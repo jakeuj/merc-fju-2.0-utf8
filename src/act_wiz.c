@@ -951,7 +951,7 @@ FUNCTION( do_olist )
     send_to_buffer( "%s", get_obj_value_usage( pObjIndex->item_type ,
       pObjIndex->value ) );
 
-    for ( pRest = pObjIndex->restrict; pRest; pRest = pRest->next )
+    for ( pRest = pObjIndex->restrictions; pRest; pRest = pRest->next )
       send_to_buffer( "限制型態﹕%s\n\r", restrict_value( pRest, ch ) );
 
     for ( pMessage = pObjIndex->message; pMessage; pMessage = pMessage->next )
@@ -1059,7 +1059,7 @@ FUNCTION( do_ostat )
       , obj->armor * 100 / obj->max_armor );
   }
 
-  for ( pRest = obj->pIndexData->restrict; pRest; pRest = pRest->next )
+  for ( pRest = obj->pIndexData->restrictions; pRest; pRest = pRest->next )
     send_to_buffer( "限制型態﹕%s\n\r", restrict_value( pRest, ch ) );
 
   for ( pMess = obj->pIndexData->message; pMess; pMess = pMess->next )
@@ -3488,7 +3488,7 @@ FUNCTION( do_llookup )
     }
   }
 
-  for ( count = 0, pRestrict = pSkill->restrict;
+  for ( count = 0, pRestrict = pSkill->restrictions;
     pRestrict;
     pRestrict = pRestrict->next, count++ )
   {

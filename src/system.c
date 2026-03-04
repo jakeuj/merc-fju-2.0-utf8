@@ -8,6 +8,8 @@
 *                                                                          *
 ***************************************************************************/
 
+#define _GNU_SOURCE
+
 #include <sys/types.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -22,7 +24,6 @@
 #include <sys/stat.h>
 #include <sys/signal.h>
 #include <sys/syscall.h>
-#include <sys/procfs.h>
 #include <sys/utsname.h>
 #include <sys/resource.h>
 #include <sys/time.h>

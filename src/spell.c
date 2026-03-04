@@ -2760,7 +2760,7 @@ SKILL( cast_judge )
     RETURN( TRUE );
   }
 
-  for ( count = 0, pRestrict = pSkill->restrict;
+  for ( count = 0, pRestrict = pSkill->restrictions;
     pRestrict;
     pRestrict = pRestrict->next, count++ )
   {

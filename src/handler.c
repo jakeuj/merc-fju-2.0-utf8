@@ -2550,7 +2550,7 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
 
     send_to_buffer( "危險程度﹕%s\n\r",
       ( obj->value[1] <= 0 ) ? "沒有" :
-      ( ( obj->value[1] <= 50 ) ? "些許\" : "很高" ) );
+      ( ( obj->value[1] <= 50 ) ? "些許" : "很高" ) );
 
     break;
 
@@ -2669,7 +2669,7 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
     }
   }
 
-  for ( pRest = obj->pIndexData->restrict; pRest; pRest = pRest->next )
+  for ( pRest = obj->pIndexData->restrictions; pRest; pRest = pRest->next )
     send_to_buffer( "物品限制﹕%s\n\r", restrict_value( pRest, ch ) );
 
   print_buffer( ch );
@@ -2823,7 +2823,7 @@ bool check_obj_restrict( CHAR_DATA * ch, OBJ_DATA * obj , bool fPrint )
     RETURN( FALSE );
   }
 
-  for ( pRest = obj->pIndexData->restrict; pRest; pRest = pRest->next )
+  for ( pRest = obj->pIndexData->restrictions; pRest; pRest = pRest->next )
     if ( !check_restrict( ch, pRest, fPrint ) ) RETURN( FALSE );
 
   RETURN( TRUE );
@@ -2841,7 +2841,7 @@ bool check_skill_restrict( CHAR_DATA * ch, SKILL_DATA * pSkill, bool fPrint )
     RETURN( FALSE );
   }
 
-  for ( pRest = pSkill->restrict; pRest; pRest = pRest->next )
+  for ( pRest = pSkill->restrictions; pRest; pRest = pRest->next )
     if ( !check_restrict( ch, pRest, fPrint ) ) RETURN( FALSE );
 
   RETURN( TRUE );
@@ -2859,7 +2859,7 @@ bool check_skill_cast( CHAR_DATA * ch, SKILL_DATA * pSkill, bool fPrint )
     RETURN( FALSE );
   }
 
-  for ( pRest = pSkill->restrict; pRest; pRest = pRest->next )
+  for ( pRest = pSkill->restrictions; pRest; pRest = pRest->next )
   {
     switch( pRest->type )
     {

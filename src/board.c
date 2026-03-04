@@ -12,9 +12,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
+#include <sys/param.h>
 #include <time.h>
 #include <unistd.h>
 #include "merc.h"
+
+#ifndef MAXNAMLEN
+#define MAXNAMLEN 256
+#endif
 
 BOARD_DATA *    load_board_index        args( ( const char * ) );
 void            load_post               args( ( const char *, BOARD_DATA * ) );

@@ -19,7 +19,7 @@
 #include "file.h"
 #include "merc.h"
 
-#define MAX_LENGTH      255
+#define MAX_LENGTH      4096
 
 /* 區域函數 */
 int     fread_line      args( ( FILE * , char * , char * ) );
@@ -371,7 +371,7 @@ void read_ini( const char * filename )
 /* 從檔案中讀入一行 */
 int fread_line( FILE * pFile , char * command , char * argument )
 {
-  char   Char;
+  int    Char;
   int    length;
   bool   turn;
   char * target;
@@ -425,6 +425,14 @@ int fread_line( FILE * pFile , char * command , char * argument )
       break;
 
     default:
+
+      if ( length == 0 && Char == '#' )
+      {
+        while ( ( Char = getc( pFile ) ) != EOF && Char != '\n' && Char != '\r' )
+          ;
+        str_cpy( command, "#" );
+        RETURN( TRUE );
+      }
 
       *target++ = Char;
       length++;

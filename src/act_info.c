@@ -32,6 +32,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
 #include "merc.h"
 
 /* 區域函數 */
@@ -4349,7 +4350,7 @@ FUNCTION( do_pry )
   send_to_buffer( "\n\r限    制﹕\n\r" );
   count = 0;
 
-  for ( pRest = pSkill->restrict; pRest; pRest = pRest->next )
+  for ( pRest = pSkill->restrictions; pRest; pRest = pRest->next )
   {
     chinese_number( ++count, buf );
     send_to_buffer( "%s、本技能%s\n\r", buf, restrict_value( pRest, ch ) );

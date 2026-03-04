@@ -1,0 +1,17 @@
+services:
+  merc:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: merc-fju
+    working_dir: /app
+    environment:
+      - MERC_HOME=/app
+    ports:
+      - "13838:3838"
+      - "11234:1234"
+      - "18888:8888"
+    volumes:
+      - .:/app
+    tty: true
+    stdin_open: true

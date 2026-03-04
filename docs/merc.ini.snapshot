@@ -11,7 +11,7 @@ NAME			=	三國歪傳之降龍伏虎
 BBS Name                =       [1;33m140.136.196.3 BBS[0m
 
 # 根目錄的實際路徑名稱
-HOME DIRECTORY  	=	/app
+HOME DIRECTORY  	=	/home/mud/mud
 
 # IPC KEY 代表申請共享記憶體的門號
 IPC KEY                 =       3585

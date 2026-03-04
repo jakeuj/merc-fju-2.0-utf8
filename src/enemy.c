@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "merc.h"
 
 void set_enemy( CHAR_DATA * ch, char * city )

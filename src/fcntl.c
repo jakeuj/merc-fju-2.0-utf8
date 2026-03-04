@@ -381,11 +381,11 @@ int fread_number( FILE_DATA * pFile )
 
 char * fread_string( FILE_DATA * pFile )
 {
-  char spool[ MAX_STRING_LENGTH ];
-  char Char;
-  int  len;
-  bool fChinese;
-  bool fLast;
+  char          spool[ MAX_STRING_LENGTH ];
+  unsigned char Char;
+  int           len;
+  int           multibyte_left;
+  bool          was_multibyte;
 
   PUSH_FUNCTION( "fread_string" );
 
@@ -412,7 +412,7 @@ char * fread_string( FILE_DATA * pFile )
 
   pFile->pointer--;
 
-  for ( len = 0, fChinese = FALSE ;; )
+  for ( len = 0, multibyte_left = 0 ;; )
   {
     if ( pFile->pointer >= pFile->boundary )
     {
@@ -436,12 +436,21 @@ char * fread_string( FILE_DATA * pFile )
       RETURN( "" );
     }
 
-    fLast = fChinese;
-    Char  = *pFile->pointer++;
+    was_multibyte = ( multibyte_left > 0 );
+    Char          = ( unsigned char ) *pFile->pointer++;
 
-         if ( fChinese )                                 fChinese = FALSE;
-    else if ( ( Char >= '\x81' ) && ( Char <= '\xFF' ) ) fChinese =  TRUE;
-    else                                                 fChinese = FALSE;
+    if ( multibyte_left > 0 )
+    {
+      multibyte_left--;
+    }
+    else
+    {
+      if      ( Char >= 0xF0 ) multibyte_left = 3;
+      else if ( Char >= 0xE0 ) multibyte_left = 2;
+      else if ( Char >= 0xC0 ) multibyte_left = 1;
+      else if ( Char >= 0x81 ) multibyte_left = 1;
+      else                     multibyte_left = 0;
+    }
 
     switch ( Char )
     {
@@ -476,7 +485,7 @@ char * fread_string( FILE_DATA * pFile )
 
     case '~':
 
-      if ( fLast )
+      if ( was_multibyte )
       {
         spool[len++] = '~';
         break;

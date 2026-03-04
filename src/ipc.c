@@ -26,6 +26,7 @@ int      shmid     = -1;           /* 系統配置共享記憶體的編號     *
 char   * shm_ptr   = ( char * ) 0; /* 系統分配共享記憶體的位址     */
 int      ipc_block = IPC_BLOCK;    /* 可以有幾塊記憶體區塊         */
 int      ipc_idle  = IPC_IDLE;     /* 閒置多久系統時間則刪除此區塊 */
+static bool share_memory_enabled = TRUE;
 
 MEMORY_DATA * get_share_memory_address  args( ( int ) );
 
@@ -52,13 +53,9 @@ void init_share_memory( int key, int key2 )
   if ( ( shmid = shmget( key, size, IPC_EXCL|IPC_CREAT|PERM ) ) == -1 )
   {
     mudlog( LOG_INFO, "shmget: %s" , strerror( errno ) );
-
-    /* 嘗試以第二個共享記憶體建立 */
-    /*
-    if ( ( shmid = shmget( key2, size, IPC_EXCL|IPC_CREAT|PERM ) ) == -1 )
-      mudlog( LOG_INFO, "shmget: %s", strerror( errno ) );
-    */
     mudlog( LOG_ERR,  "shmget: 無法取得 %d 的共享計憶體.", key );
+    share_memory_enabled = FALSE;
+    RETURN_NULL();
   }
 
   mudlog( LOG_INFO, "shmget: 建立 IPC KEY %d 大小 %d 位元組.", shmid, size );
@@ -68,9 +65,12 @@ void init_share_memory( int key, int key2 )
   {
     mudlog( LOG_INFO, "shmat: %s" , strerror( errno ) );
     mudlog( LOG_ERR,  "無法掛上共享計憶體." );
+    share_memory_enabled = FALSE;
+    RETURN_NULL();
   }
 
   mudlog( LOG_INFO, "shmat: 掛上共享計憶體位址 %p.", shm_ptr );
+  share_memory_enabled = TRUE;
 
   /* 清除共享計憶體, 且設定使用次數為 0 */
   for ( count = 0; count < ipc_block; count++ )
@@ -86,6 +86,9 @@ void init_share_memory( int key, int key2 )
 /* 刪除共享記憶體 */
 void delete_share_memory( int aShmid )
 {
+  if ( share_memory_enabled == FALSE || shm_ptr == ( char * ) 0 )
+    return;
+
   /* 先卸下共享記憶體區塊 */
   if ( shmdt( shm_ptr ) == 0 )
     mudlog( LOG_INFO, "shmdt: 成功\卸下共享計憶體." );
@@ -106,6 +109,8 @@ void delete_share_memory( int aShmid )
 
   /* 標記已經清除, 卸下 */
   shm_ptr = ( char * ) 0;
+  share_memory_enabled = FALSE;
+  shmid = -1;
   return;
 }
 
@@ -114,9 +119,8 @@ MEMORY_DATA * get_share_memory_address( int slot )
 {
   PUSH_FUNCTION( "get_share_memory_address" );
 
-  /* 判定是否共享記憶體是否已經卸下 */
-  if ( shm_ptr == ( char * ) 0 )
-    mudlog( LOG_ERR, "共享計憶體已經卸下, 還進行讀取." );
+  if ( share_memory_enabled == FALSE || shm_ptr == ( char * ) 0 )
+    RETURN( NULL );
 
   /* 測試是否編號錯誤 */
   if ( slot < 0 || slot >= ipc_block )
@@ -133,6 +137,9 @@ int get_free_share_memory( DESCRIPTOR_DATA * man, int type )
   MEMORY_DATA * mem;
 
   PUSH_FUNCTION( "get_free_share_memory" );
+
+  if ( share_memory_enabled == FALSE )
+    RETURN( -1 );
 
   for ( count = 0; count < ipc_block; count++ )
   {
@@ -168,6 +175,9 @@ void inc_share_memory_timer( void )
 
   PUSH_FUNCTION( "inc_share_memory_timer" );
 
+  if ( share_memory_enabled == FALSE )
+    RETURN_NULL();
+
   for ( count = 0; count < ipc_block; count++ )
   {
     mem = get_share_memory_address( count );
@@ -186,7 +196,7 @@ void update_share_memory( DESCRIPTOR_DATA * man )
 
   PUSH_FUNCTION( "update_share_memory" );
 
-  if ( shm_ptr != ( char * ) 0 )
+  if ( share_memory_enabled == TRUE && shm_ptr != ( char * ) 0 )
   {
     for ( count = 0; count < ipc_block; count++ )
     {
@@ -206,6 +216,9 @@ void clean_share_memory_address( int slot )
   PUSH_FUNCTION( "clean_share_memory_address" );
   mem = get_share_memory_address( slot );
 
+  if ( mem == NULL )
+    RETURN_NULL();
+
   mem->done    = FALSE;  /* 區塊是否工作完成     */
   mem->lock    = FALSE;  /* 區塊是否被鎖定       */
   mem->timer   = 0;      /* 鎖定後的計數器       */
@@ -223,8 +236,13 @@ void set_share_memory_text( int slot, char * buffer )
 
   PUSH_FUNCTION( "set_share_memory_text" );
 
+  if ( share_memory_enabled == FALSE )
+    RETURN_NULL();
+
   mem = get_share_memory_address( slot );
 
+  if ( mem == NULL )
+    RETURN_NULL();
   /* 察看是否尚未被鎖定就設定資料 */
   if ( mem->lock == FALSE )
   {
@@ -255,6 +273,13 @@ FUNCTION( do_ipcs )
   MEMORY_DATA * mem;
 
   PUSH_FUNCTION( "do_ipcs" );
+
+  if ( share_memory_enabled == FALSE )
+  {
+    send_to_buffer( "共享記憶體功能停用。\n\r" );
+    print_buffer( ch );
+    RETURN_NULL();
+  }
 
   for ( clear_buffer(), count = 0; count < ipc_block; count++ )
   {
@@ -288,6 +313,8 @@ void handle_share_memory( void )
   DESCRIPTOR_DATA * man;
 
   PUSH_FUNCTION( "handle_share_memory" );
+  if ( share_memory_enabled == FALSE )
+    RETURN_NULL();
 
   /* 察看哪些是已經完成設定的, 沒有則跳過去 */
   for ( count = 0; count < ipc_block; count++ )

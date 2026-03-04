@@ -1909,7 +1909,7 @@ void check_skill( void )
       pSkill->degree    = ERRORCODE;
     }
 
-    for ( pRest = pSkill->restrict; pRest; pRest = pRest->next )
+    for ( pRest = pSkill->restrictions; pRest; pRest = pRest->next )
     {
       switch( pRest->type )
       {

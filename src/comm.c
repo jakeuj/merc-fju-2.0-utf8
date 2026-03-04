@@ -34,6 +34,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include <signal.h>
+#include <limits.h>
 
 #include <fcntl.h>
 #include <netdb.h>
@@ -42,6 +44,10 @@
 #include <arpa/telnet.h>
 #include <arpa/inet.h>
 #include "merc.h"
+
+#ifndef O_NDELAY
+#define O_NDELAY O_NONBLOCK
+#endif
 
 /* Signal 處理. Apollo 在 signal.h 有 __attribute(atomic) 的問題 */
 /* 在這個地方不好處理 */
@@ -327,12 +333,25 @@ int                 MaxMana         = MAX_MANA;
 int                 MaxMove         = MAX_MOVE;
 
 int                 DefaultObject[ MAX_DEFAULT_OBJECT];
+bool                MOBtrigger      = TRUE;
 
-#if defined(unix)
+static int descriptor_limit( void )
+{
+#if defined(_SC_OPEN_MAX)
+  long max = sysconf( _SC_OPEN_MAX );
+  if ( max > 0 && max < INT_MAX )
+    return ( int ) max;
+#endif
+#ifdef FD_SETSIZE
+  return FD_SETSIZE;
+#else
+  return 1024;
+#endif
+}
+
 void    game_loop               args( ( void ) );
 void    new_descriptor          args( ( int, int ) );
 bool    read_from_descriptor    args( ( DESCRIPTOR_DATA * ) );
-#endif
 
 /* 其他和作業系統無關的區域變數 */
 int     init_socket             args( ( int ) );
@@ -495,10 +514,11 @@ int main( int argc, char ** argv )
   mudlog( LOG_NET , "網際管道 %d", Internal = init_socket( internal_port ) );
 
   /* 限制最多上線人數 */
-  if ( ( maxdesc = getdtablesize() ) <= 0 )
+  maxdesc = descriptor_limit();
+  if ( maxdesc <= 0 )
   {
-    mudlog( LOG_INFO, strerror( errno ) );
     mudlog( LOG_ERR , "無法取得描述表最大個數" );
+    maxdesc = 1024;
   }
 
   max_connect = UMIN( maxdesc - 8 , max_connect );
@@ -591,7 +611,7 @@ int init_socket( int port )
 
   memset( &sa , 0 , sizeof( struct sockaddr_in ) );
   sa.sin_family = hp->h_addrtype;
-  sa.sin_port   = htons( ( u_short ) port );
+  sa.sin_port   = htons( ( unsigned short ) port );
   wildcard = INADDR_ANY;
   memcpy( &sa.sin_addr, &wildcard, sizeof( long ) );
 
@@ -599,7 +619,7 @@ int init_socket( int port )
 
   memset( &sa, 0, sizeof( struct sockaddr_in ) );
   sa.sin_family = AF_INET;
-  sa.sin_port   = htons( ( u_short ) port );
+  sa.sin_port   = htons( ( unsigned short ) port );
 #endif
 
   if ( bind( fd, ( struct sockaddr * ) &sa, sizeof( sa ) ) < 0 )
@@ -640,18 +660,26 @@ void game_loop( void )
   int                     maxdesc;
   int                     connect;
   int                     loop;
-  #if !defined(sun)
-  int                     mask;
-  #endif
+#if !defined(sun)
+  sigset_t                block_mask;
+  sigset_t                old_mask;
+#endif
   char                    information[MAX_STRING_LENGTH];
 
   PUSH_FUNCTION( "game_loop" );
 
-  #if !defined(sun)
-  mask = sigmask(SIGUSR1) | sigmask(SIGUSR2) | sigmask(SIGINT)  |
-         sigmask(SIGPIPE) | sigmask(SIGALRM) | sigmask(SIGTERM) |
-         sigmask(SIGURG)  | sigmask(SIGXCPU) | sigmask(SIGHUP);
-  #endif
+#if !defined(sun)
+  sigemptyset( &block_mask );
+  sigaddset( &block_mask, SIGUSR1 );
+  sigaddset( &block_mask, SIGUSR2 );
+  sigaddset( &block_mask, SIGINT );
+  sigaddset( &block_mask, SIGPIPE );
+  sigaddset( &block_mask, SIGALRM );
+  sigaddset( &block_mask, SIGTERM );
+  sigaddset( &block_mask, SIGURG );
+  sigaddset( &block_mask, SIGXCPU );
+  sigaddset( &block_mask, SIGHUP );
+#endif
 
   /* 主要的迴圈 */
   while ( !merc_down )
@@ -721,9 +749,9 @@ void game_loop( void )
     timeout.tv_sec  = 1;
     timeout.tv_usec = 0;
 
-    #if !defined(sun)
-    sigsetmask( mask );
-    #endif
+#if !defined(sun)
+    sigprocmask( SIG_BLOCK, &block_mask, &old_mask );
+#endif
 
     if ( select( maxdesc+1, &in_set, &out_set, &exc_set, &timeout ) < 0 )
     {
@@ -731,9 +759,9 @@ void game_loop( void )
       mudlog( LOG_CRIT, "select() 函數有問題." );
     }
 
-    #if !defined(sun)
-    sigsetmask( 0 );
-    #endif
+#if !defined(sun)
+    sigprocmask( SIG_SETMASK, &old_mask, NULL );
+#endif
 
     /* 共享計憶體處理 */
     handle_share_memory();
@@ -1115,7 +1143,7 @@ void new_descriptor( int control, int slot )
   BAN_DATA           * pBan;
   struct sockaddr_in   sock;
   int                  desc;
-  int                  size;
+  socklen_t            size;
   int                  addr;
   int                  loop;
 
@@ -1123,11 +1151,14 @@ void new_descriptor( int control, int slot )
 
   size = sizeof( sock );
   getsockname( control, ( struct sockaddr * ) &sock, &size );
+  size = sizeof( sock );
 
   if ( ( desc = accept( control, (struct sockaddr *) &sock, &size) ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_INFO, "New_descriptor: accept 函數有問題." );
+    mudlog( LOG_INFO,
+      "New_descriptor: accept 函數有問題 (fd %d, errno %d, size %d).",
+      control, errno, ( int ) size );
     RETURN_NULL();
   }
 
@@ -1341,7 +1372,7 @@ void close_communication( void )
     if ( Control[loop] != ERRORCODE )
     {
       #ifdef __linux__
-      shutdown( Control[loop], 2 );
+      if ( !SystemCrash ) shutdown( Control[loop], 2 );
       #endif
 
       close( Control[loop] );
@@ -1349,7 +1380,7 @@ void close_communication( void )
   }
 
   #ifdef __linux__
-  shutdown( Internal, 2 );
+  if ( !SystemCrash ) shutdown( Internal, 2 );
   #endif
 
   close( Internal );
@@ -1807,9 +1838,9 @@ bool process_output( DESCRIPTOR_DATA * d, bool fPrompt )
     {
       char buffer[ MAX_STRING_LENGTH ];
 
-      sprintf( buffer, "\e[80D\e[0m--More--(%2d%%)"
-         , 100 - 100 * ( d->showstr_point - d->showstr_head ) /
-           UMAX( 1, str_len( d->showstr_head ) ) );
+      int percent = ( int ) ( 100 - 100 * ( d->showstr_point - d->showstr_head )
+           / UMAX( 1, str_len( d->showstr_head ) ) );
+      sprintf( buffer, "\e[80D\e[0m--More--(%2d%%)", percent );
 
       write_to_buffer( d, buffer , 0 );
     }
@@ -3819,7 +3850,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     {
       if ( ch->skill[notes] > 0 && ( pSkill = get_skill( notes ) ) )
       {
-        for ( pRest = pSkill->restrict; pRest; pRest = pRest->next )
+        for ( pRest = pSkill->restrictions; pRest; pRest = pRest->next )
         {
           switch( pRest->type )
           {

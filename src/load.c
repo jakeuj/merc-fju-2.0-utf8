@@ -342,7 +342,7 @@ void set_object_default( OBJ_INDEX_DATA * pObjIndex )
   pObjIndex->filename    = NULL;
   pObjIndex->unit        = DefaultUnit;
   pObjIndex->job         = NULL;
-  pObjIndex->restrict    = NULL;
+  pObjIndex->restrictions    = NULL;
   pObjIndex->message     = NULL;
   pObjIndex->affected    = NULL;
   pObjIndex->impact      = NULL;
@@ -435,7 +435,7 @@ void set_skill_default( SKILL_DATA * pSkill )
   pSkill->limit           = NULL;
   pSkill->check           = NULL;
   pSkill->damage          = NULL;
-  pSkill->restrict        = NULL;
+  pSkill->restrictions        = NULL;
   pSkill->function        = NULL;
   pSkill->affected        = NULL;
   pSkill->type            = TAR_IGNORE;
@@ -2683,7 +2683,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
           break;
         }
 
-        for ( zRestrict = pObjIndex->restrict; zRestrict; zRestrict = zRestrict->next )
+        for ( zRestrict = pObjIndex->restrictions; zRestrict; zRestrict = zRestrict->next )
         {
           if ( zRestrict->type == pRestrict->type
             && zRestrict->type != RES_SKILL )
@@ -2695,8 +2695,8 @@ OBJ_INDEX_DATA * load_object( const char * filename )
         }
 
         TEST_READ_ERROR
-        pRestrict->next     = pObjIndex->restrict;
-        pObjIndex->restrict = pRestrict;
+        pRestrict->next     = pObjIndex->restrictions;
+        pObjIndex->restrictions = pRestrict;
         break;
       }
 
@@ -5752,7 +5752,7 @@ void load_skill( const char * path , const char * index )
                 break;
               }
 
-              for ( zRestrict = pSkill->restrict; zRestrict; zRestrict = zRestrict->next )
+              for ( zRestrict = pSkill->restrictions; zRestrict; zRestrict = zRestrict->next )
               {
                 if ( zRestrict->type == pRestrict->type
                   && zRestrict->type != RES_SKILL )
@@ -5762,8 +5762,8 @@ void load_skill( const char * path , const char * index )
                 }
               }
 
-              pRestrict->next  = pSkill->restrict;
-              pSkill->restrict = pRestrict;
+              pRestrict->next  = pSkill->restrictions;
+              pSkill->restrictions = pRestrict;
               break;
             }
 

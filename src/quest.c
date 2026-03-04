@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "merc.h"
 
 extern bool check_quest args( ( CHAR_DATA *, const char * ) );

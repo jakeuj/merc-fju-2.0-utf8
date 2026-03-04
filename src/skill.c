@@ -208,7 +208,7 @@ FUNCTION( do_cast )
   }
 
   /* 檢查技能的限制 */
-  for ( pRest = pSkill->restrict; pRest; pRest = pRest->next )
+  for ( pRest = pSkill->restrictions; pRest; pRest = pRest->next )
   {
     switch( pRest->type )
     {

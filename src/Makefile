@@ -2,8 +2,14 @@ CC        = gcc
 #PROF     = -pg
 DEBUG     =
 PIPE      = -pipe
-WARNING   = -Wall
-O_FLAGS   = -O3 -fomit-frame-pointer -Wstrict-prototypes
+WARNING   = -Wall -Wextra -Wno-unknown-escape-sequence -Wno-invalid-source-encoding -Wno-unused-parameter -Wno-sign-compare
+O_FLAGS   = -O3 -fomit-frame-pointer -Wstrict-prototypes -D_XOPEN_SOURCE=600 -D_DEFAULT_SOURCE
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+LIBS      =
+else
+LIBS      = -lcrypt
+endif
 #O_FLAGS  = -O2 -pg
 C_FLAGS   = $(O_FLAGS) $(DEBUG) $(PROF) $(WARNING) $(PIPE)
 L_FLAGS   = $(O_FLAGS) $(DEBUG) $(PROF)
@@ -99,7 +105,7 @@ merc: $(O_FILES)
 
 	@rm -f merc
 	@echo "[1;33mLinkng Merc ... [0m"
-	$(CC) $(L_FLAGS) -o merc $(O_FILES)
+	$(CC) $(L_FLAGS) -o merc $(O_FILES) $(LIBS)
 
 clean:
 	@echo "[1;33mCleaning all object files and merc[0m"

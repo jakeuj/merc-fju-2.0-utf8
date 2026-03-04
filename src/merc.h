@@ -2414,7 +2414,7 @@ struct  mob_prog_data
   int          type;
 };
 
-bool    MOBtrigger;
+extern  bool    MOBtrigger;
 
 #define ERROR_PROG              -1
 #define IN_FILE_PROG            0
@@ -2468,7 +2468,7 @@ struct  obj_index_data
   AFFECT_DATA      * affected;
   AFFECT_DATA      * impact;
   JOB_DATA         * job;
-  RESTRICT_DATA    * restrict;
+  RESTRICT_DATA    * restrictions;
   MESSAGE_DATA     * message;
   char             * name;
   char             * short_descr;
@@ -2781,7 +2781,7 @@ struct  skill_data
   CHECK_FUN     * check;              /* 施法確認函數           */
   LIMIT_DATA    * limit;              /* 各職業的限制           */
   DAMAGE_DATA   * damage;             /* 傷害訊息               */
-  RESTRICT_DATA * restrict;           /* 限制資料               */
+  RESTRICT_DATA * restrictions;       /* 限制資料               */
   AFFECT_DATA   * affected;           /* 影響                   */
   char          * name;               /* 英文名稱               */
   char          * cname;              /* 中文名稱               */
@@ -5186,4 +5186,3 @@ extern  int                     MaxRoomObject;
 #undef  DD
 #undef  SD
 #undef  OTD
-

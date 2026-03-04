@@ -11,8 +11,12 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#ifdef __linux__
-#include <sys/sysmacros.h>
+#if defined(__has_include)
+#  if __has_include(<sys/sysmacros.h>)
+#    include <sys/sysmacros.h>
+#  endif
+#else
+#  include <sys/sysmacros.h>
 #endif
 
 #if defined(sun)
@@ -1426,8 +1430,12 @@ char * file_info( char * path, char * filename, struct stat * pSt, bool fLong )
     }
     else
     {
+#if defined(major) && defined(minor)
       send_to_stack( "%4d.%4d "
         , major( pSt->st_rdev ), minor( pSt->st_rdev ) );
+#else
+      send_to_stack( "%9ld ", ( long ) pSt->st_rdev );
+#endif
     }
 
     send_to_stack( "%.12s ", ctime( &pSt->st_mtime ) + 4 );

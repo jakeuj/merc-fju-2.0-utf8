@@ -53,7 +53,7 @@ void free_obj_index( OID * pIndex )
     free_job( pJob );
   }
 
-  for ( pRest = pIndex->restrict; pRest; pRest = zRest )
+  for ( pRest = pIndex->restrictions; pRest; pRest = zRest )
   {
     zRest = pRest->next;
     free_restrict( pRest );

@@ -449,7 +449,7 @@ void launch_internal( int internal )
   struct sockaddr_in   sock;
   NET_DATA           * pNet;
   char                 buf[MAX_HOSTNAME+1];
-  int                  size;
+  socklen_t            size;
   int                  desc;
   int                  addr;
 
@@ -457,11 +457,14 @@ void launch_internal( int internal )
 
   size = sizeof( sock );
   getsockname( internal, ( struct sockaddr * ) &sock, &size );
+  size = sizeof( sock );
 
   if ( ( desc = accept( internal, (struct sockaddr *) &sock, &size) ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_INFO, "launch_internal: accept 有問題." );
+    mudlog( LOG_INFO,
+      "launch_internal: accept 有問題 (fd %d, errno %d, size %d).",
+      internal, errno, ( int ) size );
     RETURN_NULL();
   }
 
@@ -535,14 +538,14 @@ bool init_client( NET_DATA * pNet )
   }
 
   serv.sin_family = AF_INET;
-  if ( ( hp = gethostbyname( pNet->address ) ) == NULL )
+  if ( ( hp = gethostbyname( pNet->address ) ) == NULL || !hp->h_addr_list || !hp->h_addr_list[0] )
   {
     mudlog( LOG_NET, "init_client: %s 無法取得.", pNet->address );
     close( sockfd );
     RETURN( FALSE );
   }
 
-  bcopy( ( char * ) hp->h_addr, ( char * ) &serv.sin_addr, hp->h_length );
+  memcpy( &serv.sin_addr, hp->h_addr_list[0], ( size_t ) hp->h_length );
   serv.sin_port = htons( pNet->port );
 
   if ( connect( sockfd, ( struct sockaddr * ) &serv, sizeof( serv ) ) < 0 )
