@@ -1,9 +1,9 @@
 Vnum            104
 Name            earth ore~
-ShortDesc       ¦a¥Û~
+ShortDesc       åœ°çŸ³~
 Description
-¤@Áû¬İ¨ÓÁÙ¤£¿ùªº¦a¥Û(earth ore)¡M®³µ¹ÅK¦K©Î¬OÅ±¼C®vÅ±³y(mint)§a¡T~
-Unit            Áû~
+ä¸€é¡†çœ‹ä¾†é‚„ä¸éŒ¯çš„åœ°çŸ³(earth ore)ï¹æ‹¿çµ¦éµåŒ æˆ–æ˜¯é‘„åŠå¸«é‘„é€ (mint)å§ï¹—~
+Unit            é¡†~
 ItemType        ITEM_ORE
 Takeable        Yes
 Level           1

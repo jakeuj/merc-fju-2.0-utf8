@@ -1,10 +1,10 @@
 Vnum            546
 Name            tiger boot~
-ShortDesc       Áaªê¹u~
+ShortDesc       ç¸±è™é´~
 Description
-¥Ñªê¥Ö»s¦¨ ¡M¥i´£¨Ñ«Ü¦nªº¨¾Å@¤O ¡M¼W¥[±Ó±¶«×¡C
+ç”±è™çš®è£½æˆ ï¹å¯æä¾›å¾ˆå¥½çš„é˜²è­·åŠ› ï¹å¢åŠ æ•æ·åº¦ã€‚
 ~
-Unit            Âù~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

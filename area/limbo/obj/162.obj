@@ -1,10 +1,10 @@
 Vnum            162
 Name            chian sky potion~
-ShortDesc       °®¤ÑÃÄ¤ô~
+ShortDesc       ä¹¾å¤©è—¥æ°´~
 Description
-¤@²~°®¤ÑÃÄ¤ô(chian sky potion)¡M¨ã¦³­¸µ¾¯à¤Oªº®ÄªG¡C
+ä¸€ç“¶ä¹¾å¤©è—¥æ°´(chian sky potion)ï¹å…·æœ‰é£›ç¿”èƒ½åŠ›çš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

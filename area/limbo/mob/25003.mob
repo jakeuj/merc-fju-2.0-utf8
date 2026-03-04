@@ -1,11 +1,11 @@
 Vnum            25003
 Name            mouse~
-ShortDesc       �ѹ�~
-LongDesc        �ѹ�(mouse)
+ShortDesc       老鼠~
+LongDesc        老鼠(mouse)
 ~
 Description
-�p�ѹ��x�l�ܤp�M����H�F�M��B��«�M�ͩʳ̩�
-�ߨӧ�M���}����u�O���M���H�̪������v�C
+小老鼠膽子很小﹐見到人了﹐到處亂竄﹐生性最怕
+貓來抓﹐挖洞本領真是高﹐為人們的眼中釘。
 ~
 Sentinel        Yes
 Alignment       0

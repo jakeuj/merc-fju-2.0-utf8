@@ -1,10 +1,10 @@
 Vnum            CLASS_SHAMAN
 Name            shaman~
-Cname           ¹D  ¤h~
-Title           ¤£ÆF¤£¦¬¿ú~
+Cname           é“  å£«~
+Title           ä¸éˆä¸æ”¶éŒ¢~
 LowerLimit      10
 UpperLimit      15
-LimitMsg        §A¾D¨ü·¥¦hªº¥´À»¡M¤ß¤¤¤@ªÑ®ğµLªkµo¥X¡M«K¦V¹ï¤è¥´¥X§Aªº²r¯P¤@À»¡T~
+LimitMsg        ä½ é­å—æ¥µå¤šçš„æ‰“æ“Šï¹å¿ƒä¸­ä¸€è‚¡æ°£ç„¡æ³•ç™¼å‡ºï¹ä¾¿å‘å°æ–¹æ‰“å‡ºä½ çš„çŒ›çƒˆä¸€æ“Šï¹—~
 Limit           1500
 Multiplier      20
 RebirthGold     10000

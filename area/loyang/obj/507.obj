@@ -1,11 +1,11 @@
 Vnum            507
 Name            pyramid mass~
-ShortDesc       Às´Ä~
+ShortDesc       é¾æ£•~
 Description
-«z¡T¦n¤jªº¤@­Óºê¤l(pyramid mass)¡M¨¬¨¬¦³¤@¤ç­«¡M¸Ì­±¥]º¡¤F³J¶À­»Û£¡M
-ÂA½¼½¬»T¡M¯u¬O´ş¸É¸t«~¡M¥O¤H¦Y¤FÁÙ·Q¦A¦Y¡C
+å“‡ï¹—å¥½å¤§çš„ä¸€å€‹ç²½å­(pyramid mass)ï¹è¶³è¶³æœ‰ä¸€æ–¤é‡ï¹è£¡é¢åŒ…æ»¿äº†è›‹é»ƒé¦™è‡ï¹
+é®®è¦è“®è“‰ï¹çœŸæ˜¯æ»‹è£œè–å“ï¹ä»¤äººåƒäº†é‚„æƒ³å†åƒã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           20

@@ -1,5 +1,5 @@
 Name            snow martial force~
-Cname           ³·»aªZ¾Ç~
+Cname           é›ªè’¼æ­¦å­¸~
 Slot            SLOT_SNOW_MARTIAL
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -39,7 +39,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n¨Ï¥X³·»a¬£ªº°­¼v¸}¡M¤@©Û$B¡y³±©²¨D»î¡z$Z©¹$N³s½ð¼Æ¸}¡C~
+$nä½¿å‡ºé›ªè’¼æ´¾çš„é¬¼å½±è…³ï¹ä¸€æ‹›$Bã€Žé™°åºœæ±‚é­‚ã€$Zå¾€$Né€£è¸¢æ•¸è…³ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -48,7 +48,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥X°­¼v¸}¤¤ªº$G¡y­ß¨ë»È±ô¡z$Z¥k¸}¦p§Q¼C¯ë©¹$N½ð¥h¡C~
+$nä½¿å‡ºé¬¼å½±è…³ä¸­çš„$Gã€Žå†¥åˆºéŠ€æ¢­ã€$Zå³è…³å¦‚åˆ©åŠèˆ¬å¾€$Nè¸¢åŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -57,7 +57,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥X³·»aªZ¾Ç¤¤ªº$B¡y¿º­·¶Õ¡z$Z¦p±Æ¤s­Ë®ü¯ë©¹$Nµo¥X¤@´x¡C~
+$nä½¿å‡ºé›ªè’¼æ­¦å­¸ä¸­çš„$Bã€Žè•©é¢¨å‹¢ã€$Zå¦‚æŽ’å±±å€’æµ·èˆ¬å¾€$Nç™¼å‡ºä¸€æŽŒã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -66,7 +66,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨g³Ü¤@Án¡M¤@©Û$S¡y¤Q¤»¸ô¾à®³¤â¡z$Z¶¶¶Õ´N©¹$N§ì¥h¡C~
+$nç‹‚å–ä¸€è²ï¹ä¸€æ‹›$Sã€Žåå…­è·¯æ“’æ‹¿æ‰‹ã€$Zé †å‹¢å°±å¾€$NæŠ“åŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -75,8 +75,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n¶X¶ÕÂà¨ì$Nªº¨­«á¡M¤Ï¤â§ì¦í$Nªº¤âµÃ¡M¨Ï¥X³·»aªZ¾Ç¤¤ªººL§Þ$Y¡y±²Às¡D$W³·¡z
-$Z¡M¹Á¸Õ±N$N»·»·ªººL¦V»·¤è¡C~
+$nè¶å‹¢è½‰åˆ°$Nçš„èº«å¾Œï¹åæ‰‹æŠ“ä½$Nçš„æ‰‹è…•ï¹ä½¿å‡ºé›ªè’¼æ­¦å­¸ä¸­çš„æ‘”æŠ€$Yã€Žæ²é¾ï¼Ž$Wé›ªã€
+$Zï¹å˜—è©¦å°‡$Né é çš„æ‘”å‘é æ–¹ã€‚~
 Chance          10
 Value           20
 Parry           0

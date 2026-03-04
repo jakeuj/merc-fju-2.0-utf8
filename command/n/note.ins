@@ -1,5 +1,5 @@
 Name            note~
-Cname           �H����O~
+Cname           信件指令~
 Function        do_note~
 Position        POS_SLEEPING
 Level           0
@@ -15,45 +15,45 @@ Lost            YES
 Lock            NO
 Limit           NO
 Help
-�y�k�Rnote list
-�y�k�Rnote read    <���X>
-�y�k�Rnote read    all
-�y�k�Rnote edit
-�y�k�Rnote subject <�r��>
-�y�k�Rnote to      <���H�H>
-�y�k�Rnote to      @<�����W��>
-�y�k�Rnote clear
-�y�k�Rnote send
-�y�k�Rnote show
-�y�k�Rnote post
-�y�k�Rnote remove  <���X>
+語法﹕note list
+語法﹕note read    <號碼>
+語法﹕note read    all
+語法﹕note edit
+語法﹕note subject <字串>
+語法﹕note to      <收信人>
+語法﹕note to      @<幫派名稱>
+語法﹕note clear
+語法﹕note send
+語法﹕note show
+語法﹕note post
+語法﹕note remove  <號碼>
 
-A. �\Ū�����R
+A. 閱讀部份﹕
 
-[1;32mnote list[0m �C�X���ǫH��O�A�i�H�\Ū���M[1;32mnote read[0m Ū�X�A�ҭn���H��C
+[1;32mnote list[0m 列出哪些信件是你可以閱讀的﹐[1;32mnote read[0m 讀出你所要的信件。
 
-   �Ҧp�R[1;32mnote read 13[0m �����N�O�\Ū�A���� 13 �g�H��C
+   例如﹕[1;32mnote read 13[0m 指的就是閱讀你的第 13 篇信件。
 
-B. �H�H�����R
+B. 寄信部份﹕
 
-[1;32mnote subject[0m �]�w�@�ӧA�n�o���H�󪺥D�D�C
+[1;32mnote subject[0m 設定一個你要發表信件的主題。
 
-[1;32mnote to[0m ���X�A�ҭn�H�H����H�M�`�@�i�H�����|���R
+[1;32mnote to[0m 指出你所要寄信的對象﹐總共可以分為四類﹕
 
-   [1;33m1[0m. note to all      �H�H���Ҧ����H
-   [1;33m2[0m. note to immortal �H�H���޲z��
-   [1;33m3[0m. �Y�O�Ĥ@�ӰѼƬO [1;37m@[0m�M�h�N���O�@�������H�M���M�᭱�o�[�W�������^��W�١C
-   [1;33m4[0m. �S�w���Y�ӤH�^��W�١C
+   [1;33m1[0m. note to all      寄信給所有的人
+   [1;33m2[0m. note to immortal 寄信給管理者
+   [1;33m3[0m. 若是第一個參數是 [1;37m@[0m﹐則代表是一封幫派信﹐當然後面得加上幫派的英文名稱。
+   [1;33m4[0m. 特定的某個人英文名稱。
 
-    �� [1;32mnote edit[0m �i�H�i�J�t�Ϊ��s�边���M�i�H�@��@��C�C��J�M��
-�ɧA�N��������T���z�Z�M���D�A�i�J�԰��Ҧ��M�άO�Q�޲z�̵����_�C��
-��i�H�ϥ� [1;32mnote show[0m �Ӭݬݨ쩳�s�誺���e�쩳�O�p��C�p�G�ۤv����
-�N�M�i�H��J [1;32mnote clear[0m �ӲM���Ҧ�����ơM�άO�A��J [1;32mnote edit[0m �@
-���Y�i�H�A���i�J�s��Ҧ��M���O���e�Ҽg�����e�|�Q�M���C
+    用 [1;32mnote edit[0m 可以進入系統的編輯器內﹐可以一行一行慢慢輸入﹐此
+時你將不受任何訊息干擾﹐除非你進入戰鬥模式﹐或是被管理者給打斷。之
+後可以使用 [1;32mnote show[0m 來看看到底編輯的內容到底是如何。如果自己不滿
+意﹐可以輸入 [1;32mnote clear[0m 來清除所有的資料﹐或是再輸入 [1;32mnote edit[0m 一
+次即可以再次進入編輯模式﹐但是之前所寫的內容會被清除。
 
-    �p�G�@�� OK�M�̫�i�H�ϥ� [1;32mnote send[0m �άO [1;32mnote post[0m �ӱH�X�M��
-�A�����ť����񵥯Ť@���C
+    如果一切 OK﹐最後可以使用 [1;32mnote send[0m 或是 [1;32mnote post[0m 來寄出﹐但
+你的等級必須比等級一高。
 
-�������O�Rvote joke board read
+相關指令﹕vote joke board read
 ~
 End

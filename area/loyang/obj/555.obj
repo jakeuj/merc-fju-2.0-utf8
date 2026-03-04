@@ -1,10 +1,10 @@
 Vnum            555
 Name            soldier armor~
-ShortDesc       ¿ûÅK¾Ô¥Ò~
+ShortDesc       é‹¼éµæˆ°ç”²~
 Description
-¿û»sªº¾Ô¥Ò(soldier armor)¡M¬İ°_¨Ó«Ü²Â­«¡M¦ı¦ü¥G¦³ÆZ¦nªº«OÅ@¡C
+é‹¼è£½çš„æˆ°ç”²(soldier armor)ï¹çœ‹èµ·ä¾†å¾ˆç¬¨é‡ï¹ä½†ä¼¼ä¹æœ‰è »å¥½çš„ä¿è­·ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

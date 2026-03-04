@@ -1,11 +1,11 @@
 Vnum            459
-Name            �оɬݦۤv��ƪ��ж� [score]~
+Name            教導看自己資料的房間 [score]~
 Description
-�o���ЫǬO�оɷs��̦p��ݨ�ۤv����ơM���A�Ѧۤv���h�֪���
-�O�H�Φۤv���h�j�Φh�z�M�]�i�H�ݨ�ۤv�Ǩ쪺���ǧޯ�H�Τɯ�
-���g���.
+這間教室是教導新手們如何看到自己的資料﹐來瞭解自己有多少的能
+力以及自己有多強或多弱﹐也可以看到自己學到的哪些技能以及升級
+的經驗值.
 
-�o�̦��@���i�ܵP (sign)�C�s�����J look sign.
+這裡有一塊告示牌 (sign)。新手請鍵入 look sign.
 
 ~
 SectorType      SECT_CITY
@@ -30,20 +30,20 @@ End
 Keyword         sign~
 Description
 
-�o�̱оɫ��ݧA�ۤv:
-��..�A�a��ڤ@�I�M�S���Y�b�a��ڤ@�I..
-�{�b�A�i�H��J score <sc> �ӬݧA�ۤv���U����ơC
-�t�~�M��ĳ�A�b�o�̭ק�@�ǳ]�w:
+這裡教導怎麼看你自己:
+來..再靠近我一點﹐沒關係在靠近我一點..
+現在你可以鍵入 score <sc> 來看你自己的各項資料。
+另外﹐建議你在這裡修改一些設定:
 
-��J config �@�몱�̷|��J config +autoloot ; config +autosac.
-autoloot ���}�ɡM�����Ǫ�(mob) �ɨt�Φ۰ʷj�M����.
-autosac  ���}�ɡM�����Ǫ�(mob) �ɨt�Φ۰ʩ^�m����.
-�۹諸 config -autoloot ; config -autosac �N��o�������F.
-�P�ˤ]�i�H²�ƫ��O ��J autoloot �� autosac �N�i�H���}������.
+鍵入 config 一般玩者會鍵入 config +autoloot ; config +autosac.
+autoloot 打開時﹐殺死怪物(mob) 時系統自動搜尋屍體.
+autosac  打開時﹐殺死怪物(mob) 時系統自動奉獻屍體.
+相對的 config -autoloot ; config -autosac 就把這些關掉了.
+同樣也可以簡化指令 鍵入 autoloot 或 autosac 就可以打開或關掉.
 
-��J channels �άO�� cha �ӬݧA�i�H�ΨӸ�O�H���q���W�D.
-�A�i�H�� channels +all �� channels -all �Ӷ}���Ҧ����W�D.
-�]�ЧA�`�N���ܪ������M�S���H���w��ż�ܪ�!
+鍵入 channels 或是打 cha 來看你可以用來跟別人溝通的頻道.
+你可以用 channels +all 或 channels -all 來開關所有的頻道.
+也請你注意說話的言詞﹐沒有人喜歡講髒話的!
 
 ~
 

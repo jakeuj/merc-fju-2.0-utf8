@@ -1,10 +1,10 @@
 Vnum            9010
 Name            night cloth~
-ShortDesc       ©]¦æ¦ç~
+ShortDesc       å¤œè¡Œè¡£~
 Description
-¤pÀYµs¸é³Ì³ßÅw¬ïªºªA¹¢¡C
+å°é ­ç›œè³Šæœ€å–œæ­¡ç©¿çš„æœé£¾ã€‚
 ~
-Unit            ®M~
+Unit            å¥—~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

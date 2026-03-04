@@ -3,10 +3,10 @@ Lower           11
 Position        POS_STANDING
 Function        ~
 Description
-�Aı�o���ɭԤ���W�٫᭱�h�ӭ^��W�٫ܤ��ߺD�ܡS�A�u�Q�n�ݨ줤��W�ٮɡM
-�ڭ̦��ӶK�ߪ��p�]�p�M ��J [1;32mconfig -exact[0m �N�i�H�F��F��C
+你覺得有時候中文名稱後面多個英文名稱很不習慣嗎﹖你只想要看到中文名稱時﹐
+我們有個貼心的小設計﹐ 輸入 [1;32mconfig -exact[0m 就可以達到了喔。
 
-�Ьd�ߡRauto�Bconfig
+請查詢﹕auto、config
 ~
 
 End

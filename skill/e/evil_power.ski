@@ -1,7 +1,7 @@
 Name            evil power~
-Cname           ���c�]�O~
+Cname           邪惡魔力~
 Slot            SLOT_EVIL_POWER
-Msgoff          �A�P��@�}�ŵ�M���c���O�h�h�F�@�ǡT~
+Msgoff          你感到一陣空虛﹐邪惡的力退去了一些﹗~
 Check           check_unrigid_attack~
 Function        cast_evil_power~
 Position        POS_STANDING

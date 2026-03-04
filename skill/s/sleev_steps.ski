@@ -1,5 +1,5 @@
 Name            sleev steps~
-Cname           �����S�B~
+Cname           風雲袖步~
 Slot            SLOT_SLEEV_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -37,7 +37,7 @@ Limit           CLASS_SMITH      1  40
 Help            ~
 #Damage
 Description
-$n��S�椬���R�ϥX$Y�y�سS�ӥh�z$Z�M�p�����۰ʡM�ްʮ�y������פF$N�����ۡC~
+$n兩袖交互揮舞使出$Y『拂袖而去』$Z﹐如風車旋動﹐引動氣流急轉躲避了$N的殺招。~
 Chance          20
 Value           20
 Parry           0
@@ -46,8 +46,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n����D�_�M�ϥX$G�y���S���R�z$Z�C�q$N���}�}�ۦ��ĥX�h�M���l�����ƪ��ƯB�b
-�b�šC~
+$n跟著躍起﹐使出$G『長袖善舞』$Z。從$N的破洞招式衝出去﹐身子輕飄飄的飄浮在
+半空。~
 Chance          20
 Value           20
 Parry           0
@@ -56,7 +56,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$B�y�S����[�z$Z�M�ݨ�$N���ۦ��@��M$n�N���ƪ����}�C~
+$n使出$B『袖手旁觀』$Z﹐看到$N的招式一到﹐$n就輕飄的躲開。~
 Chance          20
 Value           20
 Parry           0
@@ -65,7 +65,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥ�$W�y�ƳS�����z$Z�@�}�}���@���o�X$n�����W�M�ϱo$N��������C~
+$n使用$W『化袖為霧』$Z一陣陣的濃霧發出$n的身上﹐使得$N停止攻擊。~
 Chance          20
 Value           20
 Parry           0

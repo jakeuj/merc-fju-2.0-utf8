@@ -1,8 +1,8 @@
 Vnum            37
 Name            machete~
-ShortDesc       �j�M~
+ShortDesc       大刀~
 Description
-�o�O�@�`�H�����j�M(machete)�M�M�`�j�ۤ@�����y�M�ϰ_�Ӫ��ͭ��C~
+這是一柄沈重的大刀(machete)﹐刀柄綁著一條紅巾﹐使起來虎虎生風。~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

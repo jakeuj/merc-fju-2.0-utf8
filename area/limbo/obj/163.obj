@@ -1,10 +1,10 @@
 Vnum            163
 Name            gen mount potion~
-ShortDesc       ¦á¤sÃÄ¤ô~
+ShortDesc       è‰®å±±è—¥æ°´~
 Description
-¤@²~¦á¤sÃÄ¤ô(gen mount potion)¡M¨ã¦³¥¨¤H¤§¤Oªº®ÄªG¡C
+ä¸€ç“¶è‰®å±±è—¥æ°´(gen mount potion)ï¹å…·æœ‰å·¨äººä¹‹åŠ›çš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

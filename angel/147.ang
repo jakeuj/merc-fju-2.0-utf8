@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A���o�Ϳù��ӶæӼv�T���[��O�S�S���Y�M�o�̴��Ѥ@��²�檺���O [1;32mcls[0m
-�M�A�u�n��J [1;32mcls[0m�M�t�δN�|���A�M���ù���T
+你控發生螢幕太亂而影響的觀察呢﹖沒關係﹐這裡提供一個簡單的指令 [1;32mcls[0m
+﹐你只要輸入 [1;32mcls[0m﹐系統就會幫你清除螢幕喔﹗
 
-�Ьd�ߡRcls
+請查詢﹕cls
 ~
 End

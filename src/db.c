@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -34,7 +34,7 @@
 #include <unistd.h>
 #include "merc.h"
 
-/* ¥ş°ìÅÜ¼Æ */
+/* å…¨åŸŸè®Šæ•¸ */
 NET_DATA      *         net_list;
 
 AUCTION_DATA            pAuction;
@@ -130,7 +130,7 @@ MOB_INDEX_DATA  *       mob_index_hash          [MAX_KEY_HASH];
 DATABASE_DATA   *       data_index_hash         [MAX_KEY_HASH];
 STOCK_DATA              stock_data              [MAX_STOCK];
 
-/* °Ï°ìÅÜ¼Æ */
+/* å€åŸŸè®Šæ•¸ */
 char * welcome_message;
 char * welcome_immortal;
 char * motd_message;
@@ -182,7 +182,7 @@ bool   SkillValue     = FALSE;
 bool   PlayerAngel    = TRUE;
 int    MobDecrease    = 20;
 
-/* °Ï°ì¨ç¼Æ */
+/* å€åŸŸå‡½æ•¸ */
 void    check_skill             args( ( void ) );
 void    check_area_capital      args( ( void ) );
 void    check_class             args( ( void ) );
@@ -206,207 +206,207 @@ void boot_db( void )
 
   PUSH_FUNCTION( "boot_db" );
 
-  /* ªì©l¤Æ°t¸mªÅ¶¡ÅÜ¼Æ */
+  /* åˆå§‹åŒ–é…ç½®ç©ºé–“è®Šæ•¸ */
   for ( loop = 0; loop < MAX_MEM_LIST; loop++ ) rgFreeList[loop] = NULL;
   fBootDb = TRUE;
 
-  /* ±Ò©l¤Æ©ç½æÅÜ¼Æ */
+  /* å•Ÿå§‹åŒ–æ‹è³£è®Šæ•¸ */
   init_auction();
 
-  /* °_©l¤Æ¬y¤ô§Ç¸¹ */
+  /* èµ·å§‹åŒ–æµæ°´åºè™Ÿ */
   initial_serial_time();
 
-  /* ±Ò©l¤Æ½ä³Õ */
+  /* å•Ÿå§‹åŒ–è³­åš */
   initial_gamble();
 
-  /* ±Ò©l¤Æ¶Ã¼Æ */
+  /* å•Ÿå§‹åŒ–äº‚æ•¸ */
   init_mm();
 
-  /* °_©l¤Æ±m¨é */
+  /* èµ·å§‹åŒ–å½©åˆ¸ */
   generate_ticket( TicketTotal );
 
-  /* °_©l¼Ö³z */
+  /* èµ·å§‹æ¨‚é€ */
   lotto_generate( -1 );
 
-  /* ªì­È¤Æªí®æ */
+  /* åˆå€¼åŒ–è¡¨æ ¼ */
   tablize( FORMAT_CLEAN, NULL, 0, NULL, 0 );
 
-  /* °_©l¤ÆªÑ²¼³Ì¤j«ù¦³¼Æ */
+  /* èµ·å§‹åŒ–è‚¡ç¥¨æœ€å¤§æŒæœ‰æ•¸ */
   if ( MAX_STOCK_COST <= 0 )
-    mudlog( LOG_ERR, "boot_db: ªÑ²¼³Ì¤j­±­È %d ¤£¦X²z.", MAX_STOCK_COST );
+    mudlog( LOG_ERR, "boot_db: è‚¡ç¥¨æœ€å¤§é¢å€¼ %d ä¸åˆç†.", MAX_STOCK_COST );
 
   if ( ( max_stock_buy = ( MAX_ASSET - 1 ) / MAX_STOCK_COST ) <= 0 )
-    mudlog( LOG_ERR, "boot_db: ªÑ²¼³Ì¤j«ù¦³¼Æ %d ¤£¦X²z.", max_stock_buy );
+    mudlog( LOG_ERR, "boot_db: è‚¡ç¥¨æœ€å¤§æŒæœ‰æ•¸ %d ä¸åˆç†.", max_stock_buy );
 
-  /* Åª¤J symbol.def */
+  /* è®€å…¥ symbol.def */
   load_symbol( symbol_file );
 
-  /* Åª¤J¤é´Á¸ê®Æ */
+  /* è®€å…¥æ—¥æœŸè³‡æ–™ */
   load_date( date_file );
   weather_setting();
 
-  /* Åª¤J help ªº¸ê®Æ */
+  /* è®€å…¥ help çš„è³‡æ–™ */
   load_help( help_dir );
 
-  /* Åª¤J social ªº¸ê®Æ */
+  /* è®€å…¥ social çš„è³‡æ–™ */
   load_social( social_dir , social_file );
 
-  /* Åª¤J¦uÅ@¯«¸ê®Æ */
+  /* è®€å…¥å®ˆè­·ç¥è³‡æ–™ */
   load_angel( angel_dir );
 
-  /* Åª¤J¶i¯¸µe­± */
+  /* è®€å…¥é€²ç«™ç•«é¢ */
   load_greeting( greet_dir );
   load_welcome( welcome_file );
   load_welcome_immortal( welcome_imm );
 
-  /* Åª¤J¤µ¤é®ø®§ÀÉ®× */
+  /* è®€å…¥ä»Šæ—¥æ¶ˆæ¯æª”æ¡ˆ */
   load_motd( motd_file );
 
-  /* Åª¤J site ªº¸ê®Æ */
+  /* è®€å…¥ site çš„è³‡æ–™ */
   load_site( site_file );
 
-  /* Åª¤J¤u§@¯¸¸ê®ÆÀÉ®× */
+  /* è®€å…¥å·¥ä½œç«™è³‡æ–™æª”æ¡ˆ */
   load_server( station_file );
 
-  /* Åª¤JID«O¯d¦r */
+  /* è®€å…¥IDä¿ç•™å­— */
   load_xnames( xname_file );
 
-  /* ¸ü¤J¤É¯Å¸ê®Æ */
+  /* è¼‰å…¥å‡ç´šè³‡æ–™ */
   load_promotion( promotion_file );
 
-  /* Åª¤JªÑ²¼¸ê®ÆÀÉ®× */
+  /* è®€å…¥è‚¡ç¥¨è³‡æ–™æª”æ¡ˆ */
   load_stock( stock_file );
 
-  /* Åª¤J©Ò¦³ª±®a¸ê®Æ®w */
+  /* è®€å…¥æ‰€æœ‰ç©å®¶è³‡æ–™åº« */
   load_database( database_file );
 
-  /* Åª¤J­^¶¯¸ê®Æ */
+  /* è®€å…¥è‹±é›„è³‡æ–™ */
   load_hero( hero_file );
 
-  /* Åª¨úÂ¾·~¸ê®ÆÀÉ®× */
+  /* è®€å–è·æ¥­è³‡æ–™æª”æ¡ˆ */
   load_class( class_dir );
 
-  /* Åª¨ú§Ş¯à */
+  /* è®€å–æŠ€èƒ½ */
   load_skill( skill_dir , skill_file );
 
-  /* Åª¨ú²GÅé */
+  /* è®€å–æ¶²é«” */
   load_liq( liq_dir );
 
-  /* ÀË¬d§Ş¯àÂ¾·~¬O§_¥¿½T */
+  /* æª¢æŸ¥æŠ€èƒ½è·æ¥­æ˜¯å¦æ­£ç¢º */
   check_skill();
 
-  /* ÀË¬dÂ¾·~¬O§_¥¿½T */
+  /* æª¢æŸ¥è·æ¥­æ˜¯å¦æ­£ç¢º */
   check_class();
 
-  /* ¥²¶·­n¦³ªº§Ş¯à */
+  /* å¿…é ˆè¦æœ‰çš„æŠ€èƒ½ */
   check_ironclad();
 
-  /* ¿W¨ú¦a§Î¸ê®ÆÀÉ®× */
+  /* ç¨å–åœ°å½¢è³‡æ–™æª”æ¡ˆ */
   load_sector( sector_dir );
 
-  /* Åª¨ú«ü¥OÀÉ®× */
+  /* è®€å–æŒ‡ä»¤æª”æ¡ˆ */
   load_instrument( ins_dir , ins_file );
 
-  /* Åª¨úÄ²µo¨Æ¥óÀÉ®× */
+  /* è®€å–è§¸ç™¼äº‹ä»¶æª”æ¡ˆ */
   load_event( event_file );
 
-  /* Åª¨ú³¡¦ì¸ê®Æ */
+  /* è®€å–éƒ¨ä½è³‡æ–™ */
   load_situs( situs_file );
 
-  /* ±Ò©l¤Æ¾B¸n */
+  /* å•Ÿå§‹åŒ–é®ç½© */
   init_mask();
 
-  /* Åª¤J°Ï°ìÀÉ */
+  /* è®€å…¥å€åŸŸæª” */
   open_area_directory();
 
-  /* ÀË¬d­«­nªº©Ğ¶¡ */
+  /* æª¢æŸ¥é‡è¦çš„æˆ¿é–“ */
   check_room();
 
-  /* ÀË¬d­«­n©Çª« */
+  /* æª¢æŸ¥é‡è¦æ€ªç‰© */
   check_mobile();
 
-  /* ÀË¬d¹w³]ª««~ */
+  /* æª¢æŸ¥é è¨­ç‰©å“ */
   check_object();
 
-  /* Åª¤Jª©­± */
+  /* è®€å…¥ç‰ˆé¢ */
   open_board_directory();
 
-  /* Åª¨ú¦aÅK¸ê®Æ */
+  /* è®€å–åœ°éµè³‡æ–™ */
   load_bus( bus_file );
 
-  /* Åª¨ú´ç²î¸ê®Æ */
+  /* è®€å–æ¸¡èˆ¹è³‡æ–™ */
   load_ship( ship_file );
 
-  /* Åª¨ú¸Ñ°g¸ê®Æ */
+  /* è®€å–è§£è¿·è³‡æ–™ */
   load_quest( quest_file );
 
-  /* Åª¨ú°İÃD¶°¸ê®Æ */
+  /* è®€å–å•é¡Œé›†è³‡æ–™ */
   load_question( question_file );
 
-  /* Åª¨ú¯«±Ú¸ê®Æ */
+  /* è®€å–ç¥æ—è³‡æ–™ */
   load_immlist( immlist_file );
 
-  /* Åª¨ú©ç½æ«~¸ê®Æ */
+  /* è®€å–æ‹è³£å“è³‡æ–™ */
   load_sale( sale_file );
 
-  /* Åª¨ú®½ÃØ¸ê®ÆÀÉ®× */
+  /* è®€å–æè´ˆè³‡æ–™æª”æ¡ˆ */
   load_donate( donate_file );
 
-  /* Åª¨úÀ°¬£¸ê®Æ */
+  /* è®€å–å¹«æ´¾è³‡æ–™ */
   load_club( club_file );
 
-  /* Åª¤J§ë²¼ÀÉ®× */
+  /* è®€å…¥æŠ•ç¥¨æª”æ¡ˆ */
   load_vote( vote_dir );
 
-  /* Åª¤J¯º¸ÜÀÉ®× */
+  /* è®€å…¥ç¬‘è©±æª”æ¡ˆ */
   load_joke( joke_dir );
 
-  /* Åª¤JÂ§ª«ÀÉ®× */
+  /* è®€å…¥ç¦®ç‰©æª”æ¡ˆ */
   load_gift( gift_file );
   check_gift();
 
-  /* Åª¤JÄa½àÀÉ®×¸ê®Æ */
+  /* è®€å…¥æ‡¸è³æª”æ¡ˆè³‡æ–™ */
   load_bounty( bounty_file );
 
-  /* Åª¨úºô»Ú¯¸¦WªºÀÉ®×¸ê®Æ */
+  /* è®€å–ç¶²éš›ç«™åçš„æª”æ¡ˆè³‡æ–™ */
   load_internal( internal_file );
 
-  /* ­×¥¿°Ï°ìÀÉ¥X¤f¬O§_¥¿½T */
+  /* ä¿®æ­£å€åŸŸæª”å‡ºå£æ˜¯å¦æ­£ç¢º */
   fix_exits();
 
-  /* °_¨Ï¤ÆªZ°«¤j·|¸ê®Æ */
+  /* èµ·ä½¿åŒ–æ­¦é¬¥å¤§æœƒè³‡æ–™ */
   init_fight( fight_info );
   fight_info->time = 0;
   fight_info->open = 0;
 
-  /* ÀË¬d¬O§_¦Ü¤Ö¤@­Ó¥X¥Í¦a */
+  /* æª¢æŸ¥æ˜¯å¦è‡³å°‘ä¸€å€‹å‡ºç”Ÿåœ° */
   check_area_capital();
 
-  /* «Å§i db booting µ²§ô */
+  /* å®£å‘Š db booting çµæŸ */
   fBootDb = FALSE;
 
-  /* ÀË¬d¬O§_¦³ª««~¼Æ­È¿ù»~ */
+  /* æª¢æŸ¥æ˜¯å¦æœ‰ç‰©å“æ•¸å€¼éŒ¯èª¤ */
   fix_object_value();
 
-  /* ­×¥¿¬O§_¶Ç°eÂI¦³°İÃD */
+  /* ä¿®æ­£æ˜¯å¦å‚³é€é»æœ‰å•é¡Œ */
   fix_recall();
 
-  /* ­×¥¿¬O§_¥ı«e§Ş¯à¦³°İÃD */
+  /* ä¿®æ­£æ˜¯å¦å…ˆå‰æŠ€èƒ½æœ‰å•é¡Œ */
   load_innate();
 
-  /* ¹î¬İ­«¥Íªº¸¹½X¬O§_¥¿½T */
+  /* å¯Ÿçœ‹é‡ç”Ÿçš„è™Ÿç¢¼æ˜¯å¦æ­£ç¢º */
   fix_reborn_number();
 
-  /* ­×¥¿§Ş¯àªº¯S®íª««~ */
+  /* ä¿®æ­£æŠ€èƒ½çš„ç‰¹æ®Šç‰©å“ */
   check_skill_innate();
 
-  /* ±Ò°Ê°Ï°ì­«¸m°Ê§@ */
+  /* å•Ÿå‹•å€åŸŸé‡ç½®å‹•ä½œ */
   area_update();
 
-  /* Åª¤J«H¥óÀÉ®× */
+  /* è®€å…¥ä¿¡ä»¶æª”æ¡ˆ */
   load_mail( note_dir );
 
-  /* ³]©w MobProgram */
+  /* è¨­å®š MobProgram */
   MOBtrigger = TRUE;
 
   RETURN_NULL();
@@ -443,7 +443,7 @@ void fix_exits( void )
           {
             if ( !( pexit->to_room = get_room_index( pexit->vnum ) ) )
             {
-              mudlog( LOG_DEBUG, "fix_exits: ©Ğ¶¡ %d ¥X¤f%s(%d) ¤£¦s¦b."
+              mudlog( LOG_DEBUG, "fix_exits: æˆ¿é–“ %d å‡ºå£%s(%d) ä¸å­˜åœ¨."
                 , pRoomIndex->vnum
                 , direction_name( door )
                 , pexit->vnum );
@@ -468,7 +468,7 @@ void fix_exits( void )
           && ( pexit_rev = to_room->exit[rev_dir[door]] )
           && pexit_rev->to_room != pRoomIndex )
         {
-          mudlog( LOG_FAILEXIT, "Fix_exits: %d:%d ­×¥¿¨ì %d:%d -> %d.",
+          mudlog( LOG_FAILEXIT, "Fix_exits: %d:%d ä¿®æ­£åˆ° %d:%d -> %d.",
             pRoomIndex->vnum, door, to_room->vnum, rev_dir[door],
             ( pexit_rev->to_room == NULL ) ? 0 : pexit_rev->to_room->vnum );
         }
@@ -488,7 +488,7 @@ void load_innate( void )
 
   for ( loop = 0; loop < MAX_INNATE; loop++ ) iInnate[loop] = -1;
 
-  /* ¹w³] */
+  /* é è¨­ */
   for ( loop = 0; loop < MAX_DEFAULT_CLASS; loop++ ) iClass[loop] = NULL;
 
   for ( nInnate = 0, pSkill = skill_list; pSkill; pSkill = pSkill->next )
@@ -496,17 +496,17 @@ void load_innate( void )
     if ( pSkill->innate )
     {
       if ( nInnate >= MAX_INNATE )
-        mudlog( LOG_ERR , "Load_innate: ¶W¥X½d³ò %d.", MAX_INNATE );
+        mudlog( LOG_ERR , "Load_innate: è¶…å‡ºç¯„åœ %d.", MAX_INNATE );
 
       iInnate[nInnate++] = pSkill->slot;
     }
   }
 
   if ( nInnate < aInnate )
-    mudlog( LOG_ERR , "Load_innate: ¹w³]§Ş¯à %d ¤p©ó³]©w­È %d."
+    mudlog( LOG_ERR , "Load_innate: é è¨­æŠ€èƒ½ %d å°æ–¼è¨­å®šå€¼ %d."
       , nInnate, aInnate );
 
-  mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó¹w³]§Ş¯à.", nInnate );
+  mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹é è¨­æŠ€èƒ½.", nInnate );
   RETURN_NULL();
 }
 
@@ -524,7 +524,7 @@ void fix_recall( void )
      if ( !( pRoom = get_room_index( RecallPlace[loop] ) )
       || pRoom->Memorize == FALSE )
     {
-      mudlog( LOG_DEBUG, "fix_recall: ²Ä %d ¶Ç°eÂI %d ¿ù»~."
+      mudlog( LOG_DEBUG, "fix_recall: ç¬¬ %d å‚³é€é» %d éŒ¯èª¤."
         , loop, RecallPlace[loop] );
 
       RecallPlace[loop] = 0;
@@ -549,8 +549,8 @@ void fix_reborn_number( void )
       if ( pMobIndex->reborn_vnum > 0
         && !get_mob_index( pMobIndex->reborn_vnum ) )
       {
-        mudlog( LOG_DEBUG , "fix_reborn_number: ©Çª«¸¹½X %d ªº­«¥Í¸¹½X %d "
-          "©Çª«¤£¦s¦b.", pMobIndex->vnum, pMobIndex->reborn_vnum );
+        mudlog( LOG_DEBUG , "fix_reborn_number: æ€ªç‰©è™Ÿç¢¼ %d çš„é‡ç”Ÿè™Ÿç¢¼ %d "
+          "æ€ªç‰©ä¸å­˜åœ¨.", pMobIndex->vnum, pMobIndex->reborn_vnum );
 
         pMobIndex->reborn_vnum = 0;
       }
@@ -633,20 +633,20 @@ void reset_area( AREA_DATA * pArea )
     {
     default:
 
-      mudlog( LOG_DEBUG , "Reset_area: ¿ù»~ªº©R¥O %c.", pReset->command );
+      mudlog( LOG_DEBUG , "Reset_area: éŒ¯èª¤çš„å‘½ä»¤ %c.", pReset->command );
       break;
 
     case 'M':
 
       if ( ( pMobIndex = get_mob_index( pReset->arg1 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'M': ¿ù»~¸¹½X %d.", pReset->arg1 );
+        mudlog( LOG_DEBUG , "Reset_area: 'M': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg1 );
         continue;
       }
 
       if ( ( pRoomIndex = get_room_index( pReset->arg3 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'R': ¿ù»~¸¹½X %d.", pReset->arg3 );
+        mudlog( LOG_DEBUG , "Reset_area: 'R': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg3 );
         continue;
       }
 
@@ -658,7 +658,7 @@ void reset_area( AREA_DATA * pArea )
         break;
       }
 
-      /* ¤£·|­«¥Í */
+      /* ä¸æœƒé‡ç”Ÿ */
       if ( merc_exec && IS_SET( pMobIndex->act, ACT_NOREBORN ) )
       {
         last = FALSE;
@@ -686,13 +686,13 @@ void reset_area( AREA_DATA * pArea )
 
       if ( ( pObjIndex = get_obj_index( pReset->arg1 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'O': ¿ù»~¸¹½X %d.", pReset->arg1 );
+        mudlog( LOG_DEBUG , "Reset_area: 'O': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg1 );
         continue;
       }
 
       if ( ( pRoomIndex = get_room_index( pReset->arg3 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'R': ¿ù»~¸¹½X %d.", pReset->arg3 );
+        mudlog( LOG_DEBUG , "Reset_area: 'R': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg3 );
         continue;
       }
 
@@ -711,13 +711,13 @@ void reset_area( AREA_DATA * pArea )
     case 'P':
       if ( ( pObjIndex = get_obj_index( pReset->arg1 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'P': ¿ù»~¸¹½X %d.", pReset->arg1 );
+        mudlog( LOG_DEBUG , "Reset_area: 'P': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg1 );
         continue;
       }
 
       if ( ( pObjToIndex = get_obj_index( pReset->arg3 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'P': ¿ù»~¸¹½X %d.", pReset->arg3 );
+        mudlog( LOG_DEBUG , "Reset_area: 'P': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg3 );
         continue;
       }
 
@@ -739,7 +739,7 @@ void reset_area( AREA_DATA * pArea )
 
       if ( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'E' ©Î 'G': ¿ù»~¸¹½X %d."
+        mudlog( LOG_DEBUG , "Reset_area: 'E' æˆ– 'G': éŒ¯èª¤è™Ÿç¢¼ %d."
           , pReset->arg1 );
         continue;
       }
@@ -748,7 +748,7 @@ void reset_area( AREA_DATA * pArea )
 
       if ( !mob )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'E' or 'G': ¨S¦³¸¹½X %d ªº©Çª«."
+        mudlog( LOG_DEBUG , "Reset_area: 'E' or 'G': æ²’æœ‰è™Ÿç¢¼ %d çš„æ€ªç‰©."
           , pReset->arg1 );
 
         last = FALSE;
@@ -775,7 +775,7 @@ void reset_area( AREA_DATA * pArea )
 
       if ( !( pMount = get_mob_index( pReset->arg1 ) ) )
       {
-        mudlog( LOG_DEBUG, "reset_area: 'A' §¤ÃM %d ¿ù»~", pReset->arg1 );
+        mudlog( LOG_DEBUG, "reset_area: 'A' åé¨ %d éŒ¯èª¤", pReset->arg1 );
         continue;
       }
 
@@ -783,21 +783,21 @@ void reset_area( AREA_DATA * pArea )
 
       if ( pMount->tractable <= 0 )
       {
-        mudlog( LOG_DEBUG, "reset_area: 'A' %d ¤£¬O§¤ÃM", pReset->arg1 );
+        mudlog( LOG_DEBUG, "reset_area: 'A' %d ä¸æ˜¯åé¨", pReset->arg1 );
         last = FALSE;
         continue;
       }
 
       if ( !mob || !mob->in_room )
       {
-        mudlog( LOG_DEBUG, "reset_area: 'A' ¸¹½X %d ¤§«e¿ù»~", pReset->arg1 );
+        mudlog( LOG_DEBUG, "reset_area: 'A' è™Ÿç¢¼ %d ä¹‹å‰éŒ¯èª¤", pReset->arg1 );
         last = FALSE;
         break;
       }
 
       if ( mob->mount )
       {
-        mudlog( LOG_DEBUG, "reset_area: 'A' ¸¹½X %d §¤ÃM­«½Æ", pReset->arg1 );
+        mudlog( LOG_DEBUG, "reset_area: 'A' è™Ÿç¢¼ %d åé¨é‡è¤‡", pReset->arg1 );
         last = FALSE;
         break;
       }
@@ -826,7 +826,7 @@ void reset_area( AREA_DATA * pArea )
     case 'D':
       if ( ( pRoomIndex = get_room_index( pReset->arg1 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'D': ¿ù»~¸¹½X %d.", pReset->arg1 );
+        mudlog( LOG_DEBUG , "Reset_area: 'D': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg1 );
         continue;
       }
 
@@ -856,7 +856,7 @@ void reset_area( AREA_DATA * pArea )
     case 'R':
       if ( ( pRoomIndex = get_room_index( pReset->arg1 ) ) == NULL )
       {
-        mudlog( LOG_DEBUG , "Reset_area: 'R': ¿ù»~¸¹½X %d.", pReset->arg1 );
+        mudlog( LOG_DEBUG , "Reset_area: 'R': éŒ¯èª¤è™Ÿç¢¼ %d.", pReset->arg1 );
         continue;
       }
 
@@ -882,9 +882,9 @@ CHAR_DATA * create_mobile( MOB_INDEX_DATA * pMobIndex, int level )
   PUSH_FUNCTION( "create_mobile" );
 
   if ( pMobIndex == NULL )
-    mudlog( LOG_ERR , "Create_mobile: ­ì«¬¸¹½X¬°ªÅªº." );
+    mudlog( LOG_ERR , "Create_mobile: åŸå‹è™Ÿç¢¼ç‚ºç©ºçš„." );
 
-  /* °t¸m°O¾ĞÅéµ¹¥L */
+  /* é…ç½®è¨˜æ†¶é«”çµ¦ä»– */
   clear_char( mob = alloc_struct( STRUCT_CHAR_DATA ) );
 
   mob->pIndexData  = pMobIndex;
@@ -980,7 +980,7 @@ CHAR_DATA * create_mobile( MOB_INDEX_DATA * pMobIndex, int level )
   mob->tractable = pMobIndex->tractable;
   mob->migrate   = pMobIndex->migrate;
 
-  /* ³]©w¼ô½m«× */
+  /* è¨­å®šç†Ÿç·´åº¦ */
   for ( loop = 0; loop < MAX_SKILL; loop++ )
     mob->skill[loop] = pMobIndex->skill[loop];
 
@@ -995,9 +995,9 @@ OBJ_DATA * create_object( OBJ_INDEX_DATA * pObjIndex, int level )
 
   PUSH_FUNCTION( "create_object" );
 
-  if ( !pObjIndex ) mudlog( LOG_ERR, "Create_object: ªÅªºª««~­ì«¬." );
+  if ( !pObjIndex ) mudlog( LOG_ERR, "Create_object: ç©ºçš„ç‰©å“åŸå‹." );
 
-  /* °t¸m°O¾ĞÅé */
+  /* é…ç½®è¨˜æ†¶é«” */
   obj = alloc_struct( STRUCT_OBJ_DATA );
 
   obj->pIndexData = pObjIndex;
@@ -1053,13 +1053,13 @@ OBJ_DATA * create_object( OBJ_INDEX_DATA * pObjIndex, int level )
   for ( loop = 0; loop < MAX_OBJECT_VALUE; loop++ )
     obj->value[loop]= pObjIndex->value[loop];
 
-  /* ª««~³æ¦ì */
+  /* ç‰©å“å–®ä½ */
   obj->unit = pObjIndex->unit ? pObjIndex->unit : DefaultUnit;
 
   switch ( obj->item_type )
   {
   default:
-    mudlog( LOG_DEBUG , "create_object: ª««~¸¹½X %d «¬ºA %d ¿ù»~."
+    mudlog( LOG_DEBUG , "create_object: ç‰©å“è™Ÿç¢¼ %d å‹æ…‹ %d éŒ¯èª¤."
       , pObjIndex->vnum, obj->item_type );
     break;
 
@@ -1124,7 +1124,7 @@ OBJ_DATA * create_object( OBJ_INDEX_DATA * pObjIndex, int level )
     break;
   }
 
-  /* ¦pªG¬O¨¾¨ãÃşªº¸Ë³Æ */
+  /* å¦‚æœæ˜¯é˜²å…·é¡çš„è£å‚™ */
   if ( is_armor( obj ) )
   {
     obj->max_armor   = pObjIndex->armor;
@@ -1135,7 +1135,7 @@ OBJ_DATA * create_object( OBJ_INDEX_DATA * pObjIndex, int level )
   RETURN( obj );
 }
 
-/* ²M°£·sªº¤Hª« */
+/* æ¸…é™¤æ–°çš„äººç‰© */
 void clear_char( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "clear_char" );
@@ -1206,7 +1206,7 @@ void clear_char( CHAR_DATA * ch )
   ch->basic         = NULL;
   ch->answer        = NULL;
   ch->clublog       = FALSE;
-  ch->delete        = FALSE;  /* ³]©w©|¥¼²M°£ */
+  ch->delete        = FALSE;  /* è¨­å®šå°šæœªæ¸…é™¤ */
   ch->speak         = TRUE;
   ch->cease         = FALSE;
   ch->trade         = TRUE;
@@ -1250,11 +1250,11 @@ void free_char( CHAR_DATA * ch )
 
   if ( !ch || ch->delete )
   {
-    mudlog( LOG_DEBUG, "free_char: ¨Ó·½¤£¥¿½T©Î¤w¸g³QÄÀ©ñ¤F." );
+    mudlog( LOG_DEBUG, "free_char: ä¾†æºä¸æ­£ç¢ºæˆ–å·²ç¶“è¢«é‡‹æ”¾äº†." );
     RETURN_NULL();
   }
 
-  /* §â±H©ñª«µ¹ÄÀ©ñ */
+  /* æŠŠå¯„æ”¾ç‰©çµ¦é‡‹æ”¾ */
   for ( obj = ch->deposit; obj; obj = obj_next )
   {
     obj_next = obj->next_content;
@@ -1262,14 +1262,14 @@ void free_char( CHAR_DATA * ch )
     obj_to_char( obj, ch );
   }
 
-  /* §âÄâ±aª««~µ¹ÄÀ©ñ */
+  /* æŠŠæ”œå¸¶ç‰©å“çµ¦é‡‹æ”¾ */
   for ( obj = ch->carrying; obj; obj = obj_next )
   {
     obj_next = obj->next_content;
     extract_obj( obj );
   }
 
-  /* §â¨­¤Wªº¼vÅTµ¹ÄÀ©ñ */
+  /* æŠŠèº«ä¸Šçš„å½±éŸ¿çµ¦é‡‹æ”¾ */
   for ( paf = ch->affected; paf; paf = paf_next )
   {
     paf_next = paf->next;
@@ -1294,7 +1294,7 @@ void free_char( CHAR_DATA * ch )
     ch->pcdata->lasthost = str_dup( "" );
     ch->pcdata->mater    = NULL;
 
-    /* ÄÀ©ñ°O¨Æ¥» */
+    /* é‡‹æ”¾è¨˜äº‹æœ¬ */
     for ( loop = 0; loop < MAX_NOTEPAD; loop++ )
     {
       free_string( ch->pcdata->notepad[loop] );
@@ -1316,21 +1316,21 @@ void free_char( CHAR_DATA * ch )
       }
     }
 
-    /* ÄÀ©ñµ²ºcªº°O¾ĞÅé */
+    /* é‡‹æ”¾çµæ§‹çš„è¨˜æ†¶é«” */
     free_struct( ch->pcdata , STRUCT_PC_DATA );
   }
 
-  /* ÄÀ©ñ¥¨¶°«ü¥O */
+  /* é‡‹æ”¾å·¨é›†æŒ‡ä»¤ */
   extract_alias( ch );
 
-  /* ÄÀ©ñ¿ù»~±K½Xµ²ºc */
+  /* é‡‹æ”¾éŒ¯èª¤å¯†ç¢¼çµæ§‹ */
   if ( ch->failcode && !IS_NPC( ch ) ) extract_failcode( ch );
 
-  /* ÄÀ©ñ¦n¤Í¦W³æ */
+  /* é‡‹æ”¾å¥½å‹åå–® */
   extract_friend( ch );
   extract_badfriend( ch );
 
-  /* ÄÀ©ñ­­¨î¦ì§} */
+  /* é‡‹æ”¾é™åˆ¶ä½å€ */
   for ( pIp = ch->connect; pIp; pIp = zIp )
   {
     zIp = pIp->next;
@@ -1346,13 +1346,13 @@ void free_char( CHAR_DATA * ch )
     ch->answer = NULL;
   }
 
-  /* ÄÀ©ñ¹w³]§Ş¯à */
+  /* é‡‹æ”¾é è¨­æŠ€èƒ½ */
   if ( !IS_NPC( ch ) ) extract_enable( ch );
 
-  /* ÄÀ©ñ½ä³Õµ²ºc¸ê®Æ */
+  /* é‡‹æ”¾è³­åšçµæ§‹è³‡æ–™ */
   extract_gamble( ch );
 
-  /* ¦³Ãö«H¥ó³¡¥÷ */
+  /* æœ‰é—œä¿¡ä»¶éƒ¨ä»½ */
   if ( ( pNote = ch->pnote ) )
   {
     free_string( pNote->sender   );
@@ -1366,7 +1366,7 @@ void free_char( CHAR_DATA * ch )
     ch->pnote = NULL;
   }
 
-  /* ¦³Ãö§ë²¼³¡¥÷ */
+  /* æœ‰é—œæŠ•ç¥¨éƒ¨ä»½ */
   if ( ( pVote = ch->vote ) )
   {
     free_string( pVote->poster  );
@@ -1385,7 +1385,7 @@ void free_char( CHAR_DATA * ch )
     ch->vote = NULL;
   }
 
-  /* ¨ú®ø°O¤³³¡¥÷ */
+  /* å–æ¶ˆè¨˜ä»‡éƒ¨ä»½ */
   for ( pEnroll = ch->enroll; pEnroll; pEnroll = zEnroll )
   {
     zEnroll = pEnroll->next;
@@ -1394,14 +1394,14 @@ void free_char( CHAR_DATA * ch )
 
   ch->enroll = NULL;
 
-  /* ³]©w«ÍÅéªº¾Ö¦³ªÌ */
+  /* è¨­å®šå±é«”çš„æ“æœ‰è€… */
   for ( obj = object_list; obj; obj = obj->next )
   {
     if ( verify_obj( obj ) && obj->corpse_owner == ch )
       obj->corpse_owner = NULL;
   }
 
-  /* ÄÀ©ñ¸ÑÁ¼ */
+  /* é‡‹æ”¾è§£è¬ */
   for ( pQuest = ch->quest; pQuest; pQuest = zQuest )
   {
     zQuest = pQuest->next;
@@ -1410,7 +1410,7 @@ void free_char( CHAR_DATA * ch )
 
   ch->quest = NULL;
 
-  /* ÄÀ©ñµ²ºcªº°O¾ĞÅé */
+  /* é‡‹æ”¾çµæ§‹çš„è¨˜æ†¶é«” */
   free_struct( ch , STRUCT_CHAR_DATA );
 
   RETURN_NULL();
@@ -1453,7 +1453,7 @@ MOB_INDEX_DATA * get_mob_index( int vnum )
   RETURN( NULL );
 }
 
-/* ¨ú±o¬Y½s¸¹©Çª«ªº¼Æ¶q */
+/* å–å¾—æŸç·¨è™Ÿæ€ªç‰©çš„æ•¸é‡ */
 int get_mob_count( int vnum )
 {
   int         count;
@@ -1461,7 +1461,7 @@ int get_mob_count( int vnum )
 
   PUSH_FUNCTION( "get_mob_count" );
 
-  /* ¨ú±o¦³®Ä¤Hª« */
+  /* å–å¾—æœ‰æ•ˆäººç‰© */
   for ( count = 0, man = char_list; man; man = man->next )
   {
     if ( !verify_char( man ) ) continue;
@@ -1561,8 +1561,8 @@ FUNCTION( do_areas )
   if ( arg[0] == '\x0' )
   {
     send_to_buffer(
-      "\e[1;33;44m    ½s¿èªÌ        °Ï°ì¦WºÙ     ©Ğ¶¡ ©Çª« ª««~ °Ó"
-      "©± ­«¸m ¤jÃú ª±®a µ¥  ¯Å\e[0m\n\r"
+      "\e[1;33;44m    ç·¨è¼¯è€…        å€åŸŸåç¨±     æˆ¿é–“ æ€ªç‰© ç‰©å“ å•†"
+      "åº— é‡ç½® å¤§éœ§ ç©å®¶ ç­‰  ç´š\e[0m\n\r"
       VERTICAL_LINE );
 
     for ( count = 0, pArea = area_first; pArea; pArea = pArea->next )
@@ -1597,7 +1597,7 @@ FUNCTION( do_areas )
   {
     if ( ( sn = atoi( arg ) ) < 0 )
     {
-      send_to_char( "§Aªº¶¶§Ç¤£¦X²z¡M½Ğ¬d¸ß areas ªº¨Ï¥Î¤èªk¡C\n\r", ch );
+      send_to_char( "ä½ çš„é †åºä¸åˆç†ï¹è«‹æŸ¥è©¢ areas çš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1606,7 +1606,7 @@ FUNCTION( do_areas )
       if ( count == sn )
       {
         send_to_buffer(
-          "°Ï°ì\e[1;36m%s\e[0m  §Ç¸¹¡R%d  ­º³£¡R%d\n\r©Ò¦³©Ğ¶¡¸¹½X¡R"
+          "å€åŸŸ\e[1;36m%s\e[0m  åºè™Ÿï¹•%d  é¦–éƒ½ï¹•%d\n\ræ‰€æœ‰æˆ¿é–“è™Ÿç¢¼ï¹•"
           , pArea->name, pArea->serial, pArea->capital_no );
 
         for ( count = 0, room = pArea->list; room; room = room->next_in_area )
@@ -1616,7 +1616,7 @@ FUNCTION( do_areas )
           if ( buffer_full() ) break;
         }
 
-        if ( count == 0 ) send_to_buffer( "³o­Ó°Ï°ì¨S¦³¥ô¦óªº©Ğ¶¡¡C" );
+        if ( count == 0 ) send_to_buffer( "é€™å€‹å€åŸŸæ²’æœ‰ä»»ä½•çš„æˆ¿é–“ã€‚" );
         send_to_buffer( "\n\r" );
 
         print_buffer( ch );
@@ -1624,19 +1624,19 @@ FUNCTION( do_areas )
       }
     }
 
-    send_to_char( "¨S¦³³o­Ó°Ï°ì¡C\n\r", ch );
+    send_to_char( "æ²’æœ‰é€™å€‹å€åŸŸã€‚\n\r", ch );
   }
 
   else if ( !str_cmp( arg, "here" ) && IS_IMMORTAL( ch ) )
   {
     if ( !ch->in_room || !( pArea = ch->in_room->area ) )
     {
-      send_to_char( "¨t²ÎµLªk§P©w§A¥Ø«eªº¦ì¸m¡T\n\r", ch );
+      send_to_char( "ç³»çµ±ç„¡æ³•åˆ¤å®šä½ ç›®å‰çš„ä½ç½®ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     send_to_buffer(
-      "°Ï°ì\e[1;36m%s\e[0m  §Ç¸¹¡R%d  ­º³£¡R%d\n\r©Ò¦³©Ğ¶¡¸¹½X¡R"
+      "å€åŸŸ\e[1;36m%s\e[0m  åºè™Ÿï¹•%d  é¦–éƒ½ï¹•%d\n\ræ‰€æœ‰æˆ¿é–“è™Ÿç¢¼ï¹•"
       , pArea->name, pArea->serial, pArea->capital_no );
 
     for ( count = 0, room = pArea->list; room; room = room->next_in_area )
@@ -1646,7 +1646,7 @@ FUNCTION( do_areas )
       if ( buffer_full() ) break;
     }
 
-    if ( count == 0 ) send_to_buffer( "³o­Ó°Ï°ì¨S¦³¥ô¦óªº©Ğ¶¡¡C" );
+    if ( count == 0 ) send_to_buffer( "é€™å€‹å€åŸŸæ²’æœ‰ä»»ä½•çš„æˆ¿é–“ã€‚" );
     send_to_buffer( "\n\r" );
 
     print_buffer( ch );
@@ -1657,13 +1657,13 @@ FUNCTION( do_areas )
     one_argument( argument, arg );
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "§A­n¬d¸ß­ş¤@­Ó°Ï°ìªº»¡©ú¤å¥ó¡S\n\r", ch );
+      send_to_char( "ä½ è¦æŸ¥è©¢å“ªä¸€å€‹å€åŸŸçš„èªªæ˜æ–‡ä»¶ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( sn = atoi( arg ) ) < 0 )
     {
-      send_to_char( "§Aªº°Ï°ìªº¶¶§Ç¤£¦Xªk¡M½Ğ¬d¸ß areas ªº¨Ï¥Î¤èªk¡C\n\r", ch );
+      send_to_char( "ä½ çš„å€åŸŸçš„é †åºä¸åˆæ³•ï¹è«‹æŸ¥è©¢ areas çš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1673,29 +1673,29 @@ FUNCTION( do_areas )
       {
         if ( !pArea->description || !*pArea->description )
         {
-          act( "¹ï¤£°_¡M$t¨S¦³¬ÛÃö»¡©ú¤å¥ó¡C", ch, pArea->name, NULL, TO_CHAR );
+          act( "å°ä¸èµ·ï¹$tæ²’æœ‰ç›¸é—œèªªæ˜æ–‡ä»¶ã€‚", ch, pArea->name, NULL, TO_CHAR );
           RETURN_NULL();
         }
 
-        act( "$tªº»¡©ú¤å¥ó¦p¤U¡R$A$T"
+        act( "$tçš„èªªæ˜æ–‡ä»¶å¦‚ä¸‹ï¹•$A$T"
           , ch, pArea->name, pArea->description, TO_CHAR );
 
         RETURN_NULL();
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M¨S¦³³o­Ó°Ï°ì¡C\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é€™å€‹å€åŸŸã€‚\n\r", ch );
   }
 
   else
   {
-    send_to_char( "»yªk¿ù»~¡M½Ğ¬d¸ß areas ªº¨Ï¥Î¤èªk¡C\n\r", ch );
+    send_to_char( "èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ areas çš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r", ch );
   }
 
   RETURN_NULL();
 }
 
-/* ®ø±¼ % ³o­Ó²Å¸¹ */
+/* æ¶ˆæ‰ % é€™å€‹ç¬¦è™Ÿ */
 void smash_point( char * str )
 {
   PUSH_FUNCTION( "smash_point" );
@@ -1717,7 +1717,7 @@ void smash_point( char * str )
   RETURN_NULL();
 }
 
-/* ®ø±¼ ~ ³o­Ó²Å¸¹ */
+/* æ¶ˆæ‰ ~ é€™å€‹ç¬¦è™Ÿ */
 void smash_tilde( char * str )
 {
   bool fChinese = FALSE;
@@ -1820,33 +1820,33 @@ void check_ironclad( void )
   PUSH_FUNCTION( "check_ironclad" );
 
   if ( !get_skill( SLOT_BLINDNESS ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³²´ª¼§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰çœ¼ç›²æŠ€èƒ½." );
 
   if ( !get_skill( SLOT_CHARM_PERSON ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³°g´b§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰è¿·æƒ‘æŠ€èƒ½." );
 
   if ( !get_skill( SLOT_CURSE ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³¶A©G§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰è©›å’’æŠ€èƒ½." );
 
   if ( !get_skill( SLOT_INVIS ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³Áô§Î§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰éš±å½¢æŠ€èƒ½." );
 
   if ( !get_skill( SLOT_POISON ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³¤U¬r§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰ä¸‹æ¯’æŠ€èƒ½." );
 
   if ( !get_skill( SLOT_SLEEP ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³©üºÎ§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰æ˜ç¡æŠ€èƒ½." );
 
   if ( !get_skill( SLOT_SNEAK ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³¼ç¦æ§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰æ½›è¡ŒæŠ€èƒ½." );
 
   if ( !get_skill( SLOT_MASS_INVIS ) )
-    mudlog( LOG_DEBUG, "check_ironclad: ¨S¦³¥şÁô§Ş¯à." );
+    mudlog( LOG_DEBUG, "check_ironclad: æ²’æœ‰å…¨éš±æŠ€èƒ½." );
 
   RETURN_NULL();
 }
 
-/* ÀË¬dÂ¾·~¬O§_¦³¿ù»~ */
+/* æª¢æŸ¥è·æ¥­æ˜¯å¦æœ‰éŒ¯èª¤ */
 void check_class( void )
 {
   CLASS_DATA * pClass;
@@ -1862,7 +1862,7 @@ void check_class( void )
   RETURN_NULL();
 }
 
-/* ÀË¬d¬O§_¦Ü¤Ö­n¦³¤@­Ó¥X¥Í¦a */
+/* æª¢æŸ¥æ˜¯å¦è‡³å°‘è¦æœ‰ä¸€å€‹å‡ºç”Ÿåœ° */
 void check_area_capital( void )
 {
   AREA_DATA * pArea;
@@ -1872,11 +1872,11 @@ void check_area_capital( void )
   for ( pArea = area_first; pArea; pArea = pArea->next )
     if ( pArea->capital ) RETURN_NULL();
 
-  mudlog( LOG_ERR , "check_area_capital: ¦Ü¤Ö­n¦³¤@­Ó¥X¥Í¦a." );
+  mudlog( LOG_ERR , "check_area_capital: è‡³å°‘è¦æœ‰ä¸€å€‹å‡ºç”Ÿåœ°." );
   RETURN_NULL();
 }
 
-/* ÀË¬d§Ş¯à¬O§_¬ÛÃö³sªº¦X²z */
+/* æª¢æŸ¥æŠ€èƒ½æ˜¯å¦ç›¸é—œé€£çš„åˆç† */
 void check_skill( void )
 {
   SKILL_DATA    * pSkill;
@@ -1887,20 +1887,20 @@ void check_skill( void )
 
   for ( pSkill = skill_list; pSkill; pSkill = pSkill->next )
   {
-    /* ³sµ²¨ì¥¼©w¸qªºªk³N¸¹½X¤W */
+    /* é€£çµåˆ°æœªå®šç¾©çš„æ³•è¡“è™Ÿç¢¼ä¸Š */
     if ( ( associate = pSkill->associate ) > 0 )
     {
       if ( associate >= MAX_SKILL || ( get_skill( associate ) == NULL ) )
-        mudlog( LOG_ERR , "ªk³N¸¹½X %d ¿ù»~³sµ²(%d)."
+        mudlog( LOG_ERR , "æ³•è¡“è™Ÿç¢¼ %d éŒ¯èª¤é€£çµ(%d)."
           , pSkill->slot, associate );
 
-      /* ³sµ²¨ì¥»¨­ªk³N¤W */
+      /* é€£çµåˆ°æœ¬èº«æ³•è¡“ä¸Š */
       if ( associate == pSkill->slot )
-        mudlog( LOG_ERR, "ªk³N¸¹½X %d ¿ù»~³sµ²¨ì¥»¨­.", pSkill->slot );
+        mudlog( LOG_ERR, "æ³•è¡“è™Ÿç¢¼ %d éŒ¯èª¤é€£çµåˆ°æœ¬èº«.", pSkill->slot );
 
-      /* Á×§K¦³ªk³N¸¹½X«o¨S¦³¬ÛÃö«× */
+      /* é¿å…æœ‰æ³•è¡“è™Ÿç¢¼å»æ²’æœ‰ç›¸é—œåº¦ */
       if ( associate > 0 && pSkill->degree <= 0 )
-        mudlog( LOG_ERR, "check_skill: ªk³N¸¹½X %d ¨S¦³§Ş¯à¬ÛÃö«×."
+        mudlog( LOG_ERR, "check_skill: æ³•è¡“è™Ÿç¢¼ %d æ²’æœ‰æŠ€èƒ½ç›¸é—œåº¦."
           , pSkill->slot );
     }
     else
@@ -1918,22 +1918,22 @@ void check_skill( void )
 
       case RES_SKILL:
         if ( !get_skill( pRest->value ) )
-          mudlog( LOG_ERR, "check_skill: ªk³N¸¹½X %d ªº­­¨î§Ş¯à %d ¤£¦s¦b."
+          mudlog( LOG_ERR, "check_skill: æ³•è¡“è™Ÿç¢¼ %d çš„é™åˆ¶æŠ€èƒ½ %d ä¸å­˜åœ¨."
             , pSkill->slot, pRest->value );
 
         if ( pRest->vicevalue < 0 || pRest->vicevalue > 100 )
-          mudlog( LOG_ERR, "check_skill: ªk³N¸¹½X %d ­­¨î§Ş¯à¼Æ­È %d ¤£¦X²z."
+          mudlog( LOG_ERR, "check_skill: æ³•è¡“è™Ÿç¢¼ %d é™åˆ¶æŠ€èƒ½æ•¸å€¼ %d ä¸åˆç†."
             , pSkill->slot, pRest->vicevalue );
         break;
 
       case RES_NOSKILL:
 
         if ( !get_skill( pRest->value ) )
-          mudlog( LOG_ERR, "check_skill: ªk³N¸¹½X %d ªº­­¨î§Ş¯à %d ¤£¦s¦b."
+          mudlog( LOG_ERR, "check_skill: æ³•è¡“è™Ÿç¢¼ %d çš„é™åˆ¶æŠ€èƒ½ %d ä¸å­˜åœ¨."
             , pSkill->slot, pRest->value );
 
         if ( pRest->vicevalue < 0 || pRest->vicevalue > 100 )
-          mudlog( LOG_ERR, "check_skill: ªk³N¸¹½X %d ­­¨î§Ş¯à¼Æ­È %d ¤£¦X²z."
+          mudlog( LOG_ERR, "check_skill: æ³•è¡“è™Ÿç¢¼ %d é™åˆ¶æŠ€èƒ½æ•¸å€¼ %d ä¸åˆç†."
             , pSkill->slot, pRest->vicevalue );
         break;
       }
@@ -1943,7 +1943,7 @@ void check_skill( void )
   RETURN_NULL();
 }
 
-/* ­×¥¿§Ş¯àªº¯S®íª««~ */
+/* ä¿®æ­£æŠ€èƒ½çš„ç‰¹æ®Šç‰©å“ */
 void check_skill_innate( void )
 {
   SKILL_DATA  * pSkill;
@@ -1962,7 +1962,7 @@ void check_skill_innate( void )
         if ( !( pDam->innate = get_obj_index( pDam->obj_vnum ) ) )
         {
           pDam->obj_vnum = ERRORCODE;
-          mudlog( LOG_DEBUG, "check_skill_innate: §Ş¯à%sªº¯S®íª««~¤£¦s¦b."
+          mudlog( LOG_DEBUG, "check_skill_innate: æŠ€èƒ½%sçš„ç‰¹æ®Šç‰©å“ä¸å­˜åœ¨."
             , pSkill->name );
         }
       }
@@ -1977,28 +1977,28 @@ void check_room( void )
   PUSH_FUNCTION( "check_room" );
 
   if ( !( RoomJail = get_room_index( RoomJailVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³ºÊº»©Ğ¶¡¸¹½X %d.", RoomJailVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰ç›£ç„æˆ¿é–“è™Ÿç¢¼ %d.", RoomJailVnum );
 
   if ( !( RoomLimbo = get_room_index( RoomLimboVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³ Limbo ©Ğ¶¡¸¹½X %d.", RoomLimboVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰ Limbo æˆ¿é–“è™Ÿç¢¼ %d.", RoomLimboVnum );
 
   if ( !( RoomChat = get_room_index( RoomChatVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³²á¤Ñ«Ç¸¹½X %d.", RoomChatVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰èŠå¤©å®¤è™Ÿç¢¼ %d.", RoomChatVnum );
 
   if ( !( RoomDead = get_room_index( RoomDeadVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³¦º¤`©Ğ¶¡¸¹½X %d.", RoomDeadVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰æ­»äº¡æˆ¿é–“è™Ÿç¢¼ %d.", RoomDeadVnum );
 
   if ( !( RoomCorpse = get_room_index( RoomCorpseVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³°±«Í¶¡¸¹½X %d.", RoomCorpseVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰åœå±é–“è™Ÿç¢¼ %d.", RoomCorpseVnum );
 
   if ( !( RoomRecall = get_room_index( RoomRecallVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³ Recall ©Ğ¶¡¸¹½X %d.", RoomRecallVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰ Recall æˆ¿é–“è™Ÿç¢¼ %d.", RoomRecallVnum );
 
   if ( !( RoomSchool = get_room_index( RoomSchoolVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³¾Ç®Õ©Ğ¶¡¸¹½X %d.", RoomSchoolVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰å­¸æ ¡æˆ¿é–“è™Ÿç¢¼ %d.", RoomSchoolVnum );
 
   if ( !( RoomFail = get_room_index( RoomFailVnum ) ) )
-    mudlog( LOG_ERR, "check_room: ¨S¦³Är¼C¥x¸¹½X %d.", RoomFailVnum );
+    mudlog( LOG_ERR, "check_room: æ²’æœ‰ç¤ªåŠå°è™Ÿç¢¼ %d.", RoomFailVnum );
 
   RETURN_NULL();
 }
@@ -2016,77 +2016,77 @@ void check_object( void )
 
     if ( !( pIndex = get_obj_index( DefaultObject[loop] ) ) )
     {
-      mudlog( LOG_ERR, "check_object: ¨S¦³¹w³]ª««~¸¹½X %d."
+      mudlog( LOG_ERR, "check_object: æ²’æœ‰é è¨­ç‰©å“è™Ÿç¢¼ %d."
         , DefaultObject[loop] );
     }
 
     if ( pIndex->Takeable == FALSE )
-      mudlog( LOG_ERR, "check_object: ¹w³]ª««~¸¹½X %d ¬O¤£¥i®³ªº %d."
+      mudlog( LOG_ERR, "check_object: é è¨­ç‰©å“è™Ÿç¢¼ %d æ˜¯ä¸å¯æ‹¿çš„ %d."
         , DefaultObject[loop], pIndex->wear_flags );
   }
 
   if ( !( ObjProtype    = get_obj_index( ObjProtypeVnum    ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~­ì«¬ :%d.", ObjProtypeVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“åŸå‹ :%d.", ObjProtypeVnum );
 
   if ( !( ObjMoney      = get_obj_index( ObjMoneyVnum      ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~¿ú: %d.", ObjMoneyVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“éŒ¢: %d.", ObjMoneyVnum );
 
   if ( !( ObjMoneySome  = get_obj_index( ObjMoneySomeVnum  ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~¿ú : %d.", ObjMoneySomeVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“éŒ¢ : %d.", ObjMoneySomeVnum );
 
   if ( !( ObjCorpseNPC  = get_obj_index( ObjCorpseNPCVnum  ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³©Çª««ÍÅé: %d.", ObjCorpseNPCVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰æ€ªç‰©å±é«”: %d.", ObjCorpseNPCVnum );
 
   if ( !( ObjCorpsePC   = get_obj_index( ObjCorpsePCVnum   ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª±®a«ÍÅé: %d.", ObjCorpsePCVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç©å®¶å±é«”: %d.", ObjCorpsePCVnum );
 
   if ( !( ObjHead       = get_obj_index( ObjHeadVnum       ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(ÀY): %d.", ObjHeadVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(é ­): %d.", ObjHeadVnum );
 
   if ( !( ObjHeart      = get_obj_index( ObjHeartVnum      ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¤ßÅ¦): %d.", ObjHeartVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(å¿ƒè‡Ÿ): %d.", ObjHeartVnum );
 
   if ( !( ObjArm        = get_obj_index( ObjArmVnum        ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¤âÁu): %d.", ObjArmVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(æ‰‹è‡‚): %d.", ObjArmVnum );
 
   if ( !( ObjLeg        = get_obj_index( ObjLegVnum        ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(»L) : %d.", ObjLegVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(è…¿) : %d.", ObjLegVnum );
 
   if ( !( ObjTurd       = get_obj_index( ObjTurdVnum       ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(«Ë): %d.", ObjTurdVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(å±): %d.", ObjTurdVnum );
 
   if ( !( ObjMushroom   = get_obj_index( ObjMushroomVnum   ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(Ä¨Û£) : %d.", ObjMushroomVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(è˜‘è‡) : %d.", ObjMushroomVnum );
 
   if ( !( ObjLight      = get_obj_index( ObjLightVnum      ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¿OÅ¢) : %d.", ObjLightVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(ç‡ˆç± ) : %d.", ObjLightVnum );
 
   if ( !( ObjSpring     = get_obj_index( ObjSpringVnum     ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¬u¤ô) : %d.", ObjSpringVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(æ³‰æ°´) : %d.", ObjSpringVnum );
 
   if ( !( ObjDumpling   = get_obj_index( ObjDumplingVnum   ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¥]¤l) : %d.", ObjDumplingVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(åŒ…å­) : %d.", ObjDumplingVnum );
 
   if ( !( ObjBougi      = get_obj_index( ObjBougiVnum      ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¥]¤l) : %d.", ObjBougiVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(åŒ…å­) : %d.", ObjBougiVnum );
 
   if ( !( ObjPon        = get_obj_index( ObjPonVnum        ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(ÄÑ¥]) : %d.", ObjPonVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(éºµåŒ…) : %d.", ObjPonVnum );
 
   if ( !( ObjChicken    = get_obj_index( ObjChickenVnum    ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¬µÂû) : %d.", ObjChickenVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(ç‚¸é›) : %d.", ObjChickenVnum );
 
   if ( !( ObjMagicStone = get_obj_index( ObjMagicStoneVnum ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(Å]¥Û) : %d.", ObjMagicStoneVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(é­”çŸ³) : %d.", ObjMagicStoneVnum );
 
   if ( !( ObjMeat       = get_obj_index( ObjMeatVnum       ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(¦×¤ù) : %d.", ObjMeatVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(è‚‰ç‰‡) : %d.", ObjMeatVnum );
 
   if ( !( ObjLetter     = get_obj_index( ObjLetterVnum     ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(«H¥ó): %d.", ObjLetterVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(ä¿¡ä»¶): %d.", ObjLetterVnum );
 
   if ( !( ObjUrn        = get_obj_index( ObjUrnVnum        ) ) )
-    mudlog( LOG_ERR, "check_object: ¨S¦³ª««~(§¯³ı): %d.", ObjUrnVnum );
+    mudlog( LOG_ERR, "check_object: æ²’æœ‰ç‰©å“(å¦–å£º): %d.", ObjUrnVnum );
 
   RETURN_NULL();
 }
@@ -2096,10 +2096,10 @@ void check_mobile( void )
   PUSH_FUNCTION( "check_mobile" );
 
   if ( !( MobVampire = get_mob_index( MobVampireVnum ) ) )
-    mudlog( LOG_ERR, "check_mobile: ¨S¦³¤p°­¸¹½X %d.", MobVampireVnum );
+    mudlog( LOG_ERR, "check_mobile: æ²’æœ‰å°é¬¼è™Ÿç¢¼ %d.", MobVampireVnum );
 
   if ( !( MobPractice = get_mob_index( MobPracticeVnum ) ) )
-    mudlog( LOG_ERR, "check_mobile: ¨S¦³½m¥\\©Çª«¸¹½X %d.", MobPracticeVnum );
+    mudlog( LOG_ERR, "check_mobile: æ²’æœ‰ç·´åŠŸ\æ€ªç‰©è™Ÿç¢¼ %d.", MobPracticeVnum );
 
   RETURN_NULL();
 }
@@ -2113,9 +2113,9 @@ void weather_setting( void )
   PUSH_FUNCTION( "weather_setting" );
 
   if ( DaysPerMonth <= 0 || MonthsPerYear <= 0 )
-    mudlog( LOG_ERR, "weather_setting: ¤é´Á³]©w¿ù»~¡M¤é´Á¤£¦Xªk¡C" );
+    mudlog( LOG_ERR, "weather_setting: æ—¥æœŸè¨­å®šéŒ¯èª¤ï¹æ—¥æœŸä¸åˆæ³•ã€‚" );
 
-  /* ³]©w®É¶¡¥H¤Î¤Ñ®ğ */
+  /* è¨­å®šæ™‚é–“ä»¥åŠå¤©æ°£ */
   lhour           = ( current_time - 650336715 )
                   / ( PULSE_TICK / PULSE_PER_SECOND );
 
@@ -2133,7 +2133,7 @@ void weather_setting( void )
   else if ( time_info.hour < 20 ) weather_info.sunlight = SUN_SET;
   else                            weather_info.sunlight = SUN_DARK;
 
-  /* ½Õ¾ã®ğ­Ô */
+  /* èª¿æ•´æ°£å€™ */
   weather_info.change = 0;
   weather_info.mmhg   = 960;
 
@@ -2167,7 +2167,7 @@ void fix_object_value( void )
 
   PUSH_FUNCTION( "fix_object_value" );
 
-  /* ¥ı§âÀÉ®×µ¹®ø±¼ */
+  /* å…ˆæŠŠæª”æ¡ˆçµ¦æ¶ˆæ‰ */
   if ( ( pFile = FOPEN( badobject_file, "w" ) ) ) FCLOSE( pFile );
 
   for ( nMatch = vnum = 0; nMatch < top_obj_index; vnum++ )
@@ -2183,17 +2183,17 @@ void fix_object_value( void )
 
         if ( buf[0] != '\x0' )
         {
-          mudlog( LOG_BADOBJECT, "ª««~¸¹½X¡R%-5d ª««~¦WºÙ¡R%s(%s) ª««~«¬ºA¡R%s"
+          mudlog( LOG_BADOBJECT, "ç‰©å“è™Ÿç¢¼ï¹•%-5d ç‰©å“åç¨±ï¹•%s(%s) ç‰©å“å‹æ…‹ï¹•%s"
             , pObjIndex->vnum, pObjIndex->short_descr
             , pObjIndex->name
             , item_kind_name( pObjIndex->item_type ) );
 
-          mudlog( LOG_BADOBJECT, "ª««~¸ô®|¡R%s", pObjIndex->filename );
+          mudlog( LOG_BADOBJECT, "ç‰©å“è·¯å¾‘ï¹•%s", pObjIndex->filename );
 
-          mudlog( LOG_BADOBJECT, "¼Æ­È %2d¡R %-8d «ØÄ³­È¡R%-8d"
+          mudlog( LOG_BADOBJECT, "æ•¸å€¼ %2dï¹• %-8d å»ºè­°å€¼ï¹•%-8d"
             , loop, pObjIndex->value[loop], ret );
 
-          mudlog( LOG_BADOBJECT, "­ì¦]¡R%s", buf );
+          mudlog( LOG_BADOBJECT, "åŸå› ï¹•%s", buf );
           mudlog( LOG_BADOBJECT, "" );
         }
       }

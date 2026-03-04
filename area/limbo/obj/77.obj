@@ -1,9 +1,9 @@
 Vnum            77
 Name            shot cloth~
-ShortDesc       �}�ª����A~
+ShortDesc       破舊的花衣服~
 Description
-�@��}�ª����A(shot cloth)�M�ݰ_�ӨS����ΡC~
-Unit            ��~
+一件破舊的花衣服(shot cloth)﹐看起來沒什麼用。~
+Unit            件~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

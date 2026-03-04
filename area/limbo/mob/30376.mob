@@ -1,10 +1,10 @@
 Vnum            30376
 Name            huang show~
-ShortDesc       ����~
-LongDesc        ����(huang shou)
+ShortDesc       黃綬~
+LongDesc        黃綬(huang shou)
 ~
 Description
-�Ѹ��թ����C���������t�M�ڻD�仪�����M���O�~�w�ݳơC
+諸葛孔明明媒正娶的元配﹐據聞其貌不揚﹐但是才德兼備。
 ~
 Sentinel        Yes
 Alignment       0
@@ -28,5 +28,5 @@ DodgeRatio      100
 Migrate         0
 Sex             SEX_FEMALE
 Auction
-�թ��o������ѥu�|�Τjı�B�۰��סM�q�Ӥ]�S�ݥL���L����a�Φ^�ӡM�`�o�ѮQ�K���M�O�p�k�l�ڱo�X�ө��Y�S�����������͡C~
+孔明這死鬼整天只會睡大覺、唱高論﹐從來也沒看他拿過什麼家用回來﹐害得老娘…不﹐是小女子我得出來拋頭露面賣些雜物營生。~
 End

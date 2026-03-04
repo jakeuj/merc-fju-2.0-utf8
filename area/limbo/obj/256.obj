@@ -1,9 +1,9 @@
 Vnum            256
 Name            drunk book~
-ShortDesc       ¾K®±¯µÓD~
+ShortDesc       é†‰æ‹³ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

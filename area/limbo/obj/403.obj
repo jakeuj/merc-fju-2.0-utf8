@@ -1,9 +1,9 @@
 Vnum            403
 Name            king lance~
-ShortDesc       [1;31mÅQ¤ý[1;37m¾Ô´u[0m~
+ShortDesc       [1;31méœ¸çŽ‹[1;37mæˆ°æˆŸ[0m~
 Description
-¶W¥G·Q¹³¤§¥~ªº¶W¤j«¬¾Ô´u(lance)¡M¨C¤@À»§¡±a¦³ÅQ«l¤Î¶¯«l¡C~
-Unit            §â~
+è¶…ä¹Žæƒ³åƒä¹‹å¤–çš„è¶…å¤§åž‹æˆ°æˆŸ(lance)ï¹æ¯ä¸€æ“Šå‡å¸¶æœ‰éœ¸å‹åŠé›„å‹ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

@@ -1,10 +1,10 @@
 Vnum            525
 Name            egg~
-ShortDesc       ¥ÍÂû³J~
+ShortDesc       ç”Ÿé›è›‹~
 Description
-¤@­ÓÂû³J(egg)¡M§A¥i¥H¦Y¥¦©Î®³¨Ó¯{¤H¡C
+ä¸€å€‹é›è›‹(egg)ï¹ä½ å¯ä»¥åƒå®ƒæˆ–æ‹¿ä¾†ç ¸äººã€‚
 ~
-Unit            Áû~
+Unit            é¡†~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           5

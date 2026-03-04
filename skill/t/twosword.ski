@@ -1,5 +1,5 @@
 Name            two sword~
-Cname           ����C�k~
+Cname           兩儀劍法~
 Slot            SLOT_TWOSWORD
 Msgoff          ~
 Check           check_sword_attack~
@@ -38,28 +38,28 @@ Limit           CLASS_BRAVO      10  95
 Limit           CLASS_MAGE       10  50
 Limit           CLASS_SMITH      10  50
 Help
-����C�k�G
+兩儀劍法：
 
-�C�ͨ���M�ǥѨ�����������δ���o���C�k���̰����N�M�O�@�ӫ�
-���j���C�k�M�i�H�X�ĭP�ӡM��O�C�k�����X���޵Ѫ��@���M���L�n
-�Ǩ�i���O��T�Ѫ��W�u�N�i�H�Ǩ쪺�M���M�n��F���m���{�ק�O
-�ݭn�U�@�f�W�u�M���L�p�L�A�����쪺�ܡM�ˬO�i�H��x�窺�a�訫
-���M�γ\�|���@�f��ì�T
+劍生兩儀﹐藉由兩儀的不停移形換位發揮劍法的最高奧意﹐是一個很
+高強的劍法﹐可以驅敵致勝﹐算是劍法中較出類拔萃的一項﹐不過要
+學到可不是兩三天的苦工就可以學到的﹐當然要到達熟練的程度更是
+需要下一番苦工﹐不過如過你有興趣的話﹐倒是可以到軍營的地方走
+走﹐或許會有一番收穫﹗
 
 ~
 
 Message
-$n���$O���ӭ��M�u�H��s�C�v�M�}��K���M�C�ƨ���M
-�N����C�k�o���췥�P�C$A$A
-$W               --- $Y�[ $S�[ $Y�[ $S�[ $Y�[ $S�[ $Y�[$W ---$Z$A$A
-$n�a���@�D�M��b�ۤv�����C�W¶�ۼĤH��ŭ���$A
-$P�b��������C�}�@���V�P�M���������M��������$Z$A
-$n���������洫��M���ܶ��M���ೱ�M�ϼĤH�ݱo���Ἲ�áC~
+$n手持$O脫手而飛﹐「以氣御劍」﹐腳踩八卦﹐劍化兩儀﹐
+將兩儀劍法發揮到極致。$A$A
+$W               --- $Y騾 $S琥 $Y閭 $S琥 $Y琥 $S繆 $Y沍$W ---$Z$A$A
+$n縱身一躍﹐踏在自己的長劍上繞著敵人凌空飛行$A
+$P剎那間兩儀劍陣一片混沌﹐陰中有陽﹐陽中有陰$Z$A
+$n不停的移行換位﹐陰變陽﹐陽轉陰﹐使敵人看得眼花撩亂。~
 
 #Damage
 Description
-$n�⮺�C�Z�M���C�@���M�ϥX�@��$Y�y�C�P���z$Z�M���A�y���M�ᦳ�ѤW�P�P�몺��
-����G�C~
+$n手捏劍訣﹐長劍一挺﹐使出一招$Y『七星伴月』$Z﹐姿態悠雅﹐頗有天上星星般的皎
+潔明亮。~
 Chance          20
 Value           20
 Parry           0
@@ -69,8 +69,8 @@ End
 
 #Damage
 Description
-$n�@�ӱۨ��M�⤤��$O�b�Ť��{�L�@�D���~����V$N�M���A�t�x�@������M���O�@��$Y
-�y���Q����z$Z�C~
+$n一個旋身﹐手中的$O在空中閃過一道光芒直刺向$N﹐姿態瀟灑一氣呵成﹐正是一招$Y
+『長松蔽日』$Z。~
 Chance          30
 Value           200
 Parry           0
@@ -80,8 +80,8 @@ End
 
 #Damage
 Description
-$n���ӷL�I�M����C�Z�פޡM�k�y�@�Y�M�ϥX�@��$Y�y����¶��z$Z�M�C�ը��t��F��
-��$N��h�C~
+$n左肩微沉﹐左手劍訣斜引﹐右肘一縮﹐使出一招$Y『丹鳳朝陽』$Z﹐劍勢迅速凌厲直
+往$N刺去。~
 Chance          20
 Value           20
 Parry           0
@@ -91,8 +91,8 @@ End
 
 #Damage
 Description
-$n�C�դ@��H�����ƶh���ۡM�ϥX�@��$Y�y�a�s����z$Z�M���d��A�B��ի²r����$N
-���W�j�O�٥h�C~
+$n劍勢一改以往的飄逸絕倫﹐使出一招$Y『蒼龍櫻海』$Z﹐直削橫劈、氣勢威猛的往$N
+身上大力斬去。~
 Chance          20
 Value           20
 Parry           0
@@ -102,7 +102,7 @@ End
 
 #Damage
 Description
-$n�C�դj�}�j��M�ϥX�@��$Y�y�K���E�i�z$Z�M�g���ɫB�몺�ۦ���$N�P�����H�۬[�C~
+$n劍勢大開大闔﹐使出一招$Y『春雲乍展』$Z﹐狂風暴雨般的招式使$N感到難以招架。~
 Chance          20
 Value           20
 Parry           0
@@ -112,8 +112,8 @@ End
 
 #Damage
 Description
-$n�C�y�s���X�X�ӼC��M�@��$Y�y�ȯQ���F�z$Z�M�p�B�����ƶh�M�Ʀ������ճ��w�w��
-��$N�����W�C~
+$n劍尖連劃出幾個劍花﹐一招$Y『玄烏劃沙』$Z﹐如浮雲般飄逸﹐化成片片白雪緩緩落
+於$N的身上。~
 Chance          20
 Value           20
 Parry           0
@@ -123,8 +123,8 @@ End
 
 #Damage
 Description
-$n�N�⤤��$O�פޡM�ϥX�@��$Y�y�ȬP�Ǥ�z$Z�M�C�ն�����_����a���$N�P�쥪��
-�k�����H�۬[�C~
+$n將手中的$O斜引﹐使出一招$Y『客星犯月』$Z﹐劍勢雄偉精奇氣勢縱橫使$N感到左支
+右拙難以招架。~
 Chance          20
 Value           20
 Parry           0
@@ -134,8 +134,8 @@ End
 
 #Damage
 Description
-$n�u�����⤤��$O�M�ϥX�@��$Y�y�P���B�b�z$Z�M�y�ɼC�y�ĥX�b�بӪ�������C�~
-�M�]�R�{�{�M����n�T�B��$N�e��ӥh�C~
+$n真氣灌於手中的$O﹐使出一招$Y『星海浮搓』$Z﹐頓時劍尖衝出半尺來長的紅色劍芒
+﹐吞吐閃爍﹐嗤嗤聲響處往$N疾刺而去。~
 Chance          20
 Value           20
 Parry           0
@@ -145,8 +145,8 @@ End
 
 #Damage
 Description
-$n�⤤��$O�@�{�X�T�M�H�~�]�R�M�q�{�P�{�M�@��$Y�y�M�x��šz$Z�C��Ʀ��I�I�H�~
-��$N���W���h�C~
+$n手中的$O一閃出鞘﹐寒芒吞吐﹐電閃星爍﹐一招$Y『遍灑虛空』$Z劍氣化成點點寒芒
+往$N身上飛去。~
 Chance          20
 Value           20
 Parry           0
@@ -156,8 +156,8 @@ End
 
 #Damage
 Description
-$n�@�n�M�S�M�⤤$O�ݰʳB�ƥH�ʭp���ɦ���~�q�C�y�e���ӥX�M����p�Ȫe���q�M��
-�O�@��$Y�y�����p��z$Z�T~
+$n一聲清嘯﹐手中$O抖動處數以百計的玉色光芒從劍尖疾飛而出﹐燦爛如銀河飛濺﹐正
+是一招$Y『金鼓雷鳴』$Z﹗~
 Chance          20
 Value           20
 Parry           0
@@ -167,8 +167,8 @@ End
 
 #Damage
 Description
-$n�ϥX����C�k������$Y�y�s���|���z$Z�M�⤤��$O�깺�M$N�j�M�����ҥH���ڤ�����
-�v���ߤw�Q���_�C~
+$n使出兩儀劍法之絕招$Y『龍門疊浪』$Z﹐手中的$O虛劃﹐$N愕然不明所以之際不知自
+己筋脈已被斬斷。~
 Chance          20
 Value           20
 Parry           0
@@ -178,8 +178,8 @@ End
 
 #Damage
 Description
-$n���C�^�T�M�E��|���a�ϥX�F����C�N�����̰��Ҭ�$Y�y�����B�I�z$Z�T�ߤ����C�M
-�C�Ѥߥ͡M�����{ģ�U$N�����w�Q�ζ˦h�B�C~
+$n收劍回鞘﹐聚精會神地使出了兩儀劍術中的最高境界$Y『雲海浮沉』$Z﹗心中有劍﹐
+劍由心生﹐金光閃耀下$N全身已被割傷多處。~
 Chance          20
 Value           20
 Parry           0

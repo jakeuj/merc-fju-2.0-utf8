@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -52,7 +52,7 @@ int spell_damage( CHAR_DATA * ch, int level, int suit, int class )
   switch( suit )
   {
   default:
-    mudlog( LOG_DEBUG, "spell_damage: ¿ù»~«¬ºA: %d.", suit );
+    mudlog( LOG_DEBUG, "spell_damage: éŒ¯èª¤å‹æ…‹: %d.", suit );
     RETURN( 0 );
 
   case TYPE_STR:
@@ -83,7 +83,7 @@ int spell_damage( CHAR_DATA * ch, int level, int suit, int class )
   switch( class )
   {
   default:
-    mudlog( LOG_DEBUG, "spell_damage: ¿ù»~¼h¯Å: %d.", class );
+    mudlog( LOG_DEBUG, "spell_damage: éŒ¯èª¤å±¤ç´š: %d.", class );
     RETURN( 0 );
 
   case SPELL_CLASS_ONE:
@@ -142,31 +142,31 @@ SKILL( spell_make_spring )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "spell_make_spring: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "spell_make_spring: ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( !can_see_room( ch ) )
   {
-    act( "$r¶Âº£º£ªº¡M§A¤°»ò³£¬İ¤£¨ì¡C" , ch, NULL, NULL, TO_CHAR );
+    act( "$ré»‘æ¼†æ¼†çš„ï¹ä½ ä»€éº¼éƒ½çœ‹ä¸åˆ°ã€‚" , ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( obj_type_room( ch, ITEM_FOUNTAIN ) > 0 )
   {
-    act( "$r¤ô·½Â×´I¡M¤w¤£»İ­n¦A°µ¥X¤ô¤F¡C" , ch, NULL, NULL, TO_CHAR );
+    act( "$ræ°´æºè±å¯Œï¹å·²ä¸éœ€è¦å†åšå‡ºæ°´äº†ã€‚" , ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( is_loge( ch->in_room ) || ch->in_room->Sail )
   {
-    act( "§A¬O¨S¦³¿ìªk¦b$r³y¥X¤ô¦Àªº¡T", ch, NULL, NULL, TO_CHAR );
+    act( "ä½ æ˜¯æ²’æœ‰è¾¦æ³•åœ¨$ré€ å‡ºæ°´æ± çš„ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ch->in_room->nobject >= MaxRoomObject )
   {
-    send_to_char( "³o¸Ìªºª««~¤Ó¦h¤F¡M½Ğ¥ı©^Äm±¼¤@¨Ç§a¡T\n\r", ch );
+    send_to_char( "é€™è£¡çš„ç‰©å“å¤ªå¤šäº†ï¹è«‹å…ˆå¥‰ç»æ‰ä¸€äº›å§ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -177,29 +177,29 @@ SKILL( spell_make_spring )
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN( FALSE );
 
   case 0:
 
-    act( "$6$n¨Ï¥X¤F´ı¨­¸Ñ¼Æ¡M§Æ±æ³y¥X¤@­Ó¤p¦À¶í¡C$A"
-      "Àş¶¡¡M¦b¤­±mÄ}¯Éªº¥ú¨~Å¢¸n¤U¡M¤p¤ôºwº¥º¥¶°¦X¡M"
-      "§Î¦¨¤F¤@­Ó$p¡C$0", ch, spring, NULL, TO_ALL );
+    act( "$6$nä½¿å‡ºäº†æ¸¾èº«è§£æ•¸ï¹å¸Œæœ›é€ å‡ºä¸€å€‹å°æ± å¡˜ã€‚$A"
+      "ç¬é–“ï¹åœ¨äº”å½©ç¹½ç´›çš„å…‰èŠ’ç± ç½©ä¸‹ï¹å°æ°´æ»´æ¼¸æ¼¸é›†åˆï¹"
+      "å½¢æˆäº†ä¸€å€‹$pã€‚$0", ch, spring, NULL, TO_ALL );
     break;
 
   case 1:
 
-    act( "$6¦ı¨£$nÀH¤â¤@´§¡MÀş¶¡¦¹¦aªº¤ô¤À¥şµ¹¶°¤¤°_¨Ó¡M"
-      "¨Ã¥B¤g¦a¤U³´¡M°¨¤W´N§Î¦¨¤F¤@­Ó$p¡M§ó¥iÆ[ªº¬O©~µMÁÙ¦³"
-      "Àn¤l¦b¤W­±´å©O¡T$0", ch, spring, NULL, TO_ALL );
+    act( "$6ä½†è¦‹$néš¨æ‰‹ä¸€æ®ï¹ç¬é–“æ­¤åœ°çš„æ°´åˆ†å…¨çµ¦é›†ä¸­èµ·ä¾†ï¹"
+      "ä¸¦ä¸”åœŸåœ°ä¸‹é™·ï¹é¦¬ä¸Šå°±å½¢æˆäº†ä¸€å€‹$pï¹æ›´å¯è§€çš„æ˜¯å±…ç„¶é‚„æœ‰"
+      "é´¨å­åœ¨ä¸Šé¢æ¸¸å‘¢ï¹—$0", ch, spring, NULL, TO_ALL );
 
     break;
 
   case 2:
 
-    act( "$6$n¥|©P¬ğµM¶}©l°_Ãú¡MÅ¢¸nµÛ¾ã­Ó¦a¤è¡M"
-      "Àş¶¡¡M¶³Ãú¤Æ°µ¤C±m¤ô¬W¡M¥Ñ°ªªÅ­°¦Ü¦a­±¡M"
-      "§Î¦¨¤@­Ó¸Ö±¡µe·Nªº$p¡M¶³ÃúÂ·Â¶¡M¤[¤[¤£´²¡T$0"
+    act( "$6$nå››å‘¨çªç„¶é–‹å§‹èµ·éœ§ï¹ç± ç½©è‘—æ•´å€‹åœ°æ–¹ï¹"
+      "ç¬é–“ï¹é›²éœ§åŒ–åšä¸ƒå½©æ°´æŸ±ï¹ç”±é«˜ç©ºé™è‡³åœ°é¢ï¹"
+      "å½¢æˆä¸€å€‹è©©æƒ…ç•«æ„çš„$pï¹é›²éœ§ç¹šç¹ï¹ä¹…ä¹…ä¸æ•£ï¹—$0"
       , ch, spring, NULL, TO_ALL );
 
     break;
@@ -217,19 +217,19 @@ SKILL( spell_make_light )
 
   if ( obj_type_char( ch, ITEM_LIGHT ) > 0 )
   {
-    send_to_char( "§A¨­¤W¤w¸g°÷«GÅo¡M¤£»İ­n¥ú¤F¡T\n\r" , ch );
+    send_to_char( "ä½ èº«ä¸Šå·²ç¶“å¤ äº®å›‰ï¹ä¸éœ€è¦å…‰äº†ï¹—\n\r" , ch );
     RETURN( FALSE );
   }
 
   if ( obj_type_room( ch, ITEM_LIGHT ) > 0 )
   {
-    act( "$r¤w¸g°÷«GÅo¡M¤£»İ­n¥ú¤F¡C" , ch, NULL, NULL, TO_CHAR );
+    act( "$rå·²ç¶“å¤ äº®å›‰ï¹ä¸éœ€è¦å…‰äº†ã€‚" , ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ch->in_room->nobject >= MaxRoomObject )
   {
-    send_to_char( "³o¸Ìªºª««~¤Ó¦h¤F¡M½Ğ¥ı©^Äm±¼¤@¨Ç§a¡T\n\r", ch );
+    send_to_char( "é€™è£¡çš„ç‰©å“å¤ªå¤šäº†ï¹è«‹å…ˆå¥‰ç»æ‰ä¸€äº›å§ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -241,30 +241,30 @@ SKILL( spell_make_light )
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à%dªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½%dçš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN( FALSE );
 
   case 0:
 
-    act( "$6$n¶¶¤â¤@´§¡M¥u¨£µL¼Æªº¤p¥úÂI¶}©l§Ö¼ÆªºÂà°Ê¡M"
-         "±µµÛÂ¶µÛ$nÂà¤@°é¤§«á«K¶°¤¤°_¨Ó¡M§Î¦¨¤F$p¡T$0"
+    act( "$6$né †æ‰‹ä¸€æ®ï¹åªè¦‹ç„¡æ•¸çš„å°å…‰é»é–‹å§‹å¿«æ•¸çš„è½‰å‹•ï¹"
+         "æ¥è‘—ç¹è‘—$nè½‰ä¸€åœˆä¹‹å¾Œä¾¿é›†ä¸­èµ·ä¾†ï¹å½¢æˆäº†$pï¹—$0"
          , ch , light , NULL , TO_ALL );
 
     break;
 
   case 1:
 
-    act( "$7Âà²´¤§¶¡¡M¤@¹Î¹Î¥Ñ¤p¥úÂI©Ò²Õ¦¨ªº¥ú°é¥Ñ¦a¤W¤É°_¡M"
-         "±µµÛ¶VÂà¶V§Ö¡M´N¦b§Ö¨ì¹F¬İ¤£²M·¡¤§®É¡M¤~µo²{¥¦­Ì¤w¸g»E¶°¤@°_"
-         "§Î¦¨¤F$p¡T$0", ch, light, NULL, TO_ALL );
+    act( "$7è½‰çœ¼ä¹‹é–“ï¹ä¸€åœ˜åœ˜ç”±å°å…‰é»æ‰€çµ„æˆçš„å…‰åœˆç”±åœ°ä¸Šå‡èµ·ï¹"
+         "æ¥è‘—è¶Šè½‰è¶Šå¿«ï¹å°±åœ¨å¿«åˆ°é”çœ‹ä¸æ¸…æ¥šä¹‹æ™‚ï¹æ‰ç™¼ç¾å®ƒå€‘å·²ç¶“èšé›†ä¸€èµ·"
+         "å½¢æˆäº†$pï¹—$0", ch, light, NULL, TO_ALL );
 
     break;
 
   case 2:
 
-    act( "$7¤@®É¶¡¨S¦³¤°»òÅÜ¤Æ¡M¦ı¬OÁôÁô¹pÁn¤£Â_¡M"
-         "»áµ¹¤H­·«B«eªº¹çÀR¤§¶Õ¡M¬ğµM¤§¶¡¡M¥õÀY±æ¥h"
-         "¡Mµo²{¬P¬P¥ş³¡¦VµÛ$n»E¶°¡MÂà²´¶¡¤w¸g§Î¦¨¤F$p¡T$0"
+    act( "$7ä¸€æ™‚é–“æ²’æœ‰ä»€éº¼è®ŠåŒ–ï¹ä½†æ˜¯éš±éš±é›·è²ä¸æ–·ï¹"
+         "é —çµ¦äººé¢¨é›¨å‰çš„å¯§éœä¹‹å‹¢ï¹çªç„¶ä¹‹é–“ï¹ä»°é ­æœ›å»"
+         "ï¹ç™¼ç¾æ˜Ÿæ˜Ÿå…¨éƒ¨å‘è‘—$nèšé›†ï¹è½‰çœ¼é–“å·²ç¶“å½¢æˆäº†$pï¹—$0"
          , ch, light, NULL, TO_ALL );
 
     break;
@@ -287,13 +287,13 @@ SKILL( spell_cast_armor )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "spell_cast_armor: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "spell_cast_armor: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$Nªº«OÅ@¬İ¨Ó¤w¸g¤Q¤À¨¬°÷¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„ä¿è­·çœ‹ä¾†å·²ç¶“ååˆ†è¶³å¤ äº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -307,30 +307,30 @@ SKILL( spell_cast_armor )
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN( FALSE );
 
   case 0:
 
-    act( "$3$n$3¨­Ãä¤@°}®Ì°Ê¡M§A·P¨ìªÅ®ğ¤@°}¾®µ²¡M±µµÛ"
-         "§Î¦¨¤@­ÓÅ@¬Ş³òÂ¶¦b$N$3¨­«e¡M«OÅ@µÛ$N¡T$0"
+    act( "$3$n$3èº«é‚Šä¸€é™£æ™ƒå‹•ï¹ä½ æ„Ÿåˆ°ç©ºæ°£ä¸€é™£å‡çµï¹æ¥è‘—"
+         "å½¢æˆä¸€å€‹è­·ç›¾åœç¹åœ¨$N$3èº«å‰ï¹ä¿è­·è‘—$Nï¹—$0"
          , ch, NULL, victim, TO_ALL );
 
     break;
 
   case 1:
 
-    act( "$3$n$3¤j³Û¤@Án¡M±µµÛ¤j¦a¾_°Ê¡M­·¶³ÅÜ¦â¡MµL¼ÆªººëÆF¯É¯É"
-         "¥X²{¦b$N$3¨­«e§Î¦¨¤@Å@¬Ş¡T$0"
+    act( "$3$n$3å¤§å–Šä¸€è²ï¹æ¥è‘—å¤§åœ°éœ‡å‹•ï¹é¢¨é›²è®Šè‰²ï¹ç„¡æ•¸çš„ç²¾éˆç´›ç´›"
+         "å‡ºç¾åœ¨$N$3èº«å‰å½¢æˆä¸€è­·ç›¾ï¹—$0"
          , ch, NULL, victim, TO_ALL );
 
     break;
 
   case 2:
 
-    act( "$3¤Ñ¤W¤@°}ª÷¥ú°{°{¡M±µµÛµL¼Æªº¤Ñ§L¤Ñ±N¦p¼é¤ô´é¤F¤U¨Ó¡M"
-         " ³òÂ¶µÛ$N$3¡M½w½wªº¦b¥L¨­Ãä§Î¦¨¤@°é¹³¬O«OÅ@½¤¤@¼ËªºªF¦è¡M"
-         "·PÄ±¦n¹³¤Q¤À°í©T¡T$0" , ch, NULL, victim, TO_ALL );
+    act( "$3å¤©ä¸Šä¸€é™£é‡‘å…‰é–ƒé–ƒï¹æ¥è‘—ç„¡æ•¸çš„å¤©å…µå¤©å°‡å¦‚æ½®æ°´æ¹§äº†ä¸‹ä¾†ï¹"
+         " åœç¹è‘—$N$3ï¹ç·©ç·©çš„åœ¨ä»–èº«é‚Šå½¢æˆä¸€åœˆåƒæ˜¯ä¿è­·è†œä¸€æ¨£çš„æ±è¥¿ï¹"
+         "æ„Ÿè¦ºå¥½åƒååˆ†å …å›ºï¹—$0" , ch, NULL, victim, TO_ALL );
 
     break;
 
@@ -349,13 +349,13 @@ SKILL( spell_cast_bless )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "spell_cast_bless: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "spell_cast_bless: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$Nªº¯¬ºÖ¬İ¨Ó¤w¸g¤Q¤À¨¬°÷¤F¡M§A¤£»İ­n¦A¯¬ºÖ¤F¡C"
+    act( "$Nçš„ç¥ç¦çœ‹ä¾†å·²ç¶“ååˆ†è¶³å¤ äº†ï¹ä½ ä¸éœ€è¦å†ç¥ç¦äº†ã€‚"
       , ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
@@ -375,26 +375,26 @@ SKILL( spell_cast_bless )
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD.", sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ.", sn );
     RETURN( FALSE );
 
   case 0:
-    act( "$7$n$7¶¶¤â¤@´§¡M³\\¦hªº¤pºëÆF±qªÅ¤¤«_¤F¤U¨Ó"
-         "¡M³òÂ¶µÛ$N$7°ÛµÛ¸tºq¡M¯¬ºÖµÛ$E¡C$0", ch, NULL, victim, TO_ALL );
+    act( "$7$n$7é †æ‰‹ä¸€æ®ï¹è¨±\å¤šçš„å°ç²¾éˆå¾ç©ºä¸­å†’äº†ä¸‹ä¾†"
+         "ï¹åœç¹è‘—$N$7å”±è‘—è–æ­Œï¹ç¥ç¦è‘—$Eã€‚$0", ch, NULL, victim, TO_ALL );
     break;
 
   case 1:
 
-    act( "$7$n$7»´Án§u°ÛµÛ¯¬ºÖ¤§¹|¡M±Nº¡º¡ªº¯¬ºÖ°e»P$N$7¡MÂà²´¶¡¥u¨£$E"
-         "ºCºCªºµo¥X°{°{ªº»È¦â¥ú¨~¡M©{¦p¤ÑÃäªº¤@º§©ú¤ë¡C$0"
+    act( "$7$n$7è¼•è²åŸå”±è‘—ç¥ç¦ä¹‹é Œï¹å°‡æ»¿æ»¿çš„ç¥ç¦é€èˆ‡$N$7ï¹è½‰çœ¼é–“åªè¦‹$E"
+         "æ…¢æ…¢çš„ç™¼å‡ºé–ƒé–ƒçš„éŠ€è‰²å…‰èŠ’ï¹å®›å¦‚å¤©é‚Šçš„ä¸€æ¼£æ˜æœˆã€‚$0"
          , ch, NULL, victim, TO_ALL );
 
     break;
 
   case 2:
-    act( "$7$n$7½w½wªº´§»RµÛ¤â¡M±µµÛ³\\³\\¦h¦hªº²®¼äªº¥ú¤§ºëÆFºCºCªºº}¯B¤F"
-         "¹L¨Ó¡M³òÂ¶µÛ$N$7¨Ã¥B¥]³òµÛ$E¡M½w½wªº§Î¦¨¤F¤@­±©ú«Gªº¥ú¤§¯¬ºÖ¡M±µ"
-         "µÛ¤Ñ¤Wªº¤Ñ¨Ï³£±´ÀY¤U¨Óª§½ä³o¤Ñ¤W¤H¶¡©_´º¡C$0"
+    act( "$7$n$7ç·©ç·©çš„æ®èˆè‘—æ‰‹ï¹æ¥è‘—è¨±\è¨±\å¤šå¤šçš„çšæ½”çš„å…‰ä¹‹ç²¾éˆæ…¢æ…¢çš„æ¼‚æµ®äº†"
+         "éä¾†ï¹åœç¹è‘—$N$7ä¸¦ä¸”åŒ…åœè‘—$Eï¹ç·©ç·©çš„å½¢æˆäº†ä¸€é¢æ˜äº®çš„å…‰ä¹‹ç¥ç¦ï¹æ¥"
+         "è‘—å¤©ä¸Šçš„å¤©ä½¿éƒ½æ¢é ­ä¸‹ä¾†çˆ­è³­é€™å¤©ä¸Šäººé–“å¥‡æ™¯ã€‚$0"
          , ch, NULL, victim, TO_ALL );
     break;
   }
@@ -414,110 +414,110 @@ SKILL( spell_cast_fire )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "spell_cast_fire: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "spell_cast_fire: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_FOU );
   dam = dam / 2;
 
-  /* «e¸m°T®§ */
-  act( "$1$n$1¹B¶°¤ß¤¤ªº¼««ã¦bÂù¤â¡MÂà²´¶¡Âù¤â¦å¬õ¦p¤õ¡T¡T$A$0"
+  /* å‰ç½®è¨Šæ¯ */
+  act( "$1$n$1é‹é›†å¿ƒä¸­çš„æ†¤æ€’åœ¨é›™æ‰‹ï¹è½‰çœ¼é–“é›™æ‰‹è¡€ç´…å¦‚ç«ï¹—ï¹—$A$0"
     , ch, NULL, victim, TO_ALL );
 
   switch( UMIN( 3, dam_plus = dimemsion_position( choice, level , TRUE ) ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN( FALSE );
 
   case 0:
     sact( ch, victim, NULL,
-      "$n¥Î¥X¥ş³¡¤O¶q¡MÀ½¥X¤@­Ó®±ÀY¯ë¤jªº¤õ²y¡MÅF¦V$N¡T" );
+      "$nç”¨å‡ºå…¨éƒ¨åŠ›é‡ï¹æ“ å‡ºä¸€å€‹æ‹³é ­èˆ¬å¤§çš„ç«çƒï¹è½Ÿå‘$Nï¹—" );
     dam_plus = 1;
     break;
 
   case 1:
     sact( ch, victim, NULL,
-      "$nÂù¤â³sÀ»¡Mµo¥X¤F¨â­Ó¤p¤õ²y¡M±µµÛ«áªÌ°l¤W«eªÌ¡M§Î¦¨¤@­Ó¤õ²yÅF¦V$N¡T" );
+      "$né›™æ‰‹é€£æ“Šï¹ç™¼å‡ºäº†å…©å€‹å°ç«çƒï¹æ¥è‘—å¾Œè€…è¿½ä¸Šå‰è€…ï¹å½¢æˆä¸€å€‹ç«çƒè½Ÿå‘$Nï¹—" );
     break;
 
   case 2:
     sact( ch, victim, NULL,
-      "$nÂù¤â¦X¤@¡M²¤¤@¥Î¤O¡Mµo¥X¤F¤@­Ó¤Ú´x¤jªº¤õ²y¡M¹³$N­¸¥h¡T" );
+      "$né›™æ‰‹åˆä¸€ï¹ç•¥ä¸€ç”¨åŠ›ï¹ç™¼å‡ºäº†ä¸€å€‹å·´æŒå¤§çš„ç«çƒï¹åƒ$Né£›å»ï¹—" );
     break;
 
   case 3:
     sact( ch, victim, NULL,
-      "$n±NÂù¤â¥Î¤O±ÛÂà¡M¤¬¬Û¸I¼²¡M²r¦aÃz¥X³\\¦h¤õªá¡M±µµÛ¤@­Ó­Ó¤õªá"
-      "¹³¬O¦³¥Í©R¤@¯ë¦VµÛ$N°l¥h¡T" );
+      "$nå°‡é›™æ‰‹ç”¨åŠ›æ—‹è½‰ï¹äº’ç›¸ç¢°æ’ï¹çŒ›åœ°çˆ†å‡ºè¨±\å¤šç«èŠ±ï¹æ¥è‘—ä¸€å€‹å€‹ç«èŠ±"
+      "åƒæ˜¯æœ‰ç”Ÿå‘½ä¸€èˆ¬å‘è‘—$Nè¿½å»ï¹—" );
     break;
 
   case 4:
     sact( ch, victim, NULL,
-      "$n«b¦a°ªÁ|Âù¤â¡M±µµÛ¤@°¦Á|µÛ¤õ¤eªººëÆFÀ³ÁÜ«e¨Ó¡T$A"
-      "¤õºëÆF¦VµÛ$N§ë¥H¤£®hªº¤@²´¡M´N±N¤õ¬õªº$R¤õ¤e$Z²r¦V$E¥á¥h¡T" );
+      "$nå‰åœ°é«˜èˆ‰é›™æ‰‹ï¹æ¥è‘—ä¸€éš»èˆ‰è‘—ç«å‰çš„ç²¾éˆæ‡‰é‚€å‰ä¾†ï¹—$A"
+      "ç«ç²¾éˆå‘è‘—$NæŠ•ä»¥ä¸å±‘çš„ä¸€çœ¼ï¹å°±å°‡ç«ç´…çš„$Rç«å‰$ZçŒ›å‘$Eä¸Ÿå»ï¹—" );
     break;
 
   case 5:
     sact( ch, victim, NULL,
-      "$n°ªÁ|Âù¤â¡M¦¬¶°¤F¤j¦ÛµMªº¼ö¶q¡M¿Ä¦X§Î¦¨¤@­Ó°ª¼öªº"
-      "$R¤õ²y$Z¡M±µµÛ$R¤õ²y$Z¹³¬O¦³¥Í©R¦üªº«æ©b$N¦Ó¥h¡T" );
+      "$né«˜èˆ‰é›™æ‰‹ï¹æ”¶é›†äº†å¤§è‡ªç„¶çš„ç†±é‡ï¹èåˆå½¢æˆä¸€å€‹é«˜ç†±çš„"
+      "$Rç«çƒ$Zï¹æ¥è‘—$Rç«çƒ$Zåƒæ˜¯æœ‰ç”Ÿå‘½ä¼¼çš„æ€¥å¥”$Nè€Œå»ï¹—" );
     break;
 
   case 6:
     sact( ch, victim, NULL,
-      "$n§¤¤F¤U¨Ó¡M¶°¤¤ºë¯«Àq°á¤@¨ÇÅ¥¤£À´ªº©G»y¡T$A"
-      "±µµÛ¦b$N¨­Ãä¬ğµM¥X²{³\\¦hªº$R¤õµK$Z¡M±N$E§]¨S¡T¡T" );
+      "$nåäº†ä¸‹ä¾†ï¹é›†ä¸­ç²¾ç¥é»˜å”¸ä¸€äº›è½ä¸æ‡‚çš„å’’èªï¹—$A"
+      "æ¥è‘—åœ¨$Nèº«é‚Šçªç„¶å‡ºç¾è¨±\å¤šçš„$Rç«ç„°$Zï¹å°‡$Eåæ²’ï¹—ï¹—" );
     break;
 
   case 7:
     sact( ch, victim, NULL,
-      "$R$n$R´§»RÂù¤â¡Mµo¥X¤F¤@³s¦ê°ª¼öªº¤õ²y"
-      "¡M¤@­Ó­Ó²r¦a¦V$N¨gÀ»¡M¨Ï±o$E¦³¤@ÂI³İ¤£¹L®ğ¨Ó¡T¡T$Z" );
+      "$R$n$Ræ®èˆé›™æ‰‹ï¹ç™¼å‡ºäº†ä¸€é€£ä¸²é«˜ç†±çš„ç«çƒ"
+      "ï¹ä¸€å€‹å€‹çŒ›åœ°å‘$Nç‹‚æ“Šï¹ä½¿å¾—$Eæœ‰ä¸€é»å–˜ä¸éæ°£ä¾†ï¹—ï¹—$Z" );
     break;
 
   case 8:
     sact( ch, victim, NULL,
-      "$R$n¶°¤¤ºë¯«¡M¨Ã¥B¤ÏÂĞ¤£Â_ªº°á»w¤@¨Ç©G¤å¡C"
-      "$A$A±µµÛ¤@°¦¤õºëÆF¥X²{¦b$n¨­®Ç¡MÁy¤W±aµÛ¨Ç·Lªº·L¯º¡T"
-      "$A$A±µµÛºëÆF¨g³Û¤@Án¡MµoºÆ¦üªº½Ä¦V$N¡T$Z" );
+      "$R$né›†ä¸­ç²¾ç¥ï¹ä¸¦ä¸”åè¦†ä¸æ–·çš„å”¸èª¦ä¸€äº›å’’æ–‡ã€‚"
+      "$A$Aæ¥è‘—ä¸€éš»ç«ç²¾éˆå‡ºç¾åœ¨$nèº«æ—ï¹è‡‰ä¸Šå¸¶è‘—äº›å¾®çš„å¾®ç¬‘ï¹—"
+      "$A$Aæ¥è‘—ç²¾éˆç‹‚å–Šä¸€è²ï¹ç™¼ç˜‹ä¼¼çš„è¡å‘$Nï¹—$Z" );
     break;
 
   case 9:
     sact( ch, victim, NULL,
-      "$R$n±NÂù¤â¦X¤@¡M¤£°±ªº¨Ï«l¡M¥u¨£$eÁy¤Wº¥º¥Âà¬°¦å¬õ¦â¡C"
-      "$A$A±µµÛ¥uÅ¥$e³Û¹D¡R¡y$Y¥i´cªº$N¡M¯Ç©R¨Ó¡T¡T"
-      "$R¡z$A±µµÛ¤@Áû¥¨¤jªº¤õ²y¨g©b¦V$E¡T¡T$Z" );
+      "$R$nå°‡é›™æ‰‹åˆä¸€ï¹ä¸åœçš„ä½¿å‹ï¹åªè¦‹$eè‡‰ä¸Šæ¼¸æ¼¸è½‰ç‚ºè¡€ç´…è‰²ã€‚"
+      "$A$Aæ¥è‘—åªè½$eå–Šé“ï¹•ã€$Yå¯æƒ¡çš„$Nï¹ç´å‘½ä¾†ï¹—ï¹—"
+      "$Rã€$Aæ¥è‘—ä¸€é¡†å·¨å¤§çš„ç«çƒç‹‚å¥”å‘$Eï¹—ï¹—$Z" );
     break;
 
   case 10:
     sact( ch, victim, NULL,
-      "$R$nª×¦a¨H«ä¡M«oµo¥X¤@ªÑ¥¨¤jªº¾_¾Ù¤O¡T$A$A"
-      "±µµÛ§A¨£¨ì¤ÑÃä±¼¤U¤@Áû¥¨¤jµÛ¤õªº¤j¤õ²y½Ä¦V$N¡T$Z" );
+      "$R$nè‡¥åœ°æ²ˆæ€ï¹å»ç™¼å‡ºä¸€è‚¡å·¨å¤§çš„éœ‡æ’¼åŠ›ï¹—$A$A"
+      "æ¥è‘—ä½ è¦‹åˆ°å¤©é‚Šæ‰ä¸‹ä¸€é¡†å·¨å¤§è‘—ç«çš„å¤§ç«çƒè¡å‘$Nï¹—$Z" );
     break;
 
   case 11:
     sact( ch, victim, NULL,
-      "$R$nÂù¤â¤@´§¡M¤£¨£¥ô¦ó¨Æµo¥Í¡C\n\r\n\r"
-      "´X¬íÄÁ¹L«á¡M¤@¦ì¥ş¨­¤õµKªºµ£¤l«æ©b¦Ó¦Ü¡T\n\r"
-      "¤G¸Ü¤£»¡¥L«K¦V$N$R¼Q¥X¤@³s¦êªº¡y$Y¤T¬N¯u¤õ$R¡z¡C$Z" );
+      "$R$né›™æ‰‹ä¸€æ®ï¹ä¸è¦‹ä»»ä½•äº‹ç™¼ç”Ÿã€‚\n\r\n\r"
+      "å¹¾ç§’é˜éå¾Œï¹ä¸€ä½å…¨èº«ç«ç„°çš„ç«¥å­æ€¥å¥”è€Œè‡³ï¹—\n\r"
+      "äºŒè©±ä¸èªªä»–ä¾¿å‘$N$Rå™´å‡ºä¸€é€£ä¸²çš„ã€$Yä¸‰æ˜§çœŸç«$Rã€ã€‚$Z" );
     break;
 
   case 12:
     sact( ch, victim, NULL,
-      "$n¨­Ãä¬ğµM¥X²{¤@¨Ç¤C±mªº¯]¯]¡M³òÂ¶µÛ$e¡M«b¬O¦n¬İ¡T$A"
-      "µM«á¶ê¯]º¥º¥®ø¥¢¡M«oÅ¥¨£¤j¦a¶}©l¾_°Ê¡M¦ü¥G§Y±Nµo¥Í¤@¨Ç¤°»ò¨Æ"
-      "¡T¡T$A«b®É$n¤j³Û¤@Án¡R¡y $R¤Ú   «¢   ©i   ¯S ¡T¡T¡T"
-      "$Z¡z$A$AÂà²´¶¡¦b¥~¤ÓªÅ¬Y³B¤@°¦¥ş¨­¤õ¬õªº¥¨Às¦¬¨ì·PÀ³"
-      "¡M¦VµÛ¦¹¦a¼Q¥X¤@­Ó¶W°ª¼öªº¤õ²y¡T¡T$A$R¤õ²y§Y±NÅF¨ì¤§®É"
-      "¡M¦¹³B¤w§e¤@¤ù¤õ®ü¡M²³¯ó¤£¥Í¡T¡T$A±µµÛ¦¹¦a"
-      "ªº¤H³£¥¢¥hª¾Ä±¡M¥şÅé³£¨ü¨ìªi¤Î¡M¤×¨ä¬O$N¡T¡T$Z" );
+      "$nèº«é‚Šçªç„¶å‡ºç¾ä¸€äº›ä¸ƒå½©çš„ç ç ï¹åœç¹è‘—$eï¹å‰æ˜¯å¥½çœ‹ï¹—$A"
+      "ç„¶å¾Œåœ“ç æ¼¸æ¼¸æ¶ˆå¤±ï¹å»è½è¦‹å¤§åœ°é–‹å§‹éœ‡å‹•ï¹ä¼¼ä¹å³å°‡ç™¼ç”Ÿä¸€äº›ä»€éº¼äº‹"
+      "ï¹—ï¹—$Aå‰æ™‚$nå¤§å–Šä¸€è²ï¹•ã€ $Rå·´   å“ˆ   å§†   ç‰¹ ï¹—ï¹—ï¹—"
+      "$Zã€$A$Aè½‰çœ¼é–“åœ¨å¤–å¤ªç©ºæŸè™•ä¸€éš»å…¨èº«ç«ç´…çš„å·¨é¾æ”¶åˆ°æ„Ÿæ‡‰"
+      "ï¹å‘è‘—æ­¤åœ°å™´å‡ºä¸€å€‹è¶…é«˜ç†±çš„ç«çƒï¹—ï¹—$A$Rç«çƒå³å°‡è½Ÿåˆ°ä¹‹æ™‚"
+      "ï¹æ­¤è™•å·²å‘ˆä¸€ç‰‡ç«æµ·ï¹çœ¾è‰ä¸ç”Ÿï¹—ï¹—$Aæ¥è‘—æ­¤åœ°"
+      "çš„äººéƒ½å¤±å»çŸ¥è¦ºï¹å…¨é«”éƒ½å—åˆ°æ³¢åŠï¹å°¤å…¶æ˜¯$Nï¹—ï¹—$Z" );
 
-    send_to_char( "\e[1;31m§A¤]¨­¨üªi¤Î¡M¤õµKµI¨­¡T¡T\e[0m\n\r", ch );
+    send_to_char( "\e[1;31mä½ ä¹Ÿèº«å—æ³¢åŠï¹ç«ç„°ç„šèº«ï¹—ï¹—\e[0m\n\r", ch );
     damage( ch, ch, dam * dam_plus , sn, ATTACK_RANDOM );
 
-    /* ­Y¬IªkªÌ¤£©¯°}¤` */
+    /* è‹¥æ–½æ³•è€…ä¸å¹¸é™£äº¡ */
     if ( !can_damage( ch ) ) RETURN( TRUE );
 
     dam_plus *= 4;
@@ -540,7 +540,7 @@ SKILL( spell_cast_lightning )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "spell_cast_lightning: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "spell_cast_lightning: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -550,18 +550,18 @@ SKILL( spell_cast_lightning )
   switch( UMIN( 3, dam_plus = dimemsion_position( choice, level, TRUE ) ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN( FALSE );
 
   case 0:
     sact( ch, victim, NULL,
-      "$S$nÂù¤â¤@§İ¡Mµo¥X¤@­Ó¤p¹q²yÀ»¦V$N¡T$Z" );
+      "$S$né›™æ‰‹ä¸€æŠ–ï¹ç™¼å‡ºä¸€å€‹å°é›»çƒæ“Šå‘$Nï¹—$Z" );
     break;
 
   case 1: case 2: case 3: case  4: case  5: case  6:
   case 7: case 8: case 9: case 10: case 11: case 12:
     sact( ch, victim, NULL,
-      "$S$n¨â¤â¤@¦ù¡M´N±q¤â¤¤µo¥X¨â¹DÅRÆE¦³Ánªº°{¹q¡M²r´cªº§ğ¦V$N¡T$Z" );
+      "$S$nå…©æ‰‹ä¸€ä¼¸ï¹å°±å¾æ‰‹ä¸­ç™¼å‡ºå…©é“éœ¹é‚æœ‰è²çš„é–ƒé›»ï¹çŒ›æƒ¡çš„æ”»å‘$Nï¹—$Z" );
     break;
   }
 
@@ -576,34 +576,34 @@ SKILL( cast_control_weather )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cast_control_weather: ¨Ó·½¿ù»~. " );
+    mudlog( LOG_DEBUG, "cast_control_weather: ä¾†æºéŒ¯èª¤. " );
     RETURN( FALSE );
   }
 
   if ( number_percent() > ( number_percent() / 2 + level - 10 ) )
   {
-    send_to_char( "¤Ñ®ğ¦ü¥G¨S¦³¤°»òÅÜ¤Æ¡T\n\r"
-      "§A·Q§â¤Ñ®ğÅÜ¦n (\e[1;32mbetter\e[0m) "
-      "©Î¬OÅÜÃa (\e[1;32mworse\e[0m)¡S\n\r", ch );
+    send_to_char( "å¤©æ°£ä¼¼ä¹æ²’æœ‰ä»€éº¼è®ŠåŒ–ï¹—\n\r"
+      "ä½ æƒ³æŠŠå¤©æ°£è®Šå¥½ (\e[1;32mbetter\e[0m) "
+      "æˆ–æ˜¯è®Šå£ (\e[1;32mworse\e[0m)ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !str_cmp( ( char * ) vo , "better" ) )
   {
     weather_info.change += dice( level / 3, 4 );
-    send_to_char( "¦n¤F¡M¤Ñ®ğ¶V¨Ó¶V¦n¤F¡T\n\r", ch );
+    send_to_char( "å¥½äº†ï¹å¤©æ°£è¶Šä¾†è¶Šå¥½äº†ï¹—\n\r", ch );
   }
 
   else if ( !str_cmp( ( char * ) vo , "worse" ) )
   {
     weather_info.change -= dice( level / 3, 4 );
-    send_to_char( "¦n¤F¡M¤Ñ®ğ¶V¨Ó¶VÃa¤F¡T\n\r", ch );
+    send_to_char( "å¥½äº†ï¹å¤©æ°£è¶Šä¾†è¶Šå£äº†ï¹—\n\r", ch );
   }
 
   else
   {
-    send_to_char( "§A·Q§â¤Ñ®ğÅÜ¦n (\e[1;32mbetter\e[0m) "
-      "©Î¬OÅÜÃa (\e[1;32mworse\e[0m)¡S\n\r", ch );
+    send_to_char( "ä½ æƒ³æŠŠå¤©æ°£è®Šå¥½ (\e[1;32mbetter\e[0m) "
+      "æˆ–æ˜¯è®Šå£ (\e[1;32mworse\e[0m)ï¹–\n\r", ch );
 
     RETURN( FALSE );
   }
@@ -627,31 +627,31 @@ SKILL( cast_sparkler )
 
   if ( !( pSource = ch->in_room ) )
   {
-    send_to_char( "¹ï¤£°_¡M¦ı§A¥Ø«e¦b¨º¸Ì©O¡S\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½†ä½ ç›®å‰åœ¨é‚£è£¡å‘¢ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !IS_OUTSIDE( ch ) )
   {
-    act( "§AµLªk¦b$r¬I®i³o­Ó·Ï¤õ³N¡T", ch, NULL, NULL, TO_CHAR );
+    act( "ä½ ç„¡æ³•åœ¨$ræ–½å±•é€™å€‹ç…™ç«è¡“ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ch->in_room->area == FoggyArea )
   {
-    act( "¥Ø«e$r¤@¤ùÃúÀÛÀÛ¡M³o®É¬I®i·Ï¤õ³N¬O¨S¦³¥Îªº¡T", ch, NULL, NULL, TO_CHAR );
+    act( "ç›®å‰$rä¸€ç‰‡éœ§æ¿›æ¿›ï¹é€™æ™‚æ–½å±•ç…™ç«è¡“æ˜¯æ²’æœ‰ç”¨çš„ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( weather_info.sky == SKY_RAINING )
   {
-    send_to_char( "¤U«B¤Ñ¬O¨S¦³¿ìªk¬I®i·Ï¤õ³N¡T\n\r", ch );
+    send_to_char( "ä¸‹é›¨å¤©æ˜¯æ²’æœ‰è¾¦æ³•æ–½å±•ç…™ç«è¡“ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ( pMount = get_mount( ch ) ) )
   {
-    act( "§A§¤¦b$N¤W¬O¨S¦³¿ìªk¬I®i·Ï¤õ³Nªº¡C", ch, NULL, pMount, TO_CHAR );
+    act( "ä½ ååœ¨$Nä¸Šæ˜¯æ²’æœ‰è¾¦æ³•æ–½å±•ç…™ç«è¡“çš„ã€‚", ch, NULL, pMount, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -667,7 +667,7 @@ SKILL( cast_sparkler )
     char_from_room( ch );
     char_to_room( ch, pRoom );
 
-    str_cpy( buf, "¦b§Aªº$2" );
+    str_cpy( buf, "åœ¨ä½ çš„$2" );
 
     for ( count = MAX_SCAN_DEPTH - 1; count >= 0; count-- )
     {
@@ -677,7 +677,7 @@ SKILL( cast_sparkler )
       str_cat( buf, direction_name( rev_dir[ScanData[loop].dir[count]] ) );
     }
 
-    str_cat( buf, "$0¤è¦V¥X²{¬Y¤H¬I©ñªº·Ï¤õ¤õ¥ú¡M¦n¤£º}«G¡T" );
+    str_cat( buf, "$0æ–¹å‘å‡ºç¾æŸäººæ–½æ”¾çš„ç…™ç«ç«å…‰ï¹å¥½ä¸æ¼‚äº®ï¹—" );
     act( smash_act_keyword( buf, "nes" ), ch, NULL, NULL, TO_ROOM );
 
     char_from_room( ch );
@@ -686,7 +686,7 @@ SKILL( cast_sparkler )
 
   clean_scan();
 
-  act( "$nÂù¤â¤Ï´¤¡M¬I®i¥X·Ï¤õ³N¡M«b®É¤ÑªÅ¤@¤ù¤õ«G¡T", ch, NULL, NULL, TO_ALL );
+  act( "$né›™æ‰‹åæ¡ï¹æ–½å±•å‡ºç…™ç«è¡“ï¹å‰æ™‚å¤©ç©ºä¸€ç‰‡ç«äº®ï¹—", ch, NULL, NULL, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -707,44 +707,44 @@ SKILL( cast_search )
 
   if ( !pString || *pString == '\x0' )
   {
-    send_to_char( "§A·Q­n´M§ä¤°»ò¤H©O¡S\n\r", ch );
+    send_to_char( "ä½ æƒ³è¦å°‹æ‰¾ä»€éº¼äººå‘¢ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !( pSource = ch->in_room ) )
   {
-    send_to_char( "¹ï¤£°_¡M¦ı§A¥Ø«e¦b¨º¸Ì©O¡S\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½†ä½ ç›®å‰åœ¨é‚£è£¡å‘¢ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !IS_OUTSIDE( ch ) )
   {
-    act( "§AµLªk¦b$r¬I®i³o­ÓÄËªÅ´M¤H³N¡T", ch, NULL, NULL, TO_CHAR );
+    act( "ä½ ç„¡æ³•åœ¨$ræ–½å±•é€™å€‹é¨°ç©ºå°‹äººè¡“ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ch->in_room->area == FoggyArea )
   {
-    act( "¥Ø«e$r¤@¤ùÃúÀÛÀÛ¡M³o®É¬I®iÄËªÅ´M¤H¬O¨S¦³¥Îªº¡T", ch, NULL, NULL, TO_CHAR  );
+    act( "ç›®å‰$rä¸€ç‰‡éœ§æ¿›æ¿›ï¹é€™æ™‚æ–½å±•é¨°ç©ºå°‹äººæ˜¯æ²’æœ‰ç”¨çš„ï¹—", ch, NULL, NULL, TO_CHAR  );
     RETURN( FALSE );
   }
 
   if ( weather_info.sky == SKY_RAINING )
   {
-    send_to_char( "¤U«B¤Ñ¬O¨S¦³¿ìªk¬I®iÄËªÅ´M¤H³N¡T\n\r", ch );
+    send_to_char( "ä¸‹é›¨å¤©æ˜¯æ²’æœ‰è¾¦æ³•æ–½å±•é¨°ç©ºå°‹äººè¡“ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ( victim = get_mount( ch ) ) )
   {
-    act( "§A§¤¦b$N¤W¬O¨S¦³¿ìªk¬I®iÄËªÅ´M¤H³Nªº¡C", ch, NULL, victim, TO_CHAR );
+    act( "ä½ ååœ¨$Nä¸Šæ˜¯æ²’æœ‰è¾¦æ³•æ–½å±•é¨°ç©ºå°‹äººè¡“çš„ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   degree = UMIN( MAX_SCAN_DEPTH - 1, UMAX( 2, level / 10 ) );
   height = degree * 2;
 
-  act( "$nÁa¨­¤@¸õ¡M¬ù¦³$i¤V°ª¡M¥¿§V¤O©¹¤UÆ[¹î¦a­±§Î¶Õ¡T"
+  act( "$nç¸±èº«ä¸€è·³ï¹ç´„æœ‰$iä¸ˆé«˜ï¹æ­£åŠªåŠ›å¾€ä¸‹è§€å¯Ÿåœ°é¢å½¢å‹¢ï¹—"
     , ch, &height, NULL, TO_ALL );
 
   clean_scan();
@@ -757,7 +757,7 @@ SKILL( cast_search )
     char_from_room( ch );
     char_to_room( ch, pRoom );
 
-    act( "»·¤è$nÁa¨­¤@¸õ¡M¬ù¦³$i¤V°ª¡M¥¿§V¤O©¹¤UÆ[¹î¡T"
+    act( "é æ–¹$nç¸±èº«ä¸€è·³ï¹ç´„æœ‰$iä¸ˆé«˜ï¹æ­£åŠªåŠ›å¾€ä¸‹è§€å¯Ÿï¹—"
       , ch, &height, NULL, TO_ROOM );
 
     for ( victim = pRoom->people; victim; victim = victim->next_in_room )
@@ -767,7 +767,7 @@ SKILL( cast_search )
         && is_fullname( pString, victim->name ) )
       {
         number++;
-        str_cpy( buf, "¦b§Aªº$2" );
+        str_cpy( buf, "åœ¨ä½ çš„$2" );
 
         for ( count = 0; count < MAX_SCAN_DEPTH; count++ )
         {
@@ -775,7 +775,7 @@ SKILL( cast_search )
           str_cat( buf, direction_name( ScanData[loop].dir[count] ) );
         }
 
-        str_cat( buf, "$0¦³$N¡M¤£ª¾¹D¬O¤£¬O§A­n§äªº¹ï¶H¡T" );
+        str_cat( buf, "$0æœ‰$Nï¹ä¸çŸ¥é“æ˜¯ä¸æ˜¯ä½ è¦æ‰¾çš„å°è±¡ï¹—" );
         act( smash_act_keyword( buf, "nesNES" ), ch, NULL, victim, TO_CHAR );
       }
     }
@@ -786,7 +786,7 @@ SKILL( cast_search )
     if ( number >= UMAX( 1, degree / 2 ) ) break;
   }
 
-  if ( number <= 0 ) send_to_char( "¹ï¤£°_¡M§ä¤£¨ì§A­n´M§äªº¤H­C¡T\n\r", ch );
+  if ( number <= 0 ) send_to_char( "å°ä¸èµ·ï¹æ‰¾ä¸åˆ°ä½ è¦å°‹æ‰¾çš„äººè€¶ï¹—\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -804,11 +804,11 @@ SKILL( cast_locate_object )
 
   if ( !pString || *pString == '\x0' )
   {
-    send_to_char( "§A­n¦p¦ó®i²{§Aªº¤j¯«³q©O¡S\n\r", ch );
+    send_to_char( "ä½ è¦å¦‚ä½•å±•ç¾ä½ çš„å¤§ç¥é€šå‘¢ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
-  act( "$n§CÀY³¬¥Ø¡M¶}©l¬I®i¹CÃÑ¯«³q¡C", ch, NULL, NULL, TO_ALL );
+  act( "$nä½é ­é–‰ç›®ï¹é–‹å§‹æ–½å±•éŠè­˜ç¥é€šã€‚", ch, NULL, NULL, TO_ALL );
   buf[0] = '\x0';
 
   clear_buffer();
@@ -817,7 +817,7 @@ SKILL( cast_locate_object )
     if ( buffer_full() ) break;
     if ( count >= ( level / 2 ) )
     {
-      if ( found ) send_to_buffer( "\n\r§A·j´M¯à¤O¤w¸g¯ÓºÉ¡T\n\r" );
+      if ( found ) send_to_buffer( "\n\rä½ æœå°‹èƒ½åŠ›å·²ç¶“è€—ç›¡ï¹—\n\r" );
       break;
     }
 
@@ -833,7 +833,7 @@ SKILL( cast_locate_object )
     count++;
     if ( in_obj->carried_by )
     {
-      send_to_buffer( "¤@°}¹p¹q¹L«á¡M§A°{¹L¤@­Ó©ÀÀY¡M°Ú¡M%s ¥¿¥Ñ %s Äâ±a¡C\n\r"
+      send_to_buffer( "ä¸€é™£é›·é›»éå¾Œï¹ä½ é–ƒéä¸€å€‹å¿µé ­ï¹å•Šï¹%s æ­£ç”± %s æ”œå¸¶ã€‚\n\r"
         , obj_name( ch, obj )
         , mob_name( ch, in_obj->carried_by ) );
     }
@@ -841,14 +841,14 @@ SKILL( cast_locate_object )
     {
       if ( level < ( LEVEL_HERO / 2 ) )
       {
-        send_to_buffer( "»·¤è¶Ç¨Ó¤@°}Án­µ¡MÁöµM³Q§Aµo²{¤F¡M"
-          "¥i¬O¥H§Aªº¥\\¤O¬O§ä¤£¨ì§Úªº¡M«¢«¢¡T\n\r" );
+        send_to_buffer( "é æ–¹å‚³ä¾†ä¸€é™£è²éŸ³ï¹é›–ç„¶è¢«ä½ ç™¼ç¾äº†ï¹"
+          "å¯æ˜¯ä»¥ä½ çš„åŠŸ\åŠ›æ˜¯æ‰¾ä¸åˆ°æˆ‘çš„ï¹å“ˆå“ˆï¹—\n\r" );
       }
       else
       {
-        send_to_buffer( "¬ğµM°{¹L¤@°}¥Õ¥ú¡M§Aµo²{­ì¨Ó %s\e[0m ¦b %s\e[0m ¸Ì­±¡T\n\r"
+        send_to_buffer( "çªç„¶é–ƒéä¸€é™£ç™½å…‰ï¹ä½ ç™¼ç¾åŸä¾† %s\e[0m åœ¨ %s\e[0m è£¡é¢ï¹—\n\r"
           , obj_name( ch, obj )
-          , in_obj->in_room == NULL ? "¬Y­Ó¦a¤è" : in_obj->in_room->name );
+          , in_obj->in_room == NULL ? "æŸå€‹åœ°æ–¹" : in_obj->in_room->name );
       }
     }
 
@@ -856,8 +856,8 @@ SKILL( cast_locate_object )
 
   if ( !found )
   {
-    send_to_char( "§AÅ¥¨£«Õ«Õ³B¶Ç¨Ó¤@°}Án­µ¡M"
-      "³oªşªñ§ä¤£¨ì§A­nªºª««~¡MÅı§AÄ±±o¦³¤@ªÑ¤ò°©®ªµMªº·PÄ±¡C\n\r", ch );
+    send_to_char( "ä½ è½è¦‹å¹½å¹½è™•å‚³ä¾†ä¸€é™£è²éŸ³ï¹"
+      "é€™é™„è¿‘æ‰¾ä¸åˆ°ä½ è¦çš„ç‰©å“ï¹è®“ä½ è¦ºå¾—æœ‰ä¸€è‚¡æ¯›éª¨æ‚šç„¶çš„æ„Ÿè¦ºã€‚\n\r", ch );
   }
   else
   {
@@ -875,7 +875,7 @@ SKILL( cast_summon )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_summon: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_summon: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -883,19 +883,19 @@ SKILL( cast_summon )
     || !verify_char( victim )
     || !victim->in_room )
   {
-    act( "³oªşªñ¨S¦³³o­Ó¤H³á¡T", ch, NULL, NULL, TO_CHAR );
+    act( "é€™é™„è¿‘æ²’æœ‰é€™å€‹äººå–”ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( victim == ch )
   {
-    act( "§A¨S¨Æ¥l³ê¦Û¤v°µ¤°»ò¡S", ch, NULL, NULL, TO_CHAR );
+    act( "ä½ æ²’äº‹å¬å–šè‡ªå·±åšä»€éº¼ï¹–", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ch->in_room == victim->in_room )
   {
-    act( "$n¸ò$N¥u¦³¤@½u¤§¹j§a¡T¦ó¥²ÁÙ­n¥l³ê©O¡S"
+    act( "$nè·Ÿ$Nåªæœ‰ä¸€ç·šä¹‹éš”å§ï¹—ä½•å¿…é‚„è¦å¬å–šå‘¢ï¹–"
       , ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
@@ -909,7 +909,7 @@ SKILL( cast_summon )
     || victim->in_room->NoQuit
     || ch->in_room->NoWhere )
   {
-    act( "$nªºªk³N¥¢±Ñ¤F¡M$Nªº¦ì¸m¬İ¨Ó¤£¯à°÷¨Ï¥Î¥l³ê³N³á¡T"
+    act( "$nçš„æ³•è¡“å¤±æ•—äº†ï¹$Nçš„ä½ç½®çœ‹ä¾†ä¸èƒ½å¤ ä½¿ç”¨å¬å–šè¡“å–”ï¹—"
       , ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
@@ -921,14 +921,14 @@ SKILL( cast_summon )
     || victim->spirit
     || victim->position != POS_STANDING )
   {
-    act( "$n¥¢±Ñ¤F¡M$N¥¿¦b¦£©O¡MÅ¥¤]Å¥¤£¨ì§Aªº¥l³ê¡T"
+    act( "$nå¤±æ•—äº†ï¹$Næ­£åœ¨å¿™å‘¢ï¹è½ä¹Ÿè½ä¸åˆ°ä½ çš„å¬å–šï¹—"
       , ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( IS_NPC( victim ) && IS_SET( victim->act, ACT_TRAIN ) )
   {
-    act( "½Ğ¤£­n§â$N¥s¨Ó¥s¥h¡T", ch, NULL, victim, TO_CHAR );
+    act( "è«‹ä¸è¦æŠŠ$Nå«ä¾†å«å»ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -938,24 +938,24 @@ SKILL( cast_summon )
     || is_keeper( victim )
     || IS_SET( victim->act, ACT_NOSUMMON ) )
   {
-    send_to_char( "¤ÑÃä¶Ç¨Ó¤@°}¯ºÁn¼J¯º§A¡M§Aªº¥l³ê¥¢±Ñ¤F¡C\n\r", ch );
+    send_to_char( "å¤©é‚Šå‚³ä¾†ä¸€é™£ç¬‘è²å˜²ç¬‘ä½ ï¹ä½ çš„å¬å–šå¤±æ•—äº†ã€‚\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, SLOT_FIXITY ) )
   {
-    act( "$N¦n¹³Å¥¤£¨ì§Aªº¥l³ê¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nå¥½åƒè½ä¸åˆ°ä½ çš„å¬å–šï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( TRUE );
   }
 
-  act( "$n¦b¤@°}¥Õ·ÏÅ¢¸n¤§¤U¬ğµM®ø¥¢¤£¨£¤F¡T", victim, NULL, NULL, TO_ROOM );
+  act( "$nåœ¨ä¸€é™£ç™½ç…™ç± ç½©ä¹‹ä¸‹çªç„¶æ¶ˆå¤±ä¸è¦‹äº†ï¹—", victim, NULL, NULL, TO_ROOM );
   char_from_room( victim );
   char_to_room( victim, ch->in_room );
-  act( "$n¬ğµM¤§¶¡±q¤@¹D¤É°_ªºªù¸Ì­±¨«¤F¥X¨Ó¡T", victim, NULL, NULL, TO_ROOM );
-  act( "$N¥¿¦b¹Á¸ÕµÛ¥l³ê§A¡T", ch, NULL, victim,   TO_VICT );
+  act( "$nçªç„¶ä¹‹é–“å¾ä¸€é“å‡èµ·çš„é–€è£¡é¢èµ°äº†å‡ºä¾†ï¹—", victim, NULL, NULL, TO_ROOM );
+  act( "$Næ­£åœ¨å˜—è©¦è‘—å¬å–šä½ ï¹—", ch, NULL, victim,   TO_VICT );
   do_look( victim, "auto" );
 
-  /* ²M°£°lÂÜ¬ö¿ıÂI */
+  /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
   clear_trace( victim, TRUE );
 
   RETURN( TRUE );
@@ -973,15 +973,15 @@ SKILL( cast_ventriloquate )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cast_ventriloquate: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_ventriloquate: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !ch->in_room || !can_see_room( ch ) ) RETURN( FALSE );
 
   pString = one_argument( pString, speaker );
-  sprintf( buf1, "%s »¡¹D: '%s'¡C\n\r",     speaker, pString );
-  sprintf( buf2, "¬Y¤H¥s %s »¡ '%s'¡C\n\r", speaker, pString );
+  sprintf( buf1, "%s èªªé“: '%s'ã€‚\n\r",     speaker, pString );
+  sprintf( buf2, "æŸäººå« %s èªª '%s'ã€‚\n\r", speaker, pString );
 
   for ( vch = ch->in_room->people; vch; vch = vch->next_in_room )
   {
@@ -1001,13 +1001,13 @@ SKILL( cast_acid_blast )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_acid_blast: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_acid_blast: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_ONE );
 
-  act( "$n¶Ê°Êªk¤O¡M±N¤f¤¤ÅÜ¦¨±j»Ä¡M¤@¤f´Â$N¦R¥h¡C"
+  act( "$nå‚¬å‹•æ³•åŠ›ï¹å°‡å£ä¸­è®Šæˆå¼·é…¸ï¹ä¸€å£æœ$Nåå»ã€‚"
     , ch, NULL, victim, TO_ALL );
 
   damage( ch, victim, dam, sn, ATTACK_RANDOM );
@@ -1016,7 +1016,7 @@ SKILL( cast_acid_blast )
   if ( level > 50 )
   {
     sact( ch, victim, NULL,
-      "$n¤f¤¤¦R¥Xªº»Ä²G¸¨¤U¡M«_¥X°}°}¥Õ·Ï¡M³o¹ï$N³y¦¨«Ü¤jªº¶Ë®`¡C" );
+      "$nå£ä¸­åå‡ºçš„é…¸æ¶²è½ä¸‹ï¹å†’å‡ºé™£é™£ç™½ç…™ï¹é€™å°$Né€ æˆå¾ˆå¤§çš„å‚·å®³ã€‚" );
     damage( ch, victim, dam * 2, sn, ATTACK_RANDOM );
   }
 
@@ -1033,25 +1033,25 @@ SKILL( cast_blindness )
 
   if ( !vic )
   {
-    mudlog( LOG_DEBUG, "cast_blindess: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_blindess: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !can_fight( ch, vic ) )
   {
-    act( "§A¤£¯à§Ë½M$Nªº²´¡C", ch, NULL, vic, TO_CHAR );
+    act( "ä½ ä¸èƒ½å¼„ç$Nçš„çœ¼ã€‚", ch, NULL, vic, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( is_affected( vic, sn ) )
   {
-    act( "¹ï¤£°_¡M$N¤w¸g²´ª¼¤F¡T", ch, NULL, vic, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$Nå·²ç¶“çœ¼ç›²äº†ï¹—", ch, NULL, vic, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( !can_damage( vic ) )
   {
-    act( "§A¥Ø«e¨S¦³¿ìªk§Ë½M$N¡T", ch, NULL, vic, TO_CHAR );
+    act( "ä½ ç›®å‰æ²’æœ‰è¾¦æ³•å¼„ç$Nï¹—", ch, NULL, vic, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1060,12 +1060,12 @@ SKILL( cast_blindness )
 
   if ( number_range( 1, 100 ) > chance )
   {
-    send_to_char( "¹ï¤£°_¡M§A¥¢±Ñ¤F¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ å¤±æ•—äº†ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
-  act( "$n¥ÎµL¤ñªº¤ßÆF¾_Àú¥l¨Ó¶Â·t¡M«b¨º¶¡¡MÂù¤â¶Â·tªº$n©¹$N¤@´§¡M"
-       "±N¦¹¶Â·tªş¦b$N¨­¤W¡C", ch, NULL, vic, TO_ALL );
+  act( "$nç”¨ç„¡æ¯”çš„å¿ƒéˆéœ‡ç›ªå¬ä¾†é»‘æš—ï¹å‰é‚£é–“ï¹é›™æ‰‹é»‘æš—çš„$nå¾€$Nä¸€æ®ï¹"
+       "å°‡æ­¤é»‘æš—é™„åœ¨$Nèº«ä¸Šã€‚", ch, NULL, vic, TO_ALL );
 
   af.type      = sn;
   af.location  = APPLY_HITROLL;
@@ -1073,8 +1073,8 @@ SKILL( cast_blindness )
   af.duration  = 1 + ( level / 5 );
   af.level      = level;
   affect_to_char( vic, &af );
-  send_to_char( "¶Â¥ú¤@°{¡M§A¼È®É²´ª¼¤F¡T\n\r", vic );
-  if ( ch != vic ) send_to_char( "¦¨¥\\¬I®i²´ª¼³N¤F¡T\n\r", ch );
+  send_to_char( "é»‘å…‰ä¸€é–ƒï¹ä½ æš«æ™‚çœ¼ç›²äº†ï¹—\n\r", vic );
+  if ( ch != vic ) send_to_char( "æˆåŠŸ\æ–½å±•çœ¼ç›²è¡“äº†ï¹—\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1087,24 +1087,24 @@ SKILL( cast_burning_hands )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_burning_hands: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_burning_hands: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* ³]©w±Ô­z */
+  /* è¨­å®šæ•˜è¿° */
   if ( number_percent() > level )
   {
     sact( ch, victim, NULL,
-      "$n¨ÏºÉ¥ş¤O¡M¾Ä¤O±NÂù´x¶Ê¤Wªk¤O¨Ï¤§µo¬õ°_$R¤õ$Z¡M¦V$N­¸¥h¡T" );
+      "$nä½¿ç›¡å…¨åŠ›ï¹å¥®åŠ›å°‡é›™æŒå‚¬ä¸Šæ³•åŠ›ä½¿ä¹‹ç™¼ç´…èµ·$Rç«$Zï¹å‘$Né£›å»ï¹—" );
   }
   else
   {
     sact( ch, victim, NULL,
-      "$n¶¶¤â¤@´§¡M¤@­Ó$R«_¤õªº¤â´x$Z¦b¤â¤W§Î¦¨¡M¥ß§Y¥H«Ü§Öªº³t«×¦V"
-      "$N­¸¥h¡Mµo¥X¤@¹D¬õ¬õªº©·½u¡T" );
+      "$né †æ‰‹ä¸€æ®ï¹ä¸€å€‹$Rå†’ç«çš„æ‰‹æŒ$Zåœ¨æ‰‹ä¸Šå½¢æˆï¹ç«‹å³ä»¥å¾ˆå¿«çš„é€Ÿåº¦å‘"
+      "$Né£›å»ï¹ç™¼å‡ºä¸€é“ç´…ç´…çš„å¼§ç·šï¹—" );
   }
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_ONE );
 
   damage( ch, victim, dam, sn, ATTACK_RANDOM );
@@ -1121,27 +1121,27 @@ SKILL( cast_call_lightning )
 
   if ( !IS_OUTSIDE( ch ) )
   {
-    send_to_char( "§A¥²¶·­n¦b¤á¥~¡M¤£µM¨S¿ìªk©ñ¹q¡C\n\r", ch );
+    send_to_char( "ä½ å¿…é ˆè¦åœ¨æˆ¶å¤–ï¹ä¸ç„¶æ²’è¾¦æ³•æ”¾é›»ã€‚\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( level < 70 && weather_info.sky < SKY_RAINING )
   {
-    send_to_char( "¤Ñ®ğ¦nªº«Ü¡MµLªk¬I®i³o­Óªk³N¡C\n\r", ch );
+    send_to_char( "å¤©æ°£å¥½çš„å¾ˆï¹ç„¡æ³•æ–½å±•é€™å€‹æ³•è¡“ã€‚\n\r", ch );
     RETURN( FALSE );
   }
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_THR );
   dam = dam / 2;
 
   if ( level < 50 )
-    send_to_char( "¤ÑªÅ¬ğµM¥´°_¹p¨Ó¡T\n\r", ch );
+    send_to_char( "å¤©ç©ºçªç„¶æ‰“èµ·é›·ä¾†ï¹—\n\r", ch );
   else
-    send_to_char( "§A©I¥s¤@¤ù«B¶³¡M±a¨Ó¤@°}°{¹q¡M§ğÀ»©Ò¦³¦b³õªº¼Ä¤H¡T\n\r"
+    send_to_char( "ä½ å‘¼å«ä¸€ç‰‡é›¨é›²ï¹å¸¶ä¾†ä¸€é™£é–ƒé›»ï¹æ”»æ“Šæ‰€æœ‰åœ¨å ´çš„æ•µäººï¹—\n\r"
       ,ch );
 
-  act( "$n©I¥s¤Ñ¹p¡M¥´¦V³o¸Ì©Ò¦³ªº¼Ä¤H¡T", ch, NULL, NULL, TO_ROOM );
+  act( "$nå‘¼å«å¤©é›·ï¹æ‰“å‘é€™è£¡æ‰€æœ‰çš„æ•µäººï¹—", ch, NULL, NULL, TO_ROOM );
 
   for ( vch = char_list; vch; vch = vch_next )
   {
@@ -1160,7 +1160,7 @@ SKILL( cast_call_lightning )
     if ( vch->in_room->area == ch->in_room->area
       && IS_OUTSIDE( vch )
       && IS_AWAKE( vch ) )
-      send_to_char( "¤@¤U°{¹q¹º¹L¤ÑÃä¡M·ÓÄ£µÛ¾ã­Ó¤ÑªÅ¡C\n\r", vch );
+      send_to_char( "ä¸€ä¸‹é–ƒé›»åŠƒéå¤©é‚Šï¹ç…§è€€è‘—æ•´å€‹å¤©ç©ºã€‚\n\r", vch );
   }
 
   RETURN( TRUE );
@@ -1175,18 +1175,18 @@ SKILL( cast_cause_light )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cause_light: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cause_light: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( level < 50 )
     sact( ch, victim, NULL,
-      "$n»´©À©G»y¡MÀş¶¡¦b$N¥|©P¥X²{¤£ª¾¦Wªº¶Â·t¡M«I»kµÛ$E¡T" );
+      "$nè¼•å¿µå’’èªï¹ç¬é–“åœ¨$Nå››å‘¨å‡ºç¾ä¸çŸ¥åçš„é»‘æš—ï¹ä¾µè•è‘—$Eï¹—" );
   else
     sact( ch, victim, NULL,
-      "$n°á¥X¤@¬qÁ}²`ªº©G»y¡M±N$N¥]ªş¦b¶Â·t¤§¤¤¡M²@µL²æ¨­¾l¦a¡T" );
+      "$nå”¸å‡ºä¸€æ®µè‰±æ·±çš„å’’èªï¹å°‡$NåŒ…é™„åœ¨é»‘æš—ä¹‹ä¸­ï¹æ¯«ç„¡è„«èº«é¤˜åœ°ï¹—" );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_ONE );
 
   damage( ch, victim, dam, sn, ATTACK_RANDOM );
@@ -1202,18 +1202,18 @@ SKILL( cast_cause_critical )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cause_critical: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cause_critical: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( level < 50 )
     sact( ch, victim, NULL,
-      "$nÂù¤â¤@ÂĞ¡M°{¥X¤@¤ù¶Â·t¡M«I»kµÛ$Nªº¤ßÆF¡C\n\r"
-      "¥u¨£$N¦b¤@®ÇºGÀzµÛ¡M¦ü¥G«Üµh­W¡T" );
+      "$né›™æ‰‹ä¸€è¦†ï¹é–ƒå‡ºä¸€ç‰‡é»‘æš—ï¹ä¾µè•è‘—$Nçš„å¿ƒéˆã€‚\n\r"
+      "åªè¦‹$Nåœ¨ä¸€æ—æ…˜åšè‘—ï¹ä¼¼ä¹å¾ˆç—›è‹¦ï¹—" );
   else
     sact( ch, victim, NULL,
-      "$nÂù¤âµe¶ê¡M±À¥X¤@­Ó¥i¨£ªº¶Â·t²yÅé­¸¦V$N¡C\n\r"
-      "$N³Q²yÅé¥]ÂĞ¡M¦ü¥G·¥¬°µh­W¡T" );
+      "$né›™æ‰‹ç•«åœ“ï¹æ¨å‡ºä¸€å€‹å¯è¦‹çš„é»‘æš—çƒé«”é£›å‘$Nã€‚\n\r"
+      "$Nè¢«çƒé«”åŒ…è¦†ï¹ä¼¼ä¹æ¥µç‚ºç—›è‹¦ï¹—" );
 
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_FOU );
 
@@ -1230,18 +1230,18 @@ SKILL( cast_cause_serious )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cause_serious: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cause_serious: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( level < 50 )
     sact( ch, victim, NULL,
-      "$n¦V¼»¥¹¬è¨D¶Â·t¡M¨Ã±N¦¹¶Â·tªş¦b$N¨­¤W¡C" );
+      "$nå‘æ’’æ—¦ç¥ˆæ±‚é»‘æš—ï¹ä¸¦å°‡æ­¤é»‘æš—é™„åœ¨$Nèº«ä¸Šã€‚" );
   else
     sact( ch, victim, NULL,
-      "$n¬ğµM¸÷¤U¬è¨D¡R¡u¸U¯àªº¼»¥¹°Ú¡T±NµL¤ñªº¶Â·tªş¦b$N¨­¤W§a¡T" );
+      "$nçªç„¶è·ªä¸‹ç¥ˆæ±‚ï¹•ã€Œè¬èƒ½çš„æ’’æ—¦å•Šï¹—å°‡ç„¡æ¯”çš„é»‘æš—é™„åœ¨$Nèº«ä¸Šå§ï¹—" );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_TWO );
 
   damage( ch, victim, dam, sn, ATTACK_RANDOM );
@@ -1257,13 +1257,13 @@ SKILL( cast_change_sex )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_change_sex: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_change_sex: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "³o¬İ°_¨Ó¹ï$N¦ü¥G°_¤£¤F§@¥Î¡T", ch, NULL, victim, TO_CHAR );
+    act( "é€™çœ‹èµ·ä¾†å°$Nä¼¼ä¹èµ·ä¸äº†ä½œç”¨ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1282,20 +1282,20 @@ SKILL( cast_change_sex )
     break;
 
   default:
-    act( "$NµLªk¶i¦æÅÜ©Ê.", ch, NULL, victim, TO_CHAR );
+    act( "$Nç„¡æ³•é€²è¡Œè®Šæ€§.", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   af.level     = level;
   affect_to_char( victim, &af );
 
-  act( "$n¤âµ²¸t¦L¡M±M¤ß¬èÃ«¡M¤ÑÃä¬ğµM­°¤U¤@¦·¤C±mªº¶³¡T$A"
-       "$nÀş¶¡³Q³o¦·¶³¥]µÛ¡M¤£ª¾¹Dµo¥Í¤F¤°»ò¨Æ¡T$A"
-       "±µµÛ¡M¶³²H­·²M¡M¦ü¥G¤°»ò³£¨S¦³µo¥Í¹L¡C"
+  act( "$næ‰‹çµè–å°ï¹å°ˆå¿ƒç¥ˆç¦±ï¹å¤©é‚Šçªç„¶é™ä¸‹ä¸€æœµä¸ƒå½©çš„é›²ï¹—$A"
+       "$nç¬é–“è¢«é€™æœµé›²åŒ…è‘—ï¹ä¸çŸ¥é“ç™¼ç”Ÿäº†ä»€éº¼äº‹ï¹—$A"
+       "æ¥è‘—ï¹é›²æ·¡é¢¨æ¸…ï¹ä¼¼ä¹ä»€éº¼éƒ½æ²’æœ‰ç™¼ç”Ÿéã€‚"
        , ch, NULL, victim, TO_ALL );
 
-  send_to_char( "§A·PÄ±¨­¤W¦ü¥G°_¤F¤@¨Ç©Ç©ÇªºÅÜ¤Æ¡T\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡MÅÜ©Ê§¹²¦¡C\n\r", ch );
+  send_to_char( "ä½ æ„Ÿè¦ºèº«ä¸Šä¼¼ä¹èµ·äº†ä¸€äº›æ€ªæ€ªçš„è®ŠåŒ–ï¹—\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ï¹è®Šæ€§å®Œç•¢ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1308,28 +1308,28 @@ SKILL( cast_charm_person )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_charm_person: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_charm_person: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim == ch )
   {
-    send_to_char( "¥Í©R¬O«Ü¥i¶Qªº¡M½Ğ¦h¥[¬Ã±¤¡T\n\r", ch );
+    send_to_char( "ç”Ÿå‘½æ˜¯å¾ˆå¯è²´çš„ï¹è«‹å¤šåŠ çæƒœï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !can_damage( victim ) )
   {
-    act( "§A¥Ø«e¨S¦³¿ìªk°g´b$N¡T\n\r", ch, NULL, victim, TO_CHAR );
+    act( "ä½ ç›®å‰æ²’æœ‰è¾¦æ³•è¿·æƒ‘$Nï¹—\n\r", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
-  /* ­Y¹ï¶H¬Oª±®a¥B¤£¬Oµs¸é©Î¬O±ş¤H¥Ç«h¤£¦æ */
+  /* è‹¥å°è±¡æ˜¯ç©å®¶ä¸”ä¸æ˜¯ç›œè³Šæˆ–æ˜¯æ®ºäººçŠ¯å‰‡ä¸è¡Œ */
   if ( is_pk( ch ) && is_pk( victim ) )
   {
     if ( fight_info->status != PK_FIGHT )
     {
-      send_to_char( "¦b³o¬q®É¶¡¡MÁÙ¬O¦n¦n¦a¥ğ®§¤@¤U§a¡T\n\r", ch );
+      send_to_char( "åœ¨é€™æ®µæ™‚é–“ï¹é‚„æ˜¯å¥½å¥½åœ°ä¼‘æ¯ä¸€ä¸‹å§ï¹—\n\r", ch );
       RETURN( FALSE );
     }
   }
@@ -1340,7 +1340,7 @@ SKILL( cast_charm_person )
       && !IS_SET( victim->act, PLR_THIEF  )
       && !IS_SET( victim->act, PLR_BOLTER ) )
     {
-      act( "§A­n§ğÀ»$N¡M½Ğ¥Î $2MURDER$0 ³o­Ó«ü¥O¡C", ch, NULL, victim, TO_CHAR );
+      act( "ä½ è¦æ”»æ“Š$Nï¹è«‹ç”¨ $2MURDER$0 é€™å€‹æŒ‡ä»¤ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN( FALSE );
     }
   }
@@ -1349,7 +1349,7 @@ SKILL( cast_charm_person )
 
   if ( victim->boss )
   {
-    act( "¹ï¤£°_¡M§A¤£¯à°g´b$Nªº¤p°­¡T", ch, NULL, victim->boss, TO_CHAR );
+    act( "å°ä¸èµ·ï¹ä½ ä¸èƒ½è¿·æƒ‘$Nçš„å°é¬¼ï¹—", ch, NULL, victim->boss, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1358,13 +1358,13 @@ SKILL( cast_charm_person )
     || victim->fighting
     || saves_spell( level, victim ) )
   {
-    send_to_char( "«u§r¡T°g´bªºªk³N¥¢±Ñ¤F¡T\n\r", ch );
+    send_to_char( "å“å‘€ï¹—è¿·æƒ‘çš„æ³•è¡“å¤±æ•—äº†ï¹—\n\r", ch );
     RETURN( TRUE );
   }
 
   if ( victim->level > ( level / 10  + number_range( 1, level ) ) )
   {
-    sact( ch, victim, NULL, "$N¬ğµM¤£¨ü$nªº±±¨î¡M¹ï$n®i¶}§ğÀ»¡T" );
+    sact( ch, victim, NULL, "$Nçªç„¶ä¸å—$nçš„æ§åˆ¶ï¹å°$nå±•é–‹æ”»æ“Šï¹—" );
     set_fighting( victim, ch );
     RETURN( FALSE );
   }
@@ -1379,8 +1379,8 @@ SKILL( cast_charm_person )
   af.level     = level;
   affect_to_char( victim, &af );
 
-  act( "¬ğµM¤§¶¡¡M§AÄ±±o$n¦n¹³§A¥¢´²¦h¦~ªº¥D¤H¡T", ch, NULL, victim, TO_VICT );
-  if ( ch != victim ) send_to_char( "¦n¤F¡M°g´b¦¨¥\\¡T\n\r", ch );
+  act( "çªç„¶ä¹‹é–“ï¹ä½ è¦ºå¾—$nå¥½åƒä½ å¤±æ•£å¤šå¹´çš„ä¸»äººï¹—", ch, NULL, victim, TO_VICT );
+  if ( ch != victim ) send_to_char( "å¥½äº†ï¹è¿·æƒ‘æˆåŠŸ\ï¹—\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1394,7 +1394,7 @@ SKILL( cast_chill_touch )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_chill_touch: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_chill_touch: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -1427,15 +1427,15 @@ SKILL( cast_colour_spray )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cast_colour_spray: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_colour_spray: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   sact( ch, victim, NULL,
-    "$nÂù¤â¤@©ñ¡M¤â¤¤µo¥X¤@¹D$R¤C$Y¦â$G±m$S­i$ZÀ»¦V$N¡T" );
+    "$né›™æ‰‹ä¸€æ”¾ï¹æ‰‹ä¸­ç™¼å‡ºä¸€é“$Rä¸ƒ$Yè‰²$Gå½©$Sè™¹$Zæ“Šå‘$Nï¹—" );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_ONE );
 
   if ( saves_spell( level, victim ) ) dam /= 2;
@@ -1453,7 +1453,7 @@ SKILL( cast_create_food )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_create_food: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_create_food: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -1462,13 +1462,13 @@ SKILL( cast_create_food )
 
   if ( obj )
   {
-    act( "$r¸Ì­¹ª«Â×´I¡M§Ö¦Y§a¡MÁÙ°µ¤°»ò­¹ª«¡T", ch, NULL, NULL, TO_CHAR );
+    act( "$rè£¡é£Ÿç‰©è±å¯Œï¹å¿«åƒå§ï¹é‚„åšä»€éº¼é£Ÿç‰©ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ch->in_room->nobject >= MaxRoomObject )
   {
-    send_to_char( "³o¸Ìªºª««~¤Ó¦h¤F¡M½Ğ¥ı©^Äm±¼¤@¨Ç§a¡T\n\r", ch );
+    send_to_char( "é€™è£¡çš„ç‰©å“å¤ªå¤šäº†ï¹è«‹å…ˆå¥‰ç»æ‰ä¸€äº›å§ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -1476,14 +1476,14 @@ SKILL( cast_create_food )
   {
   default:
 
-    mudlog( LOG_DEBUG, "cast_create_food: ¶W¥X½d³ò." );
+    mudlog( LOG_DEBUG, "cast_create_food: è¶…å‡ºç¯„åœ." );
     RETURN( FALSE );
 
   case 0:
 
     if ( !( mushroom = create_object( ObjMushroom, 1 ) ) )
     {
-      mudlog( LOG_DEBUG, "cast_create_food: ¨S¦³­¹ª«: %d.", ObjMushroomVnum );
+      mudlog( LOG_DEBUG, "cast_create_food: æ²’æœ‰é£Ÿç‰©: %d.", ObjMushroomVnum );
       RETURN( FALSE );
     }
     break;
@@ -1492,7 +1492,7 @@ SKILL( cast_create_food )
 
     if ( !( mushroom = create_object( ObjDumpling, 1 ) ) )
     {
-      mudlog( LOG_DEBUG, "cast_create_food: ¨S¦³­¹ª«: %d.", ObjDumplingVnum );
+      mudlog( LOG_DEBUG, "cast_create_food: æ²’æœ‰é£Ÿç‰©: %d.", ObjDumplingVnum );
       RETURN( FALSE );
     }
     break;
@@ -1501,7 +1501,7 @@ SKILL( cast_create_food )
 
     if ( !( mushroom = create_object( ObjBougi, 1 ) ) )
     {
-      mudlog( LOG_DEBUG, "cast_create_food: ¨S¦³­¹ª«: %d.", ObjBougiVnum );
+      mudlog( LOG_DEBUG, "cast_create_food: æ²’æœ‰é£Ÿç‰©: %d.", ObjBougiVnum );
       RETURN( FALSE );
     }
     break;
@@ -1510,7 +1510,7 @@ SKILL( cast_create_food )
 
     if ( !( mushroom = create_object( ObjPon, 1 ) ) )
     {
-      mudlog( LOG_DEBUG, "cast_create_food: ¨S¦³­¹ª«: %d.", ObjPonVnum );
+      mudlog( LOG_DEBUG, "cast_create_food: æ²’æœ‰é£Ÿç‰©: %d.", ObjPonVnum );
       RETURN( FALSE );
     }
     break;
@@ -1519,7 +1519,7 @@ SKILL( cast_create_food )
 
     if ( !( mushroom = create_object( ObjChicken, 1 ) ) )
     {
-      mudlog( LOG_DEBUG, "cast_create_food: ¨S¦³­¹ª«: %d.", ObjChickenVnum );
+      mudlog( LOG_DEBUG, "cast_create_food: æ²’æœ‰é£Ÿç‰©: %d.", ObjChickenVnum );
       RETURN( FALSE );
     }
     break;
@@ -1527,8 +1527,8 @@ SKILL( cast_create_food )
 
   mushroom->value[0] = 5 + level;
   obj_to_room( mushroom, ch->in_room );
-  act( "$p¬ğµM¥Ñ¦a¤W«_¤F¥X¨Ó¡C", ch, mushroom, NULL, TO_ROOM );
-  act( "$p¦b¤@°ï¥Õ¥ú¤¤¥Ñ¦a¤W«_¤F¥X¨Ó¡C", ch, mushroom, NULL, TO_CHAR );
+  act( "$pçªç„¶ç”±åœ°ä¸Šå†’äº†å‡ºä¾†ã€‚", ch, mushroom, NULL, TO_ROOM );
+  act( "$påœ¨ä¸€å †ç™½å…‰ä¸­ç”±åœ°ä¸Šå†’äº†å‡ºä¾†ã€‚", ch, mushroom, NULL, TO_CHAR );
   RETURN( TRUE );
 }
 
@@ -1541,19 +1541,19 @@ SKILL( cast_create_water )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_create_water: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_create_water: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( obj->item_type != ITEM_DRINK_CON )
   {
-    act( "$p¤£¥i¥H®³¨Ó¸Ë¤ô³á¡C", ch, obj, NULL, TO_CHAR );
+    act( "$pä¸å¯ä»¥æ‹¿ä¾†è£æ°´å–”ã€‚", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( obj->value[2] != liq_water->slot && obj->value[1] != 0 )
   {
-    act( "$p¸Ì­±¤w¸g¦³¨ä¥L²GÅéÅo¡C", ch, obj, NULL, TO_CHAR );
+    act( "$pè£¡é¢å·²ç¶“æœ‰å…¶ä»–æ¶²é«”å›‰ã€‚", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1574,7 +1574,7 @@ SKILL( cast_create_water )
       obj->name = str_dup( buf );
     }
 
-    act( "$pªº¤ô§Öº¡¥X¨Ó¤F¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pçš„æ°´å¿«æ»¿å‡ºä¾†äº†ï¹—", ch, obj, NULL, TO_CHAR );
   }
 
   RETURN( TRUE );
@@ -1588,21 +1588,21 @@ SKILL( cast_cure_blindness )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cure_blindness: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cure_blindness: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, SLOT_BLINDNESS ) )
   {
     affect_release( victim, SLOT_BLINDNESS );
-    send_to_char( "§A¤S­«¨£¥ú©ú¤F¡T\n\r", victim );
+    send_to_char( "ä½ åˆé‡è¦‹å…‰æ˜äº†ï¹—\n\r", victim );
 
-    if ( ch != victim ) send_to_char( "Âåªv²´ª¼¦¨¥\\¡T\n\r", ch );
+    if ( ch != victim ) send_to_char( "é†«æ²»çœ¼ç›²æˆåŠŸ\ï¹—\n\r", ch );
     RETURN( TRUE );
   }
   else
   {
-    act( "$Nªº²´·ú¤Q¤Àªº¥¿±`°Ú¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„çœ¼ç›ååˆ†çš„æ­£å¸¸å•Šï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1618,13 +1618,13 @@ SKILL( cast_cure_critical )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cure_critical: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cure_critical: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim->hit >= get_curr_hit( victim ) )
   {
-    act( "$Nªº¥Í©R¤w¸g¨¬°÷¤F¡T", ch , NULL, victim, TO_CHAR );
+    act( "$Nçš„ç”Ÿå‘½å·²ç¶“è¶³å¤ äº†ï¹—", ch , NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1632,15 +1632,15 @@ SKILL( cast_cure_critical )
   victim->hit = UMIN( victim->hit + heal, get_curr_hit( victim ) );
 
   if ( victim->position == POS_SLEEPING && victim != ch )
-    act( "$NªºÂåªv¦æ°ÊÅå°Ê¤F§A¡T", victim, NULL, ch, TO_CHAR );
+    act( "$Nçš„é†«æ²»è¡Œå‹•é©šå‹•äº†ä½ ï¹—", victim, NULL, ch, TO_CHAR );
 
   update_pos( victim );
-  send_to_char( "§A¬İ¨Ó¦ü¥G¤ñ¸û¦n¤F¡T\n\r", victim );
+  send_to_char( "ä½ çœ‹ä¾†ä¼¼ä¹æ¯”è¼ƒå¥½äº†ï¹—\n\r", victim );
 
   if ( victim->hit == get_curr_hit( victim ) )
-    send_to_char( "§A¥ş¨­ªº¶Ë¤f³£®ø¥¢¤F¡T\n\r", victim );
+    send_to_char( "ä½ å…¨èº«çš„å‚·å£éƒ½æ¶ˆå¤±äº†ï¹—\n\r", victim );
 
-  if ( ch != victim ) send_to_char( "¦n¤F¡MÂåªv¦¨¥\\¡T\n\r", ch );
+  if ( ch != victim ) send_to_char( "å¥½äº†ï¹é†«æ²»æˆåŠŸ\ï¹—\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1653,13 +1653,13 @@ SKILL( cast_cure_overdose )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cure_overdose: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cure_overdose: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !victim->pcdata || victim->pcdata->dosage <= 0 )
   {
-    act( "$N¨Ã¨S¦³ÃÄª«¤¤¬r³á¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nä¸¦æ²’æœ‰è—¥ç‰©ä¸­æ¯’å–”ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1667,20 +1667,20 @@ SKILL( cast_cure_overdose )
   victim->pcdata->dosage = UMAX( 0, victim->pcdata->dosage - num );
 
   if ( victim->position == POS_SLEEPING && victim != ch )
-    act( "$NªºÂåªv¦æ°ÊÅå°Ê¤F§A¡T", victim, NULL, ch, TO_CHAR );
+    act( "$Nçš„é†«æ²»è¡Œå‹•é©šå‹•äº†ä½ ï¹—", victim, NULL, ch, TO_CHAR );
 
   update_pos( victim );
 
   if ( victim->pcdata->dosage <= 0 )
   {
-    send_to_char( "§A¨­¤WªºÃÄª«¾l¬r³£®ø¥¢¤F¡T\n\r", victim );
+    send_to_char( "ä½ èº«ä¸Šçš„è—¥ç‰©é¤˜æ¯’éƒ½æ¶ˆå¤±äº†ï¹—\n\r", victim );
   }
   else
   {
-    send_to_char( "§A¨­¤Wªº¾l¬r®ø°h¤F¤£¤Ö¡T\n\r", victim );
+    send_to_char( "ä½ èº«ä¸Šçš„é¤˜æ¯’æ¶ˆé€€äº†ä¸å°‘ï¹—\n\r", victim );
   }
 
-  if ( ch != victim ) send_to_char( "¬Iªk¦n¤F¡C\n\r", ch );
+  if ( ch != victim ) send_to_char( "æ–½æ³•å¥½äº†ã€‚\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -1695,7 +1695,7 @@ SKILL( cast_remeday )
 
   if ( !ch->in_room )
   {
-    send_to_char( "§A¨­³Bµ´¹Ò¡MµLªk¬I®i¦¹ªk³N¡T\n\r", ch );
+    send_to_char( "ä½ èº«è™•çµ•å¢ƒï¹ç„¡æ³•æ–½å±•æ­¤æ³•è¡“ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -1714,11 +1714,11 @@ SKILL( cast_remeday )
     {
       heal = victim->max_hit * percent / 100;
       victim->hit = UMIN( victim->max_hit, victim->hit + heal );
-      act( "$Nªº§®¤â¦^¬K¡M¨Ï§A¥Ñ¦º¤`Ãä½t©Ô¤F¦^¨Ó¡T", victim, NULL, ch, TO_CHAR );
+      act( "$Nçš„å¦™æ‰‹å›æ˜¥ï¹ä½¿ä½ ç”±æ­»äº¡é‚Šç·£æ‹‰äº†å›ä¾†ï¹—", victim, NULL, ch, TO_CHAR );
     }
   }
 
-  send_to_char( "§Aªº¤¸®ğ¤j¶Ë¡M±o¦n¦n­×¾i¡T\n\r", ch );
+  send_to_char( "ä½ çš„å…ƒæ°£å¤§å‚·ï¹å¾—å¥½å¥½ä¿®é¤Šï¹—\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1731,13 +1731,13 @@ SKILL( cast_cure_light )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cure_light: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cure_light: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim->hit >= get_curr_hit( victim ) )
   {
-    act( "$Nªº¥Í©R¤w¸g¨¬°÷¤F¡T", ch , NULL, victim, TO_CHAR );
+    act( "$Nçš„ç”Ÿå‘½å·²ç¶“è¶³å¤ äº†ï¹—", ch , NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1745,15 +1745,15 @@ SKILL( cast_cure_light )
   victim->hit = UMIN( victim->hit + heal, get_curr_hit( victim ) );
 
   if ( victim->position == POS_SLEEPING && victim != ch )
-    act( "$NªºÂåªv¦æ°ÊÅå°Ê¤F§A¡T", victim, NULL, ch, TO_CHAR );
+    act( "$Nçš„é†«æ²»è¡Œå‹•é©šå‹•äº†ä½ ï¹—", victim, NULL, ch, TO_CHAR );
 
   update_pos( victim );
-  send_to_char( "§A·PÄ±¦n¦h¤F¡T\n\r", victim );
+  send_to_char( "ä½ æ„Ÿè¦ºå¥½å¤šäº†ï¹—\n\r", victim );
 
   if ( victim->hit == get_curr_hit( victim ) )
-    send_to_char( "§A¥ş¨­ªº¶Ë¤f³£®ø¥¢¤F¡T\n\r", victim );
+    send_to_char( "ä½ å…¨èº«çš„å‚·å£éƒ½æ¶ˆå¤±äº†ï¹—\n\r", victim );
 
-  if ( ch != victim ) send_to_char( "¬Iªk¦n¤F¡C\n\r", ch );
+  if ( ch != victim ) send_to_char( "æ–½æ³•å¥½äº†ã€‚\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -1766,22 +1766,22 @@ SKILL( cast_cure_poison )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cure_poison: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cure_poison: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, SLOT_POISON ) )
   {
     affect_release( victim, SLOT_POISON );
-    act( "$N¬İ°_¨Ó¦n¦h¤F", ch, NULL, victim, TO_NOTVICT );
-    send_to_char( "¤@°}²M¬y¬y¤J§Aªº¤ô¤¤¡M¤£µÎªAªº·PÄ±¤£¦A¡C\n\r", victim );
-    send_to_char( "¦n¤F¡C\n\r", ch );
+    act( "$Nçœ‹èµ·ä¾†å¥½å¤šäº†", ch, NULL, victim, TO_NOTVICT );
+    send_to_char( "ä¸€é™£æ¸…æµæµå…¥ä½ çš„æ°´ä¸­ï¹ä¸èˆ’æœçš„æ„Ÿè¦ºä¸å†ã€‚\n\r", victim );
+    send_to_char( "å¥½äº†ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
   else
   {
-    act( "$NÄ±±o¨S¦³¤°»ò§ïÅÜ¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nè¦ºå¾—æ²’æœ‰ä»€éº¼æ”¹è®Šï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1797,13 +1797,13 @@ SKILL( cast_cure_serious )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_cure_serious: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cure_serious: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim->hit >= get_curr_hit( victim ) )
   {
-    act( "$Nªº¥Í©R¤w¸g«D±`¨¬°÷¤F¡T", ch , NULL, victim, TO_CHAR );
+    act( "$Nçš„ç”Ÿå‘½å·²ç¶“éå¸¸è¶³å¤ äº†ï¹—", ch , NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -1811,15 +1811,15 @@ SKILL( cast_cure_serious )
   victim->hit = UMIN( victim->hit + heal, get_curr_hit( victim ) );
 
   if ( victim->position == POS_SLEEPING && victim != ch )
-    act( "$NªºÂåªv¦æ°ÊÅå°Ê¤F§A¡T", victim, NULL, ch, TO_CHAR );
+    act( "$Nçš„é†«æ²»è¡Œå‹•é©šå‹•äº†ä½ ï¹—", victim, NULL, ch, TO_CHAR );
 
   update_pos( victim );
-  send_to_char( "§A·PÄ±¦n¦h¤F¡T\n\r", victim );
+  send_to_char( "ä½ æ„Ÿè¦ºå¥½å¤šäº†ï¹—\n\r", victim );
 
   if ( victim->hit == get_curr_hit( victim ) )
-    send_to_char( "§Aªº¶Ë¤f³£¤w¸g®ø¥¢¤F¡T\n\r", victim );
+    send_to_char( "ä½ çš„å‚·å£éƒ½å·²ç¶“æ¶ˆå¤±äº†ï¹—\n\r", victim );
 
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -1833,19 +1833,19 @@ SKILL( cast_curse )
 
   if ( !vic )
   {
-    mudlog( LOG_DEBUG, "cast_curse: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_curse: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( vic, sn ) || saves_spell( level, vic ) )
   {
-    act( "§AµLªk¶A©G$N¡T", ch, NULL, vic, TO_CHAR );
+    act( "ä½ ç„¡æ³•è©›å’’$Nï¹—", ch, NULL, vic, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( vic->alignment > 0 && ( vic->alignment / 10 > level ) )
   {
-    act( "¥Ñ$NªºÀY¤W¤É°_¤F¤@¹Îªº¥Õ¦â¥ú¨~¡Mªı¤î¤F$nªº¶A©G¡T"
+    act( "ç”±$Nçš„é ­ä¸Šå‡èµ·äº†ä¸€åœ˜çš„ç™½è‰²å…‰èŠ’ï¹é˜»æ­¢äº†$nçš„è©›å’’ï¹—"
         , ch, NULL, vic, TO_ALL );
 
     RETURN( FALSE );
@@ -1862,8 +1862,8 @@ SKILL( cast_curse )
   af.modifier  = 1;
   affect_to_char( vic, &af );
 
-  send_to_char( "§A·P¨ì¤@°}·t¶ÂÀ£§íµÛ§Aªº¤O¶q¡C\n\r", vic );
-  if ( ch != vic ) send_to_char( "¶A©G¦¨¥\\¡C\n\r", ch );
+  send_to_char( "ä½ æ„Ÿåˆ°ä¸€é™£æš—é»‘å£“æŠ‘è‘—ä½ çš„åŠ›é‡ã€‚\n\r", vic );
+  if ( ch != vic ) send_to_char( "è©›å’’æˆåŠŸ\ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1876,13 +1876,13 @@ SKILL( cast_detect_evil )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_detect_evil: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_detect_evil: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    send_to_char( "³o¬İ°_¨Ó¦ü¥G¨S¦³¥ô¦ó®ÄªG¡T\n\r", ch );
+    send_to_char( "é€™çœ‹èµ·ä¾†ä¼¼ä¹æ²’æœ‰ä»»ä½•æ•ˆæœï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -1892,8 +1892,8 @@ SKILL( cast_detect_evil )
   af.location  = APPLY_NONE;
   af.level     = level;
   affect_to_char( victim, &af );
-  send_to_char( "§Aªº²´·úµo¥X¤F¤@°}¤õ¬õªº¥ú¨~¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "ä½ çš„çœ¼ç›ç™¼å‡ºäº†ä¸€é™£ç«ç´…çš„å…‰èŠ’ã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1906,13 +1906,13 @@ SKILL( cast_detect_hidden )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_detect_hidden: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_detect_hidden: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    send_to_char( "§Aªº²´·ú¤w¸g°÷¾U§Q¡T\n\r", victim );
+    send_to_char( "ä½ çš„çœ¼ç›å·²ç¶“å¤ éŠ³åˆ©ï¹—\n\r", victim );
     RETURN( FALSE );
   }
 
@@ -1922,8 +1922,8 @@ SKILL( cast_detect_hidden )
   af.modifier  = 0;
   af.level     = level;
   affect_to_char( victim, &af );
-  send_to_char( "§AÄ±±o¥|©P³£¬İ±o«Ü²M·¡¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "ä½ è¦ºå¾—å››å‘¨éƒ½çœ‹å¾—å¾ˆæ¸…æ¥šã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1936,13 +1936,13 @@ SKILL( cast_detect_invis )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_detect_invis: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_detect_invis: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    send_to_char( "§Aªº²´·ú¤w¸g°÷µR§Q¤F¡T\n\r", ch );
+    send_to_char( "ä½ çš„çœ¼ç›å·²ç¶“å¤ çŠ€åˆ©äº†ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -1953,8 +1953,8 @@ SKILL( cast_detect_invis )
   af.level     = level;
   affect_to_char( victim, &af );
 
-  send_to_char( "§A¦ü¥G¥i¥H¬İ¨ì¤@¨Ç¤£¦PªºªF¦è¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡T\n\r", ch );
+  send_to_char( "ä½ ä¼¼ä¹å¯ä»¥çœ‹åˆ°ä¸€äº›ä¸åŒçš„æ±è¥¿ã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ï¹—\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1967,13 +1967,13 @@ SKILL( cast_detect_magic )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_detect_magic: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_detect_magic: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    send_to_char( "³o¦ü¥G°_¤£¤F¥ô¦ó§@¥Î¡T\n\r", victim );
+    send_to_char( "é€™ä¼¼ä¹èµ·ä¸äº†ä»»ä½•ä½œç”¨ï¹—\n\r", victim );
     RETURN( FALSE );
   }
 
@@ -1983,8 +1983,8 @@ SKILL( cast_detect_magic )
   af.location  = APPLY_NONE;
   af.level     = level;
   affect_to_char( victim, &af );
-  send_to_char( "§Aªº²´·ú§ó¾U§Q¤F¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "ä½ çš„çœ¼ç›æ›´éŠ³åˆ©äº†ã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -1997,13 +1997,13 @@ SKILL( cast_detect_mask )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_detect_mask: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_detect_mask: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    send_to_char( "³o¦ü¥G°_¤£¤F¥ô¦ó§@¥Î¡T\n\r", victim );
+    send_to_char( "é€™ä¼¼ä¹èµ·ä¸äº†ä»»ä½•ä½œç”¨ï¹—\n\r", victim );
     RETURN( FALSE );
   }
 
@@ -2014,8 +2014,8 @@ SKILL( cast_detect_mask )
   af.level     = level;
   affect_to_char( victim, &af );
 
-  send_to_char( "§Aªº²´·ú¥i¥H¬İ¨ì©ö®eªº¤H¤F¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "ä½ çš„çœ¼ç›å¯ä»¥çœ‹åˆ°æ˜“å®¹çš„äººäº†ã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -2028,20 +2028,20 @@ SKILL( cast_detect_poison )
 
   if ( !ch || !obj )
   {
-    mudlog( LOG_DEBUG, "cast_detect_poison: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_detect_poison: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( obj->item_type == ITEM_DRINK_CON || obj->item_type == ITEM_FOOD )
   {
-    if ( obj->value[3] == 0 ) act( "$p¬İ¨Ó¤£¿ù¦Y¡C", ch, obj, NULL, TO_CHAR );
-    else  act( "$p¦n¹³¦³¤@ÂI²§¨ı¡C", ch, obj, NULL, TO_CHAR );
+    if ( obj->value[3] == 0 ) act( "$pçœ‹ä¾†ä¸éŒ¯åƒã€‚", ch, obj, NULL, TO_CHAR );
+    else  act( "$på¥½åƒæœ‰ä¸€é»ç•°å‘³ã€‚", ch, obj, NULL, TO_CHAR );
 
     RETURN( TRUE );
   }
   else
   {
-    act( "$p¬İ°_¨Ó¨Ã¨S¦³¬r§a¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pçœ‹èµ·ä¾†ä¸¦æ²’æœ‰æ¯’å§ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -2060,7 +2060,7 @@ SKILL( cast_dispel_magic )
 
   if ( !( paf = ch->affected ) )
   {
-    send_to_char( "¹ï¤£°_¡M§A¨­¤W¨S¦³¥ô¦óªºªk³N¼vÅT¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ èº«ä¸Šæ²’æœ‰ä»»ä½•çš„æ³•è¡“å½±éŸ¿ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -2087,13 +2087,13 @@ SKILL( cast_dispel_magic )
 
     if ( number_range( 1, 100) <= chance )
     {
-      act( "¼vÅT§A¨­Åéªº$3$w$0¤w¸g³Q²¾°£¤F¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "å½±éŸ¿ä½ èº«é«”çš„$3$w$0å·²ç¶“è¢«ç§»é™¤äº†ï¹—", ch, pSkill, NULL, TO_CHAR );
       affect_remove( ch, paf );
     }
 
     else
     {
-      act( "§A¨­¤Wªº$3$w$0©|¥¼³Q²¾°£¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ èº«ä¸Šçš„$3$w$0å°šæœªè¢«ç§»é™¤ï¹—", ch, pSkill, NULL, TO_CHAR );
     }
   }
 
@@ -2111,13 +2111,13 @@ SKILL( cast_dispel_evil )
 
   if ( IS_GOOD( victim ) )
   {
-    act( "$N¨ü¨ì¤Ñ¯«ªº«OÅ@¡M§A¶Ë¤£¨ì¥L¡C", ch, NULL, victim, TO_ROOM );
+    act( "$Nå—åˆ°å¤©ç¥çš„ä¿è­·ï¹ä½ å‚·ä¸åˆ°ä»–ã€‚", ch, NULL, victim, TO_ROOM );
     RETURN( TRUE );
   }
 
   if ( IS_NEUTRAL( victim ) )
   {
-    act( "$N¬İ¨Ó¨S¤°»ò¼vÅT¡C", ch, NULL, victim, TO_CHAR );
+    act( "$Nçœ‹ä¾†æ²’ä»€éº¼å½±éŸ¿ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( TRUE );
   }
 
@@ -2135,9 +2135,9 @@ SKILL( cast_earthquake )
 
   PUSH_FUNCTION( "cast_earthquake" );
 
-  act( "$rªşªñ¦aªí±j¯P¦a¾_°ÊµÛ¡T", ch, NULL, NULL, TO_ALL );
+  act( "$ré™„è¿‘åœ°è¡¨å¼·çƒˆåœ°éœ‡å‹•è‘—ï¹—", ch, NULL, NULL, TO_ALL );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_TWO );
 
   for ( vch = char_list; vch; vch = vch_next )
@@ -2158,7 +2158,7 @@ SKILL( cast_earthquake )
     }
 
     if ( vch->in_room->area == ch->in_room->area )
-      send_to_char( "¤j¦a¤£°±¦a·n°ÊµÛ¡T\n\r", vch );
+      send_to_char( "å¤§åœ°ä¸åœåœ°æ–å‹•è‘—ï¹—\n\r", vch );
   }
 
   RETURN( TRUE );
@@ -2173,23 +2173,23 @@ SKILL( cast_enchant_weapon )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_enchant_weapon: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_enchant_weapon: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( obj->item_type != ITEM_WEAPON || obj->Magic || obj->affected )
   {
-    act( "$p¤w¸g¤£¯à¦A¥[±j¤F¡T", ch, obj, NULL, TO_CHAR );
+    act( "$på·²ç¶“ä¸èƒ½å†åŠ å¼·äº†ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( obj->level > ch->level )
   {
-    act( "$p¤£¬O$n©Ò¯àÀH·N±±¨îªº!", ch, obj, NULL, TO_CHAR );
+    act( "$pä¸æ˜¯$næ‰€èƒ½éš¨æ„æ§åˆ¶çš„!", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
-   /* °t¸m°O¾ĞÅé */
+   /* é…ç½®è¨˜æ†¶é«” */
   paf            = alloc_struct( STRUCT_AFFECT_DATA );
   paf->type      = sn;
   paf->duration  = -1;
@@ -2199,7 +2199,7 @@ SKILL( cast_enchant_weapon )
   paf->next      = obj->affected;
   obj->affected  = paf;
 
-  /* °t¸m°O¾ĞÅé */
+  /* é…ç½®è¨˜æ†¶é«” */
   paf            = alloc_struct( STRUCT_AFFECT_DATA );
   paf->type      = -1;
   paf->duration  = -1;
@@ -2213,22 +2213,22 @@ SKILL( cast_enchant_weapon )
   if ( IS_GOOD( ch ) )
   {
     obj->AntiEvil = TRUE;
-    act( "$pµo¥X¤@¤ù²H²Hªº$5ÂÅ¥ú$0¡C", ch, obj, NULL, TO_CHAR );
+    act( "$pç™¼å‡ºä¸€ç‰‡æ·¡æ·¡çš„$5è—å…‰$0ã€‚", ch, obj, NULL, TO_CHAR );
   }
 
   else if ( IS_EVIL( ch ) )
   {
     obj->AntiGood = TRUE;
-    act( "$pµo¥X¤@¤ù²H²Hªº$1¬õ¥ú$0¡C", ch, obj, NULL, TO_CHAR );
+    act( "$pç™¼å‡ºä¸€ç‰‡æ·¡æ·¡çš„$1ç´…å…‰$0ã€‚", ch, obj, NULL, TO_CHAR );
   }
   else
   {
     obj->AntiEvil = TRUE;
     obj->AntiGood = TRUE;
-    act( "$pµo¥X¤@¤ù²H²Hªº$3¶À¥ú$0¡C", ch, obj, NULL, TO_CHAR );
+    act( "$pç™¼å‡ºä¸€ç‰‡æ·¡æ·¡çš„$3é»ƒå…‰$0ã€‚", ch, obj, NULL, TO_CHAR );
   }
 
-  send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -2244,55 +2244,55 @@ SKILL( cast_fireball )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_fireball: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_fireball: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_THR );
 
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN( FALSE );
 
   case 0:
     sact( ch, victim, NULL,
-      "$n±N¤â¤Wªº¼ö·½¶°¤¤¡M§Î¦¨¤@­Ó©æ«ü¯ë¤j¤pªº¤õ²y¡M¥H¦¸¤õ²y¥á¦V$N¡T" );
+      "$nå°‡æ‰‹ä¸Šçš„ç†±æºé›†ä¸­ï¹å½¢æˆä¸€å€‹æ‹‡æŒ‡èˆ¬å¤§å°çš„ç«çƒï¹ä»¥æ¬¡ç«çƒä¸Ÿå‘$Nï¹—" );
     break;
 
   case 1:
     sact( ch, victim, NULL,
-      "$n»E¶°¤F¤j¦ÛµM¤@¨Ç´²¦bªÅ¤¤ªº¼ö¶q¡M¶°¤¤¦b¤â´x³B¡T$A"
-      "ÅZ¦a¡M$e±N³o¤@¨Ç¤p¼ö²y¥á¦V$N¡M¤@¹D¹D¤õ¥ú¦V$Eöt¥h¡T" );
+      "$nèšé›†äº†å¤§è‡ªç„¶ä¸€äº›æ•£åœ¨ç©ºä¸­çš„ç†±é‡ï¹é›†ä¸­åœ¨æ‰‹æŒè™•ï¹—$A"
+      "é©€åœ°ï¹$eå°‡é€™ä¸€äº›å°ç†±çƒä¸Ÿå‘$Nï¹ä¸€é“é“ç«å…‰å‘$Eé£†å»ï¹—" );
     break;
 
   case 2:
     sact( ch, victim, NULL,
-      "$n«Ì®ğ¾®¯«¡M¯«¹C¤Óµê¡M±µµÛ¤@Áû¤Ú´x¯ë¤j¤pªº¤õ²y¥X²{¦b$e²´«e¡T$A"
-      "$n¤@¨Ï¤O¡M³o¤@Áû¨`¼öªº¤õ²y«K¦V$N«æ½Ä¦Ó¥h¡M®ğ¶ÕÅå¤H¡T" );
+      "$nå±æ°£å‡ç¥ï¹ç¥éŠå¤ªè™›ï¹æ¥è‘—ä¸€é¡†å·´æŒèˆ¬å¤§å°çš„ç«çƒå‡ºç¾åœ¨$eçœ¼å‰ï¹—$A"
+      "$nä¸€ä½¿åŠ›ï¹é€™ä¸€é¡†ç¼ç†±çš„ç«çƒä¾¿å‘$Næ€¥è¡è€Œå»ï¹æ°£å‹¢é©šäººï¹—" );
     break;
 
   case 3:
     sact( ch, victim, NULL,
-      "¥u¨£$n¤@­Óµo®ğ¡M³\\¦hªº¦p¥Û¶ô¯ë¤jªº¤õ²y¥X²{¦b$e¥|©P¤£°±³òÂ¶µÛ¡T$A"
-      "±µµÛ³o¤@ÁûÁû¤õ²y¥|­±¤K¤èªºÀ»¦V$N¡M»á¬°§§Æ[¡T" );
+      "åªè¦‹$nä¸€å€‹ç™¼æ°£ï¹è¨±\å¤šçš„å¦‚çŸ³å¡Šèˆ¬å¤§çš„ç«çƒå‡ºç¾åœ¨$eå››å‘¨ä¸åœåœç¹è‘—ï¹—$A"
+      "æ¥è‘—é€™ä¸€é¡†é¡†ç«çƒå››é¢å…«æ–¹çš„æ“Šå‘$Nï¹é —ç‚ºå£¯è§€ï¹—" );
     break;
 
   case 4:
     sact( ch, victim, NULL,
-      "$n°á§¹©G»y¡M¤@Áû·¥¤jªº¤õ²y¹³¬O$Y¤¸®ğ¥É$Z¤@¯ë¥X²{¦b$e¤WªÅ¡MºÑÄR½÷·×¡C$A"
-      "$n¦VµÛ$N¤@«ü¡M¤õ²y¤@¯ë«K¹³¦³¥Í©R¤@¼Ëª½ª½ªº­¸©¹$E¡MÅı$EÁ×µL¥iÁ×¡C" );
+      "$nå”¸å®Œå’’èªï¹ä¸€é¡†æ¥µå¤§çš„ç«çƒåƒæ˜¯$Yå…ƒæ°£ç‰$Zä¸€èˆ¬å‡ºç¾åœ¨$eä¸Šç©ºï¹ç¢§éº—è¼ç…Œã€‚$A"
+      "$nå‘è‘—$Nä¸€æŒ‡ï¹ç«çƒä¸€èˆ¬ä¾¿åƒæœ‰ç”Ÿå‘½ä¸€æ¨£ç›´ç›´çš„é£›å¾€$Eï¹è®“$Eé¿ç„¡å¯é¿ã€‚" );
     break;
 
   case 5:
     sact( ch, victim, NULL,
-      "$n¦b¥|©P¹º¤U¤@­Óµ²¬É¡M¥u¨£¥|©Pªº´º¦â¶}©lÅÜ°Ê¡M¦ü¥G¨Ó¨ì¤F¤@­Ó"
-      "¤£¤@¼Ëªº¦a¤è¡M³o¸ÌªL¤ì«C»A¡Mª¤·Ï¸Í¸Í¡T$A"
-      "¥u¨£$n¯B¥X¤£¤@¼Ëªº·L¯º¡M¤@ºØ»Àµøªº¯º¡M¤@°}¨HÀq¡T$A"
-      "$R                     ·¥ ·Å ¤õ ²y   $Z               $A"
-      "¤@­Ó·¥¤jªº°ª·Å¤õ²y®µµÛ«l­·¦VµÛ$N¨göt¦Ó¥h¡T¡T" );
+      "$nåœ¨å››å‘¨åŠƒä¸‹ä¸€å€‹çµç•Œï¹åªè¦‹å››å‘¨çš„æ™¯è‰²é–‹å§‹è®Šå‹•ï¹ä¼¼ä¹ä¾†åˆ°äº†ä¸€å€‹"
+      "ä¸ä¸€æ¨£çš„åœ°æ–¹ï¹é€™è£¡æ—æœ¨é’ç¿ ï¹ç‚Šç…™è£Šè£Šï¹—$A"
+      "åªè¦‹$næµ®å‡ºä¸ä¸€æ¨£çš„å¾®ç¬‘ï¹ä¸€ç¨®é„™è¦–çš„ç¬‘ï¹ä¸€é™£æ²ˆé»˜ï¹—$A"
+      "$R                     æ¥µ æº« ç« çƒ   $Z               $A"
+      "ä¸€å€‹æ¥µå¤§çš„é«˜æº«ç«çƒæŒ¾è‘—å‹é¢¨å‘è‘—$Nç‹‚é£†è€Œå»ï¹—ï¹—" );
     dam = number_range( dam, UMIN( LEVEL_TWO_DAM, dam * 2 ) );
     break;
   }
@@ -2314,22 +2314,22 @@ SKILL( cast_flamestrike )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_flamestrike: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_flamestrike: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !ch->in_room || !victim->in_room ) RETURN( FALSE );
 
-  sact( ch, victim, NULL, "$R$n$RÀq°á©G»y¡MÂà²´¶¡§AÄ±±o¥|©P¦ü"
-    "¥G³Q¤õ¿N¨`¹L¤@¼Ë¡M¤o¯ó¤£¥Í¡T$Z$A" );
+  sact( ch, victim, NULL, "$R$n$Ré»˜å”¸å’’èªï¹è½‰çœ¼é–“ä½ è¦ºå¾—å››å‘¨ä¼¼"
+    "ä¹è¢«ç«ç‡’ç¼éä¸€æ¨£ï¹å¯¸è‰ä¸ç”Ÿï¹—$Z$A" );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_TWO );
 
   if ( !IS_NPC( victim ) )
   {
-    sact( ch, victim, NULL, "$R$n$R¤â¶¶¶Õ¤@´§¡M¤@ªÑ·¥¼öªº®ğ¬y"
-      "®µ±a°®§òªº¨g­·¦VµÛ$N$R¹Gªñ¡C$Z" );
+    sact( ch, victim, NULL, "$R$n$Ræ‰‹é †å‹¢ä¸€æ®ï¹ä¸€è‚¡æ¥µç†±çš„æ°£æµ"
+      "æŒ¾å¸¶ä¹¾æ—±çš„ç‹‚é¢¨å‘è‘—$N$Ré€¼è¿‘ã€‚$Z" );
 
     damage( ch, victim, UMIN( LEVEL_TWO_DAM, dam * 2 ), sn, ATTACK_RANDOM );
     RETURN( TRUE );
@@ -2339,16 +2339,16 @@ SKILL( cast_flamestrike )
   {
     vic_next = vic->next_in_room;
 
-    /* ©Çª«¤£¥´©Çª« */
+    /* æ€ªç‰©ä¸æ‰“æ€ªç‰© */
     if ( IS_NPC( ch ) && IS_NPC( vic ) ) continue;
 
     if ( check_can_kill( ch, vic ) == TRUE )
     {
       if ( loop > 3 ) sact( ch, vic, NULL,
-        "¥|©P¤@¤ù¤õ®ü¡M$nªº$R¤õµK$Z¤£°±ªº¿N¨`µÛ$Nªº¥Í©R¡T" );
+        "å››å‘¨ä¸€ç‰‡ç«æµ·ï¹$nçš„$Rç«ç„°$Zä¸åœçš„ç‡’ç¼è‘—$Nçš„ç”Ÿå‘½ï¹—" );
 
       else sact( ch, vic, NULL,
-        "$n±a°_¤@³õ$R¯PµK$Z±N$Nº¥º¥¦a§]¾½¡M­n±N$E¸m©ó¦º¦a¡T" );
+        "$nå¸¶èµ·ä¸€å ´$Rçƒˆç„°$Zå°‡$Næ¼¸æ¼¸åœ°åå™¬ï¹è¦å°‡$Eç½®æ–¼æ­»åœ°ï¹—" );
 
       dam = UMAX( 0, number_range( dam
         , dam + ( UMIN( MAX_MULTIPLE, loop++ ) * get_curr_int( ch ) ) ) );
@@ -2361,8 +2361,8 @@ SKILL( cast_flamestrike )
 
   if ( loop > 6 && victim && can_damage( victim ) )
   {
-    sact( ch, victim, NULL, "$nªº¤õµK¿N¨`¤F¤@¤Á¡M¤@¨Ç¶Ã¼uªº"
-      "$R¨`¼ö¤õµK$Z¤£¤p¤ß¤S¿N¶Ë¤F$N¡C" );
+    sact( ch, victim, NULL, "$nçš„ç«ç„°ç‡’ç¼äº†ä¸€åˆ‡ï¹ä¸€äº›äº‚å½ˆçš„"
+      "$Rç¼ç†±ç«ç„°$Zä¸å°å¿ƒåˆç‡’å‚·äº†$Nã€‚" );
     damage( ch, victim, dam, sn, ATTACK_RANDOM );
   }
 
@@ -2379,7 +2379,7 @@ SKILL( cast_faerie_fire )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_faerie_fire: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_faerie_fire: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -2391,8 +2391,8 @@ SKILL( cast_faerie_fire )
   af.modifier  = number_range( level, level * 3 );
   af.level     = level;
   affect_to_char( victim, &af );
-  send_to_char( "§A³Q¤@¹Î¯»¬õªº·ÏÃú¥]³ò¡M´N¹³¤@°¦¯»¬õ°\\¤@¼Ë¡C\n\r", victim );
-  act( "$n³Q¤@¹Î¯»¬õ·ÏÃú¥]³òµÛ¡C", victim, NULL, NULL, TO_ROOM );
+  send_to_char( "ä½ è¢«ä¸€åœ˜ç²‰ç´…çš„ç…™éœ§åŒ…åœï¹å°±åƒä¸€éš»ç²‰ç´…è±¹\ä¸€æ¨£ã€‚\n\r", victim );
+  act( "$nè¢«ä¸€åœ˜ç²‰ç´…ç…™éœ§åŒ…åœè‘—ã€‚", victim, NULL, NULL, TO_ROOM );
   RETURN( TRUE );
 }
 
@@ -2404,12 +2404,12 @@ SKILL( cast_faerie_fog )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_farie_fog: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "cast_farie_fog: ä¾†æºä¸æ­£ç¢º." );
     RETURN( FALSE );
   }
 
-  act( "$n¹³¤@°¦ÃÊßï¤@¼Ë¦R¥X¤@¹Îµµ¦âªº·ÏÃú¡C", ch, NULL, NULL, TO_ROOM );
-  send_to_char( "§A¦R¥X¤@¹Îµµ¦âªº·ÏÃú¡C\n\r", ch );
+  act( "$nåƒä¸€éš»èŸ¾èœä¸€æ¨£åå‡ºä¸€åœ˜ç´«è‰²çš„ç…™éœ§ã€‚", ch, NULL, NULL, TO_ROOM );
+  send_to_char( "ä½ åå‡ºä¸€åœ˜ç´«è‰²çš„ç…™éœ§ã€‚\n\r", ch );
 
   for ( ich = ch->in_room->people; ich; ich = ich->next_in_room )
   {
@@ -2421,8 +2421,8 @@ SKILL( cast_faerie_fog )
     affect_release( ich, SLOT_SNEAK      );
     affect_release( ich, SLOT_MASK       );
 
-    act( "$nªº¨­§ÎºCºC¦a¥X²{¤F¡T", ich, NULL, NULL, TO_ROOM );
-    send_to_char( "§A²{§Î¤F¡T\n\r", ich );
+    act( "$nçš„èº«å½¢æ…¢æ…¢åœ°å‡ºç¾äº†ï¹—", ich, NULL, NULL, TO_ROOM );
+    send_to_char( "ä½ ç¾å½¢äº†ï¹—\n\r", ich );
   }
 
   RETURN( TRUE );
@@ -2437,13 +2437,13 @@ SKILL( cast_fly )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_fly: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_fly: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim->mount )
   {
-    act( "¦]¬°§AÃMµÛ$N¡M©Ò¥HµLªk¬I®i³oºØªk³N¡T"
+    act( "å› ç‚ºä½ é¨è‘—$Nï¹æ‰€ä»¥ç„¡æ³•æ–½å±•é€™ç¨®æ³•è¡“ï¹—"
       , victim, NULL, victim->mount, TO_CHAR );
 
     RETURN( FALSE );
@@ -2451,7 +2451,7 @@ SKILL( cast_fly )
 
   if ( victim->mount_by )
   {
-    act( "¦]¬°§A¥¿³Q$NÃMµÛ¡M©Ò¥HµLªk¬I®i³oºØªk³N¡T"
+    act( "å› ç‚ºä½ æ­£è¢«$Né¨è‘—ï¹æ‰€ä»¥ç„¡æ³•æ–½å±•é€™ç¨®æ³•è¡“ï¹—"
       , victim, NULL, victim->mount_by , TO_CHAR );
 
     RETURN( FALSE );
@@ -2459,7 +2459,7 @@ SKILL( cast_fly )
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$nµ¥¤F¥b¤Ñ¡M³sÂI°ÊÀR³£¨Sµo¥Í¡C", ch, NULL, NULL, TO_ALL );
+    act( "$nç­‰äº†åŠå¤©ï¹é€£é»å‹•éœéƒ½æ²’ç™¼ç”Ÿã€‚", ch, NULL, NULL, TO_ALL );
     RETURN( FALSE );
   }
 
@@ -2470,8 +2470,8 @@ SKILL( cast_fly )
   af.level     = level;
   affect_to_char( victim, &af );
 
-  act( "¥u¨£$n¨Ï¥X¹D®a¥P³N¤§¡uÄË¶³­¸¥P¡v¡M¤â¤¤©Ø¹Ğ¤@¥Ï¡M¤@¦·¥Õ¶³"
-    "¥­¦aª@°_¡M½w½wªº±N$n¦«¤F°_¨Ó¡C", ch, NULL, NULL, TO_ALL );
+  act( "åªè¦‹$nä½¿å‡ºé“å®¶ä»™è¡“ä¹‹ã€Œé¨°é›²é£›ä»™ã€ï¹æ‰‹ä¸­æ‹‚å¡µä¸€ç”©ï¹ä¸€æœµç™½é›²"
+    "å¹³åœ°æ˜‡èµ·ï¹ç·©ç·©çš„å°‡$næ‰˜äº†èµ·ä¾†ã€‚", ch, NULL, NULL, TO_ALL );
 
   RETURN( TRUE );
 }
@@ -2485,13 +2485,13 @@ SKILL( cast_gate )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_gate: ¯Ê¥F¨Ó·½¡C" );
+    mudlog( LOG_DEBUG, "cast_gate: ç¼ºä¹ä¾†æºã€‚" );
     RETURN( FALSE );
   }
 
   if ( is_pk( ch ) && fight_info->status != PK_FIGHT )
   {
-    send_to_char( "¦b³o¬q®É¶¡¡MÁÙ¬O¦n¦n¦a¥ğ®§¤@¤U§a¡T\n\r", ch );
+    send_to_char( "åœ¨é€™æ®µæ™‚é–“ï¹é‚„æ˜¯å¥½å¥½åœ°ä¼‘æ¯ä¸€ä¸‹å§ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -2500,17 +2500,17 @@ SKILL( cast_gate )
 
   if ( mob )
   {
-    act( "$rªşªñ¨ì³B³£¬O$N¡M¦n¥i©È³á¡T", ch, NULL, mob, TO_CHAR );
+    act( "$ré™„è¿‘åˆ°è™•éƒ½æ˜¯$Nï¹å¥½å¯æ€•å–”ï¹—", ch, NULL, mob, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( !( ghost = create_mobile( MobVampire, -1 ) ) )
   {
-    mudlog( LOG_DEBUG, "cast_gate: µLªk»s³y¤k°­: %d.", MobVampireVnum );
+    mudlog( LOG_DEBUG, "cast_gate: ç„¡æ³•è£½é€ å¥³é¬¼: %d.", MobVampireVnum );
     RETURN( FALSE );
   }
 
-  act( "$2$n§CÁn°á§¹©G»y¡MÂà²´¶¡²´«e¤g¦a¤À¶}¡M¥Ñ¸ÌÀY°n¥X¤@°¦$N¡C$0"
+  act( "$2$nä½è²å”¸å®Œå’’èªï¹è½‰çœ¼é–“çœ¼å‰åœŸåœ°åˆ†é–‹ï¹ç”±è£¡é ­è¿¸å‡ºä¸€éš»$Nã€‚$0"
     , ch, NULL, ghost, TO_ALL );
 
   char_to_room( ghost, ch->in_room );
@@ -2518,7 +2518,7 @@ SKILL( cast_gate )
   if ( ch->fighting )
   {
     sact( ghost, ch->fighting, NULL,
-      "$n¤@¨£¨ì$N§Ï©»¨£¨ì¤³¤H¤@¼Ë¡M¥ß§Y¹ï$N®i¶}§ğÀ»¡T" );
+      "$nä¸€è¦‹åˆ°$Nå½·å½¿è¦‹åˆ°ä»‡äººä¸€æ¨£ï¹ç«‹å³å°$Nå±•é–‹æ”»æ“Šï¹—" );
 
     set_fighting( ghost, ch->fighting );
   }
@@ -2536,7 +2536,7 @@ SKILL( cast_general_purpose )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_general_purpose: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_general_purpose: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -2556,13 +2556,13 @@ SKILL( cast_giant_strength )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_gaint_strength: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_gaint_strength: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$N¤w¸g«D±`ªº±j§§¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nå·²ç¶“éå¸¸çš„å¼·å£¯äº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -2573,9 +2573,9 @@ SKILL( cast_giant_strength )
   af.level     = level;
   affect_to_char( victim, &af );
 
-  send_to_char( "¤£ª¾­ş¨Óªº¤O¶q¶Ç¹M§A¨­Åé¡M§A·P¨ì¥i¥HÁ|°_¤@ÀY¤û¡C\n\r"
+  send_to_char( "ä¸çŸ¥å“ªä¾†çš„åŠ›é‡å‚³éä½ èº«é«”ï¹ä½ æ„Ÿåˆ°å¯ä»¥èˆ‰èµ·ä¸€é ­ç‰›ã€‚\n\r"
     , victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -2588,7 +2588,7 @@ SKILL( cast_harm )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_harm: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_harm: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -2607,19 +2607,19 @@ SKILL( cast_heal )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_heal: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_heal: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !can_damage( victim ) )
   {
-    send_to_char( "§A¬O±Ï¤£¬¡¤@­Ó¦º¤Hªº¡T\n\r", victim );
+    send_to_char( "ä½ æ˜¯æ•‘ä¸æ´»ä¸€å€‹æ­»äººçš„ï¹—\n\r", victim );
     RETURN( FALSE );
   }
 
   if ( victim->hit >= get_curr_hit( victim ) )
   {
-    act( "$N¤w¸g¨S¦³¶Ë¤f¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nå·²ç¶“æ²’æœ‰å‚·å£äº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -2627,14 +2627,14 @@ SKILL( cast_heal )
   victim->hit = UMIN( victim->hit + heal , get_curr_hit( victim ) );
 
   if ( victim->position == POS_SLEEPING && victim != ch )
-    act( "$NªºÂåªv¦æ°ÊÅå°Ê¤F§A¡T", victim, NULL, ch, TO_CHAR );
+    act( "$Nçš„é†«æ²»è¡Œå‹•é©šå‹•äº†ä½ ï¹—", victim, NULL, ch, TO_CHAR );
 
   update_pos( victim );
 
-  send_to_char( "¤Ñ¤W­°¤U¤@¹D¹p¹q¡M¥´¦b§Aªº¨­¤W¡C\n\r"
-    "§A·P¨ì¤@°}·x¬y¬y¹M¥ş¨­¡M·Å·Åªº¦nµÎªA¡T\n\r", victim );
+  send_to_char( "å¤©ä¸Šé™ä¸‹ä¸€é“é›·é›»ï¹æ‰“åœ¨ä½ çš„èº«ä¸Šã€‚\n\r"
+    "ä½ æ„Ÿåˆ°ä¸€é™£æš–æµæµéå…¨èº«ï¹æº«æº«çš„å¥½èˆ’æœï¹—\n\r", victim );
 
-  if ( ch != victim ) send_to_char( "Âåªv§¹²¦¡C\n\r", ch );
+  if ( ch != victim ) send_to_char( "é†«æ²»å®Œç•¢ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -2647,7 +2647,7 @@ SKILL( cast_high_explosive )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_high_explosive: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_high_explosive: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -2671,37 +2671,37 @@ SKILL( cast_judge )
 
   if ( !( pSkill = skill_isname( pString ) ) )
   {
-    send_to_char( "³oºØ§Ş¯à¦n¹³¥¢¶Ç«Ü¤[Åo¡T\n\r", ch );
+    send_to_char( "é€™ç¨®æŠ€èƒ½å¥½åƒå¤±å‚³å¾ˆä¹…å›‰ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( pSkill->canask == FALSE )
   {
-    send_to_char( "§AÀY©ü¸£µÈ¡M¤°»ò³£·PÀ³¤£¨ì¡T\n\r", ch );
+    send_to_char( "ä½ é ­æ˜è…¦è„¹ï¹ä»€éº¼éƒ½æ„Ÿæ‡‰ä¸åˆ°ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   clear_buffer();
-  send_to_buffer( "\e[1;36m§A§¤¤F¤U¨Ó¡M±µ¨ü¯«©úµ¹§Aªº«ü¾É¡C\e[0m\n\r\n\r" );
-  send_to_buffer( "§AÅ²½à%s§Ş¯àªºµ²ªG¬O¡R\n\r", pSkill->cname );
-  send_to_buffer( "³o¬O¤@¶µ%sÃşªº"
-    , pSkill->rating ? skill_rating( pSkill->rating ) : "¥¼ª¾" );
-  if ( pSkill->type        == TAR_DODGE ) send_to_buffer( " ¨¾¿mÃş" );
-  else if ( pSkill->type   == TAR_FLEE )  send_to_buffer( " °k¶]Ãş" );
-  else send_to_buffer( "%sªº§Ş¯à¡M¥D­n¬O¥Î¨Ó"
+  send_to_buffer( "\e[1;36mä½ åäº†ä¸‹ä¾†ï¹æ¥å—ç¥æ˜çµ¦ä½ çš„æŒ‡å°ã€‚\e[0m\n\r\n\r" );
+  send_to_buffer( "ä½ é‘‘è³%sæŠ€èƒ½çš„çµæœæ˜¯ï¹•\n\r", pSkill->cname );
+  send_to_buffer( "é€™æ˜¯ä¸€é …%sé¡çš„"
+    , pSkill->rating ? skill_rating( pSkill->rating ) : "æœªçŸ¥" );
+  if ( pSkill->type        == TAR_DODGE ) send_to_buffer( " é˜²ç¦¦é¡" );
+  else if ( pSkill->type   == TAR_FLEE )  send_to_buffer( " é€ƒè·‘é¡" );
+  else send_to_buffer( "%sçš„æŠ€èƒ½ï¹ä¸»è¦æ˜¯ç”¨ä¾†"
     , weapon_type_name( pSkill->weapon ) );
 
   switch( pSkill->type )
   {
-  default                 : send_to_buffer( "¥¼©ú¡C\n\r"     ); break;
-  case TAR_DODGE          : send_to_buffer( "¥»¨­°{¸ú¡C\n\r" ); break;
-  case TAR_IGNORE         : send_to_buffer( "¨S¦³¥Ø¼Ğ¡C\n\r" ); break;
-  case TAR_CHAR_OFFENSIVE : send_to_buffer( "§ğÀ»¹ï¤â¡C\n\r" ); break;
-  case TAR_CHAR_DEFENSIVE : send_to_buffer( "¥»¨­¨¾¿m¡C\n\r" ); break;
-  case TAR_CHAR_SELF      : send_to_buffer( "§@¥Î¥»¨­¡C\n\r" ); break;
-  case TAR_OBJ_INV        : send_to_buffer( "§@¥Îª«Åé¡C\n\r" ); break;
-  case TAR_MEDITATION     : send_to_buffer( "­ß·Q¡C\n\r"     ); break;
-  case TAR_OBJ_ROOM       : send_to_buffer( "©Ğ¶¡ª««~¡C\n\r" ); break;
+  default                 : send_to_buffer( "æœªæ˜ã€‚\n\r"     ); break;
+  case TAR_DODGE          : send_to_buffer( "æœ¬èº«é–ƒèº²ã€‚\n\r" ); break;
+  case TAR_IGNORE         : send_to_buffer( "æ²’æœ‰ç›®æ¨™ã€‚\n\r" ); break;
+  case TAR_CHAR_OFFENSIVE : send_to_buffer( "æ”»æ“Šå°æ‰‹ã€‚\n\r" ); break;
+  case TAR_CHAR_DEFENSIVE : send_to_buffer( "æœ¬èº«é˜²ç¦¦ã€‚\n\r" ); break;
+  case TAR_CHAR_SELF      : send_to_buffer( "ä½œç”¨æœ¬èº«ã€‚\n\r" ); break;
+  case TAR_OBJ_INV        : send_to_buffer( "ä½œç”¨ç‰©é«”ã€‚\n\r" ); break;
+  case TAR_MEDITATION     : send_to_buffer( "å†¥æƒ³ã€‚\n\r"     ); break;
+  case TAR_OBJ_ROOM       : send_to_buffer( "æˆ¿é–“ç‰©å“ã€‚\n\r" ); break;
   }
 
   if ( level < 20 )
@@ -2710,23 +2710,23 @@ SKILL( cast_judge )
     RETURN( TRUE );
   }
 
-  send_to_buffer( "¬I®i¥D­n®ö¶O" );
+  send_to_buffer( "æ–½å±•ä¸»è¦æµªè²»" );
 
   switch( pSkill->cost_type )
   {
-  default        : send_to_buffer( "¥¼ª¾"   ); break;
-  case COST_HIT  : send_to_buffer( "¥Í©R¤O" ); break;
-  case COST_MANA : send_to_buffer( "ªk¤O"   ); break;
-  case COST_MOVE : send_to_buffer( "²¾°Ê¤O" ); break;
-  case COST_GOLD : send_to_buffer( "ª÷¿ú"   ); break;
+  default        : send_to_buffer( "æœªçŸ¥"   ); break;
+  case COST_HIT  : send_to_buffer( "ç”Ÿå‘½åŠ›" ); break;
+  case COST_MANA : send_to_buffer( "æ³•åŠ›"   ); break;
+  case COST_MOVE : send_to_buffer( "ç§»å‹•åŠ›" ); break;
+  case COST_GOLD : send_to_buffer( "é‡‘éŒ¢"   ); break;
   }
 
-  send_to_buffer( "ªº¼Æ­È¬İ¨Ó" );
+  send_to_buffer( "çš„æ•¸å€¼çœ‹ä¾†" );
 
-  if ( pSkill->cost <= 20 )      send_to_buffer( "«Ü¤Ö¡C\n\r" );
-  else if ( pSkill->cost < 100 ) send_to_buffer( "¤@¨Ç¡C\n\r" );
-  else if ( pSkill->cost < 300 ) send_to_buffer( "¤£¤Ö¡C\n\r" );
-  else                           send_to_buffer( "«Ü¦h¡C\n\r" );
+  if ( pSkill->cost <= 20 )      send_to_buffer( "å¾ˆå°‘ã€‚\n\r" );
+  else if ( pSkill->cost < 100 ) send_to_buffer( "ä¸€äº›ã€‚\n\r" );
+  else if ( pSkill->cost < 300 ) send_to_buffer( "ä¸å°‘ã€‚\n\r" );
+  else                           send_to_buffer( "å¾ˆå¤šã€‚\n\r" );
 
   if ( level < 40 )
   {
@@ -2735,14 +2735,14 @@ SKILL( cast_judge )
   }
 
   if ( pSkill->limit )
-    send_to_buffer( "\n\r¨Ì·PÀ³¨Óªº·PÄ±¡M³o¶µ§Ş¯à¦³«Ü¦hªº­­¨î¡R\n\r" );
+    send_to_buffer( "\n\rä¾æ„Ÿæ‡‰ä¾†çš„æ„Ÿè¦ºï¹é€™é …æŠ€èƒ½æœ‰å¾ˆå¤šçš„é™åˆ¶ï¹•\n\r" );
 
   for ( pLimit = pSkill->limit; pLimit; pLimit = pLimit->next )
   {
     if ( pLimit->class )
     {
       chinese_number( pLimit->level, buf1 );
-      send_to_buffer( "­Y¬O%s«hµ¥¯Å³Ì§C­n%s¯Å¤~¯à¾Ç¡M¼ô½m«×³Ì°ª¯à¨ì%s"
+      send_to_buffer( "è‹¥æ˜¯%så‰‡ç­‰ç´šæœ€ä½è¦%sç´šæ‰èƒ½å­¸ï¹ç†Ÿç·´åº¦æœ€é«˜èƒ½åˆ°%s"
       , class_name( pLimit->class, FALSE )
       , buf1
       , adeptation_name( ( pLimit->adept ) ) );
@@ -2750,7 +2750,7 @@ SKILL( cast_judge )
       if ( SkillValue || IS_IMMORTAL( ch ) )
         send_to_buffer( "  %3d%%", pLimit->adept );
 
-      send_to_buffer( "¡C\n\r" );
+      send_to_buffer( "ã€‚\n\r" );
     }
   }
 
@@ -2765,11 +2765,11 @@ SKILL( cast_judge )
     pRestrict = pRestrict->next, count++ )
   {
     chinese_number( count + 1, chinese );
-    send_to_buffer( "%s¡B¥»§Ş¯à%s\n\r"
+    send_to_buffer( "%sã€æœ¬æŠ€èƒ½%s\n\r"
       , chinese, restrict_value( pRestrict, ch ) );
   }
 
-  if ( count == 0 ) send_to_buffer( "¥»§Ş¯à¨S¦³¥ô¦óªº­­¨î¡C\n\r" );
+  if ( count == 0 ) send_to_buffer( "æœ¬æŠ€èƒ½æ²’æœ‰ä»»ä½•çš„é™åˆ¶ã€‚\n\r" );
   print_buffer( ch );
   RETURN( TRUE );
 }
@@ -2785,28 +2785,28 @@ SKILL( cast_pry )
   int              choice;
   char           * message[] =
     {
-      "§ä¥L·Ç",
-      "¦Ó¥B¥L¤Q¤À¼Ö·N",
-      "§Ú·Q¥L·|¼Ö·N",
-      "¥L¥i¯à·|",
-      "¥LÀ³¸Ó¬O·|",
-      "¦ı¬O¥L¤£¤Ó·Q",
-      "¦ı¬O¥L¤£Ä@·N",
-      "¦ı¬O¥L¤Q¤À¤£Ä@·N",
-      "§A¥i¯à­n¸Õ¸Õ¹B®ğ¬İ¥L¬O§_·|"
+      "æ‰¾ä»–æº–",
+      "è€Œä¸”ä»–ååˆ†æ¨‚æ„",
+      "æˆ‘æƒ³ä»–æœƒæ¨‚æ„",
+      "ä»–å¯èƒ½æœƒ",
+      "ä»–æ‡‰è©²æ˜¯æœƒ",
+      "ä½†æ˜¯ä»–ä¸å¤ªæƒ³",
+      "ä½†æ˜¯ä»–ä¸é¡˜æ„",
+      "ä½†æ˜¯ä»–ååˆ†ä¸é¡˜æ„",
+      "ä½ å¯èƒ½è¦è©¦è©¦é‹æ°£çœ‹ä»–æ˜¯å¦æœƒ"
     };
 
   PUSH_FUNCTION( "cast_pry" );
 
   if ( !pString || *pString == '\x0' )
   {
-    send_to_char( "§A­n¥´Å¥­şºØ§Ş¯à©O¡S\n\r", ch );
+    send_to_char( "ä½ è¦æ‰“è½å“ªç¨®æŠ€èƒ½å‘¢ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !( pSkill = skill_isname( pString ) ) )
   {
-    send_to_char( "³oºØ§Ş¯à¦n¹³¥¢¶Ç«Ü¤[Åo¡T\n\r", ch );
+    send_to_char( "é€™ç¨®æŠ€èƒ½å¥½åƒå¤±å‚³å¾ˆä¹…å›‰ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -2831,14 +2831,14 @@ SKILL( cast_pry )
         count++;
 
         sel = UMAX( 0, UMIN( choice - 1, teach->inventory * choice / 100 ) );
-        send_to_buffer( "§A¥´Å¥¨ì%sªº%s¦³±Ğ¾É%s¡M%s±Ğ¾É§A¡C\n\r"
+        send_to_buffer( "ä½ æ‰“è½åˆ°%sçš„%sæœ‰æ•™å°%sï¹%sæ•™å°ä½ ã€‚\n\r"
           , victim->in_room->area->name, mob_name( ch, victim )
           , pSkill->cname, message[sel] );
       }
     }
   }
 
-  if ( count == 0 ) send_to_buffer( "³oºØ§Ş¯à¦n¹³¥¢¶Ç«Ü¤[Åo¡T\n\r" );
+  if ( count == 0 ) send_to_buffer( "é€™ç¨®æŠ€èƒ½å¥½åƒå¤±å‚³å¾ˆä¹…å›‰ï¹—\n\r" );
   print_buffer( ch );
   RETURN( TRUE );
 }
@@ -2851,7 +2851,7 @@ SKILL( cast_identify )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_identify: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_identify: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -2868,21 +2868,21 @@ SKILL( cast_infravision )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_infravision: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_infravision: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) ) RETURN( FALSE );
 
-  act( "$n·P¨ì¦å²GªmÄË¡MÀş¶¡²´·ú¬õ¤F°_¨Ó¡C\n\r", ch, NULL, NULL, TO_ROOM );
+  act( "$næ„Ÿåˆ°è¡€æ¶²æ²¸é¨°ï¹ç¬é–“çœ¼ç›ç´…äº†èµ·ä¾†ã€‚\n\r", ch, NULL, NULL, TO_ROOM );
   af.type      = sn;
   af.duration  = number_range( level / 4 , level / 2 );
   af.location  = APPLY_NONE;
   af.modifier  = 0;
   af.level     = level;
   affect_to_char( victim, &af );
-  send_to_char( "§A·P¨ì¦å²GªmÄË¡MÀş¶¡²´·ú¬õ¤F°_¨Ó¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "ä½ æ„Ÿåˆ°è¡€æ¶²æ²¸é¨°ï¹ç¬é–“çœ¼ç›ç´…äº†èµ·ä¾†ã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -2895,31 +2895,31 @@ SKILL( cast_invis )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_invis: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_invis: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, SLOT_INVIS )
     || is_affected( victim, SLOT_MASS_INVIS ) )
   {
-    act( "$Nªº¨­¼v¤w¸g¤£¨£¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„èº«å½±å·²ç¶“ä¸è¦‹äº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ( IS_NPC( victim ) && IS_SET( victim->act, ACT_TRAIN ) )
     || ( IS_NPC( victim ) && IS_SET( victim->act, ACT_REBIRTH ) ) )
   {
-    act( "§A¨S¦³¿ìªk§â$N¬IÁô§Îªk³N¡C", ch, NULL, victim, TO_CHAR );
+    act( "ä½ æ²’æœ‰è¾¦æ³•æŠŠ$Næ–½éš±å½¢æ³•è¡“ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( victim->pIndexData && victim->pIndexData->pShop )
   {
-    act( "$N¬O¤£¯àÁô§Î°_¨Óªº³á¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Næ˜¯ä¸èƒ½éš±å½¢èµ·ä¾†çš„å–”ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
-  act( "$nªº¨­¼v²H¥X¤F¤@­Ó¶Â¼v¡MÀş¶¡¨«¶i¶Â¼v®ø¥¢¤F¡C"
+  act( "$nçš„èº«å½±æ·¡å‡ºäº†ä¸€å€‹é»‘å½±ï¹ç¬é–“èµ°é€²é»‘å½±æ¶ˆå¤±äº†ã€‚"
     , victim, NULL, NULL, TO_ROOM );
   af.type      = sn;
   af.duration  = number_range( level / 5, level / 3 );
@@ -2927,8 +2927,8 @@ SKILL( cast_invis )
   af.modifier  = 0;
   af.level     = level;
   affect_to_char( victim, &af );
-  send_to_char( "§Aªº¨­¼v²H¥X¤F¤@­Ó¶Â¼v¡MÀş¶¡¨«¶i¶Â¼v®ø¥¢¤F¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "ä½ çš„èº«å½±æ·¡å‡ºäº†ä¸€å€‹é»‘å½±ï¹ç¬é–“èµ°é€²é»‘å½±æ¶ˆå¤±äº†ã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -2942,21 +2942,21 @@ SKILL( cast_know_alignment )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_know_alignment: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_know_alignment: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   ap = victim->alignment;
 
-       if ( ap >  999 ) msg = "$N´X¥G¬O¦t©zµL¼Ä¥@¬ÉÅRÆE¯Â¼äªº°Õ¡C";
-  else if ( ap >  700 ) msg = "$N¦ü¥G³s¤Ñ¯«³£¦Û¹Ä¤£¦p¥Lªº¯Â¼ä¡C";
-  else if ( ap >  350 ) msg = "$N¹³¤@­Ó¤Ñ¨Ï¯ëªº¸t¼ä¡C";
-  else if ( ap >  100 ) msg = "$N¬İ¨ì¤p°Êª«³£·|µ¹¤©¯S§Oªº·ÓÅU³á¡C";
-  else if ( ap > -100 ) msg = "$N¥Î¦×²´¹ê¦b¬İ¤£¥X¦³¤°»ò¤£¤@¼Ëªº¡C";
-  else if ( ap > -350 ) msg = "$N¬İ¨ì°Êª«´N·|·Q¦n¤£¦n¦Y¡C";
-  else if ( ap > -700 ) msg = "$N±N¼C¦y«üµÛ§A»¡¹D¡R¡u¨Ó³æ¬D§a¡T¡v";
-  else if ( ap > -999 ) msg = "$N´²µo¥X¤@°}¶Â¦âªº¥ú¨~¡M¦n¬İ·¥¤F¡T";
-  else msg = "$N¬O¦l²]¾Û±°¡B¿N±ş·m§T¡BµL©Ò¤£°µªº³á¡T";
+       if ( ap >  999 ) msg = "$Nå¹¾ä¹æ˜¯å®‡å®™ç„¡æ•µä¸–ç•Œéœ¹é‚ç´”æ½”çš„å•¦ã€‚";
+  else if ( ap >  700 ) msg = "$Nä¼¼ä¹é€£å¤©ç¥éƒ½è‡ªå˜†ä¸å¦‚ä»–çš„ç´”æ½”ã€‚";
+  else if ( ap >  350 ) msg = "$Nåƒä¸€å€‹å¤©ä½¿èˆ¬çš„è–æ½”ã€‚";
+  else if ( ap >  100 ) msg = "$Nçœ‹åˆ°å°å‹•ç‰©éƒ½æœƒçµ¦äºˆç‰¹åˆ¥çš„ç…§é¡§å–”ã€‚";
+  else if ( ap > -100 ) msg = "$Nç”¨è‚‰çœ¼å¯¦åœ¨çœ‹ä¸å‡ºæœ‰ä»€éº¼ä¸ä¸€æ¨£çš„ã€‚";
+  else if ( ap > -350 ) msg = "$Nçœ‹åˆ°å‹•ç‰©å°±æœƒæƒ³å¥½ä¸å¥½åƒã€‚";
+  else if ( ap > -700 ) msg = "$Nå°‡åŠå°–æŒ‡è‘—ä½ èªªé“ï¹•ã€Œä¾†å–®æŒ‘å§ï¹—ã€";
+  else if ( ap > -999 ) msg = "$Næ•£ç™¼å‡ºä¸€é™£é»‘è‰²çš„å…‰èŠ’ï¹å¥½çœ‹æ¥µäº†ï¹—";
+  else msg = "$Næ˜¯å¥¸æ·«æ“„æ ã€ç‡’æ®ºæ¶åŠ«ã€ç„¡æ‰€ä¸åšçš„å–”ï¹—";
 
   act( smash_act_keyword( msg, "nesNES" ), ch, NULL, victim, TO_CHAR );
   RETURN( TRUE );
@@ -2971,14 +2971,14 @@ SKILL( cast_lightning_bolt )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_lightning_blot: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_lightning_blot: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_TWO );
 
-  act( "$n¦Û¤â¤¤¿E®g¥X¤@¹D°{¹q¡Mª½ª½ªº®g¦V$N¡C", ch, NULL, victim, TO_ALL );
+  act( "$nè‡ªæ‰‹ä¸­æ¿€å°„å‡ºä¸€é“é–ƒé›»ï¹ç›´ç›´çš„å°„å‘$Nã€‚", ch, NULL, victim, TO_ALL );
 
   if ( saves_spell( level, victim ) ) dam /= 2;
   damage( ch, victim, dam, sn, ATTACK_RANDOM );
@@ -2994,15 +2994,15 @@ SKILL( cast_magic_missile )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_magic_missile: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_magic_missile: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* §ğ¶Ë±Ô­z */
-  act( "$n$2´§µÛÂù¤â¡M¾®»Eªk¤O¦¨¬°¤@­Ó­¸¼u¡M°¿¦a¦VµÛ$N­¸¥h¡T$0"
+  /* æ”»å‚·æ•˜è¿° */
+  act( "$n$2æ®è‘—é›™æ‰‹ï¹å‡èšæ³•åŠ›æˆç‚ºä¸€å€‹é£›å½ˆï¹å€åœ°å‘è‘—$Né£›å»ï¹—$0"
     , ch, NULL, victim, TO_ALL );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_ONE );
 
   if ( saves_spell( level, victim ) ) dam /= 2;
@@ -3019,15 +3019,15 @@ SKILL( cast_wind_blade )
 
   if ( !ch || !verify_char( ch ) || !victim || !verify_char( victim ) )
   {
-    mudlog( LOG_DEBUG, "cast_wind_blade: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_wind_blade: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* §ğ¶Ë±Ô­z */
-  act( "$n$7±N¥k¤â¦ùª½¡M©¹¤W¤@¹º¡M¤j¦a¨í°_¤@°}¯P­·¡MµS¦p$2§Q¤b$7¯ë"
-       "¦a¤Á¦V$N¡M$N¨­¤W¥ß§Y¦h¤F¼Æ¹D¶Ë²ª¡T$0", ch, NULL, victim, TO_ALL );
+  /* æ”»å‚·æ•˜è¿° */
+  act( "$n$7å°‡å³æ‰‹ä¼¸ç›´ï¹å¾€ä¸Šä¸€åŠƒï¹å¤§åœ°åˆ®èµ·ä¸€é™£çƒˆé¢¨ï¹çŒ¶å¦‚$2åˆ©åˆƒ$7èˆ¬"
+       "åœ°åˆ‡å‘$Nï¹$Nèº«ä¸Šç«‹å³å¤šäº†æ•¸é“å‚·ç—•ï¹—$0", ch, NULL, victim, TO_ALL );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_TWO );
 
   if ( saves_spell( level, victim ) ) dam /= 2;
@@ -3049,28 +3049,28 @@ SKILL( cast_vacuum_wind )
 
   if ( !ch || !verify_char( ch ) || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_wind_blade: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_wind_blade: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( level > 45 )
   {
-    /* ´M§ä¹ï¤â */
+    /* å°‹æ‰¾å°æ‰‹ */
     for ( loop = 0, victim = ch->in_room->people; victim; victim = vic_next )
     {
       vic_next = victim->next_in_room;
 
-      /* ©Çª«¤£¥´©Çª« */
+      /* æ€ªç‰©ä¸æ‰“æ€ªç‰© */
       if ( IS_NPC( ch ) && IS_NPC( victim ) ) continue;
 
       if ( !check_can_kill( ch, victim ) ) continue;
       if ( loop > MAX_MULTIPLE )           break;
 
-      /* §ğ¶Ë±Ô­z */
+      /* æ”»å‚·æ•˜è¿° */
       sact( ch, victim, NULL,
-        "$n$W¾®¯«¤J©w¡M¤f°á[$R¨g­·©G$W]¡M¦b$Nªº©P³ò§j"
-        "°_¼Æ°}±j­·¡M¨S¦³³W«ßªº«IÅ§$N¡M¨ä±j¯P¤S¨g¶Ãªº­·¶Õ±N$N¬½¬½¦a"
-        "­«ºL¸¨¦a¡T$Z" );
+        "$n$Wå‡ç¥å…¥å®šï¹å£å”¸[$Rç‹‚é¢¨å’’$W]ï¹åœ¨$Nçš„å‘¨åœå¹"
+        "èµ·æ•¸é™£å¼·é¢¨ï¹æ²’æœ‰è¦å¾‹çš„ä¾µè¥²$Nï¹å…¶å¼·çƒˆåˆç‹‚äº‚çš„é¢¨å‹¢å°‡$Nç‹ ç‹ åœ°"
+        "é‡æ‘”è½åœ°ï¹—$Z" );
 
       dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_THR );
       if ( saves_spell( level, victim ) ) dam /= 2;
@@ -3086,10 +3086,10 @@ SKILL( cast_vacuum_wind )
   {
     victim = ( CHAR_DATA * ) vo;
 
-    /* §ğ¶Ë±Ô­z */
+    /* æ”»å‚·æ•˜è¿° */
     sact( ch, victim, NULL,
-      "$n$W¤f°á$R[¨g­·©G]$W¡M±µµÛ¦b$N©P³ò³y¦¨¯uªÅ¯ëªº­·¼É"
-      "¡M®u±²µÛ$Nªº¨­Åé¡T$Z" );
+      "$n$Wå£å”¸$R[ç‹‚é¢¨å’’]$Wï¹æ¥è‘—åœ¨$Nå‘¨åœé€ æˆçœŸç©ºèˆ¬çš„é¢¨æš´"
+      "ï¹å¸­æ²è‘—$Nçš„èº«é«”ï¹—$Z" );
 
     dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_THR );
     if ( saves_spell( level, victim ) ) dam /= 2;
@@ -3111,7 +3111,7 @@ SKILL( cast_mass_invis )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_mass_invis: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_mass_invis: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3122,10 +3122,10 @@ SKILL( cast_mass_invis )
       || is_affected( gch, SLOT_MASS_INVIS ) )
       continue;
 
-    act( "$nªº¨­¼v²H¥X¤F¤@­Ó¶Â¼v¡MÀş¶¡¨«¶i¶Â¼v®ø¥¢¤F¡C"
+    act( "$nçš„èº«å½±æ·¡å‡ºäº†ä¸€å€‹é»‘å½±ï¹ç¬é–“èµ°é€²é»‘å½±æ¶ˆå¤±äº†ã€‚"
       , gch, NULL, NULL, TO_ROOM );
 
-    send_to_char( "§Aªº¨­¼v²H¥X¤F¤@­Ó¶Â¼v¡MÀş¶¡¨«¶i¶Â¼v®ø¥¢¤F¡C\n\r", gch );
+    send_to_char( "ä½ çš„èº«å½±æ·¡å‡ºäº†ä¸€å€‹é»‘å½±ï¹ç¬é–“èµ°é€²é»‘å½±æ¶ˆå¤±äº†ã€‚\n\r", gch );
 
     af.type      = sn;
     af.duration  = number_range( level / 18, level / 12 );
@@ -3135,14 +3135,14 @@ SKILL( cast_mass_invis )
     affect_to_char( gch, &af );
   }
 
-  send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
 SKILL( cast_null )
 {
   PUSH_FUNCTION( "cast_null" );
-  send_to_char( "¹ï¤£°_¡M³o¤£¬O¤@¶µªk³N¡T\n\r", ch );
+  send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä¸€é …æ³•è¡“ï¹—\n\r", ch );
   RETURN( FALSE );
 }
 
@@ -3155,7 +3155,7 @@ SKILL( cast_pass_door )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_pass_door: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_pass_door: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3167,8 +3167,8 @@ SKILL( cast_pass_door )
   af.modifier  = 0;
   af.level     = level;
   affect_to_char( victim, &af );
-  act( "$nªº¨­Åé¦ü¥GÅÜªº¦³¤@ÂI³z©ú¡C", victim, NULL, NULL, TO_ROOM );
-  send_to_char( "§A·P¨ì¨­Åé°_¤F¤@¨ÇÅÜ¤Æ¡MÅÜªº¦³¤@ÂI³z©ú¡C\n\r", victim );
+  act( "$nçš„èº«é«”ä¼¼ä¹è®Šçš„æœ‰ä¸€é»é€æ˜ã€‚", victim, NULL, NULL, TO_ROOM );
+  send_to_char( "ä½ æ„Ÿåˆ°èº«é«”èµ·äº†ä¸€äº›è®ŠåŒ–ï¹è®Šçš„æœ‰ä¸€é»é€æ˜ã€‚\n\r", victim );
   RETURN( TRUE );
 }
 
@@ -3181,7 +3181,7 @@ SKILL( cast_fixity )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_fixity: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_fixity: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3194,7 +3194,7 @@ SKILL( cast_fixity )
   af.level     = level;
   affect_to_char( victim, &af );
 
-  act( "$n©I¥s¤£°Ê©ú¤ı¡M¤§«á$n´N©w¦í¤£°Ê¤F¡C", victim, NULL, NULL, TO_ALL );
+  act( "$nå‘¼å«ä¸å‹•æ˜ç‹ï¹ä¹‹å¾Œ$nå°±å®šä½ä¸å‹•äº†ã€‚", victim, NULL, NULL, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -3207,13 +3207,13 @@ SKILL( cast_poison )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_poison: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_poison: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( saves_spell( level, victim ) || get_curr_str( victim ) <= 2 )
   {
-    act( "$N¤£¨ü§A¬r®`³Nªº¼vÅT¡C", ch, NULL, victim, TO_CHAR );
+    act( "$Nä¸å—ä½ æ¯’å®³è¡“çš„å½±éŸ¿ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -3223,9 +3223,9 @@ SKILL( cast_poison )
   af.modifier  = -2;
   af.level     = 0;
   affect_join( victim, &af );
-  send_to_char( "§AÁy¤W¤@°}«C¤@°}¥Õ¡M¤£ª¾¹Dµo¥Í¤F¤°»ò¨Æ¡M«o·P¨ì«ÜÃø¹L¡C\n\r"
+  send_to_char( "ä½ è‡‰ä¸Šä¸€é™£é’ä¸€é™£ç™½ï¹ä¸çŸ¥é“ç™¼ç”Ÿäº†ä»€éº¼äº‹ï¹å»æ„Ÿåˆ°å¾ˆé›£éã€‚\n\r"
     , victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -3238,13 +3238,13 @@ SKILL( cast_protection )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_protection: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_protection: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    send_to_char( "§A¤w¸g¬I®i¤F¡uÆF¯«³Z¡v¡M¤p¤ß¸g¯ß°f¦æ¡C\n\r", ch );
+    send_to_char( "ä½ å·²ç¶“æ–½å±•äº†ã€Œéˆç¥è¨£ã€ï¹å°å¿ƒç¶“è„ˆé€†è¡Œã€‚\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -3255,8 +3255,8 @@ SKILL( cast_protection )
   af.level     = 0;
   affect_to_char( victim, &af );
 
-  act( "$n³¬¥Ø¾®¯«¡M¥Î½\\¦ç¤ßªkªº¤º¤O¹BÂà¤F¤@¦¸¡uÆF¯«³Z¡v¡C$A"
-       "¤@ªÑ«C®ğ±q$n¨­¤W´²¥X¡M¶×»E¦b$eªº³»¤ß¡MµM«á½w½w²H¥h¡C"
+  act( "$né–‰ç›®å‡ç¥ï¹ç”¨ç©€\è¡£å¿ƒæ³•çš„å…§åŠ›é‹è½‰äº†ä¸€æ¬¡ã€Œéˆç¥è¨£ã€ã€‚$A"
+       "ä¸€è‚¡é’æ°£å¾$nèº«ä¸Šæ•£å‡ºï¹åŒ¯èšåœ¨$eçš„é ‚å¿ƒï¹ç„¶å¾Œç·©ç·©æ·¡å»ã€‚"
        , ch, NULL, NULL, TO_ALL );
 
   RETURN( TRUE );
@@ -3271,21 +3271,21 @@ SKILL( cast_refresh )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_refresh: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_refresh: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim->move >= get_curr_move( victim ) )
   {
-    act( "$N¤w¸g§¹¥ş¤£·|¯h­Â¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nå·²ç¶“å®Œå…¨ä¸æœƒç–²å€¦äº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   refresh = level * 3 + ( number_range( 1, get_curr_int( ch ) * 2 ) );
   victim->move = UMIN( victim->move + refresh, get_curr_move( victim ) );
 
-  send_to_char( "§A·P¨ì¸û¤£¯h­Â¤F¡C\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+  send_to_char( "ä½ æ„Ÿåˆ°è¼ƒä¸ç–²å€¦äº†ã€‚\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -3297,7 +3297,7 @@ SKILL( cast_remove_curse )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_remove_curse: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_remove_curse: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3305,8 +3305,8 @@ SKILL( cast_remove_curse )
   {
     affect_release( victim, SLOT_CURSE );
 
-    send_to_char( "§A·P¨ì¦n¦h¤F¡C\n\r", victim );
-    if ( ch != victim ) send_to_char( "¦n¤F¡C\n\r", ch );
+    send_to_char( "ä½ æ„Ÿåˆ°å¥½å¤šäº†ã€‚\n\r", victim );
+    if ( ch != victim ) send_to_char( "å¥½äº†ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
@@ -3322,13 +3322,13 @@ SKILL( cast_sanctuary )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_sanctuary: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_sanctuary: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$N¤w¸g¾Ö¦³¸t¥ú¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nå·²ç¶“æ“æœ‰è–å…‰äº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -3338,8 +3338,8 @@ SKILL( cast_sanctuary )
   af.modifier  = 0;
   af.level     = 0;
   affect_to_char( victim, &af );
-  act( "$n¨­®Ç¤É°_¤F¤@°}¥ÕÃú¡M¤[¤[¤£¥h¡C", victim, NULL, NULL, TO_ROOM );
-  send_to_char( "§A³Q¤@¹Î©_©Çªº¥ÕÃú©Ò³òÂ¶¡C\n\r", victim );
+  act( "$nèº«æ—å‡èµ·äº†ä¸€é™£ç™½éœ§ï¹ä¹…ä¹…ä¸å»ã€‚", victim, NULL, NULL, TO_ROOM );
+  send_to_char( "ä½ è¢«ä¸€åœ˜å¥‡æ€ªçš„ç™½éœ§æ‰€åœç¹ã€‚\n\r", victim );
   RETURN( TRUE );
 }
 
@@ -3352,19 +3352,19 @@ SKILL( cast_shield )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_shield: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_shield: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( ch != victim )
   {
-    send_to_char( "¹ï¤£°_¡M³o¶µªk³N¥u¯à¬I®i¦b¦Û¤vªº¨­¤W¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™é …æ³•è¡“åªèƒ½æ–½å±•åœ¨è‡ªå·±çš„èº«ä¸Šï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$Nªº¨¾Å@¤w¸g¦nªº¨S¸Ü»¡¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„é˜²è­·å·²ç¶“å¥½çš„æ²’è©±èªªäº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -3375,8 +3375,8 @@ SKILL( cast_shield )
   aff.level      = level;
   affect_to_char( victim, &aff );
 
-  act( "$n³Q¤@­Ó¤O³õ³òÂ¶µÛ¡C", victim, NULL, NULL, TO_ROOM );
-  send_to_char( "§A³Q¤@­Ó¤O³õ³òÂ¶µÛ¡M«OÅ@´£ª@¤F¨Ç³\\¡C\n\r", victim );
+  act( "$nè¢«ä¸€å€‹åŠ›å ´åœç¹è‘—ã€‚", victim, NULL, NULL, TO_ROOM );
+  send_to_char( "ä½ è¢«ä¸€å€‹åŠ›å ´åœç¹è‘—ï¹ä¿è­·ææ˜‡äº†äº›è¨±\ã€‚\n\r", victim );
   RETURN( TRUE );
 }
 
@@ -3389,25 +3389,25 @@ SKILL( cast_gold_shield )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_gold_shield: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_gold_shield: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( ch != victim )
   {
-    send_to_char( "¹ï¤£°_¡M³o¤@ªù¥\\¤Ò¥u¯à¬I®i¦b¦Û¤v¨­¤W¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™ä¸€é–€åŠŸ\å¤«åªèƒ½æ–½å±•åœ¨è‡ªå·±èº«ä¸Šï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( victim->hit * 2 <= get_curr_hit( victim ) )
   {
-    act( "¹ï¤£°_¡M$N¨ü¶Ë¹L­«¡M¯u®ğ¼È®ÉµLªk¾®»E¡T", ch, NULL, victim, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$Nå—å‚·éé‡ï¹çœŸæ°£æš«æ™‚ç„¡æ³•å‡èšï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$N¤w¸g¬I®i¤Fª÷ÄÁ¸n¡M¯u®ğµLªk¦A¾®»E¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nå·²ç¶“æ–½å±•äº†é‡‘é˜ç½©ï¹çœŸæ°£ç„¡æ³•å†å‡èšï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -3418,7 +3418,7 @@ SKILL( cast_gold_shield )
   aff.level     = level;
   affect_to_char( victim, &aff );
 
-  act( "$n®ğ»E¤¦¥Ğ¡M¹C¨«¥|¤èªº¯u®ğ¦b¨­¤W§Î¦¨¤F¤@¼h«OÅ@¡T", victim, NULL, NULL, TO_ALL );
+  act( "$næ°£èšä¸¹ç”°ï¹éŠèµ°å››æ–¹çš„çœŸæ°£åœ¨èº«ä¸Šå½¢æˆäº†ä¸€å±¤ä¿è­·ï¹—", victim, NULL, NULL, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -3431,25 +3431,25 @@ SKILL( cast_iron_shield )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_iron_shield: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_iron_shield: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( ch != victim )
   {
-    send_to_char( "¹ï¤£°_¡M³o¤@ªù¥\\¤Ò¥u¯à¬I®i¦b¦Û¤v¨­¤W¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™ä¸€é–€åŠŸ\å¤«åªèƒ½æ–½å±•åœ¨è‡ªå·±èº«ä¸Šï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( victim->hit * 2 <= get_curr_hit( victim ) )
   {
-    act( "¹ï¤£°_¡M$N¨ü¶Ë¹L­«¡M¯u®ğ¤@®ÉµLªk¾®»E¡T", ch, NULL, victim, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$Nå—å‚·éé‡ï¹çœŸæ°£ä¸€æ™‚ç„¡æ³•å‡èšï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "$N¤w¸g¬I®i¤FÅK¥¬­m¡M¯u®ğµLªk¦A¾®»E¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nå·²ç¶“æ–½å±•äº†éµå¸ƒè¡«ï¹çœŸæ°£ç„¡æ³•å†å‡èšï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -3460,7 +3460,7 @@ SKILL( cast_iron_shield )
   aff.level     = level;
   affect_to_char( victim, &aff );
 
-  act( "$n¤jÁn¤@©I¡M¹C¨«¥|¤èªº¯u®ğ¦³¦p¿ûÅK¯ë¦a«OÅ@µÛ¡T", victim, NULL, NULL, TO_ALL );
+  act( "$nå¤§è²ä¸€å‘¼ï¹éŠèµ°å››æ–¹çš„çœŸæ°£æœ‰å¦‚é‹¼éµèˆ¬åœ°ä¿è­·è‘—ï¹—", victim, NULL, NULL, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -3473,25 +3473,25 @@ SKILL( cast_deva_shield )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_deva_shield: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_deva_shield: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( ch != victim )
   {
-    send_to_char( "¹ï¤£°_¡M³o¤@ªù¥\\¤Ò¥u¯à¬I®i¦b¦Û¤v¨­¤W¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™ä¸€é–€åŠŸ\å¤«åªèƒ½æ–½å±•åœ¨è‡ªå·±èº«ä¸Šï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !IS_GOOD( victim ) )
   {
-    send_to_char( "¹ï¤£°_¡M§Aªº°}Àç¤£°÷¦n¡MµLªk¬I®i³o¶µªk³N¡T\n\r", victim );
+    send_to_char( "å°ä¸èµ·ï¹ä½ çš„é™£ç‡Ÿä¸å¤ å¥½ï¹ç„¡æ³•æ–½å±•é€™é …æ³•è¡“ï¹—\n\r", victim );
     RETURN( FALSE );
   }
 
   if ( is_affected( victim, sn ) )
   {
-    act( "¹ï¤£°_¡M$N¤w¸g¬I®i¤Fª÷­èÅ@Åé¡T", ch, NULL, victim, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$Nå·²ç¶“æ–½å±•äº†é‡‘å‰›è­·é«”ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -3502,7 +3502,7 @@ SKILL( cast_deva_shield )
   aff.level     = level;
   affect_to_char( victim, &aff );
 
-  act( "$n¤f»w¦ò¸¹¡M¥|¤jª÷­è´MÁn·PÀ³¡Mªk¤O¥[«ù¡T", victim, NULL, NULL, TO_ALL );
+  act( "$nå£èª¦ä½›è™Ÿï¹å››å¤§é‡‘å‰›å°‹è²æ„Ÿæ‡‰ï¹æ³•åŠ›åŠ æŒï¹—", victim, NULL, NULL, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -3515,13 +3515,13 @@ SKILL( cast_shocking_grasp )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_shocking_grasp: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_shocking_grasp: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_ONE );
 
-  act( "$nµo¥X¤F¤@­Ó¹p¹q¶°¤¤Åé¡MÅF¦V$N¡T", ch, NULL, victim, TO_ALL );
+  act( "$nç™¼å‡ºäº†ä¸€å€‹é›·é›»é›†ä¸­é«”ï¹è½Ÿå‘$Nï¹—", ch, NULL, victim, TO_ALL );
 
   if ( saves_spell( level, victim ) ) dam /= 2;
   damage( ch, victim, dam, sn, ATTACK_RANDOM );
@@ -3537,29 +3537,29 @@ SKILL( cast_sleep )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_sleep: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_sleep: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( ch == victim )
   {
-    send_to_char( "§Aª½±µºÎ´N¥i¥H¤F§a¡M¦pªG¯uªº¤£°÷¡M¨º´N¦Ò¼{ªø¯v§a¡T\n\r"
+    send_to_char( "ä½ ç›´æ¥ç¡å°±å¯ä»¥äº†å§ï¹å¦‚æœçœŸçš„ä¸å¤ ï¹é‚£å°±è€ƒæ…®é•·çœ å§ï¹—\n\r"
       , ch );
     RETURN( FALSE );
   }
 
   if ( !can_damage( victim ) )
   {
-    act( "§A¥Ø«e¨S¦³¿ìªk¶Ê¯v$N¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä½ ç›®å‰æ²’æœ‰è¾¦æ³•å‚¬çœ $Nï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
-  /* ­Y¹ï¶H¬Oª±®a¥B¤£¬Oµs¸é©Î¬O±ş¤H¥Ç«h¤£¦æ */
+  /* è‹¥å°è±¡æ˜¯ç©å®¶ä¸”ä¸æ˜¯ç›œè³Šæˆ–æ˜¯æ®ºäººçŠ¯å‰‡ä¸è¡Œ */
   if ( is_pk( ch ) && is_pk( victim ) )
   {
     if ( fight_info->status != PK_FIGHT )
     {
-      send_to_char( "¦b³o¬q®É¶¡¡MÁÙ¬O¦n¦n¦a¥ğ®§¤@¤U§a¡T\n\r", ch );
+      send_to_char( "åœ¨é€™æ®µæ™‚é–“ï¹é‚„æ˜¯å¥½å¥½åœ°ä¼‘æ¯ä¸€ä¸‹å§ï¹—\n\r", ch );
       RETURN( FALSE );
     }
   }
@@ -3573,7 +3573,7 @@ SKILL( cast_sleep )
       && victim->in_room->area
       && !( victim->in_room->area->fight ) ) )
     {
-      act( "§A­n§ğÀ»$N¡M½Ğ¥Î $2MURDER$0 ³o­Ó«ü¥O¡C", ch, NULL, victim, TO_CHAR );
+      act( "ä½ è¦æ”»æ“Š$Nï¹è«‹ç”¨ $2MURDER$0 é€™å€‹æŒ‡ä»¤ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN( FALSE );
     }
   }
@@ -3582,32 +3582,32 @@ SKILL( cast_sleep )
 
   if ( is_affected( victim, SLOT_SLEEP ) )
   {
-    act( "$N¤£¨ü§A¶Ê¯v³Nªº¼vÅT¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nä¸å—ä½ å‚¬çœ è¡“çš„å½±éŸ¿ï¹—", ch, NULL, victim, TO_CHAR );
     if ( IS_AWAKE( victim ) && !victim->fighting ) set_fighting( victim, ch );
     RETURN( FALSE );
   }
 
   if ( victim->fighting )
   {
-    act( "$N¾Ô·N¥¿°ª¡M¤£¨ü§Aªº¶Ê¯vªº¼vÅT¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Næˆ°æ„æ­£é«˜ï¹ä¸å—ä½ çš„å‚¬çœ çš„å½±éŸ¿ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( victim->mount_by )
   {
-    act( "­n¶Ê¯v¤]±o¬İ¥D¤H$NªÖ¤£ªÖ§a¡T", ch, NULL, victim->mount_by, TO_CHAR );
+    act( "è¦å‚¬çœ ä¹Ÿå¾—çœ‹ä¸»äºº$Nè‚¯ä¸è‚¯å§ï¹—", ch, NULL, victim->mount_by, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( victim->boss )
   {
-    act( "§A¤£¯à¶Ê¯v$Nªº¤p°­¡T", ch, NULL, victim->boss, TO_CHAR );
+    act( "ä½ ä¸èƒ½å‚¬çœ $Nçš„å°é¬¼ï¹—", ch, NULL, victim->boss, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( number_range( 1, level ) <= victim->level )
   {
-    act( "$N¥´¿ôºë¯«¡M¤£¨ü$nªº¶Ê¯v¡T", ch, NULL, victim, TO_ALL );
+    act( "$Næ‰“é†’ç²¾ç¥ï¹ä¸å—$nçš„å‚¬çœ ï¹—", ch, NULL, victim, TO_ALL );
     set_fighting( victim, ch );
     RETURN( FALSE );
   }
@@ -3628,9 +3628,9 @@ SKILL( cast_sleep )
       victim->talk_mode = MODE_ABSENT;
     }
 
-    send_to_char( "¤@°}·w¯t¡M§A¬ğµM·P¨ì«Ü·QºÎ¡T\n\r", victim );
-    act( "$N³Q§Aµo¥Xªº¤@¹Î¶Â®ğÄñ¦í´NºÎµÛ¤F¡C", ch, NULL, victim, TO_CHAR );
-    act( "$n¬ğµM¤§¶¡­Ë¦b¦a¤W©I©I¤jºÎ¡C", victim, NULL, NULL, TO_ROOM );
+    send_to_char( "ä¸€é™£æšˆçœ©ï¹ä½ çªç„¶æ„Ÿåˆ°å¾ˆæƒ³ç¡ï¹—\n\r", victim );
+    act( "$Nè¢«ä½ ç™¼å‡ºçš„ä¸€åœ˜é»‘æ°£çºä½å°±ç¡è‘—äº†ã€‚", ch, NULL, victim, TO_CHAR );
+    act( "$nçªç„¶ä¹‹é–“å€’åœ¨åœ°ä¸Šå‘¼å‘¼å¤§ç¡ã€‚", victim, NULL, NULL, TO_ROOM );
     victim->position = POS_SLEEPING;
 
     if ( victim->mount ) unmount_char( victim, victim->mount );
@@ -3648,7 +3648,7 @@ SKILL( cast_stone_skin )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_stone_skin: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_stone_skin: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3661,10 +3661,10 @@ SKILL( cast_stone_skin )
   af.level     = level;
   affect_to_char( victim, &af );
 
-  act( "$n¦V±ö«×¨F¬èÃ«¡M¬ğµM¤§¶¡$eªº¥Ö½§ÅÜªº¸ò¥ÛÀY¤@¼Ë¡C"
+  act( "$nå‘æ¢…åº¦æ²™ç¥ˆç¦±ï¹çªç„¶ä¹‹é–“$eçš„çš®è†šè®Šçš„è·ŸçŸ³é ­ä¸€æ¨£ã€‚"
     , victim, NULL, NULL, TO_ROOM );
 
-  send_to_char( "§Aªº¥Ö½§µwªº©M¥ÛÀY¤@¼Ë¡T\n\r", victim );
+  send_to_char( "ä½ çš„çš®è†šç¡¬çš„å’ŒçŸ³é ­ä¸€æ¨£ï¹—\n\r", victim );
   RETURN( TRUE );
 }
 
@@ -3677,18 +3677,18 @@ SKILL( cast_teleport )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_teleport: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_teleport: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( is_pk( victim ) )
   {
-    send_to_char( "¹ï¤£°_¡M§A¥¿¦bªZ°«¤j·|¸Ì¡M¨S¦³¿ìªk¬I®i³o­Óªk³N¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ æ­£åœ¨æ­¦é¬¥å¤§æœƒè£¡ï¹æ²’æœ‰è¾¦æ³•æ–½å±•é€™å€‹æ³•è¡“ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
-  act( "$n²½°_¤@±i³±¬É¶Ç°e²Å¡C©¿µM¥|©P§j°_¤F¤@°}²DÄBÄBªº³±­·¡M³±­·¤§¤¤§Ï©»"
-       "¦³³\\¦h¤H¼v¦b®Ì°Ê¡MµM«á¤@°}¤õ¥ú¬ğµMÃz°_¡T", ch, NULL, NULL, TO_CHAR );
+  act( "$nç¥­èµ·ä¸€å¼µé™°ç•Œå‚³é€ç¬¦ã€‚å¿½ç„¶å››å‘¨å¹èµ·äº†ä¸€é™£æ¶¼é¢¼é¢¼çš„é™°é¢¨ï¹é™°é¢¨ä¹‹ä¸­å½·å½¿"
+       "æœ‰è¨±\å¤šäººå½±åœ¨æ™ƒå‹•ï¹ç„¶å¾Œä¸€é™£ç«å…‰çªç„¶çˆ†èµ·ï¹—", ch, NULL, NULL, TO_CHAR );
 
   if ( !victim->in_room
     || victim->mount
@@ -3701,7 +3701,7 @@ SKILL( cast_teleport )
     || ( victim != ch
       && ( saves_spell( level, victim ) || saves_spell( level, victim ) ) ) )
   {
-    send_to_char( "¦ı¬O¤°»ò¨Æ¤]¨S¦³µo¥Í¡C\n\r", ch );
+    send_to_char( "ä½†æ˜¯ä»€éº¼äº‹ä¹Ÿæ²’æœ‰ç™¼ç”Ÿã€‚\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -3717,18 +3717,18 @@ SKILL( cast_teleport )
       && !is_loge( pRoomIndex ) ) break;
   }
 
-  act( "$n¥uÄ±±o¨­¤l¤£Â_¤U¼Y¡M¤@ª½¤U¼Y¡M¤@ª½¤U¼Y¡M¤@ª½¤U¼Y¡M¤@ª½¤U¼Y¡C"
+  act( "$nåªè¦ºå¾—èº«å­ä¸æ–·ä¸‹å¢œï¹ä¸€ç›´ä¸‹å¢œï¹ä¸€ç›´ä¸‹å¢œï¹ä¸€ç›´ä¸‹å¢œï¹ä¸€ç›´ä¸‹å¢œã€‚"
       , victim, NULL, NULL, TO_ALL );
 
   char_from_room( victim );
   char_to_room( victim, pRoomIndex );
 
-  act( "¤£ª¾¹D¤°»ò®É­Ô¡M$nµo²{¨ä¹ê¤@ª½³£¯¸¦b°íµwªº¦a­±¤W¡M¥i¬O¥|©Pªº´ºª«"
-       "«o¤£¤@¼Ë¤F¡C" , ch, NULL, NULL, TO_ALL );
+  act( "ä¸çŸ¥é“ä»€éº¼æ™‚å€™ï¹$nç™¼ç¾å…¶å¯¦ä¸€ç›´éƒ½ç«™åœ¨å …ç¡¬çš„åœ°é¢ä¸Šï¹å¯æ˜¯å››å‘¨çš„æ™¯ç‰©"
+       "å»ä¸ä¸€æ¨£äº†ã€‚" , ch, NULL, NULL, TO_ALL );
 
   do_look( victim, "auto" );
 
-  /* ²M°£°lÂÜ¬ö¿ıÂI */
+  /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
   clear_trace( victim, TRUE );
 
   RETURN( TRUE );
@@ -3743,7 +3743,7 @@ SKILL( cast_weaken )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cast_weaken: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_weaken: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3751,7 +3751,7 @@ SKILL( cast_weaken )
     || saves_spell( level, victim )
     || get_curr_str( victim ) <= 2 )
   {
-    act( "§Aªºªk³N¹ï$N¨Ã¨S¦³®Ä¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä½ çš„æ³•è¡“å°$Nä¸¦æ²’æœ‰æ•ˆï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -3761,8 +3761,8 @@ SKILL( cast_weaken )
   af.modifier  = -2;
   af.level     = level;
   affect_to_char( victim, &af );
-  send_to_char( "§A·PÄ±¥ş¨­µê®z¤F¤@¨Ç¡M¦n¹³³s§ìÂûªº¤O¶q³£¨S¤F¡T\n\r", victim );
-  if ( ch != victim ) send_to_char( "¦n¤F¡T\n\r", ch );
+  send_to_char( "ä½ æ„Ÿè¦ºå…¨èº«è™›å¼±äº†ä¸€äº›ï¹å¥½åƒé€£æŠ“é›çš„åŠ›é‡éƒ½æ²’äº†ï¹—\n\r", victim );
+  if ( ch != victim ) send_to_char( "å¥½äº†ï¹—\n\r", ch );
   RETURN( TRUE );
 }
 
@@ -3784,7 +3784,7 @@ SKILL( cast_acid_breath )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_acid_breath: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_acid_breath: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3792,20 +3792,20 @@ SKILL( cast_acid_breath )
   {
     if ( saves_spell( level, victim ) ) dam /= 2;
 
-    act( "$n«ã§q¤@Án¡M¦b¤@°}¥Õ·Ï¤¤¥u¨£$e¤w¤Û¤Æ¦¨¤@¤ä¥¨Às¡C"
+    act( "$næ€’å¼ä¸€è²ï¹åœ¨ä¸€é™£ç™½ç…™ä¸­åªè¦‹$eå·²å¹»åŒ–æˆä¸€æ”¯å·¨é¾ã€‚"
       , ch, NULL, NULL, TO_ALL );
   }
   else
   {
     if ( saves_spell( level, victim ) ) dam /= 2;
-    act( "$nªº¨­¼vÅZ¦a®ø¥¢¤£¨£¡M¦b$N¥¢¯«ªº®É­Ô¡M¤@¤ä¥¨¤jªº¯«Às±q¤Ñ¦Ó­°"
-         "¡M±N$NÀ~¤F¤@¸õ¡T", ch, NULL, victim, TO_ALL );
+    act( "$nçš„èº«å½±é©€åœ°æ¶ˆå¤±ä¸è¦‹ï¹åœ¨$Nå¤±ç¥çš„æ™‚å€™ï¹ä¸€æ”¯å·¨å¤§çš„ç¥é¾å¾å¤©è€Œé™"
+         "ï¹å°‡$Nåš‡äº†ä¸€è·³ï¹—", ch, NULL, victim, TO_ALL );
   }
 
   sact( ch, victim, NULL,
-    "¥¨Às¯Í»H¾Ä¤O¤@´§¡M¥u¨£¹Ğ·ÏÄjº©¡M±µµÛ¤@°}¥¨¤jªº¦R®§¥Ñ$n¦V"
-    "$Nµo¥X¡C\n\rºò±µµÛ¶Â·t¤@¤ù¡M§A¤°»ò³£¬İ¤£¨ì¡M¸£¤¤·P¨ü¨ì¤@ªÑ»Ä¨ı"
-    "¡M§A·P¨ì¤@°}·w¯t¡C" );
+    "å·¨é¾ç¿…è†€å¥®åŠ›ä¸€æ®ï¹åªè¦‹å¡µç…™ç€°æ¼«ï¹æ¥è‘—ä¸€é™£å·¨å¤§çš„åæ¯ç”±$nå‘"
+    "$Nç™¼å‡ºã€‚\n\rç·Šæ¥è‘—é»‘æš—ä¸€ç‰‡ï¹ä½ ä»€éº¼éƒ½çœ‹ä¸åˆ°ï¹è…¦ä¸­æ„Ÿå—åˆ°ä¸€è‚¡é…¸å‘³"
+    "ï¹ä½ æ„Ÿåˆ°ä¸€é™£æšˆçœ©ã€‚" );
 
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_MOB );
 
@@ -3823,7 +3823,7 @@ SKILL( cast_acid_breath )
       case ITEM_ARMOR:
         if ( obj_lose->value[0] > 0 )
         {
-          act( "$pµo¥X°}°}¥Õ·Ï¡M±µµÛ¦b»Ä²G¤¤·´Ãa¤F¡T"
+          act( "$pç™¼å‡ºé™£é™£ç™½ç…™ï¹æ¥è‘—åœ¨é…¸æ¶²ä¸­æ¯€å£äº†ï¹—"
             , victim, obj_lose, NULL, TO_CHAR );
 
           if ( ( iWear = obj_lose->wear_loc ) != WEAR_NONE )
@@ -3838,7 +3838,7 @@ SKILL( cast_acid_breath )
         break;
 
       case ITEM_CONTAINER:
-        act( "$p³Q»Ä²G»G»k¡M«_¤F¤@°}·Ï«K®ø¥¢¤F¡T"
+        act( "$pè¢«é…¸æ¶²è…è•ï¹å†’äº†ä¸€é™£ç…™ä¾¿æ¶ˆå¤±äº†ï¹—"
           , victim, obj_lose, NULL, TO_CHAR );
         extract_obj( obj_lose );
         break;
@@ -3861,7 +3861,7 @@ SKILL( cast_fire_breath )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_fire_breath: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_fire_breath: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3878,13 +3878,13 @@ SKILL( cast_fire_breath )
       switch ( obj_lose->item_type )
       {
       default:             continue;
-      case ITEM_CONTAINER: msg = "$p°_¤õ¿U¿N¤F¡T";         break;
-      case ITEM_POTION:    msg = "$p«_¥X®ğªw¦ÓªmÄË¤F¡T";   break;
-      case ITEM_SCROLL:    msg = "$p°_¤õ¿U¿N¤F¡T";         break;
-      case ITEM_STAFF:     msg = "$p«_·Ï¦ÓÅÜ¦¨¤ì¬´¤F¡T";   break;
-      case ITEM_WAND:      msg = "$p«_·Ï¦Ó¸Hµõ¤F¡T";       break;
-      case ITEM_FOOD:      msg = "$pÅÜ¦¨µJºÒ¤F¡T";         break;
-      case ITEM_PILL:      msg = "$pº²¤Æ¦Óºw¸¨¦a­±¡T";     break;
+      case ITEM_CONTAINER: msg = "$pèµ·ç«ç‡ƒç‡’äº†ï¹—";         break;
+      case ITEM_POTION:    msg = "$på†’å‡ºæ°£æ³¡è€Œæ²¸é¨°äº†ï¹—";   break;
+      case ITEM_SCROLL:    msg = "$pèµ·ç«ç‡ƒç‡’äº†ï¹—";         break;
+      case ITEM_STAFF:     msg = "$på†’ç…™è€Œè®Šæˆæœ¨ç‚­äº†ï¹—";   break;
+      case ITEM_WAND:      msg = "$på†’ç…™è€Œç¢è£‚äº†ï¹—";       break;
+      case ITEM_FOOD:      msg = "$pè®Šæˆç„¦ç¢³äº†ï¹—";         break;
+      case ITEM_PILL:      msg = "$pç†”åŒ–è€Œæ»´è½åœ°é¢ï¹—";     break;
       }
 
       act( smash_act_keyword( msg, "nesp" ) , victim, obj_lose, NULL, TO_CHAR );
@@ -3892,7 +3892,7 @@ SKILL( cast_fire_breath )
     }
   }
 
-  act( "$1$n$1¥¨¤f¤@±i¡M¤@ªÑ¤õµK¯ëªº¦R®§¥Ñ¤f¤¤¼Q¥X¡Mª½¹G$N¡T$0"
+  act( "$1$n$1å·¨å£ä¸€å¼µï¹ä¸€è‚¡ç«ç„°èˆ¬çš„åæ¯ç”±å£ä¸­å™´å‡ºï¹ç›´é€¼$Nï¹—$0"
     , ch, NULL, victim, TO_CHAR );
 
   dam  = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_MOB );
@@ -3912,7 +3912,7 @@ SKILL( cast_frost_breath )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_frost_breath: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_frost_breath: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3933,7 +3933,7 @@ SKILL( cast_frost_breath )
       case ITEM_DRINK_CON:
       case ITEM_POTION:
 
-        act( "$p¾D¨ì·´Ãa¤F¡T", victim, obj_lose, NULL, TO_CHAR );
+        act( "$pé­åˆ°æ¯€å£äº†ï¹—", victim, obj_lose, NULL, TO_CHAR );
         extract_obj( obj_lose );
         break;
       }
@@ -3941,7 +3941,7 @@ SKILL( cast_frost_breath )
   }
 
   sact( ch, victim, NULL,
-    "$S$n$S±N¤f¤¤ªº$w¦B­á$s¦R®§¦R¦V$N¡M¥|©Pªº·Å«×«æÁØ­°¨ì¦BÂI¥H¤U¡T$Z" );
+    "$S$n$Så°‡å£ä¸­çš„$wå†°å‡$såæ¯åå‘$Nï¹å››å‘¨çš„æº«åº¦æ€¥é½é™åˆ°å†°é»ä»¥ä¸‹ï¹—$Z" );
 
   dam  = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_MOB );
   if ( saves_spell( level, victim ) ) dam /= 2;
@@ -3959,7 +3959,7 @@ SKILL( cast_gas_breath )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_gas_breath: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_gas_breath: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3967,13 +3967,13 @@ SKILL( cast_gas_breath )
   {
     vch_next = vch->next_in_room;
 
-    /* ©Çª«¤£¥´©Çª« */
+    /* æ€ªç‰©ä¸æ‰“æ€ªç‰© */
     if ( IS_NPC( ch ) && IS_NPC( vch ) ) continue;
 
     if ( !check_can_kill( ch, vch ) ) continue;
 
     sact( ch, vch, NULL,
-      "$G$n$G±i¤f¼Q¥X¼@¬rªº$b¥Ë´µ$R­·¼É¡M²{³õ¤@¤ù²V¶Ã¡T$Z" );
+      "$G$n$Gå¼µå£å™´å‡ºåŠ‡æ¯’çš„$bç“¦æ–¯$Ré¢¨æš´ï¹ç¾å ´ä¸€ç‰‡æ··äº‚ï¹—$Z" );
 
     if ( IS_NPC( ch ) ? !IS_NPC( vch ) : IS_NPC( vch ) )
     {
@@ -3995,13 +3995,13 @@ SKILL( cast_lightning_breath )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_lightning_breath: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_lightning_breath: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   sact( ch, victim, NULL,
-    "$W$n$W­I¤W¯Í»H¤@¶}¤@Âó¤§»Ú§Y¥Ñ¤WªÅ¿E®g¥X¼Æ¹D"
-    "$s¹p¹q$W¡Mµ§ª½ªº³e¬ï$Nªº¨­Åé¡T$Z" );
+    "$W$n$WèƒŒä¸Šç¿…è†€ä¸€é–‹ä¸€é—”ä¹‹éš›å³ç”±ä¸Šç©ºæ¿€å°„å‡ºæ•¸é“"
+    "$sé›·é›»$Wï¹ç­†ç›´çš„è²«ç©¿$Nçš„èº«é«”ï¹—$Z" );
 
   dam  = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_MOB );
   if ( saves_spell( level, victim ) ) dam /= 2;
@@ -4021,7 +4021,7 @@ SKILL( cast_scan )
 
   if ( !pString[0] )
   {
-    act( "$n¦V¥|­±¤K¤è»·²·¡C", ch, NULL, NULL, TO_ROOM );
+    act( "$nå‘å››é¢å…«æ–¹é çœºã€‚", ch, NULL, NULL, TO_ROOM );
 
     for ( found = FALSE, dir = 0; dir < DIR_MAX; dir++ )
     {
@@ -4032,7 +4032,7 @@ SKILL( cast_scan )
       }
     }
 
-    if ( !found ) act( "$r³o¨à¨S¦³¥ô¦ó¥X¤f¡T", ch, NULL, NULL, TO_CHAR );
+    if ( !found ) act( "$ré€™å…’æ²’æœ‰ä»»ä½•å‡ºå£ï¹—", ch, NULL, NULL, TO_CHAR );
   }
 
   else
@@ -4046,15 +4046,15 @@ SKILL( cast_scan )
     else if ( !str_prefix( pString, "out"   ) ) dir = DIR_OUT;
     else
     {
-      act( "$T ¤£¬O­Ó¤è¦V¡T", ch, NULL, pString, TO_CHAR );
+      act( "$T ä¸æ˜¯å€‹æ–¹å‘ï¹—", ch, NULL, pString, TO_CHAR );
       RETURN( TRUE );
     }
 
-    act( "$n¦V$T¤è»·²·¡C", ch, NULL, direction_name( dir ), TO_ROOM );
+    act( "$nå‘$Tæ–¹é çœºã€‚", ch, NULL, direction_name( dir ), TO_ROOM );
 
     if ( !ch->in_room->exit[dir] )
     {
-      act( "$T¤è¨S¦³¥X¸ô¡T", ch, NULL, direction_name( dir ), TO_CHAR );
+      act( "$Tæ–¹æ²’æœ‰å‡ºè·¯ï¹—", ch, NULL, direction_name( dir ), TO_CHAR );
       RETURN( TRUE );
     }
 
@@ -4071,19 +4071,19 @@ void scan( CHAR_DATA * ch , int door )
   bool              found;
   ROOM_INDEX_DATA * was_in_room;
   char * const dist_name [] =
-    { "", "«Üªñ³B", "¤£»·³B", "µy»·³B", "»·³B", "·¥»·³B", "³Ì»·³B" };
+    { "", "å¾ˆè¿‘è™•", "ä¸é è™•", "ç¨é è™•", "é è™•", "æ¥µé è™•", "æœ€é è™•" };
 
   PUSH_FUNCTION( "scan" );
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "scan: ¯Ê¥F¨Ó·½" );
+    mudlog( LOG_DEBUG, "scan: ç¼ºä¹ä¾†æº" );
     RETURN_NULL();
   }
 
   if ( door < 0 || door >= DIR_MAX )
   {
-    mudlog( LOG_DEBUG, "scan: ¥X¤f %d ¤£¹ï.", door );
+    mudlog( LOG_DEBUG, "scan: å‡ºå£ %d ä¸å°.", door );
     RETURN_NULL();
   }
 
@@ -4122,9 +4122,9 @@ void scan( CHAR_DATA * ch , int door )
         char door_name[MAX_STRING_LENGTH];
 
         one_argument( pExit->keyword, door_name );
-        if ( !door_name[0] ) str_cat( door_name, "ªù" );
+        if ( !door_name[0] ) str_cat( door_name, "é–€" );
 
-        print_to_char( ch , "¤@­Ó³QÃö°_¨Óªº%s¦b%s¤è%s¡C\n\r"
+        print_to_char( ch , "ä¸€å€‹è¢«é—œèµ·ä¾†çš„%såœ¨%sæ–¹%sã€‚\n\r"
           , door_name, direction_name( door ), dist_name[distance-1] );
 
         found = TRUE;
@@ -4145,9 +4145,9 @@ void scan( CHAR_DATA * ch , int door )
       {
         if ( can_see( ch, rch ) )
         {
-          print_to_char( ch , "%s%s´N¦b§Aªº%s¤è%s¡C\n\r"
+          print_to_char( ch , "%s%så°±åœ¨ä½ çš„%sæ–¹%sã€‚\n\r"
             ,mob_name( ch, rch )
-            ,IS_NPC( rch ) ? "" : "¡uª±®a¡v"
+            ,IS_NPC( rch ) ? "" : "ã€Œç©å®¶ã€"
             ,direction_name( door )
             ,dist_name[distance] );
           found = TRUE;
@@ -4158,7 +4158,7 @@ void scan( CHAR_DATA * ch , int door )
 
   ch->in_room = was_in_room;
 
-  if ( !found ) act( "§Aªº$t¤è¨S¦³¥ô¦ó­È±oª`·Nªº¤H¡C"
+  if ( !found ) act( "ä½ çš„$tæ–¹æ²’æœ‰ä»»ä½•å€¼å¾—æ³¨æ„çš„äººã€‚"
     , ch, direction_name( door ), NULL, TO_CHAR );
 
   RETURN_NULL();
@@ -4173,21 +4173,21 @@ SKILL( cast_seven_key_numen )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_seven_key_numen: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_seven_key_numen: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* «e¸m°T®§ */
+  /* å‰ç½®è¨Šæ¯ */
   sact( ch, victim, NULL,
-    "$R        ¨Ó¦Û­ß¬Éªº¤C½åªÌ°Ú¡T$A        $Y¥Î¤C§âÆ_°Í¥´¶}¦aº»¤§ªù¡T"
-    "$A$A        $G¨s·¥Å]ªk¡T¤CÆ_¦uÅ@¯«¡T$Z$A" );
+    "$R        ä¾†è‡ªå†¥ç•Œçš„ä¸ƒè³¢è€…å•Šï¹—$A        $Yç”¨ä¸ƒæŠŠé‘°åŒ™æ‰“é–‹åœ°ç„ä¹‹é–€ï¹—"
+    "$A$A        $Gç©¶æ¥µé­”æ³•ï¹—ä¸ƒé‘°å®ˆè­·ç¥ï¹—$Z$A" );
 
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_MAG );
   dam = number_range( dam, dam * 3 );
 
   if ( ch->alignment < -( AlignRange / 2 ) )
   {
-    sact( ch, victim, NULL, "$R­ß¬Éªº¤õµKº¥º¥ªº©µ¿N¨ì$N¨­¤W¡T$Z" );
+    sact( ch, victim, NULL, "$Rå†¥ç•Œçš„ç«ç„°æ¼¸æ¼¸çš„å»¶ç‡’åˆ°$Nèº«ä¸Šï¹—$Z" );
     dam = number_range( dam, dam * ( ( 0 - ch->alignment ) / 300 ) );
     dam = UMAX( 0, UMIN( MAG_ATTACK_DAM, dam ) );
   }
@@ -4195,8 +4195,8 @@ SKILL( cast_seven_key_numen )
   if ( ch->skill[sn] > 85 && number_percent() > 70 )
   {
     sact( ch, victim, NULL,
-      "$S¤@°}ÆvÂÅªº¤õµK¤§¤¤¡M¤j¤Ñ¨Ï$R¸ô¦èªk$S¥Ñ¤Ñ¦Ó­°¡T$A"
-      "$R¸ô¦èªk$S±µµÛ«K¥Î¶Â¦âªº¯Í»H©çÀ»$N¡T$Z$A" );
+      "$Sä¸€é™£è±”è—çš„ç«ç„°ä¹‹ä¸­ï¹å¤§å¤©ä½¿$Rè·¯è¥¿æ³•$Sç”±å¤©è€Œé™ï¹—$A"
+      "$Rè·¯è¥¿æ³•$Sæ¥è‘—ä¾¿ç”¨é»‘è‰²çš„ç¿…è†€æ‹æ“Š$Nï¹—$Z$A" );
 
     dam = number_range( 3 * dam / 2, dam * 3 );
     dam = UMAX( 0, UMIN( MAG_ATTACK_DAM, dam ) );
@@ -4207,7 +4207,7 @@ SKILL( cast_seven_key_numen )
   RETURN( TRUE );
 }
 
-/* Àt®§¤jªk */
+/* é¾œæ¯å¤§æ³• */
 SKILL( cast_dormancy )
 {
   int  old;
@@ -4233,21 +4233,21 @@ SKILL( cast_dormancy )
 
   if ( change )
   {
-    /* Àò±o§Ş¯àªº¼ô½m«× */
+    /* ç²å¾—æŠ€èƒ½çš„ç†Ÿç·´åº¦ */
     gain_skill_exp( ch , sn , TRUE );
 
-    send_to_char( "§Aªº©I§lÁÍ©ó½wºC¡M¨­Åé¤]¯u¥¿±o¨ì¸Ñ²æ¡C\n\r", ch );
+    send_to_char( "ä½ çš„å‘¼å¸è¶¨æ–¼ç·©æ…¢ï¹èº«é«”ä¹ŸçœŸæ­£å¾—åˆ°è§£è„«ã€‚\n\r", ch );
   }
 
   else
   {
-    send_to_char( "§Aªº©I§l¤S¦^´_¨ì¥¿±`ªº¼Ë¤l¡C\n\r", ch );
+    send_to_char( "ä½ çš„å‘¼å¸åˆå›å¾©åˆ°æ­£å¸¸çš„æ¨£å­ã€‚\n\r", ch );
   }
 
   RETURN( TRUE );
 }
 
-/* ©öµ¬¸g */
+/* æ˜“ç­‹ç¶“ */
 SKILL( cast_physique )
 {
   int old;
@@ -4261,43 +4261,43 @@ SKILL( cast_physique )
 
   if ( ch->move > old )
   {
-    /* Àò±o§Ş¯àªº¼ô½m«× */
+    /* ç²å¾—æŠ€èƒ½çš„ç†Ÿç·´åº¦ */
     gain_skill_exp( ch , sn , TRUE );
 
     switch( level / 20 )
     {
     default:
     case 0:
-      send_to_char( "§A¦ü¥G·P¨ì¦³¼Æ¹D¯u®ğ¹C¨«©óÅé¤º¡C\n\r", ch );
+      send_to_char( "ä½ ä¼¼ä¹æ„Ÿåˆ°æœ‰æ•¸é“çœŸæ°£éŠèµ°æ–¼é«”å…§ã€‚\n\r", ch );
       break;
 
     case 1:
-      send_to_char( "§AÅé¤ºªº¯u®ğ¶V¨Ó¶V±j¯P¡M§A§Ö­n±±¨î¤£¦í¡C", ch );
+      send_to_char( "ä½ é«”å…§çš„çœŸæ°£è¶Šä¾†è¶Šå¼·çƒˆï¹ä½ å¿«è¦æ§åˆ¶ä¸ä½ã€‚", ch );
       break;
 
     case 2:
-      send_to_char( "§AÅé¤ºªº¯u®ğµS¦pÀs¦æ©ó¤Ñ¡M¦pµê¦p¤Û¡C\n\r", ch );
+      send_to_char( "ä½ é«”å…§çš„çœŸæ°£çŒ¶å¦‚é¾è¡Œæ–¼å¤©ï¹å¦‚è™›å¦‚å¹»ã€‚\n\r", ch );
       break;
 
     case 3:
-      send_to_char( "¥u¨£§A¦½¬y¯H­I¡M¼Æ¹D¯u®ğµS¦p¤õ¤s¯ë«_¤F¥X¨Ó¡C\n\r", ch );
+      send_to_char( "åªè¦‹ä½ æ±—æµæµ¹èƒŒï¹æ•¸é“çœŸæ°£çŒ¶å¦‚ç«å±±èˆ¬å†’äº†å‡ºä¾†ã€‚\n\r", ch );
       break;
 
     case 4:
-      send_to_char( "§AÁy¤W¤@°}µµ¡M¤@°}¬õ¡MÅé¤º»¡¤£¥Xªº§Ö¬¡¡C\n\r", ch );
+      send_to_char( "ä½ è‡‰ä¸Šä¸€é™£ç´«ï¹ä¸€é™£ç´…ï¹é«”å…§èªªä¸å‡ºçš„å¿«æ´»ã€‚\n\r", ch );
       break;
     }
   }
 
   else
   {
-    send_to_char( "§AÅé¤ºªº¼Æ¹D¯u®ğºCºC´²¥h®ø¥¢¤F¡T\n\r", ch );
+    send_to_char( "ä½ é«”å…§çš„æ•¸é“çœŸæ°£æ…¢æ…¢æ•£å»æ¶ˆå¤±äº†ï¹—\n\r", ch );
   }
 
   RETURN( TRUE );
 }
 
-/* ¥´ÁI¤C */
+/* æ‰“ç¦ªä¸ƒ */
 SKILL( cast_meditation )
 {
   int old;
@@ -4311,20 +4311,20 @@ SKILL( cast_meditation )
 
   if ( ch->mana > old )
   {
-    /* Àò±o§Ş¯àªº¼ô½m«× */
+    /* ç²å¾—æŠ€èƒ½çš„ç†Ÿç·´åº¦ */
     gain_skill_exp( ch , sn , TRUE );
-    send_to_char( "§A®ğ®§½Õ¤Ã¡M©I§lº¥ºC¡M¤ß¤¤«o¦³¦p¤d­x¸U°¨©bÄË¡C\n\r", ch );
+    send_to_char( "ä½ æ°£æ¯èª¿å‹»ï¹å‘¼å¸æ¼¸æ…¢ï¹å¿ƒä¸­å»æœ‰å¦‚åƒè»è¬é¦¬å¥”é¨°ã€‚\n\r", ch );
   }
 
   else
   {
-    send_to_char( "§A¤w¸gµLªkÄ~Äò­ß·Q¤F¡C\n\r", ch );
+    send_to_char( "ä½ å·²ç¶“ç„¡æ³•ç¹¼çºŒå†¥æƒ³äº†ã€‚\n\r", ch );
   }
 
   RETURN( TRUE );
 }
 
-/* ¸g¯ß°f¦æ */
+/* ç¶“è„ˆé€†è¡Œ */
 SKILL( cast_anti_physique )
 {
   int old;
@@ -4338,25 +4338,25 @@ SKILL( cast_anti_physique )
 
   if ( ch->hit > old )
   {
-    /* Àò±o§Ş¯àªº¼ô½m«× */
+    /* ç²å¾—æŠ€èƒ½çš„ç†Ÿç·´åº¦ */
     gain_skill_exp( ch , sn , TRUE );
 
     switch( level / 50 )
     {
     default:
     case 0:
-      send_to_char( "¨­¤W®ğ¦åÂ½Âà¡M¸g¯ß°f¦æ¡T\n\r", ch );
+      send_to_char( "èº«ä¸Šæ°£è¡€ç¿»è½‰ï¹ç¶“è„ˆé€†è¡Œï¹—\n\r", ch );
       break;
 
     case 1:
-      send_to_char( "¨­¤W©_¸g¤K¯ß¬Ò°f¦æ¡M¦ı¦³ºØ»¡¤£¥X¨Óªºµh§Ö¡C\n\r", ch );
+      send_to_char( "èº«ä¸Šå¥‡ç¶“å…«è„ˆçš†é€†è¡Œï¹ä½†æœ‰ç¨®èªªä¸å‡ºä¾†çš„ç—›å¿«ã€‚\n\r", ch );
       break;
     }
   }
 
   else
   {
-    send_to_char( "§Aªº¦å®ğ¤S«ì´_¥¿±`¡C\n\r", ch );
+    send_to_char( "ä½ çš„è¡€æ°£åˆæ¢å¾©æ­£å¸¸ã€‚\n\r", ch );
   }
 
   RETURN( TRUE );
@@ -4371,13 +4371,13 @@ SKILL( cast_venom )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_venom: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_venom: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( obj->venom > 0 )
   {
-    act( "¹ï¤£°_¡M$p¤w¸g©Ù¬r¤F¡T", ch, obj, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$på·²ç¶“æŠ¹æ¯’äº†ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -4393,13 +4393,13 @@ SKILL( cast_venom )
   case ITEM_FOUNTAIN:
   case ITEM_LETTER:
 
-    act( "§A¬O¨S¦³¿ìªk¦b$p¤W­±©Ù¬rªº¡T", ch, obj, NULL, TO_CHAR );
+    act( "ä½ æ˜¯æ²’æœ‰è¾¦æ³•åœ¨$pä¸Šé¢æŠ¹æ¯’çš„ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( TRUE );
   }
 
   obj->venom = timer = UMAX( 1, level /5 );
 
-  act( "¤p¤ß¡M$n¤w¸g¦b$p¤W©Ù¤F¬r¡M®É®Ä¬O$I¤p®É¡C", ch, obj, &timer, TO_ALL );
+  act( "å°å¿ƒï¹$nå·²ç¶“åœ¨$pä¸ŠæŠ¹äº†æ¯’ï¹æ™‚æ•ˆæ˜¯$Iå°æ™‚ã€‚", ch, obj, &timer, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -4414,19 +4414,19 @@ SKILL( cast_develop )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_develop: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_develop: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !is_armor( obj ) || obj->max_armor <= 0 )
   {
-    act( "$p¬OµLªk¼W±jªº³á¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pæ˜¯ç„¡æ³•å¢å¼·çš„å–”ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( obj->armor < ( ( obj->max_armor * 80 ) / 100 ) )
   {
-    act( "§A¥ı§â$p­×²z¦n¤@ÂI¡M¦A¨Ó¥[±j§a¡T", ch, obj, NULL, TO_CHAR );
+    act( "ä½ å…ˆæŠŠ$pä¿®ç†å¥½ä¸€é»ï¹å†ä¾†åŠ å¼·å§ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -4434,14 +4434,14 @@ SKILL( cast_develop )
 
   if ( ( diff = max - obj->armor ) <= 0 )
   {
-    act( "$p¤w¸g¼W±j¹F¨ì³»·¥¤F¡T", ch, obj, NULL, TO_CHAR );
+    act( "$på·²ç¶“å¢å¼·é”åˆ°é ‚æ¥µäº†ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   enforce    = number_range( 1, level * 2 );
   obj->armor = UMIN( max, obj->armor + enforce );
 
-  act( "$n§â$pªº¨¾Å@¤O¤S´£ª@¤F¤£¤Ö¡T", ch, obj, NULL, TO_ALL );
+  act( "$næŠŠ$pçš„é˜²è­·åŠ›åˆææ˜‡äº†ä¸å°‘ï¹—", ch, obj, NULL, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -4455,19 +4455,19 @@ SKILL( cast_repair )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_repair: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_repair: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !is_armor( obj ) || obj->max_armor <= 0 )
   {
-    act( "$p¥Ø«eµLªk­×²zªº³á¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pç›®å‰ç„¡æ³•ä¿®ç†çš„å–”ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ( max = obj->max_armor - obj->armor ) <= 0 )
   {
-    act( "$p¦nªº«Ü¡M¤£¥Î­×²z¤F¡T", ch, obj, NULL, TO_CHAR );
+    act( "$på¥½çš„å¾ˆï¹ä¸ç”¨ä¿®ç†äº†ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -4475,9 +4475,9 @@ SKILL( cast_repair )
   obj->armor = UMIN( obj->armor + enforce, obj->max_armor );
 
   if ( obj->armor >= obj->max_armor )
-    act( "$n§V¤O¦a­×²z$p¡M$p¬İ°_¨Ó©M·sªº¤@¼Ë¤F¡T", ch, obj, NULL, TO_ALL );
+    act( "$nåŠªåŠ›åœ°ä¿®ç†$pï¹$pçœ‹èµ·ä¾†å’Œæ–°çš„ä¸€æ¨£äº†ï¹—", ch, obj, NULL, TO_ALL );
   else
-    act( "$nºÉ¤O¦a­×²z$p¡M¦ı§Ş³N¤£°÷¦¨¼ô¡MÁÙ±o§V¤O¡T", ch, obj, NULL, TO_ALL );
+    act( "$nç›¡åŠ›åœ°ä¿®ç†$pï¹ä½†æŠ€è¡“ä¸å¤ æˆç†Ÿï¹é‚„å¾—åŠªåŠ›ï¹—", ch, obj, NULL, TO_ALL );
 
   RETURN( TRUE );
 }
@@ -4490,14 +4490,14 @@ SKILL( cast_preserve )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_preserve: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_preserve: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   switch( obj->item_type )
   {
   default:
-    act( "$p¬OµLªk°µ¨¾»G³B²zªº¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pæ˜¯ç„¡æ³•åšé˜²è…è™•ç†çš„ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
 
   case ITEM_FOOD:
@@ -4506,13 +4506,13 @@ SKILL( cast_preserve )
 
   if ( obj->timer >= level * 30 )
   {
-    act( "$pªº«O¦s´Á­­¤w¸g¶W¥X§A¯àªº·¥­­¤F¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pçš„ä¿å­˜æœŸé™å·²ç¶“è¶…å‡ºä½ èƒ½çš„æ¥µé™äº†ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   obj->timer += number_range( 10, ( level / 2 ) * 10 );
 
-  act( "$n¬I®i¨¾»G³N¡M¥u¨£$pªºªí­±Å¢¸nµÛ¤@ªÑ¯S®í®ğ¬y¡C", ch, obj, NULL, TO_ALL );
+  act( "$næ–½å±•é˜²è…è¡“ï¹åªè¦‹$pçš„è¡¨é¢ç± ç½©è‘—ä¸€è‚¡ç‰¹æ®Šæ°£æµã€‚", ch, obj, NULL, TO_ALL );
   RETURN( TRUE );
 }
 
@@ -4525,20 +4525,20 @@ SKILL( cast_cook )
 
   if ( !obj || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_cook: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_cook: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( ch->in_room->nobject >= MaxRoomObject )
   {
-    send_to_char( "³o¸Ìªºª««~¤Ó¦h¤F¡M½Ğ¥ı©^Äm±¼¤@¨Ç§a¡T\n\r", ch );
+    send_to_char( "é€™è£¡çš„ç‰©å“å¤ªå¤šäº†ï¹è«‹å…ˆå¥‰ç»æ‰ä¸€äº›å§ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   switch( obj->item_type )
   {
   default:
-    act( "$p¬OµLªk®³¨Ó®Æ²zªº¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pæ˜¯ç„¡æ³•æ‹¿ä¾†æ–™ç†çš„ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
 
   case ITEM_CORPSE_NPC:
@@ -4547,12 +4547,12 @@ SKILL( cast_cook )
 
   if ( !( meat = create_object( ObjMeat, 1 ) ) )
   {
-    send_to_char( "¹ï¤£°_¡M¨t²Î§@¤£¥X¦×¶ô¥X¨Ó¡T\n\r", ch );
-    mudlog( LOG_DEBUG, "cast_cook: ¨S¦³¦×¶ô %d.", ObjMeatVnum );
+    send_to_char( "å°ä¸èµ·ï¹ç³»çµ±ä½œä¸å‡ºè‚‰å¡Šå‡ºä¾†ï¹—\n\r", ch );
+    mudlog( LOG_DEBUG, "cast_cook: æ²’æœ‰è‚‰å¡Š %d.", ObjMeatVnum );
     RETURN( FALSE );
   }
 
-  act( "$n¥Î¤M§â$p¤Á¤F¤Á¡M®Æ²z¦¨$P¡C", ch, obj, meat, TO_ALL );
+  act( "$nç”¨åˆ€æŠŠ$påˆ‡äº†åˆ‡ï¹æ–™ç†æˆ$Pã€‚", ch, obj, meat, TO_ALL );
 
   extract_obj( obj );
   obj_to_room( meat, ch->in_room );
@@ -4574,13 +4574,13 @@ SKILL( cast_steal )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_steal: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_steal: ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( !argument || !*argument )
   {
-    send_to_char( "§A­n±q½Ö¨­¤W°½¤°»òªF¦è¡S\n\r", ch );
+    send_to_char( "ä½ è¦å¾èª°èº«ä¸Šå·ä»€éº¼æ±è¥¿ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -4589,37 +4589,37 @@ SKILL( cast_steal )
 
   if ( arg1[0] == '\x0' || arg2[0] == '\x0' )
   {
-    send_to_char( "§A·Q±q½Ö¨­¤W°½¤°»òªF¦è©O¡S\n\r", ch );
+    send_to_char( "ä½ æƒ³å¾èª°èº«ä¸Šå·ä»€éº¼æ±è¥¿å‘¢ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->pcdata && ch->pcdata->steal_panity > 0 )
   {
-    act( "¶â¡M¤£­n°½ªº¤Ó¶Ô§Ö³á¡T·|³Q¤Hµo²{³á¡T", ch, NULL, NULL, TO_CHAR );
+    act( "å—¯ï¹ä¸è¦å·çš„å¤ªå‹¤å¿«å–”ï¹—æœƒè¢«äººç™¼ç¾å–”ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( !( victim = get_char_room( ch, arg2 ) ) )
   {
-    act( "§A­n°½ªº¤H $2$T$0 ¤£¦b³o¸Ì¡T", ch, NULL, arg2, TO_CHAR );
+    act( "ä½ è¦å·çš„äºº $2$T$0 ä¸åœ¨é€™è£¡ï¹—", ch, NULL, arg2, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( victim == ch )
   {
-    send_to_char( "§A­n°½§A¦Û¤vªºªF¦è¡M§A¦³¨S¦³·d¿ù¡T\n\r", ch );
+    send_to_char( "ä½ è¦å·ä½ è‡ªå·±çš„æ±è¥¿ï¹ä½ æœ‰æ²’æœ‰æéŒ¯ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( IS_IMMORTAL( victim ) )
   {
-    act( "§A¤£¥i¥H°½¤j¯«$Nªº¸Ë³Æ¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä½ ä¸å¯ä»¥å·å¤§ç¥$Nçš„è£å‚™ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( !IS_NPC( ch ) && excess_filequota( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M§AªºÀÉ®×¤Ó¤j¡MµLªk°õ¦æ³o­Ó©R¥O¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ çš„æª”æ¡ˆå¤ªå¤§ï¹ç„¡æ³•åŸ·è¡Œé€™å€‹å‘½ä»¤ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -4631,12 +4631,12 @@ SKILL( cast_steal )
     || victim->position == POS_FIGHTING
     || ( !IS_NPC( ch ) && percent > level ) )
   {
-    /* ¥¢±Ñ */
-    send_to_char( "¯u¬OÁV¿|¡M³ºµM¥¢¤â°Õ¡M¤â®ğ¯u­I¡T\n\r", ch );
-    act( "$n¹Á¸Õ±q§A¨­¤W°½ÂIªF¦è·í§@¬ö©À«~¡C", ch, NULL, victim, TO_VICT );
-    act( "$n¹Á¸Õ±q$N¨­¤W°½ÂIªF¦è¨Ó·í§@¬ö©À«~¡C",  ch, NULL, victim, TO_NOTVICT );
+    /* å¤±æ•— */
+    send_to_char( "çœŸæ˜¯ç³Ÿç³•ï¹ç«Ÿç„¶å¤±æ‰‹å•¦ï¹æ‰‹æ°£çœŸèƒŒï¹—\n\r", ch );
+    act( "$nå˜—è©¦å¾ä½ èº«ä¸Šå·é»æ±è¥¿ç•¶ä½œç´€å¿µå“ã€‚", ch, NULL, victim, TO_VICT );
+    act( "$nå˜—è©¦å¾$Nèº«ä¸Šå·é»æ±è¥¿ä¾†ç•¶ä½œç´€å¿µå“ã€‚",  ch, NULL, victim, TO_NOTVICT );
 
-    sprintf( buf, "%s¬O­Ó¤U¬yªº¤p°½¡T", mob_name( NULL, ch ) );
+    sprintf( buf, "%sæ˜¯å€‹ä¸‹æµçš„å°å·ï¹—", mob_name( NULL, ch ) );
 
     ChatRecord = FALSE;
     do_yell( victim, buf );
@@ -4654,13 +4654,13 @@ SKILL( cast_steal )
 
       else
       {
-        mudlog( LOG_INFO , "[STEAL] %s °½ªF¦è¥¢±Ñ¡M¹ï¶H¡R %s¡T"
+        mudlog( LOG_INFO , "[STEAL] %s å·æ±è¥¿å¤±æ•—ï¹å°è±¡ï¹• %sï¹—"
           , ch->name, victim->name );
 
         if ( !IS_SET( ch->act, PLR_THIEF ) )
         {
           SET_BIT( ch->act, PLR_THIEF );
-          send_to_char( "§A²{¦b¬O¤@­Ó¤p°½¡T\n\r", ch );
+          send_to_char( "ä½ ç¾åœ¨æ˜¯ä¸€å€‹å°å·ï¹—\n\r", ch );
           save_char_obj( ch , SAVE_FILE );
         }
       }
@@ -4674,22 +4674,22 @@ SKILL( cast_steal )
     amount = victim->gold * number_range( 1, 10 ) / 100;
     if ( amount <= 0 || over_scale( ch ) )
     {
-      act( "§A¨S¿ìªk±q$N¨­¤W¦A·d¨ì¿ú¤F¡C", ch, NULL, victim, TO_CHAR );
+      act( "ä½ æ²’è¾¦æ³•å¾$Nèº«ä¸Šå†æåˆ°éŒ¢äº†ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN( TRUE );
     }
 
-    mudlog( LOG_INFO, "[STEAL] %s °½¿ú¦¨¥\\¡M¹ï¶H¡R%s."
+    mudlog( LOG_INFO, "[STEAL] %s å·éŒ¢æˆåŠŸ\ï¹å°è±¡ï¹•%s."
       , ch->name, victim->name );
     gold_to_char( ch, amount );
     gold_from_char( victim, amount );
-    act( "¯u¬O¬ü§®¡T§A°½¨ì¤F$i¨â¶Àª÷¡C", ch, &amount, NULL, TO_CHAR );
+    act( "çœŸæ˜¯ç¾å¦™ï¹—ä½ å·åˆ°äº†$iå…©é»ƒé‡‘ã€‚", ch, &amount, NULL, TO_CHAR );
     if ( ch->pcdata ) ch->pcdata->steal_panity = 3;
     RETURN( TRUE );
   }
 
   if ( !( obj = get_obj_carry( victim, arg1 ) ) )
   {
-    send_to_char( "Â½¨ÓÂ½¥h¡M³ºµM§ä¤£¨ì§A­nªºªF¦è¡M«z­ù«¨¡T\n\r", ch );
+    send_to_char( "ç¿»ä¾†ç¿»å»ï¹ç«Ÿç„¶æ‰¾ä¸åˆ°ä½ è¦çš„æ±è¥¿ï¹å“‡å“©å’§ï¹—\n\r", ch );
     RETURN( TRUE );
   }
 
@@ -4700,28 +4700,28 @@ SKILL( cast_steal )
     || obj->Inventory
     || obj->level > ch->level )
   {
-    act( "§A°½¤£¨ì$p­C¡C", ch, obj, NULL, TO_CHAR );
+    act( "ä½ å·ä¸åˆ°$pè€¶ã€‚", ch, obj, NULL, TO_CHAR );
     RETURN( TRUE );
   }
 
   if ( ch->carry_number + get_obj_number( obj ) > can_carry_n( ch ) )
   {
-    send_to_char( "§A¦Û¤v¨­¤W¤w¸gÄâ±a¤Ó¦hª««~¤F¡C\n\r", ch );
+    send_to_char( "ä½ è‡ªå·±èº«ä¸Šå·²ç¶“æ”œå¸¶å¤ªå¤šç‰©å“äº†ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
   if ( ch->carry_weight + get_obj_weight( obj ) > can_carry_w( ch ) )
   {
-    send_to_char( "§A¦Û¤v¨­¤W¤w¸gÄâ±a¤Ó­«ªºª««~¤F¡C\n\r", ch );
+    send_to_char( "ä½ è‡ªå·±èº«ä¸Šå·²ç¶“æ”œå¸¶å¤ªé‡çš„ç‰©å“äº†ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
-  mudlog( LOG_INFO, "[STEAL] %s °½ªF¦è¦¨¥\\¡M¹ï¶H¡R%s ª««~ %s ."
+  mudlog( LOG_INFO, "[STEAL] %s å·æ±è¥¿æˆåŠŸ\ï¹å°è±¡ï¹•%s ç‰©å“ %s ."
     , ch->name, victim->name , obj->name );
 
   obj_from_char( obj );
   obj_to_char( obj, ch );
-  act( "$p¨ì¤â¤F¡T", ch, obj, NULL, TO_CHAR );
+  act( "$påˆ°æ‰‹äº†ï¹—", ch, obj, NULL, TO_CHAR );
   if ( ch->pcdata ) ch->pcdata->steal_panity = 5;
 
   RETURN( TRUE );
@@ -4743,13 +4743,13 @@ SKILL( cast_pick )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "cast_pick: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_pick: ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( !argument || !*argument )
   {
-    send_to_char( "§A­n¥´¶}­ş¤@­ÓÂê©O¡S\n\r", ch );
+    send_to_char( "ä½ è¦æ‰“é–‹å“ªä¸€å€‹é–å‘¢ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -4759,14 +4759,14 @@ SKILL( cast_pick )
   {
     if ( IS_NPC( gch ) && IS_AWAKE( gch ) && ch->level + 5 < gch->level )
     {
-      act( "$N´N¦b§A¨­Ãä¡M©Ò¥HµLªk¥´¶}¡C", ch, NULL, gch, TO_CHAR );
+      act( "$Nå°±åœ¨ä½ èº«é‚Šï¹æ‰€ä»¥ç„¡æ³•æ‰“é–‹ã€‚", ch, NULL, gch, TO_CHAR );
       RETURN( FALSE );
     }
   }
 
   if ( !IS_NPC( ch ) && number_percent() > level )
   {
-    send_to_char( "§A¥¢±Ñ¤F¡T\n\r", ch);
+    send_to_char( "ä½ å¤±æ•—äº†ï¹—\n\r", ch);
     RETURN( TRUE );
   }
 
@@ -4774,37 +4774,37 @@ SKILL( cast_pick )
   {
     if ( obj->item_type != ITEM_CONTAINER )
     {
-      act( "$p¤£¬O¤@­Ó®e¾¹¡T", ch, obj, NULL, TO_CHAR );
+      act( "$pä¸æ˜¯ä¸€å€‹å®¹å™¨ï¹—", ch, obj, NULL, TO_CHAR );
       RETURN( FALSE );
     }
 
     if ( !IS_SET( obj->value[1], CONT_CLOSED ) )
     {
-      act( "$p¨Ã¨S¦³Ãö°_¨Ó°Ú¡T", ch, obj, NULL, TO_CHAR );
+      act( "$pä¸¦æ²’æœ‰é—œèµ·ä¾†å•Šï¹—", ch, obj, NULL, TO_CHAR );
       RETURN( FALSE );
     }
 
     if ( obj->value[2] < 0 )
     {
-      act( "§A¤£¯à¥´¶}$p¡T", ch, obj, NULL, TO_CHAR );
+      act( "ä½ ä¸èƒ½æ‰“é–‹$pï¹—", ch, obj, NULL, TO_CHAR );
       RETURN( FALSE );
     }
 
     if ( !IS_SET( obj->value[1], CONT_LOCKED ) )
     {
-      act( "$p¤w¸g¥´¶}¤F¡T", ch, obj, NULL, TO_CHAR );
+      act( "$på·²ç¶“æ‰“é–‹äº†ï¹—", ch, obj, NULL, TO_CHAR );
       RETURN( FALSE );
     }
 
     if ( IS_SET( obj->value[1], CONT_PICKPROOF ) )
     {
-      send_to_char( "§A¥¢±Ñ¤F¡T\n\r", ch );
+      send_to_char( "ä½ å¤±æ•—äº†ï¹—\n\r", ch );
       RETURN( FALSE );
     }
 
     REMOVE_BIT(obj->value[1], CONT_LOCKED);
-    send_to_char( "³Ø°Õ¤@Án¡M§A§âÂê¥´¶}¤F¡T\n\r", ch );
-    act( "$n§â$pªºÂê¥´¶}¤F¡C", ch, obj, NULL, TO_ROOM );
+    send_to_char( "å–€å•¦ä¸€è²ï¹ä½ æŠŠé–æ‰“é–‹äº†ï¹—\n\r", ch );
+    act( "$næŠŠ$pçš„é–æ‰“é–‹äº†ã€‚", ch, obj, NULL, TO_ROOM );
     RETURN( TRUE );
   }
 
@@ -4814,31 +4814,31 @@ SKILL( cast_pick )
 
     if ( !pexit->closed )
     {
-      send_to_char( "¥¦¨Ã¨S¦³Ãö°_¨Ó¡C\n\r", ch );
+      send_to_char( "å®ƒä¸¦æ²’æœ‰é—œèµ·ä¾†ã€‚\n\r", ch );
       RETURN( FALSE );
     }
 
     if ( pexit->key < 0 )
     {
-      send_to_char( "§A¤£¯à¥´¶}¥¦¡C\n\r", ch );
+      send_to_char( "ä½ ä¸èƒ½æ‰“é–‹å®ƒã€‚\n\r", ch );
       RETURN( FALSE );
     }
 
     if ( !pexit->locked )
     {
-      send_to_char( "¥¦¨Ã¨S¦³Âê°_¨Ó¡C\n\r", ch );
+      send_to_char( "å®ƒä¸¦æ²’æœ‰é–èµ·ä¾†ã€‚\n\r", ch );
       RETURN( FALSE );
     }
 
     if ( pexit->pick )
     {
-      send_to_char( "§A¥¢±Ñ¤F¡C\n\r", ch );
+      send_to_char( "ä½ å¤±æ•—äº†ã€‚\n\r", ch );
       RETURN( TRUE );
     }
 
     pexit->locked = FALSE;
-    send_to_char( "³Ø°Õ¤@Án¡M§A§âÂê¥´¶}¤F¡C\n\r", ch );
-    act( "$n§â$dªºÂê¥´¶}¤F¡C", ch, NULL, pexit->keyword, TO_ROOM );
+    send_to_char( "å–€å•¦ä¸€è²ï¹ä½ æŠŠé–æ‰“é–‹äº†ã€‚\n\r", ch );
+    act( "$næŠŠ$dçš„é–æ‰“é–‹äº†ã€‚", ch, NULL, pexit->keyword, TO_ROOM );
 
     if ( ( to_room   = pexit->to_room               )
       && ( pexit_rev = to_room->exit[rev_dir[door]] )
@@ -4866,7 +4866,7 @@ SKILL( cast_defloration )
 
   if ( victim->move <= 1 )
   {
-    act( "$NªººëµØ¤w¸g³Q§A§l°®¤F¡C", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„ç²¾è¯å·²ç¶“è¢«ä½ å¸ä¹¾äº†ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -4879,8 +4879,8 @@ SKILL( cast_defloration )
     if ( add > 0 ) ch->move = UMIN( ch->max_move, ch->move + add );
   }
 
-  act( "$n¦ù¥X¤â«ü¹ïµÛ$N¤@¤Ä¡TµL¼Æªº¤O¶q´é¤J$nªºÅé¤º¡M¨Ï$nµÎºZµL¤ñ¡T"
-       "¦Ó$N¹yÄ±¥ş¨­µê²æµL¤O¡T«b¨º¶¡¡M$NÄ±±o¦Û¤v¶}©l¯«¸g¯Ó®z¡T"
+  act( "$nä¼¸å‡ºæ‰‹æŒ‡å°è‘—$Nä¸€å‹¾ï¹—ç„¡æ•¸çš„åŠ›é‡æ¹§å…¥$nçš„é«”å…§ï¹ä½¿$nèˆ’æš¢ç„¡æ¯”ï¹—"
+       "è€Œ$Né “è¦ºå…¨èº«è™›è„«ç„¡åŠ›ï¹—å‰é‚£é–“ï¹$Nè¦ºå¾—è‡ªå·±é–‹å§‹ç¥ç¶“è€—å¼±ï¹—"
        , ch, NULL, victim, TO_ALL );
 
   RETURN( TRUE );
@@ -4902,7 +4902,7 @@ SKILL( cast_cannibal )
 
   if ( victim->hit <= 1 )
   {
-    act( "$Nªººë®ğ¤w¸g³Q§A§l°®¤F¡C", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„ç²¾æ°£å·²ç¶“è¢«ä½ å¸ä¹¾äº†ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -4915,14 +4915,14 @@ SKILL( cast_cannibal )
     if ( add > 0 ) ch->hit = UMIN( ch->max_hit, ch->hit + add );
   }
 
-  act( "$n¹ïµÛ$N¤@«ü¡M¤@¹D¦p¦å¯ë¸{¬õªº¥ú½u¦V$N®g¥h¡M$Nªº¥Í©R¯à·½³Q$n§l¦¬¤F¡C"
-       "$n¥Ñ¤â¤¤µo¥X¤@¹D¬õ¥úÀ»¤¤¤F$N¡M$N·P¨ì¦Û¤vÅé¤ºªºÂA¦å¥¿¤£°±ªº¬y¥¢¡T"
+  act( "$nå°è‘—$Nä¸€æŒ‡ï¹ä¸€é“å¦‚è¡€èˆ¬è…¥ç´…çš„å…‰ç·šå‘$Nå°„å»ï¹$Nçš„ç”Ÿå‘½èƒ½æºè¢«$nå¸æ”¶äº†ã€‚"
+       "$nç”±æ‰‹ä¸­ç™¼å‡ºä¸€é“ç´…å…‰æ“Šä¸­äº†$Nï¹$Næ„Ÿåˆ°è‡ªå·±é«”å…§çš„é®®è¡€æ­£ä¸åœçš„æµå¤±ï¹—"
        , ch, NULL, victim, TO_ALL );
 
-  /* ­Y¹ï¤â©|¥¼¾Ô°«, «h¶}±Ò¾Ô°« */
+  /* è‹¥å°æ‰‹å°šæœªæˆ°é¬¥, å‰‡é–‹å•Ÿæˆ°é¬¥ */
   if ( !victim->fighting ) set_fighting( victim, ch );
 
-  /* ­Y¥D¨¤©|¥¼¾Ô°«, «h¶}±Ò¾Ô°« */
+  /* è‹¥ä¸»è§’å°šæœªæˆ°é¬¥, å‰‡é–‹å•Ÿæˆ°é¬¥ */
   if ( !ch->fighting ) set_fighting( ch, victim );
 
   RETURN( TRUE );
@@ -4938,13 +4938,13 @@ SKILL( cast_energy_drain )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_energy_drain: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_energy_drain: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim->mana <= 1 )
   {
-    act( "$Nªººë®ğ¤w¸g³Q§A§l°®¤F¡C", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„ç²¾æ°£å·²ç¶“è¢«ä½ å¸ä¹¾äº†ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -4957,14 +4957,14 @@ SKILL( cast_energy_drain )
     if ( add > 0 ) ch->mana = UMIN( ch->max_mana, ch->mana + add );
   }
 
-  act( "$n¹ïµÛ$N¤@«ü¡M¤@¹D¦p¦å¯ë¸{¬õªº¥ú½u¦V$N®g¥h¡M$Nªº¥Í©R¯à·½³Q$n§l¦¬¤F¡C"
-       "$n¥Ñ¤â¤¤µo¥X¤@¹D¬õ¥úÀ»¤¤¤F$N¡M$N·P¨ì¦Û¤vÅé¤ºªºÂA¦å¥¿¤£°±ªº¬y¥¢¡T"
+  act( "$nå°è‘—$Nä¸€æŒ‡ï¹ä¸€é“å¦‚è¡€èˆ¬è…¥ç´…çš„å…‰ç·šå‘$Nå°„å»ï¹$Nçš„ç”Ÿå‘½èƒ½æºè¢«$nå¸æ”¶äº†ã€‚"
+       "$nç”±æ‰‹ä¸­ç™¼å‡ºä¸€é“ç´…å…‰æ“Šä¸­äº†$Nï¹$Næ„Ÿåˆ°è‡ªå·±é«”å…§çš„é®®è¡€æ­£ä¸åœçš„æµå¤±ï¹—"
        , ch, NULL, victim, TO_ALL );
 
-  /* ­Y¹ï¤â©|¥¼¾Ô°«, «h¶}±Ò¾Ô°« */
+  /* è‹¥å°æ‰‹å°šæœªæˆ°é¬¥, å‰‡é–‹å•Ÿæˆ°é¬¥ */
   if ( !victim->fighting ) set_fighting( victim, ch );
 
-  /* ­Y¥D¨¤©|¥¼¾Ô°«, «h¶}±Ò¾Ô°« */
+  /* è‹¥ä¸»è§’å°šæœªæˆ°é¬¥, å‰‡é–‹å•Ÿæˆ°é¬¥ */
   if ( !ch->fighting ) set_fighting( ch, victim );
 
   RETURN( TRUE );
@@ -4979,19 +4979,19 @@ SKILL( cast_wakeup )
 
     if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_wakeup: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_wakeup: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( !is_affected( victim, SLOT_SLEEP ) )
   {
-    act( "$N¨Ã¨S¦³ºÎµÛ°Ú¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nä¸¦æ²’æœ‰ç¡è‘—å•Šï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( !is_affected( victim, SLOT_SLEEP ) )
   {
-    act( "$N¨Ã¨S¦³¨ü¨ì¶Ê¯v³Nªº¼vÅT¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nä¸¦æ²’æœ‰å—åˆ°å‚¬çœ è¡“çš„å½±éŸ¿ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -5002,7 +5002,7 @@ SKILL( cast_wakeup )
 
   if ( !pAffect && is_affected( victim, SLOT_SLEEP ) )
   {
-    act( "$NºÎªº¤£«ç»ò²`¨H¡M$n§â$N¥s¿ô¤F¡T", ch, NULL, victim, TO_ALL );
+    act( "$Nç¡çš„ä¸æ€éº¼æ·±æ²ˆï¹$næŠŠ$Nå«é†’äº†ï¹—", ch, NULL, victim, TO_ALL );
     RETURN( TRUE );
   }
 
@@ -5010,12 +5010,12 @@ SKILL( cast_wakeup )
   {
     if ( pAffect->duration > ( level / 5 + 5 ) )
     {
-      send_to_char( "§Aªºªk³N¥¢®Ä¤F¡C\n\r", ch );
+      send_to_char( "ä½ çš„æ³•è¡“å¤±æ•ˆäº†ã€‚\n\r", ch );
       RETURN( FALSE );
     }
 
-    act( "¤@°}»´»´ªº·L­·§j¹L¡M¸Ñ°£¤F$Nªº¶Ê¯vª¬ºA¡C$A"
-      "$n²{¦b¥i¥H±N$N·n¿ô($2wake$0)¡T", ch, NULL, victim, TO_ALL );
+    act( "ä¸€é™£è¼•è¼•çš„å¾®é¢¨å¹éï¹è§£é™¤äº†$Nçš„å‚¬çœ ç‹€æ…‹ã€‚$A"
+      "$nç¾åœ¨å¯ä»¥å°‡$Næ–é†’($2wake$0)ï¹—", ch, NULL, victim, TO_ALL );
 
     affect_release( victim, SLOT_SLEEP );
     RETURN( TRUE );
@@ -5023,7 +5023,7 @@ SKILL( cast_wakeup )
 
   else
   {
-    act( "$N¨Ã¨S¦³¦bºÎ¯v³á¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nä¸¦æ²’æœ‰åœ¨ç¡çœ å–”ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -5038,17 +5038,17 @@ SKILL( cast_evil_power )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cast_evil_power:¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_evil_power:ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( is_affected( ch, sn ) )
   {
-    send_to_char( "§A¤w¸g°÷¨¸´c¤F¡T\n\r", ch );
+    send_to_char( "ä½ å·²ç¶“å¤ é‚ªæƒ¡äº†ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
-  act( "¤Ñ¤Wªº¨¸Å]°Ú¡M½çµ¹$n¥Ã»·µL½aªº¤O¶q§a¡T", ch, NULL, NULL, TO_ALL );
+  act( "å¤©ä¸Šçš„é‚ªé­”å•Šï¹è³œçµ¦$næ°¸é ç„¡çª®çš„åŠ›é‡å§ï¹—", ch, NULL, NULL, TO_ALL );
 
   af.type      = sn;
   af.duration  = number_range( level / 6, level / 5 );
@@ -5090,29 +5090,29 @@ SKILL( cast_crash_weapon )
 
   if ( crash == NULL || crash->max_armor <= 0 )
   {
-    act( "$N¨­¤W¤w¸g¨S¦³¥i¥H§ğÀ»ªº¸Ë³Æ¤F¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nèº«ä¸Šå·²ç¶“æ²’æœ‰å¯ä»¥æ”»æ“Šçš„è£å‚™äº†ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   sact( ch, victim, crash,
-    "$n¤p¤ßÆ[±æ¡M¤@§ä¨ì¾÷·|´N©¹$Nªº$O­«­«§ğÀ»¤U¥h¡T" );
+    "$nå°å¿ƒè§€æœ›ï¹ä¸€æ‰¾åˆ°æ©Ÿæœƒå°±å¾€$Nçš„$Oé‡é‡æ”»æ“Šä¸‹å»ï¹—" );
 
   damage = number_range( level * 2, level * 4 );
   crash->armor -= damage;
 
   if ( crash->armor <= 0 )
   {
-    act( "$N¨­¤Wªº$pµLªk©Ó¨ü³o¬ğ¨Óªº²r¯P¤@À»¡M¸H¦¨¤F¨â¥b¡T"
+    act( "$Nèº«ä¸Šçš„$pç„¡æ³•æ‰¿å—é€™çªä¾†çš„çŒ›çƒˆä¸€æ“Šï¹ç¢æˆäº†å…©åŠï¹—"
       , ch, crash, victim, TO_ALL );
 
     unequip_char( victim, crash, FALSE );
     extract_obj( crash );
   }
 
-  /* ­Y¹ï¤â©|¥¼¾Ô°«, «h¶}±Ò¾Ô°« */
+  /* è‹¥å°æ‰‹å°šæœªæˆ°é¬¥, å‰‡é–‹å•Ÿæˆ°é¬¥ */
   if ( !victim->fighting ) set_fighting( victim, ch );
 
-  /* ­Y¥D¨¤©|¥¼¾Ô°«, «h¶}±Ò¾Ô°« */
+  /* è‹¥ä¸»è§’å°šæœªæˆ°é¬¥, å‰‡é–‹å•Ÿæˆ°é¬¥ */
   if ( !ch->fighting ) set_fighting( ch, victim );
 
   RETURN( TRUE );
@@ -5127,15 +5127,15 @@ SKILL( cast_flying_stone )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cast_flying_stone: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_flying_stone: ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
-  /* §ğ¶Ë±Ô­z */
-  act( "$nÂù¤âº´°Ê¡M´§»R°_¤@¬G¥¨¤jªº±Û­·¡M®µ±aµÛµL¼Æªº­·¨F¦VµÛ$N­¸¥h¡T"
+  /* æ”»å‚·æ•˜è¿° */
+  act( "$né›™æ‰‹ç…½å‹•ï¹æ®èˆèµ·ä¸€æ•…å·¨å¤§çš„æ—‹é¢¨ï¹æŒ¾å¸¶è‘—ç„¡æ•¸çš„é¢¨æ²™å‘è‘—$Né£›å»ï¹—"
     , ch, NULL, victim, TO_ALL );
 
-  /* ³]©w§ğ¶Ë */
+  /* è¨­å®šæ”»å‚· */
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_ONE );
 
   damage( ch, victim, dam, sn, ATTACK_RANDOM );
@@ -5152,27 +5152,27 @@ SKILL( cast_slow )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cast_slow: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_slow: ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( saves_spell( level, victim ) && get_curr_dex( victim ) < 1 )
   {
-    act( "§A¹ï$Nªº¿ğº¢³N¦ü¥G¨S¦³¤°»ò¥Î¡C", ch, NULL, victim, TO_CHAR );
+    act( "ä½ å°$Nçš„é²æ»¯è¡“ä¼¼ä¹æ²’æœ‰ä»€éº¼ç”¨ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
-  act( "$n±Nºë¯«¶°¤¤¡M¥HÂù¤â´§¥X¤@¹Î¶Â¶³§x¦í$Nªº¦æ°Ê¡T"
+  act( "$nå°‡ç²¾ç¥é›†ä¸­ï¹ä»¥é›™æ‰‹æ®å‡ºä¸€åœ˜é»‘é›²å›°ä½$Nçš„è¡Œå‹•ï¹—"
     , ch, NULL, victim, TO_ALL );
 
   if ( ( number_percent() + victim->level / 2 )
     > ( number_percent() + level ) )
   {
-    act( "¦ı¬O$NÀş¶¡«Ü»´¥©ªº°{¹L¤F³o­Ó¶Â¶³¡T", ch, NULL, victim, TO_ALL );
+    act( "ä½†æ˜¯$Nç¬é–“å¾ˆè¼•å·§çš„é–ƒéäº†é€™å€‹é»‘é›²ï¹—", ch, NULL, victim, TO_ALL );
     RETURN( FALSE );
   }
 
-  act( "³o¹Î¶Â¶³²Ì¦í¤F$Nªº¦æ°Ê¡T", ch, NULL, victim, TO_ALL );
+  act( "é€™åœ˜é»‘é›²çµ†ä½äº†$Nçš„è¡Œå‹•ï¹—", ch, NULL, victim, TO_ALL );
 
   af.type      = sn;
   af.duration  = number_range( level / 20, level / 15 );
@@ -5194,7 +5194,7 @@ SKILL( cast_mint )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "cast_repair: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_repair: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -5202,46 +5202,46 @@ SKILL( cast_mint )
     || !( pIndex = get_obj_index( obj->value[0] ) )
     || obj->value[2] <= 0 )
   {
-    act( "$p¬OµLªk¶i¦æÅ±³yªº¡T", ch, obj, NULL, TO_CHAR );
+    act( "$pæ˜¯ç„¡æ³•é€²è¡Œé‘„é€ çš„ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( !IS_NPC( ch ) && excess_filequota( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M§AªºÀÉ®×¤Ó¤j¡MµLªk°õ¦æ³o­Ó©R¥O¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ çš„æª”æ¡ˆå¤ªå¤§ï¹ç„¡æ³•åŸ·è¡Œé€™å€‹å‘½ä»¤ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( level < obj->value[1] )
   {
-    act( "¬İ¨Ó$p«D§A¯à¤O©Ò¤Î¡M½Ğ§O¤H¨Ó¸Õ¸Õ¬İ¡T", ch, obj, NULL, TO_CHAR );
+    act( "çœ‹ä¾†$péä½ èƒ½åŠ›æ‰€åŠï¹è«‹åˆ¥äººä¾†è©¦è©¦çœ‹ï¹—", ch, obj, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
-  act( "$n´§µÛ¦½¤ô¡M¤@Ãä§V¤O¦aºëÁåµÛ$p¡T", ch, obj, NULL, TO_ALL );
+  act( "$næ®è‘—æ±—æ°´ï¹ä¸€é‚ŠåŠªåŠ›åœ°ç²¾éŠè‘—$pï¹—", ch, obj, NULL, TO_ALL );
 
   if ( number_range( 0, 10000 - level * 10 ) >= obj->value[2] )
   {
-    act( "¬İ¨Ó$pÁÙ¦³ªº§A¦£¤F¡M¥[ªo§a¡T", ch, obj, NULL, TO_CHAR );
+    act( "çœ‹ä¾†$pé‚„æœ‰çš„ä½ å¿™äº†ï¹åŠ æ²¹å§ï¹—", ch, obj, NULL, TO_CHAR );
   }
 
   else
   {
     target = create_object( pIndex, -1 );
 
-    act( "¤j¥\\§i¦¨¡M$n²×©ó±q$p¥´³y¥X$P¡T", ch, obj, target, TO_ALL );
+    act( "å¤§åŠŸ\å‘Šæˆï¹$nçµ‚æ–¼å¾$pæ‰“é€ å‡º$Pï¹—", ch, obj, target, TO_ALL );
 
     if ( target->Takeable == FALSE
       || ( ch->carry_number + get_obj_number( target ) > can_carry_n( ch ) )
       || ( get_carry_weight( ch ) + get_obj_weight( target ) > can_carry_w( ch ) ) )
     {
-      act( "¦]¬°$nµLªk®³°_$p¡M©Ò¥H±¼¨ì¦a¤W¥h¤F¡T", ch, target, NULL, TO_ALL );
+      act( "å› ç‚º$nç„¡æ³•æ‹¿èµ·$pï¹æ‰€ä»¥æ‰åˆ°åœ°ä¸Šå»äº†ï¹—", ch, target, NULL, TO_ALL );
       obj_to_room( target, ch->in_room );
     }
 
     else
     {
-      act( "§A¬ğµMµo²{¨ì§Aªº¨­¤W¦h¤F¤@¼Ë$p¡T", ch, target, NULL, TO_CHAR );
+      act( "ä½ çªç„¶ç™¼ç¾åˆ°ä½ çš„èº«ä¸Šå¤šäº†ä¸€æ¨£$pï¹—", ch, target, NULL, TO_CHAR );
       obj_to_char( target, ch );
     }
 
@@ -5261,7 +5261,7 @@ SKILL( cast_magic_power )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_magic_power: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_magic_power: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -5278,67 +5278,67 @@ SKILL( cast_magic_power )
   RETURN( TRUE );
 }
 
-/* ¬İ¬İ¬O§_¥i¥H°½ÅÑ ch ¬O¬IªkªÌ, victim ¬O¹ï¶H.*/
+/* çœ‹çœ‹æ˜¯å¦å¯ä»¥å·ç«Š ch æ˜¯æ–½æ³•è€…, victim æ˜¯å°è±¡.*/
 bool can_steal( CHAR_DATA * ch , CHAR_DATA * victim )
 {
   PUSH_FUNCTION( "can_fight" );
 
   if ( !ch || !victim || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "can_fight: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "can_fight: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* ¦pªG©Ğ¶¡ªººX¼Ğ¬O¦w¥şªº, ¤@©w¤£¯àµo¥Í¾Ô°« */
+  /* å¦‚æœæˆ¿é–“çš„æ——æ¨™æ˜¯å®‰å…¨çš„, ä¸€å®šä¸èƒ½ç™¼ç”Ÿæˆ°é¬¥ */
   if ( ch->in_room->Safe )
   {
-    act( "¹ï¤£°_¡M$r¸Ì¬O¤£¯à°½ÅÑªº¡C" , ch, NULL, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$rè£¡æ˜¯ä¸èƒ½å·ç«Šçš„ã€‚" , ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( ( fight_info->status == PK_JOIN || fight_info->status == PK_BET )
     && is_pk( ch ) )
   {
-    send_to_char( "¥ğ®§¤¤½Ğ¤Å°½ÅÑ¡T\n\r", ch );
+    send_to_char( "ä¼‘æ¯ä¸­è«‹å‹¿å·ç«Šï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
-  /* ª±®a¦pªG³Q°g´b, ¤£¯à°½¦Û¤vªº¥D¤H */
+  /* ç©å®¶å¦‚æœè¢«è¿·æƒ‘, ä¸èƒ½å·è‡ªå·±çš„ä¸»äºº */
   if ( is_affected( ch, SLOT_CHARM_PERSON ) && ch->master == victim )
   {
-    act( "½Ğ¤£­n¢Ï¥D¤H$NªºªF¦è¡C", ch, NULL, victim, TO_CHAR );
+    act( "è«‹ä¸è¦ï¼¡ä¸»äºº$Nçš„æ±è¥¿ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
-  /* ­Y¬O¥D¤H¤@©w¤£¯à°½, ­n¥ı«Å¾Ô */
+  /* è‹¥æ˜¯ä¸»äººä¸€å®šä¸èƒ½å·, è¦å…ˆå®£æˆ° */
   if ( ch->master == victim || victim->master == ch )
   {
-    send_to_char( "§A¨S¦³¦Û¥D¡MÁÙ¥i¥H¶Ã°½¶Ü¡S\n\r" , ch );
+    send_to_char( "ä½ æ²’æœ‰è‡ªä¸»ï¹é‚„å¯ä»¥äº‚å·å—ï¹–\n\r" , ch );
     RETURN( FALSE );
   }
 
   if ( is_same_group( ch, victim ) && ch != victim )
   {
-    act( "$N¬O§A¿Ë·Rªº¶¤¤Í£°¡M©~µM°½$EªF¦è¡S", ch, NULL, victim, TO_CHAR );
-    act( "§Ö°k§a¡T$n·Q­n°½§AªºªF¦è¡T"        , ch, NULL, victim, TO_VICT );
+    act( "$Næ˜¯ä½ è¦ªæ„›çš„éšŠå‹ã„Ÿï¹å±…ç„¶å·$Eæ±è¥¿ï¹–", ch, NULL, victim, TO_CHAR );
+    act( "å¿«é€ƒå§ï¹—$næƒ³è¦å·ä½ çš„æ±è¥¿ï¹—"        , ch, NULL, victim, TO_VICT );
     RETURN( FALSE );
   }
 
   if ( victim->mount_by )
   {
-    act( "­n°½ªF¦è¥ı°İ¥D¤H$N§a¡T", ch, NULL, victim->mount_by, TO_CHAR );
+    act( "è¦å·æ±è¥¿å…ˆå•ä¸»äºº$Nå§ï¹—", ch, NULL, victim->mount_by, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( victim->boss && victim->boss == ch )
   {
-    act( "¦³¨S¦³·d¿ù¡M°½¦Û¤v$NªºÄ_ª«¡S", ch, NULL, victim, TO_CHAR );
+    act( "æœ‰æ²’æœ‰æéŒ¯ï¹å·è‡ªå·±$Nçš„å¯¶ç‰©ï¹–", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( victim->boss )
   {
-    act( "$n«Ü®`©È¦a¸ú¨ì$N¨­«á¡M¦]¬°¦³¤H·Q­n°½¥LªF¦è¡T"
+    act( "$nå¾ˆå®³æ€•åœ°èº²åˆ°$Nèº«å¾Œï¹å› ç‚ºæœ‰äººæƒ³è¦å·ä»–æ±è¥¿ï¹—"
       , victim, NULL, victim->boss, TO_ALL );
 
      RETURN( FALSE );
@@ -5346,27 +5346,27 @@ bool can_steal( CHAR_DATA * ch , CHAR_DATA * victim )
 
   if ( victim->hirer )
   {
-    act( "§A¤£¯à°½§O¤Hªº¶Ä§L$N¡C", ch, NULL, victim, TO_CHAR );
+    act( "ä½ ä¸èƒ½å·åˆ¥äººçš„å‚­å…µ$Nã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
-  /* ©Çª«ªºÄİ©Ê¬O¤£¯à±ş®` */
+  /* æ€ªç‰©çš„å±¬æ€§æ˜¯ä¸èƒ½æ®ºå®³ */
   if ( IS_NPC( victim ) && IS_SET( victim->act, ACT_NOKILL ) )
   {
-    act( "§A¤£¯à°Ê$N´N¬O¤£¯à°Ê¡C", ch, NULL, victim, TO_CHAR );
+    act( "ä½ ä¸èƒ½å‹•$Nå°±æ˜¯ä¸èƒ½å‹•ã€‚", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
-   /* ¦pªG¦º¤F, ÁÙ¨S©^Äm¥X«ÍÅé®É¤£¯à¬I®iªk³N */
+   /* å¦‚æœæ­»äº†, é‚„æ²’å¥‰ç»å‡ºå±é«”æ™‚ä¸èƒ½æ–½å±•æ³•è¡“ */
   if ( !IS_NPC( ch ) && ch->pcdata->corpse )
   {
-    send_to_char( "§AÄ±±o´ı¨­¨Ï¤£¤W¤O¡M®Ú¥»¨S¿ìªk°½ªF¦è¡C\n\r" , ch );
+    send_to_char( "ä½ è¦ºå¾—æ¸¾èº«ä½¿ä¸ä¸ŠåŠ›ï¹æ ¹æœ¬æ²’è¾¦æ³•å·æ±è¥¿ã€‚\n\r" , ch );
     RETURN( FALSE );
   }
 
   if ( !can_damage( victim ) )
   {
-    act( "§A´N©ñ¹L$N§a¡M§A¬O¤£·|·l¥¢¦h¤Öªº¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä½ å°±æ”¾é$Nå§ï¹ä½ æ˜¯ä¸æœƒæå¤±å¤šå°‘çš„ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -5384,25 +5384,25 @@ SKILL( cast_abstract )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_abstract: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_abstract: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( victim == ch )
   {
-    send_to_char( "¤°»ò¡M§A­n«Ê¦L§A¦Û¤v¶Ü¡S\n\r", ch );
+    send_to_char( "ä»€éº¼ï¹ä½ è¦å°å°ä½ è‡ªå·±å—ï¹–\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( !can_damage( victim ) )
   {
-    act( "§A¥Ø«e¨S¦³¿ìªk«Ê¦L$N¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä½ ç›®å‰æ²’æœ‰è¾¦æ³•å°å°$Nï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
   if ( !IS_NPC( victim ) || !victim->pIndexData )
   {
-    act( "§A¥u¯à«Ê¦L«Dª±®a¡M$N¬O¤£¥i¥H³Q«Ê¦Lªº¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä½ åªèƒ½å°å°éç©å®¶ï¹$Næ˜¯ä¸å¯ä»¥è¢«å°å°çš„ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -5410,7 +5410,7 @@ SKILL( cast_abstract )
 
   if ( victim->mount_by || victim->boss )
   {
-    act( "¹ï¤£°_¡M§A¤£¯à«Ê¦L§O¤Hªº§¤ÃM©Î¤p°­$N¡T", ch, NULL, victim, TO_CHAR );
+    act( "å°ä¸èµ·ï¹ä½ ä¸èƒ½å°å°åˆ¥äººçš„åé¨æˆ–å°é¬¼$Nï¹—", ch, NULL, victim, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -5419,7 +5419,7 @@ SKILL( cast_abstract )
 
   if ( base > chance )
   {
-    act( "$nªº¹D¦æÁÙ¤£°÷¡M¦ü¥GµLªk±N$N«Ê¦L¦í¡T", ch, NULL, victim, TO_ALL );
+    act( "$nçš„é“è¡Œé‚„ä¸å¤ ï¹ä¼¼ä¹ç„¡æ³•å°‡$Nå°å°ä½ï¹—", ch, NULL, victim, TO_ALL );
   }
 
   else
@@ -5432,7 +5432,7 @@ SKILL( cast_abstract )
 
     obj_to_char( pUrn, ch );
 
-    act( "¬ğµM¡M$N³Q$n«Ê¦L¦í¤F¡M¦Ó$Nªº¨­¼v¤]ºCºC®ø¥¢¦b$p¤§¤¤¡T"
+    act( "çªç„¶ï¹$Nè¢«$nå°å°ä½äº†ï¹è€Œ$Nçš„èº«å½±ä¹Ÿæ…¢æ…¢æ¶ˆå¤±åœ¨$pä¹‹ä¸­ï¹—"
       , ch, pUrn, victim, TO_ALL );
 
     raw_kill( ch, victim, FALSE );
@@ -5450,46 +5450,46 @@ SKILL( cast_dark_hell )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_dark_hell: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cast_dark_hell: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
   if ( ch->alignment > -( AlignRange / 5 ) && number_percent() > 50 )
   {
-    act( "$nªºÂù¤â¬ğµM¤£Å¥¨Ï³ê¡MµLªk¬I®iªk³N¡T", ch, NULL, NULL, TO_CHAR );
+    act( "$nçš„é›™æ‰‹çªç„¶ä¸è½ä½¿å–šï¹ç„¡æ³•æ–½å±•æ³•è¡“ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
-  /* «e¸m°T®§ */
-  act( "$A$nÂù¤â¹³¤Ñ¤@«ü¡M¨â²´µo¥X¬õ¥ú¡M¤f¤¤³ä³ä°áµÛ¤£ª¾¦Wªº©G»y¡K$A"
+  /* å‰ç½®è¨Šæ¯ */
+  act( "$A$né›™æ‰‹åƒå¤©ä¸€æŒ‡ï¹å…©çœ¼ç™¼å‡ºç´…å…‰ï¹å£ä¸­å–ƒå–ƒå”¸è‘—ä¸çŸ¥åçš„å’’èªâ€¦$A"
     , ch, NULL, victim, TO_ALL );
 
   dam = spell_damage( ch, level, TYPE_INT, SPELL_CLASS_MAG );
 
   if ( ch->skill[sn] > 45 && number_percent() > 60 )
   {
-    sact( ch, victim, NULL, "¦a©³¤U¶Ç¨Ó¤@°}Án­µ¡R¡u¥l³ê§Úªº¤H°Ú¡T"
-      "§Ú¨Ì§Aªº¤Ş¾É«e¨Ó¤F¡T¡v$A¤@­Ó¥¨¤j¨­¼vÅã²{²´«e¡M¥ş¨­º£¶Â"
-      "¤°»ò³£¬İ¤£¨£¡M¥u¨£¤@°}º£¶ÂºCºCÂX´²¡M¥]ÂĞ©Ò¦³ªºª«Åé¡T$A"
-      "$A$A$A$b                    ¦º¶Â®ÖÃzµõ¦aº»              $Z"
-      "         $A$A$AÃz¯}Án¥Rº¡¤F§Aªº¦Õ¦·¡M§AÄ±±o«D±`Ãø¹L¡T" );
+    sact( ch, victim, NULL, "åœ°åº•ä¸‹å‚³ä¾†ä¸€é™£è²éŸ³ï¹•ã€Œå¬å–šæˆ‘çš„äººå•Šï¹—"
+      "æˆ‘ä¾ä½ çš„å¼•å°å‰ä¾†äº†ï¹—ã€$Aä¸€å€‹å·¨å¤§èº«å½±é¡¯ç¾çœ¼å‰ï¹å…¨èº«æ¼†é»‘"
+      "ä»€éº¼éƒ½çœ‹ä¸è¦‹ï¹åªè¦‹ä¸€é™£æ¼†é»‘æ…¢æ…¢æ“´æ•£ï¹åŒ…è¦†æ‰€æœ‰çš„ç‰©é«”ï¹—$A"
+      "$A$A$A$b                    æ­»é»‘æ ¸çˆ†è£‚åœ°ç„              $Z"
+      "         $A$A$Açˆ†ç ´è²å……æ»¿äº†ä½ çš„è€³æœµï¹ä½ è¦ºå¾—éå¸¸é›£éï¹—" );
 
     dam = number_range( dam * 4 / 3, dam * 2 );
     dam = UMAX( 0, UMIN( MAG_ATTACK_DAM, dam ) );
 
     if ( ch->skill[sn] > 80 )
     {
-      sact( ch, victim, NULL, "$AÃz¯}ªº¸H¤ùÀş¶¡¤S¹ï$N³y¦¨²Ä¤G¦¸¶Ë®`¡T" );
+      sact( ch, victim, NULL, "$Açˆ†ç ´çš„ç¢ç‰‡ç¬é–“åˆå°$Né€ æˆç¬¬äºŒæ¬¡å‚·å®³ï¹—" );
       dam = number_range( dam, dam * 4 / 3 );
       dam = UMAX( 0, UMIN( MAG_ATTACK_DAM, dam ) );
     }
   }
   else
   {
-    sact( ch, victim, NULL, "$nÂù¤âµo¥X¤@°}¶Â¥ú¡Mº¥º¥º¦¤jµLªk±±¨î¡M"
-      "$A©ó¬O¨Ï¤O±N¨â¤â¤§¶Â²y¦X¦Ó¬°¤@¡M¥á¦V$N¡T$A$A$A"
-      "                    $b         ¦º¶Â®Ö¦aº»          "
-      "               $Z$A$A$A¶Â²y¿Ä¦X©Ò²£¥Íªº·¥«×¼ö¶q¿U¿NµÛ$N¡T$Z" );
+    sact( ch, victim, NULL, "$né›™æ‰‹ç™¼å‡ºä¸€é™£é»‘å…‰ï¹æ¼¸æ¼¸æ¼²å¤§ç„¡æ³•æ§åˆ¶ï¹"
+      "$Aæ–¼æ˜¯ä½¿åŠ›å°‡å…©æ‰‹ä¹‹é»‘çƒåˆè€Œç‚ºä¸€ï¹ä¸Ÿå‘$Nï¹—$A$A$A"
+      "                    $b         æ­»é»‘æ ¸åœ°ç„          "
+      "               $Z$A$A$Aé»‘çƒèåˆæ‰€ç”¢ç”Ÿçš„æ¥µåº¦ç†±é‡ç‡ƒç‡’è‘—$Nï¹—$Z" );
     dam = number_range( dam, dam * 4 / 3 );
     dam = UMAX( 0, UMIN( MAG_ATTACK_DAM, dam ) );
   }
@@ -5509,13 +5509,13 @@ SKILL( cast_six_god )
 
   if ( !victim )
   {
-    mudlog( LOG_DEBUG, "cast_six_god: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_six_god: ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( IS_EVIL( ch ) )
   {
-    act( "$n¤Ó¨¸´c¤F¡MµLªk¥l³ê¯«¦ò¡T", ch, NULL, NULL, TO_CHAR );
+    act( "$nå¤ªé‚ªæƒ¡äº†ï¹ç„¡æ³•å¬å–šç¥ä½›ï¹—", ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
 
@@ -5526,57 +5526,57 @@ SKILL( cast_six_god )
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD.", sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ.", sn );
     RETURN( FALSE );
 
   case 0:
-    sact( ch, victim, NULL, "$n¤f¤¤°á°á¦³µü¡M¤âµ²$Y¡y¤K¤jª÷­è¦L¡z$Z¨Ï¥X"
-      "ª÷­è«l¡M¶¯´ıÅQ¹D¡M«l¤O¦pÀ@¯eÆp¦V$N¡C" );
+    sact( ch, victim, NULL, "$nå£ä¸­å”¸å”¸æœ‰è©ï¹æ‰‹çµ$Yã€å…«å¤§é‡‘å‰›å°ã€$Zä½¿å‡º"
+      "é‡‘å‰›å‹ï¹é›„æ¸¾éœ¸é“ï¹å‹åŠ›å¦‚éŒç–¾é‘½å‘$Nã€‚" );
     break;
 
   case 1:
-    sact( ch, victim, NULL, "­±¹ï$N§ğ¶Õ¡M$n¤£·W¤£¦£¡Mµ²°_$B¡y"
-      "­°ÀsÃ¹º~¦L¡z$Z¡M¤f¤¤°á°á¦³µü¡M©P³ò¬ğµM²£¥Í±j°b¬X«l¡M¥|¨â"
-      "¼·¤d¤ç¡MºÉ¨ø$N§ğ¶Õ¡T" );
+    sact( ch, victim, NULL, "é¢å°$Næ”»å‹¢ï¹$nä¸æ…Œä¸å¿™ï¹çµèµ·$Bã€"
+      "é™é¾ç¾…æ¼¢å°ã€$Zï¹å£ä¸­å”¸å”¸æœ‰è©ï¹å‘¨åœçªç„¶ç”¢ç”Ÿå¼·è»”æŸ”å‹ï¹å››å…©"
+      "æ’¥åƒæ–¤ï¹ç›¡å¸$Næ”»å‹¢ï¹—" );
     break;
 
   case 2:
-    sact( ch, victim, NULL, "$nµ²°_$S¡yÆ[­µ¶Ã¼v¦L¡z$Z³Ü¹D¡R$W¡y´L½Ğ¤d¤â"
-      "Æ[­µ²{¯u¨­¡z$Z¡M«b¨º¶¡¡M$N§Ï©»¬İ¨£$W¤d¤âÆ[­µ$Z¾rÁ{¡M$W¤d¤âÆ[­µ$Z¬ğµM"
-      "®i¶}¤d¤â¡M¨³±¶¯É¶Ãªº±Û´õ©Û¦¡¡M¶¶¶¡¹ï$NÅF¥X¤d¦ÊÀ»¡T" );
+    sact( ch, victim, NULL, "$nçµèµ·$Sã€è§€éŸ³äº‚å½±å°ã€$Zå–é“ï¹•$Wã€å°Šè«‹åƒæ‰‹"
+      "è§€éŸ³ç¾çœŸèº«ã€$Zï¹å‰é‚£é–“ï¹$Nå½·å½¿çœ‹è¦‹$Wåƒæ‰‹è§€éŸ³$Zé§•è‡¨ï¹$Wåƒæ‰‹è§€éŸ³$Zçªç„¶"
+      "å±•é–‹åƒæ‰‹ï¹è¿…æ·ç´›äº‚çš„æ—‹æ¸¦æ‹›å¼ï¹é †é–“å°$Nè½Ÿå‡ºåƒç™¾æ“Šï¹—" );
     break;
 
   case 3:
-    sact( ch, victim, NULL, "$N¤@©Û¼A¨Ó¡M$n©¹¥k¤@°{¡M«æµ²$P¡y«ã¹p"
-      "¾_¤ß¦L¡z$Z¡M¹p¯«ªşÅé¡MÀK®É§Ö­Y©b¹p¡M«æ­Y­¸¹q¡M¦­Â¶¨ì$N¨­«á"
-      "¡M²½°_±j¤j¹q«l¡M´Â$N«á¤ß²rÀ»¡T" );
+    sact( ch, victim, NULL, "$Nä¸€æ‹›åŠˆä¾†ï¹$nå¾€å³ä¸€é–ƒï¹æ€¥çµ$Pã€æ€’é›·"
+      "éœ‡å¿ƒå°ã€$Zï¹é›·ç¥é™„é«”ï¹éœæ™‚å¿«è‹¥å¥”é›·ï¹æ€¥è‹¥é£›é›»ï¹æ—©ç¹åˆ°$Nèº«å¾Œ"
+      "ï¹ç¥­èµ·å¼·å¤§é›»å‹ï¹æœ$Nå¾Œå¿ƒçŒ›æ“Šï¹—" );
     break;
 
   case 4:
-    sact( ch, victim, NULL, "$n½Ä¦V$N¡M¤âµ²$R¡yµĞÂÄ¥°ªk¦L¡z$Z¥u¨£"
-      "$n¬ğµM³Q¯P¤õ¥]³ò¡M$N°{Á×¤£¤Î¡M³Qªk¦LÅF­Ó¥¿µÛ¡M$N¥uÄ±ªº"
-      "»ş¨æ¨`¼öªº$r¤õ¿V®ğ«l$Z¦bÅé¤ºÂ«´é¡M$N«s¥s¤@Án¡Mµn®É¤­¤º¦pµI"
-      "¡M¤£¤ä­Ë¦a¡T" );
+    sact( ch, victim, NULL, "$nè¡å‘$Nï¹æ‰‹çµ$Rã€è©è–©å¼˜æ³•å°ã€$Zåªè¦‹"
+      "$nçªç„¶è¢«çƒˆç«åŒ…åœï¹$Né–ƒé¿ä¸åŠï¹è¢«æ³•å°è½Ÿå€‹æ­£è‘—ï¹$Nåªè¦ºçš„"
+      "å‡œå†½ç¼ç†±çš„$rç«ç‡„æ°£å‹$Zåœ¨é«”å…§ç«„æ¹§ï¹$Nå“€å«ä¸€è²ï¹ç™»æ™‚äº”å…§å¦‚ç„š"
+      "ï¹ä¸æ”¯å€’åœ°ï¹—" );
     break;
 
   case 5:
-    sact( ch, victim, NULL, "$n¸}¤@ÃŞ¡M¤@­¸½Ä¤Ñ¡M¦bªÅ¤¤½L»L¦Ó"
-      "§¤¡M¤âµ²$Y¡y¤j·~¦p¨Ó¦L¡z$Z¡M¥u¨£¤Ñ»Úª÷¥ú¸U¹D¡M±mÁø¤ù¤ù¡M$n"
-      "¤f¤¤°á°á¦³µü¡M¬ğµM¼É³Ü$Y¡y¤H¯«¦X¤@ ¤Ñ¤W¦a¤U °ß§Ú¿W´L¡z$Z"
-      "¡M¦è¤Ñ¦p¨Ó»®µM¾rÁ{¡Mªk¬Û²øÄY¡M$N¥uÄ±±o¤ß¯«¤@¾_¡M¨­Åé¬ğ"
-      "µM³Q¤@ªÑ¥¨¤O³e¬ï¡T" );
+    sact( ch, victim, NULL, "$nè…³ä¸€è¹¬ï¹ä¸€é£›è¡å¤©ï¹åœ¨ç©ºä¸­ç›¤è…¿è€Œ"
+      "åï¹æ‰‹çµ$Yã€å¤§æ¥­å¦‚ä¾†å°ã€$Zï¹åªè¦‹å¤©éš›é‡‘å…‰è¬é“ï¹å½©éœç‰‡ç‰‡ï¹$n"
+      "å£ä¸­å”¸å”¸æœ‰è©ï¹çªç„¶æš´å–$Yã€äººç¥åˆä¸€ å¤©ä¸Šåœ°ä¸‹ å”¯æˆ‘ç¨å°Šã€$Z"
+      "ï¹è¥¿å¤©å¦‚ä¾†èµ«ç„¶é§•è‡¨ï¹æ³•ç›¸èŠåš´ï¹$Nåªè¦ºå¾—å¿ƒç¥ä¸€éœ‡ï¹èº«é«”çª"
+      "ç„¶è¢«ä¸€è‚¡å·¨åŠ›è²«ç©¿ï¹—" );
     break;
   }
 
   if ( ch->alignment > ( AlignRange * 3 / 4 ) )
   {
-    sact( ch, victim, NULL, "$nªº$W±j¯P¸t¼ä$Z¹ï$N³y¦¨¤FÃB¥~ªº¶Ë®`¡T" );
+    sact( ch, victim, NULL, "$nçš„$Wå¼·çƒˆè–æ½”$Zå°$Né€ æˆäº†é¡å¤–çš„å‚·å®³ï¹—" );
     dam = number_range( dam * 5 / 4, dam * 2 );
     dam = URANGE( 0, dam, LEVEL_FIV_DAM );
   }
   else if ( ch->alignment < ( AlignRange / 2 ) )
   {
-    sact( ch, victim, NULL, "$nªº¤ß¤£°÷¯Â²b¡M«Â¤O¤j´î¡T" );
+    sact( ch, victim, NULL, "$nçš„å¿ƒä¸å¤ ç´”æ·¨ï¹å¨åŠ›å¤§æ¸›ï¹—" );
     dam = number_range( dam / 2, dam * 2 / 3 );
     dam = URANGE( 0, dam, LEVEL_FIV_DAM );
   }
@@ -5600,7 +5600,7 @@ SKILL( cast_water_cloud_blast )
 
   if ( !( pObj = get_wield( ch ) ) )
   {
-    mudlog( LOG_DEBUG, "cast_water_cloud_blast: ªZ¾¹¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_water_cloud_blast: æ­¦å™¨éŒ¯èª¤." );
     RETURN( FALSE );
   }
 
@@ -5608,82 +5608,82 @@ SKILL( cast_water_cloud_blast )
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "cast_water_cloud_blast: ¥X¬É¤F." );
+    mudlog( LOG_DEBUG, "cast_water_cloud_blast: å‡ºç•Œäº†." );
     RETURN( FALSE );
 
   case 0:
     sact( ch, victim, pObj,
-      "$n»´»´¤@¯º¡M½w½w¦aÂà¨­¡M¤â«üºCºC¦a·f¤W¤F$O¤}©¶¡M¬ğµM¿şªº¤@Án¡M¤}©¶"
-      "¯e®¶¡M$S¤ô¶³½bªk$Z¤§¡u$R¬X±¡$S¦ü¤ô$Z¡v¨Ï¥X¡M¤@½b®g¦V¤F$N$Z¡C" );
+      "$nè¼•è¼•ä¸€ç¬‘ï¹ç·©ç·©åœ°è½‰èº«ï¹æ‰‹æŒ‡æ…¢æ…¢åœ°æ­ä¸Šäº†$Oå¼“å¼¦ï¹çªç„¶éŒšçš„ä¸€è²ï¹å¼“å¼¦"
+      "ç–¾æŒ¯ï¹$Sæ°´é›²ç®­æ³•$Zä¹‹ã€Œ$RæŸ”æƒ…$Sä¼¼æ°´$Zã€ä½¿å‡ºï¹ä¸€ç®­å°„å‘äº†$N$Zã€‚" );
     dam = 300;
     break;
 
   case 1:
     sact( ch, victim, pObj,
-      "$n¨­§Î¯e²¾¡M°Ê§@¤§§Ö¥O¤H¥Ø¤£·vµ¹¡M§Ï©»¦³´X¤Q­Ó$n¥]³ò¦í$N¡M·d±o"
-      "$N¡u$Sº¡ÀYÃú¤ô$Z¡v¡M¤@Áy¯íµM¡M$n¶X¾÷¦V$N­I«á®g¥X¤@½b¡C$Z" );
+      "$nèº«å½¢ç–¾ç§»ï¹å‹•ä½œä¹‹å¿«ä»¤äººç›®ä¸æš‡çµ¦ï¹å½·å½¿æœ‰å¹¾åå€‹$nåŒ…åœä½$Nï¹æå¾—"
+      "$Nã€Œ$Sæ»¿é ­éœ§æ°´$Zã€ï¹ä¸€è‡‰èŒ«ç„¶ï¹$nè¶æ©Ÿå‘$NèƒŒå¾Œå°„å‡ºä¸€ç®­ã€‚$Z" );
     dam = 350;
     break;
 
   case 2:
     sact( ch, victim, pObj,
-      "$n»´´£¨­ªk¡M±N¯u®ğ©¹¤¦¥Ğ¶°¤¤¡M¤ß¤¤±ş·N¹y®É®ø´îµLÂÜ¡MÁy¤WÅS¥X·O´d"
-      "©MÄ§ªº¯º®e¡M¨ú$O¡M·f½b¡M©Ôº¡¤}¡M©Ò¦³°Ê§@¤@®ğ¨ş¦¨¡M¦p¡u$S¦æ¶³¬y¤ô$Z¡v"
-      "¯ë±N½b®g¦V$N¡C" );
+      "$nè¼•æèº«æ³•ï¹å°‡çœŸæ°£å¾€ä¸¹ç”°é›†ä¸­ï¹å¿ƒä¸­æ®ºæ„é “æ™‚æ¶ˆæ¸›ç„¡è¹¤ï¹è‡‰ä¸Šéœ²å‡ºæ…ˆæ‚²"
+      "å’Œè—¹çš„ç¬‘å®¹ï¹å–$Oï¹æ­ç®­ï¹æ‹‰æ»¿å¼“ï¹æ‰€æœ‰å‹•ä½œä¸€æ°£å‘µæˆï¹å¦‚ã€Œ$Sè¡Œé›²æµæ°´$Zã€"
+      "èˆ¬å°‡ç®­å°„å‘$Nã€‚" );
     dam = 400;
     break;
 
   case 3:
     sact( ch, victim, pObj,
-      "$n±NÂù²´ºCºC»×¤W¡M¦¬ÀÄ¤ß¯«¡M±N¦UºØ·P©x´£ª@¨ì·¥­­¡M¤ß¤¤¡u$S©úÃè¦p¤ô"
-      "$Z¡v¤ÏÀ³¥X$Nªº©Ò¦³°Ê§@¡M¦b¬İ²M¤@¤Á«á¡M¤@½b®g¦V$Nªº­n®`¡C$Z" );
+      "$nå°‡é›™çœ¼æ…¢æ…¢é–¤ä¸Šï¹æ”¶æ–‚å¿ƒç¥ï¹å°‡å„ç¨®æ„Ÿå®˜ææ˜‡åˆ°æ¥µé™ï¹å¿ƒä¸­ã€Œ$Sæ˜é¡å¦‚æ°´"
+      "$Zã€åæ‡‰å‡º$Nçš„æ‰€æœ‰å‹•ä½œï¹åœ¨çœ‹æ¸…ä¸€åˆ‡å¾Œï¹ä¸€ç®­å°„å‘$Nçš„è¦å®³ã€‚$Z" );
     dam = 450;
     break;
 
   case 4:
     sact( ch, victim, pObj,
-      "$n¹BÂà¯u®ğ¡M±N«l¤OÄéº¡Âù»L¡MÁa¨­¤@ÅD¡M­¸¤W¥bªÅ¤¤¡M¥Ñ¤W¦Ó¤U¸D¸E¦a"
-      "¤W¸Uª«¡M¼L¨¤¤@´­¡M$S¤ô¶³½bªk$Z¦p¡u$W¤ô»È$SÂm¦a$Z¡v¯ë¨gÀ»¦Ó¤U¡C" );
+      "$né‹è½‰çœŸæ°£ï¹å°‡å‹åŠ›çŒæ»¿é›™è…¿ï¹ç¸±èº«ä¸€èºï¹é£›ä¸ŠåŠç©ºä¸­ï¹ç”±ä¸Šè€Œä¸‹ç¥ç¨åœ°"
+      "ä¸Šè¬ç‰©ï¹å˜´è§’ä¸€æšï¹$Sæ°´é›²ç®­æ³•$Zå¦‚ã€Œ$Wæ°´éŠ€$Sç€‰åœ°$Zã€èˆ¬ç‹‚æ“Šè€Œä¸‹ã€‚" );
     dam = 500;
     break;
 
   case 5:
     sact( ch, victim, pObj,
-      "$n¨­§Î«æÂà¡M¤Û¤Æ¥X¶³Ãú¯ëªº¥ú¼v¡M¥|©P¹y®É³´¤J¤@¤ù°gÀÛ³s¤é¥ú³£"
-      "·Ó¤£¶i¨Ó¡M¤@¹Dª÷¥ú¥Ñ$n¨­¤Wªº$O³z¥X¡M¤@¦¡¡u$S¶³´P¯}¤é$Z¡v$Yª÷$Z¥ú¤@"
-      "°{¡M¬ï³z¤F$N¡C$Z" );
+      "$nèº«å½¢æ€¥è½‰ï¹å¹»åŒ–å‡ºé›²éœ§èˆ¬çš„å…‰å½±ï¹å››å‘¨é “æ™‚é™·å…¥ä¸€ç‰‡è¿·æ¿›é€£æ—¥å…‰éƒ½"
+      "ç…§ä¸é€²ä¾†ï¹ä¸€é“é‡‘å…‰ç”±$nèº«ä¸Šçš„$Oé€å‡ºï¹ä¸€å¼ã€Œ$Sé›²åµç ´æ—¥$Zã€$Yé‡‘$Zå…‰ä¸€"
+      "é–ƒï¹ç©¿é€äº†$Nã€‚$Z" );
     dam = 600;
     break;
 
   case 6:
     sact( ch, victim, pObj,
-      "¦bºò±iªº¾Ô°«¤¤$n¬ğµM°±¤F¤U¨Ó¡M®Ç­YµL¤H¦a®³¥X$Rª´ºÀªá·Ï$Z¡M¶}©l©â"
-      "¤F°_¨Ó¡M¡u$S§]¶³¦RÃú$Z¡v¤T½ü¤§«á¡M$nºë¯«¤j®¶¡M­«­«¤@½b´X¥G®g¬ï¤F"
-      "$N$Z¡C" );
+      "åœ¨ç·Šå¼µçš„æˆ°é¬¥ä¸­$nçªç„¶åœäº†ä¸‹ä¾†ï¹æ—è‹¥ç„¡äººåœ°æ‹¿å‡º$Rç«ç‘°èŠ±ç…™$Zï¹é–‹å§‹æŠ½"
+      "äº†èµ·ä¾†ï¹ã€Œ$Såé›²åéœ§$Zã€ä¸‰è¼ªä¹‹å¾Œï¹$nç²¾ç¥å¤§æŒ¯ï¹é‡é‡ä¸€ç®­å¹¾ä¹å°„ç©¿äº†"
+      "$N$Zã€‚" );
     dam = 700;
     break;
 
   case 7:
     sact( ch, victim, pObj,
-      "$nÂù¤â¤@´­¡M¶Â¦âªº®ğÅé¥Ñ$O¤¤´²¥X¡M§Î¦¨¤@¹Î¥¨¤jªº¶Â¶³¡M¾B¦í"
-      "¤F¤é¤ë¥ú¨~¡M$S¤ô¶³½bªk$Z¤¤¦Ü¨¸¤@©Û¡u$B¯Q¶³½ª¤é$Z¡v¨Ï¥X¡M$N¤£¸T¥´¤F"
-      "­Ó§NÅ¸¡C$Z" );
+      "$né›™æ‰‹ä¸€æšï¹é»‘è‰²çš„æ°£é«”ç”±$Oä¸­æ•£å‡ºï¹å½¢æˆä¸€åœ˜å·¨å¤§çš„é»‘é›²ï¹é®ä½"
+      "äº†æ—¥æœˆå…‰èŠ’ï¹$Sæ°´é›²ç®­æ³•$Zä¸­è‡³é‚ªä¸€æ‹›ã€Œ$Bçƒé›²è”½æ—¥$Zã€ä½¿å‡ºï¹$Nä¸ç¦æ‰“äº†"
+      "å€‹å†·é¡«ã€‚$Z" );
     dam = 800;
     break;
 
   case 8:
     sact( ch, victim, pObj,
-      "$n´£®ğ¤T¨µ¡M®ğ³e¥ş¨­¸g¯ß¡M¨­¦æÁ³±Û«æÂà¡Mª½½Ä¦Ó¤W¡M±j¤jªº®ğ«l"
-      "Å¢¸n¤j¦a¡M$n§Ï©»ÅÜ¤j¤F¼Æ¤Q­¿¡MÂù²´$R¦å¬õ$Z¨gºA²¦ÅS¡M¦p¡u$R¬o¶³$S¤Ñ­°"
-      "$Z¡vª½½Ä¦Ó¤U¡MÅı$N$Z¨¾³Æ¤£¤Î¡C" );
+      "$nææ°£ä¸‰å·¡ï¹æ°£è²«å…¨èº«ç¶“è„ˆï¹èº«è¡Œèºæ—‹æ€¥è½‰ï¹ç›´è¡è€Œä¸Šï¹å¼·å¤§çš„æ°£å‹"
+      "ç± ç½©å¤§åœ°ï¹$nå½·å½¿è®Šå¤§äº†æ•¸åå€ï¹é›™çœ¼$Rè¡€ç´…$Zç‹‚æ…‹ç•¢éœ²ï¹å¦‚ã€Œ$Ræ®ƒé›²$Så¤©é™"
+      "$Zã€ç›´è¡è€Œä¸‹ï¹è®“$N$Zé˜²å‚™ä¸åŠã€‚" );
     dam = 900;
     break;
 
   case 9:
     sact( ch, victim, pObj,
-      "$n±Nºë®ğ¯«¤TªÌ¶×¤@¡MÂ_µ´¤@¤Á¹ï¥~®ğ®§¡M¥|©P¶}©l²£¥ÍÅÜ¤Æ¡M$G­·°_$B"
-      "¶³´é$Z¡M$y¤j¦a¾_°Ê$Z¡M$Y¤é¤ë$bµL¥ú$Z¡M$N¨­³B$n©Ò¨Ï¥Xªº¡u$S¶³µÜ$PÅ]¹Ò$Z¡v¤§¤¤"
-      "¡M¥u¯à§b§b³Q¶Ã½b®g¦º¤F¡C$Z" );
+      "$nå°‡ç²¾æ°£ç¥ä¸‰è€…åŒ¯ä¸€ï¹æ–·çµ•ä¸€åˆ‡å°å¤–æ°£æ¯ï¹å››å‘¨é–‹å§‹ç”¢ç”Ÿè®ŠåŒ–ï¹$Gé¢¨èµ·$B"
+      "é›²æ¹§$Zï¹$yå¤§åœ°éœ‡å‹•$Zï¹$Yæ—¥æœˆ$bç„¡å…‰$Zï¹$Nèº«è™•$næ‰€ä½¿å‡ºçš„ã€Œ$Sé›²èŠ$Pé­”å¢ƒ$Zã€ä¹‹ä¸­"
+      "ï¹åªèƒ½å‘†å‘†è¢«äº‚ç®­å°„æ­»äº†ã€‚$Z" );
     dam = 1000;
     break;
   }
@@ -5694,7 +5694,7 @@ SKILL( cast_water_cloud_blast )
       || !can_damage( victim )
       || victim->in_room != ch->in_room ) break;
 
-    /* ªZ¾¹ªº¥[¦¨ */
+    /* æ­¦å™¨çš„åŠ æˆ */
     if ( !IS_NPC( ch )
       && pObj
       && pObj->item_type == ITEM_WEAPON
@@ -5733,7 +5733,7 @@ SKILL( cast_fun_wu_blast )
 
   if ( !( pObj = get_wield( ch ) ) )
   {
-    mudlog( LOG_DEBUG, "cast_water_cloud_blast: ªZ¾¹¿ù»~." );
+    mudlog( LOG_DEBUG, "cast_water_cloud_blast: æ­¦å™¨éŒ¯èª¤." );
     RETURN( FALSE );
   }
 
@@ -5741,117 +5741,117 @@ SKILL( cast_fun_wu_blast )
   switch( dimemsion_position( choice, level, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "cast_water_cloud_blast: ¥X¬É¤F." );
+    mudlog( LOG_DEBUG, "cast_water_cloud_blast: å‡ºç•Œäº†." );
     RETURN( FALSE );
 
   case 0:
     sact( ch, victim, pObj,
-      "$A             $P »ñ»R½bªk $Z¤§$R ¤@»ñ¨R¤Ñ$Z$A$A"
-      "$n»´²¾¸}¨B¡M¦b$Nªº²r¯P§ğÀ»¤¤ªFÂ«¦è°{¡M¦n¤£®e©ö§ä¨ì¤@­ÓªÅÀÉ"
-      "¡M$n¥ß§Y®³¥X§Aªº$O¡M«l³e¥k¤â¡M©Ôº¡¤}©¶¡M¾ã±i¤}´X¥G©Ô¦¨"
-      "¤F¶ê§Î¡M²rµM¤@½b®g¦V¤ÑªÅ¡M$n®g¥Xªº½b¤Û¤Æ¦¨¤@°¦$R¤õ»ñ°Ä$Zª½½Ä¤W¤Ñ"
-      "¡M¦bªÅ¤¤½L±Û¼Æ©P«á¡M©¹$N¨g¼³¦Ó¥h¡C" );
+      "$A             $P é³³èˆç®­æ³• $Zä¹‹$R ä¸€é³³æ²–å¤©$Z$A$A"
+      "$nè¼•ç§»è…³æ­¥ï¹åœ¨$Nçš„çŒ›çƒˆæ”»æ“Šä¸­æ±ç«„è¥¿é–ƒï¹å¥½ä¸å®¹æ˜“æ‰¾åˆ°ä¸€å€‹ç©ºæª”"
+      "ï¹$nç«‹å³æ‹¿å‡ºä½ çš„$Oï¹å‹è²«å³æ‰‹ï¹æ‹‰æ»¿å¼“å¼¦ï¹æ•´å¼µå¼“å¹¾ä¹æ‹‰æˆ"
+      "äº†åœ“å½¢ï¹çŒ›ç„¶ä¸€ç®­å°„å‘å¤©ç©ºï¹$nå°„å‡ºçš„ç®­å¹»åŒ–æˆä¸€éš»$Rç«é³³å‡°$Zç›´è¡ä¸Šå¤©"
+      "ï¹åœ¨ç©ºä¸­ç›¤æ—‹æ•¸å‘¨å¾Œï¹å¾€$Nç‹‚æ’²è€Œå»ã€‚" );
     dam = 450;
     break;
 
   case 1:
     sact( ch, victim, pObj,
-      "$A              $P »ñ»R½bªk $Z¤§ $G¤G»ñ¥æ±Û$Z$A$A"
-      "$n±N©Ò¦³°Ê§@©ñºC¡M¥ô¦Û¤vªº¨­Âß©Ó¨ü$NµL±¡ªº²r¯P¥´À»¡M¯¸Ã­¨B"
-      "¥ï¡M±N­«¤ß©ñ¦b¤U½L¡MÃ­¦p®õ¤s¡MÀH¤â©â¥X¤G¤ä$W»È½b$Z¡M·f¦b$O"
-      "¤W¡M¯u®ğ¤@´£¡MÂù¸}¤J¤g¤T¤À¡M$WÂù½b$Z¦P®É¯e®g¦Ó¥X¡M³e¤WÁ³±Û®ğ«l¡M"
-      "$WÂù½b$Z¦p¨â°¦$R¦å»ñ°Ä$Z¥æ¿ù­¸µ¾¡M¥»¨­ÁÙ¦Û¦æÁ³±ÛÂà°Ê¡M¥æÂ´¦¨¤@¹D±j¤j"
-      "ªº$R¦å¬õ$S¥ú½b$Z¡M©¹$Nª½®g¦Ó¥h¡C" );
+      "$A              $P é³³èˆç®­æ³• $Zä¹‹ $GäºŒé³³äº¤æ—‹$Z$A$A"
+      "$nå°‡æ‰€æœ‰å‹•ä½œæ”¾æ…¢ï¹ä»»è‡ªå·±çš„èº«è»€æ‰¿å—$Nç„¡æƒ…çš„çŒ›çƒˆæ‰“æ“Šï¹ç«™ç©©æ­¥"
+      "ä¼ï¹å°‡é‡å¿ƒæ”¾åœ¨ä¸‹ç›¤ï¹ç©©å¦‚æ³°å±±ï¹éš¨æ‰‹æŠ½å‡ºäºŒæ”¯$WéŠ€ç®­$Zï¹æ­åœ¨$O"
+      "ä¸Šï¹çœŸæ°£ä¸€æï¹é›™è…³å…¥åœŸä¸‰åˆ†ï¹$Wé›™ç®­$ZåŒæ™‚ç–¾å°„è€Œå‡ºï¹è²«ä¸Šèºæ—‹æ°£å‹ï¹"
+      "$Wé›™ç®­$Zå¦‚å…©éš»$Rè¡€é³³å‡°$Zäº¤éŒ¯é£›ç¿”ï¹æœ¬èº«é‚„è‡ªè¡Œèºæ—‹è½‰å‹•ï¹äº¤ç¹”æˆä¸€é“å¼·å¤§"
+      "çš„$Rè¡€ç´…$Så…‰ç®­$Zï¹å¾€$Nç›´å°„è€Œå»ã€‚" );
     dam = 500;
     break;
 
   case 2:
     sact( ch, victim, pObj,
-      "$A               $P»ñ»R½bªk $Z¤§ $Y¯}»ñ¤T®g$A$Z$A"
-      "$nÅs¤}·f½b¡M®g¥X²Ä¤@ªK½b¡M¦b½b­è®g¥Xªº¦P®É°¨¤W¦A®g¥X²Ä¤G½b¡M"
-      "±µµÛ²Ä¤T½bºòÀH¦Ó¥X¡M¤T½b´X¥G¬O³s¦b¤@°_ªº¤@¤ä¶W¯Åªø½b¤@¼Ë¡MµS"
-      "¦p©ìµÛªøªø§À¤Úªº¯}·À»ñ°Ä¡M¬½¬½©¹$Nªº¨­Åé½Ä¥h¡M¤@½b±µµÛ¤@½b"
-      "¡M³y¦¨$N¨­¤W$l³Q§ğÀ»¤F¤T¦¸¡M´X¥G­n¤F$Nªºª¯©R¡C" );
+      "$A               $Pé³³èˆç®­æ³• $Zä¹‹ $Yç ´é³³ä¸‰å°„$A$Z$A"
+      "$nå½å¼“æ­ç®­ï¹å°„å‡ºç¬¬ä¸€æç®­ï¹åœ¨ç®­å‰›å°„å‡ºçš„åŒæ™‚é¦¬ä¸Šå†å°„å‡ºç¬¬äºŒç®­ï¹"
+      "æ¥è‘—ç¬¬ä¸‰ç®­ç·Šéš¨è€Œå‡ºï¹ä¸‰ç®­å¹¾ä¹æ˜¯é€£åœ¨ä¸€èµ·çš„ä¸€æ”¯è¶…ç´šé•·ç®­ä¸€æ¨£ï¹çŒ¶"
+      "å¦‚æ‹–è‘—é•·é•·å°¾å·´çš„ç ´æ»…é³³å‡°ï¹ç‹ ç‹ å¾€$Nçš„èº«é«”è¡å»ï¹ä¸€ç®­æ¥è‘—ä¸€ç®­"
+      "ï¹é€ æˆ$Nèº«ä¸Š$lè¢«æ”»æ“Šäº†ä¸‰æ¬¡ï¹å¹¾ä¹è¦äº†$Nçš„ç‹—å‘½ã€‚" );
     dam = 600;
     break;
 
   case 3:
     sact( ch, victim, pObj,
-      "$A               $P»ñ»R½bªk$Z ¤§$B »ñ¹C¥|®ü$Z$A$A"
-      "±æµÛ¤Ñ¤Wªº¥Õ¶³¡M$n¤ß±¡¤£¦ÛÄ±»´ÃP¤F°_¨Ó¡M²´«eªº$N¬İ°_¨Ó¤]Ä±±o"
-      "¥i·R¡M¬I®i¶}$P»ñ»R¨­ªk$Z°{¶}$Nªº­P©R§ğÀ»¤§«á¡M$nÀY¤]¤£¦^¦aÄÆ¶h"
-      "¦Ó¥h¡M¤ß¤¤¥u·Q±y¶¢ªº¹C¤sª±¤ô¡M¦A¤]¤£·Q¾Ô°«¡M´N¦b$n¤@®ÉÃP¾Ó¤§"
-      "®É¡M$N¬½¬½§ğÀ»$nªº­I«á¡M¥¨¤jªºµhÄ±¹G¨Ï$n¤£±o¤£¨Ï¥X±ş©Û¡M¬°"
-      "¤F°t¦X¤ß±¡¡M$P»ñ»R½bªk$Z¤¤³ÌÀu¶®ªº¡u$B»ñ¹C¥|®ü$Z¡v¨Ï¥X¡M$N³Q¬ğ¦p¨ä"
-      "¨Óªº$S¤ô»ñ°Ä$Z§]¾½¤F¡C" );
+      "$A               $Pé³³èˆç®­æ³•$Z ä¹‹$B é³³éŠå››æµ·$Z$A$A"
+      "æœ›è‘—å¤©ä¸Šçš„ç™½é›²ï¹$nå¿ƒæƒ…ä¸è‡ªè¦ºè¼•é¬†äº†èµ·ä¾†ï¹çœ¼å‰çš„$Nçœ‹èµ·ä¾†ä¹Ÿè¦ºå¾—"
+      "å¯æ„›ï¹æ–½å±•é–‹$Pé³³èˆèº«æ³•$Zé–ƒé–‹$Nçš„è‡´å‘½æ”»æ“Šä¹‹å¾Œï¹$né ­ä¹Ÿä¸å›åœ°é£„é€¸"
+      "è€Œå»ï¹å¿ƒä¸­åªæƒ³æ‚ é–’çš„éŠå±±ç©æ°´ï¹å†ä¹Ÿä¸æƒ³æˆ°é¬¥ï¹å°±åœ¨$nä¸€æ™‚é¬†æ‡ˆä¹‹"
+      "æ™‚ï¹$Nç‹ ç‹ æ”»æ“Š$nçš„èƒŒå¾Œï¹å·¨å¤§çš„ç—›è¦ºé€¼ä½¿$nä¸å¾—ä¸ä½¿å‡ºæ®ºæ‹›ï¹ç‚º"
+      "äº†é…åˆå¿ƒæƒ…ï¹$Pé³³èˆç®­æ³•$Zä¸­æœ€å„ªé›…çš„ã€Œ$Bé³³éŠå››æµ·$Zã€ä½¿å‡ºï¹$Nè¢«çªå¦‚å…¶"
+      "ä¾†çš„$Sæ°´é³³å‡°$Zåå™¬äº†ã€‚" );
     dam = 700;
     break;
 
   case 4:
     sact( ch, victim, pObj,
-      "$P              $P»ñ»R½bªk $Z¤§$P ±m»ñ¤­¼A$Z$A$A"
-      "­±¹ï$Nªº·Ğ¤H§ğÀ»¡M$n¥u¯à¥ª®æ¥k¾×¡M©â¤£¥X®É¶¡¨Ó©â¥X­I¤Wªº$O"
-      "§ğÀ»¡M¥[¤W·Q°_¤F¬Q¤Ñ¸ò¤p­·§n¬[¡M³Q²ö¦W¨ä§®¦a­ŞªP¡M³Ì«áÁÙ³Q©ß"
-      "±ó¡M¤@ªÑ«è®ğ¥Ñ¤ß¤¤¤É°_¡M½ÆÂøªº$R´d¶Ë¡B¼««ã¡BµL©`$Zµ¥±¡ºüªÈµ²¦b¤ß"
-      "¤¤¡M$n±NµL³Bµo¬ªªº«è«ë³q³q¥[½Ñ¦b$N¨­¤W¡M³s½b¤]Ãi±o©Ş¤F¡Mª½"
-      "±µ§â$OÁ|¤F°_¨Ó¡M¬½¬½©¹$Nªº$l¤W¼A¤F¤­¤U¡MÂA¦å­¸Âq"
-      "¦Ó¥X¡M¦b¶§¥ú·Ó®g¤U¡M¥æÂ´¦¨¬üÄRªº$R¤­±m»ñ°Ä$Z¡C" );
+      "$P              $Pé³³èˆç®­æ³• $Zä¹‹$P å½©é³³äº”åŠˆ$Z$A$A"
+      "é¢å°$Nçš„ç…©äººæ”»æ“Šï¹$nåªèƒ½å·¦æ ¼å³æ“‹ï¹æŠ½ä¸å‡ºæ™‚é–“ä¾†æŠ½å‡ºèƒŒä¸Šçš„$O"
+      "æ”»æ“Šï¹åŠ ä¸Šæƒ³èµ·äº†æ˜¨å¤©è·Ÿå°é¢¨åµæ¶ï¹è¢«è«åå…¶å¦™åœ°å†¤æ‰ï¹æœ€å¾Œé‚„è¢«æ‹‹"
+      "æ£„ï¹ä¸€è‚¡æ€¨æ°£ç”±å¿ƒä¸­å‡èµ·ï¹è¤‡é›œçš„$Ræ‚²å‚·ã€æ†¤æ€’ã€ç„¡å¥ˆ$Zç­‰æƒ…ç·’ç³¾çµåœ¨å¿ƒ"
+      "ä¸­ï¹$nå°‡ç„¡è™•ç™¼æ´©çš„æ€¨æ¨é€šé€šåŠ è«¸åœ¨$Nèº«ä¸Šï¹é€£ç®­ä¹Ÿæ‡¶å¾—æ‹”äº†ï¹ç›´"
+      "æ¥æŠŠ$Oèˆ‰äº†èµ·ä¾†ï¹ç‹ ç‹ å¾€$Nçš„$lä¸ŠåŠˆäº†äº”ä¸‹ï¹é®®è¡€é£›æ¿º"
+      "è€Œå‡ºï¹åœ¨é™½å…‰ç…§å°„ä¸‹ï¹äº¤ç¹”æˆç¾éº—çš„$Räº”å½©é³³å‡°$Zã€‚" );
     dam = 800;
     break;
 
   case 5:
     sact( ch, victim, pObj,
-      "$P              $P»ñ»R½bªk $Z¤§ $R¤õ»ñ¤»À»$Z$A$A"
-      "$n¨Ï¥X$P»ñ»R¨­ªk$Z¦Ü·¥¤@¦¡¡u$Y¤Û»ñ»R¤Æ$Z¡v¡M¨­§Î¤@¤À¬°¤»¡M¤À¯¸$Nªº"
-      "¤»¨¤¤è¦ì¡M§Î¦¨¤@­Ó$S¤»¨~¬P¥ñÅ]°}$Z¡M±N$N«Ê¦b¨ä¤¤¡M¤»­Ó$n¦P®ÉÅs"
-      "¤}·f½b¡M®g¦V¤ÑªÅ¡M¤»½b¦bªÅ¤¤¥æ¬Û¤¬À»¡M¤Û¤Æ¥X¥¨¤jªº$R¯P¤õ»ñ°Ä$Z¡M"
-      "¨eÂùÁl¤@´­¡M¤»Áû¥¨¤jªº$R¤õ²y$Z±q¤Ñ¦Ó­°¡M¯{¦V¥ñÅ]°}¤¤¡M$N"
-      "¦]¬°µLªk°{¸ú¡M¥u¯à²´¸C¸C³Q¯{¡C" );
+      "$P              $Pé³³èˆç®­æ³• $Zä¹‹ $Rç«é³³å…­æ“Š$Z$A$A"
+      "$nä½¿å‡º$Pé³³èˆèº«æ³•$Zè‡³æ¥µä¸€å¼ã€Œ$Yå¹»é³³èˆåŒ–$Zã€ï¹èº«å½¢ä¸€åˆ†ç‚ºå…­ï¹åˆ†ç«™$Nçš„"
+      "å…­è§’æ–¹ä½ï¹å½¢æˆä¸€å€‹$Så…­èŠ’æ˜Ÿä¼é­”é™£$Zï¹å°‡$Nå°åœ¨å…¶ä¸­ï¹å…­å€‹$nåŒæ™‚å½"
+      "å¼“æ­ç®­ï¹å°„å‘å¤©ç©ºï¹å…­ç®­åœ¨ç©ºä¸­äº¤ç›¸äº’æ“Šï¹å¹»åŒ–å‡ºå·¨å¤§çš„$Rçƒˆç«é³³å‡°$Zï¹"
+      "ç‰ é›™ç¿¼ä¸€æšï¹å…­é¡†å·¨å¤§çš„$Rç«çƒ$Zå¾å¤©è€Œé™ï¹ç ¸å‘ä¼é­”é™£ä¸­ï¹$N"
+      "å› ç‚ºç„¡æ³•é–ƒèº²ï¹åªèƒ½çœ¼çœçœè¢«ç ¸ã€‚" );
     dam = 900;
     break;
 
   case 6:
     sact( ch, victim, pObj,
-      "$A$P              »ñ»R½bªk$Z ¤§$S ¨g»ñ¤C±ş$Z$A$A"
-      "$nÂù²´¦å¬õ¡M§ÎºA­Y¨g¡M©ÜÀY´²¾v¡M¥ş¨­¤W¤U´²µo¥XµL¥H­Û¤ñªº¤¿²r"
-      "±ş·N¡M$n±N¨­¤W­ì¥»ªº½b³U³q³q¥á±ó¡M±qÃh¤¤±Ç¥X¥t¤@­Ó½b³U¡M³U¤¤"
-      "º¡¬O§é¦¨¤CºIªºµu½b¡M±N½b¤@©Ô¡M¦¨¬°¤@ªKªK²fµÛ¼@¬rªº¤C±ş¬r½b¡M"
-      "´¹ÂÅ¦âªº½bÀY°{°{µo«G¡M¬MµÛ$n¦BÁ÷¯ëªº§N¯º¡M¨£¦å«Ê³ïªº¬r½bÅı¤H"
-      "Ä±±o$Nªº¦º´Á¤j·§¤£»·¤F¡C" );
+      "$A$P              é³³èˆç®­æ³•$Z ä¹‹$S ç‹‚é³³ä¸ƒæ®º$Z$A$A"
+      "$né›™çœ¼è¡€ç´…ï¹å½¢æ…‹è‹¥ç‹‚ï¹æŠ«é ­æ•£é«®ï¹å…¨èº«ä¸Šä¸‹æ•£ç™¼å‡ºç„¡ä»¥å€«æ¯”çš„å‡¶çŒ›"
+      "æ®ºæ„ï¹$nå°‡èº«ä¸ŠåŸæœ¬çš„ç®­è¢‹é€šé€šä¸Ÿæ£„ï¹å¾æ‡·ä¸­æå‡ºå¦ä¸€å€‹ç®­è¢‹ï¹è¢‹ä¸­"
+      "æ»¿æ˜¯æŠ˜æˆä¸ƒæˆªçš„çŸ­ç®­ï¹å°‡ç®­ä¸€æ‹‰ï¹æˆç‚ºä¸€æææ·¬è‘—åŠ‡æ¯’çš„ä¸ƒæ®ºæ¯’ç®­ï¹"
+      "æ™¶è—è‰²çš„ç®­é ­é–ƒé–ƒç™¼äº®ï¹æ˜ è‘—$nå†°éœœèˆ¬çš„å†·ç¬‘ï¹è¦‹è¡€å°å–‰çš„æ¯’ç®­è®“äºº"
+      "è¦ºå¾—$Nçš„æ­»æœŸå¤§æ¦‚ä¸é äº†ã€‚" );
     dam = 1000;
     break;
 
   case 7:
     sact( ch, victim, pObj,
-      "$A$P               »ñ»R½bªk$Z ¤§$Y µ¾»ñ¤K¤è$Z$A$A"
-      "$n¾®»E¯u®ğ¡M±N$P»ñ»R¨­ªk$Zµo´§ªº²OºvºÉ­P¡M¦b¾Ô³õ¤¤¬ï±ô¦Û¦p¡M§¹¥ş"
-      "¤£±N$N©ñ¦b²´¸Ì¡M¦b¯u®ğ§Ö³t¬yÂà¡M¨­§Î·U¨Ó·U§Ö¤§¤U¡M$N¤w¸g"
-      "³Q·d±o©üÀYÂà¦V¤F¡M°gÀÛ¤¤$nªº¨­¼v¤w¸g¤Æ¦¨¤F$R¤C$G±m$Bµ¾$Y»ñ$Z¡M¦bÁßÆC¨¬"
-      "°÷ªº®ğ¶Õ¤§«á¡M¤@¦¡$S»ñÁl¤Ñµ¾$Z¨Ï¥X¡M¤Û½b¦p«B¯ë±q¥|­±¤K¤è®g¦V$N"
-      "¡M¯u¥¿©w·ú¤@¬İ¡M$N¨­¤W´¡¤F¤KªK½b¡MªKªK³e¬ï$Nªº¨­Åé¡C" );
+      "$A$P               é³³èˆç®­æ³•$Z ä¹‹$Y ç¿”é³³å…«æ–¹$Z$A$A"
+      "$nå‡èšçœŸæ°£ï¹å°‡$Pé³³èˆèº«æ³•$Zç™¼æ®çš„æ·‹æ¼“ç›¡è‡´ï¹åœ¨æˆ°å ´ä¸­ç©¿æ¢­è‡ªå¦‚ï¹å®Œå…¨"
+      "ä¸å°‡$Næ”¾åœ¨çœ¼è£¡ï¹åœ¨çœŸæ°£å¿«é€Ÿæµè½‰ï¹èº«å½¢æ„ˆä¾†æ„ˆå¿«ä¹‹ä¸‹ï¹$Nå·²ç¶“"
+      "è¢«æå¾—æ˜é ­è½‰å‘äº†ï¹è¿·æ¿›ä¸­$nçš„èº«å½±å·²ç¶“åŒ–æˆäº†$Rä¸ƒ$Gå½©$Bç¿”$Yé³³$Zï¹åœ¨é†é‡€è¶³"
+      "å¤ çš„æ°£å‹¢ä¹‹å¾Œï¹ä¸€å¼$Sé³³ç¿¼å¤©ç¿”$Zä½¿å‡ºï¹å¹»ç®­å¦‚é›¨èˆ¬å¾å››é¢å…«æ–¹å°„å‘$N"
+      "ï¹çœŸæ­£å®šç›ä¸€çœ‹ï¹$Nèº«ä¸Šæ’äº†å…«æç®­ï¹ææè²«ç©¿$Nçš„èº«é«”ã€‚" );
     dam = 1100;
     break;
 
   case 8:
     sact( ch, victim, pObj,
-      "$A$P              »ñ»R½bªk$Z ¤§$R »ñ»R¤E¤Ñ$A$Z$A"
-      "$n±N¥ş¨­ªººëÂ¬³¬Âê¡M¤­·P§¹¥ş«Ê³¬¡MÂ_µ´¤@¤Á»P¥~¬ÉªºÁpÃ´¡Mº¥º¥"
-      "¦a¡M$S­·$Zªº¬y°Ê¡M$Y®ğ$ZªºÅÜ¤Æ¡M§¹§¹¥ş¥ş¬M¤J¤ß²´¤§¤¤¡M¥~¬Éªº¤@¤Á"
-      "ÅÜ¤Æ³£¯à²M·¡·P¨ü¨ì¡M$Nªº¤@Á|¤@°Ê¡B¦Ù¦×ÅÜ¤Æ¡M³£¦b´x´¤¤§"
-      "¤¤¡M$n²rµM¸C²´¤@Àü¡M$N³Q®ğ¶Õ©ÒÂíÄá¡M¤@³s¤K½b®g¥X¡M½b½b"
-      "³£ºâ·Ç¤F$Nªº°h¸ô¡M¤K½b¤§«á¡M$N¤w¸gÁ×µL¥iÁ×¡M¹Ü©Rªº²Ä¤E½b"
-      "ª½±µ®g¤¤¤F$Nªº$l¡C" );
+      "$A$P              é³³èˆç®­æ³•$Z ä¹‹$R é³³èˆä¹å¤©$A$Z$A"
+      "$nå°‡å…¨èº«çš„ç²¾ç«…é–‰é–ï¹äº”æ„Ÿå®Œå…¨å°é–‰ï¹æ–·çµ•ä¸€åˆ‡èˆ‡å¤–ç•Œçš„è¯ç¹«ï¹æ¼¸æ¼¸"
+      "åœ°ï¹$Sé¢¨$Zçš„æµå‹•ï¹$Yæ°£$Zçš„è®ŠåŒ–ï¹å®Œå®Œå…¨å…¨æ˜ å…¥å¿ƒçœ¼ä¹‹ä¸­ï¹å¤–ç•Œçš„ä¸€åˆ‡"
+      "è®ŠåŒ–éƒ½èƒ½æ¸…æ¥šæ„Ÿå—åˆ°ï¹$Nçš„ä¸€èˆ‰ä¸€å‹•ã€è‚Œè‚‰è®ŠåŒ–ï¹éƒ½åœ¨æŒæ¡ä¹‹"
+      "ä¸­ï¹$nçŒ›ç„¶çœçœ¼ä¸€çªï¹$Nè¢«æ°£å‹¢æ‰€é®æ”ï¹ä¸€é€£å…«ç®­å°„å‡ºï¹ç®­ç®­"
+      "éƒ½ç®—æº–äº†$Nçš„é€€è·¯ï¹å…«ç®­ä¹‹å¾Œï¹$Nå·²ç¶“é¿ç„¡å¯é¿ï¹å¥ªå‘½çš„ç¬¬ä¹ç®­"
+      "ç›´æ¥å°„ä¸­äº†$Nçš„$lã€‚" );
     dam = 1200;
     break;
 
   case 9:
     sact( ch, victim, pObj,
-      "$A$P              »ñ»R½bªk $Z¤§ $R¤d»ñ$S´P$Y»R$A$Z$A"
-      "$n¹B°_$P»ñ»R½bªk$Z¤¤°ß¤@ªº¤ßªk--$Y¡u$G¤@µL©Ò¦³$Z¡M$BµL©Ò¤£¦³$Y¡v$Z¡M±N¯u®ğÄé"
-      "¶i¤}©¶¡M»Wº¡®ğ«lªº¤}©¶¹y®É$S¶ä¶ä§@ÅT$Z¡M»´»´¤@´£¯u®ğ¡M´¤Ã­¤}¬`¡M"
-      "¥ª¤â¤@¼·¤}©¶¡M«l®ğ¹y®É¯e½Ä¦Ó¥X¡M¤d¹D¸U¹D®ğ½b¤À§O¤Æ¦¨¤d¸U°¦¤£"
-      "¦Pªº$R»ñ°Ä$Z¡M»R¥X¦U§Î¦U¦â¸Ş²§°Ò§®ªº»R«º¡M¶Ç»¡¤¤ªº¶A©G¤§»RÅı$N"
-      "¬İ±o¤ßÃm¯«©É¡M§¹¥ş¤£ª¾¹D¦Û¤v¤w¸g³Q®ğ½b³Î±oÅéµL§¹½§¤F¡C" );
+      "$A$P              é³³èˆç®­æ³• $Zä¹‹ $Råƒé³³$Såµ$Yèˆ$A$Z$A"
+      "$né‹èµ·$Pé³³èˆç®­æ³•$Zä¸­å”¯ä¸€çš„å¿ƒæ³•--$Yã€Œ$Gä¸€ç„¡æ‰€æœ‰$Zï¹$Bç„¡æ‰€ä¸æœ‰$Yã€$Zï¹å°‡çœŸæ°£çŒ"
+      "é€²å¼“å¼¦ï¹è“„æ»¿æ°£å‹çš„å¼“å¼¦é “æ™‚$Så—¡å—¡ä½œéŸ¿$Zï¹è¼•è¼•ä¸€æçœŸæ°£ï¹æ¡ç©©å¼“æŸ„ï¹"
+      "å·¦æ‰‹ä¸€æ’¥å¼“å¼¦ï¹å‹æ°£é “æ™‚ç–¾è¡è€Œå‡ºï¹åƒé“è¬é“æ°£ç®­åˆ†åˆ¥åŒ–æˆåƒè¬éš»ä¸"
+      "åŒçš„$Ré³³å‡°$Zï¹èˆå‡ºå„å½¢å„è‰²è©­ç•°æ›¼å¦™çš„èˆå§¿ï¹å‚³èªªä¸­çš„è©›å’’ä¹‹èˆè®“$N"
+      "çœ‹å¾—å¿ƒæ› ç¥æ€¡ï¹å®Œå…¨ä¸çŸ¥é“è‡ªå·±å·²ç¶“è¢«æ°£ç®­å‰²å¾—é«”ç„¡å®Œè†šäº†ã€‚" );
     dam = 1400;
     break;
   }
@@ -5862,7 +5862,7 @@ SKILL( cast_fun_wu_blast )
       || !can_damage( victim )
       || victim->in_room != ch->in_room ) break;
 
-    /* ªZ¾¹ªº¥[¦¨ */
+    /* æ­¦å™¨çš„åŠ æˆ */
     if ( !IS_NPC( ch )
       && pObj
       && pObj->item_type == ITEM_WEAPON
@@ -5898,7 +5898,7 @@ SKILL( cast_make_sword )
 
   if ( !( pSword = create_object( pObj, ch->level ) ) )
   {
-    send_to_char( "µLªk³Ğ¥XÅ]ªk¼C¡T\n\r", ch );
+    send_to_char( "ç„¡æ³•å‰µå‡ºé­”æ³•åŠï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -5912,7 +5912,7 @@ SKILL( cast_make_sword )
   else
     obj_to_char( pSword, ch );
 
-  act( "¤@°}°{¥ú¹L«á¡M$p±q$nªº¤â¤W¾®»E¥X¨Ó¡T", ch, pSword, NULL, TO_ALL );
+  act( "ä¸€é™£é–ƒå…‰éå¾Œï¹$på¾$nçš„æ‰‹ä¸Šå‡èšå‡ºä¾†ï¹—", ch, pSword, NULL, TO_ALL );
 
   RETURN( TRUE );
 }

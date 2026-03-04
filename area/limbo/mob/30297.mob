@@ -1,13 +1,13 @@
 Vnum            30297
 Name            cao pi~
-ShortDesc       ��A~
-LongDesc        ��A(cao pi)
+ShortDesc       曹丕~
+LongDesc        曹丕(cao pi)
 ~
 Description
-�r�l�١M��ު����l�C�]���l����Ԧ��M
-�Q�߬��@�l�C���˦���M�~���Q���C�G��
-�m���I���M�إ��Q���¡M�Y��ӫҡC���
-�ưU�I���q���t�M���ᦺ�h�C
+字子桓﹐曹操的次子。因長子曹昂戰死﹐
+被立為世子。父親死後﹐繼任魏王。逼迫
+獻帝禪讓﹐建立魏王朝﹐即位皇帝。把後
+事託付給司馬懿和曹休後死去。
 ~
 Sentinel        Yes
 Alignment       0
@@ -31,5 +31,5 @@ DodgeRatio      100
 Migrate         0
 Sex             SEX_MALE
 Auction
-�ɾ����M�u�n�ܽ檫�~�Ӻ����c�����ͭp�o�T~
+時機歹歹﹐只好變賣物品來維持宮中的生計囉﹗~
 End

@@ -1,7 +1,7 @@
 Name            haste~
-Cname           ¨³±¶~
+Cname           è¿…æ·~
 Slot            SLOT_HASTE
-Msgoff          §Aªº³t«×ºC¤F¤U¨Ó¡T~
+Msgoff          ä½ çš„é€Ÿåº¦æ…¢äº†ä¸‹ä¾†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_haste~
 Position        POS_STANDING

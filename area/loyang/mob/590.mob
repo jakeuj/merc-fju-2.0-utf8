@@ -1,7 +1,7 @@
 Vnum            590
 Name            wild dog~
-ShortDesc       ³¥ª¯~
-LongDesc        ³¥ª¯(wild dog)
+ShortDesc       é‡Žç‹—~
+LongDesc        é‡Žç‹—(wild dog)
 ~
 Description
 ~
@@ -33,7 +33,7 @@ Process
 Type            fight_prog
 Chance          30
 Text
-say ¨L¨L¨L¡T
+say æ±ªæ±ªæ±ªï¹—
 ~
 End
 

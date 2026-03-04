@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -21,11 +21,11 @@
 
 #define MAX_LENGTH      255
 
-/* °Ï°ì¨ç¼Æ */
+/* å€åŸŸå‡½æ•¸ */
 int     fread_line      args( ( FILE * , char * , char * ) );
 void    exec_ini        args( ( char * , char * ) );
 
-/* ¥ş°ìÅÜ¼Æ */
+/* å…¨åŸŸè®Šæ•¸ */
 int     max_connect;
 int     chat_penalty    = CHAT_PENALTY;
 int     level_limit     = 0;
@@ -136,7 +136,7 @@ char    motd_file       [MAX_FILE_LENGTH] = { '\x0' };
 #define DEFAULT_FILE( target, default )              \
    if ( !target[0] ) str_cpy( target, default );     \
 
-/* ±Ò©l¤ÆÀÉ®×©Î¥Ø¿ı¦WºÙ */
+/* å•Ÿå§‹åŒ–æª”æ¡ˆæˆ–ç›®éŒ„åç¨± */
 void default_file( void )
 {
   PUSH_FUNCTION( "default_file" );
@@ -250,7 +250,7 @@ void default_file( void )
    sprintf( tempfile , "%s%s" , home_dir , target ); \
    str_cpy( target , tempfile );                     \
 
-/* ­×¥¿ÀÉ®×¦WºÙ¨Ã¥[¤Wµ´¹ï¸ô®|µ¹¥L */
+/* ä¿®æ­£æª”æ¡ˆåç¨±ä¸¦åŠ ä¸Šçµ•å°è·¯å¾‘çµ¦ä»– */
 void adjust_filename( void )
 {
   char tempfile[MAX_FILE_LENGTH];
@@ -326,7 +326,7 @@ void adjust_filename( void )
 
 #undef ADJUST
 
-/* Åª¤J°Ñ¦ÒÀÉ®× */
+/* è®€å…¥åƒè€ƒæª”æ¡ˆ */
 void read_ini( const char * filename )
 {
   int    flag;
@@ -338,17 +338,17 @@ void read_ini( const char * filename )
   PUSH_FUNCTION( "read_ini" );
 
   if ( access( filename , R_OK ) != 0 )
-    mudlog( LOG_ERR , "µLªk¶}±Ò±Ò©lÀÉ %s¡C\n" , filename );
+    mudlog( LOG_ERR , "ç„¡æ³•é–‹å•Ÿå•Ÿå§‹æª” %sã€‚\n" , filename );
 
   if ( !( pFile = fopen( filename , "r" ) ) )
-    mudlog( LOG_ERR , "µLªkÅª¨ú±Ò©lÀÉ %s¡C\n" , filename );
+    mudlog( LOG_ERR , "ç„¡æ³•è®€å–å•Ÿå§‹æª” %sã€‚\n" , filename );
 
   while ( !feof( pFile ) )
   {
     flag = fread_line( pFile , command , argument );
 
     if ( command[0] == '#' || command[0] == '\x0' ) continue;
-    else if ( flag == FALSE ) mudlog( LOG_ERR , "±Ò©lÀÉ®æ¦¡¿ù»~¡C\n" );
+    else if ( flag == FALSE ) mudlog( LOG_ERR , "å•Ÿå§‹æª”æ ¼å¼éŒ¯èª¤ã€‚\n" );
 
     smash_char( command  , ' ' );
     smash_char( argument , ' ' );
@@ -357,18 +357,18 @@ void read_ini( const char * filename )
 
   fclose( pFile );
 
-  if ( merc_ipc == 0 ) mudlog( LOG_ERR, "§A¥²¶·µù©ú¦@¨É°O¾ĞÅé."  );
-  if ( !mud_name[0]  ) mudlog( LOG_ERR, "§A¥²¶·µù©ú¥»MUDªº¦WºÙ." );
+  if ( merc_ipc == 0 ) mudlog( LOG_ERR, "ä½ å¿…é ˆè¨»æ˜å…±äº«è¨˜æ†¶é«”."  );
+  if ( !mud_name[0]  ) mudlog( LOG_ERR, "ä½ å¿…é ˆè¨»æ˜æœ¬MUDçš„åç¨±." );
 
   for ( loop = 0; loop < MAX_PORT; loop++ )
     if ( MudPort[loop] != ERRORCODE ) break;
 
-  if ( loop == MAX_PORT ) mudlog( LOG_ERR, "§A¥²¶·µù©ú³q°T°ğ¦ì§}." );
+  if ( loop == MAX_PORT ) mudlog( LOG_ERR, "ä½ å¿…é ˆè¨»æ˜é€šè¨ŠåŸ ä½å€." );
 
   RETURN_NULL();
 }
 
-/* ±qÀÉ®×¤¤Åª¤J¤@¦æ */
+/* å¾æª”æ¡ˆä¸­è®€å…¥ä¸€è¡Œ */
 int fread_line( FILE * pFile , char * command , char * argument )
 {
   char   Char;
@@ -432,7 +432,7 @@ int fread_line( FILE * pFile , char * command , char * argument )
     }
   }
 
-  mudlog( LOG_ERR , "±Ò©lÀÉªø«×¶W¹L¨t²Î¤º©w­È¡M¥i¯à¬O«D¤å¥óÀÉ¡C\n" );
+  mudlog( LOG_ERR , "å•Ÿå§‹æª”é•·åº¦è¶…éç³»çµ±å…§å®šå€¼ï¹å¯èƒ½æ˜¯éæ–‡ä»¶æª”ã€‚\n" );
   exit( -1 );
 }
 
@@ -458,7 +458,7 @@ int fread_line( FILE * pFile , char * command , char * argument )
     fMatch = TRUE;                         \
   }
 
-/* Åª¤J¸ê®Æ */
+/* è®€å…¥è³‡æ–™ */
 void exec_ini( char * command , char * argument )
 {
   extern  bool    signal_segv;
@@ -475,7 +475,7 @@ void exec_ini( char * command , char * argument )
   PUSH_FUNCTION( "exec_ini" );
 
   if ( *command == '\x0' || *argument == '\x0' )
-    mudlog( LOG_ERR , "§Aªº±Ò©lÀÉ®×®æ¦¡¦³°İÃD¡M½ĞÀË¬d§Aªº±Ò©lÀÉ¡C\n" );
+    mudlog( LOG_ERR , "ä½ çš„å•Ÿå§‹æª”æ¡ˆæ ¼å¼æœ‰å•é¡Œï¹è«‹æª¢æŸ¥ä½ çš„å•Ÿå§‹æª”ã€‚\n" );
 
   switch( UPPER( command[0] ) )
   {
@@ -494,7 +494,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Auction Gold" ) )
     {
       if ( ( AuctionGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "©ç½æª÷ÃB %d ¤Ó¤Ö.", AuctionGold );
+        mudlog( LOG_ERR, "æ‹è³£é‡‘é¡ %d å¤ªå°‘.", AuctionGold );
 
       fMatch = TRUE;
       break;
@@ -503,7 +503,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Alignment Different" ) )
     {
       if ( ( AlignmentDiff = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "°}Àç®t²§ %d ¤Ó¤Ö.", AlignmentDiff );
+        mudlog( LOG_ERR, "é™£ç‡Ÿå·®ç•° %d å¤ªå°‘.", AlignmentDiff );
 
       fMatch = TRUE;
       break;
@@ -512,7 +512,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Alignment Range" ) )
     {
       if ( ( AlignRange = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "°}Àç®t²§ %d ¤Ó¤Ö.", AlignRange );
+        mudlog( LOG_ERR, "é™£ç‡Ÿå·®ç•° %d å¤ªå°‘.", AlignRange );
 
       fMatch = TRUE;
       break;
@@ -521,7 +521,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Auction Times" ) )
     {
       if ( ( AuctionTimes = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "©ç½æ¦¸¼Æ %d ¤Ó¤Ö.", AuctionTimes );
+        mudlog( LOG_ERR, "æ‹è³£æ¬¡æ•¸ %d å¤ªå°‘.", AuctionTimes );
 
       fMatch = TRUE;
       break;
@@ -530,7 +530,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Angel Times" ) )
     {
       if ( ( AngelTimes = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¦uÅ@¯«¨Óªº¶g´Á %d ¤£¦X²z.", AngelTimes );
+        mudlog( LOG_ERR, "å®ˆè­·ç¥ä¾†çš„é€±æœŸ %d ä¸åˆç†.", AngelTimes );
 
       fMatch = TRUE;
       break;
@@ -539,7 +539,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Angel Default" ) )
     {
       if ( ( AngelDefault = atoi( argument ) ) <= 10 )
-        mudlog( LOG_ERR, "ª±®a¹w³]¦uÅ@¯«¨Óªº¶g´Á %d ¤£¦X²z.", AngelDefault );
+        mudlog( LOG_ERR, "ç©å®¶é è¨­å®ˆè­·ç¥ä¾†çš„é€±æœŸ %d ä¸åˆç†.", AngelDefault );
 
       fMatch = TRUE;
       break;
@@ -548,7 +548,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Angel Level" ) )
     {
       if ( ( AngelLevel = atoi( argument ) ) <= 0 || AngelLevel > MAX_LEVEL )
-        mudlog( LOG_ERR, "¦uÅ@¯«µ¥¯Å %d ¤£¦X²z.", AngelLevel );
+        mudlog( LOG_ERR, "å®ˆè­·ç¥ç­‰ç´š %d ä¸åˆç†.", AngelLevel );
 
       fMatch = TRUE;
       break;
@@ -557,7 +557,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Ask Cost" ) )
     {
       if ( ( AskCost = atoi( argument ) ) <= 0 || AskCost > 200 )
-        mudlog( LOG_ERR, "¥´¤u«OÃÒª÷­¿¼Æ %d ¤£¦Xªk.", AskCost );
+        mudlog( LOG_ERR, "æ‰“å·¥ä¿è­‰é‡‘å€æ•¸ %d ä¸åˆæ³•.", AskCost );
 
       fMatch = TRUE;
       break;
@@ -579,7 +579,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Auth Port" ) )
     {
       if ( ( AuthPort = atoi( argument ) ) <= 0 || AuthPort > 1024 )
-        mudlog( LOG_ERR, "§Aªº¬d¸ß°ğ %d ¤£¦Xªk." , AuthPort );
+        mudlog( LOG_ERR, "ä½ çš„æŸ¥è©¢åŸ  %d ä¸åˆæ³•." , AuthPort );
 
       fMatch = TRUE;
       break;
@@ -603,7 +603,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Born Age" ) )
     {
       if ( ( BornAge = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]¦~ÄÖ %d ¤£¦X²z.", BornAge );
+        mudlog( LOG_ERR, "é è¨­å¹´é½¡ %d ä¸åˆç†.", BornAge );
 
       fMatch = TRUE;
       break;
@@ -613,7 +613,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( BankThreshold = atoi( argument ) ) <= 0
         || BankThreshold > MaxNumber )
-        mudlog( LOG_ERR, "¦s´Ú¤W­­ %d ¤£¦X²z.", BankThreshold );
+        mudlog( LOG_ERR, "å­˜æ¬¾ä¸Šé™ %d ä¸åˆç†.", BankThreshold );
 
       fMatch = TRUE;
       break;
@@ -622,7 +622,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Bank Profit" ) )
     {
       if ( ( BankProfit = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¦s´Ú§Q®§ %d ¤£¦X²z.", BankProfit );
+        mudlog( LOG_ERR, "å­˜æ¬¾åˆ©æ¯ %d ä¸åˆç†.", BankProfit );
 
       fMatch = TRUE;
       break;
@@ -635,7 +635,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Club Create Fund" ) )
     {
       if ( ( ClubCreateFund = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ğ«ØÀ°¬£¶O¥Î %d ¤£¦Xªk.", ClubCreateFund );
+        mudlog( LOG_ERR, "å‰µå»ºå¹«æ´¾è²»ç”¨ %d ä¸åˆæ³•.", ClubCreateFund );
 
       fMatch = TRUE;
       break;
@@ -644,7 +644,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Club Attr Gain" ) )
     {
       if ( ( ClubAttrGain = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "À°¬£Äİ©Ê­¿¼Æ %d ¤£¦Xªk.", ClubAttrGain );
+        mudlog( LOG_ERR, "å¹«æ´¾å±¬æ€§å€æ•¸ %d ä¸åˆæ³•.", ClubAttrGain );
 
       fMatch = TRUE;
       break;
@@ -653,7 +653,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Club Countersign Fund" ) )
     {
       if ( ( ClubCountersignFund = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³s¸pÀ°¬£¶O¥Î %d ¤£¦Xªk.", ClubCountersignFund );
+        mudlog( LOG_ERR, "é€£ç½²å¹«æ´¾è²»ç”¨ %d ä¸åˆæ³•.", ClubCountersignFund );
 
       fMatch = TRUE;
       break;
@@ -662,7 +662,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Club Countersign Count" ) )
     {
       if ( ( ClubCountersignCount = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³s¸p¤H¼Æ¶O¥Î %d ¤£¦Xªk.", ClubCountersignCount );
+        mudlog( LOG_ERR, "é€£ç½²äººæ•¸è²»ç”¨ %d ä¸åˆæ³•.", ClubCountersignCount );
 
       fMatch = TRUE;
       break;
@@ -671,7 +671,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Club Expense" ) )
     {
       if ( ( ClubExpense = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "°Ñ¥[À°¬£¶O¥Î %d ¤£¦Xªk.", ClubExpense );
+        mudlog( LOG_ERR, "åƒåŠ å¹«æ´¾è²»ç”¨ %d ä¸åˆæ³•.", ClubExpense );
 
       fMatch = TRUE;
       break;
@@ -680,7 +680,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Chat penalty" ) )
     {
       if ( ( chat_penalty = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº­«½Æ¹ï¸ÜÃg»@ %d ¤£¦Xªk." , chat_penalty );
+        mudlog( LOG_ERR, "ä½ çš„é‡è¤‡å°è©±æ‡²ç½° %d ä¸åˆæ³•." , chat_penalty );
 
       fMatch = TRUE;
       break;
@@ -689,7 +689,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Club Countersign Day" ) )
     {
       if ( ( ClubCountersignDay = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§AªºÀ°¬£³s¸p¤Ñ¼Æ %d ¤£¦Xªk." , ClubCountersignDay );
+        mudlog( LOG_ERR, "ä½ çš„å¹«æ´¾é€£ç½²å¤©æ•¸ %d ä¸åˆæ³•." , ClubCountersignDay );
 
       fMatch = TRUE;
       break;
@@ -705,7 +705,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Club room" ) )
     {
       if ( ( club_room = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¨t²Î¤À°tµ¹À°¬£©Ğ¶¡ %d ¤£¦X²z.", club_room );
+        mudlog( LOG_ERR, "ç³»çµ±åˆ†é…çµ¦å¹«æ´¾æˆ¿é–“ %d ä¸åˆç†.", club_room );
 
       fMatch = TRUE;
       break;
@@ -787,7 +787,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Dosage Update" ) )
     {
       if ( ( DosageUpdate = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "¾¯¶q %d ¤£¦Xªk." , DosageUpdate );
+        mudlog( LOG_ERR, "åŠ‘é‡ %d ä¸åˆæ³•." , DosageUpdate );
 
       fMatch = TRUE;
       break;
@@ -796,7 +796,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Dosage Limit" ) )
     {
       if ( ( DosageLimit = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "¾¯¶q %d ¤£¦Xªk." , DosageLimit );
+        mudlog( LOG_ERR, "åŠ‘é‡ %d ä¸åˆæ³•." , DosageLimit );
 
       fMatch = TRUE;
       break;
@@ -805,7 +805,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Gold" ) )
     {
       if ( ( DefaultGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]ª÷¿ú %d ¤£¦X²z.", DefaultGold );
+        mudlog( LOG_ERR, "é è¨­é‡‘éŒ¢ %d ä¸åˆç†.", DefaultGold );
 
       fMatch = TRUE;
       break;
@@ -814,7 +814,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Hit" ) )
     {
       if ( ( DefaultHit = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]¥Í©R¤O %d ¤£¦X²z.", DefaultHit );
+        mudlog( LOG_ERR, "é è¨­ç”Ÿå‘½åŠ› %d ä¸åˆç†.", DefaultHit );
 
       fMatch = TRUE;
       break;
@@ -823,7 +823,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Mana" ) )
     {
       if ( ( DefaultMana = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]ªk¤O %d ¤£¦X²z.", DefaultMana );
+        mudlog( LOG_ERR, "é è¨­æ³•åŠ› %d ä¸åˆç†.", DefaultMana );
 
       fMatch = TRUE;
       break;
@@ -832,7 +832,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Move" ) )
     {
       if ( ( DefaultMove = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]Åé¤O %d ¤£¦X²z.", DefaultMove );
+        mudlog( LOG_ERR, "é è¨­é«”åŠ› %d ä¸åˆç†.", DefaultMove );
 
       fMatch = TRUE;
       break;
@@ -841,7 +841,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Practice" ) )
     {
       if ( ( DefaultPractice = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "¹w³]°V½mÂI¼Æ %d ¤£¦X²z.", DefaultPractice );
+        mudlog( LOG_ERR, "é è¨­è¨“ç·´é»æ•¸ %d ä¸åˆç†.", DefaultPractice );
 
       fMatch = TRUE;
       break;
@@ -850,7 +850,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Str" ) )
     {
       if ( ( DefaultStr = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]¤O¶q %d ¤£¦X²z.", DefaultStr );
+        mudlog( LOG_ERR, "é è¨­åŠ›é‡ %d ä¸åˆç†.", DefaultStr );
 
       fMatch = TRUE;
       break;
@@ -859,7 +859,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Int" ) )
     {
       if ( ( DefaultInt = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]´¼¼z %d ¤£¦X²z.", DefaultInt );
+        mudlog( LOG_ERR, "é è¨­æ™ºæ…§ %d ä¸åˆç†.", DefaultInt );
 
       fMatch = TRUE;
       break;
@@ -868,7 +868,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Wis" ) )
     {
       if ( ( DefaultWis = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]¾ÇÃÑ %d ¤£¦X²z.", DefaultWis );
+        mudlog( LOG_ERR, "é è¨­å­¸è­˜ %d ä¸åˆç†.", DefaultWis );
 
       fMatch = TRUE;
       break;
@@ -877,7 +877,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Dex" ) )
     {
       if ( ( DefaultDex = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]±Ó±¶ %d ¤£¦X²z.", DefaultDex );
+        mudlog( LOG_ERR, "é è¨­æ•æ· %d ä¸åˆç†.", DefaultDex );
 
       fMatch = TRUE;
       break;
@@ -886,7 +886,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Default Con" ) )
     {
       if ( ( DefaultCon = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]Åé®æ %d ¤£¦X²z.", DefaultCon );
+        mudlog( LOG_ERR, "é è¨­é«”æ ¼ %d ä¸åˆç†.", DefaultCon );
 
       fMatch = TRUE;
       break;
@@ -898,10 +898,10 @@ void exec_ini( char * command , char * argument )
         if ( DefaultObject[loop] < 0 ) break;
 
       if ( loop >= MAX_DEFAULT_OBJECT )
-        mudlog( LOG_ERR, "¹w³]ª««~¤w¸g¶W¥X¨t²Î¹w©w­È." );
+        mudlog( LOG_ERR, "é è¨­ç‰©å“å·²ç¶“è¶…å‡ºç³»çµ±é å®šå€¼." );
 
       if ( ( DefaultObject[loop] = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹w³]ª««~§Ç¸¹ %d ¤£¦X²z.", DefaultObject[loop] );
+        mudlog( LOG_ERR, "é è¨­ç‰©å“åºè™Ÿ %d ä¸åˆç†.", DefaultObject[loop] );
 
       fMatch = TRUE;
       break;
@@ -917,7 +917,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Eq Search Cost" ) )
     {
       if ( ( EQSearchCost = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¥´Å¥¸Ë³Æªº¦¬¶O %d ¤£¦Xªk.", EQSearchCost );
+        mudlog( LOG_ERR, "æ‰“è½è£å‚™çš„æ”¶è²» %d ä¸åˆæ³•.", EQSearchCost );
 
       fMatch = TRUE;
       break;
@@ -926,7 +926,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Endow Rate" ) )
     {
       if ( ( EndowRate = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "®½¿é %d ªº¤ñ¨Ò¤£¦X²z.", EndowRate );
+        mudlog( LOG_ERR, "æè¼¸ %d çš„æ¯”ä¾‹ä¸åˆç†.", EndowRate );
 
       fMatch = TRUE;
       break;
@@ -954,7 +954,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Fight Round" ) )
     {
       if ( ( FightRound = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹ï¾Ô¦^¦X %d ¤£¦X²z.", FightRound );
+        mudlog( LOG_ERR, "å°æˆ°å›åˆ %d ä¸åˆç†.", FightRound );
 
       fMatch = TRUE;
       break;
@@ -964,7 +964,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( ForceLevel = atoi( argument ) ) <= 0
         || level_limit >= MAX_LEVEL )
-        mudlog( LOG_ERR, "±j¨îÂàÂ¾µ¥¯Å¤£¦X²z %d.", ForceLevel );
+        mudlog( LOG_ERR, "å¼·åˆ¶è½‰è·ç­‰ç´šä¸åˆç† %d.", ForceLevel );
 
       fMatch = TRUE;
       break;
@@ -974,7 +974,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( FollowLevel = atoi( argument ) ) <= 1
         || level_limit >= MAX_LEVEL )
-        mudlog( LOG_ERR, "¸òÀHµ¥¯Å¤£¦X²z %d.", FollowLevel );
+        mudlog( LOG_ERR, "è·Ÿéš¨ç­‰ç´šä¸åˆç† %d.", FollowLevel );
 
       fMatch = TRUE;
       break;
@@ -983,7 +983,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Foggy Room" ) )
     {
       if ( FoggyRoom > 100 )
-        mudlog( LOG_ERR, "Ãúªº¾÷²v %d ¤£¦X²z.", FoggyRoom );
+        mudlog( LOG_ERR, "éœ§çš„æ©Ÿç‡ %d ä¸åˆç†.", FoggyRoom );
 
       fMatch = TRUE;
       break;
@@ -992,7 +992,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Fight Different" ) )
     {
       if ( ( FightDifferent = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹ï¾Ô¬Û®tµ¥¯Å %d ¤£¦X²z.", FightDifferent );
+        mudlog( LOG_ERR, "å°æˆ°ç›¸å·®ç­‰ç´š %d ä¸åˆç†.", FightDifferent );
 
       fMatch = TRUE;
       break;
@@ -1001,7 +1001,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Fight Rate" ) )
     {
       if ( ( FightRate = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¹ï¾Ô³Ñ¾l¥Í©R¤O¤ñ²v %d ¤£¦X²z.", FightRate );
+        mudlog( LOG_ERR, "å°æˆ°å‰©é¤˜ç”Ÿå‘½åŠ›æ¯”ç‡ %d ä¸åˆç†.", FightRate );
 
       fMatch = TRUE;
       break;
@@ -1010,7 +1010,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Food Degrade" ) )
     {
       if ( ( FoodDegrade = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "­¹ª«»G±Ñ®É¶¡ %d ¤£¦X²z.", FoodDegrade );
+        mudlog( LOG_ERR, "é£Ÿç‰©è…æ•—æ™‚é–“ %d ä¸åˆç†.", FoodDegrade );
 
       fMatch = TRUE;
       break;
@@ -1019,7 +1019,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "File Quota" ) )
     {
       if ( ( file_quota = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "ª±®aÀÉ®×¤j¤p­­¨î¤£¦Xªk.", file_quota );
+        mudlog( LOG_ERR, "ç©å®¶æª”æ¡ˆå¤§å°é™åˆ¶ä¸åˆæ³•.", file_quota );
 
       fMatch = TRUE;
       break;
@@ -1028,7 +1028,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Finger Port" ) )
     {
       if ( ( FingerPort = atoi( argument ) ) <= 0 || FingerPort > 1024 )
-        mudlog( LOG_ERR, "§Aªº¬d¸ß°ğ %d ¤£¦Xªk." , FingerPort );
+        mudlog( LOG_ERR, "ä½ çš„æŸ¥è©¢åŸ  %d ä¸åˆæ³•." , FingerPort );
 
       fMatch = TRUE;
       break;
@@ -1081,7 +1081,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Gold Weight" ) )
     {
       if ( ( GoldWeight = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¶Àª÷­«¶q %d ¤£¦X²z.", GoldWeight );
+        mudlog( LOG_ERR, "é»ƒé‡‘é‡é‡ %d ä¸åˆç†.", GoldWeight );
 
       fMatch = TRUE;
       break;
@@ -1090,7 +1090,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Gamble Lost" ) )
     {
       if ( ( GambleLost = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "½ä³Õ½ß²v %d ¤£¦X²z.", GambleLost );
+        mudlog( LOG_ERR, "è³­åšè³ ç‡ %d ä¸åˆç†.", GambleLost );
 
       fMatch = TRUE;
       break;
@@ -1116,7 +1116,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Hold day" ) )
     {
       if ( ( hold_day = atoi( argument ) ) <= 10 )
-        mudlog( LOG_ERR, "ª±®a«O¯dÀÉ®×¤Ñ¼Æ %d ¤£¦Xªk." , hold_day );
+        mudlog( LOG_ERR, "ç©å®¶ä¿ç•™æª”æ¡ˆå¤©æ•¸ %d ä¸åˆæ³•." , hold_day );
 
       fMatch = TRUE;
       break;
@@ -1125,7 +1125,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Hero Firman" ) )
     {
       if ( ( HeroFirman = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "­^¶¯¼W¥[§K¦ºª÷µP¼Æ %d ¤£¦X²z" , HeroFirman );
+        mudlog( LOG_ERR, "è‹±é›„å¢åŠ å…æ­»é‡‘ç‰Œæ•¸ %d ä¸åˆç†" , HeroFirman );
 
       fMatch = TRUE;
       break;
@@ -1140,7 +1140,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Ipc key" ) )
     {
       if ( ( merc_ipc = atoi( argument ) ) <= 1 )
-        mudlog( LOG_ERR, "§Aªº merc ipc ¤£¦Xªk." , merc_ipc );
+        mudlog( LOG_ERR, "ä½ çš„ merc ipc ä¸åˆæ³•." , merc_ipc );
 
       fMatch = TRUE;
       break;
@@ -1149,7 +1149,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Ipc Two" ) )
     {
       if ( ( merc_ipc_2 = atoi( argument ) ) <= 1 )
-        mudlog( LOG_ERR, "§Aªº merc ipc 2 ¤£¦Xªk." , merc_ipc_2 );
+        mudlog( LOG_ERR, "ä½ çš„ merc ipc 2 ä¸åˆæ³•." , merc_ipc_2 );
 
       fMatch = TRUE;
       break;
@@ -1158,7 +1158,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Increase" ) )
     {
       if ( ( Increase = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "¼W­È %d ¤£¦Xªk.", Increase );
+        mudlog( LOG_ERR, "å¢å€¼ %d ä¸åˆæ³•.", Increase );
 
       fMatch = TRUE;
       break;
@@ -1167,7 +1167,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "IPC block" ) )
     {
       if ( ( ipc_block = atoi( argument ) ) <= 1 )
-        mudlog( LOG_ERR, "§Aªº IPC °Ï¶ô¼Æ¥Ø %d ¤£¦Xªk." , ipc_block );
+        mudlog( LOG_ERR, "ä½ çš„ IPC å€å¡Šæ•¸ç›® %d ä¸åˆæ³•." , ipc_block );
       fMatch = TRUE;
       break;
     }
@@ -1175,7 +1175,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "IPC idle" ) )
     {
       if ( ( ipc_idle = atoi( argument ) ) <= 1 )
-        mudlog( LOG_ERR, "§Aªº¦@¨É°O¾ĞÅé¶¢¸m¬í¼Æ %d ¤£¦Xªk." , ipc_idle );
+        mudlog( LOG_ERR, "ä½ çš„å…±äº«è¨˜æ†¶é«”é–’ç½®ç§’æ•¸ %d ä¸åˆæ³•." , ipc_idle );
 
       fMatch = TRUE;
       break;
@@ -1210,7 +1210,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "LeftSkill Cost" ) )
     {
       if ( ( LeftSkillCost = atoi( argument ) ) <= 0 || LeftSkillCost > 100 )
-        mudlog( LOG_ERR, "¥´Å¥³Ñ¾l§Ş¯àªá¶O­¿¼Æ %d ¤£¦Xªk.", LeftSkillCost );
+        mudlog( LOG_ERR, "æ‰“è½å‰©é¤˜æŠ€èƒ½èŠ±è²»å€æ•¸ %d ä¸åˆæ³•.", LeftSkillCost );
 
       fMatch = TRUE;
       break;
@@ -1219,7 +1219,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Lotto Paper" ) )
     {
       if ( ( lotto_paper = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¼Ö³z§Ö³ø»ù®æ %d ¤£¦X²z.", lotto_paper );
+        mudlog( LOG_ERR, "æ¨‚é€å¿«å ±åƒ¹æ ¼ %d ä¸åˆç†.", lotto_paper );
 
       fMatch = TRUE;
       break;
@@ -1229,7 +1229,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( LottoFirst = atoi( argument ) ) <= 0
         || LottoFirst > MAX_FIRMAN )
-        mudlog( LOG_ERR, "¼Ö³z²Ä¤@¯S¼ú %d ¤£¦X²z.", LottoFirst );
+        mudlog( LOG_ERR, "æ¨‚é€ç¬¬ä¸€ç‰¹ç %d ä¸åˆç†.", LottoFirst );
 
       fMatch = TRUE;
       break;
@@ -1239,7 +1239,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( LottoSecond = atoi( argument ) ) <= 0
         || LottoSecond > MAX_FIRMAN )
-        mudlog( LOG_ERR, "¼Ö³z²Ä¤G¯S¼ú %d ¤£¦X²z.", LottoSecond );
+        mudlog( LOG_ERR, "æ¨‚é€ç¬¬äºŒç‰¹ç %d ä¸åˆç†.", LottoSecond );
 
       fMatch = TRUE;
       break;
@@ -1249,7 +1249,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( LottoThird = atoi( argument ) ) <= 0
         || LottoThird > MAX_FIRMAN )
-        mudlog( LOG_ERR, "¼Ö³z²Ä¤T¯S¼ú %d ¤£¦X²z.", LottoThird );
+        mudlog( LOG_ERR, "æ¨‚é€ç¬¬ä¸‰ç‰¹ç %d ä¸åˆç†.", LottoThird );
 
       fMatch = TRUE;
       break;
@@ -1259,7 +1259,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( LottoForth = atoi( argument ) ) <= 0
         || LottoForth > MAX_FIRMAN )
-        mudlog( LOG_ERR, "¼Ö³z²Ä¥|¯S¼ú %d ¤£¦X²z.", LottoForth );
+        mudlog( LOG_ERR, "æ¨‚é€ç¬¬å››ç‰¹ç %d ä¸åˆç†.", LottoForth );
 
       fMatch = TRUE;
       break;
@@ -1268,7 +1268,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Load HitPlus" ) )
     {
       if ( ( load_hit_plus = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¥Í©R¤O­¿¼Æ %d ¤£¦X²z.", load_hit_plus );
+        mudlog( LOG_ERR, "ç”Ÿå‘½åŠ›å€æ•¸ %d ä¸åˆç†.", load_hit_plus );
 
       fMatch = TRUE;
       break;
@@ -1277,7 +1277,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Load ManaPlus" ) )
     {
       if ( ( load_mana_plus = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "ªk¤O­¿¼Æ %d ¤£¦X²z.", load_mana_plus );
+        mudlog( LOG_ERR, "æ³•åŠ›å€æ•¸ %d ä¸åˆç†.", load_mana_plus );
 
       fMatch = TRUE;
       break;
@@ -1286,7 +1286,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Load MovePlus" ) )
     {
       if ( ( load_move_plus = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "²¾°Ê¤O­¿¼Æ %d ¤£¦X²z.", load_move_plus );
+        mudlog( LOG_ERR, "ç§»å‹•åŠ›å€æ•¸ %d ä¸åˆç†.", load_move_plus );
 
       fMatch = TRUE;
       break;
@@ -1296,7 +1296,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( level_limit = atoi( argument ) ) <= 0
         || level_limit > MAX_LEVEL )
-        mudlog( LOG_ERR, "­­¨îµ¥¯Å¤£¦X²z %d.", level_limit );
+        mudlog( LOG_ERR, "é™åˆ¶ç­‰ç´šä¸åˆç† %d.", level_limit );
 
       fMatch = TRUE;
       break;
@@ -1308,7 +1308,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Mount Cost" ) )
     {
       if ( ( MountCost = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "ÃM°¨¶OÅé¤O %d ¤£¦Xªk.", MountCost );
+        mudlog( LOG_ERR, "é¨é¦¬è²»é«”åŠ› %d ä¸åˆæ³•.", MountCost );
 
       fMatch = TRUE;
       break;
@@ -1317,7 +1317,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Marry Age" ) )
     {
       if ( ( MarryAge = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªºµ²±B³Ì§C¦~ÄÖ %d ¤£¦Xªk." , MarryAge );
+        mudlog( LOG_ERR, "ä½ çš„çµå©šæœ€ä½å¹´é½¡ %d ä¸åˆæ³•." , MarryAge );
 
       fMatch = TRUE;
       break;
@@ -1326,7 +1326,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Maxdesc" ) )
     {
       if ( ( max_connect = atoi( argument ) ) <= 1 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j³s½u¤H¼Æ %d ¤£¦Xªk." , max_connect );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§é€£ç·šäººæ•¸ %d ä¸åˆæ³•." , max_connect );
 
       fMatch = TRUE;
       break;
@@ -1335,7 +1335,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Login Error" ) )
     {
       if ( ( MaxLoginError = atoi( argument ) ) <= 3 )
-        mudlog( LOG_ERR, "§Aªº³s½u¿ù»~ %d ¤£¦Xªk." , MaxLoginError );
+        mudlog( LOG_ERR, "ä½ çš„é€£ç·šéŒ¯èª¤ %d ä¸åˆæ³•." , MaxLoginError );
 
       fMatch = TRUE;
       break;
@@ -1344,7 +1344,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Hero Show" ) )
     {
       if ( ( MaxHeroShow = atoi( argument ) ) <= 10 )
-        mudlog( LOG_ERR, "§AªºÅã¥Ü­^¶¯¼Æ %d ¤£¦Xªk." , MaxHeroShow );
+        mudlog( LOG_ERR, "ä½ çš„é¡¯ç¤ºè‹±é›„æ•¸ %d ä¸åˆæ³•." , MaxHeroShow );
 
       fMatch = TRUE;
       break;
@@ -1360,7 +1360,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Playing Idle" ) )
     {
       if ( ( MaxPlayingIdle = atoi( argument ) ) <= 10 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j³s½u¶¢¸m %d ¤£¦Xªk." , MaxPlayingIdle );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§é€£ç·šé–’ç½® %d ä¸åˆæ³•." , MaxPlayingIdle );
 
       fMatch = TRUE;
       break;
@@ -1369,7 +1369,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Corpse Idle" ) )
     {
       if ( ( MaxCorpseIdle = atoi( argument ) ) <= 10 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j«ÍÅé¶¢¸m %d ¤£¦Xªk." , MaxCorpseIdle );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§å±é«”é–’ç½® %d ä¸åˆæ³•." , MaxCorpseIdle );
 
       fMatch = TRUE;
       break;
@@ -1378,7 +1378,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Game Idle" ) )
     {
       if ( ( MaxGameIdle = atoi( argument ) ) <= 10 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j¹CÀ¸¶¢¸m %d ¤£¦Xªk." , MaxGameIdle );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§éŠæˆ²é–’ç½® %d ä¸åˆæ³•." , MaxGameIdle );
 
       fMatch = TRUE;
       break;
@@ -1387,7 +1387,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Repeat" ) )
     {
       if ( ( MaxRepeat = atoi( argument ) ) <= 10 )
-        mudlog( LOG_ERR, "§Aªº­«½Æ¦¸¼Æ %d ¤£¦X²z.", MaxRepeat );
+        mudlog( LOG_ERR, "ä½ çš„é‡è¤‡æ¬¡æ•¸ %d ä¸åˆç†.", MaxRepeat );
 
       fMatch = TRUE;
       break;
@@ -1396,7 +1396,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Alias" ) )
     {
       if ( ( max_alias = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦h¥¨¶°¼Æ¥Ø %d ¤£¦X²z.", max_alias );
+        mudlog( LOG_ERR, "æœ€å¤šå·¨é›†æ•¸ç›® %d ä¸åˆç†.", max_alias );
 
       fMatch = TRUE;
       break;
@@ -1405,7 +1405,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Auction Gold" ) )
     {
       if ( ( MaxAuctionGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¤j©ç½æª÷ %d ¤£¦X²z.", MaxAuctionGold );
+        mudlog( LOG_ERR, "æœ€å¤§æ‹è³£é‡‘ %d ä¸åˆç†.", MaxAuctionGold );
 
       fMatch = TRUE;
       break;
@@ -1414,7 +1414,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Hitroll" ) )
     {
       if ( ( MaxHitroll = atoi( argument ) ) <= 100 )
-        mudlog( LOG_ERR, "³Ì¤j§ğÀ»¥[¦¨ %d ¤£¦X²z.", MaxHitroll );
+        mudlog( LOG_ERR, "æœ€å¤§æ”»æ“ŠåŠ æˆ %d ä¸åˆç†.", MaxHitroll );
 
       fMatch = TRUE;
       break;
@@ -1423,7 +1423,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max IP" ) )
     {
       if ( ( max_ip = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦h­­¨î³s½u¦ì§}¼Æ¥Ø %d ¤£¦X²z.", max_ip );
+        mudlog( LOG_ERR, "æœ€å¤šé™åˆ¶é€£ç·šä½å€æ•¸ç›® %d ä¸åˆç†.", max_ip );
 
       fMatch = TRUE;
       break;
@@ -1432,7 +1432,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max PK Gold" ) )
     {
       if ( ( MaxPKGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "PK ³Ì¤j©ãª÷ %d ¤£¦X²z.", MaxPKGold );
+        mudlog( LOG_ERR, "PK æœ€å¤§æŠ¼é‡‘ %d ä¸åˆç†.", MaxPKGold );
 
       fMatch = TRUE;
       break;
@@ -1441,7 +1441,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max PK Total" ) )
     {
       if ( ( MaxPKTotal = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "PK ³Ì¤jÁ`©ãª÷ %d ¤£¦X²z.", MaxPKTotal );
+        mudlog( LOG_ERR, "PK æœ€å¤§ç¸½æŠ¼é‡‘ %d ä¸åˆç†.", MaxPKTotal );
 
       fMatch = TRUE;
       break;
@@ -1450,7 +1450,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Friend" ) )
     {
       if ( ( max_friend = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦h¦n¤Í¦W³æ¼Æ¥Ø %d ¤£¦X²z.", max_friend );
+        mudlog( LOG_ERR, "æœ€å¤šå¥½å‹åå–®æ•¸ç›® %d ä¸åˆç†.", max_friend );
 
       fMatch = TRUE;
       break;
@@ -1459,7 +1459,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max AliasRepeat" ) )
     {
       if ( ( alias_repeat = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦h¥¨¶°¼Æ¥Ø %d ¤£¦X²z.", alias_repeat );
+        mudlog( LOG_ERR, "æœ€å¤šå·¨é›†æ•¸ç›® %d ä¸åˆç†.", alias_repeat );
 
       fMatch = TRUE;
       break;
@@ -1468,7 +1468,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Club" ) )
     {
       if ( ( max_club = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦hÀ°¬£¼Æ¥Ø %d ¤£¦X²z.", max_club );
+        mudlog( LOG_ERR, "æœ€å¤šå¹«æ´¾æ•¸ç›® %d ä¸åˆç†.", max_club );
 
       fMatch = TRUE;
       break;
@@ -1477,7 +1477,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Notes" ) )
     {
       if ( ( max_notes = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦h«H¥ó¼Æ¥Ø¼Æ¥Ø %d ¤£¦X²z.", max_notes );
+        mudlog( LOG_ERR, "æœ€å¤šä¿¡ä»¶æ•¸ç›®æ•¸ç›® %d ä¸åˆç†.", max_notes );
 
       fMatch = TRUE;
       break;
@@ -1487,7 +1487,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( max_board = atoi( argument ) ) <= 0
         || max_board > MAX_BOARD )
-        mudlog( LOG_ERR, "³Ì¦hª©­±¼Æ¥Ø %d ¤£¦X²z.", max_board );
+        mudlog( LOG_ERR, "æœ€å¤šç‰ˆé¢æ•¸ç›® %d ä¸åˆç†.", max_board );
 
       fMatch = TRUE;
       break;
@@ -1496,7 +1496,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Enable" ) )
     {
       if ( ( max_enable = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦h­P¯à¼Æ¥Ø %d ¤£¦X²z.", max_enable );
+        mudlog( LOG_ERR, "æœ€å¤šè‡´èƒ½æ•¸ç›® %d ä¸åˆç†.", max_enable );
 
       fMatch = TRUE;
       break;
@@ -1505,7 +1505,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Hire" ) )
     {
       if ( ( max_hire = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¦h¶Ä§L¼Æ¥Ø %d ¤£¦X²z.", max_hire );
+        mudlog( LOG_ERR, "æœ€å¤šå‚­å…µæ•¸ç›® %d ä¸åˆç†.", max_hire );
 
       fMatch = TRUE;
       break;
@@ -1514,7 +1514,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Innate" ) )
     {
       if ( ( aInnate = atoi( argument ) ) < 0 || aInnate > MAX_INNATE )
-        mudlog( LOG_ERR, "§Aªº¹w³]§Ş¯à¼Æ¥Ø %d ¤£¦Xªk." , aInnate );
+        mudlog( LOG_ERR, "ä½ çš„é è¨­æŠ€èƒ½æ•¸ç›® %d ä¸åˆæ³•." , aInnate );
 
       fMatch = TRUE;
       break;
@@ -1523,7 +1523,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Firman" ) )
     {
       if ( ( MaxFirman = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¤jª÷µP¼Æ¥Ø %d ¤£¦Xªk." , MaxFirman );
+        mudlog( LOG_ERR, "æœ€å¤§é‡‘ç‰Œæ•¸ç›® %d ä¸åˆæ³•." , MaxFirman );
 
       fMatch = TRUE;
       break;
@@ -1532,7 +1532,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Practice" ) )
     {
       if ( ( MaxPractice = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¤j¾Ç²ßÂI¼Æ %d ¤£¦Xªk." , MaxPractice );
+        mudlog( LOG_ERR, "æœ€å¤§å­¸ç¿’é»æ•¸ %d ä¸åˆæ³•." , MaxPractice );
 
       fMatch = TRUE;
       break;
@@ -1541,7 +1541,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max NSkill" ) )
     {
       if ( ( MaxNSkill = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "³Ì¤jÃB¥~§Ş¯àÁ`¼Æ %d ¤£¦Xªk." , MaxNSkill );
+        mudlog( LOG_ERR, "æœ€å¤§é¡å¤–æŠ€èƒ½ç¸½æ•¸ %d ä¸åˆæ³•." , MaxNSkill );
 
       fMatch = TRUE;
       break;
@@ -1550,7 +1550,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Hit" ) )
     {
       if ( ( MaxHit = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j¥Í©R¤O %d ¤£¦Xªk." , MaxHit );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§ç”Ÿå‘½åŠ› %d ä¸åˆæ³•." , MaxHit );
 
       fMatch = TRUE;
       break;
@@ -1559,7 +1559,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Mana" ) )
     {
       if ( ( MaxMana = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤jªk¤O %d ¤£¦Xªk." , MaxMana );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§æ³•åŠ› %d ä¸åˆæ³•." , MaxMana );
 
       fMatch = TRUE;
       break;
@@ -1568,7 +1568,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Move" ) )
     {
       if ( ( MaxMove = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤jÅé¤O %d ¤£¦Xªk." , MaxMove );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§é«”åŠ› %d ä¸åˆæ³•." , MaxMove );
 
       fMatch = TRUE;
       break;
@@ -1577,7 +1577,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Str" ) )
     {
       if ( ( MaxStr = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j¤O¶q %d ¤£¦Xªk." , MaxStr );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§åŠ›é‡ %d ä¸åˆæ³•." , MaxStr );
 
       fMatch = TRUE;
       break;
@@ -1586,7 +1586,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Int" ) )
     {
       if ( ( MaxInt = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j´¼¼z %d ¤£¦Xªk." , MaxInt );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§æ™ºæ…§ %d ä¸åˆæ³•." , MaxInt );
 
       fMatch = TRUE;
       break;
@@ -1595,7 +1595,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Wis" ) )
     {
       if ( ( MaxWis = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j¾ÇÃÑ %d ¤£¦Xªk." , MaxWis );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§å­¸è­˜ %d ä¸åˆæ³•." , MaxWis );
 
       fMatch = TRUE;
       break;
@@ -1604,7 +1604,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Dex" ) )
     {
       if ( ( MaxDex = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤j±Ó±¶ %d ¤£¦Xªk." , MaxDex );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§æ•æ· %d ä¸åˆæ³•." , MaxDex );
 
       fMatch = TRUE;
       break;
@@ -1613,7 +1613,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Con" ) )
     {
       if ( ( MaxCon = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº³Ì¤jÅé®æ %d ¤£¦Xªk." , MaxCon );
+        mudlog( LOG_ERR, "ä½ çš„æœ€å¤§é«”æ ¼ %d ä¸åˆæ³•." , MaxCon );
 
       fMatch = TRUE;
       break;
@@ -1622,7 +1622,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Max Cname Len" ) )
     {
       if ( ( MaxCNameLen = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "ª±®a¤¤¤å¦W¦r³Ì¤jªø«× %d ¤£¦X²z.", MaxCNameLen );
+        mudlog( LOG_ERR, "ç©å®¶ä¸­æ–‡åå­—æœ€å¤§é•·åº¦ %d ä¸åˆç†.", MaxCNameLen );
 
       fMatch = TRUE;
       break;
@@ -1632,7 +1632,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( eq_max_capcity = atoi( argument ) ) < 0
         || eq_max_capcity > 100 )
-        mudlog( LOG_ERR, "§Aªº¸Ë³Æ³Ì¤j§l¦¬«× %d ¤£¦Xªk." , eq_max_capcity );
+        mudlog( LOG_ERR, "ä½ çš„è£å‚™æœ€å¤§å¸æ”¶åº¦ %d ä¸åˆæ³•." , eq_max_capcity );
 
       fMatch = TRUE;
       break;
@@ -1641,7 +1641,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Room Player" ) )
     {
       if ( ( MaxRoomPlayer = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "©Ğ¶¡³Ì¦h¤H¼Æ %d ¤£¦Xªk." , MaxRoomPlayer );
+        mudlog( LOG_ERR, "æˆ¿é–“æœ€å¤šäººæ•¸ %d ä¸åˆæ³•." , MaxRoomPlayer );
 
       fMatch = TRUE;
       break;
@@ -1650,7 +1650,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Room Object" ) )
     {
       if ( ( MaxRoomObject = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "©Ğ¶¡³Ì¦hª««~¼Æ %d ¤£¦Xªk." , MaxRoomObject );
+        mudlog( LOG_ERR, "æˆ¿é–“æœ€å¤šç‰©å“æ•¸ %d ä¸åˆæ³•." , MaxRoomObject );
 
       fMatch = TRUE;
       break;
@@ -1659,7 +1659,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Max Where Gold" ) )
     {
       if ( ( MaxWhereGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¥´Å¥©Çª«ªº³Ì¤jª÷ÃB %d ¤£¦Xªk.", MaxWhereGold );
+        mudlog( LOG_ERR, "æ‰“è½æ€ªç‰©çš„æœ€å¤§é‡‘é¡ %d ä¸åˆæ³•.", MaxWhereGold );
 
       fMatch = TRUE;
       break;
@@ -1668,7 +1668,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Min Where Gold" ) )
     {
       if ( ( MinWhereGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¥´Å¥©Çª«ªº³Ì¤Öª÷ÃB %d ¤£¦Xªk.", MinWhereGold );
+        mudlog( LOG_ERR, "æ‰“è½æ€ªç‰©çš„æœ€å°‘é‡‘é¡ %d ä¸åˆæ³•.", MinWhereGold );
 
       fMatch = TRUE;
       break;
@@ -1677,7 +1677,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Min PK Gold" ) )
     {
       if ( ( MinPKGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "PK ³Ì¤p©ãª÷ %d ¤£¦X²z.", MinPKGold );
+        mudlog( LOG_ERR, "PK æœ€å°æŠ¼é‡‘ %d ä¸åˆç†.", MinPKGold );
 
       fMatch = TRUE;
       break;
@@ -1686,7 +1686,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Min Cname Len" ) )
     {
       if ( ( MinCNameLen = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "ª±®a¤¤¤å¦W¦r³Ì¤pªø«× %d ¤£¦X²z.", MinCNameLen );
+        mudlog( LOG_ERR, "ç©å®¶ä¸­æ–‡åå­—æœ€å°é•·åº¦ %d ä¸åˆç†.", MinCNameLen );
 
       fMatch = TRUE;
       break;
@@ -1695,7 +1695,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Min PassWord Len" ) )
     {
       if ( ( MinPasswordLen = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "ª±®a±K½X³Ì¤jªø«× %d ¤£¦X²z.", MinPasswordLen );
+        mudlog( LOG_ERR, "ç©å®¶å¯†ç¢¼æœ€å¤§é•·åº¦ %d ä¸åˆç†.", MinPasswordLen );
 
       fMatch = TRUE;
       break;
@@ -1705,7 +1705,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( eq_min_capcity = atoi( argument ) ) < 0
         || eq_min_capcity > 100 )
-        mudlog( LOG_ERR, "§Aªº¸Ë³Æ³Ì¤p§l¦¬«× %d ¤£¦Xªk." , eq_min_capcity );
+        mudlog( LOG_ERR, "ä½ çš„è£å‚™æœ€å°å¸æ”¶åº¦ %d ä¸åˆæ³•." , eq_min_capcity );
 
       fMatch = TRUE;
       break;
@@ -1718,18 +1718,18 @@ void exec_ini( char * command , char * argument )
       for ( loop = 0; loop < MAX_PORT; loop++ )
       {
         if ( MudPort[loop] == port )
-          mudlog( LOG_ERR, "§Aªº³q°T°ğ %d ­«½Æ" , port );
+          mudlog( LOG_ERR, "ä½ çš„é€šè¨ŠåŸ  %d é‡è¤‡" , port );
 
         if ( MudPort[loop] == ERRORCODE ) break;
       }
 
       if ( loop == MAX_PORT )
-        mudlog( LOG_ERR, "¶W¹L³Ì¤j³s±µ¼Æ¥Ø %d.", MAX_PORT );
+        mudlog( LOG_ERR, "è¶…éæœ€å¤§é€£æ¥æ•¸ç›® %d.", MAX_PORT );
 
       port = atoi( argument );
 
       if ( ( port = atoi( argument ) ) <= 1024 || port > 65000 )
-        mudlog( LOG_ERR, "§Aªº³q°T°ğ %d ¤£¦Xªk." , port );
+        mudlog( LOG_ERR, "ä½ çš„é€šè¨ŠåŸ  %d ä¸åˆæ³•." , port );
 
       MudPort[loop] = port;
       fMatch = TRUE;
@@ -1774,7 +1774,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Note Level" ) )
     {
       if ( ( NoteLevel = atoi( argument ) ) <= 0 || NoteLevel > MAX_LEVEL )
-        mudlog( LOG_ERR, "¼g«H³Ì§Cµ¥¯Å %d ¤£¦X²z.", NoteLevel );
+        mudlog( LOG_ERR, "å¯«ä¿¡æœ€ä½ç­‰ç´š %d ä¸åˆç†.", NoteLevel );
 
       fMatch = TRUE;
       break;
@@ -1860,7 +1860,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Player Area" ) )
     {
       if ( area_dir[0] == '\x0' )
-        mudlog( LOG_ERR, "¦³ª±®a°Ï°ì¥Ø¿ı¤§«e¥²¶·¦³°Ï°ì¥Ø¿ı." );
+        mudlog( LOG_ERR, "æœ‰ç©å®¶å€åŸŸç›®éŒ„ä¹‹å‰å¿…é ˆæœ‰å€åŸŸç›®éŒ„." );
 
       sprintf( PlayerArea, "%s%s", area_dir, argument );
       fMatch = TRUE;
@@ -1873,7 +1873,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Pills Per Day" ) )
     {
       if ( ( PillsPerDay = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "¨C¤ÑÃÄ¶q %d ¤£¦Xªk." , PillsPerDay );
+        mudlog( LOG_ERR, "æ¯å¤©è—¥é‡ %d ä¸åˆæ³•." , PillsPerDay );
 
       fMatch = TRUE;
       break;
@@ -1882,7 +1882,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Pry Cost" ) )
     {
       if ( ( PryCost = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¥´Å¥§Ş¯àªº¿ú %d ¤£¦X²z.", PryCost );
+        mudlog( LOG_ERR, "æ‰“è½æŠ€èƒ½çš„éŒ¢ %d ä¸åˆç†.", PryCost );
 
       fMatch = TRUE;
       break;
@@ -1891,7 +1891,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "PK Level" ) )
     {
       if ( ( pk_level = atoi( argument ) ) <= 0 || pk_level > LEVEL_HERO )
-        mudlog( LOG_ERR, "§AªºPKµ¥¯Å %d ¤£¦Xªk." , pk_level );
+        mudlog( LOG_ERR, "ä½ çš„PKç­‰ç´š %d ä¸åˆæ³•." , pk_level );
 
       fMatch = TRUE;
       break;
@@ -1900,7 +1900,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "PK Limit" ) )
     {
       if ( ( pk_limit = atoi( argument ) ) <= 0 || pk_limit > LEVEL_HERO )
-        mudlog( LOG_ERR, "PK®É³õ¥~¤H¼Æ %d ¤£¦Xªk." , pk_limit );
+        mudlog( LOG_ERR, "PKæ™‚å ´å¤–äººæ•¸ %d ä¸åˆæ³•." , pk_limit );
 
       fMatch = TRUE;
       break;
@@ -1910,7 +1910,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( PkContrastLevel = atoi( argument ) ) <= 0
         || PkContrastLevel > LEVEL_HERO )
-        mudlog( LOG_ERR, "PK®Éµ¥¯Å®t %d ¤£¦Xªk." , PkContrastLevel );
+        mudlog( LOG_ERR, "PKæ™‚ç­‰ç´šå·® %d ä¸åˆæ³•." , PkContrastLevel );
 
       fMatch = TRUE;
       break;
@@ -1919,7 +1919,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "PK Age" ) )
     {
       if ( ( pk_age = atoi( argument ) ) < BornAge )
-        mudlog( LOG_ERR, "§AªºPK¦~ÄÖ %d ¤£¦Xªk." , pk_age );
+        mudlog( LOG_ERR, "ä½ çš„PKå¹´é½¡ %d ä¸åˆæ³•." , pk_age );
 
       fMatch = TRUE;
       break;
@@ -1951,7 +1951,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Question False" ) )
     {
       if ( ( QuestionFalse = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "°İÃDµª¿ù¦¸¼Æ %d ¤£¦Xªk." , QuestionFalse );
+        mudlog( LOG_ERR, "å•é¡Œç­”éŒ¯æ¬¡æ•¸ %d ä¸åˆæ³•." , QuestionFalse );
 
       fMatch = TRUE;
       break;
@@ -1960,7 +1960,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Question Alarm" ) )
     {
       if ( ( QuestionAlarm = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "°İÃD´£¿ô¶¡¹j %d ¤£¦Xªk." , QuestionAlarm );
+        mudlog( LOG_ERR, "å•é¡Œæé†’é–“éš” %d ä¸åˆæ³•." , QuestionAlarm );
 
       fMatch = TRUE;
       break;
@@ -1999,7 +1999,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Reboot Time" ) )
     {
       if ( ( reboot_time = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "¨t²Î­«¸m®É¶¡ %d ¤£¦Xªk." , reboot_time );
+        mudlog( LOG_ERR, "ç³»çµ±é‡ç½®æ™‚é–“ %d ä¸åˆæ³•." , reboot_time );
 
       reboot_time *= 60 * 60;
       fMatch = TRUE;
@@ -2009,7 +2009,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command , "Rechristen" ) )
     {
       if ( ( Rechristen = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§ï¦W¦¸¼Æ %d ¤£¦Xªk." , Rechristen );
+        mudlog( LOG_ERR, "æ”¹åæ¬¡æ•¸ %d ä¸åˆæ³•." , Rechristen );
 
       fMatch = TRUE;
       break;
@@ -2042,7 +2042,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Socket TimeOut" ) )
     {
       if ( ( SocketTimeOut = atoi( argument ) ) <= 30 || SocketTimeOut > 300 )
-        mudlog( LOG_ERR, "ºô¸ô³s½u¹O®É %d ¤£¦Xªk.", SocketTimeOut );
+        mudlog( LOG_ERR, "ç¶²è·¯é€£ç·šé€¾æ™‚ %d ä¸åˆæ³•.", SocketTimeOut );
       fMatch = TRUE;
       break;
     }
@@ -2050,7 +2050,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Sacrifice Gold" ) )
     {
       if ( ( SacGold = atoi( argument ) ) <= 0 )
-         mudlog( LOG_ERR, "§Aªº©^Ämª÷ %d ¤£¦Xªk.", SacGold );
+         mudlog( LOG_ERR, "ä½ çš„å¥‰ç»é‡‘ %d ä¸åˆæ³•.", SacGold );
 
       fMatch = TRUE;
       break;
@@ -2143,7 +2143,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Stock Tax" ) )
     {
       if ( ( StockTax = atoi( argument ) ) <= 0 || StockTax > 999 )
-        mudlog( LOG_ERR, "§AªºªÑ¥«ÃÒ¥æµ| %d ¤£¦Xªk." , StockTax );
+        mudlog( LOG_ERR, "ä½ çš„è‚¡å¸‚è­‰äº¤ç¨… %d ä¸åˆæ³•." , StockTax );
 
       fMatch = TRUE;
       break;
@@ -2153,7 +2153,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( stock_lost = atoi( argument ) ) < 0
         || stock_lost >= MAX_STOCK_LOST / 2 )
-         mudlog( LOG_ERR, "§AªºªÑ¥«¶^´T %d ¤£¦Xªk." , stock_lost );
+         mudlog( LOG_ERR, "ä½ çš„è‚¡å¸‚è·Œå¹… %d ä¸åˆæ³•." , stock_lost );
 
       fMatch = TRUE;
       break;
@@ -2163,7 +2163,7 @@ void exec_ini( char * command , char * argument )
     {
       if ( ( stock_win = atoi( argument ) ) < 0
         || stock_win >= MAX_STOCK_WIN /2 )
-         mudlog( LOG_ERR, "§AªºªÑ¥«º¦´T %d ¤£¦Xªk." , stock_win );
+         mudlog( LOG_ERR, "ä½ çš„è‚¡å¸‚æ¼²å¹… %d ä¸åˆæ³•." , stock_win );
 
       fMatch = TRUE;
       break;
@@ -2183,7 +2183,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Ticket Total" ) )
     {
       if ( ( TicketTotal = atoi( argument ) ) < 0 )
-        mudlog( LOG_ERR, "§Aªº±m¨éÁ`¼Æ¥Ø %d ¤£¦X²z.", TicketTotal );
+        mudlog( LOG_ERR, "ä½ çš„å½©åˆ¸ç¸½æ•¸ç›® %d ä¸åˆç†.", TicketTotal );
 
       fMatch = TRUE;
       break;
@@ -2192,7 +2192,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Ticket Reset" ) )
     {
       if ( ( TicketReset = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº±m¨é­«¸m®É¶¡ %d ¤£¦X²z.", TicketReset );
+        mudlog( LOG_ERR, "ä½ çš„å½©åˆ¸é‡ç½®æ™‚é–“ %d ä¸åˆç†.", TicketReset );
 
       ticketreset = TicketReset;
       fMatch = TRUE;
@@ -2209,11 +2209,11 @@ void exec_ini( char * command , char * argument )
 
       argument = one_argument( argument, arg );
       if ( arg[0] == '\x0' || ( ( howmany = atoi( arg ) ) <= 0 ) )
-        mudlog( LOG_ERR, "§Aªº±m¨é³]©w¿ù»~(°Ñ¼Æ1)." );
+        mudlog( LOG_ERR, "ä½ çš„å½©åˆ¸è¨­å®šéŒ¯èª¤(åƒæ•¸1)." );
 
       argument = one_argument( argument, arg );
       if ( arg[0] == '\x0' || ( ( gold = atoi( arg ) ) <= 0 ) )
-        mudlog( LOG_ERR, "§Aªº±m¨é³]©w¿ù»~(°Ñ¼Æ2)." );
+        mudlog( LOG_ERR, "ä½ çš„å½©åˆ¸è¨­å®šéŒ¯èª¤(åƒæ•¸2)." );
 
       for ( order = 1, zOrder = order_list; zOrder; zOrder = zOrder->next )
         order++;
@@ -2237,7 +2237,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Ticket Cost" ) )
     {
       if ( ( TicketCost = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº±m¨é»ù¿ú %d ¤£¦X²z.", TicketCost );
+        mudlog( LOG_ERR, "ä½ çš„å½©åˆ¸åƒ¹éŒ¢ %d ä¸åˆç†.", TicketCost );
 
       fMatch = TRUE;
       break;
@@ -2246,7 +2246,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Telnet Port" ) )
     {
       if ( ( TelnetPort = atoi( argument ) ) <= 0 || TelnetPort > 1024 )
-        mudlog( LOG_ERR, "§Aªº¬d¸ß°ğ %d ¤£¦Xªk." , TelnetPort );
+        mudlog( LOG_ERR, "ä½ çš„æŸ¥è©¢åŸ  %d ä¸åˆæ³•." , TelnetPort );
 
       fMatch = TRUE;
       break;
@@ -2262,7 +2262,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Vote Gold" ) )
     {
       if ( ( VoteGold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§Aªº§ë²¼«OÃÒª÷ %d ¤£¦X²z.", VoteGold );
+        mudlog( LOG_ERR, "ä½ çš„æŠ•ç¥¨ä¿è­‰é‡‘ %d ä¸åˆç†.", VoteGold );
 
       fMatch = TRUE;
       break;
@@ -2279,7 +2279,7 @@ void exec_ini( char * command , char * argument )
     if ( !str_cmp( command, "Wanted Threshold" ) )
     {
       if ( ( WantedThreshold = atoi( argument ) ) <= 0 )
-        mudlog( LOG_ERR, "§AªºÄa½à¤U­­ %d ¤£¦X²z.", WantedThreshold );
+        mudlog( LOG_ERR, "ä½ çš„æ‡¸è³ä¸‹é™ %d ä¸åˆç†.", WantedThreshold );
 
       fMatch = TRUE;
       break;
@@ -2294,7 +2294,7 @@ void exec_ini( char * command , char * argument )
   }
 
   if ( !fMatch )
-    mudlog( LOG_ERR , "±Ò©lÀÉ®×«ü¥O %s °Ñ¼Æ %s ¦³°İÃD.", command, argument );
+    mudlog( LOG_ERR , "å•Ÿå§‹æª”æ¡ˆæŒ‡ä»¤ %s åƒæ•¸ %s æœ‰å•é¡Œ.", command, argument );
 
   RETURN_NULL();
 }
@@ -2309,73 +2309,73 @@ FUNCTION( do_directory )
 
   len = str_len( home_dir );
 
-  print_to_char( ch , "©Ò¦³¥Ø¿ı¦WºÙ¡R\n\r"
-    "¥D¥Ø¿ı¸ô®|   %s\n\r"
-    "¨D§U¥Ø¿ı     %s\n\r"
-    "ªÀ¥æ¥Ø¿ı     %s\n\r"
-    "¦uÅ@¯«¥Ø¿ı   %s\n\r"
-    "°Ï°ì¥Ø¿ı     %s\n\r"
-    "¶i¯¸µe­±¥Ø¿ı %s\n\r"
-    "§ë²¼¥Ø¿ı     %s\n\r"
-    "¯º¸Ü¥Ø¿ı     %s\n\r"
-    "°Ï°ì¦a§Î¥Ø¿ı %s\n\r"
-    "ª©­±¥Ø¿ı     %s\n\r"
-    "Â¾·~¥Ø¿ı     %s\n\r"
-    "°Ï°ì²GÅé¥Ø¿ı %s\n\r"
-    "ª±®aÀÉ®×¥Ø¿ı %s\n\r"
-    "©Çª«µ{¦¡¥Ø¿ı %s\n\r"
-    "§Ş¯à¥Ø¿ı     %s\n\r"
-    "«ü¥O¥Ø¿ı     %s\n\r"
-    "\n\r©Ò¦³ÀÉ®×¦WºÙ:\n\r"
-    "¯d¨¥ªO¦Cªí   %s\n\r"
-    "¯d¨¥ªO¯Á¤ŞÀÉ %s\n\r"
-    "¯d¨¥ªO²M³æÀÉ %s\n\r"
-    "ªÀ¥æ¦CªíÀÉ®× %s\n\r"
-    "°Ï°ì¯Á¤ŞÀÉ®× %s\n\r"
-    "µêÀÀªÅÀÉ®×   %s\n\r"
-    "ª±®a·N¨£ÀÉ®× %s\n\r"
-    "µ§»~·N¨£ÀÉ®× %s\n\r"
-    "·sª±®a¦Cªí   %s\n\r"
-    "²Å¸¹±`¼ÆÀÉ®× %s\n\r"
-    "½Æ»s¸Ë³ÆÀÉ®× %s\n\r"
-    "ºÊµø¯«±ÚÀÉ®× %s\n\r"
-    "ºô¸ô³s½u°O¿ı %s\n\r"
-    "°¨¨®¸ê®ÆÀÉ®× %s\n\r"
-    "®½ÃØ¸ê®ÆÀÉ®× %s\n\r"
-    "Â§ª«¸ê®ÆÀÉ®× %s\n\r"
-    "Äa½à¸ê®ÆÀÉ®× %s\n\r"
-    "´ç²î¸ê®ÆÀÉ®× %s\n\r"
-    "¤É¯Å¸ê®ÆÀÉ®× %s\n\r"
-    "²M°£¸ê®ÆÀÉ®× %s\n\r"
-    "¸Ñ°g¸ê®ÆÀÉ®× %s\n\r"
-    "¯«±Ú¸ê®ÆÀÉ®× %s\n\r"
-    "©ç½æ«~¸ê®Æ   %s\n\r"
-    "³¡¦ì¸ê®ÆÀÉ®× %s\n\r"
-    "À°¬£¸ê®ÆÀÉ®× %s\n\r"
-    "ºô¸ô³s½u¸ê®Æ %s\n\r"
-    "¸T¤î³s½u¸ê®Æ %s\n\r"
-    "¤u§@¯¸¸ê®Æ   %s\n\r"
-    "°İÃD¶°¸ê®Æ   %s\n\r"
-    "¤£¶®¦rÀÉ®×   %s\n\r"
-    "¤£¶®¦r°O¿ı   %s\n\r"
-    "ªÑ²¼¸ê®ÆÀÉ®× %s\n\r"
-    "»¡¸Ü°O¿ıÀÉ   %s\n\r"
-    "¦Û±ş°O¿ıÀÉ   %s\n\r"
-    "FQDN¬d¸ß     %s\n\r"
-    "¿ù»~°O¿ıÀÉ®× %s\n\r"
-    "¿ù»~°O¿ıÀÉ®× %s\n\r"
-    "­^¶¯ÀÉ®×     %s\n\r"
-    "¸ü¤J¿ù»~°O¿ı %s\n\r"
-    "¥X¤f¿ù»~°O¿ı %s\n\r"
-    "±K½X¿ù»~°O¿ı %s\n\r"
-    "¸ê®Æ®w°O¿ıÀÉ %s\n\r"
-    "­P¯à¿ù»~°O¿ı %s\n\r"
-    "§Ş¯à¦CªíÀÉ®× %s\n\r"
-    "«ü¥O¦CªíÀÉ®× %s\n\r"
-    "¶i¯¸µe­±     %s\n\r"
-    "¯«±Ú¶i¯¸µe­± %s\n\r"
-    "¯«±Ú¥N²zÀÉ®× %s\n\r"
-    "¤µ¤é®ø®§ÀÉ®× %s\n\r"
+  print_to_char( ch , "æ‰€æœ‰ç›®éŒ„åç¨±ï¹•\n\r"
+    "ä¸»ç›®éŒ„è·¯å¾‘   %s\n\r"
+    "æ±‚åŠ©ç›®éŒ„     %s\n\r"
+    "ç¤¾äº¤ç›®éŒ„     %s\n\r"
+    "å®ˆè­·ç¥ç›®éŒ„   %s\n\r"
+    "å€åŸŸç›®éŒ„     %s\n\r"
+    "é€²ç«™ç•«é¢ç›®éŒ„ %s\n\r"
+    "æŠ•ç¥¨ç›®éŒ„     %s\n\r"
+    "ç¬‘è©±ç›®éŒ„     %s\n\r"
+    "å€åŸŸåœ°å½¢ç›®éŒ„ %s\n\r"
+    "ç‰ˆé¢ç›®éŒ„     %s\n\r"
+    "è·æ¥­ç›®éŒ„     %s\n\r"
+    "å€åŸŸæ¶²é«”ç›®éŒ„ %s\n\r"
+    "ç©å®¶æª”æ¡ˆç›®éŒ„ %s\n\r"
+    "æ€ªç‰©ç¨‹å¼ç›®éŒ„ %s\n\r"
+    "æŠ€èƒ½ç›®éŒ„     %s\n\r"
+    "æŒ‡ä»¤ç›®éŒ„     %s\n\r"
+    "\n\ræ‰€æœ‰æª”æ¡ˆåç¨±:\n\r"
+    "ç•™è¨€æ¿åˆ—è¡¨   %s\n\r"
+    "ç•™è¨€æ¿ç´¢å¼•æª” %s\n\r"
+    "ç•™è¨€æ¿æ¸…å–®æª” %s\n\r"
+    "ç¤¾äº¤åˆ—è¡¨æª”æ¡ˆ %s\n\r"
+    "å€åŸŸç´¢å¼•æª”æ¡ˆ %s\n\r"
+    "è™›æ“¬ç©ºæª”æ¡ˆ   %s\n\r"
+    "ç©å®¶æ„è¦‹æª”æ¡ˆ %s\n\r"
+    "ç­†èª¤æ„è¦‹æª”æ¡ˆ %s\n\r"
+    "æ–°ç©å®¶åˆ—è¡¨   %s\n\r"
+    "ç¬¦è™Ÿå¸¸æ•¸æª”æ¡ˆ %s\n\r"
+    "è¤‡è£½è£å‚™æª”æ¡ˆ %s\n\r"
+    "ç›£è¦–ç¥æ—æª”æ¡ˆ %s\n\r"
+    "ç¶²è·¯é€£ç·šè¨˜éŒ„ %s\n\r"
+    "é¦¬è»Šè³‡æ–™æª”æ¡ˆ %s\n\r"
+    "æè´ˆè³‡æ–™æª”æ¡ˆ %s\n\r"
+    "ç¦®ç‰©è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "æ‡¸è³è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "æ¸¡èˆ¹è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "å‡ç´šè³‡æ–™æª”æ¡ˆ %s\n\r"
+    "æ¸…é™¤è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "è§£è¿·è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "ç¥æ—è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "æ‹è³£å“è³‡æ–™   %s\n\r"
+    "éƒ¨ä½è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "å¹«æ´¾è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "ç¶²è·¯é€£ç·šè³‡æ–™ %s\n\r"
+    "ç¦æ­¢é€£ç·šè³‡æ–™ %s\n\r"
+    "å·¥ä½œç«™è³‡æ–™   %s\n\r"
+    "å•é¡Œé›†è³‡æ–™   %s\n\r"
+    "ä¸é›…å­—æª”æ¡ˆ   %s\n\r"
+    "ä¸é›…å­—è¨˜éŒ„   %s\n\r"
+    "è‚¡ç¥¨è³‡æ–™æª”æ¡ˆ %s\n\r"
+    "èªªè©±è¨˜éŒ„æª”   %s\n\r"
+    "è‡ªæ®ºè¨˜éŒ„æª”   %s\n\r"
+    "FQDNæŸ¥è©¢     %s\n\r"
+    "éŒ¯èª¤è¨˜éŒ„æª”æ¡ˆ %s\n\r"
+    "éŒ¯èª¤è¨˜éŒ„æª”æ¡ˆ %s\n\r"
+    "è‹±é›„æª”æ¡ˆ     %s\n\r"
+    "è¼‰å…¥éŒ¯èª¤è¨˜éŒ„ %s\n\r"
+    "å‡ºå£éŒ¯èª¤è¨˜éŒ„ %s\n\r"
+    "å¯†ç¢¼éŒ¯èª¤è¨˜éŒ„ %s\n\r"
+    "è³‡æ–™åº«è¨˜éŒ„æª” %s\n\r"
+    "è‡´èƒ½éŒ¯èª¤è¨˜éŒ„ %s\n\r"
+    "æŠ€èƒ½åˆ—è¡¨æª”æ¡ˆ %s\n\r"
+    "æŒ‡ä»¤åˆ—è¡¨æª”æ¡ˆ %s\n\r"
+    "é€²ç«™ç•«é¢     %s\n\r"
+    "ç¥æ—é€²ç«™ç•«é¢ %s\n\r"
+    "ç¥æ—ä»£ç†æª”æ¡ˆ %s\n\r"
+    "ä»Šæ—¥æ¶ˆæ¯æª”æ¡ˆ %s\n\r"
     , home_dir
     , help_dir        + len
     , social_dir      + len

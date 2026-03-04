@@ -1,5 +1,5 @@
 Name            meditation~
-Cname           ¥´ÁI¤C~
+Cname           æ‰“ç¦ªä¸ƒ~
 Slot            SLOT_MEDITATION
 Msgoff          ~
 Function        cast_meditation~
@@ -29,10 +29,10 @@ Limit           CLASS_SHAMAN     10  40
 Limit           CLASS_MAGE       50  95
 Limit           CLASS_SMITH      50  80
 Help
-¥´ÁI¤C:
+æ‰“ç¦ªä¸ƒ:
 
-¦ò®a§¤ÁIªº¥\¤Ò¡M¹ï©ó¤ß´¼¤è­±ªºÂíÀR¦³¤Q¤Àªº®ÄªG¡M
-¦]¦¹¦b«ì´_ªk¤O¤è­±¤]¬O¤@ªù¿W¯Sªº¤º®a¥\¤Ò¡C
+ä½›å®¶åç¦ªçš„åŠŸå¤«ï¹å°æ–¼å¿ƒæ™ºæ–¹é¢çš„éŽ®éœæœ‰ååˆ†çš„æ•ˆæžœï¹
+å› æ­¤åœ¨æ¢å¾©æ³•åŠ›æ–¹é¢ä¹Ÿæ˜¯ä¸€é–€ç¨ç‰¹çš„å…§å®¶åŠŸå¤«ã€‚
 ~
 
 End

@@ -1,7 +1,7 @@
 Name            curse~
-Cname           ¶A©G³N~
+Cname           è©›å’’è¡“~
 Slot            SLOT_CURSE
-Msgoff          §A¤£¦A¨ü¨ì¶A©G³Nªº¼vÅT¡T~
+Msgoff          ä½ ä¸å†å—åˆ°è©›å’’è¡“çš„å½±éŸ¿ï¹—~
 Function        cast_curse~
 Check           check_unrigid_attack~
 Position        POS_FIGHTING

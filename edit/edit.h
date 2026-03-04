@@ -36,7 +36,7 @@
 #define SET_BIT(var, bit)       ( ( var ) |=  ( bit ) )
 #define REMOVE_BIT(var, bit)    ( ( var ) &= ~( bit ) )
 
-/* ©w¸q¨t²Î©Ò»İªº±`¼Æ */
+/* å®šç¾©ç³»çµ±æ‰€éœ€çš„å¸¸æ•¸ */
 
 #undef  TRUE
 #undef  FALSE
@@ -54,7 +54,7 @@
 #define IDLE_X_CURSOR           1
 #define IDLE_Y_CURSOR           23
 
-/* ©w¸q´å¼ĞÁä */
+/* å®šç¾©æ¸¸æ¨™éµ */
 
 #if defined (MSDOS)
 #define MY_CURSOR_HEAD          '\x00'
@@ -86,7 +86,7 @@
 #define MY_CURSOR_DELETE        '3'
 #endif
 
-/* ©w¸q¤@¨Ç«öÁä */
+/* å®šç¾©ä¸€äº›æŒ‰éµ */
 
 #if defined (MSDOS)
 #define MY_KEY_BACKSPACE        '\x08'
@@ -112,13 +112,13 @@
 #define MY_KEY_SPACE            ' '
 #endif
 
-/* ©w¸q´å¼Ğªº¥~«¬ */
+/* å®šç¾©æ¸¸æ¨™çš„å¤–å‹ */
 
 #define NO_CURSOR      0
 #define NORMAL_CURSOR  2
 #define INSERT_CURSOR  1
 
-/* ©w¸qÃC¦â */
+/* å®šç¾©é¡è‰² */
 #if defined (MSDOS)
 #define BLACK           0
 #define BLUE            1
@@ -157,7 +157,7 @@
 #define WHITE           15
 #endif
 
-/* ©w¸q¯S®í«öÁäªº¶Ç¦^­È */
+/* å®šç¾©ç‰¹æ®ŠæŒ‰éµçš„å‚³å›å€¼ */
 
 #define RETURN_UP        1
 #define RETURN_DOWN      2
@@ -349,7 +349,7 @@ extern  const   struct  item_struct     item_type       [ MAX_ITEM ];
 /* ini.c */
 extern  void    initial_room                ( void );
 
-/* ¿ï³æªº¶µ¥Øªº¨ç¼Æ©w¸q */
+/* é¸å–®çš„é …ç›®çš„å‡½æ•¸å®šç¾© */
 extern  void        do_edit_area ( void );
 extern  void        do_edit_room ( void );
 extern  void        do_edit_shop ( void );

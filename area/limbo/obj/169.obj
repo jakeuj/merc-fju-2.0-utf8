@@ -1,9 +1,9 @@
 Vnum            169
 Name            meat~
-ShortDesc       ¦×¤ù~
+ShortDesc       è‚‰ç‰‡~
 Description
-¤@¤ù­è­è®Æ²z¦nªº¦×¤ù(meat)¡M®³¨Ó¦YÀ³¸Ó¤£¿ù¡T~
-Unit            ¤ù~
+ä¸€ç‰‡å‰›å‰›æ–™ç†å¥½çš„è‚‰ç‰‡(meat)ï¹æ‹¿ä¾†åƒæ‡‰è©²ä¸éŒ¯ï¹—~
+Unit            ç‰‡~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           0

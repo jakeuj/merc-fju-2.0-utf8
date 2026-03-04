@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -142,13 +142,13 @@ void print_scan( CHAR_DATA * ch, OBJ_DATA * pFire )
 
   if ( !ch || !pFire )
   {
-    mudlog( LOG_DEBUG, "print_scan: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "print_scan: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
   if ( !( pSource = ch->in_room ) )
   {
-    mudlog( LOG_DEBUG, "print_scan: ¨Ó·½©Ğ¶¡¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "print_scan: ä¾†æºæˆ¿é–“ä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -159,7 +159,7 @@ void print_scan( CHAR_DATA * ch, OBJ_DATA * pFire )
     char_from_room( ch );
     char_to_room( ch, pRoom );
 
-    str_cpy( buf, "¦b§Aªº$2" );
+    str_cpy( buf, "åœ¨ä½ çš„$2" );
 
     for ( count = MAX_SCAN_DEPTH - 1; count >= 0; count-- )
     {
@@ -167,7 +167,7 @@ void print_scan( CHAR_DATA * ch, OBJ_DATA * pFire )
       str_cat( buf, direction_name( rev_dir[ScanData[loop].dir[count]] ) );
     }
 
-    str_cat( buf, "$0¤è¦V¥X²{$7$p$0ªº·Ï¤õ¤õ¥ú¡M¦n¤£º}«G¡T" );
+    str_cat( buf, "$0æ–¹å‘å‡ºç¾$7$p$0çš„ç…™ç«ç«å…‰ï¹å¥½ä¸æ¼‚äº®ï¹—" );
     act( smash_act_keyword( buf, "nesp" ) , ch, pFire, NULL, TO_ROOM );
 
     char_from_room( ch );

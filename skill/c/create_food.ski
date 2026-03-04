@@ -1,5 +1,5 @@
 Name            create food~
-Cname           �s�y����~
+Cname           製造食物~
 Slot            SLOT_CREATE_FOOD
 Msgoff          ~
 Function        cast_create_food~
@@ -31,11 +31,11 @@ Limit           CLASS_SCHOLAR    1  45
 Limit           CLASS_BARD       1  80
 
 Help
-�s�y�����N:
+製造食物術:
 
-�o���k�N�i�H�N�A���k�O����Ʀ����@�ӥi�H��Ϊ��C�Y�M�ѧA�Ȧ�
-���ɭԧ��K�M�Y�O���j���ܡM�i�O�����Ԩ������M�ҥH���F�o�@��
-�ޯ઺�ܡM�K�i�H���A���K�C
+這項法術可以將你的法力實體化成為一個可以實用的饅頭﹐供你旅行
+的時候更方便﹐若是飢餓的話﹐可是很難忍受的說﹐所以有了這一項
+技能的話﹐便可以讓你更方便。
 
 ~
 End

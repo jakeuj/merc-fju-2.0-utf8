@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ≥o¨O•—ª≤§j§∆æ«®tªsß@∏s©“º∂ºg™∫πC¿∏°M•D≈È•— merc ßÔΩs¶”®”°M©“¶≥™∫™©≈v    *
-*  ±N∑|≥Q´OØd°M¶˝≈w™Ô§jÆa≠◊ßÔ°M¶˝ß⁄≠Ã§]ß∆±ÊßA≠Ã§]Ø‡¥£®—µπ§jÆa°M©“¶≥™∫∞”    *
-*  ∑~¶Ê¨∞±N§£≥Q§π≥\°C                                                      *
+*  ÈÄôÊòØÁî±ËºîÂ§ßÂåñÂ≠∏Á≥ªË£Ω‰ΩúÁæ§ÊâÄÊí∞ÂØ´ÁöÑÈÅäÊà≤Ôπê‰∏ªÈ´îÁî± merc ÊîπÁ∑®ËÄå‰æÜÔπêÊâÄÊúâÁöÑÁâàÊ¨ä    *
+*  Â∞áÊúÉË¢´‰øùÁïôÔπê‰ΩÜÊ≠°ËøéÂ§ßÂÆ∂‰øÆÊîπÔπê‰ΩÜÊàëÂÄë‰πüÂ∏åÊúõ‰Ω†ÂÄë‰πüËÉΩÊèê‰æõÁµ¶Â§ßÂÆ∂ÔπêÊâÄÊúâÁöÑÂïÜ    *
+*  Ê•≠Ë°åÁÇ∫Â∞á‰∏çË¢´ÂÖÅË®±„ÄÇ                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -36,30 +36,30 @@
 
 extern void extract_all_stone args( ( OBJ_DATA * ) );
 
-/* ∞œ∞Ï®Áº∆ */
+/* ÂçÄÂüüÂáΩÊï∏ */
 void    affect_modify_attr args( ( CHAR_DATA * , AFFECT_DATA * , bool ) );
 
 static ARRAY_DATA ObjArmor[] =
-  { { 501, "\e[1;33m§j∂qºW±j\e[0m" },
-    { 400, "\e[1;33m•|≠øºW±j\e[0m" },
-    { 300, "\e[1;33m§T≠øºW±j\e[0m" },
-    { 200, "\e[1;33m§G≠øºW±j\e[0m" },
-    { 101, "\e[1;33m§@≠øºW±j\e[0m" },
-    { 100, "\e[1;32mßπ¶nµLØ \e[0m" },
-    {  70, "\e[1;35mª¥´◊∑l√a\e[0m" },
-    {  40, "\e[1;34m§§´◊∑l√a\e[0m" },
-    {  10, "\e[1;36mƒY≠´∑l√a\e[0m" },
-    {  -1, "\e[1;31m∏”∞e≠◊§F\e[0m" }
+  { { 501, "\e[1;33mÂ§ßÈáèÂ¢ûÂº∑\e[0m" },
+    { 400, "\e[1;33mÂõõÂÄçÂ¢ûÂº∑\e[0m" },
+    { 300, "\e[1;33m‰∏âÂÄçÂ¢ûÂº∑\e[0m" },
+    { 200, "\e[1;33m‰∫åÂÄçÂ¢ûÂº∑\e[0m" },
+    { 101, "\e[1;33m‰∏ÄÂÄçÂ¢ûÂº∑\e[0m" },
+    { 100, "\e[1;32mÂÆåÂ•ΩÁÑ°Áº∫\e[0m" },
+    {  70, "\e[1;35mËºïÂ∫¶ÊêçÂ£û\e[0m" },
+    {  40, "\e[1;34m‰∏≠Â∫¶ÊêçÂ£û\e[0m" },
+    {  10, "\e[1;36mÂö¥ÈáçÊêçÂ£û\e[0m" },
+    {  -1, "\e[1;31mË©≤ÈÄÅ‰øÆ‰∫Ü\e[0m" }
 };
 
-/* ®˙±o¨Y§H™´™∫µ•Ø≈©Œ¨O≥Q´H•Ùµ•Ø≈ */
+/* ÂèñÂæóÊüê‰∫∫Áâ©ÁöÑÁ≠âÁ¥öÊàñÊòØË¢´‰ø°‰ªªÁ≠âÁ¥ö */
 int get_trust( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_trust" );
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_trust: ®”∑Ωø˘ª~" );
+    mudlog( LOG_DEBUG, "get_trust: ‰æÜÊ∫êÈåØË™§" );
     RETURN( ERRORCODE );
   }
 
@@ -68,7 +68,7 @@ int get_trust( CHAR_DATA * ch )
   RETURN( ch->level );
 }
 
-/* ®˙±o¨Y§H™´™∫¶~ƒ÷ */
+/* ÂèñÂæóÊüê‰∫∫Áâ©ÁöÑÂπ¥ÈΩ° */
 int get_age( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_age" );
@@ -78,56 +78,56 @@ int get_age( CHAR_DATA * ch )
   /* 12240 assumes 30 second hours, 24 hours a day, 20 day */
 }
 
-/* ∂«¶^Øu•ø•Õ©R§Oº∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£ÁîüÂëΩÂäõÊï∏ÂÄº */
 int get_curr_hit( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_hit" );
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_curr_hit: ∂«§J™∫§H™´§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_curr_hit: ÂÇ≥ÂÖ•ÁöÑ‰∫∫Áâ©‰∏çÊ≠£Á¢∫." );
     RETURN( ERRORCODE );
   }
 
   RETURN( ch->max_hit + ch->mod_hit );
 }
 
-/* ∂«¶^Øu•ø™k§O™∫º∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£Ê≥ïÂäõÁöÑÊï∏ÂÄº */
 int get_curr_mana( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_mana" );
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_curr_mana: ∂«§J™∫§H™´§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_curr_mana: ÂÇ≥ÂÖ•ÁöÑ‰∫∫Áâ©‰∏çÊ≠£Á¢∫." );
     RETURN( ERRORCODE );
   }
 
   RETURN( ch->max_mana + ch->mod_mana );
 }
 
-/* ∂«¶^Øu•ø≈È§O™∫º∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£È´îÂäõÁöÑÊï∏ÂÄº */
 int get_curr_move( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_move" );
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_curr_move: ∂«§J™∫§H™´§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_curr_move: ÂÇ≥ÂÖ•ÁöÑ‰∫∫Áâ©‰∏çÊ≠£Á¢∫." );
     RETURN( ERRORCODE );
   }
 
   RETURN( ch->max_move + ch->mod_move );
 }
 
-/* ∂«¶^Øu•ø§O∂q™∫º∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£ÂäõÈáèÁöÑÊï∏ÂÄº */
 int get_curr_str( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_str" );
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_curr_str: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_curr_str: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( ERRORCODE );
   }
 
@@ -135,7 +135,7 @@ int get_curr_str( CHAR_DATA * ch )
   RETURN( ( ch->now_str + ch->pcdata->mod_str ) );
 }
 
-/* ∂«¶^§…Ø≈§O∂q™∫¬Iº∆ */
+/* ÂÇ≥ÂõûÂçáÁ¥öÂäõÈáèÁöÑÈªûÊï∏ */
 int get_str_train( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_str_train" );
@@ -146,7 +146,7 @@ int get_str_train( CHAR_DATA * ch )
     ch->class->factor[STR_ITEM] / 100 );
 }
 
-/* ∂«¶^Øu•ø¥º§O™∫º∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£Êô∫ÂäõÁöÑÊï∏ÂÄº */
 int get_curr_int( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_int" );
@@ -156,7 +156,7 @@ int get_curr_int( CHAR_DATA * ch )
   RETURN ( ch->now_int + ch->pcdata->mod_int );
 }
 
-/* ∂«¶^§…Ø≈¥º§O™∫¬Iº∆ */
+/* ÂÇ≥ÂõûÂçáÁ¥öÊô∫ÂäõÁöÑÈªûÊï∏ */
 int get_int_train( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_int_train" );
@@ -167,7 +167,7 @@ int get_int_train( CHAR_DATA * ch )
     ch->class->factor[INT_ITEM] / 100 );
 }
 
-/* ∂«¶^Øu•øæ«√—™∫º∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£Â≠∏Ë≠òÁöÑÊï∏ÂÄº */
 int get_curr_wis( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_wis" );
@@ -177,7 +177,7 @@ int get_curr_wis( CHAR_DATA * ch )
   RETURN( ch->now_wis + ch->pcdata->mod_wis );
 }
 
-/* ∂«¶^§…Ø≈æ«√—™∫¬Iº∆ */
+/* ÂÇ≥ÂõûÂçáÁ¥öÂ≠∏Ë≠òÁöÑÈªûÊï∏ */
 int get_wis_train( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_wis_train" );
@@ -188,7 +188,7 @@ int get_wis_train( CHAR_DATA * ch )
     ch->class->factor[WIS_ITEM] / 100 );
 }
 
-/* ∂«¶^Øu•ø±”±∂™∫º∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£ÊïèÊç∑ÁöÑÊï∏ÂÄº */
 int get_curr_dex( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_dex" );
@@ -198,7 +198,7 @@ int get_curr_dex( CHAR_DATA * ch )
   RETURN ( ch->now_dex + ch->pcdata->mod_dex );
 }
 
-/* ∂«¶^§…Ø≈±”±∂™∫¬Iº∆ */
+/* ÂÇ≥ÂõûÂçáÁ¥öÊïèÊç∑ÁöÑÈªûÊï∏ */
 int get_dex_train( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_dex_train" );
@@ -209,7 +209,7 @@ int get_dex_train( CHAR_DATA * ch )
     ch->class->factor[DEX_ITEM] / 100 );
 }
 
-/* ∂«¶^Øu•ø≈ÈÆÊ™∫º∆≠» */
+/* ÂÇ≥ÂõûÁúüÊ≠£È´îÊ†ºÁöÑÊï∏ÂÄº */
 int get_curr_con( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_curr_con" );
@@ -219,7 +219,7 @@ int get_curr_con( CHAR_DATA * ch )
   RETURN ( ch->now_con + ch->pcdata->mod_con );
 }
 
-/* ∂«¶^§…Ø≈≈ÈÆÊ™∫¬Iº∆ */
+/* ÂÇ≥ÂõûÂçáÁ¥öÈ´îÊ†ºÁöÑÈªûÊï∏ */
 int get_con_train( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_con_train" );
@@ -230,7 +230,7 @@ int get_con_train( CHAR_DATA * ch )
     ch->class->factor[CON_ITEM] / 100 );
 }
 
-/* ∂«¶^¨Y§H™´•i•Hƒ‚±a≥Ã¶h¥X•Û™´´~ */
+/* ÂÇ≥ÂõûÊüê‰∫∫Áâ©ÂèØ‰ª•ÊîúÂ∏∂ÊúÄÂ§öÂπæ‰ª∂Áâ©ÂìÅ */
 int can_carry_n( CHAR_DATA * ch )
 {
   CHAR_DATA  * mount;
@@ -251,7 +251,7 @@ int can_carry_n( CHAR_DATA * ch )
   RETURN( total + modify + get_curr_dex( ch ) );
 }
 
-/* ∂«¶^¨Y§H™´•i•Hƒ‚±a™´´~™∫≠´∂q */
+/* ÂÇ≥ÂõûÊüê‰∫∫Áâ©ÂèØ‰ª•ÊîúÂ∏∂Áâ©ÂìÅÁöÑÈáçÈáè */
 int can_carry_w( CHAR_DATA * ch )
 {
   CHAR_DATA * mount;
@@ -273,7 +273,7 @@ int get_carry_weight( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_carry_weight: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_carry_weight: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( 0 );
   }
 
@@ -288,13 +288,13 @@ void affect_modify( CHAR_DATA * ch, AFFECT_DATA * paf, bool fAdd )
 
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
-  /* fAdd ≠Y¨∞Øu´hºW•[≠◊π¢≠», §œ§ß¨€§œ */
+  /* fAdd Ëã•ÁÇ∫ÁúüÂâáÂ¢ûÂä†‰øÆÈ£æÂÄº, Âèç‰πãÁõ∏Âèç */
   mod = fAdd ? paf->modifier : -paf->modifier;
 
   switch ( paf->location )
   {
   default:
-    mudlog( LOG_DEBUG , "Affect_modify: •º™æ™∫¶a§Ë %d.", paf->location );
+    mudlog( LOG_DEBUG , "Affect_modify: Êú™Áü•ÁöÑÂú∞Êñπ %d.", paf->location );
     RETURN_NULL();
 
   case APPLY_NONE:
@@ -332,7 +332,7 @@ void affect_modify( CHAR_DATA * ch, AFFECT_DATA * paf, bool fAdd )
     if ( depth == 0 )
     {
       depth++;
-      act( "$n•·±º$p°C", ch, wield, NULL, TO_ALL );
+      act( "$n‰∏üÊéâ$p„ÄÇ", ch, wield, NULL, TO_ALL );
       obj_from_char( wield );
       obj_to_room( wield, ch->in_room );
       depth--;
@@ -344,7 +344,7 @@ void affect_modify( CHAR_DATA * ch, AFFECT_DATA * paf, bool fAdd )
   RETURN_NULL();
 }
 
-/* ¶b¨Y§H™´§WºW•[§@≠”ºv≈T */
+/* Âú®Êüê‰∫∫Áâ©‰∏äÂ¢ûÂä†‰∏ÄÂÄãÂΩ±Èüø */
 void affect_to_char( CHAR_DATA * ch, AFFECT_DATA * paf )
 {
   AFFECT_DATA * paf_new;
@@ -353,11 +353,11 @@ void affect_to_char( CHAR_DATA * ch, AFFECT_DATA * paf )
 
   if ( !ch || !paf )
   {
-    mudlog( LOG_DEBUG, "affect_to_char: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "affect_to_char: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN_NULL();
   }
 
-  /* ∞t∏m∞Oæ–≈È */
+  /* ÈÖçÁΩÆË®òÊÜ∂È´î */
   paf_new = alloc_struct( STRUCT_AFFECT_DATA );
 
   *paf_new      = *paf;
@@ -367,7 +367,7 @@ void affect_to_char( CHAR_DATA * ch, AFFECT_DATA * paf )
   RETURN_NULL();
 }
 
-/* ¶b¨Y§H™´§W≤æ∞£§@≠”ºv≈T */
+/* Âú®Êüê‰∫∫Áâ©‰∏äÁßªÈô§‰∏ÄÂÄãÂΩ±Èüø */
 void affect_remove( CHAR_DATA * ch, AFFECT_DATA * paf )
 {
   AFFECT_DATA * prev;
@@ -376,13 +376,13 @@ void affect_remove( CHAR_DATA * ch, AFFECT_DATA * paf )
 
   if ( !ch || !paf )
   {
-    mudlog( LOG_DEBUG, "affect_remove: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "affect_remove: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN_NULL();
   }
 
   if ( !ch->affected )
   {
-    mudlog( LOG_DEBUG , "Affect_remove: ®S¶≥•Ù¶Û™∫≤æ∞£." );
+    mudlog( LOG_DEBUG , "Affect_remove: Ê≤íÊúâ‰ªª‰ΩïÁöÑÁßªÈô§." );
     RETURN_NULL();
   }
 
@@ -405,12 +405,12 @@ void affect_remove( CHAR_DATA * ch, AFFECT_DATA * paf )
 
     if ( !prev )
     {
-      mudlog( LOG_DEBUG , "Affect_remove: µo≤{§£®Ï paf." );
+      mudlog( LOG_DEBUG , "Affect_remove: ÁôºÁèæ‰∏çÂà∞ paf." );
       RETURN_NULL();
     }
   }
 
-  /* ¶p™G¨O©ˆÆe≥N */
+  /* Â¶ÇÊûúÊòØÊòìÂÆπË°ì */
   if ( paf->type == SLOT_MASK ) ch->mask = -1;
 
   free_struct( paf , STRUCT_AFFECT_DATA );
@@ -427,7 +427,7 @@ void affect_release( CHAR_DATA * ch, int type )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "affect_release: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "affect_release: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
@@ -451,7 +451,7 @@ bool is_affected( CHAR_DATA * ch, int sn )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "is_affected: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "is_affected: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( FALSE );
   }
 
@@ -475,7 +475,7 @@ void affect_join( CHAR_DATA * ch, AFFECT_DATA * paf )
 
   if ( !ch || !paf )
   {
-    mudlog( LOG_DEBUG, "affect_join: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "affect_join: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN_NULL();
   }
 
@@ -501,11 +501,11 @@ void char_from_room( CHAR_DATA * ch )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG , "Char_from_room: ™≈™∫®”∑Ω." );
+    mudlog( LOG_DEBUG , "Char_from_room: Á©∫ÁöÑ‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
-  /* ≠◊•ø∂¢≤·ΩwΩƒ∞œ */
+  /* ‰øÆÊ≠£ÈñíËÅäÁ∑©Ë°ùÂçÄ */
   if ( IS_NPC( ch ) && ch->talk_buf )
   {
     free_string( ch->talk_buf );
@@ -533,7 +533,7 @@ void char_from_room( CHAR_DATA * ch )
       }
     }
 
-    if ( !prev ) mudlog( LOG_DEBUG , "Char_from_room: •ºµo≤{®Ï§H™´." );
+    if ( !prev ) mudlog( LOG_DEBUG , "Char_from_room: Êú™ÁôºÁèæÂà∞‰∫∫Áâ©." );
   }
 
   ch->in_room      = NULL;
@@ -547,7 +547,7 @@ void char_to_room( CHAR_DATA * ch, ROOM_INDEX_DATA * pRoomIndex )
 
   if ( !ch || !pRoomIndex )
   {
-    mudlog( LOG_DEBUG , "Char_to_room: ™≈™∫©–∂°." );
+    mudlog( LOG_DEBUG , "Char_to_room: Á©∫ÁöÑÊàøÈñì." );
     RETURN_NULL();
   }
 
@@ -572,13 +572,13 @@ void gold_to_char( CHAR_DATA * ch, int amount )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "gold_to_char: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "gold_to_char: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN_NULL();
   }
 
   if ( amount < 0 )
   {
-    mudlog( LOG_DEBUG, "gold_to_char: %s ™∫µπ©Û™˜√B %d §p©Ûπs."
+    mudlog( LOG_DEBUG, "gold_to_char: %s ÁöÑÁµ¶ÊñºÈáëÈ°ç %d Â∞èÊñºÈõ∂."
       , ch->name, amount );
 
     RETURN_NULL();
@@ -587,7 +587,7 @@ void gold_to_char( CHAR_DATA * ch, int amount )
   if ( ch->gold < 0 )
   {
     ch->gold = 0;
-    mudlog( LOG_DEBUG, "gold_to_char: %s ™˜ø˙¨O≠t™∫°C", ch->name );
+    mudlog( LOG_DEBUG, "gold_to_char: %s ÈáëÈå¢ÊòØË≤†ÁöÑ„ÄÇ", ch->name );
     RETURN_NULL();
   }
 
@@ -595,12 +595,12 @@ void gold_to_char( CHAR_DATA * ch, int amount )
 
   if ( amount + ch->gold < 0 || over_scale( ch ) )
   {
-    send_to_char( "ßAƒ‚±aª»§l§w∏g∂W•X®t≤Œ™∫≠t≤¸§F°T\n\r", ch );
+    send_to_char( "‰Ω†ÊîúÂ∏∂ÈäÄÂ≠êÂ∑≤Á∂ìË∂ÖÂá∫Á≥ªÁµ±ÁöÑË≤†Ëç∑‰∫ÜÔπó\n\r", ch );
 
     if ( ch->in_room )
     {
       gold_to_room( ch->in_room, amount );
-      act( "$nÆ≥§£∞ ≥oªÚ¶hª»§l°M¶]¶”¥≤∏®§@¶a°T", ch, NULL, NULL, TO_ALL );
+      act( "$nÊãø‰∏çÂãïÈÄôÈ∫ºÂ§öÈäÄÂ≠êÔπêÂõ†ËÄåÊï£ËêΩ‰∏ÄÂú∞Ôπó", ch, NULL, NULL, TO_ALL );
      }
 
     RETURN_NULL();
@@ -629,7 +629,7 @@ void gold_to_char( CHAR_DATA * ch, int amount )
       if ( ch->in_room )
       {
         gold_to_room( ch->in_room, UMAX( 1, amount - canget ) );
-        act( "$nÆ≥§£∞ ≥oªÚ¶hª»§l°M¶]¶”¥≤∏®§@¶a°T", ch, NULL, NULL, TO_ALL );
+        act( "$nÊãø‰∏çÂãïÈÄôÈ∫ºÂ§öÈäÄÂ≠êÔπêÂõ†ËÄåÊï£ËêΩ‰∏ÄÂú∞Ôπó", ch, NULL, NULL, TO_ALL );
       }
     }
 
@@ -640,7 +640,7 @@ void gold_to_char( CHAR_DATA * ch, int amount )
       if ( ch->in_room )
       {
         gold_to_room( ch->in_room, amount );
-        act( "$nÆ≥§£∞ ≥oªÚ¶hª»§l°M¶]¶”¥≤∏®§@¶a°T", ch, NULL, NULL, TO_ALL );
+        act( "$nÊãø‰∏çÂãïÈÄôÈ∫ºÂ§öÈäÄÂ≠êÔπêÂõ†ËÄåÊï£ËêΩ‰∏ÄÂú∞Ôπó", ch, NULL, NULL, TO_ALL );
       }
     }
   }
@@ -654,14 +654,14 @@ void gold_from_char( CHAR_DATA * ch, int amount )
 
   if ( !ch || amount < 0 )
   {
-    mudlog( LOG_DEBUG, "gold_from_char: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "gold_from_char: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN_NULL();
   }
 
   if ( ch->gold < 0 )
   {
     ch->gold = 0;
-    mudlog( LOG_DEBUG, "gold_from_char: %s ™˜ø˙¨O≠t™∫°C", ch->name );
+    mudlog( LOG_DEBUG, "gold_from_char: %s ÈáëÈå¢ÊòØË≤†ÁöÑ„ÄÇ", ch->name );
     RETURN_NULL();
   }
 
@@ -670,7 +670,7 @@ void gold_from_char( CHAR_DATA * ch, int amount )
   if ( ch->gold - amount < 0 )
   {
     amount = ch->gold;
-    mudlog( LOG_DEBUG, "gold_from_char: %s ≠t™∫µ≤™G.", ch->name );
+    mudlog( LOG_DEBUG, "gold_from_char: %s Ë≤†ÁöÑÁµêÊûú.", ch->name );
   }
 
   ch->gold -= amount;
@@ -686,7 +686,7 @@ void gold_to_room( ROOM_INDEX_DATA * room, int amount )
 
   if ( !room || amount < 0 )
   {
-    mudlog( LOG_DEBUG, "®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN_NULL();
   }
 
@@ -721,7 +721,7 @@ void fix_gold_weight( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "fix_gold_weight: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "fix_gold_weight: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN_NULL();
   }
 
@@ -732,14 +732,14 @@ void fix_gold_weight( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* ß‚™F¶Ëµπ§H™´ */
+/* ÊääÊù±Ë•øÁµ¶‰∫∫Áâ© */
 void obj_to_char( OBJ_DATA * obj, CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "obj_to_char" );
 
   if ( !ch || !obj )
   {
-    mudlog( LOG_DEBUG, "obj_to_char: ®”∑Ω¨O™≈™∫." );
+    mudlog( LOG_DEBUG, "obj_to_char: ‰æÜÊ∫êÊòØÁ©∫ÁöÑ." );
     RETURN_NULL();
   }
 
@@ -753,7 +753,7 @@ void obj_to_char( OBJ_DATA * obj, CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* ß‚™F¶Ë≤æ∞£ */
+/* ÊääÊù±Ë•øÁßªÈô§ */
 void obj_from_char( OBJ_DATA * obj )
 {
   CHAR_DATA * ch;
@@ -763,7 +763,7 @@ void obj_from_char( OBJ_DATA * obj )
 
   if ( !obj || !( ch = obj->carried_by ) )
   {
-    mudlog( LOG_DEBUG , "Obj_from_char: §H™´¨O™≈™∫." );
+    mudlog( LOG_DEBUG , "Obj_from_char: ‰∫∫Áâ©ÊòØÁ©∫ÁöÑ." );
     RETURN_NULL();
   }
 
@@ -783,7 +783,7 @@ void obj_from_char( OBJ_DATA * obj )
         break;
       }
     }
-    if ( !prev ) mudlog( LOG_DEBUG , "Obj_from_char: ™Ì§§•º¶≥¶π™´´~." );
+    if ( !prev ) mudlog( LOG_DEBUG , "Obj_from_char: Ë°®‰∏≠Êú™ÊúâÊ≠§Áâ©ÂìÅ." );
   }
 
   obj->carried_by    = NULL;
@@ -800,7 +800,7 @@ int apply_ac( OBJ_DATA * obj, int iWear )
 
   PUSH_FUNCTION( "apply_ac" );
 
-  /* ®æ®„√˛§~¶≥ */
+  /* Èò≤ÂÖ∑È°ûÊâçÊúâ */
   if ( !obj || obj->item_type != ITEM_ARMOR ) RETURN( 0 );
 
   for ( pSitus = situs_list; pSitus; pSitus = pSitus->next )
@@ -823,7 +823,7 @@ OBJ_DATA * get_eq_char( CHAR_DATA * ch, int iWear )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_eq_char: §H™´¨O™≈™∫." );
+    mudlog( LOG_DEBUG, "get_eq_char: ‰∫∫Áâ©ÊòØÁ©∫ÁöÑ." );
     RETURN( NULL );
   }
 
@@ -845,13 +845,13 @@ void equip_char( CHAR_DATA * ch, OBJ_DATA * obj, int iWear )
 
   if ( !ch || !obj )
   {
-    mudlog( LOG_DEBUG, "equip_char: ®”∑Ω¨O™≈™∫" );
+    mudlog( LOG_DEBUG, "equip_char: ‰æÜÊ∫êÊòØÁ©∫ÁöÑ" );
     RETURN_NULL();
   }
 
   if ( get_eq_char( ch, iWear ) )
   {
-    mudlog( LOG_DEBUG , "Equip_char: %s(%d) §w∏g∏À≥∆§F %d."
+    mudlog( LOG_DEBUG , "Equip_char: %s(%d) Â∑≤Á∂ìË£ùÂÇô‰∫Ü %d."
       , ch->name , ch->pIndexData ? ch->pIndexData->vnum : -1, iWear );
     RETURN_NULL();
   }
@@ -860,8 +860,8 @@ void equip_char( CHAR_DATA * ch, OBJ_DATA * obj, int iWear )
     || ( obj->AntiGood    && IS_GOOD( ch ) )
     || ( obj->AntiNeutral && IS_NEUTRAL( ch ) ) )
   {
-    act( "ßA≥Q$pøÚ±Û°M©“•HÆ≥§£¶Ì•¶¶”±º®Ï¶a§W°C", ch, obj, NULL, TO_CHAR );
-    act( "$nøÚ±Û§F$p¶”±N•¶±º®Ï¶a§W°C"    , ch, obj, NULL, TO_ROOM );
+    act( "‰Ω†Ë¢´$pÈÅ∫Ê£ÑÔπêÊâÄ‰ª•Êãø‰∏ç‰ΩèÂÆÉËÄåÊéâÂà∞Âú∞‰∏ä„ÄÇ", ch, obj, NULL, TO_CHAR );
+    act( "$nÈÅ∫Ê£Ñ‰∫Ü$pËÄåÂ∞áÂÆÉÊéâÂà∞Âú∞‰∏ä„ÄÇ"    , ch, obj, NULL, TO_ROOM );
     obj_from_char( obj );
     obj_to_room( obj, ch->in_room );
     RETURN_NULL();
@@ -898,13 +898,13 @@ void equip_char( CHAR_DATA * ch, OBJ_DATA * obj, int iWear )
 
   light_adjust( ch, obj, TRUE );
 
-  /* ≥]©w∏À≥∆æ÷¶≥™Ã */
+  /* Ë®≠ÂÆöË£ùÂÇôÊìÅÊúâËÄÖ */
   if ( !IS_NPC( ch ) && obj->owner.high == 0 && obj->owner.low == 0 )
   {
     obj->owner.high = ch->serial.high;
     obj->owner.low  = ch->serial.low;
 
-    act( "±q≤{¶b∂}©l°M$pª}¶∫∏Ú¿H$n°T", ch, obj, NULL, TO_ALL );
+    act( "ÂæûÁèæÂú®ÈñãÂßãÔπê$pË™ìÊ≠ªË∑üÈö®$nÔπó", ch, obj, NULL, TO_ALL );
   }
 
   else if ( obj->owner.high != ch->serial.high
@@ -961,7 +961,7 @@ void equip_char( CHAR_DATA * ch, OBJ_DATA * obj, int iWear )
         obj->max_armor = UMIN( obj->max_armor, pIndex->armor );
         obj->armor     = UMIN( obj->armor    , pIndex->armor );
 
-        act( "$n®≠§W™∫$p§S¶^¥_®Ï≠Ï®”™∫™¨∫A°M§£¶A∞{ƒ£∞ §H°T"
+        act( "$nË∫´‰∏äÁöÑ$pÂèàÂõûÂæ©Âà∞Âéü‰æÜÁöÑÁãÄÊÖãÔπê‰∏çÂÜçÈñÉËÄÄÂãï‰∫∫Ôπó"
           , ch, obj, NULL, TO_ALL );
 
         break;
@@ -983,7 +983,7 @@ void unequip_char( CHAR_DATA * ch, OBJ_DATA * obj, bool fPrint )
 
   if ( obj->wear_loc == WEAR_NONE )
   {
-    mudlog( LOG_DEBUG , "Unequip_char: §w∏g∏—∞£∏À≥∆." );
+    mudlog( LOG_DEBUG , "Unequip_char: Â∑≤Á∂ìËß£Èô§Ë£ùÂÇô." );
     RETURN_NULL();
   }
 
@@ -1042,7 +1042,7 @@ void obj_from_room( OBJ_DATA * obj )
 
   if ( !( in_room = obj->in_room ) )
   {
-    mudlog( LOG_DEBUG , "obj_from_room: ™≈™∫©–∂°." );
+    mudlog( LOG_DEBUG , "obj_from_room: Á©∫ÁöÑÊàøÈñì." );
     RETURN_NULL();
   }
 
@@ -1065,7 +1065,7 @@ void obj_from_room( OBJ_DATA * obj )
 
     if ( !prev )
     {
-      mudlog( LOG_DEBUG , "Obj_from_room: ®S¶≥µo≤{™´´~." );
+      mudlog( LOG_DEBUG , "Obj_from_room: Ê≤íÊúâÁôºÁèæÁâ©ÂìÅ." );
       RETURN_NULL();
     }
   }
@@ -1115,7 +1115,7 @@ void obj_from_obj( OBJ_DATA * obj )
 
   if ( !( obj_from = obj->in_obj ) )
   {
-    mudlog( LOG_DEBUG , "Obj_from_obj: obj_from ¨O™≈™∫." );
+    mudlog( LOG_DEBUG , "Obj_from_obj: obj_from ÊòØÁ©∫ÁöÑ." );
     RETURN_NULL();
   }
 
@@ -1136,7 +1136,7 @@ void obj_from_obj( OBJ_DATA * obj )
 
     if ( !prev )
     {
-      mudlog( LOG_DEBUG , "Obj_from_obj: •ºµo≤{®Ï™´´~." );
+      mudlog( LOG_DEBUG , "Obj_from_obj: Êú™ÁôºÁèæÂà∞Áâ©ÂìÅ." );
       RETURN_NULL();
     }
   }
@@ -1201,7 +1201,7 @@ void extract_obj( OBJ_DATA * obj )
     free_struct( ed , STRUCT_EXTRA_DESCR_DATA );
   }
 
-  /* ≠◊•ø´Õ≈È */
+  /* ‰øÆÊ≠£Â±çÈ´î */
   if ( obj->corpse_owner )
   {
     for ( ch = char_list; ch; ch = ch->next )
@@ -1211,7 +1211,7 @@ void extract_obj( OBJ_DATA * obj )
     }
   }
 
-  /* ≠◊¥_∞e´H™Ã */
+  /* ‰øÆÂæ©ÈÄÅ‰ø°ËÄÖ */
   obj->address = NULL;
 
   obj->pIndexData->count--;
@@ -1219,7 +1219,7 @@ void extract_obj( OBJ_DATA * obj )
   RETURN_NULL();
 }
 
-/* æP∑¥§H™´ */
+/* Èä∑ÊØÄ‰∫∫Áâ© */
 void extract_char( CHAR_DATA * ch, bool fPull )
 {
   CHAR_DATA  * wch;
@@ -1234,22 +1234,22 @@ void extract_char( CHAR_DATA * ch, bool fPull )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG , "Extract_char: ©“¶b¶a¨O™≈™∫." );
+    mudlog( LOG_DEBUG , "Extract_char: ÊâÄÂú®Âú∞ÊòØÁ©∫ÁöÑ." );
     RETURN_NULL();
   }
 
   if ( fPull ) die_follower( ch );
   stop_fighting( ch, TRUE );
 
-  /* ≠◊•øÆy√M */
+  /* ‰øÆÊ≠£Â∫ßÈ®é */
   if ( ch->mount    ) unmount_char( ch, ch->mount    );
   if ( ch->mount_by ) unmount_char( ch->mount_by, ch );
 
-  /* ≠◊•ø∫Î∆F */
+  /* ‰øÆÊ≠£Á≤æÈùà */
   if ( ch->boss   ) spirit_from_char( ch         );
   if ( ch->spirit ) spirit_from_char( ch->spirit );
 
-  /* ≠◊•ø∂ƒßL */
+  /* ‰øÆÊ≠£ÂÇ≠ÂÖµ */
   if ( ch->hirer ) mercenary_from_char( ch, ch->hirer );
   if ( ch->mercenary && !ch->hirer ) all_mercenary_from_char( ch );
 
@@ -1261,13 +1261,13 @@ void extract_char( CHAR_DATA * ch, bool fPull )
     ch->bounty = NULL;
   }
 
-  /* ≠◊•ø©ÁΩÊ */
+  /* ‰øÆÊ≠£ÊãçË≥£ */
   if ( ch == auction_info->seller )
   {
-    /* ø˙∞hµπ∂R™∫§H */
+    /* Èå¢ÈÄÄÁµ¶Ë≤∑ÁöÑ‰∫∫ */
     if ( auction_info->buyer )
     {
-      send_to_char( "πÔ§£∞_°MΩÊ™∫§H¶∫§F°Mø˙¡ŸµπßAßa°T\n\r"
+      send_to_char( "Â∞ç‰∏çËµ∑ÔπêË≥£ÁöÑ‰∫∫Ê≠ª‰∫ÜÔπêÈå¢ÈÇÑÁµ¶‰Ω†ÂêßÔπó\n\r"
         , auction_info->buyer );
       gold_to_char( auction_info->buyer, auction_info->price );
     }
@@ -1275,24 +1275,24 @@ void extract_char( CHAR_DATA * ch, bool fPull )
     if ( auction_info->obj ) extract_obj( auction_info->obj );
 
     talk_channel( auction_info->seller
-      , "≠¸°M≥sΩÊ≠”™F¶Ë°M≥£∑|≥Q§≥Æa∞l±˛°M§£ΩÊ§F°T"
+      , "ÂîâÔπêÈÄ£Ë≥£ÂÄãÊù±Ë•øÔπêÈÉΩÊúÉË¢´‰ªáÂÆ∂ËøΩÊÆ∫Ôπê‰∏çË≥£‰∫ÜÔπó"
       , CHANNEL_AUCTION
-      , "\e[1;33mßtµ€≤\\ª°πD" );
+      , "\e[1;33mÂê´ËëóÊ∑ö\Ë™™ÈÅì" );
 
     init_auction();
   }
 
-  /* ≠◊•ø∞e´H™Ã */
+  /* ‰øÆÊ≠£ÈÄÅ‰ø°ËÄÖ */
   for ( obj = object_list; obj; obj = obj->next )
   {
     if ( verify_obj( obj ) && obj->address == ch )
     {
       if ( obj->carried_by )
-        send_to_char( "´‹•i±§°MßA™∫¶¨´H§H§w∏g¶b≥o≠”•@¨…Æ¯•¢§F°T\n\r"
+        send_to_char( "ÂæàÂèØÊÉúÔπê‰Ω†ÁöÑÊî∂‰ø°‰∫∫Â∑≤Á∂ìÂú®ÈÄôÂÄã‰∏ñÁïåÊ∂àÂ§±‰∫ÜÔπó\n\r"
         , obj->carried_by );
 
       free_string( obj->description );
-      obj->description = str_dup( "§@´ §w∏g®S¶≥•Œ™∫´H•Û(letter)°C" );
+      obj->description = str_dup( "‰∏ÄÂ∞ÅÂ∑≤Á∂ìÊ≤íÊúâÁî®ÁöÑ‰ø°‰ª∂(letter)„ÄÇ" );
       obj->address = NULL;
       obj->cost    = 1;
     }
@@ -1314,7 +1314,7 @@ void extract_char( CHAR_DATA * ch, bool fPull )
 
   ch->enemy = NULL;
 
-  /* Æ¯∞£¬ß™´™∫º–∞O */
+  /* Ê∂àÈô§Á¶ÆÁâ©ÁöÑÊ®ôË®ò */
   for ( pStamp = ch->stamp; pStamp; pStamp = zStamp )
   {
     zStamp = pStamp->next;
@@ -1329,7 +1329,7 @@ void extract_char( CHAR_DATA * ch, bool fPull )
   {
     char_to_room( ch, RoomDead );
 
-    /* ≤M∞£∞l¬‹¨ˆø˝¬I */
+    /* Ê∏ÖÈô§ËøΩËπ§Á¥ÄÈåÑÈªû */
     clear_trace( ch, FALSE );
 
     RETURN_NULL();
@@ -1346,13 +1346,13 @@ void extract_char( CHAR_DATA * ch, bool fPull )
       && wch->pcdata->wooer
       && !str_cmp( wch->pcdata->wooer->name, ch->name ) )
     {
-      act( "ßA™∫∞l®D™Ã$N∏®∂]§F°T", wch, NULL, ch, TO_CHAR );
+      act( "‰Ω†ÁöÑËøΩÊ±ÇËÄÖ$NËêΩË∑ë‰∫ÜÔπó", wch, NULL, ch, TO_CHAR );
       wch->pcdata->wooer = NULL;
     }
 
     if ( wch->pcdata && wch->pcdata->mate == ch )
     {
-      act( "ßA™∫$t$N¬˜Ωu§F°T", wch, mate_name( wch ), ch, TO_CHAR );
+      act( "‰Ω†ÁöÑ$t$NÈõ¢Á∑ö‰∫ÜÔπó", wch, mate_name( wch ), ch, TO_CHAR );
       wch->pcdata->mate = NULL;
     }
   }
@@ -1370,7 +1370,7 @@ CHAR_DATA * get_pc_room( CHAR_DATA * ch, const char * argument )
 
   if ( !ch || !ch->in_room || !argument || !*argument )
   {
-    mudlog( LOG_DEBUG, "get_pc_room: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_pc_room: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( NULL );
   }
 
@@ -1393,7 +1393,7 @@ CHAR_DATA * get_pc_world( CHAR_DATA * ch, const char * argument )
 
   if ( !ch || !ch->in_room || !argument || !*argument )
   {
-    mudlog( LOG_DEBUG, "get_pc_room: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_pc_room: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( NULL );
   }
 
@@ -1419,7 +1419,7 @@ CHAR_DATA * get_char_room( CHAR_DATA * ch, char * argument )
 
   if ( !ch || !ch->in_room || !argument || !*argument )
   {
-    mudlog( LOG_DEBUG, "get_char_room: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_char_room: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( NULL );
   }
 
@@ -1474,19 +1474,19 @@ int get_char_order( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim )
   {
-    mudlog( LOG_DEBUG, "get_char_order: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "get_char_order: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( -1 );
   }
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "get_char_order: §H™´©–∂°§£¶s¶b." );
+    mudlog( LOG_DEBUG, "get_char_order: ‰∫∫Áâ©ÊàøÈñì‰∏çÂ≠òÂú®." );
     RETURN( -1 );
   }
 
   one_argument( victim->name, name );
 
-  /* •˝ß‰©–∂°∏Ã™∫ */
+  /* ÂÖàÊâæÊàøÈñìË£°ÁöÑ */
   for ( count = 0, rch = ch->in_room->people; rch; rch = rch->next_in_room )
   {
     if ( !can_see( ch, rch ) || !is_name( name, rch->name ) ) continue;
@@ -1495,7 +1495,7 @@ int get_char_order( CHAR_DATA * ch, CHAR_DATA * victim )
     if ( rch == victim ) RETURN( count );
   }
 
-  /* ®˙±o•˛≈È§H™´ */
+  /* ÂèñÂæóÂÖ®È´î‰∫∫Áâ© */
   for ( count = 0, rch = char_list; rch; rch = rch->next )
   {
     if ( !verify_char( rch )
@@ -1520,14 +1520,14 @@ CHAR_DATA * get_char_world( CHAR_DATA * ch, char * argument )
 
   if ( !ch || !ch->in_room || !argument || !*argument )
   {
-    mudlog( LOG_DEBUG, "get_char_world: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_char_world: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( NULL );
   }
 
   if ( ( wch = get_char_room( ch, argument ) ) ) RETURN( wch );
   number = number_argument( argument, arg );
 
-  /* ®˙±o¶≥Æƒ§H™´ */
+  /* ÂèñÂæóÊúâÊïà‰∫∫Áâ© */
   for ( wch = char_list; wch; wch = wch->next )
   {
     if ( !verify_char( wch ) ) continue;
@@ -1549,14 +1549,14 @@ CHAR_DATA * get_char_area( CHAR_DATA * ch, char * argument )
 
   if ( !ch || !ch->in_room || !argument || !*argument )
   {
-    mudlog( LOG_DEBUG, "get_char_world: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "get_char_world: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( NULL );
   }
 
   if ( ( wch = get_char_room( ch, argument ) ) ) RETURN( wch );
   number = number_argument( argument, arg );
 
-  /* ®˙±o¶≥Æƒ§H™´ */
+  /* ÂèñÂæóÊúâÊïà‰∫∫Áâ© */
   for ( wch = char_list; wch; wch = wch->next )
   {
     if ( !verify_char( wch ) ) continue;
@@ -1604,7 +1604,7 @@ OBJ_DATA * get_obj_list( CHAR_DATA * ch, char * argument, OBJ_DATA * list )
   RETURN( NULL );
 }
 
-/* ®˙™∫¨Y∫ÿ√˛´¨™∫™´´~™∫º∆∂q */
+/* ÂèñÁöÑÊüêÁ®ÆÈ°ûÂûãÁöÑÁâ©ÂìÅÁöÑÊï∏Èáè */
 int obj_type_room( CHAR_DATA * ch, int type )
 {
   int        count = 0;
@@ -1614,7 +1614,7 @@ int obj_type_room( CHAR_DATA * ch, int type )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "obj_type_room: ®”∑Ω¨O™≈™∫." );
+    mudlog( LOG_DEBUG, "obj_type_room: ‰æÜÊ∫êÊòØÁ©∫ÁöÑ." );
     RETURN( -1 );
   }
 
@@ -1624,7 +1624,7 @@ int obj_type_room( CHAR_DATA * ch, int type )
   RETURN( count );
 }
 
-/* ®˙±o®≠§W¨Y∫ÿ√˛´¨™´´~™∫º∆∂q */
+/* ÂèñÂæóË∫´‰∏äÊüêÁ®ÆÈ°ûÂûãÁâ©ÂìÅÁöÑÊï∏Èáè */
 int obj_type_char( CHAR_DATA * ch, int type )
 {
   int        count = 0;
@@ -1634,7 +1634,7 @@ int obj_type_char( CHAR_DATA * ch, int type )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "obj_type_char: ®”∑Ω¨O™≈™∫." );
+    mudlog( LOG_DEBUG, "obj_type_char: ‰æÜÊ∫êÊòØÁ©∫ÁöÑ." );
     RETURN( -1 );
   }
 
@@ -1781,7 +1781,7 @@ OBJ_DATA * create_money( int amount )
 
   if ( amount <= 0 )
   {
-    mudlog( LOG_DEBUG, "Create_money: ø˙™∫º∆•ÿ %d §p©Û©Œµ•©Û0.", amount );
+    mudlog( LOG_DEBUG, "Create_money: Èå¢ÁöÑÊï∏ÁõÆ %d Â∞èÊñºÊàñÁ≠âÊñº0.", amount );
     amount = 1;
   }
 
@@ -1934,7 +1934,7 @@ bool can_see_room( CHAR_DATA * ch )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG,  "can_see_room: ®”∑Ω¶≥∞›√D." );
+    mudlog( LOG_DEBUG,  "can_see_room: ‰æÜÊ∫êÊúâÂïèÈ°å." );
     RETURN( FALSE );
   }
 
@@ -1965,19 +1965,19 @@ CHAR_DATA * object_owner( OBJ_DATA * obj )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "object_owner: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "object_owner: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( NULL );
   }
 
-  /* ±H©Ò¶b√ßΩ */
+  /* ÂØÑÊîæÂú®Èè¢Â±Ä */
   if ( obj->deposit_by ) RETURN( obj->deposit_by );
 
-  /* ≠Y¨O©Ò¶bÆeæπ§§, ß‰•X≥Ã•~ºh™∫Æeæπ */
+  /* Ëã•ÊòØÊîæÂú®ÂÆπÂô®‰∏≠, ÊâæÂá∫ÊúÄÂ§ñÂ±§ÁöÑÂÆπÂô® */
   for ( in_obj = obj; in_obj->in_obj; in_obj = in_obj->in_obj );
 
   if ( !in_obj || !verify_obj( in_obj ) )
   {
-    mudlog( LOG_DEBUG, "object_owner: ø˘ª~™∫´¸º–." );
+    mudlog( LOG_DEBUG, "object_owner: ÈåØË™§ÁöÑÊåáÊ®ô." );
     RETURN( NULL );
   }
 
@@ -1996,19 +1996,19 @@ char * object_locate( OBJ_DATA * obj , CHAR_DATA * ch )
 
   locate_name[0] = '\x0';
 
-  /* ±H©Ò¶b√ßΩ */
+  /* ÂØÑÊîæÂú®Èè¢Â±Ä */
   if ( obj->deposit_by )
   {
-    sprintf( locate_name , "•—%s©“¶s©Ò¶b√ßΩ"
+    sprintf( locate_name , "Áî±%sÊâÄÂ≠òÊîæÂú®Èè¢Â±Ä"
       , mob_name( ch, obj->deposit_by ) );
 
     RETURN( locate_name );
   }
 
-  /* ±H©Ò¶b¿∞Æw */
+  /* ÂØÑÊîæÂú®Âπ´Â∫´ */
   if ( ( club = obj->club ) )
   {
-    sprintf( locate_name, "±H©Ò¶b%s(%s)¿∞Æw(©“¶b¶a: %d)§§"
+    sprintf( locate_name, "ÂØÑÊîæÂú®%s(%s)Âπ´Â∫´(ÊâÄÂú®Âú∞: %d)‰∏≠"
       , club->cname
       , club->name
       , club->location ? club->location->vnum : -1 );
@@ -2016,61 +2016,61 @@ char * object_locate( OBJ_DATA * obj , CHAR_DATA * ch )
     RETURN( locate_name );
   }
 
-  /* ∞≤¶p¨O¶b©ÁΩÊ */
+  /* ÂÅáÂ¶ÇÊòØÂú®ÊãçË≥£ */
   if ( auction_info->obj == obj )
   {
     if ( !auction_info->seller )
     {
-      str_cpy( locate_name, "•ø¶b©ÁΩÊ§§(ΩÊ•D§£∏‘)." );
+      str_cpy( locate_name, "Ê≠£Âú®ÊãçË≥£‰∏≠(Ë≥£‰∏ª‰∏çË©≥)." );
       RETURN( locate_name );
     }
 
-    sprintf( locate_name, "•ø•—%s©ÁΩÊ§§"
+    sprintf( locate_name, "Ê≠£Áî±%sÊãçË≥£‰∏≠"
       , mob_name( NULL, auction_info->seller ) );
 
     RETURN( locate_name );
   }
 
-  /* ≠Y¨O©Ò¶bÆeæπ§§, ß‰•X≥Ã•~ºh™∫Æeæπ */
+  /* Ëã•ÊòØÊîæÂú®ÂÆπÂô®‰∏≠, ÊâæÂá∫ÊúÄÂ§ñÂ±§ÁöÑÂÆπÂô® */
   for ( in_obj = obj; in_obj->in_obj; in_obj = in_obj->in_obj );
 
   if ( !in_obj || !verify_obj( in_obj ) )
   {
-    mudlog( LOG_DEBUG, "object_locate: ø˘ª~™∫´¸º–." );
-    RETURN( "ø˘ª~" );
+    mudlog( LOG_DEBUG, "object_locate: ÈåØË™§ÁöÑÊåáÊ®ô." );
+    RETURN( "ÈåØË™§" );
   }
 
-   /* ¶≥§Hƒ‚±a™∫ */
+   /* Êúâ‰∫∫ÊîúÂ∏∂ÁöÑ */
   if ( in_obj->carried_by )
   {
     if ( in_obj == obj )
-      sprintf( locate_name , "•—%s (©“¶b¶a: %d) ©“ƒ‚±aµ€"
+      sprintf( locate_name , "Áî±%s (ÊâÄÂú®Âú∞: %d) ÊâÄÊîúÂ∏∂Ëëó"
         , mob_name( ch, in_obj->carried_by )
         , ( in_obj->carried_by->in_room ) ?
           in_obj->carried_by->in_room->vnum : ERRORCODE );
 
     else
-      sprintf( locate_name , "•—%s (©“¶b¶a: %d) ∏À¶b•L™∫%s∏Ã≠±"
+      sprintf( locate_name , "Áî±%s (ÊâÄÂú®Âú∞: %d) Ë£ùÂú®‰ªñÁöÑ%sË£°Èù¢"
         , mob_name( ch, in_obj->carried_by )
         , ( in_obj->carried_by->in_room ) ?
           in_obj->carried_by->in_room->vnum : ERRORCODE
         , obj_name( NULL, in_obj ) );
   }
 
-  /* ®S¶≥§Hƒ‚±a™∫ */
+  /* Ê≤íÊúâ‰∫∫ÊîúÂ∏∂ÁöÑ */
   else
   {
     if ( in_obj == obj )
     {
-      sprintf( locate_name , "¶b%s (©“¶b¶a: %d) ∏Ã≠±"
-        , ( in_obj->in_room ) ? in_obj->in_room->name : "¨Y§£™æ¶W¶a§Ë"
+      sprintf( locate_name , "Âú®%s (ÊâÄÂú®Âú∞: %d) Ë£°Èù¢"
+        , ( in_obj->in_room ) ? in_obj->in_room->name : "Êüê‰∏çÁü•ÂêçÂú∞Êñπ"
         , ( in_obj->in_room ) ? in_obj->in_room->vnum : ERRORCODE );
     }
 
     else
     {
-      sprintf( locate_name , "¶b%s (©“¶b¶a: %d) ∏Ã™∫%s§§"
-        , ( in_obj->in_room ) ? in_obj->in_room->name : "¨Y§£™æ¶W¶a§Ë"
+      sprintf( locate_name , "Âú®%s (ÊâÄÂú®Âú∞: %d) Ë£°ÁöÑ%s‰∏≠"
+        , ( in_obj->in_room ) ? in_obj->in_room->name : "Êüê‰∏çÁü•ÂêçÂú∞Êñπ"
         , ( in_obj->in_room ) ? in_obj->in_room->vnum : ERRORCODE
         , obj_name( NULL, in_obj ) );
     }
@@ -2079,7 +2079,7 @@ char * object_locate( OBJ_DATA * obj , CHAR_DATA * ch )
   RETURN( locate_name );
 }
 
-/* •¥≈•§H™´™∫∂O•Œ */
+/* ÊâìËÅΩ‰∫∫Áâ©ÁöÑË≤ªÁî® */
 int search_cost( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "search_cost" );
@@ -2091,7 +2091,7 @@ int search_cost( CHAR_DATA * ch )
   RETURN( number_range( MinWhereGold , MaxWhereGold ) );
 }
 
-/* ±o™æ∏À≥∆™∫™´´~ */
+/* ÂæóÁü•Ë£ùÂÇôÁöÑÁâ©ÂìÅ */
 OBJ_DATA * get_wield( CHAR_DATA * ch )
 {
   OBJ_DATA   * obj;
@@ -2137,26 +2137,26 @@ int dimemsion_position( int dimemsion[], int number , bool Randomize )
 
   PUSH_FUNCTION( "dimemsion_position" );
 
-  /* ¶€∞ ®˙∂√º∆ */
+  /* Ëá™ÂãïÂèñ‰∫ÇÊï∏ */
   if ( Randomize == TRUE ) number = number_range( 0, number );
 
-  /* Ω’æ„ */
+  /* Ë™øÊï¥ */
   number = UMIN( 100, UMAX( 0, number ) );
 
-  /* ≠p∫‚∞}¶C§j§p */
+  /* Ë®àÁÆóÈô£ÂàóÂ§ßÂ∞è */
   for ( size = 0; dimemsion[size] >= 0 && dimemsion[size] <= 100; size++ );
 
-  /* ≠Y¨O∞}¶C§j§p¨∞ 0 */
+  /* Ëã•ÊòØÈô£ÂàóÂ§ßÂ∞èÁÇ∫ 0 */
   if ( size == 0 ) RETURN( ERRORCODE );
 
-  /* ®D±o¶Ï∏m */
+  /* Ê±ÇÂæó‰ΩçÁΩÆ */
   for ( position = 0; position < size; position++ )
     if ( dimemsion[position] >= number ) break;
 
   RETURN( ( position < size ) ? position : ERRORCODE );
 }
 
-/* ¿À¨d¨Oß_¶≥¡ø¨€¶P™∫∏‹ªy, ©Œ∞ ß@ */
+/* Ê™¢Êü•ÊòØÂê¶ÊúâË¨õÁõ∏ÂêåÁöÑË©±Ë™û, ÊàñÂãï‰Ωú */
 bool check_repeat( CHAR_DATA * ch, const char * arg )
 {
   DESCRIPTOR_DATA * man;
@@ -2164,7 +2164,7 @@ bool check_repeat( CHAR_DATA * ch, const char * arg )
 
   PUSH_FUNCTION( "check_repeat" );
 
-  /* ¶p™G¨O´D™±Æa©Œ¨O®S¶≥¥y≠z™Ì´h§£•Œ */
+  /* Â¶ÇÊûúÊòØÈùûÁé©ÂÆ∂ÊàñÊòØÊ≤íÊúâÊèèËø∞Ë°®Ââá‰∏çÁî® */
   if ( IS_NPC( ch ) || !( man = ch->desc ) || !*arg || !ChatRecord )
     RETURN( FALSE );
 
@@ -2172,7 +2172,7 @@ bool check_repeat( CHAR_DATA * ch, const char * arg )
   {
     if ( !man->last_chat[loop] || !*(man->last_chat[loop] ) ) continue;
 
-    /* ¶p™G¨O™∫∏‹™∫√gª@ */
+    /* Â¶ÇÊûúÊòØÁöÑË©±ÁöÑÊá≤ÁΩ∞ */
     if ( !str_cmp( man->last_chat[loop] , arg ) )
     {
       man->chat_error += chat_penalty;
@@ -2182,15 +2182,15 @@ bool check_repeat( CHAR_DATA * ch, const char * arg )
 
   if ( str_len( arg ) >= ( sizeof( man->last_chat[loop] ) - 1 ) )
   {
-    mudlog( LOG_DEBUG, "check_repeat: ¶r¶Í§”™¯." );
+    mudlog( LOG_DEBUG, "check_repeat: Â≠ó‰∏≤Â§™Èï∑." );
     RETURN( FALSE );
   }
 
-  /* Ω’æ„∞}¶C */
+  /* Ë™øÊï¥Èô£Âàó */
   for ( loop = 1; loop < CHAT_REPEAT; loop++ )
     str_cpy( man->last_chat[loop - 1] , man->last_chat[loop] );
 
-  /* ∞Oø˝≥o§@¶∏™∫±‘≠z */
+  /* Ë®òÈåÑÈÄô‰∏ÄÊ¨°ÁöÑÊïòËø∞ */
   str_cpy( man->last_chat[CHAT_REPEAT-1] , arg );
 
   RETURN( FALSE );
@@ -2203,7 +2203,7 @@ void delete_chat( CHAR_DATA * ch )
 
   PUSH_FUNCTION( "delete_chat" );
 
-  /* ¶p™G¨O´D™±Æa©Œ¨O®S¶≥¥y≠z™Ì´h§£•Œ */
+  /* Â¶ÇÊûúÊòØÈùûÁé©ÂÆ∂ÊàñÊòØÊ≤íÊúâÊèèËø∞Ë°®Ââá‰∏çÁî® */
   if ( IS_NPC( ch ) || !( man = ch->desc ) ) RETURN_NULL();
 
   for ( loop = CHAT_REPEAT - 2; loop >= 0; loop-- )
@@ -2219,7 +2219,7 @@ bool check_cname_xname( char * arg )
 
   PUSH_FUNCTION( "check_name_xname" );
 
-  /* ¶W∫Ÿ™¯´◊§@©w§£•i•H */
+  /* ÂêçÁ®±Èï∑Â∫¶‰∏ÄÂÆö‰∏çÂèØ‰ª• */
   if ( !arg || !*arg ) RETURN( TRUE );
 
   for ( pXname = xnames_first; pXname; pXname = pXname->next )
@@ -2227,7 +2227,7 @@ bool check_cname_xname( char * arg )
     if ( pXname->type == XNAMES_CNAME && strstr( arg, pXname->word ) )
       RETURN( TRUE );
 
-    /* ∂¢≤·´OØd¶r§]§£•i•H∑Ìß@§§§Â¶W∫Ÿ */
+    /* ÈñíËÅä‰øùÁïôÂ≠ó‰πü‰∏çÂèØ‰ª•Áï∂‰Ωú‰∏≠ÊñáÂêçÁ®± */
     if ( pXname->type == XNAMES_CHAT && pXname->word && *pXname->word )
     {
       if ( ( *pXname->word == '@' && str_str( arg, pXname->word + 1 ) )
@@ -2259,7 +2259,7 @@ bool check_chat_xname( CHAR_DATA * ch, char * arg )
 
   if ( !ch || !verify_char( ch ) )
   {
-    mudlog( LOG_DEBUG, "check_chat_xname: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "check_chat_xname: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( FALSE );
   }
 
@@ -2330,11 +2330,11 @@ bool check_chat_xname( CHAR_DATA * ch, char * arg )
           {
             ch->desc->chat_error += chat_penalty;
             if ( ch->pcdata ) ch->pcdata->xname++;
-            send_to_char( "≥¬∑–™`∑NßA™∫ª°∏‹•Œµ¸°T\n\r" , ch );
+            send_to_char( "È∫ªÁÖ©Ê≥®ÊÑè‰Ω†ÁöÑË™™Ë©±Áî®Ë©ûÔπó\n\r" , ch );
           }
 
-          mudlog( LOG_LOWLIFE, "%s%s ®œ•Œ§£∂Æ¶r %s"
-            , IS_NPC( ch ) ? "[©«™´]" : "", ch->name, arg );
+          mudlog( LOG_LOWLIFE, "%s%s ‰ΩøÁî®‰∏çÈõÖÂ≠ó %s"
+            , IS_NPC( ch ) ? "[ÊÄ™Áâ©]" : "", ch->name, arg );
 
           RETURN( TRUE );
         }
@@ -2359,13 +2359,13 @@ CHAR_DATA * shape_mobile( MOB_INDEX_DATA * pMobIndex, ROOM_INDEX_DATA * pRoom )
 
   if ( !pMobIndex || !pRoom )
   {
-    mudlog( LOG_DEBUG, "shape_mobile: ®”∑Ω¨O™≈™∫." );
+    mudlog( LOG_DEBUG, "shape_mobile: ‰æÜÊ∫êÊòØÁ©∫ÁöÑ." );
     RETURN( NULL );
   }
 
   if ( !( mob = create_mobile( pMobIndex, -1 ) ) )
   {
-    mudlog( LOG_DEBUG, "shape_mobile: Ω∆ªs©«™´ %d ø˘ª~.", pMobIndex->vnum );
+    mudlog( LOG_DEBUG, "shape_mobile: Ë§áË£ΩÊÄ™Áâ© %d ÈåØË™§.", pMobIndex->vnum );
     RETURN( NULL );
   }
 
@@ -2373,7 +2373,7 @@ CHAR_DATA * shape_mobile( MOB_INDEX_DATA * pMobIndex, ROOM_INDEX_DATA * pRoom )
 
   if ( !( pArea = pRoom->area ) )
   {
-    mudlog( LOG_DEBUG, "shape_mobile: ©«™´ %d ß‰§£®Ï≠Ï©l∞œ∞Ï."
+    mudlog( LOG_DEBUG, "shape_mobile: ÊÄ™Áâ© %d Êâæ‰∏çÂà∞ÂéüÂßãÂçÄÂüü."
       , pMobIndex->vnum );
     RETURN( mob );
   }
@@ -2400,14 +2400,14 @@ CHAR_DATA * shape_mobile( MOB_INDEX_DATA * pMobIndex, ROOM_INDEX_DATA * pRoom )
 
       if ( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
       {
-        mudlog( LOG_DEBUG, "shape_mobile: ©«™´ %d ß‰§£®Ï™´´~∏πΩX %d."
+        mudlog( LOG_DEBUG, "shape_mobile: ÊÄ™Áâ© %d Êâæ‰∏çÂà∞Áâ©ÂìÅËôüÁ¢º %d."
           , pMobIndex->vnum , pReset->arg2 );
         continue;
       }
 
       if ( !( obj = create_object( pObjIndex, -1 ) ) )
       {
-        mudlog( LOG_DEBUG, "shape_mobile: ©«™´ %d Ω∆ªs™´´~∏πΩX %d ø˘ª~."
+        mudlog( LOG_DEBUG, "shape_mobile: ÊÄ™Áâ© %d Ë§áË£ΩÁâ©ÂìÅËôüÁ¢º %d ÈåØË™§."
           , pMobIndex->vnum, pReset->arg2 );
         continue;
       }
@@ -2420,7 +2420,7 @@ CHAR_DATA * shape_mobile( MOB_INDEX_DATA * pMobIndex, ROOM_INDEX_DATA * pRoom )
   RETURN( mob );
 }
 
-/* ≠◊•ø≠t≠´º∆∂q©Œ¨O≠´∂q */
+/* ‰øÆÊ≠£Ë≤†ÈáçÊï∏ÈáèÊàñÊòØÈáçÈáè */
 void adjust_carry( CHAR_DATA * ch )
 {
   OBJ_DATA * obj;
@@ -2428,25 +2428,25 @@ void adjust_carry( CHAR_DATA * ch )
 
   PUSH_FUNCTION( "adjust_carry_number" );
 
-  /* ¿À¨d®”∑Ω */
+  /* Ê™¢Êü•‰æÜÊ∫ê */
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "adjust_carry_number: ®”∑Ω¨O™≈™∫." );
+    mudlog( LOG_DEBUG, "adjust_carry_number: ‰æÜÊ∫êÊòØÁ©∫ÁöÑ." );
     RETURN_NULL();
   }
 
-  /* Ø´±⁄≥£§£ª›≠n¿À¨d */
+  /* Á•ûÊóèÈÉΩ‰∏çÈúÄË¶ÅÊ™¢Êü• */
   if ( IS_IMMORTAL( ch ) ) RETURN_NULL();
 
   for ( obj = ch->carrying; obj; obj = obj_next )
   {
-    /* ¶p™Gº∆•ÿ©Œ¨O≠´∂q∂WπL */
+    /* Â¶ÇÊûúÊï∏ÁõÆÊàñÊòØÈáçÈáèË∂ÖÈÅé */
     if ( ch->carry_number <= can_carry_n( ch )
       && get_carry_weight( ch ) <= can_carry_w( ch ) ) break;
 
     obj_next = obj->next_content;
 
-    /* ¿À¨dØ‡§£Ø‡•· */
+    /* Ê™¢Êü•ËÉΩ‰∏çËÉΩ‰∏ü */
     if ( obj->wear_loc == WEAR_NONE
        && can_see_obj( ch, obj )
        && !can_drop_obj( ch, obj )
@@ -2454,7 +2454,7 @@ void adjust_carry( CHAR_DATA * ch )
     {
       obj_from_char( obj );
       obj_to_room( obj, ch->in_room );
-      act( "$n¶]≠t≤¸§£§F¶”•·±º$p°C", ch, obj, NULL, TO_ALL );
+      act( "$nÂõ†Ë≤†Ëç∑‰∏ç‰∫ÜËÄå‰∏üÊéâ$p„ÄÇ", ch, obj, NULL, TO_ALL );
     }
   }
   RETURN_NULL();
@@ -2472,27 +2472,27 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
 
   if ( !obj )
   {
-    mudlog( LOG_DEBUG, "identify_obj: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "identify_obj: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
   clear_buffer();
-  send_to_buffer( "™´´~¶W∫Ÿ°R%s\n\r§§§Â¶W∫Ÿ°R%s\n\r", obj->name, obj->cname );
+  send_to_buffer( "Áâ©ÂìÅÂêçÁ®±Ôπï%s\n\r‰∏≠ÊñáÂêçÁ®±Ôπï%s\n\r", obj->name, obj->cname );
 
   if ( str_cmp( obj->pIndexData->short_descr, obj->cname ) )
-    send_to_buffer( "≠Ï    ¶W°R%s\n\r", obj->pIndexData->short_descr );
+    send_to_buffer( "Âéü    ÂêçÔπï%s\n\r", obj->pIndexData->short_descr );
 
   send_to_buffer(
-    "™˛•[∫Xº–°R%s\n\r"
-    "√˛    ßO°R%s\n\r"
-    "≠´    ∂q°R%d §Ω§Á\n\r"
-    "ª˘    ≠»°R%d §∏\n\r"
-    "µ•    Ø≈°R%d Ø≈\n\r"
-    "¨Oß_¶≥¨r°R%s\n\r"
-    "πH ∏T ´~°R%s\n\r"
-    "•i•H§…Ø≈°R%s\n\r"
-    "•i•H±H©Ò°R%s\n\r"
-    "∑l√a™¨∫A°R"
+    "ÈôÑÂä†ÊóóÊ®ôÔπï%s\n\r"
+    "È°û    Âà•Ôπï%s\n\r"
+    "Èáç    ÈáèÔπï%d ÂÖ¨Êñ§\n\r"
+    "ÂÉπ    ÂÄºÔπï%d ÂÖÉ\n\r"
+    "Á≠â    Á¥öÔπï%d Á¥ö\n\r"
+    "ÊòØÂê¶ÊúâÊØíÔπï%s\n\r"
+    "ÈÅï Á¶Å ÂìÅÔπï%s\n\r"
+    "ÂèØ‰ª•ÂçáÁ¥öÔπï%s\n\r"
+    "ÂèØ‰ª•ÂØÑÊîæÔπï%s\n\r"
+    "ÊêçÂ£ûÁãÄÊÖãÔπï"
     , extra_bit_name( obj )
     , item_type_name( obj->pIndexData )
     , obj->weight , obj->cost , obj->level
@@ -2510,7 +2510,7 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
 
   else
   {
-    send_to_buffer( "≥o∂µ∏À≥∆§£∑|∑l√a\n\r" );
+    send_to_buffer( "ÈÄôÈ†ÖË£ùÂÇô‰∏çÊúÉÊêçÂ£û\n\r" );
   }
 
   switch ( obj->item_type )
@@ -2536,98 +2536,98 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
     break;
 
   case ITEM_URN:
-    send_to_buffer( "´ ¶L§H™´°R" );
+    send_to_buffer( "Â∞ÅÂç∞‰∫∫Áâ©Ôπï" );
 
     if ( ( pMob = get_mob_index( obj->value[0] ) ) )
       send_to_buffer( "%s\n\r", mob_index_name( NULL, pMob ) );
     else
-      send_to_buffer( "±qØ \n\r" );
+      send_to_buffer( "ÂæûÁº∫\n\r" );
 
     break;
 
   case ITEM_FIREWORK:
-    send_to_buffer( "¨I©Ò∂Z¬˜°R%d ÆÊ\n\r", obj->value[0] );
+    send_to_buffer( "ÊñΩÊîæË∑ùÈõ¢Ôπï%d Ê†º\n\r", obj->value[0] );
 
-    send_to_buffer( "¶M¿Iµ{´◊°R%s\n\r",
-      ( obj->value[1] <= 0 ) ? "®S¶≥" :
-      ( ( obj->value[1] <= 50 ) ? "®«≥\\" : "´‹∞™" ) );
+    send_to_buffer( "Âç±Èö™Á®ãÂ∫¶Ôπï%s\n\r",
+      ( obj->value[1] <= 0 ) ? "Ê≤íÊúâ" :
+      ( ( obj->value[1] <= 50 ) ? "‰∫õË®±\" : "ÂæàÈ´ò" ) );
 
     break;
 
   case ITEM_VELLUM:
-    send_to_buffer( "•ÿ´e§∫Æe°R%s\n\r",
+    send_to_buffer( "ÁõÆÂâçÂÖßÂÆπÔπï%s\n\r",
       ( obj->description && str_len( obj->description ) >= 2 )
-      ? "§w≥QÆ—ºg" : "™≈•’µL¶r" );
+      ? "Â∑≤Ë¢´Êõ∏ÂØ´" : "Á©∫ÁôΩÁÑ°Â≠ó" );
 
     break;
 
   case ITEM_ORE:
-    send_to_buffer( "•¥≥yª˘ÆÊ°R%d\n\r", obj->value[3] );
+    send_to_buffer( "ÊâìÈÄ†ÂÉπÊ†ºÔπï%d\n\r", obj->value[3] );
     break;
 
   case ITEM_CONTAINER:
-    send_to_buffer( "¶s©Ò≠´∂q°R%d\n\r", obj->value[0] );
+    send_to_buffer( "Â≠òÊîæÈáçÈáèÔπï%d\n\r", obj->value[0] );
     break;
 
   case ITEM_DRINK_CON:
-    send_to_buffer( "≥Ã§jÆe∂q°R%d\n\r", obj->value[0] );
-    send_to_buffer( "•ÿ´eÆe∂q°R%d\n\r", obj->value[1] );
-    send_to_buffer( "¨Oß_¶≥¨r°R%s\n\r", obj->value[3] == 0 ? "µL¨r" : "¶≥¨r" );
+    send_to_buffer( "ÊúÄÂ§ßÂÆπÈáèÔπï%d\n\r", obj->value[0] );
+    send_to_buffer( "ÁõÆÂâçÂÆπÈáèÔπï%d\n\r", obj->value[1] );
+    send_to_buffer( "ÊòØÂê¶ÊúâÊØíÔπï%s\n\r", obj->value[3] == 0 ? "ÁÑ°ÊØí" : "ÊúâÊØí" );
     break;
 
   case ITEM_FOOD:
-    send_to_buffer( "≤{¶≥¶∏º∆°R%d\n\r", obj->value[2] );
-    send_to_buffer( "¨Oß_¶≥¨r°R%s\n\r", obj->value[3] == 0 ? "µL¨r" : "¶≥¨r" );
+    send_to_buffer( "ÁèæÊúâÊ¨°Êï∏Ôπï%d\n\r", obj->value[2] );
+    send_to_buffer( "ÊòØÂê¶ÊúâÊØíÔπï%s\n\r", obj->value[3] == 0 ? "ÁÑ°ÊØí" : "ÊúâÊØí" );
     break;
 
   case ITEM_LIGHT:
-    send_to_buffer( "®œ•ŒÆ…∂°°R%d §pÆ…\n\r", obj->value[2] );
+    send_to_buffer( "‰ΩøÁî®ÊôÇÈñìÔπï%d Â∞èÊôÇ\n\r", obj->value[2] );
     break;
 
   case ITEM_ARROW:
-    send_to_buffer( "ß¿ª∂ÀÆ`°R•— %d ®Ï %d°u•≠ß°∂ÀÆ` %d°v\n\r"
+    send_to_buffer( "ÊîªÊìäÂÇ∑ÂÆ≥ÔπïÁî± %d Âà∞ %d„ÄåÂπ≥ÂùáÂÇ∑ÂÆ≥ %d„Äç\n\r"
       , obj->value[0], obj->value[1]
       , ( obj->value[0] + obj->value[1] ) / 2 );
 
     break;
 
   case ITEM_WEAPON:
-    send_to_buffer( "™Zæπ∫ÿ√˛°R%s\n\r", weapon_type_name( obj->value[3] ) );
-    send_to_buffer( "ß¿ª∂ÀÆ`°R•— %d ®Ï %d°u•≠ß°∂ÀÆ` %d°v\n\r"
+    send_to_buffer( "Ê≠¶Âô®Á®ÆÈ°ûÔπï%s\n\r", weapon_type_name( obj->value[3] ) );
+    send_to_buffer( "ÊîªÊìäÂÇ∑ÂÆ≥ÔπïÁî± %d Âà∞ %d„ÄåÂπ≥ÂùáÂÇ∑ÂÆ≥ %d„Äç\n\r"
       , obj->value[1], obj->value[2]
       , ( obj->value[1] + obj->value[2] ) / 2 );
     break;
 
   case ITEM_ARMOR:
-    send_to_buffer( "®æ≈@µ•Ø≈°R%d Ø≈\n\r", obj->value[0] );
+    send_to_buffer( "Èò≤Ë≠∑Á≠âÁ¥öÔπï%d Á¥ö\n\r", obj->value[0] );
     break;
 
   case ITEM_BACKBAG:
-    send_to_buffer( "≥Ã¶hº∆∂q°R%d ∞¶\n\r", obj->value[0] );
-    send_to_buffer( "•ÿ´eº∆∂q°R%d ∞¶\n\r", obj->value[1] );
+    send_to_buffer( "ÊúÄÂ§öÊï∏ÈáèÔπï%d Èöª\n\r", obj->value[0] );
+    send_to_buffer( "ÁõÆÂâçÊï∏ÈáèÔπï%d Èöª\n\r", obj->value[1] );
 
     if ( ( pIndex = get_obj_index( obj->value[2] ) ) )
     {
-      send_to_buffer( "™Zæπ¶W∫Ÿ°R%s(%s)\n\r"
+      send_to_buffer( "Ê≠¶Âô®ÂêçÁ®±Ôπï%s(%s)\n\r"
         , pIndex->short_descr, pIndex->name );
     }
     else
     {
-      send_to_buffer( "™Zæπ¶W∫Ÿ°R±qØ \n\r" );
+      send_to_buffer( "Ê≠¶Âô®ÂêçÁ®±ÔπïÂæûÁº∫\n\r" );
     }
 
     break;
 
   case ITEM_SPIRITJADE:
-    send_to_buffer( "§p∞≠µ•Ø≈°R%d Ø≈\n\r", obj->value[1] );
-    send_to_buffer( "§p∞≠∏g≈Á°R%d\n\r"   , obj->value[2] );
+    send_to_buffer( "Â∞èÈ¨ºÁ≠âÁ¥öÔπï%d Á¥ö\n\r", obj->value[1] );
+    send_to_buffer( "Â∞èÈ¨ºÁ∂ìÈ©óÔπï%d\n\r"   , obj->value[2] );
     break;
 
   case ITEM_STAFF:
   case ITEM_WAND:
-    send_to_buffer( "ºW±j™k≥N®t°R%s \n\r", skill_rating( obj->value[4] ) );
-    send_to_buffer( "•[±j´¬§O°R%d %%\n\r", obj->value[5] );
-    send_to_buffer( "≤{¶≥™k§O°R%d°C\n\r", obj->value[6] );
+    send_to_buffer( "Â¢ûÂº∑Ê≥ïË°ìÁ≥ªÔπï%s \n\r", skill_rating( obj->value[4] ) );
+    send_to_buffer( "Âä†Âº∑Â®ÅÂäõÔπï%d %%\n\r", obj->value[5] );
+    send_to_buffer( "ÁèæÊúâÊ≥ïÂäõÔπï%d„ÄÇ\n\r", obj->value[6] );
     break;
   }
 
@@ -2635,7 +2635,7 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
   {
     if ( paf->location != APPLY_NONE && paf->modifier != 0 )
     {
-      send_to_buffer( "ºv    ≈T°R%s %d ¬I\n\r"
+      send_to_buffer( "ÂΩ±    ÈüøÔπï%s %d Èªû\n\r"
         , affect_loc_name( paf->location ), paf->modifier );
     }
   }
@@ -2644,7 +2644,7 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
   {
     if ( paf->location != APPLY_NONE && paf->modifier != 0 )
     {
-      send_to_buffer( "ºv    ≈T°R%s %d ¬I\n\r"
+      send_to_buffer( "ÂΩ±    ÈüøÔπï%s %d Èªû\n\r"
         , affect_loc_name( paf->location ), paf->modifier );
     }
   }
@@ -2653,7 +2653,7 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
   {
     if ( paf->location != APPLY_NONE && paf->modifier != 0 )
     {
-      send_to_buffer( "≈]•€Æƒ¿≥°R%s %d ¬I\n\r"
+      send_to_buffer( "È≠îÁü≥ÊïàÊáâÔπï%s %d Èªû\n\r"
         , affect_loc_name( paf->location ), paf->modifier );
     }
   }
@@ -2664,13 +2664,13 @@ void identify_obj( CHAR_DATA * ch, OBJ_DATA * obj )
 
     for ( paf = pIndex->impact; paf; paf = paf->next )
     {
-      send_to_buffer( "´ ¶L≈]•€°R%s %d ¬I\n\r"
+      send_to_buffer( "Â∞ÅÂç∞È≠îÁü≥Ôπï%s %d Èªû\n\r"
         , affect_loc_name( paf->location ), paf->modifier );
     }
   }
 
   for ( pRest = obj->pIndexData->restrict; pRest; pRest = pRest->next )
-    send_to_buffer( "™´´~≠≠®Ó°R%s\n\r", restrict_value( pRest, ch ) );
+    send_to_buffer( "Áâ©ÂìÅÈôêÂà∂Ôπï%s\n\r", restrict_value( pRest, ch ) );
 
   print_buffer( ch );
   RETURN_NULL();
@@ -2699,58 +2699,58 @@ bool check_restrict( CHAR_DATA * ch, RESTRICT_DATA * pRest, bool fPrint )
   switch( pRest->type )
   {
   default:
-    if ( fPrint ) send_to_char( "≥o¨O§∞ªÚ∞≠™F¶Ë°M§œ•øßA§£Ø‡•Œ°C\n\r", ch );
+    if ( fPrint ) send_to_char( "ÈÄôÊòØ‰ªÄÈ∫ºÈ¨ºÊù±Ë•øÔπêÂèçÊ≠£‰Ω†‰∏çËÉΩÁî®„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_STR:
     if ( get_curr_str( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫§O∂q§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÂäõÈáè‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_INT:
     if ( get_curr_int( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫¥º§O§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÊô∫Âäõ‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_WIS:
     if ( get_curr_wis( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫æ«√—§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÂ≠∏Ë≠ò‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_DEX:
     if ( get_curr_dex( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫±”±∂§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÊïèÊç∑‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_CON:
     if ( get_curr_con( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫≈ÈÆÊ§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÈ´îÊ†º‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_HP:
     if ( get_curr_hit( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫•Õ©R§O§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÁîüÂëΩÂäõ‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_MANA:
     if ( get_curr_mana( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫™k§O§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÊ≥ïÂäõ‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_MOVE:
     if ( get_curr_move( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫≤æ∞ §O§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÁßªÂãïÂäõ‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_CLASS:
 
     if ( ch->class && IS_SET( pRest->value, ch->class->mask ) ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫¬æ∑~§£πÔ°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑËÅ∑Ê•≠‰∏çÂ∞ç„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_TRUST:
     if ( get_trust( ch ) >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫´H•Ù´◊§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑ‰ø°‰ªªÂ∫¶‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_SKILL:
@@ -2760,8 +2760,8 @@ bool check_restrict( CHAR_DATA * ch, RESTRICT_DATA * pRest, bool fPrint )
       || ch->skill[pRest->value] < pRest->vicevalue )
     {
       pSkill = get_skill( pRest->value );
-      if ( fPrint ) act( "πÔ§£∞_°MßA™∫$tΩm™∫¡Ÿ§£®ÏÆa°C"
-        , ch , pSkill ? pSkill->cname : "¨Y∫ÿßﬁØ‡", NULL, TO_CHAR );
+      if ( fPrint ) act( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑ$tÁ∑¥ÁöÑÈÇÑ‰∏çÂà∞ÂÆ∂„ÄÇ"
+        , ch , pSkill ? pSkill->cname : "ÊüêÁ®ÆÊäÄËÉΩ", NULL, TO_CHAR );
 
       RETURN( FALSE );
     }
@@ -2775,8 +2775,8 @@ bool check_restrict( CHAR_DATA * ch, RESTRICT_DATA * pRest, bool fPrint )
       || ch->skill[pRest->value] > pRest->vicevalue )
     {
       pSkill = get_skill( pRest->value );
-      if ( fPrint ) act( "πÔ§£∞_°MßA™∫$t©M•¶¨€Ωƒ¨€´g°T"
-        , ch , pSkill ? pSkill->cname : "¨Y∫ÿßﬁØ‡", NULL, TO_CHAR );
+      if ( fPrint ) act( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑ$tÂíåÂÆÉÁõ∏Ë°ùÁõ∏ÂâãÔπó"
+        , ch , pSkill ? pSkill->cname : "ÊüêÁ®ÆÊäÄËÉΩ", NULL, TO_CHAR );
 
       RETURN( FALSE );
     }
@@ -2786,12 +2786,12 @@ bool check_restrict( CHAR_DATA * ch, RESTRICT_DATA * pRest, bool fPrint )
   case RES_SEX:
 
     if ( ch->sex == pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫© ßO§£πÔ°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÊÄßÂà•‰∏çÂ∞ç„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_LEVEL:
     if ( ch->level >= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫µ•Ø≈§£∞˜°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÁ≠âÁ¥ö‰∏çÂ§†„ÄÇ\n\r", ch );
     RETURN( FALSE );
 
   case RES_ALIGN:
@@ -2799,12 +2799,12 @@ bool check_restrict( CHAR_DATA * ch, RESTRICT_DATA * pRest, bool fPrint )
     if ( pRest->vicevalue )
     {
       if ( ch->alignment >= pRest->value ) RETURN( TRUE );
-      if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫∞}¿Á¡Ÿ§£∞˜¶n°T\n\r", ch );
+      if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÈô£ÁáüÈÇÑ‰∏çÂ§†Â•ΩÔπó\n\r", ch );
       RETURN( FALSE );
     }
 
     if ( ch->alignment <= pRest->value ) RETURN( TRUE );
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA™∫∞}¿Á¡Ÿ§£∞˜®∏¥c°T\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÈô£ÁáüÈÇÑ‰∏çÂ§†ÈÇ™ÊÉ°Ôπó\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -2819,7 +2819,7 @@ bool check_obj_restrict( CHAR_DATA * ch, OBJ_DATA * obj , bool fPrint )
 
   if ( !ch || !obj || !obj->pIndexData )
   {
-    mudlog( LOG_DEBUG, "check_obj_restrict: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "check_obj_restrict: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( FALSE );
   }
 
@@ -2837,7 +2837,7 @@ bool check_skill_restrict( CHAR_DATA * ch, SKILL_DATA * pSkill, bool fPrint )
 
   if ( !ch || !pSkill )
   {
-    mudlog( LOG_DEBUG, "check_skill_restrict: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "check_skill_restrict: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( FALSE );
   }
 
@@ -2855,7 +2855,7 @@ bool check_skill_cast( CHAR_DATA * ch, SKILL_DATA * pSkill, bool fPrint )
 
   if ( !ch || !pSkill )
   {
-    mudlog( LOG_DEBUG, "check_skill_cast: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "check_skill_cast: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( FALSE );
   }
 
@@ -2941,7 +2941,7 @@ bool on_line( const char * name, CHAR_DATA * ch )
 
   if ( !ch || !name || !*name )
   {
-    mudlog( LOG_DEBUG, "on_line: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "on_line: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( FALSE );
   }
 
@@ -2968,7 +2968,7 @@ bool is_keeper( CHAR_DATA * pChar )
 
   if ( !pChar )
   {
-    mudlog( LOG_DEBUG, "is_keeper: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "is_keeper: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( FALSE );
   }
 
@@ -2986,7 +2986,7 @@ bool biliwick( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim )
   {
-    mudlog( LOG_DEBUG, "biliwick: ®”∑Ωø˘ª~." );
+    mudlog( LOG_DEBUG, "biliwick: ‰æÜÊ∫êÈåØË™§." );
     RETURN( FALSE );
   }
 
@@ -3007,7 +3007,7 @@ void fix_color( char * name )
 
   if ( !name )
   {
-    mudlog( LOG_DEBUG, "fix_color: Ø •F®”∑Ω" );
+    mudlog( LOG_DEBUG, "fix_color: Áº∫‰πè‰æÜÊ∫ê" );
     RETURN_NULL();
   }
 
@@ -3041,7 +3041,7 @@ bool is_dead( CHAR_DATA * ch )
 
   if ( !ch || !verify_char( ch ) )
   {
-    mudlog( LOG_DEBUG, "is_dead: §H™´®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "is_dead: ‰∫∫Áâ©‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( TRUE );
   }
 
@@ -3059,7 +3059,7 @@ bool check_valid_rating( CHAR_DATA * ch, SKILL_DATA * pSkill, bool fPrint )
 
   if ( !ch || !pSkill )
   {
-    mudlog( LOG_DEBUG, "check_valid_rating: ®”∑Ωø˘ª~." );
+    mudlog( LOG_DEBUG, "check_valid_rating: ‰æÜÊ∫êÈåØË™§." );
     RETURN( FALSE );
   }
 
@@ -3071,7 +3071,7 @@ bool check_valid_rating( CHAR_DATA * ch, SKILL_DATA * pSkill, bool fPrint )
       && pSkill->antirating == aSkill->rating
       && !IS_IMMORTAL( ch ) )
     {
-      if ( fPrint ) act( "ßA™∫$wßﬁØ‡ªP$WßﬁØ‡¨€Ωƒ¨°C"
+      if ( fPrint ) act( "‰Ω†ÁöÑ$wÊäÄËÉΩËàá$WÊäÄËÉΩÁõ∏Ë°ùÁ™Å„ÄÇ"
         , ch, pSkill, aSkill, TO_CHAR );
 
       if ( ch->skill[ pSkill->slot ] != 0 ) cancel_skill( ch, pSkill );
@@ -3089,32 +3089,32 @@ bool can_char_from_room( CHAR_DATA * ch, bool fPrint )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "can_char_from_room: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "can_char_from_room: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( FALSE );
   }
 
   if ( !ch->in_room )
   {
-    if ( fPrint ) send_to_char( "ßA¶b¡eΩz§ßπ“°M∑Q®´≥£®´§£§F°T\n\r", ch );
+    if ( fPrint ) send_to_char( "‰Ω†Âú®Á∏πÁ∑≤‰πãÂ¢ÉÔπêÊÉ≥Ëµ∞ÈÉΩËµ∞‰∏ç‰∫ÜÔπó\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->mount )
   {
-    if ( fPrint ) send_to_char( "ßA¡Ÿ¶bß§√M§W≠C°M•˝§U®”ßa°T\n\r", ch );
+    if ( fPrint ) send_to_char( "‰Ω†ÈÇÑÂú®ÂùêÈ®é‰∏äËÄ∂ÔπêÂÖà‰∏ã‰æÜÂêßÔπó\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->mount_by )
   {
-    if ( fPrint ) send_to_char( "ßA¡Ÿ≥Q§H√Mµ€´®°T\n\r", ch );
+    if ( fPrint ) send_to_char( "‰Ω†ÈÇÑË¢´‰∫∫È®éËëóÂíßÔπó\n\r", ch );
     RETURN( FALSE );
   }
 
   RETURN( TRUE );
 }
 
-/* ®˙Æ¯ßﬁØ‡®√•B®˙Æ¯≠PØ‡ */
+/* ÂèñÊ∂àÊäÄËÉΩ‰∏¶‰∏îÂèñÊ∂àËá¥ËÉΩ */
 void cancel_skill( CHAR_DATA * ch, SKILL_DATA * pSkill )
 {
   ENABLE_DATA * pEnable;
@@ -3125,29 +3125,29 @@ void cancel_skill( CHAR_DATA * ch, SKILL_DATA * pSkill )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "cancel_skill: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "cancel_skill: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
-  /* ©«™´§@©w§£Ø‡ƒ¿©Ò */
+  /* ÊÄ™Áâ©‰∏ÄÂÆö‰∏çËÉΩÈáãÊîæ */
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
   slot = pSkill->slot;
   if ( slot < 0 || slot >= MAX_SKILL )
   {
-    mudlog( LOG_DEBUG, "cancel_skill: ßﬁØ‡∏πΩX %d §£¶X≤z.", slot );
+    mudlog( LOG_DEBUG, "cancel_skill: ÊäÄËÉΩËôüÁ¢º %d ‰∏çÂêàÁêÜ.", slot );
     RETURN_NULL();
   }
 
   if ( ch->skill[slot] <= 0 )
   {
-    mudlog( LOG_DEBUG, "cancel_skill: ≠Ï•ªßﬁØ‡ºÙΩm´◊¨Oπs." );
+    mudlog( LOG_DEBUG, "cancel_skill: ÂéüÊú¨ÊäÄËÉΩÁÜüÁ∑¥Â∫¶ÊòØÈõ∂." );
     RETURN_NULL();
   }
 
   ch->skill[slot] = 0;
 
-  /* ®˙Æ¯•L™∫≥o∂µßﬁØ‡™∫≠PØ‡ */
+  /* ÂèñÊ∂à‰ªñÁöÑÈÄôÈ†ÖÊäÄËÉΩÁöÑËá¥ËÉΩ */
   for ( pEnable = ch->enable; pEnable; pEnable = zEnable )
   {
     zEnable = pEnable->next;
@@ -3165,14 +3165,14 @@ char * host_name( DESCRIPTOR_DATA * pDesc )
 
   if ( !pDesc )
   {
-    mudlog( LOG_DEBUG, "host_name: Ø •F®”∑Ω." );
-    RETURN( "§£∏‘" );
+    mudlog( LOG_DEBUG, "host_name: Áº∫‰πè‰æÜÊ∫ê." );
+    RETURN( "‰∏çË©≥" );
   }
 
   sprintf( buf, "%s%s%s"
     , pDesc->remote && pDesc->remote[0] ? pDesc->remote : ""
     , pDesc->remote && pDesc->remote[0] ? "@"           : ""
-    , pDesc->host   && pDesc->host[0]   ? pDesc->host   : "(§£∏‘)" );
+    , pDesc->host   && pDesc->host[0]   ? pDesc->host   : "(‰∏çË©≥)" );
 
   RETURN( buf );
 }
@@ -3185,14 +3185,14 @@ bool poison_char( CHAR_DATA * ch, OBJ_DATA * obj )
 
   if ( !ch || !obj )
   {
-    mudlog( LOG_DEBUG, "poison_obj: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "poison_obj: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( FALSE );
   }
 
   if ( obj->venom <= 0 || get_curr_str( ch ) <= 2 ) RETURN( FALSE );
 
-  act( "¡V§F°M$p¨›∞_®”¨O¶≥©Ÿ¨r™∫°MßA§§¨r§F°T", ch, obj, NULL, TO_CHAR );
-  act( "$n∫N®Ï$p°M¶˝¨O$p¨›∞_®”¨O¶≥¨r™∫°T"    , ch, obj, NULL, TO_ROOM );
+  act( "Á≥ü‰∫ÜÔπê$pÁúãËµ∑‰æÜÊòØÊúâÊäπÊØíÁöÑÔπê‰Ω†‰∏≠ÊØí‰∫ÜÔπó", ch, obj, NULL, TO_CHAR );
+  act( "$nÊë∏Âà∞$pÔπê‰ΩÜÊòØ$pÁúãËµ∑‰æÜÊòØÊúâÊØíÁöÑÔπó"    , ch, obj, NULL, TO_ROOM );
 
   af.type      = SLOT_POISON;
   af.duration  = obj->venom;
@@ -3273,7 +3273,7 @@ void calculate_armor( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "calculate_armor: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "calculate_armor: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
@@ -3311,7 +3311,7 @@ AREA_DATA * get_home( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "check_home: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "check_home: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     RETURN( NULL );
   }
 
@@ -3332,7 +3332,7 @@ ROOM_INDEX_DATA * get_hometown( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_hometown: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "get_hometown: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( RoomRecall );
   }
 
@@ -3350,13 +3350,13 @@ void set_variable( const char * keyword, int value, int hours )
 
   if ( !keyword || !*keyword )
   {
-    mudlog( LOG_DEBUG, "set_variable: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "set_variable: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
   if ( hours <= 0 )
   {
-    mudlog( LOG_DEBUG, "set_variable: Æ…∂°§£¶X≤z." );
+    mudlog( LOG_DEBUG, "set_variable: ÊôÇÈñì‰∏çÂêàÁêÜ." );
     RETURN_NULL();
   }
 
@@ -3389,7 +3389,7 @@ int check_variable( const char * keyword, int value )
 
   if ( !keyword || !*keyword )
   {
-    mudlog( LOG_DEBUG, "set_variable: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "set_variable: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( VARIABLE_ILLEGAL );
   }
 
@@ -3415,7 +3415,7 @@ bool char_autofood( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "char_autofood: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "char_autofood: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( FALSE );
   }
 
@@ -3433,7 +3433,7 @@ size_t get_learnable( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_learnable: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "get_learnable: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( 0 );
   }
 
@@ -3441,7 +3441,7 @@ size_t get_learnable( CHAR_DATA * ch )
 
   if ( !ch->class )
   {
-    mudlog( LOG_DEBUG, "get_learnable: %s Ø •F¬æ∑~.", ch->name );
+    mudlog( LOG_DEBUG, "get_learnable: %s Áº∫‰πèËÅ∑Ê•≠.", ch->name );
     RETURN( 0 );
   }
 
@@ -3527,7 +3527,7 @@ int personal_asset( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "personal_asset: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "personal_asset: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( 0 );
   }
 
@@ -3575,7 +3575,7 @@ bool over_scale( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "over_scale: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "over_scale: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( TRUE );
   }
 
@@ -3630,11 +3630,11 @@ char * mob_name( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( ch && !can_see( ch, victim ) )
   {
-    RETURN( "¨Y§£™æ¶W§H™´" );
+    RETURN( "Êüê‰∏çÁü•Âêç‰∫∫Áâ©" );
   }
   else if ( ch && ch == victim )
   {
-    RETURN( "ßA" );
+    RETURN( "‰Ω†" );
   }
 
   if ( IS_NPC( victim ) )
@@ -3689,7 +3689,7 @@ void clear_return( char * source, char * target )
 
   if ( !source || !target )
   {
-    mudlog( LOG_DEBUG, "clear_return: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "clear_return: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
@@ -3705,7 +3705,7 @@ bool can_leaveroom( CHAR_DATA * ch, bool fPrint )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "can_leaveroom: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "can_leaveroom: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( FALSE );
   }
 
@@ -3713,19 +3713,19 @@ bool can_leaveroom( CHAR_DATA * ch, bool fPrint )
 
   if ( ch->position != POS_STANDING )
   {
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MΩ–•˝∏—®MßA™∫®∆±°ßa°T\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑ÔπêË´ãÂÖàËß£Ê±∫‰Ω†ÁöÑ‰∫ãÊÉÖÂêßÔπó\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->mount || ch->mount_by )
   {
-    if ( fPrint ) send_to_char( "ßA¶≥ß§√M≠C°M•˝§U®”ßa°C\n\r", ch );
+    if ( fPrint ) send_to_char( "‰Ω†ÊúâÂùêÈ®éËÄ∂ÔπêÂÖà‰∏ã‰æÜÂêß„ÄÇ\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->spirit )
   {
-    if ( fPrint ) act( "ßA•˝ß‚ßA™∫$N¶¨∞_®”ßa°M§£µM$N¨Oß‰§£®ÏßA™∫°T"
+    if ( fPrint ) act( "‰Ω†ÂÖàÊää‰Ω†ÁöÑ$NÊî∂Ëµ∑‰æÜÂêßÔπê‰∏çÁÑ∂$NÊòØÊâæ‰∏çÂà∞‰Ω†ÁöÑÔπó"
       , ch, NULL, ch->spirit, TO_CHAR );
 
     RETURN( FALSE );
@@ -3733,25 +3733,25 @@ bool can_leaveroom( CHAR_DATA * ch, bool fPrint )
 
   if ( is_pk( ch ) )
   {
-    if ( fPrint ) send_to_char( "ßA•ø¶b™Z∞´§j∑|∏Ã°M®S¶≥øÏ™k∂«∞eßA≠C°T\n\r", ch );
+    if ( fPrint ) send_to_char( "‰Ω†Ê≠£Âú®Ê≠¶È¨•Â§ßÊúÉË£°ÔπêÊ≤íÊúâËæ¶Ê≥ïÂÇ≥ÈÄÅ‰Ω†ËÄ∂Ôπó\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->failed > 0 )
   {
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA¡Ÿ¶b´‰πL§§°MµL™k∂«∞e°T\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÈÇÑÂú®ÊÄùÈÅé‰∏≠ÔπêÁÑ°Ê≥ïÂÇ≥ÈÄÅÔπó\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->jail > 0 )
   {
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MßA¡Ÿ¶bß§®c°MµL™k∂«∞e°T\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÈÇÑÂú®ÂùêÁâ¢ÔπêÁÑ°Ê≥ïÂÇ≥ÈÄÅÔπó\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->in_room->NoRecall || is_affected( ch, SLOT_CURSE ) )
   {
-    if ( fPrint ) send_to_char( "πÔ§£∞_°MØ´øÚ±Û§FßA°C\n\r", ch );
+    if ( fPrint ) send_to_char( "Â∞ç‰∏çËµ∑ÔπêÁ•ûÈÅ∫Ê£Ñ‰∫Ü‰Ω†„ÄÇ\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -3825,7 +3825,7 @@ bool check_class_attr( CHAR_DATA * ch )
 
   PUSH_FUNCTION( "check_class_attr" );
 
-  /* ©«™´®S¶≥≠≠®Óƒ›© , Ø´±⁄§]®S¶≥ */
+  /* ÊÄ™Áâ©Ê≤íÊúâÈôêÂà∂Â±¨ÊÄß, Á•ûÊóè‰πüÊ≤íÊúâ */
   if ( !ch
     || !verify_char( ch )
     || IS_NPC( ch )
@@ -3855,7 +3855,7 @@ void affect_recount( CHAR_DATA * ch )
 
   if ( !ch || IS_NPC( ch ) || !verify_char( ch ) ) RETURN_NULL();
 
-  /* •˝¬kπs */
+  /* ÂÖàÊ≠∏Èõ∂ */
   if ( ch->pcdata )
   {
     ch->pcdata->mod_str = 0;
@@ -3890,7 +3890,7 @@ void affect_recount( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* µπ≠´∑s≠p∫‚ƒ›© •Œ */
+/* Áµ¶ÈáçÊñ∞Ë®àÁÆóÂ±¨ÊÄßÁî® */
 void affect_modify_attr( CHAR_DATA * ch, AFFECT_DATA * paf, bool fAdd )
 {
   int mod;
@@ -3899,13 +3899,13 @@ void affect_modify_attr( CHAR_DATA * ch, AFFECT_DATA * paf, bool fAdd )
 
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
-  /* fAdd ≠Y¨∞Øu´hºW•[≠◊π¢≠», §œ§ß¨€§œ */
+  /* fAdd Ëã•ÁÇ∫ÁúüÂâáÂ¢ûÂä†‰øÆÈ£æÂÄº, Âèç‰πãÁõ∏Âèç */
   mod = fAdd ? paf->modifier : -paf->modifier;
 
   switch ( paf->location )
   {
   default:
-    mudlog( LOG_DEBUG , "Affect_modify_attr: •º™æ™∫¶a§Ë %d.", paf->location );
+    mudlog( LOG_DEBUG , "Affect_modify_attr: Êú™Áü•ÁöÑÂú∞Êñπ %d.", paf->location );
     RETURN_NULL();
 
   case APPLY_NONE:

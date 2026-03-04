@@ -1,10 +1,10 @@
 Vnum            519
 Name            silk sacrf~
-ShortDesc       °ª¯Åµ·½è»â±a~
+ShortDesc       é«˜ç´šçµ²è³ªé ˜å¸¶~
 Description
-¤@±ø°ª¯Å²Ô¤h»â±a(silk scarf)¡M¥i¥H¦bµ²±Bªº®É­Ô¬ï¡C
+ä¸€æ¢é«˜ç´šç´³å£«é ˜å¸¶(silk scarf)ï¹å¯ä»¥åœ¨çµå©šçš„æ™‚å€™ç©¿ã€‚
 ~
-Unit            ±ø~
+Unit            æ¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_NECK
 Takeable        Yes

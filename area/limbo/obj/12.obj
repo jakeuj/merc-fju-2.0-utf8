@@ -1,9 +1,9 @@
 Vnum            12
 Name            lamp~
-ShortDesc       ¿OÅ¢~
+ShortDesc       ç‡ˆç± ~
 Description
-¤@·ø¥ú½u·L®zªº¿OÅ¢(lamp)¡C~
-Unit            ·ø~
+ä¸€ç›žå…‰ç·šå¾®å¼±çš„ç‡ˆç± (lamp)ã€‚~
+Unit            ç›ž~
 ItemType        ITEM_LIGHT
 WearLoc         ITEM_WEAR_LIGHT
 Takeable        Yes

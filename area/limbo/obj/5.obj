@@ -1,9 +1,9 @@
 Vnum            5
 Name            corpse~
-ShortDesc       %s ªº«Í­º~
+ShortDesc       %s çš„å±é¦–~
 Description
-%s ªº«ÍÅé(corpse)¾î«ÍµóÀY¡C~
-Unit            ¨ã~
+%s çš„å±é«”(corpse)æ©«å±è¡—é ­ã€‚~
+Unit            å…·~
 ItemType        ITEM_CORPSE_PC
 Takeable        Yes
 Level           0

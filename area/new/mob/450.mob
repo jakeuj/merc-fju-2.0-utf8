@@ -1,11 +1,11 @@
 Vnum            450
 Name            doctor~
-ShortDesc       �Mħ���k�j��~
+ShortDesc       和藹的女大夫~
 Description
-�@��~�������Q�h�����k�j�ҡM�~���ɦ���h�~�M�M���v���@�ǥ֦�
-�~�ˤΤM�ζˡM����]�ϧ����ˤf�M�i�H���L�v�����˪̡M���O����
-�Y���̹�L�ӻ��O�S����k���C�{�b�ѤF�M�u�M��������J�T���
-�N�����Ǥl�̪v���F�C
+一位年紀約五十多歲的女大夫﹐年輕時行醫多年﹐專門治療一些皮肉
+外傷及刀割傷﹐善於包紮局部傷口﹐可以輕微治療受傷者﹐但是受傷
+嚴重者對他來說是沒有辦法的。現在老了﹐只專門為剛剛踏入三國時
+代的莘莘學子們治療了。
 ~
 Sentinel        Yes
 StayArea        Yes
@@ -37,7 +37,7 @@ Type            greet_prog
 Chance          20
 Text
 smile
- say ���n����� �ġK�����A�]�Ϥ@�U�K�K
+ say 不要哭喔∼ 乖…我幫你包紮一下……
 ~
 End
 

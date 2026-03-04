@@ -1,10 +1,10 @@
 Vnum            47
 Name            horsy blade~
-ShortDesc       ╟╗╓M~
+ShortDesc       И╕╛Е┬─~
 Description
-╟╗╓M╓DцM╖L╠M╔н╓╖╖L╓b║M╔v╟O║uЁCцM╖L║v╖Y╢©╔H╟╗╓M╓╖╚б║M╧П╝ю╕Х╟Л╡╖╠з╤i╚I║M
-╔ъ╓UЁC╛╠╬таZ║M╖н╙╛╩P╜ь╓M╡╓╕Э║C~
-Unit            ╖Б~
+И╕╛Е┬─Д╧┐И╗▌Е┘╣Е╟┬Г■╗Д╧▀Е┘╣Е┬┐О╧░Е▐╡Х╗≤Ц─▄Е╫╙И╗▌Е┘╣Ц─█Е█ЁФ⌡╬Д╩╔И╕╛Е┬─Д╧▀Е╗│О╧░Е╠╒Ф▄╚Х╔©Е÷÷Г∙╟Ф≈▐И─╡Д╬╣О╧░
+Г╚▀Д╦▀Е╫╙Г┌ЁФ┬╟Г╦╬О╧░Е╫╒Г▀─Х┬┤Е─╜Е┬─Г∙╔Д╪╪Ц─┌~
+Unit            Ф┼┼~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

@@ -1,9 +1,9 @@
 Vnum            247
 Name            day stick book~
-ShortDesc       ¤é®Ì´Òªk¯µÓD~
+ShortDesc       æ—¥æ™ƒæ£æ³•ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

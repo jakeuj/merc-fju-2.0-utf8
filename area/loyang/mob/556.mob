@@ -1,10 +1,10 @@
 Vnum            556
 Name            salvant~
-ShortDesc       ¹²¤H~
-LongDesc        ¦çµÛ¥j¾ëªº¹²¤H(salvant)
+ShortDesc       åƒ•äºº~
+LongDesc        è¡£è‘—å¤æ¨¸çš„åƒ•äºº(salvant)
 ~
 Description
-¥L¤£µo¤@»y¡MÀqÀqªº¦b¤@®Ç²M²zµÛ¡M§A´X¥G¬İ¤£¨ì¥Lªº¦s¦b¡C
+ä»–ä¸ç™¼ä¸€èªï¹é»˜é»˜çš„åœ¨ä¸€æ—æ¸…ç†è‘—ï¹ä½ å¹¾ä¹çœ‹ä¸åˆ°ä»–çš„å­˜åœ¨ã€‚
 ~
 Sentinel        Yes
 AutoSetValue    Yes

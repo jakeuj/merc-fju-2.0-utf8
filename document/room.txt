@@ -1,54 +1,54 @@
 
-�@�B�ɮצ�m�R
+一、檔案位置﹕
 
-�Ҧ��b <�ϰ�>/roo/ �ؿ����U�� *.roo �ɮ׳��O�ж��ɮסM�Ӱϰ�
-�N�O�ѳo���ɮשҬ۳s�Ӧ��C
+所有在 <區域>/roo/ 目錄底下的 *.roo 檔案都是房間檔案﹐而區域
+就是由這些檔案所相連而成。
 
-�G�B�榡:
+二、格式:
 
-*               /* ���� * �}�Y���N�O���ѡM�t�Τ��|Ū�J */
-Vnum            <�Ʀr>
-Name            <�r��>~
+*               /* 任何有 * 開頭的就是註解﹐系統不會讀入 */
+Vnum            <數字>
+Name            <字串>~
 Description
-<�r��>
+<字串>
 ~
-SectorType      <�Ʀr�Φr��`��>
-<�ж����A�X��>  Yes             /* �i�H���ƼƭӺX�� /*
+SectorType      <數字或字串常數>
+<房間狀態旗標>  Yes             /* 可以有複數個旗標 /*
 
 #Exit
-*               /* ���� * �}�Y���N�O���ѡM�t�Τ��|Ū�J */
-Direction       <�Ʀr�Φr��`��>
-ExitVnum        <�Ʀr>
-ExitDesc        <�r��>~
-ExitKeyword     <�r��>~
-Message         <�r��>~
-ExitKey         <�Ʀr>
-<�X�f���A�X��>  Yes
+*               /* 任何有 * 開頭的就是註解﹐系統不會讀入 */
+Direction       <數字或字串常數>
+ExitVnum        <數字>
+ExitDesc        <字串>~
+ExitKeyword     <字串>~
+Message         <字串>~
+ExitKey         <數字>
+<出口狀態旗標>  Yes
 End
 
 #Keyword
-*               /* ���� * �}�Y���N�O���ѡM�t�Τ��|Ū�J */
-Keyword         <�r��>~
+*               /* 任何有 * 開頭的就是註解﹐系統不會讀入 */
+Keyword         <字串>~
 Description
-<�r��>
+<字串>
 ~
 End
 
 #Job
-*               /* ���� * �}�Y���N�O���ѡM�t�Τ��|Ū�J */
-Keyword         <�r��>~
-Function        <�r��>~
-Position        <�Ʀr�Φr��`��>
+*               /* 任何有 * 開頭的就是註解﹐系統不會讀入 */
+Keyword         <字串>~
+Function        <字串>~
+Position        <數字或字串常數>
 End
 
-End             /* �Хܩж��ɮת����� */
+End             /* 標示房間檔案的結束 */
 
-�T�B �d�ҡR
+三、 範例﹕
 
 Vnum            301
-Name            �Q�r�D��~
+Name            十字道路~
 Description
-�@���H�s�������D���M�A�P��ܼ��C
+一條人群擁擠的道路﹐你感到很熱。
 ~
 SectorType      SECT_INSIDE
 InDoors         Yes
@@ -57,8 +57,8 @@ InDoors         Yes
 Direction       SOUTH
 ExitVnum        302
 ExitKeyword     door~
-ExitDesc        �@�Ӫ�~
-Message         �A�j�B�@��M���}�F�Q�r�D���C~
+ExitDesc        一個門~
+Message         你大步一跨﹐離開了十字道路。~
 Isdoor          Yes
 ExitKey         0
 End
@@ -66,7 +66,7 @@ End
 #Keyword
 Keyword         sign~
 Description
-�@�Ӹ��СC
+一個路標。
 ~
 End
 
@@ -78,270 +78,270 @@ End
 
 End
 
-�|�B����:
+四、說明:
 
-(1) Vnum (�ж����X)�R
-  �N���o���ж����X�M�o�ӿﶵ���i�����M�ӥB�ж����X�@�w�n�O��
-  �r�M�B���i�H�p�� 0�M���T���ж����X�ЩM�ж����g�H���t�n�M��
-  ��b���g�C
+(1) Vnum (房間號碼)﹕
+  代表這間房間號碼﹐這個選項不可忽略﹐而且房間號碼一定要是數
+  字﹐且不可以小於 0﹐正確的房間號碼請和房間撰寫人分配好﹐之
+  後在撰寫。
 
-(2) Name (�ж��W��)�R
-  �N���o���ж���²�u�ԭz�M���i�H�O���������s���M�ХH�r�굲��
-  �Ÿ�( ~ )�����C�o�ӿﶵ�]���i�H�Q�����C
+(2) Name (房間名稱)﹕
+  代表這間房間的簡短敘述﹐像可以是洛陽中央廣場﹐請以字串結束
+  符號( ~ )結束。這個選項也不可以被忽略。
 
-(3) Description (�ж��y�z)�R
-  �N���o���ж����㪺�ԭz�M�]�N�O�A�Ө�o���ж��ɩҬݨ쪺�ԭz
-  �M�]���Ҽ{�����M�ҥH�O�q�o������r�U�@��}�l���g�C�W�@��
-  �Ҧ����F�賣�N�Q�����C�ХH�r�굲���Ÿ�( ~ ) �����M�o�ӿﶵ
-  ���i�H�Q����.
+(3) Description (房間描述)﹕
+  代表這間房間完整的敘述﹐也就是你來到這間房間時所看到的敘述
+  ﹐因為考慮到對齊﹐所以是從這個關鍵字下一行開始撰寫。上一行
+  所有的東西都將被忽略。請以字串結束符號( ~ ) 結束﹐這個選項
+  不可以被忽略.
 
-(4) SectorType (�ж��a��)�R
+(4) SectorType (房間地形)﹕
 
-  SECT_INSIDE                      0              �Ǥ�
-  SECT_CITY                        1              ����
-  SECT_FIELD                       2              �쳥
-  SECT_FOREST                      3              �˪L
-  SECT_HILLS                       4              �s�C
-  SECT_MOUNTAIN                    5              �s��
-  WATER_SWIM                       6              �i��a����
-  WATER_NOSWIM                     7              ���i��a����
-                                   8              ���ϥ�
-  SECT_AIR                         9              �Ѫ�
-  SECT_DESERT                     10              �F�z
+  SECT_INSIDE                      0              室內
+  SECT_CITY                        1              城市
+  SECT_FIELD                       2              原野
+  SECT_FOREST                      3              森林
+  SECT_HILLS                       4              山丘
+  SECT_MOUNTAIN                    5              山區
+  WATER_SWIM                       6              可游泳水域
+  WATER_NOSWIM                     7              不可游泳水域
+                                   8              未使用
+  SECT_AIR                         9              天空
+  SECT_DESERT                     10              沙漠
 
-  �N���o���ж����a�ΡM�o�ӼƭȩM�A���ʮɩүӪ����ʤO�����M�p
-  �G�A�S���g�o�ӿﶵ�ɡM�t�Ϊ����w�ȱN�|�O SECT_INSIDE�M�]�N
-  �O�Ǥ��C
+  代表這間房間的地形﹐這個數值和你移動時所耗的移動力有關﹐如
+  果你沒有寫這個選項時﹐系統的內定值將會是 SECT_INSIDE﹐也就
+  是室內。
 
-  �C�@�Ӷ��ط|���Ӫ���O�p�U�R
+  每一個項目會消耗的體力如下﹕
 
-  �Ǥ�(SECT_INSIDE)                1
-  ����(SECT_CITY)                  0
-  �쳥(SECT_FIELD)                 1
-  �˪L(SECT_FOREST)                3
-  �s�C(SECT_HILLS)                 4
-  �s��(SECT_MOUNTAIN)              6
-  ����i��a(WATER_SWIM)           4
-  ���줣�i��a(WATER_NOSWIM)       1
-  ���ϥ�
-  �Ѫ�(SECT_AIR)                   6
-  �F�z(SECT_DESERT)                6
+  室內(SECT_INSIDE)                1
+  城市(SECT_CITY)                  0
+  原野(SECT_FIELD)                 1
+  森林(SECT_FOREST)                3
+  山丘(SECT_HILLS)                 4
+  山岳(SECT_MOUNTAIN)              6
+  水域可游泳(WATER_SWIM)           4
+  水域不可游泳(WATER_NOSWIM)       1
+  未使用
+  天空(SECT_AIR)                   6
+  沙漠(SECT_DESERT)                6
 
-(5) �ж����A�X�СR
+(5) 房間狀態旗標﹕
 
-  Dark             �·t                                   1
-  NoMob            mob ����i�J                           2
-  Indoors          �Ǥ�                                   4
-  Private          �u��e�\�@�쪱�a�i�J                   8
-  Safe             �w��                                  16
-  ForeverLight     �é�                                  32
-  NoRecall         ���� recall                           64
-  DepositMoney     ����                                 128
-  StoreRoom        ��                                 256
-  NoFight          ����԰�                             512
-  NoQuit           �L�k quit                           1024
-  Club             �����E�|�I                          2048
-  Memorize         �ǰe�I                              4096
-  Stock            �ҥ��                              8192
-  NoWhere          �L�k�ϥ� where �åB�L�k�I�i summon
-  Sail             �(�� ship �ϥ�)
-  Fane             �x�q(���O endow �ϥ�)              65536
-  Killer           �K�P����(���O endow �ϥ�)         131072
-  Standard         �˥��ж�(�� home �Ϊ�)            262144
+  Dark             黑暗                                   1
+  NoMob            mob 不能進入                           2
+  Indoors          室內                                   4
+  Private          只能容許一位玩家進入                   8
+  Safe             安全                                  16
+  ForeverLight     永明                                  32
+  NoRecall         不能 recall                           64
+  DepositMoney     錢莊                                 128
+  StoreRoom        鏢局                                 256
+  NoFight          不能戰鬥                             512
+  NoQuit           無法 quit                           1024
+  Club             幫派聚會點                          2048
+  Memorize         傳送點                              4096
+  Stock            證交所                              8192
+  NoWhere          無法使用 where 並且無法施展 summon
+  Sail             船艙(給 ship 使用)
+  Fane             寺廟(指令 endow 使用)              65536
+  Killer           八仙飯店(指令 endow 使用)         131072
+  Standard         樣本房間(給 home 用的)            262144
 
 
-  �N���ж������A���X�СM�o�ӼƥN���o���ж����ʽ�M�N���U����
-  ���Ҵy�z���M�p�G�A�S���g�o�ӿﶵ�ɡM�t�Ϊ����w�ȱN�|�O
-  ROOM_INDOOR �]�N�O�Ǥ��C
+  代表房間的狀態的旗標﹐這個數代表這間房間的性質﹐就像下面選
+  項所描述的﹐如果你沒有寫這個選項時﹐系統的內定值將會是
+  ROOM_INDOOR 也就是室內。
 
-  �ӧO�����p�U�R
+  個別說明如下﹕
 
-  �ж��t��(Dark)�R
-      �@��ӻ��M�ж������t�|�H�ۮɶ��ӧ��ܡM���O�����ϰ줺�w
-      ���ëG���ϰ�M�ӧA�p�G�ϥγo�ӿﶵ���ܫh�i�H�ϩж��B��
-      �÷t�����A�M���|�H�ɶ��ܰʡM�n������~��ݨ�ж����ԭz
-      �P���~�C
+  房間暗的(Dark)﹕
+      一般來說﹐房間的明暗會隨著時間來改變﹐但是城市區域內定
+      為永亮的區域﹐而你如果使用這個選項的話則可以使房間處於
+      永暗的狀態﹐不會隨時間變動﹐要拿火把才能看到房間的敘述
+      與物品。
 
-  �S���Ǫ�(NoMob)�R
-      �o�ӺX�г]�w�o�өж����|���Ǫ��e�ӡM( �w�gŪ���X�Ӧb��
-      �B������ )�M��Y�@�Ƿ|�H�B���ʪ��Ǫ��J��o�ةж��]���|
-      ���L�ӡC
+  沒有怪物(NoMob)﹕
+      這個旗標設定這個房間不會有怪物前來﹐( 已經讀取出來在此
+      處的不算 )﹐亦即一些會隨處走動的怪物遇到這種房間也不會
+      走過來。
 
-  �Ǥ�(Indoors)�R
-      �o�ӺX�г]�w�ж��O�B��Ǥ����A�M���|�H�ۮɶ��]��ɤ鸨
-      �^�������a�ԭz�M�åB�򥻤W�B��·t���A�C
+  室內(Indoors)﹕
+      這個旗標設定房間是處於室內狀態﹐不會隨著時間（日升日落
+      ）給予玩家敘述﹐並且基本上處於黑暗狀態。
 
-  �p�H(Private)�R
-      �o�ӺX�Ъ��ܳo�өж��O�p�H�֦��M�q�`�u�ह�\��ӤH�b��
-     �]�]�t�Ǫ��^ �M�Y�O�W�L�h����樫�άO�ǰe�����C
+  私人(Private)﹕
+      這個旗標表示這個房間是私人擁有﹐通常只能允許兩個人在此
+     （包含怪物） ﹐若是超過則不能行走或是傳送等等。
 
-  �w��(Safe)�R
-      �o�ӺX�г]�w�o�өж����ॴ���M�q�`�b�@�Ǫ��a�Ҧb����m
-      �O�i�H�]�w�o�ӺX�ШӫO�@�s��M�w���Q��ŧ�άO�Q�Ǫ��l���C
+  安全(Safe)﹕
+      這個旗標設定這個房間不能打鬥﹐通常在一些玩家所在的位置
+      是可以設定這個旗標來保護新手﹐預防被偷襲或是被怪物追殺。
 
-  �T��ǰe(NoRecall)�R
-      �@�өж��p�G���]�w�o�ӺX�Ыh���ܳo�өж�����^�k(recall)
-      �M���M�򥻤W���O�i�H�^�k���C
+  禁止傳送(NoRecall)﹕
+      一個房間如果有設定這個旗標則表示這個房間不能回歸(recall)
+      ﹐不然基本上都是可以回歸的。
 
-  �é�(ForeverLight)�R
-      �o�ӺX�г]�w�o�өж��B��û����G�����A�C
+  永明(ForeverLight)﹕
+      這個旗標設定這個房間處於永遠明亮的狀態。
 
-  ����(DepositMoney)�R
-      �o�ӺX�г]�w�o�өж��i�H���Ѫ��a���s���ڪ��ʧ@�M��Y��
-      �檺�\��M�Ȧ�M�ө����P�M�ө��O�H�Ǫ�����¦�ӶR��M�p
-      �G�Ǫ������h����R��M�Ȧ�h�O�H�ж����ǡC
+  錢莊(DepositMoney)﹕
+      這個旗標設定這個房間可以提供玩家做存提款的動作﹐亦即銀
+      行的功能﹐銀行和商店不同﹐商店是以怪物為基礎來買賣﹐如
+      果怪物死掉則不能買賣﹐銀行則是以房間為準。
 
-  ��(StoreRoom)�R
-      �o�ӺX�г]�w�o�өж��i�H���Ѫ��a���s���˳ƪ��ʧ@�M�o��
-      ��O�H�ж����D�C
+  鏢局(StoreRoom)﹕
+      這個旗標設定這個房間可以提供玩家做存取裝備的動作﹐這個
+      亦是以房間為主。
 
-  ����԰�(NoFight)�R
-      �o�ӺX�г]�w�o�өж�����o�;԰��C
+  不准戰鬥(NoFight)﹕
+      這個旗標設定這個房間不能發生戰鬥。
 
-  �������u(NoQuit):
-      �o�ӺX�������a���i�H�b�o�@�����}�C���M�άO�۱������C
+  不准離線(NoQuit):
+      這個旗標讓玩家不可以在這一格離開遊戲﹐或是自殺等等。
 
-  �i�H�O��(Memorize)�R
-      �p�G�@�өж����]�w�o�ӺX�Ыh���ܦ��ж��i�H�����a�b���]
-      �w�^�k�I�M�@�Ӫ��a���Q�Ӧ^�k�I�i�H�]�w�M�ҥH�@�ӫ�����
-      ���W�n�]�w�@�Ǧ^�k�I���Ѫ��a�ϥΡC
+  可以記憶(Memorize)﹕
+      如果一個房間有設定這個旗標則表示此房間可以讓玩家在此設
+      定回歸點﹐一個玩家有十個回歸點可以設定﹐所以一個城市基
+      本上要設定一些回歸點提供玩家使用。
 
-  �Ҩ�����(Stock)�R
-      �@�өж��]�w�[�W�o�ӺX�Ъ��ܡM�o�өж��N�O�Ҩ����ҡM
-      �]�N�O���a�i�H�b���R���Ҩ�Ѳ��M�Y���O�b����ҫh�ҶR��
-      ������O�|����Q�C
+  證券交易所(Stock)﹕
+      一個房間設定加上這個旗標的話﹐這個房間就是證券交易所﹐
+      也就是玩家可以在此買賣證券股票﹐若不是在交易所則所買賣
+      的手續費會比較貴。
 
-  �����E�|�I(Club)�R
-      �p�G�ж��O���]�w�o�ӺX�СA�o�өж��N�O�@���������E�|�I
-      �C���@���������߫�A�t�η|�۰ʴ��������ͤ@�������E�|�I
-      (reboot ��~�|���W�s�ж�) �o�O���ͪ��s�ж��N�|���o�ӺX
-      �СC
+  幫派聚會點(Club)﹕
+      如果房間是有設定這個旗標，這個房間就是一個幫派的聚會點
+      。當一個幫派成立後，系統會自動替幫派產生一個幫派聚會點
+      (reboot 後才會掛上新房間) 這是產生的新房間就會有這個旗
+      標。
 
-  ����d��(NoWhere)�R
-      �p�G�@�өж����o�ӺX�СA����b�o�өж��̴N�L�k�ϥ� where
-      ���O�Ӭd�ߦP�@�Ӱϰ쪺���a�ΩǪ��A�åB�]�L�k�I�i summon
-      �k�N�C
+  不准查詢(NoWhere)﹕
+      如果一個房間有這個旗標，那麼在這個房間裡就無法使用 where
+      指令來查詢同一個區域的玩家或怪物，並且也無法施展 summon
+      法術。
 
-  �(Sail)�R
-      �p�G�@�өж����]�w�o�ӺX�СA�o�өж��N�O�]�w���O��C�o
-      �ӺX�ХD�n�O�� ship ���O�̩ҨϥΪ���A�ä��ݭn�t�~���g
-      �ж��A�bŪ�J /data/ship.txt �ɴN�|�̾ڸ��ɮ׳гy��X��
-      �A���O�ж����X����Q��L�ϰ�ϥΡC
+  船艙(Sail)﹕
+      如果一個房間有設定這個旗標，這個房間就是設定成是船艙。這
+      個旗標主要是給 ship 指令裡所使用的船艙，並不需要另外撰寫
+      房間，在讀入 /data/ship.txt 時就會依據該檔案創造船艙出來
+      ，但是房間號碼不能被其他區域使用。
 
-  �x�q(Fane)�R
-      �p�G�@�өж����]�w�o�ӺX�СA���a�b�o�өж��̴N�i�H�ϥ�
-      endow ���O�Ӯ����A�����a���}���ܦn�C
+  寺廟(Fane)﹕
+      如果一個房間有設定這個旗標，玩家在這個房間裡就可以使用
+      endow 指令來捐錢，讓玩家的陣營變好。
 
-  �K�P����(Killer)�R
-      �p�G�@�өж����]�w�o�ӺX�СA���a�b�o�өж��̴N�i�H�ϥ�
-      endow ���O�Ӯ����A�����a���}�����a�C
+  八仙飯店(Killer)﹕
+      如果一個房間有設定這個旗標，玩家在這個房間裡就可以使用
+      endow 指令來捐錢，讓玩家的陣營變壞。
 
-  �˥��ж�(Standard)�R
-      �o�ӺX�ЬO�Ψӳ]�w�o�өж��O���a�p�H�ж����򥻭쫬�A�@
-      ��ϰ켶�g�����|�Ψ�A�u�ݦ��@�ӭ쫬�ж��Y�i�C
+  樣本房間(Standard)﹕
+      這個旗標是用來設定這個房間是玩家私人房間的基本原型，一
+      般區域撰寫中不會用到，只需有一個原型房間即可。
 
-  �򥻤W�W���Ҵ��쪺�X�Ф@�өж��i�H�]�w�ܦh�ӡM�A�i�H�ӧO��
-  �@��]�w�A�p
+  基本上上面所提到的旗標一個房間可以設定很多個﹐你可以個別用
+  一行設定，如
 
       NoQuit       Yes
       NoRecall     Yes
 
-  �h���ܤ@�Ӥ���^�k�P���}�C�����ж��C
+  則表示一個不能回歸與離開遊戲的房間。
 
-(6) #Exit( �X�f�譱 )�R
-  �A�i�H�����o�ӿﶵ�M�p�G�A�o���ж��O�S���X�f���ܡM�A�N�O�Q
-  �γo�ӿﶵ�M��L�ж��ӳs���M�Ъ`�N�t�Ψä��|���A�s���M�o�N
-  ���ۭY���ⶡ�ж��Y�O�۳q�M�A�����b�o�ⶡ�ж����������g�X�f
-  �M�p�G�u�g�@�䪺�ܥu�i�H���ͳ�V�X�f���ж��C
-  �Y�X�f�s�������Y�����ơM�Ҧp�Y�@���ж����F��X�f���q�����
-  �ж��M�άO�ж��X�f�s�L�h�M�s�^�Ӫ��ж����P�M�t�η|�۰ʭץ�
-  �M�B�^������~�ɸ̡C
+(6) #Exit( 出口方面 )﹕
+  你可以忽略這個選項﹐如果你這間房間是沒有出口的話﹐你就是利
+  用這個選項和其他房間來連接﹐請注意系統並不會幫你連接﹐這意
+  味著若有兩間房間若是相通﹐你必須在這兩間房間都必須撰寫出口
+  ﹐如果只寫一邊的話只可以產生單向出口的房間。
+  若出口連接部份若有重複﹐例如某一間房間的東方出口有通往兩個
+  房間﹐或是房間出口連過去和連回來的房間不同﹐系統會自動修正
+  ﹐且回報到錯誤檔裡。
 
-  1. Direction (�X�f��V)�R
+  1. Direction (出口方向)﹕
 
-    �_   ( SOUTH )  0
-    �F   ( EAST  )  1
-    �n   ( SOUTH )  2
-    ��   ( WEST  )  3
-    �W   ( UP    )  4
-    �U   ( DOWN  )  5
-    �i�J ( ENTER )  6
-    �X�h ( OUT   )  7
+    北   ( SOUTH )  0
+    東   ( EAST  )  1
+    南   ( SOUTH )  2
+    西   ( WEST  )  3
+    上   ( UP    )  4
+    下   ( DOWN  )  5
+    進入 ( ENTER )  6
+    出去 ( OUT   )  7
 
-    �N�����@�Ӥ�V�P�Y�@�ж��s���M�o�@�ӿﶵ�O���i�H�Q�ٲ���
-    �M�ӥB�ƭȭY���b�H�U���d�򤺡M�|�y���t�Τu�@�����`�C
+    代表哪一個方向與某一房間連接﹐這一個選項是不可以被省略的
+    ﹐而且數值若不在以下的範圍內﹐會造成系統工作不正常。
 
-  2. ExitVnum (�X�f�s�����ж�)�R
-    �N���X�f�ж������X�M�o�ӿﶵ���i�H�ٲ��C
+  2. ExitVnum (出口連接的房間)﹕
+    代表出口房間的號碼﹐這個選項不可以省略。
 
-  3. ExitKeyword (�X�f����r)�R
-    ���ܳo�ӥX�f������r�M���i�H�ٲ��M�ХH�r�굲���Ÿ�( ~ )
-    �����M�o������r�Y�O�A�Ψӳ]�w�����W�٩ҨϥΡM��h�W�p�G
-    ���@�Ӫ����ܡM���w�W�٬� door �M�p�G�A�n�]�w���t�@�ӦW��
-    ���ܡM�h�ϥγo�ӿﶵ�M�A�K�i�H�ϥΦp unlock gate  ������
-    �ʧ@�C
+  3. ExitKeyword (出口關鍵字)﹕
+    表示這個出口的關鍵字﹐不可以省略﹐請以字串結束符號( ~ )
+    結束﹐這個關鍵字即是你用來設定門的名稱所使用﹐原則上如果
+    為一個門的話﹐內定名稱為 door ﹐如果你要設定為另一個名稱
+    的話﹐則使用這個選項﹐你便可以使用如 unlock gate  等等的
+    動作。
 
-  4. ExitDesc (�X�f�y�z)�R
-    �M�X�f����r�������y�z�M���i�H�ٲ��M�ХH�r�굲���Ÿ�( ~ )
-    �����M�o������r�O�A look �o�Ӥ�V�ɩҬݨ����ԭz�C
+  4. ExitDesc (出口描述)﹕
+    和出口關鍵字有關的描述﹐不可以省略﹐請以字串結束符號( ~ )
+    結束﹐這個關鍵字是你 look 這個方向時所看見的敘述。
 
-  5. Message (�X�f�T��)�R
-    �A�i�H�]�w���A���}�@�ǥX�f�ɩҰe�X���T���M�o�Ӥ]�O�H�r��
-    �����Ÿ�( ~ ) �ӧ@�������C
+  5. Message (出口訊息)﹕
+    你可以設定當你離開一些出口時所送出的訊息﹐這個也是以字串
+    結束符號( ~ ) 來作為結束。
 
-  6. �X�f���A�X�СR
+  6. 出口狀態旗標﹕
 
-     ���B����                      IsDoor    Yes      1
-     �����W����                    Closed    Yes      3
-     ����W����                    Locked    Yes      7
-     ����W�B�L�k�}�ꪺ��          Pick      Yes     39
+     此處為門                      IsDoor    Yes      1
+     有關上的門                    Closed    Yes      3
+     有鎖上的門                    Locked    Yes      7
+     有鎖上且無法開鎖的門          Pick      Yes     39
 
-    �o�ӿﶵ���ܳo�ӥX�f���w�]���A�M�i�H�ٲ��C
+    這個選項表示這個出口的預設狀態﹐可以省略。
 
-  7. ExitLock (�X�f�_�͸��X)�R
-    �Y�o�ӥX�f�O�i�H�W�ꪺ�ܡM����o�ӼƭȴN�O�o����ͪ����X
-    �M���M�o�ӼƭȰ򥻤W�S���ϥΡC
+  7. ExitLock (出口鑰匙號碼)﹕
+    若這個出口是可以上鎖的話﹐那麼這個數值就是這個鎖匙的號碼
+    ﹐不然這個數值基本上沒有使用。
 
-  8. �ХH End ���� #Exit ���ԭz�C
+  8. 請以 End 結束 #Exit 的敘述。
 
-(7) #Keyword (����r�譱)�R
-  1. Keyword (����r)�R
-    �N�O�o���ж��̭��i�H�ݨ�S��������r�M���y�ܻ��M�A�i�H�b
-    �o���ж��̭� look �o������r�M�ХH�r�굲���Ÿ�( ~ ) �����C
+(7) #Keyword (關鍵字方面)﹕
+  1. Keyword (關鍵字)﹕
+    就是這間房間裡面可以看到特殊的關鍵字﹐換句話說﹐你可以在
+    這間房間裡面 look 這個關鍵字﹐請以字串結束符號( ~ ) 結束。
 
-  2. Description (�y�z)�R
-    �N�O�W�z look �o������r�ɩҥX�{���㪺�y�z�C�o�ӱԭz�]��
-    �Ҽ{�����M�ҥH�O�q�o������r�U�@��}�l���g�M�Ĥ@��Ҧ�
-    ���F�賣�N�Q�����M�ХH�r�굲���Ÿ�( ~ ) �����C
+  2. Description (描述)﹕
+    就是上述 look 這個關鍵字時所出現完整的描述。這個敘述因為
+    考慮到對齊﹐所以是從這個關鍵字下一行開始撰寫﹐第一行所有
+    的東西都將被忽略﹐請以字串結束符號( ~ ) 結束。
 
-  3. �H�W�o��ӥu�n�A�� #Keyword  �o�ӿﶵ�ɳ����i�H�ٲ��C
+  3. 以上這兩個只要你有 #Keyword  這個選項時都不可以省略。
 
-  4. �H End �N�������C
+  4. 以 End 代表結束。
 
-(8) #Job (�S��Ĳ�o�譱)�R
-  1. Keyword (����r)�R
-    �o�өж����S�����ʧ@�ɩ�Ĳ�o�{��������R�O�M�p�G�R�O��F
-    �M��|�h����\�ೡ���M�o�ӳ����n�H�r�굲���Ÿ������C
+(8) #Job (特殊觸發方面)﹕
+  1. Keyword (關鍵字)﹕
+    這個房間做特殊的動作時所觸發程式的關鍵命令﹐如果命令對了
+    ﹐方會去執行功能部份﹐這個部份要以字串結束符號結尾。
 
-  2. Function (�\����)�R
-    �o�ӬO�u���ϥΨ쪺�\��W�١M�o�ӥ\�ॲ���b�{����( job.c )
-    ���w�q�L���ϥΡM�����Ǫ����S���禡���\��M�@�˥H�r�굲
-    ���Ÿ������C
+  2. Function (功能函數)﹕
+    這個是真正使用到的功能名稱﹐這個功能必須在程式中( job.c )
+    有定義過方能使用﹐類似怪物的特殊函式的功能﹐一樣以字串結
+    束符號結束。
 
-  3. Position (�̧C���A)�R
+  3. Position (最低狀態)﹕
 
-    POS_DEAD                0 (���`)
-    POS_SLEEPING            1 (��ı)
-    POS_RESTING             2 (��)
-    POS_FIGHTING            3 (���[)
-    POS_STANDING            4 (����)
+    POS_DEAD                0 (死亡)
+    POS_SLEEPING            1 (睡覺)
+    POS_RESTING             2 (休息)
+    POS_FIGHTING            3 (打架)
+    POS_STANDING            4 (站立)
 
-    �w�q�ϥγo�ӯS���禡�ɩһݪ��̧C���A�M�@�묰 POS_STANDING
-    ( ���� )�M��l�p�W�ҥܡC
+    定義使用這個特殊函式時所需的最低狀態﹐一般為 POS_STANDING
+    ( 站立 )﹐其餘如上所示。
 
-  4.�p�G���ݭn�i�H�V�{���]�p�̴��X�ݭn job  ��ƪ��ӽСM�t�~
-    ���Ѥ@�Ө�ƧY�����^��s��Ϫ��\�൹�j�a�g�ϰ컲�U�ΡM�g
-    �k�p�U�R
+  4.如果有需要可以向程式設計者提出需要 job  函數的申請﹐另外
+    提供一個函數即類似回到新手區的功能給大家寫區域輔助用﹐寫
+    法如下﹕
 
 #Job
 Keyword          new~
@@ -349,24 +349,24 @@ Function         job_recall_new~
 Position         POS_STANDING
 End
 
-  5.�H�W Keyword �� Function �p�G�� #Job �������s�b�C
+  5.以上 Keyword 跟 Function 如果有 #Job 都必須存在。
 
-  6.�H End �N�������C
+  6.以 End 代表結束。
 
-(9) ��� #ROOM �ԭz���@�w�n�� #EXIT �M #Keyword �B #Job �o�T
-    �ӿﶵ�M���o�N���۳o���ж��|�S���X�f�B�S������r�i�H�[�ݡC
+(9) 整個 #ROOM 敘述不一定要有 #EXIT 和 #Keyword 、 #Job 這三
+    個選項﹐但這意味著這間房間會沒有出口且沒有關鍵字可以觀看。
 
-(10) ���F�H�ᰣ����K�M�Цh�Φr��`�ƨӥN���`�ơC
+(10) 為了以後除錯方便﹐請多用字串常數來代替常數。
 
-(11) �t�Τ������Ѥ@�өж����;��H��K�ϰ켶�g�H�Ӽ��g�M�o�ӵ{
-     ����b /home/mud/make �̪� makeroom�M�A�i�H��J me  �Ө�
-     �ΡM�άO�ϥ� map ���O�Ӳ��ͩж��M�Ш� map �ϥλ������C
+(11) 系統內有提供一個房間產生器以方便區域撰寫人來撰寫﹐這個程
+     式放在 /home/mud/make 裡的 makeroom﹐你可以輸入 me  來使
+     用﹐或是使用 map 指令來產生房間﹐請見 map 使用說明文件。
 
-���B����:
+五、附註:
 
-(1) �r��`�ơR
+(1) 字串常數﹕
 
-* ��V
+* 方向
 
 NORTH                           0
 EAST                            1
@@ -377,7 +377,7 @@ DOWN                            5
 ENTER                           6
 OUT                             7
 
-* �a�κX��
+* 地形旗標
 
 SECT_INSIDE                     0
 SECT_CITY                       1
@@ -390,7 +390,7 @@ SECT_WATER_NOSWIM               7
 SECT_AIR                        8
 SECT_DESERT                     9
 
-* �H�����A
+* 人物狀態
 
 POS_DEAD                        0
 POS_SLEEPING                    1
@@ -398,18 +398,18 @@ POS_RESTING                     2
 POS_FIGHTING                    3
 POS_STANDING                    4
 
-(2) �ɮצW�ٻP��m�R
+(2) 檔案名稱與位置﹕
 
-�ж��ɤ@�ߩ�b�ϰ쪺 roo �l�ؿ��U�M�ɦW�� *.roo �M���F��K�M
-�@��|�N�ɦW�]���ж� VNUM �M�Ҧp�ж����X 501 �h�]�� 501.roo
-�M�`�N�M�b roo �ؿ��U�Ҧ� *.roo ���ɮ׳��N�����ж��ɮסC
+房間檔一律放在區域的 roo 子目錄下﹐檔名為 *.roo ﹐為了方便﹐
+一般會將檔名設為房間 VNUM ﹐例如房間號碼 501 則設為 501.roo
+﹐注意﹐在 roo 目錄下所有 *.roo 的檔案都將視為房間檔案。
 
 
-(3) ���n�����ƶ��R
+(3) 重要提醒事項﹕
 
-    �Y�n�]�w���@�Ӫ��M�г]�w�X�f���A�X��
+    若要設定為一個門﹐請設定出口狀態旗標
 
        IsDoor     Yes
 
-    �åB�b�]�w���m�B�N�����_��(�Ԩ��ϰ쭫�m�g�@)�C
+    並且在設定重置處將其關起來(詳見區域重置寫作)。
 

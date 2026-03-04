@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -31,45 +31,45 @@
 
 struct ProcFile
 {
-  char cmd[40];       /* ©R¥O               Bsd */
+  char cmd[40];       /* å‘½ä»¤               Bsd */
   char ttyname[20];   /*                    Bsd, no Linux */
-  char state;         /* ¦æµ{ª¬ºA           */
-  int pid;            /* ¦æµ{ PID           Bsd */
-  int ppid;           /* ¤÷¦æµ{ PID         Bsd */
-  int pgrp;           /* ¸s±Ú¦æµ{¸¹½X       Bsd */
+  char state;         /* è¡Œç¨‹ç‹€æ…‹           */
+  int pid;            /* è¡Œç¨‹ PID           Bsd */
+  int ppid;           /* çˆ¶è¡Œç¨‹ PID         Bsd */
+  int pgrp;           /* ç¾¤æ—è¡Œç¨‹è™Ÿç¢¼       Bsd */
   int sid;            /* Session ID         Bsd */
-  int uid;            /* ¨Ï¥ÎªÌªºID¸¹½X     */
-  int gid;            /* ¨Ï¥ÎªÌªº¸s±ÚID¸¹½X */
+  int uid;            /* ä½¿ç”¨è€…çš„IDè™Ÿç¢¼     */
+  int gid;            /* ä½¿ç”¨è€…çš„ç¾¤æ—IDè™Ÿç¢¼ */
   int tty;            /* TTY                */
-  int tpgid;          /* ²×ºİ¾÷¦æµ{ID       */
-  int flags;          /* ¦æµ{ºX¼Ğ           */
-  int min_flt;        /* ¶ñº¡ PAGE ®É¤£»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ       Bsd */
-  int maj_flt;        /* ¤l¦æµ{¶ñº¡ PAGE ®É¤£»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ Bsd */
-  int cmin_flt;       /* ¶ñº¡ PAGE ®É»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ         */
-  int cmaj_flt;       /* ¤l¦æµ{¶ñº¡ PAGE ®É»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ   */
-  int utime;          /* ¦æµ{©Ò¯Óªº®É¶¡                              */
-  int stime;          /* ®Ö¤ß³Q¦æµ{©Ò¯Óªº®É¶¡                        */
-  int cutime;         /* ¦æµ{ªº¤l¦æµ{©Ò¯Óªº®É¶¡                      */
-  int cstime;         /* ®Ö¤ß³Q¦æµ{ªº¤l¦æµ{©Ò¯Óªº®É¶¡                */
-  int priority;       /* Àu¥ıÅv                                      */
+  int tpgid;          /* çµ‚ç«¯æ©Ÿè¡Œç¨‹ID       */
+  int flags;          /* è¡Œç¨‹æ——æ¨™           */
+  int min_flt;        /* å¡«æ»¿ PAGE æ™‚ä¸éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸       Bsd */
+  int maj_flt;        /* å­è¡Œç¨‹å¡«æ»¿ PAGE æ™‚ä¸éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸ Bsd */
+  int cmin_flt;       /* å¡«æ»¿ PAGE æ™‚éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸         */
+  int cmaj_flt;       /* å­è¡Œç¨‹å¡«æ»¿ PAGE æ™‚éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸   */
+  int utime;          /* è¡Œç¨‹æ‰€è€—çš„æ™‚é–“                              */
+  int stime;          /* æ ¸å¿ƒè¢«è¡Œç¨‹æ‰€è€—çš„æ™‚é–“                        */
+  int cutime;         /* è¡Œç¨‹çš„å­è¡Œç¨‹æ‰€è€—çš„æ™‚é–“                      */
+  int cstime;         /* æ ¸å¿ƒè¢«è¡Œç¨‹çš„å­è¡Œç¨‹æ‰€è€—çš„æ™‚é–“                */
+  int priority;       /* å„ªå…ˆæ¬Š                                      */
   int nice;           /* Nice                    */
-  int timeout;        /* ¥¼ª¾¥Î³~                */
-  int it_real_value;  /* ¥¼ª¾¥Î³~                */
-  int start_time;     /* ±Ò°Ê®É¶¡                Bsd */
-  int start_utime;    /* ±Ò°Ê®É¶¡                Bsd, no Linux */
-  int vsize;          /* µêÀÀ°O¾ĞÅéªº­¶¼Æ        */
-  int rss;            /* ¦û¦sªº°O¾ĞÅé            */
-  int rss_rlim;       /* ¥¼ª¾¥Î³~                */
-  int start_code;     /* Code Segment °_¨Ï¦ì§}   */
-  int end_code;       /* Code Segment µ²§ô¦ì§}   */
-  int start_stack;    /* °ïÅ|ªº©³³¡¦ì§}          */
-  int kstack_esp;     /* ®Ö¤ß°ïÅ|ªºESP¼È¦s¾¹¤º®e */
-  int kstack_eip;     /* ®Ö¤ß°ïÅ|ªºEIP¼È¦s¾¹¤º®e */
-  int signal;         /* pending °T¸¹ªº¾B¸n */
-  int blocked;        /* blocked °T¸¹ªº¾B¸n */
-  int sigignore;      /* ignored °T¸¹ªº¾B¸n */
-  int sigcatch;       /* catch   °T¸¹ªº¾B¸n */
-  int wchan;          /* ®Ö¤ßµ¥«İ¦æµ{ªº¦ì§} */
+  int timeout;        /* æœªçŸ¥ç”¨é€”                */
+  int it_real_value;  /* æœªçŸ¥ç”¨é€”                */
+  int start_time;     /* å•Ÿå‹•æ™‚é–“                Bsd */
+  int start_utime;    /* å•Ÿå‹•æ™‚é–“                Bsd, no Linux */
+  int vsize;          /* è™›æ“¬è¨˜æ†¶é«”çš„é æ•¸        */
+  int rss;            /* ä½”å­˜çš„è¨˜æ†¶é«”            */
+  int rss_rlim;       /* æœªçŸ¥ç”¨é€”                */
+  int start_code;     /* Code Segment èµ·ä½¿ä½å€   */
+  int end_code;       /* Code Segment çµæŸä½å€   */
+  int start_stack;    /* å †ç–Šçš„åº•éƒ¨ä½å€          */
+  int kstack_esp;     /* æ ¸å¿ƒå †ç–Šçš„ESPæš«å­˜å™¨å…§å®¹ */
+  int kstack_eip;     /* æ ¸å¿ƒå †ç–Šçš„EIPæš«å­˜å™¨å…§å®¹ */
+  int signal;         /* pending è¨Šè™Ÿçš„é®ç½© */
+  int blocked;        /* blocked è¨Šè™Ÿçš„é®ç½© */
+  int sigignore;      /* ignored è¨Šè™Ÿçš„é®ç½© */
+  int sigcatch;       /* catch   è¨Šè™Ÿçš„é®ç½© */
+  int wchan;          /* æ ¸å¿ƒç­‰å¾…è¡Œç¨‹çš„ä½å€ */
 };
 
 bool    get_proc                args( ( pid_t, struct ProcFile * ) );
@@ -84,7 +84,7 @@ char *  rlimit_str              args( ( int ) );
 #define PROC_DIR        "/proc"
 #define LOADING_FILE    "/proc/loadavg"
 
-/* Åª¨ú¨t²Î¤@¯ë¸ê°T */
+/* è®€å–ç³»çµ±ä¸€èˆ¬è³‡è¨Š */
 FUNCTION( do_sysinfo )
 {
   char            arg[MAX_INPUT_LENGTH];
@@ -112,7 +112,7 @@ FUNCTION( do_sysinfo )
   {
     if ( get_proc( merc_pid, &sysinfo ) == FALSE )
     {
-      send_to_char( "Åª¨ú¨t²ÎÀÉ®×µo¥Í¿ù»~¡C\n\r", ch );
+      send_to_char( "è®€å–ç³»çµ±æª”æ¡ˆç™¼ç”ŸéŒ¯èª¤ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -122,15 +122,15 @@ FUNCTION( do_sysinfo )
     for ( loop = 0; loop < MAX_PORT; loop++ )
     {
       if ( MudPort[loop] == ERRORCODE ) break;
-      send_to_buffer( "³s±µ°ğ¡R%5d ³s±µÁ`¤H¦¸¡R%5d\n\r"
+      send_to_buffer( "é€£æ¥åŸ ï¹•%5d é€£æ¥ç¸½äººæ¬¡ï¹•%5d\n\r"
         , MudPort[loop], MudConnect[loop] );
     }
 
     #ifdef __linux__
-    send_to_buffer( "µêÀÀ¨t²Î°O¾ĞÅé¡R%d ¤d¦ì¤¸²Õ¡C\n\r"
+    send_to_buffer( "è™›æ“¬ç³»çµ±è¨˜æ†¶é«”ï¹•%d åƒä½å…ƒçµ„ã€‚\n\r"
       , ( sysinfo.vsize >> 10 ) );
 
-    send_to_buffer( "¨t²Î±`¾n°O¾ĞÅé¡R%d ¤d¦ì¤¸²Õ¡C\n\r"
+    send_to_buffer( "ç³»çµ±å¸¸é§è¨˜æ†¶é«”ï¹•%d åƒä½å…ƒçµ„ã€‚\n\r"
       , ( sysinfo.rss << 2 ) );
     #endif
 
@@ -140,19 +140,19 @@ FUNCTION( do_sysinfo )
     sTime.tv_sec  = usage_self.ru_utime.tv_sec;
     sTime.tv_usec = usage_self.ru_utime.tv_usec;
 
-    send_to_buffer( "¥D¦æµ{¥¿±`®ø¯Ó®É¶¡¡R%s ¬í¡C\n\r", time_string( &sTime ) );
+    send_to_buffer( "ä¸»è¡Œç¨‹æ­£å¸¸æ¶ˆè€—æ™‚é–“ï¹•%s ç§’ã€‚\n\r", time_string( &sTime ) );
 
     sTime.tv_sec  = usage_chld.ru_utime.tv_sec;
     sTime.tv_usec = usage_chld.ru_utime.tv_usec;
-    send_to_buffer( "¤l¦æµ{¥¿±`®ø¯Ó®É¶¡¡R%s ¬í¡C\n\r", time_string( &sTime ) );
+    send_to_buffer( "å­è¡Œç¨‹æ­£å¸¸æ¶ˆè€—æ™‚é–“ï¹•%s ç§’ã€‚\n\r", time_string( &sTime ) );
 
     sTime.tv_sec  = usage_self.ru_stime.tv_sec;
     sTime.tv_usec = usage_self.ru_stime.tv_usec;
-    send_to_buffer( "¥D¦æµ{¨t²Î®ø¯Ó®É¶¡¡R%s ¬í¡C\n\r", time_string( &sTime ) );
+    send_to_buffer( "ä¸»è¡Œç¨‹ç³»çµ±æ¶ˆè€—æ™‚é–“ï¹•%s ç§’ã€‚\n\r", time_string( &sTime ) );
 
     sTime.tv_sec  = usage_chld.ru_stime.tv_sec;
     sTime.tv_usec = usage_chld.ru_stime.tv_usec;
-    send_to_buffer( "¤l¦æµ{¨t²Î®ø¯Ó®É¶¡¡R%s ¬í¡C\n\r", time_string( &sTime ) );
+    send_to_buffer( "å­è¡Œç¨‹ç³»çµ±æ¶ˆè€—æ™‚é–“ï¹•%s ç§’ã€‚\n\r", time_string( &sTime ) );
 
     sTime.tv_sec = usage_self.ru_stime.tv_sec
                  + usage_self.ru_utime.tv_sec
@@ -164,31 +164,31 @@ FUNCTION( do_sysinfo )
                   + usage_chld.ru_stime.tv_usec
                   + usage_chld.ru_stime.tv_usec;
 
-    send_to_buffer( "¦æµ{°õ¦æÁ`©M®É¶¡¡R%s ¬í¡C\n\r", time_string( &sTime ) );
+    send_to_buffer( "è¡Œç¨‹åŸ·è¡Œç¸½å’Œæ™‚é–“ï¹•%s ç§’ã€‚\n\r", time_string( &sTime ) );
 
     total = get_uptime() - mud_boot_tick;
     sTime.tv_sec  = total / freq;
     sTime.tv_usec = total % freq;
 
-    send_to_buffer( "¦æµ{²Ö¿nÁ`©M®É¶¡¡R%s ¬í¡C\n\r", time_string( &sTime ) );
-    send_to_buffer( "¦æµ{¥­§¡­t¸ü¶q¯Å¡R%s%%¡C\n\r" , get_loading() );
+    send_to_buffer( "è¡Œç¨‹ç´¯ç©ç¸½å’Œæ™‚é–“ï¹•%s ç§’ã€‚\n\r", time_string( &sTime ) );
+    send_to_buffer( "è¡Œç¨‹å¹³å‡è² è¼‰é‡ç´šï¹•%s%%ã€‚\n\r" , get_loading() );
 
-    send_to_buffer( "Á`¼g¥X¦ì¤¸²Õ  ¡R%d ¤d¦ì¤¸²Õ %d ¦ì¤¸²Õ¡C\n\r"
+    send_to_buffer( "ç¸½å¯«å‡ºä½å…ƒçµ„  ï¹•%d åƒä½å…ƒçµ„ %d ä½å…ƒçµ„ã€‚\n\r"
       , WriteKiloBytes, WriteBytes );
 
     flow = ( WriteKiloBytes * 1000 + WriteBytes ) / UMAX( sTime.tv_sec , 1 );
-    send_to_buffer( "¥­§¡¿é¥X¬y¶q  ¡R¨C¬í %d ¦ì¤¸²Õ¡C\n\r", (int) flow );
+    send_to_buffer( "å¹³å‡è¼¸å‡ºæµé‡  ï¹•æ¯ç§’ %d ä½å…ƒçµ„ã€‚\n\r", (int) flow );
 
-    send_to_buffer( "Á`Åª¤J¦ì¤¸²Õ  ¡R%d ¤d¦ì¤¸²Õ %d ¦ì¤¸²Õ¡C\n\r"
+    send_to_buffer( "ç¸½è®€å…¥ä½å…ƒçµ„  ï¹•%d åƒä½å…ƒçµ„ %d ä½å…ƒçµ„ã€‚\n\r"
       , ReadKiloBytes, ReadBytes );
 
     flow = ( ReadKiloBytes * 1000 + ReadBytes ) / UMAX( sTime.tv_sec , 1 );
-    send_to_buffer( "¥­§¡¿é¤J¬y¶q  ¡R¨C¬í %d ¦ì¤¸²Õ¡C\n\r", (int) flow );
+    send_to_buffer( "å¹³å‡è¼¸å…¥æµé‡  ï¹•æ¯ç§’ %d ä½å…ƒçµ„ã€‚\n\r", (int) flow );
 
-    send_to_buffer( "¥D¾÷³Ìªñªº­t²ü¡R%s¡C\n\r", get_OS_loading()  );
-    send_to_buffer( "¨t²Î³Ìªñªº­t²ü¡R%s¡C\n\r", get_mud_loading() );
+    send_to_buffer( "ä¸»æ©Ÿæœ€è¿‘çš„è² è·ï¹•%sã€‚\n\r", get_OS_loading()  );
+    send_to_buffer( "ç³»çµ±æœ€è¿‘çš„è² è·ï¹•%sã€‚\n\r", get_mud_loading() );
 
-    send_to_buffer( "¨t²ÎÁ`µù¥U¤H¼Æ¡R%s ¤H¡C\n\r"
+    send_to_buffer( "ç³»çµ±ç¸½è¨»å†Šäººæ•¸ï¹•%s äººã€‚\n\r"
       , numberize( database_count( DATABASE_EXIST ), NULL ) );
 
     print_buffer( ch );
@@ -197,101 +197,101 @@ FUNCTION( do_sysinfo )
   {
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§A­n­pºâ´X¤ÀÄÁ«e¦Ü¥Ø«eªº­t¸ü¶q¡S\n\r", ch );
+      send_to_char( "ä½ è¦è¨ˆç®—å¹¾åˆ†é˜å‰è‡³ç›®å‰çš„è² è¼‰é‡ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( loop = atoi( argument ) ) <= 0 )
     {
-      send_to_char( "§Aªº¤ÀÄÁ¼Æ¥²¶·¤j©ó¹sªº¾ã¼Æ¡T\n\r", ch );
+      send_to_char( "ä½ çš„åˆ†é˜æ•¸å¿…é ˆå¤§æ–¼é›¶çš„æ•´æ•¸ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !get_exec_time( loop, &stime, &ustime ) )
     {
-      send_to_char( "¨S¦³¨º»ò¤[¤§«eªº¸ê®Æ¥i¨Ñ­pºâ¡T\n\r", ch );
+      send_to_char( "æ²’æœ‰é‚£éº¼ä¹…ä¹‹å‰çš„è³‡æ–™å¯ä¾›è¨ˆç®—ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     chinese_number( loop, buf );
     total = calc_loading( loop, stime, ustime );
 
-    print_to_char( ch, "%s\e[0m¨t²Î¡M%s¤ÀÄÁ«e¦Ü¥Ø«eªº¥­§¡­t¸ü¶q¬°"
+    print_to_char( ch, "%s\e[0mç³»çµ±ï¹%såˆ†é˜å‰è‡³ç›®å‰çš„å¹³å‡è² è¼‰é‡ç‚º"
       " %d.%d%d%%\n\r"
       , mud_name
       , buf, total / 100, ( total % 100 ) / 10 , ( total % 100 ) % 10);
   }
   else
   {
-    send_to_char( "¹ï¤£°_¡M§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß sysconf ªº¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ sysconf çš„ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
   RETURN_NULL();
 }
 
 #ifdef __linux__
-/* °õ¦æ¾\Åª¨t²Î§C¶¥¸ê°T¨ç¼Æ */
+/* åŸ·è¡Œé–±è®€ç³»çµ±ä½éšè³‡è¨Šå‡½æ•¸ */
 FUNCTION( do_debug )
 {
   struct ProcFile sysinfo;
 
   PUSH_FUNCTION( "do_debug" );
 
-  /* ­Y¬OÅª¨ú¦³µo¥Í¿ù»~ */
+  /* è‹¥æ˜¯è®€å–æœ‰ç™¼ç”ŸéŒ¯èª¤ */
   if ( get_proc( merc_pid, &sysinfo ) == FALSE )
   {
-    send_to_char( "Åª¨ú proc ÀÉ®×¦³¿ù»~µo¥Í¡C\n\r" , ch );
+    send_to_char( "è®€å– proc æª”æ¡ˆæœ‰éŒ¯èª¤ç™¼ç”Ÿã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
   clear_buffer();
-  send_to_buffer( "¥Ø«e¦æµ{¸¹½X(PID)¡R                          %d\n\r"
-                  "¤÷µ{¸¹½X(PPID)¡R                             %d\n\r"
-                  "ª¬ºA¡R                                       "
+  send_to_buffer( "ç›®å‰è¡Œç¨‹è™Ÿç¢¼(PID)ï¹•                          %d\n\r"
+                  "çˆ¶ç¨‹è™Ÿç¢¼(PPID)ï¹•                             %d\n\r"
+                  "ç‹€æ…‹ï¹•                                       "
     , sysinfo.pid, sysinfo.ppid );
 
   switch( sysinfo.state )
   {
-    default  : send_to_buffer( "¥¼©ú"            ); break;
-    case 'I' : send_to_buffer( "¶¢¸m(I)"         ); break;
-    case 'O' : send_to_buffer( "¥¿¦b³B²z(O)"     ); break;
-    case 'R' : send_to_buffer( "°õ¦æ¦î¦C¤¤(R)"   ); break;
-    case 'S' : send_to_buffer( "¨HºÎ¤¤(S)"       ); break;
-    case 'T' : send_to_buffer( "°±¤î¤¤(T)"       ); break;
-    case 'X' : send_to_buffer( "µ¥«İ°O¾ĞÅé¤¤(X)" ); break;
-    case 'Z' : send_to_buffer( "§bº¢¤¤(Z)"       ); break;
+    default  : send_to_buffer( "æœªæ˜"            ); break;
+    case 'I' : send_to_buffer( "é–’ç½®(I)"         ); break;
+    case 'O' : send_to_buffer( "æ­£åœ¨è™•ç†(O)"     ); break;
+    case 'R' : send_to_buffer( "åŸ·è¡Œä½‡åˆ—ä¸­(R)"   ); break;
+    case 'S' : send_to_buffer( "æ²ˆç¡ä¸­(S)"       ); break;
+    case 'T' : send_to_buffer( "åœæ­¢ä¸­(T)"       ); break;
+    case 'X' : send_to_buffer( "ç­‰å¾…è¨˜æ†¶é«”ä¸­(X)" ); break;
+    case 'Z' : send_to_buffer( "å‘†æ»¯ä¸­(Z)"       ); break;
   }
 
   send_to_buffer( "\n\r"
-                  "¸s±Ú¦æµ{¸¹½X(PGRP)¡R                         %d\n\r"
-                  "Session¦æµ{¸¹½X(SID)¡R                       %d\n\r"
-                  "±±¨î¥x¡R                                     %d\n\r"
-                  "²×ºİ¾÷¦æµ{¸¹½X(TPGID)¡R                      %d\n\r"
-                  "¦æµ{ºX¼Ğ¡R                                   %d\n\r"
-                  "¶ñº¡ PAGE ®É¤£»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ¡R      %d\n\r"
-                  "¤l¦æµ{¶ñº¡ PAGE ®É¤£»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ¡R%d\n\r"
-                  "¶ñº¡ PAGE ®É»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ¡R        %d\n\r"
-                  "¤l¦æµ{¶ñº¡ PAGE ®É»İ­n¥Î¨ì I/O °Ê§@ªº¦¸¼Æ¡R  %d\n\r"
-                  "¦æµ{©Ò¯Óªº®É¶¡¡R                             %d\n\r"
-                  "®Ö¤ß³Q¦æµ{©Ò¯Óªº®É¶¡¡R                       %d\n\r"
-                  "¦æµ{ªº¤l¦æµ{©Ò¯Óªº®É¶¡¡R                     %d\n\r"
-                  "®Ö¤ß³Q¦æµ{ªº¤l¦æµ{©Ò¯Óªº®É¶¡¡R               %d\n\r"
-                  "Àu¥ıÅv¡R                                     %d\n\r"
-                  "Nice¡R                                       %d\n\r"
-                  "±Ò°Ê®É¶¡¡R                                   %d\n\r"
-                  "µêÀÀ°O¾ĞÅéªº¤j¤p¡R                           %d\n\r"
-                  "¦û¦sªº°O¾ĞÅé                                 %d\n\r"
-                  "Code Segment °_¨Ï¦ì§}                        %d\n\r"
-                  "Code Segment µ²§ô¦ì§}                        %d\n\r"
-                  "°ïÅ|ªº©³³¡¦ì§}                               %d\n\r"
-                  "®Ö¤ß°ïÅ|ªºESP¼È¦s¾¹¤º®e                      %d\n\r"
-                  "®Ö¤ß°ïÅ|ªºEIP¼È¦s¾¹¤º®e                      %d\n\r"
-                  "pending °T¸¹ªº¾B¸n                           %d\n\r"
-                  "blocked °T¸¹ªº¾B¸n                           %d\n\r"
-                  "ignored °T¸¹ªº¾B¸n                           %d\n\r"
-                  "catch   °T¸¹ªº¾B¸n                           %d\n\r"
-                  "®Ö¤ßµ¥«İ¦æµ{ªº¦ì§}                           %d\n\r"
-                  "ÀW²v(HZ)                                     %d\n\r"
-                  "¨t²Î­t¸ü                                     %s%%\n\r"
+                  "ç¾¤æ—è¡Œç¨‹è™Ÿç¢¼(PGRP)ï¹•                         %d\n\r"
+                  "Sessionè¡Œç¨‹è™Ÿç¢¼(SID)ï¹•                       %d\n\r"
+                  "æ§åˆ¶å°ï¹•                                     %d\n\r"
+                  "çµ‚ç«¯æ©Ÿè¡Œç¨‹è™Ÿç¢¼(TPGID)ï¹•                      %d\n\r"
+                  "è¡Œç¨‹æ——æ¨™ï¹•                                   %d\n\r"
+                  "å¡«æ»¿ PAGE æ™‚ä¸éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸ï¹•      %d\n\r"
+                  "å­è¡Œç¨‹å¡«æ»¿ PAGE æ™‚ä¸éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸ï¹•%d\n\r"
+                  "å¡«æ»¿ PAGE æ™‚éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸ï¹•        %d\n\r"
+                  "å­è¡Œç¨‹å¡«æ»¿ PAGE æ™‚éœ€è¦ç”¨åˆ° I/O å‹•ä½œçš„æ¬¡æ•¸ï¹•  %d\n\r"
+                  "è¡Œç¨‹æ‰€è€—çš„æ™‚é–“ï¹•                             %d\n\r"
+                  "æ ¸å¿ƒè¢«è¡Œç¨‹æ‰€è€—çš„æ™‚é–“ï¹•                       %d\n\r"
+                  "è¡Œç¨‹çš„å­è¡Œç¨‹æ‰€è€—çš„æ™‚é–“ï¹•                     %d\n\r"
+                  "æ ¸å¿ƒè¢«è¡Œç¨‹çš„å­è¡Œç¨‹æ‰€è€—çš„æ™‚é–“ï¹•               %d\n\r"
+                  "å„ªå…ˆæ¬Šï¹•                                     %d\n\r"
+                  "Niceï¹•                                       %d\n\r"
+                  "å•Ÿå‹•æ™‚é–“ï¹•                                   %d\n\r"
+                  "è™›æ“¬è¨˜æ†¶é«”çš„å¤§å°ï¹•                           %d\n\r"
+                  "ä½”å­˜çš„è¨˜æ†¶é«”                                 %d\n\r"
+                  "Code Segment èµ·ä½¿ä½å€                        %d\n\r"
+                  "Code Segment çµæŸä½å€                        %d\n\r"
+                  "å †ç–Šçš„åº•éƒ¨ä½å€                               %d\n\r"
+                  "æ ¸å¿ƒå †ç–Šçš„ESPæš«å­˜å™¨å…§å®¹                      %d\n\r"
+                  "æ ¸å¿ƒå †ç–Šçš„EIPæš«å­˜å™¨å…§å®¹                      %d\n\r"
+                  "pending è¨Šè™Ÿçš„é®ç½©                           %d\n\r"
+                  "blocked è¨Šè™Ÿçš„é®ç½©                           %d\n\r"
+                  "ignored è¨Šè™Ÿçš„é®ç½©                           %d\n\r"
+                  "catch   è¨Šè™Ÿçš„é®ç½©                           %d\n\r"
+                  "æ ¸å¿ƒç­‰å¾…è¡Œç¨‹çš„ä½å€                           %d\n\r"
+                  "é »ç‡(HZ)                                     %d\n\r"
+                  "ç³»çµ±è² è¼‰                                     %s%%\n\r"
                   , sysinfo.pgrp
                   , sysinfo.sid
                   , sysinfo.tty
@@ -331,12 +331,12 @@ FUNCTION( do_debug )
 FUNCTION( do_debug )
 {
   PUSH_FUNCTION( "do_debug" );
-  send_to_char( "¦¹Ãş§@·~¨t²Î¤£´£¨Ñ³oÃşªA°È¡C\n\r", ch );
+  send_to_char( "æ­¤é¡ä½œæ¥­ç³»çµ±ä¸æä¾›é€™é¡æœå‹™ã€‚\n\r", ch );
   RETURN_NULL();
 }
 #endif
 
-/* ­pºâ¥X¨t²Îªº­t¸ü¶q */
+/* è¨ˆç®—å‡ºç³»çµ±çš„è² è¼‰é‡ */
 char * get_loading( void )
 {
   int         used;
@@ -364,7 +364,7 @@ int get_process_loading( struct ProcFile * sys )
   RETURN( sys->utime + sys->stime + sys->cutime + sys->cstime );
 }
 
-/* ¦C¦L¥X¨t²Îªº¸ê°T */
+/* åˆ—å°å‡ºç³»çµ±çš„è³‡è¨Š */
 FUNCTION( do_uname )
 {
   struct utsname name;
@@ -373,18 +373,18 @@ FUNCTION( do_uname )
 
   if ( uname( &name ) < 0 )
   {
-    send_to_char( "¨ç¼Æ uname() ¦³°İÃD¡C" , ch );
+    send_to_char( "å‡½æ•¸ uname() æœ‰å•é¡Œã€‚" , ch );
     RETURN_NULL();
   }
 
   print_to_char( ch ,
-    "¨ç¼Æ uname() ªº¸ê°T¡R\n\r"
-    "§@·~¨t²Î¦WºÙ¡R%s\n\r"
-    "§@·~¨t²Îª©¥»¡R%s\n\r"
-    "¨t²Î¸`ÂI¦WºÙ¡R%s\n\r"
-    "¨t²Î¥¿¦¡ª©¥»¡R%s\n\r"
-    "¨t²Î¾÷¾¹«¬ºA¡R%s\n\r"
-    "Domain name ¡R%s\n\r"
+    "å‡½æ•¸ uname() çš„è³‡è¨Šï¹•\n\r"
+    "ä½œæ¥­ç³»çµ±åç¨±ï¹•%s\n\r"
+    "ä½œæ¥­ç³»çµ±ç‰ˆæœ¬ï¹•%s\n\r"
+    "ç³»çµ±ç¯€é»åç¨±ï¹•%s\n\r"
+    "ç³»çµ±æ­£å¼ç‰ˆæœ¬ï¹•%s\n\r"
+    "ç³»çµ±æ©Ÿå™¨å‹æ…‹ï¹•%s\n\r"
+    "Domain name ï¹•%s\n\r"
     , name.sysname
     , name.release
     , name.nodename
@@ -392,41 +392,41 @@ FUNCTION( do_uname )
     , name.machine );
 
   #ifdef __linux__
-  print_to_char( ch, "Domain name ¡R%s\n\r", name.domainname );
+  print_to_char( ch, "Domain name ï¹•%s\n\r", name.domainname );
   #endif
 
   RETURN_NULL();
 }
 
-/* ¨ú±o¨t²Îªº²ÕºA */
+/* å–å¾—ç³»çµ±çš„çµ„æ…‹ */
 FUNCTION( do_sysconf )
 {
   PUSH_FUNCTION( "do_sysconf" );
 
   clear_buffer();
 
-  send_to_buffer( "¨C­Ó¨Ï¥ÎªÌ³Ì¦h¦æµ{¼Æ   ¡R%d\n\r"
+  send_to_buffer( "æ¯å€‹ä½¿ç”¨è€…æœ€å¤šè¡Œç¨‹æ•¸   ï¹•%d\n\r"
     , sysconf( _SC_CHILD_MAX ) );
 
-  send_to_buffer( "¨C¬íªº¨t²Î°O¼Æ¾¹¦¸¼Æ   ¡R%d\n\r" , get_tick() );
+  send_to_buffer( "æ¯ç§’çš„ç³»çµ±è¨˜æ•¸å™¨æ¬¡æ•¸   ï¹•%d\n\r" , get_tick() );
 
-  send_to_buffer( "¦æµ{³Ì¦h¥i¥H¶}´X­Ó¶×¬y ¡R%d\n\r"
+  send_to_buffer( "è¡Œç¨‹æœ€å¤šå¯ä»¥é–‹å¹¾å€‹åŒ¯æµ ï¹•%d\n\r"
     , sysconf( _SC_STREAM_MAX ) );
 
-  send_to_buffer( "¦æµ{³Ì¦h¥i¥H¶}´X­ÓÀÉ®× ¡R%d\n\r"
+  send_to_buffer( "è¡Œç¨‹æœ€å¤šå¯ä»¥é–‹å¹¾å€‹æª”æ¡ˆ ï¹•%d\n\r"
     , sysconf( _SC_OPEN_MAX ) );
 
-  send_to_buffer( "¬O§_¤ä´© Job ±±¨î      ¡R%s\n\r"
+  send_to_buffer( "æ˜¯å¦æ”¯æ´ Job æ§åˆ¶      ï¹•%s\n\r"
     , YESNO( sysconf( _SC_JOB_CONTROL ) ) );
 
-  send_to_buffer( "¬O§_¤ä´©°O¿ı IDS       ¡R%s\n\r"
+  send_to_buffer( "æ˜¯å¦æ”¯æ´è¨˜éŒ„ IDS       ï¹•%s\n\r"
     , YESNO( sysconf( _SC_SAVED_IDS ) ) );
 
-  send_to_buffer( "¨t²Î©Ò¤ä´©ªº POSIX ª©¥»¡R%d.%d\n\r"
+  send_to_buffer( "ç³»çµ±æ‰€æ”¯æ´çš„ POSIX ç‰ˆæœ¬ï¹•%d.%d\n\r"
     , sysconf( _SC_VERSION ) / 100
     , sysconf( _SC_VERSION ) % 100 );
 
-  send_to_buffer( "¨t²Î©Ò¤ä´©ªºPOSIX2 ª©¥»¡R%d.%d\n\r"
+  send_to_buffer( "ç³»çµ±æ‰€æ”¯æ´çš„POSIX2 ç‰ˆæœ¬ï¹•%d.%d\n\r"
     , sysconf( _SC_2_VERSION ) / 100
     , sysconf( _SC_2_VERSION ) % 100 );
 
@@ -434,7 +434,7 @@ FUNCTION( do_sysconf )
   RETURN_NULL();
 }
 
-/* ¨ú±o¨t²Î¶}¾÷¨ì¥Ø«e¬°¤îªº Tick ¼Æ */
+/* å–å¾—ç³»çµ±é–‹æ©Ÿåˆ°ç›®å‰ç‚ºæ­¢çš„ Tick æ•¸ */
 unsigned long get_uptime( void )
 {
   struct tms pTms;
@@ -443,7 +443,7 @@ unsigned long get_uptime( void )
   RETURN( times( &pTms ) );
 }
 
-/* ¨ú±o¨t²Îªº Tick */
+/* å–å¾—ç³»çµ±çš„ Tick */
 int get_tick( void )
 {
   PUSH_FUNCTION( "get_tick" );
@@ -484,7 +484,7 @@ int get_tick( void )
   }
 
 #ifdef __linux__
-/* ¨ú±o proc file ªºÀÉ®× */
+/* å–å¾— proc file çš„æª”æ¡ˆ */
 bool get_proc( pid_t pid, struct ProcFile * proc )
 {
   int    fd;
@@ -494,34 +494,34 @@ bool get_proc( pid_t pid, struct ProcFile * proc )
 
   PUSH_FUNCTION( "get_proc" );
 
-  /* ÀË¬d PID ¬O§_ ¦Xªk */
+  /* æª¢æŸ¥ PID æ˜¯å¦ åˆæ³• */
   if ( pid <= 1 )
   {
-    mudlog( LOG_INFO, "get_proc: pid ¸¹½X %d ¤£¦Xªk" , pid );
+    mudlog( LOG_INFO, "get_proc: pid è™Ÿç¢¼ %d ä¸åˆæ³•" , pid );
     RETURN( FALSE );
   }
 
-  /* ÀË¬dµ²ºc¬O§_¦Xªk */
+  /* æª¢æŸ¥çµæ§‹æ˜¯å¦åˆæ³• */
   if ( proc == NULL )
   {
-    mudlog( LOG_INFO, "get_proc: µ²ºc proc ¬OªÅªº" );
+    mudlog( LOG_INFO, "get_proc: çµæ§‹ proc æ˜¯ç©ºçš„" );
     RETURN( FALSE );
   }
 
-  /* ²M°£µ²ºcªº¸ê®Æ */
+  /* æ¸…é™¤çµæ§‹çš„è³‡æ–™ */
   memset( proc , 0, sizeof( struct ProcFile ) );
 
-  /* ³]©wÀÉ¦W */
+  /* è¨­å®šæª”å */
   sprintf( filename, "%s/%d/stat" , PROC_DIR , pid );
 
-  /* ¶}±Ò proc file stat ªº¤º®e */
+  /* é–‹å•Ÿ proc file stat çš„å…§å®¹ */
   if ( ( fd = open( filename , O_RDONLY ,0 ) ) < 0 )
   {
     mudlog( LOG_INFO , "get_proc: open:%s" , strerror( errno ) );
     RETURN( FALSE );
   }
 
-  /* Åª¨ú proc file stat ªº¤º®e */
+  /* è®€å– proc file stat çš„å…§å®¹ */
   if ( ( read( fd, buffer , sizeof( buffer ) - 1 ) ) <= 0 )
   {
     mudlog( LOG_INFO , "Get_proc: read:%s" , strerror( errno ) );
@@ -529,10 +529,10 @@ bool get_proc( pid_t pid, struct ProcFile * proc )
     RETURN( FALSE );
   }
 
-  /* Ãö³¬ÀÉ®×´y­z¤l */
+  /* é—œé–‰æª”æ¡ˆæè¿°å­ */
   close( fd );
 
-  /* ±q½w½Ä°Ï¤¤Åª¨ú¸ê®Æ */
+  /* å¾ç·©è¡å€ä¸­è®€å–è³‡æ–™ */
   arg = buffer;
   READ_NUMBER( arg, proc->pid           );
   READ_WORD  ( arg, proc->cmd           );
@@ -570,17 +570,17 @@ bool get_proc( pid_t pid, struct ProcFile * proc )
   READ_NUMBER( arg, proc->sigcatch      );
   READ_NUMBER( arg, proc->wchan         );
 
-  /* ³]©wÀÉ¦W */
+  /* è¨­å®šæª”å */
   sprintf( filename, "%s/%d/status" , PROC_DIR , pid );
 
-  /* ¶}±Ò proc file status ªº¤º®e */
+  /* é–‹å•Ÿ proc file status çš„å…§å®¹ */
   if ( ( fd = open( filename , O_RDONLY ,0 ) ) < 0 )
   {
     mudlog( LOG_INFO , "get_proc: open:%s" , strerror( errno ) );
     RETURN( FALSE );
   }
 
-  /* Åª¨ú proc file status ªº¤º®e */
+  /* è®€å– proc file status çš„å…§å®¹ */
   if ( ( read( fd, buffer , sizeof( buffer ) - 1 ) ) <= 0 )
   {
     mudlog( LOG_INFO , "Get_proc: read:%s" , strerror( errno ) );
@@ -588,7 +588,7 @@ bool get_proc( pid_t pid, struct ProcFile * proc )
     RETURN( FALSE );
   }
 
-  /* Ãö³¬ÀÉ®×´y­z¤l */
+  /* é—œé–‰æª”æ¡ˆæè¿°å­ */
   close( fd );
 
   proc->uid = -1;
@@ -609,34 +609,34 @@ bool get_proc( pid_t pid, struct ProcFile * proc )
 
   PUSH_FUNCTION( "get_proc" );
 
-  /* ÀË¬d PID ¬O§_ ¦Xªk */
+  /* æª¢æŸ¥ PID æ˜¯å¦ åˆæ³• */
   if ( pid <= 1 )
   {
-    mudlog( LOG_INFO, "get_proc: pid ¸¹½X %d ¤£¦Xªk" , pid );
+    mudlog( LOG_INFO, "get_proc: pid è™Ÿç¢¼ %d ä¸åˆæ³•" , pid );
     RETURN( FALSE );
   }
 
-  /* ÀË¬dµ²ºc¬O§_¦Xªk */
+  /* æª¢æŸ¥çµæ§‹æ˜¯å¦åˆæ³• */
   if ( proc == NULL )
   {
-    mudlog( LOG_INFO, "get_proc: µ²ºc proc ¬OªÅªº" );
+    mudlog( LOG_INFO, "get_proc: çµæ§‹ proc æ˜¯ç©ºçš„" );
     RETURN( FALSE );
   }
 
-  /* ²M°£µ²ºcªº¸ê®Æ */
+  /* æ¸…é™¤çµæ§‹çš„è³‡æ–™ */
   memset( proc , 0, sizeof( struct ProcFile ) );
 
-  /* ³]©wÀÉ¦W */
+  /* è¨­å®šæª”å */
   sprintf( filename, "%s/%d/status", PROC_DIR, ( int ) pid );
 
-  /* ¶}±Ò proc file stat ªº¤º®e */
+  /* é–‹å•Ÿ proc file stat çš„å…§å®¹ */
   if ( ( fd = open( filename , O_RDONLY ,0 ) ) < 0 )
   {
     mudlog( LOG_INFO , "get_proc: open:%s" , strerror( errno ) );
     RETURN( FALSE );
   }
 
-  /* Åª¨ú proc file stat ªº¤º®e */
+  /* è®€å– proc file stat çš„å…§å®¹ */
   if ( ( read( fd, buffer , sizeof( buffer ) - 1 ) ) <= 0 )
   {
     mudlog( LOG_INFO , "Get_proc: read:%s" , strerror( errno ) );
@@ -644,7 +644,7 @@ bool get_proc( pid_t pid, struct ProcFile * proc )
     RETURN( FALSE );
   }
 
-  /* Ãö³¬ÀÉ®×´y­z¤l */
+  /* é—œé–‰æª”æ¡ˆæè¿°å­ */
   close( fd );
 
   arg = buffer;
@@ -683,7 +683,7 @@ FUNCTION( do_ps )
 
   if ( get_proc( merc_pid, &sysinfo ) == FALSE )
   {
-    send_to_char( "Åª¨ú¨t²ÎÀÉ®×µo¥Í¿ù»~¡C\n\r", ch );
+    send_to_char( "è®€å–ç³»çµ±æª”æ¡ˆç™¼ç”ŸéŒ¯èª¤ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -701,7 +701,7 @@ FUNCTION( do_ps )
     case 'u': fUser = TRUE; break;
     case 'g': fGrp  = TRUE; break;
     default:
-      print_to_char( ch, "¿ù»~ªº°Ñ¼Æ %c¡C ½Ğ¬d¸ß¨Ï¥Î¤èªk¡C\n\r", *argument );
+      print_to_char( ch, "éŒ¯èª¤çš„åƒæ•¸ %cã€‚ è«‹æŸ¥è©¢ä½¿ç”¨æ–¹æ³•ã€‚\n\r", *argument );
       RETURN_NULL();
     }
   }
@@ -709,12 +709,12 @@ FUNCTION( do_ps )
   clear_buffer();
   if ( ( reading = opendir( PROC_DIR ) ) )
   {
-    /* Åª¨ú¥Ø¿ıªº¤º®e */
+    /* è®€å–ç›®éŒ„çš„å…§å®¹ */
     while ( ( next = readdir( reading ) ) )
     {
       char filename[MAX_FILE_LENGTH];
 
-      /* ÀÉ¦W©Î¬O¥Ø¿ı¦WºÙ */
+      /* æª”åæˆ–æ˜¯ç›®éŒ„åç¨± */
       sprintf( filename, "%s/%s", PROC_DIR, next->d_name );
 
       if ( ( atoi( next->d_name ) <= 1
@@ -767,16 +767,16 @@ FUNCTION( do_ps )
       }
     }
 
-    if ( !Found ) send_to_buffer( "¥Ø«e¨S¦³¥ô¦óªº¤l¦æµ{¡T\n\r" );
-    else send_to_char( "\r\e[44;1m ¦æµ{    °õ¦æªº«ü¥O      UID "
-     "     GID   SID  PPID ¯Ó·l®É¶¡       °õ¦æ®É¶¡       \n\r\e[0m" , ch );
+    if ( !Found ) send_to_buffer( "ç›®å‰æ²’æœ‰ä»»ä½•çš„å­è¡Œç¨‹ï¹—\n\r" );
+    else send_to_char( "\r\e[44;1m è¡Œç¨‹    åŸ·è¡Œçš„æŒ‡ä»¤      UID "
+     "     GID   SID  PPID è€—ææ™‚é–“       åŸ·è¡Œæ™‚é–“       \n\r\e[0m" , ch );
 
     print_buffer( ch );
     closedir( reading );
   }
   else
   {
-    send_to_char( "µLªk¶}±Ò¨t²Î¦æµ{¥Ø¿ı¡C\n\r" , ch );
+    send_to_char( "ç„¡æ³•é–‹å•Ÿç³»çµ±è¡Œç¨‹ç›®éŒ„ã€‚\n\r" , ch );
   }
   RETURN_NULL();
 }
@@ -791,8 +791,8 @@ FUNCTION( do_flow )
   PUSH_FUNCTION( "do_flow" );
 
   clear_buffer();
-  send_to_buffer( "\e[1;33;44mª±®a­^¤å¦WºÙ °± ¯d ¿é    ¥X ¥­§¡ ¿é  ¤J ¥­§¡"
-    " ¦ì                               §}\e[0m\n\r" );
+  send_to_buffer( "\e[1;33;44mç©å®¶è‹±æ–‡åç¨± åœ ç•™ è¼¸    å‡º å¹³å‡ è¼¸  å…¥ å¹³å‡"
+    " ä½                               å€\e[0m\n\r" );
 
   for ( man = descriptor_list; man; man = man->next )
   {
@@ -843,11 +843,11 @@ FUNCTION( do_okip )
   {
     if ( !( pDesc = ch->desc ) || !pDesc->host || !*pDesc->host )
     {
-      send_to_char( "§A¥Ø«e¯Ê¥F³s½u¸ê®Æ¡MµLªkÅã¥Ü¡T\n\r", ch );
+      send_to_char( "ä½ ç›®å‰ç¼ºä¹é€£ç·šè³‡æ–™ï¹ç„¡æ³•é¡¯ç¤ºï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "§A¥Ø«eªº³s½u¦ì§}¬° $6$t$0 ¼Æ¦r«¬ºA¬°¡R$6$T$0"
+    act( "ä½ ç›®å‰çš„é€£ç·šä½å€ç‚º $6$t$0 æ•¸å­—å‹æ…‹ç‚ºï¹•$6$T$0"
       , ch, pDesc->host, pDesc->address, TO_CHAR );
   }
 
@@ -855,17 +855,17 @@ FUNCTION( do_okip )
   {
     if ( !ch->connect )
     {
-      send_to_char( "§A¥Ø«e¨S¦³³]©w¥ô¦ó­­¨î³s½u¦ì§}¡M½Ğ¬d¸ß okip¡T\n\r", ch );
+      send_to_char( "ä½ ç›®å‰æ²’æœ‰è¨­å®šä»»ä½•é™åˆ¶é€£ç·šä½å€ï¹è«‹æŸ¥è©¢ okipï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     clear_buffer();
-    send_to_buffer( "§A¥Ø«e³]©wªº­­¨î³s½u¦ì§}¦³¦p¤U¡R\n\r" );
+    send_to_buffer( "ä½ ç›®å‰è¨­å®šçš„é™åˆ¶é€£ç·šä½å€æœ‰å¦‚ä¸‹ï¹•\n\r" );
     for ( count = 1, pIp = ch->connect; pIp; pIp = pIp->next, count++ )
     {
       if ( !pIp->address || !*pIp->address ) continue;
 
-      send_to_buffer( "¶¶§Ç %2d ­­¨î³s½u¦ì§}¬° ¡u%s\e[0m¡v\n\r"
+      send_to_buffer( "é †åº %2d é™åˆ¶é€£ç·šä½å€ç‚º ã€Œ%s\e[0mã€\n\r"
         , count, pIp->address );
     }
 
@@ -876,14 +876,14 @@ FUNCTION( do_okip )
   {
     if ( !ch->connect )
     {
-      send_to_char( "§A¥Ø«e¨S¦³³]©w¥ô¦ó³s½u¦ì§}¡M©Ò¥HµLªk§R°£¡T\n\r", ch );
+      send_to_char( "ä½ ç›®å‰æ²’æœ‰è¨­å®šä»»ä½•é€£ç·šä½å€ï¹æ‰€ä»¥ç„¡æ³•åˆªé™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     argument = one_argument( argument, arg );
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥²¶·µù©ú§Aªº³s½u¦ì§}¤~¯à§R°£¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å¿…é ˆè¨»æ˜ä½ çš„é€£ç·šä½å€æ‰èƒ½åˆªé™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -894,7 +894,7 @@ FUNCTION( do_okip )
         if ( zIp == NULL ) ch->connect = ch->connect->next;
         else               zIp->next  = pIp->next;
 
-        act( "§A²¾°£¤F$1$t$0³o­Ó­­¨î³s½u¦ì§}¡T"
+        act( "ä½ ç§»é™¤äº†$1$t$0é€™å€‹é™åˆ¶é€£ç·šä½å€ï¹—"
           , ch, pIp->address, NULL, TO_CHAR );
 
         free_string( pIp->address );
@@ -903,14 +903,14 @@ FUNCTION( do_okip )
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M¨S¦³§ä¨ì¬ÛÃöªº¦ì§}¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰æ‰¾åˆ°ç›¸é—œçš„ä½å€ï¹—\n\r", ch );
   }
 
   else if ( !str_prefix( arg, "clear" ) )
   {
     if ( !ch->connect )
     {
-      send_to_char( "§A¥Ø«e¨S¦³³]©w¥ô¦ó³s½u¦ì§}¡M©Ò¥HµLªk²M°£¡T\n\r", ch );
+      send_to_char( "ä½ ç›®å‰æ²’æœ‰è¨­å®šä»»ä½•é€£ç·šä½å€ï¹æ‰€ä»¥ç„¡æ³•æ¸…é™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -922,7 +922,7 @@ FUNCTION( do_okip )
     }
 
     ch->connect = NULL;
-    send_to_char( "¤w¸g¥ş³¡²M°£§Aªº©Ò¦³­­¨î³s½u¦ì§}¸ê®Æ¡T\n\r", ch );
+    send_to_char( "å·²ç¶“å…¨éƒ¨æ¸…é™¤ä½ çš„æ‰€æœ‰é™åˆ¶é€£ç·šä½å€è³‡æ–™ï¹—\n\r", ch );
   }
 
   else if ( !str_prefix( arg, "add" ) || !str_prefix( arg, "set" ) )
@@ -930,24 +930,24 @@ FUNCTION( do_okip )
     argument = one_argument( argument, arg );
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥²¶·µù©ú§Aªº³s½u¦ì§}¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å¿…é ˆè¨»æ˜ä½ çš„é€£ç·šä½å€ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ip_count( ch ) >= max_ip )
     {
-      send_to_char( "¹ï¤£°_¡M§A³]©wªº¦ì§}¤Ó¦h¤F¡MµLªk¦A¼W¥[¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ è¨­å®šçš„ä½å€å¤ªå¤šäº†ï¹ç„¡æ³•å†å¢åŠ äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     smash_tilde( arg );
     set_ip( ch, arg );
-    act( "§A­­¨î¤µ«á¥u¯à¥Ñ$t³s±µ¤W½u¡T", ch, arg, NULL, TO_CHAR );
+    act( "ä½ é™åˆ¶ä»Šå¾Œåªèƒ½ç”±$té€£æ¥ä¸Šç·šï¹—", ch, arg, NULL, TO_CHAR );
   }
 
   else
   {
-    send_to_char( "§Aªº°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß okip ªº¥Îªk¡T\n\r", ch );
+    send_to_char( "ä½ çš„åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢ okip çš„ç”¨æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
@@ -961,7 +961,7 @@ void set_ip( CHAR_DATA * ch, const char * address )
 
   if ( !ch || !address )
   {
-    mudlog( LOG_DEBUG, "set_ip: ¨Ó·½¿ù»~¡C" );
+    mudlog( LOG_DEBUG, "set_ip: ä¾†æºéŒ¯èª¤ã€‚" );
     RETURN_NULL();
   }
 
@@ -984,7 +984,7 @@ size_t ip_count( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "ip_count: ¯Ê¥F¨Ó·½¡C" );
+    mudlog( LOG_DEBUG, "ip_count: ç¼ºä¹ä¾†æºã€‚" );
     RETURN( 0 );
   }
 
@@ -1004,11 +1004,11 @@ bool check_limit_ip( DESCRIPTOR_DATA * pDesc )
 
   if ( !pDesc || !pDesc->host || !*pDesc->host || !( ch = pDesc->character ) )
   {
-    mudlog( LOG_DEBUG, "check_limit_ip: ¯Ê¥F¨Ó·½¡C" );
+    mudlog( LOG_DEBUG, "check_limit_ip: ç¼ºä¹ä¾†æºã€‚" );
     RETURN( FALSE );
   }
 
-  /* ¦pªG¨S¦³³]©w¡M¨º¤@©w¬O¹ïªº */
+  /* å¦‚æœæ²’æœ‰è¨­å®šï¹é‚£ä¸€å®šæ˜¯å°çš„ */
   if ( !ch->connect ) RETURN( TRUE );
 
   for ( pIp = ch->connect; pIp; pIp = pIp->next )
@@ -1033,12 +1033,12 @@ char * get_OS_loading( void )
   PUSH_FUNCTION( "get_OS_loading" );
 
   if ( !open_loading_file( &load_1, &load_10, &load_15 ) )
-    RETURN( "µLªk¶}±ÒÀÉ®×Åª¨ú¸ê®Æ" );
+    RETURN( "ç„¡æ³•é–‹å•Ÿæª”æ¡ˆè®€å–è³‡æ–™" );
 
   sprintf( buf,
-    "¤@¤ÀÄÁ¡R\e[1;%dm%.2f\e[0m "
-    "¤Q¤ÀÄÁ¡R\e[1;%dm%.2f\e[0m "
-    "¤Q¤­¤ÀÄÁ¡R\e[1;%dm%.2f\e[0m"
+    "ä¸€åˆ†é˜ï¹•\e[1;%dm%.2f\e[0m "
+    "ååˆ†é˜ï¹•\e[1;%dm%.2f\e[0m "
+    "åäº”åˆ†é˜ï¹•\e[1;%dm%.2f\e[0m"
     , ( load_1  * 100 ) >= OverLoading ? 31 : 32
     , load_1
     , ( load_10 * 100 ) >= OverLoading ? 31 : 32
@@ -1074,9 +1074,9 @@ char * get_mud_loading( void )
     load_15 = ( ( float ) calc_loading( 15, stime, ustime ) ) / 10000;
 
   sprintf( buf,
-    "¤@¤ÀÄÁ¡R\e[1;%dm%.2f\e[0m "
-    "¤Q¤ÀÄÁ¡R\e[1;%dm%.2f\e[0m "
-    "¤Q¤­¤ÀÄÁ¡R\e[1;%dm%.2f\e[0m"
+    "ä¸€åˆ†é˜ï¹•\e[1;%dm%.2f\e[0m "
+    "ååˆ†é˜ï¹•\e[1;%dm%.2f\e[0m "
+    "åäº”åˆ†é˜ï¹•\e[1;%dm%.2f\e[0m"
     , ( load_1  * 100 ) >= OverLoading / 2 ? 31 : 32
     , load_1
     , ( load_10 * 100 ) >= OverLoading / 2 ? 31 : 32
@@ -1119,7 +1119,7 @@ void loading_warning( CHAR_DATA * ch )
       || ( load_10 * 100 ) >= OverLoading
       || ( load_15 * 100 ) >= OverLoading )
     {
-      act( "$B$B$B$2¡u¨t²ÎÄµ§i¡v$0¥D¾÷¨t²Îªº­t¸ü¶q¶W­­¡M$t$0¡T"
+      act( "$B$B$B$2ã€Œç³»çµ±è­¦å‘Šã€$0ä¸»æ©Ÿç³»çµ±çš„è² è¼‰é‡è¶…é™ï¹$t$0ï¹—"
         , ch, get_OS_loading(), NULL, TO_CHAR );
     }
   }
@@ -1135,67 +1135,67 @@ FUNCTION( do_rlimit )
 
   clear_buffer();
 
-  send_to_buffer( "\e[1;33;44m¶µ          ¥Ø            ³n©Ê­­¨î"
-    "             µw©Ê­­¨î                         \e[0m\n\r" );
+  send_to_buffer( "\e[1;33;44mé …          ç›®            è»Ÿæ€§é™åˆ¶"
+    "             ç¡¬æ€§é™åˆ¶                         \e[0m\n\r" );
 
   if ( getrlimit( RLIMIT_CPU, &pLim ) == 0 )
   {
-    send_to_buffer( "¢Ñ¢Ş¢ã¨Ï¥Î®É¶¡­­¨î" );
-    send_to_buffer( "%s     ¬í "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s     ¬í\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "ï¼£ï¼°ï¼µä½¿ç”¨æ™‚é–“é™åˆ¶" );
+    send_to_buffer( "%s     ç§’ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s     ç§’\n\r" , rlimit_str( pLim.rlim_max ) );
   }
 
   if ( getrlimit( RLIMIT_FSIZE, &pLim ) == 0 )
   {
-    send_to_buffer( "¶}±ÒÀÉ®×³Ì¤j¤j¤p  " );
-    send_to_buffer( "%s ¦ì¤¸²Õ "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s ¦ì¤¸²Õ\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "é–‹å•Ÿæª”æ¡ˆæœ€å¤§å¤§å°  " );
+    send_to_buffer( "%s ä½å…ƒçµ„ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s ä½å…ƒçµ„\n\r" , rlimit_str( pLim.rlim_max ) );
   }
 
   if ( getrlimit( RLIMIT_DATA, &pLim ) == 0 )
   {
-    send_to_buffer( "³Ì¤j¸ê®Æ°O¾ĞÅé¤j¤p" );
-    send_to_buffer( "%s ¦ì¤¸²Õ "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s ¦ì¤¸²Õ\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "æœ€å¤§è³‡æ–™è¨˜æ†¶é«”å¤§å°" );
+    send_to_buffer( "%s ä½å…ƒçµ„ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s ä½å…ƒçµ„\n\r" , rlimit_str( pLim.rlim_max ) );
   }
 
   if ( getrlimit( RLIMIT_STACK, &pLim ) == 0 )
   {
-    send_to_buffer( "³Ì¤j°ïÅ|°O¾ĞÅé¤j¤p" );
-    send_to_buffer( "%s ¦ì¤¸²Õ "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s ¦ì¤¸²Õ\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "æœ€å¤§å †ç–Šè¨˜æ†¶é«”å¤§å°" );
+    send_to_buffer( "%s ä½å…ƒçµ„ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s ä½å…ƒçµ„\n\r" , rlimit_str( pLim.rlim_max ) );
   }
 
   if ( getrlimit( RLIMIT_CORE, &pLim ) == 0 )
   {
-    send_to_buffer( "³Ì¤j®Ö¤ß¬M®gÀÉ¤j¤p" );
-    send_to_buffer( "%s ¦ì¤¸²Õ "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s ¦ì¤¸²Õ\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "æœ€å¤§æ ¸å¿ƒæ˜ å°„æª”å¤§å°" );
+    send_to_buffer( "%s ä½å…ƒçµ„ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s ä½å…ƒçµ„\n\r" , rlimit_str( pLim.rlim_max ) );
   }
 
   #if defined(RLIMIT_RSS)
   if ( getrlimit( RLIMIT_RSS, &pLim ) == 0 )
   {
-    send_to_buffer( "¥i¨Ï¥Îªº³Ì¤j°O¾ĞÅé" );
-    send_to_buffer( "%s ¦ì¤¸²Õ "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s ¦ì¤¸²Õ\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "å¯ä½¿ç”¨çš„æœ€å¤§è¨˜æ†¶é«”" );
+    send_to_buffer( "%s ä½å…ƒçµ„ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s ä½å…ƒçµ„\n\r" , rlimit_str( pLim.rlim_max ) );
   }
   #endif
 
   #if defined(RLIMIT_NPROC)
   if ( getrlimit( RLIMIT_NPROC, &pLim ) == 0 )
   {
-    send_to_buffer( "³Ì¦h¥i²£¥Íªº¤lµ{§Ç" );
-    send_to_buffer( "%s     ­Ó "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s     ­Ó\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "æœ€å¤šå¯ç”¢ç”Ÿçš„å­ç¨‹åº" );
+    send_to_buffer( "%s     å€‹ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s     å€‹\n\r" , rlimit_str( pLim.rlim_max ) );
   }
   #endif
 
   if ( getrlimit( RLIMIT_NOFILE, &pLim ) == 0 )
   {
-    send_to_buffer( "¶}±ÒÀÉ®×¼Æ¥Ø¤W­­  " );
-    send_to_buffer( "%s     ­Ó "    , rlimit_str( pLim.rlim_cur ) );
-    send_to_buffer( "%s     ­Ó\n\r" , rlimit_str( pLim.rlim_max ) );
+    send_to_buffer( "é–‹å•Ÿæª”æ¡ˆæ•¸ç›®ä¸Šé™  " );
+    send_to_buffer( "%s     å€‹ "    , rlimit_str( pLim.rlim_cur ) );
+    send_to_buffer( "%s     å€‹\n\r" , rlimit_str( pLim.rlim_max ) );
   }
 
   print_buffer( ch );
@@ -1208,7 +1208,7 @@ char * rlimit_str( int value )
 
   PUSH_FUNCTION( "rlimit_string" );
 
-  if ( value == ( int ) RLIM_INFINITY ) RETURN( "        µL½a¤j" );
+  if ( value == ( int ) RLIM_INFINITY ) RETURN( "        ç„¡çª®å¤§" );
 
   sprintf( buf, "%14s", numberize( value, NULL ) );
   RETURN( buf );

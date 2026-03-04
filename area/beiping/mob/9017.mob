@@ -1,8 +1,8 @@
 Vnum            9017
 Name            scamp~
-ShortDesc       �L��~
+ShortDesc       無賴~
 Description
-�j�ݧڨӦ��O�@�O�F�M���Q�����N�ĨĪ���X�ӡT
+大爺我來收保護費了﹐不想死的就乖乖的交出來﹗
 ~
 StayArea        Yes
 AutoSetValue    Yes
@@ -30,7 +30,7 @@ Type            greet_prog
 Chance          30
 Text
 if ispc($n)
-  emote �j�f�f�����L�ӡM�V�A�R�F�@�f�w��C
+  emote 大剌剌的走過來﹐向你吐了一口膿痰。
 endif
 ~
 End

@@ -1,9 +1,9 @@
 Vnum            1222
 Name            coins~
-ShortDesc       ¤T¤Q¨â¶Àª÷~
+ShortDesc       ä¸‰åå…©é»ƒé‡‘~
 Description
-¤@°ï¤T¤Q¨âªº¶Àª÷(coins)©ñ¦b¦a¤W¡C~
-Unit            °ï~
+ä¸€å †ä¸‰åå…©çš„é»ƒé‡‘(coins)æ”¾åœ¨åœ°ä¸Šã€‚~
+Unit            å †~
 ItemType        ITEM_MONEY
 Takeable        Yes
 Level           2

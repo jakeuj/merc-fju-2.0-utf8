@@ -1,12 +1,12 @@
 Vnum            84
 Name            snake sword~
-ShortDesc       �T�D�C~
+ShortDesc       狼蛇劍~
 Description
-�o��C�O�ѥj�N�Wű�y�v����ű�����M�`�W�J�ۤ@���ݮݦp�ͪ��T�M�T��
-�������N�N���ݵۧA�M�C���h���@�s�ΡM�驻�n�N�A���ͥͪ������M�ڻ�
-�o��C�¤O�L�a�M�u���̺�q�C�k���H�~���ϥΥ��C
+這把劍是由古代名鑄造師陳洛鑄成的﹐柄上雕著一隻栩栩如生的狼﹐狼的
+眼睛正冷冷的看著你﹐劍身則略作龍形﹐仿彿要將你活生生的撕裂﹐據說
+這把劍威力無窮﹐只有最精通劍法的人才敢使用它。
 ~
-Unit            ��~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

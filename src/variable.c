@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include "merc.h"
 
-/* ±`¥Îªº©Ğ¶¡ªºµêÀÀ¸¹½X */
+/* å¸¸ç”¨çš„æˆ¿é–“çš„è™›æ“¬è™Ÿç¢¼ */
 #define ROOM_VNUM_JAIL                  1
 #define ROOM_VNUM_LIMBO                 2
 #define ROOM_VNUM_CHAT                  3
@@ -22,7 +22,7 @@
 #define ROOM_VNUM_SCHOOL                500
 #define ROOM_VNUM_FAIL                  50
 
-/* µÛ¦WªºMOBªºµêÀÀ¸¹½X */
+/* è‘—åçš„MOBçš„è™›æ“¬è™Ÿç¢¼ */
 #define MOB_VNUM_VAMPIRE                2
 #define MOB_VNUM_PRACTICE               22
 
@@ -209,7 +209,7 @@ int                     NoteLevel       =       2;
 int                     MaxHitroll      =       150;
 
 char                    DefaultEmail[BUFSIZ] = { "anonymous@unknown.net" };
-char                    DefaultUnit[BUFSIZ]  = { "­Ó" };
+char                    DefaultUnit[BUFSIZ]  = { "å€‹" };
 char                    FromUnknown[BUFSIZ]  = { "unknown" };
 
 char *                  HourName[MAX_HOUR];

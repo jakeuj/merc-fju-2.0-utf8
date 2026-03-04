@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -15,7 +15,7 @@
 
 bool    mount_char      args( ( CHAR_DATA *, CHAR_DATA * ) );
 
-/* ÃM¤W°¨ */
+/* é¨ä¸Šé¦¬ */
 FUNCTION( do_mount )
 {
   CHAR_DATA * mount;
@@ -29,18 +29,18 @@ FUNCTION( do_mount )
 
   one_argument( argument, arg );
 
-  /* ¨S¦³°Ñ¼Æ´N¬O¬d¸ß§¤ÃM */
+  /* æ²’æœ‰åƒæ•¸å°±æ˜¯æŸ¥è©¢åé¨ */
   if ( !arg[0] )
   {
     if ( ( mount = ch->mount ) )
     {
       sprintf( buf, "%d/%d", mount->move, get_curr_move( mount ) );
-      act( "§Aªº®yÃM¬O$N(Åé¤O¡R$t)", ch, buf, mount, TO_CHAR );
+      act( "ä½ çš„åº§é¨æ˜¯$N(é«”åŠ›ï¹•$t)", ch, buf, mount, TO_CHAR );
     }
 
     else
     {
-      send_to_char( "§A¨S¦³¥ô¦óªº®yÃM³á¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰ä»»ä½•çš„åº§é¨å–”ã€‚\n\r", ch );
     }
 
     RETURN_NULL();
@@ -48,97 +48,97 @@ FUNCTION( do_mount )
 
   if ( ( adept = ch->skill[SLOT_MOUNT] )  <= 0 )
   {
-    send_to_char( "¹ï¤£°_¡M§AÁÙ¤£·|ÃM³N³o¤@©Û­C¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ é‚„ä¸æœƒé¨è¡“é€™ä¸€æ‹›è€¶ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
-  /* ¤£¯à­«½Æ¦³§¤ÃM */
+  /* ä¸èƒ½é‡è¤‡æœ‰åé¨ */
   if ( ch->mount )
   {
-    act( "§A¤w¸gÃMµÛ$N¤F¡C", ch, NULL, ch->mount, TO_CHAR );
+    act( "ä½ å·²ç¶“é¨è‘—$Näº†ã€‚", ch, NULL, ch->mount, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¬O§_¦Û¤v¬O§O¤Hªº§¤ÃM */
+  /* æª¢æŸ¥æ˜¯å¦è‡ªå·±æ˜¯åˆ¥äººçš„åé¨ */
   if ( ch->mount_by )
   {
-    act( "§A¦Û¤v¤w¸g³Q$NÃMµÛ¤F¡C", ch, NULL, ch->mount_by, TO_CHAR );
+    act( "ä½ è‡ªå·±å·²ç¶“è¢«$Né¨è‘—äº†ã€‚", ch, NULL, ch->mount_by, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¬O§_¦Û¤v¥»¨­¦X¾A»P§_ */
+  /* æª¢æŸ¥æ˜¯å¦è‡ªå·±æœ¬èº«åˆé©èˆ‡å¦ */
   if ( ch->tractable > 0 )
   {
-    send_to_char( "§A¤£¾A¦X¦³®yÃM¡C\n\r", ch );
+    send_to_char( "ä½ ä¸é©åˆæœ‰åº§é¨ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
-  /* ¤£¯à¦³­¸¦æ³N */
+  /* ä¸èƒ½æœ‰é£›è¡Œè¡“ */
   if ( is_affected( ch, SLOT_FLY ) )
   {
-    send_to_char( "§AÂù¸}Â÷¦a¡MµLªkÃM¤W§Aªº§¤ÃM¡C\n\r", ch );
+    send_to_char( "ä½ é›™è…³é›¢åœ°ï¹ç„¡æ³•é¨ä¸Šä½ çš„åé¨ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
-  /* §ä´M©Ğ¶¡¸Ì­±ªº§¤ÃM */
+  /* æ‰¾å°‹æˆ¿é–“è£¡é¢çš„åé¨ */
   if ( !( mount = get_char_room( ch, arg ) ) )
   {
-    act( "§ä¤£¨ì§Aªº®yÃM $2$T$0¡C", ch, NULL, arg, TO_CHAR );
+    act( "æ‰¾ä¸åˆ°ä½ çš„åº§é¨ $2$T$0ã€‚", ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¬İ¬İ³o°¦°Êª«¬O§_¤w¸g³QÃM¨«¤F */
+  /* çœ‹çœ‹é€™éš»å‹•ç‰©æ˜¯å¦å·²ç¶“è¢«é¨èµ°äº† */
   if ( !IS_NPC( mount ) || mount->tractable <= 0 )
   {
-    act( "$N³ºµM·QÃM¨ì§AªºÀY¤W¡C", mount, NULL, ch, TO_CHAR );
-    act( "§A»{¿ù§Aªº®yÃM¤F$N¡C", ch, NULL, mount, TO_CHAR );
+    act( "$Nç«Ÿç„¶æƒ³é¨åˆ°ä½ çš„é ­ä¸Šã€‚", mount, NULL, ch, TO_CHAR );
+    act( "ä½ èªéŒ¯ä½ çš„åº§é¨äº†$Nã€‚", ch, NULL, mount, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¬İ¬İ¬O§_³Q°g´b©Î¬O¦³¥D¤Hªº */
+  /* çœ‹çœ‹æ˜¯å¦è¢«è¿·æƒ‘æˆ–æ˜¯æœ‰ä¸»äººçš„ */
   if ( mount->master || mount->leader )
   {
-    act( "$N¦³¨ä¥¦ªº¥D¤H¤F¡C", ch, NULL, mount, TO_CHAR );
+    act( "$Næœ‰å…¶å®ƒçš„ä¸»äººäº†ã€‚", ch, NULL, mount, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¤w¸g¬O§O¤Hªº§¤ÃMªº */
+  /* å·²ç¶“æ˜¯åˆ¥äººçš„åé¨çš„ */
   if ( mount->mount_by )
   {
-    act( "$N³ºµM·Q·m§Aªº®yÃM­C¡C", mount->mount_by, NULL, ch, TO_CHAR );
-    act( "$N¤w¸g¬O¨ä¥¦¤Hªº®yÃM¤F¡C", ch, NULL, mount, TO_CHAR );
+    act( "$Nç«Ÿç„¶æƒ³æ¶ä½ çš„åº§é¨è€¶ã€‚", mount->mount_by, NULL, ch, TO_CHAR );
+    act( "$Nå·²ç¶“æ˜¯å…¶å®ƒäººçš„åº§é¨äº†ã€‚", ch, NULL, mount, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¬İ¬İ§¤ÃMªºª¬ºA¬O§_¥¿½T */
+  /* çœ‹çœ‹åé¨çš„ç‹€æ…‹æ˜¯å¦æ­£ç¢º */
   if ( mount->position != POS_STANDING )
   {
-    act( "$N¥Ø«e¼È®É¨S¿ìªkÃM¡C", ch, NULL, mount, TO_CHAR );
+    act( "$Nç›®å‰æš«æ™‚æ²’è¾¦æ³•é¨ã€‚", ch, NULL, mount, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* §¤ÃM¬O§_¥i¥H¬İ¨ì§A */
+  /* åé¨æ˜¯å¦å¯ä»¥çœ‹åˆ°ä½  */
   if ( !can_see( mount, ch ) )
   {
-    act( "$N¬İ¤£¨ì§A­C¡C", ch, NULL, mount, TO_CHAR );
+    act( "$Nçœ‹ä¸åˆ°ä½ è€¶ã€‚", ch, NULL, mount, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¬İ¬İ¬O§_Åé¤O¬O§_¨¬°÷ */
+  /* çœ‹çœ‹æ˜¯å¦é«”åŠ›æ˜¯å¦è¶³å¤  */
   if ( ch->move < MountCost )
   {
-    send_to_char( "§AªºÅé¤O¤£ÀÙ¡MÂù¸}µo³n¡M¨Ï¤£¤W¤O¡C\n\r", ch );
+    send_to_char( "ä½ çš„é«”åŠ›ä¸æ¿Ÿï¹é›™è…³ç™¼è»Ÿï¹ä½¿ä¸ä¸ŠåŠ›ã€‚\n\r", ch );
     ch->move = 0;
     RETURN_NULL();
   }
 
-  /* ¦©°£Åé¤O¯Ó·l */
+  /* æ‰£é™¤é«”åŠ›è€—æ */
   ch->move = UMAX( 0, ch->move - MountCost );
 
-  /* ÀË¬d¾÷²v */
+  /* æª¢æŸ¥æ©Ÿç‡ */
   if ( number_range( UMIN( 100, adept * 5 ) , 100 ) < mount->tractable )
   {
-    act( "$N¬ğµM¥û©Ê¤jµo¡M$n±q$N¨­¤WºL¤F¤U¨Ó¡C", ch, NULL, mount, TO_ALL );
+    act( "$Nçªç„¶å…‡æ€§å¤§ç™¼ï¹$nå¾$Nèº«ä¸Šæ‘”äº†ä¸‹ä¾†ã€‚", ch, NULL, mount, TO_ALL );
     ch->move  = UMAX( 0, ch->move - MountCost );
 
     RETURN_NULL();
@@ -146,7 +146,7 @@ FUNCTION( do_mount )
 
   if ( !mount_char( ch, mount ) )
   {
-    send_to_char( "§A¥¢±Ñ¤F¡C\n\r" , ch );
+    send_to_char( "ä½ å¤±æ•—äº†ã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
@@ -157,30 +157,30 @@ FUNCTION( do_mount )
     mount->talk_mode = MODE_ABSENT;
   }
 
-  /* ¿é¥X±Ô­z */
-  act( "$N¦¨¬°$nªº®yÃM¤F¡C"  , ch, NULL, mount, TO_ALL );
+  /* è¼¸å‡ºæ•˜è¿° */
+  act( "$Næˆç‚º$nçš„åº§é¨äº†ã€‚"  , ch, NULL, mount, TO_ALL );
 
-  /* Àò±o¸gÅç­È */
+  /* ç²å¾—ç¶“é©—å€¼ */
   gain_skill_exp( ch, SLOT_MOUNT, TRUE );
 
   RETURN_NULL();
 }
 
-/* ¨«¤U§¤ÃM */
+/* èµ°ä¸‹åé¨ */
 FUNCTION( do_unmount )
 {
   PUSH_FUNCTION( "do_unmount" );
 
-  /* ÀË¬d¬O§_¤w¸g¬O§_¦³§¤ÃM */
+  /* æª¢æŸ¥æ˜¯å¦å·²ç¶“æ˜¯å¦æœ‰åé¨ */
   if ( !ch->mount )
   {
-    send_to_char( "§A¨Ã¨S¦³¥ô¦óªº®yÃM³á¡C\n\r", ch );
+    send_to_char( "ä½ ä¸¦æ²’æœ‰ä»»ä½•çš„åº§é¨å–”ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !unmount_char( ch, ch->mount ) )
   {
-    send_to_char( "§A¥¢±Ñ¤F¡C\n\r", ch );
+    send_to_char( "ä½ å¤±æ•—äº†ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -188,12 +188,12 @@ FUNCTION( do_unmount )
   RETURN_NULL();
 }
 
-/* ÀË¬d»P®M¤W§¤ÃM */
+/* æª¢æŸ¥èˆ‡å¥—ä¸Šåé¨ */
 bool mount_char( CHAR_DATA * rider, CHAR_DATA * ridden )
 {
   PUSH_FUNCTION( "mount_char" );
 
-  /* ÀË¬d±ø¥ó */
+  /* æª¢æŸ¥æ¢ä»¶ */
   if ( rider->mount
     || rider->mount_by
     || rider->tractable > 0
@@ -210,32 +210,32 @@ bool mount_char( CHAR_DATA * rider, CHAR_DATA * ridden )
   RETURN( TRUE );
 }
 
-/* §¤ÃM¸Ñ®M */
+/* åé¨è§£å¥— */
 bool unmount_char( CHAR_DATA * rider, CHAR_DATA * ridden )
 {
   PUSH_FUNCTION( "unmount_char" );
 
-  /* ¥ıÀË¬d¨Ó·½ */
+  /* å…ˆæª¢æŸ¥ä¾†æº */
   if ( !rider || !ridden || !rider->mount ) RETURN( FALSE );
 
-  /* ÀË¬d¨ä»P³QÃM¬O§_¤@­P */
+  /* æª¢æŸ¥å…¶èˆ‡è¢«é¨æ˜¯å¦ä¸€è‡´ */
   if ( rider->mount != ridden || ridden->mount_by != rider )
   {
-    mudlog( LOG_DEBUG, "unmount_char: ÃM»P³QÃM¤£§k¦X" );
+    mudlog( LOG_DEBUG, "unmount_char: é¨èˆ‡è¢«é¨ä¸å»åˆ" );
     RETURN( FALSE );
   }
 
   rider->mount     = NULL;
   ridden->mount_by = NULL;
 
-  /* ¿é¥X±Ô­z */
+  /* è¼¸å‡ºæ•˜è¿° */
   if ( rider->in_room && rider->in_room == ridden->in_room )
-    act( "$n±q$N¨­¤Wºu¤F¤U¨Ó¡C", rider, NULL, ridden, TO_ALL );
+    act( "$nå¾$Nèº«ä¸Šæ»¾äº†ä¸‹ä¾†ã€‚", rider, NULL, ridden, TO_ALL );
 
   RETURN( TRUE );
 }
 
-/* ¶Ç¦^¬Y¤Hªº§¤ÃM */
+/* å‚³å›æŸäººçš„åé¨ */
 CHAR_DATA * get_mount( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_mount" );
@@ -243,7 +243,7 @@ CHAR_DATA * get_mount( CHAR_DATA * ch )
   RETURN( ch->mount );
 }
 
-/* ¶Ç¦^¬Y§¤ÃMªº¥D¤H */
+/* å‚³å›æŸåé¨çš„ä¸»äºº */
 CHAR_DATA * get_rider( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "get_rider" );

@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -15,7 +15,7 @@
 #include <string.h>
 #include "merc.h"
 
-/* ¦s©ñª««~©Î¬Oª÷¿úªº¥Dµ{¦¡ */
+/* å­˜æ”¾ç‰©å“æˆ–æ˜¯é‡‘éŒ¢çš„ä¸»ç¨‹å¼ */
 FUNCTION( do_deposit )
 {
   char        arg1[ MAX_INPUT_LENGTH ];
@@ -34,7 +34,7 @@ FUNCTION( do_deposit )
 
   if ( !arg1[0] )
   {
-    send_to_char( "§A·Q¦s´Ú©Î¬O±H©ñªF¦è¡M½Ğ¬d¸ß \e[1;32mdeposit\e[0m¡C\n\r" , ch );
+    send_to_char( "ä½ æƒ³å­˜æ¬¾æˆ–æ˜¯å¯„æ”¾æ±è¥¿ï¹è«‹æŸ¥è©¢ \e[1;32mdeposit\e[0mã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
@@ -42,13 +42,13 @@ FUNCTION( do_deposit )
   {
     if ( ch->in_room->DepositMoney == FALSE )
     {
-      act( "¹ï¤£°_¡M$r¨Ã¤£¬O¿ú²ø³á¡T" , ch, NULL, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$rä¸¦ä¸æ˜¯éŒ¢èŠå–”ï¹—" , ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¥¼¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n·íÁï¤Ö·İ¡C"
+      act( "åœ¨ä½ æœªå‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦ç•¶é—Šå°‘çˆºã€‚"
         , ch, &level_limit, NULL, TO_CHAR );
 
       RETURN_NULL();
@@ -56,7 +56,7 @@ FUNCTION( do_deposit )
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¸Ë´I¦³¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦è£å¯Œæœ‰ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -64,19 +64,19 @@ FUNCTION( do_deposit )
 
     if ( arg1[0] == '\x0' )
     {
-      send_to_char( "§A­nÂà±bµ¹½Ö©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦è½‰å¸³çµ¦èª°å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_world( ch, arg1 ) ) )
     {
-      act( "§ä¤£¨ì§Aªº¹ï¶H $2$T$0 ­C¡T", ch, NULL, arg1, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ çš„å°è±¡ $2$T$0 è€¶ï¹—", ch, NULL, arg1, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim == ch )
     {
-      send_to_char( "¦³¨S¦³·d¿ù°Ú¡M§A­nÂà±bµ¹¦Û¤v¡S\n\r", ch );
+      send_to_char( "æœ‰æ²’æœ‰æéŒ¯å•Šï¹ä½ è¦è½‰å¸³çµ¦è‡ªå·±ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -84,53 +84,53 @@ FUNCTION( do_deposit )
 
     if ( arg1[0] == '\x0' || !is_number( arg1 ) )
     {
-      act( "§A­nÂà¦h¤Ö±bµ¹$N©O¡S", ch, NULL, victim, TO_CHAR );
+      act( "ä½ è¦è½‰å¤šå°‘å¸³çµ¦$Nå‘¢ï¹–", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ( money = atoi( arg1 ) ) <= 0 )
     {
-      act( "§A­n°e¯È¿úµ¹$N¶Ü¡S", ch, NULL, victim, TO_CHAR );
+      act( "ä½ è¦é€ç´™éŒ¢çµ¦$Nå—ï¹–", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( money > ch->bank )
     {
-      send_to_char( "§A¤áÀY¸Ì¨S¦³¨º»ò¦h­C¡T\n\r", ch );
+      send_to_char( "ä½ æˆ¶é ­è£¡æ²’æœ‰é‚£éº¼å¤šè€¶ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( fee = money / 10 ) < 10 )
     {
-      send_to_char( "Âà±bª÷ÃB¤Ó¤Ö¤F°Õ¡T¤âÄò¶O¤£°÷°Õ¡T\n\r", ch );
+      send_to_char( "è½‰å¸³é‡‘é¡å¤ªå°‘äº†å•¦ï¹—æ‰‹çºŒè²»ä¸å¤ å•¦ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( over_scale( victim ) )
     {
-      act( "¹ï¤£°_¡M$Nªº¸ê²£¤Ó¤j¤F¡MµLªkÄ~Äò¦s¿ú¡T", ch, NULL, victim, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$Nçš„è³‡ç”¢å¤ªå¤§äº†ï¹ç„¡æ³•ç¹¼çºŒå­˜éŒ¢ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     ch->bank     -= money;
     victim->bank += ( money - fee );
 
-    act( "§AÂà¤F$i¨â»È¤lµ¹$N¡C", ch, &money, victim, TO_CHAR );
+    act( "ä½ è½‰äº†$iå…©éŠ€å­çµ¦$Nã€‚", ch, &money, victim, TO_CHAR );
 
     chinese_number( money - fee, buf );
-    act( "$nÂà¤F$t¨â»È¤lµ¹§A¡C", ch, buf, victim, TO_VICT );
+    act( "$nè½‰äº†$tå…©éŠ€å­çµ¦ä½ ã€‚", ch, buf, victim, TO_VICT );
 
     RETURN_NULL();
   }
 
-  /* ÃöÁä¦r¥i¥H¬O gold coin ©Î¬O coins ¨ä¤¤¤@­Ó */
+  /* é—œéµå­—å¯ä»¥æ˜¯ gold coin æˆ–æ˜¯ coins å…¶ä¸­ä¸€å€‹ */
   if ( !str_cmp( arg1 , "gold"  )
     || !str_cmp( arg1 , "coin"  )
     || !str_cmp( arg1 , "coins" ) )
   {
     if ( ch->in_room->DepositMoney == FALSE )
     {
-      act( "$r¨Ã¤£¬O¿ú²ø³á¡T" , ch, NULL, NULL, TO_CHAR );
+      act( "$rä¸¦ä¸æ˜¯éŒ¢èŠå–”ï¹—" , ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -144,72 +144,72 @@ FUNCTION( do_deposit )
 
     if ( ( money = atoi( arg2 ) ) <= 0 || money > ch->gold )
     {
-      send_to_char( "§A¦sªº¬O¯È¿ú¶Ü¡S\n\r" , ch );
+      send_to_char( "ä½ å­˜çš„æ˜¯ç´™éŒ¢å—ï¹–\n\r" , ch );
       RETURN_NULL();
     }
 
     if ( over_scale( ch ) )
     {
-      send_to_char( "¹ï¤£°_¡M§Aªº¸ê²£¤Ó¤j¤F¡MµLªkÄ~Äò¦s¿ú¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„è³‡ç”¢å¤ªå¤§äº†ï¹ç„¡æ³•ç¹¼çºŒå­˜éŒ¢ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     gold_from_char( ch, money );
     ch->bank += money;
 
-    act( "§A¦s¤F $i ¨â¡M²{¦bÁ`¦@¦³ $I ¨â¦b¿ú²ø¸Ì¡MÁÂÁÂ§Aªº¥úÁ{¡C"
+    act( "ä½ å­˜äº† $i å…©ï¹ç¾åœ¨ç¸½å…±æœ‰ $I å…©åœ¨éŒ¢èŠè£¡ï¹è¬è¬ä½ çš„å…‰è‡¨ã€‚"
       , ch, &money , &ch->bank, TO_CHAR );
 
     RETURN_NULL();
   }
 
-  /* ¦s©ñª««~ */
+  /* å­˜æ”¾ç‰©å“ */
     if ( ch->in_room->StoreRoom == FALSE )
   {
-    act( "$r¨Ã¤£¬OÃğ§½³á¡T" , ch, NULL, NULL, TO_CHAR );
+    act( "$rä¸¦ä¸æ˜¯é¢å±€å–”ï¹—" , ch, NULL, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !( obj = get_obj_carry( ch, arg1 ) ) )
   {
-    act( "§A¨S¦³¨º¼Ë $2$T$0 ¥i¥H±H©ñ³á¡C", ch, NULL, arg1, TO_CHAR );
+    act( "ä½ æ²’æœ‰é‚£æ¨£ $2$T$0 å¯ä»¥å¯„æ”¾å–”ã€‚", ch, NULL, arg1, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( obj->wear_loc != WEAR_NONE )
   {
-    act( "§AÁÙ§â$p¬ï¦b¨­¤W­C¡M¥ı§â¥¦²æ¤F§a¡C", ch, obj, NULL, TO_CHAR );
+    act( "ä½ é‚„æŠŠ$pç©¿åœ¨èº«ä¸Šè€¶ï¹å…ˆæŠŠå®ƒè„«äº†å§ã€‚", ch, obj, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ª««~¬O§_¦³Áı¬r */
+  /* ç‰©å“æ˜¯å¦æœ‰é¤µæ¯’ */
   if ( poison_char( ch, obj ) ) RETURN_NULL();
 
   if ( excess_filequota( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M§AªºÀÉ®×¤Ó¤j¡MµLªk°õ¦æ³o­Ó©R¥O¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ çš„æª”æ¡ˆå¤ªå¤§ï¹ç„¡æ³•åŸ·è¡Œé€™å€‹å‘½ä»¤ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !can_store( obj ) )
   {
-    act( "©êºp¡M§Ú­Ì¤£¯àÀ°§A¦s©ñ$p¡C" , ch, obj, NULL, TO_CHAR );
+    act( "æŠ±æ­‰ï¹æˆ‘å€‘ä¸èƒ½å¹«ä½ å­˜æ”¾$pã€‚" , ch, obj, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( obj->address )
   {
-    act( "$p¬O­n¥æµ¹§O¤Hªº«H¡M«ç»ò¦Û¤v¦s°_¨Ó¡C", ch, obj, NULL, TO_CHAR );
+    act( "$pæ˜¯è¦äº¤çµ¦åˆ¥äººçš„ä¿¡ï¹æ€éº¼è‡ªå·±å­˜èµ·ä¾†ã€‚", ch, obj, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !can_drop_obj( ch, obj ) )
   {
-    act( "§A¤£¯à¦s©ñ$p¡C", ch, obj, NULL, TO_CHAR );
+    act( "ä½ ä¸èƒ½å­˜æ”¾$pã€‚", ch, obj, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  act( "§A±N$p$0±H©ñ¦b¥»Ãğ§½¡MÁÂÁÂ¥úÁ{¡C", ch, obj, NULL, TO_CHAR );
+  act( "ä½ å°‡$p$0å¯„æ”¾åœ¨æœ¬é¢å±€ï¹è¬è¬å…‰è‡¨ã€‚", ch, obj, NULL, TO_CHAR );
 
   message_driver( ch, obj, ACT_WHEN_DEPOSIT );
 
@@ -219,7 +219,7 @@ FUNCTION( do_deposit )
   RETURN_NULL();
 }
 
-/* »â¦^ª÷¿ú©Î¬Oª««~ */
+/* é ˜å›é‡‘éŒ¢æˆ–æ˜¯ç‰©å“ */
 FUNCTION( do_withdraw )
 {
   OBJ_DATA * obj;
@@ -235,7 +235,7 @@ FUNCTION( do_withdraw )
 
   if ( !arg1[0] )
   {
-    send_to_char( "§A·Q´£´Ú©Î¬O»â¦^ªF¦è¡M½Ğ¬d¸ß withdraw¡T\n\r" , ch );
+    send_to_char( "ä½ æƒ³ææ¬¾æˆ–æ˜¯é ˜å›æ±è¥¿ï¹è«‹æŸ¥è©¢ withdrawï¹—\n\r" , ch );
     RETURN_NULL();
   }
 
@@ -245,13 +245,13 @@ FUNCTION( do_withdraw )
   {
     if ( ch->trade == FALSE )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤Ó¥i©È¤F¡M©Ò¥HµLªk°õ¦æ³o­Ó«ü¥O¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å¤ªå¯æ€•äº†ï¹æ‰€ä»¥ç„¡æ³•åŸ·è¡Œé€™å€‹æŒ‡ä»¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->in_room->DepositMoney == FALSE )
     {
-      act( "$r¨Ã¤£¬O¿ú²ø³á¡C", ch, NULL, NULL, TO_CHAR );
+      act( "$rä¸¦ä¸æ˜¯éŒ¢èŠå–”ã€‚", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -265,49 +265,49 @@ FUNCTION( do_withdraw )
 
     if ( ( money = atoi( arg2 ) ) <= 0 || money > ch->bank )
     {
-      send_to_char( "§A»âªº¬O­ß¿ú¶Ü¡S\n\r" , ch );
+      send_to_char( "ä½ é ˜çš„æ˜¯å†¥éŒ¢å—ï¹–\n\r" , ch );
       RETURN_NULL();
     }
 
     if ( over_scale( ch ) )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤w¹F¤W­­¡MµLªk»â¥X¿ú¨Ó¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹ç„¡æ³•é ˜å‡ºéŒ¢ä¾†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     gold_to_char( ch, money );
     ch->bank -= money;
 
-    act( "§A²{¦b¤@¦@¦s¤F$i¨â¦b¿ú²ø¸Ì¡MÁÂÁÂ§Aªº¥úÁ{¡C"
+    act( "ä½ ç¾åœ¨ä¸€å…±å­˜äº†$iå…©åœ¨éŒ¢èŠè£¡ï¹è¬è¬ä½ çš„å…‰è‡¨ã€‚"
       , ch, &ch->bank, NULL, TO_CHAR );
 
     RETURN_NULL();
   }
 
-  /* »â¦^ª««~ */
+  /* é ˜å›ç‰©å“ */
     if ( ch->in_room->StoreRoom == FALSE )
   {
-    act( "$r¨Ã¤£¬OÃğ§½³á¡C", ch, NULL, NULL, TO_CHAR );
+    act( "$rä¸¦ä¸æ˜¯é¢å±€å–”ã€‚", ch, NULL, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !( obj = get_obj_deposit( ch, arg1 ) ) )
   {
-    act( "§A¨S¦³¨º¼Ë $2$T$0 ©ñ¦bÃğ§½¡C", ch, NULL, arg1, TO_CHAR );
+    act( "ä½ æ²’æœ‰é‚£æ¨£ $2$T$0 æ”¾åœ¨é¢å±€ã€‚", ch, NULL, arg1, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ª««~¬O§_¦³Áı¬r */
+  /* ç‰©å“æ˜¯å¦æœ‰é¤µæ¯’ */
   if ( poison_char( ch, obj ) ) RETURN_NULL();
 
-  act( "§A¤w¸g§â$p$0»â¦^¤F¡MÁÂÁÂ¥úÁ{¡C", ch, obj, NULL, TO_CHAR );
+  act( "ä½ å·²ç¶“æŠŠ$p$0é ˜å›äº†ï¹è¬è¬å…‰è‡¨ã€‚", ch, obj, NULL, TO_CHAR );
   obj_from_char_deposit( obj );
   message_driver( ch, obj, ACT_WHEN_WITHDRAW );
 
   if ( ch->carry_number + 1 > can_carry_n( ch )
     ||  get_carry_weight( ch ) + get_obj_weight( obj ) > can_carry_w( ch ) )
   {
-    act( "§AµLªk­I­t$p¡M©Ò¥H§â¥¦©ñ¦b¦a¤W¡T", ch, obj, NULL, TO_CHAR );
+    act( "ä½ ç„¡æ³•èƒŒè² $pï¹æ‰€ä»¥æŠŠå®ƒæ”¾åœ¨åœ°ä¸Šï¹—", ch, obj, NULL, TO_CHAR );
     obj_to_room( obj, ch->in_room );
   }
   else
@@ -318,7 +318,7 @@ FUNCTION( do_withdraw )
   RETURN_NULL();
 }
 
-/* ÀË¬dÃğ§½©Î¬O¿ú²ø±H©ñªºª÷¿ú©Î¬Oª««~ */
+/* æª¢æŸ¥é¢å±€æˆ–æ˜¯éŒ¢èŠå¯„æ”¾çš„é‡‘éŒ¢æˆ–æ˜¯ç‰©å“ */
 FUNCTION( do_check )
 {
   OBJ_DATA * obj;
@@ -330,7 +330,7 @@ FUNCTION( do_check )
 
   if ( ch->in_room->DepositMoney )
   {
-    act( "§A²{¦b¤@¦@¦s¤F $i ¨â¦b¿ú²ø¸Ì¡MÁÂÁÂ§Aªº¥úÁ{¡C"
+    act( "ä½ ç¾åœ¨ä¸€å…±å­˜äº† $i å…©åœ¨éŒ¢èŠè£¡ï¹è¬è¬ä½ çš„å…‰è‡¨ã€‚"
       , ch, &ch->bank, NULL, TO_CHAR );
 
     RETURN_NULL();
@@ -342,20 +342,20 @@ FUNCTION( do_check )
     for ( found = FALSE, obj = ch->deposit; obj; obj = obj->next_content )
     {
       found = TRUE;
-      send_to_buffer( "§A§â%s±H©ñ¦bÃğ§½¸Ì¡C\n\r" , obj_name( ch, obj ) );
+      send_to_buffer( "ä½ æŠŠ%så¯„æ”¾åœ¨é¢å±€è£¡ã€‚\n\r" , obj_name( ch, obj ) );
     }
 
-    if ( !found ) send_to_buffer( "§A¨Ã¨S¦³¥ô¦óªºªF¦è¦b³o¸Ì±H©ñ¡C\n\r" );
+    if ( !found ) send_to_buffer( "ä½ ä¸¦æ²’æœ‰ä»»ä½•çš„æ±è¥¿åœ¨é€™è£¡å¯„æ”¾ã€‚\n\r" );
     print_buffer( ch );
 
     RETURN_NULL();
   }
 
-  act( "¹ï¤£°_¡M$r¨Ã¤£¬O¿ú²ø©Î¬OÃğ§½¡C" , ch, NULL, NULL, TO_CHAR );
+  act( "å°ä¸èµ·ï¹$rä¸¦ä¸æ˜¯éŒ¢èŠæˆ–æ˜¯é¢å±€ã€‚" , ch, NULL, NULL, TO_CHAR );
   RETURN_NULL();
 }
 
-/* §âªF¦è©ñ¨ì¤Hª«±H©ñªº¦a¤è */
+/* æŠŠæ±è¥¿æ”¾åˆ°äººç‰©å¯„æ”¾çš„åœ°æ–¹ */
 void obj_to_char_deposit( OBJ_DATA * obj, CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "obj_to_char_deposit" );
@@ -368,7 +368,7 @@ void obj_to_char_deposit( OBJ_DATA * obj, CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* §âªF¦è±q¤Hª«ªº¦s©ñ³æ¸Ì­ç°£ */
+/* æŠŠæ±è¥¿å¾äººç‰©çš„å­˜æ”¾å–®è£¡å‰”é™¤ */
 void obj_from_char_deposit( OBJ_DATA * obj )
 {
   CHAR_DATA * ch;
@@ -378,7 +378,7 @@ void obj_from_char_deposit( OBJ_DATA * obj )
 
   if ( !( ch = obj->deposit_by ) )
   {
-    mudlog( LOG_DEBUG , "Obj_from_char_deposit: ¤Hª«¬OªÅªº." );
+    mudlog( LOG_DEBUG , "Obj_from_char_deposit: äººç‰©æ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
@@ -400,7 +400,7 @@ void obj_from_char_deposit( OBJ_DATA * obj )
 
     if ( !prev )
     {
-      mudlog( LOG_DEBUG , "Obj_from_char_deposit: ª««~¨Ã¨S¦³¦bªí¤¤." );
+      mudlog( LOG_DEBUG , "Obj_from_char_deposit: ç‰©å“ä¸¦æ²’æœ‰åœ¨è¡¨ä¸­." );
     }
   }
 
@@ -420,7 +420,7 @@ OBJ_DATA * get_obj_deposit( CHAR_DATA * ch, char * argument )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG , "get_obj_deposit: ¤Hª«¬OªÅªº." );
+    mudlog( LOG_DEBUG , "get_obj_deposit: äººç‰©æ˜¯ç©ºçš„." );
     RETURN( NULL );
   }
 
@@ -438,7 +438,7 @@ void obj_to_obj_dep( OBJ_DATA * obj, OBJ_DATA * obj_to )
 
   if ( !obj || !obj_to )
   {
-    mudlog( LOG_DEBUG , "obj_to_obj_dep: obj ©Î obj_to ¬OªÅªº" );
+    mudlog( LOG_DEBUG , "obj_to_obj_dep: obj æˆ– obj_to æ˜¯ç©ºçš„" );
     RETURN_NULL();
   }
 
@@ -459,7 +459,7 @@ size_t deposit_count( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "deposit_count: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "deposit_count: ä¾†æºä¸æ­£ç¢º." );
     RETURN( 0 );
   }
 

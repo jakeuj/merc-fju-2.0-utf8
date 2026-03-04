@@ -1,11 +1,11 @@
 Vnum            154
 Name            cure plaster~
-ShortDesc       ª÷³ĞÃÄ~
+ShortDesc       é‡‘å‰µè—¥~
 Description
-ªvÀø¥~¶Ëªº´¶³qÃÄ«~(cure plaster)¡M¥i¥H¼Å¦b¶Ë¤f¤W¡M
-¬O¦æ¨«¦¿´ò¤£¥i¯Ê¤Öªº¥²³Æ«~¡C
+æ²»ç™‚å¤–å‚·çš„æ™®é€šè—¥å“(cure plaster)ï¹å¯ä»¥æ•·åœ¨å‚·å£ä¸Šï¹
+æ˜¯è¡Œèµ°æ±Ÿæ¹–ä¸å¯ç¼ºå°‘çš„å¿…å‚™å“ã€‚
 ~
-Unit            ¥]~
+Unit            åŒ…~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

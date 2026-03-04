@@ -1,11 +1,11 @@
 Vnum            541
 Name            guard boot~
-ShortDesc       �u�ö��Թu~
+ShortDesc       守衛隊戰靴~
 Description
-���~�ֻs�� �M��󲾰ʦ��ܤj�����U �M�i�Ǧ��j��
-�u�ö����Z�ʭ������I�C
+由獸皮製成 ﹐對於移動有很大的幫助 ﹐可藉此瀰補
+守衛隊戰鎧粗重的缺點。
 ~
-Unit            ��~
+Unit            雙~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

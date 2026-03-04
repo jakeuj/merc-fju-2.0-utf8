@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -146,14 +146,14 @@ void free_mob_index( MOB_INDEX_DATA * pMobIndex )
   free_string( pMobIndex->auction     );
   free_string( pMobIndex->temp        );
 
-  /* ÄÀ©ñ±Ð¾É */
+  /* é‡‹æ”¾æ•™å°Ž */
   for ( pTeach = pMobIndex->teach; pTeach; pTeach = zTeach )
   {
     zTeach = pTeach->next;
     free_teach( pTeach );
   }
 
-  /* ÄÀ©ñ­P¯à */
+  /* é‡‹æ”¾è‡´èƒ½ */
   for ( pEnable = pMobIndex->enable; pEnable; pEnable = zEnable )
   {
     zEnable = pEnable->next;

@@ -1,5 +1,5 @@
 Name            vote~
-Cname           �벼���O~
+Cname           投票指令~
 Function        do_vote~
 Position        POS_SLEEPING
 Level           0
@@ -15,61 +15,61 @@ Lost            YES
 Lock            NO
 Limit           NO
 Help
-�y�k�Rvote
-�y�k�Rvote subject <�D��>
-�y�k�Rvote text    <�N�q>
-�y�k�Rvote list
-�y�k�Rvote post
-�y�k�Rvote set <1-10> <��ﶵ��>
-�y�k�Rvote show
-�y�k�Rvote read <�ĴX�g>
-�y�k�Rvote clear
-�y�k�Rvote limit <�������>
-�y�k�Rvote poll <�ĴX�ӧ벼> <�ĴX���ﶵ>
-�y�k�Rvote lock <�ĴX�ӧ벼>
-�y�k�Rvote days <�X��>
-�y�k�Rvote club
-�y�k�Rvote moninal
+語法﹕vote
+語法﹕vote subject <主旨>
+語法﹕vote text    <意義>
+語法﹕vote list
+語法﹕vote post
+語法﹕vote set <1-10> <圈選項目>
+語法﹕vote show
+語法﹕vote read <第幾篇>
+語法﹕vote clear
+語法﹕vote limit <限制的等級>
+語法﹕vote poll <第幾個投票> <第幾項選項>
+語法﹕vote lock <第幾個投票>
+語法﹕vote days <幾天>
+語法﹕vote club
+語法﹕vote moninal
 
-    �o�ӫ��O�O�����a���|��벼�M�i��벼�����O�M�ҥH�����������O�M
+    這個指令是給玩家來舉辦投票和進行投票的指令﹐所以分為兩類指令﹐
 
-1. �|��@���벼
-   a. vote subject <�D��>�M�Ψӫإߧ벼���ت��T
-   b. vote text    <���e>�M�Ψӧi�D��L�H�M�o���벼���u���N�q�M�i�H
-      �@����J�M�o�˴N�i�H���ܦh�檺���e�T
-   c. vote level   <����>�M�]�w�̧C�벼���šM����C�󵥯ŤQ�T
-   d. vote set <1-10> <�i��諸����>�M�o�ӬO����L�H�i�H��諸����
-      �]�O�o���벼�����I�T
-   e. vote show�M��ݥثe�]�w�����p�T
-   f. vote clear�M�M���ثe�|�쪺���e�T
-   g. vote post�M�����|��벼�M���oú��O�ΡM�ثe�O�@���@�ʸU�T
-   h. vote club �]�w�o�O�ۤv�������벼�C
-   i. vote days �]�w�X�ѫ�i�H�}���C
-   j. vote moninal �]�w�O�_���O�W�άO���O�W�벼�C
+1. 舉辦一場投票
+   a. vote subject <主旨>﹐用來建立投票的目的﹗
+   b. vote text    <內容>﹐用來告訴其他人﹐這場投票的真正意義﹐可以
+      一直輸入﹐這樣就可以有很多行的內容﹗
+   c. vote level   <等級>﹐設定最低投票等級﹐不能低於等級十﹗
+   d. vote set <1-10> <可圈選的項目>﹐這個是讓其他人可以圈選的項目
+      也是這場投票的重點﹗
+   e. vote show﹐察看目前設定的狀況﹗
+   f. vote clear﹐清除目前舉辦的內容﹗
+   g. vote post﹐正式舉辦投票﹐但得繳交費用﹐目前是一場一百萬﹗
+   h. vote club 設定這是自己幫派的投票。
+   i. vote days 設定幾天後可以開票。
+   j. vote moninal 設定是否為記名或是不記名投票。
 
-   �d�ҡR�Y�H�Q�|��@������¾�~���벼�M�ҥH�L�����O�O
-   1. vote subject ����¾�~���벼   ---> �i�D��L�H�o���벼�D�n���ت��T
+   範例﹕某人想舉辦一場有關職業的投票﹐所以他的指令是
+   1. vote subject 有關職業的投票   ---> 告訴其他人這場投票主要的目的﹗
    2. vote text ....
-      vote text ....                ---> �i�D��L�H�ԲӪ����e�M�N�q�T
-   3. vote level 50                 ---> ����o�O���Q�ťH�W��i�벼�T
-   4. vote set 1 �N�x
-      vote set 2 ���
-      vote set 3 .....              ---> �C�C�]�w�O�H�i��諸���ءM�̦h�Q��
-   5. vote post                     ---> �����|��T
+      vote text ....                ---> 告訴其他人詳細的內容和意義﹗
+   3. vote level 50                 ---> 限制這是五十級以上方可投票﹗
+   4. vote set 1 將軍
+      vote set 2 刺客
+      vote set 3 .....              ---> 慢慢設定別人可圈選的項目﹐最多十個
+   5. vote post                     ---> 正式舉辦﹗
 
-2. �벼
-   a. vote list�M�i�H���D�ثe���X�������i�H��M��D�n�N�q�T
-   b. vote read <���X>�M�i�H�o���o���벼�����㤺�e�T
-   c. vote poll <�ĴX��> <�ĴX�ӿﶵ>�M�����벼�M�ЦҼ{�M���T
+2. 投票
+   a. vote list﹐可以知道目前有幾場的票可以投和其主要意義﹗
+   b. vote read <號碼>﹐可以得知這場投票的完整內容﹗
+   c. vote poll <第幾場> <第幾個選項>﹐正式投票﹐請考慮清楚﹗
 
-    ���~�M�޲z�̥i�H�ϥ� vote lock <�ĴX��> ����w�άO�Ѱ��Y�벼���@�~�M
-���|�쪺�H�`�N�@�U�M���ų̦n�n������M�]���C���벼�u��Ѥ@�ʭӤH�벼�M�B
-���N����벼�F�M���M�C�ӤH��C���벼�u�঳�@���벼�v�M�ҥH�зV���Ҽ{�M�Y
-�|���Q�Ѥ��M�����@�ʭӤH�벼�M�]���P�����벼�T
+    此外﹐管理者可以使用 vote lock <第幾場> 來鎖定或是解除某投票的作業﹐
+請舉辦的人注意一下﹐等級最好要有限制﹐因為每場投票只能供一百個人投票﹐額
+滿就不能投票了﹐當然每個人對每場投票只能有一次投票權﹐所以請慎重考慮﹐若
+舉辦後十天內﹐未滿一百個人投票﹐也視同完成投票﹗
 
-    ���M�M�o�ӧ벼���ηN�O�D�n�Ӥ������a���N���M���o���O�����벼�M�ҥH..
-�M��M�����������D�T
+    當然﹐這個投票的用意是主要來反應玩家的意見﹐但這不是公民投票﹐所以..
+﹐嗯﹐頗尷尬的問題﹗
 
-�������O�Rnote joke read
+相關指令﹕note joke read
 ~
 End

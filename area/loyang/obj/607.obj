@@ -1,11 +1,11 @@
 Vnum            607
 Name            red seal~
-ShortDesc       [1;31m¤j¬õ¥][0m~
+ShortDesc       [1;31må¤§ç´…åŒ…[0m~
 Description
-¬õ¥]¸Ì­±¤£ª¾¹D¸Ë¤F¦h¤Ö¿ú¡M¥á¨ì¦a¤W¦A¾ß°_¨Ó´N¥i¥H¤F¡T
+ç´…åŒ…è£¡é¢ä¸çŸ¥é“è£äº†å¤šå°‘éŒ¢ï¹ä¸Ÿåˆ°åœ°ä¸Šå†æ’¿èµ·ä¾†å°±å¯ä»¥äº†ï¹—
 
 ~
-Unit            ­Ó~
+Unit            å€‹~
 ItemType        ITEM_MONEY
 Takeable        Yes
 Level           2

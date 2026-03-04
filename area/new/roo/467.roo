@@ -1,11 +1,11 @@
 Vnum            467
-Name            �P��P�k�]�оǫ� [enable & flee]~
+Name            致能與逃跑教學室 [enable & flee]~
 Description
-�o���ЫǬO�԰��𮧫ǡM�b�m�߾԰����ŷv�ɶ��M�A�i�H�b�o�̵y�L��
-�𮧤@�U�M�ɥR��O.
-���B�ЧA�p��P��ۦ��H�Φp��԰����k�]�M�ӤU�O�ЧA�p���檫�~.
+這間教室是戰鬥休息室﹐在練習戰鬥的空暇時間﹐你可以在這裡稍微的
+休息一下﹐補充體力.
+此處教你如何致能招式以及如何戰鬥中逃跑﹐樓下是教你如何拍賣物品.
 
-�o�̦��@���i�ܵP (sign).
+這裡有一塊告示牌 (sign).
 
 ~
 SectorType      SECT_CITY
@@ -53,16 +53,16 @@ End
 #Keyword
 Keyword         sign~
 Description
-���A�Ǩ�F�ޯ�(skill)����M�n���� skill �P��(enable)�W�h�M�~
-��N�ۦ��ΥX�M�P�ɧA�n�԰����k�]���M�A�]�n�P��(enable)�k�]��
-(flee) ���ۦ��~��k�]��.
+當你學到了技能(skill)之後﹐要先把 skill 致能(enable)上去﹐才
+能將招式用出﹐同時你要戰鬥中逃跑掉﹐你也要致能(enable)逃跑類
+(flee) 的招式才能逃跑喔.
 
-�ӧA������ skill �O? ����J learn �N�|�ݨ�Ҧ��Ǩ쪺�ۦ��F.
-�ӧA�P��F���� skill �O? ����J enable �N�|�ݨ�A�P��F����
-skill �F.
+而你有哪些 skill 呢? 請鍵入 learn 就會看到所有學到的招式了.
+而你致能了哪些 skill 呢? 請鍵入 enable 就會看到你致能了哪些
+skill 了.
 
-�Ӱk�]�����P��W�k�]�����ۦ��~�� flee�M���M�A�����J flee ��
-�O�û��k��������.
+而逃跑必須致能上逃跑類的招式才行 flee﹐不然你怎麼鍵入 flee 都
+是永遠逃不掉的喔.
 
 ~
 

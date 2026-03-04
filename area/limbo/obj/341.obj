@@ -1,9 +1,9 @@
 Vnum            341
 Name            enchant weapon book~
-ShortDesc       ¥[±jªZ¾¹«Â¤O¯µÓD~
+ShortDesc       åŠ å¼·æ­¦å™¨å¨åŠ›ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

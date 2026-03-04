@@ -1,9 +1,9 @@
 Vnum            19
 Name            wind cloak~
-ShortDesc       ­·¯«¤æÁO~
+ShortDesc       é¢¨ç¥æ–—ç¯·~
 Description
-¤@¥ó¥Ñ¶Àª÷µ·Â´¦¨¡M¤Ñ¯«±M¥Îªº©Ü­·(cloak)¡C~
-Unit            ¥ó~
+ä¸€ä»¶ç”±é»ƒé‡‘çµ²ç¹”æˆï¹å¤©ç¥å°ˆç”¨çš„æŠ«é¢¨(cloak)ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_ABOUT
 Takeable        Yes

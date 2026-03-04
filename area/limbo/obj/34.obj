@@ -1,9 +1,9 @@
 Vnum            34
 Name            crutch~
-ShortDesc       ©ä§ú~
+ShortDesc       æ‹æ–~
 Description
-¤@¤ä¤£¬Æ°_²´ªº©ä§ú(crutch)¡C~
-Unit            ¤ä~
+ä¸€æ”¯ä¸ç”šèµ·çœ¼çš„æ‹æ–(crutch)ã€‚~
+Unit            æ”¯~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

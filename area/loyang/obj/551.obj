@@ -1,11 +1,11 @@
 Vnum            551
 Name            wolf cloth~
-ShortDesc       ���T��~
+ShortDesc       雪狼衣~
 Description
-�Ѩu�������T�֩һs�� �M�Ƭ��öQ �M��b���W��j�j����
-�ӱ��סC
+由罕見的雪狼皮所製成 ﹐甚為珍貴 ﹐穿在身上能大大提高
+敏捷度。
 ~
-Unit            ��~
+Unit            件~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

@@ -1,15 +1,15 @@
 Title:     print_to_char for ENVY
 
-�H�U���@�Ӧ��@�I��K��function
-�쥻�O�ɪŤ����̭��Ϊ�, �{�b post �X�ӵ��j�a
-�i�H���A���ά��F screen pager �дo�n��T�����y�n�b buffer
-�M��A�@���e�� send_to_char ���·ШƱ�, �åB�䴩�p
-printf �몺�I�s�榡!(�ܦh�a�賣�i�H�令���o�ˤl)
+以下為一個有一點方便的function
+原本是時空之門裡面用的, 現在 post 出來給大家
+可以讓你不用為了 screen pager 煩惱要把訊息先囤積在 buffer
+然後再一次送給 send_to_char 的麻煩事情, 並且支援如
+printf 般的呼叫格式!(很多地方都可以改成像這樣子)
 
-�����b comm.c ���p�U
-�̫�|���@�� example �b act_info.c �� do_who ���O�@�ϥΥܽd!
-�ѩ�O���s��g, �i��|�� bug!!
-�ޥήɽЪ`�N���z�]���v...
+首先在 comm.c 更改如下
+最後會有一個 example 在 act_info.c 的 do_who 指令作使用示範!
+由於是重新改寫, 可能會有 bug!!
+引用時請注意智慧財產權...
 
 /* comm.c */
 #include<varargs.h>

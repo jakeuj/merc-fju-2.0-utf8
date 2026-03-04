@@ -1,9 +1,9 @@
 Vnum            1295
-Name            �s��ʪ���~
+Name            新手動物園~
 Description
-�o�̬O�ʪ��骺�޲z�����M�������@�Ӯ�l�M���L�A�ݤ�������H�M
-�ˬO��W���õL��M�B�B���O�U���M�ݨӤ����O�H�����a��M�l�ާA
-���O��W���@�өԧ� (bar)�M�����D�O������Ϊ��C
+這裡是動物園的管理部門﹐中間有一個桌子﹐不過你看不見任何人﹐
+倒是桌上雜亂無比﹐處處都是垃圾﹐看來不像是人住的地方﹐吸引你
+的是牆上有一個拉把 (bar)﹐不知道是做什麼用的。
 
 ~
 SectorType      SECT_CITY
@@ -19,7 +19,7 @@ End
 #Keyword
 Keyword         bar~
 Description
-�A�n���i�H��(pull)���ʥ��T
+你好像可以拉(pull)的動它﹗
 ~
 End
 

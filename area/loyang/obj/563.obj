@@ -1,10 +1,10 @@
 Vnum            563
 Name            scroll of identify~
-ShortDesc       Å²©w±²¶b~
+ShortDesc       é‘‘å®šæ²è»¸~
 Description
-¤@±i¦ü¥G¾Ö¦³Å]¤Oªº¨÷¶b(the scroll of identify)¡C
+ä¸€å¼µä¼¼ä¹æ“æœ‰é­”åŠ›çš„å·è»¸(the scroll of identify)ã€‚
 ~
-Unit            ±i~
+Unit            å¼µ~
 ItemType        ITEM_SCROLL
 Takeable        Yes
 Level           3

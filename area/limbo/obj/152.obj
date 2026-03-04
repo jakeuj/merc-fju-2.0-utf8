@@ -1,11 +1,11 @@
 Vnum            152
 Name            large revivify pill~
-ShortDesc       ¤jÁÙ¤¦~
+ShortDesc       å¤§é‚„ä¸¹~
 Description
-¤jÁÙ¤¦(large revivify pill)¡M¬OÃÄ©±¦ÑÁó±Ä¶°¤@¦Ê¹s
-¤KºØ¬Ã¶QÃÄ§÷¡M¶O¤F¤C¤C¥|¤Q¤E¤Ñ·Ò»s¦Ó¦¨¡C
+å¤§é‚„ä¸¹(large revivify pill)ï¹æ˜¯è—¥åº—è€é—†æ¡é›†ä¸€ç™¾é›¶
+å…«ç¨®çè²´è—¥æï¹è²»äº†ä¸ƒä¸ƒå››åä¹å¤©ç…‰è£½è€Œæˆã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

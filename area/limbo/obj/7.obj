@@ -1,9 +1,9 @@
 Vnum            7
 Name            heart~
-ShortDesc       %sªº¤ßÅ¦~
+ShortDesc       %sçš„å¿ƒè‡Ÿ~
 Description
-%sªº¤ßÅ¦(heart)±¼¸¨¦b¦¹¡C~
-Unit            Áû~
+%sçš„å¿ƒè‡Ÿ(heart)æ‰è½åœ¨æ­¤ã€‚~
+Unit            é¡†~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           0

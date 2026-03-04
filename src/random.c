@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -35,7 +35,7 @@ int     number_mm       args( ( void ) );
 
 static  int     rgiState[2+55];
 
-/* ±Ò©l¤Æ¶Ã¼Æªí */
+/* å•Ÿå§‹åŒ–äº‚æ•¸è¡¨ */
 void init_mm( )
 {
   int * piState;
@@ -56,7 +56,7 @@ void init_mm( )
   RETURN_NULL();
 }
 
-/* ¶Ã¼Æ²£¥Í¤@­Ó¼Æ */
+/* äº‚æ•¸ç”¢ç”Ÿä¸€å€‹æ•¸ */
 int number_mm( void )
 {
   int * piState;
@@ -78,7 +78,7 @@ int number_mm( void )
   RETURN( iRand >> 6 );
 }
 
-/* ¶Ã¼Æ²£¥Í¤@­Ó¤è¦V */
+/* äº‚æ•¸ç”¢ç”Ÿä¸€å€‹æ–¹å‘ */
 int number_door( void )
 {
   int door;
@@ -101,7 +101,7 @@ int number_fuzzy( int number )
   RETURN( UMAX( 1, number ) );
 }
 
-/* ²£¥Í¤@­Ó¥Ñ from ¨ì to ªº¶Ã¼Æ */
+/* ç”¢ç”Ÿä¸€å€‹ç”± from åˆ° to çš„äº‚æ•¸ */
 int number_range( int from, int to )
 {
   int power;
@@ -109,7 +109,7 @@ int number_range( int from, int to )
 
   PUSH_FUNCTION( "number_range" );
 
-  /* ¼Æ­È¤Ó¤j·|³´¤JµL½a¦^°é */
+  /* æ•¸å€¼å¤ªå¤§æœƒé™·å…¥ç„¡çª®å›åœˆ */
   to   = UMIN( 1000000, to   );
   from = UMIN( 1000000, from );
 
@@ -121,7 +121,7 @@ int number_range( int from, int to )
   RETURN( from + number );
 }
 
-/* ÀH¾÷²£¥Í¤@­Ó¦Ê¤À¤ñ */
+/* éš¨æ©Ÿç”¢ç”Ÿä¸€å€‹ç™¾åˆ†æ¯” */
 int number_percent( void )
 {
   int percent;

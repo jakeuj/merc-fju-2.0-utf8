@@ -1,5 +1,5 @@
 Name            dragon leg~
-Cname           ���s�L�k~
+Cname           降龍腿法~
 Slot            SLOT_DRAGONLEG
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -31,8 +31,8 @@ Limit           CLASS_BRAVO      1  90
 Help            ~
 #Damage
 Description
-$n�˨��b�šM����s�v���R�M�չD�S�M�L�l�p�s���ѡM�@�ۡu$B���s�b��$Z�v�I����
-�X�C~
+$n騰身半空﹐仿似龍影飛舞﹐勢道磅礡﹐腿勁如龍飛天﹐一招「$B飛龍在天$Z」呼之欲
+出。~
 Chance          10
 Value           20
 Parry           0
@@ -41,8 +41,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���L�զp�U���b�ˡM���p�}���P�a��M�u$B���s�b��$Z�v�p�@���g�s�뼳�V$n�M��
-���i�ɡC~
+$n的腿勢如萬馬奔騰﹐有如開天闢地般﹐「$B戰龍在野$Z」如一條狂龍般撲向$n﹐勢
+不可檔。~
 Chance          10
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�p�C�s�L�ڡM�B�L�C���|��M�L�l�H�j�ƺ��M�𲾤K���M�u$B���s�ť�$Z�v�H�z�éۡC~
+$n如青龍盤據﹐運腿遊走四方﹐腿勁以強化綿﹐氣移八路﹐「$B潛龍勿用$Z」以弱藏招。~
 Chance          10
 Value           20
 Parry           0
@@ -60,8 +60,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�L�դj�}�j��M�餺�u���_�V�~��g�M�L�ۥ��H�ۯu��V$n��h�M�u$B�_��ʨ�
-$Z�v�p�z�p����H�C~
+$n腿勢大開大闔﹐體內真氣不斷向外放射﹐腿招亦隨著真氣向$n攻去﹐「$B震驚百里
+$Z」如爆雷般驚人。~
 Chance          10
 Value           20
 Parry           0
@@ -70,8 +70,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Τ��_�̰ʡM�ϩ������d�W�U�ӻL�v�MŢ�n��$n�����M�@�ۡu$B���D��W$Z�v�F
-�ʤN�p���`�C~
+$n身形不斷晃動﹐彷彿有成千上萬個腿影﹐籠罩著$n全身﹐一招「$B或躍於淵$Z」靈
+動刁鑽異常。~
 Chance          10
 Value           20
 Parry           0
@@ -80,8 +80,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���p���h������~��M���_�ʰ_�ۨ������N�M�@�ۡu$B�s�s�L��$Z�v�p���s�s��
-�g��j��C~
+$n有如失去控制的野獸般﹐不斷催起自身的殺意﹐一招「$B群龍無首$Z」如火龍群般
+狂怒強攻。~
 Chance          10
 Value           20
 Parry           0
@@ -90,8 +90,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Τ��_�̰ʡM�B��$n����M��M���M����L�v�P�ɨgŧ�ӦܡM���O�@�ۡu$B�ɭ���
-�s$Z�v�C~
+$n身形不斷晃動﹐步移$n六方﹐突然間﹐六方腿影同時狂襲而至﹐正是一招「$B時乘六
+龍$Z」。~
 Chance          10
 Value           20
 Parry           0
@@ -100,8 +100,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���L�P�ɭ��_�M�B�L���ۡM�@�L�֤�@�L�M�Ů𲣥ͺx���M�]���$n�M$N�q���ĥX�M
-���O�u$B���s���]$Z�v�C~
+$n雙腿同時飛起﹐運腿成招﹐一腿快比一腿﹐空氣產生漩渦﹐包圍著$n﹐$N從中衝出﹐
+正是「$B雙龍取珠$Z」。~
 Chance          10
 Value           20
 Parry           0
@@ -110,8 +110,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�L�v�u�������M�ä��m��M$n�o�ϳQ$N�c�K���L�v�Ұh�M���Ѫ��L�v�M�D�O��u�ۡu
-$B�K�����B$Z�v�C~
+$n腿影守住全身﹐並不搶攻﹐$n卻反被$N繁密的腿影所退﹐漫天的腿影﹐乃是其守招「
+$B密雲不雨$Z」。~
 Chance          10
 Value           20
 Parry           0
@@ -120,8 +120,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�b�����ʨg�ʤU�M������ı�W�V�F���������P�M�u���_�V�|�P�X���M�A���_�ʨ�
-�ۨ��\�O�U�M�L�l���p�s�x�z�o�M�ϥX���s�L�k���̱j���ۡ��u$R���s�D�D$Z�v�T~
+$n在怨恨推動狂催下﹐不知不覺超越了本身的極致﹐真氣不斷向四周擴散﹐再不斷催谷
+自身功力下﹐腿勁直如山洪爆發﹐使出降龍腿法之最強殺招∼∼「$R殺龍求道$Z」﹗~
 Chance          10
 Value           20
 Parry           0

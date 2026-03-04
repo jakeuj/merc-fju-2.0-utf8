@@ -1,10 +1,10 @@
 Vnum            538
 Name            ghost blade~
-ShortDesc       ���Y�M~
+ShortDesc       鬼頭刀~
 Description
-�@��¦�Q���j�M(ghost blade) �M�M�W�@�ӭ��زu�񪺰��Y �M�Ƭ��~�H�C
+一把黑色烏鋼大刀(ghost blade) ﹐刀上一個面目猙獰的鬼頭 ﹐甚為嚇人。
 ~
-Unit            �`~
+Unit            柄~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

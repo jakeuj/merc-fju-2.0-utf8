@@ -1,10 +1,10 @@
 Vnum            9014
 Name            waku~
-ShortDesc       ªZ¤h©MªA~
+ShortDesc       æ­¦å£«å’Œæœ~
 Description
-ªFÃsªZ¤h¬ïªº©MªA¡C
+æ±ç€›æ­¦å£«ç©¿çš„å’Œæœã€‚
 ~
-Unit            ®M~
+Unit            å¥—~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

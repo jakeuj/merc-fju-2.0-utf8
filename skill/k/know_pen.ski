@@ -1,5 +1,5 @@
 Name            know pen~
-Cname           ������~
+Cname           筆之心~
 Slot            SLOT_KNOW_PEN
 Msgoff          ~
 Check           check_pen_attack~
@@ -34,16 +34,16 @@ Limit           CLASS_BARD       1  85
 Limit           CLASS_MAGE       1  95
 Limit           CLASS_SMITH      1  80
 Help
-������:
+筆之心:
 
-��H���Ȥ⤤���򵧡M�g�Z�H�p���ұo���Z�ޡC�ۦ��`���ɤO���O�M
-�H�|��Ӽ��d���M�G�ϥΪ̦h����L�������O���ѥ͡C
+文人墨客手中的毛筆﹐經武人鑽研後所得之武技。招式注重借力打力﹐
+以四兩而撥千金﹐故使用者多為手無縛雞之力的書生。
 
 ~
 
 #Damage
 Description
-$n�⤤$O�@½�M�@��$S�y�涳�y���z$Z��̪�$O�p�@�����s�y��M��$N��h�C~
+$n手中$O一翻﹐一招$S『行雲流水』$Z手裡的$O如一條長龍流轉﹐往$N刺去。~
 Chance          10
 Value           20
 Parry           0
@@ -53,7 +53,7 @@ End
 
 #Damage
 Description
-$n���άy��M�s��C�B�M�⤤$O�@��$S�y�C�B���֡z$Z��$N�I�h�C~
+$n身形流轉﹐連踩七步﹐手中$O一招$S『七步成詩』$Z往$N點去。~
 Chance          10
 Value           20
 Parry           0
@@ -63,7 +63,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�n�̡M�B�k�L�y�M���a�@��$S�y��s�ݤѡz$Z�N$O���X�M�s�X�T�U��$N�I�h�C~
+$n手中$O搖晃﹐步法微頓﹐倏地一招$S『把酒問天』$Z將$O揮出﹐連出三下往$N點去。~
 Chance          10
 Value           20
 Parry           0
@@ -73,8 +73,8 @@ End
 
 #Damage
 Description
-$n�N��̪�$O�����|�_�M���a�⤤$O���ܩۼơM�@��$S�y���ɿ��z$Z�s����������
-$N���I�C~
+$n將手裡的$O高高舉起﹐忽地手中$O急變招數﹐一招$S『菊園盡興』$Z連綿不絕的往
+$N急點。~
 Chance          10
 Value           20
 Parry           0

@@ -1,9 +1,9 @@
 Vnum            69
 Name            silk cloth~
-ShortDesc       ÀA¦ç~
+ShortDesc       éŒ¦è¡£~
 Description
-¤@¥óÂ¸¤uºë²Óªºµ·½è¦çªA¡M¤@¬Ý´Nª¾¹D¬O´I¶Q¤H®a¤~¬ï±o°_ªº¦ç»n(silk cloth)¡C~
-Unit            ¥ó~
+ä¸€ä»¶ç¹¡å·¥ç²¾ç´°çš„çµ²è³ªè¡£æœï¹ä¸€çœ‹å°±çŸ¥é“æ˜¯å¯Œè²´äººå®¶æ‰ç©¿å¾—èµ·çš„è¡£è£³(silk cloth)ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

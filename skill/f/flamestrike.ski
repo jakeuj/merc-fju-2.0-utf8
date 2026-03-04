@@ -1,5 +1,5 @@
 Name            flamestrike~
-Cname           �P�K�N~
+Cname           烈焰術~
 Slot            SLOT_FLAMESTRIKE
 Msgoff          ~
 Function        cast_flamestrike~
@@ -35,11 +35,11 @@ Limit           CLASS_MAGE       50  95
 Limit           CLASS_SMITH      50  80
 
 Help
-�P�K�N:
+烈焰術:
 
-�ѬI�N�̵o�X�@�����K�M��Ҧ��b�����ĤH�i������M�¤O�j�j�M�O
-���K���x���ɯŪ��M���L�����n���@�w���{�פ��⮩�M�ݩ���t�k
-�N�C
+由施術者發出一片火焰﹐對所有在場的敵人進行攻擊﹐威力強大﹐是
+火焰之掌的升級版﹐不過必須要有一定的程度方能領悟﹐屬於火系法
+術。
 
 ~
 End

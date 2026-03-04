@@ -6,53 +6,53 @@
 
 void  link_file		( FILE * , char * , int );
 
-/* ÀÉ®×³sµ²¥Dµ{¦¡ */
+/* æª”æ¡ˆé€£çµä¸»ç¨‹å¼ */
 void do_link( void )
 {
   FILE_INFO     * pFile;
   char            buffer[1024];
 
-  /* ¿é¤JÀÉ¦W¨Ã¥B¶}±ÒÀÉ®× */
+  /* è¼¸å…¥æª”åä¸¦ä¸”é–‹å•Ÿæª”æ¡ˆ */
   pFile = get_file_name( ".are" );
 
-  /* ÀÉ®×µLªkÅª¨ú */
+  /* æª”æ¡ˆç„¡æ³•è®€å– */
   if ( pFile->information < 0 ) return;
 
-  /* ­«·s¶}±Ò¬°¥i¥H¼gªº¤è¦¡ */
+  /* é‡æ–°é–‹å•Ÿç‚ºå¯ä»¥å¯«çš„æ–¹å¼ */
   fclose( pFile->filehandler );
   pFile->filehandler = fopen( pFile->filename ,"w+" );
 
-  sprintf( buffer , "³sµ² %s ÀÉ®×¤¤, ½Ğµy«á." , pFile->filename );
+  sprintf( buffer , "é€£çµ %s æª”æ¡ˆä¸­, è«‹ç¨å¾Œ." , pFile->filename );
   print_string( LINK_X -5 , LINK_Y , LINK_COLOR , buffer );
 
-  /* ³sµ²ªşÀÉ¦W¬° .sec ªºÀÉ®× */
+  /* é€£çµé™„æª”åç‚º .sec çš„æª”æ¡ˆ */
   link_file( pFile->filehandler , ".sec" , 2 );
 
-  /* ³sµ²ªşÀÉ¦W¬° .roo ªºÀÉ®× */
+  /* é€£çµé™„æª”åç‚º .roo çš„æª”æ¡ˆ */
   link_file( pFile->filehandler , ".roo" , 3 );
 
-  /* ³sµ²ªşÀÉ¦W¬° .sho ªºÀÉ®× */
+  /* é€£çµé™„æª”åç‚º .sho çš„æª”æ¡ˆ */
   link_file( pFile->filehandler , ".sho" , 4 );
 
-  /* ³sµ²ªşÀÉ¦W¬° .res ªºÀÉ®× */
+  /* é€£çµé™„æª”åç‚º .res çš„æª”æ¡ˆ */
   link_file( pFile->filehandler , ".res" , 5 );
 
-  /* ³sµ²ªşÀÉ¦W¬° .spe ªºÀÉ®× */
+  /* é€£çµé™„æª”åç‚º .spe çš„æª”æ¡ˆ */
   link_file( pFile->filehandler , ".spe" , 6 );
 
-  /* ÀÉ®×³Ì«á­±¼g¤J #$ ²Å¸¹ */
+  /* æª”æ¡ˆæœ€å¾Œé¢å¯«å…¥ #$ ç¬¦è™Ÿ */
   fprintf( pFile->filehandler , "#$\n" );
   fclose( pFile->filehandler );
 
-  /* §¹¦¨³sµ² */
+  /* å®Œæˆé€£çµ */
   print_string( LINK_X - 4 , LINK_Y + 8 , LINK_COLOR
-    , "³sµ²§¹¦¨, ½Ğ«ö¥ô¦óÁäÄ~Äò" );
+    , "é€£çµå®Œæˆ, è«‹æŒ‰ä»»ä½•éµç¹¼çºŒ" );
   get_control_key();
 
   return;
 }
 
-/* ¿é¤JªşÀÉ¦W¨Ó¶i¦æÀÉ®×³sµ² */
+/* è¼¸å…¥é™„æª”åä¾†é€²è¡Œæª”æ¡ˆé€£çµ */
 void link_file( FILE * pFileDest , char * lastname , int shift )
 {
   DIR           * reading;
@@ -62,31 +62,31 @@ void link_file( FILE * pFileDest , char * lastname , int shift )
   int             file_count;
   char            buffer [1024];
 
-  sprintf( buffer , "%s ³sµ²­Ó¼Æ : %d " , lastname , ( file_count = 0 ) );
+  sprintf( buffer , "%s é€£çµå€‹æ•¸ : %d " , lastname , ( file_count = 0 ) );
   print_string( LINK_X , LINK_Y + shift , LINK_COLOR , buffer );
 
-  /* ¶}±Ò¥Ø«e¥Ø¿ı */
+  /* é–‹å•Ÿç›®å‰ç›®éŒ„ */
   if ( ( reading = opendir( LOCAL_DIRECTORY ) ) != NULL )
   {
-    /* Åª¨ú¥Ø¿ı¤¤ÀÉ®×ªº¦W¦r */
+    /* è®€å–ç›®éŒ„ä¸­æª”æ¡ˆçš„åå­— */
     while ( ( next = readdir( reading ) ) != NULL )
     {
-      /* ¤ñ¸ûÀÉ®×ªº¦WºÙ */
+      /* æ¯”è¼ƒæª”æ¡ˆçš„åç¨± */
       if ( string_compare( next->d_name , lastname ) )
       {
-        /* ¥H¥ı«eªºÀÉ¦W¨Ó¶i¦æ¶}ÀÉ */
+        /* ä»¥å…ˆå‰çš„æª”åä¾†é€²è¡Œé–‹æª” */
         if ( ( pRead = fopen( next->d_name , "r+" ) ) != NULL )
         {
-          /* ¤@ª½Åª¨úª½¨ìÀÉ®×¥½ºİ */
+          /* ä¸€ç›´è®€å–ç›´åˆ°æª”æ¡ˆæœ«ç«¯ */
           while ( ( transfer = fgetc( pRead ) ) != EOF )
             fputc( transfer , pFileDest );
 
-          /* ÀÉ®×¥½ºİ°e¥X´«¦æªº©R¥O */
+          /* æª”æ¡ˆæœ«ç«¯é€å‡ºæ›è¡Œçš„å‘½ä»¤ */
           fputc( '\n' , pFileDest );
           fclose( pRead );
 
-          /* ¦L¥X¤w³sµ²ªºÀÉ®×¼Æ¥Ø */
-          sprintf( buffer , "%4s ³sµ²­Ó¼Æ : %d "
+          /* å°å‡ºå·²é€£çµçš„æª”æ¡ˆæ•¸ç›® */
+          sprintf( buffer , "%4s é€£çµå€‹æ•¸ : %d "
             , lastname , ++file_count );
 
           print_string( LINK_X , LINK_Y + shift , LINK_COLOR , buffer );
@@ -95,7 +95,7 @@ void link_file( FILE * pFileDest , char * lastname , int shift )
       }
     }
 
-    /* Ãö³¬¥ı«e¶}±Òªº¥Ø¿ıµ²ºc */
+    /* é—œé–‰å…ˆå‰é–‹å•Ÿçš„ç›®éŒ„çµæ§‹ */
     closedir( reading );
   }
 

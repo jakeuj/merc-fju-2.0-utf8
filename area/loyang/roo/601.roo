@@ -1,8 +1,8 @@
 Vnum            601
-Name            ���v�J�f~
+Name            民宅入口~
 Description
-�o�̬O�@�����v���J�f�M�Ϋe��y�۷�( lion )���ͫ¡M�ݨӬO�@
-�Ӥj��H�a�����a��M�o�����O�֡C
+這裡是一間民宅的入口﹐屋前兩座石獅( lion )虎虎生威﹐看來是一
+個大戶人家住的地方﹐卻不知是誰。
 
 ~
 SectorType      SECT_CITY
@@ -19,7 +19,7 @@ End
 #Keyword
 Keyword         lion~
 Description
-�o�۷�l�ݰ_�Ӧ��G�n�n���Y�M�D�`�M�I�C
+這石獅子看起來似乎搖搖欲墜﹐非常危險。
 
 ~
 End

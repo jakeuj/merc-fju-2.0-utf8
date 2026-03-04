@@ -1,10 +1,10 @@
 Vnum            508
 Name            gentleman boot~
-ShortDesc       °íÀY°Ò¥Ö¾c~
+ShortDesc       å …é ­æ›¼çš®é‹~
 Description
-¤@Âù²Ô¤h¥Ö¾c(gentleman boot)¡M¥i¥H¦bµ²±Bªº®É­Ô¬ï¡C
+ä¸€é›™ç´³å£«çš®é‹(gentleman boot)ï¹å¯ä»¥åœ¨çµå©šçš„æ™‚å€™ç©¿ã€‚
 ~
-Unit            Âù~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

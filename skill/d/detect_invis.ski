@@ -1,7 +1,7 @@
 Name            detect invis~
-Cname           °»´úÁô§Î~
+Cname           åµæ¸¬éš±å½¢~
 Slot            SLOT_DETECT_INVIS
-Msgoff          §A¦A¤]¬İ¤£¨£³z©úªºªF¦è¤F¡T~
+Msgoff          ä½ å†ä¹Ÿçœ‹ä¸è¦‹é€æ˜çš„æ±è¥¿äº†ï¹—~
 Function        cast_detect_invis~
 Check           check_unrigid_attack~
 Position        POS_STANDING

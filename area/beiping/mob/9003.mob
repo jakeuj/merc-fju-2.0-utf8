@@ -1,8 +1,8 @@
 Vnum            9003
 Name            medicine waiter~
-ShortDesc       ÃÄ¾Q¥ë­p~
+ShortDesc       è—¥é‹ªä¼™è¨ˆ~
 Description
-¥L¬OÃÄ¾Q¸Ìªº©±­û¡M±Mªù­t³d©Û«İ¤WªùªºÅU«È¡M¦]¦¹¶Úªù¯S§O¤j¡C
+ä»–æ˜¯è—¥é‹ªè£¡çš„åº—å“¡ï¹å°ˆé–€è² è²¬æ‹›å¾…ä¸Šé–€çš„é¡§å®¢ï¹å› æ­¤å—“é–€ç‰¹åˆ¥å¤§ã€‚
 ~
 Sentinel        Yes
 StayArea        Yes
@@ -36,7 +36,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  say ³o¨à¤°»òÃÄ§÷³£¦³¡M­n¹L¨Ó¬İ¬İ¶Ü¡S
+  say é€™å…’ä»€éº¼è—¥æéƒ½æœ‰ï¹è¦éä¾†çœ‹çœ‹å—ï¹–
 endif
 ~
 End

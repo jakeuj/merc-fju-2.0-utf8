@@ -1,9 +1,9 @@
 Vnum            100
 Name            gem~
-ShortDesc       ¬õ¥É¼Y¤l~
+ShortDesc       ç´…çŽ‰å¢œå­~
 Description
-¤@±ø¥ÑÃø±o¤@¨£ªº¬õÄ_¥ÛÆ^©ó¨ä¤Wªº¶µÁå(gem)¡MÅ¥»¡¬õÄ_¥Û¦³¦¬¯Ç¯à¶qªº¥\®Ä¡C~
-Unit            ±ø~
+ä¸€æ¢ç”±é›£å¾—ä¸€è¦‹çš„ç´…å¯¶çŸ³é‘²æ–¼å…¶ä¸Šçš„é …éŠ(gem)ï¹è½èªªç´…å¯¶çŸ³æœ‰æ”¶ç´èƒ½é‡çš„åŠŸæ•ˆã€‚~
+Unit            æ¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_NECK
 Takeable        Yes

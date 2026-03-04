@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -14,7 +14,7 @@
 
 int             pk_age          = PK_AGE;
 int             pk_level        = PK_LEVEL;
-int             pk_limit        = 10;           /* ¤W½u¤Q¤H¥H¤W¤~·|¶}±Ò */
+int             pk_limit        = 10;           /* ä¸Šç·šåäººä»¥ä¸Šæ‰æœƒé–‹å•Ÿ */
 int             PkContrastLevel = PK_CONTRAST_LEVEL;
 int             MinPKGold       = MIN_PK_GOLD;
 int             MaxPKGold       = MAX_PK_GOLD;
@@ -74,7 +74,7 @@ FUNCTION( do_fight )
 
   if ( !fight_info->area )
   {
-    act( "$t¤¤¨S¦³¥ô¦óªºÄv§Ş³õ¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "$tä¸­æ²’æœ‰ä»»ä½•çš„ç«¶æŠ€å ´ï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -84,55 +84,55 @@ FUNCTION( do_fight )
   {
     if ( fight_info->lock )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eªZ°«¤j·|¬OÃö³¬ªº¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰æ­¦é¬¥å¤§æœƒæ˜¯é—œé–‰çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     clear_buffer();
 
-    send_to_buffer( "¥Ø«eªZ°«¤j·|ªºª¬ªp¬O¡R" );
+    send_to_buffer( "ç›®å‰æ­¦é¬¥å¤§æœƒçš„ç‹€æ³æ˜¯ï¹•" );
 
     switch( fight_info->status )
     {
     case PK_JOIN:
-      send_to_buffer( "±µ¨ü³ø¦W¤¤¡T\n\r" );
+      send_to_buffer( "æ¥å—å ±åä¸­ï¹—\n\r" );
 
       switch( fight_info->type )
       {
       case PK_PERSON:
 
-        send_to_buffer( "½s¸¹¤@¡M­Ó¤HÁÉ¥Ò¤è¡B" );
+        send_to_buffer( "ç·¨è™Ÿä¸€ï¹å€‹äººè³½ç”²æ–¹ã€" );
 
         if ( ( victim = fight_info->fight_1 ) )
         {
           send_to_buffer( "%s\n\r", mob_name( NULL, victim ) );
-          send_to_buffer( "¿éÄ¹¦¸¼Æ¡R ¡uÄ¹¡v%4d ¡u¿é¡v%4d\n\r"
+          send_to_buffer( "è¼¸è´æ¬¡æ•¸ï¹• ã€Œè´ã€%4d ã€Œè¼¸ã€%4d\n\r"
             , victim->pcdata ? victim->pcdata->fight_win  : 0
             , victim->pcdata ? victim->pcdata->fight_lost : 0 );
-          send_to_buffer( "¥Ø«eµ¥¯Å¡R%3d ¯Å\n\r", victim->level );
+          send_to_buffer( "ç›®å‰ç­‰ç´šï¹•%3d ç´š\n\r", victim->level );
         }
 
         else
         {
-          send_to_buffer( "±q¯Ê\n\r" );
+          send_to_buffer( "å¾ç¼º\n\r" );
         }
 
-        send_to_buffer( "½s¸¹¤G¡M­Ó¤HÁÉ¤A¤è¡B" );
+        send_to_buffer( "ç·¨è™ŸäºŒï¹å€‹äººè³½ä¹™æ–¹ã€" );
 
         if ( ( victim = fight_info->fight_2 )  )
         {
           send_to_buffer( "%s\n\r", mob_name( NULL, victim ) );
 
-          send_to_buffer( "¿éÄ¹¦¸¼Æ¡R ¡uÄ¹¡v%4d ¡u¿é¡v%4d\n\r"
+          send_to_buffer( "è¼¸è´æ¬¡æ•¸ï¹• ã€Œè´ã€%4d ã€Œè¼¸ã€%4d\n\r"
             , victim->pcdata ? victim->pcdata->fight_win  : 0
             , victim->pcdata ? victim->pcdata->fight_lost : 0 );
 
-          send_to_buffer( "¥Ø«eµ¥¯Å¡R%3d ¯Å\n\r", victim->level );
+          send_to_buffer( "ç›®å‰ç­‰ç´šï¹•%3d ç´š\n\r", victim->level );
         }
 
         else
         {
-          send_to_buffer( "±q¯Ê\n\r" );
+          send_to_buffer( "å¾ç¼º\n\r" );
         }
 
         break;
@@ -141,64 +141,64 @@ FUNCTION( do_fight )
         break;
 
       default:
-        send_to_buffer( "©|¥¼¦³¥ô¦ó¤H³ø¦W¡T\n\r" );
+        send_to_buffer( "å°šæœªæœ‰ä»»ä½•äººå ±åï¹—\n\r" );
         break;
       }
       break;
 
     case PK_BET:
 
-      send_to_buffer( "±µ¨ü¥~³õ¤Uª`¤¤¡T\n\r" );
+      send_to_buffer( "æ¥å—å¤–å ´ä¸‹æ³¨ä¸­ï¹—\n\r" );
 
       if ( ( victim = fight_info->fight_1 ) )
       {
-        send_to_buffer( "½s¸¹¤@¡B%sÁ`©ãª÷¡R %d ¨â¶Àª÷¡C\n\r"
+        send_to_buffer( "ç·¨è™Ÿä¸€ã€%sç¸½æŠ¼é‡‘ï¹• %d å…©é»ƒé‡‘ã€‚\n\r"
           , mob_name( NULL, victim ), pk_ante_total( PK_FIRST ) );
 
-        send_to_buffer( "¦Û¤v©ã%s¡R %d ¨â¶Àª÷¡C\n\r"
+        send_to_buffer( "è‡ªå·±æŠ¼%sï¹• %d å…©é»ƒé‡‘ã€‚\n\r"
           , mob_name( NULL, victim ), ch->ante[PK_FIRST] );
 
-        send_to_buffer( "¿éÄ¹°O¿ı¡R ¡uÄ¹¡v%4d ¡u¿é¡v%4d\n\r"
+        send_to_buffer( "è¼¸è´è¨˜éŒ„ï¹• ã€Œè´ã€%4d ã€Œè¼¸ã€%4d\n\r"
           , victim->pcdata ? victim->pcdata->fight_win  : 0
           , victim->pcdata ? victim->pcdata->fight_lost : 0 );
 
-        send_to_buffer( "¥Ø«eµ¥¯Å¡R%3d ¯Å\n\r", victim->level );
+        send_to_buffer( "ç›®å‰ç­‰ç´šï¹•%3d ç´š\n\r", victim->level );
       }
 
       if ( ( victim = fight_info->fight_2 ) )
       {
-        send_to_buffer( "\n\r½s¸¹¤G¡B%sÁ`©ãª÷¡R %d ¨â¶Àª÷¡C\n\r"
+        send_to_buffer( "\n\rç·¨è™ŸäºŒã€%sç¸½æŠ¼é‡‘ï¹• %d å…©é»ƒé‡‘ã€‚\n\r"
           , mob_name( NULL, victim ), pk_ante_total( PK_SECOND ) );
 
-        send_to_buffer( "¦Û¤v©ã%s¡R %d ¨â¶Àª÷¡C\n\r"
+        send_to_buffer( "è‡ªå·±æŠ¼%sï¹• %d å…©é»ƒé‡‘ã€‚\n\r"
           , mob_name( NULL, victim ), ch->ante[PK_SECOND] );
 
-        send_to_buffer( "¿éÄ¹°O¿ı¡R ¡uÄ¹¡v%4d ¡u¿é¡v%4d\n\r"
+        send_to_buffer( "è¼¸è´è¨˜éŒ„ï¹• ã€Œè´ã€%4d ã€Œè¼¸ã€%4d\n\r"
           , victim->pcdata ? victim->pcdata->fight_win  : 0
           , victim->pcdata ? victim->pcdata->fight_lost : 0 );
 
-        send_to_buffer( "¥Ø«eµ¥¯Å¡R%3d ¯Å\n\r", victim->level );
+        send_to_buffer( "ç›®å‰ç­‰ç´šï¹•%3d ç´š\n\r", victim->level );
       }
 
       break;
 
     case PK_FIGHT:
-      send_to_buffer( "ªZ°«¤j·|¶i¦æ¤¤¡M¥Ñ¤U¦C¨â¦ì¹ï¨M¤¤¡T\n\r" );
+      send_to_buffer( "æ­¦é¬¥å¤§æœƒé€²è¡Œä¸­ï¹ç”±ä¸‹åˆ—å…©ä½å°æ±ºä¸­ï¹—\n\r" );
 
       if ( ( fight_1 = fight_info->fight_1 )
         && ( fight_2 = fight_info->fight_2 ) )
       {
         send_to_buffer(
-          "½s¸¹¤@¸¹¡R%s\e[0m(%s)\n\r"
-          "¥Ø«eª¬ºA¡R%s\n\r"
-          "Á`©ãª÷ÃB¡R%d ¨â¶Àª÷\n\r"
-          "¦Û¤v©ãª`¡R%d ¨â¶Àª÷\n\r"
-          "³Ó±Ñ°O¿ı¡R%4d¡u³Ó¡v¡R%4d¡u±Ñ¡v\n\r"
-          "½s¸¹¤G¸¹¡R%s\e[0m(%s)\n\r"
-          "¥Ø«eª¬ºA¡R%s\n\r"
-          "Á`©ãª÷ÃB¡R%d ¨â¶Àª÷\n\r"
-          "¦Û¤v©ãª`¡R%d ¨â¶Àª÷\n\r"
-          "³Ó±Ñ°O¿ı¡R%4d¡u³Ó¡v¡R%4d¡u±Ñ¡v\n\r"
+          "ç·¨è™Ÿä¸€è™Ÿï¹•%s\e[0m(%s)\n\r"
+          "ç›®å‰ç‹€æ…‹ï¹•%s\n\r"
+          "ç¸½æŠ¼é‡‘é¡ï¹•%d å…©é»ƒé‡‘\n\r"
+          "è‡ªå·±æŠ¼æ³¨ï¹•%d å…©é»ƒé‡‘\n\r"
+          "å‹æ•—è¨˜éŒ„ï¹•%4dã€Œå‹ã€ï¹•%4dã€Œæ•—ã€\n\r"
+          "ç·¨è™ŸäºŒè™Ÿï¹•%s\e[0m(%s)\n\r"
+          "ç›®å‰ç‹€æ…‹ï¹•%s\n\r"
+          "ç¸½æŠ¼é‡‘é¡ï¹•%d å…©é»ƒé‡‘\n\r"
+          "è‡ªå·±æŠ¼æ³¨ï¹•%d å…©é»ƒé‡‘\n\r"
+          "å‹æ•—è¨˜éŒ„ï¹•%4dã€Œå‹ã€ï¹•%4dã€Œæ•—ã€\n\r"
           , fight_1->cname
           , fight_1->name
           , status_message( fight_1 )
@@ -218,11 +218,11 @@ FUNCTION( do_fight )
       break;
 
     case PK_STOP:
-      send_to_buffer( "²M²zªZ°«¤j·|²{³õ¤¤¡T\n\r" );
+      send_to_buffer( "æ¸…ç†æ­¦é¬¥å¤§æœƒç¾å ´ä¸­ï¹—\n\r" );
       break;
 
     case PK_DESERT:
-      send_to_buffer( "ªZ°«¤j·|¶¢¸m¤¤¡T\n\r" );
+      send_to_buffer( "æ­¦é¬¥å¤§æœƒé–’ç½®ä¸­ï¹—\n\r" );
       break;
     }
 
@@ -234,69 +234,69 @@ FUNCTION( do_fight )
     if ( ( reboot_time   > 0 && ( ( reboot_time   - current_time ) < 900 ) )
       || ( shutdown_time > 0 && ( ( shutdown_time - current_time ) < 900 ) ) )
     {
-      act( "$t§Y±NÃö³¬¡M©Ò¥H¨S¦³¿ìªk¶}±ÒªZ°«¤j·|¡C", ch, mud_name, NULL, TO_CHAR );
+      act( "$tå³å°‡é—œé–‰ï¹æ‰€ä»¥æ²’æœ‰è¾¦æ³•é–‹å•Ÿæ­¦é¬¥å¤§æœƒã€‚", ch, mud_name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( IS_IMMORTAL( ch ) )
     {
-      send_to_char( "§A¥u¯à¥[¥[ªo¡M¤£¯à°Ñ¥[ªº°Õ¡T\n\r", ch );
+      send_to_char( "ä½ åªèƒ½åŠ åŠ æ²¹ï¹ä¸èƒ½åƒåŠ çš„å•¦ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->level <= pk_level )
     {
       chinese_number( pk_level, buf );
-      act( "¹ï¤£°_¡M§Aªºµ¥¯Å¥²¶·¶W¹L$t¯Å¤~¯à°Ñ¥[ªZ°«¤j·|¡T", ch, buf, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ä½ çš„ç­‰ç´šå¿…é ˆè¶…é$tç´šæ‰èƒ½åƒåŠ æ­¦é¬¥å¤§æœƒï¹—", ch, buf, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( get_age( ch ) <= pk_age )
     {
       chinese_number( pk_age, buf );
-      act( "¹ï¤£°_¡M§Aªº¦~ÄÖ¥²¶·¶W¹L$t·³¤~¯à°Ñ¥[ªZ°«¤j·|¡T", ch, buf, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ä½ çš„å¹´é½¡å¿…é ˆè¶…é$tæ­²æ‰èƒ½åƒåŠ æ­¦é¬¥å¤§æœƒï¹—", ch, buf, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( fight_info->lock )
     {
-      send_to_char( "¥Ø«eªZ°«¤j·|³QÂê©w¤F¡M©Ò¥H½Ö¤]µLªk°Ñ¥[¡T\n\r", ch );
+      send_to_char( "ç›®å‰æ­¦é¬¥å¤§æœƒè¢«é–å®šäº†ï¹æ‰€ä»¥èª°ä¹Ÿç„¡æ³•åƒåŠ ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( fight_info->status != PK_JOIN )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«e¤£¬O³ø¦Wªº®É­Ô¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ä¸æ˜¯å ±åçš„æ™‚å€™ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->master || ch->leader )
     {
-      send_to_char( " ¹ï¤£°_¡M§A¥¿¸òÀH§O¤H¡T\n\r", ch );
+      send_to_char( " å°ä¸èµ·ï¹ä½ æ­£è·Ÿéš¨åˆ¥äººï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( auction_info->seller && auction_info->seller == ch )
     {
-      send_to_char( "¹ï¤£°_¡Mµ¥§A½æ§¹ªF¦è¦A¨Ó³ø¦W§a¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç­‰ä½ è³£å®Œæ±è¥¿å†ä¾†å ±åå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( auction_info->buyer && auction_info->buyer == ch )
     {
-      send_to_char( "¹ï¤£°_¡Mµ¥§A¶R§¹ªF¦è¦A¨Ó³ø¦W§a¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç­‰ä½ è²·å®Œæ±è¥¿å†ä¾†å ±åå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "¹ï¤£°_¡Mµ¥§A¦£§¹¤F¦A°Ñ¥[ªZ°«¤j·|§a¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç­‰ä½ å¿™å®Œäº†å†åƒåŠ æ­¦é¬¥å¤§æœƒå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->failed > 0 )
     {
-      send_to_char( "§A¿é¤£°÷¶Ü¡Sµ¥§A½m¦n¤@ÂI¦A¨Ó§a¡T\n\r", ch );
+      send_to_char( "ä½ è¼¸ä¸å¤ å—ï¹–ç­‰ä½ ç·´å¥½ä¸€é»å†ä¾†å§ï¹—\n\r", ch );
       RETURN_NULL()
     }
 
@@ -304,14 +304,14 @@ FUNCTION( do_fight )
       && fight_info->fight_1
       && ch->level - fight_info->fight_1->level > PkContrastLevel )
     {
-      act( "§A¤£¯à´Û­tµ¥¯Å¤ñ§A§C$i¯Åªºª±®a¡C", ch
+      act( "ä½ ä¸èƒ½æ¬ºè² ç­‰ç´šæ¯”ä½ ä½$iç´šçš„ç©å®¶ã€‚", ch
         , &PkContrastLevel, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->jail > 0 )
     {
-      send_to_char( "¥ı§â§Aªº¦D´ÁªA§¹¦A»¡§a¡T\n\r", ch );
+      send_to_char( "å…ˆæŠŠä½ çš„åˆ‘æœŸæœå®Œå†èªªå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -319,93 +319,93 @@ FUNCTION( do_fight )
       || IS_SET( ch->act, PLR_BOLTER )
       || IS_SET( ch->act, PLR_THIEF ) )
     {
-      send_to_char( "§A¦pªG°Ñ¥[·|Åı¤j®aª¾¹D§A¶]¸ôªº¦æÂÜ¡T\n\r", ch );
+      send_to_char( "ä½ å¦‚æœåƒåŠ æœƒè®“å¤§å®¶çŸ¥é“ä½ è·‘è·¯çš„è¡Œè¹¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->mount )
     {
-      act( "§AÁÙ¦b$N¤W¡M¥ı¤U°¨§a¡T", ch, NULL, ch->mount, TO_CHAR );
+      act( "ä½ é‚„åœ¨$Nä¸Šï¹å…ˆä¸‹é¦¬å§ï¹—", ch, NULL, ch->mount, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->spirit )
     {
-      act( "¹ï¤£°_¡M§A¤£¯à±aµÛ$N°Ñ¥[ªZ°«¤j·|³á¡T", ch, NULL, ch->spirit, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ä½ ä¸èƒ½å¸¶è‘—$NåƒåŠ æ­¦é¬¥å¤§æœƒå–”ï¹—", ch, NULL, ch->spirit, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->in_room && ch->in_room->NoQuit )
     {
-      act( "¥ıÂ÷¶}³o­Ó°­¦a¤è$r¦A»¡§a¡T", ch, NULL, NULL, TO_CHAR );
+      act( "å…ˆé›¢é–‹é€™å€‹é¬¼åœ°æ–¹$rå†èªªå§ï¹—", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( is_station( ch->in_room ) )
     {
-      act( "§AÁÙ¦b$r¸Ì¡M½Ğ¥ı¤U¨®§a¡M¦A¨Ó°Ñ¥[ªZ°«¤j·|§a¡T", ch, NULL, NULL, TO_CHAR  );
+      act( "ä½ é‚„åœ¨$rè£¡ï¹è«‹å…ˆä¸‹è»Šå§ï¹å†ä¾†åƒåŠ æ­¦é¬¥å¤§æœƒå§ï¹—", ch, NULL, NULL, TO_CHAR  );
       RETURN_NULL();
     }
 
     if ( ch->in_room->Sail )
     {
-      act( "§AÁÙ¦b$r¡M½Ğ¥ı¤U²î§a¡M¤£µMµLªk°Ñ¥[ªZ°«¤j·|¡T", ch, NULL, NULL, TO_CHAR  );
+      act( "ä½ é‚„åœ¨$rï¹è«‹å…ˆä¸‹èˆ¹å§ï¹ä¸ç„¶ç„¡æ³•åƒåŠ æ­¦é¬¥å¤§æœƒï¹—", ch, NULL, NULL, TO_CHAR  );
       RETURN_NULL();
     }
 
     if ( fight_info->type == PK_CLUB )
     {
-      send_to_char( "¥Ø«e¬OÀ°¬£¤õ«÷¡M§A¤£¾A¦X°Ñ¥[¡T\n\r", ch );
+      send_to_char( "ç›®å‰æ˜¯å¹«æ´¾ç«æ‹¼ï¹ä½ ä¸é©åˆåƒåŠ ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_pk( ch ) )
     {
-      send_to_char( "§A¤w¸g³ø¦W¤F¡M¤£¯à­«½Æ³ø¦W³á¡T\n\r", ch );
+      send_to_char( "ä½ å·²ç¶“å ±åäº†ï¹ä¸èƒ½é‡è¤‡å ±åå–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( fight_info->area == NULL || !( pRoom = random_pk_room( ch ) ) )
     {
-      send_to_char( "¥Ø«e§ä¤£¨ì¥i¥H¤õ«÷ªº¦a¤è¡M³o­Ó°İÃD¦³ÂIÄY­«¡T\n\r", ch );
+      send_to_char( "ç›®å‰æ‰¾ä¸åˆ°å¯ä»¥ç«æ‹¼çš„åœ°æ–¹ï¹é€™å€‹å•é¡Œæœ‰é»åš´é‡ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     check_contraband( ch );
 
-    act( "¤Ñ¤WÄÆ¨Ó¤@¦·¶³¡M§â$n¶Ç°e¨ìÄv§Ş³õÅo¡T", ch, NULL, NULL, TO_ALL );
+    act( "å¤©ä¸Šé£„ä¾†ä¸€æœµé›²ï¹æŠŠ$nå‚³é€åˆ°ç«¶æŠ€å ´å›‰ï¹—", ch, NULL, NULL, TO_ALL );
 
     char_from_room( ch );
     char_to_room( ch, pRoom );
     do_look( ch, "auto" );
 
-    /* ²M°£°lÂÜ¬ö¿ıÂI */
+    /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
     clear_trace( ch, TRUE );
 
     set_pk( ch, NULL );
 
-    sprintf( buf, "%s°Ñ¥[¤F³o³õªZ°«¤j·|¡M¤j®a´À¥L¥[ªo§a¡T"
+    sprintf( buf, "%såƒåŠ äº†é€™å ´æ­¦é¬¥å¤§æœƒï¹å¤§å®¶æ›¿ä»–åŠ æ²¹å§ï¹—"
       , mob_name( NULL, ch ) );
 
     talk_channel_2( buf, CHANNEL_PK, "" );
 
     if ( fight_info->status == PK_BET )
     {
-      str_cpy( buf, "¤@¦~¤@«×ªºªZ°«¤j·|¤w¸gÃBº¡¡M½Ğ¤j®a¥i¥H"
-        "¶}©l¤Uª`(\e[1;32mfight bet\e[0m)¤F¡T" );
+      str_cpy( buf, "ä¸€å¹´ä¸€åº¦çš„æ­¦é¬¥å¤§æœƒå·²ç¶“é¡æ»¿ï¹è«‹å¤§å®¶å¯ä»¥"
+        "é–‹å§‹ä¸‹æ³¨(\e[1;32mfight bet\e[0m)äº†ï¹—" );
 
       talk_channel_2( buf, CHANNEL_PK, "" );
 
       if ( ( victim = fight_info->fight_1 ) )
       {
-        /* ²¾°£¨­¤W©Ò¦³ªºªk³N */
+        /* ç§»é™¤èº«ä¸Šæ‰€æœ‰çš„æ³•è¡“ */
         while ( victim->affected ) affect_remove( victim, victim->affected );
         victim->affected    = NULL;
       }
 
       if ( ( victim = fight_info->fight_2 ) )
       {
-        /* ²¾°£¨­¤W©Ò¦³ªºªk³N */
+        /* ç§»é™¤èº«ä¸Šæ‰€æœ‰çš„æ³•è¡“ */
         while ( victim->affected ) affect_remove( victim, victim->affected );
         victim->affected     = NULL;
       }
@@ -416,46 +416,46 @@ FUNCTION( do_fight )
   {
     if ( ch->trade == FALSE )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤Ó¥i©È¤F¡M©Ò¥HµLªk°õ¦æ³o­Ó«ü¥O¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å¤ªå¯æ€•äº†ï¹æ‰€ä»¥ç„¡æ³•åŸ·è¡Œé€™å€‹æŒ‡ä»¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( fight_info->lock )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eªZ°«¤j·|¬OÃö³¬ªº¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰æ­¦é¬¥å¤§æœƒæ˜¯é—œé–‰çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( fight_info->status != PK_BET )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eµLªk¤Uª`¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ç„¡æ³•ä¸‹æ³¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¥H¤÷¥Àªºª÷¿ú¨M³Ó­t¡C"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦ä»¥çˆ¶æ¯çš„é‡‘éŒ¢æ±ºå‹è² ã€‚"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "±ÏÀÙª÷¥i¤£¬OÅı§A®³¨Ó½ä³Õªº¡T\n\r", ch );
+      send_to_char( "æ•‘æ¿Ÿé‡‘å¯ä¸æ˜¯è®“ä½ æ‹¿ä¾†è³­åšçš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     argument = one_argument( argument, arg );
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "§A­n©ã­ş¤@¤èÄ¹©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦æŠ¼å“ªä¸€æ–¹è´å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( which = atoi( arg ) ) <= 0 || which > 2 )
     {
-      send_to_char( "§A¥u¯à¿ï¾Ü¤@(\e[1;32m1\e[0m)©Î¤G(\e[1;32m2\e[0m)"
-                    "Ä¹¡T\n\r", ch );
+      send_to_char( "ä½ åªèƒ½é¸æ“‡ä¸€(\e[1;32m1\e[0m)æˆ–äºŒ(\e[1;32m2\e[0m)"
+                    "è´ï¹—\n\r", ch );
 
       RETURN_NULL();
     }
@@ -463,44 +463,44 @@ FUNCTION( do_fight )
     if ( ( fight_info->fight_1 && ( fight_info->fight_1 == ch ) && ( which == 2 ) )
       || ( fight_info->fight_2 && ( fight_info->fight_2 == ch ) && ( which == 1 ) ) )
     {
-      send_to_char( "§A¹ï¦Û¤v³£¨S¦³«H¤ß¤F¡M½ÖÁÙ¹ï§A¦³«H¤ß©O¡S\n\r", ch );
+      send_to_char( "ä½ å°è‡ªå·±éƒ½æ²’æœ‰ä¿¡å¿ƒäº†ï¹èª°é‚„å°ä½ æœ‰ä¿¡å¿ƒå‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->ante[--which] > 0 )
     {
-      send_to_char( "§A¥u¯à©ã¤@¦¸½äª÷¡T\n\r", ch );
+      send_to_char( "ä½ åªèƒ½æŠ¼ä¸€æ¬¡è³­é‡‘ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     argument = one_argument( argument, arg );
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "§A¨ì©³­n©ã¦h¤Ö¿ú½ä¥LÄ¹©O¡S\n\r", ch );
+      send_to_char( "ä½ åˆ°åº•è¦æŠ¼å¤šå°‘éŒ¢è³­ä»–è´å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( amount = atoi( arg ) ) < MinPKGold )
     {
-      send_to_char( "§Aªº©ãª÷¤]¥¼§K¤Ó¤p¤F§a¡T\n\r", ch );
+      send_to_char( "ä½ çš„æŠ¼é‡‘ä¹Ÿæœªå…å¤ªå°äº†å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( amount = atoi( arg ) ) > MaxPKGold )
     {
-      send_to_char( "§Aªº©ãª÷¤Ó¤j¤F¡M§A¹ï¥L¨º»ò¦³«H¤ß¶Ü¡S\n\r", ch );
+      send_to_char( "ä½ çš„æŠ¼é‡‘å¤ªå¤§äº†ï¹ä½ å°ä»–é‚£éº¼æœ‰ä¿¡å¿ƒå—ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->gold < amount )
     {
-      send_to_char( "¯u¬O½ä©Ê°í±j¡M¦ı¬O¥ı¬İ¬İ§A¦Û¤vªº¤f³U§a¡T\n\r", ch );
+      send_to_char( "çœŸæ˜¯è³­æ€§å …å¼·ï¹ä½†æ˜¯å…ˆçœ‹çœ‹ä½ è‡ªå·±çš„å£è¢‹å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( ( total = pk_ante_total( which ) ) + amount ) > MaxPKTotal )
     {
-      send_to_char( "£°¡M³o¤@Ãäªº½äª÷¤Ó¤j¤F¡M©Ò¥HµLªkÄ~Äò©ãª`¡T\n\r", ch );
+      send_to_char( "ã„Ÿï¹é€™ä¸€é‚Šçš„è³­é‡‘å¤ªå¤§äº†ï¹æ‰€ä»¥ç„¡æ³•ç¹¼çºŒæŠ¼æ³¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -519,14 +519,14 @@ FUNCTION( do_fight )
       {
         if ( ch == victim )
         {
-          sprintf( buf, "%s¹ï¦Û¤v¤Q¤À¦³«H¤ß¡M©ã¤F%d¨â¶Àª÷¶R¦Û¤vÄ¹¡T"
+          sprintf( buf, "%så°è‡ªå·±ååˆ†æœ‰ä¿¡å¿ƒï¹æŠ¼äº†%då…©é»ƒé‡‘è²·è‡ªå·±è´ï¹—"
             , mob_name( NULL, ch ), amount );
         }
 
         else
         {
-          sprintf( buf, "%s\e[0m(%s)¹ï%s\e[0m(%s)¤Q¤À¦³«H¤ß¡M"
-            "©ã¤F%d¨â¶Àª÷¶R¥LÄ¹¡T"
+          sprintf( buf, "%s\e[0m(%s)å°%s\e[0m(%s)ååˆ†æœ‰ä¿¡å¿ƒï¹"
+            "æŠ¼äº†%då…©é»ƒé‡‘è²·ä»–è´ï¹—"
             , ch->cname, ch->name, victim->cname, victim->name, amount );
         }
 
@@ -537,14 +537,14 @@ FUNCTION( do_fight )
       {
         if ( ch == victim )
         {
-          sprintf( buf, "%s¹ï¦Û¤v¤Q¤À¦³«H¤ß¡M©ã¤F%d¨â¶Àª÷¶R¦Û¤vÄ¹¡T"
+          sprintf( buf, "%så°è‡ªå·±ååˆ†æœ‰ä¿¡å¿ƒï¹æŠ¼äº†%då…©é»ƒé‡‘è²·è‡ªå·±è´ï¹—"
             , mob_name( NULL, ch ), amount );
         }
 
         else
         {
-          sprintf( buf, "%s\e[0m(%s)¹ï%s\e[0m(%s)¤Q¤À¦³«H¤ß¡M"
-            "©ã¤F%d¨â¶Àª÷¶R¥LÄ¹¡T"
+          sprintf( buf, "%s\e[0m(%s)å°%s\e[0m(%s)ååˆ†æœ‰ä¿¡å¿ƒï¹"
+            "æŠ¼äº†%då…©é»ƒé‡‘è²·ä»–è´ï¹—"
             , ch->cname, ch->name, victim->cname, victim->name, amount );
         }
 
@@ -559,46 +559,46 @@ FUNCTION( do_fight )
   {
     clear_buffer();
     send_to_buffer(
-      "%s\e[0mªZ°«¤j·|ª¬ªp¦p¤U¡R\n\r%s"
-      "¤W½u¤H¼Æ  ¡R%d ¤H¥H¤W¤~·|Á|¿ì\n\r"
-      "ªZ°«¦¸¼Æ  ¡R%d ¦¸\n\r"
-      "¶}±Ò¦¸¼Æ  ¡R%d ¦¸\n\r"
-      "Âê©wª¬ªp  ¡R%s\n\r"
-      "³Ì¤p©ãª÷  ¡R%d ¨â¶Àª÷\n\r"
-      "³Ì¤j©ãª÷  ¡R%d ¨â¶Àª÷\n\r"
-      "³Ì¤jÁ`©ãª÷¡R%d ¨â¶Àª÷\n\r"
-      "²Ö­pÁ`©ãª÷¡R%d ¨â¶Àª÷\n\r"
-      "¥Ø«eª¬ªp  ¡R"
+      "%s\e[0mæ­¦é¬¥å¤§æœƒç‹€æ³å¦‚ä¸‹ï¹•\n\r%s"
+      "ä¸Šç·šäººæ•¸  ï¹•%d äººä»¥ä¸Šæ‰æœƒèˆ‰è¾¦\n\r"
+      "æ­¦é¬¥æ¬¡æ•¸  ï¹•%d æ¬¡\n\r"
+      "é–‹å•Ÿæ¬¡æ•¸  ï¹•%d æ¬¡\n\r"
+      "é–å®šç‹€æ³  ï¹•%s\n\r"
+      "æœ€å°æŠ¼é‡‘  ï¹•%d å…©é»ƒé‡‘\n\r"
+      "æœ€å¤§æŠ¼é‡‘  ï¹•%d å…©é»ƒé‡‘\n\r"
+      "æœ€å¤§ç¸½æŠ¼é‡‘ï¹•%d å…©é»ƒé‡‘\n\r"
+      "ç´¯è¨ˆç¸½æŠ¼é‡‘ï¹•%d å…©é»ƒé‡‘\n\r"
+      "ç›®å‰ç‹€æ³  ï¹•"
       , mud_name, VERTICAL_LINE
       , pk_limit
       , fight_info->time, fight_info->open
-      , fight_info->lock ? "Âê©w" : "¥¿±`"
+      , fight_info->lock ? "é–å®š" : "æ­£å¸¸"
       , MinPKGold, MaxPKGold, MaxPKTotal, PKBetTotal );
 
     switch( fight_info->status )
     {
     default:
-      send_to_buffer( "¤£¸Ô¡T\n\r" );
+      send_to_buffer( "ä¸è©³ï¹—\n\r" );
       break;
 
     case PK_JOIN:
-      send_to_buffer( "±µ¨ü³ø¦W¤¤¡T\n\r" );
+      send_to_buffer( "æ¥å—å ±åä¸­ï¹—\n\r" );
       break;
 
     case PK_BET:
-      send_to_buffer( "±µ¨ü¥~³õ¤Uª`¤¤¡T\n\r" );
+      send_to_buffer( "æ¥å—å¤–å ´ä¸‹æ³¨ä¸­ï¹—\n\r" );
       break;
 
     case PK_FIGHT:
-      send_to_buffer( "ªZ°«¤j·|¹ï¨M¤¤¡T\n\r" );
+      send_to_buffer( "æ­¦é¬¥å¤§æœƒå°æ±ºä¸­ï¹—\n\r" );
       break;
 
     case PK_STOP:
-      send_to_buffer( "²M²zªZ°«¤j·|²{³õ¤¤¡T\n\r" );
+      send_to_buffer( "æ¸…ç†æ­¦é¬¥å¤§æœƒç¾å ´ä¸­ï¹—\n\r" );
       break;
 
     case PK_DESERT:
-      send_to_buffer( "ªZ°«¤j·|¶¢¸m¤¤¡T\n\r" );
+      send_to_buffer( "æ­¦é¬¥å¤§æœƒé–’ç½®ä¸­ï¹—\n\r" );
       break;
     }
 
@@ -611,19 +611,19 @@ FUNCTION( do_fight )
     {
     case TRUE:
       fight_info->lock = FALSE;
-      send_to_char( "§A§âªZ°«¤j·|¸Ñ°£Âê©w¤F¡T\n\r", ch );
+      send_to_char( "ä½ æŠŠæ­¦é¬¥å¤§æœƒè§£é™¤é–å®šäº†ï¹—\n\r", ch );
       break;
 
     case FALSE:
       fight_info->lock = TRUE;
-      send_to_char( "§A§âªZ°«¤j·|Âê©w¤F¡T\n\r", ch );
+      send_to_char( "ä½ æŠŠæ­¦é¬¥å¤§æœƒé–å®šäº†ï¹—\n\r", ch );
       break;
     }
   }
 
   else
   {
-    send_to_char( "§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß fight ªº¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ fight çš„ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
   RETURN_NULL();
 }
@@ -638,7 +638,7 @@ void fight_update( void )
 
   PUSH_FUNCTION( "fight_update" );
 
-  /* ¦pªGªZ°«¤j·|¶¢¸m®É¡M¥B¤W½u¤H¼Æ¤Ö©ó³]©w­È¡M«h¤£°µ°Ê§@ */
+  /* å¦‚æœæ­¦é¬¥å¤§æœƒé–’ç½®æ™‚ï¹ä¸”ä¸Šç·šäººæ•¸å°‘æ–¼è¨­å®šå€¼ï¹å‰‡ä¸åšå‹•ä½œ */
   if ( fight_info->status == PK_DESERT && get_usernum() < pk_limit )
      RETURN_NULL();
 
@@ -656,14 +656,14 @@ void fight_update( void )
 
     if ( fight_info->status == PK_JOIN )
     {
-      str_cpy( buf, "¤@¦~¤@«×ªºªZ°«¤j·|¤S¶}©l¤F¡M½Ğ¤j®a¯à°÷¿ãÅD³ø¦W(fight join)¡T" );
+      str_cpy( buf, "ä¸€å¹´ä¸€åº¦çš„æ­¦é¬¥å¤§æœƒåˆé–‹å§‹äº†ï¹è«‹å¤§å®¶èƒ½å¤ è¸´èºå ±å(fight join)ï¹—" );
       talk_channel_2( buf, CHANNEL_PK, "" );
     }
 
     else if ( fight_info->status == PK_BET )
     {
-      str_cpy( buf, "ªZ°«¤j·|¤w¸gºV©w¡M½Ğ³õ¥~¤H¤h¶}©l¤Uª`"
-        "(\e[1;32mfight bet\e[0m)¡T" );
+      str_cpy( buf, "æ­¦é¬¥å¤§æœƒå·²ç¶“æ•²å®šï¹è«‹å ´å¤–äººå£«é–‹å§‹ä¸‹æ³¨"
+        "(\e[1;32mfight bet\e[0m)ï¹—" );
 
       talk_channel_2( buf, CHANNEL_PK, "" );
     }
@@ -674,7 +674,7 @@ void fight_update( void )
 
     if ( fight_info->status == PK_JOIN )
     {
-      str_cpy( buf, "¤@¦~¤@«×ªºªZ°«¤j·|³ø¦WºI¤î¤F¡M¤U¦¸½Ğ¦­§a¡T" );
+      str_cpy( buf, "ä¸€å¹´ä¸€åº¦çš„æ­¦é¬¥å¤§æœƒå ±åæˆªæ­¢äº†ï¹ä¸‹æ¬¡è«‹æ—©å§ï¹—" );
       talk_channel_2( buf, CHANNEL_PK, "" );
 
       ch = NULL;
@@ -684,7 +684,7 @@ void fight_update( void )
 
       if ( ch )
       {
-        sprintf( buf, "¥u¨£%s¸ú¦b·t³B°ãª_¡M§Ú«ç»ò¨º»ò±j¡M³ºµM§ä¤£¨ì¹ï¤â¡T"
+        sprintf( buf, "åªè¦‹%sèº²åœ¨æš—è™•å•œæ³£ï¹æˆ‘æ€éº¼é‚£éº¼å¼·ï¹ç«Ÿç„¶æ‰¾ä¸åˆ°å°æ‰‹ï¹—"
           , mob_name( NULL, ch ) );
 
         talk_channel_2( buf, CHANNEL_PK, "" );
@@ -698,8 +698,8 @@ void fight_update( void )
 
     else if ( fight_info->status == PK_BET )
     {
-      str_cpy( buf, "ªZ°«¤j·|¤w¸gºV©w¡M½Ğ³õ¥~¤H¤hºÉ±¡¤Uª`"
-        "(\e[1;32mfight bet\e[0m)¡T" );
+      str_cpy( buf, "æ­¦é¬¥å¤§æœƒå·²ç¶“æ•²å®šï¹è«‹å ´å¤–äººå£«ç›¡æƒ…ä¸‹æ³¨"
+        "(\e[1;32mfight bet\e[0m)ï¹—" );
 
       talk_channel_2( buf, CHANNEL_PK, "" );
     }
@@ -710,8 +710,8 @@ void fight_update( void )
 
     if ( fight_info->status == PK_BET )
     {
-      str_cpy( buf, "ªZ°«¤j·|¤w¸gºV©w¡M½Ğ³õ¥~¤H¤h§V¤O¤Uª`"
-        "(\e[1;32mfight bet\e[0m)¡T" );
+      str_cpy( buf, "æ­¦é¬¥å¤§æœƒå·²ç¶“æ•²å®šï¹è«‹å ´å¤–äººå£«åŠªåŠ›ä¸‹æ³¨"
+        "(\e[1;32mfight bet\e[0m)ï¹—" );
 
       talk_channel_2( buf, CHANNEL_PK, "" );
     }
@@ -722,7 +722,7 @@ void fight_update( void )
 
     if ( fight_info->status == PK_BET )
     {
-      str_cpy( buf, "°±¤î³õ¥~¤Uª`¡MªZ°«¤j·|¤w¸g¶}¥´¤F¡T" );
+      str_cpy( buf, "åœæ­¢å ´å¤–ä¸‹æ³¨ï¹æ­¦é¬¥å¤§æœƒå·²ç¶“é–‹æ‰“äº†ï¹—" );
       talk_channel_2( buf, CHANNEL_PK, "" );
       fight_info->status = PK_FIGHT;
       fight_info->open++;
@@ -753,24 +753,24 @@ void fight_update( void )
 
           if ( fight_1->in_room == fight_2->in_room )
           {
-            send_to_char( "ÁÙ¤£§ÖÂI¥´¡M³õ¥~³£¤w¸g¶Ã¦¨¤@¹Î¤F¡T\n\r", fight_1 );
-            send_to_char( "ÁÙ¤£§ÖÂI¥´¡M³õ¥~³£¤w¸g¶Ã¦¨¤@¹Î¤F¡T\n\r", fight_2 );
+            send_to_char( "é‚„ä¸å¿«é»æ‰“ï¹å ´å¤–éƒ½å·²ç¶“äº‚æˆä¸€åœ˜äº†ï¹—\n\r", fight_1 );
+            send_to_char( "é‚„ä¸å¿«é»æ‰“ï¹å ´å¤–éƒ½å·²ç¶“äº‚æˆä¸€åœ˜äº†ï¹—\n\r", fight_2 );
             break;
           }
 
           if ( fight_1->fighting ) stop_fighting( fight_1, FALSE );
           if ( fight_2->fighting ) stop_fighting( fight_2, FALSE );
 
-          act( "$n¤£ª¾¹D³QªZ¯«©ì¨ì¨º¸Ì¥h¤F¡T", fight_1, NULL, NULL, TO_ALL );
+          act( "$nä¸çŸ¥é“è¢«æ­¦ç¥æ‹–åˆ°é‚£è£¡å»äº†ï¹—", fight_1, NULL, NULL, TO_ALL );
 
           char_from_room( fight_1 );
           char_to_room( fight_1, fight_2->in_room );
 
-          /* ²M°£°lÂÜ¬ö¿ıÂI */
+          /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
           clear_trace( fight_1, TRUE );
 
-          send_to_char( "¨t²Î±j¨î§A­Ì¦b¤@°_¡Mµ¹§Ú¥´¡T\n\r", fight_1 );
-          send_to_char( "¨t²Î±j¨î§A­Ì¦b¤@°_¡Mµ¹§Ú¥´¡T\n\r", fight_2 );
+          send_to_char( "ç³»çµ±å¼·åˆ¶ä½ å€‘åœ¨ä¸€èµ·ï¹çµ¦æˆ‘æ‰“ï¹—\n\r", fight_1 );
+          send_to_char( "ç³»çµ±å¼·åˆ¶ä½ å€‘åœ¨ä¸€èµ·ï¹çµ¦æˆ‘æ‰“ï¹—\n\r", fight_2 );
         }
 
         break;
@@ -786,7 +786,7 @@ void fight_update( void )
     if ( fight_info->status == PK_FIGHT )
     {
       stop_pk( NULL );
-      str_cpy( buf, "³o³õªZ°«¤j·|¨S¦³Ä¹®a¡M©Ò¥HÂù¤è³£ºâ¿é¡T" );
+      str_cpy( buf, "é€™å ´æ­¦é¬¥å¤§æœƒæ²’æœ‰è´å®¶ï¹æ‰€ä»¥é›™æ–¹éƒ½ç®—è¼¸ï¹—" );
       talk_channel_2( buf, CHANNEL_PK, "" );
     }
 
@@ -808,7 +808,7 @@ ROOM_INDEX_DATA * random_pk_room( CHAR_DATA * ch )
 
   if ( !ch || !( pArea = fight_info->area ) )
   {
-    mudlog( LOG_DEBUG, "random_pk_room: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "random_pk_room: ç¼ºä¹ä¾†æº." );
     RETURN( NULL );
   }
 
@@ -844,14 +844,14 @@ void check_contraband( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "check_contraband: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "check_contraband: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
-  act( "Åı§Ú¨ÓÀË¬d$n¨­¤W¬O§_¦³±a­ş¨Ç¹H¸T«~¡T", ch, NULL, NULL, TO_ALL );
-  act( "$n°ªÁ|Âù¤â¡M¤Q¤À¦X§@¦a±µ¨üÀË¬d¡T", ch, NULL, NULL, TO_ALL );
+  act( "è®“æˆ‘ä¾†æª¢æŸ¥$nèº«ä¸Šæ˜¯å¦æœ‰å¸¶å“ªäº›é•ç¦å“ï¹—", ch, NULL, NULL, TO_ALL );
+  act( "$né«˜èˆ‰é›™æ‰‹ï¹ååˆ†åˆä½œåœ°æ¥å—æª¢æŸ¥ï¹—", ch, NULL, NULL, TO_ALL );
 
   for ( pObj = ch->carrying; pObj; pObj = pObj_next )
   {
@@ -859,7 +859,7 @@ void check_contraband( CHAR_DATA * ch )
 
     if ( pObj->Contraband )
     {
-      act( "§A¨­¤Wªº$p¬O¹H¸T«~¡M§Ú¨S¦¬¤F¡T", ch, pObj, NULL, TO_CHAR );
+      act( "ä½ èº«ä¸Šçš„$pæ˜¯é•ç¦å“ï¹æˆ‘æ²’æ”¶äº†ï¹—", ch, pObj, NULL, TO_CHAR );
       extract_obj( pObj );
       continue;
     }
@@ -872,7 +872,7 @@ void check_contraband( CHAR_DATA * ch )
 
         if ( zObj->Contraband )
         {
-          act( "§A¨­¤Wªº$p¬O¹H¸T«~¡M§Ú¨S¦¬¤F¡T", ch, zObj, NULL, TO_CHAR );
+          act( "ä½ èº«ä¸Šçš„$pæ˜¯é•ç¦å“ï¹æˆ‘æ²’æ”¶äº†ï¹—", ch, zObj, NULL, TO_CHAR );
           extract_obj( zObj );
           continue;
         }
@@ -890,14 +890,14 @@ void set_pk( CHAR_DATA * ch, CLUB_DATA * club )
   switch( fight_info->type )
   {
   default:
-    mudlog( LOG_DEBUG, "set_pk: «¬ºA¿ù»~." );
+    mudlog( LOG_DEBUG, "set_pk: å‹æ…‹éŒ¯èª¤." );
     break;
 
   case PK_PERSON:
 
     if ( !fight_info->fight_1 )      fight_info->fight_1 = ch;
     else if ( !fight_info->fight_2 ) fight_info->fight_2 = ch;
-    else mudlog( LOG_DEBUG, "set_pk: ­Ó¤H«¬ºA¦WÃB¤wº¡." );
+    else mudlog( LOG_DEBUG, "set_pk: å€‹äººå‹æ…‹åé¡å·²æ»¿." );
 
     if ( fight_info->fight_1 && fight_info->fight_2 )
       fight_info->status = PK_BET;
@@ -908,7 +908,7 @@ void set_pk( CHAR_DATA * ch, CLUB_DATA * club )
 
     if ( !fight_info->club_1 )       fight_info->club_1 = club;
     else if ( !fight_info->club_2 ) fight_info->club_2 = club;
-    else mudlog( LOG_DEBUG, "set_pk: À°¬£«¬ºA¦WÃB¤wº¡." );
+    else mudlog( LOG_DEBUG, "set_pk: å¹«æ´¾å‹æ…‹åé¡å·²æ»¿." );
 
     if ( fight_info->club_1 && fight_info->club_2 )
       fight_info->status = PK_BET;
@@ -931,7 +931,7 @@ void set_pk( CHAR_DATA * ch, CLUB_DATA * club )
 
     else
     {
-      mudlog( LOG_DEBUG, "set_pk: «¬ºA¬J¤£¬OÀ°¬£¤]¤£¬O­Ó¤H." );
+      mudlog( LOG_DEBUG, "set_pk: å‹æ…‹æ—¢ä¸æ˜¯å¹«æ´¾ä¹Ÿä¸æ˜¯å€‹äºº." );
     }
 
     break;
@@ -952,21 +952,21 @@ void cancel_pk( void )
 
     if ( ( ch = fight_info->fight_1 ) && ch->in_room )
     {
-      send_to_char( "¹ï¤£°_¡M§A¤Ó±j¤F¡M©Ò¥H§ä¤£¨ì¹ï¤â¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å¤ªå¼·äº†ï¹æ‰€ä»¥æ‰¾ä¸åˆ°å°æ‰‹ï¹—\n\r", ch );
       char_from_room( ch );
       char_to_room( ch, get_hometown( ch ) );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( ch, TRUE );
     }
 
     if ( ( ch = fight_info->fight_2 ) && ch->in_room )
     {
-      send_to_char( "¹ï¤£°_¡M§A¤Ó±j¤F¡M©Ò¥H§ä¤£¨ì¹ï¤â¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å¤ªå¼·äº†ï¹æ‰€ä»¥æ‰¾ä¸åˆ°å°æ‰‹ï¹—\n\r", ch );
       char_from_room( ch );
       char_to_room( ch, get_hometown( ch ) );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( ch, TRUE );
     }
 
@@ -989,14 +989,14 @@ void stop_pk( void * winner )
 
   if ( fight_info->status != PK_FIGHT )
   {
-    mudlog( LOG_DEBUG, "stop_pk: ª¬ºA¤£¹ï." );
+    mudlog( LOG_DEBUG, "stop_pk: ç‹€æ…‹ä¸å°." );
     RETURN_NULL();
   }
 
   switch( fight_info->type )
   {
   default:
-    mudlog( LOG_DEBUG, "stop_pk: ¿ù»~ªº«¬ºA." );
+    mudlog( LOG_DEBUG, "stop_pk: éŒ¯èª¤çš„å‹æ…‹." );
     RETURN_NULL();
 
   case PK_PERSON:
@@ -1007,41 +1007,41 @@ void stop_pk( void * winner )
     fight_1->cease = TRUE;
     fight_2->cease = TRUE;
 
-    /* ³B²z¾Ô³ÓªÌ */
+    /* è™•ç†æˆ°å‹è€… */
     if ( fighter )
     {
       if ( fighter != fight_1 && fighter != fight_2 )
       {
-        mudlog( LOG_DEBUG, "stop_pk: Ä¹¤è«DªZ°«¤§¤H." );
+        mudlog( LOG_DEBUG, "stop_pk: è´æ–¹éæ­¦é¬¥ä¹‹äºº." );
         RETURN_NULL();
       }
 
       char_from_room( fighter );
       char_to_room( fighter, get_hometown( fighter ) );
 
-      act( "$n¥´Ä¹¤FªZ°«¤j·|¡M¥úºa¦a¦^¨ì³o¸Ì¡T", fighter, NULL, NULL, TO_ALL );
+      act( "$næ‰“è´äº†æ­¦é¬¥å¤§æœƒï¹å…‰æ¦®åœ°å›åˆ°é€™è£¡ï¹—", fighter, NULL, NULL, TO_ALL );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( fighter, TRUE );
 
       do_look( fighter, "auto" );
 
-      /* µo°e¼úª÷ */
+      /* ç™¼é€çé‡‘ */
       if ( fighter == fight_1 ) send_ante( PK_FIRST  );
       if ( fighter == fight_2 ) send_ante( PK_SECOND );
 
       if ( fighter->pcdata ) fighter->pcdata->fight_win++;
     }
 
-    /* ³B²z¾Ô±ÑªÌ */
+    /* è™•ç†æˆ°æ•—è€… */
     if ( fighter != fight_1 )
     {
       char_from_room( fight_1 );
       char_to_room( fight_1, RoomFail );
 
-      act( "$n¥´¿éªZ°«¤j·|¡M¥u¦nºÛ¦b³o¸Ì«ä¹L¤F¡T", fight_1, NULL, NULL, TO_ALL );
+      act( "$næ‰“è¼¸æ­¦é¬¥å¤§æœƒï¹åªå¥½çª©åœ¨é€™è£¡æ€éäº†ï¹—", fight_1, NULL, NULL, TO_ALL );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( fight_1, TRUE );
 
       fight_1->failed   = 20;
@@ -1059,9 +1059,9 @@ void stop_pk( void * winner )
       char_from_room( fight_2 );
       char_to_room( fight_2, RoomFail );
 
-      act( "$n¥´¿éªZ°«¤j·|¡M¥u¦nºÛ¦b³o¸Ì«ä¹L¤F¡T", fight_2, NULL, NULL, TO_ALL );
+      act( "$næ‰“è¼¸æ­¦é¬¥å¤§æœƒï¹åªå¥½çª©åœ¨é€™è£¡æ€éäº†ï¹—", fight_2, NULL, NULL, TO_ALL );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( fight_2, TRUE );
 
       fight_2->failed   = 20;
@@ -1084,7 +1084,7 @@ void stop_pk( void * winner )
   init_fight( fight_info );
   fight_info->status = PK_STOP;
 
-  /* ®ø°£±mª÷ */
+  /* æ¶ˆé™¤å½©é‡‘ */
   clear_ante();
   RETURN_NULL();
 }
@@ -1120,7 +1120,7 @@ void send_ante( int which )
 
   if ( which != PK_FIRST && which != PK_SECOND )
   {
-    mudlog( LOG_DEBUG, "send_ante: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "send_ante: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -1135,7 +1135,7 @@ void send_ante( int which )
 
     if ( fight_info->fight_1 && bonus > 0 )
     {
-      act( "¦]¬°§Aªº¾Ô³Ó¡M©Ò¥H§A¥i¥H©â¨ú±mª÷$i¨â¶Àª÷¡T"
+      act( "å› ç‚ºä½ çš„æˆ°å‹ï¹æ‰€ä»¥ä½ å¯ä»¥æŠ½å–å½©é‡‘$iå…©é»ƒé‡‘ï¹—"
         , fight_info->fight_1, &bonus, NULL, TO_CHAR );
 
       if ( !over_scale( fight_info->fight_1 ) )
@@ -1144,7 +1144,7 @@ void send_ante( int which )
       }
       else
       {
-        send_to_char( "¦]¬°§AÁ`¸ê²£¤w¹F¤W­­¡M©Ò¨S®³¨ì¿ú¡T\n\r"
+        send_to_char( "å› ç‚ºä½ ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹æ‰€æ²’æ‹¿åˆ°éŒ¢ï¹—\n\r"
           , fight_info->fight_1 );
       }
     }
@@ -1157,7 +1157,7 @@ void send_ante( int which )
 
     if ( fight_info->fight_2 && bonus > 0 )
     {
-      act( "¦]¬°§AªºµL¼Ä¡M©Ò¥H§A¥i¥H©â¨ú±mª÷$i¨â¶Àª÷¡T"
+      act( "å› ç‚ºä½ çš„ç„¡æ•µï¹æ‰€ä»¥ä½ å¯ä»¥æŠ½å–å½©é‡‘$iå…©é»ƒé‡‘ï¹—"
         , fight_info->fight_2, &bonus, NULL, TO_CHAR );
 
       if ( !over_scale( fight_info->fight_2 ) )
@@ -1166,7 +1166,7 @@ void send_ante( int which )
       }
       else
       {
-        send_to_char( "¦]¬°§AÁ`¸ê²£¤w¹F¤W­­¡M©Ò¨S®³¨ì¿ú¡T\n\r"
+        send_to_char( "å› ç‚ºä½ ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹æ‰€æ²’æ‹¿åˆ°éŒ¢ï¹—\n\r"
           , fight_info->fight_2 );
       }
     }
@@ -1204,11 +1204,11 @@ void send_ante( int which )
 
       if ( gold > 0 )
       {
-        act( "¦]¬°§A¦bªZ°«¤j·|©ã¹ï¤F¤H¡M§A±o¨ì±mª÷$i¨â¶Àª÷¡T"
+        act( "å› ç‚ºä½ åœ¨æ­¦é¬¥å¤§æœƒæŠ¼å°äº†äººï¹ä½ å¾—åˆ°å½©é‡‘$iå…©é»ƒé‡‘ï¹—"
           , ch, &gold, NULL, TO_CHAR );
 
         if ( !over_scale( ch ) ) gold_to_char( ch, gold );
-        else send_to_char( "¦]¬°§AÁ`¸ê²£¤w¹F¤W­­¡M©Ò¨S®³¨ì¿ú¡T\n\r", ch );
+        else send_to_char( "å› ç‚ºä½ ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹æ‰€æ²’æ‹¿åˆ°éŒ¢ï¹—\n\r", ch );
       }
     }
   }
@@ -1241,7 +1241,7 @@ void return_ante( void )
     {
       if ( ( total = ch->ante[PK_FIRST] + ch->ante[PK_SECOND] ) > 0 )
       {
-        act( "ªZ°«¤j·|°hÁÙµ¹§A±mª÷$i¨â¶Àª÷¡T", ch, &total, NULL, TO_CHAR );
+        act( "æ­¦é¬¥å¤§æœƒé€€é‚„çµ¦ä½ å½©é‡‘$iå…©é»ƒé‡‘ï¹—", ch, &total, NULL, TO_CHAR );
       }
     }
   }

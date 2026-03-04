@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A���`�ɡM�A�K�O�L�D�C��M�s�ӯ���n���S���M���O�S���o�ӫ��_�I�ڡM
-�S���Y�M��D([1;32mcrave[0m)�W�ѧ�A�������ٵ��A�M���A����餺���˳Ƴ��ߥX��
-( [1;32mget all corpse[0m )�M����A�N�i�H�ٶ�( [1;32msacrifirce corpse[0m ) �o�C
+當你死亡時﹐你便是無主遊魂﹐連個臭皮囊都沒有﹐但是沒有這個怎麼冒險啊﹐
+沒關係﹐祈求([1;32mcrave[0m)上天把你的屍體還給你﹐等你把屍體內的裝備都撿出來
+( [1;32mget all corpse[0m )﹐之後你就可以還陽( [1;32msacrifirce corpse[0m ) 囉。
 
-�Ьd�ߡRcrave�Bsacrifice�Bget
+請查詢﹕crave、sacrifice、get
 ~
 End

@@ -1,10 +1,10 @@
 Vnum            577
 Name            iron sword~
-ShortDesc       ­è¼C~
+ShortDesc       å‰›åŠ~
 Description
-¥ş³¡ªº¼C¨­¥Hºë¿û³y¦¨¡M¾W§QµL¤ñ¡C
+å…¨éƒ¨çš„åŠèº«ä»¥ç²¾é‹¼é€ æˆï¹é‹’åˆ©ç„¡æ¯”ã€‚
 ~
-Unit            ¤ä~
+Unit            æ”¯~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

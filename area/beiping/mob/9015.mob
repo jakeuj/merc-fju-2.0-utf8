@@ -1,9 +1,9 @@
 Vnum            9015
 Name            scholar~
-ShortDesc       Ĭ�q�~~
+ShortDesc       蘇秀才~
 Description
-�L�O�@��y���Z�L�̪��ѥ͡M�ݥL���e�������ˤl�M
-�j����l�ٹL�������a�C
+他是一位悠游於武林裡的書生﹐看他笑容滿面的樣子﹐
+大概日子還過的不錯吧。
 ~
 Sentinel        Yes
 StayArea        Yes
@@ -35,7 +35,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  say �X�~����󥲦p���ʮ�O�S
+  say 出外江湖何必如此動氣呢﹖
 endif
 ~
 End

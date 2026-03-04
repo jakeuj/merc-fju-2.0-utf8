@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -58,7 +58,7 @@ void top_update( void )
       pTop->time[count].ustime = -1;
     }
 
-    /* ³]©w¥Ø«eªºµ²ºc */
+    /* è¨­å®šç›®å‰çš„çµæ§‹ */
     NowTop = pTop;
 
     pTop->next = top_list;
@@ -70,7 +70,7 @@ void top_update( void )
 
   top_list->number = UMAX( top_list->number, count );
 
-  /* °O¿ı­t¸ü¶q */
+  /* è¨˜éŒ„è² è¼‰é‡ */
   if ( sTime->tm_min != NowMinute )
   {
     NowMinute = UMIN( 59, sTime->tm_min );
@@ -159,16 +159,16 @@ FUNCTION( do_top )
   pMin = top_list;
 
   clear_buffer();
-  send_to_buffer( "\e[1;33;44m¤é ´Á ®É ¶¡  ­t ¸ü  ¼g ¤J  Åª ¤J ¤H¼Æ"
-    " ¥Ü  ·N  ¹Ï                                \e[0m\n\r" );
+  send_to_buffer( "\e[1;33;44mæ—¥ æœŸ æ™‚ é–“  è²  è¼‰  å¯« å…¥  è®€ å…¥ äººæ•¸"
+    " ç¤º  æ„  åœ–                                \e[0m\n\r" );
 
   for ( pTop = top_list; pTop; pTop = pTop->next )
   {
     number = UMAX( 1, ( pTop->number * 42 ) / max_connect );
 
-    send_to_buffer( "%2d¸¹%s%2dÂI %2d.%d%d %6d %6d %4d \e[1;32m"
+    send_to_buffer( "%2dè™Ÿ%s%2dé» %2d.%d%d %6d %6d %4d \e[1;32m"
       , pTop->day
-      , pTop->hour < 12 ? "¦­¤W" : ( pTop->hour >= 18 ? "±ß¤W" : "¤U¤È" )
+      , pTop->hour < 12 ? "æ—©ä¸Š" : ( pTop->hour >= 18 ? "æ™šä¸Š" : "ä¸‹åˆ" )
       , pTop->hour % 12
       , pTop->loading / 100
       , ( pTop->loading % 100 ) / 10
@@ -194,8 +194,8 @@ FUNCTION( do_top )
   }
 
   send_to_buffer(
-    "\n\r¤é´Á%2d¸¹%2dÂI®É¡M¦³³Ì¤j¤W½u¤H¼Æ %d¤H¡C"
-    "\n\r¤é´Á%2d¸¹%2dÂI®É¡M¦³³Ì¤Ö¤W½u¤H¼Æ %d¤H¡C\n\r"
+    "\n\ræ—¥æœŸ%2dè™Ÿ%2dé»æ™‚ï¹æœ‰æœ€å¤§ä¸Šç·šäººæ•¸ %däººã€‚"
+    "\n\ræ—¥æœŸ%2dè™Ÿ%2dé»æ™‚ï¹æœ‰æœ€å°‘ä¸Šç·šäººæ•¸ %däººã€‚\n\r"
     , pMax->day, pMax->hour, max
     , pMin->day, pMin->hour, min );
 

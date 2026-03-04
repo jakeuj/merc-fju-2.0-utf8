@@ -1,7 +1,7 @@
 /***************************************************************************
-*  �o�O�ѻ��j�ƾǨt�s�@�s�Ҽ��g���C���M�D��� merc ��s�ӨӡM�Ҧ������v    *
-*  �N�|�Q�O�d�M���w��j�a�ק�M���ڭ̤]�Ʊ�A�̤]�ണ�ѵ��j�a�M�Ҧ�����    *
-*  �~�欰�N���Q���\�C                                                      *
+*  這是由輔大化學系製作群所撰寫的遊戲﹐主體由 merc 改編而來﹐所有的版權    *
+*  將會被保留﹐但歡迎大家修改﹐但我們也希望你們也能提供給大家﹐所有的商    *
+*  業行為將不被允許。                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -14,14 +14,14 @@
 #include "merc.h"
 
 /*
-���ɼƭȪ��ܤ�k
+鬼玉數值表示方法
 
-V0  �p�����X
-V1  �p������
-V2  �p���g��
-V3  �ޯู�X
-V4  �ޯ൥��
-V5  �p����W
+V0  小鬼號碼
+V1  小鬼等級
+V2  小鬼經驗
+V3  技能號碼
+V4  技能等級
+V5  小鬼改名
 */
 
 #define SPIRIT_VNUM             0
@@ -57,25 +57,25 @@ FUNCTION( do_call )
   {
     if ( !( spirit = ch->spirit ) )
     {
-      send_to_char( "�A����S�����󪺤p����T\n\r", ch );
+      send_to_char( "你身邊沒有任何的小鬼喔﹗\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !spirit->in_room || spirit->in_room != ch->in_room )
     {
-      act( "�A��$N��A���h�p���F�T", ch, NULL, spirit, TO_CHAR );
+      act( "你的$N跟你失去聯絡了﹗", ch, NULL, spirit, TO_CHAR );
       RETURN_NULL();
     }
 
     clear_buffer();
     send_to_buffer(
-      "�p���W�١R%s\n\r"
-      "�p�����šR%d\n\r"
-      "�p���ͩR�R%-6d �R %-6d\n\r"
-      "�p���k�O�R%-6d �R %-6d\n\r"
-      "�p����O�R%-6d �R %-6d\n\r"
-      "�g �� �ȡR%d\n\r"
-      "�ɯŸg��R%d\n\r"
+      "小鬼名稱﹕%s\n\r"
+      "小鬼等級﹕%d\n\r"
+      "小鬼生命﹕%-6d ﹕ %-6d\n\r"
+      "小鬼法力﹕%-6d ﹕ %-6d\n\r"
+      "小鬼體力﹕%-6d ﹕ %-6d\n\r"
+      "經 驗 值﹕%d\n\r"
+      "升級經驗﹕%d\n\r"
       , mob_name( ch, spirit )
       , spirit->level
       , spirit->hit,  get_curr_hit( spirit )
@@ -88,7 +88,7 @@ FUNCTION( do_call )
     {
       if ( spirit->skill[loop] > 0 && ( pSkill = get_skill( loop ) ) )
       {
-        send_to_buffer( "�ǲߧޯ�R%s\n\r�ޯ���m�R%s"
+        send_to_buffer( "學習技能﹕%s\n\r技能熟練﹕%s"
           , pSkill->cname
           , adeptation_name( spirit->skill[loop] ) );
 
@@ -108,31 +108,31 @@ FUNCTION( do_call )
   {
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "�A����U���䪺�u�@�a�T\n\r", ch );
+      send_to_char( "你先放下手邊的工作吧﹗\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( spirit = ch->spirit ) )
     {
-      send_to_char( "�A�ڥ��S���p���C�T\n\r", ch );
+      send_to_char( "你根本沒有小鬼耶﹗\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !spirit->in_room || spirit->in_room != ch->in_room )
     {
-      act( "�A��$N���b�A������O�T", ch, NULL, spirit, TO_CHAR );
+      act( "你的$N不在你的身邊噎﹗", ch, NULL, spirit, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( spirit->position != POS_STANDING )
     {
-      act( "�A��$N�٥��b�����T", ch, NULL, spirit, TO_CHAR );
+      act( "你的$N還正在忙咧﹗", ch, NULL, spirit, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !spirit_to_jade( spirit ) )
     {
-      act( "�D�F�M$N���M�����^�h�F�T", ch, NULL, spirit, TO_CHAR );
+      act( "遭了﹐$N竟然收不回去了﹗", ch, NULL, spirit, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -143,7 +143,7 @@ FUNCTION( do_call )
   {
     if ( ch->spirit )
     {
-      act( "�A�w�g��$N�F�T", ch, NULL, ch->spirit, TO_CHAR );
+      act( "你已經有$N了﹗", ch, NULL, ch->spirit, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -163,11 +163,11 @@ FUNCTION( do_call )
 
       pFind = 1;
       free_string( spirit->byname );
-      sprintf( buf, "�ݩ�%s���p��(%s)", mob_name( NULL, ch ), spirit->name );
+      sprintf( buf, "屬於%s的小鬼(%s)", mob_name( NULL, ch ), spirit->name );
       spirit->byname = str_dup( buf );
 
       free_string( spirit->description );
-      sprintf( buf, "�o�O��%s�l��X�Ӫ�%s�M�ݨӮ������U���T\n\r"
+      sprintf( buf, "這是由%s召喚出來的%s﹐看來挺有幫助的﹗\n\r"
         , mob_name( NULL, ch )
         , mob_index_name( NULL, spirit->pIndexData ) );
 
@@ -176,7 +176,7 @@ FUNCTION( do_call )
       ch->spirit   = spirit;
       spirit->boss = ch;
 
-      act( "$n�I��$N�����F�`�B�M����$N�N�ѥ������^�ӤF�T"
+      act( "$n呼喚$N的心靈深處﹐接著$N就由失魂的遠方回來了﹗"
         , ch, NULL, spirit, TO_ALL );
 
       RETURN_NULL();
@@ -184,7 +184,7 @@ FUNCTION( do_call )
 
     if ( pFind == 0 )
     {
-      send_to_char( "�A�L�k�I���A���p�������F�`�B�T\n\r", ch );
+      send_to_char( "你無法呼喚到你的小鬼的心靈深處﹗\n\r", ch );
       RETURN_NULL();
     }
   }
@@ -193,11 +193,11 @@ FUNCTION( do_call )
   {
     if ( ch->spirit )
     {
-      act( "�A��$N�èS���g���T", ch, NULL, ch->spirit, TO_CHAR );
+      act( "你的$N並沒有迷失﹗", ch, NULL, ch->spirit, TO_CHAR );
       RETURN_NULL();
     }
 
-    send_to_char( "�A�Ѥߤ��o�X�I�ۡM�Ʊ�g�����p������^�a�����T\n\r", ch );
+    send_to_char( "你由心中發出呼喊﹐希望迷失的小鬼能找到回家的路﹗\n\r", ch );
 
     for ( pFind = 0, spirit = char_list; spirit; spirit = spirit->next )
     {
@@ -208,7 +208,7 @@ FUNCTION( do_call )
         || !spirit->in_room
         || spirit->boss ) continue;
 
-      act( "�A�o�{�A���p�����b$t��$r�C���M�֥h�䥦�a�T"
+      act( "你發現你的小鬼正在$t的$r遊盪﹐快去找它吧﹗"
         , ch
         , spirit->in_room->area->name
         , NULL
@@ -217,7 +217,7 @@ FUNCTION( do_call )
       pFind++;
     }
 
-    if ( pFind == 0 ) send_to_char( "�A�èS���p���b�o�@�ɡT\n\r", ch );
+    if ( pFind == 0 ) send_to_char( "你並沒有小鬼在這世界﹗\n\r", ch );
     RETURN_NULL();
   }
 
@@ -225,13 +225,13 @@ FUNCTION( do_call )
   {
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "�A����U���䪺�u�@�a�T\n\r", ch );
+      send_to_char( "你先放下手邊的工作吧﹗\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( spirit = ch->spirit ) )
     {
-      send_to_char( "�A�ڥ��S���p���C�M�A�����ޯ൹�L�O�S\n\r", ch );
+      send_to_char( "你根本沒有小鬼耶﹐你怎麼灌技能給他呢﹖\n\r", ch );
       RETURN_NULL();
     }
 
@@ -239,34 +239,34 @@ FUNCTION( do_call )
 
     if ( arg[0] == '\x0' )
     {
-      act( "�A�n�餰��ޯ൹�A��$N�O�S", ch, NULL, spirit, TO_CHAR );
+      act( "你要灌什麼技能給你的$N呢﹖", ch, NULL, spirit, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !( pSkill = skill_isname( arg ) ) )
     {
-      act( "�藍�_�M�S�����اޯ� $2$T$0 �i�H�鵹�L�T", ch, NULL, arg, TO_CHAR );
+      act( "對不起﹐沒有那種技能 $2$T$0 可以灌給他﹗", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !pSkill->enable || pSkill->slot == SLOT_FLEE )
     {
-      act( "�藍�_�M$w�L�k�P��M�ҥH���n�е�$N�T", ch, pSkill, spirit, TO_CHAR );
+      act( "對不起﹐$w無法致能﹐所以不要教給$N﹗", ch, pSkill, spirit, TO_CHAR );
 
       RETURN_NULL();
     }
 
     if ( ch->skill[( sn = pSkill->slot )] <= 30 )
     {
-      act( "$w�A�]�S���ܼ��M���е�$N�O�S", ch, pSkill, spirit, TO_CHAR );
+      act( "$w你也沒有很熟﹐怎麼教給$N呢﹖", ch, pSkill, spirit, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* �����ޯ� */
+    /* 消掉技能 */
     for ( loop = 0; loop < MAX_SKILL; loop++ )
       if ( loop != SLOT_FLEE ) spirit->skill[loop] = 0;
 
-    /* �����P�� */
+    /* 消掉致能 */
     if ( spirit->enable ) extract_enable( spirit );
 
     spirit->skill[sn]  = 10;
@@ -274,10 +274,10 @@ FUNCTION( do_call )
 
     set_enable( spirit, pSkill );
 
-    act( "$n�w�g�N����$w���\\�O�鵹$N�T", ch, pSkill, spirit, TO_ALL );
+    act( "$n已經將部份$w的功\力灌給$N﹗", ch, pSkill, spirit, TO_ALL );
 
     if ( IS_IMMORTAL( ch ) )
-      mudlog( LOG_WIZARD, "%s ���p���ޯ� %s.", ch->name, pSkill->name );
+      mudlog( LOG_WIZARD, "%s 灌輸小鬼技能 %s.", ch->name, pSkill->name );
 
     RETURN_NULL();
   }
@@ -286,43 +286,43 @@ FUNCTION( do_call )
   {
     if ( !( spirit = ch->spirit ) )
     {
-      send_to_char( "�A�ڥ��S���p���C�M�A���}�i�L�O�S\n\r", ch );
+      send_to_char( "你根本沒有小鬼耶﹐你怎麼飼養他呢﹖\n\r", ch );
       RETURN_NULL();
     }
 
     Touch = FALSE;
 
-    /* �`�J�ͩR�O */
+    /* 注入生命力 */
     if ( ( adept = UMIN( spirit->max_hit - spirit->hit, ch->hit - 1 ) ) > 0 )
     {
-      act( "�A��$i�I���ͩR�O��J$N���C", ch, &adept, spirit, TO_CHAR );
+      act( "你把$i點的生命力灌入$N中。", ch, &adept, spirit, TO_CHAR );
 
       spirit->hit += adept;
       ch->hit     -= adept;
       Touch        = TRUE;
     }
 
-    /* �`�J�k�O */
+    /* 注入法力 */
     if ( ( adept = UMIN( spirit->max_mana - spirit->mana, ch->mana - 1 ) ) > 0 )
     {
-      act( "�A��$i�I���k�O��J$N���C", ch, &adept, spirit, TO_CHAR );
+      act( "你把$i點的法力灌入$N中。", ch, &adept, spirit, TO_CHAR );
 
       spirit->mana += adept;
       ch->mana     -= adept;
       Touch         = TRUE;
     }
 
-    /* �`�J��O */
+    /* 注入體力 */
     if ( ( adept = UMIN( spirit->max_move - spirit->move, ch->move - 1 ) ) > 0 )
     {
-      act( "�A��$i�I����O��J$N���C", ch, &adept, spirit, TO_CHAR );
+      act( "你把$i點的體力灌入$N中。", ch, &adept, spirit, TO_CHAR );
 
       spirit->move += adept;
       ch->move     -= adept;
       Touch         = TRUE;
     }
 
-    if ( !Touch ) act( "�A����]�S�������A��$N�T", ch, NULL, spirit, TO_CHAR );
+    if ( !Touch ) act( "你什麼也沒有餵給你的$N﹗", ch, NULL, spirit, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -330,43 +330,43 @@ FUNCTION( do_call )
   {
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "�A����U���䪺�u�@�a�T\n\r", ch );
+      send_to_char( "你先放下手邊的工作吧﹗\n\r", ch );
       RETURN_NULL();
     }
 
     if ( room_is_private( ch->in_room ) || ch->in_room->NoMob )
     {
-      act( "$r����ӭ��F�M�p���O�����X�Ӫ��T", ch, NULL, NULL, TO_CHAR );
+      act( "$r陽氣太重了﹐小鬼是不敢出來的﹗", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( is_platform( ch->in_room ) || ch->in_room->Sail )
     {
-      act( "�藍�_�M�A����b$r�l��X�A���p���T", ch, NULL, NULL, TO_CHAR );
+      act( "對不起﹐你不能在$r召喚出你的小鬼﹗", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !( obj = get_obj_carry( ch, arg ) ) )
     {
-      act( "�A���W�ڥ��S���o������ $2$T$0 �C�T", ch, NULL, arg, TO_CHAR );
+      act( "你身上根本沒有這顆鬼玉 $2$T$0 耶﹗", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( obj->item_type != ITEM_SPIRITJADE )
     {
-      act( "$p�ڥ����O���ɡM�A�O���O�Q�F�F�S", ch, obj, NULL, TO_CHAR );
+      act( "$p根本不是鬼玉﹐你是不是被騙了﹖", ch, obj, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->spirit )
     {
-      send_to_char( "�A�S����k�l��X��h���p���X�ӤF�T\n\r", ch );
+      send_to_char( "你沒有辦法召喚出更多的小鬼出來了﹗\n\r", ch );
       RETURN_NULL();
     }
 
     if ( obj->value[SPIRIT_LEVEL] > ch->level )
     {
-      send_to_char( "�ݨӧA�O�S����k����o�Ӥp���M�L���k�O�ӱj�F�T\n\r", ch );
+      send_to_char( "看來你是沒有辦法控制這個小鬼﹐他的法力太強了﹗\n\r", ch );
       RETURN_NULL();
     }
 
@@ -385,7 +385,7 @@ FUNCTION( do_call )
 
     if ( !( spirit = jade_to_spirit( ch, obj ) ) )
     {
-      act( "�A�o��$p�ݨӮڥ��S����k�l��X�p���M��F��F�T"
+      act( "你這顆$p看來根本沒有辦法召喚出小鬼﹐丟了算了﹗"
         , ch, obj, NULL, TO_CHAR );
 
       RETURN_NULL();
@@ -410,41 +410,41 @@ OBJ_DATA * spirit_to_jade(  CHAR_DATA * spirit )
     || !( boss = spirit->boss )
     || !boss->in_room )
   {
-    mudlog( LOG_DEBUG, "spirit_to_jade: �ӷ����~." );
+    mudlog( LOG_DEBUG, "spirit_to_jade: 來源錯誤." );
     RETURN( NULL );
   }
 
   if ( ( sn = spirit->spiritjade ) <= 0 )
   {
-    mudlog( LOG_DEBUG, "spirit_to_jade: �ӷ��L�k�ܬ�����." );
+    mudlog( LOG_DEBUG, "spirit_to_jade: 來源無法變為鬼玉." );
     RETURN( NULL );
   }
 
   if ( !( pIndexData = get_obj_index( sn ) )
     || pIndexData->item_type != ITEM_SPIRITJADE )
   {
-    mudlog( LOG_DEBUG, "spirit_to_jade: ���ɸ��X %d ���~.", sn );
+    mudlog( LOG_DEBUG, "spirit_to_jade: 鬼玉號碼 %d 錯誤.", sn );
     RETURN( NULL );
   }
 
   if ( boss->in_room != spirit->in_room )
   {
-    mudlog( LOG_DEBUG, "spirit_to_jade: ��̦a�褣�P." );
+    mudlog( LOG_DEBUG, "spirit_to_jade: 兩者地方不同." );
     RETURN( NULL );
   }
 
-  /* �s�y�X���� */
+  /* 製造出鬼玉 */
   obj = create_object( pIndexData, UMIN( LEVEL_IMMORTAL -1, spirit->level ) );
 
-  /* �M���ƭ� */
+  /* 清除數值 */
   for ( loop = 0; loop < MAX_OBJECT_VALUE; loop++ ) obj->value[loop] = 0;
 
-  /* ��^�ƭ� */
+  /* 填回數值 */
   obj->value[SPIRIT_VNUM]  = spirit->pIndexData->vnum;
   obj->value[SPIRIT_LEVEL] = UMAX( 1, UMIN( LEVEL_IMMORTAL -1, spirit->level ) );
   obj->value[SPIRIT_EXP]   = UMAX( 0, spirit->exp );
 
-  /* ��^�ޯ�ƭ�, �p���u�|�@�اޯ� */
+  /* 填回技能數值, 小鬼只會一種技能 */
   for ( loop = 0; loop < MAX_SKILL; loop++ )
   {
     if ( spirit->skill[loop] > 0 && loop != SLOT_FLEE )
@@ -455,17 +455,17 @@ OBJ_DATA * spirit_to_jade(  CHAR_DATA * spirit )
     }
   }
 
-  /* �ݬݬO�_�ள, �άO��������� */
+  /* 看看是否能拿, 或是能夠拿的動 */
   if ( obj->Takeable
     && boss->carry_number + 1 <= can_carry_n( boss )
     && get_carry_weight( boss ) + get_obj_weight( obj ) <= can_carry_w( boss ) )
   {
     obj_to_char( obj, boss );
 
-    act( "��M�M�u���A��$N�_�X�@�}�C�ϡM���A�^���ɡM�A���W�N�h�F$p�T�o�S"
+    act( "突然﹐只見你的$N冒出一陣青煙﹐等你回神時﹐你身上就多了$p﹗這﹖"
       , boss, obj, spirit, TO_CHAR );
 
-    act( "��M�M$n��$N�_�X�@�}�C�ϡM���A�^���ɡM���٦�$N�����v�T�o�S"
+    act( "突然﹐$n的$N冒出一陣青煙﹐等你回神時﹐哪還有$N的身影﹗這﹖"
       , boss, NULL, spirit, TO_ROOM );
   }
 
@@ -473,14 +473,14 @@ OBJ_DATA * spirit_to_jade(  CHAR_DATA * spirit )
   {
     obj_to_room( obj, boss->in_room );
 
-    act( "��M�M�u���A��$N�_�X�@�}�C�ϡM���A�^���ɡM�a�W�N�h�X$p�T�o�S"
+    act( "突然﹐只見你的$N冒出一陣青煙﹐等你回神時﹐地上就多出$p﹗這﹖"
       , boss, obj, spirit, TO_CHAR );
 
-    act( "��M�M$n��$N�_�X�@�}�C�ϡM���A�^���ɡM�a�W�N�h�X$p�T�o�S"
+    act( "突然﹐$n的$N冒出一陣青煙﹐等你回神時﹐地上就多出$p﹗這﹖"
       , boss, obj, spirit, TO_ROOM );
   }
 
-  /* �������F */
+  /* 消掉精靈 */
   spirit_from_char( spirit );
   extract_char( spirit, TRUE );
 
@@ -500,25 +500,25 @@ CHAR_DATA * jade_to_spirit( CHAR_DATA * ch , OBJ_DATA * obj )
 
   if ( !ch || !obj )
   {
-    mudlog( LOG_DEBUG, "jade_to_spirit: �ӷ��ʥF." );
+    mudlog( LOG_DEBUG, "jade_to_spirit: 來源缺乏." );
     RETURN( NULL );
   }
 
   if ( IS_NPC( ch ) || obj->item_type != ITEM_SPIRITJADE || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "jade_to_spirit: �ӷ������T." );
+    mudlog( LOG_DEBUG, "jade_to_spirit: 來源不正確." );
     RETURN( NULL );
   }
 
   if ( ch->serial.high == 0 || ch->serial.low == 0 )
   {
-    mudlog( LOG_DEBUG, "jade_to_spirit: �D�H�ʥF�Ǹ�." );
+    mudlog( LOG_DEBUG, "jade_to_spirit: 主人缺乏序號." );
     RETURN( NULL );
   }
 
   if ( !( pMobIndex = get_mob_index( obj->value[SPIRIT_VNUM] ) ) )
   {
-    mudlog( LOG_DEBUG, "jade_to_spirit: ���~%d�p�����X���~."
+    mudlog( LOG_DEBUG, "jade_to_spirit: 物品%d小鬼號碼錯誤."
       , obj->pIndexData->vnum );
     RETURN( NULL );
   }
@@ -533,7 +533,7 @@ CHAR_DATA * jade_to_spirit( CHAR_DATA * ch , OBJ_DATA * obj )
     || obj->value[SPIRIT_RENAME]     < 0 )
     RETURN( NULL );
 
-  /* �t�m�O���鵹�L */
+  /* 配置記憶體給他 */
   clear_char( spirit  = alloc_struct( STRUCT_CHAR_DATA ) );
 
   spirit->pIndexData  = pMobIndex;
@@ -541,10 +541,10 @@ CHAR_DATA * jade_to_spirit( CHAR_DATA * ch , OBJ_DATA * obj )
   spirit->name        = str_dup( pMobIndex->name       );
   spirit->long_descr  = str_dup( pMobIndex->long_descr );
 
-  sprintf( buf, "�ݩ�%s���p��", mob_name( NULL, ch ) );
+  sprintf( buf, "屬於%s的小鬼", mob_name( NULL, ch ) );
   spirit->byname = str_dup( buf );
 
-  sprintf( buf, "�o�O��%s�l��X�Ӫ�%s�M�ݨӮ������U���T\n\r"
+  sprintf( buf, "這是由%s召喚出來的%s﹐看來挺有幫助的﹗\n\r"
     , mob_name( NULL, ch )
     , mob_index_name( NULL, pMobIndex ) );
 
@@ -591,13 +591,13 @@ CHAR_DATA * jade_to_spirit( CHAR_DATA * ch , OBJ_DATA * obj )
   spirit->tractable   = 0;
   spirit->spiritjade  = obj->pIndexData->vnum;
 
-  /* �]�w���m�� */
+  /* 設定熟練度 */
   for ( loop = 0; loop < MAX_SKILL; loop++ ) spirit->skill[loop] = 0;
 
   spirit->skill[obj->value[SPIRIT_SKILL_VNUM]] = obj->value[SPIRIT_SKILL_EXP];
   spirit->skill[SLOT_FLEE] = UMAX( 1, spirit->level / 5 );
 
-  /* �]�w�P��, �ӥB�p���u�|�@�اޯ� */
+  /* 設定致能, 而且小鬼只會一種技能 */
   if ( ( pSkill = get_skill( obj->value[SPIRIT_SKILL_VNUM] ) )
     && pSkill->enable )
   {
@@ -609,22 +609,22 @@ CHAR_DATA * jade_to_spirit( CHAR_DATA * ch , OBJ_DATA * obj )
   spirit->jade.high = ch->serial.high;
   spirit->jade.low  = ch->serial.low;
 
-  /* �]�w�L���g��� */
+  /* 設定他的經驗值 */
   spirit->exp = obj->value[SPIRIT_EXP];
   pMobIndex->count++;
 
-  /* �ץ��s�� */
+  /* 修正連結 */
   ch->spirit   = spirit;
   spirit->boss = ch;
 
   char_to_room( spirit, ch->in_room );
 
-  /* �e�X�T�����ж����Ҧ����H */
-  act( "$n�q$p�l��X$N�M�o�쩳���@�^�ƩO�S", ch, obj, spirit, TO_ALL );
+  /* 送出訊息給房間內所有的人 */
+  act( "$n從$p召喚出$N﹐這到底怎麼一回事呢﹖", ch, obj, spirit, TO_ALL );
 
-  /* �e�X�T���M�åB�⪫�~�P�� */
-  do_say( spirit, "�D�H�M�^�媺�}���M�ڨӨ�U�A�F�T" );
-  act( "�A���W��$p�b�P�ɤ]���������T", ch, obj, NULL, TO_CHAR );
+  /* 送出訊息﹐並且把物品銷毀 */
+  do_say( spirit, "主人﹐奉血的誓約﹐我來協助你了﹗" );
+  act( "你身上的$p在同時也消失不見﹗", ch, obj, NULL, TO_CHAR );
   extract_obj( obj );
 
   RETURN( spirit );
@@ -641,14 +641,14 @@ void spirit_from_char( CHAR_DATA * spirit )
     || !( boss = spirit->boss )
     || !( pIndex = spirit->pIndexData ) )
   {
-    mudlog( LOG_DEBUG, "spirit_from_char: �ӷ����~." );
+    mudlog( LOG_DEBUG, "spirit_from_char: 來源錯誤." );
     RETURN_NULL();
   }
 
   spirit->boss = NULL;
   boss->spirit = NULL;
 
-  /* �ץ��W��, �B�A�]�l�ꤣ�^�h�F */
+  /* 修正名稱, 且再也召喚不回去了 */
   free_string( spirit->byname );
   spirit->byname = str_dup( spirit->pIndexData->short_descr );
 
@@ -664,14 +664,14 @@ void smash_spirit( CHAR_DATA * spirit )
 
   if ( !spirit || !spirit->pIndexData )
   {
-    mudlog( LOG_DEBUG, "smash_spirit: �ʥF�ӷ�." );
+    mudlog( LOG_DEBUG, "smash_spirit: 缺乏來源." );
     RETURN_NULL();
   }
 
   spirit->boss       = NULL;
   spirit->spiritjade = 0;
 
-  /* �ץ��W��, �B�A�]�l�ꤣ�^�h�F */
+  /* 修正名稱, 且再也召喚不回去了 */
   free_string( spirit->byname );
   spirit->byname = str_dup( spirit->pIndexData->short_descr );
 

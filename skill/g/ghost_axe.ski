@@ -1,5 +1,5 @@
 Name            ghost axe~
-Cname           ���L���򤻵���~
+Cname           神盤鬼斧六絕式~
 Slot            SLOT_GHOST_AXE
 Msgoff          ~
 Check           check_axe_attack~
@@ -38,19 +38,19 @@ Limit           CLASS_BRAVO      1  60
 Limit           CLASS_MAGE       1  30
 Limit           CLASS_SMITH      1  35
 Help
-���L���򤻵����G
+神盤鬼斧六絕式：
 
-�o�O�@�˻ᬰ�򥻪���ۡM���䤺�e�h�ܡM�i�H�o�����Y�o��������
-�O�Z�����¤O�M�۩ۺ���M�Y�O�m��۷��{�פ]�O�i�H�P���Ū��ޯ�
-�ۤ���C���L�i�H�Ǫ��a�褣�h�M�i�H�b�@���a��F�����ѱN�Ǳo��
-�@�ޥ��C
+這是一樣頗為基本的斧招﹐但其內容多變﹐可以發揮斧頭這項重攻擊
+力武器的威力﹐招招精鍊﹐若是練到相當程度也是可以與高級的技能
+相比拼。不過可以學的地方不多﹐可以在一位縱橫沙場的老將學得此
+一技巧。
 
 ~
 #Damage
 Description
-$P$n�N�⤤�L���|�L���M�}�B�@�I�M�V�W�@�D�M�L��p�y�P�멹�U���A�M���O$W
-�y���L���򤻵����z$P���_����$Y�y�G�����ܡz$P�p���E�@�J��O$N�@�Lĵ�T�M��
-�����L��w�Ӧ�$N�����e$Z�C~
+$P$n將手中盤斧高舉過頂﹐腳步一沉﹐向上一躍﹐盤斧如流星般往下直劈﹐正是$W
+『神盤鬼斧六絕式』$P之起首式$Y『二神垂眉』$P如驚鴻一撇般令$N毫無警訊﹐不
+瞬間盤斧已來至$N的面前$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -59,9 +59,9 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n���Τ@��M�⤤�޽L�p��������ण���M�ϥX$W�y���L���򤻵����z$P�ĤG��$y
-�y����ѽL�z$P�o�ʵ۩P�D����y�p�x����N�A�n���M�N�b$N���j���ڡM���y���ߡM
-�r�M�A�X�C�C�|�Q�E��$Z�C~
+$P$n身形一轉﹐手中盾盤如陀螺般旋轉不停﹐使出$W『神盤鬼斧六絕式』$P第二式$y
+『神轉天盤』$P牽動著周遭的氣流如漩渦般將你罩住﹐就在$N錯愕之際﹐渦流中心﹐
+猛然劈出七七四十九斧$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -70,9 +70,9 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n���Τ@�G�M�ϥX$W�y���L���򤻵����z$P�ĤT��$S�y�����ƽz�z$P����L�ް{�q
-���X�Q�T���M��V$N���U�L�M�k��Q��V�k��A�M�������T�Q�C���M�۩ۧ�V$N��
-�P�R���B$Z�C~
+$P$n身形一矮﹐使出$W『神盤鬼斧六絕式』$P第三招$S『神行飄緲』$P左手盤盾閃電
+揮出十三次﹐攻向$N的下盤﹐右手利斧向右橫劈﹐伸手穿梭三十七次﹐招招攻向$N的
+致命之處$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -81,9 +81,9 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�ݦa�V�k��ƨB�M���ӷL�I�M�ϥX$W�y���L���򤻵����z$P���ĥ|��$B�y����
-�u�z$P�k�Ⱝ��ϩ��p�a�����F��M��M�q$N���I��A�ܡM�@�ѴH��q$n���򤤳z�X�M
-$N�ܬӦ^�����ڡM�w�Q�Q��A����b$Z�C~
+$P$n豎地向右橫移數步﹐左肩微沉﹐使出$W『神盤鬼斧六絕式』$P之第四招$B『鬼斧神
+工』$P右手鬼斧彷彿如地獄幽靈般﹐突然從$N的背後劈至﹐一股寒氣從$n的斧中透出﹐
+$N倉皇回身之際﹐已被利斧劈成兩半$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -92,9 +92,9 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�}�ϤC�P�B�M�ݶi�E�h�M����C�����w�M��M����@�}�M$W�y���L���򤻵����z$P
-�Ĥ���$G�y���M�Ѫe�z$P�L����X�M�q$N����l�e�A�ӦܡM�@�i�i�j�P���l��M�A���a
-���p�\���Y���M�����n�V$N�P���C�Q�G�j��$Z�C~
+$P$n腳蹋七星步﹐豎進乍退﹐穿梭遊移不定﹐突然身體一弓﹐$W『神盤鬼斧六絕式』$P
+第五式$G『鬼決天河』$P盤斧齊出﹐從$N的兩惻疾劈而至﹐一波波強烈的勁氣﹐括的地
+面如枯木般崩裂﹐遙遙罩向$N周身七十二大穴$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -103,9 +103,9 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�⤤�L��e���M���_�b���x���洫�M��M���ϩ��Ŷ��Q�Ǫů�M��$N�@�L�ۤO�P�M
-���O$W�y���L���򤻵����z$P�̫�@��$R�y�������z�z$P$n�}����L�M�k��q���٤U�{
-�q�A�X�C�Q�G�U�M���L�E���e��M�q$N�Y�W�g���ӤU$Z�C~
+$P$n手中盤斧疾揮﹐不斷在雙掌間交換﹐突然間彷彿空間被掏空般﹐使$N毫無著力感﹐
+正是$W『神盤鬼斧六絕式』$P最後一式$R『鬼哭神嚎』$P$n弓身抬腿﹐右斧從左脅下閃
+電劈出七十二下﹐左盤乍伸疾轉﹐從$N頭上狂擊而下$Z。~
 Chance          20
 Value           20
 Parry           0

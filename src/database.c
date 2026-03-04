@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -28,7 +28,7 @@ void set_database( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "set_database: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_database: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -75,7 +75,7 @@ void delete_database( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "delete_database: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "delete_database: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -94,7 +94,7 @@ void delete_database( CHAR_DATA * ch )
     }
   }
 
-  mudlog( LOG_DEBUG, "delete_database: §ä¤£¨ì¥Ø¼Ğ %s.", ch->name );
+  mudlog( LOG_DEBUG, "delete_database: æ‰¾ä¸åˆ°ç›®æ¨™ %s.", ch->name );
   RETURN_NULL();
 }
 
@@ -106,7 +106,7 @@ void erase_database( const char * name )
 
   if ( !name || !*name )
   {
-    mudlog( LOG_DEBUG, "erase_database: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "erase_database: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -120,7 +120,7 @@ void erase_database( const char * name )
     }
   }
 
-  mudlog( LOG_DEBUG, "delete_database: §ä¤£¨ì¥Ø¼Ğ %s.", name );
+  mudlog( LOG_DEBUG, "delete_database: æ‰¾ä¸åˆ°ç›®æ¨™ %s.", name );
   RETURN_NULL();
 }
 
@@ -132,7 +132,7 @@ void update_database( DATABASE_DATA * pData )
 
   if ( !( pFile = FOPEN( database_file, "a" ) ) )
   {
-    mudlog( LOG_DEBUG, "update_database: µLªk¶}±ÒÀÉ®× %s.", database_file );
+    mudlog( LOG_DEBUG, "update_database: ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ %s.", database_file );
     RETURN_NULL();
   }
 
@@ -174,7 +174,7 @@ size_t database_count( int type )
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "database_count: ¿ù»~ªº¿ï¶µ %d.", type );
+    mudlog( LOG_DEBUG, "database_count: éŒ¯èª¤çš„é¸é … %d.", type );
     RETURN( 0 );
 
   case DATABASE_ALL:
@@ -214,7 +214,7 @@ BASIC_DATA * load_basic( const char * name )
 
   if ( !name || !*name )
   {
-    mudlog( LOG_DEBUG, "load_basic: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "load_basic: ç¼ºä¹ä¾†æº." );
     RETURN( NULL );
   }
 
@@ -223,7 +223,7 @@ BASIC_DATA * load_basic( const char * name )
 
   if ( !( pFile = FOPEN( filename, "r" ) ) )
   {
-    mudlog( LOG_DEBUG, "load_basic: µLªk¶}±ÒÀÉ®× %s.", filename );
+    mudlog( LOG_DEBUG, "load_basic: ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ %s.", filename );
     RETURN( NULL );
   }
 
@@ -245,7 +245,7 @@ BASIC_DATA * load_basic( const char * name )
   {
     if ( !fread_a_line( pFile, buf ) )
     {
-      mudlog( LOG_DEBUG, "load_basic: ÀÉ®× %s ¤£¬O¤å¦rÀÉ.", filename );
+      mudlog( LOG_DEBUG, "load_basic: æª”æ¡ˆ %s ä¸æ˜¯æ–‡å­—æª”.", filename );
       FCLOSE( pFile );
       RETURN( NULL );
     }
@@ -390,7 +390,7 @@ BASIC_DATA * load_basic( const char * name )
     {
       free_basic( pBasic );
 
-      mudlog( LOG_DEBUG, "load_basic: %s ¿ù»~ªº©R¥O %s.", filename, word );
+      mudlog( LOG_DEBUG, "load_basic: %s éŒ¯èª¤çš„å‘½ä»¤ %s.", filename, word );
       FCLOSE( pFile );
       RETURN( NULL );
     }
@@ -408,7 +408,7 @@ bool fread_a_line( FILE * pFile, char * buffer )
 
   *buffer = '\x0';
 
-  /* ¥ı§âªÅ¥Õ¥ıµ¹§Ë±¼ */
+  /* å…ˆæŠŠç©ºç™½å…ˆçµ¦å¼„æ‰ */
   do
   {
     Char = getc( pFile );
@@ -485,7 +485,7 @@ char * fullname( SERIAL_DATA * pSerial )
     RETURN( buf );
   }
 
-  RETURN( "¸ê®Æ®w¥¼¦³¦¹¤H" );
+  RETURN( "è³‡æ–™åº«æœªæœ‰æ­¤äºº" );
 }
 
 DATABASE_DATA * name2database( const char * name )
@@ -497,7 +497,7 @@ DATABASE_DATA * name2database( const char * name )
 
   if ( !name || !*name )
   {
-    mudlog( LOG_DEBUG, "name2serial: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "name2serial: ç¼ºä¹ä¾†æº." );
     RETURN( NULL );
   }
 

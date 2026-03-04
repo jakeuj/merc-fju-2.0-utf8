@@ -1,9 +1,9 @@
 Vnum            86
 Name            sun sword~
-ShortDesc       ³v¤é¼C~
+ShortDesc       é€æ—¥åŠ~
 Description
-¼C¨­¾ã­Ó¥Î¤W¦nªººëÅK·Ò»s¡MÆv¬õªº¤M¬`§Ï©»­z»¡¥¦ªº¿W¨ì¤§³B¡C~
-Unit            §â~
+åŠèº«æ•´å€‹ç”¨ä¸Šå¥½çš„ç²¾éµç…‰è£½ï¹è±”ç´…çš„åˆ€æŸ„å½·å½¿è¿°èªªå®ƒçš„ç¨åˆ°ä¹‹è™•ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

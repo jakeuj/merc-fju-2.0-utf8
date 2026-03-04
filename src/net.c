@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -32,7 +32,7 @@
 
 int             internal_port;
 
-/* ºô»Ú³s½u¨ç¼Æ */
+/* ç¶²éš›é€£ç·šå‡½æ•¸ */
 FUNCTION( do_mud )
 {
   NET_DATA * pNet;
@@ -42,204 +42,204 @@ FUNCTION( do_mud )
 
   PUSH_FUNCTION( "do_mud" );
 
-  /* «Dª±®a¤£¯à³s½u¶Ç®ø®§ */
+  /* éç©å®¶ä¸èƒ½é€£ç·šå‚³æ¶ˆæ¯ */
   if ( IS_NPC( ch ) || !ch->desc ) RETURN_NULL();
 
   argument = one_argument( argument, arg );
 
-  /* ¨S¦³°Ñ¼Æ´N¬O¬d¸ß */
+  /* æ²’æœ‰åƒæ•¸å°±æ˜¯æŸ¥è©¢ */
   if ( !arg[0] )
   {
-    /* ©I¥s¨ä¥L¨ç¼Æ¨Ó¤u§@ */
+    /* å‘¼å«å…¶ä»–å‡½æ•¸ä¾†å·¥ä½œ */
     do_netstat( ch, "" );
     RETURN_NULL();
   }
 
-  /* ¤ÁÂ_¬Y¤Í¯¸ªºÂù¦V³s½u */
+  /* åˆ‡æ–·æŸå‹ç«™çš„é›™å‘é€£ç·š */
   else if ( !str_prefix( arg, "!disconnect" ) && IS_GOD( ch ) )
   {
     argument = one_argument( argument, arg1 );
 
     if ( !arg1[0] )
     {
-      send_to_char( "§A¥²¶·µù©ú­ş¤@­Ó¯¸¦W¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜å“ªä¸€å€‹ç«™åã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pNet = get_net_data( arg1, NET_NAME ) ) )
     {
-      act( "§ä¤£¨ì $t ¯¸¦W¡M½Ğ¥Î mud ¬d¸ß¡C", ch, arg1, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ° $t ç«™åï¹è«‹ç”¨ mud æŸ¥è©¢ã€‚", ch, arg1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¿é¤JºŞ¹D¬O§_¤w¸g³s½u */
+    /* æª¢æŸ¥è¼¸å…¥ç®¡é“æ˜¯å¦å·²ç¶“é€£ç·š */
     if ( valid_socket( pNet, NET_IMPORT ) )
     {
       close_net_socket( pNet, NET_IMPORT );
-      act( "¤ÁÂ_¹ï³s½u $t ¿é¤J¡C", ch , pNet->name, NULL, TO_CHAR );
+      act( "åˆ‡æ–·å°é€£ç·š $t è¼¸å…¥ã€‚", ch , pNet->name, NULL, TO_CHAR );
     }
 
     else
     {
-      act( "¯¸¦W $t ¿é¤J³s½u­ì¥»´NÃö³¬¡C", ch, pNet->name, NULL, TO_CHAR );
+      act( "ç«™å $t è¼¸å…¥é€£ç·šåŸæœ¬å°±é—œé–‰ã€‚", ch, pNet->name, NULL, TO_CHAR );
     }
 
-    /* ÀË¬d¿é¥XºŞ¹D¬O§_¤w¸g³s½u */
+    /* æª¢æŸ¥è¼¸å‡ºç®¡é“æ˜¯å¦å·²ç¶“é€£ç·š */
     if ( valid_socket( pNet, NET_EXPORT ) )
     {
       close_net_socket( pNet, NET_EXPORT );
-      act( "¤ÁÂ_¹ï³s½u $t ¿é¥X¡C", ch, pNet->name, NULL, TO_CHAR );
+      act( "åˆ‡æ–·å°é€£ç·š $t è¼¸å‡ºã€‚", ch, pNet->name, NULL, TO_CHAR );
     }
     else
     {
-      act( "¯¸¦W $t ¿é¥X³s½u­ì¥»´NÃö³¬¡C", ch, pNet->name, NULL, TO_CHAR );
+      act( "ç«™å $t è¼¸å‡ºé€£ç·šåŸæœ¬å°±é—œé–‰ã€‚", ch, pNet->name, NULL, TO_CHAR );
     }
 
     RETURN_NULL();
   }
 
-  /* «ì´_¬Y¤Í¯¸ªº³s½u */
+  /* æ¢å¾©æŸå‹ç«™çš„é€£ç·š */
   else if ( !str_prefix( arg, "!reconnect" ) && IS_GOD( ch ) )
   {
     argument = one_argument( argument, arg1 );
 
     if ( !arg1[0] )
     {
-      send_to_char( "§A¥²¶·µù©úºô¯¸¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜ç¶²ç«™ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pNet = get_net_data( arg1, NET_NAME ) ) )
     {
-      act( "§ä¤£¨ì $t ¯¸¦W¡M½Ğ¥Î mud ¬d¸ß¡C", ch, arg1, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ° $t ç«™åï¹è«‹ç”¨ mud æŸ¥è©¢ã€‚", ch, arg1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤w¸g³s½u¤F */
+    /* æª¢æŸ¥æ˜¯å¦å·²ç¶“é€£ç·šäº† */
     if ( valid_socket( pNet, NET_EXPORT ) )
-      act( "ºô¯¸ $t ¤w¸g¨ú±o¿é¥X³s½u¡C", ch, pNet->name, NULL, TO_CHAR );
+      act( "ç¶²ç«™ $t å·²ç¶“å–å¾—è¼¸å‡ºé€£ç·šã€‚", ch, pNet->name, NULL, TO_CHAR );
 
-    /* ¬İ¬İ¬O§_¸T¤î³s½u */
+    /* çœ‹çœ‹æ˜¯å¦ç¦æ­¢é€£ç·š */
     else if ( pNet->export == -2 )
-      act( "ºô¯¸ $t ¸T¤î¿é¥X³s½u¡C", ch, pNet->name, NULL, TO_CHAR );
+      act( "ç¶²ç«™ $t ç¦æ­¢è¼¸å‡ºé€£ç·šã€‚", ch, pNet->name, NULL, TO_CHAR );
 
-    /* ³s½u */
+    /* é€£ç·š */
     else init_client( pNet );
 
     RETURN_NULL();
   }
 
-  /* ²M°£³s½uªº¸ê®Æ */
+  /* æ¸…é™¤é€£ç·šçš„è³‡æ–™ */
   else if ( !str_prefix( arg, "!clean" ) && IS_GOD( ch ) )
   {
     argument = one_argument( argument, arg1 );
 
     if ( !arg1[0] )
     {
-      send_to_char( "§A¥²¶·µù©úºô¯¸¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜ç¶²ç«™ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pNet = get_net_data( arg1, NET_NAME ) ) )
     {
-      act( "§ä¤£¨ì $t ¯¸¦W¡M½Ğ¥Î mud ¬d¸ß¡C", ch, arg1, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ° $t ç«™åï¹è«‹ç”¨ mud æŸ¥è©¢ã€‚", ch, arg1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !valid_socket( pNet, NET_EXPORT ) )
     {
-      act( "ºô¯¸ $t ¨S¦³¨ú±o³s½u¡C", ch, arg, NULL, TO_CHAR );
+      act( "ç¶²ç«™ $t æ²’æœ‰å–å¾—é€£ç·šã€‚", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     pNet->message[0] = '\x0';
-    act( "ºô¯¸ $t¤w¸g²M°£¿é¥X½w½Ä°Ï¡C", ch, pNet->name, NULL, TO_CHAR );
+    act( "ç¶²ç«™ $tå·²ç¶“æ¸…é™¤è¼¸å‡ºç·©è¡å€ã€‚", ch, pNet->name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ³]©w¼Ğ°Oª¬ªp */
+  /* è¨­å®šæ¨™è¨˜ç‹€æ³ */
   else if ( !str_prefix( arg, "!log" ) && IS_GOD( ch ) )
   {
     argument = one_argument( argument, arg1 );
 
     if ( !arg1[0] )
     {
-      send_to_char( "§A¥²¶·µù©úºô¯¸¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜ç¶²ç«™ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pNet = get_net_data( arg1, NET_NAME ) ) )
     {
-      act( "§ä¤£¨ì $t ¯¸¦W¡M½Ğ¥Î mud ¬d¸ß¡C", ch, arg1, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ° $t ç«™åï¹è«‹ç”¨ mud æŸ¥è©¢ã€‚", ch, arg1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* °²³]¤§«e´N¤w¸g³Q¼Ğ°O, «h²M°£ */
+    /* å‡è¨­ä¹‹å‰å°±å·²ç¶“è¢«æ¨™è¨˜, å‰‡æ¸…é™¤ */
     if ( pNet->log )
     {
       pNet->log = FALSE;
-      act( "¯¸¦W $t ²M°£¼Ğ°O¡C", ch, pNet->name, NULL, TO_CHAR );
+      act( "ç«™å $t æ¸…é™¤æ¨™è¨˜ã€‚", ch, pNet->name, NULL, TO_CHAR );
     }
     else
     {
       pNet->log = TRUE;
-      act( "¯¸¦W $t ³]©w¼Ğ°O¡C", ch, pNet->name, NULL, TO_CHAR );
+      act( "ç«™å $t è¨­å®šæ¨™è¨˜ã€‚", ch, pNet->name, NULL, TO_CHAR );
     }
 
     RETURN_NULL();
   }
 
-  /* ¸T¤îÂù¦V³s½u */
+  /* ç¦æ­¢é›™å‘é€£ç·š */
   else if ( !str_prefix( arg, "!banexternal" ) && IS_GOD( ch ) )
   {
     argument = one_argument( argument, arg1 );
 
     if ( !arg1[0] )
     {
-      send_to_char( "§A¥²¶·µù©úºô¯¸¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜ç¶²ç«™ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pNet = get_net_data( arg1, NET_NAME ) ) )
     {
-      act( "§ä¤£¨ì $t ¯¸¦W¡M½Ğ¥Î mud ¬d¸ß¡C", ch, arg1, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ° $t ç«™åï¹è«‹ç”¨ mud æŸ¥è©¢ã€‚", ch, arg1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ¿é¤J³¡¥÷, ¥B­ì¥»´N¸T¤î */
+    /* è¼¸å…¥éƒ¨ä»½, ä¸”åŸæœ¬å°±ç¦æ­¢ */
     if ( pNet->import == -2 )
     {
       pNet->import = -1;
-      act( "$t «ì´_¿é¤J³s½u¡C", ch, arg1, NULL, TO_CHAR );
+      act( "$t æ¢å¾©è¼¸å…¥é€£ç·šã€‚", ch, arg1, NULL, TO_CHAR );
     }
 
     else
     {
-      /* ¦pªG³s½u¤¤, ¤ÁÂ_¥L */
+      /* å¦‚æœé€£ç·šä¸­, åˆ‡æ–·ä»– */
       if ( valid_socket( pNet, NET_IMPORT ) )
         close_net_socket( pNet, NET_IMPORT );
 
-      /* ¼Ğ°O¤£­ã³s½u */
+      /* æ¨™è¨˜ä¸å‡†é€£ç·š */
       pNet->import = -2;
-      act( "$t ¤£­ã¿é¤J³s½u¡C", ch, arg1, NULL, TO_CHAR );
+      act( "$t ä¸å‡†è¼¸å…¥é€£ç·šã€‚", ch, arg1, NULL, TO_CHAR );
     }
 
-    /* ¿é¥X°ğ¥÷, ¥B­ì¥»´N¸T¤î */
+    /* è¼¸å‡ºåŸ ä»½, ä¸”åŸæœ¬å°±ç¦æ­¢ */
     if ( pNet->export == -2 )
     {
       pNet->export = -1;
       init_client( pNet );
-      act( "$t «ì´_¿é¥X³s½u¡C", ch, arg1, NULL, TO_CHAR );
+      act( "$t æ¢å¾©è¼¸å‡ºé€£ç·šã€‚", ch, arg1, NULL, TO_CHAR );
     }
     else
     {
-      /* ¦pªG³s½u¤¤, ¤ÁÂ_¥L */
+      /* å¦‚æœé€£ç·šä¸­, åˆ‡æ–·ä»– */
       if ( valid_socket( pNet, NET_EXPORT ) )
         close_net_socket( pNet, NET_EXPORT );
 
-      /* ¼Ğ°O¤£­ã³s½u */
+      /* æ¨™è¨˜ä¸å‡†é€£ç·š */
       pNet->export = -2;
-      act( "$t ¤£­ã¿é¥X³s½u¡C", ch, arg1, NULL, TO_CHAR );
+      act( "$t ä¸å‡†è¼¸å‡ºé€£ç·šã€‚", ch, arg1, NULL, TO_CHAR );
     }
     RETURN_NULL();
   }
@@ -248,25 +248,25 @@ FUNCTION( do_mud )
   {
     if ( !( pNet = get_net_data( arg, NET_NAME ) ) )
     {
-      act( "§ä¤£¨ì§Aªººô¯¸ $t¡C", ch, arg, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ çš„ç¶²ç«™ $tã€‚", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !valid_socket( pNet, NET_EXPORT ) )
     {
-      act( "ºô¯¸ $t ¨S¦³¨ú±o³s½u¡C", ch, arg, NULL, TO_CHAR );
+      act( "ç¶²ç«™ $t æ²’æœ‰å–å¾—é€£ç·šã€‚", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !argument[0] )
     {
-      send_to_char( "§A­n¹jªÅ¶Ç­µ¤°»ò¡S\n\r", ch );
+      send_to_char( "ä½ è¦éš”ç©ºå‚³éŸ³ä»€éº¼ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pNet->message[0] )
     {
-      act( "ºô¯¸ $t ¦£½u¤¤¡C", ch, arg, NULL, TO_CHAR );
+      act( "ç¶²ç«™ $t å¿™ç·šä¸­ã€‚", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -274,13 +274,13 @@ FUNCTION( do_mud )
     buf[sizeof( pNet->message ) - 1] = '\x0';
     str_cpy( pNet->message, buf );
 
-    send_to_char( "¤w¸gÀ°§A¶Ç»¼®ø®§¤F¡C\n\r", ch );
+    send_to_char( "å·²ç¶“å¹«ä½ å‚³éæ¶ˆæ¯äº†ã€‚\n\r", ch );
   }
 
   RETURN_NULL();
 }
 
-/* ¬d¸ßºô¸ô³s½uª¬ªp */
+/* æŸ¥è©¢ç¶²è·¯é€£ç·šç‹€æ³ */
 FUNCTION( do_netstat )
 {
   NET_DATA * pNet;
@@ -291,13 +291,13 @@ FUNCTION( do_netstat )
 
   one_argument( argument, arg );
 
-  /* ¨S¦³°Ñ¼Æ´N¬O¬d¸ß */
+  /* æ²’æœ‰åƒæ•¸å°±æ˜¯æŸ¥è©¢ */
   if ( !arg[0] )
   {
     clear_buffer();
 
-    send_to_buffer( "¶¶§Ç ºô¯¸¦WºÙ        ºô¯¸¦ì§}             ³q°T°ğ "
-      "¿é¤J ¿é¥X\n\r" );
+    send_to_buffer( "é †åº ç¶²ç«™åç¨±        ç¶²ç«™ä½å€             é€šè¨ŠåŸ  "
+      "è¼¸å…¥ è¼¸å‡º\n\r" );
 
     for ( count = 0, pNet = net_list; pNet; pNet = pNet->next )
     {
@@ -309,7 +309,7 @@ FUNCTION( do_netstat )
       if ( buffer_full() ) break;
     }
 
-    if ( count == 0 ) send_to_char( "¨S¦³¥ô¦óªººô»Ú³s½u¯¸¦Wªº³]©w¡C\n\r", ch );
+    if ( count == 0 ) send_to_char( "æ²’æœ‰ä»»ä½•çš„ç¶²éš›é€£ç·šç«™åçš„è¨­å®šã€‚\n\r", ch );
     else print_buffer( ch );
 
     RETURN_NULL();
@@ -318,17 +318,17 @@ FUNCTION( do_netstat )
   if ( !( pNet = get_net_data( arg, NET_NAME ) )
     && !( pNet = get_net_data( arg, NET_ADDRESS ) ) )
   {
-    act( "¨Sµo²{§Aªº¯¸¦W $t¡M½Ğ¿é¤J netstat ¬d¸ß¡C", ch, arg, NULL, TO_CHAR );
+    act( "æ²’ç™¼ç¾ä½ çš„ç«™å $tï¹è«‹è¼¸å…¥ netstat æŸ¥è©¢ã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  print_to_char( ch, "¯¸¦W¡R%s\n\r"
-                     "¤¤¤å¯¸¦W¡R%s\n\r"
-                     "¦ì§}¡R%s ( ³s±µ°ğ = %5d )\n\r"
-                     "¿é¥X¡R[%s] ¿é¤J¡R[%s] ©Ó»{¡R[%s] °O¿ı¡R[%s]\n\r"
-                     "Åª¼g¦¸¼Æ %5d¡R%5d\n\r"
-                     "®É¶¡­­¨î¡R%5d ¿é¤J®É¶¡¡R%5d ¿é¥X®É¶¡¡R%5d\n\r"
-     , pNet->name, pNet->cname ? pNet->cname : "(±q¯Ê)"
+  print_to_char( ch, "ç«™åï¹•%s\n\r"
+                     "ä¸­æ–‡ç«™åï¹•%s\n\r"
+                     "ä½å€ï¹•%s ( é€£æ¥åŸ  = %5d )\n\r"
+                     "è¼¸å‡ºï¹•[%s] è¼¸å…¥ï¹•[%s] æ‰¿èªï¹•[%s] è¨˜éŒ„ï¹•[%s]\n\r"
+                     "è®€å¯«æ¬¡æ•¸ %5dï¹•%5d\n\r"
+                     "æ™‚é–“é™åˆ¶ï¹•%5d è¼¸å…¥æ™‚é–“ï¹•%5d è¼¸å‡ºæ™‚é–“ï¹•%5d\n\r"
+     , pNet->name, pNet->cname ? pNet->cname : "(å¾ç¼º)"
      , pNet->address, pNet->port
      , YESNO( pNet->export >= 0 )
      , YESNO( pNet->import >= 0 )
@@ -340,7 +340,7 @@ FUNCTION( do_netstat )
   RETURN_NULL();
 }
 
-/* ¬O§_¬°¦³®Äªº³s½u */
+/* æ˜¯å¦ç‚ºæœ‰æ•ˆçš„é€£ç·š */
 bool valid_socket( NET_DATA * pNet, int type )
 {
   PUSH_FUNCTION( "valid_socket" );
@@ -352,13 +352,13 @@ bool valid_socket( NET_DATA * pNet, int type )
   default:
     RETURN( FALSE );
 
-  /* ¿é¤J¤è­± */
+  /* è¼¸å…¥æ–¹é¢ */
   case NET_IMPORT:
 
     if ( pNet->import >= 0 ) RETURN( TRUE );
     break;
 
-  /* ¿é¥X¤è­± */
+  /* è¼¸å‡ºæ–¹é¢ */
   case NET_EXPORT:
 
     if ( pNet->export >= 0 ) RETURN( TRUE );
@@ -368,7 +368,7 @@ bool valid_socket( NET_DATA * pNet, int type )
   RETURN( FALSE );
 }
 
-/* Ãö³¬ºô¸ô³s½u */
+/* é—œé–‰ç¶²è·¯é€£ç·š */
 void close_net_socket( NET_DATA * pNet, int type )
 {
   PUSH_FUNCTION( "close_net_socket" );
@@ -378,10 +378,10 @@ void close_net_socket( NET_DATA * pNet, int type )
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "close_net_socket: «¬ºA %d ¿ù»~ .", type );
+    mudlog( LOG_DEBUG, "close_net_socket: å‹æ…‹ %d éŒ¯èª¤ .", type );
     RETURN_NULL();
 
-  /* Ãö³¬¿é¤JºŞ¹D */
+  /* é—œé–‰è¼¸å…¥ç®¡é“ */
   case NET_IMPORT:
 
     if ( pNet->import >= 0 )
@@ -393,7 +393,7 @@ void close_net_socket( NET_DATA * pNet, int type )
 
     RETURN_NULL();
 
-  /* Ãö³¬¿é¥XºŞ¹D */
+  /* é—œé–‰è¼¸å‡ºç®¡é“ */
   case NET_EXPORT:
 
     if ( pNet->export >= 0 )
@@ -410,7 +410,7 @@ void close_net_socket( NET_DATA * pNet, int type )
   RETURN_NULL();
 }
 
-/* ¨ú±o¬Yºô»Ú¸ê®Æµ²ºc */
+/* å–å¾—æŸç¶²éš›è³‡æ–™çµæ§‹ */
 NET_DATA * get_net_data( char * name, int type )
 {
   NET_DATA * pNet;
@@ -420,10 +420,10 @@ NET_DATA * get_net_data( char * name, int type )
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "get_net_data: ¿ù»~«¬ºA %d.", type );
+    mudlog( LOG_DEBUG, "get_net_data: éŒ¯èª¤å‹æ…‹ %d.", type );
     RETURN( NULL );
 
-  /* ¥Î¦WºÙ¬d¸ß */
+  /* ç”¨åç¨±æŸ¥è©¢ */
   case NET_NAME:
 
     for ( pNet = net_list; pNet; pNet = pNet->next )
@@ -431,7 +431,7 @@ NET_DATA * get_net_data( char * name, int type )
 
     break;
 
-  /* ¥Î¦ì§}¬d¸ß */
+  /* ç”¨ä½å€æŸ¥è©¢ */
   case NET_ADDRESS:
 
     for ( pNet = net_list; pNet; pNet = pNet->next )
@@ -443,7 +443,7 @@ NET_DATA * get_net_data( char * name, int type )
   RETURN( NULL );
 }
 
-/* ªì©l¤Æºô»Ú³s½u */
+/* åˆå§‹åŒ–ç¶²éš›é€£ç·š */
 void launch_internal( int internal )
 {
   struct sockaddr_in   sock;
@@ -461,21 +461,21 @@ void launch_internal( int internal )
   if ( ( desc = accept( internal, (struct sockaddr *) &sock, &size) ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_INFO, "launch_internal: accept ¦³°İÃD." );
+    mudlog( LOG_INFO, "launch_internal: accept æœ‰å•é¡Œ." );
     RETURN_NULL();
   }
 
   if ( fcntl( desc, F_SETFL, ( fcntl( desc , F_GETFL ) | O_NONBLOCK ) ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_INFO, "launch_internal: fcntl ¦³°İÃD" );
+    mudlog( LOG_INFO, "launch_internal: fcntl æœ‰å•é¡Œ" );
     RETURN_NULL();
   }
 
   size = sizeof(sock);
   if ( getpeername( desc, (struct sockaddr *) &sock, &size ) < 0 )
   {
-    mudlog( LOG_NET, "[ºô»Ú³s½u] ¬d¸ß¤£¨ì¨ä¦ì§}." );
+    mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] æŸ¥è©¢ä¸åˆ°å…¶ä½å€." );
     close( desc );
     RETURN_NULL();
   }
@@ -485,39 +485,39 @@ void launch_internal( int internal )
     , ( addr >> 24 ) & 0xFF, ( addr >> 16 ) & 0xFF
     , ( addr >>  8 ) & 0xFF, ( addr       ) & 0xFF );
 
-  /* ÀË¬d¬O§_¦bªí®æ¤§¤¤, ¤£¬OªÌ¤£¯à³s½u */
+  /* æª¢æŸ¥æ˜¯å¦åœ¨è¡¨æ ¼ä¹‹ä¸­, ä¸æ˜¯è€…ä¸èƒ½é€£ç·š */
   if ( !( pNet = get_net_data( buf, NET_ADDRESS ) ) )
   {
-    mudlog( LOG_NET, "[ºô»Ú³s½u] %s ¥¼¦b­­©w¯¸¤¤.", buf );
+    mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s æœªåœ¨é™å®šç«™ä¸­.", buf );
     close( desc );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¬O§_¼Ğ°O¤£­ã³s½u */
+  /* æª¢æŸ¥æ˜¯å¦æ¨™è¨˜ä¸å‡†é€£ç·š */
   if ( pNet->import == -2 )
   {
-    mudlog( LOG_NET, "[ºô»Ú³s½u] %s ¤£­ã³s½u.", buf );
+    mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s ä¸å‡†é€£ç·š.", buf );
     close( desc );
     RETURN_NULL();
   }
 
   if ( pNet->import >= 0 )
   {
-    mudlog( LOG_NET, "[ºô»Ú³s½u] %s ­«½Æ³s½u.", buf );
+    mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s é‡è¤‡é€£ç·š.", buf );
     close_net_socket( pNet, NET_IMPORT );
   }
 
   pNet->import          = desc;
   pNet->import_duration = 0;
 
-  mudlog( LOG_NET, "[ºô»Ú³s½u] %s§¹¦¨³s½u", buf );
+  mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %så®Œæˆé€£ç·š", buf );
 
-  /* ÀË¬dÂù¦V */
+  /* æª¢æŸ¥é›™å‘ */
   if ( pNet->export == -1 ) init_client( pNet );
   RETURN_NULL();
 }
 
-/* ªì©l¤Æ»·ºİ³s½u */
+/* åˆå§‹åŒ–é ç«¯é€£ç·š */
 bool init_client( NET_DATA * pNet )
 {
   int                  sockfd;
@@ -530,14 +530,14 @@ bool init_client( NET_DATA * pNet )
 
   if ( ( sockfd = socket( AF_INET, SOCK_STREAM, 0 ) ) < 0 )
   {
-    mudlog( LOG_NET, "init_client: µLªk¶}±Ò socket." );
+    mudlog( LOG_NET, "init_client: ç„¡æ³•é–‹å•Ÿ socket." );
     RETURN( FALSE );
   }
 
   serv.sin_family = AF_INET;
   if ( ( hp = gethostbyname( pNet->address ) ) == NULL )
   {
-    mudlog( LOG_NET, "init_client: %s µLªk¨ú±o.", pNet->address );
+    mudlog( LOG_NET, "init_client: %s ç„¡æ³•å–å¾—.", pNet->address );
     close( sockfd );
     RETURN( FALSE );
   }
@@ -547,7 +547,7 @@ bool init_client( NET_DATA * pNet )
 
   if ( connect( sockfd, ( struct sockaddr * ) &serv, sizeof( serv ) ) < 0 )
   {
-    mudlog( LOG_NET, "init_client: µLªk³s±µ %s@%d."
+    mudlog( LOG_NET, "init_client: ç„¡æ³•é€£æ¥ %s@%d."
       , pNet->address, pNet->port );
 
     close( sockfd );
@@ -558,7 +558,7 @@ bool init_client( NET_DATA * pNet )
   pNet->export_duration = 0;
   pNet->message[0]      = '\x0';
 
-  mudlog( LOG_NET, "¨ú±o³s±µ %s@%d", pNet->address, pNet->port );
+  mudlog( LOG_NET, "å–å¾—é€£æ¥ %s@%d", pNet->address, pNet->port );
 
   RETURN( TRUE );
 }

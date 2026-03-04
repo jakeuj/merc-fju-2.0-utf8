@@ -1,9 +1,9 @@
 Vnum            611
-Name            �V�m��~
+Name            訓練場~
 Description
-�o�̬O�@�ӻ�j���Ŧa�M�A�i�Hť���@�Ǧ[���n�����������ǹL�ӡM
-�շϯ����M�������h�֪��h�L�b���i��޽m�M�o�]�O�����D�n�x�O��
-�ӷ��C
+這裡是一個頗大的空地﹐你可以聽見一些吆喝聲隱隱約約的傳過來﹐
+白煙茫茫﹐不知有多少的士兵在此進行操練﹐這也是洛陽主要軍力的
+來源。
 
 ~
 SectorType      SECT_CITY
@@ -26,11 +26,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         ��¾��~
+Keyword         轉職者~
 End
 
 #Enquire
-Keyword         �Z�x��¾��~
+Keyword         武官轉職者~
 End
 
 End

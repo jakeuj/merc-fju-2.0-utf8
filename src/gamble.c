@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -22,7 +22,7 @@
 
 #define GAMBLE_GOLD             1
 
-/* °Ï°ìÅÜ¼Æ */
+/* å€åŸŸè®Šæ•¸ */
 int     last_hour;
 int     gamble_tick;
 int     horse_step [ MAX_HORSES ];
@@ -31,24 +31,24 @@ int     horse_order[ MAX_HORSES ];
 
 char * const horse_name[ MAX_HORSES ] =
 {
-  "\e[1;31m­¸¤Ñ½Ş\e[0m" ,
-  "\e[1;32m¤jÃi½Ş\e[0m" ,
-  "\e[1;33m¹x¥Ö½Ş\e[0m" ,
-  "\e[1;34mºëÆF½Ş\e[0m" ,
-  "\e[1;35m¼É¤O½Ş\e[0m" ,
-  "\e[1;36mµw¤ò½Ş\e[0m"
+  "\e[1;31mé£›å¤©è±¬\e[0m" ,
+  "\e[1;32må¤§æ‡¶è±¬\e[0m" ,
+  "\e[1;33mé ‘çš®è±¬\e[0m" ,
+  "\e[1;34mç²¾éˆè±¬\e[0m" ,
+  "\e[1;35mæš´åŠ›è±¬\e[0m" ,
+  "\e[1;36mç¡¬æ¯›è±¬\e[0m"
 };
 
 char * gamble_message[ MAX_GAMBLE_MESSAGE ] =
 {
-  "\e[1;33m¤p½ä¥i¥H¦w®a¡M¤j½ä¥i¥H¿³¨¹¡T\e[0m"   ,
-  "\e[1;31m¶R©wÂ÷¤â¡M¶R©wÂ÷¤â¡T\e[0m"           ,
-  "\e[1;35m¬İ½äªº´X¦Ê­Ó¡M¤Uª`ªº¨S´X­Ó¡T\e[0m"   ,
-  "\e[1;32m¤Ñ¤j¦a¤j¡M½ä³Õ³Ì¤j¡T\e[0m"           ,
-  "\e[1;34m¦³¿ú¨Ó½ä³Õ¡M¨S¿ú½æ¦Ñ±C¡T\e[0m"       ,
-  "\e[1;36m¥ı½ä¥ıÄ¹¡M«á½äªº·|¿é¨ì¤£¦æ¡T\e[0m"   ,
-  "\e[1;31m¦³¿ú½ä¿ú¡M¨S¿ú½äÄê¡T\e[0m"           ,
-  "\e[1;32m¦³¿ú½Ğ¤Uª`¡M¨S¿ú½Ğ¦^®a©ê¦Ñ±C¡T\e[0m"
+  "\e[1;33må°è³­å¯ä»¥å®‰å®¶ï¹å¤§è³­å¯ä»¥èˆˆé‚¦ï¹—\e[0m"   ,
+  "\e[1;31mè²·å®šé›¢æ‰‹ï¹è²·å®šé›¢æ‰‹ï¹—\e[0m"           ,
+  "\e[1;35mçœ‹è³­çš„å¹¾ç™¾å€‹ï¹ä¸‹æ³¨çš„æ²’å¹¾å€‹ï¹—\e[0m"   ,
+  "\e[1;32må¤©å¤§åœ°å¤§ï¹è³­åšæœ€å¤§ï¹—\e[0m"           ,
+  "\e[1;34mæœ‰éŒ¢ä¾†è³­åšï¹æ²’éŒ¢è³£è€å©†ï¹—\e[0m"       ,
+  "\e[1;36må…ˆè³­å…ˆè´ï¹å¾Œè³­çš„æœƒè¼¸åˆ°ä¸è¡Œï¹—\e[0m"   ,
+  "\e[1;31mæœ‰éŒ¢è³­éŒ¢ï¹æ²’éŒ¢è³­çˆ›ï¹—\e[0m"           ,
+  "\e[1;32mæœ‰éŒ¢è«‹ä¸‹æ³¨ï¹æ²’éŒ¢è«‹å›å®¶æŠ±è€å©†ï¹—\e[0m"
 };
 
 void   gamble_order       args( ( void ) );
@@ -70,26 +70,26 @@ FUNCTION( do_gamble )
 
   PUSH_FUNCTION( "do_gamble" );
 
-  /* «Dª±®a¤£¯à½ä³Õ */
+  /* éç©å®¶ä¸èƒ½è³­åš */
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
   argument = one_argument( argument , arg );
 
   if ( !arg[0] )
   {
-    send_to_char( "¦pªG¹ïöt½Ş¤ñÁÉ¤£À´ªº¡M½Ğ¿é¤J \e[1;32mgamble /?\e[0m\n\r"
+    send_to_char( "å¦‚æœå°é£†è±¬æ¯”è³½ä¸æ‡‚çš„ï¹è«‹è¼¸å…¥ \e[1;32mgamble /?\e[0m\n\r"
       , ch );
     RETURN_NULL();
   }
 
-  /* ¹î¬İ½ä³Õªº¬ÛÃö¸ê°T */
+  /* å¯Ÿçœ‹è³­åšçš„ç›¸é—œè³‡è¨Š */
   if ( !str_prefix( arg , "!information" ) && IS_GOD( ch ) )
   {
     clear_buffer();
-    send_to_buffer( "½ä³Õªº­p¼Æ¾¹¡R%d¡C\n\r" , gamble_tick );
+    send_to_buffer( "è³­åšçš„è¨ˆæ•¸å™¨ï¹•%dã€‚\n\r" , gamble_tick );
     for ( loop = 0; loop < MAX_HORSES; loop++ )
     {
-      send_to_buffer( "[%2d] %sªº¸}¨B¼Æ %5d¡C\n\r"
+      send_to_buffer( "[%2d] %sçš„è…³æ­¥æ•¸ %5dã€‚\n\r"
         , loop+1 , horse_name[loop] , horse_step[loop] );
     }
 
@@ -97,7 +97,7 @@ FUNCTION( do_gamble )
     RETURN_NULL();
   }
 
-  /* ­×§ï¨C¤@°¦½Şªº¸}¨B¼Æ */
+  /* ä¿®æ”¹æ¯ä¸€éš»è±¬çš„è…³æ­¥æ•¸ */
   if ( !str_prefix( arg , "!set" ) && IS_GOD( ch ) )
   {
     argument = one_argument( argument , arg );
@@ -105,67 +105,67 @@ FUNCTION( do_gamble )
     if ( ( horse = atoi( arg ) ) < 1 || horse > MAX_HORSES )
     {
       chinese_number( MAX_HORSES, buf );
-      act( "­×§ïªº½Ş¥u¯à±q 1 ¨ì $t¡C" , ch, buf, NULL, TO_CHAR );
+      act( "ä¿®æ”¹çš„è±¬åªèƒ½å¾ 1 åˆ° $tã€‚" , ch, buf, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     argument = one_argument( argument , arg );
     if ( ( count = atoi( arg ) ) < 0 )
     {
-      send_to_char( "­×§ïªº¸}¨B¼Æ¤£¯à¤p©ó 0¡C\n\r" , ch );
+      send_to_char( "ä¿®æ”¹çš„è…³æ­¥æ•¸ä¸èƒ½å°æ–¼ 0ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
     horse_step[ horse - 1 ] = count;
-    act( "§A­×§ï¤F²Ä$i°¦½Şªº¸}¨B¼Æ¬°$I¡C", ch, &horse, &count, TO_CHAR );
+    act( "ä½ ä¿®æ”¹äº†ç¬¬$iéš»è±¬çš„è…³æ­¥æ•¸ç‚º$Iã€‚", ch, &horse, &count, TO_CHAR );
 
-    /* ¼Ğ°O */
-    mudlog( LOG_INFO , "[GAMBLE] %s ­×§ï¤Föt½Şªº¸ê®Æ." , ch->name );
+    /* æ¨™è¨˜ */
+    mudlog( LOG_INFO , "[GAMBLE] %s ä¿®æ”¹äº†é£†è±¬çš„è³‡æ–™." , ch->name );
 
     RETURN_NULL();
   }
 
-  /* ¹î¬İ¨C¤@°¦½Şªº±¡ªp */
+  /* å¯Ÿçœ‹æ¯ä¸€éš»è±¬çš„æƒ…æ³ */
   if ( !str_prefix( arg , "!condition" ) )
   {
     for ( clear_buffer(), loop = 0; loop < MAX_HORSES; loop++ )
     {
-      send_to_buffer( "[%d] %sÄ¹¹L %5d ¦¸²Ä¤@¦W¡C\n\r"
+      send_to_buffer( "[%d] %sè´é %5d æ¬¡ç¬¬ä¸€åã€‚\n\r"
         , loop + 1 , horse_name[ loop ] , horse_data[ loop ] );
     }
 
-    send_to_buffer( "\n\r¥Ø«eöt½Şªº±¡ªp¬O¡R" );
+    send_to_buffer( "\n\rç›®å‰é£†è±¬çš„æƒ…æ³æ˜¯ï¹•" );
     switch ( gamble_tick )
     {
     default : break;
-    case -1 : send_to_buffer( "Äw±¹¼úª÷¤¤¡C\n\r" ); break;
-    case  0 : send_to_buffer( "µo°e¼úª÷¤¤¡C\n\r" ); break;
-    case  1 : send_to_buffer( "¾ã²z³õ¦a¤¤¡C\n\r" ); break;
+    case -1 : send_to_buffer( "ç±Œæªçé‡‘ä¸­ã€‚\n\r" ); break;
+    case  0 : send_to_buffer( "ç™¼é€çé‡‘ä¸­ã€‚\n\r" ); break;
+    case  1 : send_to_buffer( "æ•´ç†å ´åœ°ä¸­ã€‚\n\r" ); break;
     case  2 :
     case  3 :
-    case  4 : send_to_buffer( "±µ¨ü¤Uª`¤¤¡C\n\r" ); break;
+    case  4 : send_to_buffer( "æ¥å—ä¸‹æ³¨ä¸­ã€‚\n\r" ); break;
     case  5 :
     case  6 :
     case  7 :
-    case  8 : send_to_buffer( "¤ñÁÉ¶i¦æ¤¤¡C\n\r" ); break;
+    case  8 : send_to_buffer( "æ¯”è³½é€²è¡Œä¸­ã€‚\n\r" ); break;
     }
 
     print_buffer( ch );
     RETURN_NULL();
   }
 
-  /* ³ø¾É¤ñÁÉªº±¡ªp */
+  /* å ±å°æ¯”è³½çš„æƒ…æ³ */
   if ( !str_prefix( arg , "!report" ) )
   {
     if ( gamble_tick < 5 )
     {
-      send_to_char( "¤ñÁÉ³£ÁÙ¨S¶}©l¡M«ç»òÆ[¬İ¤ñÁÉªº±¡§Î¡S\n\r" , ch );
+      send_to_char( "æ¯”è³½éƒ½é‚„æ²’é–‹å§‹ï¹æ€éº¼è§€çœ‹æ¯”è³½çš„æƒ…å½¢ï¹–\n\r" , ch );
       RETURN_NULL();
     }
 
     for ( gamble_order(), clear_buffer(), loop = 0; loop < MAX_HORSES; loop++ )
     {
-      send_to_buffer( "²{¦b¶]²Ä %d ªº½Ş¬O¡R%s(%d)\n\r"
+      send_to_buffer( "ç¾åœ¨è·‘ç¬¬ %d çš„è±¬æ˜¯ï¹•%s(%d)\n\r"
         , loop + 1
         , horse_name[horse_order[loop]]
         , horse_order[loop] + 1 );
@@ -176,42 +176,42 @@ FUNCTION( do_gamble )
     RETURN_NULL();
   }
 
-  /* ÀË¬d¤Uª`ªº±¡ªp */
+  /* æª¢æŸ¥ä¸‹æ³¨çš„æƒ…æ³ */
   if ( !str_prefix( arg , "!check" ) )
   {
     clear_buffer();
-    send_to_buffer( "§A¥Ø«e©Ò¤Uªºª`¦³¡R\n\r" );
+    send_to_buffer( "ä½ ç›®å‰æ‰€ä¸‹çš„æ³¨æœ‰ï¹•\n\r" );
     for ( found = FALSE, gamble = ch->gamble; gamble; gamble = gamble->next )
     {
       found = TRUE;
-      send_to_buffer( "§Aªá¤F%d¨â»È¤l¶R¤F%s¡C\n\r"
+      send_to_buffer( "ä½ èŠ±äº†%då…©éŠ€å­è²·äº†%sã€‚\n\r"
         , gamble->mount , return_horse_name( gamble ) );
     }
 
-    if ( !found ) send_to_buffer( "§A¨S¦³¤U¥ô¦óªºª`¡C\n\r" );
+    if ( !found ) send_to_buffer( "ä½ æ²’æœ‰ä¸‹ä»»ä½•çš„æ³¨ã€‚\n\r" );
     print_buffer( ch );
     RETURN_NULL();
   }
 
-  /* ¤Uª`ª÷¿úªº¥D­nµ{¦¡ */
+  /* ä¸‹æ³¨é‡‘éŒ¢çš„ä¸»è¦ç¨‹å¼ */
   if ( !str_prefix( arg , "gold" ) || !str_prefix( arg , "coin" ) )
   {
-    /* ¤£¬O¤Uª`ªº®É¶¡ */
+    /* ä¸æ˜¯ä¸‹æ³¨çš„æ™‚é–“ */
     if ( gamble_tick < 2 || gamble_tick >=5 )
     {
-      send_to_char( "²{¦b¤£¯à¤Uª`­C¡M½Ğµ¥¤@¤U§a¡C\n\r" , ch );
+      send_to_char( "ç¾åœ¨ä¸èƒ½ä¸‹æ³¨è€¶ï¹è«‹ç­‰ä¸€ä¸‹å§ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
     if ( ch->trade == FALSE )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤Ó¥i©È¤F¡M©Ò¥HµLªk°õ¦æ³o­Ó«ü¥O¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å¤ªå¯æ€•äº†ï¹æ‰€ä»¥ç„¡æ³•åŸ·è¡Œé€™å€‹æŒ‡ä»¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¥H¤÷¥Àªºª÷¿ú¨M³Ó­t¡C"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦ä»¥çˆ¶æ¯çš„é‡‘éŒ¢æ±ºå‹è² ã€‚"
         , ch, &level_limit, NULL, TO_CHAR );
 
       RETURN_NULL();
@@ -219,44 +219,44 @@ FUNCTION( do_gamble )
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "±ÏÀÙª÷¥i¤£¬OÅı§A®³¨Ó½ä³Õ¥Îªº¡T\n\r", ch );
+      send_to_char( "æ•‘æ¿Ÿé‡‘å¯ä¸æ˜¯è®“ä½ æ‹¿ä¾†è³­åšç”¨çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     argument = one_argument( argument , arg );
 
-    /* ¨S¦³¤U¤@­Ó¤Ş­z */
+    /* æ²’æœ‰ä¸‹ä¸€å€‹å¼•è¿° */
     if ( !arg[0] )
     {
-      send_to_char( "¬İ¨Ó§A¤£¬O½äªL°ª¤â¡MÁÙ¬O¥ı¬d¸ß gamble §a¡C\n\r" , ch );
+      send_to_char( "çœ‹ä¾†ä½ ä¸æ˜¯è³­æ—é«˜æ‰‹ï¹é‚„æ˜¯å…ˆæŸ¥è©¢ gamble å§ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    /* ½äª`¤Ó¤Ö */
+    /* è³­æ³¨å¤ªå°‘ */
     if ( ( money = atoi( arg ) ) < MIN_GAMBLE_GOLD )
     {
-      send_to_char( "³o»ò¤pªº½äª`¡M¥á¨ì¤ô·¾¸Ì­±ºâ¤F¡C\n\r" , ch );
+      send_to_char( "é€™éº¼å°çš„è³­æ³¨ï¹ä¸Ÿåˆ°æ°´æºè£¡é¢ç®—äº†ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    /* ½äª`¤Ó¦h */
+    /* è³­æ³¨å¤ªå¤š */
     if ( money > MAX_GAMBLE_GOLD )
     {
-      send_to_char( "¶â¡M³o»ò¤jªº½äª`¡M§Ú©È·|­Ë²ø­C¡C\n\r" , ch );
+      send_to_char( "å—¯ï¹é€™éº¼å¤§çš„è³­æ³¨ï¹æˆ‘æ€•æœƒå€’èŠè€¶ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    /* ¨­¤Wªº¿ú¤£°÷¨Ó½ä */
+    /* èº«ä¸Šçš„éŒ¢ä¸å¤ ä¾†è³­ */
     if ( money > ch->gold )
     {
-      send_to_char( "¯u¬O½ä©Ê°í±j¡M¤£¹L§A¥ıÄw¤@¨Ç¿ú¨Ó½ä§a¡C\n\r" , ch );
+      send_to_char( "çœŸæ˜¯è³­æ€§å …å¼·ï¹ä¸éä½ å…ˆç±Œä¸€äº›éŒ¢ä¾†è³­å§ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    /* °t¸m½ä³Õµ²ºcªº°O¾ĞÅé */
+    /* é…ç½®è³­åšçµæ§‹çš„è¨˜æ†¶é«” */
     gamble = alloc_struct( STRUCT_GAMBLE_DATA );
 
-    /* ²M°£°¨¤Ç¸ê®Æ */
+    /* æ¸…é™¤é¦¬åŒ¹è³‡æ–™ */
     for ( count = 0; count < MAX_HORSES; count++ ) gamble->horse[ count ] = -1;
 
     count    = 0;
@@ -275,49 +275,49 @@ FUNCTION( do_gamble )
       argument = one_argument( argument , arg );
     }
 
-    /* ®Ú¥»¨S¦³¿é¤J½Ş°¦ªº¸¹½X©Î¬O¿é¤J¤è¦¡¤£¹ï */
+    /* æ ¹æœ¬æ²’æœ‰è¼¸å…¥è±¬éš»çš„è™Ÿç¢¼æˆ–æ˜¯è¼¸å…¥æ–¹å¼ä¸å° */
     if ( count == 0 )
     {
       for ( count = 0; count < MAX_HORSES; count++ ) gamble->horse[count] = -1;
 
-      /* ÄÀ©ñµ²ºcªº°O¾ĞÅé */
+      /* é‡‹æ”¾çµæ§‹çš„è¨˜æ†¶é«” */
       free_struct( gamble , STRUCT_GAMBLE_DATA );
 
-      send_to_char( "§A¤Uª`ªº¤è¦¡¤£¹ï¡M½Ğ¬d¸ß gamble ªº¨Ï¥Î¤èªk¡C\n\r" , ch );
+      send_to_char( "ä½ ä¸‹æ³¨çš„æ–¹å¼ä¸å°ï¹è«‹æŸ¥è©¢ gamble çš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³­«½Æ©Î¬O¿ù»~ */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰é‡è¤‡æˆ–æ˜¯éŒ¯èª¤ */
     if ( !( check_gamble_valid( ch , gamble ) ) )
     {
       for ( count = 0; count < MAX_HORSES; count++ ) gamble->horse[count] = -1;
 
-      /* ÄÀ©ñµ²ºcªº°O¾ĞÅé */
+      /* é‡‹æ”¾çµæ§‹çš„è¨˜æ†¶é«” */
       free_struct( gamble , STRUCT_GAMBLE_DATA );
 
-      send_to_char( "§A¤Uª`ªº±m¨÷¬OµL®Äªº¡M½Ğ¬d¸ß GAMBLE¡C\n\r" , ch );
+      send_to_char( "ä½ ä¸‹æ³¨çš„å½©å·æ˜¯ç„¡æ•ˆçš„ï¹è«‹æŸ¥è©¢ GAMBLEã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    act( "§Aªá¤F$i¨â»È¤l¶R¤F$T¡C"
+    act( "ä½ èŠ±äº†$iå…©éŠ€å­è²·äº†$Tã€‚"
       , ch, &money, return_horse_name( gamble ), TO_CHAR );
 
-    /* §â¸ê®Æ¶ñ¤Jµ²ºc¤§¤¤ */
+    /* æŠŠè³‡æ–™å¡«å…¥çµæ§‹ä¹‹ä¸­ */
     gamble->format = GAMBLE_GOLD;
     gamble->mount  = money;
 
-    /* ¸ü¤Jª±®aªº gamble ªºµ²ºc¤¤ */
+    /* è¼‰å…¥ç©å®¶çš„ gamble çš„çµæ§‹ä¸­ */
     gamble->next = ch->gamble;
     ch->gamble   = gamble;
 
-    /* ¦©±¼±mª÷ */
+    /* æ‰£æ‰å½©é‡‘ */
     gold_from_char( ch, money );
 
-    /* ±j¨î¥´¶}½ä³ÕÀW¹D */
+    /* å¼·åˆ¶æ‰“é–‹è³­åšé »é“ */
     if ( IS_SET( ch->deaf , CHANNEL_GAMBLE ) )
     {
       REMOVE_BIT( ch->deaf , CHANNEL_GAMBLE );
-      send_to_char( "½Ş³õ¦Ñ¤j¶¶«KÀ°§A§â½ä³ÕÀW¹D¥´¶}¤F¡C\n\r" , ch );
+      send_to_char( "è±¬å ´è€å¤§é †ä¾¿å¹«ä½ æŠŠè³­åšé »é“æ‰“é–‹äº†ã€‚\n\r" , ch );
     }
 
     RETURN_NULL();
@@ -327,7 +327,7 @@ FUNCTION( do_gamble )
   RETURN_NULL();
 }
 
-/* ±Ò©l¤Æ½ä³Õªº°Ñ¼Æ */
+/* å•Ÿå§‹åŒ–è³­åšçš„åƒæ•¸ */
 void initial_gamble( void )
 {
   int loop;
@@ -337,13 +337,13 @@ void initial_gamble( void )
   gamble_tick =  1;
   last_hour   = -1;
 
-  /* ²M°£²Ä¤@¦Wªº¸ê®Æ */
+  /* æ¸…é™¤ç¬¬ä¸€åçš„è³‡æ–™ */
   for ( loop = 0 ; loop < MAX_HORSES; loop++ ) horse_data[loop] = 0;
 
   RETURN_NULL();
 }
 
-/* ¨t²Îöt½Şªº¥D­nµ{¦¡ */
+/* ç³»çµ±é£†è±¬çš„ä¸»è¦ç¨‹å¼ */
 void gamble_update( void )
 {
   int               loop;
@@ -355,24 +355,24 @@ void gamble_update( void )
 
   PUSH_FUNCTION( "gamble_update" );
 
-  /* ¶Ã¼Æ¨M©w½Ş¶]ªº¨B¼Æ */
+  /* äº‚æ•¸æ±ºå®šè±¬è·‘çš„æ­¥æ•¸ */
   if ( gamble_tick >= 5 )
   {
     for ( loop = 0; loop < MAX_HORSES; loop++ )
       horse_step[loop] += number_range( 1 , 5 );
   }
 
-  /* ¨C¤@­Ó¤p®É§@¤@¦¸°Ê§@, ¤£µM¨S¦³°Ê§@ */
+  /* æ¯ä¸€å€‹å°æ™‚ä½œä¸€æ¬¡å‹•ä½œ, ä¸ç„¶æ²’æœ‰å‹•ä½œ */
   if ( time_info.hour == last_hour ) RETURN_NULL();
 
-  /* °O¿ı¤W¦¸ªº®É¶¡ , ¨Ã¥B§â tick ¼W¥[¤@ */
+  /* è¨˜éŒ„ä¸Šæ¬¡çš„æ™‚é–“ , ä¸¦ä¸”æŠŠ tick å¢åŠ ä¸€ */
   last_hour = time_info.hour;
   gamble_tick++;
 
-  /* µ²§ô, ¨Ã¥Bºâ¿ú */
+  /* çµæŸ, ä¸¦ä¸”ç®—éŒ¢ */
   if ( gamble_tick == 0 )
   {
-    /* ²M°£©Ò¦³ª±®aªº½ä³Õ¸ê®Æ */
+    /* æ¸…é™¤æ‰€æœ‰ç©å®¶çš„è³­åšè³‡æ–™ */
     for ( d = descriptor_list; d; d = d->next )
     {
       if ( !verify_desc( d )
@@ -387,15 +387,15 @@ void gamble_update( void )
           {
             if ( number_range( 1 , GambleLost ) != GambleLost )
             {
-              act( "®¥ÁH§A¡M§Aªº$tÄ¹±o$I¨â»È¤l¡C"
+              act( "æ­ç¦§ä½ ï¹ä½ çš„$tè´å¾—$Iå…©éŠ€å­ã€‚"
                 , ch, return_horse_name( gamble ) , &lotto, TO_CHAR );
 
               if ( !over_scale( ch ) ) gold_to_char( ch, lotto );
 
-              /* °e¥X®¥ÁHªº°T®§ */
+              /* é€å‡ºæ­ç¦§çš„è¨Šæ¯ */
               if ( lotto > LOTTO_CONGULATION )
               {
-                sprintf( buf , "%sª¯«Ë¹B¤¤¤F¤j¼ú¡M»°§Ö¸ò¥L¤À¬õ§a¡C"
+                sprintf( buf , "%sç‹—å±é‹ä¸­äº†å¤§çï¹è¶•å¿«è·Ÿä»–åˆ†ç´…å§ã€‚"
                   , mob_name( NULL, ch ) );
 
                 talk_channel_2( buf, CHANNEL_GAMBLE, "" );
@@ -404,13 +404,13 @@ void gamble_update( void )
 
             else
             {
-              act( "¯u©êºp¡M§Aªº$t¤W¨S¦³¥»¦Ñ¤jªº¥¿¦r¼Ğ°O¡M©Ò¥H¤£ºâ¼Æ¡C"
+              act( "çœŸæŠ±æ­‰ï¹ä½ çš„$tä¸Šæ²’æœ‰æœ¬è€å¤§çš„æ­£å­—æ¨™è¨˜ï¹æ‰€ä»¥ä¸ç®—æ•¸ã€‚"
                 , ch, return_horse_name( gamble ), NULL, TO_CHAR );
 
               if ( lotto > LOTTO_CONGULATION )
               {
-                sprintf( buf , "%sª¯«Ë¹B¤¤¤F¤j¼ú¡M¤£¹L³Q½Ş³õ"
-                  "¦Ñ¤jµ¹¶Â¦Y¶Â¤F¡C", mob_name( NULL, ch ) );
+                sprintf( buf , "%sç‹—å±é‹ä¸­äº†å¤§çï¹ä¸éè¢«è±¬å ´"
+                  "è€å¤§çµ¦é»‘åƒé»‘äº†ã€‚", mob_name( NULL, ch ) );
 
                 talk_channel_2( buf, CHANNEL_GAMBLE, "" );
               }
@@ -419,7 +419,7 @@ void gamble_update( void )
 
           else
           {
-            act( "¯u©êºp¡M§Aªº$t³Q·í§@½Ş·|¦Ñ¤jªº°ù¦Ñ±C¥»¤F¡C"
+            act( "çœŸæŠ±æ­‰ï¹ä½ çš„$tè¢«ç•¶ä½œè±¬æœƒè€å¤§çš„å¨¶è€å©†æœ¬äº†ã€‚"
               , ch, return_horse_name( gamble ), NULL, TO_CHAR );
           }
         }
@@ -429,15 +429,15 @@ void gamble_update( void )
     RETURN_NULL();
   }
 
-  /* ¶}©l¤Uª` */
+  /* é–‹å§‹ä¸‹æ³¨ */
   if ( gamble_tick == 2 )
   {
-    talk_channel_2( "öt½Ş¤ñÁÉ¤S¶}©l¤F¡M½Ğ¦U¦ì¤j·İ¤Uª`§a¡C"
+    talk_channel_2( "é£†è±¬æ¯”è³½åˆé–‹å§‹äº†ï¹è«‹å„ä½å¤§çˆºä¸‹æ³¨å§ã€‚"
       , CHANNEL_GAMBLE, "" );
     RETURN_NULL();
   }
 
-  /* ¤Uª`®É¶¡, ¨Ã¥BÀH¾÷°e¥X¤Uª`ªº°T®§ */
+  /* ä¸‹æ³¨æ™‚é–“, ä¸¦ä¸”éš¨æ©Ÿé€å‡ºä¸‹æ³¨çš„è¨Šæ¯ */
   if ( gamble_tick < 5 && gamble_tick > 2 )
   {
     talk_channel_2(
@@ -447,25 +447,25 @@ void gamble_update( void )
     RETURN_NULL();
   }
 
-  /* ¶}©löt½Ş */
+  /* é–‹å§‹é£†è±¬ */
   if ( gamble_tick == 5 )
   {
-    /* §â¨C¤@°¦°¨ªº¶]ªº¨B¼Æ²M°£¬°¹s */
+    /* æŠŠæ¯ä¸€éš»é¦¬çš„è·‘çš„æ­¥æ•¸æ¸…é™¤ç‚ºé›¶ */
     for ( loop = 0; loop < MAX_HORSES; loop++ ) horse_step[loop] = 0;
 
-    talk_channel_2( "¤£¯à¦A¤Uª`¤F¡M¶}©löt½Ş¤F¡C", CHANNEL_GAMBLE, "" );
+    talk_channel_2( "ä¸èƒ½å†ä¸‹æ³¨äº†ï¹é–‹å§‹é£†è±¬äº†ã€‚", CHANNEL_GAMBLE, "" );
     RETURN_NULL();
   }
 
-  /* µ²§ôöt½Ş */
+  /* çµæŸé£†è±¬ */
   if ( gamble_tick == 8 )
   {
-    /* §âöt½Şªºµ²ªG±Æ¤@¤U¶¶§Ç */
+    /* æŠŠé£†è±¬çš„çµæœæ’ä¸€ä¸‹é †åº */
     gamble_order();
 
-    /* «Å§i¤ñÁÉµ²§ô, ¨Ã¥B¤½§G¦W¦¸ */
+    /* å®£å‘Šæ¯”è³½çµæŸ, ä¸¦ä¸”å…¬ä½ˆåæ¬¡ */
     clear_stack();
-    send_to_stack( "öt½Ş¦W¦¸¬O " );
+    send_to_stack( "é£†è±¬åæ¬¡æ˜¯ " );
 
     for ( loop = 0; loop < MAX_HORSES; loop++ )
     {
@@ -477,10 +477,10 @@ void gamble_update( void )
 
     talk_channel_2( return_stack(), CHANNEL_GAMBLE, "" );
 
-    /* ²Ä¤@¦Wªº½Ş§â°O¿ı¥[¤@ */
+    /* ç¬¬ä¸€åçš„è±¬æŠŠè¨˜éŒ„åŠ ä¸€ */
     horse_data[ horse_order[0] ]++;
 
-    /* §â°O¼Æ¾¹Âk¹s, ¤U¤@³¡´N¬Oµo©ñ¼úª÷ */
+    /* æŠŠè¨˜æ•¸å™¨æ­¸é›¶, ä¸‹ä¸€éƒ¨å°±æ˜¯ç™¼æ”¾çé‡‘ */
     gamble_tick = -1;
 
     RETURN_NULL();
@@ -488,7 +488,7 @@ void gamble_update( void )
   RETURN_NULL();
 }
 
-/* §â½Ş¶]ªº¶¶§Ç±Æ¦C¤@¤U */
+/* æŠŠè±¬è·‘çš„é †åºæ’åˆ—ä¸€ä¸‹ */
 void gamble_order( void )
 {
   int horse_temp[ MAX_HORSES ];
@@ -523,7 +523,7 @@ void gamble_order( void )
   RETURN_NULL();
 }
 
-/* ¶Ç¦^¶Rªº±m¨÷ªº½Ş°¦¸¹½X */
+/* å‚³å›è²·çš„å½©å·çš„è±¬éš»è™Ÿç¢¼ */
 char * return_horse_name( GAMBLE_DATA * gamble )
 {
   int loop;
@@ -542,7 +542,7 @@ char * return_horse_name( GAMBLE_DATA * gamble )
   RETURN( return_stack() );
 }
 
-/* §R°£¬Yª±®aªº½ä³Õ¸ê®Æµ²ºc */
+/* åˆªé™¤æŸç©å®¶çš„è³­åšè³‡æ–™çµæ§‹ */
 void extract_gamble( CHAR_DATA * ch )
 {
   GAMBLE_DATA * temp;
@@ -552,7 +552,7 @@ void extract_gamble( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG , "¾P·´ª±®a½ä³Õ¸ê®Æ®É¤Hª«¬OªÅªº." );
+    mudlog( LOG_DEBUG , "éŠ·æ¯€ç©å®¶è³­åšè³‡æ–™æ™‚äººç‰©æ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
@@ -563,7 +563,7 @@ void extract_gamble( CHAR_DATA * ch )
     temp->format = -1;
     temp->mount  =  0;
 
-    /* ÄÀ©ñµ²ºcªº°O¾ĞÅé */
+    /* é‡‹æ”¾çµæ§‹çš„è¨˜æ†¶é«” */
     free_struct( temp , STRUCT_GAMBLE_DATA );
   }
 
@@ -571,7 +571,7 @@ void extract_gamble( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* ÀË¬d¬O§_©Mµ²ªG¤@¼Ë */
+/* æª¢æŸ¥æ˜¯å¦å’Œçµæœä¸€æ¨£ */
 int check_gamble( GAMBLE_DATA * gamble )
 {
   int loop;
@@ -593,7 +593,7 @@ int check_gamble( GAMBLE_DATA * gamble )
   RETURN ( multipile( right ) * gamble->mount );
 }
 
-/* ºâ¥X¥X¼úª÷ªº­¿¼Æ */
+/* ç®—å‡ºå‡ºçé‡‘çš„å€æ•¸ */
 int multipile( int number )
 {
   int loop;
@@ -601,7 +601,7 @@ int multipile( int number )
 
   PUSH_FUNCTION( "multipile" );
 
-  /* ¦pªG¤p©óµ¥©ó0 , ­¿¼Æ¬° 0 */
+  /* å¦‚æœå°æ–¼ç­‰æ–¼0 , å€æ•¸ç‚º 0 */
   if ( number <= 0 ) RETURN( 0 );
 
   count = 1;
@@ -612,7 +612,7 @@ int multipile( int number )
   RETURN( count );
 }
 
-/* ÀË¬d¶Rªº±m¨÷¬O§_¦³®Ä */
+/* æª¢æŸ¥è²·çš„å½©å·æ˜¯å¦æœ‰æ•ˆ */
 int check_gamble_valid( CHAR_DATA * ch , GAMBLE_DATA * gamble )
 {
   int           loop;

@@ -1,10 +1,10 @@
 Vnum            112
 Name            longan ring~
-ShortDesc       �s����~
+ShortDesc       龍眼戒~
 Description
-�@�u�ΤW���s���߻s�����٫��M�ݨӬO�������ˤl�T
+一只用上等龍眼心製成的戒指﹐看來是不錯的樣子﹗
 ~
-Unit            �u~
+Unit            只~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FINGER
 Takeable        Yes

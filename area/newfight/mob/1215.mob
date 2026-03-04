@@ -1,11 +1,11 @@
 Vnum            1215
 Name            soldier~
-ShortDesc       ���O�Ϊ��u��~
-LongDesc        ���O�Ϊ��u��(soldier).
+ShortDesc       打瞌睡的守衛~
+LongDesc        打瞌睡的守衛(soldier).
 ~
 Description
-���~��u�b�o�Ӫ��]�������Ǫ��M�@�ƺΤ����B�믫�������å�M��
-�̾a�b�}�f��I�I�j�ΡM�٥i�Hť�쥦ʡ�s���n���C
+長年把守在這個炎窟當中的怪物﹐一副睡不飽、精神散漫的傢伙﹐正
+依靠在洞口邊呼呼大睡﹐還可以聽到它吽叫的聲音。
 ~
 Sentinel        Yes
 StayArea        Yes

@@ -1,9 +1,9 @@
 Vnum            98
 Name            white gloves~
-ShortDesc       ¥Õ·T¤â®M~
+ShortDesc       ç™½æ„æ‰‹å¥—~
 Description
-¤W¦n¥Õº÷²VµÛ³·Åúµ·»s¦¨ªº¤â®M(gloves)¡M¥i©è¾×¤@¯ë§L¾¹ªº§ğÀ»¡C~
-Unit            Âù~
+ä¸Šå¥½ç™½ç¶¢æ··è‘—é›ªè ¶çµ²è£½æˆçš„æ‰‹å¥—(gloves)ï¹å¯æŠµæ“‹ä¸€èˆ¬å…µå™¨çš„æ”»æ“Šã€‚~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HANDS
 Takeable        Yes

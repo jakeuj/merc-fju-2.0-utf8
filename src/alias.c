@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -15,26 +15,26 @@
 #include <string.h>
 #include "merc.h"
 
-/* ¥¨¶°³Ì¤j¥i¥H¦³´X­ÓÅÜ¼Æ */
+/* å·¨é›†æœ€å¤§å¯ä»¥æœ‰å¹¾å€‹è®Šæ•¸ */
 #define MAX_VARIABLE              4
 
-/* ¨C¤@¦ìª±®a¥¨¶°³Ì¦h¥i¥H¦³´X­Ó */
+/* æ¯ä¸€ä½çŽ©å®¶å·¨é›†æœ€å¤šå¯ä»¥æœ‰å¹¾å€‹ */
 #define MAX_ALIAS_COUNT           30
 
-/* ¨C¤@¦ìª±®a³Ì¦h¥¨¶°¥i¥H­«½Æ´X¦¸ */
+/* æ¯ä¸€ä½çŽ©å®¶æœ€å¤šå·¨é›†å¯ä»¥é‡è¤‡å¹¾æ¬¡ */
 #define MAX_ALIAS_REPEAT          15
 
 int     max_alias       = MAX_ALIAS_COUNT;
 int     alias_repeat    = MAX_ALIAS_REPEAT;
 
-/* °Ï°ì¨ç¼Æ */
+/* å€åŸŸå‡½æ•¸ */
 bool extract_an_alias           args( ( CHAR_DATA * , char * ) );
 bool check_alias_legal          args( ( char * ) );
 void alias_spooler_full         args( ( DESCRIPTOR_DATA * ) );
 void expand_alias_spooler       args( ( DESCRIPTOR_DATA * ) );
 extern bool write_to_descriptor args( ( DESCRIPTOR_DATA *, char * , int ) );
 
-/* ¥¨¶°«ü¥Oªº®Ö¤ß */
+/* å·¨é›†æŒ‡ä»¤çš„æ ¸å¿ƒ */
 FUNCTION( do_alias )
 {
   CHAR_DATA  * victim;
@@ -45,17 +45,17 @@ FUNCTION( do_alias )
 
   PUSH_FUNCTION( "do_alias" );
 
-  /* ¦pªG¤£¬Oª±®a¤@©w¨S¦³¥¨¶°«ü¥O¶° */
+  /* å¦‚æžœä¸æ˜¯çŽ©å®¶ä¸€å®šæ²’æœ‰å·¨é›†æŒ‡ä»¤é›† */
   if ( !ch || IS_NPC( ch ) ) RETURN_NULL();
 
-  /* §â ~ ³o­Ó²Å¸¹µ¹®ø°£, §_«h¦sÀÉ¤§«áÅªÀÉ·|¦³°ÝÃD */
+  /* æŠŠ ~ é€™å€‹ç¬¦è™Ÿçµ¦æ¶ˆé™¤, å¦å‰‡å­˜æª”ä¹‹å¾Œè®€æª”æœƒæœ‰å•é¡Œ */
   smash_tilde( argument );
 
-  /* ®»¥X¤Þ¼Æ */
+  /* æ‰å‡ºå¼•æ•¸ */
   argument = one_argument( argument, arg );
   for ( ; *argument == ' '; argument++ );
 
-  /* ¨S¦³¤Þ¼Æ´N¬OÆ[¬Ý¦Û¤v©Ò¦³ªº¥¨¶°«ü¥O */
+  /* æ²’æœ‰å¼•æ•¸å°±æ˜¯è§€çœ‹è‡ªå·±æ‰€æœ‰çš„å·¨é›†æŒ‡ä»¤ */
   if ( !arg[0] || arg[0] == '!' )
   {
     if ( arg[0] == '\x0' )
@@ -65,26 +65,26 @@ FUNCTION( do_alias )
 
     else if ( arg[1] == '\x0' )
     {
-      send_to_char( "§A­n¬Ý½Öªº¥¨¶°«ü¥O©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦çœ‹èª°çš„å·¨é›†æŒ‡ä»¤å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
     else
     {
       if ( !( victim = get_char_world( ch, arg + 1 ) ) )
       {
-        act( "§ä¤£¨ì³o¤@¸¹¤Hª« $2$T$0 ­C¡T", ch, NULL, arg+1, TO_CHAR );
+        act( "æ‰¾ä¸åˆ°é€™ä¸€è™Ÿäººç‰© $2$T$0 è€¶ï¹—", ch, NULL, arg+1, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( IS_NPC( victim ) )
       {
-        act( "$N¬O¨S¦³¥¨¶°«ü¥Oªº¡T", ch, NULL, victim, TO_CHAR );
+        act( "$Næ˜¯æ²’æœ‰å·¨é›†æŒ‡ä»¤çš„ï¹—", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( !biliwick( ch, victim ) )
       {
-        act( "§AªºÅv¤O¤£°÷¬Ý$Nªº¥¨¶°«ü¥O¡C", ch, NULL, victim, TO_CHAR );
+        act( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹$Nçš„å·¨é›†æŒ‡ä»¤ã€‚", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
@@ -93,7 +93,7 @@ FUNCTION( do_alias )
     for ( count = 0, pAlias = victim->alias; pAlias; pAlias = pAlias->next )
     {
       count++;
-      send_to_buffer( "%s§â {%s} ´À¥N¦¨ {%s}\n\r"
+      send_to_buffer( "%sæŠŠ {%s} æ›¿ä»£æˆ {%s}\n\r"
         , mob_name( ch, victim ), pAlias->text , pAlias->macro );
 
       if ( buffer_full() ) break;
@@ -102,12 +102,12 @@ FUNCTION( do_alias )
     if ( count == 0 )
     {
       send_to_buffer(
-        "%s¥Ø«e¨S¦³¥ô¦óªº¥¨¶°«ü¥O\n\r¦pªG·Q­nª¾¹D¦p¦ó¨Ï¥Î¥¨¶°¡M"
-        "½Ð¿é¤J alias /?¡C\n\r", mob_name( victim, ch ) );
+        "%sç›®å‰æ²’æœ‰ä»»ä½•çš„å·¨é›†æŒ‡ä»¤\n\rå¦‚æžœæƒ³è¦çŸ¥é“å¦‚ä½•ä½¿ç”¨å·¨é›†ï¹"
+        "è«‹è¼¸å…¥ alias /?ã€‚\n\r", mob_name( victim, ch ) );
     }
     else
     {
-      send_to_buffer( "\n\r%sÁ`¦@¦³ %d ­Ó¥¨¶°«ü¥O¡T\n\r"
+      send_to_buffer( "\n\r%sç¸½å…±æœ‰ %d å€‹å·¨é›†æŒ‡ä»¤ï¹—\n\r"
         , mob_name( victim, ch ), count );
     }
 
@@ -115,68 +115,68 @@ FUNCTION( do_alias )
     RETURN_NULL();
   }
 
-  /* ²M°£©Ò¦³ªº¥¨¶°«ü¥O¶° */
+  /* æ¸…é™¤æ‰€æœ‰çš„å·¨é›†æŒ‡ä»¤é›† */
   if ( arg[0] == '-' )
   {
     extract_alias( ch );
-    send_to_char( "§A²M°£¾ã­Ó¥¨¶°«ü¥O©w¸q¡C\n\r" , ch );
+    send_to_char( "ä½ æ¸…é™¤æ•´å€‹å·¨é›†æŒ‡ä»¤å®šç¾©ã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* ­Y¥u¦³¤Þ¼Æ¤@«h¬O²M°£¬Û¦Pªº¥¨¶°«ü¥O¶° */
+  /* è‹¥åªæœ‰å¼•æ•¸ä¸€å‰‡æ˜¯æ¸…é™¤ç›¸åŒçš„å·¨é›†æŒ‡ä»¤é›† */
   if ( !argument[0] )
   {
     if ( extract_an_alias( ch , arg ) )
-      act( "¤w¸g§â {$t} ²¾°£¤F¡C", ch , arg, NULL, TO_CHAR );
+      act( "å·²ç¶“æŠŠ {$t} ç§»é™¤äº†ã€‚", ch , arg, NULL, TO_CHAR );
 
     else
-      act( "¨Ã¥¼§ä¨ì¥ô¦ó»P {$t} ¬Û¦Pªº¥¨¶°¡C", ch, arg, NULL, TO_CHAR );
+      act( "ä¸¦æœªæ‰¾åˆ°ä»»ä½•èˆ‡ {$t} ç›¸åŒçš„å·¨é›†ã€‚", ch, arg, NULL, TO_CHAR );
 
     RETURN_NULL();
   }
 
-  /* ¦P®É¦³¤Þ¼Æ¤@©M¤Þ¼Æ¤G«h¬O¿é¤J¥¨¶°, ¦ý¬O¤Þ¼Æ¤@©M¤Þ¼Æ¤G¤£¯à¬Û¦P */
+  /* åŒæ™‚æœ‰å¼•æ•¸ä¸€å’Œå¼•æ•¸äºŒå‰‡æ˜¯è¼¸å…¥å·¨é›†, ä½†æ˜¯å¼•æ•¸ä¸€å’Œå¼•æ•¸äºŒä¸èƒ½ç›¸åŒ */
   if ( !str_cmp( arg , argument ) )
   {
-    send_to_char( "«ü¥O©M¥¨¶°¬Û¦P·|¾É­PµL½a¦^°é¡C\n\r" , ch );
+    send_to_char( "æŒ‡ä»¤å’Œå·¨é›†ç›¸åŒæœƒå°Žè‡´ç„¡çª®å›žåœˆã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¥¨¶°«ü¥O¶°¬O§_¦Xªk */
+  /* æª¢æŸ¥å·¨é›†æŒ‡ä»¤é›†æ˜¯å¦åˆæ³• */
   if ( !check_alias_legal( arg ) || arg[0] == '!' )
   {
-    send_to_char( "¤£¯à¨Ï¥Î«ü¥O·í§@¨Ó·½©R¥O¥¨¶°¡C\n\r" , ch );
+    send_to_char( "ä¸èƒ½ä½¿ç”¨æŒ‡ä»¤ç•¶ä½œä¾†æºå‘½ä»¤å·¨é›†ã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¥¨¶°¬O§_¦³­«½Æ, ­Y­«½Æ«h¶i¦æ¨ú¥N */
+  /* æª¢æŸ¥å·¨é›†æ˜¯å¦æœ‰é‡è¤‡, è‹¥é‡è¤‡å‰‡é€²è¡Œå–ä»£ */
   for ( pAlias = ch->alias ; pAlias; pAlias = pAlias->next )
   {
     if ( !str_cmp( pAlias->text, arg ) )
     {
       str_cpy( pAlias->macro , argument );
-      act( "§A§â {$t} §ó§ï´À¥N¦¨ {$T}¡C"
+      act( "ä½ æŠŠ {$t} æ›´æ”¹æ›¿ä»£æˆ {$T}ã€‚"
         ,ch , pAlias->text , pAlias->macro, TO_CHAR );
 
       RETURN_NULL();
     }
   }
 
-  /* ÀË¬dª±®a¥¨¶°«ü¥O¶°¬O§_¤Ó¦h */
+  /* æª¢æŸ¥çŽ©å®¶å·¨é›†æŒ‡ä»¤é›†æ˜¯å¦å¤ªå¤š */
   if ( ( get_alias_count( ch ) > max_alias ) && !IS_IMMORTAL( ch ) )
   {
-    act( "§Aªº¥¨¶°«ü¥O¶W¹L$i­Ó¡MµLªk¦A¼W¥[¡C" , ch, &max_alias, NULL, TO_CHAR );
+    act( "ä½ çš„å·¨é›†æŒ‡ä»¤è¶…éŽ$iå€‹ï¹ç„¡æ³•å†å¢žåŠ ã€‚" , ch, &max_alias, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( str_len( arg      ) >= sizeof( arg ) - 1
     || str_len( argument ) >= sizeof( arg ) - 1 )
   {
-    send_to_char( "§Aªº¥¨¶°ªø«×¤£¦Xªk¡C\n\r", ch );
+    send_to_char( "ä½ çš„å·¨é›†é•·åº¦ä¸åˆæ³•ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
-  /* °t¸m¥¨¶°«ü¥Oµ²ºcªº°O¾ÐÅé */
+  /* é…ç½®å·¨é›†æŒ‡ä»¤çµæ§‹çš„è¨˜æ†¶é«” */
   pAlias = alloc_struct( STRUCT_ALIAS_DATA );
 
   str_cpy( pAlias->text , arg      );
@@ -188,11 +188,11 @@ FUNCTION( do_alias )
   if ( !zAlias ) ch->alias    = pAlias;
   else           zAlias->next = pAlias;
 
-  act( "§A§â {$t} ´À¥N¦¨ {$T}¡C", ch, pAlias->text , pAlias->macro, TO_CHAR );
+  act( "ä½ æŠŠ {$t} æ›¿ä»£æˆ {$T}ã€‚", ch, pAlias->text , pAlias->macro, TO_CHAR );
   RETURN_NULL();
 }
 
-/* ¶Ç¦^¬Y¤Hª«ªº¥¨¶°«ü¥O­Ó¼Æ */
+/* å‚³å›žæŸäººç‰©çš„å·¨é›†æŒ‡ä»¤å€‹æ•¸ */
 int get_alias_count( CHAR_DATA * ch )
 {
   ALIAS_DATA * pAlias;
@@ -205,7 +205,7 @@ int get_alias_count( CHAR_DATA * ch )
   RETURN( count );
 }
 
-/* ¾P·´©Ò¦³ªº¥¨¶° */
+/* éŠ·æ¯€æ‰€æœ‰çš„å·¨é›† */
 void extract_alias( CHAR_DATA * ch )
 {
   ALIAS_DATA * pAlias;
@@ -215,7 +215,7 @@ void extract_alias( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG , "extract_alias: ¾P·´¥¨¶°®É, ¤Hª«¬OªÅªº." );
+    mudlog( LOG_DEBUG , "extract_alias: éŠ·æ¯€å·¨é›†æ™‚, äººç‰©æ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
@@ -229,7 +229,7 @@ void extract_alias( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* ¾P·´³æ¤@ªº¥¨¶° */
+/* éŠ·æ¯€å–®ä¸€çš„å·¨é›† */
 bool extract_an_alias( CHAR_DATA * ch , char * arg )
 {
   ALIAS_DATA * temp;
@@ -239,7 +239,7 @@ bool extract_an_alias( CHAR_DATA * ch , char * arg )
 
   if ( !ch || !arg || !*arg )
   {
-    mudlog( LOG_DEBUG, "extract_an_alias: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "extract_an_alias: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -258,7 +258,7 @@ bool extract_an_alias( CHAR_DATA * ch , char * arg )
   RETURN( FALSE );
 }
 
-/* §â¥¨¶°«ü¥OÂ½Ä¶¦¨«ü¥O¶° */
+/* æŠŠå·¨é›†æŒ‡ä»¤ç¿»è­¯æˆæŒ‡ä»¤é›† */
 void translate_alias( DESCRIPTOR_DATA * d , char * input )
 {
   ALIAS_DATA * pAlias;
@@ -286,7 +286,7 @@ void translate_alias( DESCRIPTOR_DATA * d , char * input )
     {
       target_address = pAlias->macro;
 
-      /* ®»¥X©R¥O¦C¤¤ªº¤Þ¼Æ */
+      /* æ‰å‡ºå‘½ä»¤åˆ—ä¸­çš„å¼•æ•¸ */
       for ( loop = 0; loop < ( MAX_VARIABLE + 1 ) ; loop++ )
       {
         source_address  = source_command[ loop ];
@@ -346,7 +346,7 @@ void translate_alias( DESCRIPTOR_DATA * d , char * input )
   RETURN_NULL();
 }
 
-/* ÀË¬d¿é¤Jªº¥¨¶°©R¥O¬O§_¦Xªk */
+/* æª¢æŸ¥è¼¸å…¥çš„å·¨é›†å‘½ä»¤æ˜¯å¦åˆæ³• */
 bool check_alias_legal( char * input )
 {
   SOCIAL_DATA * social;
@@ -363,27 +363,27 @@ bool check_alias_legal( char * input )
   RETURN( TRUE );
 }
 
-/* ¥¨¶°«ü¥O¾É­P¿é¤J½w½Ä°Ïº¡¸ü */
+/* å·¨é›†æŒ‡ä»¤å°Žè‡´è¼¸å…¥ç·©è¡å€æ»¿è¼‰ */
 void alias_spooler_full( DESCRIPTOR_DATA * d )
 {
   PUSH_FUNCTION( "alias_spooler_full" );
 
   if ( !d )
   {
-    mudlog( LOG_DEBUG, "alias_spooler_full: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "alias_spooler_full: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
-  mudlog( LOG_INFO , "[WARN] %s ¥¨¶°«ü¥O¤Óªø¾É­P¿é¤J½w½Ä°Ï¤wº¡."
+  mudlog( LOG_INFO , "[WARN] %s å·¨é›†æŒ‡ä»¤å¤ªé•·å°Žè‡´è¼¸å…¥ç·©è¡å€å·²æ»¿."
     , d->character->name );
 
-  write_to_descriptor( d, "\n\r§A¥¨¶°«ü¥O¤Óªø¾É­P¿é¤J½w½Ä°Ï¤wº¡¡C\n\r", 0 );
+  write_to_descriptor( d, "\n\rä½ å·¨é›†æŒ‡ä»¤å¤ªé•·å°Žè‡´è¼¸å…¥ç·©è¡å€å·²æ»¿ã€‚\n\r", 0 );
 
   str_cpy( d->incomm, "quit\0" );
   RETURN_NULL();
 }
 
-/* ÂX®i¥¨¶°«ü¥O¶° */
+/* æ“´å±•å·¨é›†æŒ‡ä»¤é›† */
 void expand_alias_spooler( DESCRIPTOR_DATA * d )
 {
   char   arg[ MAX_STRING_LENGTH * 2 ];
@@ -431,18 +431,18 @@ void expand_alias_spooler( DESCRIPTOR_DATA * d )
 
   if ( ++d->alias_repeat > alias_repeat )
   {
-    mudlog( LOG_INFO , "[WARN] %s ¥¨¶°«ü¥O­«½Æ¦¸¼Æ¤Ó¦h, ±j¨îÂ_½u.",
+    mudlog( LOG_INFO , "[WARN] %s å·¨é›†æŒ‡ä»¤é‡è¤‡æ¬¡æ•¸å¤ªå¤š, å¼·åˆ¶æ–·ç·š.",
       d->character->name );
 
     write_to_descriptor( d,
-      "\n\r§A¤@ª½°õ¦æ¥¨¶°¡M¨t²Î°ò©ó¦w¥þ¡M±j¨î§AÂ_½u¡T\n\r", 0 );
+      "\n\rä½ ä¸€ç›´åŸ·è¡Œå·¨é›†ï¹ç³»çµ±åŸºæ–¼å®‰å…¨ï¹å¼·åˆ¶ä½ æ–·ç·šï¹—\n\r", 0 );
 
     str_cpy( d->incomm, "quit\0" );
     RETURN_NULL();
   }
 
-  write_to_descriptor( d, "\e[1;37m§Aªº¥¨¶°«ü¥O¶}©l­pºâ¹B§@¡M"
-    "­Y¬O³´¤JµL½a°j°é»°§Ö¿é¤J alias -¡C\e[0m\n\r" , 0 );
+  write_to_descriptor( d, "\e[1;37mä½ çš„å·¨é›†æŒ‡ä»¤é–‹å§‹è¨ˆç®—é‹ä½œï¹"
+    "è‹¥æ˜¯é™·å…¥ç„¡çª®è¿´åœˆè¶•å¿«è¼¸å…¥ alias -ã€‚\e[0m\n\r" , 0 );
   str_cat( d->inbuf , arg );
   d->incomm[0] =   ' ';
   d->incomm[1] = '\x0';

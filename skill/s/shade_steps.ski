@@ -1,5 +1,5 @@
 Name            shade steps~
-Cname           ���P�B~
+Cname           換星步~
 Slot            SLOT_SHADE_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,7 +38,7 @@ Help            ~
 
 #Damage
 Description
-$n���v�L�ʡM�w�g�Ǥ@�ۡy$P�P���|��$Z�z¶��$N�|�P�Φ��|�Ӥۼv�C~
+$n身影微動﹐已經藉一招『$P星光四散$Z』繞到$N四周形成四個幻影。~
 Chance          20
 Value           20
 Parry           0
@@ -47,7 +47,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Τ@��ϥX�y$P���}�P��$Z�z���ɤH�������פF�}�h�M$N�����F�ۼv�C~
+$n身形一轉使出『$P紅鸞星動$Z』瞬時人離原位而避了開去﹐$N擊中了幻影。~
 Chance          20
 Value           20
 Parry           0
@@ -56,7 +56,7 @@ Innate          0 0
 End
 #Damage
 Description
-�u��$n���v�@�̧Y���M�@���y$P�y�P����$Z�z�w�ۤƦb�T�V���~�C~
+只見$n身影一晃即失﹐一式『$P流星趕月$Z』已幻化在三丈之外。~
 Chance          20
 Value           20
 Parry           0
@@ -65,17 +65,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�y$P����P��$Z�z�M$N����������Q�ƸѡM$n�q�e�����a�{�L�C~
-Chance          20
-Value           20
-Parry           0
-Situs           ATTACK_RANDOM
-Innate          0 0
-End
-
-#Damage
-Description
-$n�ϥX�@�ۡy$P�P�H����$Z�z�M���l�H$N��������y�����ƤF�}�h�C~
+$n使出『$P斗轉星移$Z』﹐$N之攻勢瞬間被化解﹐$n從容不迫地閃過。~
 Chance          20
 Value           20
 Parry           0
@@ -85,7 +75,17 @@ End
 
 #Damage
 Description
-$n���ηL�̩����C�Ӥۼv�M$N�x�b���w�ӧ������~�M���O�@�ۡy$P�ۤƤC�P$Z�z�C~
+$n使出一招『$P星隨氣轉$Z』﹐身子隨$N攻擊之氣流輕輕飄了開去。~
+Chance          20
+Value           20
+Parry           0
+Situs           ATTACK_RANDOM
+Innate          0 0
+End
+
+#Damage
+Description
+$n身形微晃忽成七個幻影﹐$N困惑不已而攻擊失誤﹐正是一招『$P幻化七星$Z』。~
 Chance          20
 Value           20
 Parry           0
@@ -94,8 +94,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�H�v�����M�𨣵L�ƬP�~��¶�b$N�P��M��$N�����f�b�M�����ұ��M�o���O�۬P�B
-��بB�k-�y$P�Pù�ѥ�$Z�z�C~
+$n人影忽滅﹐突見無數星芒環繞在$N周圍﹐使$N目瞪口呆﹐不知所措﹐這正是幻星步
+精華步法-『$P星羅棋布$Z』。~
 Chance          20
 Value           20
 Parry           0

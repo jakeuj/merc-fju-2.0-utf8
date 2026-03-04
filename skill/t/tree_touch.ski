@@ -1,5 +1,5 @@
 Name            tree touch~
-Cname           §¯¾ğ¤§Ä²~
+Cname           å¦–æ¨¹ä¹‹è§¸~
 Slot            SLOT_TREE_TOUCH
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -30,7 +30,7 @@ Help
 ~
 #Damage
 Description
-$n¹ïµÛ$N¨Ï¥X¡u§¯¾ğ¤§Ä²¡v¡A±N$Nºòºò§ì¦í¡C~
+$nå°è‘—$Nä½¿å‡ºã€Œå¦–æ¨¹ä¹‹è§¸ã€ï¼Œå°‡$Nç·Šç·ŠæŠ“ä½ã€‚~
 Chance		20
 Value           20
 Parry           0

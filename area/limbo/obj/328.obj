@@ -1,9 +1,9 @@
 Vnum            328
 Name            cure critical book~
-ShortDesc       ·¥«×ªvÀø¯µÓD~
+ShortDesc       æ¥µåº¦æ²»ç™‚ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

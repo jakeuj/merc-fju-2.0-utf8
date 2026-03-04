@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -39,7 +39,7 @@ FUNCTION( do_hero )
   {
     if ( !hero_first )
     {
-      act( "$tÁÙ¨S¦³²£¥Í¥ô¦ó­^¶¯­C¡T", ch, mud_name, NULL, TO_CHAR );
+      act( "$té‚„æ²’æœ‰ç”¢ç”Ÿä»»ä½•è‹±é›„è€¶ï¹—", ch, mud_name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -53,8 +53,8 @@ FUNCTION( do_hero )
     }
 
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m½s¸¹ ­^  ¤å ¦W ºÙ Â¾  ·~ ¤¤    ¤å    ¦W    ºÙ"
-      " ¦¨¦W®É¶¡                          \e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mç·¨è™Ÿ è‹±  æ–‡ å ç¨± è·  æ¥­ ä¸­    æ–‡    å    ç¨±"
+      " æˆåæ™‚é–“                          \e[0m\n\r" );
 
     for ( loop = 0, pHero = hero_first; pHero; pHero = pHero->next, loop++ )
     {
@@ -75,8 +75,8 @@ FUNCTION( do_hero )
       chinese_number( sTime->tm_hour > 12
         ? sTime->tm_hour - 12 : sTime->tm_hour, buf4 );
 
-      sprintf( timebuf, "%s¦~%s¤ë%s¸¹%s%sÂI%s¤À"
-        , buf1, buf2, buf3, sTime->tm_hour < 12 ? "¦­¤W" : "¤U¤È", buf4, buf5 );
+      sprintf( timebuf, "%så¹´%sæœˆ%sè™Ÿ%s%sé»%såˆ†"
+        , buf1, buf2, buf3, sTime->tm_hour < 12 ? "æ—©ä¸Š" : "ä¸‹åˆ", buf4, buf5 );
 
       timebuf[34] = '\x0';
 
@@ -98,19 +98,19 @@ FUNCTION( do_hero )
 
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "§A­n¼W¥[­ş¤@¦ìª±®a¬°­^¶¯©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦å¢åŠ å“ªä¸€ä½ç©å®¶ç‚ºè‹±é›„å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_world( ch, arg ) ) )
     {
-      act( "§ä¤£¨ì§A­n¤É®æªº¤H $2$T$0¡C", ch, NULL, arg, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ è¦å‡æ ¼çš„äºº $2$T$0ã€‚", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( IS_NPC( victim ) )
     {
-      act( "§A¤£¯à§â©Çª«$N¤É®æ¬°­^¶¯¡C", ch, NULL, victim, TO_CHAR );
+      act( "ä½ ä¸èƒ½æŠŠæ€ªç‰©$Nå‡æ ¼ç‚ºè‹±é›„ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -118,24 +118,24 @@ FUNCTION( do_hero )
     {
       if ( !str_cmp( pHero->name, victim->name ) )
       {
-        act( "$N¤w¸g¦b­^¶¯º]¸Ì¤F¡T", ch, NULL, victim, TO_CHAR );
+        act( "$Nå·²ç¶“åœ¨è‹±é›„æ¦œè£¡äº†ï¹—", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
 
     chinese_number( hero_count() + 1, buf1 );
-    sprintf( timebuf, "®¥ÁH%s¦¨¬°%s\e[0m²Ä%s¦ì­^¶¯¡T\n\r"
+    sprintf( timebuf, "æ­ç¦§%sæˆç‚º%s\e[0mç¬¬%sä½è‹±é›„ï¹—\n\r"
       , mob_name( NULL, victim ), mud_name, buf1 );
 
     send_to_all_char( timebuf );
 
-    act( "®¥ÁH§A¦¨¬°$t$0²Ä$T¦ì­^¶¯¡T", victim, mud_name, buf1, TO_CHAR );
-    if ( ch != victim ) send_to_char( "¼W¥[­^¶¯º]§¹¦¨¡C\n\r", ch );
+    act( "æ­ç¦§ä½ æˆç‚º$t$0ç¬¬$Tä½è‹±é›„ï¹—", victim, mud_name, buf1, TO_CHAR );
+    if ( ch != victim ) send_to_char( "å¢åŠ è‹±é›„æ¦œå®Œæˆã€‚\n\r", ch );
 
-    /* ¼W¥[­^¶¯ */
+    /* å¢åŠ è‹±é›„ */
     hero_add( victim );
 
-    /* ¼g¤JÀÉ®× */
+    /* å¯«å…¥æª”æ¡ˆ */
     update_hero();
   }
 
@@ -145,7 +145,7 @@ FUNCTION( do_hero )
 
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "§A­n§â­ş¤@¦ì½ğ¥X­^¶¯º]¥~¡S\n\r", ch );
+      send_to_char( "ä½ è¦æŠŠå“ªä¸€ä½è¸¢å‡ºè‹±é›„æ¦œå¤–ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -154,17 +154,17 @@ FUNCTION( do_hero )
 
     if ( !pHero )
     {
-      act( "¹ï¤£°_¡M­^¶¯º]¤º¨S¦³ $2$T$0¡T", ch, NULL, arg, TO_CHAR );
+      act( "å°ä¸èµ·ï¹è‹±é›„æ¦œå…§æ²’æœ‰ $2$T$0ï¹—", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* §R°£­^¶¯ */
+    /* åˆªé™¤è‹±é›„ */
     hero_remove( pHero );
 
-    /* ¼g¤JÀÉ®× */
+    /* å¯«å…¥æª”æ¡ˆ */
     update_hero();
 
-    send_to_char( "§R°£­^¶¯¡T\n\r", ch );
+    send_to_char( "åˆªé™¤è‹±é›„ï¹—\n\r", ch );
 
     for ( victim = char_list; victim; victim = victim->next )
     {
@@ -172,7 +172,7 @@ FUNCTION( do_hero )
         && !IS_NPC( victim )
         && !str_cmp( victim->name, arg ) )
       {
-        send_to_char( "¹ï¤£°_¡M§A³Q½ğ¥X­^¶¯º]¥~¤F¡T\n\r", victim );
+        send_to_char( "å°ä¸èµ·ï¹ä½ è¢«è¸¢å‡ºè‹±é›„æ¦œå¤–äº†ï¹—\n\r", victim );
         break;
       }
     }
@@ -180,7 +180,7 @@ FUNCTION( do_hero )
 
   else
   {
-    send_to_char( "»yªk¿ù»~¡M½Ğ¬d¸ß \e[1;32mhero\e[0m ¥¿½Tªº¥Îªk¡C\n\r", ch );
+    send_to_char( "èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ \e[1;32mhero\e[0m æ­£ç¢ºçš„ç”¨æ³•ã€‚\n\r", ch );
   }
   RETURN_NULL();
 }
@@ -195,7 +195,7 @@ size_t hero_count( void )
   RETURN( count );
 }
 
-/* ¼W¥[©Î¬O¨ú¥N */
+/* å¢åŠ æˆ–æ˜¯å–ä»£ */
 void hero_add( CHAR_DATA * ch )
 {
   HERO_DATA * pHero;
@@ -204,15 +204,15 @@ void hero_add( CHAR_DATA * ch )
 
   if ( !ch || IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "hero_add: ¨Ó·½¦³¿ù»~." );
+    mudlog( LOG_DEBUG, "hero_add: ä¾†æºæœ‰éŒ¯èª¤." );
     RETURN_NULL();
   }
 
-  /* ´M§ä¬O§_¤w¸g¦³¹L¤F */
+  /* å°‹æ‰¾æ˜¯å¦å·²ç¶“æœ‰éäº† */
   for ( pHero = hero_first; pHero; pHero = pHero->next )
     if ( !str_cmp( pHero->name, ch->name ) ) break;
 
-  /* ¦³«h¶i¦æ¨ú¥N */
+  /* æœ‰å‰‡é€²è¡Œå–ä»£ */
   if ( pHero )
   {
     free_string( pHero->name  );
@@ -225,10 +225,10 @@ void hero_add( CHAR_DATA * ch )
     pHero->timer = time( NULL );
   }
 
-  /* ¤£µM°t¸m¤@­Ó·sªº */
+  /* ä¸ç„¶é…ç½®ä¸€å€‹æ–°çš„ */
   else
   {
-    /* §ä¥X³Ì«á¤@­Ó */
+    /* æ‰¾å‡ºæœ€å¾Œä¸€å€‹ */
     for ( pHero = hero_first; pHero; pHero = pHero->next ) hero_last = pHero;
 
     pHero        = alloc_struct( STRUCT_HERO_DATA );
@@ -247,7 +247,7 @@ void hero_add( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* ²¾°£­^¶¯¸ê®Æ */
+/* ç§»é™¤è‹±é›„è³‡æ–™ */
 void hero_remove( HERO_DATA * pHero )
 {
   HERO_DATA * aHero;
@@ -257,7 +257,7 @@ void hero_remove( HERO_DATA * pHero )
 
   if ( !pHero )
   {
-    mudlog( LOG_DEBUG, "hero_remove: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "hero_remove: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -279,11 +279,11 @@ void hero_remove( HERO_DATA * pHero )
     }
   }
 
-  mudlog( LOG_DEBUG, "hero_remove: ¥¼µo²{¨ì±ı§R°£ªº­^¶¯." );
+  mudlog( LOG_DEBUG, "hero_remove: æœªç™¼ç¾åˆ°æ¬²åˆªé™¤çš„è‹±é›„." );
   RETURN_NULL();
 }
 
-/* ¼g¤JÀÉ®× */
+/* å¯«å…¥æª”æ¡ˆ */
 void update_hero( void )
 {
   HERO_DATA * pHero;
@@ -293,7 +293,7 @@ void update_hero( void )
 
   if ( !( pFile = FOPEN( hero_file, "w" ) ) )
   {
-    mudlog( LOG_DEBUG, "update_hero: µLªk¼g¤J­^¶¯ÀÉ®×%s.", hero_file );
+    mudlog( LOG_DEBUG, "update_hero: ç„¡æ³•å¯«å…¥è‹±é›„æª”æ¡ˆ%s.", hero_file );
     RETURN_NULL();
   }
 
@@ -317,7 +317,7 @@ void check_hero( char * name )
 
   if ( !name || !*name )
   {
-    mudlog( LOG_DEBUG, "check_hero: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "check_hero: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -325,10 +325,10 @@ void check_hero( char * name )
   {
     if ( !str_cmp( pHero->name, name ) )
     {
-      /* §R°£­^¶¯ */
+      /* åˆªé™¤è‹±é›„ */
       hero_remove( pHero );
 
-      /* ¼g¤JÀÉ®× */
+      /* å¯«å…¥æª”æ¡ˆ */
       update_hero();
 
       RETURN_NULL();
@@ -338,7 +338,7 @@ void check_hero( char * name )
   RETURN_NULL();
 }
 
-/* ¼W¥[Äİ©Ê */
+/* å¢åŠ å±¬æ€§ */
 void add_hero_bonus( CHAR_DATA * ch )
 {
   int          loop;
@@ -352,7 +352,7 @@ void add_hero_bonus( CHAR_DATA * ch )
 
   if ( !ch || !( pClass = ch->class ) )
   {
-    mudlog( LOG_DEBUG, "add_hero_bonus: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "add_hero_bonus: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -361,7 +361,7 @@ void add_hero_bonus( CHAR_DATA * ch )
   if ( HeroFirman > 0 )
   {
     chinese_number( add_firman( ch, HeroFirman ), buf );
-    act( "¨t²Î®¥ÁH§A¤É¨ì­^¶¯¡M©Ò¥H°e§A$t±i§K¦ºª÷µP¡C", ch, buf, NULL, TO_CHAR );
+    act( "ç³»çµ±æ­ç¦§ä½ å‡åˆ°è‹±é›„ï¹æ‰€ä»¥é€ä½ $tå¼µå…æ­»é‡‘ç‰Œã€‚", ch, buf, NULL, TO_CHAR );
   }
 
   for ( loop = 0; loop < MAX_ATTR; loop++ )
@@ -378,7 +378,7 @@ void add_hero_bonus( CHAR_DATA * ch )
         ch->now_str = UMIN( max, old + value );
 
         if ( ch->now_str > old )
-          send_to_char( "®¥ÁH§A¡M§Aªº¤O¶qÅÜ¤j¤F¡T\n\r", ch );
+          send_to_char( "æ­ç¦§ä½ ï¹ä½ çš„åŠ›é‡è®Šå¤§äº†ï¹—\n\r", ch );
 
         break;
 
@@ -388,7 +388,7 @@ void add_hero_bonus( CHAR_DATA * ch )
         ch->now_int = UMIN( max, old + value );
 
         if ( ch->now_int > old )
-          send_to_char( "®¥ÁH§A¡M§Aªº´¼¤O¼W¥[¤F¡T\n\r", ch );
+          send_to_char( "æ­ç¦§ä½ ï¹ä½ çš„æ™ºåŠ›å¢åŠ äº†ï¹—\n\r", ch );
 
         break;
 
@@ -398,7 +398,7 @@ void add_hero_bonus( CHAR_DATA * ch )
         ch->now_wis = UMIN( max, old + value );
 
         if ( ch->now_wis > old )
-          send_to_char( "®¥ÁH§A¡M§Aªº¾ÇÃÑ¼W¼s¤F¡T\n\r", ch );
+          send_to_char( "æ­ç¦§ä½ ï¹ä½ çš„å­¸è­˜å¢å»£äº†ï¹—\n\r", ch );
 
         break;
 
@@ -408,7 +408,7 @@ void add_hero_bonus( CHAR_DATA * ch )
         ch->now_dex = UMIN( max, old + value );
 
         if ( ch->now_dex > old )
-          send_to_char( "®¥ÁH§A¡M§Aªº±Ó±¶¤W´­¤F¡T\n\r", ch );
+          send_to_char( "æ­ç¦§ä½ ï¹ä½ çš„æ•æ·ä¸Šæšäº†ï¹—\n\r", ch );
 
         break;
 
@@ -418,7 +418,7 @@ void add_hero_bonus( CHAR_DATA * ch )
         ch->now_con = UMIN( max, old + value );
 
         if ( ch->now_con > old )
-          send_to_char( "®¥ÁH§A¡M§AªºÅé®æÅÜ§§¤F¡T\n\r", ch );
+          send_to_char( "æ­ç¦§ä½ ï¹ä½ çš„é«”æ ¼è®Šå£¯äº†ï¹—\n\r", ch );
 
         break;
       }

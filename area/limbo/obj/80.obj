@@ -1,9 +1,9 @@
 Vnum            80
 Name            drawer~
-ShortDesc       Á¶¿Ç~
+ShortDesc       è¤»è¤²~
 Description
-¤@¥ó¦³Á¢µ·ªáÃäªºÁ¶¿Ç(drawer)¡C~
-Unit            ¥ó~
+ä¸€ä»¶æœ‰è•¾çµ²èŠ±é‚Šçš„è¤»è¤²(drawer)ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_LEGS
 Takeable        Yes

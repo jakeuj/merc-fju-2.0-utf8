@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A���h�d�ڮɡM�S�ȳQ�����M�ڭ̳o�̦��ӶK�ߪ��p�]�p�M�N�O�A�i�H��C�ӫ�
-�̪������̥h�s��([1;32mdeposit[0m)�M�A�i�H��C�������h�d��([1;32mcheck[0m)�ۤv���s�ڡM�άO
-�d��([1;32mscore[0m)�ۤv�����A�ɡM���|��ܡC�A�]�i�H��C�������h��^([1;32mwithdraw[0m)�A
-���s�ڡC�ثe�s�ڥi�O���Q������C
+當你身懷鉅款時﹐又怕被偷走﹐我們這裡有個貼心的小設計﹐就是你可以到每個城
+裡的錢莊裡去存款([1;32mdeposit[0m)﹐你可以到每間錢莊去查詢([1;32mcheck[0m)自己的存款﹐或是
+查詢([1;32mscore[0m)自己的狀態時﹐都會顯示。你也可以到每間錢莊去領回([1;32mwithdraw[0m)你
+的存款。目前存款可是有利息的喔。
 
-�Ьd�ߡRdeposit�Bcheck�Bwithdraw�Bscore
+請查詢﹕deposit、check、withdraw、score
 ~
 End

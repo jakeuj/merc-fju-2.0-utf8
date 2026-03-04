@@ -1,10 +1,10 @@
 Vnum            518
 Name            roach~
-ShortDesc       ����~
-LongDesc        ����(roach)
+ShortDesc       蟑螂~
+LongDesc        蟑螂(roach)
 ~
 Description
-�ۥj�H�ӴN�s�b���ʪ��M�Pı�W�ܪo���M�D�`���ߡC
+自古以來就存在的動物﹐感覺上很油膩﹐非常噁心。
 ~
 Sentinel        Yes
 AutoSetValue    Yes

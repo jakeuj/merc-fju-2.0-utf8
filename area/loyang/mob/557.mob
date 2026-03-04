@@ -1,10 +1,10 @@
 Vnum            557
 Name            citizen~
-ShortDesc       �~��~
-LongDesc        ���������~��(citizen)�b���C���C
+ShortDesc       居民~
+LongDesc        洛陽城的居民(citizen)在此遊蕩。
 ~
 Description
-�ݥL�@�ƵL�Ҩƨƪ��ˤl�M���A�Q�����r�}�L�C
+看他一副無所事事的樣子﹐讓你十分的羨慕他。
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -34,9 +34,9 @@ Type            greet_prog
 Chance          25
 Text
 if ispc($n)
-  say �զ��a�L�ӡM�A���S���ݹL���ǨS�H�����аڡS
-  say ť�����ǥ��Ыܩ_�ǡK
-  say �Q���D�@�Ǩ�L���ܡS(yes)
+  say 耳朵靠過來﹐你有沒有看過那些沒人的民房啊﹖
+  say 聽說有些民房很奇怪…
+  say 想知道一些其他的嗎﹖(yes)
   ponder
 endif
 ~
@@ -47,12 +47,12 @@ Type            speech_prog
 Argument        yes~
 Text
 if ispc($n)
-  tell $n �����i�D�A��T�ڤW���ݨ�@��H�i�h���T
-  tell $n ��ӧڸ�W�h�M���G���@��H�N�����F���K
-  tell $n �O�ڷQ�]�Q���z�K
-  tell $n �Q���Q���D�b���̵o�ͪ��ڡS
+  tell $n 偷偷告訴你喔﹗我上次看到一堆人進去說﹗
+  tell $n 後來我跟上去﹐結果那一堆人就不見了說…
+  tell $n 令我想也想不透…
+  tell $n 想不想知道在那裡發生的啊﹖
   grin
-  tell $n �u$1�����i�ϰ����i$0�v�K�K�K�K
+  tell $n 「$1有錢可使鬼推磨$0」…嘿嘿…
   wait $n
 endif
 ~

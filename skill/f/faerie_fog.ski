@@ -1,5 +1,5 @@
 Name            faerie fog~
-Cname           ºëÆF¤§Ãú~
+Cname           ç²¾éˆä¹‹éœ§~
 Slot            SLOT_FAERIE_FOG
 Msgoff          ~
 Function        cast_faerie_fog~
@@ -31,8 +31,8 @@ Limit           CLASS_DOCTOR     1  70
 Limit           CLASS_BARD       1  95
 
 Help
-ºëÆF¤§Ãú:
+ç²¾éˆä¹‹éœ§:
 
-§A§l¦¬¤j®ð¤¤ªº·ÏÃú¡M¤@¦R¦Ó¥X¡M¥i¥H¥Î¨ÓÅý¤@¨ÇÁô¨­ªº¤H²{¨­¡T
+ä½ å¸æ”¶å¤§æ°£ä¸­çš„ç…™éœ§ï¹ä¸€åè€Œå‡ºï¹å¯ä»¥ç”¨ä¾†è®“ä¸€äº›éš±èº«çš„äººç¾èº«ï¹—
 ~
 End

@@ -1,11 +1,11 @@
 Vnum            CLASS_DEMOS
 Name            demos~
-Cname           ¥­  ¥Á~
-Title           òÔ¥ÁÀr­º~
+Cname           å¹³  æ°‘~
+Title           è—œæ°‘é»”é¦–~
 LowerLimit      -1
 UpperLimit      -1
-LimitMsg        $Y$n¾D¨ü¤Ó¦hªº¥´À»¡M´c®ğ¾î¥Í¡M¤@ªÑ®ğµL³B¥iµo¡T
-­±¹ï$Nªº¤£Â_¬DÆ]¡M©ó¬O¦V$N¥´¥X$eªº²r¯P¤@À»¡T$A$R~
+LimitMsg        $Y$né­å—å¤ªå¤šçš„æ‰“æ“Šï¹æƒ¡æ°£æ©«ç”Ÿï¹ä¸€è‚¡æ°£ç„¡è™•å¯ç™¼ï¹—
+é¢å°$Nçš„ä¸æ–·æŒ‘é‡ï¹æ–¼æ˜¯å‘$Næ‰“å‡º$eçš„çŒ›çƒˆä¸€æ“Šï¹—$A$R~
 Limit           500
 Multiplier      10
 RebirthGold     0

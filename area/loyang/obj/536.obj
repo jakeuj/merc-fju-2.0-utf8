@@ -1,10 +1,10 @@
 Vnum            536
 Name            crutch~
-ShortDesc       Ï^§ú~
+ShortDesc       æŸºæ–~
 Description
-¥ÑÀÌ¤ì©Ò»s¦¨ªºÏ^§ú (crutch)¡C
+ç”±æªœæœ¨æ‰€è£½æˆçš„æŸºæ– (crutch)ã€‚
 ~
-Unit            ®Ú~
+Unit            æ ¹~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

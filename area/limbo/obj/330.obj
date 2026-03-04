@@ -1,9 +1,9 @@
 Vnum            330
 Name            cure poison book~
-ShortDesc       Àø¬r³N¯µÓD~
+ShortDesc       ç™‚æ¯’è¡“ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

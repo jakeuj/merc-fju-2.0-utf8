@@ -1,10 +1,10 @@
 Vnum            548
 Name            tiger surcoat~
-ShortDesc       ªê¯¾©Ü­·~
+ShortDesc       è™ç´‹æŠ«é¢¨~
 Description
-¤@¥ó¥Ñªê¥Ö»s¦¨¡MÆ^¦³ªê¯¾ªº©Ü­·(tiger surcoat)¡C
+ä¸€ä»¶ç”±è™çš®è£½æˆï¹é‘²æœ‰è™ç´‹çš„æŠ«é¢¨(tiger surcoat)ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_ABOUT
 Takeable        Yes

@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ≥o¨O•—ª≤§j§∆æ«®tªsß@∏s©“º∂ºg™∫πC¿∏°M•D≈È•— merc ßÔΩs¶”®”°M©“¶≥™∫™©≈v    *
-*  ±N∑|≥Q´OØd°M¶˝≈w™Ô§jÆa≠◊ßÔ°M¶˝ß⁄≠Ã§]ß∆±ÊßA≠Ã§]Ø‡¥£®—µπ§jÆa°M©“¶≥™∫∞”    *
-*  ∑~¶Ê¨∞±N§£≥Q§π≥\°C                                                      *
+*  ÈÄôÊòØÁî±ËºîÂ§ßÂåñÂ≠∏Á≥ªË£Ω‰ΩúÁæ§ÊâÄÊí∞ÂØ´ÁöÑÈÅäÊà≤Ôπê‰∏ªÈ´îÁî± merc ÊîπÁ∑®ËÄå‰æÜÔπêÊâÄÊúâÁöÑÁâàÊ¨ä    *
+*  Â∞áÊúÉË¢´‰øùÁïôÔπê‰ΩÜÊ≠°ËøéÂ§ßÂÆ∂‰øÆÊîπÔπê‰ΩÜÊàëÂÄë‰πüÂ∏åÊúõ‰Ω†ÂÄë‰πüËÉΩÊèê‰æõÁµ¶Â§ßÂÆ∂ÔπêÊâÄÊúâÁöÑÂïÜ    *
+*  Ê•≠Ë°åÁÇ∫Â∞á‰∏çË¢´ÂÖÅË®±„ÄÇ                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -166,7 +166,7 @@ char * extract_script( char * str, char * line, char * com, char * arg )
   {
     if ( len > MAX_INPUT_LENGTH - 2 )
     {
-      mudlog( LOG_DEBUG, "extract_script: ¶r¶Í§”™¯." );
+      mudlog( LOG_DEBUG, "extract_script: Â≠ó‰∏≤Â§™Èï∑." );
       RETURN( str );
     }
 
@@ -241,7 +241,7 @@ char * exec_script( char * str, CHAR_DATA * ch, int * depth )
 
   if ( !str || !ch )
   {
-    mudlog( LOG_DEBUG, "exec_script: ®”∑Ω§£•øΩT." );
+    mudlog( LOG_DEBUG, "exec_script: ‰æÜÊ∫ê‰∏çÊ≠£Á¢∫." );
     *depth = 0;
     RETURN( NULL );
   }

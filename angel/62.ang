@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A��Y�ӫ��O�]�Ҧp�O [1;32mput[0m �^�����x�L���Ϊk�ɫ���O�S�A�i�H�d��
-( [1;32mhelp[0m�B[1;32mman[0m ) �o�ӫ��O�o�C�άO��J [1;32mput /?[0m �Ӭd�߬ݬݡC
+當你對某個指令（例如是 [1;32mput[0m ）不熟悉他的用法時怎麼辦呢﹖你可以查詢
+( [1;32mhelp[0m、[1;32mman[0m ) 這個指令囉。或是輸入 [1;32mput /?[0m 來查詢看看。
 
-�Ьd�ߡR help�Bman
+請查詢﹕ help、man
 ~
 End

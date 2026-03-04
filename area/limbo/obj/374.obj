@@ -1,9 +1,9 @@
 Vnum            374
 Name            stone skin book~
-ShortDesc       ¥Ö½§¥Û¤Æ³N¯µÓD~
+ShortDesc       çš®è†šçŸ³åŒ–è¡“ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

@@ -1,10 +1,10 @@
 Vnum            562
 Name            water skin~
-ShortDesc       ¤ô³U~
+ShortDesc       æ°´è¢‹~
 Description
-¤@­Ó¥i¥H¸Ë¤ô¤ô³U(small bag)³Q¥á¦b¦a¤W¡C
+ä¸€å€‹å¯ä»¥è£æ°´æ°´è¢‹(small bag)è¢«ä¸Ÿåœ¨åœ°ä¸Šã€‚
 ~
-Unit            ­Ó~
+Unit            å€‹~
 ItemType        ITEM_DRINK_CON
 Takeable        Yes
 Level           1

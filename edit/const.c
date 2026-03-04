@@ -3,7 +3,7 @@
 const   struct  const_string    const_table [] =
 {
 
-  /* ¤è¦V */
+  /* æ–¹å‘ */
 
   { "NORTH",                      0 },
   { "EAST",                       1 },
@@ -12,12 +12,12 @@ const   struct  const_string    const_table [] =
   { "UP",                         4 },
   { "DOWN",                       5 },
 
-  /* °Ï°ìºX¼Ð */
+  /* å€åŸŸæ——æ¨™ */
 
   { "NO_ECHO",                    0 },
   { "WILL_ECHO",                  1 },
 
-  /* ©Ð¶¡ºX¼Ð */
+  /* æˆ¿é–“æ——æ¨™ */
 
   { "ROOM_DARK",                  1 },
   { "ROOM_NO_MOB",                2 },
@@ -31,7 +31,7 @@ const   struct  const_string    const_table [] =
   { "ROOM_NOFIGHT",             512 },
   { "ROOM_NOQUIT",             1024 },
 
-  /* ¦a§ÎºX¼Ð */
+  /* åœ°å½¢æ——æ¨™ */
 
   { "SECT_INSIDE",                0 },
   { "SECT_CITY",                  1 },
@@ -44,7 +44,7 @@ const   struct  const_string    const_table [] =
   { "SECT_AIR",                   8 },
   { "SECT_DESERT",                9 },
 
-  /* ª««~ºØÃþ */
+  /* ç‰©å“ç¨®é¡ž */
 
   { "ITEM_LIGHT",                 1 },
   { "ITEM_SCROLL",                2 },
@@ -67,7 +67,7 @@ const   struct  const_string    const_table [] =
   { "ITEM_FOUNTAIN",             19 },
   { "ITEM_PILL",                 20 },
 
-  /* ª««~ªºÄÝ©Ê */
+  /* ç‰©å“çš„å±¬æ€§ */
 
   { "ITEM_GLOW",                  1 },
   { "ITEM_HUM",                   2 },
@@ -84,7 +84,7 @@ const   struct  const_string    const_table [] =
   { "ITEM_NOREMOVE",           4096 },
   { "ITEM_INVENTORY",          8192 },
 
-  /* ª««~ªº¬ïÀ¹ºX¼Ð */
+  /* ç‰©å“çš„ç©¿æˆ´æ——æ¨™ */
 
   { "ITEM_NOT_TAKE",              0 },
   { "ITEM_TAKE",                  1 },
@@ -103,7 +103,7 @@ const   struct  const_string    const_table [] =
   { "ITEM_WIELD",              8192 },
   { "ITEM_HOLD",              16384 },
 
-  /* ¼vÅTÄÝ©Êªº¶µ¥Ø */
+  /* å½±éŸ¿å±¬æ€§çš„é …ç›® */
 
   { "APPLY_NONE",                 0 },
   { "APPLY_STR",                  1 },
@@ -131,7 +131,7 @@ const   struct  const_string    const_table [] =
   { "APPLY_SAVING_BREATH",       23 },
   { "APPLY_SAVING_SPELL",        24 },
 
-  /* ³Ì«áªº¼Ð°O */
+  /* æœ€å¾Œçš„æ¨™è¨˜ */
 
   { ""                           , 0 }
 };
@@ -139,25 +139,25 @@ const   struct  const_string    const_table [] =
 const   struct  item_struct     item_type[ MAX_ITEM ] =
 {
 
-  { "¿OÅ¢"       , "ITEM_LIGHT"      , 1 },
-  { "±²¶b"       , "ITEM_SCROLL"     , 1 },
-  { "ªk§ú1"      , "ITEM_WAND"       , 1 },
-  { "ªk§ú2"      , "ITEM_STAFF"      , 1 },
-  { "ªZ¾¹"       , "ITEM_WEAPON"     , 1 },
-  { "Ä_ª«"       , "ITEM_TREASURE"   , 1 },
-  { "Å@¥Ò"       , "ITEM_ARMOR"      , 1 },
-  { "ÃÄ¤ô"       , "ITEM_POTION"     , 1 },
-  { "®a¨ã"       , "ITEM_FURNITURE"  , 1 },
-  { "©U§£"       , "ITEM_TRASH"      , 0 },
-  { "®e¾¹"       , "ITEM_CONTAINER"  , 1 },
-  { "¤ô³U"       , "ITEM_DRINK_CON"  , 1 },
-  { "Æ_°Í"       , "ITEM_KEY"        , 1 },
-  { "­¹ª«"       , "ITEM_FOOD"       , 1 },
-  { "¿ú"         , "ITEM_MONEY"      , 0 },
-  { "²î"         , "ITEM_BOAT"       , 0 },
-  { "«Dª±®a«ÍÅé" , "ITEM_CORPSE_NPC" , 0 },
-  { "ª±®a«ÍÅé"   , "ITEM_CORPSE_PC"  , 0 },
-  { "¬u¤ô"       , "ITEM_FOUNTAIN"   , 0 },
-  { "ÃÄ¤Y"       , "ITEM_PILL"       , 1 }
+  { "ç‡ˆç± "       , "ITEM_LIGHT"      , 1 },
+  { "æ²è»¸"       , "ITEM_SCROLL"     , 1 },
+  { "æ³•æ–1"      , "ITEM_WAND"       , 1 },
+  { "æ³•æ–2"      , "ITEM_STAFF"      , 1 },
+  { "æ­¦å™¨"       , "ITEM_WEAPON"     , 1 },
+  { "å¯¶ç‰©"       , "ITEM_TREASURE"   , 1 },
+  { "è­·ç”²"       , "ITEM_ARMOR"      , 1 },
+  { "è—¥æ°´"       , "ITEM_POTION"     , 1 },
+  { "å®¶å…·"       , "ITEM_FURNITURE"  , 1 },
+  { "åžƒåœ¾"       , "ITEM_TRASH"      , 0 },
+  { "å®¹å™¨"       , "ITEM_CONTAINER"  , 1 },
+  { "æ°´è¢‹"       , "ITEM_DRINK_CON"  , 1 },
+  { "é‘°åŒ™"       , "ITEM_KEY"        , 1 },
+  { "é£Ÿç‰©"       , "ITEM_FOOD"       , 1 },
+  { "éŒ¢"         , "ITEM_MONEY"      , 0 },
+  { "èˆ¹"         , "ITEM_BOAT"       , 0 },
+  { "éžçŽ©å®¶å±é«”" , "ITEM_CORPSE_NPC" , 0 },
+  { "çŽ©å®¶å±é«”"   , "ITEM_CORPSE_PC"  , 0 },
+  { "æ³‰æ°´"       , "ITEM_FOUNTAIN"   , 0 },
+  { "è—¥ä¸¸"       , "ITEM_PILL"       , 1 }
 };
 

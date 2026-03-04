@@ -1,7 +1,7 @@
 Name            weaken~
-Cname           µê®z³N~
+Cname           è™›å¼±è¡“~
 Slot            SLOT_WEAKEN
-Msgoff          §A·P¨ì±j§§¤F¤@¨Ç¡T~
+Msgoff          ä½ æ„Ÿåˆ°å¼·å£¯äº†ä¸€äº›ï¹—~
 Check           check_unrigid_attack~
 Function        cast_weaken~
 Position        POS_FIGHTING

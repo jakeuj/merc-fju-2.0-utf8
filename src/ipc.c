@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -18,18 +18,18 @@
 #include <sys/shm.h>
 #include "merc.h"
 
-#define  PERM           0600       /* ¦@¨É°O¾ĞÅéªºÅª¨ú¼g¤JÄİ©Ê     */
+#define  PERM           0600       /* å…±äº«è¨˜æ†¶é«”çš„è®€å–å¯«å…¥å±¬æ€§     */
 
-int      merc_ipc;                 /* ­n¨Dªº°t¸m¦@¨É°O¾ĞÅéªº KEY   */
-int      merc_ipc_2;               /* ³Æ¥Î¦@¨É°O¾ĞÅéªº KEY         */
-int      shmid     = -1;           /* ¨t²Î°t¸m¦@¨É°O¾ĞÅéªº½s¸¹     */
-char   * shm_ptr   = ( char * ) 0; /* ¨t²Î¤À°t¦@¨É°O¾ĞÅéªº¦ì§}     */
-int      ipc_block = IPC_BLOCK;    /* ¥i¥H¦³´X¶ô°O¾ĞÅé°Ï¶ô         */
-int      ipc_idle  = IPC_IDLE;     /* ¶¢¸m¦h¤[¨t²Î®É¶¡«h§R°£¦¹°Ï¶ô */
+int      merc_ipc;                 /* è¦æ±‚çš„é…ç½®å…±äº«è¨˜æ†¶é«”çš„ KEY   */
+int      merc_ipc_2;               /* å‚™ç”¨å…±äº«è¨˜æ†¶é«”çš„ KEY         */
+int      shmid     = -1;           /* ç³»çµ±é…ç½®å…±äº«è¨˜æ†¶é«”çš„ç·¨è™Ÿ     */
+char   * shm_ptr   = ( char * ) 0; /* ç³»çµ±åˆ†é…å…±äº«è¨˜æ†¶é«”çš„ä½å€     */
+int      ipc_block = IPC_BLOCK;    /* å¯ä»¥æœ‰å¹¾å¡Šè¨˜æ†¶é«”å€å¡Š         */
+int      ipc_idle  = IPC_IDLE;     /* é–’ç½®å¤šä¹…ç³»çµ±æ™‚é–“å‰‡åˆªé™¤æ­¤å€å¡Š */
 
 MEMORY_DATA * get_share_memory_address  args( ( int ) );
 
-/* ±Ò©l¤Æ¦@¨É°O¾ĞÅé */
+/* å•Ÿå§‹åŒ–å…±äº«è¨˜æ†¶é«” */
 void init_share_memory( int key, int key2 )
 {
   int           size;
@@ -38,41 +38,41 @@ void init_share_memory( int key, int key2 )
 
   PUSH_FUNCTION( "init_share_memory" );
 
-  /* ­pºâ¥X©Ò»İªº¦@¨É°O¾ĞÅéªº¤j¤p */
+  /* è¨ˆç®—å‡ºæ‰€éœ€çš„å…±äº«è¨˜æ†¶é«”çš„å¤§å° */
   size = sizeof( MEMORY_DATA ) * ipc_block;
 
-  /* ´ú¸Õ¬O§_¤§«eªº°Ï¶ô¨S¦³³Q§R°£, ¦³ªº¸Ü¹Á¸Õ§R°£¬İ¬İ */
+  /* æ¸¬è©¦æ˜¯å¦ä¹‹å‰çš„å€å¡Šæ²’æœ‰è¢«åˆªé™¤, æœ‰çš„è©±å˜—è©¦åˆªé™¤çœ‹çœ‹ */
   if ( ( shmid = shmget( key , 0 , PERM ) != -1 ) )
   {
-    mudlog( LOG_INFO, "shmget: IPC KEY %d ¦s¦b, ¹Á¸Õ§R°£.", key );
+    mudlog( LOG_INFO, "shmget: IPC KEY %d å­˜åœ¨, å˜—è©¦åˆªé™¤.", key );
     delete_share_memory( shmget( key, 0, IPC_CREAT ) );
   }
 
-  /* «Ø¥ß¦@¨É°O¾ĞÅé°Ï¶ô */
+  /* å»ºç«‹å…±äº«è¨˜æ†¶é«”å€å¡Š */
   if ( ( shmid = shmget( key, size, IPC_EXCL|IPC_CREAT|PERM ) ) == -1 )
   {
     mudlog( LOG_INFO, "shmget: %s" , strerror( errno ) );
 
-    /* ¹Á¸Õ¥H²Ä¤G­Ó¦@¨É°O¾ĞÅé«Ø¥ß */
+    /* å˜—è©¦ä»¥ç¬¬äºŒå€‹å…±äº«è¨˜æ†¶é«”å»ºç«‹ */
     /*
     if ( ( shmid = shmget( key2, size, IPC_EXCL|IPC_CREAT|PERM ) ) == -1 )
       mudlog( LOG_INFO, "shmget: %s", strerror( errno ) );
     */
-    mudlog( LOG_ERR,  "shmget: µLªk¨ú±o %d ªº¦@¨É­p¾ĞÅé.", key );
+    mudlog( LOG_ERR,  "shmget: ç„¡æ³•å–å¾— %d çš„å…±äº«è¨ˆæ†¶é«”.", key );
   }
 
-  mudlog( LOG_INFO, "shmget: «Ø¥ß IPC KEY %d ¤j¤p %d ¦ì¤¸²Õ.", shmid, size );
+  mudlog( LOG_INFO, "shmget: å»ºç«‹ IPC KEY %d å¤§å° %d ä½å…ƒçµ„.", shmid, size );
 
-  /* ±¾¤W¦@¨É°O¾ĞÅé, ¨t²Î·|¤À°t¤@­Ó¦ì§} */
+  /* æ›ä¸Šå…±äº«è¨˜æ†¶é«”, ç³»çµ±æœƒåˆ†é…ä¸€å€‹ä½å€ */
   if ( ( shm_ptr = shmat( shmid, ( char * ) 0, 0 ) ) == ( char * ) -1 )
   {
     mudlog( LOG_INFO, "shmat: %s" , strerror( errno ) );
-    mudlog( LOG_ERR,  "µLªk±¾¤W¦@¨É­p¾ĞÅé." );
+    mudlog( LOG_ERR,  "ç„¡æ³•æ›ä¸Šå…±äº«è¨ˆæ†¶é«”." );
   }
 
-  mudlog( LOG_INFO, "shmat: ±¾¤W¦@¨É­p¾ĞÅé¦ì§} %p.", shm_ptr );
+  mudlog( LOG_INFO, "shmat: æ›ä¸Šå…±äº«è¨ˆæ†¶é«”ä½å€ %p.", shm_ptr );
 
-  /* ²M°£¦@¨É­p¾ĞÅé, ¥B³]©w¨Ï¥Î¦¸¼Æ¬° 0 */
+  /* æ¸…é™¤å…±äº«è¨ˆæ†¶é«”, ä¸”è¨­å®šä½¿ç”¨æ¬¡æ•¸ç‚º 0 */
   for ( count = 0; count < ipc_block; count++ )
   {
     mem = get_share_memory_address( count );
@@ -83,50 +83,50 @@ void init_share_memory( int key, int key2 )
   RETURN_NULL();
 }
 
-/* §R°£¦@¨É°O¾ĞÅé */
+/* åˆªé™¤å…±äº«è¨˜æ†¶é«” */
 void delete_share_memory( int aShmid )
 {
-  /* ¥ı¨ø¤U¦@¨É°O¾ĞÅé°Ï¶ô */
+  /* å…ˆå¸ä¸‹å…±äº«è¨˜æ†¶é«”å€å¡Š */
   if ( shmdt( shm_ptr ) == 0 )
-    mudlog( LOG_INFO, "shmdt: ¦¨¥\\¨ø¤U¦@¨É­p¾ĞÅé." );
+    mudlog( LOG_INFO, "shmdt: æˆåŠŸ\å¸ä¸‹å…±äº«è¨ˆæ†¶é«”." );
   else
-    mudlog( LOG_INFO, "shmdt: ¨ø¤U¦@¨É°O¾ĞÅé¥¢±Ñ." );
+    mudlog( LOG_INFO, "shmdt: å¸ä¸‹å…±äº«è¨˜æ†¶é«”å¤±æ•—." );
 
 
-  /* §R°£¦@¨É°O¾ĞÅé */
+  /* åˆªé™¤å…±äº«è¨˜æ†¶é«” */
   if ( shmctl( aShmid, IPC_RMID, 0 ) == -1 )
   {
     mudlog( LOG_INFO, "shmctl: %s", strerror( errno ) );
-    mudlog( LOG_ERR,  "shmctl: µLªk§R°£ IPC KEY %d.", aShmid );
+    mudlog( LOG_ERR,  "shmctl: ç„¡æ³•åˆªé™¤ IPC KEY %d.", aShmid );
   }
   else
   {
-    mudlog( LOG_INFO, "shmctl: ¦¨¥\\§R°£ IPC KEY %d.", aShmid );
+    mudlog( LOG_INFO, "shmctl: æˆåŠŸ\åˆªé™¤ IPC KEY %d.", aShmid );
   }
 
-  /* ¼Ğ°O¤w¸g²M°£, ¨ø¤U */
+  /* æ¨™è¨˜å·²ç¶“æ¸…é™¤, å¸ä¸‹ */
   shm_ptr = ( char * ) 0;
   return;
 }
 
-/* ¨ú±o¬Y½s¸¹ªº¦@¨É°O¾ĞÅéªº¦ì§} */
+/* å–å¾—æŸç·¨è™Ÿçš„å…±äº«è¨˜æ†¶é«”çš„ä½å€ */
 MEMORY_DATA * get_share_memory_address( int slot )
 {
   PUSH_FUNCTION( "get_share_memory_address" );
 
-  /* §P©w¬O§_¦@¨É°O¾ĞÅé¬O§_¤w¸g¨ø¤U */
+  /* åˆ¤å®šæ˜¯å¦å…±äº«è¨˜æ†¶é«”æ˜¯å¦å·²ç¶“å¸ä¸‹ */
   if ( shm_ptr == ( char * ) 0 )
-    mudlog( LOG_ERR, "¦@¨É­p¾ĞÅé¤w¸g¨ø¤U, ÁÙ¶i¦æÅª¨ú." );
+    mudlog( LOG_ERR, "å…±äº«è¨ˆæ†¶é«”å·²ç¶“å¸ä¸‹, é‚„é€²è¡Œè®€å–." );
 
-  /* ´ú¸Õ¬O§_½s¸¹¿ù»~ */
+  /* æ¸¬è©¦æ˜¯å¦ç·¨è™ŸéŒ¯èª¤ */
   if ( slot < 0 || slot >= ipc_block )
-    mudlog( LOG_CRIT, "get_share_memory_address: ½s¸¹¿ù»~" );
+    mudlog( LOG_CRIT, "get_share_memory_address: ç·¨è™ŸéŒ¯èª¤" );
 
-  /* ­pºâ¦ì§}¨Ã¥B¶Ç¦^ */
+  /* è¨ˆç®—ä½å€ä¸¦ä¸”å‚³å› */
   RETURN( ( MEMORY_DATA * ) ( shm_ptr + ( slot * sizeof( MEMORY_DATA ) ) ) );
 }
 
-/* ¨ú±o¶¢¸mªº¦@¨É°O¾ĞÅé°Ï¶ô */
+/* å–å¾—é–’ç½®çš„å…±äº«è¨˜æ†¶é«”å€å¡Š */
 int get_free_share_memory( DESCRIPTOR_DATA * man, int type )
 {
   int           count;
@@ -138,29 +138,29 @@ int get_free_share_memory( DESCRIPTOR_DATA * man, int type )
   {
     mem = get_share_memory_address( count );
 
-    /* ¹î¬İ¬O§_³QÂê©w */
+    /* å¯Ÿçœ‹æ˜¯å¦è¢«é–å®š */
     if ( mem->lock == FALSE )
     {
-      /* ²M°£¨Ã¥B³]©w¼Æ­È */
+      /* æ¸…é™¤ä¸¦ä¸”è¨­å®šæ•¸å€¼ */
       clean_share_memory_address( count );
-      mem->lock = TRUE;               /* ³]©w³QÂê©w   */
-      mem->type = type;               /* ³]©w°Ï¶ô«¬ºA */
-      mem->id   = man->id_number;     /* ³]©wª±®a¸¹½X */
-      mem->used++;                    /* ²Ö¥[¨Ï¥Î¦¸¼Æ */
+      mem->lock = TRUE;               /* è¨­å®šè¢«é–å®š   */
+      mem->type = type;               /* è¨­å®šå€å¡Šå‹æ…‹ */
+      mem->id   = man->id_number;     /* è¨­å®šç©å®¶è™Ÿç¢¼ */
+      mem->used++;                    /* ç´¯åŠ ä½¿ç”¨æ¬¡æ•¸ */
       break;
     }
   }
 
   if ( count == ipc_block )
   {
-    mudlog( LOG_DEBUG, "get_free_share_memory: ¨S¦³ªÅ¶¢ªº°Ï¶ô" );
+    mudlog( LOG_DEBUG, "get_free_share_memory: æ²’æœ‰ç©ºé–’çš„å€å¡Š" );
     RETURN( -1 );
   }
 
   RETURN( count );
 }
 
-/* ºÊ±±¬O§_¦³¶¢¸m¤Ó¤[ªº¦@¨É°O¾ĞÅé */
+/* ç›£æ§æ˜¯å¦æœ‰é–’ç½®å¤ªä¹…çš„å…±äº«è¨˜æ†¶é«” */
 void inc_share_memory_timer( void )
 {
   int           count;
@@ -178,7 +178,7 @@ void inc_share_memory_timer( void )
   RETURN_NULL();
 }
 
-/* §R°£¤w¸gÂ_½uªº¦@¨É°O¾ĞÅé */
+/* åˆªé™¤å·²ç¶“æ–·ç·šçš„å…±äº«è¨˜æ†¶é«” */
 void update_share_memory( DESCRIPTOR_DATA * man )
 {
   int           count;
@@ -198,7 +198,7 @@ void update_share_memory( DESCRIPTOR_DATA * man )
   RETURN_NULL();
 }
 
-/* ²M°£¬Y½s¸¹ªº¦@¨É°O¾ĞÅé°Ï¶ô */
+/* æ¸…é™¤æŸç·¨è™Ÿçš„å…±äº«è¨˜æ†¶é«”å€å¡Š */
 void clean_share_memory_address( int slot )
 {
   MEMORY_DATA * mem;
@@ -206,17 +206,17 @@ void clean_share_memory_address( int slot )
   PUSH_FUNCTION( "clean_share_memory_address" );
   mem = get_share_memory_address( slot );
 
-  mem->done    = FALSE;  /* °Ï¶ô¬O§_¤u§@§¹¦¨     */
-  mem->lock    = FALSE;  /* °Ï¶ô¬O§_³QÂê©w       */
-  mem->timer   = 0;      /* Âê©w«áªº­p¼Æ¾¹       */
-  mem->id      = -1;     /* Äİ©ó­ş¤@¦ìª±®aªº°Ï¶ô */
-  mem->type    = -1;     /* °Ï¶ôªº«¬ºA           */
-  mem->text[0] = '\x0';  /* °Ï¶ôªº¸ê®Æ°Ï         */
+  mem->done    = FALSE;  /* å€å¡Šæ˜¯å¦å·¥ä½œå®Œæˆ     */
+  mem->lock    = FALSE;  /* å€å¡Šæ˜¯å¦è¢«é–å®š       */
+  mem->timer   = 0;      /* é–å®šå¾Œçš„è¨ˆæ•¸å™¨       */
+  mem->id      = -1;     /* å±¬æ–¼å“ªä¸€ä½ç©å®¶çš„å€å¡Š */
+  mem->type    = -1;     /* å€å¡Šçš„å‹æ…‹           */
+  mem->text[0] = '\x0';  /* å€å¡Šçš„è³‡æ–™å€         */
 
   RETURN_NULL();
 }
 
-/* §â¦r¦ê³]©wµ¹¬Y½s¸¹ªº¦@¨É°O¾ĞÅé°Ï¶ô */
+/* æŠŠå­—ä¸²è¨­å®šçµ¦æŸç·¨è™Ÿçš„å…±äº«è¨˜æ†¶é«”å€å¡Š */
 void set_share_memory_text( int slot, char * buffer )
 {
   MEMORY_DATA * mem;
@@ -225,30 +225,30 @@ void set_share_memory_text( int slot, char * buffer )
 
   mem = get_share_memory_address( slot );
 
-  /* ¹î¬İ¬O§_©|¥¼³QÂê©w´N³]©w¸ê®Æ */
+  /* å¯Ÿçœ‹æ˜¯å¦å°šæœªè¢«é–å®šå°±è¨­å®šè³‡æ–™ */
   if ( mem->lock == FALSE )
   {
-    mudlog( LOG_INFO, "½s¸¹ %d ªº¦@¨É­p¾ĞÅé©|¥¼Âê©w´N³]©w¸ê®Æ.", slot );
+    mudlog( LOG_INFO, "ç·¨è™Ÿ %d çš„å…±äº«è¨ˆæ†¶é«”å°šæœªé–å®šå°±è¨­å®šè³‡æ–™.", slot );
     clean_share_memory_address( slot );
   }
 
   else
   {
-    /* ¥ıÀË¬d¸ê®Æ¨Ó·½¬O§_·|¶W¥X½d³ò */
+    /* å…ˆæª¢æŸ¥è³‡æ–™ä¾†æºæ˜¯å¦æœƒè¶…å‡ºç¯„åœ */
     if ( str_len( buffer ) < MAX_STRING_LENGTH - 1 )
       str_cpy( mem->text, buffer );
 
     else
-      str_cpy( mem->text, "°T®§¤Óªø¡C" );
+      str_cpy( mem->text, "è¨Šæ¯å¤ªé•·ã€‚" );
 
-    /* ³]©w°Ï¶ô¤u§@§¹¦¨, µ¥«İÅª¨ú */
+    /* è¨­å®šå€å¡Šå·¥ä½œå®Œæˆ, ç­‰å¾…è®€å– */
     mem->done = TRUE;
   }
 
   RETURN_NULL();
 }
 
-/* ¹î¬İ¦@¨É°O¾ĞÅéªº¨Ï¥Î±¡ªp */
+/* å¯Ÿçœ‹å…±äº«è¨˜æ†¶é«”çš„ä½¿ç”¨æƒ…æ³ */
 FUNCTION( do_ipcs )
 {
   int           count;
@@ -259,8 +259,8 @@ FUNCTION( do_ipcs )
   for ( clear_buffer(), count = 0; count < ipc_block; count++ )
   {
     mem = get_share_memory_address( count );
-    send_to_buffer("½s¸¹¡R%3d ¸¹½X¡R%5d «¬ºA¡R%2d Âê©w[%s] "
-                   "§¹¦¨[%s] ®É¶¡¡R%5d ¦¸¼Æ¡R%5d\n\r"
+    send_to_buffer("ç·¨è™Ÿï¹•%3d è™Ÿç¢¼ï¹•%5d å‹æ…‹ï¹•%2d é–å®š[%s] "
+                   "å®Œæˆ[%s] æ™‚é–“ï¹•%5d æ¬¡æ•¸ï¹•%5d\n\r"
       , count
       , mem->id, mem->type
       , YESNO( mem->lock )
@@ -268,7 +268,7 @@ FUNCTION( do_ipcs )
       , mem->timer , mem->used );
   }
 
-  send_to_buffer( "\n\r¦@¦³ %3d ­Ó¦@¨É­p¾ĞÅé°Ï¶ô¡M¦@ %d ¦ì¤¸²Õ¡M"
+  send_to_buffer( "\n\rå…±æœ‰ %3d å€‹å…±äº«è¨ˆæ†¶é«”å€å¡Šï¹å…± %d ä½å…ƒçµ„ï¹"
                   "shmid = %d KEY = %d KEY 2 = %d\n\r"
     , ipc_block, ipc_block * sizeof( MEMORY_DATA ), shmid
     , merc_ipc, merc_ipc_2 );
@@ -277,7 +277,7 @@ FUNCTION( do_ipcs )
   RETURN_NULL();
 }
 
-/* Åª¨ú¨Ã³B²z¤w§¹¦¨ªº¦@¨É°O¾ĞÅé°Ï¶ô®Ö¤ß */
+/* è®€å–ä¸¦è™•ç†å·²å®Œæˆçš„å…±äº«è¨˜æ†¶é«”å€å¡Šæ ¸å¿ƒ */
 void handle_share_memory( void )
 {
   int               count;
@@ -289,37 +289,37 @@ void handle_share_memory( void )
 
   PUSH_FUNCTION( "handle_share_memory" );
 
-  /* ¹î¬İ­ş¨Ç¬O¤w¸g§¹¦¨³]©wªº, ¨S¦³«h¸õ¹L¥h */
+  /* å¯Ÿçœ‹å“ªäº›æ˜¯å·²ç¶“å®Œæˆè¨­å®šçš„, æ²’æœ‰å‰‡è·³éå» */
   for ( count = 0; count < ipc_block; count++ )
   {
     mem = get_share_memory_address( count );
     if ( mem->done != TRUE ) continue;
 
-    /* ¹î¬İ¨ì©³¬Oµ¹­ş¤@¦ìª±®aªº¸ê®Æ */
+    /* å¯Ÿçœ‹åˆ°åº•æ˜¯çµ¦å“ªä¸€ä½ç©å®¶çš„è³‡æ–™ */
     for ( man = descriptor_list; man; man = man->next )
     {
       if ( !verify_desc( man ) ) continue;
       if ( man->id_number == mem->id ) break;
     }
 
-    /* §ä¤£¨ì¥Øªºªºª±®a */
+    /* æ‰¾ä¸åˆ°ç›®çš„çš„ç©å®¶ */
     if ( !man )
     {
-      mudlog( LOG_INFO, "¦³°T®§«o§ä¤£¨ìª±®a, °T®§³Q©¿²¤." );
+      mudlog( LOG_INFO, "æœ‰è¨Šæ¯å»æ‰¾ä¸åˆ°ç©å®¶, è¨Šæ¯è¢«å¿½ç•¥." );
       clean_share_memory_address( count );
       continue;
     }
 
     buffer = mem->text;
 
-    /* ¨ì©³¬O­ş¤@ºØ«¬ºAªº°T®§°Ï¶ô */
+    /* åˆ°åº•æ˜¯å“ªä¸€ç¨®å‹æ…‹çš„è¨Šæ¯å€å¡Š */
     switch( mem->type )
     {
     default:
-      mudlog( LOG_INFO, "°T®§«¬ºA¿ù»~ %d.", mem->type );
+      mudlog( LOG_INFO, "è¨Šæ¯å‹æ…‹éŒ¯èª¤ %d.", mem->type );
       break;
 
-    /* ¨ú±o FQDN ¥H¤Î»·ºİ¨Ï¥ÎªÌªºÃ±¤J±b¸¹ */
+    /* å–å¾— FQDN ä»¥åŠé ç«¯ä½¿ç”¨è€…çš„ç°½å…¥å¸³è™Ÿ */
     case INTERNAL_GETHOSTBYADDR:
 
       buffer = one_argument( buffer , buf1 );
@@ -328,20 +328,20 @@ void handle_share_memory( void )
       if ( buf1[0] == '\x0' || !str_cmp( man->host, buf1 ) )
       {
         write_to_descriptor( man,
-          "\n\r\e[1;33m¸g¬d¸ß«á¡Mµo²{§Aªº¾÷¾¹¨S¦³FQDN¡M½Ğ¦V§Aªººô¸ô"
-          "ºŞ²z­û¥Ó½Ğ¡MÁÂÁÂ¦X§@¡C\e[0m", 0 );
+          "\n\r\e[1;33mç¶“æŸ¥è©¢å¾Œï¹ç™¼ç¾ä½ çš„æ©Ÿå™¨æ²’æœ‰FQDNï¹è«‹å‘ä½ çš„ç¶²è·¯"
+          "ç®¡ç†å“¡ç”³è«‹ï¹è¬è¬åˆä½œã€‚\e[0m", 0 );
 
         if ( fqdn_limit )
         {
           man->fqdn_limit = TRUE;
 
           write_to_descriptor( man,
-            "\n\r\e[1;32m¬°ºûÅ@ºô¸ô¯´§Ç¡M¦b§Aª±¦¹¹CÀ¸¤§«e¡M¥ı¥Ó½Ğ¦n "
-            "FQDN¡MÁÂÁÂ¦X§@¡C\e[0m", 0 );
+            "\n\r\e[1;32mç‚ºç¶­è­·ç¶²è·¯ç§©åºï¹åœ¨ä½ ç©æ­¤éŠæˆ²ä¹‹å‰ï¹å…ˆç”³è«‹å¥½ "
+            "FQDNï¹è¬è¬åˆä½œã€‚\e[0m", 0 );
         }
       }
 
-      /* ¦ì§}¦WºÙ */
+      /* ä½å€åç¨± */
       if ( !str_cmp( buf1 , FromUnknown ) )
       {
         set_address_data( man->host, man->host );
@@ -354,7 +354,7 @@ void handle_share_memory( void )
         man->host = str_dup( buf1 );
       }
 
-      /* »·ºİÃ±¤JªÌ±b¸¹ */
+      /* é ç«¯ç°½å…¥è€…å¸³è™Ÿ */
       if ( str_cmp( buf2 , FromUnknown ) )
       {
         free_string( man->remote );
@@ -364,16 +364,16 @@ void handle_share_memory( void )
       man->check_fqdn = TRUE;
       break;
 
-    /* ¬d¸ß»·ºİ¨Ï¥ÎªÌªº¸ê®Æ */
+    /* æŸ¥è©¢é ç«¯ä½¿ç”¨è€…çš„è³‡æ–™ */
     case INTERNAL_FINGER:
 
-      /* ÀË¬d¬O§_¶W¥X½d³ò, §_«h«h«ş¨©¨ì¸ê®Æ°Ï¤¤ */
+      /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ, å¦å‰‡å‰‡æ‹·è²åˆ°è³‡æ–™å€ä¸­ */
       buffer[ sizeof( man->finger_data ) - 1 ] = '\x0';
       str_cpy( man->finger_data, buffer );
       man->check_finger = TRUE;
       break;
 
-    /* ÀË¬dª±®aÀÉ®×¬O§_¥¿½T */
+    /* æª¢æŸ¥ç©å®¶æª”æ¡ˆæ˜¯å¦æ­£ç¢º */
     case INTERNAL_CHECKFILE:
       man->check_file = TRUE;
       man->file       = atoi( buffer );
@@ -385,7 +385,7 @@ void handle_share_memory( void )
       break;
     }
 
-    /* ²M°£¤wÅª¨ú§¹²¦ªº¦@¨É°O¾ĞÅé°Ï¶ô */
+    /* æ¸…é™¤å·²è®€å–å®Œç•¢çš„å…±äº«è¨˜æ†¶é«”å€å¡Š */
     clean_share_memory_address( count );
   }
   RETURN_NULL();

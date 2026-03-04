@@ -1,5 +1,5 @@
 Name            yu needle~
-Cname           �C�_�w�Z~
+Cname           七奇針訣~
 Slot            SLOT_YU_NEEDLE
 Msgoff          ~
 Check           check_pen_attack~
@@ -33,8 +33,8 @@ Limit           CLASS_SMITH      1  80
 Help            ~
 #Damage
 Description
-$n�@��$W�y�ճD�R�H�z$Z�M�U���y���M�B�i�e��M���x�L���M����y��$N���ݫe$S�y��
-���ޡz$Z�ΤO�W�F�h�T~
+$n一招$W『白蛇吐信』$Z﹐下身稍曲﹐步履前跨﹐雙掌微分﹐手指尖往$N的胸前$S『鳩
+尾穴』$Z用力戳了去﹗~
 Chance          10
 Value           20
 Parry           0
@@ -43,8 +43,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��x�@�i�M�@��$W�y�c�꼳�ϡz$Z�M�a���@���M�ѤW���U�V$N���Y��$S�y�ʷ|�ޡz$Z
-���F�h�T~
+$n手掌一張﹐一式$W『惡虎撲羊』$Z﹐縱身一跳﹐由上往下向$N的頭頂$S『百會穴』$Z
+撲了去﹗~
 Chance          10
 Value           20
 Parry           0
@@ -53,8 +53,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n����@�Ԥ@���@���M�N$N������I$S�y�X���ޡz$Z����M���~�j��@��M�ΤO�a�N$N
-�ߤF�}�h�T~
+$n雙手一拉一按一壓﹐將$N的左手背$S『合谷穴』$Z制住﹐往外迴轉一圈﹐用力地將$N
+拋了開去﹗~
 Chance          10
 Value           20
 Parry           0
@@ -63,7 +63,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�����L�ۡM���a���ߤ@��M¶��F$N���I��M�����V$N�I��$S�y�R���ޡz$Z�W�F�h�T~
+$n拗膝微蹲﹐倏地身軀一轉﹐繞到了$N的背後﹐中指向$N背後$S『命門穴』$Z戳了去﹗~
 Chance          10
 Value           20
 Parry           0
@@ -72,8 +72,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�����M�a����h�F�ƨB�M$N��i�M���M$n����߰��M��y�@���M��h���i�M�y�y��
-$N����$S�y���ޡz$Z�泻�ӥh�T~
+$n身行突然地往後退了數步﹐$N跟進﹐忽然$n身行立停﹐手肘一曲﹐轉退為進﹐肘尖往
+$N腹部$S『氣血穴』$Z急頂而去﹗~
 Chance          10
 Value           20
 Parry           0
@@ -82,8 +82,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�I�S�@�n�M���k���F�a��$N�I���a�F�h�M����@���@�W�M�V$N������$S�y�Ӷ��ޡz$Z
-�M�ḣ$S�y�����ޡz$Z�����T~
+$n呼嘯一聲﹐身法輕靈地往$N背後縱了去﹐雙手一打一戳﹐向$N的左邊$S『太陽穴』$Z
+﹐後腦$S『風府穴』$Z攻擊﹗~
 Chance          10
 Value           20
 Parry           0
@@ -92,8 +92,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�@��$S�y�ਭ���X�z$Z�M���λ������k�n�\�M����W�U½�ʡM��t�a�V��$N�Ω祴�M
-�ξள�M��$N�������U�j�n�ީ۩I�T~
+$n一招$S『轉身六合』$Z﹐身形輕輕左右搖擺﹐雙手上下翻動﹐急速地向著$N或拍打﹐
+或擒拿﹐往$N的全身各大要穴招呼﹗~
 Chance          10
 Value           20
 Parry           0
@@ -102,8 +102,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n����@���M�k��@�ġM�@��$W�y���Ḩ���z$Z�M��⤤$O�R�V$N�����u$S�y�ؿA�ޡz
-$Z�T~
+$n左手一揮﹐右手一勾﹐一招$W『飛花落葉』$Z﹐把手中$O舞向$N的雙臂$S『尺澤穴』
+$Z﹗~
 Chance          10
 Value           20
 Parry           0
@@ -112,7 +112,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�B��$O�M���k�}�}�M�������ɡM�W�V$N���ݫe$S�y�褤�ޡz$Z�M�I��$S�y�ǫ\�ޡz$Z�T~
+$n運使$O﹐左右開弓﹐綿綿不盡﹐戳向$N的胸前$S『膻中穴』$Z﹐背後$S『腎俞穴』$Z﹗~
 Chance          10
 Value           20
 Parry           0
@@ -121,8 +121,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���ߤ@�ۡM�����t$O�M�������e����M�@��$W�y����½��z$Z�W�իݵo�M��V$N���}
-��$S�y��u�ޡz$Z�T~
+$n身軀一蹲﹐雙手掐$O﹐平平往前直刺﹐一招$W『海底翻花』$Z蓄勢待發﹐迎向$N的腳
+底$S『湧泉穴』$Z﹗~
 Chance          10
 Value           20
 Parry           0
@@ -131,8 +131,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���k���F�M�@��$W�y���B���}�z$Z�M�����@�D�M$O��V$N�ӭK$S�y�����ޡz$Z�M�ӳ�
-$S�y�ӽ��ޡz$Z�C~
+$n身法輕靈﹐一招$W『飛步拗鸞』$Z﹐輕身一躍﹐$O刺向$N肩胛$S『雲門穴』$Z﹐肩頂
+$S『肩膠穴』$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -141,8 +141,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���u�V�~�@�i�M�@��$W�y�j�P�i�͡z$Z�M���@��$W�y���F�����z$Z�M�⤤$O�e�V$N
-���|��$S�y�Ѭ�ޡz$Z��h�T~
+$n雙臂向外一張﹐一式$W『大鵬展翅』$Z﹐緊跟一招$W『平沙落雁』$Z﹐手中$O疾向$N
+的咽喉$S『天突穴』$Z刺去﹗~
 Chance          10
 Value           20
 Parry           0
@@ -151,8 +151,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Τ@��M�@��$W�y�ਭ���X�z$Z�M�N�⤤$O�R���@�Ѯ�y�M�j�ۦb$N�|�g�M���a�@
-��$W�y�^��K��z$Z�M�N$O��V$N����$S�y�ѬW�ޡz$Z�M$S�y�ת��ޡz$Z�T~
+$n身形一轉﹐一式$W『轉身六合』$Z﹐將手中$O舞成一股氣流﹐迴旋在$N四週﹐倏地一
+招$W『回望春月』$Z﹐將$O刺向$N腦門$S『天柱穴』$Z﹐$S『啞門穴』$Z﹗~
 Chance          10
 Value           20
 Parry           0
@@ -161,9 +161,9 @@ Innate          0 0
 End
 #Damage
 Description
-$n�j�ܤ@�n�y$Y���R�C�w$Z�z�M���ʥ������l�M�⤤$O�R���C�I���I�M���O�V$N��$Y�y��
-�|�ޡz�M�y�L��ޡz�M�y�Ѭ�ޡz�M�y�褤�ޡz�M�y���E�ޡz�M�y�����ޡz�M�y����ޡz
-$Z�M�����T~
+$n大喝一聲『$Y絕命七針$Z』﹐鼓動全身內勁﹐手中$O舞成七點光點﹐分別向$N的$Y『百
+會穴』﹐『印堂穴』﹐『天突穴』﹐『膻中穴』﹐『中脘穴』﹐『鳩尾穴』﹐『氣海穴』
+$Z﹐急急突刺﹗~
 Chance          10
 Value           20
 Parry           0
@@ -172,7 +172,7 @@ Innate          0 0
 End
 #Damage
 Description
-$R$n�y���R�C�w�z��z�F$N���W�����ߤj�ޡM$N�����W�崳�I�I�C$Z~
+$R$n『絕命七針』刺透了$N身上的任脈大穴﹐$N的身上血斑點點。$Z~
 Chance          10
 Value           20
 Parry           0

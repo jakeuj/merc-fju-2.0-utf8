@@ -1,7 +1,7 @@
 Name            sneak~
-Cname           ���N~
+Cname           潛行術~
 Slot            SLOT_SNEAK
-Msgoff          �A���A�λ��ժ��B��樫�F�T~
+Msgoff          你不再用輕盈的步伐行走了﹗~
 Function        skill_sneak~
 Position        POS_STANDING
 Type            TAR_CHAR_SELF

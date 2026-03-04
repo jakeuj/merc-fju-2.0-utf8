@@ -1,9 +1,9 @@
 Vnum            105
 Name            sun ore~
-ShortDesc       ¤é¥Û~
+ShortDesc       æ—¥çŸ³~
 Description
-¤@Áû¬İ¨ÓÁÙ¤£¿ùªº¤é¥Û(sun ore)¡M®³µ¹ÅK¦K©Î¬OÅ±¼C®vÅ±³y(mint)§a¡T~
-Unit            Áû~
+ä¸€é¡†çœ‹ä¾†é‚„ä¸éŒ¯çš„æ—¥çŸ³(sun ore)ï¹æ‹¿çµ¦éµåŒ æˆ–æ˜¯é‘„åŠå¸«é‘„é€ (mint)å§ï¹—~
+Unit            é¡†~
 ItemType        ITEM_ORE
 Takeable        Yes
 Level           1

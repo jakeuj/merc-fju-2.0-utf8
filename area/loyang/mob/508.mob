@@ -1,11 +1,11 @@
 Vnum            508
 Name            citizen~
-ShortDesc       ��H~
-LongDesc        ���^�^����H(citizen)�g�L���a�C
+ShortDesc       行人~
+LongDesc        行色匆匆的行人(citizen)經過此地。
 ~
 Description
-�ݥL�@�Ʀ��^�^���ˤl�M�n���n��檺���h�Y�a�a�T
-�γ\�A�i�H�ݥL���󨺻�۫�(why)��T
+看他一副行色匆匆的樣子﹐好像要急急的趕去某地吧﹗
+或許你可以問他為何那麼著急(why)喔﹗
 ~
 StayArea        Yes
 Alignment       0
@@ -34,7 +34,7 @@ Type            speech_prog
 Argument        why~
 Text
 if ispc($n)
-  tell $n �S���աK�e���b�j���աK�n�֤@�I�~�R����K
+  tell $n 沒有啦…前面在大拍賣啦…要快一點才買的到…
   smile $n
 endif
 ~
@@ -45,8 +45,8 @@ Type            greet_prog
 Chance          30
 Text
 if ispc($n)
-  say �����M�W���ڬݨ�Z��������b�R�����K
-  say �ݥL�R�����ͭ��M�u�Q��L�Ǥ@�U���K
+  say 呵呵﹐上次我看到武器店老闆在舞拳ㄟ…
+  say 看他舞的虎虎生風﹐真想跟他學一下說…
   hmm
 endif
 ~

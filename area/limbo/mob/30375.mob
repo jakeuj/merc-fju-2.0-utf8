@@ -1,10 +1,10 @@
 Vnum            30375
 Name            queen dong~
-ShortDesc       ���m~
-LongDesc        ���m(queen dong)
+ShortDesc       董妃~
+LongDesc        董妃(queen dong)
 ~
 Description
-�긤���Ӫ��f�f�M���P�~�m�Ҭ��m�C
+國舅董承的妹妹﹐嫁與漢獻帝為妃。
 ~
 Sentinel        Yes
 Alignment       0
@@ -28,5 +28,5 @@ DodgeRatio      100
 Migrate         0
 Sex             SEX_FEMALE
 Auction
-�ڦѤ����b�ܽ�a���F�M�ڤ]�X���ɽ�洫�{���C~
+我老公都在變賣家產了﹐我也趁此時賣賣換現金。~
 End

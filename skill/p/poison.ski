@@ -1,7 +1,7 @@
 Name            poison~
-Cname           ¬r±ş³N~
+Cname           æ¯’æ®ºè¡“~
 Slot            SLOT_POISON
-Msgoff          §A·P¨ì¨­Åé¸û°·±d¤F¡T~
+Msgoff          ä½ æ„Ÿåˆ°èº«é«”è¼ƒå¥åº·äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_poison~
 Position        POS_STANDING

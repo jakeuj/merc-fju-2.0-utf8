@@ -1,7 +1,7 @@
 Name            blindness~
-Cname           ²´ª¼³N~
+Cname           çœ¼ç›²è¡“~
 Slot            SLOT_BLINDNESS
-Msgoff          §A¤S¥i¥H¬İ¨£¤F¡T~
+Msgoff          ä½ åˆå¯ä»¥çœ‹è¦‹äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_blindness~
 Position        POS_FIGHTING

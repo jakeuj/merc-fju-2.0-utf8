@@ -1,5 +1,5 @@
 Name            frost steps~
-Cname           �����B~
+Cname           紫霜步~
 Slot            SLOT_FROST_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,7 +38,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n�ϥX$R�y���N�����z$Z�M�礣���M�ۤϺ�u�p�s�M�H�R��ʡM$N�L�k�q$n�Żڧ����C~
+$n使出$R『霜冷煙霧』$Z﹐亦不急攻﹐相反緊守如山﹐以靜制動﹐$N無法從$n空際攻擊。~
 Chance          20
 Value           20
 Parry           0
@@ -47,7 +47,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Ϋ�ۦp��$B�y�N���Ƭޡz$Z�M��$N���ۦ��ƺɾפU�C~
+$n身形急旋如盾$B『冷霜化盾』$Z﹐把$N的招式數盡擋下。~
 Chance          20
 Value           20
 Parry           0
@@ -56,8 +56,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�t�۱N�B�𤣦����@�M���_�Q���l�O�M�ϥX$Y�y����۲��z$Z�w�ͥͧ�$N�����۩�}
-�M$n���v�Ƹ��T�ؤ��� �C~
+$n暗自將運氣不住提昇﹐鼓起十成勁力﹐使出$Y『霜氣幻眾』$Z硬生生把$N的殺招拆開
+﹐$n身影飄落三尺之遠 。~
 Chance          20
 Value           20
 Parry           0
@@ -66,7 +66,7 @@ Innate          0 0
 End
 #Damage
 Description
-$N���ۦ��M���������V$n��h�M$n��$W�y�������{�z$Z�k���}�U�T�B�M���}$N�������C~
+$N的招式﹐源源不絕向$n攻去﹐$n使$W『霜雪飄臨』$Z右左腳各三步﹐躲開$N的殺式。~
 Chance          20
 Value           20
 Parry           0

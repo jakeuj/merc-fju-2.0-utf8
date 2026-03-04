@@ -1,9 +1,9 @@
 Vnum            23
 Name            dragon boot~
-ShortDesc       À³Àsªø¹u~
+ShortDesc       æ‡‰é¾é•·é´~
 Description
-¤Ñ¯«±M¥Îªø¹u(boot)¡C~
-Unit            Âù~
+å¤©ç¥å°ˆç”¨é•·é´(boot)ã€‚~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

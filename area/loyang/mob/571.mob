@@ -1,10 +1,10 @@
 Vnum            571
 Name            badly rouge~
-ShortDesc       ¬yª]~
-LongDesc        ¬yª](badly rouge)
+ShortDesc       æµæ°“~
+LongDesc        æµæ°“(badly rouge)
 ~
 Description
-¥L¤@Áyªº¾î¦×¡M¦Ù¦×ªÈµ²¡MÄU§A¨S¨Æ¤£­n©Û·S³o¼Ëªº¤H¡T
+ä»–ä¸€è‡‰çš„æ©«è‚‰ï¹è‚Œè‚‰ç³¾çµï¹å‹¸ä½ æ²’äº‹ä¸è¦æ‹›æƒ¹é€™æ¨£çš„äººï¹—
 ~
 AutoSetValue    Yes
 Alignment       0
@@ -33,7 +33,7 @@ Type            greet_prog
 Chance          30
 Text
 if ispc($n)
-  say ¬İ¤T¤p¡T¦A¬İ§â§A²´·ú«õ¥X¨Ó¡T
+  say çœ‹ä¸‰å°ï¹—å†çœ‹æŠŠä½ çœ¼ç›æŒ–å‡ºä¾†ï¹—
   growl
 endif
 ~
@@ -44,7 +44,7 @@ Type            fight_prog
 Chance          30
 Text
 if rand(30)
-  say ¤p¤l¡T§A¬O¬¡¿°¤F°Ú¡T´±¦b¤Ó·³ÀY¤W°Ê¤g¡T
+  say å°å­ï¹—ä½ æ˜¯æ´»è†©äº†å•Šï¹—æ•¢åœ¨å¤ªæ­²é ­ä¸Šå‹•åœŸï¹—
 endif
 ~
 End

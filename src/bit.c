@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -23,12 +23,12 @@ const char * direction_name( int direction )
 {
   int    size;
   const char * dir_name [] =
-    {  "¥_", "ªF", "«n", "¦è", "¤W", "¤U", "¶i¤J", "¥X¥h" };
+    {  "åŒ—", "æ±", "å—", "è¥¿", "ä¸Š", "ä¸‹", "é€²å…¥", "å‡ºå»" };
 
   PUSH_FUNCTION( "direction_name" );
 
   size = sizeof( dir_name ) / sizeof( dir_name[0] );
-  if ( direction < 0 || direction >= size ) RETURN( "¥¼ª¾" );
+  if ( direction < 0 || direction >= size ) RETURN( "æœªçŸ¥" );
   RETURN( dir_name[direction] );
 }
 
@@ -41,7 +41,7 @@ const char * direction_ename( int direction )
   PUSH_FUNCTION( "direction_name" );
 
   size = sizeof( dir_ename ) / sizeof( dir_ename[0] );
-  if ( direction < 0 || direction >= size ) RETURN( "¥¼ª¾" );
+  if ( direction < 0 || direction >= size ) RETURN( "æœªçŸ¥" );
   RETURN( dir_ename[direction] );
 }
 
@@ -54,30 +54,30 @@ const char * get_homename( int sn )
   for ( pArea = area_first; pArea; pArea = pArea->next )
     if ( pArea->serial == sn ) RETURN( pArea->name );
 
-  RETURN( "¤£¸Ô" );
+  RETURN( "ä¸è©³" );
 }
 
 const char * status_message( CHAR_DATA * ch )
 {
   char * const StatusMessage [] =
   {
-     "\e[1;31m¨â²´¤@¸C¡M¨â»L¤@¦ù¡M¬Û«H«Ü§Ö´N¥i¥H©MÀFÃ¹¤ıªw¯ù¤F¡T\e[0m",
-     "\e[1;31m¤w¸g¨ü¶Ë¹L­«¡M©a©a¤@®§¡M©R¦b¥¹¤i¡T\e[0m",
-     "\e[1;31m³B©ó¥b©ü°gª¬ºA¡MÀH®É³£¥i¯àºL­Ë©ü¥h¡M²´·ú¤]¶}©l¼Ò½k¡T\e[0m",
-     "\e[1;31m¨ü¶Ë¹L­«¡M¦³¦p­·¤¤´İÀë¡MÀH®É¦³¥i¯àÂ_®ğ¡T\e[0m",
-     "\e[1;31m¨ü¤F¬Û·í­«ªº¶Ë¡M¥u©È¦³¥Í©R¦MÀI¡M¬İ¨Ó±¡ªp¤£¤Ó§®¡T\e[0m",
+     "\e[1;31må…©çœ¼ä¸€çœï¹å…©è…¿ä¸€ä¼¸ï¹ç›¸ä¿¡å¾ˆå¿«å°±å¯ä»¥å’Œé–»ç¾…ç‹æ³¡èŒ¶äº†ï¹—\e[0m",
+     "\e[1;31må·²ç¶“å—å‚·éé‡ï¹å¥„å¥„ä¸€æ¯ï¹å‘½åœ¨æ—¦å¤•ï¹—\e[0m",
+     "\e[1;31mè™•æ–¼åŠæ˜è¿·ç‹€æ…‹ï¹éš¨æ™‚éƒ½å¯èƒ½æ‘”å€’æ˜å»ï¹çœ¼ç›ä¹Ÿé–‹å§‹æ¨¡ç³Šï¹—\e[0m",
+     "\e[1;31må—å‚·éé‡ï¹æœ‰å¦‚é¢¨ä¸­æ®˜ç‡­ï¹éš¨æ™‚æœ‰å¯èƒ½æ–·æ°£ï¹—\e[0m",
+     "\e[1;31må—äº†ç›¸ç•¶é‡çš„å‚·ï¹åªæ€•æœ‰ç”Ÿå‘½å±éšªï¹çœ‹ä¾†æƒ…æ³ä¸å¤ªå¦™ï¹—\e[0m",
 
-     "\e[1;32m¤@°ÆÀY­«¸}»´ªº¼Ò¼Ë¡M¥¿¦b«j±j¤ä¼µ¤£­Ë¤U¡T\e[0m",
-     "\e[1;32m®ğ®§¨H­«¡M°Ê§@¶}©l´²¶Ã¡M¬İ¨Ó©Ò¨üªº¶ËµÛ¹ê¤£»´¡T\e[0m",
-     "\e[1;32m¶}©l®ğ³İ¦p¤û¡M¤U½L¤£Ã­¡M¥X©Û¤w¦³©úÅãªº¯}ºì¡T\e[0m",
-     "\e[1;32m¦ü¥G¤Q¤À¯h¾Î¡M¬İ¨Ó»İ­n¦n¦n¥ğ®§¡T\e[0m",
-     "\e[1;32m®ğ³İ¦S¦S¡M¬İ¨Óª¬ªp¤£¤Ó¦n¡M»İ­n½Õ²z½Õ²z¡T\e[0m",
+     "\e[1;32mä¸€å‰¯é ­é‡è…³è¼•çš„æ¨¡æ¨£ï¹æ­£åœ¨å‹‰å¼·æ”¯æ’ä¸å€’ä¸‹ï¹—\e[0m",
+     "\e[1;32mæ°£æ¯æ²ˆé‡ï¹å‹•ä½œé–‹å§‹æ•£äº‚ï¹çœ‹ä¾†æ‰€å—çš„å‚·è‘—å¯¦ä¸è¼•ï¹—\e[0m",
+     "\e[1;32mé–‹å§‹æ°£å–˜å¦‚ç‰›ï¹ä¸‹ç›¤ä¸ç©©ï¹å‡ºæ‹›å·²æœ‰æ˜é¡¯çš„ç ´ç¶»ï¹—\e[0m",
+     "\e[1;32mä¼¼ä¹ååˆ†ç–²æ†Šï¹çœ‹ä¾†éœ€è¦å¥½å¥½ä¼‘æ¯ï¹—\e[0m",
+     "\e[1;32mæ°£å–˜ååï¹çœ‹ä¾†ç‹€æ³ä¸å¤ªå¥½ï¹éœ€è¦èª¿ç†èª¿ç†ï¹—\e[0m",
 
-     "\e[1;33m¨ü¶Ë¤£»´¡M¬İ¤£¤Ó²M·¡ª¬ªp¬O¦p¦ó¡T\e[0m",
-     "\e[1;33m¨ü¤F´X³B¤p¶Ë¡M¥i¬OÀ³¸Ó¤£Ãª¨Æ¡T\e[0m",
-     "\e[1;33m°Ê§@¦ü¥G¶}©l¦³ÂI¤£ÆF¥ú¡M¦ı¬O¤´µM¦³±ø¤£¯¿¡T\e[0m",
-     "\e[1;33m¥Rº¡¤F¬¡¤O¡M¬İ¨Ó¬O¥´¥X¿³½ì¨Ó¤F¡T\e[0m",
-     "\e[1;33m¬õ¥úº¡­±¡M®ğ¦å¹¡º¡¡M¥¿³B©ó³Ì¨Îª¬ªp¡T\e[0m"
+     "\e[1;33må—å‚·ä¸è¼•ï¹çœ‹ä¸å¤ªæ¸…æ¥šç‹€æ³æ˜¯å¦‚ä½•ï¹—\e[0m",
+     "\e[1;33må—äº†å¹¾è™•å°å‚·ï¹å¯æ˜¯æ‡‰è©²ä¸ç¤™äº‹ï¹—\e[0m",
+     "\e[1;33må‹•ä½œä¼¼ä¹é–‹å§‹æœ‰é»ä¸éˆå…‰ï¹ä½†æ˜¯ä»ç„¶æœ‰æ¢ä¸ç´Šï¹—\e[0m",
+     "\e[1;33må……æ»¿äº†æ´»åŠ›ï¹çœ‹ä¾†æ˜¯æ‰“å‡ºèˆˆè¶£ä¾†äº†ï¹—\e[0m",
+     "\e[1;33mç´…å…‰æ»¿é¢ï¹æ°£è¡€é£½æ»¿ï¹æ­£è™•æ–¼æœ€ä½³ç‹€æ³ï¹—\e[0m"
   };
 
   int size = sizeof( StatusMessage ) / sizeof( StatusMessage[0] );
@@ -163,18 +163,18 @@ const char * adeptation_name( int adept )
   int     count;
   char *  const adeptation [] =
   {
-    "\e[0;37m²@µL®Ú°ò\e[0m" ,
-    "\e[0;31mªì¾Ç¥E½m\e[0m" ,
-    "\e[0;32m²Ê³q¥Ö¤ò\e[0m" ,
-    "\e[0;33mªì¿sªù®|\e[0m" ,
-    "\e[0;34m°¨°¨ªêªê\e[0m" ,
-    "\e[0;35m¤ß¯«»â·|\e[0m" ,
-    "\e[1;31m¥XÃş©ŞµÑ\e[0m" ,
-    "\e[1;32m¯«¥G¨ä§Ş\e[0m" ,
-    "\e[1;33m¥X¯«¤J¤Æ\e[0m" ,
-    "\e[1;34mµn®p³y·¥\e[0m" ,
-    "\e[1;36m¤@¥N©v®v\e[0m" ,
-    "\e[1;37m²`¤£¥i´ú\e[0m"
+    "\e[0;37mæ¯«ç„¡æ ¹åŸº\e[0m" ,
+    "\e[0;31måˆå­¸ä¹ç·´\e[0m" ,
+    "\e[0;32mç²—é€šçš®æ¯›\e[0m" ,
+    "\e[0;33måˆçªºé–€å¾‘\e[0m" ,
+    "\e[0;34mé¦¬é¦¬è™è™\e[0m" ,
+    "\e[0;35må¿ƒç¥é ˜æœƒ\e[0m" ,
+    "\e[1;31må‡ºé¡æ‹”èƒ\e[0m" ,
+    "\e[1;32mç¥ä¹å…¶æŠ€\e[0m" ,
+    "\e[1;33må‡ºç¥å…¥åŒ–\e[0m" ,
+    "\e[1;34mç™»å³°é€ æ¥µ\e[0m" ,
+    "\e[1;36mä¸€ä»£å®—å¸«\e[0m" ,
+    "\e[1;37mæ·±ä¸å¯æ¸¬\e[0m"
   };
 
   PUSH_FUNCTION( "adeptation_name" );
@@ -184,7 +184,7 @@ const char * adeptation_name( int adept )
   size  = sizeof( adeptation ) / sizeof( adeptation[0] );
   count = ( adept / 10 ) + 1;
 
-  if ( count < 0 || count >= size ) RETURN( "¥¼ª¾" );
+  if ( count < 0 || count >= size ) RETURN( "æœªçŸ¥" );
 
   RETURN( adeptation[count] );
 }
@@ -196,20 +196,20 @@ char * effect_type_name( int type )
   switch( type )
   {
   default:
-  case EFFECT_NONE:                     RETURN( "¥¼ª¾±q¯Ê" );
-  case EFFECT_VICTIM_MANA:              RETURN( "¹ï¤èªk¤O" );
-  case EFFECT_SELF_MANA:                RETURN( "¦Û¤vªk¤O" );
-  case EFFECT_VICTIM_MOVE:              RETURN( "¹ï¤èÅé¤O" );
-  case EFFECT_SELF_MOVE:                RETURN( "¦Û¤vÅé¤O" );
-  case EFFECT_VICTIM_BLINDNESS:         RETURN( "¹ï¤è²´ª¼" );
-  case EFFECT_VICTIM_CURSE:             RETURN( "¹ï¤è¶A©G" );
-  case EFFECT_VICTIM_POISON:            RETURN( "¹ï¤è¤¤¬r" );
-  case EFFECT_VICTIM_SLEEP:             RETURN( "¹ï¤è©üºÎ" );
-  case EFFECT_VICTIM_PARA:              RETURN( "¹ï¤è³Â·ô" );
-  case EFFECT_VICTIM_FAERIE_FIRE:       RETURN( "¹ï¤èºëÆF¤§¤õ" );
-  case EFFECT_VICTIM_HIT:               RETURN( "¹ï¤è¥Í©R" );
-  case EFFECT_SELF_HIT:                 RETURN( "¦Û¤v¥Í©R" );
-  case EFFECT_HIT_DIE:                  RETURN( "¤@À»¥²±ş" );
+  case EFFECT_NONE:                     RETURN( "æœªçŸ¥å¾ç¼º" );
+  case EFFECT_VICTIM_MANA:              RETURN( "å°æ–¹æ³•åŠ›" );
+  case EFFECT_SELF_MANA:                RETURN( "è‡ªå·±æ³•åŠ›" );
+  case EFFECT_VICTIM_MOVE:              RETURN( "å°æ–¹é«”åŠ›" );
+  case EFFECT_SELF_MOVE:                RETURN( "è‡ªå·±é«”åŠ›" );
+  case EFFECT_VICTIM_BLINDNESS:         RETURN( "å°æ–¹çœ¼ç›²" );
+  case EFFECT_VICTIM_CURSE:             RETURN( "å°æ–¹è©›å’’" );
+  case EFFECT_VICTIM_POISON:            RETURN( "å°æ–¹ä¸­æ¯’" );
+  case EFFECT_VICTIM_SLEEP:             RETURN( "å°æ–¹æ˜ç¡" );
+  case EFFECT_VICTIM_PARA:              RETURN( "å°æ–¹éº»ç—º" );
+  case EFFECT_VICTIM_FAERIE_FIRE:       RETURN( "å°æ–¹ç²¾éˆä¹‹ç«" );
+  case EFFECT_VICTIM_HIT:               RETURN( "å°æ–¹ç”Ÿå‘½" );
+  case EFFECT_SELF_HIT:                 RETURN( "è‡ªå·±ç”Ÿå‘½" );
+  case EFFECT_HIT_DIE:                  RETURN( "ä¸€æ“Šå¿…æ®º" );
   }
 }
 
@@ -219,12 +219,12 @@ char * get_position( int number )
 
   switch( number )
   {
-  default:           RETURN( "¥¼ª¾" );
-  case POS_DEAD:     RETURN( "¦º¤`" );
-  case POS_SLEEPING: RETURN( "ºÎÄ±" );
-  case POS_RESTING:  RETURN( "¥ğ®§" );
-  case POS_FIGHTING: RETURN( "¾Ô°«" );
-  case POS_STANDING: RETURN( "¯¸µÛ" );
+  default:           RETURN( "æœªçŸ¥" );
+  case POS_DEAD:     RETURN( "æ­»äº¡" );
+  case POS_SLEEPING: RETURN( "ç¡è¦º" );
+  case POS_RESTING:  RETURN( "ä¼‘æ¯" );
+  case POS_FIGHTING: RETURN( "æˆ°é¬¥" );
+  case POS_STANDING: RETURN( "ç«™è‘—" );
   }
 }
 
@@ -234,11 +234,11 @@ char * get_log( int number )
 
   switch( number )
   {
-  default:          RETURN( "¥¼ª¾"     );
-  case LOG_NORMAL:  RETURN( "¥¿±`¼Ğ°O" );
-  case LOG_ALWAYS:  RETURN( "¥Ã»·¼Ğ°O" );
-  case LOG_NEVER :  RETURN( "¥Ã¤£¼Ğ°O" );
-  case LOG_WIZ   :  RETURN( "¯«±Ú¼Ğ°O" );
+  default:          RETURN( "æœªçŸ¥"     );
+  case LOG_NORMAL:  RETURN( "æ­£å¸¸æ¨™è¨˜" );
+  case LOG_ALWAYS:  RETURN( "æ°¸é æ¨™è¨˜" );
+  case LOG_NEVER :  RETURN( "æ°¸ä¸æ¨™è¨˜" );
+  case LOG_WIZ   :  RETURN( "ç¥æ—æ¨™è¨˜" );
   }
 }
 
@@ -247,10 +247,10 @@ char * sex_name( int sex )
   PUSH_FUNCTION( "sex_name" );
   switch( sex )
   {
-  case SEX_MALE:    RETURN( "¨k©Ê" );
-  case SEX_FEMALE:  RETURN( "¤k©Ê" );
-  case SEX_NEUTRAL: RETURN( "¤¤©Ê" );
-  default:          RETURN( "¤£©ú" );
+  case SEX_MALE:    RETURN( "ç”·æ€§" );
+  case SEX_FEMALE:  RETURN( "å¥³æ€§" );
+  case SEX_NEUTRAL: RETURN( "ä¸­æ€§" );
+  default:          RETURN( "ä¸æ˜" );
   }
 }
 
@@ -260,27 +260,27 @@ char * obj_cast_location( int location )
 
   switch( location )
   {
-  default:                RETURN( "¥¼ª¾±q¯Ê" );
-  case OBJ_CAST_HIT:      RETURN( "¼vÅT¥Í©R" );
-  case OBJ_CAST_MANA:     RETURN( "¼vÅTªk¤O" );
-  case OBJ_CAST_MOVE:     RETURN( "¼vÅTÅé¤O" );
-  case OBJ_CAST_IDENT:    RETURN( "Å²©w³N"   );
-  case OBJ_CURE_POISON:   RETURN( "¸Ñ¬r³N"   );
-  case OBJ_DETECT_INVS:   RETURN( "°»´úÁô§Î" );
-  case OBJ_DETECT_MASK:   RETURN( "°»´ú©ö®e" );
-  case OBJ_CAST_FLY:      RETURN( "­¸¦æ³N"   );
-  case OBJ_CURE_BLIND:    RETURN( "ªvÀø²´ª¼" );
-  case OBJ_GIANT_STR:     RETURN( "¥¨¤H¤§¤O" );
-  case OBJ_DETECT_HIDE:   RETURN( "°»´úÂÃ°Î" );
-  case OBJ_SNEAK:         RETURN( "¼ç¦æ"     );
-  case OBJ_DETECT_EVIL:   RETURN( "°»´ú¨¸´c" );
-  case OBJ_CHANGE_SEX:    RETURN( "ÅÜ©Ê³N"   );
-  case OBJ_DETECT_MAGIC:  RETURN( "°»´úÅ]ªk" );
-  case OBJ_DETECT_POISON: RETURN( "°»´ú¬rª«" );
-  case OBJ_FAERIE_FOG:    RETURN( "²{¨­³N"   );
-  case OBJ_GATE:          RETURN( "©Û°­³N"   );
-  case OBJ_FIXITY:        RETURN( "©w¨­³N"   );
-  case OBJ_CAST_ALL:      RETURN( "¦^´_©Ò¦³" );
+  default:                RETURN( "æœªçŸ¥å¾ç¼º" );
+  case OBJ_CAST_HIT:      RETURN( "å½±éŸ¿ç”Ÿå‘½" );
+  case OBJ_CAST_MANA:     RETURN( "å½±éŸ¿æ³•åŠ›" );
+  case OBJ_CAST_MOVE:     RETURN( "å½±éŸ¿é«”åŠ›" );
+  case OBJ_CAST_IDENT:    RETURN( "é‘‘å®šè¡“"   );
+  case OBJ_CURE_POISON:   RETURN( "è§£æ¯’è¡“"   );
+  case OBJ_DETECT_INVS:   RETURN( "åµæ¸¬éš±å½¢" );
+  case OBJ_DETECT_MASK:   RETURN( "åµæ¸¬æ˜“å®¹" );
+  case OBJ_CAST_FLY:      RETURN( "é£›è¡Œè¡“"   );
+  case OBJ_CURE_BLIND:    RETURN( "æ²»ç™‚çœ¼ç›²" );
+  case OBJ_GIANT_STR:     RETURN( "å·¨äººä¹‹åŠ›" );
+  case OBJ_DETECT_HIDE:   RETURN( "åµæ¸¬è—åŒ¿" );
+  case OBJ_SNEAK:         RETURN( "æ½›è¡Œ"     );
+  case OBJ_DETECT_EVIL:   RETURN( "åµæ¸¬é‚ªæƒ¡" );
+  case OBJ_CHANGE_SEX:    RETURN( "è®Šæ€§è¡“"   );
+  case OBJ_DETECT_MAGIC:  RETURN( "åµæ¸¬é­”æ³•" );
+  case OBJ_DETECT_POISON: RETURN( "åµæ¸¬æ¯’ç‰©" );
+  case OBJ_FAERIE_FOG:    RETURN( "ç¾èº«è¡“"   );
+  case OBJ_GATE:          RETURN( "æ‹›é¬¼è¡“"   );
+  case OBJ_FIXITY:        RETURN( "å®šèº«è¡“"   );
+  case OBJ_CAST_ALL:      RETURN( "å›å¾©æ‰€æœ‰" );
   }
 }
 
@@ -290,12 +290,12 @@ const char * bounty_type( int type )
 
   switch( type )
   {
-  default:            RETURN( "¤£¸Ô" );
-  case BOUNTY_GOLD:   RETURN( "¶Àª÷" );
-  case BOUNTY_FIRMAN: RETURN( "§K¦ºª÷µP" );
+  default:            RETURN( "ä¸è©³" );
+  case BOUNTY_GOLD:   RETURN( "é»ƒé‡‘" );
+  case BOUNTY_FIRMAN: RETURN( "å…æ­»é‡‘ç‰Œ" );
   }
 
-  RETURN( "¤£¸Ô" );
+  RETURN( "ä¸è©³" );
 }
 
 const char * bounty_unit( int type )
@@ -305,8 +305,8 @@ const char * bounty_unit( int type )
   switch( type )
   {
   default:            RETURN( ""   );
-  case BOUNTY_GOLD:   RETURN( "¨â" );
-  case BOUNTY_FIRMAN: RETURN( "±i" );
+  case BOUNTY_GOLD:   RETURN( "å…©" );
+  case BOUNTY_FIRMAN: RETURN( "å¼µ" );
   }
 
   RETURN( "" );
@@ -317,35 +317,35 @@ char * message_type( int type )
 
   switch( type )
   {
-  default:                 RETURN( "(¥¼ª¾)"         );
-  case ACT_WHEN_EAT:       RETURN( "¦Yªº°Ê§@"       );
-  case ACT_WHEN_WEAR:      RETURN( "¬ïªº°Ê§@"       );
-  case ACT_WHEN_DROP:      RETURN( "¥áªº°Ê§@"       );
-  case ACT_WHEN_REMOVE:    RETURN( "²¾°£ªº°Ê§@"     );
-  case ACT_WHEN_SACRIFICE: RETURN( "©^Ämªº°Ê§@"     );
-  case ACT_WHEN_GET:       RETURN( "¾ß°_ªº°Ê§@"     );
-  case ACT_WHEN_PUT:       RETURN( "©ñ¤Jªº°Ê§@"     );
-  case ACT_WHEN_GIVE:      RETURN( "ÃØ»Pªº°Ê§@"     );
-  case ACT_WHEN_FILL:      RETURN( "¸Ë¶ñªº°Ê§@"     );
-  case ACT_WHEN_DRINK:     RETURN( "³Üªº°Ê§@"       );
-  case ACT_WHEN_RECITE:    RETURN( "©À»wªº°Ê§@"     );
-  case ACT_WHEN_BUY:       RETURN( "¶Rªº°Ê§@"       );
-  case ACT_WHEN_SELL:      RETURN( "½æªº°Ê§@"       );
-  case ACT_WHEN_VALUE:     RETURN( "¦ô»ùªº°Ê§@"     );
-  case ACT_WHEN_LOOK:      RETURN( "Æ[¬İªº°Ê§@"     );
-  case ACT_WHEN_COMPARE:   RETURN( "¤ñ¸ûªº°Ê§@"     );
-  case ACT_WHEN_SEND:      RETURN( "¶l±Hªº°Ê§@"     );
-  case ACT_WHEN_OPEN:      RETURN( "¥´¶}ªº°Ê§@"     );
-  case ACT_WHEN_CLOSE:     RETURN( "Ãö¤Wªº°Ê§@"     );
-  case ACT_WHEN_LOCK:      RETURN( "Âê¤Wªº°Ê§@"     );
-  case ACT_WHEN_UNLOCK:    RETURN( "¶}Âêªº°Ê§@"     );
-  case ACT_WHEN_AUCTION:   RETURN( "©ç½æªº°Ê§@"     );
-  case ACT_WHEN_BET:       RETURN( "³Û»ùªº°Ê§@"     );
-  case ACT_WHEN_REPAIR:    RETURN( "­×²zªº°Ê§@"     );
-  case ACT_WHEN_DEPOSIT:   RETURN( "±H©ñªº°Ê§@"     );
-  case ACT_WHEN_WITHDRAW:  RETURN( "»â¦^ªº°Ê§@"     );
-  case ACT_WHEN_CACHET:    RETURN( "¸Ë¤WÅ]¥Ûªº°Ê§@" );
-  case ACT_WHEN_SLUP:      RETURN( "¨ø¤UÅ]¥Ûªº°Ê§@" );
+  default:                 RETURN( "(æœªçŸ¥)"         );
+  case ACT_WHEN_EAT:       RETURN( "åƒçš„å‹•ä½œ"       );
+  case ACT_WHEN_WEAR:      RETURN( "ç©¿çš„å‹•ä½œ"       );
+  case ACT_WHEN_DROP:      RETURN( "ä¸Ÿçš„å‹•ä½œ"       );
+  case ACT_WHEN_REMOVE:    RETURN( "ç§»é™¤çš„å‹•ä½œ"     );
+  case ACT_WHEN_SACRIFICE: RETURN( "å¥‰ç»çš„å‹•ä½œ"     );
+  case ACT_WHEN_GET:       RETURN( "æ’¿èµ·çš„å‹•ä½œ"     );
+  case ACT_WHEN_PUT:       RETURN( "æ”¾å…¥çš„å‹•ä½œ"     );
+  case ACT_WHEN_GIVE:      RETURN( "è´ˆèˆ‡çš„å‹•ä½œ"     );
+  case ACT_WHEN_FILL:      RETURN( "è£å¡«çš„å‹•ä½œ"     );
+  case ACT_WHEN_DRINK:     RETURN( "å–çš„å‹•ä½œ"       );
+  case ACT_WHEN_RECITE:    RETURN( "å¿µèª¦çš„å‹•ä½œ"     );
+  case ACT_WHEN_BUY:       RETURN( "è²·çš„å‹•ä½œ"       );
+  case ACT_WHEN_SELL:      RETURN( "è³£çš„å‹•ä½œ"       );
+  case ACT_WHEN_VALUE:     RETURN( "ä¼°åƒ¹çš„å‹•ä½œ"     );
+  case ACT_WHEN_LOOK:      RETURN( "è§€çœ‹çš„å‹•ä½œ"     );
+  case ACT_WHEN_COMPARE:   RETURN( "æ¯”è¼ƒçš„å‹•ä½œ"     );
+  case ACT_WHEN_SEND:      RETURN( "éƒµå¯„çš„å‹•ä½œ"     );
+  case ACT_WHEN_OPEN:      RETURN( "æ‰“é–‹çš„å‹•ä½œ"     );
+  case ACT_WHEN_CLOSE:     RETURN( "é—œä¸Šçš„å‹•ä½œ"     );
+  case ACT_WHEN_LOCK:      RETURN( "é–ä¸Šçš„å‹•ä½œ"     );
+  case ACT_WHEN_UNLOCK:    RETURN( "é–‹é–çš„å‹•ä½œ"     );
+  case ACT_WHEN_AUCTION:   RETURN( "æ‹è³£çš„å‹•ä½œ"     );
+  case ACT_WHEN_BET:       RETURN( "å–Šåƒ¹çš„å‹•ä½œ"     );
+  case ACT_WHEN_REPAIR:    RETURN( "ä¿®ç†çš„å‹•ä½œ"     );
+  case ACT_WHEN_DEPOSIT:   RETURN( "å¯„æ”¾çš„å‹•ä½œ"     );
+  case ACT_WHEN_WITHDRAW:  RETURN( "é ˜å›çš„å‹•ä½œ"     );
+  case ACT_WHEN_CACHET:    RETURN( "è£ä¸Šé­”çŸ³çš„å‹•ä½œ" );
+  case ACT_WHEN_SLUP:      RETURN( "å¸ä¸‹é­”çŸ³çš„å‹•ä½œ" );
   }
 }
 
@@ -358,52 +358,52 @@ char * restrict_value( RESTRICT_DATA * pRestrict, CHAR_DATA * ch )
 
   PUSH_FUNCTION( "restrict_value" );
 
-  if ( !pRestrict || !ch ) RETURN( "(ªÅµ²ºc)" );
+  if ( !pRestrict || !ch ) RETURN( "(ç©ºçµæ§‹)" );
 
   switch( pRestrict->type )
   {
   case RES_STR:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨î¤O¶q¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶åŠ›é‡ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_INT:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨î´¼¤O¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶æ™ºåŠ›ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_WIS:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨î¾ÇÃÑ¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶å­¸è­˜ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_DEX:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨î±Ó±¶¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶æ•æ·ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_CON:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨îÅé®æ¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶é«”æ ¼ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_HP:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨î¥Í©R¤O¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶ç”Ÿå‘½åŠ›ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_MANA:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨îªk¤O¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶æ³•åŠ›ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_MOVE:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨îÅé¤O¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶é«”åŠ›ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_CLASS:
-    str_cpy( buf, "­­¨îÂ¾·~­­¨î¬°" );
+    str_cpy( buf, "é™åˆ¶è·æ¥­é™åˆ¶ç‚º" );
 
     for ( pClass = class_list; pClass; pClass = pClass->next )
     {
@@ -420,19 +420,19 @@ char * restrict_value( RESTRICT_DATA * pRestrict, CHAR_DATA * ch )
   case RES_TRUST:
 
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "­­¨î«H¥ô­È¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "é™åˆ¶ä¿¡ä»»å€¼ä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_SKILL:
 
-    if ( !( pSkill = get_skill( pRestrict->value ) ) ) RETURN( "¥¼ª¾" );
+    if ( !( pSkill = get_skill( pRestrict->value ) ) ) RETURN( "æœªçŸ¥" );
 
     chinese_number( pRestrict->vicevalue, chinese );
-    sprintf( buf, "­­¨î§Ş¯à%s¼ô½m«×¤£¯à§C©ó¬°%s%s%s%s¡C"
+    sprintf( buf, "é™åˆ¶æŠ€èƒ½%sç†Ÿç·´åº¦ä¸èƒ½ä½æ–¼ç‚º%s%s%s%sã€‚"
       , pSkill->cname, adeptation_name( pRestrict->vicevalue )
-      , SkillValue || IS_IMMORTAL( ch ) ? "¡u¼ô½m«×¡R" : ""
+      , SkillValue || IS_IMMORTAL( ch ) ? "ã€Œç†Ÿç·´åº¦ï¹•" : ""
       , SkillValue || IS_IMMORTAL( ch ) ? chinese      : ""
-      , SkillValue || IS_IMMORTAL( ch ) ? "¡v"         : "" );
+      , SkillValue || IS_IMMORTAL( ch ) ? "ã€"         : "" );
 
     break;
 
@@ -440,41 +440,41 @@ char * restrict_value( RESTRICT_DATA * pRestrict, CHAR_DATA * ch )
 
     switch( pRestrict->value )
     {
-    default:          send_to_buffer( "­­¨î©Ê§O¤£¸Ô¡C"   ); break;
-    case SEX_NEUTRAL: send_to_buffer( "­­¨î©Ê§O¬°¤¤©Ê¡C" ); break;
-    case SEX_MALE:    send_to_buffer( "­­¨î©Ê§O¬°¨k©Ê¡C" ); break;
-    case SEX_FEMALE:  send_to_buffer( "­­¨î©Ê§O¬°¤k©Ê¡C" ); break;
+    default:          send_to_buffer( "é™åˆ¶æ€§åˆ¥ä¸è©³ã€‚"   ); break;
+    case SEX_NEUTRAL: send_to_buffer( "é™åˆ¶æ€§åˆ¥ç‚ºä¸­æ€§ã€‚" ); break;
+    case SEX_MALE:    send_to_buffer( "é™åˆ¶æ€§åˆ¥ç‚ºç”·æ€§ã€‚" ); break;
+    case SEX_FEMALE:  send_to_buffer( "é™åˆ¶æ€§åˆ¥ç‚ºå¥³æ€§ã€‚" ); break;
     }
 
     break;
 
   case RES_LEVEL:
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "µ¥¯Å¤£¯à§C©ó%s¡C", chinese );
+    sprintf( buf, "ç­‰ç´šä¸èƒ½ä½æ–¼%sã€‚", chinese );
     break;
 
   case RES_NOSKILL:
 
-    if ( !( pSkill = get_skill( pRestrict->value ) ) ) RETURN( "¥¼ª¾" );
+    if ( !( pSkill = get_skill( pRestrict->value ) ) ) RETURN( "æœªçŸ¥" );
 
     chinese_number( pRestrict->vicevalue, chinese );
-    sprintf( buf, "­­¨î¬Û«g§Ş¯à%s¼ô½m¤£¯à°ª©ó%s%s%s%s¡C"
+    sprintf( buf, "é™åˆ¶ç›¸å‰‹æŠ€èƒ½%sç†Ÿç·´ä¸èƒ½é«˜æ–¼%s%s%s%sã€‚"
       , pSkill->cname, adeptation_name( pRestrict->vicevalue )
-      , SkillValue || IS_IMMORTAL( ch ) ? "¡u¼ô½m«×¡R" : ""
+      , SkillValue || IS_IMMORTAL( ch ) ? "ã€Œç†Ÿç·´åº¦ï¹•" : ""
       , SkillValue || IS_IMMORTAL( ch ) ? chinese      : ""
-      , SkillValue || IS_IMMORTAL( ch ) ? "¡v"         : "" );
+      , SkillValue || IS_IMMORTAL( ch ) ? "ã€"         : "" );
 
     break;
 
   case RES_ALIGN:
 
     chinese_number( pRestrict->value, chinese );
-    sprintf( buf, "°}Àç¥²¶·%s%s¡C"
-      , pRestrict->vicevalue ? "°ª©ó" : "§C©ó", chinese );
+    sprintf( buf, "é™£ç‡Ÿå¿…é ˆ%s%sã€‚"
+      , pRestrict->vicevalue ? "é«˜æ–¼" : "ä½æ–¼", chinese );
     break;
 
   default:
-    str_cpy( buf, "¥¼ª¾" );
+    str_cpy( buf, "æœªçŸ¥" );
     break;
   }
 
@@ -489,23 +489,23 @@ char * ship_status( SHIP_DATA * pShip )
 
   if ( !pShip )
   {
-    mudlog( LOG_DEBUG, "ship_status: ¨Ó·½¤£¥¿½T." );
-    RETURN( "¥¼ª¾" );
+    mudlog( LOG_DEBUG, "ship_status: ä¾†æºä¸æ­£ç¢º." );
+    RETURN( "æœªçŸ¥" );
   }
 
   if ( pShip->sailing_tick > 0 )
   {
-    sprintf( buf, "\e[1;32m¯è¦æ\e[0m¡M%2d¤p®É«á¨ì¹F", pShip->sailing_tick );
+    sprintf( buf, "\e[1;32mèˆªè¡Œ\e[0mï¹%2då°æ™‚å¾Œåˆ°é”", pShip->sailing_tick );
     RETURN( buf );
   }
 
   if ( pShip->waiting_tick > 0 )
   {
-    sprintf( buf, "\e[1;33mµn²î\e[0m¡M%2d¤p®É«á¥Xµo", pShip->waiting_tick );
+    sprintf( buf, "\e[1;33mç™»èˆ¹\e[0mï¹%2då°æ™‚å¾Œå‡ºç™¼", pShip->waiting_tick );
     RETURN( buf );
   }
 
-  RETURN( "ª¬ºA¥¼©ú" );
+  RETURN( "ç‹€æ…‹æœªæ˜" );
 }
 
 char * player_status( int vector )
@@ -514,29 +514,29 @@ char * player_status( int vector )
 
   switch( vector )
   {
-  case CON_PLAYING              : RETURN( "¥¿¦b¹CÀ¸¤¤" );
-  case CON_GET_FQDN             : RETURN( "¨ú±oFQDN¤¤" );
-  case CON_GET_FINGER           : RETURN( "¬dª±®a¸ê®Æ" );
-  case CON_GET_NAME             : RETURN( "¿é¤J©m¦W¤¤" );
-  case CON_CHECK_FILE           : RETURN( "ÀË¬dÀÉ®×¤¤" );
-  case CON_VERIFY               : RETURN( "½T»{ÀÉ®×¤¤" );
-  case CON_GET_OLD_PASSWORD     : RETURN( "¿é¤JÂÂ±K½X" );
-  case CON_CONFIRM_NEW_NAME     : RETURN( "½T»{·s¦WºÙ" );
-  case CON_GET_NEW_PASSWORD     : RETURN( "¿é¤J·s±K½X" );
-  case CON_CONFIRM_NEW_PASSWORD : RETURN( "½T»{·s±K½X" );
-  case CON_GET_SEX              : RETURN( "¿é¤J©Ê§O¤¤" );
-  case CON_READ_MOTD            : RETURN( "¶i¯¸µe­±¤¤" );
-  case CON_GET_CNAME            : RETURN( "¿é¤J¤¤¤å¦W" );
-  case CON_CHOOSE_SKILL         : RETURN( "¿ï¨ú§Ş¯à¤¤" );
-  case CON_GET_EMAIL_ADDRESS    : RETURN( "³]¹q¤l«H½c" );
-  case CON_CHOOSE_CLASS         : RETURN( "¿ï¾ÜÂ¾·~¤¤" );
-  case CON_CHOOSE_MODE          : RETURN( "¿ï¿é¥X¼Ò¦¡" );
-  case CON_CHOOSE_ANGEL         : RETURN( "¿ï¾Ü¦uÅ@¯«" );
-  case CON_CHOOSE_HOME          : RETURN( "¿ï¾Ü¥X¥Í¦a" );
-  case CON_CONTRACT             : RETURN( "Ã±¦X¬ù"     );
+  case CON_PLAYING              : RETURN( "æ­£åœ¨éŠæˆ²ä¸­" );
+  case CON_GET_FQDN             : RETURN( "å–å¾—FQDNä¸­" );
+  case CON_GET_FINGER           : RETURN( "æŸ¥ç©å®¶è³‡æ–™" );
+  case CON_GET_NAME             : RETURN( "è¼¸å…¥å§“åä¸­" );
+  case CON_CHECK_FILE           : RETURN( "æª¢æŸ¥æª”æ¡ˆä¸­" );
+  case CON_VERIFY               : RETURN( "ç¢ºèªæª”æ¡ˆä¸­" );
+  case CON_GET_OLD_PASSWORD     : RETURN( "è¼¸å…¥èˆŠå¯†ç¢¼" );
+  case CON_CONFIRM_NEW_NAME     : RETURN( "ç¢ºèªæ–°åç¨±" );
+  case CON_GET_NEW_PASSWORD     : RETURN( "è¼¸å…¥æ–°å¯†ç¢¼" );
+  case CON_CONFIRM_NEW_PASSWORD : RETURN( "ç¢ºèªæ–°å¯†ç¢¼" );
+  case CON_GET_SEX              : RETURN( "è¼¸å…¥æ€§åˆ¥ä¸­" );
+  case CON_READ_MOTD            : RETURN( "é€²ç«™ç•«é¢ä¸­" );
+  case CON_GET_CNAME            : RETURN( "è¼¸å…¥ä¸­æ–‡å" );
+  case CON_CHOOSE_SKILL         : RETURN( "é¸å–æŠ€èƒ½ä¸­" );
+  case CON_GET_EMAIL_ADDRESS    : RETURN( "è¨­é›»å­ä¿¡ç®±" );
+  case CON_CHOOSE_CLASS         : RETURN( "é¸æ“‡è·æ¥­ä¸­" );
+  case CON_CHOOSE_MODE          : RETURN( "é¸è¼¸å‡ºæ¨¡å¼" );
+  case CON_CHOOSE_ANGEL         : RETURN( "é¸æ“‡å®ˆè­·ç¥" );
+  case CON_CHOOSE_HOME          : RETURN( "é¸æ“‡å‡ºç”Ÿåœ°" );
+  case CON_CONTRACT             : RETURN( "ç°½åˆç´„"     );
   }
 
-  RETURN( "¥¼ª¾ªºÃş§O" );
+  RETURN( "æœªçŸ¥çš„é¡åˆ¥" );
 }
 
 char * skill_type( int vector )
@@ -545,22 +545,22 @@ char * skill_type( int vector )
 
   switch( vector )
   {
-  case TAR_IGNORE:         RETURN( "¥¼ª¾"     );
-  case TAR_CHAR_OFFENSIVE: RETURN( "§ğÀ»Ãş"   );
-  case TAR_CHAR_DEFENSIVE: RETURN( "¨¾¿mÃş"   );
-  case TAR_CHAR_SELF:      RETURN( "¥¼ª¾"     );
-  case TAR_OBJ_INV:        RETURN( "ª««~Ãş"   );
-  case TAR_DODGE:          RETURN( "°{¸úÃş"   );
-  case TAR_STRING:         RETURN( "¥¼ª¾"     );
-  case TAR_ARGUMENT:       RETURN( "»İ­n¦r¦ê" );
-  case TAR_FLEE:           RETURN( "°k¶]Ãş"   );
-  case TAR_MEDITATION:     RETURN( "­ß·QÃş"   );
-  case TAR_OBJ_ROOM:       RETURN( "©Ğ¶¡ª««~" );
-  case TAR_MOUNT:          RETURN( "ÃM³N"     );
-  case TAR_NO_CAST:        RETURN( "Âø¶µ"     );
+  case TAR_IGNORE:         RETURN( "æœªçŸ¥"     );
+  case TAR_CHAR_OFFENSIVE: RETURN( "æ”»æ“Šé¡"   );
+  case TAR_CHAR_DEFENSIVE: RETURN( "é˜²ç¦¦é¡"   );
+  case TAR_CHAR_SELF:      RETURN( "æœªçŸ¥"     );
+  case TAR_OBJ_INV:        RETURN( "ç‰©å“é¡"   );
+  case TAR_DODGE:          RETURN( "é–ƒèº²é¡"   );
+  case TAR_STRING:         RETURN( "æœªçŸ¥"     );
+  case TAR_ARGUMENT:       RETURN( "éœ€è¦å­—ä¸²" );
+  case TAR_FLEE:           RETURN( "é€ƒè·‘é¡"   );
+  case TAR_MEDITATION:     RETURN( "å†¥æƒ³é¡"   );
+  case TAR_OBJ_ROOM:       RETURN( "æˆ¿é–“ç‰©å“" );
+  case TAR_MOUNT:          RETURN( "é¨è¡“"     );
+  case TAR_NO_CAST:        RETURN( "é›œé …"     );
   }
 
-  RETURN( "¥¼ª¾" );
+  RETURN( "æœªçŸ¥" );
 }
 
 char * skill_rating( int group )
@@ -569,31 +569,31 @@ char * skill_rating( int group )
 
   switch( group )
   {
-  case RATING_SKILL:     RETURN( "§Ş¯à"   );
-  case RATING_WIND:      RETURN( "­·¨t"   );
-  case RATING_EARTH:     RETURN( "¤g¨t"   );
-  case RATING_LIGHTNING: RETURN( "¹p¹q¨t" );
-  case RATING_POISON:    RETURN( "¬r¨t"   );
-  case RATING_FIRE:      RETURN( "¤õ¨t"   );
-  case RATING_WATER:     RETURN( "¤ô¨t"   );
-  case RATING_DARKNESS:  RETURN( "·t¨t"   );
-  case RATING_LIGHT:     RETURN( "¥ú¨t"   );
-  case RATING_SAINT:     RETURN( "¸t¨t"   );
-  case RATING_EVIL:      RETURN( "¨¸¨t"   );
-  case RATING_LOST:      RETURN( "ªk®v¨t" );
-  case RATING_CURE:      RETURN( "ÂåÀø¨t" );
-  case RATING_SING:      RETURN( "§u°Û¨t" );
-  case RATING_FIGHT:     RETURN( "®æ°«¨t" );
-  case RATING_MURDER:    RETURN( "·t±ş¨t" );
-  case RATING_CREATE:    RETURN( "Å±³y¨t" );
-  case RATING_THIEF:     RETURN( "µs¸é¨t" );
-  case RATING_ALL:       RETURN( "¥ş³¡"   );
+  case RATING_SKILL:     RETURN( "æŠ€èƒ½"   );
+  case RATING_WIND:      RETURN( "é¢¨ç³»"   );
+  case RATING_EARTH:     RETURN( "åœŸç³»"   );
+  case RATING_LIGHTNING: RETURN( "é›·é›»ç³»" );
+  case RATING_POISON:    RETURN( "æ¯’ç³»"   );
+  case RATING_FIRE:      RETURN( "ç«ç³»"   );
+  case RATING_WATER:     RETURN( "æ°´ç³»"   );
+  case RATING_DARKNESS:  RETURN( "æš—ç³»"   );
+  case RATING_LIGHT:     RETURN( "å…‰ç³»"   );
+  case RATING_SAINT:     RETURN( "è–ç³»"   );
+  case RATING_EVIL:      RETURN( "é‚ªç³»"   );
+  case RATING_LOST:      RETURN( "æ³•å¸«ç³»" );
+  case RATING_CURE:      RETURN( "é†«ç™‚ç³»" );
+  case RATING_SING:      RETURN( "åŸå”±ç³»" );
+  case RATING_FIGHT:     RETURN( "æ ¼é¬¥ç³»" );
+  case RATING_MURDER:    RETURN( "æš—æ®ºç³»" );
+  case RATING_CREATE:    RETURN( "é‘„é€ ç³»" );
+  case RATING_THIEF:     RETURN( "ç›œè³Šç³»" );
+  case RATING_ALL:       RETURN( "å…¨éƒ¨"   );
   }
 
-  RETURN( "¥¼ª¾" );
+  RETURN( "æœªçŸ¥" );
 }
 
-/* À°¬£ª¬ºA */
+/* å¹«æ´¾ç‹€æ…‹ */
 char * club_status( CLUB_DATA * pClub )
 {
   int type;
@@ -603,12 +603,12 @@ char * club_status( CLUB_DATA * pClub )
   if ( pClub )
   {
     type = pClub->status;
-    if ( type == CLUB_STATUS_COUNTERSIGN ) RETURN( "³s¸p¤¤"   );
-    if ( type == CLUB_STATUS_UNIONIZE    ) RETURN( "¤w¦¨¥ß"   );
-    if ( type == CLUB_STATUS_UNKNOW      ) RETURN( "ª¬ºA¤£©ú" );
+    if ( type == CLUB_STATUS_COUNTERSIGN ) RETURN( "é€£ç½²ä¸­"   );
+    if ( type == CLUB_STATUS_UNIONIZE    ) RETURN( "å·²æˆç«‹"   );
+    if ( type == CLUB_STATUS_UNKNOW      ) RETURN( "ç‹€æ…‹ä¸æ˜" );
   }
 
-  RETURN( "¥¼ª¾" );
+  RETURN( "æœªçŸ¥" );
 }
 
 char * shop_type_name( int iType )
@@ -617,11 +617,11 @@ char * shop_type_name( int iType )
 
   switch( iType )
   {
-  case SHOP_STORE:     RETURN( "°Ó©±"   );
-  case SHOP_SMITH:     RETURN( "ÅK¾Q"   );
-  case SHOP_MERCENARY: RETURN( "¶Ä§L©Ò" );
-  case SHOP_COPER:     RETURN( "°¨©±"   );
-  default:             RETURN( "¥¼ª¾"   );
+  case SHOP_STORE:     RETURN( "å•†åº—"   );
+  case SHOP_SMITH:     RETURN( "éµé‹ª"   );
+  case SHOP_MERCENARY: RETURN( "å‚­å…µæ‰€" );
+  case SHOP_COPER:     RETURN( "é¦¬åº—"   );
+  default:             RETURN( "æœªçŸ¥"   );
   }
 }
 
@@ -637,42 +637,42 @@ char * item_kind_name( int iType )
 
   switch ( iType )
   {
-  case ITEM_LIGHT:      RETURN( "·Ó©úÃş"     );
-  case ITEM_SCROLL:     RETURN( "±²¶b"       );
-  case ITEM_WAND:       RETURN( "ªk§ú"       );
-  case ITEM_STAFF:      RETURN( "ªk§ú"       );
-  case ITEM_WEAPON:     RETURN( "ªZ¾¹"       );
-  case ITEM_TREASURE:   RETURN( "Ä_ª«"       );
-  case ITEM_ARMOR:      RETURN( "¨¾¨ã"       );
-  case ITEM_BACKBAG:    RETURN( "­I³U"       );
-  case ITEM_POTION:     RETURN( "ÃÄ¤ô"       );
-  case ITEM_FURNITURE:  RETURN( "®a¨ã"       );
-  case ITEM_TRASH:      RETURN( "©U§£"       );
-  case ITEM_CONTAINER:  RETURN( "®e¾¹"       );
-  case ITEM_DRINK_CON:  RETURN( "¸Ë¤ô®e¾¹"   );
-  case ITEM_KEY:        RETURN( "Æ_°Í"       );
-  case ITEM_FOOD:       RETURN( "­¹ª«"       );
-  case ITEM_MONEY:      RETURN( "ª÷¿ú"       );
-  case ITEM_BOAT:       RETURN( "²î"         );
-  case ITEM_CORPSE_NPC: RETURN( "©Çª«ªº«ÍÅé" );
-  case ITEM_CORPSE_PC:  RETURN( "ª±®aªº«ÍÅé" );
-  case ITEM_FOUNTAIN:   RETURN( "¬u¤ô"       );
-  case ITEM_PILL:       RETURN( "ÃÄ¤Y"       );
-  case ITEM_MAGICSTONE: RETURN( "Å]¥Û"       );
-  case ITEM_SPIRITJADE: RETURN( "°­¥É"       );
-  case ITEM_MYSTERY:    RETURN( "¯µÓD"       );
-  case ITEM_LETTER:     RETURN( "®Ñ«H"       );
-  case ITEM_ORE:        RETURN( "Äqª«"       );
-  case ITEM_GOLDMINE:   RETURN( "»EÄ_¬Ö"     );
-  case ITEM_SIGIL:      RETURN( "²Å©G"       );
-  case ITEM_VELLUM:     RETURN( "¦Ï¥Ö¯È"     );
-  case ITEM_FIREWORK:   RETURN( "·Ï¤õ"       );
-  case ITEM_URN:        RETURN( "§¯³ı"       );
-  case ITEM_ARROW:      RETURN( "½b"         );
+  case ITEM_LIGHT:      RETURN( "ç…§æ˜é¡"     );
+  case ITEM_SCROLL:     RETURN( "æ²è»¸"       );
+  case ITEM_WAND:       RETURN( "æ³•æ–"       );
+  case ITEM_STAFF:      RETURN( "æ³•æ–"       );
+  case ITEM_WEAPON:     RETURN( "æ­¦å™¨"       );
+  case ITEM_TREASURE:   RETURN( "å¯¶ç‰©"       );
+  case ITEM_ARMOR:      RETURN( "é˜²å…·"       );
+  case ITEM_BACKBAG:    RETURN( "èƒŒè¢‹"       );
+  case ITEM_POTION:     RETURN( "è—¥æ°´"       );
+  case ITEM_FURNITURE:  RETURN( "å®¶å…·"       );
+  case ITEM_TRASH:      RETURN( "åƒåœ¾"       );
+  case ITEM_CONTAINER:  RETURN( "å®¹å™¨"       );
+  case ITEM_DRINK_CON:  RETURN( "è£æ°´å®¹å™¨"   );
+  case ITEM_KEY:        RETURN( "é‘°åŒ™"       );
+  case ITEM_FOOD:       RETURN( "é£Ÿç‰©"       );
+  case ITEM_MONEY:      RETURN( "é‡‘éŒ¢"       );
+  case ITEM_BOAT:       RETURN( "èˆ¹"         );
+  case ITEM_CORPSE_NPC: RETURN( "æ€ªç‰©çš„å±é«”" );
+  case ITEM_CORPSE_PC:  RETURN( "ç©å®¶çš„å±é«”" );
+  case ITEM_FOUNTAIN:   RETURN( "æ³‰æ°´"       );
+  case ITEM_PILL:       RETURN( "è—¥ä¸¸"       );
+  case ITEM_MAGICSTONE: RETURN( "é­”çŸ³"       );
+  case ITEM_SPIRITJADE: RETURN( "é¬¼ç‰"       );
+  case ITEM_MYSTERY:    RETURN( "ç§˜ç¬ˆ"       );
+  case ITEM_LETTER:     RETURN( "æ›¸ä¿¡"       );
+  case ITEM_ORE:        RETURN( "ç¤¦ç‰©"       );
+  case ITEM_GOLDMINE:   RETURN( "èšå¯¶ç›†"     );
+  case ITEM_SIGIL:      RETURN( "ç¬¦å’’"       );
+  case ITEM_VELLUM:     RETURN( "ç¾Šçš®ç´™"     );
+  case ITEM_FIREWORK:   RETURN( "ç…™ç«"       );
+  case ITEM_URN:        RETURN( "å¦–å£º"       );
+  case ITEM_ARROW:      RETURN( "ç®­"         );
   }
 
-  mudlog( LOG_DEBUG , "Item_type_name: ¥¼ª¾ªº«¬ºA %d.", iType );
-  RETURN( "(¥¼ª¾)");
+  mudlog( LOG_DEBUG , "Item_type_name: æœªçŸ¥çš„å‹æ…‹ %d.", iType );
+  RETURN( "(æœªçŸ¥)");
 }
 
 char * affect_loc_name( int location )
@@ -681,33 +681,33 @@ char * affect_loc_name( int location )
 
   switch ( location )
   {
-  case APPLY_NONE:          RETURN( "µL" );
-  case APPLY_STR:           RETURN( "¤O¶q" );
-  case APPLY_DEX:           RETURN( "±Ó±¶" );
-  case APPLY_INT:           RETURN( "´¼¤O" );
-  case APPLY_WIS:           RETURN( "¾ÇÃÑ" );
-  case APPLY_CON:           RETURN( "Åé®æ" );
-  case APPLY_SEX:           RETURN( "©Ê§O" );
-  case APPLY_CLASS:         RETURN( "Â¾·~" );
-  case APPLY_LEVEL:         RETURN( "µ¥¯Å" );
-  case APPLY_AGE:           RETURN( "¦~ÄÖ" );
-  case APPLY_MANA:          RETURN( "ªk¤O" );
-  case APPLY_HIT:           RETURN( "¥Í©R¤O" );
-  case APPLY_MOVE:          RETURN( "Åé¤O" );
-  case APPLY_GOLD:          RETURN( "ª÷¿ú" );
-  case APPLY_EXP:           RETURN( "¸gÅç­È" );
-  case APPLY_AC:            RETURN( "¨¾Å@µ¥¯Å" );
-  case APPLY_HITROLL:       RETURN( "©R¤¤²v" );
-  case APPLY_DAMROLL:       RETURN( "¶Ë®`ÂI¼Æ" );
+  case APPLY_NONE:          RETURN( "ç„¡" );
+  case APPLY_STR:           RETURN( "åŠ›é‡" );
+  case APPLY_DEX:           RETURN( "æ•æ·" );
+  case APPLY_INT:           RETURN( "æ™ºåŠ›" );
+  case APPLY_WIS:           RETURN( "å­¸è­˜" );
+  case APPLY_CON:           RETURN( "é«”æ ¼" );
+  case APPLY_SEX:           RETURN( "æ€§åˆ¥" );
+  case APPLY_CLASS:         RETURN( "è·æ¥­" );
+  case APPLY_LEVEL:         RETURN( "ç­‰ç´š" );
+  case APPLY_AGE:           RETURN( "å¹´é½¡" );
+  case APPLY_MANA:          RETURN( "æ³•åŠ›" );
+  case APPLY_HIT:           RETURN( "ç”Ÿå‘½åŠ›" );
+  case APPLY_MOVE:          RETURN( "é«”åŠ›" );
+  case APPLY_GOLD:          RETURN( "é‡‘éŒ¢" );
+  case APPLY_EXP:           RETURN( "ç¶“é©—å€¼" );
+  case APPLY_AC:            RETURN( "é˜²è­·ç­‰ç´š" );
+  case APPLY_HITROLL:       RETURN( "å‘½ä¸­ç‡" );
+  case APPLY_DAMROLL:       RETURN( "å‚·å®³é»æ•¸" );
   case APPLY_SAVING_PARA:   RETURN( "save vs paralysis" );
   case APPLY_SAVING_ROD:    RETURN( "save vs rod" );
   case APPLY_SAVING_PETRI:  RETURN( "save vs petrification" );
   case APPLY_SAVING_BREATH: RETURN( "save vs breath" );
-  case APPLY_SAVING_SPELL:  RETURN( "ªk³N§È¯§" );
+  case APPLY_SAVING_SPELL:  RETURN( "æ³•è¡“åº‡ç¥" );
   }
 
-  mudlog( LOG_DEBUG , "Affect_location_name: ¥¼ª¾¦a¤è %d.", location );
-  RETURN( "(¥¼ª¾)" );
+  mudlog( LOG_DEBUG , "Affect_location_name: æœªçŸ¥åœ°æ–¹ %d.", location );
+  RETURN( "(æœªçŸ¥)" );
 }
 
 char * skill_affect( int type )
@@ -716,15 +716,15 @@ char * skill_affect( int type )
 
   switch( type )
   {
-  default:                RETURN( "¨S¦³"     );
-  case SLOT_BLINDNESS:    RETURN( "²´ª¼"     );
-  case SLOT_CHARM_PERSON: RETURN( "°g´b"     );
-  case SLOT_CURSE:        RETURN( "¶A©G"     );
-  case SLOT_INVIS:        RETURN( "Áô§Î"     );
-  case SLOT_MASS_INVIS:   RETURN( "¥şÅéÁô§Î" );
-  case SLOT_POISON:       RETURN( "¤¤¬r"     );
-  case SLOT_SLEEP:        RETURN( "©üºÎ"     );
-  case SLOT_SNEAK:        RETURN( "¼ç¦æ"     );
+  default:                RETURN( "æ²’æœ‰"     );
+  case SLOT_BLINDNESS:    RETURN( "çœ¼ç›²"     );
+  case SLOT_CHARM_PERSON: RETURN( "è¿·æƒ‘"     );
+  case SLOT_CURSE:        RETURN( "è©›å’’"     );
+  case SLOT_INVIS:        RETURN( "éš±å½¢"     );
+  case SLOT_MASS_INVIS:   RETURN( "å…¨é«”éš±å½¢" );
+  case SLOT_POISON:       RETURN( "ä¸­æ¯’"     );
+  case SLOT_SLEEP:        RETURN( "æ˜ç¡"     );
+  case SLOT_SNEAK:        RETURN( "æ½›è¡Œ"     );
   }
 }
 
@@ -735,12 +735,12 @@ const char * exit_status( EXIT_DATA * pExit )
   PUSH_FUNCTION( "exit_status" );
 
   buf[0] = '\x0';
-  if ( pExit->closed ) str_cat( buf, " Ãö³¬"   );
-  if ( pExit->locked ) str_cat( buf, " ÂêµÛ"   );
-  if ( pExit->pick   ) str_cat( buf, " ¥i¼À¶}" );
-  if ( pExit->isdoor ) str_cat( buf, " ¦³ªù"   );
+  if ( pExit->closed ) str_cat( buf, " é—œé–‰"   );
+  if ( pExit->locked ) str_cat( buf, " é–è‘—"   );
+  if ( pExit->pick   ) str_cat( buf, " å¯æ’¬é–‹" );
+  if ( pExit->isdoor ) str_cat( buf, " æœ‰é–€"   );
 
-  RETURN( ( buf[0] != '\x0' )  ? buf+1 : "(¨S¦³)" );
+  RETURN( ( buf[0] != '\x0' )  ? buf+1 : "(æ²’æœ‰)" );
 }
 
 char * area_bit_name( AREA_DATA * pArea )
@@ -750,11 +750,11 @@ char * area_bit_name( AREA_DATA * pArea )
   PUSH_FUNCTION( "area_bit_name" );
 
   buf[0] = '\x0';
-  if ( pArea->pk      ) str_cat( buf , " ¢Ş¢Ù"   );
-  if ( pArea->newhand ) str_cat( buf , " ·s¤â°Ï" );
-  if ( pArea->fight   ) str_cat( buf , " ¯T·Ï°Ï" );
+  if ( pArea->pk      ) str_cat( buf , " ï¼°ï¼«"   );
+  if ( pArea->newhand ) str_cat( buf , " æ–°æ‰‹å€" );
+  if ( pArea->fight   ) str_cat( buf , " ç‹¼ç…™å€" );
 
-  RETURN( buf[0] != '\x0' ? buf+1 : "(¨S¦³)" );
+  RETURN( buf[0] != '\x0' ? buf+1 : "(æ²’æœ‰)" );
 }
 
 char * sector_flag_name( SECTOR_DATA * pSector )
@@ -764,12 +764,12 @@ char * sector_flag_name( SECTOR_DATA * pSector )
   PUSH_FUNCTION( "sector_flag_name" );
 
   buf[0] = '\x0';
-  if ( pSector->fly  ) str_cat( buf , " ­¸¦æ" );
-  if ( pSector->swim ) str_cat( buf , " ´åªa" );
-  RETURN( buf[0] != '\x0' ? buf+1 : "(¨S¦³)" );
+  if ( pSector->fly  ) str_cat( buf , " é£›è¡Œ" );
+  if ( pSector->swim ) str_cat( buf , " æ¸¸æ³³" );
+  RETURN( buf[0] != '\x0' ? buf+1 : "(æ²’æœ‰)" );
 }
 
-/* ©Ğ¶¡«¬ºAªº¤¤¤å¦WºÙ */
+/* æˆ¿é–“å‹æ…‹çš„ä¸­æ–‡åç¨± */
 char * room_bit_name( ROOM_INDEX_DATA * pRoom )
 {
   static char buf[512];
@@ -777,34 +777,34 @@ char * room_bit_name( ROOM_INDEX_DATA * pRoom )
   PUSH_FUNCTION( "room_bit_name" );
 
   buf[0] = '\x0';
-  if ( pRoom->player        ) str_cat( buf, " ª±®a¦Û»s" );
-  if ( pRoom->Dark          ) str_cat( buf, " ¶Â·t"     );
-  if ( pRoom->NoMob         ) str_cat( buf, " ¨S¦³©Çª«" );
-  if ( pRoom->Indoors       ) str_cat( buf, " «Ç¤º"     );
-  if ( pRoom->Private       ) str_cat( buf, " ¨p¤H"     );
-  if ( pRoom->Safe          ) str_cat( buf, " ¦w¥ş"     );
-  if ( pRoom->NoRecall      ) str_cat( buf, " ¤£¯à¶Ç°e" );
-  if ( pRoom->ForeverLight  ) str_cat( buf, " ¥Ã©ú"     );
-  if ( pRoom->DepositMoney  ) str_cat( buf, " ¿ú²ø"     );
-  if ( pRoom->StoreRoom     ) str_cat( buf, " Ãğ§½"     );
-  if ( pRoom->Club          ) str_cat( buf, " À°·|"     );
-  if ( pRoom->Memorize      ) str_cat( buf, " °O¾Ğ"     );
-  if ( pRoom->Stock         ) str_cat( buf, " ²¼¾Ú©Ò"   );
-  if ( pRoom->NoQuit        ) str_cat( buf, " ¤£¯àÂ÷½u" );
-  if ( pRoom->Sail          ) str_cat( buf, " ²î¿µ"     );
-  if ( pRoom->Fane          ) str_cat( buf, " ¦x¼q"     );
-  if ( pRoom->Killer        ) str_cat( buf, " ¤K¥P¶º©±" );
-  if ( pRoom->Standard      ) str_cat( buf, " ¼Ğ·Ç©Ğ¶¡" );
-  if ( pRoom->NoFight       ) str_cat( buf, " ¤£¯à¾Ô°«" );
-  if ( pRoom->NoLink        ) str_cat( buf, " ¤£¯à³sµ²" );
-  if ( pRoom->Waterful      ) str_cat( buf, " ¦h¤ô"     );
-  if ( pRoom->Foodful       ) str_cat( buf, " ¦h­¹ª«"   );
-  if ( pRoom->ManaCure      ) str_cat( buf, " ªk¤O¶EÀø©Ò"   );
-  if ( pRoom->MoveCure      ) str_cat( buf, " Åé¤O¶EÀø©Ò"   );
-  if ( pRoom->HitCure       ) str_cat( buf, " ¥Í©R¤O¶EÀø©Ò" );
-  if ( pRoom->PracRoom      ) str_cat( buf, " ½m¥\\³õ"   );
+  if ( pRoom->player        ) str_cat( buf, " ç©å®¶è‡ªè£½" );
+  if ( pRoom->Dark          ) str_cat( buf, " é»‘æš—"     );
+  if ( pRoom->NoMob         ) str_cat( buf, " æ²’æœ‰æ€ªç‰©" );
+  if ( pRoom->Indoors       ) str_cat( buf, " å®¤å…§"     );
+  if ( pRoom->Private       ) str_cat( buf, " ç§äºº"     );
+  if ( pRoom->Safe          ) str_cat( buf, " å®‰å…¨"     );
+  if ( pRoom->NoRecall      ) str_cat( buf, " ä¸èƒ½å‚³é€" );
+  if ( pRoom->ForeverLight  ) str_cat( buf, " æ°¸æ˜"     );
+  if ( pRoom->DepositMoney  ) str_cat( buf, " éŒ¢èŠ"     );
+  if ( pRoom->StoreRoom     ) str_cat( buf, " é¢å±€"     );
+  if ( pRoom->Club          ) str_cat( buf, " å¹«æœƒ"     );
+  if ( pRoom->Memorize      ) str_cat( buf, " è¨˜æ†¶"     );
+  if ( pRoom->Stock         ) str_cat( buf, " ç¥¨æ“šæ‰€"   );
+  if ( pRoom->NoQuit        ) str_cat( buf, " ä¸èƒ½é›¢ç·š" );
+  if ( pRoom->Sail          ) str_cat( buf, " èˆ¹è‰™"     );
+  if ( pRoom->Fane          ) str_cat( buf, " å¯ºå»Ÿ"     );
+  if ( pRoom->Killer        ) str_cat( buf, " å…«ä»™é£¯åº—" );
+  if ( pRoom->Standard      ) str_cat( buf, " æ¨™æº–æˆ¿é–“" );
+  if ( pRoom->NoFight       ) str_cat( buf, " ä¸èƒ½æˆ°é¬¥" );
+  if ( pRoom->NoLink        ) str_cat( buf, " ä¸èƒ½é€£çµ" );
+  if ( pRoom->Waterful      ) str_cat( buf, " å¤šæ°´"     );
+  if ( pRoom->Foodful       ) str_cat( buf, " å¤šé£Ÿç‰©"   );
+  if ( pRoom->ManaCure      ) str_cat( buf, " æ³•åŠ›è¨ºç™‚æ‰€"   );
+  if ( pRoom->MoveCure      ) str_cat( buf, " é«”åŠ›è¨ºç™‚æ‰€"   );
+  if ( pRoom->HitCure       ) str_cat( buf, " ç”Ÿå‘½åŠ›è¨ºç™‚æ‰€" );
+  if ( pRoom->PracRoom      ) str_cat( buf, " ç·´åŠŸ\å ´"   );
 
-  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(¨S¦³)" );
+  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(æ²’æœ‰)" );
 }
 
 char * attack_situs( int flag )
@@ -825,25 +825,25 @@ char * attack_situs( int flag )
     }
   }
 
-  RETURN( ( buf[0] ) ? buf+1 : "ÀH¾÷" );
+  RETURN( ( buf[0] ) ? buf+1 : "éš¨æ©Ÿ" );
 }
 
-/* ¬ïÀ¹¦a¤èªº¦WºÙ */
+/* ç©¿æˆ´åœ°æ–¹çš„åç¨± */
 char * wear_location_string( int type )
 {
   SITUS_DATA * pSitus;
 
   PUSH_FUNCTION( "wear_location_string" );
 
-  if ( type == WEAR_NONE ) RETURN( "©|¥¼¸Ë³Æ" );
+  if ( type == WEAR_NONE ) RETURN( "å°šæœªè£å‚™" );
 
   for ( pSitus = situs_list; pSitus; pSitus = pSitus->next )
     if ( pSitus->location == type ) RETURN( pSitus->situs_name );
 
-  RETURN( "¥¼ª¾" );
+  RETURN( "æœªçŸ¥" );
 }
 
-/* ¬ïÀ¹ºX¼Ğªº¦WºÙ */
+/* ç©¿æˆ´æ——æ¨™çš„åç¨± */
 char * wear_bit_name( int wear_flags )
 {
   static char   buf[512];
@@ -862,7 +862,7 @@ char * wear_bit_name( int wear_flags )
     }
   }
 
-  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(¨S¦³)" );
+  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(æ²’æœ‰)" );
 }
 
 char * xnames_bit_name( int type )
@@ -871,13 +871,13 @@ char * xnames_bit_name( int type )
 
   switch ( type )
   {
-  case XNAMES_SYSTEM  : RETURN( "¨t²Î«O¯d¦r"     );
-  case XNAMES_CACONYM : RETURN( "¤£¶®¦r"         );
-  case XNAMES_CHAT    : RETURN( "¶¢²á«O¯d¦r"     );
-  case XNAMES_CNAME   : RETURN( "¤¤¤å¦WºÙ«O¯d¦r" );
+  case XNAMES_SYSTEM  : RETURN( "ç³»çµ±ä¿ç•™å­—"     );
+  case XNAMES_CACONYM : RETURN( "ä¸é›…å­—"         );
+  case XNAMES_CHAT    : RETURN( "é–’èŠä¿ç•™å­—"     );
+  case XNAMES_CNAME   : RETURN( "ä¸­æ–‡åç¨±ä¿ç•™å­—" );
   }
 
-  RETURN( "¥¼ª¾" );
+  RETURN( "æœªçŸ¥" );
 }
 
 char * ban_bit_name( int type )
@@ -886,14 +886,14 @@ char * ban_bit_name( int type )
 
   switch ( type )
   {
-  default         : RETURN( "¥¼ª¾"                   );
-  case BAN_LOGIN  : RETURN( "¸T¤î³s½u"               );
-  case BAN_FQDN   : RETURN( "¤£°µ¦ì§}¤Ï¬d¸ß"         );
-  case BAN_FINGER : RETURN( "¸T¤î¬d¸ß³o¦ì§}ª±®a¸ê®Æ" );
+  default         : RETURN( "æœªçŸ¥"                   );
+  case BAN_LOGIN  : RETURN( "ç¦æ­¢é€£ç·š"               );
+  case BAN_FQDN   : RETURN( "ä¸åšä½å€åæŸ¥è©¢"         );
+  case BAN_FINGER : RETURN( "ç¦æ­¢æŸ¥è©¢é€™ä½å€ç©å®¶è³‡æ–™" );
   }
 }
 
-/* ª««~ÃB¥~ºX¼Ğªº¦WºÙ */
+/* ç‰©å“é¡å¤–æ——æ¨™çš„åç¨± */
 char * extra_bit_name( OBJ_DATA * pObj )
 {
   static char buf[512];
@@ -902,29 +902,29 @@ char * extra_bit_name( OBJ_DATA * pObj )
 
   buf[0] = '\x0';
 
-  if ( pObj->Glow         ) str_cat( buf, " °{°{µo¥ú"   );
-  if ( pObj->Hum          ) str_cat( buf, " ¶ä¶ä§@ÅT"   );
-  if ( pObj->Dark         ) str_cat( buf, " ¶Â·t"       );
-  if ( pObj->Evil         ) str_cat( buf, " ¨¸´c"       );
-  if ( pObj->Invis        ) str_cat( buf, " Áô§Î"       );
-  if ( pObj->Magic        ) str_cat( buf, " Å]ªk"       );
-  if ( pObj->NoDrop       ) str_cat( buf, " ¤£¥i¥á±ó"   );
-  if ( pObj->Bless        ) str_cat( buf, " ¯¬ºÖ"       );
-  if ( pObj->AntiGood     ) str_cat( buf, " §Üµ½¨}°}Àç" );
-  if ( pObj->AntiEvil     ) str_cat( buf, " §Ü¨¸´c°}Àç" );
-  if ( pObj->AntiNeutral  ) str_cat( buf, " §Ü¤¤¥ß°}Àç" );
-  if ( pObj->NoRemove     ) str_cat( buf, " ¤£¥i²¾°£"   );
-  if ( pObj->Inventory    ) str_cat( buf, " °Ó«~"       );
-  if ( pObj->Cancachet    ) str_cat( buf, " ¥i«Ê¦L"     );
-  if ( pObj->UserSet      ) str_cat( buf, " ¦Û³]¼Æ­È"   );
-  if ( pObj->NoSave       ) str_cat( buf, " ¤£¥iÀx¦s"   );
-  if ( pObj->Contraband   ) str_cat( buf, " ¹H¸T«~"     );
-  if ( pObj->Loadable     ) str_cat( buf, " ¥i¸Ë¶ñ"     );
+  if ( pObj->Glow         ) str_cat( buf, " é–ƒé–ƒç™¼å…‰"   );
+  if ( pObj->Hum          ) str_cat( buf, " å—¡å—¡ä½œéŸ¿"   );
+  if ( pObj->Dark         ) str_cat( buf, " é»‘æš—"       );
+  if ( pObj->Evil         ) str_cat( buf, " é‚ªæƒ¡"       );
+  if ( pObj->Invis        ) str_cat( buf, " éš±å½¢"       );
+  if ( pObj->Magic        ) str_cat( buf, " é­”æ³•"       );
+  if ( pObj->NoDrop       ) str_cat( buf, " ä¸å¯ä¸Ÿæ£„"   );
+  if ( pObj->Bless        ) str_cat( buf, " ç¥ç¦"       );
+  if ( pObj->AntiGood     ) str_cat( buf, " æŠ—å–„è‰¯é™£ç‡Ÿ" );
+  if ( pObj->AntiEvil     ) str_cat( buf, " æŠ—é‚ªæƒ¡é™£ç‡Ÿ" );
+  if ( pObj->AntiNeutral  ) str_cat( buf, " æŠ—ä¸­ç«‹é™£ç‡Ÿ" );
+  if ( pObj->NoRemove     ) str_cat( buf, " ä¸å¯ç§»é™¤"   );
+  if ( pObj->Inventory    ) str_cat( buf, " å•†å“"       );
+  if ( pObj->Cancachet    ) str_cat( buf, " å¯å°å°"     );
+  if ( pObj->UserSet      ) str_cat( buf, " è‡ªè¨­æ•¸å€¼"   );
+  if ( pObj->NoSave       ) str_cat( buf, " ä¸å¯å„²å­˜"   );
+  if ( pObj->Contraband   ) str_cat( buf, " é•ç¦å“"     );
+  if ( pObj->Loadable     ) str_cat( buf, " å¯è£å¡«"     );
 
-  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(¨S¦³)" );
+  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(æ²’æœ‰)" );
 }
 
-/* ª««~ÃB¥~ºX¼Ğªº¦WºÙ */
+/* ç‰©å“é¡å¤–æ——æ¨™çš„åç¨± */
 char * extra_bit_name_2( OBJ_INDEX_DATA * pObjIndex )
 {
   static char buf[512];
@@ -933,55 +933,55 @@ char * extra_bit_name_2( OBJ_INDEX_DATA * pObjIndex )
 
   buf[0] = '\x0';
 
-  if ( pObjIndex->Glow         ) str_cat( buf, " °{°{µo¥ú"   );
-  if ( pObjIndex->Hum          ) str_cat( buf, " ¶ä¶ä§@ÅT"   );
-  if ( pObjIndex->Dark         ) str_cat( buf, " ¶Â·t"       );
-  if ( pObjIndex->Evil         ) str_cat( buf, " ¨¸´c"       );
-  if ( pObjIndex->Invis        ) str_cat( buf, " Áô§Î"       );
-  if ( pObjIndex->Magic        ) str_cat( buf, " Å]ªk"       );
-  if ( pObjIndex->NoDrop       ) str_cat( buf, " ¤£¥i¥á±ó"   );
-  if ( pObjIndex->Bless        ) str_cat( buf, " ¯¬ºÖ"       );
-  if ( pObjIndex->AntiGood     ) str_cat( buf, " §Üµ½¨}°}Àç" );
-  if ( pObjIndex->AntiEvil     ) str_cat( buf, " §Ü¨¸´c°}Àç" );
-  if ( pObjIndex->AntiNeutral  ) str_cat( buf, " §Ü¤¤¥ß°}Àç" );
-  if ( pObjIndex->NoRemove     ) str_cat( buf, " ¤£¥i²¾°£"   );
-  if ( pObjIndex->Inventory    ) str_cat( buf, " °Ó«~"       );
-  if ( pObjIndex->Cancachet    ) str_cat( buf, " ¥i«Ê¦L"     );
-  if ( pObjIndex->UserSet      ) str_cat( buf, " ¦Û³]¼Æ­È"   );
-  if ( pObjIndex->NoSave       ) str_cat( buf, " ¤£¥iÀx¦s"   );
-  if ( pObjIndex->Contraband   ) str_cat( buf, " ¹H¸T«~"     );
-  if ( pObjIndex->Loadable     ) str_cat( buf, " ¥i¸Ë¶ñ"     );
+  if ( pObjIndex->Glow         ) str_cat( buf, " é–ƒé–ƒç™¼å…‰"   );
+  if ( pObjIndex->Hum          ) str_cat( buf, " å—¡å—¡ä½œéŸ¿"   );
+  if ( pObjIndex->Dark         ) str_cat( buf, " é»‘æš—"       );
+  if ( pObjIndex->Evil         ) str_cat( buf, " é‚ªæƒ¡"       );
+  if ( pObjIndex->Invis        ) str_cat( buf, " éš±å½¢"       );
+  if ( pObjIndex->Magic        ) str_cat( buf, " é­”æ³•"       );
+  if ( pObjIndex->NoDrop       ) str_cat( buf, " ä¸å¯ä¸Ÿæ£„"   );
+  if ( pObjIndex->Bless        ) str_cat( buf, " ç¥ç¦"       );
+  if ( pObjIndex->AntiGood     ) str_cat( buf, " æŠ—å–„è‰¯é™£ç‡Ÿ" );
+  if ( pObjIndex->AntiEvil     ) str_cat( buf, " æŠ—é‚ªæƒ¡é™£ç‡Ÿ" );
+  if ( pObjIndex->AntiNeutral  ) str_cat( buf, " æŠ—ä¸­ç«‹é™£ç‡Ÿ" );
+  if ( pObjIndex->NoRemove     ) str_cat( buf, " ä¸å¯ç§»é™¤"   );
+  if ( pObjIndex->Inventory    ) str_cat( buf, " å•†å“"       );
+  if ( pObjIndex->Cancachet    ) str_cat( buf, " å¯å°å°"     );
+  if ( pObjIndex->UserSet      ) str_cat( buf, " è‡ªè¨­æ•¸å€¼"   );
+  if ( pObjIndex->NoSave       ) str_cat( buf, " ä¸å¯å„²å­˜"   );
+  if ( pObjIndex->Contraband   ) str_cat( buf, " é•ç¦å“"     );
+  if ( pObjIndex->Loadable     ) str_cat( buf, " å¯è£å¡«"     );
 
-  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(¨S¦³)" );
+  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(æ²’æœ‰)" );
 }
 
-/* ªZ¾¹«¬ºAªº¤¤¤å¦WºÙ */
+/* æ­¦å™¨å‹æ…‹çš„ä¸­æ–‡åç¨± */
 char * weapon_type_name( int value )
 {
   PUSH_FUNCTION( "weapon_type_name" );
 
   switch ( value )
   {
-  default : RETURN( "\e[1;31mªÅ¤â\e[0m" );
-  case  0 : RETURN( "µL³]©w" );
-  case  1 : RETURN( "®±´x"   );
-  case  2 : RETURN( "µu§L"   );
-  case  3 : RETURN( "ªø¼C"   );
-  case  4 : RETURN( "¤j¤M"   );
-  case  5 : RETURN( "©ò"     );
-  case  6 : RETURN( "Ã@"     );
-  case  7 : RETURN( "ºj¥Ù"   );
-  case  8 : RETURN( "µ§®°"   );
-  case  9 : RETURN( "Âñ"     );
-  case 10 : RETURN( "´Ò´Î"   );
-  case 11 : RETURN( "¤}"     );
-  case 12 : RETURN( "®ğ"     );
-  case 13 : RETURN( "¨Bªk"   );
-  case 14 : RETURN( "°k¶]"   );
+  default : RETURN( "\e[1;31mç©ºæ‰‹\e[0m" );
+  case  0 : RETURN( "ç„¡è¨­å®š" );
+  case  1 : RETURN( "æ‹³æŒ"   );
+  case  2 : RETURN( "çŸ­å…µ"   );
+  case  3 : RETURN( "é•·åŠ"   );
+  case  4 : RETURN( "å¤§åˆ€"   );
+  case  5 : RETURN( "æ–§"     );
+  case  6 : RETURN( "é­"     );
+  case  7 : RETURN( "æ§çŸ›"   );
+  case  8 : RETURN( "ç­†æ‰‡"   );
+  case  9 : RETURN( "éš"     );
+  case 10 : RETURN( "æ£æ£’"   );
+  case 11 : RETURN( "å¼“"     );
+  case 12 : RETURN( "æ°£"     );
+  case 13 : RETURN( "æ­¥æ³•"   );
+  case 14 : RETURN( "é€ƒè·‘"   );
   }
 }
 
-/* ®e¾¹ªººX¼Ğ¦WºÙ */
+/* å®¹å™¨çš„æ——æ¨™åç¨± */
 char * container_bit_name( int value )
 {
   static char buf[512];
@@ -989,11 +989,11 @@ char * container_bit_name( int value )
   PUSH_FUNCTION( "container_bit_name" );
 
   buf[0] = '\x0';
-  if ( value & CONT_CLOSEABLE ) str_cat( buf , " ¥i¥H¶}Ãö" );
-  if ( value & CONT_PICKPROOF ) str_cat( buf , " µLªk¼À¶}" );
-  if ( value & CONT_CLOSED    ) str_cat( buf , " ÃöµÛ"     );
-  if ( value & CONT_LOCKED    ) str_cat( buf , " ÂêµÛ"     );
-  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(¨S¦³)" );
+  if ( value & CONT_CLOSEABLE ) str_cat( buf , " å¯ä»¥é–‹é—œ" );
+  if ( value & CONT_PICKPROOF ) str_cat( buf , " ç„¡æ³•æ’¬é–‹" );
+  if ( value & CONT_CLOSED    ) str_cat( buf , " é—œè‘—"     );
+  if ( value & CONT_LOCKED    ) str_cat( buf , " é–è‘—"     );
+  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(æ²’æœ‰)" );
 }
 
 char * turn_bit_name( int turn )
@@ -1003,16 +1003,16 @@ char * turn_bit_name( int turn )
   PUSH_FUNCTION( "turn_bit_name" );
   buf[0] = '\x0';
 
-  if ( turn & PLR_REBIRTH  ) str_cat( buf, " ÂàÂ¾ªÌ"   );
-  if ( turn & PLR_TRAIN    ) str_cat( buf, " ¤É¯ÅÄİ©Ê" );
-  if ( turn & PLR_PRACTICE ) str_cat( buf, " °V½m§Ş¯à" );
-  if ( turn & PLR_ANSI     ) str_cat( buf, " ¹LÂo¦â±m" );
-  if ( turn & PLR_LOTTO    ) str_cat( buf, " ¼Ö³z§Ö³ø" );
-  RETURN( ( buf[0] ) ? buf+1 : "(¨S¦³)" );
+  if ( turn & PLR_REBIRTH  ) str_cat( buf, " è½‰è·è€…"   );
+  if ( turn & PLR_TRAIN    ) str_cat( buf, " å‡ç´šå±¬æ€§" );
+  if ( turn & PLR_PRACTICE ) str_cat( buf, " è¨“ç·´æŠ€èƒ½" );
+  if ( turn & PLR_ANSI     ) str_cat( buf, " éæ¿¾è‰²å½©" );
+  if ( turn & PLR_LOTTO    ) str_cat( buf, " æ¨‚é€å¿«å ±" );
+  RETURN( ( buf[0] ) ? buf+1 : "(æ²’æœ‰)" );
 }
 
 
-/* ¯«±Ú¥N²zÅv */
+/* ç¥æ—ä»£ç†æ¬Š */
 char * wiz_bit_name( int wizflags )
 {
   static char buf[512];
@@ -1020,16 +1020,16 @@ char * wiz_bit_name( int wizflags )
   PUSH_FUNCTION( "wiz_bit_name" );
   buf[0] = '\x0';
 
-  if ( wizflags == 0 )          str_cat( buf, " ¨S¦³¯«±Ú¥N²zÅv" );
+  if ( wizflags == 0 )          str_cat( buf, " æ²’æœ‰ç¥æ—ä»£ç†æ¬Š" );
 
-  if ( wizflags & WIZ_SILENCE ) str_cat( buf, " ¸T¨¥"       );
-  if ( wizflags & WIZ_NOTELL  ) str_cat( buf, " ¤£­ã§i¶D"   );
-  if ( wizflags & WIZ_NOEMOTE ) str_cat( buf, " ¤£¯à¥ÎªÀ¥æ" );
+  if ( wizflags & WIZ_SILENCE ) str_cat( buf, " ç¦è¨€"       );
+  if ( wizflags & WIZ_NOTELL  ) str_cat( buf, " ä¸å‡†å‘Šè¨´"   );
+  if ( wizflags & WIZ_NOEMOTE ) str_cat( buf, " ä¸èƒ½ç”¨ç¤¾äº¤" );
 
-  RETURN( ( buf[0] ) ? buf + 1 : "(¨S¦³) " );
+  RETURN( ( buf[0] ) ? buf + 1 : "(æ²’æœ‰) " );
 }
 
-/* ¤Hª«Äİ©Ê¦WºÙ */
+/* äººç‰©å±¬æ€§åç¨± */
 char * act_bit_name( int act )
 {
   PUSH_FUNCTION( "act_bit_name" );
@@ -1038,56 +1038,56 @@ char * act_bit_name( int act )
 
   if ( ( act & PLR_IS_NPC ) == 0 )
   {
-    send_to_stack( "ª±®a" );
-    if ( act & PLR_AUTOEXIT     ) send_to_stack( " ¦Û°Ê¥X¤f"     );
-    if ( act & PLR_AUTOSAC      ) send_to_stack( " ¦Û°Ê©^Äm"     );
-    if ( act & PLR_BLANK        ) send_to_stack( " ¦³ªÅ¥Õ¦C"     );
-    if ( act & PLR_BRIEF        ) send_to_stack( " Â²µu´y­z"     );
-    if ( act & PLR_COMBINE      ) send_to_stack( " ²Õ¦X"         );
-    if ( act & PLR_PROMPT       ) send_to_stack( " ´£¥Ü¦C"       );
-    if ( act & PLR_HOLYLIGHT    ) send_to_stack( " ¸t¥ú"         );
-    if ( act & PLR_WIZINVIS     ) send_to_stack( " ¯«±ÚÁô§Î"     );
-    if ( act & PLR_SILENCE      ) send_to_stack( " ®ø­µ"         );
-    if ( act & PLR_NO_EMOTE     ) send_to_stack( " ¤£­ãemote"    );
-    if ( act & PLR_NO_TELL      ) send_to_stack( " ¤£­ãtell"     );
-    if ( act & PLR_LOG          ) send_to_stack( " ³Qlog"        );
-    if ( act & PLR_FREEZE       ) send_to_stack( " ³Qfreeze"     );
-    if ( act & PLR_THIEF        ) send_to_stack( " µs¸é"         );
-    if ( act & PLR_KILLER       ) send_to_stack( " ±ş¤H¥Ç"       );
-    if ( act & PLR_BOLTER       ) send_to_stack( " «qÀ°ªÌ"       );
-    if ( act & PLR_EXACT        ) send_to_stack( " §¹¾ã¦WºÙ"     );
-    if ( act & PLR_MESSAGE      ) send_to_stack( " §ğÀ»±Ô­z"     );
-    if ( act & PLR_FLEE         ) send_to_stack( " Â_½u¦Û°Ê°k¶]" );
-    if ( act & PLR_ANGEL        ) send_to_stack( " ¦uÅ@¯«"       );
-    if ( act & PLR_AUTOFOOD     ) send_to_stack( " ¦Û°Ê¦Y­¹ª«"   );
-    if ( act & PLR_AUTODRINK    ) send_to_stack( " ¦Û°Ê³Ü¤ô"     );
-    if ( act & PLR_NODEATH      ) send_to_stack( " ¤£¦º"         );
+    send_to_stack( "ç©å®¶" );
+    if ( act & PLR_AUTOEXIT     ) send_to_stack( " è‡ªå‹•å‡ºå£"     );
+    if ( act & PLR_AUTOSAC      ) send_to_stack( " è‡ªå‹•å¥‰ç»"     );
+    if ( act & PLR_BLANK        ) send_to_stack( " æœ‰ç©ºç™½åˆ—"     );
+    if ( act & PLR_BRIEF        ) send_to_stack( " ç°¡çŸ­æè¿°"     );
+    if ( act & PLR_COMBINE      ) send_to_stack( " çµ„åˆ"         );
+    if ( act & PLR_PROMPT       ) send_to_stack( " æç¤ºåˆ—"       );
+    if ( act & PLR_HOLYLIGHT    ) send_to_stack( " è–å…‰"         );
+    if ( act & PLR_WIZINVIS     ) send_to_stack( " ç¥æ—éš±å½¢"     );
+    if ( act & PLR_SILENCE      ) send_to_stack( " æ¶ˆéŸ³"         );
+    if ( act & PLR_NO_EMOTE     ) send_to_stack( " ä¸å‡†emote"    );
+    if ( act & PLR_NO_TELL      ) send_to_stack( " ä¸å‡†tell"     );
+    if ( act & PLR_LOG          ) send_to_stack( " è¢«log"        );
+    if ( act & PLR_FREEZE       ) send_to_stack( " è¢«freeze"     );
+    if ( act & PLR_THIEF        ) send_to_stack( " ç›œè³Š"         );
+    if ( act & PLR_KILLER       ) send_to_stack( " æ®ºäººçŠ¯"       );
+    if ( act & PLR_BOLTER       ) send_to_stack( " å›å¹«è€…"       );
+    if ( act & PLR_EXACT        ) send_to_stack( " å®Œæ•´åç¨±"     );
+    if ( act & PLR_MESSAGE      ) send_to_stack( " æ”»æ“Šæ•˜è¿°"     );
+    if ( act & PLR_FLEE         ) send_to_stack( " æ–·ç·šè‡ªå‹•é€ƒè·‘" );
+    if ( act & PLR_ANGEL        ) send_to_stack( " å®ˆè­·ç¥"       );
+    if ( act & PLR_AUTOFOOD     ) send_to_stack( " è‡ªå‹•åƒé£Ÿç‰©"   );
+    if ( act & PLR_AUTODRINK    ) send_to_stack( " è‡ªå‹•å–æ°´"     );
+    if ( act & PLR_NODEATH      ) send_to_stack( " ä¸æ­»"         );
   }
 
   else
   {
-    send_to_stack( " «Dª±®a" );
-    if ( act & ACT_SENTINEL     ) send_to_stack( " ¤£²¾°Ê"         );
-    if ( act & ACT_SCAVENGER    ) send_to_stack( " ¾ß«ÍÅé"         );
-    if ( act & ACT_AGGRESSIVE   ) send_to_stack( " ¦Û°Ê§ğÀ»"       );
-    if ( act & ACT_STAY_AREA    ) send_to_stack( " ¤£·|Â÷¶}¦¹°Ï°ì" );
-    if ( act & ACT_WIMPY        ) send_to_stack( " ¦Û°Ê°k¶]"       );
-    if ( act & ACT_PET          ) send_to_stack( " Ãdª«"           );
-    if ( act & ACT_TRAIN        ) send_to_stack( " °V½mªÌ"         );
-    if ( act & ACT_PRACTICE     ) send_to_stack( " ½m²ßªÌ"         );
-    if ( act & ACT_REBIRTH      ) send_to_stack( " ÂàÂ¾ªÌ"         );
-    if ( act & ACT_REBORN_FIGHT ) send_to_stack( " ­«¥Í¾Ô°«"       );
-    if ( act & AUTOSET_VALUE    ) send_to_stack( " ¦Û°Ê³]©w¼Æ­È"   );
-    if ( act & ACT_NOREBORN     ) send_to_stack( " ¤£·|­«¥Í"       );
-    if ( act & ACT_NOKILL       ) send_to_stack( " ¤£¯à±ş®`"       );
-    if ( act & ACT_NOSUMMON     ) send_to_stack( " ¤£¯à©Û³ê"       );
-    if ( act & ACT_ENROLL       ) send_to_stack( " °O«ë"           );
+    send_to_stack( " éç©å®¶" );
+    if ( act & ACT_SENTINEL     ) send_to_stack( " ä¸ç§»å‹•"         );
+    if ( act & ACT_SCAVENGER    ) send_to_stack( " æ’¿å±é«”"         );
+    if ( act & ACT_AGGRESSIVE   ) send_to_stack( " è‡ªå‹•æ”»æ“Š"       );
+    if ( act & ACT_STAY_AREA    ) send_to_stack( " ä¸æœƒé›¢é–‹æ­¤å€åŸŸ" );
+    if ( act & ACT_WIMPY        ) send_to_stack( " è‡ªå‹•é€ƒè·‘"       );
+    if ( act & ACT_PET          ) send_to_stack( " å¯µç‰©"           );
+    if ( act & ACT_TRAIN        ) send_to_stack( " è¨“ç·´è€…"         );
+    if ( act & ACT_PRACTICE     ) send_to_stack( " ç·´ç¿’è€…"         );
+    if ( act & ACT_REBIRTH      ) send_to_stack( " è½‰è·è€…"         );
+    if ( act & ACT_REBORN_FIGHT ) send_to_stack( " é‡ç”Ÿæˆ°é¬¥"       );
+    if ( act & AUTOSET_VALUE    ) send_to_stack( " è‡ªå‹•è¨­å®šæ•¸å€¼"   );
+    if ( act & ACT_NOREBORN     ) send_to_stack( " ä¸æœƒé‡ç”Ÿ"       );
+    if ( act & ACT_NOKILL       ) send_to_stack( " ä¸èƒ½æ®ºå®³"       );
+    if ( act & ACT_NOSUMMON     ) send_to_stack( " ä¸èƒ½æ‹›å–š"       );
+    if ( act & ACT_ENROLL       ) send_to_stack( " è¨˜æ¨"           );
   }
 
   RETURN( return_stack() );
 }
 
-/* MOB µ{¦¡ªº¦WºÙ */
+/* MOB ç¨‹å¼çš„åç¨± */
 char * progtypes_bit_name( int progtypes )
 {
   static char buf[512];
@@ -1109,7 +1109,7 @@ char * progtypes_bit_name( int progtypes )
   if ( progtypes & GIVE_PROG      ) str_cat( buf , " GIVE"      );
   if ( progtypes & BRIBE_PROG     ) str_cat( buf , " BRIBE"     );
 
-  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(¨S¦³)" );
+  RETURN( ( buf[0] != '\x0' ) ? buf+1 : "(æ²’æœ‰)" );
 }
 
 char * get_obj_value_usage( int type, int * array )
@@ -1123,21 +1123,21 @@ char * get_obj_value_usage( int type, int * array )
   default :
 
     sprintf( buf,
-      "V0  (¥Î³~¥¼©ú)=%6d "
-      "V1  (¥Î³~¥¼©ú)=%6d "
-      "V2  (¥Î³~¥¼©ú)=%6d\n\r"
-      "V3  (¥Î³~¥¼©ú)=%6d "
-      "V4  (¥Î³~¥¼©ú)=%6d "
-      "V5  (¥Î³~¥¼©ú)=%6d\n\r"
-      "V6  (¥Î³~¥¼©ú)=%6d "
-      "V7  (¥Î³~¥¼©ú)=%6d "
-      "V8  (¥Î³~¥¼©ú)=%6d\n\r"
-      "V9  (¥Î³~¥¼©ú)=%6d "
-      "V10 (¥Î³~¥¼©ú)=%6d "
-      "V11 (¥Î³~¥¼©ú)=%6d\n\r"
-      "V12 (¥Î³~¥¼©ú)=%6d "
-      "V13 (¥Î³~¥¼©ú)=%6d "
-      "V14 (¥Î³~¥¼©ú)=%6d\n\r"
+      "V0  (ç”¨é€”æœªæ˜)=%6d "
+      "V1  (ç”¨é€”æœªæ˜)=%6d "
+      "V2  (ç”¨é€”æœªæ˜)=%6d\n\r"
+      "V3  (ç”¨é€”æœªæ˜)=%6d "
+      "V4  (ç”¨é€”æœªæ˜)=%6d "
+      "V5  (ç”¨é€”æœªæ˜)=%6d\n\r"
+      "V6  (ç”¨é€”æœªæ˜)=%6d "
+      "V7  (ç”¨é€”æœªæ˜)=%6d "
+      "V8  (ç”¨é€”æœªæ˜)=%6d\n\r"
+      "V9  (ç”¨é€”æœªæ˜)=%6d "
+      "V10 (ç”¨é€”æœªæ˜)=%6d "
+      "V11 (ç”¨é€”æœªæ˜)=%6d\n\r"
+      "V12 (ç”¨é€”æœªæ˜)=%6d "
+      "V13 (ç”¨é€”æœªæ˜)=%6d "
+      "V14 (ç”¨é€”æœªæ˜)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1147,21 +1147,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_LIGHT:
 
     sprintf( buf ,
-      "V0  (¨S¦³¨Ï¥Î)=%6d "
-      "V1  (¨S¦³¨Ï¥Î)=%6d "
-      "V2  (¨Ï¥Î®É¶¡)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V1  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V2  (ä½¿ç”¨æ™‚é–“)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1170,21 +1170,21 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_MYSTERY:
     sprintf( buf ,
-      "V0  (ªk³N½s¸¹)=%6d "
-      "V1  ( ¼ô½m«× )=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æ³•è¡“ç·¨è™Ÿ)=%6d "
+      "V1  ( ç†Ÿç·´åº¦ )=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      , *(array+1) ,*(array+2)
       ,*(array+3)  , *(array+4) ,*(array+5)
       ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
@@ -1196,21 +1196,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_PILL:
 
     sprintf( buf ,
-      "V0  (¼vÅT¼Æ­È)=%6d "
-      "V1  (ªk³N¦WºÙ)=%8s "
-      "V2  (ªk³N½s¸¹)=%6d\n\r"
-      "V3  (ÃÄª«¾¯¶q)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%8d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%8d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%8d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%8d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (å½±éŸ¿æ•¸å€¼)=%6d "
+      "V1  (æ³•è¡“åç¨±)=%8s "
+      "V2  (æ³•è¡“ç·¨è™Ÿ)=%6d\n\r"
+      "V3  (è—¥ç‰©åŠ‘é‡)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%8d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%8d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%8d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%8d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      , obj_cast_location( *(array+1) ) ,*(array+2)
       ,*(array+3)  , *(array+4) ,*(array+5)
       ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
@@ -1222,21 +1222,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_WAND:
 
     sprintf( buf ,
-      "V0  (¨S¦³¨Ï¥Î)=%6d "
-      "V1  (¨S¦³¨Ï¥Î)=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¥[±j¤ÀÃş)=%6d "
-      "V5  (¥[±jµ{«×)=%6d\n\r"
-      "V6  (¥Ø«eªk¤O)=%6d "
-      "V7  (®ø¯Óªk¤O)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V1  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (åŠ å¼·åˆ†é¡)=%6d "
+      "V5  (åŠ å¼·ç¨‹åº¦)=%6d\n\r"
+      "V6  (ç›®å‰æ³•åŠ›)=%6d "
+      "V7  (æ¶ˆè€—æ³•åŠ›)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1246,21 +1246,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_WEAPON:
 
     sprintf( buf ,
-      "V0  (¨S¦³¨Ï¥Î)=%6d "
-      "V1  (³Ì¤p¶Ë®`)=%6d "
-      "V2  (³Ì¤j¶Ë®`)=%6d\n\r"
-      "V3  (ªZ¾¹ºØÃş)= %s (%d)\n\r"
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d "
-      "V6  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d "
-      "V9  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d "
-      "V12 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V1  (æœ€å°å‚·å®³)=%6d "
+      "V2  (æœ€å¤§å‚·å®³)=%6d\n\r"
+      "V3  (æ­¦å™¨ç¨®é¡)= %s (%d)\n\r"
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)
       , weapon_type_name( *(array+3 ) ) , *( array+3 ), *(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
@@ -1271,21 +1271,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_ARROW:
 
     sprintf( buf ,
-      "V0  (³Ì¤j¶Ë®`)=%6d "
-      "V1  (³Ì¤p¶Ë®`)=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)= %s (%d)\n\r"
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d "
-      "V6  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d "
-      "V9  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d "
-      "V12 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æœ€å¤§å‚·å®³)=%6d "
+      "V1  (æœ€å°å‚·å®³)=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)= %s (%d)\n\r"
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)
       , weapon_type_name( *(array+3 ) ) , *( array+3 ), *(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
@@ -1305,21 +1305,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_VELLUM:
 
     sprintf( buf ,
-      "V0  (¨S¦³¨Ï¥Î)=%6d "
-      "V1  (¨S¦³¨Ï¥Î)=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V1  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1329,21 +1329,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_FIREWORK:
 
     sprintf( buf ,
-      "V0  (¬I©ñ¶ZÂ÷)=%6d "
-      "V1  (¥¢±Ñ¾÷²v)=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æ–½æ”¾è·é›¢)=%6d "
+      "V1  (å¤±æ•—æ©Ÿç‡)=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1353,21 +1353,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_URN:
 
     sprintf( buf ,
-      "V0  (©Çª«¸¹½X)=%6d "
-      "V1  (¥Í ©R ¤O)=%6d "
-      "V2  (ªk¤O¼Æ­È)=%6d\n\r"
-      "V3  (Åé¤O¼Æ­È)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æ€ªç‰©è™Ÿç¢¼)=%6d "
+      "V1  (ç”Ÿ å‘½ åŠ›)=%6d "
+      "V2  (æ³•åŠ›æ•¸å€¼)=%6d\n\r"
+      "V3  (é«”åŠ›æ•¸å€¼)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1377,21 +1377,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_LETTER:
 
     sprintf( buf ,
-      "V0  (³Ñ¾l®É¶¡)=%6d "
-      "V1  (¨S¦³¨Ï¥Î)=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (å‰©é¤˜æ™‚é–“)=%6d "
+      "V1  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1401,21 +1401,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_ORE:
 
     sprintf( buf ,
-      "V0  (¥X²{ª««~)=%6d "
-      "V1  (ªk³Nµ¥¯Å)=%6d "
-      "V2  (¦¨¥\\¾÷·|)=%6d\n\r"
-      "V3  (¥´³y»ù®æ)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (å‡ºç¾ç‰©å“)=%6d "
+      "V1  (æ³•è¡“ç­‰ç´š)=%6d "
+      "V2  (æˆåŠŸ\æ©Ÿæœƒ)=%6d\n\r"
+      "V3  (æ‰“é€ åƒ¹æ ¼)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1425,21 +1425,21 @@ char * get_obj_value_usage( int type, int * array )
   case ITEM_GOLDMINE:
 
     sprintf( buf ,
-      "V0  (Á`¦@µ¥¯Å)=%6d "
-      "V1  (²Ö¿nµ¥¯Å)=%6d "
-      "V2  (³Ì¤pµ¥¯Å)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (ª««~¸¹½X)=%6d\n\r"
-      "V6  (ª««~¸¹½X)=%6d "
-      "V7  (ª««~¸¹½X)=%6d "
-      "V8  (ª««~¸¹½X)=%6d\n\r"
-      "V9  (ª««~¸¹½X)=%6d "
-      "V10 (ª««~¸¹½X)=%6d "
-      "V11 (ª««~¸¹½X)=%6d\n\r"
-      "V12 (ª««~¸¹½X)=%6d "
-      "V13 (ª««~¸¹½X)=%6d "
-      "V14 (ª««~¸¹½X)=%6d\n\r"
+      "V0  (ç¸½å…±ç­‰ç´š)=%6d "
+      "V1  (ç´¯ç©ç­‰ç´š)=%6d "
+      "V2  (æœ€å°ç­‰ç´š)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (ç‰©å“è™Ÿç¢¼)=%6d\n\r"
+      "V6  (ç‰©å“è™Ÿç¢¼)=%6d "
+      "V7  (ç‰©å“è™Ÿç¢¼)=%6d "
+      "V8  (ç‰©å“è™Ÿç¢¼)=%6d\n\r"
+      "V9  (ç‰©å“è™Ÿç¢¼)=%6d "
+      "V10 (ç‰©å“è™Ÿç¢¼)=%6d "
+      "V11 (ç‰©å“è™Ÿç¢¼)=%6d\n\r"
+      "V12 (ç‰©å“è™Ÿç¢¼)=%6d "
+      "V13 (ç‰©å“è™Ÿç¢¼)=%6d "
+      "V14 (ç‰©å“è™Ÿç¢¼)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1448,21 +1448,21 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_ARMOR:
     sprintf( buf ,
-      "V0  (¨¾Å@µ¥¯Å)=%6d "
-      "V1  (¨S¦³¨Ï¥Î)=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (é˜²è­·ç­‰ç´š)=%6d "
+      "V1  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1471,21 +1471,21 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_BACKBAG:
     sprintf( buf ,
-      "V0  (³Ì¦h¼Æ¶q)=%6d "
-      "V1  (¥Ø«e¼Æ¶q)=%6d "
-      "V2  (ªZ¾¹¸¹½X)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æœ€å¤šæ•¸é‡)=%6d "
+      "V1  (ç›®å‰æ•¸é‡)=%6d "
+      "V2  (æ­¦å™¨è™Ÿç¢¼)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1494,21 +1494,21 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_CONTAINER:
     sprintf( buf ,
-      "V0  (¦s©ñ­«¶q)=%6d "
-      "V1  (¸Ë¸mºX¼Ğ)= %s (%d)\n\r"
-      "V2  (Æ_°Í¸¹½X)=%6d "
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V5  (¨S¦³¨Ï¥Î)=%6d "
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V8  (¨S¦³¨Ï¥Î)=%6d "
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V11 (¨S¦³¨Ï¥Î)=%6d "
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (å­˜æ”¾é‡é‡)=%6d "
+      "V1  (è£ç½®æ——æ¨™)= %s (%d)\n\r"
+      "V2  (é‘°åŒ™è™Ÿç¢¼)=%6d "
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      , container_bit_name( *(array+1) ), *(array+1)
       ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
@@ -1518,23 +1518,23 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_DRINK_CON:
     sprintf( buf ,
-       "V0  (³Ì¤j®e¶q)=%6d "
-       "V1  (¥Ø«e®e¶q)=%6d "
-       "V2  (²GÅé¸¹½X)=%6d\n\r"
-       "V3  (¬O§_¦³¬r)= %s (%d)\n\r"
-       "V4  (¨S¦³¨Ï¥Î)=%6d "
-       "V5  (¨S¦³¨Ï¥Î)=%6d "
-       "V6  (¨S¦³¨Ï¥Î)=%6d\n\r"
-       "V7  (¨S¦³¨Ï¥Î)=%6d "
-       "V8  (¨S¦³¨Ï¥Î)=%6d "
-       "V9  (¨S¦³¨Ï¥Î)=%6d\n\r"
-       "V10 (¨S¦³¨Ï¥Î)=%6d "
-       "V11 (¨S¦³¨Ï¥Î)=%6d "
-       "V12 (¨S¦³¨Ï¥Î)=%6d\n\r"
-       "V13 (¨S¦³¨Ï¥Î)=%6d "
-       "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+       "V0  (æœ€å¤§å®¹é‡)=%6d "
+       "V1  (ç›®å‰å®¹é‡)=%6d "
+       "V2  (æ¶²é«”è™Ÿç¢¼)=%6d\n\r"
+       "V3  (æ˜¯å¦æœ‰æ¯’)= %s (%d)\n\r"
+       "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+       "V5  (æ²’æœ‰ä½¿ç”¨)=%6d "
+       "V6  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+       "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+       "V8  (æ²’æœ‰ä½¿ç”¨)=%6d "
+       "V9  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+       "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+       "V11 (æ²’æœ‰ä½¿ç”¨)=%6d "
+       "V12 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+       "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+       "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)
-      , *(array+3) == 0 ? "µL¬r" : "¦³¬r" ,*(array+3)  ,*(array+4)
+      , *(array+3) == 0 ? "ç„¡æ¯’" : "æœ‰æ¯’" ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
 
@@ -1542,23 +1542,23 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_FOOD:
     sprintf( buf ,
-      "V0  (¦³®Ä´Á­­)=%6d "
-      "V1  (²{¦³¦¸¼Æ)=%6d "
-      "V2  (¤@¤f­¹¶q)=%6d\n\r"
-      "V3  (¬O§_¦³¬r)=%s (%d)\n\r"
-      "V4  (²£¥Íª««~)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d "
-      "V6  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d "
-      "V9  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d "
-      "V12 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (æœ‰æ•ˆæœŸé™)=%6d "
+      "V1  (ç¾æœ‰æ¬¡æ•¸)=%6d "
+      "V2  (ä¸€å£é£Ÿé‡)=%6d\n\r"
+      "V3  (æ˜¯å¦æœ‰æ¯’)=%s (%d)\n\r"
+      "V4  (ç”¢ç”Ÿç‰©å“)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)
-      , *(array+3) == 0 ? "µL¬r" : "¦³¬r" ,*(array+3)  ,*(array+4)
+      , *(array+3) == 0 ? "ç„¡æ¯’" : "æœ‰æ¯’" ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
 
@@ -1566,21 +1566,21 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_MONEY:
     sprintf( buf ,
-      "V0  (¿úªº¼Æ¶q)=%6d "
-      "V1  (¨S¦³¨Ï¥Î)=%6d "
-      "V2  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V3  (¨S¦³¨Ï¥Î)=%6d "
-      "V4  (¨S¦³¨Ï¥Î)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (éŒ¢çš„æ•¸é‡)=%6d "
+      "V1  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V2  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V3  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V4  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
@@ -1589,45 +1589,45 @@ char * get_obj_value_usage( int type, int * array )
 
   case ITEM_MAGICSTONE:
     sprintf( buf ,
-      "V0  (Å]¥ÛºØÃş)=%6d "
-      "V1  (ªk³N³]©w)=%6d "
-      "V2  (¸gÅç­È  )=%6d\n\r"
-      "V3  (Å]¥Ûª¬ºA)=%6d "
-      "V4  (¼vÅTµ{«×)=%6d "
-      "V5  (Å]¥Ûµ¥¯Å)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (é­”çŸ³ç¨®é¡)=%6d "
+      "V1  (æ³•è¡“è¨­å®š)=%6d "
+      "V2  (ç¶“é©—å€¼  )=%6d\n\r"
+      "V3  (é­”çŸ³ç‹€æ…‹)=%6d "
+      "V4  (å½±éŸ¿ç¨‹åº¦)=%6d "
+      "V5  (é­”çŸ³ç­‰ç´š)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );
 
     break;
 
-  /* °­¥É */
+  /* é¬¼ç‰ */
   case ITEM_SPIRITJADE:
     sprintf( buf ,
-      "V0  (¤p°­¸¹½X)=%6d "
-      "V1  (¤p°­µ¥¯Å)=%6d "
-      "V2  (¤p°­¸gÅç)=%6d\n\r"
-      "V3  (§Ş¯à¸¹½X)=%6d "
-      "V4  (§Ş¯àµ¥¯Å)=%6d "
-      "V5  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V6  (¨S¦³¨Ï¥Î)=%6d "
-      "V7  (¨S¦³¨Ï¥Î)=%6d "
-      "V8  (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V9  (¨S¦³¨Ï¥Î)=%6d "
-      "V10 (¨S¦³¨Ï¥Î)=%6d "
-      "V11 (¨S¦³¨Ï¥Î)=%6d\n\r"
-      "V12 (¨S¦³¨Ï¥Î)=%6d "
-      "V13 (¨S¦³¨Ï¥Î)=%6d "
-      "V14 (¨S¦³¨Ï¥Î)=%6d\n\r"
+      "V0  (å°é¬¼è™Ÿç¢¼)=%6d "
+      "V1  (å°é¬¼ç­‰ç´š)=%6d "
+      "V2  (å°é¬¼ç¶“é©—)=%6d\n\r"
+      "V3  (æŠ€èƒ½è™Ÿç¢¼)=%6d "
+      "V4  (æŠ€èƒ½ç­‰ç´š)=%6d "
+      "V5  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V6  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V7  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V8  (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V9  (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V10 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V11 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
+      "V12 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V13 (æ²’æœ‰ä½¿ç”¨)=%6d "
+      "V14 (æ²’æœ‰ä½¿ç”¨)=%6d\n\r"
       ,*array      ,*(array+1)  ,*(array+2)  ,*(array+3)  ,*(array+4)
       ,*(array+5)  ,*(array+6)  ,*(array+7)  ,*(array+8)  ,*(array+9)
       ,*(array+10) ,*(array+11) ,*(array+12) ,*(array+13) ,*(array+14) );

@@ -1,10 +1,10 @@
 Vnum            6
 Name            kerry~
-ShortDesc       ¯Tª¯³Í²ú~
-LongDesc        ¤@°¦¬İ¦ü¤¿¬½ªº¯Tª¯(Kerry)·nµÛ§À¤Ú¡C
+ShortDesc       ç‹¼ç‹—å‡±è‰~
+LongDesc        ä¸€éš»çœ‹ä¼¼å‡¶ç‹ çš„ç‹¼ç‹—(Kerry)æ–è‘—å°¾å·´ã€‚
 ~
 Description
-³o°¦¬O Robin ®a¸Ì¾iªº¨ã¦³¦å²ÎÃÒ©ú®Ñªº¯Tª¯¡C
+é€™éš»æ˜¯ Robin å®¶è£¡é¤Šçš„å…·æœ‰è¡€çµ±è­‰æ˜æ›¸çš„ç‹¼ç‹—ã€‚
 ~
 Sentinel        Yes
 Effect          'sanctuary'
@@ -39,7 +39,7 @@ Process
 Type            rand_prog
 Chance          5
 Text
-emote ¹ïµÛ§A¨g¥s¡C
+emote å°è‘—ä½ ç‹‚å«ã€‚
 ~
 End
 
@@ -47,14 +47,14 @@ Process
 Type            fight_prog
 Chance          80
 Text
-say $1¥D¤H¤£¦b®a¡M§A­Ì´N¨Ó´Û­t§Ú¡K$0
- say $1¬İ§Ú¥²±şªº¤@À»¡K$0
+say $1ä¸»äººä¸åœ¨å®¶ï¹ä½ å€‘å°±ä¾†æ¬ºè² æˆ‘â€¦$0
+ say $1çœ‹æˆ‘å¿…æ®ºçš„ä¸€æ“Šâ€¦$0
  mpadd $n HIT -20000
  mpadd $n MANA -1000
  mpadd $n MOVE -1000
  mpadd $n DOSAGE 100
- mpechoat $n $1$N$1Ä±±o¦Û¤vªººë¤OÀş¶¡«æ³t¤U­°¡C$0
- mpechoaround $n $1$Nªººë¤O«æ³t¬y¥¢¡C$0
+ mpechoat $n $1$N$1è¦ºå¾—è‡ªå·±çš„ç²¾åŠ›ç¬é–“æ€¥é€Ÿä¸‹é™ã€‚$0
+ mpechoaround $n $1$Nçš„ç²¾åŠ›æ€¥é€Ÿæµå¤±ã€‚$0
 ~
 End
 

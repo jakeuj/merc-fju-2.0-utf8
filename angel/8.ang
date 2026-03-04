@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�p�G�A�n���t�Φ۰����A�b�����ĤH���M����̪��˳ƮɡM�A�i�H��J autoloot�M
-�t�η|�۰����A��M�M�A�i�H��J config �ݬݥثe���]�w�ȳ�T�ܩ���M�t�Υi�O
-�|�۰����A�����աM���D�A�����ʡC
+如果你要讓系統自動幫你在打死敵人後找尋屍體裡的裝備時﹐你可以輸入 autoloot﹐
+系統會自動幫你找尋﹐你可以輸入 config 看看目前的設定值喔﹗至於錢﹐系統可是
+會自動幫你拿的啦﹐除非你拿不動。
 
-�Ьd�ߡRauto config autoloot
+請查詢﹕auto config autoloot
 ~
 
 End

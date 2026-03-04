@@ -1,9 +1,9 @@
 Vnum            82
 Name            cloudy shoe~
-ShortDesc       ¤C¬PÂ½¶³¹u~
+ShortDesc       ä¸ƒæ˜Ÿç¿»é›²é´~
 Description
-³o¬O¤@Âù¥Î¤ÑÅúµ·©ÒÂ´¦¨ªº¾c¤l(cloudy shoe)¡C~
-Unit            Âù~
+é€™æ˜¯ä¸€é›™ç”¨å¤©è ¶çµ²æ‰€ç¹”æˆçš„é‹å­(cloudy shoe)ã€‚~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

@@ -1,9 +1,9 @@
 Vnum            641
-Name            �ѩ�~
+Name            書店~
 Description
-�A�����e�O�@�Ʊƪ��[�l�M�[�l�W���������Ʃ�۳\�h���ѡM����
-���t�H�ӶR�M�t�~�٦��@�Ǯѱױת����b�@�}���a�W�M���O����|��
-��z�����y�M���L�j�P�W�Pı�_�ӤQ�����M�n�C
+你的眼前是一排排的架子﹐架子上面整整齊齊排放著許多的書﹐等待
+有緣人來買﹐另外還有一些書斜斜的等在一腳的地上﹐那是老闆尚未
+整理的書籍﹐不過大致上感覺起來十分的清爽。
 
 ~
 SectorType      SECT_INSIDE
@@ -19,11 +19,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         �ө�~
+Keyword         商店~
 End
 
 #Enquire
-Keyword         ���D��~
+Keyword         秘笈屋~
 End
 
 End

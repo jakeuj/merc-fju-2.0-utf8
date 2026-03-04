@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -35,16 +35,16 @@ void generate_ticket( int howmany )
   PUSH_FUNCTION( "generate_tick" );
 
   if ( howmany < 0 )
-    mudlog( LOG_ERR, "generate_ticket: ¨Ó·½¤£¦X²z." );
+    mudlog( LOG_ERR, "generate_ticket: ä¾†æºä¸åˆç†." );
 
   if ( !order_list )
-    mudlog( LOG_ERR, "generate_ticket: ¨S¦³¤¤¼úªº¸ê®Æ." );
+    mudlog( LOG_ERR, "generate_ticket: æ²’æœ‰ä¸­ççš„è³‡æ–™." );
 
   for ( count = 0, pOrder = order_list; pOrder; pOrder = pOrder->next )
     count += pOrder->howmany;
 
   if ( count > howmany )
-    mudlog( LOG_ERR, "generate_ticket: ¤¤¼ú²Õ¼Æ¤j©ó¥ş³¡²Õ¼Æ." );
+    mudlog( LOG_ERR, "generate_ticket: ä¸­ççµ„æ•¸å¤§æ–¼å…¨éƒ¨çµ„æ•¸." );
 
   for ( loop = 0; loop < howmany; loop++ )
   {
@@ -53,7 +53,7 @@ void generate_ticket( int howmany )
     ticket_list   = pTicket;
   }
 
-  /* ­«¸m±m¨é */
+  /* é‡ç½®å½©åˆ¸ */
   dice_ticket();
 
   RETURN_NULL();
@@ -71,7 +71,7 @@ void dice_ticket( void )
 
   if ( !ticket_list || !order_list ) RETURN_NULL();
 
-  /* ²M°£¸ê®Æ */
+  /* æ¸…é™¤è³‡æ–™ */
   for ( pTicket = ticket_list; pTicket; pTicket = pTicket->next )
     set_ticket_default( pTicket );
 
@@ -124,7 +124,7 @@ FUNCTION( do_chance )
 
   if ( !ticket_list || !order_list )
   {
-    act( "¹ï¤£°_¡M$t¨S¦³¥ô¦ó±m¨é³c½æ¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$tæ²’æœ‰ä»»ä½•å½©åˆ¸è²©è³£ï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -135,22 +135,22 @@ FUNCTION( do_chance )
     clear_buffer();
 
     send_to_buffer(
-      "¨C¦¸²£¥Í¡R %d ²Õ¡C\n\r"
-      "¨C²Õ»ù¿ú¡R %d ¨â¡C\n\r"
-      "­«¸m®É¶¡¡R %d ¤Ñ¡C\n\r"
+      "æ¯æ¬¡ç”¢ç”Ÿï¹• %d çµ„ã€‚\n\r"
+      "æ¯çµ„åƒ¹éŒ¢ï¹• %d å…©ã€‚\n\r"
+      "é‡ç½®æ™‚é–“ï¹• %d å¤©ã€‚\n\r"
       , TicketTotal, TicketCost, TicketReset );
 
     for ( sold = 0, pTicket = ticket_list; pTicket; pTicket = pTicket->next )
       if ( pTicket->sold ) sold++;
 
     send_to_buffer(
-      "¤w¸g½æ¥X¡R %d ²Õ¡C\n\r"
-      "³Ñ¾l±m¨é¡R %d ²Õ¡C\n\r"
+      "å·²ç¶“è³£å‡ºï¹• %d çµ„ã€‚\n\r"
+      "å‰©é¤˜å½©åˆ¸ï¹• %d çµ„ã€‚\n\r"
       , sold, TicketTotal - sold );
 
     for ( pOrder = order_list; pOrder; pOrder = pOrder->next )
     {
-      send_to_buffer( "¤¤¼ú³]©w¡R ²Ä %d ¯S¼ú¡M¦³ %3d ²Õ¡M¨C²Õ %5d ¨â¡C\n\r"
+      send_to_buffer( "ä¸­çè¨­å®šï¹• ç¬¬ %d ç‰¹çï¹æœ‰ %3d çµ„ï¹æ¯çµ„ %5d å…©ã€‚\n\r"
         , pOrder->order, pOrder->howmany, pOrder->gold );
 
       if ( buffer_full() ) break;
@@ -164,34 +164,34 @@ FUNCTION( do_chance )
     clear_buffer();
 
     send_to_buffer(
-      "¨C¦¸²£¥Í¡R %d ²Õ¡C\n\r"
-      "¨C²Õ»ù¿ú¡R %d ¨â¡C\n\r"
-      "­«¸m®É¶¡¡R %d ¤Ñ¡C\n\r"
+      "æ¯æ¬¡ç”¢ç”Ÿï¹• %d çµ„ã€‚\n\r"
+      "æ¯çµ„åƒ¹éŒ¢ï¹• %d å…©ã€‚\n\r"
+      "é‡ç½®æ™‚é–“ï¹• %d å¤©ã€‚\n\r"
       , TicketTotal, TicketCost, TicketReset );
 
     for ( sold = 0, pTicket = ticket_list; pTicket; pTicket = pTicket->next )
       if ( pTicket->sold ) sold++;
 
     send_to_buffer(
-      "¤w¸g½æ¥X¡R %d ²Õ¡C\n\r"
-      "³Ñ¾l±m¨é¡R %d ²Õ¡C\n\r"
+      "å·²ç¶“è³£å‡ºï¹• %d çµ„ã€‚\n\r"
+      "å‰©é¤˜å½©åˆ¸ï¹• %d çµ„ã€‚\n\r"
       , sold, TicketTotal - sold );
 
     for ( count = 0, pOrder = order_list; pOrder; pOrder = pOrder->next )
       count += pOrder->gold * pOrder->howmany;
 
-    send_to_buffer( "±m¨é§Q¯q¡R Á`°âÃB¡R%d Á`¼úª÷¡R%d\n\r"
+    send_to_buffer( "å½©åˆ¸åˆ©ç›Šï¹• ç¸½å”®é¡ï¹•%d ç¸½çé‡‘ï¹•%d\n\r"
       , TicketCost * TicketTotal , count );
 
     for ( pOrder = order_list; pOrder; pOrder = pOrder->next )
     {
-      send_to_buffer( "¤¤¼ú³]©w¡R ²Ä %d ¯S¼ú¡M¦³ %3d ²Õ¡M¨C²Õ %5d ¨â¡C\n\r"
+      send_to_buffer( "ä¸­çè¨­å®šï¹• ç¬¬ %d ç‰¹çï¹æœ‰ %3d çµ„ï¹æ¯çµ„ %5d å…©ã€‚\n\r"
         , pOrder->order, pOrder->howmany, pOrder->gold );
     }
 
     for ( pOrder = order_list; pOrder; pOrder = pOrder->next )
     {
-      send_to_buffer( "\n\r²Ä %d ¯S¼ú¶¶§Ç:\n\r", pOrder->order );
+      send_to_buffer( "\n\rç¬¬ %d ç‰¹çé †åº:\n\r", pOrder->order );
 
       count = 1;
       loop = 0;
@@ -216,7 +216,7 @@ FUNCTION( do_chance )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å¤§«e¡M½Ğª`·N§Aªºª÷¿ú¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šä¹‹å‰ï¹è«‹æ³¨æ„ä½ çš„é‡‘éŒ¢ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
 
       RETURN_NULL();
@@ -224,13 +224,13 @@ FUNCTION( do_chance )
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "±ÏÀÙª÷¥i¤£¬OÅı§A®³¨Ó¶R±m¨éªº¡T\n\r", ch );
+      send_to_char( "æ•‘æ¿Ÿé‡‘å¯ä¸æ˜¯è®“ä½ æ‹¿ä¾†è²·å½©åˆ¸çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->trade == FALSE )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤Ó¥i©È¤F¡M©Ò¥HµLªk°õ¦æ³o­Ó«ü¥O¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å¤ªå¯æ€•äº†ï¹æ‰€ä»¥ç„¡æ³•åŸ·è¡Œé€™å€‹æŒ‡ä»¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -238,37 +238,37 @@ FUNCTION( do_chance )
 
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "¹ï¤£°_¡M§A­n¸ò½Ö¶R±m¨é©O¡S\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ è¦è·Ÿèª°è²·å½©åˆ¸å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_room( ch, arg ) ) )
     {
-      act( "³o¸Ì¨S¦³ $2$T$0¡M©Ò¥H§A¶R¤£¨ì±m¨é¡C", ch, NULL, arg, TO_CHAR );
+      act( "é€™è£¡æ²’æœ‰ $2$T$0ï¹æ‰€ä»¥ä½ è²·ä¸åˆ°å½©åˆ¸ã€‚", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !IS_NPC( victim ) )
     {
-      act( "¹ï¤£°_¡M$N¬O¤£½æ±m¨éªº¡C", ch, NULL, victim, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$Næ˜¯ä¸è³£å½©åˆ¸çš„ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->position != POS_STANDING )
     {
-      act( "$N¥¿¦b¦£©O¡Mµ¥¤@¤U¦n¤F¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Næ­£åœ¨å¿™å‘¢ï¹ç­‰ä¸€ä¸‹å¥½äº†ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !can_see( victim, ch ) )
     {
-      act( "$N¬İ¤£¨ì§A­C¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nçœ‹ä¸åˆ°ä½ è€¶ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->gold < TicketCost )
     {
-      act( "³o¬O¤½¯q±m¨é¡M¤@±i­n$i¨â»È¤l¡T", ch, &TicketCost, NULL, TO_CHAR );
+      act( "é€™æ˜¯å…¬ç›Šå½©åˆ¸ï¹ä¸€å¼µè¦$iå…©éŠ€å­ï¹—", ch, &TicketCost, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -283,14 +283,14 @@ FUNCTION( do_chance )
 
     if ( !zTicket )
     {
-      send_to_char( "¹ï¤£°_¡M©Ò¦³ªº±m¨é³£½æ§¹¤F¡M¤U¦¸½Ğ¦­¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ‰€æœ‰çš„å½©åˆ¸éƒ½è³£å®Œäº†ï¹ä¸‹æ¬¡è«‹æ—©ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     gold_from_char( ch, TicketCost );
     zTicket->sold = TRUE;
 
-    act( "$N½æ¤F¤@±i¤½¯q±m¨éµ¹$n¡M¨Ã¯¬$e¤¤¤j¼ú¡T", ch, NULL, victim, TO_ALL );
+    act( "$Nè³£äº†ä¸€å¼µå…¬ç›Šå½©åˆ¸çµ¦$nï¹ä¸¦ç¥$eä¸­å¤§çï¹—", ch, NULL, victim, TO_ALL );
 
     if ( !( pOrder = zTicket->order ) )
     {
@@ -298,32 +298,32 @@ FUNCTION( do_chance )
       {
       default:
       case 0:
-        msg = "¦n¤ß¦³¦n³ø¡M»ÊÁÂ´fÅU";
+        msg = "å¥½å¿ƒæœ‰å¥½å ±ï¹éŠ˜è¬æƒ é¡§";
         break;
 
       case 1:
-        msg = "ÁÂÁÂ§A¼ö¤ß¤½¯q¡M¯¬§A¤U¦¸¤¤¤j¼ú";
+        msg = "è¬è¬ä½ ç†±å¿ƒå…¬ç›Šï¹ç¥ä½ ä¸‹æ¬¡ä¸­å¤§ç";
         break;
 
       case 2:
-        msg = "±m¨é¦b¤â¡M§Æ±æµL½a";
+        msg = "å½©åˆ¸åœ¨æ‰‹ï¹å¸Œæœ›ç„¡çª®";
         break;
       }
 
-      act( "§A¨í¤@¤F¨í¡M¤W­±¼gµÛ¡R¡y$t¡z", ch, msg, NULL, TO_CHAR );
+      act( "ä½ åˆ®ä¸€äº†åˆ®ï¹ä¸Šé¢å¯«è‘—ï¹•ã€$tã€", ch, msg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    act( "®¥ÁH§A¡M³o±i±m¨é¤¤¤F²Ä $2$i$0 ¯S¼ú¡M¼úª÷¬O $3$I$0 ¨â»È¤l¡C"
+    act( "æ­ç¦§ä½ ï¹é€™å¼µå½©åˆ¸ä¸­äº†ç¬¬ $2$i$0 ç‰¹çï¹çé‡‘æ˜¯ $3$I$0 å…©éŠ€å­ã€‚"
       , ch, &pOrder->order, &pOrder->gold, TO_CHAR );
 
     if ( !over_scale( ch ) ) gold_to_char( ch, pOrder->gold );
-    else send_to_char( "¹ï¤£°_¡M§AªºÁ`¸ê²£¤w¹F¤W­­¡M©Ò¥H¨S®³¨ì¿ú¡T\n\r", ch );
+    else send_to_char( "å°ä¸èµ·ï¹ä½ çš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹æ‰€ä»¥æ²’æ‹¿åˆ°éŒ¢ï¹—\n\r", ch );
   }
 
   else
   {
-    send_to_char( "§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß chance ªº¥Îªk¡T\n\r", ch );
+    send_to_char( "ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ chance çš„ç”¨æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();

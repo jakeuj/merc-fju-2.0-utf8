@@ -1,9 +1,9 @@
 Vnum            613
-Name            ���ک�~
+Name            票據所~
 Description
-�A�����e�X�{�F�@�諸�ù��M�W���@��ƾڶ]�Ӷ]�h�M��i�Ȫ��O�A
-���Ǥ@��H�A�A�����M���A�H���Ө�F�@�ӥi�Ȫ��a��C��ӳo�̴N
-�O���کҰڡM�u���O�O�H�P��Q�����`�ȡT
+你的眼前出現了一堆的螢幕﹐上面一堆數據跑來跑去﹐更可怕的是你
+身旁一堆人唧唧雜雜﹐讓你以為來到了一個可怕的地方。原來這裡就
+是票據所啊﹐真的是令人感到十分的害怕﹗
 
 ~
 SectorType      SECT_CITY
@@ -18,11 +18,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         ���ک�~
+Keyword         票據所~
 End
 
 #Enquire
-Keyword         �Ѳ�~
+Keyword         股票~
 End
 
 

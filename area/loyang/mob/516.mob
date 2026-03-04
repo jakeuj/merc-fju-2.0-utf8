@@ -1,11 +1,11 @@
 Vnum            516
 Name            scholar~
-ShortDesc       ¾ÇªÌ~
-LongDesc        ¾ÇªÌ(scholar)
+ShortDesc       å­¸è€…~
+LongDesc        å­¸è€…(scholar)
 ~
 Description
-³o­Ó¤H¨Ó¥h¦æ¨«¤£©w¡M¦ü¥G¦³¦£¤£§¹ªº¬O¡M¤S¦ü¥G¤°»ò¨Æ³£¨S¦³¡C¤â
-¤W©êµÛ¤@¥»®Ñ¤£ª¾¹D¬O°µ¤°»ò¥Îªº¡K
+é€™å€‹äººä¾†åŽ»è¡Œèµ°ä¸å®šï¹ä¼¼ä¹Žæœ‰å¿™ä¸å®Œçš„æ˜¯ï¹åˆä¼¼ä¹Žä»€éº¼äº‹éƒ½æ²’æœ‰ã€‚æ‰‹
+ä¸ŠæŠ±è‘—ä¸€æœ¬æ›¸ä¸çŸ¥é“æ˜¯åšä»€éº¼ç”¨çš„â€¦
 ~
 StayArea        Yes
 AutoSetValue    Yes

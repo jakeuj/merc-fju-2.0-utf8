@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�b�o�̧A���C���i�ץi�H�x�s�_�Ӫ��M�A�i�H��J [1;32msave[0m �N��F�M�Y�O�Aı�o�����w��
-�٥i�H���@���ƥ��M�A�i�H��J [1;32mbackup[0m�M���A���ɮ��a�F�M�ӵL�k�i�J�C���ɡM�t��
-�|�۰����A�q�ƥ��̨��^�i�ת���C�O���M�n�`�`�s�ɩM�ƥ���C
+在這裡你的遊戲進度可以儲存起來的﹐你可以輸入 [1;32msave[0m 就行了﹐若是你覺得不夠安全
+還可以有一份備份﹐你可以輸入 [1;32mbackup[0m﹐當你的檔案壞了﹐而無法進入遊戲時﹐系統
+會自動幫你從備份裡取回進度的喔。記的﹐要常常存檔和備份喔。
 
-�Ьd�ߡRsave�Bbackup
+請查詢﹕save、backup
 ~
 
 End

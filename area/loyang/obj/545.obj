@@ -1,11 +1,11 @@
 Vnum            545
 Name            tiger blade~
-ShortDesc       ���Y�x�M~
+ShortDesc       虎頭軍刀~
 Description
-�Ѻ��ű�� �M�S�O�W�Q �M�O�u�ö��Y���˳ơC
-�M���V���F�رF���A��C
+由精鋼鑄成 ﹐特別鋒利 ﹐是守衛隊頭的裝備。
+刀身染滿了倭寇的鮮血。
 ~
-Unit            ��~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

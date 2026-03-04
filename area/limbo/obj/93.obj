@@ -1,9 +1,9 @@
 Vnum            93
 Name            poncho~
-ShortDesc       �b��~
+ShortDesc       蓑衣~
 Description
-�@��z��ξA���b��(poncho)�M�ܾA�X�B�Ѯɬ�ۡC~
-Unit            ��~
+一件透氣舒適的蓑衣(poncho)﹐很適合雨天時穿著。~
+Unit            件~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_ABOUT
 Takeable        Yes

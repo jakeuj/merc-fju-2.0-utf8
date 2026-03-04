@@ -1,5 +1,5 @@
 Name            wind color steps~
-Cname           �}���m���B~
+Cname           破風彩雲步~
 Slot            SLOT_WINDCOLOR_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -34,8 +34,8 @@ Help            ~
 
 #Damage
 Description
-$W$N�u��$n���i���u�M�ϥX$G�y�����g�ۡz$Z$W�y�ɭ��_�����M����\���p�ַN$Y�i��
-�ʶ������M�� ���ưҧ����g���j$Z$W�H��K�b�����������u���v�C$Z~
+$W$N只見$n輕張雙臂﹐使出$G『飛葉迷濛』$Z$W頓時風起葉飛﹐雪花蓋頂如詩意$Y【風
+動雲掩葉映霞 輕裟曼妙霧迷茫】$Z$W隨後便在落葉之中消逝身影。$Z~
 Chance          20
 Value           20
 Parry           0
@@ -44,8 +44,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n���}�u��@�����Ω��ܡM�ϥX$R�y�L�v�����z$Z$W�զp����󰳡M�V���V�e�b��
-�h�M�p�ַN$Y�i�����u�v���X�� �ӥh�ۦp�@�}���j$Z$Y�{�q�몺�L�����L$N�������C$Z~
+$W$n雙腳真氣一提身形忽變﹐使出$R『無影雙梭』$Z$W勢如風行草偃﹐向兩方向疾奔而
+去﹐如詩意$Y【掠光逝影雲出岫 來去自如一陣風】$Z$Y閃電般的無息躲過$N的攻擊。$Z~
 Chance          20
 Value           20
 Parry           0
@@ -54,8 +54,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n���Φp�Ѥ�j���몺�j�ۡM�ϥX$R�y�������z$Z$W�M�S�p�ַN $Y�i��V���Ф�
-�Z�� �j�ۤѦa�h�_�١j$Z$W�W�����{�}�����C$Z~
+$W$n身形如碧月迴光般的迴旋﹐使出$R『凌渡天關』$Z$W﹐猶如詩意 $Y【穿越紅塵不
+擾關 迴旋天地去復還】$Z$W俐落的閃開攻擊。$Z~
 Chance          20
 Value           20
 Parry           0
@@ -64,8 +64,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�ɭ��P�ΡM�H���_���զӰ_�M�ϥX$G�y���Ƶ���z$Z$W�M�{�p�ַN$Y�i���Ǥd�t��
-�u�v �ɮ������t�i�j$Z$W�}�B���w�����k��$N���������šC$Z~
+$W$n借風遁形﹐隨風起之勢而起﹐使出$G『風飄萍轉』$Z$W﹐宛如詩意$Y【海納千川雲
+逝影 滄海月明鏡含波】$Z$W漂浮不定的身法使$N的攻擊落空。$Z~
 Chance          20
 Value           20
 Parry           0
@@ -74,8 +74,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n���v����e�z�M�ϥX$P�y���s���z$Z$W�M�N�Ҥw�F�@�Ϊ_���ʯ몺�޲��M�{�p��
-�N$Y�i���q�u�Q�� ���ɬP�e�}�j$Z$W�K����$N�����X���M�@�ɤ��������Ӧp��U��C
+$W$n身影虛幻縹緲﹐使出$P『凌虛御風』$Z$W﹐意境已達一形泣風動般的詭異﹐宛如詩
+意$Y【長歌吟松風 曲盡星河稀】$Z$W霎那間$N分不出虛實﹐一時之間不知該如何下手。
 $Z~
 Chance          20
 Value           20
@@ -85,8 +85,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�ǵۿE�_���l���M�������δ���M�ϥX$B�y���������z$Z$W�M�զp�y�سe�i�몺��
-�t�M�{�p�ַN$Y�i���h�h�����䭸 ���W�C�������j$Z$W���ƨ������׶}�F$N����աC
+$W$n藉著激起的勁風﹐瞬間移形換位﹐使出$B『風捲殘霞』$Z$W﹐勢如流華貫虹般的迅
+速﹐宛如詩意$Y【俱懷逸興壯思飛 欲上青天覽日月】$Z$W輕飄迅捷的避開了$N的攻勢。
 $Z~
 Chance          20
 Value           20

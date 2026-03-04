@@ -1,7 +1,7 @@
 Name            giant strength~
-Cname           ¥¨¤H¤§¤O~
+Cname           å·¨äººä¹‹åŠ›~
 Slot            SLOT_GIANT_STRENGTH
-Msgoff          §A·P¨ì¤£¦A±j§§¤F¡T~
+Msgoff          ä½ æ„Ÿåˆ°ä¸å†å¼·å£¯äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_giant_strength~
 Position        POS_STANDING

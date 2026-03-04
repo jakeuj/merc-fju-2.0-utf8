@@ -1,5 +1,5 @@
 Name            enchant weapon~
-Cname           �[�j�Z���¤O~
+Cname           加強武器威力~
 Slot            SLOT_ENCHANT_WEAPON
 Msgoff          ~
 Check           check_unrigid_attack~

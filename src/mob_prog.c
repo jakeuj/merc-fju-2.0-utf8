@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -32,7 +32,7 @@
 #include <ctype.h>
 #include "merc.h"
 
-/* °Ï°ì¨ç¼Æ */
+/* å€åŸŸå‡½æ•¸ */
 #define CD CHAR_DATA
 #define OD OBJ_DATA
 char *  mprog_next_command args( ( char * ) );
@@ -66,7 +66,7 @@ bool mprog_seval( char * lhs, char * opr, char * rhs )
   if ( !str_cmp( opr, "!=" ) ) RETURN(  str_cmp  ( lhs, rhs ) );
   if ( !str_cmp( opr, "/"  ) ) RETURN( !str_infix( rhs, lhs ) );
   if ( !str_cmp( opr, "!/" ) ) RETURN(  str_infix( rhs, lhs ) );
-  mudlog( LOG_DEBUG , "mprog_seval: MOBPROG ¤£¥¿·íªº¹Bºâ" );
+  mudlog( LOG_DEBUG , "mprog_seval: MOBPROG ä¸æ­£ç•¶çš„é‹ç®—" );
   RETURN( FALSE );
 }
 
@@ -81,7 +81,7 @@ bool mprog_veval( int lhs, char * opr, int rhs )
   if ( !str_cmp( opr, ">=" ) ) RETURN( lhs >= rhs );
   if ( !str_cmp( opr, "&"  ) ) RETURN( lhs  & rhs );
   if ( !str_cmp( opr, "|"  ) ) RETURN( lhs  | rhs );
-  mudlog( LOG_DEBUG , "mprog_veval: MOBPROG ¤£¥¿·íªº¹Bºâ." );
+  mudlog( LOG_DEBUG , "mprog_veval: MOBPROG ä¸æ­£ç•¶çš„é‹ç®—." );
   RETURN( FALSE );
 }
 
@@ -108,18 +108,18 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
 
   if ( *point == '\x0' )
   {
-    mudlog( LOG_DEBUG , "mprog_do_ifchck: %d ªÅªº ifchck", vnum );
+    mudlog( LOG_DEBUG , "mprog_do_ifchck: %d ç©ºçš„ ifchck", vnum );
     RETURN( ERRORCODE );
   }
 
   NOSPACE( point );
 
-  /* §ä²Ä¤@­Ó¨ç¼Æ */
+  /* æ‰¾ç¬¬ä¸€å€‹å‡½æ•¸ */
   while ( *point != '(' )
   {
     if ( *point == '\x0' )
     {
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d ifchck »yªk¿ù»~", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d ifchck èªžæ³•éŒ¯èª¤", vnum );
       RETURN( ERRORCODE );
     }
 
@@ -133,12 +133,12 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
   *bufpt = '\x0';
   point++;
 
-  /* §ä²Ä¤@­Ó¨ç¼Æªº¤Þ¼Æ */
+  /* æ‰¾ç¬¬ä¸€å€‹å‡½æ•¸çš„å¼•æ•¸ */
   while ( *point != ')' )
   {
     if ( *point == '\x0' )
     {
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d ifchck »yªk¿ù»~.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d ifchck èªžæ³•éŒ¯èª¤.", vnum );
       RETURN( ERRORCODE );
     }
     else
@@ -152,7 +152,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
   point++;
   NOSPACE( point );
 
-  /* §ä¹Bºâ¤¸¥H¤Î¼Æ­È */
+  /* æ‰¾é‹ç®—å…ƒä»¥åŠæ•¸å€¼ */
   if ( *point == '\x0' )
   {
     *opr = *val = '\x0';
@@ -160,12 +160,12 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
 
   else
   {
-    /* §ä¥X¹Bºâ¤¸ */
+    /* æ‰¾å‡ºé‹ç®—å…ƒ */
     while ( ( *point != ' ' ) && ( !isalnum( ( int ) *point ) ) )
     {
       if ( *point == '\x0' )
       {
-        mudlog( LOG_DEBUG , "mprog_do_ifchck: ©Çª« %d ifchck ¹Bºâ¨S¦³¼Æ­È", vnum );
+        mudlog( LOG_DEBUG , "mprog_do_ifchck: æ€ªç‰© %d ifchck é‹ç®—æ²’æœ‰æ•¸å€¼", vnum );
         RETURN( ERRORCODE );
       }
       else
@@ -177,7 +177,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
     *oprpt = '\x0';
     NOSPACE( point );
 
-    /* §ä¥X¼Æ­È */
+    /* æ‰¾å‡ºæ•¸å€¼ */
     for( ;; )
     {
       if ( ( *point != ' ' ) && ( *point == '\x0' ) ) break;
@@ -211,7 +211,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'ispc' ¦³¿ù»~°Ñ¼Æ %c.", vnum , arg[1] );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'ispc' æœ‰éŒ¯èª¤åƒæ•¸ %c.", vnum , arg[1] );
       RETURN( ERRORCODE );
     }
   }
@@ -236,7 +236,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isnpc' ¸Ì¦³¿ù»~°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isnpc' è£¡æœ‰éŒ¯èª¤åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -261,7 +261,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isgood' ¸Ì¦³¿ù»~°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isgood' è£¡æœ‰éŒ¯èª¤åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -286,7 +286,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isquest' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isquest' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -311,7 +311,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isenemy' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isenemy' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -336,7 +336,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isfight' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isfight' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -361,7 +361,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isimmort' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isimmort' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -389,7 +389,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isimminvis' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isimminvis' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -415,7 +415,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'align' ¦³¿ù»~°Ñ¼Æ %c.", vnum , arg[1] );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'align' æœ‰éŒ¯èª¤åƒæ•¸ %c.", vnum , arg[1] );
       RETURN( ERRORCODE );
     }
   }
@@ -441,7 +441,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'str' ¦³¿ù»~°Ñ¼Æ %c.", vnum , arg[1] );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'str' æœ‰éŒ¯èª¤åƒæ•¸ %c.", vnum , arg[1] );
       RETURN( ERRORCODE );
     }
   }
@@ -467,7 +467,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'int' ¦³¿ù»~°Ñ¼Æ %c.", vnum , arg[1] );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'int' æœ‰éŒ¯èª¤åƒæ•¸ %c.", vnum , arg[1] );
       RETURN( ERRORCODE );
     }
   }
@@ -493,7 +493,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'wis' ¦³¿ù»~°Ñ¼Æ %c.", vnum , arg[1] );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'wis' æœ‰éŒ¯èª¤åƒæ•¸ %c.", vnum , arg[1] );
       RETURN( ERRORCODE );
     }
   }
@@ -519,7 +519,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'dex' ¦³¿ù»~°Ñ¼Æ %c.", vnum , arg[1] );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'dex' æœ‰éŒ¯èª¤åƒæ•¸ %c.", vnum , arg[1] );
       RETURN( ERRORCODE );
     }
   }
@@ -545,7 +545,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'con' ¦³¿ù»~°Ñ¼Æ %c.", vnum , arg[1] );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'con' æœ‰éŒ¯èª¤åƒæ•¸ %c.", vnum , arg[1] );
       RETURN( ERRORCODE );
     }
   }
@@ -570,7 +570,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'ischarmed' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'ischarmed' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -595,7 +595,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isfollow' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'isfollow' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -620,7 +620,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'hitprcnt' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'hitprcnt' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -645,7 +645,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'inroom' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'inroom' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -670,7 +670,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'sex' ¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'sex' éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -695,7 +695,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'position' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'position' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -720,7 +720,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'level' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'level' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -745,7 +745,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'goldamt' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'goldamt' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -777,7 +777,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'class' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'class' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -795,7 +795,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objtype' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objtype' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -813,7 +813,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG, "mprog_do_ifchck: %d 'objval0' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG, "mprog_do_ifchck: %d 'objval0' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -831,7 +831,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objval1' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objval1' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -849,7 +849,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objval2' ¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objval2' æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -867,7 +867,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objval3' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'objval3' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -906,7 +906,7 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'number' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'number' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
@@ -939,12 +939,12 @@ int mprog_do_ifchck( char * ifchck, CHAR_DATA * mob, CHAR_DATA * actor,
       RETURN( ERRORCODE );
 
     default:
-      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'name' ¸Ì¦³¿ù»~ªº°Ñ¼Æ.", vnum );
+      mudlog( LOG_DEBUG , "mprog_do_ifchck: %d 'name' è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸.", vnum );
       RETURN( ERRORCODE );
     }
   }
 
-  mudlog( LOG_DEBUG , "mprog_do_ifchck: %d ¥¼ª¾ªº ifchck %s.", vnum , buf );
+  mudlog( LOG_DEBUG , "mprog_do_ifchck: %d æœªçŸ¥çš„ ifchck %s.", vnum , buf );
   RETURN( ERRORCODE );
 }
 
@@ -963,7 +963,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
   if ( !mob->pIndexData )
   {
-    mudlog( LOG_DEBUG, "mprog_process_if: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "mprog_process_if: ä¾†æºéŒ¯èª¤." );
     RETURN( NULL );
   }
 
@@ -983,7 +983,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
     if ( *cmnd == '\x0' )
     {
-      mudlog( LOG_DEBUG , "mprog_process_if: %d IF/OR ¤§«á¨S¦³©R¥O.", vnum );
+      mudlog( LOG_DEBUG , "mprog_process_if: %d IF/OR ä¹‹å¾Œæ²’æœ‰å‘½ä»¤.", vnum );
       RETURN( NULL );
     }
 
@@ -1033,7 +1033,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
           if ( *cmnd == '\x0' )
           {
-            mudlog( LOG_DEBUG , "mprog_process_if: %d else «á­±¨S¦³ endif.", vnum );
+            mudlog( LOG_DEBUG , "mprog_process_if: %d else å¾Œé¢æ²’æœ‰ endif.", vnum );
             RETURN( NULL );
           }
           morebuf = one_argument( cmnd,buf );
@@ -1049,7 +1049,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
       if ( *cmnd == '\x0' )
       {
-        mudlog( LOG_DEBUG , "mprog_process_if: %d ¯Ê else ©Î¬O endif", vnum );
+        mudlog( LOG_DEBUG , "mprog_process_if: %d ç¼º else æˆ–æ˜¯ endif", vnum );
         RETURN( NULL );
       }
       morebuf = one_argument( cmnd, buf );
@@ -1066,7 +1066,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
       if ( *cmnd == '\x0' )
       {
-        mudlog( LOG_DEBUG , "mprog_process_if: %d ¯Ê else ©Î¬O endif", vnum );
+        mudlog( LOG_DEBUG , "mprog_process_if: %d ç¼º else æˆ–æ˜¯ endif", vnum );
         RETURN( NULL );
       }
       morebuf = one_argument( cmnd, buf );
@@ -1080,7 +1080,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
     if ( *cmnd == '\x0' )
     {
-      mudlog( LOG_DEBUG , "mprog_process_if: %d ¯Ê endif", vnum );
+      mudlog( LOG_DEBUG , "mprog_process_if: %d ç¼º endif", vnum );
       RETURN( NULL );
     }
     morebuf = one_argument( cmnd, buf );
@@ -1105,7 +1105,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
       if ( !str_cmp( buf, "else" ) )
       {
-        mudlog( LOG_DEBUG , "mprog_process_if: %d else ¸Ì­±ÁÙ¦³¤£¦Xªkªº else.", vnum );
+        mudlog( LOG_DEBUG , "mprog_process_if: %d else è£¡é¢é‚„æœ‰ä¸åˆæ³•çš„ else.", vnum );
         RETURN( NULL );
       }
 
@@ -1119,7 +1119,7 @@ char * mprog_process_if( char * ifchck, char * com_list, CHAR_DATA * mob,
 
       if ( *cmnd == '\x0' )
       {
-        mudlog( LOG_DEBUG , "mprog_process_if: %d else «á­±¤Ö¤@­Ó endif.", vnum );
+        mudlog( LOG_DEBUG , "mprog_process_if: %d else å¾Œé¢å°‘ä¸€å€‹ endif.", vnum );
         RETURN( NULL );
       }
       morebuf = one_argument( cmnd, buf );
@@ -1179,14 +1179,14 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
 
   case 'i':
 
-    if ( !mob ) mudlog( LOG_DEBUG, "mprog_translate: ¯Ê¥F¨Ó·½.(i)" );
+    if ( !mob ) mudlog( LOG_DEBUG, "mprog_translate: ç¼ºä¹ä¾†æº.(i)" );
     else        one_argument( mob->name, t );
 
     break;
 
   case 'I':
 
-    if ( !mob ) mudlog( LOG_DEBUG, "mprog_translate: ¯Ê¥F¨Ó·½.(I)" );
+    if ( !mob ) mudlog( LOG_DEBUG, "mprog_translate: ç¼ºä¹ä¾†æº.(I)" );
     else        str_cpy( t, mob_name( NULL, mob ) );
 
     break;
@@ -1195,7 +1195,7 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
 
     if ( !actor )
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $n ¯Ê¥F¥D®æ." );
+      mudlog( LOG_DEBUG, "mprog_translate: $n ç¼ºä¹ä¸»æ ¼." );
     }
 
     else if ( actor->in_room )
@@ -1219,7 +1219,7 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
     }
     else
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $n §ä¤£¨ì¾A·íªº¤Hª«." );
+      mudlog( LOG_DEBUG, "mprog_translate: $n æ‰¾ä¸åˆ°é©ç•¶çš„äººç‰©." );
     }
 
     break;
@@ -1244,12 +1244,12 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
       }
       else
       {
-        str_cpy( t, "¬Y¤£ª¾¦W¤Hª«" );
+        str_cpy( t, "æŸä¸çŸ¥åäººç‰©" );
       }
     }
     else
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $N §ä¤£¨ì¾A·íªº¤Hª«." );
+      mudlog( LOG_DEBUG, "mprog_translate: $N æ‰¾ä¸åˆ°é©ç•¶çš„äººç‰©." );
     }
 
     break;
@@ -1258,7 +1258,7 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
 
     if ( !vict )
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $t ¯Ê¥F¨ü®æ." );
+      mudlog( LOG_DEBUG, "mprog_translate: $t ç¼ºä¹å—æ ¼." );
     }
 
     else if ( vict->in_room )
@@ -1282,7 +1282,7 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
     }
     else
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $t §ä¤£¨ì¾A·íªº¤Hª«." );
+      mudlog( LOG_DEBUG, "mprog_translate: $t æ‰¾ä¸åˆ°é©ç•¶çš„äººç‰©." );
     }
 
     break;
@@ -1307,12 +1307,12 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
       }
       else
       {
-        str_cpy( t, "¬Y¤£ª¾¦W¤Hª«" );
+        str_cpy( t, "æŸä¸çŸ¥åäººç‰©" );
       }
     }
     else
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $T §ä¤£¨ì¾A·íªº¤Hª«." );
+      mudlog( LOG_DEBUG, "mprog_translate: $T æ‰¾ä¸åˆ°é©ç•¶çš„äººç‰©." );
     }
 
     break;
@@ -1320,7 +1320,7 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
   case 'r':
     if ( !rndm )
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $r ¯Ê¥FÀH¾÷ªÌ." );
+      mudlog( LOG_DEBUG, "mprog_translate: $r ç¼ºä¹éš¨æ©Ÿè€…." );
     }
 
     else if ( rndm->in_room )
@@ -1344,7 +1344,7 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
     }
     else
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $r §ä¤£¨ì¾A·íªº¤Hª«." );
+      mudlog( LOG_DEBUG, "mprog_translate: $r æ‰¾ä¸åˆ°é©ç•¶çš„äººç‰©." );
     }
 
     break;
@@ -1369,12 +1369,12 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
       }
       else
       {
-        str_cpy( t, "¬Y¤£ª¾¦W¤Hª«" );
+        str_cpy( t, "æŸä¸çŸ¥åäººç‰©" );
       }
     }
     else
     {
-      mudlog( LOG_DEBUG, "mprog_translate: $T §ä¤£¨ì¾A·íªº¤Hª«." );
+      mudlog( LOG_DEBUG, "mprog_translate: $T æ‰¾ä¸åˆ°é©ç•¶çš„äººç‰©." );
     }
 
     break;
@@ -1382,23 +1382,23 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
   case 'e':
   case 'm':
     if ( actor && mob ) can_see( mob, actor ) ? str_cpy( t, he_she[ actor->sex ] )
-                                              : str_cpy( t, "¬Y¤£ª¾¦W¤Hª«" );
+                                              : str_cpy( t, "æŸä¸çŸ¥åäººç‰©" );
     break;
 
   case 's':
     if ( actor && mob ) can_see( mob, actor ) ? str_cpy( t, his_her[ actor->sex ] )
-                                       : str_cpy( t, "¬Y¤£ª¾¦W¤Hª«ªº" );
+                                       : str_cpy( t, "æŸä¸çŸ¥åäººç‰©çš„" );
     break;
 
   case 'E':
   case 'M':
     if ( vict && mob ) can_see( mob, vict ) ? str_cpy( t, he_she[ vict->sex ] )
-                                            : str_cpy( t, "¬Y¤£ª¾¦W¤Hª«" );
+                                            : str_cpy( t, "æŸä¸çŸ¥åäººç‰©" );
     break;
 
   case 'S':
     if ( vict && mob ) can_see( mob, vict ) ? str_cpy( t, his_her[ vict->sex ] )
-                                            : str_cpy( t, "¬Y¤£ª¾¦W¤Hª«ªº" );
+                                            : str_cpy( t, "æŸä¸çŸ¥åäººç‰©çš„" );
     break;
 
   case 'j':
@@ -1413,40 +1413,40 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
   case 'J':
   case 'K':
     if ( rndm && mob ) can_see( mob, rndm ) ? str_cpy( t, he_she[ rndm->sex ] )
-                                            : str_cpy( t, "¬Y¤£ª¾¦W¤Hª«" );
+                                            : str_cpy( t, "æŸä¸çŸ¥åäººç‰©" );
     break;
 
   case 'L':
     if ( rndm && mob ) can_see( mob, rndm ) ? str_cpy( t, his_her[ rndm->sex ] )
-                                            : str_cpy( t, "¬Y¤£ª¾¦W¤Hª«" );
+                                            : str_cpy( t, "æŸä¸çŸ¥åäººç‰©" );
     break;
 
   case 'o':
     if ( obj && mob ) can_see_obj( mob, obj ) ? one_argument( obj->name, t )
-                                              : str_cpy( t, "¬Yª«" );
+                                              : str_cpy( t, "æŸç‰©" );
     break;
 
   case 'O':
     if ( obj && mob ) can_see_obj( mob, obj ) ? str_cpy( t, obj->cname )
-                                              : str_cpy( t, "¬Yª«" );
+                                              : str_cpy( t, "æŸç‰©" );
     break;
 
   case 'p':
     if ( v_obj && mob ) can_see_obj( mob, v_obj ) ? one_argument( v_obj->name, t )
-                                                  : str_cpy( t, "¬Yª«" );
+                                                  : str_cpy( t, "æŸç‰©" );
     break;
 
   case 'P':
     if ( v_obj && mob ) can_see_obj( mob, v_obj ) ? str_cpy( t, v_obj->cname )
-                                                  : str_cpy( t, "¬Yª«" );
+                                                  : str_cpy( t, "æŸç‰©" );
     break;
 
   case 'a':
-    if ( obj ) str_cpy( t, "¤@­Ó" );
+    if ( obj ) str_cpy( t, "ä¸€å€‹" );
     break;
 
   case 'A':
-    if ( v_obj ) str_cpy( t, "¤@­Ó" );
+    if ( v_obj ) str_cpy( t, "ä¸€å€‹" );
     break;
 
   case '$':
@@ -1454,7 +1454,7 @@ void mprog_translate( char ch, char * t, CHAR_DATA * mob, CHAR_DATA * actor,
     break;
 
   default:
-    mudlog( LOG_DEBUG , "mprog_translate: %d ¿ù»~ªº $var", mob->pIndexData->vnum );
+    mudlog( LOG_DEBUG , "mprog_translate: %d éŒ¯èª¤çš„ $var", mob->pIndexData->vnum );
     break;
   }
   RETURN_NULL();
@@ -1515,17 +1515,17 @@ void mprog_driver( char * com_list, CHAR_DATA * mob, CHAR_DATA * actor,
 
   if ( !mob || !verify_char( mob ) || !mob->in_room )
   {
-    mudlog( LOG_DEBUG, "mprog_driver: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "mprog_driver: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
   if ( is_affected( mob, SLOT_CHARM_PERSON ) || mob->disable_prog )
     RETURN_NULL();
 
-  /* ¦¹®É¶i¤J mob_prog */
+  /* æ­¤æ™‚é€²å…¥ mob_prog */
   mob->inprocess = TRUE;
 
-  /* ÀH«K§ä¥X¤@­Ó¤H */
+  /* éš¨ä¾¿æ‰¾å‡ºä¸€å€‹äºº */
   for ( vch = mob->in_room->people; vch; vch = vch->next_in_room )
   {
     if ( !IS_NPC( vch ) && vch->level < LEVEL_IMMORTAL && can_see( mob, vch ) )
@@ -1538,7 +1538,7 @@ void mprog_driver( char * com_list, CHAR_DATA * mob, CHAR_DATA * actor,
   if ( str_len( com_list ) > sizeof( tmpcmndlst ) - 1 )
   {
     mob->inprocess = FALSE;
-    mudlog( LOG_DEBUG, "mprog_driver: ©R¥O¹Lªø." );
+    mudlog( LOG_DEBUG, "mprog_driver: å‘½ä»¤éŽé•·." );
     RETURN_NULL();
   }
 
@@ -1551,7 +1551,7 @@ void mprog_driver( char * com_list, CHAR_DATA * mob, CHAR_DATA * actor,
   {
     morebuf = one_argument( cmnd, buf );
 
-    /* if ªº©R¥O */
+    /* if çš„å‘½ä»¤ */
     if ( !str_cmp( buf, "if" ) )
     {
       command_list =
@@ -1703,10 +1703,10 @@ void mprog_bribe_trigger( CHAR_DATA * mob, CHAR_DATA * ch, int amount )
 
   PUSH_FUNCTION( "mprog_bribe_trigger" );
 
-  /* ·í¦³ bribe_prog ¤~·|¶i¤J */
+  /* ç•¶æœ‰ bribe_prog æ‰æœƒé€²å…¥ */
   if ( IS_NPC( mob ) && ( mob->pIndexData->progtypes & BRIBE_PROG ) )
   {
-    /* ³Ð³y¿úªºª««~ */
+    /* å‰µé€ éŒ¢çš„ç‰©å“ */
     obj = create_object( ObjMoneySome, 1 );
     sprintf( buf, obj->cname, amount );
     free_string( obj->cname );
@@ -1726,7 +1726,7 @@ void mprog_bribe_trigger( CHAR_DATA * mob, CHAR_DATA * ch, int amount )
 
     if ( !mprg_now ) RETURN_NULL();
 
-    /* °õ¦æ³Ì²Å¦Xªº©Çª«µ{¦¡ */
+    /* åŸ·è¡Œæœ€ç¬¦åˆçš„æ€ªç‰©ç¨‹å¼ */
     mprog_driver( mprg_now->comlist, mob, ch, obj, NULL );
 
   }

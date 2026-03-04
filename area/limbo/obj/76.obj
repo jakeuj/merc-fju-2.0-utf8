@@ -1,9 +1,9 @@
 Vnum            76
 Name            belt~
-ShortDesc       ¸y±a~
+ShortDesc       è…°å¸¶~
 Description
-¤@±ø¦³ªêª¬ªá¯¾ªº¸y±a(belt)¡C~
-Unit            ±ø~
+ä¸€æ¢æœ‰è™ç‹€èŠ±ç´‹çš„è…°å¸¶(belt)ã€‚~
+Unit            æ¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_WAIST
 Takeable        Yes

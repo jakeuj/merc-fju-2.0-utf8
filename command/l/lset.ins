@@ -1,5 +1,5 @@
 Name            lset~
-Cname           �]�w�ޯ���~
+Cname           設定技能資料~
 Function        do_lset~
 Position        POS_DEAD
 Level           L_DEI
@@ -15,17 +15,17 @@ Lost            NO
 Lock            NO
 Limit           NO
 Help
-�y�k�Rlset <�H��> <�ޯ�> <���m��>
-�y�k�Rlset <�H��>  all   <���m��>
+語法﹕lset <人物> <技能> <熟練度>
+語法﹕lset <人物>  all   <熟練度>
 
-LSET�o�ӫ��O�i�H�]�w���a( �u�����a�i�H )���ޯ�άO�k�N�����m�סM
-�ҥH�b�o�̡M�Ĥ@�ӰѼƥ����O���a���W�r�M�ĤG�ӥ����O�ޯ�άO�k
-�N���W�١M�άO�i�H�� all�N���M�Y�O�� all�M�o�򱵤U�ӧ�諸�ʧ@�M
-�N�|�w��Ҧ����k�N�άO�ޯ�M�Ӥ��O��@�ӡC���U�Ӽ��m�ץ����O�@
-�ӼƦr�M�ӥB���� 1�� 100�����~��X�z�C
+LSET這個指令可以設定玩家( 只有玩家可以 )的技能或是法術的熟練度﹐
+所以在這裡﹐第一個參數必須是玩家的名字﹐第二個必須是技能或是法
+術的名稱﹐或是可以用 all代替﹐若是用 all﹐這麼接下來更改的動作﹐
+將會針對所有的法術或是技能﹐而不是單一個。接下來熟練度必須是一
+個數字﹐而且介於 1到 100之間才算合理。
 
-�ܩ�k�N���W�٥i�H�Ѧ� llookup�o�ӫ��O�M�A�i�H��o�󪺸�T�C
+至於法術的名稱可以參考 llookup這個指令﹐你可以獲得更的資訊。
 
-������T�Rllookup �Mlfind�Mlearn�Mllink
+相關資訊﹕llookup ﹐lfind﹐learn﹐llink
 ~
 End

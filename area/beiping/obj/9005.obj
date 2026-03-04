@@ -1,9 +1,9 @@
 Vnum            9005
 Name            castle sword~
-ShortDesc       ¸T½Ã­xªø¼C~
+ShortDesc       ç¦è¡›è»é•·åŠ~
 Description
-¸T½Ã­x³q¥Îªºªø¼C¡C~
-Unit            §â~
+ç¦è¡›è»é€šç”¨çš„é•·åŠã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

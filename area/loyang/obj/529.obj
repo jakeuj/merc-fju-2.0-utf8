@@ -1,10 +1,10 @@
 Vnum            529
 Name            t shirt~
-ShortDesc       ¦½­m~
+ShortDesc       æ±—è¡«~
 Description
-¤@¥ó³z®ğµÎ¾Aªº¦½­m(t shirt)¡M«Ü¾A¦X¤u§@®É¬ïµÛ¡C
+ä¸€ä»¶é€æ°£èˆ’é©çš„æ±—è¡«(t shirt)ï¹å¾ˆé©åˆå·¥ä½œæ™‚ç©¿è‘—ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

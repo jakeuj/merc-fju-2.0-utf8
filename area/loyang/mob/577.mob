@@ -1,10 +1,10 @@
 Vnum            577
 Name            golden guard~
-ShortDesc       ·µ«eÅ@½Ã~
-LongDesc        ·µ«eÅ@½Ã(golden guard)
+ShortDesc       æ®¿å‰è­·è¡›~
+LongDesc        æ®¿å‰è­·è¡›(golden guard)
 ~
 Description
-¶¯­v­v®ğ©ù©ùªº¼Ë¤l¡M¤@²´¬İ¥h¤£¸T¥O¤H¥Í¬È¡C
+é›„èµ³èµ³æ°£æ˜‚æ˜‚çš„æ¨£å­ï¹ä¸€çœ¼çœ‹å»ä¸ç¦ä»¤äººç”Ÿç•ã€‚
 ~
 Sentinel        Yes
 AutoSetValue    Yes
@@ -34,7 +34,7 @@ Type            fight_prog
 Chance          30
 Text
 if rand(30)
-  say ¤jÁx¨g®{¡MÁx´±¨Ó¥Ç¡MÁÙ¤£³t³t§ë­°¡T
+  say å¤§è†½ç‹‚å¾’ï¹è†½æ•¢ä¾†çŠ¯ï¹é‚„ä¸é€Ÿé€ŸæŠ•é™ï¹—
 endif
 ~
 End
@@ -49,8 +49,8 @@ endif
 if isimminvis($n)
   break
 endif
-if isenemy($n) != '¬¥¶§'
-  mpsetenemy $n '¬¥¶§'
+if isenemy($n) != 'æ´›é™½'
+  mpsetenemy $n 'æ´›é™½'
 endif
 ~
 End

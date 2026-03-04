@@ -1,9 +1,9 @@
 Vnum            99
 Name            jade wrist~
-ShortDesc       ³n¥É¤âÀô~
+ShortDesc       è»Ÿç‰æ‰‹ç’°~
 Description
-¤@¥ó¬X¶À³n¥É»sªº¤âÀô(jade wrist)¡C¬İ°_¨Ó¤Q¤À¦a°Q¤H³ßÅw¡C~
-Unit            °¦~
+ä¸€ä»¶æŸ”é»ƒè»Ÿç‰è£½çš„æ‰‹ç’°(jade wrist)ã€‚çœ‹èµ·ä¾†ååˆ†åœ°è¨äººå–œæ­¡ã€‚~
+Unit            éš»~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_WRIST
 Takeable        Yes

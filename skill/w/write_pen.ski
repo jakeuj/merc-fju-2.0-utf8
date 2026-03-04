@@ -1,5 +1,5 @@
 Name            write pen~
-Cname           �{���I��~
+Cname           臨書點穴~
 Slot            SLOT_WRITE_PEN
 Msgoff          ~
 Check           check_pen_attack~
@@ -35,7 +35,7 @@ Help            ~
 
 #Damage
 Description
-$n��ʵ��ѱd������$R�m�s���������n$Z�M�ᦳ�s�N�M�F�ʤ������I$N�C~
+$n手動筆書康有為之$R《廣藝舟雙楫》$Z﹐頗有新意﹐靈動之貌急點$N。~
 Chance          20
 Value           20
 Parry           0
@@ -45,7 +45,7 @@ End
 
 #Damage
 Description
-$n��g���¤�$R�m�ü֤j��n$Z�M��淥�Y�M���h�T�w�M�@�ѻ��w�������V$N�C~
+$n手寫明朝之$R《永樂大典》$Z﹐體格極嚴﹐楷則固定﹐一股僵硬之風撲向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -55,7 +55,7 @@ End
 
 #Damage
 Description
-$n���I���C�M�r�ѻ�˸��$G�m�G����n$Z�M�W�Ƥ@�椧���M���M�@�Ѯ�ת��G$N�C~
+$n手點丹青﹐字書趙佶之$G《瘦金體》$Z﹐獨數一格之風﹐凜然一股氣度直逼$N。~
 Chance          20
 Value           20
 Parry           0
@@ -65,7 +65,7 @@ End
 
 #Damage
 Description
-$n�W�x���{�X�ڶ��ߤ�$G�m�E���cĿ�u�ʡn$Z�M�ε����r�k���Y�ԡM�w�U$N���@�|�@�ʡC~
+$n規矩的臨出歐陽詢之$G《九成宮醴泉銘》$Z﹐用筆結字法度嚴謹﹐定下$N之一舉一動。~
 Chance          20
 Value           20
 Parry           0
@@ -75,7 +75,7 @@ End
 
 #Damage
 Description
-$n�y�m�ѥX$S�m���F���ǡn$Z�M�r�r�u�����@�M��m�ʤH�M�N�H������$N�����C~
+$n流彩書出$S《蘭亭集序》$Z﹐字字真情之作﹐精彩動人﹐意象綿延至$N全身。~
 Chance          20
 Value           20
 Parry           0
@@ -85,7 +85,7 @@ End
 
 #Damage
 Description
-$n�g�X�_�Q�s���۸]$R�m�Q�F�án$Z�M�r�|��ءM�v�v�x�x�M���s�e���աM����$N�ӥh�C~
+$n寫出北魏龍門石窟$R《魏靈藏》$Z﹐字徑兩尺﹐洋洋灑灑﹐有山河之勢﹐直壓$N而去。~
 Chance          20
 Value           20
 Parry           0
@@ -95,8 +95,8 @@ End
 
 #Damage
 Description
-$n���Φ����M����P�ɵe�X�u�G�y�v�M$R�m�y�_�l�O�n$Z�B$R�m�y�s�C�O�n$Z�M�r��
-�_�k���ʡB�����Ʃw�M�e�ᤧ����x��$N�C~
+$n身形似風﹐雙手同時畫出「二爨」﹐$R《爨寶子碑》$Z、$R《爨龍顏碑》$Z﹐字勢
+奇峭飛動、丰姿飄定﹐前後之姿圍困住$N。~
 Chance          20
 Value           20
 Parry           0
@@ -106,8 +106,8 @@ End
 
 #Damage
 Description
-$n�{�ҥX�Ѹt���k�x��$Y�m�Q�C���n$Z�M���t�u��v�����ʹ������աM���x�N��@��
-��p�õ���N$N����T���C~
+$n臨募出書聖王右軍之$Y《十七帖》$Z﹐隱含「草」的飛動馳騁之勢﹐揮灑意趣一筆
+草如亂絮般將$N緊緊箍住。~
 Chance          20
 Value           20
 Parry           0
@@ -117,8 +117,8 @@ End
 
 #Damage
 Description
-$n�u�㪺�g�X���٤�$G�m�ťܪ��n$Z�M�������𤧶աM�@�s���Ѥ��g�N�M�ǽT���sô
-��$N�ݫe�j�ޤ����C~
+$n工整的寫出鐘繇之$G《宣示表》$Z﹐卓見有樹之勢﹐一新楷書之寫意﹐準確的連繫
+至$N胸前大穴之中。~
 Chance          20
 Value           20
 Parry           0
@@ -128,7 +128,7 @@ End
 
 #Damage
 Description
-$n�{���I�X$S�m�A��O�n$Z�M���Y�P���M�Ѷ����M�C�@�J�B�C�@�̧�����$N�P���j�ޡC~
+$n臨風點出$S《乙瑛碑》$Z﹐蠶頭燕尾﹐由圓轉方﹐每一撇、每一捺均扣準$N周身大穴。~
 Chance          20
 Value           20
 Parry           0
@@ -138,7 +138,7 @@ End
 
 #Damage
 Description
-$n���$S�m�ɺ�f�n$Z�M�r�G�w���M�S�p�@�L�Ψ�ۭ����b$N���W�M�L�k�ä�C~
+$n手書$S《玉箸篆》$Z﹐字瘦硬婉﹐猶如一無形刻石重壓在$N身上﹐無法掙扎。~
 Chance          20
 Value           20
 Parry           0
@@ -148,8 +148,8 @@ End
 
 #Damage
 Description
-$n���Ť@�ѡM���{�X�@�ز��Y�¿p���q�󭷮�M��մ��p�B���������M$Y�m��P����n$Z
-�����դw�N$N�c�c�T��C~
+$n當空一書﹐表現出一種莊嚴肅穆的廟堂風格﹐氣勢渾穆、高遠凝重﹐$Y《西周金文》$Z
+之筆勢已將$N牢牢禁制。~
 Chance          20
 Value           20
 Parry           0
@@ -159,8 +159,8 @@ End
 
 #Damage
 Description
-$n���ά�M�@�w�M��Y��O�M�����Y�p���n�M���M�O���Ǥw�[�����j$G�m�Ұ��﫴�n$Z�M
-�M����Ţ�n$N�P���T�Q���j�ޡC~
+$n身形突然一鈍﹐手若刻碑﹐隱隱若雷之聲﹐赫然是失傳已久之遠古$G《甲骨殷契》$Z﹐
+﹐筆勢籠罩$N周身三十六大穴。~
 Chance          20
 Value           20
 Parry           0

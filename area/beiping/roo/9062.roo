@@ -1,11 +1,11 @@
 Vnum            9062
-Name            �x�q~
+Name            寺廟~
 Description
-�o�̬O�@��M�`���x�q�M�`�`���H�Ӧ��@�k�ơM�ӶW��
-�@�Ǥ`��M�ҥH�o�������F�H�Mť���ٺ����Ϊ��M�p�G
-�A�]�Q�@�k�ƽЬd�� endow�C
+這裡是一般尋常的寺廟﹐常常有人來此作法事﹐來超度
+一些亡魂﹐所以這裡擠滿了人﹐聽說還滿有用的﹐如果
+你也想作法事請查詢 endow。
 
-              �o�̦��Х�(sign)
+              這裡有標示(sign)
 
 ~
 SectorType      SECT_CITY
@@ -22,12 +22,12 @@ End
 #Keyword
 Keyword         sign~
 Description
-�k�ư��@���ܤ֭n���ʨ�Ȥl�H�W�M�V�h�O�V�n�C
+法事做一場至少要五百兩銀子以上﹐越多是越好。
 ~
 End
 
 #Enquire
-Keyword         �x�q~
+Keyword         寺廟~
 End
 
 End

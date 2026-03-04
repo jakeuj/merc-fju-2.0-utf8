@@ -1,11 +1,11 @@
 Vnum            544
 Name            tiger armor~
-ShortDesc       ¥Õªê¤§ñZ~
+ShortDesc       ç™½è™Žä¹‹éŽ§~
 Description
-¥H¤Wµ¥ºë¿ûÆ^¦b¥Õªê¥Ö¤W ¡M¤£¦ý¨ã¦³±j¤jªº¨¾Å@¯à¤O
-¤SÀ±¸É¤F«p­«¤£«Kªº¯ÊÂI ¡M¬°¤£¿ù¤§ñZ¥Ò¡C
+ä»¥ä¸Šç­‰ç²¾é‹¼é‘²åœ¨ç™½è™Žçš®ä¸Š ï¹ä¸ä½†å…·æœ‰å¼·å¤§çš„é˜²è­·èƒ½åŠ›
+åˆå½Œè£œäº†åŽšé‡ä¸ä¾¿çš„ç¼ºé»ž ï¹ç‚ºä¸éŒ¯ä¹‹éŽ§ç”²ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

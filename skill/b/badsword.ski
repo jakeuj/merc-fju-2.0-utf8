@@ -1,5 +1,5 @@
 Name            bad sword~
-Cname           �L���C�k~
+Cname           無情劍法~
 Slot            SLOT_BADSWORD
 Msgoff          ~
 Check           check_sword_attack~
@@ -41,7 +41,7 @@ Help            ~
 
 #Damage
 Description
-$n���a�L���M�ϥX�����઺$S�y�����äM�z$Z�M�I�a�̷t�B���l�M���a��V$N�U�L�C~
+$n面帶微笑﹐使出哈哈兒的$S『笑裡藏刀』$Z﹐背地裡暗運內勁﹐忽地攻向$N下盤。~
 Chance          10
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ End
 
 #Damage
 Description
-$n�⨭�@�D�M���ѼC�v��V$N�M�g�b�ĤH�եءM���O�@�ۿ��}�}��$P�y�c�k�g��z$Z�C~
+$n抽身一躍﹐滿天劍影砍向$N﹐迷惑敵人耳目﹐正是一招蕭咪咪的$P『惡女迷魂』$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -61,8 +61,8 @@ End
 
 #Damage
 Description
-$n���U�ۤv�����j�}�M�@��$B�y�l�H�`�v�z$Z��B�C�y�M�����g�i�M��V$N�P���j�ޡM
-���O�ն}�ߪ����ۡC~
+$n不顧自己面門大開﹐一招$B『損人害己』$Z氣運劍尖﹐撲身狂進﹐攻向$N周身大穴﹐
+正是白開心的絕招。~
 Chance          10
 Value           20
 Parry           0
@@ -72,7 +72,7 @@ End
 
 #Damage
 Description
-$n��ä@��M�ϥX���j�L��$G�y�k���k�סz$Z�M��F�C�����V$N�����d�h�C~
+$n手腕一轉﹐使出李大嘴的$G『蝕骨蝕肉』$Z﹐凌厲劍網直向$N全身削去。~
 Chance          10
 Value           20
 Parry           0
@@ -82,8 +82,8 @@ End
 
 #Damage
 Description
-$n��B���СM�O�e�C�p�M���ߤ@�H��$N���Y��U�M���O�a�դT����$W�y�c�H�׸��z$Z
-�M�Q��Q���C~
+$n氣運丹田﹐力貫劍峰﹐重心一沈朝$N當頭砍下﹐正是軒轅三光的$W『惡人擋路』$Z
+﹐霸氣十足。~
 Chance          10
 Value           20
 Parry           0
@@ -93,8 +93,8 @@ End
 
 #Damage
 Description
-$n���Τ@��ϥX���ѤE��$R�y�c���ۻ�z$Z�M�K�ɭ��n�b��M�⤤��$O�q���i��ĳ����
-��«�X�M����$N���šC~
+$n身形一轉使出陰老九的$R『惡鬼招魂』$Z﹐霎時風聲鶴唳﹐手中的$O從不可思議的方
+位竄出﹐直取$N首級。~
 Chance          10
 Value           20
 Parry           0
@@ -104,8 +104,8 @@ End
 
 #Damage
 Description
-$n�g�S�@�n�M�⤤$O���p�ƨg��V$N�g��ӥh�M���d�@�u�;��M���O�K�Ԫ�$G�y�g���
-�q�z$Z�C~
+$n狂嘯一聲﹐手中$O有如瘋狂般向$N狂砍而去﹐不留一線生機﹐正是鐵戰的$G『狂獅怒
+吼』$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -115,7 +115,7 @@ End
 
 #Damage
 Description
-$n�y��@�H�M�N��������e�`��$O���W�M�ϥX��������$Y�y���L���z$Z�C~
+$n臉色一沈﹐將全身殺氣貫注於$O之上﹐使出杜殺絕學$Y『血手無情』$Z。~
 Chance          10
 Value           20
 Parry           0

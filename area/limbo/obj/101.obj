@@ -1,10 +1,10 @@
 Vnum            101
 Name            evil jade~
-ShortDesc       °­¥É~
+ShortDesc       é¬¼ç‰~
 Description
-¤@­Ó¨ã¦³¨Ó¦Û²§ªÅ¶¡ªº¯«©_¤O¶qªºÄ_¥É¡M§A¤£§«©I¥s(call)¥¦¬İ¬İ¡C
+ä¸€å€‹å…·æœ‰ä¾†è‡ªç•°ç©ºé–“çš„ç¥å¥‡åŠ›é‡çš„å¯¶ç‰ï¹ä½ ä¸å¦¨å‘¼å«(call)å®ƒçœ‹çœ‹ã€‚
 ~
-Unit            Áû~
+Unit            é¡†~
 ItemType        ITEM_SPIRITJADE
 Contraband      Yes
 Takeable        Yes

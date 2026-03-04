@@ -1,5 +1,5 @@
 Name            long fist~
-Cname           ���s����~
+Cname           泰山長拳~
 Slot            SLOT_LONGFIST
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -37,20 +37,20 @@ Limit           CLASS_BRAVO      1  95
 Limit           CLASS_MAGE       1  35
 Limit           CLASS_SMITH      1  35
 Help
-���s�����G
+泰山長拳：
 
-�o�O�@�ӳ\�h�H���|���ޯ�M�\�h���Z�]�������оɳo�@���ޯ�M�L
-���S�x�O���ݭn�Z���M�i�H�@���񨭪����@�M�åB�i�H�O�@�����娭
-�骺�n�ޯ�M�]�O�@�Ǹ����Ū��ޯ�i�����e�ҥ����ǲߪ��C
-�p�G�A�n�ǲ߳o�@�ӧޯ઺�ܡM�ڷQ���@�Ǧa��O�A�i�H�Ҽ{���M��
-�O�������Z��������( / 2s w )  �M�άO�U�˪��������ͪ��j�~�M��
-�������Y�����оɮ��s�����M�i�H�e���ոլݡC
+這是一個許多人都會的技能﹐許多的武館有都有教導這一項技能﹐他
+的特徵是不需要武器﹐可以作為近身的防護﹐並且可以是一項鍛鍊身
+體的好技能﹐也是一些較高級的技能進階之前所必須學習的。
+如果你要學習這一個技能的話﹐我想有一些地方是你可以考慮的﹐像
+是洛陽的武器店老闆( / 2s w )  ﹐或是下卞的賣藝維生的大漢﹐襄
+陽的教頭都有教導泰山長拳﹐可以前往試試看。
 
 ~
 
 #Damage
 Description
-$n����p�ġM�@��$W�y���s�����z$Z�M���Φp�@�����s��$N��F�L�h�C~
+$n雙手如勾﹐一招$W『金龍探爪』$Z﹐身形如一條金龍往$N攻了過去。~
 Chance          20
 Value           20
 Parry           0
@@ -60,7 +60,7 @@ End
 
 #Damage
 Description
-$n��I���СM$S�y�s��@���z$Z�W�իݵo�M�@�����V$N�C~
+$n氣沉丹田﹐$S『龍行一式』$Z蓄勢待發﹐一拳打向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -70,7 +70,7 @@ End
 
 #Damage
 Description
-$n���Τ@��M�ϥX$G�y������z$Z�M�V$N��ӥh�C~
+$n身形一轉﹐使出$G『秋風落葉』$Z﹐向$N橫掃而去。~
 Chance          20
 Value           20
 Parry           0
@@ -80,7 +80,7 @@ End
 
 #Damage
 Description
-$n���X$B�y�s���T�����z$Z�M���l���������V$N�C~
+$n擊出$B『龍門三擊浪』$Z﹐拳勁直直的撞向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -90,7 +90,7 @@ End
 
 #Damage
 Description
-$n��M�@��$R�y½�����L�z$Z�M���ΤN�p����$N�@�����h�C~
+$n突然一招$R『翻身打盤』$Z﹐身形刁鑽的朝$N一拳直去。~
 Chance          20
 Value           20
 Parry           0
@@ -100,7 +100,7 @@ End
 
 #Damage
 Description
-$n����@�i�M�ϥX$W�y����i�͡z$Z�M�ѤW�ӤU����$N�C~
+$n雙手一展﹐使出$W『金鵰展翅』$Z﹐由上而下拳打$N。~
 Chance          20
 Value           20
 Parry           0
@@ -110,7 +110,7 @@ End
 
 #Damage
 Description
-$n�j�ܤ@�n�M$b�y�a�s�k���z$Z�M����w�w�����V$N�C~
+$n大喝一聲﹐$b『蒼龍歸海』$Z﹐雙手緩緩的推向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -120,7 +120,7 @@ End
 
 #Damage
 Description
-$n�զp�r��X�h�M$p�y�ª갽�ߡz$Z��ŧ$N�C~
+$n勢如猛虎出閘﹐$p『黑虎偷心』$Z直襲$N。~
 Chance          20
 Value           20
 Parry           0
@@ -130,7 +130,7 @@ End
 
 #Damage
 Description
-$n�ϥX$S�y�i�B�s���z$Z�M�@�s�T�����V$N�C~
+$n使出$S『進步連環』$Z﹐一連三拳打向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -140,7 +140,7 @@ End
 
 #Damage
 Description
-$n���ܤ@�n�M�ϥX$Y�y�W�A�ؤs�z$Z�M�@�x�V$N�٤F�U�h�C~
+$n斥喝一聲﹐使出$Y『獨劈華山』$Z﹐一掌向$N斬了下去。~
 Chance          20
 Value           20
 Parry           0
@@ -150,7 +150,7 @@ End
 
 #Damage
 Description
-$n���Τ@�h�M�@��$Y�y�˥������z$Z�Ϧӥ��V$N�C~
+$n身形一退﹐一招$Y『倒打金鐘』$Z反而打向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -160,7 +160,7 @@ End
 
 #Damage
 Description
-$n�@�ਭ�M$Y�y���s�����z$Z�@���V$N���h�C~
+$n一轉身﹐$Y『黃龍捲尾』$Z一拳向$N飛去。~
 Chance          20
 Value           20
 Parry           0
@@ -170,7 +170,7 @@ End
 
 #Damage
 Description
-$n�@��$R�y�p�ʦ����z$Z�M���⩿�W���U�M�岾���w�����V$N�C~
+$n一招$R『如封似閉』$Z﹐雙手忽上忽下﹐游移不定的擊向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -180,7 +180,7 @@ End
 
 #Damage
 Description
-$n�k�⩹�e�@���M�@��$B�y�������z$Z�V$N���h�C~
+$n右手往前一推﹐一招$B『推窗望月』$Z向$N推去。~
 Chance          20
 Value           20
 Parry           0
@@ -190,7 +190,7 @@ End
 
 #Damage
 Description
-$n���⳱���M���X�@��$W�y�շ�K�G�z$Z�M��ŧ$N�C~
+$n左手陰拳﹐打出一招$W『白猿摘果』$Z﹐直襲$N。~
 Chance          20
 Value           20
 Parry           0
@@ -200,7 +200,7 @@ End
 
 #Damage
 Description
-$n���Τ@��M�ϥX$Y�y�ɱa��y�z$Z�M���I����$N�C~
+$n身形一扭﹐使出$Y『玉帶圍腰』$Z﹐拳背直擊$N。~
 Chance          20
 Value           20
 Parry           0
@@ -210,7 +210,7 @@ End
 
 #Damage
 Description
-$n���ⴤ���M$S�y��M�s���z$Z�V$N���h�C~
+$n雙手握拳﹐$S『抽撤連環』$Z向$N擊去。~
 Chance          20
 Value           20
 Parry           0
@@ -220,7 +220,7 @@ End
 
 #Damage
 Description
-$n����X�x�M$W�y�H������z$Z��V$N�C~
+$n雙手合掌﹐$W『寒雞拜佛』$Z刺向$N。~
 Chance          20
 Value           20
 Parry           0

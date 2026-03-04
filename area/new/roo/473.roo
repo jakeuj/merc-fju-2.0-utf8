@@ -1,18 +1,18 @@
 Vnum            473
-Name            �оɵo�H���ж� [note]~
+Name            教導發信的房間 [note]~
 Description
-�o�̬O�ڭ̥Τߦ�غc�Ӧ��M�ЧA���n���� Hacker �� Crash �t�ΡM
-�p�G�A�o�{���� bug�M�ЧA note �� Immortals.
-���� note ���Ϊk�A�i�H�� help note �ӤF�ѡM�X�G�C�ӫ��O������
-�ӧO�� help�C�� help <command> �N�i�H�\Ū�F.
-ex: help new�Mhelp cast�Mhelp chat ����...
+這裡是我們用心血建構而成﹐請你不要嘗試 Hacker 或 Crash 系統﹐
+如果你發現任何 bug﹐請你 note 給 Immortals.
+關於 note 的用法你可以打 help note 來了解﹐幾乎每個指令都有其
+個別的 help。打 help <command> 就可以閱讀了.
+ex: help new﹐help cast﹐help chat 等等...
 
-�A�]�i�H�ϥ� typo �� help typo �i�H�F�Ѥ@�ǩM Immortals ���q
-���޹D Immortals �����Ŧb 51 �ťH�W�M�A�]�i�H�ϥ� who �����O
-�ӬݬݬO�_�� Immortals �b�u�W �άO who -w.
+你也可以使用 typo 打 help typo 可以了解一些和 Immortals 溝通
+的管道 Immortals 的等級在 51 級以上﹐你也可以使用 who 的指令
+來看看是否有 Immortals 在線上 或是 who -w.
 
-�p�G�A�o�{�F�Y���� bug �ݭn�ߧY�q�����M�i�H�����i�D�L�̡C
-�p�G�A��o�̧������ͽ�Ū�@�U help new & help who�C
+如果你發現了嚴重的 bug 需要立即通知的﹐可以直接告訴他們。
+如果你對這裡完全陌生請讀一下 help new & help who。
 
 ~
 SectorType      SECT_CITY

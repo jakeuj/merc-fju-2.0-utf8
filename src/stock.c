@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -47,7 +47,7 @@ FUNCTION( do_stock )
 
   if ( ch->trade == FALSE )
   {
-    send_to_char( "§AªºÁ`¸ê²£¤Ó¥i©È¤F¡M©Ò¥HµLªk°õ¦æ¦¹«ü¥O¡T\n\r", ch );
+    send_to_char( "ä½ çš„ç¸½è³‡ç”¢å¤ªå¯æ€•äº†ï¹æ‰€ä»¥ç„¡æ³•åŸ·è¡Œæ­¤æŒ‡ä»¤ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -66,25 +66,25 @@ FUNCTION( do_stock )
     {
       if ( arg[1] == '\x0' )
       {
-        send_to_char( "§A­n¹î¬İ½ÖªºªÑ²¼ª¬ºA¡S\n\r", ch );
+        send_to_char( "ä½ è¦å¯Ÿçœ‹èª°çš„è‚¡ç¥¨ç‹€æ…‹ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( victim = get_char_world( ch, arg + 1 ) ) )
       {
-        act( "§ä¤£¨ì§Aªº¹ï¶H $2$T$0¡C", ch, NULL, arg + 1, TO_CHAR );
+        act( "æ‰¾ä¸åˆ°ä½ çš„å°è±¡ $2$T$0ã€‚", ch, NULL, arg + 1, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( get_trust( ch ) < get_trust( victim ) )
       {
-        act( "§AªºÅv¤O¤£°÷¬İ$NªºªÑ²¼¡T", ch, NULL, victim, TO_CHAR );
+        act( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹$Nçš„è‚¡ç¥¨ï¹—", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( IS_NPC( victim ) || !victim->pcdata )
       {
-        act( "$N¬O¤£·|¦³¥ô¦óªÑ²¼ªº.", ch, NULL, victim, TO_CHAR );
+        act( "$Næ˜¯ä¸æœƒæœ‰ä»»ä½•è‚¡ç¥¨çš„.", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
@@ -95,17 +95,17 @@ FUNCTION( do_stock )
       {
         if ( !found )
         {
-          send_to_buffer( "\e[1;33m¡u%s\e[1;33m¤â¤WªºªÑ²¼¦³¡R¡v\e[0m\n\r"
-            , ch == victim ? "§A" : victim->name );
+          send_to_buffer( "\e[1;33mã€Œ%s\e[1;33mæ‰‹ä¸Šçš„è‚¡ç¥¨æœ‰ï¹•ã€\e[0m\n\r"
+            , ch == victim ? "ä½ " : victim->name );
 
-          send_to_buffer( "\e[1;33;44m²Î ¤@ ½s ¸¹ ªÑ    ²¼    ¦W    ºÙ"
-            " «ù¦³±i¼Æ ÁÊ¤J¦¨¥» ¥Ø«e»ù®æ »ù¿ú®tÃB\e[0m\n\r", ch );
+          send_to_buffer( "\e[1;33;44mçµ± ä¸€ ç·¨ è™Ÿ è‚¡    ç¥¨    å    ç¨±"
+            " æŒæœ‰å¼µæ•¸ è³¼å…¥æˆæœ¬ ç›®å‰åƒ¹æ ¼ åƒ¹éŒ¢å·®é¡\e[0m\n\r", ch );
         }
 
         found  = TRUE;
         bStock = ( IS_IMMORTAL( ch ) || ch->gold > 0 ) ? TRUE : FALSE;
 
-        send_to_buffer( "²Î¤@½s¸¹%3d %-20s %8d %8d %s%8d"
+        send_to_buffer( "çµ±ä¸€ç·¨è™Ÿ%3d %-20s %8d %8d %s%8d"
           "\e[0m %s%8d\e[0m\n\r"
           , loop + 1, stock_data[loop].name
           , victim->pcdata->stock[loop], victim->pcdata->asset[loop]
@@ -122,14 +122,14 @@ FUNCTION( do_stock )
 
     if ( !found )
     {
-      send_to_buffer( "%s¨S¦³¥ô¦óªºªÑ²¼¡C\n\r"
-      , ( victim == ch ) ? "§A" : victim->name );
+      send_to_buffer( "%sæ²’æœ‰ä»»ä½•çš„è‚¡ç¥¨ã€‚\n\r"
+      , ( victim == ch ) ? "ä½ " : victim->name );
     }
 
     else if ( IS_IMMORTAL( ch ) )
     {
       chinese_number( stock_value( victim ), buf );
-      send_to_buffer( "\e[1;33mªÑ²¼Á`­±­È¬° %s¨â»È¤l¡C\e[0m\n\r", buf );
+      send_to_buffer( "\e[1;33mè‚¡ç¥¨ç¸½é¢å€¼ç‚º %så…©éŠ€å­ã€‚\e[0m\n\r", buf );
     }
 
     print_buffer( ch );
@@ -144,7 +144,7 @@ FUNCTION( do_stock )
 
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "»yªk¿ù»~¡M½Ğ¬d¸ß stock¡C\n\r", ch );
+      send_to_char( "èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ stockã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -152,13 +152,13 @@ FUNCTION( do_stock )
 
     if ( sn < 0 || sn >= MAX_STOCK )
     {
-      send_to_char( "½d³ò¿ù»~¡T½Ğ¬d¸ß stock ¨Ï¥Î¤èªk¡T\n\r", ch );
+      send_to_char( "ç¯„åœéŒ¯èª¤ï¹—è«‹æŸ¥è©¢ stock ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !stock_data[sn].name || !*( stock_data[sn].name ) )
     {
-      send_to_char( "³o®a¤½¥q©|¥¼¤WÂd¡MµLªk¬d¸ß¡C\n\r", ch );
+      send_to_char( "é€™å®¶å…¬å¸å°šæœªä¸Šæ«ƒï¹ç„¡æ³•æŸ¥è©¢ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -179,7 +179,7 @@ FUNCTION( do_stock )
 
     if ( max == min )
     {
-      act( "$t©|¥¼¦³¸ê®Æ¡MµLªk°lÂÜ¡T", ch, stock_data[sn].name, NULL, TO_CHAR );
+      act( "$tå°šæœªæœ‰è³‡æ–™ï¹ç„¡æ³•è¿½è¹¤ï¹—", ch, stock_data[sn].name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -208,13 +208,13 @@ FUNCTION( do_stock )
   else if ( !str_prefix( arg, "status" ) && IS_IMMORTAL( ch ) )
   {
     print_to_char( ch,
-      "ªÑ¥«¨C¤é³Ì¤jº¦´T  ¡R¤d¤À¤§ %d\n\r"
-      "ªÑ¥«¨C¤é³Ì¤j¶^´T  ¡R¤d¤À¤§ %d\n\r"
-      "ªÑ¥«¨C¤é¥æ©ö¼vÅT¶q¡R%d ±i\n\r"
-      "ªÑ¥«ÃÒ¥æµ|        ¡R¤d¤À¤§ %d\n\r"
-      "ªÑ¥«±Y½L½ßÀv²v    ¡R­ì»ùªº %d ¤§¤@\n\r"
-      "ªÑ¥«¥æ©ö°tÃB      ¡R%d ±i\n\r"
-      "¨C±iªÑ²¼³Ì¦h¶q    ¡R%d ±i\n\r"
+      "è‚¡å¸‚æ¯æ—¥æœ€å¤§æ¼²å¹…  ï¹•åƒåˆ†ä¹‹ %d\n\r"
+      "è‚¡å¸‚æ¯æ—¥æœ€å¤§è·Œå¹…  ï¹•åƒåˆ†ä¹‹ %d\n\r"
+      "è‚¡å¸‚æ¯æ—¥äº¤æ˜“å½±éŸ¿é‡ï¹•%d å¼µ\n\r"
+      "è‚¡å¸‚è­‰äº¤ç¨…        ï¹•åƒåˆ†ä¹‹ %d\n\r"
+      "è‚¡å¸‚å´©ç›¤è³ å„Ÿç‡    ï¹•åŸåƒ¹çš„ %d ä¹‹ä¸€\n\r"
+      "è‚¡å¸‚äº¤æ˜“é…é¡      ï¹•%d å¼µ\n\r"
+      "æ¯å¼µè‚¡ç¥¨æœ€å¤šé‡    ï¹•%d å¼µ\n\r"
       , stock_win
       , stock_lost
       , StockShock
@@ -230,7 +230,7 @@ FUNCTION( do_stock )
     {
       if ( ch->bank < 10 )
       {
-        send_to_char( "©êºp¡M§A»È¦æ¸Ì¤áÀY¿ú¹ê¦b¤Ó¤Ö¤F¡T\n\r", ch );
+        send_to_char( "æŠ±æ­‰ï¹ä½ éŠ€è¡Œè£¡æˆ¶é ­éŒ¢å¯¦åœ¨å¤ªå°‘äº†ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
@@ -238,8 +238,8 @@ FUNCTION( do_stock )
     }
 
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m½s¸¹ ¤½¥q¦æ¸¹             ¶R¶i ½æ¥X "
-      "¤µ¤é»ù®æ ¬Q¤é»ù®æ º¦¶^´T Âê©w          \e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mç·¨è™Ÿ å…¬å¸è¡Œè™Ÿ             è²·é€² è³£å‡º "
+      "ä»Šæ—¥åƒ¹æ ¼ æ˜¨æ—¥åƒ¹æ ¼ æ¼²è·Œå¹… é–å®š          \e[0m\n\r" );
 
     for ( loop = 0; loop < MAX_STOCK; loop++ )
     {
@@ -267,7 +267,7 @@ FUNCTION( do_stock )
   {
     if ( over_scale( ch ) )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤w¹F¤W­­¡MµLªk¶R½æªÑ²¼¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹ç„¡æ³•è²·è³£è‚¡ç¥¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -278,7 +278,7 @@ FUNCTION( do_stock )
 
     if ( !arg[0] || !is_number( arg ) )
     {
-      send_to_char( "»yªk¿ù»~¡M½Ğ¬d¸ß stock ªº¥Îªk¡C\n\r", ch );
+      send_to_char( "èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ stock çš„ç”¨æ³•ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -289,19 +289,19 @@ FUNCTION( do_stock )
     {
       if ( !is_number( arg1 ) )
       {
-        send_to_char( "§A¥²¶·¿é¤J§A·Q½æªº±i¼Æ¡T\n\r", ch );
+        send_to_char( "ä½ å¿…é ˆè¼¸å…¥ä½ æƒ³è³£çš„å¼µæ•¸ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( ( level = atoi( arg1 ) ) <= 0 )
       {
-        send_to_char( "§A¨Ó­AÄ_ªº¶Ü¡S\n\r", ch );
+        send_to_char( "ä½ ä¾†è€å¯¶çš„å—ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
       if ( level > max_stock_buy )
       {
-        send_to_char( "³o¸Ì¤£±µ¨ü¤j½L¶i³õ¤z¹w³á¡T\n\r", ch );
+        send_to_char( "é€™è£¡ä¸æ¥å—å¤§ç›¤é€²å ´å¹²é å–”ï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
@@ -312,32 +312,32 @@ FUNCTION( do_stock )
       || !stock_data[loop].name
       || ch->pcdata->stock[loop] < level )
     {
-      send_to_char( "§A¨Ã¨S¦³¨º»ò¦h±iªÑ²¼³á¡T\n\r", ch );
+      send_to_char( "ä½ ä¸¦æ²’æœ‰é‚£éº¼å¤šå¼µè‚¡ç¥¨å–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( stock_data[loop].lock )
     {
-      act( "$t¥Ø«e¼È°±¥æ©ö¡C", ch, stock_data[loop].name, NULL, TO_CHAR );
+      act( "$tç›®å‰æš«åœäº¤æ˜“ã€‚", ch, stock_data[loop].name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( StockQuota > 0
       && stock_data[loop].today_sell + level > StockQuota )
     {
-      act( "$t¤µ¤Ñ¥æ©ö¶q¤w¸g¶W¹L°tÃB¡T", ch, stock_data[loop].name, NULL, TO_CHAR );
+      act( "$tä»Šå¤©äº¤æ˜“é‡å·²ç¶“è¶…éé…é¡ï¹—", ch, stock_data[loop].name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ( cost = stock_cost( loop, level, STOCK_SELL_TAX, bStock ) ) <= 0 )
     {
-      send_to_char( "§A¥æ©öªº¶q¹ê¦b¤Ó¤j¤F¡C\n\r", ch );
+      send_to_char( "ä½ äº¤æ˜“çš„é‡å¯¦åœ¨å¤ªå¤§äº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->bank < cost )
     {
-      send_to_char( "§A»È¦æ¸Ìªº¦s´Ú¤£°÷¥IÃÒ¥æµ|¡C\n\r", ch );
+      send_to_char( "ä½ éŠ€è¡Œè£¡çš„å­˜æ¬¾ä¸å¤ ä»˜è­‰äº¤ç¨…ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -345,7 +345,7 @@ FUNCTION( do_stock )
       || cost + ch->bank <= 0
       || cost + ch->bank >= MAX_ASSET )
     {
-      send_to_char( "§A¥æ©öªºª÷ÃB¤Ó¤j¤F¡T\n\r", ch );
+      send_to_char( "ä½ äº¤æ˜“çš„é‡‘é¡å¤ªå¤§äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -356,7 +356,7 @@ FUNCTION( do_stock )
 
     chinese_number( stock_data[loop].cost * level, buf );
     chinese_number( level, buf1 );
-    print_to_char( ch, "§A¥H%s¨â»È¤l½æ¤F%s±i%sªºªÑ²¼¡C\n\r"
+    print_to_char( ch, "ä½ ä»¥%så…©éŠ€å­è³£äº†%så¼µ%sçš„è‚¡ç¥¨ã€‚\n\r"
       , buf, buf1, stock_data[loop].name );
 
     stock_data[loop].sell       += level;
@@ -368,20 +368,20 @@ FUNCTION( do_stock )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¥ı¤£­n§ë¸ê¡C", ch, &level_limit, NULL, TO_CHAR );
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹å…ˆä¸è¦æŠ•è³‡ã€‚", ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n§ë¸êªÑ²¼¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦æŠ•è³‡è‚¡ç¥¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     argument = one_argument( argument, arg );
     if ( !arg[0] || !is_number( arg ) )
     {
-      send_to_char( "»yªk¿ù»~¡M½Ğ¬d¸ß stock ªº¥Îªk¡C\n\r", ch );
+      send_to_char( "èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ stock çš„ç”¨æ³•ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -395,20 +395,20 @@ FUNCTION( do_stock )
     {
       if ( !is_number( arg1 ) )
       {
-        send_to_char( "§A¥²¶·¿é¤J§A·Q¶Rªº±i¼Æ¡T\n\r", ch );
+        send_to_char( "ä½ å¿…é ˆè¼¸å…¥ä½ æƒ³è²·çš„å¼µæ•¸ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       level = atoi( arg1 );
       if ( level <= 0 )
       {
-        send_to_char( "§A¨Ó­AÄ_ªº¶Ü¡S\n\r", ch );
+        send_to_char( "ä½ ä¾†è€å¯¶çš„å—ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
       if ( level > max_stock_buy )
       {
-        send_to_char( "³o¸Ì¤£±µ¨ü¤j½L¶i³õ¤z¹w³á¡T\n\r", ch );
+        send_to_char( "é€™è£¡ä¸æ¥å—å¤§ç›¤é€²å ´å¹²é å–”ï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
@@ -416,49 +416,49 @@ FUNCTION( do_stock )
     loop = atoi( arg ) - 1;
     if ( loop < 0 || loop >= MAX_STOCK || !stock_data[loop].name )
     {
-      send_to_char( "²¼¾Ú©Ò¸Ì¨S¦³¨º±iªÑ²¼­C¡C\n\r", ch );
+      send_to_char( "ç¥¨æ“šæ‰€è£¡æ²’æœ‰é‚£å¼µè‚¡ç¥¨è€¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( stock_data[loop].lock )
     {
-      act( "$t¥Ø«e¼È°±¥æ©ö¡C", ch, stock_data[loop].name, NULL, TO_CHAR );
+      act( "$tç›®å‰æš«åœäº¤æ˜“ã€‚", ch, stock_data[loop].name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( StockRelease > 0
       && ( stock_data[loop].buy - stock_data[loop].sell ) > StockRelease )
     {
-      act( "$tµo¦æ¶q¤w¹F¨ì¤W­­¡T", ch, stock_data[loop].name, NULL, TO_CHAR );
+      act( "$tç™¼è¡Œé‡å·²é”åˆ°ä¸Šé™ï¹—", ch, stock_data[loop].name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->pcdata->stock[loop] + level >= max_stock_buy )
     {
-      act( "§A$t¤Ó¦h¤F¡M½Ğ§ë¸ê¦b¨ä¥L¦a¤è¡T", ch, stock_data[loop].name, NULL, TO_CHAR );
+      act( "ä½ $tå¤ªå¤šäº†ï¹è«‹æŠ•è³‡åœ¨å…¶ä»–åœ°æ–¹ï¹—", ch, stock_data[loop].name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( StockQuota > 0
       && stock_data[loop].today_buy + level > StockQuota )
     {
-      act( "$t¤µ¤Ñ¥æ©ö¶q¤w¸g¶W¹L°tÃB¡T", ch, stock_data[loop].name, NULL, TO_CHAR );
+      act( "$tä»Šå¤©äº¤æ˜“é‡å·²ç¶“è¶…éé…é¡ï¹—", ch, stock_data[loop].name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ( cost = stock_cost( loop, level, STOCK_BUY, bStock ) ) <= 0 )
     {
-      send_to_char( "¤w¶W¥X¨t²Îªº­pºâ½d³ò¡C\n\r", ch );
+      send_to_char( "å·²è¶…å‡ºç³»çµ±çš„è¨ˆç®—ç¯„åœã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->bank < cost )
     {
-      send_to_char( "§A»È¦æ¸Ìªº¦s´Ú¤£°÷¶R³o¤@¦¸ªÑ²¼¡C\n\r", ch );
+      send_to_char( "ä½ éŠ€è¡Œè£¡çš„å­˜æ¬¾ä¸å¤ è²·é€™ä¸€æ¬¡è‚¡ç¥¨ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ­×¥¿ÁÊ¶RªÑ²¼¦¨¥» */
+    /* ä¿®æ­£è³¼è²·è‚¡ç¥¨æˆæœ¬ */
     {
       float Total;
       float Count;
@@ -475,7 +475,7 @@ FUNCTION( do_stock )
 
     chinese_number( cost, buf );
     chinese_number( level, buf1 );
-    print_to_char( ch, "§Aªá¤F%s¨â»È¤l¶R¤F%s±i%sªºªÑ²¼¡C\n\r"
+    print_to_char( ch, "ä½ èŠ±äº†%så…©éŠ€å­è²·äº†%så¼µ%sçš„è‚¡ç¥¨ã€‚\n\r"
       , buf, buf1, stock_data[loop].name );
 
     stock_data[loop].buy       += level;
@@ -486,8 +486,8 @@ FUNCTION( do_stock )
 
   else if ( !str_prefix( arg, "information" ) && IS_IMMORTAL( ch ) )
   {
-    send_to_buffer( "\e[1;33;44m½s¸¹ ¤½¥q¦æ¸¹           ¶R¶i ½æ¥X "
-      "¤µ»ù®æ ¬Q»ù®æ º¦¶^ Á`¶R¤J Á`½æ¥X Á`±i¼Æ §Q¯q¤ñ\e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mç·¨è™Ÿ å…¬å¸è¡Œè™Ÿ           è²·é€² è³£å‡º "
+      "ä»Šåƒ¹æ ¼ æ˜¨åƒ¹æ ¼ æ¼²è·Œ ç¸½è²·å…¥ ç¸½è³£å‡º ç¸½å¼µæ•¸ åˆ©ç›Šæ¯”\e[0m\n\r" );
 
     for ( loop = 0; loop < MAX_STOCK; loop++ )
     {
@@ -523,7 +523,7 @@ FUNCTION( do_stock )
 
     if ( sn == MAX_STOCK )
     {
-      send_to_char( "©êºp¨S¦³ÃB¥~ªºªÅ¶¡¨Ó¼W¥[·sªº¤WÂd¤½¥q¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰æ²’æœ‰é¡å¤–çš„ç©ºé–“ä¾†å¢åŠ æ–°çš„ä¸Šæ«ƒå…¬å¸ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -532,7 +532,7 @@ FUNCTION( do_stock )
 
     if ( arg[0] == '\x0' || arg1[0] == '\x0' )
     {
-      send_to_char( "³]©w¿ù»~¡M½Ğ¬d¸ß stock ¨Ï¥Î¤èªk¡T\n\r", ch );
+      send_to_char( "è¨­å®šéŒ¯èª¤ï¹è«‹æŸ¥è©¢ stock ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -540,14 +540,14 @@ FUNCTION( do_stock )
     {
       if ( stock_data[loop].name && !str_cmp( stock_data[loop].name, arg ) )
       {
-        send_to_char( "³o­Ó¤WÂd¤½¥q¦WºÙ¤w¸g¦³¨Ï¥Î¹L¤F¡C\n\r", ch );
+        send_to_char( "é€™å€‹ä¸Šæ«ƒå…¬å¸åç¨±å·²ç¶“æœ‰ä½¿ç”¨éäº†ã€‚\n\r", ch );
         RETURN_NULL();
       }
     }
 
     if ( !is_number( arg1 ) || ( ( cost = atoi( arg1 ) ) < 10000 ) )
     {
-      send_to_char( "¤WÂd»ù¿ú¦Ü¤Ö­n¤@¸U¤¸¥H¤W¡C\n\r", ch );
+      send_to_char( "ä¸Šæ«ƒåƒ¹éŒ¢è‡³å°‘è¦ä¸€è¬å…ƒä»¥ä¸Šã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -565,13 +565,13 @@ FUNCTION( do_stock )
     stock_data[sn].lost       = stock_lost;
     stock_data[sn].lock       = FALSE;
 
-    sprintf( buf, "%sªÑ²¼¤WÂd³á¡M½Ğ¤j®a¦h¦hÁÊ¶R¡TÁÂÁÂ¡T", arg );
-    talk_channel_2( buf, CHANNEL_BULLETIN, "ªÑ²¼§Ö³ø" );
+    sprintf( buf, "%sè‚¡ç¥¨ä¸Šæ«ƒå–”ï¹è«‹å¤§å®¶å¤šå¤šè³¼è²·ï¹—è¬è¬ï¹—", arg );
+    talk_channel_2( buf, CHANNEL_BULLETIN, "è‚¡ç¥¨å¿«å ±" );
   }
 
   else if ( !str_prefix( arg, "refresh" ) && IS_GOD( ch ) )
   {
-    send_to_char( "§A­«·s¨ê·sªÑ¥«¥æ©ö±¡§Î¡T\n\r", ch );
+    send_to_char( "ä½ é‡æ–°åˆ·æ–°è‚¡å¸‚äº¤æ˜“æƒ…å½¢ï¹—\n\r", ch );
     stock_update();
   }
 
@@ -580,20 +580,20 @@ FUNCTION( do_stock )
     argument = one_argument( argument, arg );
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "»yªk¿ù»~¡M½Ğ¬d¸ß stock¡C\n\r", ch );
+      send_to_char( "èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ stockã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     sn = atoi( arg ) -1;
     if ( sn < 0 || sn >= MAX_STOCK )
     {
-      send_to_char( "½d³ò¿ù»~¡T½Ğ¬d¸ß stock ¨Ï¥Î¤èªk¡T\n\r", ch );
+      send_to_char( "ç¯„åœéŒ¯èª¤ï¹—è«‹æŸ¥è©¢ stock ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !stock_data[sn].name )
     {
-      send_to_char( "³o®a¤½¥q©|¥¼¤WÂd¡MµLªk­×§ï¡C\n\r", ch );
+      send_to_char( "é€™å®¶å…¬å¸å°šæœªä¸Šæ«ƒï¹ç„¡æ³•ä¿®æ”¹ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -602,7 +602,7 @@ FUNCTION( do_stock )
 
     if ( !arg[0] || !arg1[0] )
     {
-      send_to_char( "§A­n­×§ï­ş¤@­Ó¿ï¶µ©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦ä¿®æ”¹å“ªä¸€å€‹é¸é …å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -612,18 +612,18 @@ FUNCTION( do_stock )
       {
         if ( stock_data[loop].name && !str_cmp( stock_data[loop].name, arg1 ) )
         {
-          send_to_char( "³o­Ó¤WÂd¤½¥q¦WºÙ¤w¸g¦³¨Ï¥Î¹L¤F¡C\n\r", ch );
+          send_to_char( "é€™å€‹ä¸Šæ«ƒå…¬å¸åç¨±å·²ç¶“æœ‰ä½¿ç”¨éäº†ã€‚\n\r", ch );
           RETURN_NULL();
         }
       }
 
       smash_tilde( arg1 );
-      sprintf( buf, "¤WÂd¤½¥q%s±q¦¹§ï¦W¬°%s¡M½ĞÄ~Äò¥úÁ{¡T"
+      sprintf( buf, "ä¸Šæ«ƒå…¬å¸%så¾æ­¤æ”¹åç‚º%sï¹è«‹ç¹¼çºŒå…‰è‡¨ï¹—"
         , stock_data[sn].name, arg1 );
 
       free_string( stock_data[sn].name );
       stock_data[sn].name = str_dup( arg1 );
-      talk_channel_2( buf, CHANNEL_BULLETIN, "ªÑ²¼§Ö³ø" );
+      talk_channel_2( buf, CHANNEL_BULLETIN, "è‚¡ç¥¨å¿«å ±" );
       RETURN_NULL();
     }
 
@@ -631,18 +631,18 @@ FUNCTION( do_stock )
     {
       if ( ( cost = atoi( arg1 ) ) <= 0 || cost >= stock_win * 2 )
       {
-        send_to_char( "³o¼Ë«Ü®e©ö³y¦¨ªÑ¥«±Y½Lªº³á¡T\n\r", ch );
+        send_to_char( "é€™æ¨£å¾ˆå®¹æ˜“é€ æˆè‚¡å¸‚å´©ç›¤çš„å–”ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       stock_data[sn].win = cost;
-      act( "§A§â$tªÑ²¼ªºº¦´T½Õ¬°$I", ch, stock_data[sn].name, &cost, TO_CHAR );
+      act( "ä½ æŠŠ$tè‚¡ç¥¨çš„æ¼²å¹…èª¿ç‚º$I", ch, stock_data[sn].name, &cost, TO_CHAR );
 
-      mudlog( LOG_WIZARD, "%s­×§ïªÑ¥«%sªºº¦´T¬°%d"
+      mudlog( LOG_WIZARD, "%sä¿®æ”¹è‚¡å¸‚%sçš„æ¼²å¹…ç‚º%d"
         , ch->name, stock_data[sn].name, cost );
 
-      str_cpy( buf, "¤j½L¶i³õ¤z¹wÅo¡T¤j®a¤p¤ßÅo¡T" );
-      talk_channel_2( buf, CHANNEL_BULLETIN, "ªÑ²¼§Ö³ø" );
+      str_cpy( buf, "å¤§ç›¤é€²å ´å¹²é å›‰ï¹—å¤§å®¶å°å¿ƒå›‰ï¹—" );
+      talk_channel_2( buf, CHANNEL_BULLETIN, "è‚¡ç¥¨å¿«å ±" );
       RETURN_NULL();
     }
 
@@ -650,38 +650,38 @@ FUNCTION( do_stock )
     {
       if ( ( cost = atoi( arg1 ) ) <= 0 || cost >= stock_lost * 2 )
       {
-        send_to_char( "³o¼Ë«Ü®e©ö³y¦¨ªÑ¥«±Y½Lªº³á¡T\n\r", ch );
+        send_to_char( "é€™æ¨£å¾ˆå®¹æ˜“é€ æˆè‚¡å¸‚å´©ç›¤çš„å–”ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       stock_data[sn].lost = cost;
-      act( "§A§â$tªÑ²¼ªº¶^´T½Õ¬°$I", ch, stock_data[sn].name, &cost, TO_CHAR );
+      act( "ä½ æŠŠ$tè‚¡ç¥¨çš„è·Œå¹…èª¿ç‚º$I", ch, stock_data[sn].name, &cost, TO_CHAR );
 
-      mudlog( LOG_WIZARD, "%s­×§ïªÑ¥«%sªº¶^´T¬°%d"
+      mudlog( LOG_WIZARD, "%sä¿®æ”¹è‚¡å¸‚%sçš„è·Œå¹…ç‚º%d"
         , ch->name, stock_data[sn].name, cost );
 
-      str_cpy( buf, "¦³¤j½L¶i³õ¤z¹wÅo¡T¤j®a¤p¤ßÅo¡T" );
-      talk_channel_2( buf, CHANNEL_BULLETIN, "ªÑ²¼§Ö³ø" );
+      str_cpy( buf, "æœ‰å¤§ç›¤é€²å ´å¹²é å›‰ï¹—å¤§å®¶å°å¿ƒå›‰ï¹—" );
+      talk_channel_2( buf, CHANNEL_BULLETIN, "è‚¡ç¥¨å¿«å ±" );
       RETURN_NULL();
     }
 
     else if ( !str_prefix( arg, "lock" ) )
     {
-      mudlog( LOG_WIZARD, "%sÂê©wªÑ¥«%sª¬ºA.", ch->name, stock_data[sn].name );
+      mudlog( LOG_WIZARD, "%sé–å®šè‚¡å¸‚%sç‹€æ…‹.", ch->name, stock_data[sn].name );
 
       stock_data[sn].lock = stock_data[sn].lock ? FALSE : TRUE;
 
-      act( "§A$t$Tªº¥æ©ö¦æ¬°¡C"
+      act( "ä½ $t$Tçš„äº¤æ˜“è¡Œç‚ºã€‚"
         , ch
-        , stock_data[sn].lock ? "¼È°±" : "«ì´_"
+        , stock_data[sn].lock ? "æš«åœ" : "æ¢å¾©"
         , stock_data[sn].name
         , TO_CHAR );
 
-      sprintf( buf, "%s%s¥æ©öÅo¡T"
-        , stock_data[sn].lock ? "¼È°±" : "«ì´_"
+      sprintf( buf, "%s%säº¤æ˜“å›‰ï¹—"
+        , stock_data[sn].lock ? "æš«åœ" : "æ¢å¾©"
         , stock_data[sn].name );
 
-      talk_channel_2( buf, CHANNEL_BULLETIN, "ªÑ²¼§Ö³ø" );
+      talk_channel_2( buf, CHANNEL_BULLETIN, "è‚¡ç¥¨å¿«å ±" );
 
       RETURN_NULL();
     }
@@ -691,31 +691,31 @@ FUNCTION( do_stock )
       if ( ( cost = atoi( arg1 ) ) < MIN_STOCK_COST
         || cost > MAX_STOCK_COST )
       {
-        send_to_char( "³o¼Ë«Ü®e©ö³y¦¨ªÑ¥«±Y½Lªº³á¡T\n\r", ch );
+        send_to_char( "é€™æ¨£å¾ˆå®¹æ˜“é€ æˆè‚¡å¸‚å´©ç›¤çš„å–”ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       set_stock_value( sn, cost );
-      act( "§A§â$tªÑ²¼ªº¶^´T½Õ¬°$I", ch, stock_data[sn].name, &cost, TO_CHAR );
+      act( "ä½ æŠŠ$tè‚¡ç¥¨çš„è·Œå¹…èª¿ç‚º$I", ch, stock_data[sn].name, &cost, TO_CHAR );
 
-      mudlog( LOG_WIZARD, "%s­×§ïªÑ¥«%sªº»ù¿ú¬°%d"
+      mudlog( LOG_WIZARD, "%sä¿®æ”¹è‚¡å¸‚%sçš„åƒ¹éŒ¢ç‚º%d"
         , ch->name, stock_data[sn].name, cost );
 
-      str_cpy( buf, "¦³¤j½L¶i³õ¤z¹wÅo¡M¤j®a¤p¤ßÅo¡T" );
-      talk_channel_2( buf, CHANNEL_BULLETIN, "ªÑ²¼§Ö³ø" );
+      str_cpy( buf, "æœ‰å¤§ç›¤é€²å ´å¹²é å›‰ï¹å¤§å®¶å°å¿ƒå›‰ï¹—" );
+      talk_channel_2( buf, CHANNEL_BULLETIN, "è‚¡ç¥¨å¿«å ±" );
       RETURN_NULL();
     }
 
     else
     {
-      send_to_char( "¿ï¶µ¿ù»~¡M½Ğ¬d¸ß stock¡C\n\r", ch );
+      send_to_char( "é¸é …éŒ¯èª¤ï¹è«‹æŸ¥è©¢ stockã€‚\n\r", ch );
       RETURN_NULL();
     }
   }
 
   else
   {
-    send_to_char( "«ü¥O¿ù»~¡M½Ğ¬d¸ß stock¡C\n\r", ch );
+    send_to_char( "æŒ‡ä»¤éŒ¯èª¤ï¹è«‹æŸ¥è©¢ stockã€‚\n\r", ch );
   }
 
   RETURN_NULL();
@@ -734,7 +734,7 @@ void stock_update( void )
   {
     if ( !stock_data[sn].name ) continue;
 
-    /* ­×¥¿º¦¶^´T«× */
+    /* ä¿®æ­£æ¼²è·Œå¹…åº¦ */
     if ( StockShock > 0 )
     {
       stock_data[sn].win  +=
@@ -796,13 +796,13 @@ void save_stock( void )
 
     FCLOSE( pFile );
 
-    /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+    /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
     set_file_mode( stock_file );
 
   }
   else
   {
-    mudlog( LOG_DEBUG, "save_stock: µLªk¼g¤JªÑ²¼°O¿ıÀÉ %s.", stock_file );
+    mudlog( LOG_DEBUG, "save_stock: ç„¡æ³•å¯«å…¥è‚¡ç¥¨è¨˜éŒ„æª” %s.", stock_file );
   }
 
   RETURN_NULL();
@@ -817,7 +817,7 @@ int stock_value( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "stock_value: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "stock_value: ç¼ºä¹ä¾†æº." );
     RETURN( -1 );
   }
 
@@ -835,7 +835,7 @@ int stock_value( CHAR_DATA * ch )
         if ( Total < 0 || Total >= MaxNumber || Total > MAX_ASSET )
         {
           ch->trade = FALSE;
-          mudlog( LOG_DEBUG, "stock_value: %s ªÑ²¼¸ê²£·¸¦ì.", ch->name );
+          mudlog( LOG_DEBUG, "stock_value: %s è‚¡ç¥¨è³‡ç”¢æº¢ä½.", ch->name );
           RETURN( -1 );
         }
       }
@@ -858,7 +858,7 @@ void bote_stock( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "bote_stock: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "bote_stock: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -875,8 +875,8 @@ void bote_stock( CHAR_DATA * ch )
       if ( ch->bank + value <= MAX_ASSET )
       {
         chinese_number( value, buf );
-        print_to_char( ch, "±zªºªÑ²¼\e[1;37m%s\e[0m¦]¬°±Y½L¡M©Ò¥H"
-          "%s½ßÀv§A³¡¥÷ªº·l¥¢ %s ¨â»È¤l¡T\n\r"
+        print_to_char( ch, "æ‚¨çš„è‚¡ç¥¨\e[1;37m%s\e[0må› ç‚ºå´©ç›¤ï¹æ‰€ä»¥"
+          "%sè³ å„Ÿä½ éƒ¨ä»½çš„æå¤± %s å…©éŠ€å­ï¹—\n\r"
           , stock_data[loop].name
           , mud_name
           , buf );
@@ -904,20 +904,20 @@ int stock_cost( int slot, int count, int type, bool bStock )
 
   if ( slot < 0 || slot >= MAX_STOCK || !stock_data[slot].name )
   {
-    mudlog( LOG_DEBUG, "stock_cost: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "stock_cost: ä¾†æºä¸æ­£ç¢º." );
     RETURN( -1 );
   }
 
   if ( count <= 0 || count > max_stock_buy )
   {
-    mudlog( LOG_DEBUG, "stock_cost: ¼Æ¶q %d ¤£¦X²z.", count );
+    mudlog( LOG_DEBUG, "stock_cost: æ•¸é‡ %d ä¸åˆç†.", count );
     RETURN( -1 );
   }
 
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "stock_cost: ¿ù»~ªº¿ï¶µ %d.", type );
+    mudlog( LOG_DEBUG, "stock_cost: éŒ¯èª¤çš„é¸é … %d.", type );
     RETURN( -1 );
 
   case STOCK_BUY:
@@ -958,13 +958,13 @@ void set_stock_value( int slot, int cost )
 
   if ( slot < 0 || slot >= MAX_STOCK || !stock_data[slot].name )
   {
-    mudlog( LOG_DEBUG, "set_stock_value: ¨Ó·½ %d ¿ù»~.", slot );
+    mudlog( LOG_DEBUG, "set_stock_value: ä¾†æº %d éŒ¯èª¤.", slot );
     RETURN_NULL();
   }
 
   if ( cost < MIN_STOCK_COST || cost > MAX_STOCK_COST )
   {
-    mudlog( LOG_DEBUG, "set_stock_value: §Ç¸¹ %d »ù®æ %d ¤£¦X²z."
+    mudlog( LOG_DEBUG, "set_stock_value: åºè™Ÿ %d åƒ¹æ ¼ %d ä¸åˆç†."
       , slot, cost );
 
     RETURN_NULL();

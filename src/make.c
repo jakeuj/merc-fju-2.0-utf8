@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -44,7 +44,7 @@ FUNCTION( do_home )
 
   if ( !PlayerZone )
   {
-    act( "$t¸Ì¨S¦³¥ô¦óª±®a¼gªº°Ï°ì¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "$tè£¡æ²’æœ‰ä»»ä½•ç©å®¶å¯«çš„å€åŸŸï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -60,7 +60,7 @@ FUNCTION( do_home )
       if ( is_owner( ch, pRoom, TRUE ) )
       {
         if ( count <= 0 )
-          send_to_buffer( "\e[1;33;44m¶¶§Ç ©Ğ¶¡¸¹½X ©Ğ¶¡¦WºÙ                 "
+          send_to_buffer( "\e[1;33;44mé †åº æˆ¿é–“è™Ÿç¢¼ æˆ¿é–“åç¨±                 "
            "                                         \e[0m\n\r" );
 
         send_to_buffer( "%4d %8d %s\n\r", ++count, pRoom->vnum, pRoom->name );
@@ -69,7 +69,7 @@ FUNCTION( do_home )
     }
 
     if ( count <= 0 )
-      send_to_buffer( "¹ï¤£°_¡M§A¨S¦³»{ÁÊ¥ô¦óªº©Ğ¤l¤g¦a¡T\n\r" );
+      send_to_buffer( "å°ä¸èµ·ï¹ä½ æ²’æœ‰èªè³¼ä»»ä½•çš„æˆ¿å­åœŸåœ°ï¹—\n\r" );
 
     print_buffer( ch );
   }
@@ -78,50 +78,50 @@ FUNCTION( do_home )
   {
     if ( !MobPractice )
     {
-      send_to_char( "¥Ø«e¨t²Î¨S¦³½m²ß©Çª«¡M½Ğ¸ò¯«±ÚÁpµ¸¡T\n\r", ch );
+      send_to_char( "ç›®å‰ç³»çµ±æ²’æœ‰ç·´ç¿’æ€ªç‰©ï¹è«‹è·Ÿç¥æ—è¯çµ¡ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¶Ãªá¿ú¡T", ch, &level_limit, NULL, TO_CHAR );
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—", ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¶Ãªá¿ú¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->bank < HomeMobile )
     {
-      act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à²£¥Í½m²ß©Çª«¡C"
+      act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½ç”¢ç”Ÿç·´ç¿’æ€ªç‰©ã€‚"
         , ch, &HomeMobile, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+      send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
     {
-      send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶Ã¨Ó¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ äº‚ä¾†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pRoom->Upgrade || !pRoom->PracRoom )
     {
-      send_to_char( "³o©Ğ¶¡¨Ã¨S¦³§A·Q­nªº¥\\¯à¡T\n\r", ch );
+      send_to_char( "é€™æˆ¿é–“ä¸¦æ²’æœ‰ä½ æƒ³è¦çš„åŠŸ\èƒ½ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pRoom->mob_reborn > 0 )
     {
-      send_to_char( "©Çª«»°»s¤£¤Î¡M½Ğ­@¤ßµ¥­Ô¡T\n\r", ch );
+      send_to_char( "æ€ªç‰©è¶•è£½ä¸åŠï¹è«‹è€å¿ƒç­‰å€™ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -133,24 +133,24 @@ FUNCTION( do_home )
 
     if ( vch )
     {
-      send_to_char( "§Ö§â²´«eªº¼Ä¤H±ş¤F§a¡T\n\r", ch );
+      send_to_char( "å¿«æŠŠçœ¼å‰çš„æ•µäººæ®ºäº†å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pMob = create_mobile( MobPractice, ch->level ) ) )
     {
-      send_to_char( "µLªk²£¥Í©Çª«¡M¤j·§¾÷¾¹Ãa±¼¤F¡T\n\r", ch );
-      mudlog( LOG_DEBUG, "do_home: Practice µLªk²£¥Í©Çª«." );
+      send_to_char( "ç„¡æ³•ç”¢ç”Ÿæ€ªç‰©ï¹å¤§æ¦‚æ©Ÿå™¨å£æ‰äº†ï¹—\n\r", ch );
+      mudlog( LOG_DEBUG, "do_home: Practice ç„¡æ³•ç”¢ç”Ÿæ€ªç‰©." );
       RETURN_NULL();
     }
 
     char_to_room( pMob, pRoom );
-    act( "$N¬ğµM¥X²{¦b³o¸Ì¡Mµ¥µÛ³Q®Á¥´¡T", ch, NULL, pMob, TO_ALL );
+    act( "$Nçªç„¶å‡ºç¾åœ¨é€™è£¡ï¹ç­‰è‘—è¢«æŒ¨æ‰“ï¹—", ch, NULL, pMob, TO_ALL );
 
-    /* ¦©±¼»È¦æªº¿ú */
+    /* æ‰£æ‰éŠ€è¡Œçš„éŒ¢ */
     ch->bank -= ch->level * HomeMobile;
 
-    /* ³]©w©Ğ¶¡­«¥Í®É¶¡ */
+    /* è¨­å®šæˆ¿é–“é‡ç”Ÿæ™‚é–“ */
     pRoom->mob_reborn = ch->level / 10;
 
     RETURN_NULL();
@@ -160,14 +160,14 @@ FUNCTION( do_home )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¶Ãªá¿ú¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¶Ãªá¿ú¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -175,7 +175,7 @@ FUNCTION( do_home )
 
     if ( !arg[0] )
     {
-      send_to_char( "§A·Q­n¤É¯Å¬°¤°»ò©Ğ¶¡©O¡S\n\r", ch );
+      send_to_char( "ä½ æƒ³è¦å‡ç´šç‚ºä»€éº¼æˆ¿é–“å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -183,26 +183,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯Å¦h¤ô¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šå¤šæ°´åŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -210,8 +210,8 @@ FUNCTION( do_home )
       pRoom->Upgrade  = TRUE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤F¦h¤ôªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°¦h¤ôªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†å¤šæ°´çš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºå¤šæ°´çš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
@@ -219,26 +219,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯Å¦h­¹ª«¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šå¤šé£Ÿç‰©åŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -246,8 +246,8 @@ FUNCTION( do_home )
       pRoom->Upgrade  = TRUE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤F¦h­¹ª«ªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°¦h­¹ª«ªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†å¤šé£Ÿç‰©çš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºå¤šé£Ÿç‰©çš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
@@ -255,26 +255,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯Å¿ú²ø¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šéŒ¢èŠåŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -282,8 +282,8 @@ FUNCTION( do_home )
       pRoom->Upgrade       = TRUE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤F¿ú²øªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°¿ú²øªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†éŒ¢èŠçš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºéŒ¢èŠçš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
@@ -291,26 +291,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯ÅÃğ§½¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šé¢å±€åŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -318,8 +318,8 @@ FUNCTION( do_home )
       pRoom->Upgrade    = TRUE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤FÃğ§½ªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°Ãğ§½ªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†é¢å±€çš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºé¢å±€çš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
@@ -327,26 +327,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯Å¥Í©R«ì´_©Ò¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šç”Ÿå‘½æ¢å¾©æ‰€åŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -354,8 +354,8 @@ FUNCTION( do_home )
       pRoom->Upgrade  = TRUE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤F¥Í©R«ì´_©Òªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°¥Í©R«ì´_©Òªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†ç”Ÿå‘½æ¢å¾©æ‰€çš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºç”Ÿå‘½æ¢å¾©æ‰€çš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
@@ -363,26 +363,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯Å½m¥\\³õ¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šç·´åŠŸ\å ´åŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -392,8 +392,8 @@ FUNCTION( do_home )
       pRoom->NoFight  = FALSE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤F½m¥\\³õªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°½m¥\\³õªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†ç·´åŠŸ\å ´çš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºç·´åŠŸ\å ´çš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
@@ -401,26 +401,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯Åªk¤O«ì´_©Ò¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šæ³•åŠ›æ¢å¾©æ‰€åŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -428,8 +428,8 @@ FUNCTION( do_home )
       pRoom->Upgrade  = TRUE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤Fªk¤O«ì´_©Òªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°ªk¤O«ì´_©Òªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†æ³•åŠ›æ¢å¾©æ‰€çš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºæ³•åŠ›æ¢å¾©æ‰€çš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
@@ -437,26 +437,26 @@ FUNCTION( do_home )
     {
       if ( ch->bank < HomeObject )
       {
-        act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¤É¯ÅÅé¤O«ì´_©Ò¥\\¯à¡C"
+        act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½å‡ç´šé«”åŠ›æ¢å¾©æ‰€åŠŸ\èƒ½ã€‚"
           , ch, &HomeObject, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( ch->position != POS_STANDING )
       {
-        send_to_char( "¥ı§â¤âÃäªº¨Æ±¡¦£§¹¤F¦A»¡§a¡T\n\r", ch );
+        send_to_char( "å…ˆæŠŠæ‰‹é‚Šçš„äº‹æƒ…å¿™å®Œäº†å†èªªå§ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
       {
-        send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§A¶î¾~¡T\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ å¡—é´‰ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( pRoom->Upgrade )
       {
-        act( "$r¤w¸g¤£¯à¦A§ï¸Ë¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$rå·²ç¶“ä¸èƒ½å†æ”¹è£äº†ï¹—", ch, NULL, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -464,16 +464,16 @@ FUNCTION( do_home )
       pRoom->Upgrade  = TRUE;
       ch->bank = UMAX( 0, ch->bank - HomeObject );
 
-      act( "§Aªá¤F¤@µ§¿ú§â$r§ï¸Ë¤FÅé¤O«ì´_©Òªº¥\\¯à¡T", ch, NULL, NULL, TO_CHAR );
-      act( "$r³Q$n§ï¸Ë¦¨¬°Åé¤O«ì´_©Òªº¦a¤è¤F¡T", ch, NULL, NULL, TO_ROOM );
+      act( "ä½ èŠ±äº†ä¸€ç­†éŒ¢æŠŠ$ræ”¹è£äº†é«”åŠ›æ¢å¾©æ‰€çš„åŠŸ\èƒ½ï¹—", ch, NULL, NULL, TO_CHAR );
+      act( "$rè¢«$næ”¹è£æˆç‚ºé«”åŠ›æ¢å¾©æ‰€çš„åœ°æ–¹äº†ï¹—", ch, NULL, NULL, TO_ROOM );
       write_new_room( pRoom );
     }
 
     else
     {
-      send_to_char( "¨S¦³§A©Ò¿ï¾Üªº¥\\¯à¡T\n\r¥i¥H¤É¯Å¦¨¬°"
-        "¥Í©R«ì´_(hitcure) ªk¤O«ì´_(manacure) \n\rÅé¤O«ì´_(movecure)"
-        "¼W¥[­¹ª«(foodful) ¼W¥[¤ô·½(waterful) µ¥¿ï¶µ¡C\n\r", ch );
+      send_to_char( "æ²’æœ‰ä½ æ‰€é¸æ“‡çš„åŠŸ\èƒ½ï¹—\n\rå¯ä»¥å‡ç´šæˆç‚º"
+        "ç”Ÿå‘½æ¢å¾©(hitcure) æ³•åŠ›æ¢å¾©(manacure) \n\ré«”åŠ›æ¢å¾©(movecure)"
+        "å¢åŠ é£Ÿç‰©(foodful) å¢åŠ æ°´æº(waterful) ç­‰é¸é …ã€‚\n\r", ch );
       RETURN_NULL();
     }
   }
@@ -484,55 +484,55 @@ FUNCTION( do_home )
 
     if ( !arg[0] || !argument[0] )
     {
-      send_to_char( "§A·Q­n³]©w¤°»òªF¦è¡S\n\r", ch );
+      send_to_char( "ä½ æƒ³è¦è¨­å®šä»€éº¼æ±è¥¿ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !is_number( argument ) || ( count = atoi( argument ) ) <= 0 )
     {
-      send_to_char( "§Aªº³]©w­È¥²¶·¬O¼Æ¦r¡T\n\r", ch );
+      send_to_char( "ä½ çš„è¨­å®šå€¼å¿…é ˆæ˜¯æ•¸å­—ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !str_prefix( arg, "Cost" ) )
     {
       HomeGold = count;
-      act( "§A§â¶R©Ğ¤lªº»ù®æ§ï¬°$i¨â¶Àª÷¡T", ch, &count, NULL, TO_CHAR );
+      act( "ä½ æŠŠè²·æˆ¿å­çš„åƒ¹æ ¼æ”¹ç‚º$iå…©é»ƒé‡‘ï¹—", ch, &count, NULL, TO_CHAR );
     }
 
     else if ( !str_prefix( arg, "Title" ) )
     {
       HomeGoldTitle = count;
-      act( "§A§â§ó§ï©Ğ¶¡¦WºÙªº»ù®æ§ï¬°$i¨â¶Àª÷¡T", ch, &count, NULL, TO_CHAR );
+      act( "ä½ æŠŠæ›´æ”¹æˆ¿é–“åç¨±çš„åƒ¹æ ¼æ”¹ç‚º$iå…©é»ƒé‡‘ï¹—", ch, &count, NULL, TO_CHAR );
     }
 
     else if ( !str_prefix( arg, "Link" ) )
     {
       HomeGoldLink = count;
-      act( "§A§â§ó³sµ²ªº»ù®æ§ï¬°$i¨â¶Àª÷¡T", ch, &count, NULL, TO_CHAR );
+      act( "ä½ æŠŠæ›´é€£çµçš„åƒ¹æ ¼æ”¹ç‚º$iå…©é»ƒé‡‘ï¹—", ch, &count, NULL, TO_CHAR );
     }
 
     else if ( !str_prefix( arg, "Descr" ) )
     {
       HomeGoldDescr = count;
-      act( "§A§â§ó§ï©Ğ¶¡´y­zªº»ù®æ¬°$i¨â¶Àª÷¡T", ch, &count, NULL, TO_CHAR );
+      act( "ä½ æŠŠæ›´æ”¹æˆ¿é–“æè¿°çš„åƒ¹æ ¼ç‚º$iå…©é»ƒé‡‘ï¹—", ch, &count, NULL, TO_CHAR );
     }
 
     else if ( !str_prefix( arg, "Upgrade" ) )
     {
       HomeObject = count;
-      act( "§A§â¤É¯Å©Ğ«Î°t³Æªº»ù®æ§ï¬°$i¨â¶Àª÷¡T", ch, &count, NULL, TO_CHAR );
+      act( "ä½ æŠŠå‡ç´šæˆ¿å±‹é…å‚™çš„åƒ¹æ ¼æ”¹ç‚º$iå…©é»ƒé‡‘ï¹—", ch, &count, NULL, TO_CHAR );
     }
 
     else if ( !str_prefix( arg, "Practice" ) )
     {
       HomeMobile = count;
-      act( "§A§â²£¥Í½m²ß©Çª«ªº»ù®æ§ï¬°$i¨â¶Àª÷¡T", ch, &count, NULL, TO_CHAR );
+      act( "ä½ æŠŠç”¢ç”Ÿç·´ç¿’æ€ªç‰©çš„åƒ¹æ ¼æ”¹ç‚º$iå…©é»ƒé‡‘ï¹—", ch, &count, NULL, TO_CHAR );
     }
 
     else
     {
-      send_to_char( "¦Xªkªº°Ñ¼Æ¬° Cost Title Descr Link Upgrade Practice\n\r", ch );
+      send_to_char( "åˆæ³•çš„åƒæ•¸ç‚º Cost Title Descr Link Upgrade Practice\n\r", ch );
     }
   }
 
@@ -541,12 +541,12 @@ FUNCTION( do_home )
     if ( LockCreateHome )
     {
       LockCreateHome = FALSE;
-      send_to_char( "§A§â«Ø¥ß­×§ï©Ğ¶¡¥\\¯àµ¹¥´¶}¤F¡T\n\r", ch );
+      send_to_char( "ä½ æŠŠå»ºç«‹ä¿®æ”¹æˆ¿é–“åŠŸ\èƒ½çµ¦æ‰“é–‹äº†ï¹—\n\r", ch );
     }
     else
     {
       LockCreateHome = TRUE;
-      send_to_char( "§A§â«Ø¥ß­×§ï©Ğ¶¡¥\\¯àµ¹Âê©w¤F¡T\n\r", ch );
+      send_to_char( "ä½ æŠŠå»ºç«‹ä¿®æ”¹æˆ¿é–“åŠŸ\èƒ½çµ¦é–å®šäº†ï¹—\n\r", ch );
     }
   }
 
@@ -554,16 +554,16 @@ FUNCTION( do_home )
   {
     clear_buffer();
     send_to_buffer(
-    "ª±®a°Ï°ìÀÉ®×¥Ø¿ı¦WºÙ¡R\e[1;32m[\e[0m%s\e[1;32m]\e[0m\n\r"
-    "ª±®a°Ï°ì¶}©l§Ç¸¹    ¡R%-9d\n\r"
-    "ª±®a°Ï°ì³Ì¤j¼Æ¶q    ¡R%-9d\n\r"
-    "¶R©Ğ¤lªº»ù®æ        ¡R%-9d ¤¸\n\r"
-    "§ó§ï©Ğ¶¡¦WºÙªº»ù®æ  ¡R%-9d ¤¸\n\r"
-    "§ó§ï©Ğ¶¡´y­zªº»ù®æ  ¡R%-9d ¤¸\n\r"
-    "³sµ²¥X¤fªº»ù®æ      ¡R%-9d ¤¸\n\r"
-    "¤É¯Å©Ğ«Î°t³Æªº»ù®æ  ¡R%-9d ¤¸\n\r"
-    "­Ó¤H©Ğ¶¡³Ì¤j¼Æ      ¡R%-9d ­Ó\n\r"
-    "Âê©w§ó§ï©Ğ¶¡        ¡R%s\n\r\n\r"
+    "ç©å®¶å€åŸŸæª”æ¡ˆç›®éŒ„åç¨±ï¹•\e[1;32m[\e[0m%s\e[1;32m]\e[0m\n\r"
+    "ç©å®¶å€åŸŸé–‹å§‹åºè™Ÿ    ï¹•%-9d\n\r"
+    "ç©å®¶å€åŸŸæœ€å¤§æ•¸é‡    ï¹•%-9d\n\r"
+    "è²·æˆ¿å­çš„åƒ¹æ ¼        ï¹•%-9d å…ƒ\n\r"
+    "æ›´æ”¹æˆ¿é–“åç¨±çš„åƒ¹æ ¼  ï¹•%-9d å…ƒ\n\r"
+    "æ›´æ”¹æˆ¿é–“æè¿°çš„åƒ¹æ ¼  ï¹•%-9d å…ƒ\n\r"
+    "é€£çµå‡ºå£çš„åƒ¹æ ¼      ï¹•%-9d å…ƒ\n\r"
+    "å‡ç´šæˆ¿å±‹é…å‚™çš„åƒ¹æ ¼  ï¹•%-9d å…ƒ\n\r"
+    "å€‹äººæˆ¿é–“æœ€å¤§æ•¸      ï¹•%-9d å€‹\n\r"
+    "é–å®šæ›´æ”¹æˆ¿é–“        ï¹•%s\n\r\n\r"
     , PlayerArea
     , PlayerAreaNum
     , PlayerAreaCap
@@ -579,8 +579,8 @@ FUNCTION( do_home )
     for ( pRoom = PlayerZone->list; pRoom; pRoom = pRoom->next_in_area )
     {
       if ( count <= 0 )
-        send_to_buffer( "\e[1;33;44m¶¶§Ç ©Ğ¶¡¸¹½X ©Ğ  ¶¡  ¦W  ºÙ      "
-         " ¥D¤H¦WºÙ                                    \e[0m\n\r" );
+        send_to_buffer( "\e[1;33;44mé †åº æˆ¿é–“è™Ÿç¢¼ æˆ¿  é–“  å  ç¨±      "
+         " ä¸»äººåç¨±                                    \e[0m\n\r" );
 
       tablize( FORMAT_SET,
         "NUBR VNUM     NAME                \e[0m MASTER         "
@@ -598,7 +598,7 @@ FUNCTION( do_home )
     }
 
     if ( count <= 0 )
-      send_to_buffer( "¹ï¤£°_¡M%s¨S¦³¥ô¦óªº»{ÁÊ¤g¦a¡T\n\r", mud_name );
+      send_to_buffer( "å°ä¸èµ·ï¹%sæ²’æœ‰ä»»ä½•çš„èªè³¼åœŸåœ°ï¹—\n\r", mud_name );
 
     print_buffer( ch );
     RETURN_NULL();
@@ -608,25 +608,25 @@ FUNCTION( do_home )
   {
     if ( !( fch = owner_name( pRoom = ch->in_room ) ) || fch != ch )
     {
-      send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M¨S¿ìªkÅı§Aª¾¹D¬ÛÃö¸ê®Æ¡T\n\r"
+      send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹æ²’è¾¦æ³•è®“ä½ çŸ¥é“ç›¸é—œè³‡æ–™ï¹—\n\r"
         , ch );
       RETURN_NULL();
     }
 
     print_to_char( ch,
-      "©Ò¦b¦WºÙ¡R\e[1;32m[\e[0m%s\e[1;32m]\e[0m\n\r"
-      "©Ğ¶¡½s¸¹¡R(%5d)  "
-      "·Ó©ú»P§_¡R%s  "
-      "¬O§_¥i¥H¼g¤J¡R%s\n\r"
-      "©Ğ¶¡ºX¼Ğ¡R%s\n\r"
-      "©Ğ¶¡¦a§Î¡R%s\n\r"
-      "¦¹¦aªº§¹¾ã´y­z¡R\n\r%s%s\n\r%s"
+      "æ‰€åœ¨åç¨±ï¹•\e[1;32m[\e[0m%s\e[1;32m]\e[0m\n\r"
+      "æˆ¿é–“ç·¨è™Ÿï¹•(%5d)  "
+      "ç…§æ˜èˆ‡å¦ï¹•%s  "
+      "æ˜¯å¦å¯ä»¥å¯«å…¥ï¹•%s\n\r"
+      "æˆ¿é–“æ——æ¨™ï¹•%s\n\r"
+      "æˆ¿é–“åœ°å½¢ï¹•%s\n\r"
+      "æ­¤åœ°çš„å®Œæ•´æè¿°ï¹•\n\r%s%s\n\r%s"
     , pRoom->name
     , pRoom->vnum
     , YESNO( !room_is_dark( pRoom ) )
     , YESNO( pRoom->writeable )
     , room_bit_name( pRoom )
-    , pRoom->sector ? pRoom->sector->cname : "¤£¸Ô"
+    , pRoom->sector ? pRoom->sector->cname : "ä¸è©³"
     , VERTICAL_LINE
     , pRoom->description
     , VERTICAL_LINE );
@@ -638,44 +638,44 @@ FUNCTION( do_home )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¶Ãªá¿ú¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¶Ãªá¿ú¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( LockCreateHome )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eºŞ²zªÌ§â³o­Ó¥\\¯àµ¹Âê©w¦í¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ç®¡ç†è€…æŠŠé€™å€‹åŠŸ\èƒ½çµ¦é–å®šä½äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "¹ï¤£°_¡M½Ğ¥ı¸Ñ¨M§A¦Û¤vªº¨Æ±¡§a¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹è«‹å…ˆè§£æ±ºä½ è‡ªå·±çš„äº‹æƒ…å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->bank < HomeGold )
     {
-      act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à¶R©Ğ¤l¡C", ch, &HomeGold, NULL, TO_CHAR );
+      act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½è²·æˆ¿å­ã€‚", ch, &HomeGold, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( count_home_number( ch ) > HomeManMax )
     {
-      send_to_char( "§A¤w¸g¬O¥»¹CÀ¸ªº¤j¤á¤F¡M½Ğ¤£­n¦A¶R©Ğ¤l¤F¡T\n\r",ch );
+      send_to_char( "ä½ å·²ç¶“æ˜¯æœ¬éŠæˆ²çš„å¤§æˆ¶äº†ï¹è«‹ä¸è¦å†è²·æˆ¿å­äº†ï¹—\n\r",ch );
       RETURN_NULL();
     }
 
     if ( !( pRoom = create_new_room() ) )
     {
-      send_to_char( "¹ï¤£°_¡M¨S¦³¿ìªk²£¥Í©Ğ¶¡¤F¡M§A´N¦º¤ß¤F§a¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰è¾¦æ³•ç”¢ç”Ÿæˆ¿é–“äº†ï¹ä½ å°±æ­»å¿ƒäº†å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -687,27 +687,27 @@ FUNCTION( do_home )
 
     if ( !write_new_room( pRoom ) )
     {
-      mudlog( LOG_DEBUG, "create_new_room: µLªk¦sÀÉ %s.", pRoom->filename );
-      send_to_char( "¹ï¤£°_¡M§Aªº©Ğ¶¡µLªk¦sÀÉ¡T\n\r", ch );
+      mudlog( LOG_DEBUG, "create_new_room: ç„¡æ³•å­˜æª” %s.", pRoom->filename );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„æˆ¿é–“ç„¡æ³•å­˜æª”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "$nªá¤F$i¨â¶Àª÷¶R¤F¤@¼l»¨¦v¡T", ch, &HomeGold, NULL, TO_ALL );
+    act( "$nèŠ±äº†$iå…©é»ƒé‡‘è²·äº†ä¸€å¹¢è±ªå®…ï¹—", ch, &HomeGold, NULL, TO_ALL );
 
     count = 0;
     for ( pRoom = PlayerZone->list; pRoom; pRoom = pRoom->next_in_area )
       if ( is_owner( ch, pRoom, TRUE ) ) count++;
 
-    sprintf( buf, "§A¥u­n¿é¤J \e[1;35mhome goto %d\e[0m "
-      "´N¥i¥H¨ì§Aªº·s®aÅo¡T\n\r", count );
+    sprintf( buf, "ä½ åªè¦è¼¸å…¥ \e[1;35mhome goto %d\e[0m "
+      "å°±å¯ä»¥åˆ°ä½ çš„æ–°å®¶å›‰ï¹—\n\r", count );
 
     send_to_char( buf, ch );
 
     ch->bank = UMAX( 0, ch->bank - HomeGold );
-    sprintf( buf, "%sªá¤F¤@µ§¿ú¶R¤F¤@´É»¨¦v¡M¤j®a¥i¥H¨ì¥L®a¥h§@«È³á¡T"
+    sprintf( buf, "%sèŠ±äº†ä¸€ç­†éŒ¢è²·äº†ä¸€æ£Ÿè±ªå®…ï¹å¤§å®¶å¯ä»¥åˆ°ä»–å®¶å»ä½œå®¢å–”ï¹—"
       , mob_name( NULL, ch ) );
 
-    talk_channel_2( buf, CHANNEL_BULLETIN, "¤½§i" );
+    talk_channel_2( buf, CHANNEL_BULLETIN, "å…¬å‘Š" );
   }
 
   else if ( !str_prefix( arg, "goto" ) )
@@ -720,7 +720,7 @@ FUNCTION( do_home )
     }
     else if ( !is_number( arg ) || ( count = atoi( arg ) ) <= 0 )
     {
-      send_to_char( "§A­n¦^¨ì§A­ş´É©Ğ¤l©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦å›åˆ°ä½ å“ªæ£Ÿæˆ¿å­å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -738,19 +738,19 @@ FUNCTION( do_home )
 
     if ( loop == 0 )
     {
-      send_to_char( "¹ï¤£°_¡M§A®Ú¥»¨S¦³»{ÁÊ¥ô¦óªº©Ğ¶¡¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ æ ¹æœ¬æ²’æœ‰èªè³¼ä»»ä½•çš„æˆ¿é–“ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pHome )
     {
-      send_to_char( "¹ï¤£°_¡M§A¨S¦³¨º´É©Ğ¶¡³á¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ æ²’æœ‰é‚£æ£Ÿæˆ¿é–“å–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pHome == ch->in_room )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥Ø«e´N¬O¦b³o´É©Ğ¤l¸Ì°Ú¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ ç›®å‰å°±æ˜¯åœ¨é€™æ£Ÿæˆ¿å­è£¡å•Šï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -758,20 +758,20 @@ FUNCTION( do_home )
 
     pRoom = ch->in_room;
 
-    /* ¥ı°e¥D¤H */
-    act( "$n¥^¥^¦£¦£¦aÂ÷¶}¦¹¦a¡M¦^¨ì¥L¦Û¤vªº©Ğ¤l¥h¤F¡T", ch, NULL, NULL, TO_ROOM );
+    /* å…ˆé€ä¸»äºº */
+    act( "$nåŒ†åŒ†å¿™å¿™åœ°é›¢é–‹æ­¤åœ°ï¹å›åˆ°ä»–è‡ªå·±çš„æˆ¿å­å»äº†ï¹—", ch, NULL, NULL, TO_ROOM );
 
     char_from_room( ch );
     char_to_room( ch, pHome );
 
     do_look( ch, "auto" );
 
-    /* ²M°£°lÂÜ¬ö¿ıÂI */
+    /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
     clear_trace( ch, TRUE );
 
-    act( "$n«æ¦£¦a¦^¨ì¤F³o­ÓÄİ©ó¥L¦Û¤vªº®aÅo¡T", ch, NULL, NULL, TO_ROOM );
+    act( "$næ€¥å¿™åœ°å›åˆ°äº†é€™å€‹å±¬æ–¼ä»–è‡ªå·±çš„å®¶å›‰ï¹—", ch, NULL, NULL, TO_ROOM );
 
-    /* ¦A°e follow ªº¤H */
+    /* å†é€ follow çš„äºº */
     for ( fch = pRoom->people; fch; fch = fch_next )
     {
       fch_next = fch->next_in_room;
@@ -780,16 +780,16 @@ FUNCTION( do_home )
         && fch->position == POS_STANDING
         && can_leaveroom( fch, FALSE ) )
       {
-        act( "§A¸òÀHµÛ$N¦^¨ì¥Lªº®a¸Ì¡C", fch, NULL, ch, TO_CHAR );
+        act( "ä½ è·Ÿéš¨è‘—$Nå›åˆ°ä»–çš„å®¶è£¡ã€‚", fch, NULL, ch, TO_CHAR );
 
         char_from_room( fch );
         char_to_room( fch, pHome );
         do_look( fch, "auto" );
 
-        /* ²M°£°lÂÜ¬ö¿ıÂI */
+        /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
         clear_trace( fch, TRUE );
 
-        act( "$n¸òÀHµÛ$N¦^¨ì¥Lªº®a¸Ì¡C", fch, NULL, ch, TO_ROOM );
+        act( "$nè·Ÿéš¨è‘—$Nå›åˆ°ä»–çš„å®¶è£¡ã€‚", fch, NULL, ch, TO_ROOM );
       }
     }
   }
@@ -798,44 +798,44 @@ FUNCTION( do_home )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¶Ãªá¿ú¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¶Ãªá¿ú¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( LockCreateHome )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eºŞ²zªÌ§â³o­Ó¥\\¯àµ¹Âê©w¦í¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ç®¡ç†è€…æŠŠé€™å€‹åŠŸ\èƒ½çµ¦é–å®šä½äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( owner_name( ( pRoom = ch->in_room ) ) != ch )
     {
-      send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M½Ğ¤£­n¦b¦¹¶î¾~¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹è«‹ä¸è¦åœ¨æ­¤å¡—é´‰ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pRoom->writeable )
     {
-      act( "¹ï¤£°_¡M$r¤w¸g¤£¯à¦A¶î§ï¤F³á¡T", ch, NULL, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$rå·²ç¶“ä¸èƒ½å†å¡—æ”¹äº†å–”ï¹—", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !argument[0] )
     {
-      act( "¹ï¤£°_¡M§A­n§â$r§ï¦W¬°¤°»ò©O¡S", ch, NULL, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ä½ è¦æŠŠ$ræ”¹åç‚ºä»€éº¼å‘¢ï¹–", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->bank < HomeGoldTitle )
     {
-      act( "§A»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à§ó§ï©Ğ¤l¦WºÙ¡C"
+      act( "ä½ éŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½æ›´æ”¹æˆ¿å­åç¨±ã€‚"
         , ch, &HomeGoldTitle, NULL, TO_CHAR );
       RETURN_NULL();
     }
@@ -845,13 +845,13 @@ FUNCTION( do_home )
 
     if ( str_len( argument ) < MinCNameLen )
     {
-      send_to_char( "§Aªº¦WºÙ¤]¨úªº¤Óµu¤F§a¡T\n\r", ch );
+      send_to_char( "ä½ çš„åç¨±ä¹Ÿå–çš„å¤ªçŸ­äº†å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( check_cname_xname( argument ) )
     {
-      send_to_char( "³o­Ó¦WºÙ¤£¦n§a¡M´«­Ó¦WºÙ¬İ¬İ¡C\n\r", ch );
+      send_to_char( "é€™å€‹åç¨±ä¸å¥½å§ï¹æ›å€‹åç¨±çœ‹çœ‹ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -866,12 +866,12 @@ FUNCTION( do_home )
 
     if ( !write_new_room( pRoom ) )
     {
-      mudlog( LOG_DEBUG, "create_new_room: µLªk¦sÀÉ %s.", pRoom->filename );
-      send_to_char( "¹ï¤£°_¡M§Aªº©Ğ¶¡µLªk¦sÀÉ¡T\n\r", ch );
+      mudlog( LOG_DEBUG, "create_new_room: ç„¡æ³•å­˜æª” %s.", pRoom->filename );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„æˆ¿é–“ç„¡æ³•å­˜æª”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "$n§â³o¸Ì§ï¦W¬°$t¡T", ch, buf, NULL, TO_ALL );
+    act( "$næŠŠé€™è£¡æ”¹åç‚º$tï¹—", ch, buf, NULL, TO_ALL );
     ch->bank = UMAX( 0, ch->bank - HomeGoldTitle );
   }
 
@@ -879,20 +879,20 @@ FUNCTION( do_home )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¶Ãªá¿ú¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¶Ãªá¿ú¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( LockCreateHome )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eºŞ²zªÌ§â³o­Ó¥\\¯àµ¹Âê©w¦í¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ç®¡ç†è€…æŠŠé€™å€‹åŠŸ\èƒ½çµ¦é–å®šä½äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -900,19 +900,19 @@ FUNCTION( do_home )
 
     if ( owner_name( ( pRoom = ch->in_room ) ) != ch )
     {
-      send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M½Ğ¤£­n¦b¦¹¶î¾~¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹è«‹ä¸è¦åœ¨æ­¤å¡—é´‰ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pRoom->writeable )
     {
-      act( "¹ï¤£°_¡M$r¤w¸g¤£¯à¦A§ó§ï³]©w¤F³á¡T", ch, NULL, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$rå·²ç¶“ä¸èƒ½å†æ›´æ”¹è¨­å®šäº†å–”ï¹—", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->bank < HomeGoldDescr )
     {
-      act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à§ó§ï©Ğ¤lªº±Ô­z¡C"
+      act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½æ›´æ”¹æˆ¿å­çš„æ•˜è¿°ã€‚"
         , ch, &HomeGoldDescr, NULL, TO_CHAR );
       RETURN_NULL();
     }
@@ -930,44 +930,44 @@ FUNCTION( do_home )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¶Ãªá¿ú¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¶Ãªá¿ú¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( LockCreateHome )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eºŞ²zªÌ§â³o­Ó¥\\¯àµ¹Âê©w¦í¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ç®¡ç†è€…æŠŠé€™å€‹åŠŸ\èƒ½çµ¦é–å®šä½äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥ı§â§AªºÂø¨Æ¥ı§Ë§¹§a¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å…ˆæŠŠä½ çš„é›œäº‹å…ˆå¼„å®Œå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( owner_name( ( pHome = ch->in_room ) ) != ch )
     {
-      send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M½Ğ¤£­n¦b¦¹¶î¾~¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹è«‹ä¸è¦åœ¨æ­¤å¡—é´‰ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pHome->writeable )
     {
-      act( "¹ï¤£°_¡M$r¤w¸g¤£¯à¦A§ó§ï³]©w¤F³á¡T", ch, NULL, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$rå·²ç¶“ä¸èƒ½å†æ›´æ”¹è¨­å®šäº†å–”ï¹—", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->bank < HomeGoldLink )
     {
-      act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à³sµ²¨ä¥L©Ğ¶¡¡C"
+      act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½é€£çµå…¶ä»–æˆ¿é–“ã€‚"
         , ch, &HomeGoldLink, NULL, TO_CHAR );
       RETURN_NULL();
     }
@@ -984,31 +984,31 @@ FUNCTION( do_home )
     else if ( !str_prefix( arg, "out"   ) ) dir = DIR_OUT;
     else
     {
-      send_to_char( "¹ï¤£°_¡M¨º¤£¬O¤@­Ó¥¿½Tªº¤è¦V¡M½Ğ¬d¸ß direction¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é‚£ä¸æ˜¯ä¸€å€‹æ­£ç¢ºçš„æ–¹å‘ï¹è«‹æŸ¥è©¢ directionï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( aExit = pHome->exit[dir] ) )
     {
-      send_to_char( "¹ï¤£°_¡M®Ú¥»¨S¦³³o­Ó¤è¦Vªº³q¹D¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ ¹æœ¬æ²’æœ‰é€™å€‹æ–¹å‘çš„é€šé“ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pRoom = aExit->to_room ) )
     {
-      send_to_char( "¹ï¤£°_¡M³o±ø³q¹D¦³ÂI°İÃD¡M¦ü¥GµLªk§R°£¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™æ¢é€šé“æœ‰é»å•é¡Œï¹ä¼¼ä¹ç„¡æ³•åˆªé™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pRoom->writeable )
     {
-      send_to_char( "¹ï¤£°_¡M¹ï¤è©Ğ¶¡¤w¸g¤£¯à¦A§ó§ï³]©w¤F³á¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹å°æ–¹æˆ¿é–“å·²ç¶“ä¸èƒ½å†æ›´æ”¹è¨­å®šäº†å–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( bExit = pRoom->exit[rev_dir[dir]] ) )
     {
-      send_to_char( "¹ï¤£°_¡M¤è¦VÂù¦V³sµ²¦³¿ù»~¡MµLªk§R°£¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ–¹å‘é›™å‘é€£çµæœ‰éŒ¯èª¤ï¹ç„¡æ³•åˆªé™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1018,13 +1018,13 @@ FUNCTION( do_home )
     write_new_room( pRoom );
     write_new_room( pHome );
 
-    act( "$n¦b³o¸Ìªº$t¤èªº³q¹Dµ¹Ãö³¬¤F¡T"
+    act( "$nåœ¨é€™è£¡çš„$tæ–¹çš„é€šé“çµ¦é—œé–‰äº†ï¹—"
       , ch, direction_name( dir ), NULL, TO_ALL );
 
     char_from_room( ch );
     char_to_room( ch, pRoom );
 
-    act( "$n¦b¹j¾À°ï¤F¤@¶ô¤j¥ÛÀY¡M¦]¦¹$t¤èªº³q¹D¤w¸g¤£³q¤F¡T"
+    act( "$nåœ¨éš”å£å †äº†ä¸€å¡Šå¤§çŸ³é ­ï¹å› æ­¤$tæ–¹çš„é€šé“å·²ç¶“ä¸é€šäº†ï¹—"
       , ch, direction_name( rev_dir[dir] ), NULL, TO_ROOM );
 
     char_from_room( ch );
@@ -1048,44 +1048,44 @@ FUNCTION( do_home )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¶Ãªá¿ú¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ¤£­n¶Ãªá¿ú¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹ä¸è¦äº‚èŠ±éŒ¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( LockCreateHome )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«eºŞ²zªÌ§â³o­Ó¥\\¯àµ¹Âê©w¦í¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ç®¡ç†è€…æŠŠé€™å€‹åŠŸ\èƒ½çµ¦é–å®šä½äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥ı§â§AªºÂø¨Æ¥ı§Ë§¹§a¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å…ˆæŠŠä½ çš„é›œäº‹å…ˆå¼„å®Œå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( owner_name( ( pHome = ch->in_room ) ) != ch )
     {
-      send_to_char( "¹ï¤£°_¡M³o¤£¬O§Aªº¨p¦³°]²£¡M½Ğ¤£­n¦b¦¹¶î¾~¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™ä¸æ˜¯ä½ çš„ç§æœ‰è²¡ç”¢ï¹è«‹ä¸è¦åœ¨æ­¤å¡—é´‰ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pHome->writeable )
     {
-      act( "¹ï¤£°_¡M$r¤w¸g¤£¯à¦A¶î§ï¤F³á¡T", ch, NULL, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$rå·²ç¶“ä¸èƒ½å†å¡—æ”¹äº†å–”ï¹—", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->bank < HomeGoldLink )
     {
-      act( "$n»È¦æ¸Ì¥²¶·¦³$i¨â¶Àª÷¤~¯à³sµ²¨ä¥L©Ğ¶¡¡C"
+      act( "$néŠ€è¡Œè£¡å¿…é ˆæœ‰$iå…©é»ƒé‡‘æ‰èƒ½é€£çµå…¶ä»–æˆ¿é–“ã€‚"
         , ch, &HomeGoldLink, NULL, TO_CHAR );
       RETURN_NULL();
     }
@@ -1094,55 +1094,55 @@ FUNCTION( do_home )
 
     if ( !arg[0] || !is_number( arg ) || ( count = atoi( arg ) ) <= 0 )
     {
-      send_to_char( "§A­n³sµ²­ş¤@¶¡©Ğ¶¡©O¡S½Ğµù©ú¥¦ªº¸¹½X§a¡T\n\r", ch );
+      send_to_char( "ä½ è¦é€£çµå“ªä¸€é–“æˆ¿é–“å‘¢ï¹–è«‹è¨»æ˜å®ƒçš„è™Ÿç¢¼å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pRoom = get_room_index( count ) ) )
     {
-      send_to_char( "¹ï¤£°_¡M¨S¦³³o¤@¶¡¸¹½Xªº©Ğ¶¡¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é€™ä¸€é–“è™Ÿç¢¼çš„æˆ¿é–“ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pRoom == pHome )
     {
-      send_to_char( "¬Û¦Pªº©Ğ¶¡¬OµLªk¶i¦æ³sµ²¡T\n\r", ch );
+      send_to_char( "ç›¸åŒçš„æˆ¿é–“æ˜¯ç„¡æ³•é€²è¡Œé€£çµï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pRoom->area || pRoom->area != PlayerZone )
     {
-      send_to_char( "¹ï¤£°_¡M³o¶¡©Ğ¶¡¬O©T©w§Î¦¡ªº¡M¤£¯à³sµ²¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™é–“æˆ¿é–“æ˜¯å›ºå®šå½¢å¼çš„ï¹ä¸èƒ½é€£çµï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pRoom->NoLink )
     {
-      send_to_char( "¹ï¤£°_¡M³o¶¡©Ğ¶¡¬O¤£¯à³sµ²¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™é–“æˆ¿é–“æ˜¯ä¸èƒ½é€£çµï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pRoom->writeable )
     {
-      send_to_char( "¹ï¤£°_¡M¨º¶¡©Ğ¶¡¤£¯à¦A§ó§ï¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é‚£é–“æˆ¿é–“ä¸èƒ½å†æ›´æ”¹äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( fch = owner_name( pRoom ) ) )
     {
-      send_to_char( "¹ï¤£°_¡M³o¶¡©Ğ¶¡ªº¥D¤H¤£ª¾¹D¬O½Ö­C¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™é–“æˆ¿é–“çš„ä¸»äººä¸çŸ¥é“æ˜¯èª°è€¶ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( fch != ch && !is_same_group( fch, ch ) )
     {
-      send_to_char( "¹ï¤£°_¡M³sµ²ªº©Ğ¶¡§A¨S¦³Åv¤O¥h°Ê¥¦¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€£çµçš„æˆ¿é–“ä½ æ²’æœ‰æ¬ŠåŠ›å»å‹•å®ƒï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !argument[0] )
     {
-      send_to_char( "¹ï¤£°_¡M§A­n³sµ²¨º­Ó¤è¦V©O¡S\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ è¦é€£çµé‚£å€‹æ–¹å‘å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1156,13 +1156,13 @@ FUNCTION( do_home )
     else if ( !str_prefix( argument, "out"   ) ) dir = DIR_OUT;
     else
     {
-      send_to_char( "¹ï¤£°_¡M¨º¤£¬O¤@­Ó¥¿½Tªº¤è¦V¡M½Ğ¬d¸ß direction¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é‚£ä¸æ˜¯ä¸€å€‹æ­£ç¢ºçš„æ–¹å‘ï¹è«‹æŸ¥è©¢ directionï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pHome->exit[dir] || pRoom->exit[rev_dir[dir]] )
     {
-      send_to_char( "¹ï¤£°_¡M³o¤è¦V¤w¸g¦³³sµ²¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™æ–¹å‘å·²ç¶“æœ‰é€£çµäº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1170,7 +1170,7 @@ FUNCTION( do_home )
     {
       if ( pHome->exit[loop] && pHome->exit[loop]->to_room == pRoom )
       {
-        send_to_char( "³o¶¡©Ğ¶¡¤w¦³¨ä¥L¤è¦Vªº³sµ²¤F¡T\n\r", ch );
+        send_to_char( "é€™é–“æˆ¿é–“å·²æœ‰å…¶ä»–æ–¹å‘çš„é€£çµäº†ï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
@@ -1179,16 +1179,16 @@ FUNCTION( do_home )
     {
       if ( pRoom->exit[loop] && pRoom->exit[loop]->to_room == pHome )
       {
-        send_to_char( "³o¶¡©Ğ¶¡¤w¦³¨ä¥L¤è¦Vªº³sµ²¤F¡T\n\r", ch );
+        send_to_char( "é€™é–“æˆ¿é–“å·²æœ‰å…¶ä»–æ–¹å‘çš„é€£çµäº†ï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
 
-    /* °t¸m°O¾ĞÅé */
+    /* é…ç½®è¨˜æ†¶é«” */
     set_exit_default( aExit = alloc_struct( STRUCT_EXIT_DATA ) );
     set_exit_default( bExit = alloc_struct( STRUCT_EXIT_DATA ) );
 
-    /* ²M°£°ò¥»­È */
+    /* æ¸…é™¤åŸºæœ¬å€¼ */
     aExit->description = bExit->description = str_dup( "" );
     aExit->keyword     = bExit->keyword     = str_dup( "" );
     aExit->closed      = bExit->closed      = FALSE;
@@ -1197,7 +1197,7 @@ FUNCTION( do_home )
     aExit->pick        = bExit->pick        = FALSE;
     aExit->key         = bExit->key         = 0;
 
-    /* «Ø¥ß³sµ² */
+    /* å»ºç«‹é€£çµ */
     aExit->to_room = pRoom;
     bExit->to_room = pHome;
 
@@ -1210,13 +1210,13 @@ FUNCTION( do_home )
     write_new_room( pRoom );
     write_new_room( pHome );
 
-    act( "$n¦b³o¸Ìªº$t¤è¥´¤F­Ó¤j¬}¡T"
+    act( "$nåœ¨é€™è£¡çš„$tæ–¹æ‰“äº†å€‹å¤§æ´ï¹—"
       , ch, direction_name( dir ), NULL, TO_ALL );
 
     char_from_room( ch );
     char_to_room( ch, pRoom );
 
-    act( "$n¦b¹j¾À«õ¤F­Ó¤j¬}¡M¦]¦¹$t¤è¥i¥H³q¨ì¨º¸Ì¥h¤F¡T"
+    act( "$nåœ¨éš”å£æŒ–äº†å€‹å¤§æ´ï¹å› æ­¤$tæ–¹å¯ä»¥é€šåˆ°é‚£è£¡å»äº†ï¹—"
       , ch, direction_name( rev_dir[dir] ), NULL, TO_ROOM );
 
     char_from_room( ch );
@@ -1227,7 +1227,7 @@ FUNCTION( do_home )
 
   else
   {
-    send_to_char( "§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß home ªº¥¿½T¤èªk¡C\n\r", ch );
+    send_to_char( "ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ home çš„æ­£ç¢ºæ–¹æ³•ã€‚\n\r", ch );
   }
   RETURN_NULL();
 }
@@ -1247,13 +1247,13 @@ ROOM_INDEX_DATA * create_new_room( void )
 
   PUSH_FUNCTION( "create_new_room" );
 
-  /* ¦pªG¨S¦³ª±®a°Ï°ìªº¥Ø¿ı */
+  /* å¦‚æœæ²’æœ‰ç©å®¶å€åŸŸçš„ç›®éŒ„ */
   if ( !PlayerZone ) RETURN( NULL );
 
-  /* ¦pªG°Ï°ì¤À°t¸¹½X¤Î®e¶q¤£¦X²z */
+  /* å¦‚æœå€åŸŸåˆ†é…è™Ÿç¢¼åŠå®¹é‡ä¸åˆç† */
   if ( PlayerAreaNum <= 0 || PlayerAreaCap <= 0 ) RETURN( NULL );
 
-  /* ¥ı§ä¤@¶¡¼Ë¥»©Ğ¶¡ */
+  /* å…ˆæ‰¾ä¸€é–“æ¨£æœ¬æˆ¿é–“ */
   zStandard = NULL;
   for ( count = vnum = nMatch = 0; nMatch < top_room; vnum++ )
   {
@@ -1266,10 +1266,10 @@ ROOM_INDEX_DATA * create_new_room( void )
     }
   }
 
-  /* §ä¤£¨ì¥ô¦ó¤@¶¡¼Ë¥»©Ğ¶¡ */
+  /* æ‰¾ä¸åˆ°ä»»ä½•ä¸€é–“æ¨£æœ¬æˆ¿é–“ */
   if ( !zStandard ) RETURN( NULL );
 
-  /* ¥Ø¿ı¬O§_¥i¥H¼g¤J */
+  /* ç›®éŒ„æ˜¯å¦å¯ä»¥å¯«å…¥ */
   sprintf( dirname, "%s/%s/", PlayerArea, room_dir );
   if ( access( dirname, W_OK ) ) RETURN( NULL );
 
@@ -1277,20 +1277,20 @@ ROOM_INDEX_DATA * create_new_room( void )
   {
     if ( get_room_index( ( vnum = loop + PlayerAreaNum ) ) ) continue;
 
-    /* ³]©w©Ğ¶¡ÀÉ®×¦WºÙ */
+    /* è¨­å®šæˆ¿é–“æª”æ¡ˆåç¨± */
     sprintf( filename, "%s/%s/%d.%s"
       , PlayerArea, room_dir, vnum, room_ext );
 
     set_room_default( pRoom = alloc_struct( STRUCT_ROOM_INDEX_DATA ) );
 
-    /* ³]©w©Ğ¶¡°ò¥» */
+    /* è¨­å®šæˆ¿é–“åŸºæœ¬ */
     pRoom->area            = PlayerZone;
     pRoom->filename        = str_dup( filename );
     pRoom->vnum            = vnum;
     pRoom->light           = 0;
     pRoom->sector          = DefaultSector;
 
-    /* ¨Ì·Ó¼Ğ·Ç©Ğ¶¡³]©w¼Æ­È */
+    /* ä¾ç…§æ¨™æº–æˆ¿é–“è¨­å®šæ•¸å€¼ */
     pRoom->name            = str_dup( zStandard->name );
     pRoom->description     = str_dup( zStandard->description );
 
@@ -1314,7 +1314,7 @@ ROOM_INDEX_DATA * create_new_room( void )
     pRoom->Killer          = zStandard->Killer;
     pRoom->Standard        = FALSE;
 
-    /* ©ñ¨ì°Ï°ì¦Cªí */
+    /* æ”¾åˆ°å€åŸŸåˆ—è¡¨ */
     pRoom->next_in_area    = PlayerZone->list;
     PlayerZone->list       = pRoom;
     PlayerZone->room++;
@@ -1324,13 +1324,13 @@ ROOM_INDEX_DATA * create_new_room( void )
     room_index_hash[iHash] = pRoom;
     top_room++;
 
-    /* ³]©w¨S¦³¥X¤f */
+    /* è¨­å®šæ²’æœ‰å‡ºå£ */
     for ( iExit = 0; iExit < DIR_MAX; iExit++ ) pRoom->exit[iExit] = NULL;
 
     RETURN( pRoom );
   }
 
-  mudlog( LOG_DEBUG, "create_new_room: ª±®a°Ï°ìÀÉ®×¤wº¡." );
+  mudlog( LOG_DEBUG, "create_new_room: ç©å®¶å€åŸŸæª”æ¡ˆå·²æ»¿." );
   RETURN( NULL );
 }
 
@@ -1348,7 +1348,7 @@ bool write_new_room( ROOM_INDEX_DATA * pRoom )
 
   if ( !pRoom )
   {
-    mudlog( LOG_DEBUG, "write_new_room: ¨Ó·½¤£¦s¦b." );
+    mudlog( LOG_DEBUG, "write_new_room: ä¾†æºä¸å­˜åœ¨." );
     RETURN( FALSE );
   }
 
@@ -1356,7 +1356,7 @@ bool write_new_room( ROOM_INDEX_DATA * pRoom )
 
   if ( !( pFile = FOPEN( pRoom->filename, "w" ) ) )
   {
-    mudlog( LOG_DEBUG, "write_new_room: µLªk¶}±ÒÀÉ®× %s.", pRoom->filename );
+    mudlog( LOG_DEBUG, "write_new_room: ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ %s.", pRoom->filename );
     RETURN( FALSE );
   }
 
@@ -1382,7 +1382,7 @@ bool write_new_room( ROOM_INDEX_DATA * pRoom )
   case 9: fprintf( pFile, "SectorType      SECT_DESERT\n"          ); break;
   }
 
-  str_cpy( Str1, symbol_string( TRUE, "ÅŞ¿è±`¼Æ" ) );
+  str_cpy( Str1, symbol_string( TRUE, "é‚è¼¯å¸¸æ•¸" ) );
 
   if ( pRoom->player       ) fprintf( pFile, "Player          %s\n", Str1 );
   if ( pRoom->Dark         ) fprintf( pFile, "Dark            %s\n", Str1 );
@@ -1413,7 +1413,7 @@ bool write_new_room( ROOM_INDEX_DATA * pRoom )
   if ( pRoom->PracRoom     ) fprintf( pFile, "PracRoom        %s\n", Str1 );
   if ( pRoom->Upgrade      ) fprintf( pFile, "Upgrade         %s\n", Str1 );
 
-  /* ¼g¤J¾Ö¦³ªÌ */
+  /* å¯«å…¥æ“æœ‰è€… */
   if ( pRoom->owner.high > 0 && pRoom->owner.low > 0 )
   {
     fprintf( pFile, "Owner           %d %d\n"
@@ -1484,7 +1484,7 @@ bool is_owner( CHAR_DATA * ch, ROOM_INDEX_DATA * pRoom, bool couple )
 
   if ( !ch || !pRoom )
   {
-    mudlog( LOG_DEBUG, "is_owner: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "is_owner: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -1512,7 +1512,7 @@ CHAR_DATA * owner_name( ROOM_INDEX_DATA * pRoom )
 
   if ( !pRoom )
   {
-    mudlog( LOG_DEBUG, "owner_name: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "owner_name: ç¼ºä¹ä¾†æº." );
     RETURN( NULL );
   }
 
@@ -1570,7 +1570,7 @@ void room_update( void )
 
         if ( zObj )
         {
-          sprintf( buf, "¬Y¤£ª¾¦W¤Hª«§â%sµ¹©^Äm±¼¤F¡T\n\r"
+          sprintf( buf, "æŸä¸çŸ¥åäººç‰©æŠŠ%sçµ¦å¥‰ç»æ‰äº†ï¹—\n\r"
             , obj_name( NULL, zObj ) );
 
           sendmsg_to_someroom( buf, pRoom );
@@ -1597,7 +1597,7 @@ void room_update( void )
         {
           zChar->mana += get_curr_mana( zChar ) / 3;
           zChar->mana  = UMIN( zChar->mana, get_curr_mana( zChar ) );
-          send_to_char( "\n\r\e[1;32mÅı§Ú¨ÓÀ°§A¦^´_³¡¤Àªk¤O§a¡T\e[0m\n\r", zChar );
+          send_to_char( "\n\r\e[1;32mè®“æˆ‘ä¾†å¹«ä½ å›å¾©éƒ¨åˆ†æ³•åŠ›å§ï¹—\e[0m\n\r", zChar );
           continue;
         }
       }
@@ -1619,7 +1619,7 @@ void room_update( void )
         {
           zChar->move += get_curr_move( zChar ) / 3;
           zChar->move  = UMIN( zChar->move, get_curr_move( zChar ) );
-          send_to_char( "\n\r\e[1;32mÅı§Ú¨ÓÀ°§A¦^´_³¡¤ÀÅé¤O§a¡T\e[0m\n\r", zChar );
+          send_to_char( "\n\r\e[1;32mè®“æˆ‘ä¾†å¹«ä½ å›å¾©éƒ¨åˆ†é«”åŠ›å§ï¹—\e[0m\n\r", zChar );
           continue;
         }
       }
@@ -1641,7 +1641,7 @@ void room_update( void )
         {
           zChar->hit += get_curr_hit( zChar ) / 3;
           zChar->hit  = UMIN( zChar->hit, get_curr_hit( zChar ) );
-          send_to_char( "\n\r\e[1;32mÅı§Ú¨ÓÀ°§A¦^´_³¡¤À¥Í©R¤O§a¡T\e[0m\n\r", zChar );
+          send_to_char( "\n\r\e[1;32mè®“æˆ‘ä¾†å¹«ä½ å›å¾©éƒ¨åˆ†ç”Ÿå‘½åŠ›å§ï¹—\e[0m\n\r", zChar );
           continue;
         }
       }
@@ -1664,7 +1664,7 @@ void room_update( void )
           pObj->timer = 10;
           obj_to_room( pObj, pRoom );
 
-          sprintf( buf, "¦U¦ì¤j·İ¡M§K¶OÃØ°eªº%sµ¹§A­Ì°e¨Ó¤F¡T\n\r"
+          sprintf( buf, "å„ä½å¤§çˆºï¹å…è²»è´ˆé€çš„%sçµ¦ä½ å€‘é€ä¾†äº†ï¹—\n\r"
             , obj_name( NULL, pObj ) );
 
           sendmsg_to_room( buf, pRoom->people );
@@ -1690,7 +1690,7 @@ void room_update( void )
           pObj->timer = 10;
           obj_to_room( pObj, pRoom );
 
-          sprintf( buf, "¦U¦ì¤j·İ¡M§K¶OÃØ°eªº%sµ¹§A­Ì°e¨Ó¤F¡T\n\r"
+          sprintf( buf, "å„ä½å¤§çˆºï¹å…è²»è´ˆé€çš„%sçµ¦ä½ å€‘é€ä¾†äº†ï¹—\n\r"
             , obj_name( NULL, pObj ) );
 
           sendmsg_to_room( buf, pRoom->people );

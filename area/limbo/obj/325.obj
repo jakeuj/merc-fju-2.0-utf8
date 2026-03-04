@@ -1,9 +1,9 @@
 Vnum            325
 Name            create food book~
-ShortDesc       »s³y­¹ª«¯µÓD~
+ShortDesc       è£½é€ é£Ÿç‰©ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

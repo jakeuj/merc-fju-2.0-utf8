@@ -1,5 +1,5 @@
 Name            cause light~
-Cname           ���׶ˮ`~
+Cname           輕度傷害~
 Slot            SLOT_CAUSE_LIGHT
 Msgoff          ~
 Check           check_unrigid_attack~

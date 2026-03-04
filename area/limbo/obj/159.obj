@@ -1,11 +1,11 @@
 Vnum            159
 Name            identify scroll~
-ShortDesc       Å²ÃÑªk¨÷~
+ShortDesc       é‘‘è­˜æ³•å·~
 Description
-Å²ÃÑªk¨÷(identify scroll)¤º°O¸üµÛ¦U¦¡¦U¼Ëªº³q¤Ñ´¼¼z¡M
-¯àÅı¤HÁA¸Ñ¦UºØª««~ªº¥Î³~¡C
+é‘‘è­˜æ³•å·(identify scroll)å…§è¨˜è¼‰è‘—å„å¼å„æ¨£çš„é€šå¤©æ™ºæ…§ï¹
+èƒ½è®“äººç­è§£å„ç¨®ç‰©å“çš„ç”¨é€”ã€‚
 ~
-Unit            ±²~
+Unit            æ²~
 ItemType        ITEM_SCROLL
 Takeable        Yes
 Level           10

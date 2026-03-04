@@ -1,9 +1,9 @@
 Vnum            9022
 Name            necklace~
-ShortDesc       §LÄy¦WµP~
+ShortDesc       å…µç±åç‰Œ~
 Description
-µù©ú§LÄyªº¦WµP¡C~
-Unit            ±ø~
+è¨»æ˜å…µç±çš„åç‰Œã€‚~
+Unit            æ¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_NECK
 Takeable        Yes

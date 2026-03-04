@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�`�`�ݤ@��H���Ө��h�M�S�����D�L�̨쩳�O�֫���O�S�o�ɿ�J [1;32mwho[0m �N�i�H���D
-�ثe�t�Τ��쩳�����ǤH�o�C [1;32mwho[0m ���Ϊk�Q���j�j�M�Ьd�߫�ϥΡC
+常常看一堆人走來走去﹐又不知道他們到底是誰怎麼辦呢﹖這時輸入 [1;32mwho[0m 就可以知道
+目前系統內到底有哪些人囉。 [1;32mwho[0m 的用法十分強大﹐請查詢後使用。
 
-�Ьd�ߡRwho
+請查詢﹕who
 ~
 End

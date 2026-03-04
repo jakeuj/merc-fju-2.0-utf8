@@ -1,5 +1,5 @@
 Name            g steps~
-Cname           �ۼv���k~
+Cname           幻影身法~
 Slot            SLOT_G_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,7 +38,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n�ϥX�_���P�Ҥ���$S�ۼv���k$Z�M�ۤƥX�ƭ�$n�M�׶}�F$N�������C~
+$n使出奇門遁甲中的$S幻影身法$Z﹐幻化出數個$n﹐避開了$N的攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -47,7 +47,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�@��$S�u����P���v$Z�M�N$N����պɨ���a�C~
+$n使出一招$S「斗轉星移」$Z﹐將$N的攻勢盡卸於地。~
 Chance          10
 Value           20
 Parry           0
@@ -56,7 +56,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�B�k����M���O$S���P����$Z�M���ζ������ʡM�פF�}�h�C~
+$n步法交錯﹐正是$S移星換位$Z﹐身形順間移動﹐避了開去。~
 Chance          10
 Value           20
 Parry           0
@@ -65,7 +65,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�@��$R�f�మ�[$Z�N$N�����^�h�C~
+$n使出一招$R逆轉乾坤$Z將$N反擊回去。~
 Chance          10
 Value           20
 Parry           0

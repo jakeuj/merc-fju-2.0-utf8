@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -16,13 +16,13 @@
 
 extern void       check_contraband args( ( CHAR_DATA * ) );
 
-/* ©w¸q¥i¥H¨ìÄv§Þ³õªºµ¥¯Å */
+/* å®šç¾©å¯ä»¥åˆ°ç«¶æŠ€å ´çš„ç­‰ç´š */
 #define LEVEL_CAN_PK               35
 
-/* ©w¸q¨ìÄv§Þ³õ­n¥æªº¿ú */
+/* å®šç¾©åˆ°ç«¶æŠ€å ´è¦äº¤çš„éŒ¢ */
 #define FIGHT_MONEY                10000
 
-/* ©w¸q³Ì¤p¥i¥H¥h·s¤â°Ïªºµ¥¯Å */
+/* å®šç¾©æœ€å°å¯ä»¥åŽ»æ–°æ‰‹å€çš„ç­‰ç´š */
 #define LEVEL_NO_NEW               15
 
 DECLARE_JOB_FUN( job_recall_new    );
@@ -55,20 +55,20 @@ JOB( job_recall_new )
 
   if ( ch->level >= LEVEL_NO_NEW )
   {
-    send_to_char( "§A³£¤w¸g¨º»ò¦Ñ¤FÁÙ·Q¥h·s¤â°Ï°Ú¡M¯u¤£®`íë¡T\n\r", ch );
+    send_to_char( "ä½ éƒ½å·²ç¶“é‚£éº¼è€äº†é‚„æƒ³åŽ»æ–°æ‰‹å€å•Šï¹çœŸä¸å®³è‡Šï¹—\n\r", ch );
     RETURN_NULL();
   }
 
-  act( "$n¦V¤Ñ¯«¬èÃ«¦^¨ì·s¤â°ÏÄ~Äò°V½m¡C", ch, NULL, NULL, TO_ROOM );
-  send_to_char( "\e[1;33m§A¯T¯Vªº°k¦^·s¤â°Ï¡T\e[0m\n\r\n\r", ch );
+  act( "$nå‘å¤©ç¥žç¥ˆç¦±å›žåˆ°æ–°æ‰‹å€ç¹¼çºŒè¨“ç·´ã€‚", ch, NULL, NULL, TO_ROOM );
+  send_to_char( "\e[1;33mä½ ç‹¼ç‹½çš„é€ƒå›žæ–°æ‰‹å€ï¹—\e[0m\n\r\n\r", ch );
 
   char_from_room( ch );
   char_to_room( ch, pRoom );
 
-  act( "$n¯T¯Vªº°k¤F¦^¨Ó¡T", ch, NULL, NULL, TO_ROOM );
+  act( "$nç‹¼ç‹½çš„é€ƒäº†å›žä¾†ï¹—", ch, NULL, NULL, TO_ROOM );
   do_look( ch, "auto" );
 
-  /* ²M°£°lÂÜ¬ö¿ýÂI */
+  /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é»ž */
   clear_trace( ch, TRUE );
 
   RETURN_NULL();
@@ -87,15 +87,15 @@ JOB( job_goto_pk_area )
   if ( !( pIndex1 = get_room_index( 7043 ) )
     || !( pIndex2 = get_room_index( 7044 ) ) )
   {
-    mudlog( LOG_DEBUG, "job_goto_pk_area: ¨S¦³¹ï¾Ô°Ï." );
-    send_to_char( "¹ï¤£°_, ¥Ø«e¨t²Î¨S¦³¹ï¾Ô°Ï.\n\r", ch );
+    mudlog( LOG_DEBUG, "job_goto_pk_area: æ²’æœ‰å°æˆ°å€." );
+    send_to_char( "å°ä¸èµ·, ç›®å‰ç³»çµ±æ²’æœ‰å°æˆ°å€.\n\r", ch );
     RETURN_NULL();
   }
 
   if ( ch->level <= LEVEL_CAN_PK )
   {
     chinese_number( LEVEL_CAN_PK, buf );
-    act( "¹ï¤£°_¡M§Aªºµ¥¯Å¥²¶·¶W¹L$t¯Å¤~¯à°Ñ¥[¤j²V¾Ô¡T",
+    act( "å°ä¸èµ·ï¹ä½ çš„ç­‰ç´šå¿…é ˆè¶…éŽ$tç´šæ‰èƒ½åƒåŠ å¤§æ··æˆ°ï¹—",
       ch, buf, NULL, TO_CHAR );
     RETURN_NULL();
   }
@@ -103,32 +103,32 @@ JOB( job_goto_pk_area )
   if ( get_age( ch ) <= pk_age )
   {
     chinese_number( pk_age, buf );
-    act( "¹ï¤£°_¡M§Aªº¦~ÄÖ¥²¶·¶W¹L$t·³¤~¯à°Ñ¥[¤j²V¾Ô¡T",
+    act( "å°ä¸èµ·ï¹ä½ çš„å¹´é½¡å¿…é ˆè¶…éŽ$tæ­²æ‰èƒ½åƒåŠ å¤§æ··æˆ°ï¹—",
       ch, buf, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( ch->master || ch->leader )
   {
-    send_to_char( " ¹ï¤£°_¡M§A¥¿¸òÀH§O¤H¡T\n\r", ch );
+    send_to_char( " å°ä¸èµ·ï¹ä½ æ­£è·Ÿéš¨åˆ¥äººï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( auction_info->seller && auction_info->seller == ch )
   {
-    send_to_char( "¹ï¤£°_¡Mµ¥§A½æ§¹ªF¦è¦A¨Ó¼r±þ§a¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ç­‰ä½ è³£å®Œæ±è¥¿å†ä¾†å»æ®ºå§ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( auction_info->buyer && auction_info->buyer == ch )
   {
-    send_to_char( "¹ï¤£°_¡Mµ¥§A¶R§¹ªF¦è¦A¨Ó¼r±þ§a¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ç­‰ä½ è²·å®Œæ±è¥¿å†ä¾†å»æ®ºå§ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( ch->jail > 0 )
   {
-    send_to_char( "¥ý§â§Aªº¦D´ÁªA§¹¦A»¡§a¡T\n\r", ch );
+    send_to_char( "å…ˆæŠŠä½ çš„åˆ‘æœŸæœå®Œå†èªªå§ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -136,33 +136,33 @@ JOB( job_goto_pk_area )
     || IS_SET( ch->act, PLR_BOLTER )
     || IS_SET( ch->act, PLR_THIEF ) )
   {
-    send_to_char( "§A¦pªG°Ñ¥[·|Åý¤j®aª¾¹D§A¶]¸ôªº¦æÂÜ¡T\n\r", ch );
+    send_to_char( "ä½ å¦‚æžœåƒåŠ æœƒè®“å¤§å®¶çŸ¥é“ä½ è·‘è·¯çš„è¡Œè¹¤ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( ch->mount )
   {
-    act( "§AÁÙ¦b$N¤W¡M¥ý¤U°¨§a¡T", ch, NULL, ch->mount, TO_CHAR );
+    act( "ä½ é‚„åœ¨$Nä¸Šï¹å…ˆä¸‹é¦¬å§ï¹—", ch, NULL, ch->mount, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( ch->spirit )
   {
-    act( "¹ï¤£°_¡M§A¤£¯à±aµÛ$N°Ñ¥[¤j²V¾Ô³á¡T", ch, NULL, ch->spirit, TO_CHAR );
+    act( "å°ä¸èµ·ï¹ä½ ä¸èƒ½å¸¶è‘—$NåƒåŠ å¤§æ··æˆ°å–”ï¹—", ch, NULL, ch->spirit, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( ch->gold < FIGHT_MONEY )
   {
-    send_to_char( "§Aªº¿ú¤£°÷¥Iªù²¼¡T\n\r", ch );
+    send_to_char( "ä½ çš„éŒ¢ä¸å¤ ä»˜é–€ç¥¨ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   check_contraband( ch );
 
-  act( "¤Ñ¤WÄÆ¨Ó¤@¦·¶³¡M§â$n¶Ç°e¨ì¤T°êÄv§Þ³õÅo¡T", ch, NULL, NULL, TO_ALL );
+  act( "å¤©ä¸Šé£„ä¾†ä¸€æœµé›²ï¹æŠŠ$nå‚³é€åˆ°ä¸‰åœ‹ç«¶æŠ€å ´å›‰ï¹—", ch, NULL, NULL, TO_ALL );
 
-  sprintf( buf, "%s°½°½ªº¶i¤J¤F¤T°êÄv§Þ³õ, §Ö¥h«ó¥L³á!"
+  sprintf( buf, "%så·å·çš„é€²å…¥äº†ä¸‰åœ‹ç«¶æŠ€å ´, å¿«åŽ»æ‰ä»–å–”!"
     , mob_name( NULL, ch ) );
   talk_channel_2( buf, CHANNEL_PK, "" );
 
@@ -175,10 +175,10 @@ JOB( job_goto_pk_area )
 
   do_look( ch, "auto" );
 
-  /* ²M°£°lÂÜ¬ö¿ýÂI */
+  /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é»ž */
   clear_trace( ch, TRUE );
 
-  act( "$n¨Ó°e¦ºÅo¡T", ch, NULL, NULL, TO_ROOM );
+  act( "$nä¾†é€æ­»å›‰ï¹—", ch, NULL, NULL, TO_ROOM );
   gold_from_char( ch, FIGHT_MONEY );
 
   RETURN_NULL();

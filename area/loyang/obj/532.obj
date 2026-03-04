@@ -1,10 +1,10 @@
 Vnum            532
 Name            blademan cloth~
-ShortDesc       ¤MªÌ¤§ªA~
+ShortDesc       åˆ€è€…ä¹‹æœ~
 Description
-ªì¤J¦¿´ò¤§¤M«È³Ì¦h¥Îªº°ò¥»°t³Æ (blademan cloth)¡C
+åˆå…¥æ±Ÿæ¹–ä¹‹åˆ€å®¢æœ€å¤šç”¨çš„åŸºæœ¬é…å‚™ (blademan cloth)ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

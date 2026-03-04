@@ -1,12 +1,12 @@
 Vnum            507
 Name            smith~
-ShortDesc       �K�K~
-LongDesc        ��̮��۪x���K���K�K(smith)��������ʧ@�ݵۧA�C
+ShortDesc       鐵匠~
+LongDesc        手裡拿著泛紅鐵鎚的鐵匠(smith)停止揮打的動作看著你。
 ~
 Description
-�o���K�Kť�����e�O�@��N�x�M�u�O���@���b��x��|�ɡM�ܰs�~�ơM
-�ҥH�Q�S�M����N�q�ƥ��K���u�@�C���ަp��M�٬O�h�B�ոեL����
-���a�C
+這位鐵匠聽說之前是一位將軍﹐只是有一次在兩軍交會時﹐喝酒誤事﹐
+所以被貶﹐之後就從事打鐵的工作。不管如何﹐還是姑且試試他的技
+藝吧。
 ~
 Sentinel        Yes
 NoKill          Yes
@@ -40,8 +40,8 @@ Process
 Type            greet_prog
 Chance          70
 Text
-emote ���ۦ����M�V���۪Z���T
-  tell $n �o��ȭ��M������F��n�ײz���ܡS
+emote 擦著汗水﹐敲打著武器﹗
+  tell $n 這位客倌﹐有什麼東西要修理的嗎﹖
 ~
 End
 

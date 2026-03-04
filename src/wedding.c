@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -23,7 +23,7 @@ void check_mate( CHAR_DATA * ch )
 
   if ( !ch || !ch->pcdata )
   {
-    mudlog( LOG_DEBUG, "check_mate: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "check_mate: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -38,7 +38,7 @@ void check_mate( CHAR_DATA * ch )
 
   if ( !is_exist( ch->pcdata->mater ) )
   {
-     act( "§Aªº$t$T¤w¸gÂ÷¶}¹Ğ¥@Åo¡C"
+     act( "ä½ çš„$t$Tå·²ç¶“é›¢é–‹å¡µä¸–å›‰ã€‚"
        , ch, mate_name( ch ), ch->pcdata->mater, TO_CHAR );
 
     free_string( ch->pcdata->mater );
@@ -63,9 +63,9 @@ void check_mate( CHAR_DATA * ch )
         || mate->pcdata->mate
         || str_cmp( mate->pcdata->mater, ch->name ) )
       {
-        mudlog( LOG_DEBUG, "check_mate: ³]©w®É¹ï¶H %s ¿ù»~.", ch->name );
+        mudlog( LOG_DEBUG, "check_mate: è¨­å®šæ™‚å°è±¡ %s éŒ¯èª¤.", ch->name );
 
-        act( "§Aªº$t$T¯«¸g¿ù¶Ã¤F¡C"
+        act( "ä½ çš„$t$Tç¥ç¶“éŒ¯äº‚äº†ã€‚"
           , ch , mate_name( ch ), ch->pcdata->mater, TO_CHAR );
 
         free_string( ch->pcdata->mater );
@@ -89,8 +89,8 @@ void check_mate( CHAR_DATA * ch )
         mate->pcdata->couple.low  = ch->serial.low;
       }
 
-      act( "§Aªº$t$N¦b½u¤W³á¡C", ch, mate_name( ch ), mate, TO_CHAR );
-      act( "§Aªº$t$N¤W½uÅo¡C", mate, mate_name( mate ), ch, TO_CHAR );
+      act( "ä½ çš„$t$Nåœ¨ç·šä¸Šå–”ã€‚", ch, mate_name( ch ), mate, TO_CHAR );
+      act( "ä½ çš„$t$Nä¸Šç·šå›‰ã€‚", mate, mate_name( mate ), ch, TO_CHAR );
 
       RETURN_NULL();
     }
@@ -106,13 +106,13 @@ char * mate_name( CHAR_DATA * ch )
   switch( ch->sex )
   {
   default:
-    RETURN( "°t°¸" );
+    RETURN( "é…å¶" );
 
   case SEX_MALE:
-    RETURN( "©d¤l" );
+    RETURN( "å¦»å­" );
 
   case SEX_FEMALE:
-    RETURN( "¤V¤Ò" );
+    RETURN( "ä¸ˆå¤«" );
   }
 }
 
@@ -135,19 +135,19 @@ FUNCTION( do_marry )
 
   if ( !ch->pcdata )
   {
-    mudlog( LOG_DEBUG, "do_marry: ¨Ó·½¦³¿ù»~." );
+    mudlog( LOG_DEBUG, "do_marry: ä¾†æºæœ‰éŒ¯èª¤." );
     RETURN_NULL();
   }
 
   if ( get_age( ch ) < MarryAge )
   {
-    send_to_char( "§Aªº¦~¬ö¤Ó¤p¤F¡Mµ¥ªø¤j¥H«á¦A»¡§a¡T\n\r", ch );
+    send_to_char( "ä½ çš„å¹´ç´€å¤ªå°äº†ï¹ç­‰é•·å¤§ä»¥å¾Œå†èªªå§ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( is_affected( ch, SLOT_CHANGE_SEX ) )
   {
-    send_to_char( "¬İ¨Ó§Aªº©Ê§O¦³ÂI¤£¤Ó¹ï­C¡T\n\r", ch );
+    send_to_char( "çœ‹ä¾†ä½ çš„æ€§åˆ¥æœ‰é»ä¸å¤ªå°è€¶ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -155,7 +155,7 @@ FUNCTION( do_marry )
 
   if ( arg1[0] == '\x0' )
   {
-    send_to_char( "°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß¥¿½Tªº¨Ï¥Î¤èªk¡C\n\r", ch );
+    send_to_char( "åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢æ­£ç¢ºçš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -166,67 +166,67 @@ FUNCTION( do_marry )
 
     if ( arg2[0] == '\x0' || arg3[0] == '\x0' )
     {
-      send_to_char( "°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß¥¿½Tªº¨Ï¥Î¤èªk¡C\n\r", ch );
+      send_to_char( "åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢æ­£ç¢ºçš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_room( ch, arg2 ) ) )
     {
-      act( "§ä¤£¨ì§A­n°l¨Dªº¹ï¶H $2$T$0¡C", ch, NULL, arg2, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ è¦è¿½æ±‚çš„å°è±¡ $2$T$0ã€‚", ch, NULL, arg2, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( IS_NPC( victim ) || !victim->pcdata )
     {
-      act( "$N¤£¬O§A²z·Qªº¦ñ«Q§a¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nä¸æ˜¯ä½ ç†æƒ³çš„ä¼´ä¾¶å§ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( is_affected( victim, SLOT_MASK ) )
     {
-      act( "$N¥¿¬I®i©ö®e³N¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Næ­£æ–½å±•æ˜“å®¹è¡“ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( is_affected( victim, SLOT_CHANGE_SEX ) )
     {
-      act( "¬İ¨Ó$N©Ê§O¦³ÂI¤£¤Ó¹ï­C¡C", ch, NULL, victim, TO_CHAR );
+      act( "çœ‹ä¾†$Næ€§åˆ¥æœ‰é»ä¸å¤ªå°è€¶ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( get_age( victim ) < MarryAge )
     {
-      act( "$Nªº¦~¬ö¤Ó¤p¤F¡Mµ¥¥Lªø¤j¥H«á¦A»¡§a¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Nçš„å¹´ç´€å¤ªå°äº†ï¹ç­‰ä»–é•·å¤§ä»¥å¾Œå†èªªå§ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim == ch )
     {
-      send_to_char( "§A¬O¤£¬O¤Ó¦ÛÅÊ¤F¡T\n\r", ch );
+      send_to_char( "ä½ æ˜¯ä¸æ˜¯å¤ªè‡ªæˆ€äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !can_see( victim, ch ) )
     {
-      act( "$N¬İ¤£¨ì§A­C¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nçœ‹ä¸åˆ°ä½ è€¶ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->pcdata->mate )
     {
-      act( "$N¤w¸gµ²±B¤F­C¡M¬İ¨Ó§AºC¤F¤@¨B¤F¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nå·²ç¶“çµå©šäº†è€¶ï¹çœ‹ä¾†ä½ æ…¢äº†ä¸€æ­¥äº†ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->pcdata->wooer )
     {
-      act( "$N¤w¸g¦³¨ä¥¦°l¨DªÌ¤F¡M¬İ¨Ó§AºC¤F¤@¨B¤F¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nå·²ç¶“æœ‰å…¶å®ƒè¿½æ±‚è€…äº†ï¹çœ‹ä¾†ä½ æ…¢äº†ä¸€æ­¥äº†ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->position != POS_STANDING )
     {
-      act( "$N¥¿¦b¦£­C¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Næ­£åœ¨å¿™è€¶ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -238,55 +238,55 @@ FUNCTION( do_marry )
 
     if ( selection == FALSE )
     {
-      act( "°l¨D$N¬O«Ü¦n¡M¦ı¤]¥ı§â©Ê§O§Ë²M·¡¡C", ch, NULL, victim, TO_CHAR );
+      act( "è¿½æ±‚$Næ˜¯å¾ˆå¥½ï¹ä½†ä¹Ÿå…ˆæŠŠæ€§åˆ¥å¼„æ¸…æ¥šã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !( pObj = get_obj_carry( ch, arg3 ) ) )
     {
-      send_to_char( "®³¥X§Aªº¸Û·N¨Ó¹À¡T¨D±BÁ`¤£¯à¨â¦ê¿¼§a¡C\n\r", ch );
+      send_to_char( "æ‹¿å‡ºä½ çš„èª æ„ä¾†å˜›ï¹—æ±‚å©šç¸½ä¸èƒ½å…©ä¸²è•‰å§ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pObj->wear_loc != WEAR_NONE )
     {
-      act( "§AÁÙ§â$p¬ï¦b¨­¤W­C¡M¥ı§â¥¦²æ¤F§a¡C", ch, pObj, NULL, TO_CHAR );
+      act( "ä½ é‚„æŠŠ$pç©¿åœ¨èº«ä¸Šè€¶ï¹å…ˆæŠŠå®ƒè„«äº†å§ã€‚", ch, pObj, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( pObj->address )
     {
-      act( "$p¬O­n¥æµ¹§O¤Hªº«H¡M«ç»ò¥i¥H°eµ¹§O¤H¡C", ch, pObj, NULL, TO_CHAR );
+      act( "$pæ˜¯è¦äº¤çµ¦åˆ¥äººçš„ä¿¡ï¹æ€éº¼å¯ä»¥é€çµ¦åˆ¥äººã€‚", ch, pObj, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ¬İ¬İ¬O¤£¬O¥i¥H¥á±ó */
+    /* çœ‹çœ‹æ˜¯ä¸æ˜¯å¯ä»¥ä¸Ÿæ£„ */
     if ( !can_drop_obj( ch, pObj ) )
     {
-      act( "$p¬O§Aªº¶Ç®a¤§Ä_¡M¤£¥i¥H°eµ¹§O¤H¡C", ch, pObj, NULL, TO_CHAR );
+      act( "$pæ˜¯ä½ çš„å‚³å®¶ä¹‹å¯¶ï¹ä¸å¯ä»¥é€çµ¦åˆ¥äººã€‚", ch, pObj, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->carry_number + get_obj_number( pObj )
       > can_carry_n( victim ) )
     {
-      act( "$N¦ü¥G®³¤£°Ê¨º»ò¦hªF¦è¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nä¼¼ä¹æ‹¿ä¸å‹•é‚£éº¼å¤šæ±è¥¿ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( get_carry_weight( victim ) + get_obj_weight( pObj )
       > can_carry_w( victim ) )
     {
-      act( "$N¦ü¥G®³¤£°Ê¨º»ò­«ªºªF¦è¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nä¼¼ä¹æ‹¿ä¸å‹•é‚£éº¼é‡çš„æ±è¥¿ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     obj_from_char( pObj );
     obj_to_char( pObj, victim );
 
-    act( "$n®³µÛ$p·í§@¦V$N¨D±BªºÂ§ª«¡T", ch, pObj, victim, TO_NOTVICT );
-    act( "$n®³µÛ$p·í§@¦V§A¨D±BªºÂ§ª«¡T"  , ch, pObj, victim, TO_VICT    );
-    act( "§A®³µÛ$p·í§@¦V$N¨D±BªºÂ§ª«¡T"  , ch, pObj, victim, TO_CHAR    );
+    act( "$næ‹¿è‘—$pç•¶ä½œå‘$Næ±‚å©šçš„ç¦®ç‰©ï¹—", ch, pObj, victim, TO_NOTVICT );
+    act( "$næ‹¿è‘—$pç•¶ä½œå‘ä½ æ±‚å©šçš„ç¦®ç‰©ï¹—"  , ch, pObj, victim, TO_VICT    );
+    act( "ä½ æ‹¿è‘—$pç•¶ä½œå‘$Næ±‚å©šçš„ç¦®ç‰©ï¹—"  , ch, pObj, victim, TO_CHAR    );
 
     victim->pcdata->wooer = ch;
 
@@ -294,14 +294,14 @@ FUNCTION( do_marry )
     {
       if ( ch->pcdata->wooer != victim )
       {
-        send_to_char( "§Aªº°l¨DªÌ¸ò§O¤H¶]¤F¡C\n\r", ch->pcdata->wooer );
+        send_to_char( "ä½ çš„è¿½æ±‚è€…è·Ÿåˆ¥äººè·‘äº†ã€‚\n\r", ch->pcdata->wooer );
         ch->pcdata->wooer = NULL;
       }
       else
       {
-        act( "$n©M$N¬İ¨Ó¬O¤Ñ¥Íªº¤@¹ï¡T", ch, NULL, victim, TO_NOTVICT );
-        act( "$n©M§A¬İ¨Ó¬O¤Ñ¥Íªº¤@¹ï¡T"  , ch, NULL, victim, TO_VICT    );
-        act( "§A©M$N¬İ¨Ó¬O¤Ñ¥Íªº¤@¹ï¡T"  , ch, NULL, victim, TO_CHAR    );
+        act( "$nå’Œ$Nçœ‹ä¾†æ˜¯å¤©ç”Ÿçš„ä¸€å°ï¹—", ch, NULL, victim, TO_NOTVICT );
+        act( "$nå’Œä½ çœ‹ä¾†æ˜¯å¤©ç”Ÿçš„ä¸€å°ï¹—"  , ch, NULL, victim, TO_VICT    );
+        act( "ä½ å’Œ$Nçœ‹ä¾†æ˜¯å¤©ç”Ÿçš„ä¸€å°ï¹—"  , ch, NULL, victim, TO_CHAR    );
       }
     }
 
@@ -312,17 +312,17 @@ FUNCTION( do_marry )
   {
     if ( ch->pcdata->mate )
     {
-      send_to_char( "³£¤w¸gµ²±B¤F¡MÁÙ¬d¤°»ò¬d¡C\n\r", ch );
+      send_to_char( "éƒ½å·²ç¶“çµå©šäº†ï¹é‚„æŸ¥ä»€éº¼æŸ¥ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = ch->pcdata->wooer ) )
     {
-      send_to_char( "£°¡M¹ï¤£°_¡M§A¨S¦³°l¨DªÌ¡C\n\r", ch );
+      send_to_char( "ã„Ÿï¹å°ä¸èµ·ï¹ä½ æ²’æœ‰è¿½æ±‚è€…ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "§Aªº°l¨DªÌ¬Oµ¥¯Å$iªº$N¡C", ch, &victim->level, victim, TO_CHAR );
+    act( "ä½ çš„è¿½æ±‚è€…æ˜¯ç­‰ç´š$içš„$Nã€‚", ch, &victim->level, victim, TO_CHAR );
 
     RETURN_NULL();
   }
@@ -331,51 +331,51 @@ FUNCTION( do_marry )
   {
     if ( ch->pcdata->mate )
     {
-      send_to_char( "³£¤w¸gµ²±B¤F¡MÁÙµªÀ³¡M§A¤£©È§O¤H®»«Á°Ú¡C\n\r", ch );
+      send_to_char( "éƒ½å·²ç¶“çµå©šäº†ï¹é‚„ç­”æ‡‰ï¹ä½ ä¸æ€•åˆ¥äººæ‰å§¦å•Šã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = ch->pcdata->wooer ) || !victim->pcdata )
     {
-      send_to_char( "§A¬O¤£¬O·Qµ²±B·QºÆ¤F¡S\n\r", ch );
+      send_to_char( "ä½ æ˜¯ä¸æ˜¯æƒ³çµå©šæƒ³ç˜‹äº†ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !victim->in_room || victim->in_room != ch->in_room )
     {
-      send_to_char( "»°§Ö§â§Aªº°l¨DªÌ¥s¦^¨Ó§a¡C\n\r", ch );
+      send_to_char( "è¶•å¿«æŠŠä½ çš„è¿½æ±‚è€…å«å›ä¾†å§ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_affected( victim, SLOT_CHANGE_SEX ) )
     {
-      act( "¬İ¨Ó$N©Ê§O¦³ÂI¤£¤Ó¹ï­C¡C", ch, NULL, victim, TO_CHAR );
+      act( "çœ‹ä¾†$Næ€§åˆ¥æœ‰é»ä¸å¤ªå°è€¶ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !can_see( victim, ch ) )
     {
-      act( "$N¬İ¤£¨ì§A­C¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nçœ‹ä¸åˆ°ä½ è€¶ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->pcdata->wooer && victim->pcdata->wooer != ch )
     {
-      act( "$N¤w¸g¦³¨ä¥¦ªº°l¨DªÌ¤F¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nå·²ç¶“æœ‰å…¶å®ƒçš„è¿½æ±‚è€…äº†ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->pcdata->wooer == ch )
     {
-      act( "$N¤w¸gª¾¹D§AµªÀ³¤F°Ú¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nå·²ç¶“çŸ¥é“ä½ ç­”æ‡‰äº†å•Šã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     victim->pcdata->wooer = ch;
 
-    act( "$n©M$N¬İ¨Ó¬O¤Ñ¥Íªº¤@¹ï¡T", ch, NULL, victim, TO_NOTVICT );
-    act( "$n©M§A¬İ¨Ó¬O¤Ñ¥Íªº¤@¹ï¡T", ch, NULL, victim, TO_VICT    );
-    act( "§A©M$N¬İ¨Ó¬O¤Ñ¥Íªº¤@¹ï¡T", ch, NULL, victim, TO_CHAR    );
+    act( "$nå’Œ$Nçœ‹ä¾†æ˜¯å¤©ç”Ÿçš„ä¸€å°ï¹—", ch, NULL, victim, TO_NOTVICT );
+    act( "$nå’Œä½ çœ‹ä¾†æ˜¯å¤©ç”Ÿçš„ä¸€å°ï¹—", ch, NULL, victim, TO_VICT    );
+    act( "ä½ å’Œ$Nçœ‹ä¾†æ˜¯å¤©ç”Ÿçš„ä¸€å°ï¹—", ch, NULL, victim, TO_CHAR    );
 
     RETURN_NULL();
   }
@@ -384,7 +384,7 @@ FUNCTION( do_marry )
   {
     if ( !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "§A¤£¬OºŞ²zªÌ¡M«ç»òÀ°§O¤HÃÒ±B©O¡S\n\r", ch );
+      send_to_char( "ä½ ä¸æ˜¯ç®¡ç†è€…ï¹æ€éº¼å¹«åˆ¥äººè­‰å©šå‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -393,14 +393,14 @@ FUNCTION( do_marry )
 
     if ( arg2[0] == '\x0' || arg3[0] == '\x0' )
     {
-      send_to_char( "³s°Ñ¼Æ³£¿ù¤F¡M«ç»òÀ°¤H®aÃÒ±B¡M»{¯u¤@ÂI°Õ¡T\n\r", ch );
+      send_to_char( "é€£åƒæ•¸éƒ½éŒ¯äº†ï¹æ€éº¼å¹«äººå®¶è­‰å©šï¹èªçœŸä¸€é»å•¦ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_room( ch, arg2 ) )
       || !( other  = get_char_room( ch, arg3 ) ) )
     {
-      send_to_char( "§ä¤£¨ì§A­nÃÒ±Bªº¤p­Ç¤f­C¡T\n\r", ch );
+      send_to_char( "æ‰¾ä¸åˆ°ä½ è¦è­‰å©šçš„å°å€†å£è€¶ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -409,13 +409,13 @@ FUNCTION( do_marry )
       || !victim->pcdata
       || !other->pcdata )
     {
-      send_to_char( "§A¯uªº­nÀ°¡u¥¦¡v­ÌÃÒ±B¶Ü¡S\n\r", ch );
+      send_to_char( "ä½ çœŸçš„è¦å¹«ã€Œå®ƒã€å€‘è­‰å©šå—ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( victim == ch || other == ch )
     {
-      send_to_char( "§A¤£¥i¥H¦Û¤vÀ°¦Û¤vÃÒ±B°Õ¡C\n\r", ch );
+      send_to_char( "ä½ ä¸å¯ä»¥è‡ªå·±å¹«è‡ªå·±è­‰å©šå•¦ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -424,7 +424,7 @@ FUNCTION( do_marry )
       || is_affected( victim, SLOT_MASK )
       || is_affected( other,  SLOT_MASK ) )
     {
-      send_to_char( "¥L­Ì¤§¤¤¦³¤H¬I®i©_©Çªºªk³N¡T\n\r", ch );
+      send_to_char( "ä»–å€‘ä¹‹ä¸­æœ‰äººæ–½å±•å¥‡æ€ªçš„æ³•è¡“ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -435,13 +435,13 @@ FUNCTION( do_marry )
 
     if ( !husband || !wife )
     {
-      send_to_char( "¥L­Ìªº©Ê§O¿ù¶Ã¤F¡T\n\r", ch );
+      send_to_char( "ä»–å€‘çš„æ€§åˆ¥éŒ¯äº‚äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( husband->pcdata->wooer != wife || wife->pcdata->wooer  != husband )
     {
-      send_to_char( "¥L­Ì¨Ã¨S¦³¤¬¬Û¬Û·R¡M¦ó¥²«j±j¡C\n\r", ch );
+      send_to_char( "ä»–å€‘ä¸¦æ²’æœ‰äº’ç›¸ç›¸æ„›ï¹ä½•å¿…å‹‰å¼·ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -449,31 +449,31 @@ FUNCTION( do_marry )
       || ( husband->pcdata->mater && *husband->pcdata->mater )
       || ( wife->pcdata->mater  && *wife->pcdata->mater  ) )
     {
-      mudlog( LOG_DEBUG, "do_marry: ¨Ó·½­«ÂĞÁpµ²." );
+      mudlog( LOG_DEBUG, "do_marry: ä¾†æºé‡è¦†è¯çµ." );
       husband->pcdata->wooer = NULL;
       wife->pcdata->wooer    = NULL;
 
-      send_to_char( "¥L­Ì¨ä¤¤¦³¤@¦ì¤w¸gµ²¹L±B¤F¡C\n\r", ch );
+      send_to_char( "ä»–å€‘å…¶ä¸­æœ‰ä¸€ä½å·²ç¶“çµéå©šäº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* °eµ¹¥ş³¡ªº¤H³£ª¾¹D */
-    sprintf( buf, "²{³õ¤@¤ùÆr¹ªÁnÅT¡M¥¿ÆU°ó¨â®Ç¬õÀë°ª±¾¡M±i¿Oµ²ºù¡M³ß®ğ¬v¬v¡C"
-         "\n\r»««È­Ìµ¸Ã¶¤£µ´¡M¯É¯É¨ì²{³õ¯¬¶P¡M%s(%s)©M%s(%s)½w½w¨«¨ìÃÒ±B¤j¯«"
-         "ªº«e¤è¯¸©w¡C\n\rÅı§Ú­Ì®¥ÁH¥L­Ì¤§«á±Nµ²¬°³s²z¡M¦@¦P¥Í¬¡¡T\n\r"
+    /* é€çµ¦å…¨éƒ¨çš„äººéƒ½çŸ¥é“ */
+    sprintf( buf, "ç¾å ´ä¸€ç‰‡é‘¼é¼“è²éŸ¿ï¹æ­£å»³å ‚å…©æ—ç´…ç‡­é«˜æ›ï¹å¼µç‡ˆçµç¶µï¹å–œæ°£æ´‹æ´‹ã€‚"
+         "\n\rè³“å®¢å€‘çµ¡ç¹¹ä¸çµ•ï¹ç´›ç´›åˆ°ç¾å ´ç¥è³€ï¹%s(%s)å’Œ%s(%s)ç·©ç·©èµ°åˆ°è­‰å©šå¤§ç¥"
+         "çš„å‰æ–¹ç«™å®šã€‚\n\rè®“æˆ‘å€‘æ­ç¦§ä»–å€‘ä¹‹å¾Œå°‡çµç‚ºé€£ç†ï¹å…±åŒç”Ÿæ´»ï¹—\n\r"
          ,husband->cname, husband->name
          , wife->cname  , wife->name );
 
     send_to_all_char( buf );
 
-    str_cpy( buf, "¤@«ô¤Ñ¦a¡M¤G«ô°ª°ó¡M¤Ò©d¥æ«ô¡M°e¤J¬}©Ğ¡T" );
+    str_cpy( buf, "ä¸€æ‹œå¤©åœ°ï¹äºŒæ‹œé«˜å ‚ï¹å¤«å¦»äº¤æ‹œï¹é€å…¥æ´æˆ¿ï¹—" );
 
     ChatRecord = FALSE;
     do_chat( ch, buf );
     ChatRecord = TRUE;
 
-    act( "±q¦¹¤§«á¡M§A´N¬O$Nªº¤V¤Ò¤F¡T", husband, NULL, wife, TO_CHAR );
-    act( "±q¦¹¤§«á¡M§A´N¬O$Nªº©d¤l¤F¡T", wife, NULL, husband, TO_CHAR );
+    act( "å¾æ­¤ä¹‹å¾Œï¹ä½ å°±æ˜¯$Nçš„ä¸ˆå¤«äº†ï¹—", husband, NULL, wife, TO_CHAR );
+    act( "å¾æ­¤ä¹‹å¾Œï¹ä½ å°±æ˜¯$Nçš„å¦»å­äº†ï¹—", wife, NULL, husband, TO_CHAR );
 
     husband->pcdata->mater = str_dup( wife->name    );
     wife->pcdata->mater    = str_dup( husband->name );
@@ -497,12 +497,12 @@ FUNCTION( do_marry )
   {
     if ( !( victim = ch->pcdata->wooer ) )
     {
-      send_to_char( "§A¤S¨S¦³¨D·R¹ï¶H¡M«ç»ò©Úµ´¡S\n\r", ch );
+      send_to_char( "ä½ åˆæ²’æœ‰æ±‚æ„›å°è±¡ï¹æ€éº¼æ‹’çµ•ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "§Aªº¨D·R¹ï¶H$N©Úµ´§A¤F¡T", victim, NULL, ch, TO_CHAR );
-    act( "§A©Úµ´¤F$Nªº¨D·R°Ê§@¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä½ çš„æ±‚æ„›å°è±¡$Næ‹’çµ•ä½ äº†ï¹—", victim, NULL, ch, TO_CHAR );
+    act( "ä½ æ‹’çµ•äº†$Nçš„æ±‚æ„›å‹•ä½œï¹—", ch, NULL, victim, TO_CHAR );
 
     ch->pcdata->wooer = NULL;
     RETURN_NULL();
@@ -512,7 +512,7 @@ FUNCTION( do_marry )
   {
     if ( !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "§A¤£¬OºŞ²zªÌ¡M«ç»òÀ°§O¤HÂ÷±B©O¡S\n\r", ch );
+      send_to_char( "ä½ ä¸æ˜¯ç®¡ç†è€…ï¹æ€éº¼å¹«åˆ¥äººé›¢å©šå‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -521,14 +521,14 @@ FUNCTION( do_marry )
 
     if ( arg2[0] == '\x0' || arg3[0] == '\x0' )
     {
-      send_to_char( "³s°Ñ¼Æ³£¿ù¤F¡M«ç»òÀ°¤H®aÂ÷±B©O¡T\n\r", ch );
+      send_to_char( "é€£åƒæ•¸éƒ½éŒ¯äº†ï¹æ€éº¼å¹«äººå®¶é›¢å©šå‘¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_room( ch, arg2 ) )
       || !( other  = get_char_room( ch, arg3 ) ) )
     {
-      send_to_char( "§ä¤£¨ì§A­nÂ÷±Bªº­Ş®a­C¡T\n\r", ch );
+      send_to_char( "æ‰¾ä¸åˆ°ä½ è¦é›¢å©šçš„å†¤å®¶è€¶ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -537,19 +537,19 @@ FUNCTION( do_marry )
       || !victim->pcdata
       || !other->pcdata )
     {
-      send_to_char( "§A¯uªº­nÀ°¡u¥¦¡v­ÌÂ÷±B¶Ü¡S\n\r", ch );
+      send_to_char( "ä½ çœŸçš„è¦å¹«ã€Œå®ƒã€å€‘é›¢å©šå—ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( victim == ch || other == ch )
     {
-      send_to_char( "§A¤£¥i¥H¦Û¤vÀ°¦Û¤vÂ÷±B°Õ¡C\n\r", ch );
+      send_to_char( "ä½ ä¸å¯ä»¥è‡ªå·±å¹«è‡ªå·±é›¢å©šå•¦ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( victim->pcdata->mate != other || other->pcdata->mate != victim )
     {
-      send_to_char( "¥L­Ì¥»¨Ó´N¤£¬O¤Ò©d¤F°Ú¡M«ç»òÂ÷±B¡C\n\r", ch );
+      send_to_char( "ä»–å€‘æœ¬ä¾†å°±ä¸æ˜¯å¤«å¦»äº†å•Šï¹æ€éº¼é›¢å©šã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -558,8 +558,8 @@ FUNCTION( do_marry )
       || !other->pcdata->mater
       || !*other->pcdata->mater )
     {
-      send_to_char( "¥L­Ìªº¸ê®Æ¦³°İÃD¡MµLªkÂ÷±B¡T\n\r", ch );
-      mudlog( LOG_DEBUG, "do_marry: Â÷±B®Éµ²ºc¦³°İÃD." );
+      send_to_char( "ä»–å€‘çš„è³‡æ–™æœ‰å•é¡Œï¹ç„¡æ³•é›¢å©šï¹—\n\r", ch );
+      mudlog( LOG_DEBUG, "do_marry: é›¢å©šæ™‚çµæ§‹æœ‰å•é¡Œ." );
       RETURN_NULL();
     }
 
@@ -577,18 +577,18 @@ FUNCTION( do_marry )
     other->pcdata->couple.high  = 0;
     other->pcdata->couple.low   = 0;
 
-    print_to_char( ch, "§AÀ°%s(%s)©M%s(%s)Â÷±B¤F¡C\n\r"
+    print_to_char( ch, "ä½ å¹«%s(%s)å’Œ%s(%s)é›¢å©šäº†ã€‚\n\r"
       , victim->cname, victim->name, other->cname, other->name );
 
-    act( "§A±q¦¹©M$N¦A¤]¨S¦³¥ô¦óÃö«Y¤F¡C", victim, NULL, other, TO_CHAR );
-    act( "§A±q¦¹©M$N¦A¤]¨S¦³¥ô¦óÃö«Y¤F¡C", other, NULL, victim, TO_CHAR );
+    act( "ä½ å¾æ­¤å’Œ$Nå†ä¹Ÿæ²’æœ‰ä»»ä½•é—œä¿‚äº†ã€‚", victim, NULL, other, TO_CHAR );
+    act( "ä½ å¾æ­¤å’Œ$Nå†ä¹Ÿæ²’æœ‰ä»»ä½•é—œä¿‚äº†ã€‚", other, NULL, victim, TO_CHAR );
 
     RETURN_NULL();
   }
 
   else
   {
-    send_to_char( "°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß¥¿½Tªº¨Ï¥Î¤èªk¡C\n\r", ch );
+    send_to_char( "åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢æ­£ç¢ºçš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -601,7 +601,7 @@ bool is_couple( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim )
   {
-    mudlog( LOG_DEBUG, "is_couple: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "is_couple: ä¾†æºä¸æ­£ç¢º." );
     RETURN( FALSE );
   }
 

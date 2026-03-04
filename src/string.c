@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -35,7 +35,7 @@
 
 #define MAX_DIGITAL     5
 
-/* ÀË¬d¬Y¦r¦ê¸Ì¬O§_¦³¥]§t¬Y­Ó¦r¦ê */
+/* æª¢æŸ¥æŸå­—ä¸²è£¡æ˜¯å¦æœ‰åŒ…å«æŸå€‹å­—ä¸² */
 bool is_name( const char * str, char * namelist )
 {
   char name[ MAX_INPUT_LENGTH ];
@@ -115,7 +115,7 @@ FUNCTION( do_test )
 
   if ( !( pFile = fopen( "data", "w" ) ) )
   {
-    send_to_char( "µLªk¶}±ÒÀÉ®×¡C\n\r", ch );
+    send_to_char( "ç„¡æ³•é–‹å•Ÿæª”æ¡ˆã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -136,17 +136,17 @@ FUNCTION( do_test )
           else if ( pMobIndex->count >= 3 ) color = "\e[1;32m";
           else                              color = "";
 
-               if ( pMobIndex->count >  10 ) amount = "·¥¦h";
-          else if ( pMobIndex->count >  5  ) amount = "«Ü¦h";
-          else if ( pMobIndex->count >= 3  ) amount = "¦h  ";
-          else                               amount = "´¶³q";
+               if ( pMobIndex->count >  10 ) amount = "æ¥µå¤š";
+          else if ( pMobIndex->count >  5  ) amount = "å¾ˆå¤š";
+          else if ( pMobIndex->count >= 3  ) amount = "å¤š  ";
+          else                               amount = "æ™®é€š";
 
           found  = TRUE;
           count += pMobIndex->count;
           i[loop / 10 ] += pMobIndex->count;
           j[loop / 10 ] ++;
 
-          fprintf( pFile, "%sµ¥¯Å¡R%3d ¼Æ¶q¡R%s °Ï°ì¡R%10s ¦WºÙ¡R%s%s\n"
+          fprintf( pFile, "%sç­‰ç´šï¹•%3d æ•¸é‡ï¹•%s å€åŸŸï¹•%10s åç¨±ï¹•%s%s\n"
             , color
             , pMobIndex->level
             , amount
@@ -159,10 +159,10 @@ FUNCTION( do_test )
 
     /*
     if ( !found )
-      fprintf( pFile, "\e[1;37mµ¥¯Å %d ¨S¦³©Çª«¡C\e[0m\n", loop );
+      fprintf( pFile, "\e[1;37mç­‰ç´š %d æ²’æœ‰æ€ªç‰©ã€‚\e[0m\n", loop );
 
     else
-      fprintf( pFile, "µ¥¯Å \e[1;35m%d\e[0m Á`¼Æ¥Ø¬° \e[1;36m%d\e[0m¡C\n", loop, count );
+      fprintf( pFile, "ç­‰ç´š \e[1;35m%d\e[0m ç¸½æ•¸ç›®ç‚º \e[1;36m%d\e[0mã€‚\n", loop, count );
 
     */
 
@@ -171,7 +171,7 @@ FUNCTION( do_test )
 
   for ( loop = 0; loop < 10; loop++ )
   {
-    fprintf( pFile, "µ¥¯Å¡R%3d-%3d  Á`°¦¼Æ¡R %4d  ºØÃş¡R %4d\n"
+    fprintf( pFile, "ç­‰ç´šï¹•%3d-%3d  ç¸½éš»æ•¸ï¹• %4d  ç¨®é¡ï¹• %4d\n"
       , loop * 10, ( loop + 1 ) * 10 - 1, i[loop], j[loop] );
   }
 
@@ -179,7 +179,7 @@ FUNCTION( do_test )
   RETURN_NULL();
 }
 
-/* ´ú¸Õ¦r¦ê¬O§_¬O¼Æ¦r */
+/* æ¸¬è©¦å­—ä¸²æ˜¯å¦æ˜¯æ•¸å­— */
 bool is_number( char * argument )
 {
   PUSH_FUNCTION( "is_number" );
@@ -197,7 +197,7 @@ char * test_number( char * argument , int * number )
 
   PUSH_FUNCTION( "test_number" );
 
-  /* ²M°£°}¦C */
+  /* æ¸…é™¤é™£åˆ— */
   for ( loop = 0; loop < MAX_DIGITAL; loop++ ) buf[loop] = '\x0';
   *number = 0;
 
@@ -207,7 +207,7 @@ char * test_number( char * argument , int * number )
     buf[loop] = *argument - '0';
   }
 
-  /* ­Y³£¨S¦³«h¦^¶Ç -1 */
+  /* è‹¥éƒ½æ²’æœ‰å‰‡å›å‚³ -1 */
   if ( loop == 0 ) RETURN( NULL );
 
   factor = 1;
@@ -220,7 +220,7 @@ char * test_number( char * argument , int * number )
   RETURN( argument );
 }
 
-/* ­pºâ¦r¦êªø«× */
+/* è¨ˆç®—å­—ä¸²é•·åº¦ */
 size_t str_len( const char * argument )
 {
   register size_t len;
@@ -232,7 +232,7 @@ size_t str_len( const char * argument )
   RETURN( len );
 }
 
-/* ­pºâ¦r¦êªø«×¡M¦ı¤£¥]§t ansi code */
+/* è¨ˆç®—å­—ä¸²é•·åº¦ï¹ä½†ä¸åŒ…å« ansi code */
 size_t ansi_str_len( char * pString )
 {
   size_t len;
@@ -249,26 +249,26 @@ size_t ansi_str_len( char * pString )
   RETURN( len );
 }
 
-/* §â¨â­Ó¦r¦ê³s±µ°_¨Ó */
+/* æŠŠå…©å€‹å­—ä¸²é€£æ¥èµ·ä¾† */
 char * str_cat( char * dest , const char * source )
 {
   char * buf;
 
   PUSH_FUNCTION( "str_cat" );
 
-  /* ¥ı¨ì¦r¦ê¥½ºİ */
+  /* å…ˆåˆ°å­—ä¸²æœ«ç«¯ */
   for ( buf = dest; *dest; dest++ );
 
-  /* ³s±µ¦r¦ê */
+  /* é€£æ¥å­—ä¸² */
   for ( ; *source; *dest++ = *source++ );
 
-  /* §â¦r¦ê¥½ºİ¥[¤WªÅ¦r¦ê */
+  /* æŠŠå­—ä¸²æœ«ç«¯åŠ ä¸Šç©ºå­—ä¸² */
   *dest = '\x0';
 
   RETURN( buf );
 }
 
-/* «ş¨©¦r¦ê */
+/* æ‹·è²å­—ä¸² */
 char * str_cpy( char * dest , const char * source )
 {
   char * buf;
@@ -278,7 +278,7 @@ char * str_cpy( char * dest , const char * source )
   RETURN( buf );
 }
 
-/* ¨ú¬Y¦r¦êªº«e n ­Ó¦r¤¸ */
+/* å–æŸå­—ä¸²çš„å‰ n å€‹å­—å…ƒ */
 char * str_ncpy( char * dest, const char * source, size_t len )
 {
   char * buf;
@@ -326,7 +326,7 @@ bool str_scmp( const char * astr, const char * bstr, bool * value )
 
   if ( !astr || !bstr )
   {
-    mudlog( LOG_DEBUG , "str_scmp: ªÅªº¨Ó·½¦r¦ê." );
+    mudlog( LOG_DEBUG , "str_scmp: ç©ºçš„ä¾†æºå­—ä¸²." );
     RETURN( TRUE );
   }
 
@@ -343,7 +343,7 @@ bool str_cmp( const char * astr, const char * bstr )
 
   if ( !astr || !bstr )
   {
-    mudlog( LOG_DEBUG , "str_cmp: ªÅªº¨Ó·½¦r¦ê." );
+    mudlog( LOG_DEBUG , "str_cmp: ç©ºçš„ä¾†æºå­—ä¸²." );
     RETURN( TRUE );
   }
 
@@ -359,13 +359,13 @@ bool str_prefix( const char * astr, const char * bstr )
 
   if ( !astr )
   {
-    mudlog( LOG_DEBUG , "str_prefix: ªÅªº¨Ó·½¦r¦ê." );
+    mudlog( LOG_DEBUG , "str_prefix: ç©ºçš„ä¾†æºå­—ä¸²." );
     RETURN( TRUE );
   }
 
   if ( !bstr )
   {
-    mudlog( LOG_DEBUG , "str_prefix: ªÅªº¥Øªº¦r¦ê." );
+    mudlog( LOG_DEBUG , "str_prefix: ç©ºçš„ç›®çš„å­—ä¸²." );
     RETURN( TRUE );
   }
 
@@ -465,10 +465,10 @@ char * chinese_number( int i, char * pString )
 {
   long long mod;
   static char * c_dig[] =
-   { "¹s", "¤Q", "¦Ê", "¤d", "¸U", "»õ", "¥ü" };
+   { "é›¶", "å", "ç™¾", "åƒ", "è¬", "å„„", "å…†" };
 
   static char * c_num[] =
-    { "¹s", "¤@", "¤G", "¤T", "¥|", "¤­", "¤»", "¤C", "¤K", "¤E", "¤Q" };
+    { "é›¶", "ä¸€", "äºŒ", "ä¸‰", "å››", "äº”", "å…­", "ä¸ƒ", "å…«", "ä¹", "å" };
 
   PUSH_FUNCTION( "chinese_number" );
 
@@ -478,13 +478,13 @@ char * chinese_number( int i, char * pString )
   {
     if ( ( i = -i ) > 0 )
     {
-      pString += sprintf( pString, "%s", "­t" );
+      pString += sprintf( pString, "%s", "è² " );
       pString  = chinese_number( i, pString  );
     }
 
     else
     {
-      pString += sprintf( pString, "%s", "­tµL­­¤j" );
+      pString += sprintf( pString, "%s", "è² ç„¡é™å¤§" );
     }
   }
 
@@ -595,7 +595,7 @@ char * chinese_number( int i, char * pString )
 
   else
   {
-    pString += sprintf( pString, "%s", "µL­­¤j" );
+    pString += sprintf( pString, "%s", "ç„¡é™å¤§" );
   }
 
   RETURN( pString );

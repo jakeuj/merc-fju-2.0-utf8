@@ -1,5 +1,5 @@
 Name            sea flow blade~
-Cname           ��y�M�k~
+Cname           花語刀法~
 Slot            SLOT_SEAFLOW_BLADE
 Msgoff          ~
 Check           check_blade_attack~
@@ -33,8 +33,8 @@ Help            ~
 
 #Damage
 Description
-$n�ϧ�$O�M�@��$G�y�K���m�����z$Z�w�M�϶}�M�M���{�{���w�M���p�m���|�B���R$N�@
-���������W�U�w�Q��˵L�ƳB�C~
+$n使快$O﹐一招$G『春風彩蝶飛』$Z已然使開﹐刀光閃爍不定﹐婉如彩蝶四處飛舞$N一
+失神全身上下已被砍傷無數處。~
 Chance          20
 Value           20
 Parry           0
@@ -44,8 +44,8 @@ End
 
 #Damage
 Description
-$n�����$O�M�M�_�M���M���O�|�u��R�M�k����$S�y�L�]�P�ũ��z$Z$N���C�C���ݵ۾�
-�M��ӫo���G�L�k��ܡC~
+$n雙手持$O﹐刀起刀落﹐正是四季花舞刀法中的$S『夏夜星空明』$Z$N眼睜睜的看著橫
+刀砍來卻似乎無法抵抗。~
 Chance          20
 Value           20
 Parry           0
@@ -55,8 +55,8 @@ End
 
 #Damage
 Description
-$n���Y����M���N��ɡM$Y�y��N�T���_�z$Z���_�⦡�ݦ�����$O�b$N���|�P�����Ƭ��L
-�Ʒ������a�M$N�@���w���M�M��w�g�G�체�e�C~
+$n眉頭緊鎖﹐殺意急升﹐$Y『秋意愁不斷』$Z之起手式看似完成$O在$N的四周飄盪化為無
+數楓葉落地﹐$N一不定神﹐刀氣已經逼到眼前。~
 Chance          20
 Value           20
 Parry           0
@@ -66,8 +66,8 @@ End
 
 #Damage
 Description
-$n�⤤$O�V�϶V�֡M�M���N��M$G�y�V�B�H�Y���z$Z�M�����n�ӥX�M$N�ߤ��j��M������
-�w��$N�w���J�I�ҵL�k�{���C~
+$n手中$O越使越快﹐刀風冷冽﹐$G『冬雨寒若雪』$Z刀招應聲而出﹐$N心中大驚﹐但為時
+已晚$N已陷入險境無法閃躲。~
 Chance          20
 Value           20
 Parry           0
@@ -77,8 +77,8 @@ End
 
 #Damage
 Description
-$n�s���X�ۡM�@��$P�y���}�H���ơz$Z����k���M�p�g���몺�Ƭy�M$N���G�L�k�׶}�o�X
-��öi���@���C~
+$n連環出招﹐一招$P『梅開隨風飄』$Z左攻右擊﹐如狂風般的飄流﹐$N似乎無法避開這柔
+剛並進的一擊。~
 Chance          20
 Value           20
 Parry           0
@@ -88,8 +88,8 @@ End
 
 #Damage
 Description
-$n���|$O�M�H�����������ի��M�V�e�M���O�|�u��R�M�k���̬X�����ۦ�$P�y�����ǥ|��
-�z$Z�M$N�w�Q�o���R���������l�ަӧѤF�����C~
+$n倒舉$O﹐以極美妙的姿勢持刀向前﹐正是四季花舞刀法中最柔美的招式$P『蘭香傳四方
+』$Z﹐$N已被這美麗的景像給吸引而忘了攻擊。~
 Chance          20
 Value           20
 Parry           0
@@ -99,8 +99,8 @@ End
 
 #Damage
 Description
-$n�M�_�ש�M�ʧ@�M����U���O$y�y�˥X�ʪ�ݡz$Z�M�Z���D�n�v��$N�ݨ�o�M�ۤ@�X
-ı���ۦ樣�F�M���M���ۼo�Z�Ǧӫ�$n���v�����Y�C~
+$n刀起斜放﹐動作清雅脫俗正是$y『竹出百花殘』$Z刀訣的主要宗旨$N看到這刀招一出
+覺的相行見慚﹐竟然有自廢武學而拜$n為師的念頭。~
 Chance          20
 Value           20
 Parry           0
@@ -110,8 +110,8 @@ End
 
 #Damage
 Description
-$n���M���b�����b��M�ۼĤ���$Y�y��y�ĤH�ߡz$Z�۵M�ӥ͡M$N�Q$n�ݯ}�߷N�m�o��
-���M$N�w���J�@�}�M�������C~
+$n持刀劃半弧成半圓﹐欺敵之招$Y『菊語採人心』$Z自然而生﹐$N被$n看破心意搶得先
+機﹐$N已陷入一陣刀網之中。~
 Chance          20
 Value           20
 Parry           0

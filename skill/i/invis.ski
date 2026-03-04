@@ -1,7 +1,7 @@
 Name            invis~
-Cname           Áô§Î³N~
+Cname           éš±å½¢è¡“~
 Slot            SLOT_INVIS
-Msgoff          §A¤£¦AÁô§Î¤F¡T~
+Msgoff          ä½ ä¸å†éš±å½¢äº†ï¹—~
 Function        cast_invis~
 Position        POS_STANDING
 Check           check_unrigid_attack~

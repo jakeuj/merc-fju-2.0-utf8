@@ -1,10 +1,10 @@
 Vnum            42
 Name            hemoriver sword~
-ShortDesc       ¡y¦åªe¡z¯«¼C~
+ShortDesc       ã€Žè¡€æ²³ã€ç¥žåŠ~
 Description
-¡y¦åªe¡z¡M¼C¨­¥W¥Y¤£¥­¡M¼C¾W¨ä¶wµL¤ñ¡M¼C¯áÅs¦±¡M
-¼C¦y¬n±×¡M¦pªG»¡¦³¥X¦â¤§³B¡M«K¬O³o§â¼CÁôÁô³z¥X¬õ¥ú¡C~
-Unit            §â~
+ã€Žè¡€æ²³ã€ï¹åŠèº«å‡¹å‡¸ä¸å¹³ï¹åŠé‹’å…¶éˆç„¡æ¯”ï¹åŠè„Šå½Žæ›²ï¹
+åŠå°–æ­ªæ–œï¹å¦‚æžœèªªæœ‰å‡ºè‰²ä¹‹è™•ï¹ä¾¿æ˜¯é€™æŠŠåŠéš±éš±é€å‡ºç´…å…‰ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

@@ -1,10 +1,10 @@
 Vnum            CLASS_BARD
 Name            bard~
-Cname           §D  ¤H~
-Title           ½æ¨­¤£½æÁn~
+Cname           ä¼¶  äºº~
+Title           è³£èº«ä¸è³£è²~
 LowerLimit      50
 UpperLimit      L_HER
-LimitMsg        $Y$nÄ±±o$N¹ê¦b¬O¤Ó¥O¤HÃø¥H§Ô¨ü¤F¡M«K¦V¨äµo¥X¥²±şªº¤@À»¡T$Z~
+LimitMsg        $Y$nè¦ºå¾—$Nå¯¦åœ¨æ˜¯å¤ªä»¤äººé›£ä»¥å¿å—äº†ï¹ä¾¿å‘å…¶ç™¼å‡ºå¿…æ®ºçš„ä¸€æ“Šï¹—$Z~
 Limit           3000
 Multiplier      30
 RebirthGold     10000

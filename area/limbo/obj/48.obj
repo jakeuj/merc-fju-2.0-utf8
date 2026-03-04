@@ -1,10 +1,10 @@
 Vnum            48
 Name            swallow sword~
-ShortDesc       �P�ޤM~
+ShortDesc       燕翎刀~
 Description
-�P�ޤM  �S�W���I�j���M�M�M�I�p�M�M�Y��M�M�խ��M�M�I�W�e�H���u�����M
-���ʮ����M�����M�Ŧ��P��M�ӤM���b���P�СM�G�W�u�P�ޤM�v�C~
-Unit            ��~
+燕翎刀  又名金背大環刀﹐刀背厚﹐刀頭闊﹐刀勢重﹐刀背上貫以五只銅環﹐
+揮動時環刀相擊﹐酷似燕鳴﹐而刀身半片燕羽﹐故名「燕翎刀」。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

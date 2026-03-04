@@ -1,10 +1,10 @@
 Vnum            108
 Name            sigil~
-ShortDesc       ²Å©G~
+ShortDesc       ç¬¦å’’~
 Description
-¤@±i¥i¥H§ó§ïª««~¦WºÙªº²Å©G¡M¤£§«¥Î rename ¸Õ¸Õ¬İ¡T
+ä¸€å¼µå¯ä»¥æ›´æ”¹ç‰©å“åç¨±çš„ç¬¦å’’ï¹ä¸å¦¨ç”¨ rename è©¦è©¦çœ‹ï¹—
 ~
-Unit            ±i~
+Unit            å¼µ~
 ItemType        ITEM_SIGIL
 Takeable        Yes
 Level           1

@@ -1,11 +1,11 @@
 Vnum            127
 Name            x'mas coffee~
-ShortDesc       [1;33m�t��[1;35m�@��[0m~
+ShortDesc       [1;33m聖誕[1;35m咖啡[0m~
 Description
-�@�M����|�h���@�ءM�b�Y���C�Ϥ�����M�ӪM�@�@���@�ءK
-���믫�����ӤF��
+一杯香氣四逸的咖啡﹐在吃完耶誕火雞後﹐來杯濃濃的咖啡…
+嗯∼精神全都來了∼
 ~
-Unit            �M~
+Unit            杯~
 ItemType        ITEM_DRINK_CON
 Takeable        Yes
 Level           10

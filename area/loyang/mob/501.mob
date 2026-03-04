@@ -1,10 +1,10 @@
 Vnum            501
 Name            guard~
-ShortDesc       «°¥«¦u½Ã~
-LongDesc        ¦uÅ@µÛ«°¥«ªº¦u½Ã(guard)¦b¦¹¨µÅŞ¡C
+ShortDesc       åŸå¸‚å®ˆè¡›~
+LongDesc        å®ˆè­·è‘—åŸå¸‚çš„å®ˆè¡›(guard)åœ¨æ­¤å·¡é‚ã€‚
 ~
 Description
-¥L­Ì¬O¯S§O¦b¦¹«OÅ@«°¥«ªº¦w¥ş¡M¥¿¥ş¤O±Mª`ªº¬İµÛ¨Ó©¹ªº¦æ¤H¡C
+ä»–å€‘æ˜¯ç‰¹åˆ¥åœ¨æ­¤ä¿è­·åŸå¸‚çš„å®‰å…¨ï¹æ­£å…¨åŠ›å°ˆæ³¨çš„çœ‹è‘—ä¾†å¾€çš„è¡Œäººã€‚
 ~
 StayArea        Yes
 Effect          'detect invis'
@@ -42,8 +42,8 @@ endif
 if isimmort($n)
   break
 endif
-if isenemy($n) != '¬¥¶§'
-  mpsetenemy $n '¬¥¶§'
+if isenemy($n) != 'æ´›é™½'
+  mpsetenemy $n 'æ´›é™½'
 endif
 ~
 End
@@ -53,8 +53,8 @@ Type            rand_prog
 Chance          30
 Text
 if rand(30)
-  emote ¥¿¨ì³B¨µÅŞµÛ¡K
-  say ¤£­nÅı§Úµo²{¨ì¹H¤Ï¬ö«ßªº¨Æ¡M§_«h¡K¼K¼K¡K
+  emote æ­£åˆ°è™•å·¡é‚è‘—â€¦
+  say ä¸è¦è®“æˆ‘ç™¼ç¾åˆ°é•åç´€å¾‹çš„äº‹ï¹å¦å‰‡â€¦å˜¿å˜¿â€¦
 endif
 ~
 End

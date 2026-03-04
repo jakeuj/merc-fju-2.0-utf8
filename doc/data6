@@ -1,10 +1,10 @@
-��  �D: Mud Server ���J�L���j�骺�~���ʷ��{��
+標  題: Mud Server 陷入無限迴圈的外部監督程式
 
-Merc/Envy �ѩ󥻨����r��B�z�Plist���B�z ,���ɷ|�۰ʱ��i�L��
-���j�餧�� ,�ӥ����a mud ���D�ޤH���s�N job kill �A��Ұ� ,
-�o�� script �N�O�N�����@�欰��²���~�� script.
+Merc/Envy 由於本身的字串處理與list的處理 ,有時會自動掉進無盡
+的迴圈之中 ,而必須靠 mud 的主管人重新將 job kill 再行啟動 ,
+這組 script 就是代替此一行為的簡易外部 script.
 
-exam �� script
+exam 的 script
 #! /bin/csh -f
 nohup
 while ( 1 )
@@ -18,18 +18,18 @@ while ( 1 )
 continue
 end
 
-�Q�� ps ����X�ӧ@���ˬd ,�W���� grep ��޸����r��H�ŦX�A��
-�޲z�� mud server �R�O�C.
-ps -xu �p�G�b�Y�Ǿ����i��n��H ps -u username ���������Ѽ�
-�h���ۦ����.�þA�ת��վ� cut���d��
-sleep ���ɶ��H������� ,�ҥH��]�w�� 20 �����ˬd�@��
+利用 ps 的輸出來作為檢查 ,上面的 grep 單引號的字串以符合你所
+管理的 mud server 命令列.
+ps -xu 如果在某些機器可能要改以 ps -u username 此部份的參數
+則須自行嘗試.並適度的調整 cut的範圍
+sleep 的時間以秒為單位 ,所以原設定為 20 分鐘檢查一次
 
-ps.sc �N�|���H�U�X�ӰѼ�
+ps.sc 將會有以下幾個參數
 username PID %CPU %MEM CPUTIME COMMAND LINE
-�ҥH���n�t�@�ӻP username �ۦP��  script �ӱ����o�Ǩ��
-�p�G run mud server �� username �� mud_adm
-�h�� script �Y�� mud_adm
-�䤺�e�p�U
+所以須要另一個與 username 相同的  script 來接收這些函數
+如果 run mud server 的 username 為 mud_adm
+則該 script 即為 mud_adm
+其內容如下
 #! /bin/csh -f
 if ( "$1" != "" ) then
   if ( ( $2 >= 50 ) || ( $4 >= 240 ) ) then
@@ -40,10 +40,10 @@ if ( "$1" != "" ) then
 endif
 exit
 
-���B�h�ݬݧA�Q�]�w�b�󱡪p�U kill mud server ,���J�L���j��ɪ��S��O CPU%
-���j ,CPUTIME �ֿn���� ,�H�� script ���]�w�� CPU% > 50% �άO CPUTIME >240
-�Y�| kill job.�ѩ� LA �O�ݩ�C�ѭ��s�}�� ,�t�Φb 50 �H���k�W�u�� ,�t�έt
-���j���b 10%�H�U ,�����t���p ,�]���|�����@�]�w ,�U mud �޲z�H�i�H���ۤv
-mudserver �����p�ӾA�׽վ�o�ǰѼƪ��j�p
+此處則端看你想設定在何情況下 kill mud server ,陷入無限迴圈時的特色是 CPU%
+極大 ,CPUTIME 累積較快 ,以此 script 的設定為 CPU% > 50% 或是 CPUTIME >240
+即會 kill job.由於 LA 是屬於每天重新開機 ,系統在 50 人左右上線時 ,系統負
+載大約在 10%以下 ,平均負載小 ,因此會有此一設定 ,各 mud 管理人可以視自己
+mudserver 的狀況而適度調整這些參數的大小
 
-script �o�i���� Sun Sparc 2  + SunOS 4.1.2
+script 發展環境 Sun Sparc 2  + SunOS 4.1.2

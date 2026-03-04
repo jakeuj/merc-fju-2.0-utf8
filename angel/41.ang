@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A��򪾹D�A���W�쩳�����ǪF��O�S�A�u�n��J [1;32minventory[0m (���Y�g i )�N�i�H
-�o���o�C�L�ٷ|�i�D�A�F�誺�l�`�{�׳�C
+你怎麼知道你身上到底有哪些東西呢﹖你只要輸入 [1;32minventory[0m (或縮寫 i )就可以
+得知囉。他還會告訴你東西的損害程度喔。
 
-�Ьd�ߡRinventory�Bequipment
+請查詢﹕inventory、equipment
 ~
 End

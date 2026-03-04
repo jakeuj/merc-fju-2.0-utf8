@@ -1,7 +1,7 @@
 Name            faerie fire~
-Cname           ºëÆF¤§¤õ~
+Cname           ç²¾éˆä¹‹ç«~
 Slot            SLOT_FAERIE_FIRE
-Msgoff          ³òÂ¶§A¨­Åéªº¯»¬õ¦â¥ú¨~®ø¥¢¤F¡T~
+Msgoff          åœç¹žä½ èº«é«”çš„ç²‰ç´…è‰²å…‰èŠ’æ¶ˆå¤±äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_faerie_fire~
 Position        POS_FIGHTING
@@ -37,10 +37,10 @@ Location        AFF_NONE
 End
 
 Help
-ºëÆF¤§¤õ:
+ç²¾éˆä¹‹ç«:
 
-Âà¤Æ§Aªºªk¤O³ê¨Ó¤õªººëÆF¡M±N§Aªº¹ï¶H©ÜÂÐ¤@¼h¯»¬õ¦âªº¤õµK¡M¯}
-Ãa¥Lªº¨¾¿m¡MÅý§Aªºª«²z§ðÀ»§ó¦³§Q¡T
+è½‰åŒ–ä½ çš„æ³•åŠ›å–šä¾†ç«çš„ç²¾éˆï¹å°‡ä½ çš„å°è±¡æŠ«è¦†ä¸€å±¤ç²‰ç´…è‰²çš„ç«ç„°ï¹ç ´
+å£žä»–çš„é˜²ç¦¦ï¹è®“ä½ çš„ç‰©ç†æ”»æ“Šæ›´æœ‰åˆ©ï¹—
 
 ~
 End

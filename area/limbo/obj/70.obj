@@ -1,9 +1,9 @@
 Vnum            70
 Name            melansword~
-ShortDesc       ¶ÂÅK¼C~
+ShortDesc       é»‘éµåŠ~
 Description
-¶ÂÂKÂKªº¤@§âÅK¼C(melansword)¡M¤£ª¾¹D¬O¥Î¤°»òª÷ÄÝ»s¦¨ªº¡C~
-Unit            §â~
+é»‘é»é»çš„ä¸€æŠŠéµåŠ(melansword)ï¹ä¸çŸ¥é“æ˜¯ç”¨ä»€éº¼é‡‘å±¬è£½æˆçš„ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

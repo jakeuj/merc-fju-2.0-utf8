@@ -1,18 +1,18 @@
 -1 COMMANDS CMDS~
 .
-    1. ²¾°ÊÃş«ü¥O       [1;32mhelp direction[0m
-    2. ª¬ºAÃş«ü¥O       [1;32mhelp position[0m
-    3. ¹Î¶¤Ãş«ü¥O       [1;32mhelp groups[0m
-    4. ¾Ô°«Ãş«ü¥O       [1;32mhelp war[0m
-    5. §Ş¯àÃş«ü¥O       [1;32mhelp allskill[0m
-    6. ¶T©öÃş«ü¥O       [1;32mhelp trade[0m
-    7. ª«¥óÃş«ü¥O       [1;32mhelp object[0m
-    8. ·¾³qÃş«ü¥O       [1;32mhelp communication[0m
-    9. ¥æ³qÃş«ü¥O       [1;32mhelp travel[0m
-   10. ²ÕºAÃş«ü¥O       [1;32mhelp config[0m
-   11. ¬d¸ßÃş«ü¥O       [1;32mhelp finger[0m
+    1. ç§»å‹•é¡æŒ‡ä»¤       [1;32mhelp direction[0m
+    2. ç‹€æ…‹é¡æŒ‡ä»¤       [1;32mhelp position[0m
+    3. åœ˜éšŠé¡æŒ‡ä»¤       [1;32mhelp groups[0m
+    4. æˆ°é¬¥é¡æŒ‡ä»¤       [1;32mhelp war[0m
+    5. æŠ€èƒ½é¡æŒ‡ä»¤       [1;32mhelp allskill[0m
+    6. è²¿æ˜“é¡æŒ‡ä»¤       [1;32mhelp trade[0m
+    7. ç‰©ä»¶é¡æŒ‡ä»¤       [1;32mhelp object[0m
+    8. æºé€šé¡æŒ‡ä»¤       [1;32mhelp communication[0m
+    9. äº¤é€šé¡æŒ‡ä»¤       [1;32mhelp travel[0m
+   10. çµ„æ…‹é¡æŒ‡ä»¤       [1;32mhelp config[0m
+   11. æŸ¥è©¢é¡æŒ‡ä»¤       [1;32mhelp finger[0m
 
-    ©Ò¦³ªº«ü¥O¦U¦Û¦³§¹µ½ªº»¡©ú¡M¥H buy ³o­Ó«ü¥O¬°¨Ò¡M§A·Qª¾¹D¨Ï¥Î¤èªk
-¥i¥H¿é¤J [1;32mbuy /?[0m ©Î¬O [1;32mbuy -?[0m¡M¨t²Î·|§¹¾ã¦a§i¶D§A¥Lªº¨Ï¥Î¤èªk©M®É¾÷¡C
+    æ‰€æœ‰çš„æŒ‡ä»¤å„è‡ªæœ‰å®Œå–„çš„èªªæ˜ï¹ä»¥ buy é€™å€‹æŒ‡ä»¤ç‚ºä¾‹ï¹ä½ æƒ³çŸ¥é“ä½¿ç”¨æ–¹æ³•
+å¯ä»¥è¼¸å…¥ [1;32mbuy /?[0m æˆ–æ˜¯ [1;32mbuy -?[0mï¹ç³»çµ±æœƒå®Œæ•´åœ°å‘Šè¨´ä½ ä»–çš„ä½¿ç”¨æ–¹æ³•å’Œæ™‚æ©Ÿã€‚
 
 ~

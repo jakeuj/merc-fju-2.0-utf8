@@ -1,10 +1,10 @@
 Vnum            168
 Name            xun wind potion~
-ShortDesc       ´S­·ÃÄ¤ô~
+ShortDesc       å·½é¢¨è—¥æ°´~
 Description
-¤@²~´S­·ÃÄ¤ô(xun wind potion)¡M¨ã¦³ºëÆF¤§Ãúªº®ÄªG¡C
+ä¸€ç“¶å·½é¢¨è—¥æ°´(xun wind potion)ï¹å…·æœ‰ç²¾éˆä¹‹éœ§çš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

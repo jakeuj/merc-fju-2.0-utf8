@@ -1,9 +1,9 @@
 Vnum            21
 Name            water brace~
-ShortDesc       ¤ô¯«Å@µÃ~
+ShortDesc       æ°´ç¥žè­·è…•~
 Description
-¤@¥ó¥Ñª÷¶ô¥´³yªºÅ@µÃ(robe)¡C~
-Unit            ¥ó~
+ä¸€ä»¶ç”±é‡‘å¡Šæ‰“é€ çš„è­·è…•(robe)ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_WRIST
 Takeable        Yes

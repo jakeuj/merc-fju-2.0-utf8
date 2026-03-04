@@ -1,9 +1,9 @@
 Vnum            55
 Name            small rod~
-ShortDesc       ¤ì´Ò~
+ShortDesc       æœ¨æ£~
 Description
-¸ôÃäÀH¤â¥i±oªº¤p¤ì´Ò(rod)©ñ¸m¦b¤@®Ç~
-Unit            ®Ú~
+è·¯é‚Šéš¨æ‰‹å¯å¾—çš„å°æœ¨æ£(rod)æ”¾ç½®åœ¨ä¸€æ—~
+Unit            æ ¹~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

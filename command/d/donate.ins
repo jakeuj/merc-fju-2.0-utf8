@@ -1,5 +1,5 @@
 Name            donate~
-Cname           ����~
+Cname           捐贈~
 Function        do_donate~
 Position        POS_RESTING
 Level           0
@@ -15,42 +15,42 @@ Lost            NO
 Lock            NO
 Limit           YES
 Help
-�y�k�Rdonate
-�y�k�Rdonate gold <���B>
-�y�k�Rdonate withdraw
-�y�k�Rdonate lock                                  (���ګ��O)
-�y�k�Rdonate set duration <�ɶ����j>               (���ګ��O)
-�y�k�Rdonate set benifit  <���٪��B>               (���ګ��O)
-�y�k�Rdonate set level    <���ٵ���>               (���ګ��O)
-�y�k�Rdonate set limit    <���٤U��>               (���ګ��O)
-�y�k�Rdonate setting                               (���ګ��O)
+語法﹕donate
+語法﹕donate gold <金額>
+語法﹕donate withdraw
+語法﹕donate lock                                  (神族指令)
+語法﹕donate set duration <時間間隔>               (神族指令)
+語法﹕donate set benifit  <救濟金額>               (神族指令)
+語法﹕donate set level    <救濟等級>               (神族指令)
+語法﹕donate set limit    <救濟下限>               (神族指令)
+語法﹕donate setting                               (神族指令)
 
-    �o�ӫ��O�O�ΨӺ޲z�B���ةάO�������|���������O�M�@�}�l�A�i�H�ϥ�
-[1;32mdonate[0m  �o���ثe����|�̦��h�֪����M�άO�d�ߧA�ثe�O�_�٦b����|�ʷ���
-�U�޲z�A���]���C�������H�i�H�ϥ� donate gold xxxx �Ӯ��ؿ�������|�M��
-�p�R
+    這個指令是用來管理、捐贈或是領取基金會金錢的指令﹐一開始你可以使用
+[1;32mdonate[0m  得知目前基金會裡有多少金錢﹐或是查詢你目前是否還在基金會監督之
+下管理你的財產。有錢的人可以使用 donate gold xxxx 來捐贈錢給基金會﹐例
+如﹕
 
-    [1;32mdonate gold 200000[0m �M�N���A���F�G�Q�U������|�M������|�|�Q�γo����
-�����U���ŧC�B�ʿ������a�M�Y�ŦX���󪺪��a�M����p�U�R�]����i��Q���^
+    [1;32mdonate gold 200000[0m ﹐代表你捐了二十萬給基金會﹐此基金會會利用這筆錢
+來幫助等級低且缺錢的玩家﹐若符合條件的玩家﹐條件如下﹕（條件可能被更改）
 
-    1) ���ť����b [1;37m15[0m �ťH�U�C
-    2) �����b�W�@������٪��� [1;37m24[0m �p�ɤ���C
-    3) ���W�`�겣����W�L[1;37m�@�U[0m��Ȥl�C
+    1) 等級必須在 [1;37m15[0m 級以下。
+    2) 必須在上一次領救濟金的 [1;37m24[0m 小時之後。
+    3) 身上總資產不能超過[1;37m一萬[0m兩銀子。
 
-    �Y�W�z�ŦX���󪺪��a�M���i�H������h����o�@�����٪��M���@�d��Ȥl�M
-���b�⧹���G�Q�|�p�ɤ��M����|�|�ʷ��A�ϥο������p�M�Ҧp�R����R�Ѳ��B
-����R�m�餧�������O�C
+    若上述符合條件的玩家﹐都可以到錢莊去領取這一筆救濟金﹐約一千兩銀子﹐
+但在領完的二十四小時內﹐基金會會監督你使用錢的狀況﹐例如﹕不能買股票、
+不能買彩券之類的指令。
 
-    �޲z�̥i�H�ϥ� [1;32mdonate lock[0m ����w�ζ}�Ҧ�����|����B�M�]�i�H�ϥ�
-[1;32mdonate setting[0m �ӹ�ݥثe�����p�C
+    管理者可以使用 [1;32mdonate lock[0m 來鎖定或開啟住基金會的營運﹐也可以使用
+[1;32mdonate setting[0m 來察看目前的狀況。
 
-    �Y�O�ѼƬ� [1;32mset[0m �h�i�H���ثe���]�w�M�U�C�O�U�@�ӰѼƪ��N�q�R
+    若是參數為 [1;32mset[0m 則可以更改目前的設定﹐下列是下一個參數的意義﹕
 
-    1) [1;33mduration[0m ���٫�M����|�ʷ����ɶ��C
-    2) [1;33mlevel[0m    �̧C�����ٵ��šC
-    3) [1;33mbenifit[0m  �C���ŦX���󪺪��a�i�H��������٪����B�C
-    4) [1;33mlimit[0m    �C���Ū��a���`�겣����M�W�L������h�������C
+    1) [1;33mduration[0m 救濟後﹐基金會監督的時間。
+    2) [1;33mlevel[0m    最低的救濟等級。
+    3) [1;33mbenifit[0m  每次符合條件的玩家可以領取的救濟金金額。
+    4) [1;33mlimit[0m    低等級玩家的總資產限制﹐超過此限制則不能領取。
 
-������T�R
+相關資訊﹕
 ~
 End

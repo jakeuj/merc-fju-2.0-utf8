@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -41,11 +41,11 @@ FUNCTION( do_automap )
   {
     if ( !( pTrace = pc->trace ) )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥Ø«e¨S¦³Âê©w¬ö¿ı¸ô®|¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ ç›®å‰æ²’æœ‰é–å®šç´€éŒ„è·¯å¾‘ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    print_to_char( ch, "§A¥Ø«eÂê©wªº¸ô®|¸ê®Æ¬°¡R\n\r%s%s%s"
+    print_to_char( ch, "ä½ ç›®å‰é–å®šçš„è·¯å¾‘è³‡æ–™ç‚ºï¹•\n\r%s%s%s"
       , VERTICAL_LINE, show_a_trace( pTrace ) , VERTICAL_LINE );
   }
 
@@ -53,7 +53,7 @@ FUNCTION( do_automap )
   {
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "½Ğµù©ú§Aªº´X¸¹¬ö¿ı¡S\n\r", ch );
+      send_to_char( "è«‹è¨»æ˜ä½ çš„å¹¾è™Ÿç´€éŒ„ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -61,37 +61,37 @@ FUNCTION( do_automap )
 
     if ( loop < 0 || loop >= MAX_TRACE )
     {
-      send_to_char( "¹ï¤£°_¡M§Aªº¸¹½X¤£¦Xªk¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„è™Ÿç¢¼ä¸åˆæ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pTrace = pc->map[loop] ) )
     {
-      send_to_char( "¹ï¤£°_¡M§A¨º­Ó¬ö¿ı¬OªÅªº¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ é‚£å€‹ç´€éŒ„æ˜¯ç©ºçš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pTrace->ending != pRoom->vnum )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«e¤£¬O¦b¨º­Ó²×ÂI¡M©Ò¥HµLªk±Ò°Ê¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ä¸æ˜¯åœ¨é‚£å€‹çµ‚é»ï¹æ‰€ä»¥ç„¡æ³•å•Ÿå‹•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pDesc = ch->desc ) )
     {
-      send_to_char( "¦¹¤HµL´y­zªí¡MµLªk±Ò°Ê¡T\n\r", ch );
+      send_to_char( "æ­¤äººç„¡æè¿°è¡¨ï¹ç„¡æ³•å•Ÿå‹•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "§AÁÙ¬O¥ı¦£§¹§A¤âÃäªºªF¦è§a¡T\n\r", ch );
+      send_to_char( "ä½ é‚„æ˜¯å…ˆå¿™å®Œä½ æ‰‹é‚Šçš„æ±è¥¿å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_pk( ch ) )
     {
-      send_to_char( "§AÁÙ¬O±M¤ß§AªºªZ°«¤j·|§a¡T\n\r", ch );
+      send_to_char( "ä½ é‚„æ˜¯å°ˆå¿ƒä½ çš„æ­¦é¬¥å¤§æœƒå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -137,13 +137,13 @@ FUNCTION( do_automap )
 
     if ( buf[0] == '\x0' )
     {
-      send_to_char( "µL®Äªº¬ö¿ı¡T\n\r", ch );
+      send_to_char( "ç„¡æ•ˆçš„ç´€éŒ„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     buf[ UMAX( 0, sizeof( pDesc->inbuf ) - 100 ) ] = '\x0';
 
-    send_to_char( "±Ò°Ê¬ö¿ı¸ô®|¼Ò¦¡¡T\n\r", ch );
+    send_to_char( "å•Ÿå‹•ç´€éŒ„è·¯å¾‘æ¨¡å¼ï¹—\n\r", ch );
     str_cpy( pDesc->inbuf , buf );
     RETURN_NULL();
   }
@@ -154,37 +154,37 @@ FUNCTION( do_automap )
 
     if ( loop < 0 || loop >= MAX_TRACE )
     {
-      send_to_char( "¹ï¤£°_¡M§Aªº¸¹½X¤£¦Xªk¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„è™Ÿç¢¼ä¸åˆæ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pTrace = pc->map[loop] ) )
     {
-      send_to_char( "¹ï¤£°_¡M§A¨º­Ó¬ö¿ı¬OªÅªº¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ é‚£å€‹ç´€éŒ„æ˜¯ç©ºçš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pTrace->starting != pRoom->vnum )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«e¤£¬O¦b¨º­Ó°_©lÂI¡M©Ò¥HµLªk±Ò°Ê¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰ä¸æ˜¯åœ¨é‚£å€‹èµ·å§‹é»ï¹æ‰€ä»¥ç„¡æ³•å•Ÿå‹•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pDesc = ch->desc ) )
     {
-      send_to_char( "¦¹¤HµL´y­zªí¡MµLªk±Ò°Ê¡T\n\r", ch );
+      send_to_char( "æ­¤äººç„¡æè¿°è¡¨ï¹ç„¡æ³•å•Ÿå‹•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "§AÁÙ¬O¥ı¦£§¹§A¤âÃäªºªF¦è§a¡T\n\r", ch );
+      send_to_char( "ä½ é‚„æ˜¯å…ˆå¿™å®Œä½ æ‰‹é‚Šçš„æ±è¥¿å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_pk( ch ) )
     {
-      send_to_char( "§AÁÙ¬O±M¤ß§AªºªZ°«¤j·|§a¡T\n\r", ch );
+      send_to_char( "ä½ é‚„æ˜¯å°ˆå¿ƒä½ çš„æ­¦é¬¥å¤§æœƒå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -230,13 +230,13 @@ FUNCTION( do_automap )
 
     if ( buf[0] == '\x0' )
     {
-      send_to_char( "µL®Äªº¬ö¿ı¡T\n\r", ch );
+      send_to_char( "ç„¡æ•ˆçš„ç´€éŒ„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     buf[ UMAX( 0, sizeof( pDesc->inbuf ) - 100 ) ] = '\x0';
 
-    send_to_char( "±Ò°Ê¬ö¿ı¸ô®|¼Ò¦¡¡T\n\r", ch );
+    send_to_char( "å•Ÿå‹•ç´€éŒ„è·¯å¾‘æ¨¡å¼ï¹—\n\r", ch );
     str_cpy( pDesc->inbuf , buf );
   }
 
@@ -247,19 +247,19 @@ FUNCTION( do_automap )
       || ch->failed > 0
       || ch->jail > 0 )
     {
-      send_to_char( "§A¥Ø«eªºª¬ºA¤£¾A¦X°lÂÜ¸ô®|¡T\n\r", ch );
+      send_to_char( "ä½ ç›®å‰çš„ç‹€æ…‹ä¸é©åˆè¿½è¹¤è·¯å¾‘ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_pk( ch ) )
     {
-      send_to_char( "§AÁÙ¬O±M¤ßªºªZ°«¤j·|§a¡T\n\r", ch );
+      send_to_char( "ä½ é‚„æ˜¯å°ˆå¿ƒçš„æ­¦é¬¥å¤§æœƒå§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_station( pRoom ) || pRoom->Sail )
     {
-      send_to_char( "¦b³o¸Ì¬OµLªk¬ö¿ı°lÂÜ¸ô®|ªº³á¡T\n\r", ch );
+      send_to_char( "åœ¨é€™è£¡æ˜¯ç„¡æ³•ç´€éŒ„è¿½è¹¤è·¯å¾‘çš„å–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -274,7 +274,7 @@ FUNCTION( do_automap )
 
     if ( !HasExit )
     {
-      send_to_char( "¹ï¤£°_¡M³o¸Ì¨S¦³¥X¤f¡M©Ò¥HµLªk°lÂÜ¸ô®|¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™è£¡æ²’æœ‰å‡ºå£ï¹æ‰€ä»¥ç„¡æ³•è¿½è¹¤è·¯å¾‘ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -288,27 +288,27 @@ FUNCTION( do_automap )
     pTrace->ending   = ERRORCODE;
     for ( loop = 0; loop < MAX_PATH; loop++ ) pTrace->path[loop] = ERRORCODE;
 
-    act( "§AÂê©w¤F$2$t$0¬°¬ö¿ıªº°_ÂI¡T", ch, pRoom->name, NULL, TO_CHAR );
+    act( "ä½ é–å®šäº†$2$t$0ç‚ºç´€éŒ„çš„èµ·é»ï¹—", ch, pRoom->name, NULL, TO_CHAR );
   }
 
   else if ( !str_prefix( arg, "clear" ) )
   {
     if ( !( pTrace = pc->trace ) )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥²¶·¥ı±o¦³Âê©w¤~¯à²M°£¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å¿…é ˆå…ˆå¾—æœ‰é–å®šæ‰èƒ½æ¸…é™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     free_struct( pc->trace, STRUCT_TRACE_DATA );
     pc->trace = NULL;
-    send_to_char( "§A¤w¸g²M°£¤§«eªºÂê©w°lÂÜ¡T\n\r", ch );
+    send_to_char( "ä½ å·²ç¶“æ¸…é™¤ä¹‹å‰çš„é–å®šè¿½è¹¤ï¹—\n\r", ch );
   }
 
   else if ( !str_prefix( arg, "delete" ) )
   {
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§A­n§R°£­ş¤@­Ó°lÂÜ¸ô®|¬ö¿ı¡S\n\r", ch );
+      send_to_char( "ä½ è¦åˆªé™¤å“ªä¸€å€‹è¿½è¹¤è·¯å¾‘ç´€éŒ„ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -316,13 +316,13 @@ FUNCTION( do_automap )
 
     if ( loop < 0 || loop >= MAX_TRACE )
     {
-      send_to_char( "¹ï¤£°_¡M§Aªº¸¹½X¤£¦Xªk¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„è™Ÿç¢¼ä¸åˆæ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pc->map[loop] )
     {
-      send_to_char( "¹ï¤£°_¡M§A¨º­Ó¬ö¿ı¬OªÅªº¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ é‚£å€‹ç´€éŒ„æ˜¯ç©ºçš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -330,14 +330,14 @@ FUNCTION( do_automap )
     pc->map[loop] = NULL;
 
     chinese_number( loop + 1, buf );
-    act( "§A§R°£¤F²Ä$t¸¹ªº¸ô®|¬ö¿ı¡T\n\r", ch, buf, NULL, TO_CHAR );
+    act( "ä½ åˆªé™¤äº†ç¬¬$tè™Ÿçš„è·¯å¾‘ç´€éŒ„ï¹—\n\r", ch, buf, NULL, TO_CHAR );
   }
 
   else if ( !str_prefix( arg, "show" ) )
   {
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§A­nÅã¥Ü­ş¤@­Ó°lÂÜ¸ô®|¬ö¿ı¡S\n\r", ch );
+      send_to_char( "ä½ è¦é¡¯ç¤ºå“ªä¸€å€‹è¿½è¹¤è·¯å¾‘ç´€éŒ„ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -345,18 +345,18 @@ FUNCTION( do_automap )
 
     if ( loop < 0 || loop >= MAX_TRACE )
     {
-      send_to_char( "¹ï¤£°_¡M§Aªº¸¹½X¤£¦Xªk¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„è™Ÿç¢¼ä¸åˆæ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pc->map[loop] )
     {
-      send_to_char( "¹ï¤£°_¡M§A¨º­Ó¬ö¿ı¬OªÅªº¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ é‚£å€‹ç´€éŒ„æ˜¯ç©ºçš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     chinese_number( loop + 1, buf );
-    print_to_char( ch, "§A²Ä%s¸¹¸ô®|¸ê®Æ¬°¡R\n\r%s%s%s"
+    print_to_char( ch, "ä½ ç¬¬%sè™Ÿè·¯å¾‘è³‡æ–™ç‚ºï¹•\n\r%s%s%s"
       , buf , VERTICAL_LINE, show_a_trace( pc->map[loop] ) , VERTICAL_LINE );
   }
 
@@ -376,17 +376,17 @@ FUNCTION( do_automap )
         aStart = aRoom ? aRoom->area : NULL;
         aEnd   = zRoom ? zRoom->area : NULL;
 
-        send_to_buffer( "%s¡B%sªº%s\e[0m ¨ì %sªº%s\e[0m\n\r"
+        send_to_buffer( "%sã€%sçš„%s\e[0m åˆ° %sçš„%s\e[0m\n\r"
           , buf
-          , aStart ? aStart->name : "¬Y¤£ª¾¦W°Ï°ì"
-          , aRoom  ? aRoom->name  : "¬Y¤£ª¾¦W¦a¤è"
-          , aEnd   ? aEnd->name   : "¬Y¤£ª¾¦W°Ï°ì"
-          , zRoom  ? zRoom->name  : "¬Y¤£ª¾¦W¦a¤è" );
+          , aStart ? aStart->name : "æŸä¸çŸ¥åå€åŸŸ"
+          , aRoom  ? aRoom->name  : "æŸä¸çŸ¥ååœ°æ–¹"
+          , aEnd   ? aEnd->name   : "æŸä¸çŸ¥åå€åŸŸ"
+          , zRoom  ? zRoom->name  : "æŸä¸çŸ¥ååœ°æ–¹" );
       }
 
       else
       {
-        send_to_buffer( "%s¡B¨S¦³¬ö¿ı¡T\n\r", buf );
+        send_to_buffer( "%sã€æ²’æœ‰ç´€éŒ„ï¹—\n\r", buf );
       }
 
       if ( buffer_full() ) break;
@@ -399,31 +399,31 @@ FUNCTION( do_automap )
   {
     if ( !( pTrace = pc->trace ) )
     {
-      send_to_char( "¹ï¤£°_¡M§A¥²¶·¥ı±o¦³Âê©w¤~¯à¼g¤J¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å¿…é ˆå…ˆå¾—æœ‰é–å®šæ‰èƒ½å¯«å…¥ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( zRoom = get_room_index( pTrace->starting ) ) )
     {
-      send_to_char( "§Aªº¬ö¿ı°_ÂI¤w¸g®ø¥¢¤F¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç´€éŒ„èµ·é»å·²ç¶“æ¶ˆå¤±äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( zRoom == pRoom )
     {
-      send_to_char( "§Aªº°_©lÂI©M²×ÂI®Ú¥»´N¤@¼Ë¡M¤£»İ­n¬ö¿ı¡T\n\r", ch );
+      send_to_char( "ä½ çš„èµ·å§‹é»å’Œçµ‚é»æ ¹æœ¬å°±ä¸€æ¨£ï¹ä¸éœ€è¦ç´€éŒ„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pTrace->path[0] == ERRORCODE )
     {
-      send_to_char( "§Aªº¸ô®|¸Ì®Ú¥»¨S¦³¬ö¿ı¡M°Ê§@¨ú®ø¡T\n\r", ch );
+      send_to_char( "ä½ çš„è·¯å¾‘è£¡æ ¹æœ¬æ²’æœ‰ç´€éŒ„ï¹å‹•ä½œå–æ¶ˆï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§A­n§â°lÂÜ¬ö¿ı¨ì­ş¤@­Ó¸¹½X¸Ì¡S\n\r", ch );
+      send_to_char( "ä½ è¦æŠŠè¿½è¹¤ç´€éŒ„åˆ°å“ªä¸€å€‹è™Ÿç¢¼è£¡ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -431,7 +431,7 @@ FUNCTION( do_automap )
 
     if ( loop < 0 || loop >= MAX_TRACE )
     {
-      send_to_char( "¹ï¤£°_¡M§Aªº¿é¥X¸¹½X¤£¦Xªk¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ çš„è¼¸å‡ºè™Ÿç¢¼ä¸åˆæ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -446,7 +446,7 @@ FUNCTION( do_automap )
      pc->trace      = NULL;
 
      chinese_number( loop + 1, buf );
-     print_to_char( ch, "§A§â%s\e[0m¨ì%s\e[0mªº¸ô®|¬ö¿ı¨ì²Ä%s¸¹¬ö¿ı¸Ì¡T\n\r"
+     print_to_char( ch, "ä½ æŠŠ%s\e[0måˆ°%s\e[0mçš„è·¯å¾‘ç´€éŒ„åˆ°ç¬¬%sè™Ÿç´€éŒ„è£¡ï¹—\n\r"
        , zRoom->name, pRoom->name, buf );
 
      RETURN_NULL();
@@ -454,7 +454,7 @@ FUNCTION( do_automap )
 
   else
   {
-    send_to_char( "§Aªº°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß automap ªº¥Îªk¡T\n\r", ch );
+    send_to_char( "ä½ çš„åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢ automap çš„ç”¨æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
@@ -471,7 +471,7 @@ void clear_trace( CHAR_DATA * ch, bool bShow )
   free_struct( pTrace, STRUCT_TRACE_DATA );
   ch->pcdata->trace = NULL;
 
-  if ( bShow ) send_to_char( "§A¨«ªº¸ô®|¦³ÂI¸Ş²§¡M¨t²ÎµLªk°lÂÜ¡T\n\r", ch );
+  if ( bShow ) send_to_char( "ä½ èµ°çš„è·¯å¾‘æœ‰é»è©­ç•°ï¹ç³»çµ±ç„¡æ³•è¿½è¹¤ï¹—\n\r", ch );
   RETURN_NULL();
 }
 
@@ -509,7 +509,7 @@ void set_map( CHAR_DATA * ch, int dir )
     }
   }
 
-  send_to_char( "§Aªº°lÂÜ¬ö¿ıÂI¤wº¡¡MµLªkÄ~Äò¬ö¿ı¡T\n\r", ch );
+  send_to_char( "ä½ çš„è¿½è¹¤ç´€éŒ„é»å·²æ»¿ï¹ç„¡æ³•ç¹¼çºŒç´€éŒ„ï¹—\n\r", ch );
   RETURN_NULL();
 }
 
@@ -527,7 +527,7 @@ char * show_a_trace( TRACE_DATA * pTrace )
 
   if ( !pTrace )
   {
-    mudlog( LOG_DEBUG, "show_a_trace: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "show_a_trace: ç¼ºä¹ä¾†æº." );
     RETURN( "" );
   }
 
@@ -537,13 +537,13 @@ char * show_a_trace( TRACE_DATA * pTrace )
   aStart = pStart ? pStart->area : NULL;
   aEnd   = pEnd   ? pEnd->area   : NULL;
 
-  sprintf( buf, "%s%s\e[0mªº%s\e[0m©¹%s%s\e[0mªº%s\e[0m\n\r¸ô®|¡R"
+  sprintf( buf, "%s%s\e[0mçš„%s\e[0må¾€%s%s\e[0mçš„%s\e[0m\n\rè·¯å¾‘ï¹•"
     , ""
-    , aStart ? aStart->name : "¤£ª¾¦W°Ï°ì"
-    , pStart ? pStart->name : "¤£ª¾¦W¦a¤è"
+    , aStart ? aStart->name : "ä¸çŸ¥åå€åŸŸ"
+    , pStart ? pStart->name : "ä¸çŸ¥ååœ°æ–¹"
     , ""
-    , aEnd   ? aEnd->name   : "¤£ª¾¦W°Ï°ì"
-    , pEnd   ? pEnd->name   : "¤£ª¾¦W¦a¤è" );
+    , aEnd   ? aEnd->name   : "ä¸çŸ¥åå€åŸŸ"
+    , pEnd   ? pEnd->name   : "ä¸çŸ¥ååœ°æ–¹" );
 
   for ( bAttach = FALSE, loop = 0; loop < MAX_PATH; loop++ )
   {
@@ -555,7 +555,7 @@ char * show_a_trace( TRACE_DATA * pTrace )
     bAttach = TRUE;
   }
 
-  if ( !bAttach ) str_cat( buf, "µL" );
+  if ( !bAttach ) str_cat( buf, "ç„¡" );
   str_cat( buf, "\n\r" );
   RETURN( buf );
 }

@@ -1,9 +1,9 @@
 Vnum            559
 Name            magic stone~
-ShortDesc       ¤C±m´³Äãªº¥ÛÀY~
+ShortDesc       ä¸ƒå½©æ–‘æ–•çš„çŸ³é ­~
 Description
 ~
-Unit            Áû~
+Unit            é¡†~
 ItemType        ITEM_MAGICSTONE
 Takeable        Yes
 Level           99

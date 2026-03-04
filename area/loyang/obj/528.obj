@@ -1,11 +1,11 @@
 Vnum            528
 Name            little mass~
-ShortDesc       íiíi»B»Aºê~
+ShortDesc       ç’ç’ç¿¡ç¿ ç²½~
 Description
-¤p¤pªº¤@Áûµæºê(little mass)¡M³qÅéºÑºñ¡M¸Ì­±¥]ªº¬OÄªµ«¡M½¬¤l¡M
-µÙ¨¤µ¥²n¤fªº§÷®Æ¡M¦bª¢ª¢®L¤é¤¤¬°±z±a¨Ó¤@°}²M²D¡C
+å°å°çš„ä¸€é¡†èœç²½(little mass)ï¹é€šé«”ç¢§ç¶ ï¹è£¡é¢åŒ…çš„æ˜¯è˜†ç­ï¹è“®å­ï¹
+è±è§’ç­‰çˆ½å£çš„ææ–™ï¹åœ¨ç‚ç‚å¤æ—¥ä¸­ç‚ºæ‚¨å¸¶ä¾†ä¸€é™£æ¸…æ¶¼ã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           10

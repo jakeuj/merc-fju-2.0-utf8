@@ -1,5 +1,5 @@
 Name            cloud ghost~
-Cname           ���ܾy�v~
+Cname           雲蹤魅影~
 Slot            SLOT_CLOUD_GHOST
 Msgoff          ~
 Position        POS_FIGHTING
@@ -31,16 +31,16 @@ Limit           CLASS_BARD       1  95
 Limit           CLASS_MAGE       1  95
 Limit           CLASS_SMITH      1  95
 Help
-���ܾy�v:
+雲蹤魅影:
 
-���B�k�O�Ѱ��H�[�������ӻ⮩���M�B�N�Ҧp�ֵ��լ��M�G�h�b�O��
-��H�~�h�Ҭ�ߡM�Z�x�����M���O�h�b�⮩���X�����u���N�ҡC
+本步法是由高人觀摩飛雲而領悟的﹐且意境如詩詞幽美﹐故多半是由
+文人居士所研習﹐武官雖有﹐但是多半領悟不出那種優美意境。
 
 ~
 #Damage
 Description
-$n�ϥX�F$S�u���Ϥۼv�v$Z�k�x½�L�M�֦��{�q�M�X���Żڰk�X$N�ҵo�X���x�OŢ�n��
-�U�M���פF�n�`�C~
+$n使出了$S「雲煙幻影」$Z右掌翻過﹐快似閃電﹐趁此空際逃出$N所發出的掌力籠罩之
+下﹐躲避了要害。~
 Chance          10
 Value           20
 Parry           0
@@ -50,8 +50,8 @@ End
 
 #Damage
 Description
-$n���F$N�@�ۡM$n�������u�ĳ¡C$n�s���ΥX$S�u���m���R�v$Z�����ƪ��a�D���R���G
-���@���O�O��M�k�X�F$N�������C~
+$n接了$N一招﹐$n瞬間手臂酸麻。$n連忙用出$S「雲彩飛舞」$Z輕飄飄的縱躍飛舞似乎
+絲毫不費力氣﹐逃出了$N的攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -61,8 +61,8 @@ End
 
 #Damage
 Description
-$N�s��o�ۡM�ۦ��w�M��F$n���e�C$n���U�L�L�@���ϥX$S�u�����t�y�v$Z�M$n���ۦ�
-�K�q$N�����e�Ƹ��M�b$N�y�U�W���F�L�h�M�u�O���I�C~
+$N連續發招﹐招式已然到了$n面前。$n腦袋微微一側使出$S「雲霧暗流」$Z﹐$n的招式
+便從$N的面前滑落﹐在$N臉頰上擦了過去﹐真是風險。~
 Chance          10
 Value           20
 Parry           0
@@ -72,8 +72,8 @@ End
 
 #Damage
 Description
-$N�趡�w�V$n���W�r�P�����M$n���ηL���M���q�@�n�M�i�}$S�u�t���ƴ��v$Z�q$N����
-��ƦӹL�C�榣���Y�{��$N�����ۡC~
+$N刻間已向$n身上猛烈攻擊﹐$n身形微側﹐撲通一聲﹐展開$S「暗雲飄散」$Z從$N身側
+急滑而過。急忙側頭閃避$N的殺招。~
 Chance          10
 Value           20
 Parry           0
@@ -83,8 +83,8 @@ End
 
 #Damage
 Description
-$n�ϥX$S�u���v�ݶ��v$Z�M�@����իժ����v�q$N���e��ӹL�C$n���U���������ʨ�
-��M�b$N���έ��R�M���褧��$n���S�ƥh�C~
+$n使出$S「落影殘雲」$Z﹐一條綠幽幽的身影從$N面前橫掠而過。$n足下不停的移動走
+位﹐在$N身形飛舞﹐片刻之間$n長袖飄去。~
 Chance          10
 Value           20
 Parry           0
@@ -94,8 +94,8 @@ End
 
 #Damage
 Description
-$N��M���m��M$n�ϥX$S�u�궳�g���v$Z���B�����M�ܤƲ����M�ר��ӥX���k�ᬰ�F��
-�M���Y�����M�׹L�F�����������C~
+$N突然間搶攻﹐$n使出$S「虛雲迷離」$Z移步迅捷﹐變化莫測﹐斜身而出身法頗為靈動
+﹐當即側身﹐避過了正面的攻擊。~
 Chance          10
 Value           20
 Parry           0

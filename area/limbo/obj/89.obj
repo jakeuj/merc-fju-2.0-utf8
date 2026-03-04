@@ -1,9 +1,9 @@
 Vnum            89
 Name            ghost blade~
-ShortDesc       °­¼v´İ­·¤M~
+ShortDesc       é¬¼å½±æ®˜é¢¨åˆ€~
 Description
-³o¬O¤@§â¯«§L§Q¾¹¡y°­¼v´İ­·¤M¡z(ghost blade)¡C~
-Unit            §â~
+é€™æ˜¯ä¸€æŠŠç¥å…µåˆ©å™¨ã€é¬¼å½±æ®˜é¢¨åˆ€ã€(ghost blade)ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

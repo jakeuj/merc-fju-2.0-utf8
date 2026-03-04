@@ -1,11 +1,11 @@
 Vnum            598
-Name            �������㩱~
+Name            洛陽防具店~
 Description
-�@��㨾���Z�ҩ�m�a�W�M�٦��@�Ǩ�L���U�l��A�����b��W�M��
-�ӳo��N�O���㩱�F�M�A���e�@�Ө��۱m�窺�ضQ�k�l�����ݧA�e��
-�ʶR�ݭn���˳ơC
+一具具防身鎧甲放置地上﹐還有一些其他的帽子衣服等掛在牆上﹐看
+來這邊就是防具店了﹐你眼前一個身著彩衣的華貴女子正等待你前來
+購買需要的裝備。
 
-�Ϋe�@�i����( red paper )�M�A�i�H�ݬ�( look )�C
+屋前一張紅紙( red paper )﹐你可以看看( look )。
 
 ~
 SectorType      SECT_CITY
@@ -22,17 +22,17 @@ End
 #Keyword
 Keyword         red paper~
 Description
-�w����{�ʶR�A�ݭn���F��M�ХH LIST ���[�MBUY �ʶR�C
+歡迎光臨購買你需要的東西﹐請以 LIST 參觀﹐BUY 購買。
 
 ~
 End
 
 #Enquire
-Keyword         �ө�~
+Keyword         商店~
 End
 
 #Enquire
-Keyword         ���㩱~
+Keyword         防具店~
 End
 
 End

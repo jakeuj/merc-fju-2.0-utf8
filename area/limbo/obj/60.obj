@@ -1,9 +1,9 @@
 Vnum            60
 Name            amethyst duds~
-ShortDesc       µµµ¼­m~
+ShortDesc       ç´«çµ³è¡«~
 Description
-±m¶³¯ëªºµ¼µµ·w¬V¾ã¥ó¦ç­m(duds)¡M¼h¼hÅ|Å|ªºµµ±a««¹¢ªº·Ù¬O¦n¬İ¡C~
-Unit            ¥ó~
+å½©é›²èˆ¬çš„çµ³ç´«æšˆæŸ“æ•´ä»¶è¡£è¡«(duds)ï¹å±¤å±¤ç–Šç–Šçš„ç´«å¸¶å‚é£¾çš„ç…æ˜¯å¥½çœ‹ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -67,7 +67,7 @@ FUNCTION( do_board )
 
   if ( !board_list )
   {
-    act( "$t¸Ì¨S¦³¥ô¦óªºª©¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "$tè£¡æ²’æœ‰ä»»ä½•çš„ç‰ˆï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -77,8 +77,8 @@ FUNCTION( do_board )
   if ( arg[0] == '\x0' )
   {
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m½s¸¹ ª©      ¦W ©Ğ¶¡¸¹½X Åª¨ú "
-      "¼g¤J ¼Æ¶q ­­¨î Âê©w                               \e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mç·¨è™Ÿ ç‰ˆ      å æˆ¿é–“è™Ÿç¢¼ è®€å– "
+      "å¯«å…¥ æ•¸é‡ é™åˆ¶ é–å®š                               \e[0m\n\r" );
 
     for ( count = 0, pBoard = board_list; pBoard; pBoard = pBoard->next )
     {
@@ -104,14 +104,14 @@ FUNCTION( do_board )
 
     if ( !ch->in_room || !( pBoard = ch->in_room->board ) )
     {
-      send_to_char( "§A³o­Ó¦a¤è¨S¦³¯d¨¥ª©¡T\n\r", ch );
+      send_to_char( "ä½ é€™å€‹åœ°æ–¹æ²’æœ‰ç•™è¨€ç‰ˆï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     pBoard->lock = pBoard->lock ? FALSE : TRUE;
 
-    act( "$n$t$T¯d¨¥ª©¡T"
-      , ch, pBoard->lock ? "Ãö³¬" : "¶}©ñ", pBoard->name, TO_ALL );
+    act( "$n$t$Tç•™è¨€ç‰ˆï¹—"
+      , ch, pBoard->lock ? "é—œé–‰" : "é–‹æ”¾", pBoard->name, TO_ALL );
 
     RETURN_NULL();
   }
@@ -120,22 +120,22 @@ FUNCTION( do_board )
   {
     if ( !( pBoard = board_lookup( atoi( arg ) ) ) )
     {
-      send_to_char( "¨S¦³¨º­Ó½s¸¹ªºª©­±¡T\n\r", ch );
+      send_to_char( "æ²’æœ‰é‚£å€‹ç·¨è™Ÿçš„ç‰ˆé¢ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     print_to_char( ch,
-      "ª©­±½s¸¹  ¡R%d\n\r"
-      "ª©­±¦WºÙ  ¡R%s\n\r"
-      "Åwªï¦r¦ê  ¡R%s\n\r"
-      "©Ò¦b¦a¸¹½X¡R%d\n\r"
-      "¦CªíÀÉ®×  ¡R%s\n\r"
-      "¸ô®|¦WºÙ  ¡R%s\n\r"
-      "Åª¨úµ¥¯Å  ¡R%d\n\r"
-      "¼g¤Jµ¥¯Å  ¡R%d\n\r"
-      "®e¶q­­¨î  ¡R%d\n\r"
-      "¥Ø«e¼Æ¶q  ¡R%d\n\r"
-      "¬O§_³QÂê©w¡R%s\n\r"
+      "ç‰ˆé¢ç·¨è™Ÿ  ï¹•%d\n\r"
+      "ç‰ˆé¢åç¨±  ï¹•%s\n\r"
+      "æ­¡è¿å­—ä¸²  ï¹•%s\n\r"
+      "æ‰€åœ¨åœ°è™Ÿç¢¼ï¹•%d\n\r"
+      "åˆ—è¡¨æª”æ¡ˆ  ï¹•%s\n\r"
+      "è·¯å¾‘åç¨±  ï¹•%s\n\r"
+      "è®€å–ç­‰ç´š  ï¹•%d\n\r"
+      "å¯«å…¥ç­‰ç´š  ï¹•%d\n\r"
+      "å®¹é‡é™åˆ¶  ï¹•%d\n\r"
+      "ç›®å‰æ•¸é‡  ï¹•%d\n\r"
+      "æ˜¯å¦è¢«é–å®šï¹•%s\n\r"
       , pBoard->slot
       , pBoard->name
       , pBoard->welcome
@@ -151,7 +151,7 @@ FUNCTION( do_board )
     RETURN_NULL();
   }
 
-  send_to_char( "°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß«ü¥Oªº¥Îªk¡T\n\r", ch );
+  send_to_char( "åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢æŒ‡ä»¤çš„ç”¨æ³•ï¹—\n\r", ch );
   RETURN_NULL();
 }
 
@@ -169,49 +169,49 @@ void open_board_directory( void )
 
   PUSH_FUNCTION( "open_board_directory" );
 
-  /* ¥ı§ä¨ì¥Ø¿ı¨Ã¥B¹î¬İ¬O§_­n¶ñ¤J¥Ø¿ıªº°O¸¹ */
+  /* å…ˆæ‰¾åˆ°ç›®éŒ„ä¸¦ä¸”å¯Ÿçœ‹æ˜¯å¦è¦å¡«å…¥ç›®éŒ„çš„è¨˜è™Ÿ */
   fill_path( str_cpy( directory, board_dir ) );
 
-  /* §ä¨ì°Ï°ìÀÉ®×¥Ø¿ı¦CªíÀÉ */
+  /* æ‰¾åˆ°å€åŸŸæª”æ¡ˆç›®éŒ„åˆ—è¡¨æª” */
   sprintf( filename , "%s%s" , directory , board_lst );
 
-  /* ¬İ¬İ¬O§_¥i¥H¶}ÀÉ */
+  /* çœ‹çœ‹æ˜¯å¦å¯ä»¥é–‹æª” */
   if ( ( pFile = f_open( filename , "r" ) ) )
   {
-    /* ¤@ª½Åª¨ìÀÉ®×¥½ºİ¤~°±¤î */
+    /* ä¸€ç›´è®€åˆ°æª”æ¡ˆæœ«ç«¯æ‰åœæ­¢ */
     while ( !if_eof( pFile ) )
     {
       word = fread_word( pFile );
 
-      /* ¤@¦æÅª§¹ */
+      /* ä¸€è¡Œè®€å®Œ */
       fread_to_eol( pFile );
 
       if ( word[0] == '*' ) continue;
 
-      /* Åª¤J·Q­nÅª¨úªºª©­±¥Ø¿ı */
+      /* è®€å…¥æƒ³è¦è®€å–çš„ç‰ˆé¢ç›®éŒ„ */
       sprintf( buf , "%s%s" , directory , word );
 
-      /* ÀË¬d¬O§_¬°¥i¥H¦s¨úªº¤l¥Ø¿ı */
+      /* æª¢æŸ¥æ˜¯å¦ç‚ºå¯ä»¥å­˜å–çš„å­ç›®éŒ„ */
       if ( is_directory( buf ) )
       {
-        /* ¦A¹î¬İ¬O§_¦³¯Á¤ŞÀÉ */
+        /* å†å¯Ÿçœ‹æ˜¯å¦æœ‰ç´¢å¼•æª” */
         sprintf( work_dir_name , "%s%s" , directory , word );
         fill_path( work_dir_name );
         sprintf( index , "%s%s" , work_dir_name , board_index );
 
-        /* ¦pªG¦³¯Á¤ŞÀÉ«hÅª¤J©Ò¦³¸ê®Æ */
+        /* å¦‚æœæœ‰ç´¢å¼•æª”å‰‡è®€å…¥æ‰€æœ‰è³‡æ–™ */
         if ( is_regular( index ) )
         {
           if ( !( pBoard = load_board_index( work_dir_name ) ) )
           {
-            mudlog( LOG_ERR, "open_board_directory: µLªkÅª¨úª©­±%s."
+            mudlog( LOG_ERR, "open_board_directory: ç„¡æ³•è®€å–ç‰ˆé¢%s."
               , work_dir_name );
           }
 
-          /* ¦A¹î¬İ¬O§_¦³¯Á¤ŞÀÉ */
+          /* å†å¯Ÿçœ‹æ˜¯å¦æœ‰ç´¢å¼•æª” */
           sprintf( list_file, "%s%s" , work_dir_name, board_sheet );
 
-          /* °O¿ı¯Á¤ŞÀÉ */
+          /* è¨˜éŒ„ç´¢å¼•æª” */
           pBoard->listfile = str_dup( list_file );
           pBoard->pathname = str_dup( work_dir_name );
 
@@ -220,35 +220,35 @@ void open_board_directory( void )
             load_post( work_dir_name, pBoard );
           }
 
-          /* ¤£µM°e¥X¿ù»~ªº°T®§ */
+          /* ä¸ç„¶é€å‡ºéŒ¯èª¤çš„è¨Šæ¯ */
           else
           {
-            mudlog( LOG_ERR , "open_board_directory: ª©­±¥Ø¿ı %s ¨S¦³²M³æÀÉ"
+            mudlog( LOG_ERR , "open_board_directory: ç‰ˆé¢ç›®éŒ„ %s æ²’æœ‰æ¸…å–®æª”"
               , work_dir_name );
           }
         }
 
-        /* ¤£µM°e¥X¿ù»~ªº°T®§ */
+        /* ä¸ç„¶é€å‡ºéŒ¯èª¤çš„è¨Šæ¯ */
         else
         {
-          mudlog( LOG_ERR , "open_board_directory: ª©­±¥Ø¿ı %s ¨S¦³¯Á¤ŞÀÉ"
+          mudlog( LOG_ERR , "open_board_directory: ç‰ˆé¢ç›®éŒ„ %s æ²’æœ‰ç´¢å¼•æª”"
             , work_dir_name );
         }
       }
 
-      /* °Ï°ì¥Ø¿ı®Ú¥»¤£¯à¦s¨ú */
+      /* å€åŸŸç›®éŒ„æ ¹æœ¬ä¸èƒ½å­˜å– */
       else
       {
-        mudlog( LOG_ERR , "open_board_directory: ª©­±¥Ø¿ı %s µLªk¦s¨ú" , buf );
+        mudlog( LOG_ERR , "open_board_directory: ç‰ˆé¢ç›®éŒ„ %s ç„¡æ³•å­˜å–" , buf );
       }
     }
     f_close( pFile );
   }
 
-  /* ®Ú¥»¨S¦³°Ï°ì¥Ø¿ı¦CªíÀÉ, °e¥X¿ù»~°T®§ */
+  /* æ ¹æœ¬æ²’æœ‰å€åŸŸç›®éŒ„åˆ—è¡¨æª”, é€å‡ºéŒ¯èª¤è¨Šæ¯ */
   else
   {
-    mudlog( LOG_ERR , "¨S¦³ª©­±¤l¥Ø¿ı¦CªíÀÉ" );
+    mudlog( LOG_ERR , "æ²’æœ‰ç‰ˆé¢å­ç›®éŒ„åˆ—è¡¨æª”" );
   }
 
   RETURN_NULL();
@@ -264,12 +264,12 @@ BOARD_DATA * load_board_index( const char * pathname )
 
   PUSH_FUNCTION( "load_board" );
 
-  /* ¥ı³]©w¯Á¤ŞÀÉªºÀÉ¦W */
+  /* å…ˆè¨­å®šç´¢å¼•æª”çš„æª”å */
   sprintf( filename , "%s%s" , pathname , board_index );
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_ERR, "load_board_index: µLªk¶}±Ò¯Á¤ŞÀÉ%s.", filename );
+    mudlog( LOG_ERR, "load_board_index: ç„¡æ³•é–‹å•Ÿç´¢å¼•æª”%s.", filename );
     RETURN( NULL );
   }
 
@@ -282,7 +282,7 @@ BOARD_DATA * load_board_index( const char * pathname )
 
     switch ( UPPER( word[0] ) )
     {
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
       fMatch = TRUE;
       fread_to_eol( pFile );
@@ -293,7 +293,7 @@ BOARD_DATA * load_board_index( const char * pathname )
       if ( !str_cmp( word, "Capcity" ) )
       {
         if ( ( pBoard->capcity = fread_number( pFile ) ) <= 0 )
-          mudlog( LOG_DEBUG, "load_board_index: ª©­±®e¶q¤£¥¿½T %d."
+          mudlog( LOG_DEBUG, "load_board_index: ç‰ˆé¢å®¹é‡ä¸æ­£ç¢º %d."
             , pBoard->capcity );
 
         fMatch = TRUE;
@@ -307,19 +307,19 @@ BOARD_DATA * load_board_index( const char * pathname )
       if ( !str_cmp( word, "End" ) )
       {
         if ( !pBoard->location )
-          mudlog( LOG_DEBUG, "load_board_index: ª©­±¨S¦³°Ï°ì©Ğ¶¡¡C" );
+          mudlog( LOG_DEBUG, "load_board_index: ç‰ˆé¢æ²’æœ‰å€åŸŸæˆ¿é–“ã€‚" );
 
         if ( !pBoard->name )
-          mudlog( LOG_DEBUG, "load_board_index: ª©­±¨S¦³¬ÛÃö¦WºÙ¡C" );
+          mudlog( LOG_DEBUG, "load_board_index: ç‰ˆé¢æ²’æœ‰ç›¸é—œåç¨±ã€‚" );
 
         if ( !pBoard->welcome )
-          mudlog( LOG_DEBUG, "load_board_index: ª©­±¨S¦³Åwªï°T®§¡C" );
+          mudlog( LOG_DEBUG, "load_board_index: ç‰ˆé¢æ²’æœ‰æ­¡è¿è¨Šæ¯ã€‚" );
 
         if ( IS_ERROR( pBoard->slot ) )
-          mudlog( LOG_DEBUG, "load_board_index: ª©­±¨S¦³½s¸¹¡C" );
+          mudlog( LOG_DEBUG, "load_board_index: ç‰ˆé¢æ²’æœ‰ç·¨è™Ÿã€‚" );
 
         if ( IS_ERROR( pBoard->capcity ) )
-          mudlog( LOG_DEBUG, "load_board_index: ª©­±¨S¦³®e¶q­­¨î¡C" );
+          mudlog( LOG_DEBUG, "load_board_index: ç‰ˆé¢æ²’æœ‰å®¹é‡é™åˆ¶ã€‚" );
 
         if ( !board_list ) board_list      = pBoard;
         if ( board_last  ) board_last->next = pBoard;
@@ -345,10 +345,10 @@ BOARD_DATA * load_board_index( const char * pathname )
         iRoom = fread_number( pFile );
 
         if ( !( pRoom = get_room_index( iRoom ) ) )
-          mudlog( LOG_DEBUG, "load_board_index: ¨S¦³ %d ¸¹©Ğ¶¡.", iRoom );
+          mudlog( LOG_DEBUG, "load_board_index: æ²’æœ‰ %d è™Ÿæˆ¿é–“.", iRoom );
 
         if ( pRoom->board )
-          mudlog( LOG_DEBUG, "load_board_index: ©Ğ¶¡ %d ª©­±­«½Æ.", iRoom );
+          mudlog( LOG_DEBUG, "load_board_index: æˆ¿é–“ %d ç‰ˆé¢é‡è¤‡.", iRoom );
 
         pBoard->location = pRoom;
         fMatch           = TRUE;
@@ -375,7 +375,7 @@ BOARD_DATA * load_board_index( const char * pathname )
 
         level = fread_number( pFile );
         if ( level < 0 || level > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "load_board_index: Åª¨úµ¥¯Å %d ¤£¦X²z.", level );
+          mudlog( LOG_DEBUG, "load_board_index: è®€å–ç­‰ç´š %d ä¸åˆç†.", level );
 
         pBoard->read_level = level;
         fMatch             = TRUE;
@@ -390,10 +390,10 @@ BOARD_DATA * load_board_index( const char * pathname )
         int slot;
 
         if ( ( slot = fread_number( pFile ) ) < 0 || slot >= MAX_BOARD )
-          mudlog( LOG_DEBUG, "load_board_index: ©Ğ¶¡ %d ½s¸¹¤£¦X²z.", slot );
+          mudlog( LOG_DEBUG, "load_board_index: æˆ¿é–“ %d ç·¨è™Ÿä¸åˆç†.", slot );
 
         if ( board_lookup( slot ) )
-          mudlog( LOG_DEBUG, "load_board_index: ©Ğ¶¡ %d ½s¸¹­«½Æ.", slot );
+          mudlog( LOG_DEBUG, "load_board_index: æˆ¿é–“ %d ç·¨è™Ÿé‡è¤‡.", slot );
 
         pBoard->slot = slot;
         fMatch = TRUE;
@@ -411,7 +411,7 @@ BOARD_DATA * load_board_index( const char * pathname )
 
         level = fread_number( pFile );
         if ( level < 0 || level > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "load_board_index: ¼g¤Jµ¥¯Å %d ¤£¦X²z.", level );
+          mudlog( LOG_DEBUG, "load_board_index: å¯«å…¥ç­‰ç´š %d ä¸åˆç†.", level );
 
         pBoard->write_level = level;
         fMatch              = TRUE;
@@ -420,9 +420,9 @@ BOARD_DATA * load_board_index( const char * pathname )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "load_board_index: ©R¥O %s ¤£¥¿½T." , word );
+      mudlog( LOG_DEBUG , "load_board_index: å‘½ä»¤ %s ä¸æ­£ç¢º." , word );
   }
 
   RETURN( NULL );
@@ -440,12 +440,12 @@ void load_post( const char * pathname, BOARD_DATA * pBoard )
 
   PUSH_FUNCTION( "load_post" );
 
-  /* ¥ı³]©w¯Á¤ŞÀÉªºÀÉ¦W */
+  /* å…ˆè¨­å®šç´¢å¼•æª”çš„æª”å */
   sprintf( filename , "%s%s" , pathname , board_sheet );
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_ERR, "load_post: µLªk¶}±Ò²M³æÀÉ %s.", filename );
+    mudlog( LOG_ERR, "load_post: ç„¡æ³•é–‹å•Ÿæ¸…å–®æª” %s.", filename );
     RETURN_NULL();
   }
 
@@ -460,7 +460,7 @@ void load_post( const char * pathname, BOARD_DATA * pBoard )
       f_close( pFile );
       RETURN_NULL();
 
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
       fMatch = TRUE;
       fread_to_eol( pFile );
@@ -492,7 +492,7 @@ void load_post( const char * pathname, BOARD_DATA * pBoard )
 
         else
         {
-          mudlog( LOG_ERR , "load_post: ¨S¦³ %s ³o½g¤å³¹.", postfile );
+          mudlog( LOG_ERR , "load_post: æ²’æœ‰ %s é€™ç¯‡æ–‡ç« .", postfile );
           RETURN_NULL();
         }
 
@@ -504,9 +504,9 @@ void load_post( const char * pathname, BOARD_DATA * pBoard )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "load_post: ©R¥O %s ¤£¥¿½T." , word );
+      mudlog( LOG_DEBUG , "load_post: å‘½ä»¤ %s ä¸æ­£ç¢º." , word );
   }
 
   RETURN_NULL();
@@ -523,7 +523,7 @@ POST_DATA * load_a_post( const char * filename )
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_ERR, "load_a_post: µLªk¶}±Ò¯Á¤ŞÀÉ%s.", filename );
+    mudlog( LOG_ERR, "load_a_post: ç„¡æ³•é–‹å•Ÿç´¢å¼•æª”%s.", filename );
     RETURN( NULL );
   }
 
@@ -536,7 +536,7 @@ POST_DATA * load_a_post( const char * filename )
 
     switch ( UPPER( word[0] ) )
     {
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
       fMatch = TRUE;
       fread_to_eol( pFile );
@@ -551,19 +551,19 @@ POST_DATA * load_a_post( const char * filename )
       if ( !str_cmp( word, "End" ) )
       {
         if ( !pPost->title )
-          mudlog( LOG_DEBUG, "load_a_post: ¤å³¹¨S¦³¼ĞÃD." );
+          mudlog( LOG_DEBUG, "load_a_post: æ–‡ç« æ²’æœ‰æ¨™é¡Œ." );
 
         if ( !pPost->text )
-          mudlog( LOG_DEBUG, "load_a_post: ¤å³¹¨S¦³¥»¤å." );
+          mudlog( LOG_DEBUG, "load_a_post: æ–‡ç« æ²’æœ‰æœ¬æ–‡." );
 
         if ( !pPost->poster )
-          mudlog( LOG_DEBUG, "load_a_post: ¤å³¹¨S¦³µo«HªÌ." );
+          mudlog( LOG_DEBUG, "load_a_post: æ–‡ç« æ²’æœ‰ç™¼ä¿¡è€…." );
 
         if ( !pPost->owner )
-          mudlog( LOG_DEBUG, "load_a_post: ¤å³¹¨S¦³¾Ö¦³ªÌ." );
+          mudlog( LOG_DEBUG, "load_a_post: æ–‡ç« æ²’æœ‰æ“æœ‰è€…." );
 
         if ( IS_ERROR( pPost->timer ) )
-          mudlog( LOG_DEBUG, "load_a_post: ¤å³¹¨S¦³®É¶¡¼ĞÅÒ." );
+          mudlog( LOG_DEBUG, "load_a_post: æ–‡ç« æ²’æœ‰æ™‚é–“æ¨™ç±¤." );
 
         f_close( pFile );
         RETURN( pPost );
@@ -608,9 +608,9 @@ POST_DATA * load_a_post( const char * filename )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "load_a_post: ©R¥O %s ¤£¥¿½T." , word );
+      mudlog( LOG_DEBUG , "load_a_post: å‘½ä»¤ %s ä¸æ­£ç¢º." , word );
   }
 
   RETURN( NULL );
@@ -667,7 +667,7 @@ int post_count( BOARD_DATA * pBoard, int type )
 
   if ( !pBoard )
   {
-    mudlog( LOG_DEBUG, "post_count: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "post_count: ä¾†æºä¸æ­£ç¢º." );
     RETURN( 0 );
   }
 
@@ -703,7 +703,7 @@ int unread_post( CHAR_DATA * ch, BOARD_DATA * pBoard )
 
   if ( !ch || !pBoard )
   {
-    mudlog( LOG_DEBUG, "unread_post: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "unread_post: ä¾†æºä¸æ­£ç¢º." );
     RETURN( 0 );
   }
 
@@ -729,7 +729,7 @@ void show_board_title( CHAR_DATA * ch, BOARD_DATA * pBoard )
 
   if ( !ch || !pBoard )
   {
-    mudlog( LOG_DEBUG, "show_board_title: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "show_board_title: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -738,8 +738,8 @@ void show_board_title( CHAR_DATA * ch, BOARD_DATA * pBoard )
   clear_buffer();
   count = 0;
 
-  send_to_buffer( "%s\n\r\e[1;33;44m ¶¶§Ç ¼Ğ     ÃD                      "
-    "µo     «H     ªÌ               µo «H ¤é ´Á \e[0m\n\r",  pBoard->welcome );
+  send_to_buffer( "%s\n\r\e[1;33;44m é †åº æ¨™     é¡Œ                      "
+    "ç™¼     ä¿¡     è€…               ç™¼ ä¿¡ æ—¥ æœŸ \e[0m\n\r",  pBoard->welcome );
 
   for ( pPost = pBoard->post; pPost; pPost = pPost->next )
   {
@@ -751,10 +751,10 @@ void show_board_title( CHAR_DATA * ch, BOARD_DATA * pBoard )
       , post_status( pPost, ch->pcdata->board[pBoard->slot] ), ++count );
 
     send_to_buffer( "%s ", format_string(
-      pPost->title && *pPost->title ? pPost->title : "(¤£¸Ô)", TITLE_FIELD ) );
+      pPost->title && *pPost->title ? pPost->title : "(ä¸è©³)", TITLE_FIELD ) );
 
     send_to_buffer( "%s ", format_string(
-      pPost->poster && *pPost->poster ? pPost->poster : "(¤£¸Ô)"
+      pPost->poster && *pPost->poster ? pPost->poster : "(ä¸è©³)"
       , POSTER_FIELD ) );
 
     send_to_buffer( "%s\n\r", timestr + 4 );
@@ -774,7 +774,7 @@ void show_a_post( POST_DATA * pPost, CHAR_DATA * ch )
 
   if ( !pPost || !ch )
   {
-    mudlog( LOG_DEBUG, "show_a_post: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "show_a_post: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -784,13 +784,13 @@ void show_a_post( POST_DATA * pPost, CHAR_DATA * ch )
 
   clear_buffer();
 
-  send_to_buffer( "¼Ğ  ÃD¡R%s\n\rµo«HªÌ¡R%s\e[0m\n\r®É  ¶¡¡R%s\n\r"
+  send_to_buffer( "æ¨™  é¡Œï¹•%s\n\rç™¼ä¿¡è€…ï¹•%s\e[0m\n\ræ™‚  é–“ï¹•%s\n\r"
     , pPost->title, pPost->poster, timestr );
 
-  if ( IS_IMMORTAL( ch ) ) send_to_buffer( "ÀÉ  ®×¡R%s\n\r¾Ö¦³ªÌ¡R%s\n\r"
+  if ( IS_IMMORTAL( ch ) ) send_to_buffer( "æª”  æ¡ˆï¹•%s\n\ræ“æœ‰è€…ï¹•%s\n\r"
       , pPost->filename, pPost->owner );
 
-  send_to_buffer( "¤º  ®e¡R\n\r%s%s\e[0m%s"
+  send_to_buffer( "å…§  å®¹ï¹•\n\r%s%s\e[0m%s"
     , VERTICAL_LINE, pPost->text, VERTICAL_LINE );
 
   print_buffer( ch );
@@ -816,19 +816,19 @@ FUNCTION( do_read )
 
   if ( !( pBoard = ch->in_room->board ) )
   {
-    send_to_char( "¹ï¤£°_¡M³o¸Ì¨S¦³¯d¨¥ªO¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™è£¡æ²’æœ‰ç•™è¨€æ¿ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !pBoard->post )
   {
-    send_to_char( "¹ï¤£°_¡M³o­Ó¯d¨¥ªO¨S¦³¥ô¦ó¯d¨¥¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™å€‹ç•™è¨€æ¿æ²’æœ‰ä»»ä½•ç•™è¨€ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( ( pBoard->lock || ch->level < pBoard->read_level ) && !IS_IMMORTAL( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M³o­Ó¯d¨¥ªO§A¬O¤£¯àÅªªº¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™å€‹ç•™è¨€æ¿ä½ æ˜¯ä¸èƒ½è®€çš„ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -842,7 +842,7 @@ FUNCTION( do_read )
           = UMAX( pPost->timer, ch->pcdata->board[pBoard->slot] );
       }
 
-      send_to_char( "§A±N³o¸Ì©Ò¦³ªº¯d¨¥³]¬°¤w¸gÅª¨ú¡T\n\r", ch );
+      send_to_char( "ä½ å°‡é€™è£¡æ‰€æœ‰çš„ç•™è¨€è¨­ç‚ºå·²ç¶“è®€å–ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -851,7 +851,7 @@ FUNCTION( do_read )
       one_argument( argument, arg );
       if ( !arg[0] || !is_number( arg ) )
       {
-        send_to_char( "§A­n¼Ğ°O­ş¤@½g¤å³¹©O¡S\n\r", ch );
+        send_to_char( "ä½ è¦æ¨™è¨˜å“ªä¸€ç¯‡æ–‡ç« å‘¢ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
@@ -864,15 +864,15 @@ FUNCTION( do_read )
         {
           pPost->mark = pPost->mark ? FALSE : TRUE;
 
-          act( "§A§â²Ä$t½g¤å³¹$T¼Ğ°O¡T", ch, buf
-            , pPost->mark ? "³]©w" : "¸Ñ°£", TO_CHAR );
+          act( "ä½ æŠŠç¬¬$tç¯‡æ–‡ç« $Tæ¨™è¨˜ï¹—", ch, buf
+            , pPost->mark ? "è¨­å®š" : "è§£é™¤", TO_CHAR );
 
           write_post( pPost );
           RETURN_NULL();
         }
       }
 
-      send_to_char( "¨S¦³§ä¨ì§A­n¼Ğ°Oªº¤å³¹½s¸¹¡T\n\r", ch );
+      send_to_char( "æ²’æœ‰æ‰¾åˆ°ä½ è¦æ¨™è¨˜çš„æ–‡ç« ç·¨è™Ÿï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -881,7 +881,7 @@ FUNCTION( do_read )
       one_argument( argument, arg );
       if ( !arg[0] || !is_number( arg ) )
       {
-        send_to_char( "§A­n§R°£­ş¤@½g¤å³¹©O¡S\n\r", ch );
+        send_to_char( "ä½ è¦åˆªé™¤å“ªä¸€ç¯‡æ–‡ç« å‘¢ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
@@ -894,34 +894,34 @@ FUNCTION( do_read )
         {
           if ( pPost->mark )
           {
-            send_to_char( "³o¤@½g¤å³¹³Q¼Ğ°O¡M¤£¯à§R°£¡C\n\r", ch );
+            send_to_char( "é€™ä¸€ç¯‡æ–‡ç« è¢«æ¨™è¨˜ï¹ä¸èƒ½åˆªé™¤ã€‚\n\r", ch );
             RETURN_NULL();
           }
 
           if ( !IS_IMMORTAL( ch ) && str_cmp( pPost->owner, ch->name ) )
           {
-            send_to_char( "§A¨S¦³Åv¤O§R°£³o½g¤å³¹¡T\n\r", ch );
+            send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åˆªé™¤é€™ç¯‡æ–‡ç« ï¹—\n\r", ch );
             RETURN_NULL();
           }
 
           pBoard = pPost->board;
           remove_post( pPost );
 
-          /* ­«·s§ó·s¦Cªí */
+          /* é‡æ–°æ›´æ–°åˆ—è¡¨ */
           rewrite_board_list( pBoard );
 
-          act( "§A§R°£²Ä$t½g¤å³¹¡T", ch, buf, NULL, TO_CHAR );
+          act( "ä½ åˆªé™¤ç¬¬$tç¯‡æ–‡ç« ï¹—", ch, buf, NULL, TO_CHAR );
           RETURN_NULL();
         }
       }
 
-      send_to_char( "¨S¦³§ä¨ì§A­n§R°£ªº¤å³¹½s¸¹¡T\n\r", ch );
+      send_to_char( "æ²’æœ‰æ‰¾åˆ°ä½ è¦åˆªé™¤çš„æ–‡ç« ç·¨è™Ÿï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     else if ( !is_number( arg ) )
     {
-      send_to_char( "§A¥²¶·¿é¤J¼Æ¦r¨Óªí¥Ü½s¸¹¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¼¸å…¥æ•¸å­—ä¾†è¡¨ç¤ºç·¨è™Ÿï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -938,7 +938,7 @@ FUNCTION( do_read )
 
     if ( !pPost )
     {
-      send_to_char( "§A¤w¸gÅª§¹³o¸Ìªº©Ò¦³¯d¨¥¡T\n\r", ch );
+      send_to_char( "ä½ å·²ç¶“è®€å®Œé€™è£¡çš„æ‰€æœ‰ç•™è¨€ï¹—\n\r", ch );
       RETURN_NULL();
     }
   }
@@ -956,7 +956,7 @@ FUNCTION( do_read )
     }
   }
 
-  send_to_char( "¹ï¤£°_¡M¨S¦³¨º½g¯d¨¥¡C\n\r", ch );
+  send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£ç¯‡ç•™è¨€ã€‚\n\r", ch );
   RETURN_NULL();
 }
 
@@ -981,20 +981,20 @@ FUNCTION( do_post )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "§A¥²¶·µù©ú¼ĞÃD©Î¬O¦^²Ä´X½g¤å³¹¡T\n\r", ch );
+    send_to_char( "ä½ å¿…é ˆè¨»æ˜æ¨™é¡Œæˆ–æ˜¯å›ç¬¬å¹¾ç¯‡æ–‡ç« ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !( pBoard = ch->in_room->board ) )
   {
-    send_to_char( "¹ï¤£°_¡M³o¸Ì¨S¦³¯d¨¥ªO¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™è£¡æ²’æœ‰ç•™è¨€æ¿ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( ( pBoard->lock || ch->level < pBoard->write_level )
     && !IS_IMMORTAL( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M³o­Ó¯d¨¥ªO§A¬O¤£¯àµoªí¤å³¹ªº¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™å€‹ç•™è¨€æ¿ä½ æ˜¯ä¸èƒ½ç™¼è¡¨æ–‡ç« çš„ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1015,11 +1015,11 @@ FUNCTION( do_post )
   {
     if ( !ch->editing || !*ch->editing )
     {
-      send_to_char( "§Aªº½s¿è½w½Ä°Ï¸Ì¨S¦³¥ô¦óªF¦è¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç·¨è¼¯ç·©è¡å€è£¡æ²’æœ‰ä»»ä½•æ±è¥¿ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    print_to_char( ch, "§Aªº¤å³¹ªº¤º®e¬°¡R\n\r%s%s"
+    print_to_char( ch, "ä½ çš„æ–‡ç« çš„å…§å®¹ç‚ºï¹•\n\r%s%s"
       , VERTICAL_LINE, ch->editing );
 
     RETURN_NULL();
@@ -1029,25 +1029,25 @@ FUNCTION( do_post )
   {
     if ( !ch->editing || !*ch->editing )
     {
-      send_to_char( "§Aªº½s¿è½w½Ä°Ï¸Ì¨S¦³¥ô¦óªF¦è¡M½Ğ¬d¸ß edit¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç·¨è¼¯ç·©è¡å€è£¡æ²’æœ‰ä»»ä½•æ±è¥¿ï¹è«‹æŸ¥è©¢ editï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "§A¥²¶·µù©ú¦^²Ä´X½g¤å³¹¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜å›ç¬¬å¹¾ç¯‡æ–‡ç« ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !is_number( arg + 1 ) )
     {
-      send_to_char( "¹ï¤£°_¡M¤å³¹½s¸¹¤@©w¬O¼Æ¦r¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ–‡ç« ç·¨è™Ÿä¸€å®šæ˜¯æ•¸å­—ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( str_len( ch->editing ) > sizeof( buf1 ) - ( MAX_RESPONSE * 2 ) )
     {
-      send_to_char( "§Aªº½s¿è½w½Ä°Ï¤Ó¤j¤F¡M½Ğ§R°£¤@¨Ç§a¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç·¨è¼¯ç·©è¡å€å¤ªå¤§äº†ï¹è«‹åˆªé™¤ä¸€äº›å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1058,17 +1058,17 @@ FUNCTION( do_post )
     {
       if ( --slot == 0 )
       {
-        /* °t¸m°O¾ĞÅé¨Ã¥B²M°£ */
+        /* é…ç½®è¨˜æ†¶é«”ä¸¦ä¸”æ¸…é™¤ */
         set_post_default( ( pPost = alloc_struct( STRUCT_POST_DATA ) ) );
 
-        /* ³]©w§@ªÌ */
+        /* è¨­å®šä½œè€… */
         str_cpy( buf,  mob_name( NULL, ch ) );
         buf[POSTER_FIELD] = '\x0';
         smash_tilde( buf );
         pPost->poster = str_dup( buf );
         pPost->owner  = str_dup( ch->name );
 
-        /* ³]©w¼ĞÃD */
+        /* è¨­å®šæ¨™é¡Œ */
         if ( aPost->attach > 0 ) str_cpy( buf, aPost->title           );
         else                     sprintf( buf, "Re: %s", aPost->title );
 
@@ -1076,8 +1076,8 @@ FUNCTION( do_post )
         smash_tilde( buf );
         pPost->title = str_dup( buf );
 
-        /* ³]©w¤º®e */
-        sprintf( buf, "\e[36m:¡i ¦b %s ªº¤j§@¤¤´£¨ì ¡j\n  :", aPost->poster );
+        /* è¨­å®šå…§å®¹ */
+        sprintf( buf, "\e[36m:ã€ åœ¨ %s çš„å¤§ä½œä¸­æåˆ° ã€‘\n  :", aPost->poster );
         aString = buf + str_len( buf ) - 1;
 
         for ( pString = aPost->text; *pString; pString++ )
@@ -1111,34 +1111,34 @@ FUNCTION( do_post )
         smash_tilde( buf );
         pPost->text = str_dup( buf );
 
-        /* ³]©wÀÉ¦W */
+        /* è¨­å®šæª”å */
         sprintf( buf, "%d", ( pPost->timer = current_time ) );
         pPost->filename = str_dup( buf );
 
-        /* ³]©wÂø¶µ */
+        /* è¨­å®šé›œé … */
         pPost->mark   = FALSE;
         pPost->attach = aPost->timer;
         pPost->timer  = current_time;
         pPost->board  = pBoard;
 
-        /* ¼g¦^ÀÉ®× */
+        /* å¯«å›æª”æ¡ˆ */
         attach_post( pPost, pBoard, TRUE );
         write_post( pPost );
 
-        act( "$n¦b$t¦^¤F²Ä$T½gªº¤å³¹¡C", ch, pBoard->name, buf2, TO_ALL );
+        act( "$nåœ¨$tå›äº†ç¬¬$Tç¯‡çš„æ–‡ç« ã€‚", ch, pBoard->name, buf2, TO_ALL );
 
-        /* ÄÀ©ñ½s¿è½w½Ä°Ï */
+        /* é‡‹æ”¾ç·¨è¼¯ç·©è¡å€ */
         free_string( ch->editing );
         ch->editing = str_dup( "" );
 
-        /* ½s¿èªº Stamp ­×¥¿ */
+        /* ç·¨è¼¯çš„ Stamp ä¿®æ­£ */
         ch->pcdata->board[pBoard->slot] = current_time;
 
         RETURN_NULL();
       }
     }
 
-    send_to_char( "§ä¤£¨ì¨º½g¤å³¹¥i¥H¦^À³¡T\n\r", ch );
+    send_to_char( "æ‰¾ä¸åˆ°é‚£ç¯‡æ–‡ç« å¯ä»¥å›æ‡‰ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1146,25 +1146,25 @@ FUNCTION( do_post )
   {
     if ( !ch->editing || !*ch->editing )
     {
-      send_to_char( "§Aªº½s¿è½w½Ä°Ï¸Ì¨S¦³¥ô¦óªF¦è¡M½Ğ¬d¸ß edit¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç·¨è¼¯ç·©è¡å€è£¡æ²’æœ‰ä»»ä½•æ±è¥¿ï¹è«‹æŸ¥è©¢ editï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "§A¥²¶·µù©ú¦^²Ä´X½g¤å³¹¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜å›ç¬¬å¹¾ç¯‡æ–‡ç« ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !is_number( arg + 1 ) )
     {
-      send_to_char( "¹ï¤£°_¡M¤å³¹½s¸¹¤@©w¬O¼Æ¦r¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ–‡ç« ç·¨è™Ÿä¸€å®šæ˜¯æ•¸å­—ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( str_len( ch->editing ) > sizeof( buf1 ) - 200 )
     {
-      send_to_char( "§Aªº½s¿è½w½Ä°Ï¤Ó¤j¤F¡M½Ğ§R°£¤@¨Ç§a¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç·¨è¼¯ç·©è¡å€å¤ªå¤§äº†ï¹è«‹åˆªé™¤ä¸€äº›å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1175,17 +1175,17 @@ FUNCTION( do_post )
     {
       if ( --slot == 0 )
       {
-        /* °t¸m°O¾ĞÅé¨Ã¥B²M°£ */
+        /* é…ç½®è¨˜æ†¶é«”ä¸¦ä¸”æ¸…é™¤ */
         set_post_default( ( pPost = alloc_struct( STRUCT_POST_DATA ) ) );
 
-        /* ³]©w§@ªÌ */
+        /* è¨­å®šä½œè€… */
         str_cpy( buf, mob_name( NULL, ch ) );
         buf[POSTER_FIELD] = '\x0';
         smash_tilde( buf );
         pPost->poster = str_dup( buf );
         pPost->owner  = str_dup( ch->name );
 
-        /* ³]©w¼ĞÃD */
+        /* è¨­å®šæ¨™é¡Œ */
         if ( aPost->attach > 0 ) str_cpy( buf, aPost->title           );
         else                     sprintf( buf, "Re: %s", aPost->title );
 
@@ -1193,39 +1193,39 @@ FUNCTION( do_post )
         smash_tilde( buf );
         pPost->title = str_dup( buf );
 
-        /* ³]©w¤º®e */
+        /* è¨­å®šå…§å®¹ */
         str_cpy( buf, ch->editing );
         smash_tilde( buf );
         pPost->text = str_dup( buf );
 
-        /* ³]©wÀÉ¦W */
+        /* è¨­å®šæª”å */
         sprintf( buf, "%d", ( pPost->timer = current_time ) );
         pPost->filename = str_dup( buf );
 
-        /* ³]©wÂø¶µ */
+        /* è¨­å®šé›œé … */
         pPost->mark   = FALSE;
         pPost->attach = aPost->timer;
         pPost->timer  = current_time;
         pPost->board  = pBoard;
 
-        /* ¼g¦^ÀÉ®× */
+        /* å¯«å›æª”æ¡ˆ */
         attach_post( pPost, pBoard, TRUE );
         write_post( pPost );
 
-        act( "$n¦b$t¦^¤F²Ä$T½gªº¤å³¹¡C", ch, pBoard->name, buf2, TO_ALL );
+        act( "$nåœ¨$tå›äº†ç¬¬$Tç¯‡çš„æ–‡ç« ã€‚", ch, pBoard->name, buf2, TO_ALL );
 
-        /* ÄÀ©ñ½s¿è½w½Ä°Ï */
+        /* é‡‹æ”¾ç·¨è¼¯ç·©è¡å€ */
         free_string( ch->editing );
         ch->editing = str_dup( "" );
 
-        /* ½s¿èªº Stamp ­×¥¿ */
+        /* ç·¨è¼¯çš„ Stamp ä¿®æ­£ */
         ch->pcdata->board[pBoard->slot] = current_time;
 
         RETURN_NULL();
       }
     }
 
-    send_to_char( "§ä¤£¨ì¨º½g¤å³¹¥i¥H¦^À³¡T\n\r", ch );
+    send_to_char( "æ‰¾ä¸åˆ°é‚£ç¯‡æ–‡ç« å¯ä»¥å›æ‡‰ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1233,61 +1233,61 @@ FUNCTION( do_post )
   {
     if ( !ch->editing || !*ch->editing )
     {
-      send_to_char( "§Aªº½s¿è½w½Ä°Ï¸Ì¨S¦³¥ô¦óªF¦è¡M½Ğ¬d¸ß edit¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç·¨è¼¯ç·©è¡å€è£¡æ²’æœ‰ä»»ä½•æ±è¥¿ï¹è«‹æŸ¥è©¢ editï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¤º®e¬O§_¦³¤£¶®¦r */
+    /* æª¢æŸ¥å…§å®¹æ˜¯å¦æœ‰ä¸é›…å­— */
     if ( check_chat_xname( ch, arg ) == TRUE ) RETURN_NULL();
 
     if ( str_len( ch->editing ) > sizeof( buf ) - 200 )
     {
-      send_to_char( " §Aªº½s¿è½w½Ä°Ï¤Ó¤j¤F¡M½Ğ¥ı§R°£¤@¨Ç§a¡T\n\r", ch );
+      send_to_char( " ä½ çš„ç·¨è¼¯ç·©è¡å€å¤ªå¤§äº†ï¹è«‹å…ˆåˆªé™¤ä¸€äº›å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* °t¸m°O¾ĞÅé¨Ã¥B²M°£ */
+    /* é…ç½®è¨˜æ†¶é«”ä¸¦ä¸”æ¸…é™¤ */
     set_post_default( ( pPost = alloc_struct( STRUCT_POST_DATA ) ) );
 
-    /* ³]©w§@ªÌ */
+    /* è¨­å®šä½œè€… */
     str_cpy( buf, mob_name( NULL, ch ) );
     buf[POSTER_FIELD] = '\x0';
     smash_tilde( buf );
     pPost->poster = str_dup( buf );
     pPost->owner  = str_dup( ch->name );
 
-    /* ³]©w¼ĞÃD */
+    /* è¨­å®šæ¨™é¡Œ */
     str_cpy( buf, arg );
     buf[TITLE_FIELD] = '\x0';
     smash_tilde( buf );
     pPost->title = str_dup( buf );
 
-    /* ³]©w¤º®e */
+    /* è¨­å®šå…§å®¹ */
     str_cpy( buf, ch->editing );
     smash_tilde( buf );
     pPost->text = str_dup( buf );
 
-    /* ³]©wÀÉ¦W */
+    /* è¨­å®šæª”å */
     sprintf( buf, "%d", ( pPost->timer = current_time ) );
     pPost->filename = str_dup( buf );
 
-    /* ³]©wÂø¶µ */
+    /* è¨­å®šé›œé … */
     pPost->mark   = FALSE;
     pPost->attach = 0;
     pPost->timer  = current_time;
     pPost->board  = pBoard;
 
-    /* ¼g¦^ÀÉ®× */
+    /* å¯«å›æª”æ¡ˆ */
     attach_post( pPost, pBoard, TRUE );
     write_post( pPost );
 
-    act( "$n¦b$tµoªí¤F¤@½g¦³Ãö$Tªº¤å³¹¡C", ch, pBoard->name, arg, TO_ALL );
+    act( "$nåœ¨$tç™¼è¡¨äº†ä¸€ç¯‡æœ‰é—œ$Tçš„æ–‡ç« ã€‚", ch, pBoard->name, arg, TO_ALL );
 
-    /* ÄÀ©ñ½s¿è½w½Ä°Ï */
+    /* é‡‹æ”¾ç·¨è¼¯ç·©è¡å€ */
     free_string( ch->editing );
     ch->editing = str_dup( "" );
 
-    /* ½s¿èªº Stamp ­×¥¿ */
+    /* ç·¨è¼¯çš„ Stamp ä¿®æ­£ */
     ch->pcdata->board[pBoard->slot] = current_time;
 
     RETURN_NULL();
@@ -1296,7 +1296,7 @@ FUNCTION( do_post )
   RETURN_NULL();
 }
 
-/* ²M°£¹L¶qªº¤å³¹ */
+/* æ¸…é™¤éé‡çš„æ–‡ç«  */
 void board_update( void )
 {
   BOARD_DATA * pBoard;
@@ -1319,11 +1319,11 @@ void purge_post( BOARD_DATA * pBoard )
 
   if ( !pBoard )
   {
-    mudlog( LOG_DEBUG, "purge_post: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "purge_post: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
-  /* ¦pªGÁÙ¤£¨ì®e¶q­­¨î */
+  /* å¦‚æœé‚„ä¸åˆ°å®¹é‡é™åˆ¶ */
   if ( ( count = post_count( pBoard, POST_NOT_MARK ) - pBoard->capcity ) <= 0 )
     RETURN_NULL();
 
@@ -1337,7 +1337,7 @@ void purge_post( BOARD_DATA * pBoard )
     }
   }
 
-  /* ­«·s§ó·s¦Cªí */
+  /* é‡æ–°æ›´æ–°åˆ—è¡¨ */
   rewrite_board_list( pBoard );
   RETURN_NULL();
 }
@@ -1353,15 +1353,15 @@ void remove_post( POST_DATA * pPost )
 
   if ( !pPost || !( pBoard = pPost->board ) )
   {
-    mudlog( LOG_DEBUG, "remove_post: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "remove_post: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
-  /* §R°£ÀÉ®× */
+  /* åˆªé™¤æª”æ¡ˆ */
   sprintf( filename, "%s%s", pBoard->pathname, pPost->filename );
 
   if ( unlink( filename ) != 0 )
-    mudlog( LOG_DEBUG, "remove_post: µLªk§R°£ %s.", filename );
+    mudlog( LOG_DEBUG, "remove_post: ç„¡æ³•åˆªé™¤ %s.", filename );
 
   for ( zPost = NULL, aPost = pBoard->post;
         aPost;
@@ -1383,11 +1383,11 @@ void remove_post( POST_DATA * pPost )
     }
   }
 
-  mudlog( LOG_DEBUG, "remove_post: ¥¼µo²{¨ì±ı§R°£ªº¤å³¹." );
+  mudlog( LOG_DEBUG, "remove_post: æœªç™¼ç¾åˆ°æ¬²åˆªé™¤çš„æ–‡ç« ." );
   RETURN_NULL();
 }
 
-/* ­«·s§ó·s¦Cªí */
+/* é‡æ–°æ›´æ–°åˆ—è¡¨ */
 void rewrite_board_list( BOARD_DATA * pBoard )
 {
   POST_DATA * pPost;
@@ -1397,7 +1397,7 @@ void rewrite_board_list( BOARD_DATA * pBoard )
 
   if ( !pBoard || !pBoard->listfile || !*pBoard->listfile )
   {
-    mudlog( LOG_DEBUG, "rewrite_board_list: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "rewrite_board_list: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -1411,7 +1411,7 @@ void rewrite_board_list( BOARD_DATA * pBoard )
 
   else
   {
-    mudlog( LOG_DEBUG, "rewrite_board_list: µLªk¶}±ÒÀÉ®× %s."
+    mudlog( LOG_DEBUG, "rewrite_board_list: ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ %s."
       , pBoard->listfile );
   }
 
@@ -1426,7 +1426,7 @@ void attach_post( POST_DATA * pPost, BOARD_DATA * pBoard, bool fWrite )
 
   if ( !pPost || !pBoard )
   {
-    mudlog( LOG_DEBUG, "attach_post: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "attach_post: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -1444,7 +1444,7 @@ void attach_post( POST_DATA * pPost, BOARD_DATA * pBoard, bool fWrite )
     aPost->next = pPost;
   }
 
-  /* ¦pªG­n§ó·sÀÉ®×¦Cªí */
+  /* å¦‚æœè¦æ›´æ–°æª”æ¡ˆåˆ—è¡¨ */
   if ( fWrite ) rewrite_board_list( pBoard );
 
   RETURN_NULL();
@@ -1460,7 +1460,7 @@ void write_post( POST_DATA * pPost )
 
   if ( !pPost || !( pBoard = pPost->board ) || !pBoard->pathname )
   {
-    mudlog( LOG_DEBUG, "write_post: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "write_post: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -1468,7 +1468,7 @@ void write_post( POST_DATA * pPost )
 
   if ( !( pFile = FOPEN( filename, "w" ) ) )
   {
-    mudlog( LOG_DEBUG, "write_post: µLªk¶}±ÒÀÉ®× %s.", filename );
+    mudlog( LOG_DEBUG, "write_post: ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ %s.", filename );
     RETURN_NULL();
   }
 
@@ -1497,7 +1497,7 @@ void write_post( POST_DATA * pPost )
   RETURN_NULL();
 }
 
-/* Åã¥Ü¤å³¹¹ï¬Y¤Hªºª¬ºA */
+/* é¡¯ç¤ºæ–‡ç« å°æŸäººçš„ç‹€æ…‹ */
 const char * post_status( POST_DATA * pPost, int timer )
 {
   PUSH_FUNCTION( "post_status" );
@@ -1527,11 +1527,11 @@ FUNCTION( do_edit )
   {
     if ( !*ch->editing )
     {
-      send_to_char( "§A¨Ã¨S¦³½s¿è¥ô¦óªF¦è¡T\n\r", ch );
+      send_to_char( "ä½ ä¸¦æ²’æœ‰ç·¨è¼¯ä»»ä½•æ±è¥¿ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    print_to_char( ch, "§A¥Ø«e½s¿èªº¤º®e¬°¡R\n\r%s%s%s"
+    print_to_char( ch, "ä½ ç›®å‰ç·¨è¼¯çš„å…§å®¹ç‚ºï¹•\n\r%s%s%s"
       , VERTICAL_LINE, ch->editing, VERTICAL_LINE );
 
     RETURN_NULL();
@@ -1541,7 +1541,7 @@ FUNCTION( do_edit )
   {
     free_string( ch->editing );
     ch->editing = str_dup( "" );
-    send_to_char( "§A¤w¸g²M°£§Aªº½s¿è½w½Ä°Ïªº¤º®e¡C\n\r", ch );
+    send_to_char( "ä½ å·²ç¶“æ¸…é™¤ä½ çš„ç·¨è¼¯ç·©è¡å€çš„å…§å®¹ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1551,19 +1551,19 @@ FUNCTION( do_edit )
 
     if ( str_len( buf ) + str_len( argument ) >= ( sizeof( buf ) - 200 ) )
     {
-      send_to_char( "¹ï¤£°_¡M½s¿è¤º®e¤Óªø¤F¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç·¨è¼¯å…§å®¹å¤ªé•·äº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ®ø±¼ÃöÁä¦r */
+    /* æ¶ˆæ‰é—œéµå­— */
     smash_tilde( argument );
 
-    /* ÀË¬d¤º®e¬O§_¦³¤£¶®¦r */
+    /* æª¢æŸ¥å…§å®¹æ˜¯å¦æœ‰ä¸é›…å­— */
     if ( check_chat_xname( ch, argument ) == TRUE ) RETURN_NULL();
 
     ansi_transcribe( argument, buf1 );
 
-    /* ¥HÁ×§KªÅ¥Õ³Q§R°£ */
+    /* ä»¥é¿å…ç©ºç™½è¢«åˆªé™¤ */
     if ( buf1[0] == '.' ) buf1[0] = ' ';
 
     str_cat( buf, buf1 );
@@ -1571,7 +1571,7 @@ FUNCTION( do_edit )
     free_string( ch->editing );
     ch->editing = str_dup( buf );
 
-    send_to_char( "¼W¥[½s¿èªº¤º®e¡C\n\r", ch );
+    send_to_char( "å¢åŠ ç·¨è¼¯çš„å…§å®¹ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1579,7 +1579,7 @@ FUNCTION( do_edit )
   {
     if ( !*ch->editing )
     {
-      send_to_char( "§Aªº½s¿è½w½Ä°Ï¨S¦³¤º®e¡MµLªk§R°£¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç·¨è¼¯ç·©è¡å€æ²’æœ‰å…§å®¹ï¹ç„¡æ³•åˆªé™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1593,20 +1593,20 @@ FUNCTION( do_edit )
         free_string( ch->editing );
         ch->editing = str_dup( buf );
 
-        send_to_char( "§R°£½s¿è½w½Ä°Ï¤W¤@¦æ¡T\n\r", ch );
+        send_to_char( "åˆªé™¤ç·¨è¼¯ç·©è¡å€ä¸Šä¸€è¡Œï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
 
     free_string( ch->editing );
     ch->editing = str_dup( "" );
-    send_to_char( "¦]¬°§Aªº½w½Ä°Ï¥u¦³¤@¦æ¡M©Ò¥H¾ã­Ó³Q§R°£¤F¡T\n\r", ch );
+    send_to_char( "å› ç‚ºä½ çš„ç·©è¡å€åªæœ‰ä¸€è¡Œï¹æ‰€ä»¥æ•´å€‹è¢«åˆªé™¤äº†ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   else
   {
-    send_to_char( "»yªk¿ù»~¡M½Ğ¬d¸ß¬ÛÃö¥Îªk¡T\n\r", ch );
+    send_to_char( "èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ç›¸é—œç”¨æ³•ï¹—\n\r", ch );
     RETURN_NULL();
   }
   RETURN_NULL();

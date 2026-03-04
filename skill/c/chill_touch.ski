@@ -1,7 +1,7 @@
 Name            chill touch~
-Cname           ´HÁ÷¤§Ä²~
+Cname           å¯’éœœä¹‹è§¸~
 Slot            SLOT_CHILL_TOUCH
-Msgoff          §A·P¨ì¨S¨º»ò§N¤F¡T~
+Msgoff          ä½ æ„Ÿåˆ°æ²’é‚£éº¼å†·äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_chill_touch~
 Position        POS_FIGHTING

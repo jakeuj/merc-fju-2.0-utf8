@@ -1,5 +1,5 @@
 Name            fonxan sword~
-Cname           �ʤs�C�k~
+Cname           封山劍法~
 Slot            SLOT_FONXANSWORD
 Msgoff          ~
 Check           check_sword_attack~
@@ -33,16 +33,16 @@ Limit           CLASS_BRAVO      1  95
 Limit           CLASS_MAGE       1  60
 Limit           CLASS_SMITH      1  60
 Help
-�ʤs�C�k:
+封山劍法:
 
-�ѵؤs�C�k�t�ƥX�Ӫ��C�ۡM��W�ʤs�M�N�����C�@�X�M�C�p
-���i�ʤs�M�O�H�ۦ��N�ҬҥH�s�ը��V���D�C
+由華山劍法演化出來的劍招﹐其名封山﹐意指此劍一出﹐劍峰
+當可封山﹐是以招式意境皆以山勢走向為主。
 
 ~
 
 #Damage
 Description
-$n�Ϥ@��$G�y�p�j����z$Z�M�⤤$O�p�@���ȳD���V$N��$l�C~
+$n使一招$G『峰迴路轉』$Z﹐手中$O如一條銀蛇般刺向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�ʤs�C�k����$G�y�Ťs���y�z$Z�M�C���N�N�٦V$N��$l�C~
+$n使出封山劍法中的$G『空山鳥語』$Z﹐劍光霍霍斬向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -60,7 +60,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�@��$G�y�s���Ӧ�z$Z�M���ΰ~�M�ƥX�ƤءM�⤤$O�٦V$N��$l�C~
+$n一招$G『御風而行』$Z﹐身形陡然滑出數尺﹐手中$O斬向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -69,7 +69,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�⤤$O���c���i�M�@��$G�y����F�@�z$Z���$N��$l��X�@�C�C~
+$n手中$O中宮直進﹐一式$G『旭日東昇』$Z對準$N的$l刺出一劍。~
 Chance          20
 Value           20
 Parry           0
@@ -78,7 +78,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�a���@�D�M�⤤$O�@��$G�y�����m�a�z$Z���$N��$l�ױר�X�@�C�C~
+$n縱身一躍﹐手中$O一招$G『金光瀉地』$Z對準$N的$l斜斜刺出一劍。~
 Chance          20
 Value           20
 Parry           0
@@ -87,7 +87,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��$O�̪Ť@���M�@��$G�y���l�޸��z$Z��V$N��$l�C~
+$n的$O憑空一指﹐一招$G『童子引路』$Z刺向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -96,7 +96,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�⤤$O�V�~�@���M�Ϥ@��$G�y�h�t����z$Z�Ϥ���$N$l�@�C��h�C~
+$n手中$O向外一分﹐使一招$G『柳暗花明』$Z反手對準$N$l一劍刺去。~
 Chance          20
 Value           20
 Parry           0
@@ -105,7 +105,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��C�W�e�M���Τ@��⤤$O�Ϥ@��$G�y�Ũ���i�z$Z�e�X�@�D�����٦V$N��$l�C~
+$n橫劍上前﹐身形一轉手中$O使一招$G『空谷秋虹』$Z畫出一道光弧斬向$N的$l。~
 Chance          20
 Value           20
 Parry           0

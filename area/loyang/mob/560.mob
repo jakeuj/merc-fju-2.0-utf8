@@ -1,10 +1,10 @@
 Vnum            560
 Name            temple guard~
-ShortDesc       ¸T­xÅ@½Ã~
-LongDesc        ­t³d¬Ó®c¦w¥şªº¸T­x(temple guard)¦b¦¹¯¸±^¡C
+ShortDesc       ç¦è»è­·è¡›~
+LongDesc        è² è²¬çš‡å®®å®‰å…¨çš„ç¦è»(temple guard)åœ¨æ­¤ç«™å´—ã€‚
 ~
 Description
-¶¯­v­v¡M®ğ©ù©ù¡M¬İ¨Ó¯uªº¥u¦³³o¼Ëªº¤H¤~¥i¥H«OÅ@¬Ó®cªº¦w¥ş¡C
+é›„èµ³èµ³ï¹æ°£æ˜‚æ˜‚ï¹çœ‹ä¾†çœŸçš„åªæœ‰é€™æ¨£çš„äººæ‰å¯ä»¥ä¿è­·çš‡å®®çš„å®‰å…¨ã€‚
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -44,8 +44,8 @@ endif
 if isimminvis($n)
   break
 endif
-if isenemy($n) != '¬¥¶§'
-  mpsetenemy $n '¬¥¶§'
+if isenemy($n) != 'æ´›é™½'
+  mpsetenemy $n 'æ´›é™½'
 endif
 ~
 End

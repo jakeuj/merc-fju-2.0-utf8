@@ -1,4 +1,4 @@
-/* ªá®±Â¸»L */
+/* èŠ±æ‹³ç¹¡è…¿ */
 void skill_unrigid_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -8,28 +8,28 @@ void skill_unrigid_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_unrigid_attack" );
 
-  /* °ò¥»§ğ¶Ë³]©w */
+  /* åŸºæœ¬æ”»å‚·è¨­å®š */
   dam = ch->damroll;
 
-  /* Àò±o¼ô½m«× */
+  /* ç²å¾—ç†Ÿç·´åº¦ */
   practice = get_practice( ch , sn );
 
   switch( dimemsion_position( choice, practice, TRUE ) )
   {
     case ERRORCODE:
-      mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+      mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
       RETURN_NULL();
 
     case 0:
       sact( ch , victim, NULL
-        , "$n¯ÓºÉ¥ş¤O¹ï$N¥´¥X³n®zªº¤@®±, ¸ÕµÛÅı¥L·PÄ±¦³¤@ÂIµh,"
-          " ¤]¤£ª¾¹D¦³¨S¦³®Ä." );
+        , "$nè€—ç›¡å…¨åŠ›å°$Næ‰“å‡ºè»Ÿå¼±çš„ä¸€æ‹³, è©¦è‘—è®“ä»–æ„Ÿè¦ºæœ‰ä¸€é»ç—›,"
+          " ä¹Ÿä¸çŸ¥é“æœ‰æ²’æœ‰æ•ˆ." );
       damage( ch, victim, dam, sn );
       break;
 
     case 1:
       sact( ch, victim, NULL
-        , "$n±N¤ß¯«©ñ¦b¸}¤W, ÀHµÛ´²¶Ãªº¨B¥ï, ¶¶¤âµ¹¤©$N¤@À»." );
+        , "$nå°‡å¿ƒç¥æ”¾åœ¨è…³ä¸Š, éš¨è‘—æ•£äº‚çš„æ­¥ä¼, é †æ‰‹çµ¦äºˆ$Nä¸€æ“Š." );
       damage( ch, victim, dam * number_range( 1, 2 ), sn );
       break;
 
@@ -38,21 +38,21 @@ void skill_unrigid_attack( int sn , int level , CHAR_DATA * ch , void * vo )
         int choice[] = { 150 , 200, -1 };
 
         sact( ch, victim, NULL
-          , "$n¥H§Ö³tªº°Ê§@, ²r¦V$N´§®±, ¤£¹L¥u¦³¨â¤U¥i¥H¬İ!!" );
+          , "$nä»¥å¿«é€Ÿçš„å‹•ä½œ, çŒ›å‘$Næ®æ‹³, ä¸éåªæœ‰å…©ä¸‹å¯ä»¥çœ‹!!" );
         multi_damage( ch, victim, sn, dam, choice );
         break;
       }
 
     case 3:
       sact( ch, victim, NULL,
-        "$n§Ö³tªº´§µÛ®±, ¤@ª½¦V$N¥´¥h, ¤]¤£ºŞ¦³¨S¦³¥´¤¤." );
+        "$nå¿«é€Ÿçš„æ®è‘—æ‹³, ä¸€ç›´å‘$Næ‰“å», ä¹Ÿä¸ç®¡æœ‰æ²’æœ‰æ‰“ä¸­." );
       damage( ch, victim, dam, sn );
       break;
 
     case 4:
       sact( ch, victim, NULL,
-        "$n¥H¬yºZªº°Ê§@, Âù®±¤£°±ªº©¹$N¨­¤W¥´¥h, ¤@Àş¶¡,"
-        "Ãz¥X³s¯]¯¥¯ëªºÁnÅT." );
+        "$nä»¥æµæš¢çš„å‹•ä½œ, é›™æ‹³ä¸åœçš„å¾€$Nèº«ä¸Šæ‰“å», ä¸€ç¬é–“,"
+        "çˆ†å‡ºé€£ç ç ²èˆ¬çš„è²éŸ¿." );
       damage( ch, victim, dam, sn );
       break;
 
@@ -64,7 +64,7 @@ void skill_unrigid_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ©î©Û¨ø¤O */
+/* æ‹†æ‹›å¸åŠ› */
 void skill_dodge( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = ( CHAR_DATA * ) vo;
@@ -72,22 +72,22 @@ void skill_dodge( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_dodge" );
 
-  /* ¯d­ÓÀË¬d¨ç¼Æ xxxx */
+  /* ç•™å€‹æª¢æŸ¥å‡½æ•¸ xxxx */
 
-  /* ­pºâ¾÷²v */
+  /* è¨ˆç®—æ©Ÿç‡ */
   chance = IS_NPC( ch ) ? UMIN( 70, ch->level ) : ch->learn[sn] / 2;
 
-  /* °{¸ú¤£¦¨¥\ */
+  /* é–ƒèº²ä¸æˆåŠŸ */
   if ( number_percent() >= chance + victim->level - ch->level )
     RETURN_NULL();
 
-  /* °{¸ú¦¨¥\ */
-  act( "¥­®É­W½m¦³¦¨,§AÀIÀIªº¸ú¹L¤F$Nªº§ğÀ»." , ch , NULL , victim , TO_VICT );
-  act( "«u§r!! $nÁa¨­°{¸ú¹L¤F§Aªº§ğÀ»."       , ch , NULL , victim , TO_CHAR );
+  /* é–ƒèº²æˆåŠŸ */
+  act( "å¹³æ™‚è‹¦ç·´æœ‰æˆ,ä½ éšªéšªçš„èº²éäº†$Nçš„æ”»æ“Š." , ch , NULL , victim , TO_VICT );
+  act( "å“å‘€!! $nç¸±èº«é–ƒèº²éäº†ä½ çš„æ”»æ“Š."       , ch , NULL , victim , TO_CHAR );
   RETURN_NULL();
 }
 
-/* ¼CÀ» --> Added by Cutty */
+/* åŠæ“Š --> Added by Cutty */
 void skill_sword_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -98,10 +98,10 @@ void skill_sword_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_sword_attack" );
 
-  /* ÀË¬dªZ¾¹ */
+  /* æª¢æŸ¥æ­¦å™¨ */
   if ( !( obj = get_wield( ch ) ) ) RETURN_NULL();
 
-  /* °ò¥»³]©w */
+  /* åŸºæœ¬è¨­å®š */
   if ( ch && ch->pcdata && get_wield( ch ) )
   {
     dam = number_range( ch->learn[sn]
@@ -111,17 +111,17 @@ void skill_sword_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   else
   {
     if ( !IS_NPC( ch ) )
-      mudlog( LOG_DEBUG, "§Ş¯à %d §ğ¶Ë³]©w¦³°İÃD." , sn );
+      mudlog( LOG_DEBUG, "æŠ€èƒ½ %d æ”»å‚·è¨­å®šæœ‰å•é¡Œ." , sn );
     dam = 100;
   }
 
   practice = get_practice( ch, sn );
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   switch( dimemsion_position( choice, practice, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN_NULL();
 
   case 2:
@@ -129,21 +129,21 @@ void skill_sword_attack( int sn , int level , CHAR_DATA * ch , void * vo )
       int damage_plus[] = { 100, 150, 200, -1 };
 
       sact( ch, victim, obj
-        , "$n¥H$O¾î¯İ, ©ù­º»·µø, ¦ü¥G¶i¤J¤J©w¤§¤¤!!\n\r"
-          "©¿µM²·­º»·µø, ²´¥úª½¹G$N, ¶X¨äÅåÀ~¤§¾l¦º©R´§¥X¤T¼C...." );
+        , "$nä»¥$Oæ©«èƒ¸, æ˜‚é¦–é è¦–, ä¼¼ä¹é€²å…¥å…¥å®šä¹‹ä¸­!!\n\r"
+          "å¿½ç„¶çœºé¦–é è¦–, çœ¼å…‰ç›´é€¼$N, è¶å…¶é©šåš‡ä¹‹é¤˜æ­»å‘½æ®å‡ºä¸‰åŠ...." );
       multi_damage( ch, victim, sn, dam, damage_plus);
       break;
     }
 
   case 1:
     sact( ch, victim, obj
-      , "$n¥Hªø¤[­×½mªºªZÃÀ¥R¥¸¤º¤ß, ±N©Ò¾Ğ¤§§Ş¥©¦b$O¤Wµo´§, ´§¦V$N!!" );
+      , "$nä»¥é•·ä¹…ä¿®ç·´çš„æ­¦è—å……æ–¥å…§å¿ƒ, å°‡æ‰€æ†¶ä¹‹æŠ€å·§åœ¨$Oä¸Šç™¼æ®, æ®å‘$N!!" );
     damage( ch , victim , dam * 2 , sn );
     break;
 
   case 0:
     sact( ch, victim, obj
-      , "$n¥Î$O¹ïµÛ$N¾Ä¤O´§¥X,$N°{¸ú¤£¤Î³Qµe¥X¤F¤@±øªøªøªº¤f¤l!!" );
+      , "$nç”¨$Oå°è‘—$Nå¥®åŠ›æ®å‡º,$Né–ƒèº²ä¸åŠè¢«ç•«å‡ºäº†ä¸€æ¢é•·é•·çš„å£å­!!" );
     damage( ch , victim , dam , sn );
     break;
   }
@@ -151,7 +151,7 @@ void skill_sword_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥¼CÀ» --> Added by ene , Modify by Cutty */
+/* é€²éšåŠæ“Š --> Added by ene , Modify by Cutty */
 void skill_sword_adv_attack( int sn, int level, CHAR_DATA * ch, void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -161,7 +161,7 @@ void skill_sword_adv_attack( int sn, int level, CHAR_DATA * ch, void * vo )
 
   PUSH_FUNCTION( "skill_sword_adv_attack" );
 
-  /* °ò¥»³]©w */
+  /* åŸºæœ¬è¨­å®š */
   if ( ch && ch->pcdata && get_wield( ch ) )
   {
     dam = number_range( ch->learn[sn] * 10
@@ -171,113 +171,113 @@ void skill_sword_adv_attack( int sn, int level, CHAR_DATA * ch, void * vo )
   else
   {
     if ( !IS_NPC( ch ) )
-      mudlog( LOG_DEBUG, "§Ş¯à %d ªº§ğ¶Ë³]©w¦³°İÃD." , sn );
+      mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„æ”»å‚·è¨­å®šæœ‰å•é¡Œ." , sn );
     dam = 100;
   }
 
   practice = get_practice( ch, sn );
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   switch( dimemsion_position( choice, practice, TRUE ) )
   {
   case ERRORCODE:
-    mudlog( LOG_DEBUG, "§Ş¯à %d ªº°T®§³]©w¦³°İÃD." , sn );
+    mudlog( LOG_DEBUG, "æŠ€èƒ½ %d çš„è¨Šæ¯è¨­å®šæœ‰å•é¡Œ." , sn );
     RETURN_NULL();
 
   case 0:
     act_skill( ch, victim
-      , "§A¤£¶O§j¦Ç¤§¤O¥Î¼C¹ïµÛ$N­â¼F´§¥X,$E²´¬İ°{¤£±¼³Qµe¥X´X¹D²`²`ªº"
-        "¶Ë¤f!!"
-      , "$n¥Î¤F¼C­â¼Fªº´§¦V§A,¦ı§A°{Á×¤£¤Î,"
-        "Àş¶¡¨­¤W¥H¦h¤F´X¹D¶Ë²ª!!"
-      , "$n¥Î¼C­â¼F¦a´§¦V$N,$E°{¸ú¤£¤Î³Q³ÎªºÂA¦åª½¬y!!" );
+      , "ä½ ä¸è²»å¹ç°ä¹‹åŠ›ç”¨åŠå°è‘—$Nå‡Œå²æ®å‡º,$Eçœ¼çœ‹é–ƒä¸æ‰è¢«ç•«å‡ºå¹¾é“æ·±æ·±çš„"
+        "å‚·å£!!"
+      , "$nç”¨äº†åŠå‡Œå²çš„æ®å‘ä½ ,ä½†ä½ é–ƒé¿ä¸åŠ,"
+        "ç¬é–“èº«ä¸Šä»¥å¤šäº†å¹¾é“å‚·ç—•!!"
+      , "$nç”¨åŠå‡Œå²åœ°æ®å‘$N,$Eé–ƒèº²ä¸åŠè¢«å‰²çš„é®®è¡€ç›´æµ!!" );
     damage( ch , victim , dam , sn );
     break;
 
   case 1:
     act_skill( ch, victim
-      , "§A§Q¥Î¦h¤é¨Ó©Ò¾Ç²ßªº²`´ï¼C³N, ´£¼C±Ù¦V$N,"
-        " ¤@°}¬õ¨~¨³³t¦V$E¹Gªñ!!"
-      , "$n°µ¦n·Ç³Æ, ¥H¼Æ¤é¨Ó½m²ßªº¦¨ªG´§¼C¬å¦V§A, "
-        "¤@°}¬õ¨~ÀHµÛ¼C¦y¦V§A¹Gªñ!!"
-      , "$n°µ¦n·Ç³Æ, ¥H¼Æ¤é¨Ó½m²ßªº¦¨ªG´§¼C¬å¦V$N,"
-         " ¥u¨£¤@±ø¬õ¨~¨³¯e¦V$E½Ä¥h!!" );
+      , "ä½ åˆ©ç”¨å¤šæ—¥ä¾†æ‰€å­¸ç¿’çš„æ·±æ¹›åŠè¡“, æåŠæ–¬å‘$N,"
+        " ä¸€é™£ç´…èŠ’è¿…é€Ÿå‘$Eé€¼è¿‘!!"
+      , "$nåšå¥½æº–å‚™, ä»¥æ•¸æ—¥ä¾†ç·´ç¿’çš„æˆæœæ®åŠç å‘ä½ , "
+        "ä¸€é™£ç´…èŠ’éš¨è‘—åŠå°–å‘ä½ é€¼è¿‘!!"
+      , "$nåšå¥½æº–å‚™, ä»¥æ•¸æ—¥ä¾†ç·´ç¿’çš„æˆæœæ®åŠç å‘$N,"
+         " åªè¦‹ä¸€æ¢ç´…èŠ’è¿…ç–¾å‘$Eè¡å»!!" );
     damage( ch , victim , dam * 2, sn );
     break;
 
   case 2:
     act_skill( ch, victim
-      , "§A²´¥ú¶°¤¤¦b¼C¦y, ¤ß¤¤¤¸¯«¦X¤@, ¤Ñ®ğ¬ğµMÂà³±!!\n\r"
-        "Àş¶¡, §A±i¶}Âù²´, ±N¼C¦y©M$N¦¨¬°¤@½u, ¥H¼Cª½¹G$E¦Ó¥h!!"
-      , "$n¬ğµM¹ïµÛ¼C¦yµo§b, ¦ı¨£¤Ñ¦â¬ğµM·t¤U, "
-        "¦³­·«B±N¦Ü¤§¶Õ.\n\r¬ğµM¤§¶¡, $e¶¶µÛ¼C¦y«æ³t±N¼C´§¦V§A,"
-        " ²´¬İ°{¸ú¤£¹L!!"
-      , "$n¬ğµM¹ïµÛ¼C¦yµo§b, ¦ı¨£¤Ñ¦â¬ğµM·t¤U, "
-        "¦³­·«B±N¦Ü¤§¶Õ.\n\r¬ğµM¤§¶¡, $e¶¶µÛ¼C¦y«æ³t±N¼C´§¦V$N,"
-        " ²´¬İ°{¸ú¤£¹L!!" );
+      , "ä½ çœ¼å…‰é›†ä¸­åœ¨åŠå°–, å¿ƒä¸­å…ƒç¥åˆä¸€, å¤©æ°£çªç„¶è½‰é™°!!\n\r"
+        "ç¬é–“, ä½ å¼µé–‹é›™çœ¼, å°‡åŠå°–å’Œ$Næˆç‚ºä¸€ç·š, ä»¥åŠç›´é€¼$Eè€Œå»!!"
+      , "$nçªç„¶å°è‘—åŠå°–ç™¼å‘†, ä½†è¦‹å¤©è‰²çªç„¶æš—ä¸‹, "
+        "æœ‰é¢¨é›¨å°‡è‡³ä¹‹å‹¢.\n\rçªç„¶ä¹‹é–“, $eé †è‘—åŠå°–æ€¥é€Ÿå°‡åŠæ®å‘ä½ ,"
+        " çœ¼çœ‹é–ƒèº²ä¸é!!"
+      , "$nçªç„¶å°è‘—åŠå°–ç™¼å‘†, ä½†è¦‹å¤©è‰²çªç„¶æš—ä¸‹, "
+        "æœ‰é¢¨é›¨å°‡è‡³ä¹‹å‹¢.\n\rçªç„¶ä¹‹é–“, $eé †è‘—åŠå°–æ€¥é€Ÿå°‡åŠæ®å‘$N,"
+        " çœ¼çœ‹é–ƒèº²ä¸é!!" );
     damage( ch , victim , dam * 3, sn );
     break;
 
 
   case 3:
     act_skill( ch, victim
-      , "§A¬ğµM©ñ±ó¾Ô°«, Âà¨­¸õ¨ì¤Fªşªñ¤@­Ó¸û°ªªº¦a¤è,"
-        "²·¥Ø»·±æ...\n\r$N¨£¨ì§A³o¤@°Æ¼Ò¼Ë, «æ¦£·Q­n¦A¤W¨Ó¤@¨M¦º¾Ô."
-        "\n\r©ó¬O§A¶XµÛ$E¦bªÅ¤¤µLªk°{Á×¤§®Éµ¹¤©²r¯Pªº¤@À»!!"
-      , "$n¦b¾Ô°«¤¤¬ğµMÂà¨­¸õ¦V°ª³B, ¬İªºÅı§A¤Q¤À°g´b."
-        "\n\r²´¬İ³o¬O¤@­Ó¤£®e¿ù¥¢ªº¦n¾÷·|, §A¾Ä¤O¸õ°_½Ä¦V$e!!\n\r"
-        "´N¦b§A°±¦bªÅ¤¤¤§®É, $e´§¼C«æ³t¥Ñ§A¤W¤è«æ±Ù¦Ó¨Ó!!"
-      , "$n¦b¾Ô°«¤¤¬ğµMÂà¨­¸õ¦V°ª³B, ¬İªºÅı¤j®a¤Q¤À°g´b."
-        "\n\r²´¬İ³o¬O¤@­Ó¤£®e¿ù¥¢ªº¦n¾÷·|, $N¾Ä¤O¸õ°_½Ä¦V$e!!\n\r"
-        "´N¦b$E°±¦bªÅ¤¤¤§®É, $e´§¼C«æ³t¥Ñ$E¤W¤è«æ±Ù¦Ó¤U!!" );
+      , "ä½ çªç„¶æ”¾æ£„æˆ°é¬¥, è½‰èº«è·³åˆ°äº†é™„è¿‘ä¸€å€‹è¼ƒé«˜çš„åœ°æ–¹,"
+        "çœºç›®é æœ›...\n\r$Nè¦‹åˆ°ä½ é€™ä¸€å‰¯æ¨¡æ¨£, æ€¥å¿™æƒ³è¦å†ä¸Šä¾†ä¸€æ±ºæ­»æˆ°."
+        "\n\ræ–¼æ˜¯ä½ è¶è‘—$Eåœ¨ç©ºä¸­ç„¡æ³•é–ƒé¿ä¹‹æ™‚çµ¦äºˆçŒ›çƒˆçš„ä¸€æ“Š!!"
+      , "$nåœ¨æˆ°é¬¥ä¸­çªç„¶è½‰èº«è·³å‘é«˜è™•, çœ‹çš„è®“ä½ ååˆ†è¿·æƒ‘."
+        "\n\rçœ¼çœ‹é€™æ˜¯ä¸€å€‹ä¸å®¹éŒ¯å¤±çš„å¥½æ©Ÿæœƒ, ä½ å¥®åŠ›è·³èµ·è¡å‘$e!!\n\r"
+        "å°±åœ¨ä½ åœåœ¨ç©ºä¸­ä¹‹æ™‚, $eæ®åŠæ€¥é€Ÿç”±ä½ ä¸Šæ–¹æ€¥æ–¬è€Œä¾†!!"
+      , "$nåœ¨æˆ°é¬¥ä¸­çªç„¶è½‰èº«è·³å‘é«˜è™•, çœ‹çš„è®“å¤§å®¶ååˆ†è¿·æƒ‘."
+        "\n\rçœ¼çœ‹é€™æ˜¯ä¸€å€‹ä¸å®¹éŒ¯å¤±çš„å¥½æ©Ÿæœƒ, $Nå¥®åŠ›è·³èµ·è¡å‘$e!!\n\r"
+        "å°±åœ¨$Eåœåœ¨ç©ºä¸­ä¹‹æ™‚, $eæ®åŠæ€¥é€Ÿç”±$Eä¸Šæ–¹æ€¥æ–¬è€Œä¸‹!!" );
     damage( ch , victim , dam * number_range( 4, 8 ), sn );
     break;
 
   case 4:
     if ( check_hand( ch , WEAPON_SWORD ) != 4 )
     {
-      send_to_char( "´N¦b§A¤ß»â¯«·|·Ç³Æ¨Ï¥X¶i¶¥¼C§Ş³Ì±j©Û®É, "
-                    "«o¦]¨S¦³Âù¤â´¤¼C¦Ó¥¢±Ñ¤F!!\n\r" , ch );
+      send_to_char( "å°±åœ¨ä½ å¿ƒé ˜ç¥æœƒæº–å‚™ä½¿å‡ºé€²éšåŠæŠ€æœ€å¼·æ‹›æ™‚, "
+                    "å»å› æ²’æœ‰é›™æ‰‹æ¡åŠè€Œå¤±æ•—äº†!!\n\r" , ch );
       RETURN_NULL();
     }
 
     act_skill( ch, victim
-      , "§A¥HÂù¤â´¤¼C, ½w½wªºÁß¶°¤O¶q¦bÂù¤â¤§¤W,"
-        " ¥u¨£¤â¤¤ªº¼C¶}©l§İ°Ê!\n\r¥ß¨è§A½w½wªº¥H¤£¥i¯àªº¨¤«×¦V"
-        "$N´§¥h, Åı$E¤£¥i¯à©Û¬[!!"
-      , "$nÂù¤â´¤¦í¤â¤W¤j¼C, ±N¥ş¨­¤O¶q¥ş³¡¶°¤¤¦b¼C¤W"
-        ", ¬İ¨Ó¬O¤@©Û±j©Û!!\n\rÂà²´¶¡, $e¥H·¥½wºC³t«×´§¼C§ğ¦V§A"
-        ", ¥i¬O«o¤SÅı§AÁ×µL¥iÁ×!!"
-      , "$nÂù¤â´¤¦í¤â¤W¤j¼C, ±N¥ş¨­¤O¶q¥ş³¡¶°¤¤¦b¼C¤W"
-        ", ¬İ¨Ó¬O¤@©Û±j©Û!!\n\rÂà²´¶¡, $e¥H·¥½wºC³t«×´§¼C§ğ¦V$N"
-        ", ¥i¬O«o¤SÅı$EÁ×µL¥iÁ×!!" );
+      , "ä½ ä»¥é›™æ‰‹æ¡åŠ, ç·©ç·©çš„é†é›†åŠ›é‡åœ¨é›™æ‰‹ä¹‹ä¸Š,"
+        " åªè¦‹æ‰‹ä¸­çš„åŠé–‹å§‹æŠ–å‹•!\n\rç«‹åˆ»ä½ ç·©ç·©çš„ä»¥ä¸å¯èƒ½çš„è§’åº¦å‘"
+        "$Næ®å», è®“$Eä¸å¯èƒ½æ‹›æ¶!!"
+      , "$né›™æ‰‹æ¡ä½æ‰‹ä¸Šå¤§åŠ, å°‡å…¨èº«åŠ›é‡å…¨éƒ¨é›†ä¸­åœ¨åŠä¸Š"
+        ", çœ‹ä¾†æ˜¯ä¸€æ‹›å¼·æ‹›!!\n\rè½‰çœ¼é–“, $eä»¥æ¥µç·©æ…¢é€Ÿåº¦æ®åŠæ”»å‘ä½ "
+        ", å¯æ˜¯å»åˆè®“ä½ é¿ç„¡å¯é¿!!"
+      , "$né›™æ‰‹æ¡ä½æ‰‹ä¸Šå¤§åŠ, å°‡å…¨èº«åŠ›é‡å…¨éƒ¨é›†ä¸­åœ¨åŠä¸Š"
+        ", çœ‹ä¾†æ˜¯ä¸€æ‹›å¼·æ‹›!!\n\rè½‰çœ¼é–“, $eä»¥æ¥µç·©æ…¢é€Ÿåº¦æ®åŠæ”»å‘$N"
+        ", å¯æ˜¯å»åˆè®“$Eé¿ç„¡å¯é¿!!" );
 
-    /* ²Ä¤@¦¸§ğÀ» */
+    /* ç¬¬ä¸€æ¬¡æ”»æ“Š */
     damage( ch, victim, dam * 8 , sn );
 
     act_skill( ch, victim
-      , "±µµÛ§A¦^¼C¤JÀT, ±N¼C±×©ñ¦b¨­«á, ²´·úÀüµÛ$N."
-        "\n\r¦A§Q¥ÎÂà¨­©M¥XÀTªº¤O¶q, Åı¼Cµo¥X¶ä¶ä¤§Án§ğ¦V$E!!"
-      , "µM«á$n±N¼C¦¬¦^¼CÀT¤º, ©ñ¦b¨­«áÃä, ¤S¥H¥û´c"
-        "ªºÂù²´Àüµø§A!!\n\r´N¦b§A³QÀ~±o¤ß¯«¥¢±±¤§®É, $eÂà¨­¥X¼C"
-        ", ¥HÅ¸§İ¤£°±¤§¼C´§¦V§A¦Ó¨Ó!!"
-      , "µM«á$n±N¼C¦¬¦^¼CÀT¤º, ©ñ¦b¨­«áÃä, ¤S¥H¥û´c"
-        "ªºÂù²´Àüµø$N!!\n\r´N¦b$E³QÀ~±o¤ß¯«¥¢±±¤§®É, $eÂà¨­¥X¼C"
-        ", ¥HÅ¸§İ¤£°±¤§¼C´§¦V$E¦Ó¥h!!" );
+      , "æ¥è‘—ä½ å›åŠå…¥é˜, å°‡åŠæ–œæ”¾åœ¨èº«å¾Œ, çœ¼ç›çªè‘—$N."
+        "\n\rå†åˆ©ç”¨è½‰èº«å’Œå‡ºé˜çš„åŠ›é‡, è®“åŠç™¼å‡ºå—¡å—¡ä¹‹è²æ”»å‘$E!!"
+      , "ç„¶å¾Œ$nå°‡åŠæ”¶å›åŠé˜å…§, æ”¾åœ¨èº«å¾Œé‚Š, åˆä»¥å…‡æƒ¡"
+        "çš„é›™çœ¼çªè¦–ä½ !!\n\rå°±åœ¨ä½ è¢«åš‡å¾—å¿ƒç¥å¤±æ§ä¹‹æ™‚, $eè½‰èº«å‡ºåŠ"
+        ", ä»¥é¡«æŠ–ä¸åœä¹‹åŠæ®å‘ä½ è€Œä¾†!!"
+      , "ç„¶å¾Œ$nå°‡åŠæ”¶å›åŠé˜å…§, æ”¾åœ¨èº«å¾Œé‚Š, åˆä»¥å…‡æƒ¡"
+        "çš„é›™çœ¼çªè¦–$N!!\n\rå°±åœ¨$Eè¢«åš‡å¾—å¿ƒç¥å¤±æ§ä¹‹æ™‚, $eè½‰èº«å‡ºåŠ"
+        ", ä»¥é¡«æŠ–ä¸åœä¹‹åŠæ®å‘$Eè€Œå»!!" );
 
-    /* ²Ä¤G¦¸§ğÀ» */
+    /* ç¬¬äºŒæ¬¡æ”»æ“Š */
     if ( !check_continue( ch, victim ) ) RETURN_NULL();
     damage( ch, victim, dam * 8 , sn );
 
     act_skill( ch, victim
-      , "¤§«á§A§Q¥Î¼C¥»¨­§İ°Ê¤£°±ªº¾l¶Õ, µo¥X"
-        "¤@¹D·¥¬°²r¯Pªº¼C®ğ¦V$N®u±²¦Ó¥h!!"
-      , "¦A¨Ó$n´N¶¶µÛ¼Cªº§İ°Ê, µo¥X¤@¹D¼C®ğ, "
-        "À£­¢ªº§A©I§l§xÃø!!"
-      , "±µµÛ$n´N¥H¼Cªº§İ°Êµo¥X¤F¤@¹D²r¯Pªº¼C®ğ, "
-        "´N¦b¼C®ğ½Ä¦V$N¤§®É, ³s§A¤]Ä±±o©I§l§xÃø!!" );
+      , "ä¹‹å¾Œä½ åˆ©ç”¨åŠæœ¬èº«æŠ–å‹•ä¸åœçš„é¤˜å‹¢, ç™¼å‡º"
+        "ä¸€é“æ¥µç‚ºçŒ›çƒˆçš„åŠæ°£å‘$Nå¸­æ²è€Œå»!!"
+      , "å†ä¾†$nå°±é †è‘—åŠçš„æŠ–å‹•, ç™¼å‡ºä¸€é“åŠæ°£, "
+        "å£“è¿«çš„ä½ å‘¼å¸å›°é›£!!"
+      , "æ¥è‘—$nå°±ä»¥åŠçš„æŠ–å‹•ç™¼å‡ºäº†ä¸€é“çŒ›çƒˆçš„åŠæ°£, "
+        "å°±åœ¨åŠæ°£è¡å‘$Nä¹‹æ™‚, é€£ä½ ä¹Ÿè¦ºå¾—å‘¼å¸å›°é›£!!" );
 
-    /* ²Ä¤T¦¸§ğÀ» */
+    /* ç¬¬ä¸‰æ¬¡æ”»æ“Š */
     if ( !check_continue( ch, victim ) ) RETURN_NULL();
     damage( ch , victim , dam * number_range( 2, 3 ), sn );
 
@@ -286,7 +286,7 @@ void skill_sword_adv_attack( int sn, int level, CHAR_DATA * ch, void * vo )
   RETURN_NULL();
 }
 
-/* ®ğÀ» --> Added by Ene */
+/* æ°£æ“Š --> Added by Ene */
 void skill_force_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -294,35 +294,35 @@ void skill_force_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_force_attack" );
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A¹B®ğ¶°¤¤¤O¶q©ó¤â«ü, ¦A±N¨äÄÀ©ñ¨ì$N¨­¤W!!"
-    , "$n¹B®ğ¶°¤¤¤O¶q©ó¤â«ü, ¦A±N¨äÄÀ©ñ¨ì§A¨­¤W!!"
-    , "$n¹B®ğ¶°¤¤¤O¶q©ó¤â«ü, ¦A±N¨äÄÀ©ñ¨ì$N¨­¤W!!" );
+    , "ä½ é‹æ°£é›†ä¸­åŠ›é‡æ–¼æ‰‹æŒ‡, å†å°‡å…¶é‡‹æ”¾åˆ°$Nèº«ä¸Š!!"
+    , "$né‹æ°£é›†ä¸­åŠ›é‡æ–¼æ‰‹æŒ‡, å†å°‡å…¶é‡‹æ”¾åˆ°ä½ èº«ä¸Š!!"
+    , "$né‹æ°£é›†ä¸­åŠ›é‡æ–¼æ‰‹æŒ‡, å†å°‡å…¶é‡‹æ”¾åˆ°$Nèº«ä¸Š!!" );
 
-  /* -- «O¯d±Ô­z, ¥H«á¨Ï¥Î --
+  /* -- ä¿ç•™æ•˜è¿°, ä»¥å¾Œä½¿ç”¨ --
   act_skill( ch, victim
-    , "¤@ªÑ¯EµM¤§®ğ±q§A¤¦¥Ğ¸ÌÂ«¤É°_¨Ó, »Eºë·|¯«¦a±N"
-      "¦¹­è²rªº«l¹D»E¶°¦b¤â«ü¤W!!\n\r"
-      "§A±N¤â«ü»´»´ªº¸I¦b$N¨­¤W, Àş¶¡³oªÑ«l¹D¾ã­ÓÄÀ©ñ"
-      "¶}¨Ó, $N¦]­«¤ß¤£Ã­¦Ó¶^­Ë¦b¦a!!\n\r"
-    , "¬İ¨£$n¨­¤Wµo¥X¤@ªÑ¯EµM¤§®ğ, »Eºë·|¯«¦a±N"
-      "¦¹­è²rªº«l¹D»E¶°¦b¤â«ü¤W!!\n\r"
-      "$n±N¤â«ü»´»´ªº¸I¨ì§A, Àş¶¡³oªÑ«l¹D¾ã­ÓÄÀ©ñ"
-      "¶}¨Ó, §A¦]­«¤ß¤£Ã­¦Ó¶^­Ë¦b¦a!!\n\r"
-    , "$n¨­¤Wµo¥X¤@ªÑ¯EµM¤§®ğ, »Eºë·|¯«¦a±N"
-      "¦¹­è²rªº«l¹D»E¶°¦b¤â«ü¤W!!\n\r"
-      "$n±N¤â«ü»´»´ªº¸I¨ì$N, Àş¶¡³oªÑ«l¹D¾ã­ÓÄÀ©ñ"
-      "¶}¨Ó, $N¦]­«¤ß¤£Ã­¦Ó¶^­Ë¦b¦a!!\n\r" ); */
+    , "ä¸€è‚¡æµ©ç„¶ä¹‹æ°£å¾ä½ ä¸¹ç”°è£¡ç«„å‡èµ·ä¾†, èšç²¾æœƒç¥åœ°å°‡"
+      "æ­¤å‰›çŒ›çš„å‹é“èšé›†åœ¨æ‰‹æŒ‡ä¸Š!!\n\r"
+      "ä½ å°‡æ‰‹æŒ‡è¼•è¼•çš„ç¢°åœ¨$Nèº«ä¸Š, ç¬é–“é€™è‚¡å‹é“æ•´å€‹é‡‹æ”¾"
+      "é–‹ä¾†, $Nå› é‡å¿ƒä¸ç©©è€Œè·Œå€’åœ¨åœ°!!\n\r"
+    , "çœ‹è¦‹$nèº«ä¸Šç™¼å‡ºä¸€è‚¡æµ©ç„¶ä¹‹æ°£, èšç²¾æœƒç¥åœ°å°‡"
+      "æ­¤å‰›çŒ›çš„å‹é“èšé›†åœ¨æ‰‹æŒ‡ä¸Š!!\n\r"
+      "$nå°‡æ‰‹æŒ‡è¼•è¼•çš„ç¢°åˆ°ä½ , ç¬é–“é€™è‚¡å‹é“æ•´å€‹é‡‹æ”¾"
+      "é–‹ä¾†, ä½ å› é‡å¿ƒä¸ç©©è€Œè·Œå€’åœ¨åœ°!!\n\r"
+    , "$nèº«ä¸Šç™¼å‡ºä¸€è‚¡æµ©ç„¶ä¹‹æ°£, èšç²¾æœƒç¥åœ°å°‡"
+      "æ­¤å‰›çŒ›çš„å‹é“èšé›†åœ¨æ‰‹æŒ‡ä¸Š!!\n\r"
+      "$nå°‡æ‰‹æŒ‡è¼•è¼•çš„ç¢°åˆ°$N, ç¬é–“é€™è‚¡å‹é“æ•´å€‹é‡‹æ”¾"
+      "é–‹ä¾†, $Nå› é‡å¿ƒä¸ç©©è€Œè·Œå€’åœ¨åœ°!!\n\r" ); */
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ch->now_int ;
   damage( ch , victim , dam , sn );
 
   RETURN_NULL();
 }
 
-/* Åª®ÑÃÑ¦r -- Added by Cutty */
+/* è®€æ›¸è­˜å­— -- Added by Cutty */
 void skill_knowledge( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   char   buf[ MAX_STRING_LENGTH ];
@@ -330,37 +330,37 @@ void skill_knowledge( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_knowledge" );
 
-  /* ¶}©lÅª®Ñ */
-  sprintf( buf , "©p®³¤F¤@¥»®Ñ,®u¦a¦Ó§¤¶}©lÅª¤F°_¨Ó." );
+  /* é–‹å§‹è®€æ›¸ */
+  sprintf( buf , "å¦³æ‹¿äº†ä¸€æœ¬æ›¸,å¸­åœ°è€Œåé–‹å§‹è®€äº†èµ·ä¾†." );
   act( buf , ch , NULL , NULL , TO_CHAR );
-  sprintf( buf , "$n®³¤F¤@¥»®Ñ,­Y¦³¨ä¨Æªº§¤¤U¨Ó¶}©l¬ãÅª." );
+  sprintf( buf , "$næ‹¿äº†ä¸€æœ¬æ›¸,è‹¥æœ‰å…¶äº‹çš„åä¸‹ä¾†é–‹å§‹ç ”è®€." );
   act( buf , ch , NULL , NULL , TO_ROOM );
 
-  /* ­pºâ¾÷²v */
+  /* è¨ˆç®—æ©Ÿç‡ */
   chance = IS_NPC( ch ) ? ch->level : ch->learn[sn] / 2;
 
-  /* Åª®Ñ¥¢±Ñ,±o¤£¨ì¸gÅç­È. */
+  /* è®€æ›¸å¤±æ•—,å¾—ä¸åˆ°ç¶“é©—å€¼. */
   if ( number_percent() >= chance )
   {
-    sprintf( buf , "©p·P¨ìÀY©ü¸£µÈ,¤°»ò®Ñ³£¬İ¤£¤U¥h." );
+    sprintf( buf , "å¦³æ„Ÿåˆ°é ­æ˜è…¦è„¹,ä»€éº¼æ›¸éƒ½çœ‹ä¸ä¸‹å»." );
     act( buf , ch , NULL , NULL , TO_CHAR );
-    sprintf( buf , "$n§â®Ñ¤@©ñ,¤S¶}©l­J«ä¶Ã·Q¤F." );
+    sprintf( buf , "$næŠŠæ›¸ä¸€æ”¾,åˆé–‹å§‹èƒ¡æ€äº‚æƒ³äº†." );
     act( buf , ch , NULL , NULL , TO_ROOM );
     RETURN_NULL();
   }
 
-  /* ¼W¥[ª¾ÃÑ */
+  /* å¢åŠ çŸ¥è­˜ */
   if ( number_range( 1, 10000 ) <= 1 )
   {
-    sprintf( buf , "\x1b[1;37m¤ÑªÅ¬ğµM­°¤U¤@¹D¹p¹q"
-      ",©p¬ğµM·P¨ìÁÅµM³e³q!!\x1b[0m\n\r"
-      "\x1b[1;31m¦ı¬O§A¤]³Q¹p¥´ªº´ı¨­µL¤O!!\x1b[0m" );
+    sprintf( buf , "\x1b[1;37må¤©ç©ºçªç„¶é™ä¸‹ä¸€é“é›·é›»"
+      ",å¦³çªç„¶æ„Ÿåˆ°è±ç„¶è²«é€š!!\x1b[0m\n\r"
+      "\x1b[1;31mä½†æ˜¯ä½ ä¹Ÿè¢«é›·æ‰“çš„æ¸¾èº«ç„¡åŠ›!!\x1b[0m" );
     act( buf , ch , NULL , NULL , TO_CHAR );
-    sprintf( buf , "\x1b[1;37m$n±o¨ì¸Û¤ß­WÅª,Àò±o¯«ªº§È¦ö"
-      ",ª¾ÃÑ¤S¶V¨Ó¶V¦h¤F!!\x1b[0m" );
+    sprintf( buf , "\x1b[1;37m$nå¾—åˆ°èª å¿ƒè‹¦è®€,ç²å¾—ç¥çš„åº‡ä½‘"
+      ",çŸ¥è­˜åˆè¶Šä¾†è¶Šå¤šäº†!!\x1b[0m" );
     act( buf , ch , NULL , NULL , TO_ROOM );
 
-    /* ¼W¶iª¾ÃÑ¨âÂI¦ıª¬ºAÂk¹s */
+    /* å¢é€²çŸ¥è­˜å…©é»ä½†ç‹€æ…‹æ­¸é›¶ */
     if ( !IS_NPC( ch ) )
     {
       ch->learn[sn] += 2;
@@ -372,21 +372,21 @@ void skill_knowledge( int sn , int level , CHAR_DATA * ch , void * vo )
     RETURN_NULL();
   }
 
-  /* ¦¨¥\\ */
-  sprintf( buf , "©p·P¨ì¤å«ä¬u´é, ¦ü¥GÀş¶¡«K¥i¥H°µ¥X¤@½g¤å³¹.\n\r"
-    "¨Ã¥Bªk¤O¼W¥[¤F." );
+  /* æˆåŠŸ\ */
+  sprintf( buf , "å¦³æ„Ÿåˆ°æ–‡æ€æ³‰æ¹§, ä¼¼ä¹ç¬é–“ä¾¿å¯ä»¥åšå‡ºä¸€ç¯‡æ–‡ç« .\n\r"
+    "ä¸¦ä¸”æ³•åŠ›å¢åŠ äº†." );
   act( buf , ch , NULL , NULL , TO_CHAR );
-  sprintf( buf , "$n¬ğµM®³µÛ®Ñ¥»¶}©l°½¯º¤F°_¨Ó,¥i¯à¦³¤°»ò»â®©¤F§a!!" );
+  sprintf( buf , "$nçªç„¶æ‹¿è‘—æ›¸æœ¬é–‹å§‹å·ç¬‘äº†èµ·ä¾†,å¯èƒ½æœ‰ä»€éº¼é ˜æ‚Ÿäº†å§!!" );
   act( buf , ch , NULL , NULL , TO_ROOM );
 
-  /* ¼W¥[ªk¤O */
+  /* å¢åŠ æ³•åŠ› */
   ch->mana = UMIN( ch->max_mana , ch->mana
     + ( ch->now_int * !IS_NPC( ch ) ? ch->learn[sn]
     : ch->level ) );
   RETURN_NULL();
 }
 
-/* ¹B®ğ -- Added by Cutty */
+/* é‹æ°£ -- Added by Cutty */
 void skill_cast_force( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   char   buf[MAX_STRING_LENGTH];
@@ -394,48 +394,48 @@ void skill_cast_force( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_cast_force" );
 
-  /* ¥Í©R¤O¤£¨¬,µLªk¹B®ğ */
+  /* ç”Ÿå‘½åŠ›ä¸è¶³,ç„¡æ³•é‹æ°£ */
   if ( ch->hit < ( ch->learn[sn] + 1 ) && !IS_NPC( ch ) )
   {
-    sprintf( buf , "©pªº¥Í©R¤O¤Ó§C,­Y¦A¹B®ğ¥i¯à·|¼Q¦å¦Ó¦º." );
+    sprintf( buf , "å¦³çš„ç”Ÿå‘½åŠ›å¤ªä½,è‹¥å†é‹æ°£å¯èƒ½æœƒå™´è¡€è€Œæ­»." );
     act( buf , ch , NULL , NULL , TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¶}©l¹B®ğ */
-  sprintf( buf , "©p¹B®ğ§¤¤F¤U¨Ó,®ğ¨H¤¦¥Ğ"
-    "ÁôÁôªº·PÄ±¨ì¤@ªÑ¼ö®ğ¥Ñ¤U³¡©¹¤WÄÆ¤É." );
+  /* é–‹å§‹é‹æ°£ */
+  sprintf( buf , "å¦³é‹æ°£åäº†ä¸‹ä¾†,æ°£æ²ˆä¸¹ç”°"
+    "éš±éš±çš„æ„Ÿè¦ºåˆ°ä¸€è‚¡ç†±æ°£ç”±ä¸‹éƒ¨å¾€ä¸Šé£„å‡." );
   act( buf , ch , NULL , NULL ,TO_CHAR );
-  sprintf( buf , "$N§¤¤F¤U¨Ó,¶}©l¹B®ğ." );
+  sprintf( buf , "$Nåäº†ä¸‹ä¾†,é–‹å§‹é‹æ°£." );
   act( buf , ch , NULL , NULL , TO_ROOM );
 
-  /* ­pºâ¾÷²v */
+  /* è¨ˆç®—æ©Ÿç‡ */
   chance = ( ( !IS_NPC( ch ) ? ch->learn[sn]
   : ch->level ) + ch->now_int ) / 3;
 
-  /* ¹B®ğ¥¢±Ñ */
+  /* é‹æ°£å¤±æ•— */
   if ( number_percent() >= chance )
   {
-    sprintf( buf , "©pµLªk¶°¤¤ºë¯«,¹B®ğ¥¢±Ñ....\n\r"
-      "\x1b[1;31m©p·P¨ì¯İ¤¤®ğ¦åÂ½´é,¤Q¤ÀÃø¹L...\x1b[0m" );
+    sprintf( buf , "å¦³ç„¡æ³•é›†ä¸­ç²¾ç¥,é‹æ°£å¤±æ•—....\n\r"
+      "\x1b[1;31må¦³æ„Ÿåˆ°èƒ¸ä¸­æ°£è¡€ç¿»æ¹§,ååˆ†é›£é...\x1b[0m" );
     act( buf , ch , NULL , NULL , TO_CHAR );
-    sprintf( buf , "$n¦]¬°¥¢¯«¦Ó¹B®ğ¥¢±Ñ..." );
+    sprintf( buf , "$nå› ç‚ºå¤±ç¥è€Œé‹æ°£å¤±æ•—..." );
 
-    /* ¥¢±Ñ¥B¦©°£¥Í©R¤O */
+    /* å¤±æ•—ä¸”æ‰£é™¤ç”Ÿå‘½åŠ› */
     if ( !IS_NPC( ch ) )
       ch->hit -= ch->learn[sn];
     if ( ch->hit < 1 ) ch->hit = 1;
     RETURN_NULL();
   }
 
-  /* ¦¨¥\\ */
-  sprintf( buf , "©pÄ±±o¥ş¨­µÎ®õ,¤º¤O¤S¼W¥[¤F¤@¨Ç,"
-    "¨Ã¥B´ı¨­ªº¶Ë¤f¦ü¥G¦^´_¤F." );
+  /* æˆåŠŸ\ */
+  sprintf( buf , "å¦³è¦ºå¾—å…¨èº«èˆ’æ³°,å…§åŠ›åˆå¢åŠ äº†ä¸€äº›,"
+    "ä¸¦ä¸”æ¸¾èº«çš„å‚·å£ä¼¼ä¹å›å¾©äº†." );
   act( buf , ch , NULL , NULL , TO_CHAR );
-  sprintf( buf , "$n¹B®ğ¦¨¥\\,¥ş¨­ÁôÁôªºµo¥X¤@°}ºë¥ú." );
+  sprintf( buf , "$né‹æ°£æˆåŠŸ\,å…¨èº«éš±éš±çš„ç™¼å‡ºä¸€é™£ç²¾å…‰." );
   act( buf , ch , NULL , NULL , TO_ROOM );
 
-  /* ¼W¥[¥Í©R¤O»Pªk¤O */
+  /* å¢åŠ ç”Ÿå‘½åŠ›èˆ‡æ³•åŠ› */
   if ( !IS_NPC( ch ) )
     ch->hit = UMIN( ch->max_hit , ch->hit + ch->learn[sn] );
   ch->mana = UMIN( ch->max_mana , ch->mana
@@ -443,7 +443,7 @@ void skill_cast_force( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ½ğ Added by Cutty */
+/* è¸¢ Added by Cutty */
 void skill_kick( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = ( CHAR_DATA * ) vo;
@@ -452,36 +452,36 @@ void skill_kick( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( " skill_kick " );
 
-  /* ¯d­ÓÀË¬d¨ç¼Æ */
+  /* ç•™å€‹æª¢æŸ¥å‡½æ•¸ */
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A¦ù¥X¤j¸}¥Î¤O©¹$N½ğ¥h...."
-    , "$n¥Î¥Lªº¸}©¹$N¤@½ğ..."
-    , "$n¦ù¥X¤j¸}¦VµÛ§A¥Î¤O½ğ¨Ó." );
+    , "ä½ ä¼¸å‡ºå¤§è…³ç”¨åŠ›å¾€$Nè¸¢å»...."
+    , "$nç”¨ä»–çš„è…³å¾€$Nä¸€è¸¢..."
+    , "$nä¼¸å‡ºå¤§è…³å‘è‘—ä½ ç”¨åŠ›è¸¢ä¾†." );
 
-  /* ¾÷·| */
+  /* æ©Ÿæœƒ */
   if ( !IS_NPC( ch ) )
     chance = ( ch->now_dex + ch->learn[sn] ) / 2;
   else chance = ch->level ;
 
-  /* Åı¥L¶^­Ë */
+  /* è®“ä»–è·Œå€’ */
   if ( number_percent() >= chance )
   {
-    send_to_char( "\x1b[1;36m§A¥¢¥h¥­¿Å, ¶^­Ë¦b¦a, º¡Áy"
-      "³£¬OÂA¦å..\x1b[0m\n\r" , ch );
+    send_to_char( "\x1b[1;36mä½ å¤±å»å¹³è¡¡, è·Œå€’åœ¨åœ°, æ»¿è‡‰"
+      "éƒ½æ˜¯é®®è¡€..\x1b[0m\n\r" , ch );
     if ( !IS_NPC( ch ) )
       ch->hit -= ch->learn[sn] / 2;
     if ( ch->hit < 1 && !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "\x1b[1;31mµê®zªº§A³Q¦a¤WªºÅK°v¨ë¨ì, ºCºC§A"
-        "ªº²´·ú¶}©l¼Ò½k¤F.\x1b[0m\n\r" , ch );
+      send_to_char( "\x1b[1;31mè™›å¼±çš„ä½ è¢«åœ°ä¸Šçš„éµé‡˜åˆºåˆ°, æ…¢æ…¢ä½ "
+        "çš„çœ¼ç›é–‹å§‹æ¨¡ç³Šäº†.\x1b[0m\n\r" , ch );
       RETURN_NULL();
     }
     RETURN_NULL();
   }
 
-  /* ¦©°£¹ï¤è¥Í©R */
+  /* æ‰£é™¤å°æ–¹ç”Ÿå‘½ */
   if ( !IS_NPC( ch ) )
     dam = ch->now_str * 5 + ch->learn[sn];
   else dam = ch->level;
@@ -490,7 +490,7 @@ void skill_kick( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* °ò¥»§ğÀ» -- Added by Cutty */
+/* åŸºæœ¬æ”»æ“Š -- Added by Cutty */
 void skill_common_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = ( CHAR_DATA * ) vo;
@@ -498,20 +498,20 @@ void skill_common_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_common_attack" );
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "©p´£°_«l¦VµÛ$N§ğ¥h..."
-    , "$n¦VµÛ$N¤@½ü²r§ğ..."
-    , "$n²r¯Pªº¦VµÛ§A§ğ¨Ó.." );
+    , "å¦³æèµ·å‹å‘è‘—$Næ”»å»..."
+    , "$nå‘è‘—$Nä¸€è¼ªçŒ›æ”»..."
+    , "$nçŒ›çƒˆçš„å‘è‘—ä½ æ”»ä¾†.." );
 
-  /* §ğ¶Ë */
+  /* æ”»å‚· */
   dam = ch->damroll;
   damage( ch , victim , dam , sn );
 
   RETURN_NULL();
 }
 
-/* ¦y¥s -- Added by Cutty */
+/* å°–å« -- Added by Cutty */
 void skill_scratching( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   char              buf[MAX_STRING_LENGTH];
@@ -521,36 +521,36 @@ void skill_scratching( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_scratching" );
 
-  /* ©Çª«µLªk¦y¥s */
+  /* æ€ªç‰©ç„¡æ³•å°–å« */
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
-  /* ¤â¤W¦³ªF¦èµLªk¦y¥s */
+  /* æ‰‹ä¸Šæœ‰æ±è¥¿ç„¡æ³•å°–å« */
   if ( check_hand( ch , WEAPON_ALL ) != WEAR_NONE )
   {
-    send_to_char( "§Aªº¤â¤W¦³ªF¦è, µLªk¬I®i³o­Ó§Ş¯à.\n\r" , ch );
+    send_to_char( "ä½ çš„æ‰‹ä¸Šæœ‰æ±è¥¿, ç„¡æ³•æ–½å±•é€™å€‹æŠ€èƒ½.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* ³]©w¾÷²v */
+  /* è¨­å®šæ©Ÿç‡ */
   if ( !IS_NPC( ch ) )
     chance = ( ch->now_wis + ch->learn[sn] ) / 3;
   else chance = ch->level;
 
-  /* ¤£¦¨¥\ */
+  /* ä¸æˆåŠŸ */
   if ( number_percent() >= chance )
   {
-    send_to_char( "¨S¤H­nÅ¥©p¦y¥s°Õ..³¬¼L...\n\r" , ch );
+    send_to_char( "æ²’äººè¦è½å¦³å°–å«å•¦..é–‰å˜´...\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* ±Ô­z */
-  sprintf( buf , "©p¸ÕµÛ©Ôªø³ïÄV¤jÁn¦y¥s,¬è¨D¯«¼W¥[¦Û¤vªºªk¤O.\n\r"
-    "¬ğµM,¤@¹D¹p¹q±q¤Ñ¦Ó­°,µ§ª½ªº¥´¦b©p¨­¤W,©pªºªk¤O¼W¥[¤F." );
+  /* æ•˜è¿° */
+  sprintf( buf , "å¦³è©¦è‘—æ‹‰é•·å–‰åš¨å¤§è²å°–å«,ç¥ˆæ±‚ç¥å¢åŠ è‡ªå·±çš„æ³•åŠ›.\n\r"
+    "çªç„¶,ä¸€é“é›·é›»å¾å¤©è€Œé™,ç­†ç›´çš„æ‰“åœ¨å¦³èº«ä¸Š,å¦³çš„æ³•åŠ›å¢åŠ äº†." );
   act( buf , ch , NULL , NULL , TO_CHAR );
-  sprintf( buf , "$n¤jÁn¦y¥s, µ²ªG³Q¸¨¹p¥´¨ì,¦n¹³«Üµhªº¼Ë¤l." );
+  sprintf( buf , "$nå¤§è²å°–å«, çµæœè¢«è½é›·æ‰“åˆ°,å¥½åƒå¾ˆç—›çš„æ¨£å­." );
   act( buf , ch , NULL , NULL , TO_ROOM );
 
-  /* ®ÇÃäªº¤HÅ¥¨ì */
+  /* æ—é‚Šçš„äººè½åˆ° */
   was_in_room = ch->in_room;
   for ( door = 0; door <= 5; door++ )
   {
@@ -561,20 +561,20 @@ void skill_scratching( int sn , int level , CHAR_DATA * ch , void * vo )
       &&   pexit->to_room != was_in_room )
     {
       ch->in_room = pexit->to_room;
-      sprintf( buf , "©p¦ü¥GÅ¥¨ì¤@Án¨ë¦Õªº¦y¥s..." );
+      sprintf( buf , "å¦³ä¼¼ä¹è½åˆ°ä¸€è²åˆºè€³çš„å°–å«..." );
       act( buf, ch, NULL, NULL, TO_ROOM );
     }
   }
   ch->in_room = was_in_room;
 
-  /* ¸É¥Rªk¤O */
+  /* è£œå……æ³•åŠ› */
   if ( !IS_NPC( ch ) )
     ch->mana = UMIN( ch->max_mana , ch->mana
       + ( ch->now_int + ch->learn[sn] ) * 3);
   RETURN_NULL();
 }
 
-/* »R¤M§Ş -- Added by Cutty */
+/* èˆåˆ€æŠ€ -- Added by Cutty */
 void skill_dance_blade( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -582,29 +582,29 @@ void skill_dance_blade( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_dance_blade" );
 
-  /* ÀË¬d¬O§_®³¤M */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿åˆ€ */
   if ( check_hand( ch , WEAPON_BLADE ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³¤M¤~¯à¬I®i¤M³N.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿åˆ€æ‰èƒ½æ–½å±•åˆ€è¡“.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A±N¤M¤@¾î, ¥Î¤O¼A¦V$N!!"
-    , "$n¤@¨Ï«l, §Y¾î¤M¦V§A¼A¦Ü!!"
-    , "$n²r¤Oªº±N¤â¤Wªº¤M¾î¾î¼A¦V$N!!" );
+    , "ä½ å°‡åˆ€ä¸€æ©«, ç”¨åŠ›åŠˆå‘$N!!"
+    , "$nä¸€ä½¿å‹, å³æ©«åˆ€å‘ä½ åŠˆè‡³!!"
+    , "$nçŒ›åŠ›çš„å°‡æ‰‹ä¸Šçš„åˆ€æ©«æ©«åŠˆå‘$N!!" );
 
-  /* -- «O¯d±Ô­z, ¥H«á¨Ï¥Î --
+  /* -- ä¿ç•™æ•˜è¿°, ä»¥å¾Œä½¿ç”¨ --
   act_skill( ch, victim
-    , "§A¾î¤M¦î¥ß,¤@°Æ«Â­·»ş»ş¤£¥i¤@¥@ªº¼Ë¤l.\n\r"
-      "©¿µM¶¡»R°_¤â¤Wªº¤M»´ÄÆÄÆªº¬å¦V$N,Åı$E¯d¤U¤£¥i¿i·Àªº²ª¸ñ."
-    , "$n´¡¤M¦b¦a,«İ©P¾DªÅ®ğ¥ş³¡±IÀR...."
-      "Àş¶¡¦V¸õ»R¦üªº±N¤M©¹$N¨­¤W©Û©I.."
-    , "$n©¿ÀR©¿°Ê±N¥L¤â¤Wªº¤M¥H¤£¥i«äÄ³ªº¨¤«×¬å¦b§A¨­¤W." );
+    , "ä½ æ©«åˆ€ä½‡ç«‹,ä¸€å‰¯å¨é¢¨å‡œå‡œä¸å¯ä¸€ä¸–çš„æ¨£å­.\n\r"
+      "å¿½ç„¶é–“èˆèµ·æ‰‹ä¸Šçš„åˆ€è¼•é£„é£„çš„ç å‘$N,è®“$Eç•™ä¸‹ä¸å¯ç£¨æ»…çš„ç—•è·¡."
+    , "$næ’åˆ€åœ¨åœ°,å¾…å‘¨é­ç©ºæ°£å…¨éƒ¨å¯‚éœ...."
+      "ç¬é–“å‘è·³èˆä¼¼çš„å°‡åˆ€å¾€$Nèº«ä¸Šæ‹›å‘¼.."
+    , "$nå¿½éœå¿½å‹•å°‡ä»–æ‰‹ä¸Šçš„åˆ€ä»¥ä¸å¯æ€è­°çš„è§’åº¦ç åœ¨ä½ èº«ä¸Š." );
   */
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -612,7 +612,7 @@ void skill_dance_blade( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥»R¤M§Ş -- Added by ene */
+/* é€²éšèˆåˆ€æŠ€ -- Added by ene */
 void skill_dance_adv_blade( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -620,20 +620,20 @@ void skill_dance_adv_blade( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_dance_adv_blade" );
 
-  /* ÀË¬d¬O§_®³¤M */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿åˆ€ */
   if ( check_hand( ch , WEAPON_BLADE ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³¤M¤~¯à¬I®i¤M³N.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿åˆ€æ‰èƒ½æ–½å±•åˆ€è¡“.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A±N¤M­¸»R¯ëªº¼A¦V$N, ¥ß§Y¨£¦å!!"
-    , "$nµR§Qªº§ğ¶Õ, ¾î¤M­¸§Ö¦a¦V§A¼A¦Ü!!"
-    , "$n­¸»RµÛ¤â¤Wªº¤M»´¥©¦a¼A¦V$N!!" );
+    , "ä½ å°‡åˆ€é£›èˆèˆ¬çš„åŠˆå‘$N, ç«‹å³è¦‹è¡€!!"
+    , "$nçŠ€åˆ©çš„æ”»å‹¢, æ©«åˆ€é£›å¿«åœ°å‘ä½ åŠˆè‡³!!"
+    , "$né£›èˆè‘—æ‰‹ä¸Šçš„åˆ€è¼•å·§åœ°åŠˆå‘$N!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -641,7 +641,7 @@ void skill_dance_adv_blade( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ºj§Ş -- Added by Cutty */
+/* æ§æŠ€ -- Added by Cutty */
 void skill_lance_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -649,20 +649,20 @@ void skill_lance_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_lance_attack" );
 
-  /* ÀË¬d¬O§_®³ºj */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿æ§ */
   if ( check_hand( ch , WEAPON_SPEAR ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³ºj¤~¯à¬I®iºj³N.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿æ§æ‰èƒ½æ–½å±•æ§è¡“.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A±Nªøºj¥H¨â¤â´¤¦í, ª½ª½¦V$NÂW¥h!!"
-    , "$nÂù¤â´¤¦í¤â¤Wªººj, ª½ª½ªº¦V§A§ğ¨Ó!"
-    , "$n±N¤â¤Wªºªøºjª½ª½ªº¦V$N§ğ¥h!" );
+    , "ä½ å°‡é•·æ§ä»¥å…©æ‰‹æ¡ä½, ç›´ç›´å‘$Næˆ³å»!!"
+    , "$né›™æ‰‹æ¡ä½æ‰‹ä¸Šçš„æ§, ç›´ç›´çš„å‘ä½ æ”»ä¾†!"
+    , "$nå°‡æ‰‹ä¸Šçš„é•·æ§ç›´ç›´çš„å‘$Næ”»å»!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -670,7 +670,7 @@ void skill_lance_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥ºj§Ş -- Added by ene */
+/* é€²éšæ§æŠ€ -- Added by ene */
 void skill_lance_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -678,20 +678,20 @@ void skill_lance_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_lance_adv_attack" );
 
-  /* ÀË¬d¬O§_®³ºj */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿æ§ */
   if ( check_hand( ch , WEAPON_SPEAR ) != HAND_BOTH )
   {
-    send_to_char( "§A¥²¶·­nÂù¤â®³ºj¤~¯à¬I®iºj³N.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦é›™æ‰‹æ‹¿æ§æ‰èƒ½æ–½å±•æ§è¡“.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A±Nªøºj¥H¨â¤â´¤¦í, ª½±µ¦V$NÂW¥h, ºj¦y¹º¥X¤@¬qªø­i, ª½ª½ªº¦V$N§ğ¥h!"
-    , "$nÂù¤â´¤¦í¤â¤Wªººj, Àş¶¡¤@¹Dªø­i¦V§A¹Gªñ!"
-    , "$n±N¤â¤Wªºªøºj¤Æ§@ªø­i²r¯P¦V$N§ğ¥h!" );
+    , "ä½ å°‡é•·æ§ä»¥å…©æ‰‹æ¡ä½, ç›´æ¥å‘$Næˆ³å», æ§å°–åŠƒå‡ºä¸€æ®µé•·è™¹, ç›´ç›´çš„å‘$Næ”»å»!"
+    , "$né›™æ‰‹æ¡ä½æ‰‹ä¸Šçš„æ§, ç¬é–“ä¸€é“é•·è™¹å‘ä½ é€¼è¿‘!"
+    , "$nå°‡æ‰‹ä¸Šçš„é•·æ§åŒ–ä½œé•·è™¹çŒ›çƒˆå‘$Næ”»å»!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -699,7 +699,7 @@ void skill_lance_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¤P­º§Ş -- Added by Cutty */
+/* åŒ•é¦–æŠ€ -- Added by Cutty */
 void skill_dagger_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -707,20 +707,20 @@ void skill_dagger_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_dagger_attack" );
 
-  /* ÀË¬d¬O§_®³¤P­º */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿åŒ•é¦– */
   if ( check_hand( ch , WEAPON_DAGGER ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³¤P­º¤~¯à¬I®i¤P­º³N.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿åŒ•é¦–æ‰èƒ½æ–½å±•åŒ•é¦–è¡“.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A´¤¦í¤P­º,¶¶µÛ$N¤£¹îÄ±ªºÀş¶¡,¥H¥ş¤O¨ë¦V$E!!"
-    , "$n¶XµÛ§A¥¢¯«ªºÀş¶¡,¤â¤W¤P­º¨ë¦V§A¦Ó¨Ó!!"
-    , "$n¶XµÛ$N¥¢¯«ªºÀş¶¡,¥H¤P­º¦V¨ä©Û©I!!" );
+    , "ä½ æ¡ä½åŒ•é¦–,é †è‘—$Nä¸å¯Ÿè¦ºçš„ç¬é–“,ä»¥å…¨åŠ›åˆºå‘$E!!"
+    , "$nè¶è‘—ä½ å¤±ç¥çš„ç¬é–“,æ‰‹ä¸ŠåŒ•é¦–åˆºå‘ä½ è€Œä¾†!!"
+    , "$nè¶è‘—$Nå¤±ç¥çš„ç¬é–“,ä»¥åŒ•é¦–å‘å…¶æ‹›å‘¼!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -728,7 +728,7 @@ void skill_dagger_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥¤P­º§Ş -- Added by ene */
+/* é€²éšåŒ•é¦–æŠ€ -- Added by ene */
 void skill_dagger_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -736,20 +736,20 @@ void skill_dagger_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_dagger_adv_attack" );
 
-  /* ÀË¬d¬O§_®³¤P­º */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿åŒ•é¦– */
   if ( check_hand( ch , WEAPON_DAGGER ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³¤P­º¤~¯à¬I®i¤P­º³N.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿åŒ•é¦–æ‰èƒ½æ–½å±•åŒ•é¦–è¡“.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A¶°¤¤©Ò¦³ª`µø¤O¬İµÛ$N, ©¹$Eªº¯}ºì¯e¾pÂW¥h!!"
-    , "$n¶XµÛ§A¯«¸g¿ù¶Ãªº®É­Ô, ¤â¤Wªº¤P­º¥H¦V§AÂW¤F¹L¨Ó!!"
-    , "$n¶XµÛ$N¯«¸g¿ù¶Ãªº®É­Ô, ¥H¤P­ºªøÅXÂW¤J®zÂI!!" );
+    , "ä½ é›†ä¸­æ‰€æœ‰æ³¨è¦–åŠ›çœ‹è‘—$N, å¾€$Eçš„ç ´ç¶»ç–¾é§›æˆ³å»!!"
+    , "$nè¶è‘—ä½ ç¥ç¶“éŒ¯äº‚çš„æ™‚å€™, æ‰‹ä¸Šçš„åŒ•é¦–ä»¥å‘ä½ æˆ³äº†éä¾†!!"
+    , "$nè¶è‘—$Nç¥ç¶“éŒ¯äº‚çš„æ™‚å€™, ä»¥åŒ•é¦–é•·é©…æˆ³å…¥å¼±é»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -757,7 +757,7 @@ void skill_dagger_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ³æ¤â©ò§Ş -- Added by Cutty */
+/* å–®æ‰‹æ–§æŠ€ -- Added by Cutty */
 void skill_axe_sin_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -765,21 +765,21 @@ void skill_axe_sin_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_axe_sin_attack" );
 
-  /* ÀË¬d¬O§_¥u¦³³æ¤â¦³®³©òÀY */
+  /* æª¢æŸ¥æ˜¯å¦åªæœ‰å–®æ‰‹æœ‰æ‹¿æ–§é ­ */
   if ( check_hand( ch , WEAPON_AXE ) != HAND_LEFT
     || check_hand( ch , WEAPON_AXE ) != HAND_RIGHT )
   {
-    send_to_char( "³o­Ó§Ş¯à¥²¶·¥Î³æ¤â®³©òÀY.\n\r", ch );
+    send_to_char( "é€™å€‹æŠ€èƒ½å¿…é ˆç”¨å–®æ‰‹æ‹¿æ–§é ­.\n\r", ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A¥ş¤O´¤¦í¤â¤W©òÀY,¦V$N¬å¥h!!"
-    , "$n²r³Ü¤@Án,¤â¤W©òÀY¦V§A¬å¤U!!"
-    , "$n²r³Ü¤@Án,¥H¤â¤W©òÀY¦V$N¬å¤U!!" );
+    , "ä½ å…¨åŠ›æ¡ä½æ‰‹ä¸Šæ–§é ­,å‘$Nç å»!!"
+    , "$nçŒ›å–ä¸€è²,æ‰‹ä¸Šæ–§é ­å‘ä½ ç ä¸‹!!"
+    , "$nçŒ›å–ä¸€è²,ä»¥æ‰‹ä¸Šæ–§é ­å‘$Nç ä¸‹!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -787,7 +787,7 @@ void skill_axe_sin_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥³æ¤â©ò§Ş -- Added by ene */
+/* é€²éšå–®æ‰‹æ–§æŠ€ -- Added by ene */
 void skill_axe_sin_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -795,20 +795,20 @@ void skill_axe_sin_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_axe_sin_adv_attack" );
 
-  /* ÀË¬d¬O§_®³©òÀY */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿æ–§é ­ */
   if ( check_hand( ch , WEAPON_AXE ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³©òÀY¤~¯à¬I®i©ò§Ş.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿æ–§é ­æ‰èƒ½æ–½å±•æ–§æŠ€.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A¥Î³æ¥Ğ¤§¤O´¤¦í¤â¤W©òÀY,¥H®ğ¾®¯«¦V$N­n®`¬å¥h!!"
-    , "$n»Eºë·|¯«, ¥Ø¤£Âà·ú, ¤â¤W©òÀYÃ­Ã­ªº¦V§A­n®`¬å¤U!!"
-    , "$n¥H®ğ¾®¯«±N¤â¤W©òÀY¦V$N­n®`¬å¤U!!" );
+    , "ä½ ç”¨å–®ç”°ä¹‹åŠ›æ¡ä½æ‰‹ä¸Šæ–§é ­,ä»¥æ°£å‡ç¥å‘$Nè¦å®³ç å»!!"
+    , "$nèšç²¾æœƒç¥, ç›®ä¸è½‰ç›, æ‰‹ä¸Šæ–§é ­ç©©ç©©çš„å‘ä½ è¦å®³ç ä¸‹!!"
+    , "$nä»¥æ°£å‡ç¥å°‡æ‰‹ä¸Šæ–§é ­å‘$Nè¦å®³ç ä¸‹!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -816,7 +816,7 @@ void skill_axe_sin_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ºl¤l§ğÀ» -- Added by Cutty */
+/* æ§Œå­æ”»æ“Š -- Added by Cutty */
 void skill_hammer_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -824,20 +824,20 @@ void skill_hammer_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_hammer_attack" );
 
-  /* ÀË¬d¬O§_®³ºl¤l */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿æ§Œå­ */
   if ( check_hand( ch , WEAPON_HAMMER ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³ºl¤l¤~¯à¬I®iºl§Ş.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿æ§Œå­æ‰èƒ½æ–½å±•æ§ŒæŠ€.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A¥ş¤O´¤¦í¤â¤Wºl¤l,¦V$NºV¤U!!"
-    , "$n²r³Ü¤@Án,¤â¤Wºl¤l¥ß§Y¦V§AºV¤U!!"
-    , "$n²r³Ü¤@Án,¥H¤â¤Wºl¤l¦V$NºV¤U!!" );
+    , "ä½ å…¨åŠ›æ¡ä½æ‰‹ä¸Šæ§Œå­,å‘$Næ•²ä¸‹!!"
+    , "$nçŒ›å–ä¸€è²,æ‰‹ä¸Šæ§Œå­ç«‹å³å‘ä½ æ•²ä¸‹!!"
+    , "$nçŒ›å–ä¸€è²,ä»¥æ‰‹ä¸Šæ§Œå­å‘$Næ•²ä¸‹!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -845,7 +845,7 @@ void skill_hammer_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥ºl¤l§ğÀ» -- Added by Ene */
+/* é€²éšæ§Œå­æ”»æ“Š -- Added by Ene */
 void skill_hammer_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -853,20 +853,20 @@ void skill_hammer_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_hammer_adv_attack" );
 
-  /* ÀË¬d¬O§_®³ºl¤l */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿æ§Œå­ */
   if ( check_hand( ch , WEAPON_HAMMER ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³ºl¤l¤~¯à¬I®iºl§Ş.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿æ§Œå­æ‰èƒ½æ–½å±•æ§ŒæŠ€.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A»´¥©ªº§â¤â¤Wªººl¤lºV¦V$Nªº¸£³U¥Ê, ¨Ï±o$NÀY«_¬P¬P­C!!"
-    , "$n»´¥©ªº±N¤â¤Wªººl¤l¦V§A¸£³U¥ÊºV¤U, ¨Ï±o§AÀY«_¬P¬P­C!!"
-    , "$n±N¤â¤Wªººl¤lºV¦V$Nªº¸£³U¥Ê¤l, ¬İ¨ì$NªºÀY«_¬P¬P­C!!" );
+    , "ä½ è¼•å·§çš„æŠŠæ‰‹ä¸Šçš„æ§Œå­æ•²å‘$Nçš„è…¦è¢‹ç“œ, ä½¿å¾—$Né ­å†’æ˜Ÿæ˜Ÿè€¶!!"
+    , "$nè¼•å·§çš„å°‡æ‰‹ä¸Šçš„æ§Œå­å‘ä½ è…¦è¢‹ç“œæ•²ä¸‹, ä½¿å¾—ä½ é ­å†’æ˜Ÿæ˜Ÿè€¶!!"
+    , "$nå°‡æ‰‹ä¸Šçš„æ§Œå­æ•²å‘$Nçš„è…¦è¢‹ç“œå­, çœ‹åˆ°$Nçš„é ­å†’æ˜Ÿæ˜Ÿè€¶!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -874,7 +874,7 @@ void skill_hammer_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ªøÃ@§ğÀ» -- Added by Cutty */
+/* é•·é­æ”»æ“Š -- Added by Cutty */
 void skill_whip_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -882,20 +882,20 @@ void skill_whip_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_whip_attack" );
 
-  /* ÀË¬d¬O§_®³Ã@ */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿é­ */
   if ( check_hand( ch , WEAPON_WHIP ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³Ã@¤~¯à¬I®iÃ@§Ş.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿é­æ‰èƒ½æ–½å±•é­æŠ€.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A´§°_¤â¤WÃ@¤l,¦V$N±²¥h!!"
-    , "$n¥Î¤O¤@§İ,±N¤â¤WÃ@¤l´§¦V§A¨­¤W!!"
-    , "$n±N¤â¤WÃ@¤l´Â$N´§¥h!!" );
+    , "ä½ æ®èµ·æ‰‹ä¸Šé­å­,å‘$Næ²å»!!"
+    , "$nç”¨åŠ›ä¸€æŠ–,å°‡æ‰‹ä¸Šé­å­æ®å‘ä½ èº«ä¸Š!!"
+    , "$nå°‡æ‰‹ä¸Šé­å­æœ$Næ®å»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -903,7 +903,7 @@ void skill_whip_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥ªøÃ@§ğÀ» -- Added by Ene */
+/* é€²éšé•·é­æ”»æ“Š -- Added by Ene */
 void skill_whip_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -911,20 +911,20 @@ void skill_whip_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_whip_adv_attack" );
 
-  /* ÀË¬d¬O§_®³Ã@ */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿é­ */
   if ( check_hand( ch , WEAPON_WHIP ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³Ã@¤~¯à¬I®iÃ@§Ş.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿é­æ‰èƒ½æ–½å±•é­æŠ€.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A±Û­·¦¡§İ°Ê¤â¤WÃ@¤l, ¦V$N§¾ªÑ¤WÃ@¥´¤U¥h!!"
-    , "¨£$n§İ°Ê¤â¤WÃ@¤l, ·Ç·ÇªºÃ@¦V§Aªº¤p§¾§¾¤W!!"
-    , "$n±Û­·¦¡§İ°Ê¤â¤WÃ@¤l, ´Â$N§¾ªÑ¤WÃ@¥´¤U¥h!!" );
+    , "ä½ æ—‹é¢¨å¼æŠ–å‹•æ‰‹ä¸Šé­å­, å‘$Nå±è‚¡ä¸Šé­æ‰“ä¸‹å»!!"
+    , "è¦‹$næŠ–å‹•æ‰‹ä¸Šé­å­, æº–æº–çš„é­å‘ä½ çš„å°å±å±ä¸Š!!"
+    , "$næ—‹é¢¨å¼æŠ–å‹•æ‰‹ä¸Šé­å­, æœ$Nå±è‚¡ä¸Šé­æ‰“ä¸‹å»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -932,7 +932,7 @@ void skill_whip_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¤}½b§Ş -- Added by ene */
+/* å¼“ç®­æŠ€ -- Added by ene */
 void skill_bow_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -940,20 +940,20 @@ void skill_bow_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_bow_attack" );
 
-  /* ÀË¬d¬O§_®³¤} */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿å¼“ */
   if ( check_hand( ch , WEAPON_BOW ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³¤}¤~¯à¬I®i¤}½b§Ş.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿å¼“æ‰èƒ½æ–½å±•å¼“ç®­æŠ€.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A©Ô°_¤â¤Wªº¤}½b,¦V$N®g¥h!!"
-    , "$n¥Î¤O¤@®g,±N¤}¤Wªº½b®g¦b§Aªº¨­¤W!!"
-    , "$n±N¤}¤Wªº½b´Â$N®g¥h!!" );
+    , "ä½ æ‹‰èµ·æ‰‹ä¸Šçš„å¼“ç®­,å‘$Nå°„å»!!"
+    , "$nç”¨åŠ›ä¸€å°„,å°‡å¼“ä¸Šçš„ç®­å°„åœ¨ä½ çš„èº«ä¸Š!!"
+    , "$nå°‡å¼“ä¸Šçš„ç®­æœ$Nå°„å»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -961,7 +961,7 @@ void skill_bow_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥¤}½b§Ş -- Added by Ene */
+/* é€²éšå¼“ç®­æŠ€ -- Added by Ene */
 void skill_bow_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo)
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -969,20 +969,20 @@ void skill_bow_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo)
 
   PUSH_FUNCTION( "skill_bow_adv_attack" );
 
-  /* ÀË¬d¬O§_Âù¤â®³¤} */
+  /* æª¢æŸ¥æ˜¯å¦é›™æ‰‹æ‹¿å¼“ */
   if ( check_hand( ch , WEAPON_BOW ) != HAND_BOTH )
   {
-    send_to_char( "§A¥²¶·­nÂù¤â®³¤}¤~¯à¬I®i¦¹¤}½b§Ş.\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦é›™æ‰‹æ‹¿å¼“æ‰èƒ½æ–½å±•æ­¤å¼“ç®­æŠ€.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A¤j¸ó¨B¥ï, ©Ôº¡¤}¬ı, ¹Â¡ã¹Â¡ã¹Â¡ã ©¹$N¨­¤W®g¥h!!"
-    , "¹Â¡ã¹Â¡ã¹Â¡ã $n¥Î¤O¤@®g,±N¤}¤Wªº½b®g¦b§Aªº¨­¤W!!"
-    , "$n¤j¸ó¨B¥ï, ©Ôº¡¤}¬ı, ¹Â¡ã¹Â¡ã¹Â¡ã ©¹$N¨­¤W®g¥h!!" );
+    , "ä½ å¤§è·¨æ­¥ä¼, æ‹‰æ»¿å¼“ç¾¿, å—½âˆ¼å—½âˆ¼å—½âˆ¼ å¾€$Nèº«ä¸Šå°„å»!!"
+    , "å—½âˆ¼å—½âˆ¼å—½âˆ¼ $nç”¨åŠ›ä¸€å°„,å°‡å¼“ä¸Šçš„ç®­å°„åœ¨ä½ çš„èº«ä¸Š!!"
+    , "$nå¤§è·¨æ­¥ä¼, æ‹‰æ»¿å¼“ç¾¿, å—½âˆ¼å—½âˆ¼å—½âˆ¼ å¾€$Nèº«ä¸Šå°„å»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -990,7 +990,7 @@ void skill_bow_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo)
   RETURN_NULL();
 }
 
-/* ´Ò´Î§ğÀ» -- Added by Ene */
+/* æ£æ£’æ”»æ“Š -- Added by Ene */
 void skill_club_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -998,24 +998,24 @@ void skill_club_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_club_attack" );
 
-  /* ÀË¬d¬O§_®³´Ò´Î */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿æ£æ£’ */
   if ( check_hand( ch , WEAPON_CLUB ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³´Ò´Î¤~¯à¬I®i´Ò´Î§ğÀ».\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿æ£æ£’æ‰èƒ½æ–½å±•æ£æ£’æ”»æ“Š.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
-  sact( ch, victim, NULL, "$n´§°_¤â¤Wªº´Ò´Î,¦V$NºV¥h!!" );
+  /* æ”»å‚·æ•˜è¿° */
+  sact( ch, victim, NULL, "$næ®èµ·æ‰‹ä¸Šçš„æ£æ£’,å‘$Næ•²å»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
   RETURN_NULL();
 }
 
-/* ¶i¶¥´Ò´Î§ğÀ» -- Added by Ene */
+/* é€²éšæ£æ£’æ”»æ“Š -- Added by Ene */
 void skill_club_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -1023,17 +1023,17 @@ void skill_club_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_club_adv_attack" );
 
-  /* ÀË¬d¬O§_®³´Ò´Î */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿æ£æ£’ */
   if ( check_hand( ch , WEAPON_CLUB ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³´Ò´Î¤~¯à¬I®i´Ò´Î§ğÀ».\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿æ£æ£’æ‰èƒ½æ–½å±•æ£æ£’æ”»æ“Š.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
-  sact( ch, victim, NULL, "$n«ùµÛ´Ò´Î©¹¦a¤W¤@µe, ¥H¡u§Ö¡B¬½¡B·Ç¡v¦V$NºV¥h!!" );
+  /* æ”»å‚·æ•˜è¿° */
+  sact( ch, victim, NULL, "$næŒè‘—æ£æ£’å¾€åœ°ä¸Šä¸€ç•«, ä»¥ã€Œå¿«ã€ç‹ ã€æº–ã€å‘$Næ•²å»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -1041,7 +1041,7 @@ void skill_club_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¾£µ§§ğÀ» -- Added by Ene */
+/* éº¾ç­†æ”»æ“Š -- Added by Ene */
 void skill_pen_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -1049,20 +1049,20 @@ void skill_pen_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_pen_attack" );
 
-  /* ÀË¬d¬O§_®³µ§ */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿ç­† */
   if ( check_hand( ch , WEAPON_PEN ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³µÛµ§¤~¯à¬I®i¾£µ§§ğÀ».\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿è‘—ç­†æ‰èƒ½æ–½å±•éº¾ç­†æ”»æ“Š.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A´§°_¤â¤Wªºµ§,¦V$N¾£¥h!!"
-    , "$n¥Î¤O¤@¾£,±N¤â¤Wªºµ§¶Ãµe¦b§Aªº¨­¤W!!"
-    , "$n±N¤â¤Wªºµ§´Â$N¾£¥h!!" );
+    , "ä½ æ®èµ·æ‰‹ä¸Šçš„ç­†,å‘$Néº¾å»!!"
+    , "$nç”¨åŠ›ä¸€éº¾,å°‡æ‰‹ä¸Šçš„ç­†äº‚ç•«åœ¨ä½ çš„èº«ä¸Š!!"
+    , "$nå°‡æ‰‹ä¸Šçš„ç­†æœ$Néº¾å»!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );
@@ -1070,7 +1070,7 @@ void skill_pen_attack( int sn , int level , CHAR_DATA * ch , void * vo )
   RETURN_NULL();
 }
 
-/* ¶i¶¥¾£µ§§ğÀ» -- Added by Ene */
+/* é€²éšéº¾ç­†æ”»æ“Š -- Added by Ene */
 void skill_pen_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 {
   CHAR_DATA * victim = (CHAR_DATA *) vo;
@@ -1078,20 +1078,20 @@ void skill_pen_adv_attack( int sn , int level , CHAR_DATA * ch , void * vo )
 
   PUSH_FUNCTION( "skill_pen_adv_attack" );
 
-  /* ÀË¬d¬O§_®³µ§ */
+  /* æª¢æŸ¥æ˜¯å¦æ‹¿ç­† */
   if ( check_hand( ch , WEAPON_PEN ) == WEAR_NONE )
   {
-    send_to_char( "§A¥²¶·­n®³µÛµ§¤~¯à¬I®i¾£µ§§ğÀ».\n\r" , ch );
+    send_to_char( "ä½ å¿…é ˆè¦æ‹¿è‘—ç­†æ‰èƒ½æ–½å±•éº¾ç­†æ”»æ“Š.\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ğ¶Ë±Ô­z */
+  /* æ”»å‚·æ•˜è¿° */
   act_skill( ch, victim
-    , "§A®³µ§¦b¦Û¤v¨­¤W¶Ãµe, $N¬ğµM³Q¦¹´º¶HÀ~±oÅåÀb¹L«×!!"
-    , "$n±N¤â¤Wªºµ§¶Ãµe¦b¨­¤W, §A¬İ¨ì¦¹´º¶HÀ~±oÅåÀb¹L«×!!"
-    , "$n®³µ§¦b¦Û¤v¨­¤W¶Ãµe, $N¬ğµM³Q¦¹´º¶HÀ~±oÅåÀb¹L«×!!" );
+    , "ä½ æ‹¿ç­†åœ¨è‡ªå·±èº«ä¸Šäº‚ç•«, $Nçªç„¶è¢«æ­¤æ™¯è±¡åš‡å¾—é©šé§­éåº¦!!"
+    , "$nå°‡æ‰‹ä¸Šçš„ç­†äº‚ç•«åœ¨èº«ä¸Š, ä½ çœ‹åˆ°æ­¤æ™¯è±¡åš‡å¾—é©šé§­éåº¦!!"
+    , "$næ‹¿ç­†åœ¨è‡ªå·±èº«ä¸Šäº‚ç•«, $Nçªç„¶è¢«æ­¤æ™¯è±¡åš‡å¾—é©šé§­éåº¦!!" );
 
-  /* ­pºâ§ğ¶Ë */
+  /* è¨ˆç®—æ”»å‚· */
   dam = ch->now_str * ( ( get_wield( ch )->value[1]
     + get_wield( ch )->value[2] ) / 2 );
   damage( ch , victim , dam , sn );

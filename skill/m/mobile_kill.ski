@@ -1,5 +1,5 @@
 Name            mobile kill~
-Cname           �r�~��~
+Cname           猛獸擊~
 Slot            SLOT_MOBILE_KILL
 Msgoff          ~
 Position        POS_FIGHTING
@@ -26,12 +26,12 @@ Qutoient        1
 Adeptation      0
 Limit           CLASS_DEMOS     1  95
 Help
-�o�O�r�~�Ϊ��ۦ��C
+這是猛獸用的招式。
 
 ~
 #Damage
 Description
-$n�Φy�U�����l�V$N��ӡM�ϥX$S�r�~��$Z���u$Y�ۭ���$Z�v�M�E�_�@�}�ۭ��M��$N���J�䤤�M�{�פ��ΡM�Q�즨���ˡC~
+$n用尖銳的爪子向$N抓來﹐使出$S猛獸擊$Z之「$Y旋風爪$Z」﹐激起一陣旋風﹐使$N捲入其中﹐閃避不及﹐被抓成重傷。~
 Chance          10
 Value           20
 Parry           0
@@ -41,7 +41,7 @@ End
 
 #Damage
 Description
-$n�P�켫�뤣�w�M�n�ɦV�Ѥj�q�M�ϥX�j�j������ �u$R��l�q$Z�v�M�_��$N���½�ˡM���˦b�a�C~
+$n感到憤恨不已﹐登時向天大吼﹐使出強大的絕技 「$R獅子吼$Z」﹐震的$N血氣翻騰﹐昏倒在地。~
 Chance          10
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ End
 
 #Damage
 Description
-$n�ΤO���V$N���ӡM�Q$N�{�L�M$n�H���i�઺���צ^���ϥX�u$Y�^����$Z�v�M$N�I��n�ɳQ�쪺��׼ҽk�C~
+$n用力的向$N撲來﹐被$N閃過﹐$n以不可能的角度回身使出「$Y回身擊$Z」﹐$N背後登時被抓的血肉模糊。~
 Chance          10
 Value           20
 Parry           0
@@ -61,7 +61,7 @@ End
 
 #Damage
 Description
-$n��$N�t�׻�֡M�N�����@�e�M�ϥX�u$S�u�Ť�$Z�v�M�n�ɤG�D�u�Ūi�V$Nŧ�ӡM$N�L�q�{�סM�Q�ϸѦ����C~
+$n看$N速度頗快﹐就雙爪一畫﹐使出「$S真空爪$Z」﹐登時二道真空波向$N襲來﹐$N無從閃避﹐被肢解成塊。~
 Chance          10
 Value           20
 Parry           0
@@ -71,7 +71,7 @@ End
 
 #Damage
 Description
-$N�ݨ�$n�����@���@�աM�K�������M�ǳƥ��U��M$n�g�q�@�n�ϥX�u$R��$S�B$Y��$Z�v�����P�ɦV$N��ӡM$N�u�P�쩿�N�����M���h�Ҧ����m�M�N���G�ѫl�b�^���۷|�M�n�ɦb$N�^���z���C~
+$N看到$n雙爪一紅一白﹐便知不妙﹐準備先下手﹐$n狂吼一聲使出「$R炎$S冰$Y爪$Z」雙爪同時向$N抓來﹐$N只感到忽冷忽熱﹐失去所有防禦﹐冷熱二股勁在体內相會﹐登時在$N体內爆炸。~
 Chance          10
 Value           20
 Parry           0
@@ -81,7 +81,7 @@ End
 
 #Damage
 Description
-$n�ϥX�u$S�r�~��$Z�v���ֳ̧t���ۦ��u$P���p��$Z�v�M$N�u�����e�@�{$n�w�b$N���W��X�F�C�C�|�Q�E�D�����C~
+$n使出「$S猛獸擊$Z」中最快速的招式「$P迅雷擊$Z」﹐$N只見眼前一閃$n已在$N身上抓出了七七四十九道爪痕。~
 Chance          10
 Value           20
 Parry           0

@@ -1,10 +1,10 @@
 Vnum            553
 Name            sky shaman~
-ShortDesc       ¶}¶§¹D~
-LongDesc        ¶}¶§¹D(sky shaman)
+ShortDesc       é–‹é™½é“~
+LongDesc        é–‹é™½é“(sky shaman)
 ~
 Description
-¥L¤@ÁyµTº¾ªº¼Ò¼Ë¡MÅı§AÄ±±o¦n¹³¬O¤£ª¾¹D¨º¸Ì¨Óªº¤p³c¡C
+ä»–ä¸€è‡‰çŒ¥ç‘£çš„æ¨¡æ¨£ï¹è®“ä½ è¦ºå¾—å¥½åƒæ˜¯ä¸çŸ¥é“é‚£è£¡ä¾†çš„å°è²©ã€‚
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -36,7 +36,7 @@ Type            greet_prog
 Chance          35
 Text
 if ispc($n)
-  say ¶â¡K
+  say å—¯â€¦
   ponder
 endif
 ~

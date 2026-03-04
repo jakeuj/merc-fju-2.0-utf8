@@ -1,11 +1,11 @@
 Vnum            608
 Name            backbag~
-ShortDesc       ­I³U~
+ShortDesc       èƒŒè¢‹~
 Description
-³o¬O¤@­Ó­I³U¡M¤w¸g¦³¤@ÂIÂÂ¤F¡T
+é€™æ˜¯ä¸€å€‹èƒŒè¢‹ï¹å·²ç¶“æœ‰ä¸€é»èˆŠäº†ï¹—
 
 ~
-Unit            ¥]~
+Unit            åŒ…~
 ItemType        ITEM_BACKBAG
 WearLoc         ITEM_WEAR_BACK
 Takeable        Yes

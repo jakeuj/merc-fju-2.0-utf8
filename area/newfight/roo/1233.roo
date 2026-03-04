@@ -1,9 +1,9 @@
 Vnum            1233
-Name            ������~
+Name            炎之殿~
 Description
-�o�̦��p�Fù�a��몺�ż��M�b�����ӨѮ�M��W�����Fù��
-����ߦb�o�ӨѮ�W�M�o�ɧA�w�g�����F�o�������ż��M�Ʊ�
-��ë(pray)�Fù����j�㯫�q�M�Ѱ����W���h�W�C
+這裡有如閻羅地域般的酷熱﹐在此有個供桌﹐桌上有個閻羅王
+正佇立在這個供桌上﹐這時你已經受不了這炎獄的酷熱﹐希望
+祈禱(pray)閻羅王能大顯神通﹐解除身上的痛苦。
 
 ~
 SectorType      SECT_INSIDE
@@ -35,7 +35,7 @@ End
 #Keyword
 Keyword         pray~
 Description
-�A��۳o�y�Fù�������e�M�߸̫ܰ@�۪��µۯ�(god)�U�����C
+你對著這座閻羅王神像前﹐心裡很虔誠的朝著神(god)下跪拜。
 
 ~
 

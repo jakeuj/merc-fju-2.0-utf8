@@ -1,10 +1,10 @@
 Vnum            591
 Name            little_wind~
-ShortDesc       ¤p­·~
-LongDesc        ¤p­·(little_wind)
+ShortDesc       å°é¢¨~
+LongDesc        å°é¢¨(little_wind)
 ~
 Description
-³o­Ó³Ã¥ë¤£ª¾¹D¬O½Ö¡M¤£¹L¡K¡K¡K
+é€™å€‹å‚¢ä¼™ä¸çŸ¥é“æ˜¯èª°ï¹ä¸éâ€¦â€¦â€¦
 ~
 StayArea        Yes
 Effect          'sanctuary'
@@ -37,7 +37,7 @@ if isnpc($n)
   break
 endif
 if rand(35)
-  yell Åı§A¬İ¬İ¨Ó¦Û­ß¬ÉªºÅ]ªk§a¡TÅı§A¤@¹¡²´ºÖ¡T
+  yell è®“ä½ çœ‹çœ‹ä¾†è‡ªå†¥ç•Œçš„é­”æ³•å§ï¹—è®“ä½ ä¸€é£½çœ¼ç¦ï¹—
   cast 'seven key numen'
 endif
 ~

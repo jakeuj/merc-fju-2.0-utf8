@@ -1,10 +1,10 @@
 Vnum            531
 Name            blademan boot~
-ShortDesc       ¤MªÌ¤§¹u~
+ShortDesc       åˆ€è€…ä¹‹é´~
 Description
-ªì¤J¦¿´ò¤§¤M«È³Ì¦h¥Îªº°ò¥»°t³Æ (blademan boot)¡C
+åˆå…¥æ±Ÿæ¹–ä¹‹åˆ€å®¢æœ€å¤šç”¨çš„åŸºæœ¬é…å‚™ (blademan boot)ã€‚
 ~
-Unit            Âù~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

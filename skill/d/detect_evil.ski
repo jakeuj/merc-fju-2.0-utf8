@@ -1,7 +1,7 @@
 Name            detect evil~
-Cname           °»´ú¨¸´c~
+Cname           åµæ¸¬é‚ªæƒ¡~
 Slot            SLOT_DETECT_EVIL
-Msgoff          §AÂù²´µo¥Xªº¬õ¥ú®ø¥¢¤F¡T~
+Msgoff          ä½ é›™çœ¼ç™¼å‡ºçš„ç´…å…‰æ¶ˆå¤±äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_detect_evil~
 Position        POS_STANDING

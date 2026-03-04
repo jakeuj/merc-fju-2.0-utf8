@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -36,13 +36,13 @@ FUNCTION( do_badfriend )
   {
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "§A­n¥[¤J­ş¤@¦ìª±®a¬°Äê¤H¦W³æ¡S\n\r", ch );
+      send_to_char( "ä½ è¦åŠ å…¥å“ªä¸€ä½ç©å®¶ç‚ºçˆ›äººåå–®ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_badfriend( ch, arg + 1 ) )
     {
-      act( "$2$t$0¥»¨Ó´N¦b§AªºÄê¤H¦W³æ¤§¤¤¡C", ch, arg + 1, NULL, TO_CHAR );
+      act( "$2$t$0æœ¬ä¾†å°±åœ¨ä½ çš„çˆ›äººåå–®ä¹‹ä¸­ã€‚", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -50,31 +50,31 @@ FUNCTION( do_badfriend )
 
     if ( str_len( arg + 1 ) > sizeof( pFriend->name ) )
     {
-      send_to_char( "§AªºÄê¤H¦WºÙªø«×¤£¦Xªk¡T\n\r", ch );
+      send_to_char( "ä½ çš„çˆ›äººåç¨±é•·åº¦ä¸åˆæ³•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !str_cmp( ch->name, arg + 1 ) )
     {
-      send_to_char( "§A­n§â¦Û¤v·í§@¦nªB¤Í¶Ü¡S\n\r", ch );
+      send_to_char( "ä½ è¦æŠŠè‡ªå·±ç•¶ä½œå¥½æœ‹å‹å—ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( badfriend_count( ch ) >= max_friend && !IS_IMMORTAL( ch ) )
     {
-      act( "§AªºÄê¤H¦W³æ¶W¹L$i­Ó¡M½Ğ¥ı§R°£¤@¨Ç§a¡T", ch, &max_friend, NULL, TO_CHAR );
+      act( "ä½ çš„çˆ›äººåå–®è¶…é$iå€‹ï¹è«‹å…ˆåˆªé™¤ä¸€äº›å§ï¹—", ch, &max_friend, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !is_exist( arg + 1 ) )
     {
-      act( "¾ã­Ó¦t©z¤§¤¤¡M§ä¤£¨ì³o¦ì $t ³á¡T", ch, arg + 1, NULL, TO_CHAR );
+      act( "æ•´å€‹å®‡å®™ä¹‹ä¸­ï¹æ‰¾ä¸åˆ°é€™ä½ $t å–”ï¹—", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( imm_lookup( arg + 1 ) )
     {
-      act( "§A¤£¯à±N¯«±Ú $2$t$0 ¦C¤JÄê¤H¦W³æ¡T", ch, arg+1, NULL, TO_CHAR );
+      act( "ä½ ä¸èƒ½å°‡ç¥æ— $2$t$0 åˆ—å…¥çˆ›äººåå–®ï¹—", ch, arg+1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -83,7 +83,7 @@ FUNCTION( do_badfriend )
     pFriend->next = ch->badfriend;
     ch->badfriend = pFriend;
 
-    act( "§A§â$2$t$0³]¬°§AªºÄê¤H¦W³æ¤§¤¤¡C", ch, arg + 1, NULL, TO_CHAR );
+    act( "ä½ æŠŠ$2$t$0è¨­ç‚ºä½ çš„çˆ›äººåå–®ä¹‹ä¸­ã€‚", ch, arg + 1, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -91,17 +91,17 @@ FUNCTION( do_badfriend )
   {
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "§A­n§R°£­ş¤@¦ì¬°Äê¤H¦W³æ¡S\n\r", ch );
+      send_to_char( "ä½ è¦åˆªé™¤å“ªä¸€ä½ç‚ºçˆ›äººåå–®ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !is_badfriend( ch, arg + 1 ) )
     {
-      act( "$t ¥»¨Ó´N¤£¦b§AªºÄê¤H¦W³æ¤§¤¤Åo¡T", ch, arg + 1, NULL, TO_CHAR );
+      act( "$t æœ¬ä¾†å°±ä¸åœ¨ä½ çš„çˆ›äººåå–®ä¹‹ä¸­å›‰ï¹—", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    act( "§A§â$t±q§AªºÄê¤H¦W³æ¤¤²¾°£¤F¡T", ch, arg + 1, NULL, TO_CHAR );
+    act( "ä½ æŠŠ$tå¾ä½ çš„çˆ›äººåå–®ä¸­ç§»é™¤äº†ï¹—", ch, arg + 1, NULL, TO_CHAR );
     extract_a_badfriend( ch, arg + 1 );
     RETURN_NULL();
   }
@@ -116,32 +116,32 @@ FUNCTION( do_badfriend )
     {
       if ( !IS_IMMORTAL( ch ) )
       {
-        send_to_char( "§AªºÅv¤O¤£¨¬¥HÆ[¬İ¨ä¥L¤HªºÄê¤H¦W³æ¡T\n\r", ch );
+        send_to_char( "ä½ çš„æ¬ŠåŠ›ä¸è¶³ä»¥è§€çœ‹å…¶ä»–äººçš„çˆ›äººåå–®ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( victim = get_char_world( ch, arg ) ) )
       {
-        act( "§ä¤£¨ì§A­nÆ[¬İªº¹ï¶H $2$T$0¡C", ch, NULL, arg, TO_CHAR );
+        act( "æ‰¾ä¸åˆ°ä½ è¦è§€çœ‹çš„å°è±¡ $2$T$0ã€‚", ch, NULL, arg, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( IS_NPC( victim ) )
       {
-        act( "«Dª±®a$N¬O¨S¦³Äê¤H¦W³æªº¡C", ch, NULL, victim, TO_CHAR );
+        act( "éç©å®¶$Næ˜¯æ²’æœ‰çˆ›äººåå–®çš„ã€‚", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( get_trust( ch ) < get_trust( victim ) )
       {
-        act( "§AªºÅv¤O¤£°÷¬İ$NªºÄê¤H¦W³æ¡C", ch, NULL, victim, TO_CHAR );
+        act( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹$Nçš„çˆ›äººåå–®ã€‚", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
 
     if ( !victim->badfriend )
     {
-      act( "$N¨Ã¨S¦³¥ô¦óªºÄê¤H¦W³æ¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Nä¸¦æ²’æœ‰ä»»ä½•çš„çˆ›äººåå–®ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -149,8 +149,8 @@ FUNCTION( do_badfriend )
     count = 0;
 
     send_to_buffer(
-      "\e[1;33;44m¶¶§Ç ¤W½u ¦W¦r         ¤¤¤å¦W¦r                        "
-      " µ¥¯Å ¦~ÄÖ ©Ê§O Â¾  ·~  \e[0m\n\r" );
+      "\e[1;33;44mé †åº ä¸Šç·š åå­—         ä¸­æ–‡åå­—                        "
+      " ç­‰ç´š å¹´é½¡ æ€§åˆ¥ è·  æ¥­  \e[0m\n\r" );
 
     for ( pFriend = victim->badfriend; pFriend; pFriend = pFriend->next )
     {
@@ -193,7 +193,7 @@ FUNCTION( do_badfriend )
   RETURN_NULL();
 }
 
-/* ¾P·´Äê¤H¦W³æ */
+/* éŠ·æ¯€çˆ›äººåå–® */
 void extract_badfriend( CHAR_DATA * ch )
 {
   FRIEND_DATA * pFriend;
@@ -203,7 +203,7 @@ void extract_badfriend( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "extract_badfriend: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "extract_badfriend: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -226,7 +226,7 @@ void extract_a_badfriend( CHAR_DATA * ch, const char * name )
 
   if ( !ch || !name || !*name )
   {
-    mudlog( LOG_DEBUG, "extract_a_badfriend: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "extract_a_badfriend: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -242,7 +242,7 @@ void extract_a_badfriend( CHAR_DATA * ch, const char * name )
     }
   }
 
-  mudlog( LOG_DEBUG, "extract_a_badfriend: ¨Sµo²{­n¾P·´ªºµ²ºc." );
+  mudlog( LOG_DEBUG, "extract_a_badfriend: æ²’ç™¼ç¾è¦éŠ·æ¯€çš„çµæ§‹." );
   RETURN_NULL();
 }
 
@@ -255,7 +255,7 @@ size_t badfriend_count( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "badfriend_count: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "badfriend_count: ä¾†æºä¸æ­£ç¢º." );
     RETURN( 0 );
   }
 
@@ -272,7 +272,7 @@ FRIEND_DATA * is_badfriend( CHAR_DATA * ch, const char * name )
 
   if ( !ch || !name || !*name )
   {
-    mudlog( LOG_DEBUG, "is_badfriend: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "is_badfriend: ä¾†æºä¸æ­£ç¢º." );
     RETURN( NULL );
   }
 

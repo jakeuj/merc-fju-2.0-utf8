@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�p�󭫽ƿ�J���e�����O�O�S�A�u�ݭn��J [1;32m![0m �N�i�H���ƤW�@�ӫ��O�M�t�~�t��
-�|�O�ФQ�էA���e�����O�M���A�n���Ƥ��e�ĤK�ӫ��O�M�A�i�H��J [1;32m!8[0m�N�i�H�C
-�p�󪾹D���e�����O�O�S�п�J [1;32mhistory[0m �K�i�H�o���o�C
+如何重複輸入之前的指令呢﹖你只需要輸入 [1;32m![0m 就可以重複上一個指令﹐另外系統
+會記憶十組你之前的指令﹐像你要重複之前第八個指令﹐你可以輸入 [1;32m!8[0m就可以。
+如何知道之前的指令呢﹖請輸入 [1;32mhistory[0m 便可以得知囉。
 
-�Ьd�ߡRhistory�B!
+請查詢﹕history、!
 ~
 End

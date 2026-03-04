@@ -1,10 +1,10 @@
 Vnum            586
 Name            secret thing~
-ShortDesc       «Hª«~
+ShortDesc       ä¿¡ç‰©~
 Description
-³o¬O¤@­Ó«Hª«¡M¬°¤F¬Y¼ËÃÒ©ú¡C
+é€™æ˜¯ä¸€å€‹ä¿¡ç‰©ï¹ç‚ºäº†æŸæ¨£è­‰æ˜ã€‚
 ~
-Unit            ­Ó~
+Unit            å€‹~
 ItemType        ITEM_TREASURE
 Takeable        Yes
 Level           10

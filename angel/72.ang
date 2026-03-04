@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�`�`�ݨ�@��H�b���([1;32mchat[0m)�M�άO���([1;32mauction[0m)�˳ơM�ӷP�칽�СM�o�ɫ���
-�O�S���M�i�H�����o���W�D([1;32mchannel[0m)�C�A�]�i�H��J [1;32mchannel[0m �ӬݬݧA�ثe���W
-�D�ϥΪ��p�C
+常常看到一堆人在聊天([1;32mchat[0m)﹐或是拍賣([1;32mauction[0m)裝備﹐而感到厭煩﹐這時怎麼辦
+呢﹖當然可以關掉這個頻道([1;32mchannel[0m)。你也可以輸入 [1;32mchannel[0m 來看看你目前的頻
+道使用狀況。
 
-�Ьd�ߡRchat�Bauction�Bchannel
+請查詢﹕chat、auction、channel
 ~
 End

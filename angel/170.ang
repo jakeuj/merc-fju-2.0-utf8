@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A���ðݮɡM�A�����ϥζ���([1;32mchat[0m)���W�D�M�A�i�H�H [1;32mquestion[0m �Ӵ��X���D�M
-�p�G���H���D���ת��ܡM�]�i�H�ϥ� [1;32manswer[0m �Ӧ^���A�����D��C�o�˥i�H�϶���
-�W�D�ζq�֤@�I�C
+當你有疑問時﹐你不必使用閒聊([1;32mchat[0m)的頻道﹐你可以以 [1;32mquestion[0m 來提出問題﹐
+如果有人知道答案的話﹐也可以使用 [1;32manswer[0m 來回答你的問題喔。這樣可以使閒聊
+頻道用量少一點。
 
-�Ьd�ߡRchat�Bquestion�Banswer
+請查詢﹕chat、question、answer
 ~
 End

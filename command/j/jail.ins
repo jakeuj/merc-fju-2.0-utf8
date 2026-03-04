@@ -1,5 +1,5 @@
 Name            jail~
-Cname           ���Ѩc~
+Cname           關天牢~
 Function        do_jail~
 Position        POS_DEAD
 Level           L_SUP
@@ -15,22 +15,22 @@ Lost            NO
 Lock            NO
 Limit           NO
 Help
-�y�k�Rjail [�H�W] [�Ѽ�]
-      jail !release [�H�W]
-      jail !set     [�H�W] [�Ѽ�]
-      jail !address [��}] [�Ѽ�]
+語法﹕jail [人名] [天數]
+      jail !release [人名]
+      jail !set     [人名] [天數]
+      jail !address [位址] [天數]
 
-    �o�ӫ��O�O�Ψ����@��Ĳ�Ǥѱ������a�����O�M�p�G�n�����ɭԡM�Ĥ@�ӰѼ�
-�������Ѩc�����a�W�١M�ĤG�ӰѼƬ��ѼơM�b�o�Өt�Τ��M�@�Ѭ����u��ɶ��Q
-�����C���O���a�w�g�Q���M�άO���b�߫���ɡM�O����Q�����M���M�M�]��������
-�z�̡C
+    這個指令是用來關一些觸犯天條的玩家的指令﹐如果要關的時候﹐第一個參數
+為欲關天牢的玩家名稱﹐第二個參數為天數﹐在這個系統內﹐一天約為真實時間十
+分鐘。但是玩家已經被關﹐或是正在撿屍體時﹐是不能被關的﹐當然﹐也不能關管
+理者。
 
-    �Y�O�Ĥ@�ӰѼƬ� !release���ܡM�h�O��w�g�Q���Ѩc���H����X�ӡC���O�o
-�ӤH�����O���۪��C
+    若是第一個參數為 !release的話﹐則是把已經被關天牢的人釋放出來。但是這
+個人必須是醒著的。
 
-    �Y�O�Q�n�[���άO��Y�쪱�a���A�D�ɶ��M�h�i�H��!set�ӧ��ܥL���A�D��
-���M�ۦP���M�o�ӤH�����w�g�b�Ѩc�����M�B�ѼƤ���p��άO���� 0�C
+    若是想要加重或是減輕某位玩家的服刑時間﹐則可以用!set來改變他的服刑時
+間﹐相同的﹐這個人必須已經在天牢之中﹐且天數不能小於或是等於 0。
 
-������ơRrule aecho
+相關資料﹕rule aecho
 ~
 End

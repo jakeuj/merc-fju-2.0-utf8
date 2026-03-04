@@ -1,9 +1,9 @@
 Vnum            30
 Name            thin dart~
-ShortDesc       ¬h¸­Ãð~
+ShortDesc       æŸ³è‘‰é¢~
 Description
-³o¬O¤@ªT¤Q¤À²Óªøªº­¸Ãð(thin dart)¡M¥­®É¥i¥HÂÃ¦b³S¤¤¡M¥Hµo´§¥Xµ´¨Îªº©_Å§®ÄªG¡C~
-Unit            ªT~
+é€™æ˜¯ä¸€æžšååˆ†ç´°é•·çš„é£›é¢(thin dart)ï¹å¹³æ™‚å¯ä»¥è—åœ¨è¢–ä¸­ï¹ä»¥ç™¼æ®å‡ºçµ•ä½³çš„å¥‡è¥²æ•ˆæžœã€‚~
+Unit            æžš~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

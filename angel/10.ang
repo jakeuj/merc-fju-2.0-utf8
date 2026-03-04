@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�p�G�A�������~�褣�O�ܦn�M�g�`�԰���@�b�N�_�u�M���s�u�i�ӴN�w�g�L�٩�ơM
-����A�i�H�Ҽ{ [1;32mconfig +flee[0m�M�t�η|�b�A�_�u�ɡM�۰����A�k�]�M���O�O�_�k�]
-���\�M�N�ݧA���B��F�C
+如果你的網路品質不是很好﹐經常戰鬥到一半就斷線﹐等連線進來就已經無濟於事﹐
+那麼你可以考慮 [1;32mconfig +flee[0m﹐系統會在你斷線時﹐自動幫你逃跑﹐但是是否逃跑
+成功﹐就看你的運氣了。
 
-�Ьd�ߡRauto config
+請查詢﹕auto config
 ~
 
 End

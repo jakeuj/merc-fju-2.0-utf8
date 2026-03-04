@@ -1,10 +1,10 @@
 Vnum            517
 Name            rain cloth~
-ShortDesc       »´«K«¬«B¦ç~
+ShortDesc       è¼•ä¾¿å‹é›¨è¡£~
 Description
-¤@¥ó³z®ğµÎ¾Aªº«B¦ç(rain cloth)¡M«Ü¾A¦X«B¤Ñ®É¬ïµÛ¡C
+ä¸€ä»¶é€æ°£èˆ’é©çš„é›¨è¡£(rain cloth)ï¹å¾ˆé©åˆé›¨å¤©æ™‚ç©¿è‘—ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

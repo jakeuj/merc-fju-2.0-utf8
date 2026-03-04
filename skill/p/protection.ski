@@ -1,7 +1,7 @@
 Name            protection~
-Cname           бu╞Fпл│Zбv~
+Cname           уАМщЭИчеЮшигуАН~
 Slot            SLOT_PROTECTION
-Msgoff          зAк║лO┼@ж№еG┤юд╓дFбT~
+Msgoff          ф╜ачЪДф┐Эшн╖ф╝╝ф╣Оц╕Ых░Сф║Жя╣Ч~
 Check           check_unrigid_attack~
 Function        cast_protection~
 Position        POS_STANDING

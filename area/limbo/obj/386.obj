@@ -1,9 +1,9 @@
 Vnum            386
 Name            eight gun book~
-ShortDesc       ±K¶Ç£»¤K·¥ºj¯µÓD~
+ShortDesc       å¯†å‚³Ë™å…«æ¥µæ§ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

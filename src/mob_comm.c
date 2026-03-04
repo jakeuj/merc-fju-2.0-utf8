@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -67,47 +67,47 @@ FUNCTION( do_mpstat )
 
   if ( !( victim = get_char_world( ch, arg ) ) )
   {
-    act( "§A­nÆ[¬Ýªº¹ï¶H $T ¤£¦b³o¸Ì.", ch, NULL, arg, TO_CHAR );
+    act( "ä½ è¦è§€çœ‹çš„å°è±¡ $T ä¸åœ¨é€™è£¡.", ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !IS_NPC( victim ) || !victim->pIndexData )
   {
-    act( "ª±®a$N¬O¨S¦³ MOB ªºµ{¦¡ªº¡T", ch, NULL, victim, TO_CHAR );
+    act( "çŽ©å®¶$Næ˜¯æ²’æœ‰ MOB çš„ç¨‹å¼çš„ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !( victim->pIndexData->progtypes ) )
   {
-    act( "$N¨S¦³¥ô¦ó MOB µ{¦¡¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Næ²’æœ‰ä»»ä½• MOB ç¨‹å¼ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( victim->disable_prog )
   {
-    act( "$Nªº MOB µ{¦¡³Q¨ú®ø¡T", ch, NULL, victim, TO_CHAR );
+    act( "$Nçš„ MOB ç¨‹å¼è¢«å–æ¶ˆï¹—", ch, NULL, victim, TO_CHAR );
     RETURN_NULL();
   }
 
   clear_buffer();
   send_to_buffer(
-    "¦W    ¦r¡R%s  "
-    "µêÀÀ¸¹½X¡R%d \n\r"
-    "µu ´y ­z¡R%s\n\r"
-    "ªø ´y ­z¡R%s"
-    "¥Í ©R ¤O¡R%d/%d  "
-    "ªk    ¤O¡R%d/%d  "
-    "²¾ °Ê ¤O¡R%d/%d\n\r"
-    "µ¥    ¯Å¡R%d "
-    "Â¾    ·~¡R%s "
-    "°}    Àç¡R%d\n\r"
-    "¨¾ Å@ ¤O¡R%d "
-    "ª÷    ¿ú¡R%d "
-    "¸g Åç ­È¡R%d\n\r"
+    "å    å­—ï¹•%s  "
+    "è™›æ“¬è™Ÿç¢¼ï¹•%d \n\r"
+    "çŸ­ æ è¿°ï¹•%s\n\r"
+    "é•· æ è¿°ï¹•%s"
+    "ç”Ÿ å‘½ åŠ›ï¹•%d/%d  "
+    "æ³•    åŠ›ï¹•%d/%d  "
+    "ç§» å‹• åŠ›ï¹•%d/%d\n\r"
+    "ç­‰    ç´šï¹•%d "
+    "è·    æ¥­ï¹•%s "
+    "é™£    ç‡Ÿï¹•%d\n\r"
+    "é˜² è­· åŠ›ï¹•%d "
+    "é‡‘    éŒ¢ï¹•%d "
+    "ç¶“ é©— å€¼ï¹•%d\n\r"
     , victim->name
     , victim->pIndexData->vnum
     , victim->byname
-    , victim->long_descr[0] ? victim->long_descr : "(±q¯Ê)\n\r"
+    , victim->long_descr[0] ? victim->long_descr : "(å¾žç¼º)\n\r"
     , victim->hit
     , get_curr_hit( victim )
     , victim->mana
@@ -143,13 +143,13 @@ FUNCTION( do_mpasound )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "do_mpasound: %d ¯Ê¥F¨Ó·½.", ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG, "do_mpasound: %d ç¼ºä¹ä¾†æº.", ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
   if ( !argument[0] )
   {
-    mudlog( LOG_DEBUG , "Mpasound: MOB ¸¹½X %d ¨S¦³¤Þ¼Æ."
+    mudlog( LOG_DEBUG , "Mpasound: MOB è™Ÿç¢¼ %d æ²’æœ‰å¼•æ•¸."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
@@ -183,18 +183,18 @@ FUNCTION( do_mpkill )
 
   if ( !arg[0] )
   {
-    mudlog( LOG_DEBUG , "MpKill: MOB ¸¹½X %d ¨S¦³¥ô¦óªº¤Þ¼Æ.", vnum );
+    mudlog( LOG_DEBUG , "MpKill: MOB è™Ÿç¢¼ %d æ²’æœ‰ä»»ä½•çš„å¼•æ•¸.", vnum );
     RETURN_NULL();
   }
 
   if ( !( victim = get_char_room( ch, arg ) ) )
   {
-    mudlog( LOG_DEBUG , "MpKill: MOB ¸¹½X %d ­n±þªº¹ï¶H %s ¤£¦b©Ð¶¡¸Ì."
+    mudlog( LOG_DEBUG , "MpKill: MOB è™Ÿç¢¼ %d è¦æ®ºçš„å°è±¡ %s ä¸åœ¨æˆ¿é–“è£¡."
       , vnum, arg );
 
     if ( ( victim = get_char_world( ch, arg ) ) )
     {
-      mudlog( LOG_DEBUG, "MpKill: %d(©Ð¸¹:%d)­n±þªº¹ï¶H%s¦b%d."
+      mudlog( LOG_DEBUG, "MpKill: %d(æˆ¿è™Ÿ:%d)è¦æ®ºçš„å°è±¡%såœ¨%d."
         , vnum
         , ch->in_room ? ch->in_room->vnum : -1
         , victim->name
@@ -206,19 +206,19 @@ FUNCTION( do_mpkill )
 
   if ( victim == ch )
   {
-    mudlog( LOG_DEBUG , "MpKill: MOB ¸¹½X %d ­n±þªº¹ï¶H¬O¦Û¤v.", vnum );
+    mudlog( LOG_DEBUG , "MpKill: MOB è™Ÿç¢¼ %d è¦æ®ºçš„å°è±¡æ˜¯è‡ªå·±.", vnum );
     RETURN_NULL();
   }
 
   if ( is_affected( ch, SLOT_CHARM_PERSON ) && ch->master == victim )
   {
-    mudlog( LOG_DEBUG , "MpKill: ³Q°g´bªº MOB ¸¹½X %d ±þ¦Û¤vªº¥D¤H.", vnum );
+    mudlog( LOG_DEBUG , "MpKill: è¢«è¿·æƒ‘çš„ MOB è™Ÿç¢¼ %d æ®ºè‡ªå·±çš„ä¸»äºº.", vnum );
     RETURN_NULL();
   }
 
   if ( ch->position == POS_FIGHTING )
   {
-    mudlog( LOG_DEBUG , "MpKill: MOB ¸¹½X %d ¤w¸g¶}©l¾Ô°«¤F.", vnum );
+    mudlog( LOG_DEBUG , "MpKill: MOB è™Ÿç¢¼ %d å·²ç¶“é–‹å§‹æˆ°é¬¥äº†.", vnum );
     RETURN_NULL();
   }
 
@@ -238,7 +238,7 @@ FUNCTION( do_mpjunk )
 
   if ( !arg[0] )
   {
-    mudlog( LOG_DEBUG , "Mpjunk: MOB ¸¹½X %d ¨S¦³¥ô¦óªº¤Þ¼Æ."
+    mudlog( LOG_DEBUG , "Mpjunk: MOB è™Ÿç¢¼ %d æ²’æœ‰ä»»ä½•çš„å¼•æ•¸."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
@@ -279,20 +279,20 @@ FUNCTION( do_mpsay )
 
   if ( !argument[0] )
   {
-    mudlog( LOG_DEBUG , "Mpsay: MOB ¸¹½X %d ¨S¦³¥ô¦óªº¤Þ¼Æ."
+    mudlog( LOG_DEBUG , "Mpsay: MOB è™Ÿç¢¼ %d æ²’æœ‰ä»»ä½•çš„å¼•æ•¸."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
-  /* ¤w¸g¦³¿é¥X½w½Ä°Ï¤F */
+  /* å·²ç¶“æœ‰è¼¸å‡ºç·©è¡å€äº† */
   if ( ch->talk_buf ) RETURN_NULL();
 
   argument = one_statement( argument, arg );
 
-  /* ­Y¬O²Ä¤@¥y¸Ü¦³¤º®e */
+  /* è‹¥æ˜¯ç¬¬ä¸€å¥è©±æœ‰å…§å®¹ */
   if ( arg[0] ) do_say( ch, arg );
 
-  /* ­Y¬O«á­±ÁÙ¦³ªº¸Ü */
+  /* è‹¥æ˜¯å¾Œé¢é‚„æœ‰çš„è©± */
   if ( argument[0] )
   {
     ch->talk_buf  = str_dup( argument );
@@ -310,17 +310,17 @@ FUNCTION( do_mpchat )
 
   if ( !argument[0] )
   {
-    mudlog( LOG_DEBUG , "Mpchat: MOB ¸¹½X %d ¨S¦³¥ô¦óªº¤Þ¼Æ."
+    mudlog( LOG_DEBUG , "Mpchat: MOB è™Ÿç¢¼ %d æ²’æœ‰ä»»ä½•çš„å¼•æ•¸."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
-  /* ¤w¸g¦³¿é¥X½w½Ä°Ï¤F */
+  /* å·²ç¶“æœ‰è¼¸å‡ºç·©è¡å€äº† */
   if ( ch->talk_buf ) RETURN_NULL();
 
   argument = one_statement( argument, arg );
 
-  /* ­Y¬O²Ä¤@¥y¸Ü¦³¤º®e */
+  /* è‹¥æ˜¯ç¬¬ä¸€å¥è©±æœ‰å…§å®¹ */
   if ( arg[0] )
   {
     ChatRecord = FALSE;
@@ -328,7 +328,7 @@ FUNCTION( do_mpchat )
     ChatRecord = TRUE;
   }
 
-  /* ­Y¬O«á­±ÁÙ¦³ªº¸Ü */
+  /* è‹¥æ˜¯å¾Œé¢é‚„æœ‰çš„è©± */
   if ( argument[0] )
   {
     ch->talk_buf  = str_dup( argument );
@@ -349,19 +349,19 @@ FUNCTION( do_mpechoaround )
 
   if ( !arg[0] )
   {
-    mudlog( LOG_DEBUG , "Mpechoaround: MOB ¸¹½X %d ¨S¦³¥ô¦óªº¤Þ¼Æ."
+    mudlog( LOG_DEBUG , "Mpechoaround: MOB è™Ÿç¢¼ %d æ²’æœ‰ä»»ä½•çš„å¼•æ•¸."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
   if ( !( victim = get_char_room( ch, arg ) ) )
   {
-    mudlog( LOG_DEBUG , "Mpechoaround: MOB ¸¹½X %d ªº¹ï¶H %s ¤£¦s¦b."
+    mudlog( LOG_DEBUG , "Mpechoaround: MOB è™Ÿç¢¼ %d çš„å°è±¡ %s ä¸å­˜åœ¨."
       , ch->pIndexData->vnum, arg );
 
     if ( ( victim = get_char_world( ch, arg ) ) )
     {
-      mudlog( LOG_DEBUG, "Mpechoaround: %d(©Ð¸¹:%d)ªº¹ï¶H%s¦b%d."
+      mudlog( LOG_DEBUG, "Mpechoaround: %d(æˆ¿è™Ÿ:%d)çš„å°è±¡%såœ¨%d."
         , ch->pIndexData->vnum
         , ch->in_room ? ch->in_room->vnum : -1
         , victim->name
@@ -386,19 +386,19 @@ FUNCTION( do_mpechoat )
 
   if ( !arg[0] || !argument[0] )
   {
-    mudlog( LOG_DEBUG , "Mpechoat: MOB ¸¹½X %d ¨S¦³¥ô¦óªº¤Þ¼Æ."
+    mudlog( LOG_DEBUG , "Mpechoat: MOB è™Ÿç¢¼ %d æ²’æœ‰ä»»ä½•çš„å¼•æ•¸."
        , ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
   if ( !( victim = get_char_room( ch, arg ) ) )
   {
-    mudlog( LOG_DEBUG , "Mpechoat: MOB ¸¹½X %d ªº¹ï¶H %s ¤£¦s¦b."
+    mudlog( LOG_DEBUG , "Mpechoat: MOB è™Ÿç¢¼ %d çš„å°è±¡ %s ä¸å­˜åœ¨."
       , ch->pIndexData->vnum, arg );
 
     if ( ( victim = get_char_world( ch, arg ) ) )
     {
-      mudlog( LOG_DEBUG, "Mpechoat: %d(©Ð¸¹:%d)ªº¹ï¶H%s¦b%d."
+      mudlog( LOG_DEBUG, "Mpechoat: %d(æˆ¿è™Ÿ:%d)çš„å°è±¡%såœ¨%d."
         , ch->pIndexData->vnum
         , ch->in_room ? ch->in_room->vnum : -1
         , victim->name
@@ -418,7 +418,7 @@ FUNCTION( do_mpecho )
 
   if ( !argument[0] )
   {
-    mudlog( LOG_DEBUG , "Mpecho: MOB ¸¹½X %d ¨S¦³¥ô¦óªº¤Þ¼Æ."
+    mudlog( LOG_DEBUG , "Mpecho: MOB è™Ÿç¢¼ %d æ²’æœ‰ä»»ä½•çš„å¼•æ•¸."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
@@ -441,28 +441,28 @@ FUNCTION( do_mplset )
 
   if ( !IS_NPC( ch ) ) RETURN_NULL();
 
-  /* ¥ý¨ú¥X¤T­Ó°Ñ¼Æ */
+  /* å…ˆå–å‡ºä¸‰å€‹åƒæ•¸ */
   argument = one_argument( argument , arg1 );
   argument = one_argument( argument , arg2 );
   one_argument( argument , arg3 );
 
-  /* ¹î¬Ý¬O§_°Ñ¼Æ³£¦³¥¿½T */
+  /* å¯Ÿçœ‹æ˜¯å¦åƒæ•¸éƒ½æœ‰æ­£ç¢º */
   if ( !arg1[0] || !arg2[0] || !arg3[0] )
   {
-    mudlog( LOG_DEBUG, "Mplset: ©Çª« %d ¸Ì¦³³]©w¤£¥¿½T§Þ¯à."
+    mudlog( LOG_DEBUG, "Mplset: æ€ªç‰© %d è£¡æœ‰è¨­å®šä¸æ­£ç¢ºæŠ€èƒ½."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
-  /* ¥ý§ä§ä¬Ý¬O§_¦³³o­Ó¤H */
+  /* å…ˆæ‰¾æ‰¾çœ‹æ˜¯å¦æœ‰é€™å€‹äºº */
   if ( !( victim = get_char_room( ch , arg1 ) ) )
   {
-    mudlog( LOG_DEBUG, "Mplset: ©Çª« %d ¸Ì§ä¤£¨ì¤H %s ³]©w§Þ¯à."
+    mudlog( LOG_DEBUG, "Mplset: æ€ªç‰© %d è£¡æ‰¾ä¸åˆ°äºº %s è¨­å®šæŠ€èƒ½."
       , ch->pIndexData->vnum, arg1 );
 
     if ( ( victim = get_char_world( ch, arg1 ) ) )
     {
-      mudlog( LOG_DEBUG, "Mplset: %d(©Ð¸¹:%d)ªº¹ï¶H%s¦b%d."
+      mudlog( LOG_DEBUG, "Mplset: %d(æˆ¿è™Ÿ:%d)çš„å°è±¡%såœ¨%d."
         , ch->pIndexData->vnum
         , ch->in_room ? ch->in_room->vnum : -1
         , victim->name
@@ -472,39 +472,39 @@ FUNCTION( do_mplset )
     RETURN_NULL();
   }
 
-  /* ¤£¯à§@¥Î¦b«Dª±®a¨­¤W */
+  /* ä¸èƒ½ä½œç”¨åœ¨éžçŽ©å®¶èº«ä¸Š */
   if ( IS_NPC( victim ) ) RETURN_NULL();
 
-  /* §ä´M§Þ¯à¦WºÙ, ­Y¬O²Ä¤G­Ó°Ñ¼Æ¬° all´N¤£¥Î§ä¤F */
+  /* æ‰¾å°‹æŠ€èƒ½åç¨±, è‹¥æ˜¯ç¬¬äºŒå€‹åƒæ•¸ç‚º allå°±ä¸ç”¨æ‰¾äº† */
   if ( !( pSkill = skill_isname( arg2 ) ) )
   {
-    mudlog( LOG_DEBUG, "Mplset: ©Çª« %d ¸Ì³]©w¿ù»~§Þ¯à %s."
+    mudlog( LOG_DEBUG, "Mplset: æ€ªç‰© %d è£¡è¨­å®šéŒ¯èª¤æŠ€èƒ½ %s."
       , ch->pIndexData->vnum, arg2 );
     RETURN_NULL();
   }
 
-  /* ²Ä¤T­Ó¼Æ­È¤£¯à¬°«D¼Æ¦r */
+  /* ç¬¬ä¸‰å€‹æ•¸å€¼ä¸èƒ½ç‚ºéžæ•¸å­— */
   if ( !is_number( arg3 ) )
   {
-    mudlog( LOG_DEBUG, "Mplset: ©Çª« %d ¸Ì³]©w¿ù»~¼ô½m«× %s."
+    mudlog( LOG_DEBUG, "Mplset: æ€ªç‰© %d è£¡è¨­å®šéŒ¯èª¤ç†Ÿç·´åº¦ %s."
       , ch->pIndexData->vnum , arg3 );
     RETURN_NULL();
   }
 
   if ( ( value = atoi( arg3 ) ) < 0 || value > 100 )
   {
-    mudlog( LOG_DEBUG, "Mplset: ©Çª« %d ©Ò³]©w¤§§Þ¯à¼ô½m %d ¤£¦X²z.",
+    mudlog( LOG_DEBUG, "Mplset: æ€ªç‰© %d æ‰€è¨­å®šä¹‹æŠ€èƒ½ç†Ÿç·´ %d ä¸åˆç†.",
       ch->pIndexData->vnum, value );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¬O§_¥i¥H¾Ç¨ì */
+  /* æª¢æŸ¥æ˜¯å¦å¯ä»¥å­¸åˆ° */
   if ( value > 0 && !check_skill_restrict( victim, pSkill, FALSE ) )
     RETURN_NULL();
 
   if ( ( victim->skill[pSkill->slot] = value ) <= 0 )
   {
-    /* ¨ú®ø¥Lªº³o¶µ§Þ¯à */
+    /* å–æ¶ˆä»–çš„é€™é …æŠ€èƒ½ */
     for ( pEnable = victim->enable; pEnable; pEnable = pEnable->next )
     {
       if ( pEnable->skill == pSkill )
@@ -530,14 +530,14 @@ FUNCTION( do_mpmload )
 
   if ( !arg[0] || !is_number( arg ) )
   {
-    mudlog( LOG_DEBUG , "Mpmload - ¸¹½X %d ©Çª«ªºµ{¦¡¸Ì¦³¿ù»~ªº°Ñ¼Æ %s."
+    mudlog( LOG_DEBUG , "Mpmload - è™Ÿç¢¼ %d æ€ªç‰©çš„ç¨‹å¼è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸ %s."
       , ch->pIndexData->vnum, arg );
     RETURN_NULL();
   }
 
   if ( !( pMobIndex = get_mob_index( atoi( arg ) ) ) )
   {
-    mudlog( LOG_DEBUG , "Mpmload - ¸¹½X %d ©Çª«ªºµ{¦¡¸Ì¦³¿ù»~ªº°Ñ¼Æ %s."
+    mudlog( LOG_DEBUG , "Mpmload - è™Ÿç¢¼ %d æ€ªç‰©çš„ç¨‹å¼è£¡æœ‰éŒ¯èª¤çš„åƒæ•¸ %s."
       , ch->pIndexData->vnum, arg );
     RETURN_NULL();
   }
@@ -561,7 +561,7 @@ FUNCTION( do_mpoload )
 
   if ( !arg1[0] || !is_number( arg1 ) )
   {
-    mudlog( LOG_DEBUG , "Mpoload - ¸¹½X %d »yªk¿ù»~¡M°Ñ¼Æ¬° %s."
+    mudlog( LOG_DEBUG , "Mpoload - è™Ÿç¢¼ %d èªžæ³•éŒ¯èª¤ï¹åƒæ•¸ç‚º %s."
       , ch->pIndexData->vnum, arg1 );
     RETURN_NULL();
   }
@@ -575,7 +575,7 @@ FUNCTION( do_mpoload )
   {
     if ( !is_number( arg2 ) )
     {
-      mudlog( LOG_DEBUG , "Mpoload - ¸¹½X %d »yªk %s ¿ù»~."
+      mudlog( LOG_DEBUG , "Mpoload - è™Ÿç¢¼ %d èªžæ³• %s éŒ¯èª¤."
         , ch->pIndexData->vnum, arg2 );
 
       RETURN_NULL();
@@ -583,7 +583,7 @@ FUNCTION( do_mpoload )
 
     if ( ( level = atoi( arg2 ) ) < 0 )
     {
-      mudlog( LOG_DEBUG , "Mpoload - ¸¹½X %d µ¥¯Å %s ¿ù»~."
+      mudlog( LOG_DEBUG , "Mpoload - è™Ÿç¢¼ %d ç­‰ç´š %s éŒ¯èª¤."
         , ch->pIndexData->vnum, arg2 );
       RETURN_NULL();
     }
@@ -591,7 +591,7 @@ FUNCTION( do_mpoload )
 
   if ( level > get_trust( ch ) )
   {
-    mudlog( LOG_DEBUG , "Mpoload - ¸¹½X %d ¸ü¤Jª««~ %d µ¥¯Å¤ñ¦Û¤v°ª %d."
+    mudlog( LOG_DEBUG , "Mpoload - è™Ÿç¢¼ %d è¼‰å…¥ç‰©å“ %d ç­‰ç´šæ¯”è‡ªå·±é«˜ %d."
       , ch->pIndexData->vnum, level, ch->level );
 
     RETURN_NULL();
@@ -599,7 +599,7 @@ FUNCTION( do_mpoload )
 
   if ( !( pObjIndex = get_obj_index( atoi( arg1 ) ) ) )
   {
-    mudlog( LOG_DEBUG , "Mpoload - ¸¹½X %d °Ñ¼Æ %s ¿ù»~."
+    mudlog( LOG_DEBUG , "Mpoload - è™Ÿç¢¼ %d åƒæ•¸ %s éŒ¯èª¤."
       , ch->pIndexData->vnum, arg1 );
     RETURN_NULL();
   }
@@ -624,7 +624,7 @@ FUNCTION( do_mppurge )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "do_mppurge: %d ¨Ó·½¤£¥¿½T.", ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG, "do_mppurge: %d ä¾†æºä¸æ­£ç¢º.", ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
@@ -650,14 +650,14 @@ FUNCTION( do_mppurge )
   if ( !( victim = get_char_room( ch, arg ) ) )
   {
     if ( ( obj = get_obj_here( ch, arg ) ) ) extract_obj( obj );
-    else mudlog( LOG_DEBUG , "Mppurge - ¸¹½X %d °Ñ¼Æ %s ¿ù»~."
+    else mudlog( LOG_DEBUG , "Mppurge - è™Ÿç¢¼ %d åƒæ•¸ %s éŒ¯èª¤."
       , ch->pIndexData->vnum, arg );
     RETURN_NULL();
   }
 
   if ( !IS_NPC( victim ) )
   {
-    mudlog( LOG_DEBUG , "Mppurge - ¸¹½X %d ¿ù»~²M°£ª±®a %s."
+    mudlog( LOG_DEBUG , "Mppurge - è™Ÿç¢¼ %d éŒ¯èª¤æ¸…é™¤çŽ©å®¶ %s."
       , ch->pIndexData->vnum, victim->name );
     RETURN_NULL();
   }
@@ -676,13 +676,13 @@ FUNCTION( do_mpgoto )
   one_argument( argument, arg );
   if ( !arg[0] )
   {
-    mudlog( LOG_DEBUG , "Mpgoto - ¸¹½X %d ¨S¦³°Ñ¼Æ" , ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG , "Mpgoto - è™Ÿç¢¼ %d æ²’æœ‰åƒæ•¸" , ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
   if ( !( location = find_location( ch, arg ) ) )
   {
-    mudlog( LOG_DEBUG , "Mpgoto - ¸¹½X %d ¥hªº¦a¤è %s ±q¯Ê."
+    mudlog( LOG_DEBUG , "Mpgoto - è™Ÿç¢¼ %d åŽ»çš„åœ°æ–¹ %s å¾žç¼º."
       , ch->pIndexData->vnum, arg );
     RETURN_NULL();
   }
@@ -708,13 +708,13 @@ FUNCTION( do_mpat )
 
   if ( !arg[0] || !argument[0] )
   {
-    mudlog( LOG_DEBUG , "Mpat - ¸¹½X %d ¿ù»~ªº°Ñ¼Æ." , ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG , "Mpat - è™Ÿç¢¼ %d éŒ¯èª¤çš„åƒæ•¸." , ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
   if ( !( location = find_location( ch, arg ) ) )
   {
-    mudlog( LOG_DEBUG , "Mpat - ¸¹½X %d ¾Þ§@ªº¦a¤è %s ¤£¦s¦b."
+    mudlog( LOG_DEBUG , "Mpat - è™Ÿç¢¼ %d æ“ä½œçš„åœ°æ–¹ %s ä¸å­˜åœ¨."
       , ch->pIndexData->vnum, arg );
     RETURN_NULL();
   }
@@ -753,7 +753,7 @@ FUNCTION( do_mptransfer )
 
   if ( !arg1[0] )
   {
-    mudlog( LOG_DEBUG , "Mptransfer - ¸¹½X %d »yªk¿ù»~."
+    mudlog( LOG_DEBUG , "Mptransfer - è™Ÿç¢¼ %d èªžæ³•éŒ¯èª¤."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
@@ -786,14 +786,14 @@ FUNCTION( do_mptransfer )
   {
     if ( !( location = find_location( ch, arg2 ) ) )
     {
-      mudlog( LOG_DEBUG , "Mptransfer : ¸¹½X %d ¾Þ§@ªº¦a¤è %s ¤£¦s¦b."
+      mudlog( LOG_DEBUG , "Mptransfer : è™Ÿç¢¼ %d æ“ä½œçš„åœ°æ–¹ %s ä¸å­˜åœ¨."
         , ch->pIndexData->vnum, arg2 );
       RETURN_NULL();
     }
 
     if ( room_is_private( location ) )
     {
-      mudlog( LOG_DEBUG , "Mptransfer : ¸¹½X %d ¾Þ§@ªº¦a¤è¬O¨p¤H¦a¤è %d."
+      mudlog( LOG_DEBUG , "Mptransfer : è™Ÿç¢¼ %d æ“ä½œçš„åœ°æ–¹æ˜¯ç§äººåœ°æ–¹ %d."
         , ch->pIndexData->vnum, location->vnum );
       RETURN_NULL();
     }
@@ -801,14 +801,14 @@ FUNCTION( do_mptransfer )
 
   if ( !( victim = get_char_world( ch, arg1 ) ) )
   {
-    mudlog( LOG_DEBUG , "Mptransfer : ¸¹½X %d §ä¤£¨ì¤H %s."
+    mudlog( LOG_DEBUG , "Mptransfer : è™Ÿç¢¼ %d æ‰¾ä¸åˆ°äºº %s."
       , ch->pIndexData->vnum , arg1 );
     RETURN_NULL();
   }
 
   if ( !victim->in_room )
   {
-    mudlog( LOG_DEBUG , "Mptransfer : ¸¹½X %d ªº¹ï¶H %s ¦b Limbo."
+    mudlog( LOG_DEBUG , "Mptransfer : è™Ÿç¢¼ %d çš„å°è±¡ %s åœ¨ Limbo."
       , ch->pIndexData->vnum, victim->name );
     RETURN_NULL();
   }
@@ -834,13 +834,13 @@ FUNCTION( do_mpforce )
 
   if ( !arg[0] || !argument[0] )
   {
-    mudlog( LOG_DEBUG , "Mpforce: ¸¹½X %d »yªk¿ù»~.", ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG , "Mpforce: è™Ÿç¢¼ %d èªžæ³•éŒ¯èª¤.", ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
   if ( !str_cmp( arg, "all" ) )
   {
-    /* ¨ú±o¦³®Ä¤Hª« */
+    /* å–å¾—æœ‰æ•ˆäººç‰© */
     for ( vch = char_list; vch; vch = vch_next )
     {
       vch_next = vch->next;
@@ -859,14 +859,14 @@ FUNCTION( do_mpforce )
   {
     if ( !( victim = get_char_room( ch, arg ) ) )
     {
-      mudlog( LOG_DEBUG , "Mpforce : ¸¹½X %d §ä¤£¨ì¹ï¶H %s."
+      mudlog( LOG_DEBUG , "Mpforce : è™Ÿç¢¼ %d æ‰¾ä¸åˆ°å°è±¡ %s."
         , ch->pIndexData->vnum, arg );
       RETURN_NULL();
     }
 
     if ( victim == ch )
     {
-      mudlog( LOG_DEBUG , "Mpforce : ¸¹½X %d ©R¥O¦Û¤v."
+      mudlog( LOG_DEBUG , "Mpforce : è™Ÿç¢¼ %d å‘½ä»¤è‡ªå·±."
         , ch->pIndexData->vnum );
       RETURN_NULL();
     }
@@ -890,7 +890,7 @@ FUNCTION( do_mpadd )
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "do_mpadd: ¸¹½X %d ©Ð¶¡¨Ó·½¦³»~.", ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG, "do_mpadd: è™Ÿç¢¼ %d æˆ¿é–“ä¾†æºæœ‰èª¤.", ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
@@ -900,7 +900,7 @@ FUNCTION( do_mpadd )
 
   if ( !arg1[0] || !arg2[0] || !arg3[0] )
   {
-    mudlog( LOG_DEBUG , "do_mpadd: ¸¹½X %d »yªk¿ù»~.", ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG , "do_mpadd: è™Ÿç¢¼ %d èªžæ³•éŒ¯èª¤.", ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
@@ -924,14 +924,14 @@ FUNCTION( do_mpadd )
   else if ( !str_cmp( arg2, "move"       ) ) location = LOC_MOVE;
   else
   {
-    mudlog( LOG_DEBUG , "do_mpadd: ¸¹½X %d °Ñ¼Æ 2 (%s) ¿ù»~."
+    mudlog( LOG_DEBUG , "do_mpadd: è™Ÿç¢¼ %d åƒæ•¸ 2 (%s) éŒ¯èª¤."
       , ch->pIndexData->vnum, arg2 );
     RETURN_NULL();
   }
 
   if ( !is_number( arg3 ) )
   {
-    mudlog( LOG_DEBUG , "do_mpadd: ¸¹½X %d °Ñ¼Æ3 ¿ù»~.", ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG , "do_mpadd: è™Ÿç¢¼ %d åƒæ•¸3 éŒ¯èª¤.", ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
@@ -939,21 +939,21 @@ FUNCTION( do_mpadd )
 
   if ( !( victim = get_char_room( ch, arg1 ) ) )
   {
-    mudlog( LOG_DEBUG, "do_mpadd: ©Çª«¸¹½X %d §ä¤£¨ì¤H¦W %s."
+    mudlog( LOG_DEBUG, "do_mpadd: æ€ªç‰©è™Ÿç¢¼ %d æ‰¾ä¸åˆ°äººå %s."
       , ch->pIndexData->vnum, arg1 );
     RETURN_NULL();
   }
 
   if ( IS_NPC( victim ) )
   {
-    mudlog( LOG_DEBUG, "do_mpadd: %d ¹ï¶H¬O«Dª±®a.", ch->pIndexData->vnum );
+    mudlog( LOG_DEBUG, "do_mpadd: %d å°è±¡æ˜¯éžçŽ©å®¶.", ch->pIndexData->vnum );
     RETURN_NULL();
   }
 
   switch( location )
   {
   default:
-    mudlog( LOG_DEBUG , "do_mpadd: ¸¹½X %d °Ñ¼Æ 2 (%d) ¿ù»~."
+    mudlog( LOG_DEBUG , "do_mpadd: è™Ÿç¢¼ %d åƒæ•¸ 2 (%d) éŒ¯èª¤."
       , ch->pIndexData->vnum, location );
 
     RETURN_NULL();
@@ -1058,7 +1058,7 @@ FUNCTION( do_mpclean )
 
   if ( !arg1[0] )
   {
-    mudlog( LOG_DEBUG , "do_mpclean: ¸¹½X %d ¯Ê¥F°Ñ¼Æ¤@."
+    mudlog( LOG_DEBUG , "do_mpclean: è™Ÿç¢¼ %d ç¼ºä¹åƒæ•¸ä¸€."
       , ch->pIndexData->vnum );
     RETURN_NULL();
   }
@@ -1080,7 +1080,7 @@ FUNCTION( do_mpclean )
     }
 
     if ( bExtract == FALSE )
-      mudlog( LOG_DEBUG , "do_mpclean: ©Çª«¸¹½X %d ¨S¦³®ø±¼¥ô¦óª÷¿ú."
+      mudlog( LOG_DEBUG , "do_mpclean: æ€ªç‰©è™Ÿç¢¼ %d æ²’æœ‰æ¶ˆæŽ‰ä»»ä½•é‡‘éŒ¢."
       , ch->pIndexData->vnum, arg2 );
 
     RETURN_NULL();
@@ -1088,7 +1088,7 @@ FUNCTION( do_mpclean )
 
   else if ( !str_cmp( arg1, "obj" ) )
   {
-    /* ¨S¦³°Ñ¼Æ´N¬O¥þ³¡¾P·´ */
+    /* æ²’æœ‰åƒæ•¸å°±æ˜¯å…¨éƒ¨éŠ·æ¯€ */
     if ( arg2[0] == '\x0' )
     {
       for ( bExtract = FALSE, pObj = ch->carrying; pObj; pObj = zObj )
@@ -1104,7 +1104,7 @@ FUNCTION( do_mpclean )
       }
 
       if ( bExtract == FALSE )
-        mudlog( LOG_DEBUG , "do_mpclean: ©Çª«¸¹½X %d ¨S¦³®ø±¼¥ô¦óª««~."
+        mudlog( LOG_DEBUG , "do_mpclean: æ€ªç‰©è™Ÿç¢¼ %d æ²’æœ‰æ¶ˆæŽ‰ä»»ä½•ç‰©å“."
         , ch->pIndexData->vnum, arg2 );
 
       RETURN_NULL();
@@ -1120,7 +1120,7 @@ FUNCTION( do_mpclean )
       }
     }
 
-    mudlog( LOG_DEBUG , "do_mpclean: ¸¹½X %d °Ñ¼Æ(2) %s ¿ù»~."
+    mudlog( LOG_DEBUG , "do_mpclean: è™Ÿç¢¼ %d åƒæ•¸(2) %s éŒ¯èª¤."
       , ch->pIndexData->vnum, arg2 );
 
     RETURN_NULL();
@@ -1128,7 +1128,7 @@ FUNCTION( do_mpclean )
 
   else
   {
-    mudlog( LOG_DEBUG , "do_mpclean: ¸¹½X %d °Ñ¼Æ(1) %s ¿ù»~."
+    mudlog( LOG_DEBUG , "do_mpclean: è™Ÿç¢¼ %d åƒæ•¸(1) %s éŒ¯èª¤."
       , ch->pIndexData->vnum, arg1 );
 
     RETURN_NULL();

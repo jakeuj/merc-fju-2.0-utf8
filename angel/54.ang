@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���F�קK�Y�Ǫ��a�Q�� bug �ӽƻs�˳ơM�o�̨C�Ӹ˳Ƴ��|���@�ӿW�@�L�G��
-�Ǹ�([1;32mserial[0m)�M�����Τ@�o�����s���C�A�i�H�Q��([1;32mserial[0m) �ӹ�ݦۤv���~��
-�Ǹ��C�Ǹ��i�H�F�ܡS�i�H��ֳz([1;32mlotto[0m)�����~�M�C�ѳ��|�}�X���P�����X�M
-��F�i�O���K�����P��C
+為了避免某些玩家利用 bug 來複製裝備﹐這裡每個裝備都會有一個獨一無二的
+序號([1;32mserial[0m)﹐類似統一發票的編號。你可以利用([1;32mserial[0m) 來察看自己物品的
+序號。序號可以幹嗎﹖可以對樂透([1;32mlotto[0m)的獎品﹐每天都會開出不同的號碼﹐
+對了可是有免死金牌喔。
 
-�Ьd�ߡRserial�Blotto
+請查詢﹕serial、lotto
 ~
 End

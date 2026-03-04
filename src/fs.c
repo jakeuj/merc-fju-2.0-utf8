@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -76,7 +76,7 @@ bool set_workpath( CHAR_DATA * ch, const char * name, int style )
 
   if ( !ch || !ch->desc )
   {
-    mudlog( LOG_DEBUG, "set_workpath: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_workpath: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -100,7 +100,7 @@ bool set_workpath( CHAR_DATA * ch, const char * name, int style )
 
   if ( !send_to_path( ch, buf, style ) ) RETURN( FALSE );
 
-  /* ¬O§_¬°®Ú¥Ø¿ı */
+  /* æ˜¯å¦ç‚ºæ ¹ç›®éŒ„ */
   if ( WorkPathPointer == 0 && !can_access( ch, "", style ) )
   {
     print_no_access( ch, style );
@@ -123,7 +123,7 @@ bool send_to_path( CHAR_DATA * ch, const char * path, int style )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "send_to_path: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "send_to_path: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -131,7 +131,7 @@ bool send_to_path( CHAR_DATA * ch, const char * path, int style )
 
   if ( str_len( path ) >= sizeof( buf ) - 10 )
   {
-    send_to_char( "¸ô®|ªø«×¶W¹L¨t²Î³]©w­È¡C\n\r", ch );
+    send_to_char( "è·¯å¾‘é•·åº¦è¶…éç³»çµ±è¨­å®šå€¼ã€‚\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -147,13 +147,13 @@ bool send_to_path( CHAR_DATA * ch, const char * path, int style )
       if ( WorkPathPointer >= MAX_PATH_DEPTH )
       {
         clear_workpath();
-        send_to_char( "§Aªº¸ô®|¤Ó¦h¼h¤F¡C\n\r", ch );
+        send_to_char( "ä½ çš„è·¯å¾‘å¤ªå¤šå±¤äº†ã€‚\n\r", ch );
         RETURN( FALSE );
       }
 
       if ( !mud_lstat( "", return_path(), &pSt ) )
       {
-        act( "$t¡R §ä¤£¨ì³o­Ó¥Ø¿ı¡C", ch, return_path(), NULL, TO_CHAR );
+        act( "$tï¹• æ‰¾ä¸åˆ°é€™å€‹ç›®éŒ„ã€‚", ch, return_path(), NULL, TO_CHAR );
         clear_workpath();
         RETURN( FALSE );
       }
@@ -170,7 +170,7 @@ bool send_to_path( CHAR_DATA * ch, const char * path, int style )
         if ( WorkPathPointer <= 0 )
         {
           clear_workpath();
-          send_to_char( "¤w¸g¦b®Ú¥Ø¿ı¡MµLªk¦b¦^¨ì¤W¤@¼h¡C\n\r", ch );
+          send_to_char( "å·²ç¶“åœ¨æ ¹ç›®éŒ„ï¹ç„¡æ³•åœ¨å›åˆ°ä¸Šä¸€å±¤ã€‚\n\r", ch );
           RETURN( FALSE );
         }
 
@@ -200,7 +200,7 @@ bool send_to_path( CHAR_DATA * ch, const char * path, int style )
       if ( WorkPathPointer >= MAX_PATH_DEPTH || loop >= MAX_FILE_LENGTH - 1 )
       {
         clear_workpath();
-        send_to_char( "§Aªº¥Ø¿ı©ÎÀÉ®×¦WºÙ¤Óªø¤F¡C\n\r", ch );
+        send_to_char( "ä½ çš„ç›®éŒ„æˆ–æª”æ¡ˆåç¨±å¤ªé•·äº†ã€‚\n\r", ch );
         RETURN( FALSE );
       }
 
@@ -250,7 +250,7 @@ FUNCTION( do_md )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "¹ï¤£°_¡M§A­n«Ø¥ß­ş­Ó¥Ø¿ı©O¡S\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ è¦å»ºç«‹å“ªå€‹ç›®éŒ„å‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -261,13 +261,13 @@ FUNCTION( do_md )
 
   if ( !strcmp( filename, PermFile ) )
   {
-    send_to_char( "³o¬O¨t²Î­«­nÀÉ®×¡M¤£¯à¨Ï¥Î³oºØ¤è¦¡²£¥Í¡C\n\r", ch );
+    send_to_char( "é€™æ˜¯ç³»çµ±é‡è¦æª”æ¡ˆï¹ä¸èƒ½ä½¿ç”¨é€™ç¨®æ–¹å¼ç”¢ç”Ÿã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   if ( mud_lstat( pathname, filename, &pSt ) )
   {
-    act( "$t¡R ¤w¸g¦s¦b¡MµLªk²£¥Í¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹• å·²ç¶“å­˜åœ¨ï¹ç„¡æ³•ç”¢ç”Ÿã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -279,11 +279,11 @@ FUNCTION( do_md )
 
   if ( mkdir( smash_path( buf ), 0770 ) < 0 )
   {
-    act( "$t¡R$T¡R²£¥Í¥Ø¿ı¥¢±Ñ¡C", ch, arg, strerror( errno ), TO_CHAR );
+    act( "$tï¹•$Tï¹•ç”¢ç”Ÿç›®éŒ„å¤±æ•—ã€‚", ch, arg, strerror( errno ), TO_CHAR );
     RETURN_NULL();
   }
 
-  act( "²£¥Í·sªº¥Ø¿ı $t¡C", ch, arg, NULL, TO_CHAR );
+  act( "ç”¢ç”Ÿæ–°çš„ç›®éŒ„ $tã€‚", ch, arg, NULL, TO_CHAR );
 
   if ( ( pFile = FOPEN( temp, "w+" ) ) )
   {
@@ -311,7 +311,7 @@ FUNCTION( do_touch )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "¹ï¤£°_¡M§A­n²£¥Í­ş­ÓÀÉ®×©O¡S\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ è¦ç”¢ç”Ÿå“ªå€‹æª”æ¡ˆå‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -322,13 +322,13 @@ FUNCTION( do_touch )
 
   if ( !strcmp( filename, PermFile ) )
   {
-    send_to_char( "³o¬O¨t²Î­«­nÀÉ®×¡M¤£¯à¨Ï¥Î³oºØ¤è¦¡²£¥Í¡C\n\r", ch );
+    send_to_char( "é€™æ˜¯ç³»çµ±é‡è¦æª”æ¡ˆï¹ä¸èƒ½ä½¿ç”¨é€™ç¨®æ–¹å¼ç”¢ç”Ÿã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   if ( mud_lstat( pathname, filename, &pSt ) )
   {
-    act( "$t¡R¤w¸g¦s¦b¡MµLªk²£¥Í¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•å·²ç¶“å­˜åœ¨ï¹ç„¡æ³•ç”¢ç”Ÿã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -337,11 +337,11 @@ FUNCTION( do_touch )
 
   if ( ( fd = open( smash_path( buf ), O_CREAT, 0660 ) ) < 0 )
   {
-    act( "$t¡R$T¡R²£¥ÍÀÉ®×¥¢±Ñ¡C", ch, arg, strerror( errno ), TO_CHAR );
+    act( "$tï¹•$Tï¹•ç”¢ç”Ÿæª”æ¡ˆå¤±æ•—ã€‚", ch, arg, strerror( errno ), TO_CHAR );
     RETURN_NULL();
   }
 
-  act( "²£¥Í·sªºÀÉ®× $t¡C", ch, arg, NULL, TO_CHAR );
+  act( "ç”¢ç”Ÿæ–°çš„æª”æ¡ˆ $tã€‚", ch, arg, NULL, TO_CHAR );
   close( fd );
   RETURN_NULL();
 }
@@ -367,7 +367,7 @@ FUNCTION( do_rm )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "¹ï¤£°_¡M§A­n§R°£­ş­ÓÀÉ®×©O¡S\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ è¦åˆªé™¤å“ªå€‹æª”æ¡ˆå‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -379,7 +379,7 @@ FUNCTION( do_rm )
 
   if ( chdir( dirname ) != 0 )
   {
-    send_to_char( "µLªk¤Á´«¸ô®|¡C\n\r", ch );
+    send_to_char( "ç„¡æ³•åˆ‡æ›è·¯å¾‘ã€‚\n\r", ch );
     chdir( CurrentDir );
     RETURN_NULL();
   }
@@ -390,7 +390,7 @@ FUNCTION( do_rm )
 
   if ( rc == GLOB_NOSPACE )
   {
-    send_to_char( "°O¾ĞÅé¤£¨¬¡C\n\r", ch );
+    send_to_char( "è¨˜æ†¶é«”ä¸è¶³ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -403,21 +403,21 @@ FUNCTION( do_rm )
     if ( !mud_lstat( pathname, result.gl_pathv[loop], &pSt ) )
     {
       count++;
-      mudlog( LOG_DEBUG, "do_rm: lstat: ¿ù»~(file)." );
+      mudlog( LOG_DEBUG, "do_rm: lstat: éŒ¯èª¤(file)." );
       continue;
     }
 
     if ( S_ISDIR( pSt.st_mode ) )
     {
       count++;
-      act( "$t¡R¬O¤@­Ó¥Ø¿ı¡MµLªk§R°£¡C"
+      act( "$tï¹•æ˜¯ä¸€å€‹ç›®éŒ„ï¹ç„¡æ³•åˆªé™¤ã€‚"
         , ch, result.gl_pathv[loop], NULL, TO_CHAR );
       continue;
     }
 
     if ( !S_ISREG( pSt.st_mode ) )
     {
-      act( "$t¡R¤£¬O¤@­Ó¸ê®ÆÀÉ®×¡C"
+      act( "$tï¹•ä¸æ˜¯ä¸€å€‹è³‡æ–™æª”æ¡ˆã€‚"
         , ch, result.gl_pathv[loop], NULL, TO_CHAR );
       continue;
     }
@@ -428,13 +428,13 @@ FUNCTION( do_rm )
     count++;
     if ( unlink( buf ) != 0 )
     {
-      act( "$t¡R$T¡R§R°£ÀÉ®×¥¢±Ñ¡C", ch, result.gl_pathv[loop]
+      act( "$tï¹•$Tï¹•åˆªé™¤æª”æ¡ˆå¤±æ•—ã€‚", ch, result.gl_pathv[loop]
         , strerror( errno ), TO_CHAR );
     }
 
     else
     {
-      act( "§R°£ÀÉ®× $t¡C", ch, result.gl_pathv[loop], NULL, TO_CHAR );
+      act( "åˆªé™¤æª”æ¡ˆ $tã€‚", ch, result.gl_pathv[loop], NULL, TO_CHAR );
     }
   }
 
@@ -442,8 +442,8 @@ FUNCTION( do_rm )
 
   if ( count <= 0 )
   {
-    if ( arg[0] == '\x0' ) send_to_char( "³o­Ó¥Ø¿ı¬OªÅªº¡C\n\r", ch );
-    else  act( "$t¡R§ä¤£¨ì³o­ÓÀÉ®×©Î¥Ø¿ı¡C", ch, arg, NULL, TO_CHAR );
+    if ( arg[0] == '\x0' ) send_to_char( "é€™å€‹ç›®éŒ„æ˜¯ç©ºçš„ã€‚\n\r", ch );
+    else  act( "$tï¹•æ‰¾ä¸åˆ°é€™å€‹æª”æ¡ˆæˆ–ç›®éŒ„ã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -468,7 +468,7 @@ FUNCTION( do_rd )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "¹ï¤£°_¡M§A­n§R°£­ş­Ó¥Ø¿ı©O¡S\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ è¦åˆªé™¤å“ªå€‹ç›®éŒ„å‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -479,13 +479,13 @@ FUNCTION( do_rd )
 
   if ( !mud_lstat( "", pathname, &pSt ) )
   {
-    act( "$t¡R¨S¦³¨º­ÓÀÉ®×©Î¬O¥Ø¿ı¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•æ²’æœ‰é‚£å€‹æª”æ¡ˆæˆ–æ˜¯ç›®éŒ„ã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !S_ISDIR( pSt.st_mode ) )
   {
-    act( "$t¡R¤£¬O¤@­Ó¥Ø¿ı¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•ä¸æ˜¯ä¸€å€‹ç›®éŒ„ã€‚", ch, arg, NULL, TO_CHAR );
   }
 
   else
@@ -501,7 +501,7 @@ FUNCTION( do_rd )
           || !strcmp( next->d_name, PermFile ) )
           continue;
 
-        act( "$t¡R¥Ø¿ı¤£¬OªÅªº¡C", ch, arg, NULL, TO_CHAR );
+        act( "$tï¹•ç›®éŒ„ä¸æ˜¯ç©ºçš„ã€‚", ch, arg, NULL, TO_CHAR );
         RETURN_NULL();
       }
 
@@ -509,7 +509,7 @@ FUNCTION( do_rd )
     }
     else
     {
-      act( "$t¡R¶}±Ò¥Ø¿ı¦Cªí¿ù»~¡C", ch, arg, NULL, TO_CHAR );
+      act( "$tï¹•é–‹å•Ÿç›®éŒ„åˆ—è¡¨éŒ¯èª¤ã€‚", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -520,17 +520,17 @@ FUNCTION( do_rd )
 
     if ( unlink( temp ) != 0 )
     {
-      act( "$t¡R§R°£¥Ø¿ı¤º¨t²ÎÀÉ¿ù»~¡C", ch, arg, NULL, TO_CHAR );
+      act( "$tï¹•åˆªé™¤ç›®éŒ„å…§ç³»çµ±æª”éŒ¯èª¤ã€‚", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( rmdir( buf ) < 0 )
     {
-      act( "$t¡R$T¡R§R°£¥Ø¿ı¥¢±Ñ¡C", ch, arg, strerror( errno ), TO_CHAR );
+      act( "$tï¹•$Tï¹•åˆªé™¤ç›®éŒ„å¤±æ•—ã€‚", ch, arg, strerror( errno ), TO_CHAR );
     }
     else
     {
-      act( "§R°£¥Ø¿ı $t¡C", ch, arg, NULL, TO_CHAR );
+      act( "åˆªé™¤ç›®éŒ„ $tã€‚", ch, arg, NULL, TO_CHAR );
     }
   }
 
@@ -557,7 +557,7 @@ FUNCTION( do_cp )
 
   if ( arg1[0] == '\x0' || arg2[0] == '\x0' )
   {
-    send_to_char( "§A­n«ş¨©­ş­ÓÀÉ®×©O¡S\n\r", ch );
+    send_to_char( "ä½ è¦æ‹·è²å“ªå€‹æª”æ¡ˆå‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -568,19 +568,19 @@ FUNCTION( do_cp )
 
   if ( !mud_lstat( pathname, filename, &pSt ) )
   {
-    act( "$t¡R¨S¦³³o­ÓÀÉ®×©Î¥Ø¿ı¡C", ch, arg1, NULL, TO_CHAR );
+    act( "$tï¹•æ²’æœ‰é€™å€‹æª”æ¡ˆæˆ–ç›®éŒ„ã€‚", ch, arg1, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( S_ISDIR( pSt.st_mode ) )
   {
-    act( "$t¡R¬O¤@­Ó¥Ø¿ı¡MµLªk¶i¦æ«ş¨©¡C", ch, arg1, NULL, TO_CHAR );
+    act( "$tï¹•æ˜¯ä¸€å€‹ç›®éŒ„ï¹ç„¡æ³•é€²è¡Œæ‹·è²ã€‚", ch, arg1, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   else if ( !S_ISREG( pSt.st_mode ) )
   {
-    act( "$t¡R¤£¬O¤@­ÓÀÉ®×¡MµLªk¶i¦æ«ş¨©¡C", ch, arg1, NULL, TO_CHAR );
+    act( "$tï¹•ä¸æ˜¯ä¸€å€‹æª”æ¡ˆï¹ç„¡æ³•é€²è¡Œæ‹·è²ã€‚", ch, arg1, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -594,13 +594,13 @@ FUNCTION( do_cp )
 
   if ( !strcmp( filename, PermFile ) )
   {
-    send_to_char( "³o¬O¨t²Î­«­nÀÉ®×¡M¤£¯à¹ï¦¹°µ¥ô¦ó°Ê§@¡C\n\r", ch );
+    send_to_char( "é€™æ˜¯ç³»çµ±é‡è¦æª”æ¡ˆï¹ä¸èƒ½å°æ­¤åšä»»ä½•å‹•ä½œã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   if ( mud_lstat( pathname, filename, &pSt ) )
   {
-    act( "$t¡RÀÉ®×©Î¬O¥Ø¿ı¤w¸g¦s¦b¡MµLªkÂĞ¼g¡T", ch, arg2, NULL, TO_CHAR );
+    act( "$tï¹•æª”æ¡ˆæˆ–æ˜¯ç›®éŒ„å·²ç¶“å­˜åœ¨ï¹ç„¡æ³•è¦†å¯«ï¹—", ch, arg2, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -616,12 +616,12 @@ FUNCTION( do_cp )
 
       fclose( fp_target );
 
-      act( "«ş³ÆÀÉ®× $t ¦Ü $T¡C", ch, arg1, arg2, TO_CHAR );
+      act( "æ‹·å‚™æª”æ¡ˆ $t è‡³ $Tã€‚", ch, arg1, arg2, TO_CHAR );
     }
 
     else
     {
-      act( "$t¡RµLªk¶}±Ò¥ØªºÀÉ®×¡C", ch, arg2, NULL, TO_CHAR );
+      act( "$tï¹•ç„¡æ³•é–‹å•Ÿç›®çš„æª”æ¡ˆã€‚", ch, arg2, NULL, TO_CHAR );
     }
 
     fclose( fp_source );
@@ -629,7 +629,7 @@ FUNCTION( do_cp )
 
   else
   {
-    act( "$t¡RµLªk¶}±Ò¨Ó·½ÀÉ®×¡C", ch, arg1, NULL, TO_CHAR );
+    act( "$tï¹•ç„¡æ³•é–‹å•Ÿä¾†æºæª”æ¡ˆã€‚", ch, arg1, NULL, TO_CHAR );
   }
 
   RETURN_NULL();
@@ -658,12 +658,12 @@ FUNCTION( do_pwd )
   path = ch->desc->path;
 
   clear_buffer();
-  send_to_buffer( "§A¥Ø«eªº¥Ø¿ı¬° %s%s/\n\r"
+  send_to_buffer( "ä½ ç›®å‰çš„ç›®éŒ„ç‚º %s%s/\n\r"
     , ( path && *path ) ? "/" : "" , path );
 
   if ( !mud_lstat( path, PermFile, &pSt ) )
   {
-    send_to_buffer( "³o­Ó¥Ø¿ı¨S¦³³]©wÀÉ¡M©Ò¦³¤H³£¥i¥HÅª¨ú¡M¦ı¤£¯à¼g¤J¡T\n\r" );
+    send_to_buffer( "é€™å€‹ç›®éŒ„æ²’æœ‰è¨­å®šæª”ï¹æ‰€æœ‰äººéƒ½å¯ä»¥è®€å–ï¹ä½†ä¸èƒ½å¯«å…¥ï¹—\n\r" );
   }
 
   else
@@ -672,7 +672,7 @@ FUNCTION( do_pwd )
 
     if ( ( fd = open( filename, O_RDONLY ) ) < 0 )
     {
-      send_to_buffer( "¶}±Ò³]©wÀÉ¿ù»~¡M©Ò¦³¤H³£¥i¥HÅª¨ú¡M¦ı¤£¯à¼g¤J¡T\n\r" );
+      send_to_buffer( "é–‹å•Ÿè¨­å®šæª”éŒ¯èª¤ï¹æ‰€æœ‰äººéƒ½å¯ä»¥è®€å–ï¹ä½†ä¸èƒ½å¯«å…¥ï¹—\n\r" );
     }
 
     else
@@ -681,8 +681,8 @@ FUNCTION( do_pwd )
       if ( region == ( caddr_t ) -1 )
       {
         close( fd );
-        send_to_buffer( "Åª¨ú¦¹¥Ø¿ı³]©wÀÉ¿ù»~¡M©Ò¦³¤H³£¥i¥HÅª¨ú¡M"
-          "¦ı¤£¯à¼g¤J¡T\n\r" );
+        send_to_buffer( "è®€å–æ­¤ç›®éŒ„è¨­å®šæª”éŒ¯èª¤ï¹æ‰€æœ‰äººéƒ½å¯ä»¥è®€å–ï¹"
+          "ä½†ä¸èƒ½å¯«å…¥ï¹—\n\r" );
       }
 
       else
@@ -715,14 +715,14 @@ FUNCTION( do_pwd )
 
                 count = 0;
                 empty = FALSE;
-                send_to_buffer( "¥H¤Uªº¤H³£µLªk¶i¦æÅª¨ú°Ê§@¡T\n\r" );
+                send_to_buffer( "ä»¥ä¸‹çš„äººéƒ½ç„¡æ³•é€²è¡Œè®€å–å‹•ä½œï¹—\n\r" );
                 continue;
 
               case 'B':
 
                 count = 0;
                 empty = FALSE;
-                send_to_buffer( "¥H¤Uªº¤H³£µLªk¶i¦æ¼g¤J°Ê§@¡T\n\r" );
+                send_to_buffer( "ä»¥ä¸‹çš„äººéƒ½ç„¡æ³•é€²è¡Œå¯«å…¥å‹•ä½œï¹—\n\r" );
                 continue;
 
               case 'R':
@@ -750,13 +750,13 @@ FUNCTION( do_pwd )
                 case STYLE_READ:
 
                   empty = FALSE;
-                  send_to_buffer( "µ¥¯Å %d ¥H¤W¥i¥H¶i¦æÅª¨ú¡T\n\r", level );
+                  send_to_buffer( "ç­‰ç´š %d ä»¥ä¸Šå¯ä»¥é€²è¡Œè®€å–ï¹—\n\r", level );
                   break;
 
                 case STYLE_WRITE:
 
                   empty = FALSE;
-                  send_to_buffer( "µ¥¯Å %d ¥H¤W¥i¥H¶i¦æ¼g¤J¡T\n\r", level );
+                  send_to_buffer( "ç­‰ç´š %d ä»¥ä¸Šå¯ä»¥é€²è¡Œå¯«å…¥ï¹—\n\r", level );
                   break;
                 }
               }
@@ -768,13 +768,13 @@ FUNCTION( do_pwd )
                 case STYLE_READ:
 
                   empty = FALSE;
-                  send_to_buffer( "¦W¦r¬° %s ¥i¥H¶i¦æÅª¨ú¡C\n\r", aString );
+                  send_to_buffer( "åå­—ç‚º %s å¯ä»¥é€²è¡Œè®€å–ã€‚\n\r", aString );
                   break;
 
                 case STYLE_WRITE:
 
                   empty = FALSE;
-                  send_to_buffer( "¦W¦r¬° %s ¥i¥H¶i¦æ¼g¤J¡C\n\r", aString );
+                  send_to_buffer( "åå­—ç‚º %s å¯ä»¥é€²è¡Œå¯«å…¥ã€‚\n\r", aString );
                   break;
                 }
               }
@@ -790,8 +790,8 @@ FUNCTION( do_pwd )
           case '\xFF':
 
             empty = FALSE;
-            send_to_buffer( "³]©wÀÉ¤º®e¿ù»~¡M©Ò¦³¤H³£¥i¥HÅª¨ú¡M"
-              "¦ı¤£¯à¼g¤J¡C\n\r" );
+            send_to_buffer( "è¨­å®šæª”å…§å®¹éŒ¯èª¤ï¹æ‰€æœ‰äººéƒ½å¯ä»¥è®€å–ï¹"
+              "ä½†ä¸èƒ½å¯«å…¥ã€‚\n\r" );
             break;
           }
         }
@@ -799,8 +799,8 @@ FUNCTION( do_pwd )
         munmap( region, pSt.st_size );
 
         if ( empty )
-          send_to_buffer( "¦¹¥Ø¿ı³]©wÀÉ¨S¦³¤º®e¡M©Ò¦³¤H³£¤£¯à"
-            "Åª¨ú¤Î¼g¤J¡T\n\r" );
+          send_to_buffer( "æ­¤ç›®éŒ„è¨­å®šæª”æ²’æœ‰å…§å®¹ï¹æ‰€æœ‰äººéƒ½ä¸èƒ½"
+            "è®€å–åŠå¯«å…¥ï¹—\n\r" );
       }
 
       close( fd );
@@ -838,13 +838,13 @@ FUNCTION( do_cd )
 
   if ( !mud_lstat( "", pathname, &pSt ) )
   {
-    act( "$t¡R§ä¤£¨ì³o­Ó¥Ø¿ı¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•æ‰¾ä¸åˆ°é€™å€‹ç›®éŒ„ã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !S_ISDIR( pSt.st_mode ) )
   {
-    act( "$t¡R¤£¬O¤@­Ó¥Ø¿ı¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•ä¸æ˜¯ä¸€å€‹ç›®éŒ„ã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -880,7 +880,7 @@ FUNCTION( do_cat )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "§A­nÆ[¬İ­ş­ÓÀÉ®×©O¡S\n\r", ch );
+    send_to_char( "ä½ è¦è§€çœ‹å“ªå€‹æª”æ¡ˆå‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -890,13 +890,13 @@ FUNCTION( do_cat )
 
     if ( arg1[0] == '\x0' || !is_number( arg1 ) )
     {
-      send_to_char( "§A­n±q²Ä´X¦æ¶}©lÆ[¬İ¡S\n\r", ch );
+      send_to_char( "ä½ è¦å¾ç¬¬å¹¾è¡Œé–‹å§‹è§€çœ‹ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( iLine = atoi( arg1 ) ) <= 0 )
     {
-      send_to_char( "§A¶}©lªº¦æ¼Æ¤£¦Xªk¡C\n\r", ch );
+      send_to_char( "ä½ é–‹å§‹çš„è¡Œæ•¸ä¸åˆæ³•ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -905,13 +905,13 @@ FUNCTION( do_cat )
       argument = one_argument( argument, arg2 );
       if ( arg2[0] == '\x0' || !is_number( arg2 ) )
       {
-        send_to_char( "§A¥´ºâ­n¬İ´X¦æ©O¡S\n\r", ch );
+        send_to_char( "ä½ æ‰“ç®—è¦çœ‹å¹¾è¡Œå‘¢ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
       if ( ( LineCount = atoi( arg2 ) ) <= 0 )
       {
-        send_to_char( "§Aªº¦æ¼Æ¤£¦Xªk¡C\n\r", ch );
+        send_to_char( "ä½ çš„è¡Œæ•¸ä¸åˆæ³•ã€‚\n\r", ch );
         RETURN_NULL();
       }
     }
@@ -924,25 +924,25 @@ FUNCTION( do_cat )
 
   if ( !strcmp( filename, PermFile ) )
   {
-    send_to_char( "³o¬O¨t²Î­«­nÀÉ®×¡M¤£¯à¨Ï¥Î³oºØ¤è¦¡Æ[¬İ¡C\n\r", ch );
+    send_to_char( "é€™æ˜¯ç³»çµ±é‡è¦æª”æ¡ˆï¹ä¸èƒ½ä½¿ç”¨é€™ç¨®æ–¹å¼è§€çœ‹ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !mud_lstat( pathname, filename, &pSt ) )
   {
-    act( "$t¡R¨S¦³³o­ÓÀÉ®×©Î¥Ø¿ı¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•æ²’æœ‰é€™å€‹æª”æ¡ˆæˆ–ç›®éŒ„ã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !S_ISREG( pSt.st_mode ) )
   {
-    act( "$t¡R¤£¬O¤@­ÓÀÉ®×¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•ä¸æ˜¯ä¸€å€‹æª”æ¡ˆã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( pSt.st_size <= 0 )
   {
-    act( "$t¡RÀÉ®×¬OªÅªº¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•æª”æ¡ˆæ˜¯ç©ºçš„ã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -951,7 +951,7 @@ FUNCTION( do_cat )
 
   if ( ( fd = open( smash_path( buf ), O_RDONLY ) ) < 0 )
   {
-    act( "$t¡RµLªk¶}±ÒÀÉ®×¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•ç„¡æ³•é–‹å•Ÿæª”æ¡ˆã€‚", ch, arg, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -959,7 +959,7 @@ FUNCTION( do_cat )
 
   if ( region == ( caddr_t ) -1 )
   {
-    act( "$t¡RµLªkÀÉ®×¹ïÀ³°O¾ĞÅé¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•ç„¡æ³•æª”æ¡ˆå°æ‡‰è¨˜æ†¶é«”ã€‚", ch, arg, NULL, TO_CHAR );
     close( fd );
     RETURN_NULL();
   }
@@ -971,7 +971,7 @@ FUNCTION( do_cat )
   {
     if ( count >= sizeof( buf ) - 50 )
     {
-      const char * warning = "\n\r\n\r----ÀÉ®×¤Ó¤j-----\n\r";
+      const char * warning = "\n\r\n\r----æª”æ¡ˆå¤ªå¤§-----\n\r";
       buf[count] = '\x0';
       str_cat( buf, warning );
       count += str_len( warning );
@@ -1010,7 +1010,7 @@ FUNCTION( do_cat )
 
   if ( count == 0 )
   {
-    send_to_char( "¦b§A­­©wªº½d³ò¤º¡M¨S¦³¥ô¦ó¸ê®Æ¡T\n\r", ch );
+    send_to_char( "åœ¨ä½ é™å®šçš„ç¯„åœå…§ï¹æ²’æœ‰ä»»ä½•è³‡æ–™ï¹—\n\r", ch );
   }
 
   else if ( regular )
@@ -1023,7 +1023,7 @@ FUNCTION( do_cat )
 
   else
   {
-    act( "$t¡R¤£¬O¤@¯ë¤å¦rÀÉ®×¡C", ch, arg, NULL, TO_CHAR );
+    act( "$tï¹•ä¸æ˜¯ä¸€èˆ¬æ–‡å­—æª”æ¡ˆã€‚", ch, arg, NULL, TO_CHAR );
   }
 
   close( fd );
@@ -1061,7 +1061,7 @@ FUNCTION( do_grep )
 
   if ( arg1[0] == '\x0' || arg2[0] == '\x0' )
   {
-    send_to_char( "§A­n±q¨º­ÓÀÉ®×§ä´M¤°»ò¦r¦ê¡S\n\r", ch );
+    send_to_char( "ä½ è¦å¾é‚£å€‹æª”æ¡ˆæ‰¾å°‹ä»€éº¼å­—ä¸²ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1076,7 +1076,7 @@ FUNCTION( do_grep )
 
   if ( chdir( dirname ) != 0 )
   {
-    send_to_char( "µLªk¤Á´«¸ô®|¡C\n\r", ch );
+    send_to_char( "ç„¡æ³•åˆ‡æ›è·¯å¾‘ã€‚\n\r", ch );
     chdir( CurrentDir );
     RETURN_NULL();
   }
@@ -1087,7 +1087,7 @@ FUNCTION( do_grep )
 
   if ( rc == GLOB_NOSPACE )
   {
-    send_to_char( "°O¾ĞÅé¤£¨¬¡C\n\r", ch );
+    send_to_char( "è¨˜æ†¶é«”ä¸è¶³ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1100,11 +1100,11 @@ FUNCTION( do_grep )
   {
     if ( arg2[0] == '\x0' )
     {
-      send_to_char( "³o­Ó¥Ø¿ı¬OªÅªº¡C\n\r", ch );
+      send_to_char( "é€™å€‹ç›®éŒ„æ˜¯ç©ºçš„ã€‚\n\r", ch );
     }
     else
     {
-      act( "$t¡R§ä¤£¨ì³o­ÓÀÉ®×©Î¥Ø¿ı¡C", ch, arg2, NULL, TO_CHAR );
+      act( "$tï¹•æ‰¾ä¸åˆ°é€™å€‹æª”æ¡ˆæˆ–ç›®éŒ„ã€‚", ch, arg2, NULL, TO_CHAR );
     }
 
     RETURN_NULL();
@@ -1115,19 +1115,19 @@ FUNCTION( do_grep )
   {
     if ( !mud_lstat( pathname, pString[loop], &pSt ) )
     {
-      mudlog( LOG_DEBUG, "do_grep: lstat: ¿ù»~(file)." );
+      mudlog( LOG_DEBUG, "do_grep: lstat: éŒ¯èª¤(file)." );
       continue;
     }
 
     if ( S_ISDIR( pSt.st_mode ) )
     {
-      send_to_buffer( "%s¡R¬O¤@­Ó¥Ø¿ı¡MµLªk·j´M¡T\n\r", pString[loop] );
+      send_to_buffer( "%sï¹•æ˜¯ä¸€å€‹ç›®éŒ„ï¹ç„¡æ³•æœå°‹ï¹—\n\r", pString[loop] );
       continue;
     }
 
     if ( !S_ISREG( pSt.st_mode ) )
     {
-      send_to_buffer( "%s¡R¤£¬O¤@­ÓÀÉ®×¡T\n\r", pString[loop] );
+      send_to_buffer( "%sï¹•ä¸æ˜¯ä¸€å€‹æª”æ¡ˆï¹—\n\r", pString[loop] );
       continue;
     }
 
@@ -1135,7 +1135,7 @@ FUNCTION( do_grep )
 
     if ( ( fd = open( filename, O_RDONLY ) ) < 0 )
     {
-      send_to_buffer( "%s¡RµLªk¶}±ÒÀÉ®×¡C\n\r", pString[loop] );
+      send_to_buffer( "%sï¹•ç„¡æ³•é–‹å•Ÿæª”æ¡ˆã€‚\n\r", pString[loop] );
       continue;
     }
 
@@ -1143,7 +1143,7 @@ FUNCTION( do_grep )
 
     if ( region == ( caddr_t ) -1 )
     {
-      send_to_buffer( "%s¡RµLªkÀÉ®×¹ïÀ³°O¾ĞÅé¡T\n\r", pString[loop] );
+      send_to_buffer( "%sï¹•ç„¡æ³•æª”æ¡ˆå°æ‡‰è¨˜æ†¶é«”ï¹—\n\r", pString[loop] );
       close( fd );
       continue;
     }
@@ -1165,7 +1165,7 @@ FUNCTION( do_grep )
 
         if ( size > 0 && strstr( cLine, arg1 ) )
         {
-          send_to_buffer( "%s¡R%d¡R%s\n\r", pString[loop], iLine, cLine );
+          send_to_buffer( "%sï¹•%dï¹•%s\n\r", pString[loop], iLine, cLine );
           bFound = TRUE;
         }
 
@@ -1189,7 +1189,7 @@ FUNCTION( do_grep )
     munmap( region, pSt.st_size );
   }
 
-  if ( !bFound ) send_to_buffer( "¨S¦³µo²{¥ô¦ó²Å¦Xªº¸ê®Æ¡C\n\r" );
+  if ( !bFound ) send_to_buffer( "æ²’æœ‰ç™¼ç¾ä»»ä½•ç¬¦åˆçš„è³‡æ–™ã€‚\n\r" );
   print_buffer( ch );
 
   for ( loop = 0; loop < MAX_FILE; loop++ )
@@ -1210,7 +1210,7 @@ FUNCTION( do_whereis )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "¹ï¤£°_¡M§A­n§ä­ş­ÓÀÉ®×©O¡S\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ è¦æ‰¾å“ªå€‹æª”æ¡ˆå‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1245,8 +1245,8 @@ FUNCTION( do_ls )
 
   if ( str_len( home_dir ) + str_len( ch->desc->path ) > sizeof( arg ) - 3 )
   {
-    mudlog( LOG_DEBUG, "do_ls: ¸ô®|¤Óªø." );
-    send_to_char( "¸ô®|ªø«×¶W¹L¨t²Î¤º©w­È¡C\n\r", ch );
+    mudlog( LOG_DEBUG, "do_ls: è·¯å¾‘å¤ªé•·." );
+    send_to_char( "è·¯å¾‘é•·åº¦è¶…éç³»çµ±å…§å®šå€¼ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1260,11 +1260,11 @@ FUNCTION( do_ls )
     switch( UPPER( arg[loop] ) )
     {
     case '\x0':
-      send_to_char( "½Ğ¬d¸ß ls ¥Îªk¡T\n\r", ch );
+      send_to_char( "è«‹æŸ¥è©¢ ls ç”¨æ³•ï¹—\n\r", ch );
       RETURN_NULL();
 
     default:
-      print_to_char( ch, "¿ù»~ªº°Ñ¼Æ %c¡M½Ğ¬d¸ß ls ¥Îªk¡T\n\r", arg[loop] );
+      print_to_char( ch, "éŒ¯èª¤çš„åƒæ•¸ %cï¹è«‹æŸ¥è©¢ ls ç”¨æ³•ï¹—\n\r", arg[loop] );
       RETURN_NULL();
 
     #ifdef __linux__
@@ -1307,7 +1307,7 @@ FUNCTION( do_ls )
 
   if ( chdir( dirname ) != 0 )
   {
-    send_to_char( "µLªk¤Á´«¸ô®|¡T\n\r", ch );
+    send_to_char( "ç„¡æ³•åˆ‡æ›è·¯å¾‘ï¹—\n\r", ch );
     chdir( CurrentDir );
     RETURN_NULL();
   }
@@ -1318,7 +1318,7 @@ FUNCTION( do_ls )
 
   if ( rc == GLOB_NOSPACE )
   {
-    send_to_char( "°O¾ĞÅé¤£¨¬¡C\n\r", ch );
+    send_to_char( "è¨˜æ†¶é«”ä¸è¶³ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -1339,10 +1339,10 @@ FUNCTION( do_ls )
   if ( count <= 0 )
   {
     if ( arg[0] == '\x0' )
-      send_to_char( "³o­Ó¥Ø¿ı¬OªÅªº¡C\n\r", ch );
+      send_to_char( "é€™å€‹ç›®éŒ„æ˜¯ç©ºçš„ã€‚\n\r", ch );
 
     else
-      act( "$t¡R§ä¤£¨ì³o­ÓÀÉ®×©Î¥Ø¿ı¡C", ch, arg, NULL, TO_CHAR );
+      act( "$tï¹•æ‰¾ä¸åˆ°é€™å€‹æª”æ¡ˆæˆ–ç›®éŒ„ã€‚", ch, arg, NULL, TO_CHAR );
 
     RETURN_NULL();
   }
@@ -1354,13 +1354,13 @@ FUNCTION( do_ls )
                        "                                        "
     , 0, NULL, 0 );
 
-  if ( fLong ) send_to_buffer( "Á`¼Æ¡R%d\n\r", count );
+  if ( fLong ) send_to_buffer( "ç¸½æ•¸ï¹•%d\n\r", count );
 
   for ( loop = 0; loop < count; loop++ )
   {
     if ( !mud_lstat( pathname, pString[loop], &pSt ) )
     {
-      mudlog( LOG_DEBUG, "do_ls: lstat: ¿ù»~(file)." );
+      mudlog( LOG_DEBUG, "do_ls: lstat: éŒ¯èª¤(file)." );
       continue;
     }
 
@@ -1459,7 +1459,7 @@ char * file_info( char * path, char * filename, struct stat * pSt, bool fLong )
 
       else
       {
-        send_to_stack( "\e[1;36m%s\e[0m -> ¡S", filename );
+        send_to_stack( "\e[1;36m%s\e[0m -> ï¹–", filename );
       }
 
       break;
@@ -1889,7 +1889,7 @@ void scan_directory( CHAR_DATA * ch, char * path, char * str )
       , ( path && *path == '/' ) ? "" : "/"
       , path, result.gl_pathv[loop] );
 
-    send_to_buffer( "%s¡R%s\n\r", str, filename );
+    send_to_buffer( "%sï¹•%s\n\r", str, filename );
   }
 
   globfree( &result );
@@ -1926,22 +1926,22 @@ void print_no_access( CHAR_DATA * ch, int mode )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "print_no_access: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "print_no_access: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
   switch( mode )
   {
   default:
-    send_to_char( "³o­Ó¥Ø¿ı§A¨S¦³Åv§Q¼g¤J©ÎÅª¨ú¡C\n\r", ch );
+    send_to_char( "é€™å€‹ç›®éŒ„ä½ æ²’æœ‰æ¬Šåˆ©å¯«å…¥æˆ–è®€å–ã€‚\n\r", ch );
     break;
 
   case STYLE_READ:
-    send_to_char( "³o­Ó¥Ø¿ı§A¨S¦³Åv§QÅª¨ú¡C\n\r", ch );
+    send_to_char( "é€™å€‹ç›®éŒ„ä½ æ²’æœ‰æ¬Šåˆ©è®€å–ã€‚\n\r", ch );
     break;
 
   case STYLE_WRITE:
-    send_to_char( "³o­Ó¥Ø¿ı§A¨S¦³Åv§Q¼g¤J¡C\n\r", ch );
+    send_to_char( "é€™å€‹ç›®éŒ„ä½ æ²’æœ‰æ¬Šåˆ©å¯«å…¥ã€‚\n\r", ch );
     break;
   }
 
@@ -1965,7 +1965,7 @@ int glob_file( const char * path, const char * ext, glob_t * result )
 
   if ( rc == GLOB_NOSPACE )
   {
-    mudlog( LOG_DEBUG, "glob_file: °O¾ĞÅé¤£¨¬¡C" );
+    mudlog( LOG_DEBUG, "glob_file: è¨˜æ†¶é«”ä¸è¶³ã€‚" );
     RETURN( -1 );
   }
 

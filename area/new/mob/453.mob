@@ -1,11 +1,11 @@
 Vnum            453
 Name            flee girl~
-ShortDesc       �������R���k��~
+ShortDesc       翩翩飛舞的女孩~
 Description
-�@��~�����Q�h�����k�ġM���b�o���a�y���������_�R�ۡM�L���W��
-�a���K�b�ڤ����R���M�`�`�s��̳�¶�ۥL����@�_���R�M������ı
-���A�ܷQ��L�ǲ߰k�](flee)�ޯ�M�Y�O�n��ڤp�k�l�ǰk�]���ܡM
-����J([1;32mlearn girl flee[0m)�C
+一位年紀約十多歲的女孩﹐正在這塊地悠揚的翩翩起舞著﹐他正獨自
+地陶醉在夢中的舞姿﹐常常新手們圍繞著他身邊一起跳舞﹐不知不覺
+中你很想跟他學習逃跑(flee)技能﹐若是要跟我小女子學逃跑的話﹐
+請鍵入([1;32mlearn girl flee[0m)。
 ~
 Sentinel        Yes
 StayArea        Yes
@@ -38,7 +38,7 @@ Process
 Type            greet_prog
 Chance          30
 Text
-say �ڸ��o�n���n�ݡM�Q���Q��ھǩO�S($2yes$2 / $2no$0)
+say 我跳得好不好看﹐想不想跟我學呢﹖($2yes$2 / $2no$0)
 ~
 End
 
@@ -46,7 +46,7 @@ Process
 Type            speech_prog
 Argument        yes~
 Text
-tell $n �n�K�ڱЧA�p��k�]���ޯ�M����J ($2learn girl flee$0)�C
+tell $n 好…我教你如何逃跑的技能﹐請鍵入 ($2learn girl flee$0)。
 ~
 End
 
@@ -54,9 +54,9 @@ Process
 Type            speech_prog
 Argument        no~
 Text
-tell $n ��K���Q�ǡS�O���O���ڸ��o�����ݧr�S
+tell $n 哼…不想學﹖是不是嫌我跳得太難看呀﹖
  cry
- tell $n �ۭt�H�a�M�ڭn�h�i�D���������M���A�ۭt�ڡC
+ tell $n 欺負人家﹐我要去告訴爸爸媽媽﹐說你欺負我。
 ~
 End
 

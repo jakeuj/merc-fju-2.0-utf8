@@ -1,5 +1,5 @@
 Name            young gun~
-Cname           ���a�j�k~
+Cname           楊家槍法~
 Slot            SLOT_YOUNGGUN
 Msgoff          ~
 Check           check_spear_attack~
@@ -30,19 +30,19 @@ Limit           CLASS_FIGHTER    20 55
 Limit           CLASS_GENERAL    20 95
 Limit           CLASS_BRAVO      20 65
 Help
-���a�j�k:
+楊家槍法:
 
-�۶Ǧ۷��~���ѥO�����a�Ǻj�k�M�j�k�������M�M����Y�ԡM
-��O�j�����̡Cť���N�x�f���O�κj���n��M�����L�|���|
-���a�j�k�C
-(���n�h�áM���~�O���N�ɪ��H�M���o�O mud �S�����򤣥i�H)
+相傳自楊業楊老令公的家傳槍法﹐槍法中正平和﹐氣度嚴謹﹐
+實是槍中王者。聽說將軍呂布是用槍的好手﹐不知他會不會
+楊家槍法。
+(不要懷疑﹐楊業是五代時的人﹐但這是 mud 又有什麼不可以)
 
 ~
 
 #Damage
 Description
-$G$n�⤤$O$G�_�_���M���W���U�M���O$P�u���I�Y�v$G�M�j�W�x�_�@���H���M��V$N
-$Z�C~
+$G$n手中$O$G起起伏伏﹐忽上忽下﹐正是$P「鳳點頭」$G﹐槍鋒泛起一片寒光﹐攻向$N
+$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -52,8 +52,8 @@ End
 
 #Damage
 Description
-$G$n���Τ@�w�M�E�𾮯��M�ϥX�@��$P�u�p�b�b���v$G���κ��^�p�}�M�H$O$G���b�M�X
-$N�@�ӯ}��M�p�q�g�V$N$Z�C~
+$G$n身形一緩﹐聚氣凝神﹐使出一招$P「如箭在弦」$G身形緊繃如弓﹐以$O$G為箭﹐趁
+$N一個破綻﹐如電射向$N$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -63,8 +63,8 @@ End
 
 #Damage
 Description
-$G$n��ӯ}��M�o��$N���G���ڡM�ϥX�@��$P�u�L����v$G�M�˹L�j�`���p��Ӫ��V�V
-$N�ߤf$Z�C~
+$G$n賣個破綻﹐卻於$N疏乎之際﹐使出一招$P「無形鎚」$G﹐倒過槍柄忽如其來的敲向
+$N心口$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -74,8 +74,8 @@ End
 
 #Damage
 Description
-$G$n�u�O��`$O�M²²��檺��X�h�M�@�ۥ��Z��$P�u��d�x�v$G�M�b�A�⤤����
-�p���j��$Z�C~
+$G$n真力灌注$O﹐簡簡單單的橫劃出去﹐一招平凡的$P「橫掃千軍」$G﹐在你手中竟有
+如斯強橫$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -85,7 +85,7 @@ End
 
 #Damage
 Description
-$G$n�j�դ@�ܡM�ϥX�@��$P�u�̰��j�v$G������$N�U�L���h�M�Q����$N�����$Z�C~
+$G$n槍勢一變﹐使出一式$P「絆馬槍」$G偷偷往$N下盤擊去﹐想封鎖$N的行動$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -95,8 +95,8 @@ End
 
 #Damage
 Description
-$G$n�⤤$O�@�̡M�ਭ�N���M$N�_���K�l�M�A�@�O$P�u�^���j�v$G�ѵŤU��X�M$N�o�{
-�ɡM�j�y�w�체�e$Z�C~
+$G$n手中$O一晃﹐轉身就走﹐$N起身便追﹐你一記$P「回馬槍」$G由腋下刺出﹐$N發現
+時﹐槍尖已到眼前$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -106,8 +106,8 @@ End
 
 #Damage
 Description
-$G$n����o�B�M�⤤$O�B�ন��M�ϥX�@�O$P�u�ӷ���v$G�H�O�ͤO�M�@�����@�����V
-$N$Z�C~
+$G$n鬥到酣處﹐手中$O運轉成圓﹐使出一記$P「太極轉」$G以力生力﹐一擊接一擊掃向
+$N$Z。~
 Chance          20
 Value           20
 Parry           0

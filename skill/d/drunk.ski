@@ -1,5 +1,5 @@
 Name            drunk~
-Cname           ¾K®±~
+Cname           é†‰æ‹³~
 Slot            SLOT_DRUNK
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -39,7 +39,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n¤j³Û$P¡u§f¬}»«¡G¾K°s´£³ý¤O¤d¶v¡v$Z¡M$n¤â¦¨´£°sª¬¡M¨â¤â©¹$NªºÂùªÓ¤@®»¡C~
+$nå¤§å–Š$Pã€Œå‘‚æ´žè³“ï¼šé†‰é…’æå£ºåŠ›åƒéˆžã€$Zï¹$næ‰‹æˆæé…’ç‹€ï¹å…©æ‰‹å¾€$Nçš„é›™è‚©ä¸€æ‰ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -48,7 +48,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤j³Û$Y¡uÁú´ð¤l¡G¾àµÃÀ»¯Ý¾K§j¿½¡v$Z¡M$n®»¦í$Nªº¤â¡M©¹¥Lªº¯Ý³¡²r¼²¡C~
+$nå¤§å–Š$Yã€ŒéŸ“æ¹˜å­ï¼šæ“’è…•æ“Šèƒ¸é†‰å¹è•­ã€$Zï¹$næ‰ä½$Nçš„æ‰‹ï¹å¾€ä»–çš„èƒ¸éƒ¨çŒ›æ’žã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -57,7 +57,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤j³Û$G¡u±iªG¦Ñ¡G¾K°s©ßªM¾K³sÀô¡v$Z¡M$n¦¨¾K¨Bª¬¡M·n·nÂ\Â\©¹$N½ð¥h¡C~
+$nå¤§å–Š$Gã€Œå¼µæžœè€ï¼šé†‰é…’æ‹‹æ¯é†‰é€£ç’°ã€$Zï¹$næˆé†‰æ­¥ç‹€ï¹æ–æ–æ“ºæ“ºå¾€$Nè¸¢åŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -66,7 +66,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤j³Û$P¡uÄxªö©M¡G³æ´£·q°sÄd¸y¯}¡v$Z¡M$n¦¨¥b½öª¬¡M¤â©¹$Nªº¸y¨B¤@¦©¡C~
+$nå¤§å–Š$Pã€Œç±ƒé‡‡å’Œï¼šå–®ææ•¬é…’æ””è…°ç ´ã€$Zï¹$næˆåŠèººç‹€ï¹æ‰‹å¾€$Nçš„è…°æ­¥ä¸€æ‰£ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -75,7 +75,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤j³Û$Y¡uÅK©ä§õ¡G±Û¨y½¥¼²¾KÁÙ¯u¡v$Z¡M$n¦¬°_¤@¸}¡M·n·nÂ\Â\¤@¤â«o±N$n§¨¦í¡C~
+$nå¤§å–Š$Yã€Œéµæ‹æŽï¼šæ—‹è‚˜è†æ’žé†‰é‚„çœŸã€$Zï¹$næ”¶èµ·ä¸€è…³ï¹æ–æ–æ“ºæ“ºä¸€æ‰‹å»å°‡$nå¤¾ä½ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -84,7 +84,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤j³Û$G¡u±ä°ê¸¤¡G¥P¤H·q°sÂê³ï¦©¡v$Z¡M$n¤â¦¨«ùªMª¬¡M©¹$Nªº²ä¤l¤@®»¡C~
+$nå¤§å–Š$Gã€Œæ›¹åœ‹èˆ…ï¼šä»™äººæ•¬é…’éŽ–å–‰æ‰£ã€$Zï¹$næ‰‹æˆæŒæ¯ç‹€ï¹å¾€$Nçš„è„–å­ä¸€æ‰ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -93,7 +93,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤j³Û$S¡uº~ÁéÂ÷¡G¾K¨B©êÂ»ºÛ¤ß³»¡v$Z¡M$nÀY¤@¦ù¡M©¹$N¤@¼²¡C~
+$nå¤§å–Š$Sã€Œæ¼¢é¾é›¢ï¼šé†‰æ­¥æŠ±ç½ˆçª©å¿ƒé ‚ã€$Zï¹$né ­ä¸€ä¼¸ï¹å¾€$Nä¸€æ’žã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -102,7 +102,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤j³Û$S¡u¦ó¥P©h¡G¼u¸y·q°s¾KÀú¨B¡v$Z¡M$n¸y¤@Ås¡M¬ðµMÂù¤â©¹$NªºÁy³¡¤@¼u¡C~
+$nå¤§å–Š$Sã€Œä½•ä»™å§‘ï¼šå½ˆè…°æ•¬é…’é†‰ç›ªæ­¥ã€$Zï¹$nè…°ä¸€å½Žï¹çªç„¶é›™æ‰‹å¾€$Nçš„è‡‰éƒ¨ä¸€å½ˆã€‚~
 Chance          10
 Value           20
 Parry           0

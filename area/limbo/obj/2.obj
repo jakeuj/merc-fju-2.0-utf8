@@ -1,9 +1,9 @@
 Vnum            2
 Name            coin~
-ShortDesc       ¶Àª÷~
+ShortDesc       é»ƒé‡‘~
 Description
-¤@¨â¶Àª÷(coin)¡C~
-Unit            ¨â~
+ä¸€å…©é»ƒé‡‘(coin)ã€‚~
+Unit            å…©~
 ItemType        ITEM_MONEY
 Takeable        Yes
 Level           1

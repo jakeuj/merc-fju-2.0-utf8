@@ -1,10 +1,10 @@
 Vnum            530
 Name            blademan armor~
-ShortDesc       ¤MªÌ¤§ñZ~
+ShortDesc       åˆ€è€…ä¹‹é§~
 Description
-ªì¤J¦¿´ò¤§¤M«È³Ì¦h¥Îªº°ò¥»°t³Æ(blademan armor)¡C
+åˆå…¥æ±Ÿæ¹–ä¹‹åˆ€å®¢æœ€å¤šç”¨çš„åŸºæœ¬é…å‚™(blademan armor)ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

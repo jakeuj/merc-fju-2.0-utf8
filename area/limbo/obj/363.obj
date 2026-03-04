@@ -1,9 +1,9 @@
 Vnum            363
 Name            magic missile book~
-ShortDesc       Å]ªk­¸¼u¯µÓD~
+ShortDesc       é­”æ³•é£›å½ˆç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

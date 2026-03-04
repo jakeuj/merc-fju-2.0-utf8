@@ -1,13 +1,13 @@
 Vnum            538
 Name            doctor~
-ShortDesc       �Mħ���j��~
-LongDesc        ���s��̪v�����j��(doctor)�C
+ShortDesc       和藹的大夫~
+LongDesc        幫新手們治療的大夫(doctor)。
 ~
 Description
-�@��~�������Q�h�����j�ҡM�~���ɦ���h�~�M�M���v���@�ǥ֦ת�
-�~�ˤΤM�ζˡM����]�ϧ����ˤf�M�i�H���L�v�����˪̡M���O����
-�Y���̹�L�ӻ��O�S����k���C�{�b�ѤF�M�u�M��������J�T���
-�N�����Ǥl�̪v���F�C
+一位年紀約五十多歲的大夫﹐年輕時行醫多年﹐專門治療一些皮肉的
+外傷及刀割傷﹐善於包紮局部傷口﹐可以輕微治療受傷者﹐但是受傷
+嚴重者對他來說是沒有辦法的。現在老了﹐只專門為剛剛踏入三國時
+代的莘莘學子們治療了。
 ~
 Sentinel        Yes
 NoKill          Yes
@@ -46,7 +46,7 @@ Type            fight_prog
 Chance          100
 Text
 if rand( 30 )
-  say �U�c���j���å�ڡT���A�ݬݯ����g�@�T
+  say 萬惡不赦的傢伙啊﹗讓你看看神的懲罰﹗
   cast 'cast fire'
 endif
 ~
@@ -57,7 +57,7 @@ Type            greet_prog
 Chance          30
 Text
 if ispc($n)
-  tell $n �١T�A�n�T�ݭn����A�ȶܡS
+  tell $n 嗨﹗你好﹗需要什麼服務嗎﹖
 endif
 ~
 End

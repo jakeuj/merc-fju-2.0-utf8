@@ -1,5 +1,5 @@
-¤@¡B ¦pªG¦b showstr_head ¤¤ªº data ¨S show§¹¡M¤S¦³·sªº str ¶i¨Ó...
-     merc22 §Ñ¤F²M°£ÂÂªº buffer...
+ä¸€ã€ å¦‚æžœåœ¨ showstr_head ä¸­çš„ data æ²’ showå®Œï¹åˆæœ‰æ–°çš„ str é€²ä¾†...
+     merc22 å¿˜äº†æ¸…é™¤èˆŠçš„ buffer...
 
 void send_to_char( const char *txt, CHAR_DATA *ch )
 {
@@ -16,7 +16,7 @@ void send_to_char( const char *txt, CHAR_DATA *ch )
 
 }
 
-¤G¡B ¦³¤@¶ô memory ¨S free
+äºŒã€ æœ‰ä¸€å¡Š memory æ²’ free
 void close_socket( DESCRIPTOR_DATA *dclose )
 {
       .
@@ -38,27 +38,27 @@ void close_socket( DESCRIPTOR_DATA *dclose )
     return;
 }
 
-¤T¡B prompt ªº bug...¦³¥|­Ó¦a¤è­n§ï
+ä¸‰ã€ prompt çš„ bug...æœ‰å››å€‹åœ°æ–¹è¦æ”¹
 
-1.¦b void nanny( DESCRIPTOR_DATA *d, char *argument )
-  ¤§¤¤§ï
+1.åœ¨ void nanny( DESCRIPTOR_DATA *d, char *argument )
+  ä¹‹ä¸­æ”¹
      /* ch->prompt = "<%hhp %mm %vmv> "; */
         ch->prompt = str_dup("<%hhp %mm %vmv> ");
 
-2.¦bCHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
-  ¤§¤¤§ï
+2.åœ¨CHAR_DATA *create_mobile( MOB_INDEX_DATA *pMobIndex )
+  ä¹‹ä¸­æ”¹
    /* mob->prompt         = "<%h %m %v>"; */
       mob->prompt         = str_dup("<%h %m %v>");
 
-3.¦b void free_char( CHAR_DATA *ch )
-   ¥[¤J free_string
+3.åœ¨ void free_char( CHAR_DATA *ch )
+   åŠ å…¥ free_string
     .
     .
     free_string( ch->description        );
     free_string( ch->prompt             ); /* add by Corel */
 
-4. ¦bvoid fread_char( CHAR_DATA *ch, FILE *fp )
-   ¤§¤¤..±NÅª prompt ªº³¡¥÷§ï±¼...
+4. åœ¨void fread_char( CHAR_DATA *ch, FILE *fp )
+   ä¹‹ä¸­..å°‡è®€ prompt çš„éƒ¨ä»½æ”¹æŽ‰...
 
    /*  KEY( "Prompt",   ch->prompt,             fread_string( fp ) );*/
             if ( !str_cmp( word , "Prompt" ) )
@@ -69,9 +69,9 @@ void close_socket( DESCRIPTOR_DATA *dclose )
                  break;
             }
 
-¤­¡B
-  ¦bvoid affect_remove( CHAR_DATA *ch, AFFECT_DATA *paf )
-  ¤§¤¤...list ³s¿ù
+äº”ã€
+  åœ¨void affect_remove( CHAR_DATA *ch, AFFECT_DATA *paf )
+  ä¹‹ä¸­...list é€£éŒ¯
 
     paf->next   = affect_free;
   /*  affect_free       = paf->next;*/

@@ -1,11 +1,11 @@
 Vnum            452
-Name            ��V�V�m�� [����]~
+Name            方向訓練室 [中央]~
 Description
-�b�j������ MUD �̭��M��ӥ@�ɬO�Q���Φ��@�Ӥ@�Ӫ��y�ж��z.
-�ӳo�Ǥ@�������a��h�H��V�Ӥ��۳s���M�b�o�ӰV�m�Ṋ̀��A�N
-�|����B���Pı�M�o�̦��@���i�ܵP (sign).
+在大部分的 MUD 裡面﹐整個世界是被分割成一個一個的『房間』.
+而這些一塊塊的地方則以方向來互相連結﹐在這個訓練室裡面你將
+會有初步的感覺﹐這裡有一塊告示牌 (sign).
 
-�s�����J look sign .
+新手請鍵入 look sign .
 
 ~
 SectorType      SECT_CITY
@@ -62,17 +62,17 @@ End
 Keyword         sign~
 Description
 
-�w��A�Ө��V�V�m�ЫǪ���������
-���O east  ���ʨ���V�F��.
-���O west  ���ʨ���V�訫.
-���O south ���ʨ���V�n��.
-���O north ���ʨ���V�_��.
-���O up    ���ʨ���V�W��.
-���O down  ���ʨ���V�U��.
-�A�i�H���O�ϥ� e w n s u d ��²����J�����O.
-��J config �i�H�ݨ�ӤH���@�ǳ]�w
-��J config +autoexit �|�۰���ܥX�f
-��J exit �i�H�o���o�өж����X�f��V
+歡迎你來到方向訓練教室的中央部份
+指令 east  移動角色向東走.
+指令 west  移動角色向西走.
+指令 south 移動角色向南走.
+指令 north 移動角色向北走.
+指令 up    移動角色向上走.
+指令 down  移動角色向下走.
+你可以分別使用 e w n s u d 來簡化鍵入的指令.
+鍵入 config 可以看到個人的一些設定
+鍵入 config +autoexit 會自動顯示出口
+鍵入 exit 可以得知這個房間的出口方向
 
 ~
 

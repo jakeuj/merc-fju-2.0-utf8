@@ -82,76 +82,76 @@ static struct  const_string    lock_status [] =
 
 void show_room_shape( ROOM_INFO * pRoom )
 {
-  print_string( ROOM_X , ROOM_Y    , ROOM_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{" );
-  print_string( ROOM_X , ROOM_Y + 1, ROOM_COL ,"¢xÀÉ®×¦WºÙ:                                                                 ¢x" );
-  print_string( ROOM_X , ROOM_Y + 2, ROOM_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( ROOM_X , ROOM_Y + 3, ROOM_COL ,"¢x©Ğ¶¡¸¹½X: [     ]  ©Ğ¶¡¦WºÙ                                               ¢x" );
-  print_string( ROOM_X , ROOM_Y + 4, ROOM_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( ROOM_X , ROOM_Y + 5, ROOM_COL ,"¢x´y­z                                                                      ¢x" );
-  print_string( ROOM_X , ROOM_Y + 6, ROOM_COL ,"¢x                                                                          ¢x" );
-  print_string( ROOM_X , ROOM_Y + 7, ROOM_COL ,"¢x                                                                          ¢x" );
-  print_string( ROOM_X , ROOM_Y + 8, ROOM_COL ,"¢x                                                                          ¢x" );
-  print_string( ROOM_X , ROOM_Y + 9, ROOM_COL ,"¢x                                                                          ¢x" );
-  print_string( ROOM_X , ROOM_Y +10, ROOM_COL ,"¢x                                                                          ¢x" );
-  print_string( ROOM_X , ROOM_Y +11, ROOM_COL ,"¢x                                                                          ¢x" );
-  print_string( ROOM_X , ROOM_Y +12, ROOM_COL ,"¢x                                                                          ¢x" );
-  print_string( ROOM_X , ROOM_Y +13, ROOM_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( ROOM_X , ROOM_Y +14, ROOM_COL ,"¢x©Ğ¶¡¦a§Î [ ] «Ç¤º  [ ] «°¥«  [ ] ­ì³¥  [ ] ´ËªL  [ ] ¤s¥C  [ ] ¤s°Ï       ¢x" );
-  print_string( ROOM_X , ROOM_Y +15, ROOM_COL ,"¢x         [ ] ¤ô°ì¤£¥i´åªa    [ ] ¤ô°ì¥i¥H´åªa    [ ] ¤ÑªÅ  [ ] ¨Fºz       ¢x" );
-  print_string( ROOM_X , ROOM_Y +16, ROOM_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( ROOM_X , ROOM_Y +17, ROOM_COL ,"¢x©Ğ¶¡ºX¼Ğ [ ] ¶Â·t [ ] ¨S¦³MOB [ ] «Ç¤º [ ] ¨p¤H [ ] ¦w¥ş [ ] ¤£¯à¶Ç°e     ¢x" );
-  print_string( ROOM_X , ROOM_Y +18, ROOM_COL ,"¢x         [ ] ¥Ã©ú [ ] Ãğ§½    [ ] ¿ú²ø                                    ¢x" );
-  print_string( ROOM_X , ROOM_Y +19, ROOM_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( ROOM_X , ROOM_Y +20, ROOM_COL ,"¢x< ½s¿è¥X¤f> < ½s¿èÃB¥~´y­z > < ¦sÀÉ > < ©ñ±ó >                            ¢x" );
-  print_string( ROOM_X , ROOM_Y +21, ROOM_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}" );
+  print_string( ROOM_X , ROOM_Y    , ROOM_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”" );
+  print_string( ROOM_X , ROOM_Y + 1, ROOM_COL ,"â”‚æª”æ¡ˆåç¨±:                                                                 â”‚" );
+  print_string( ROOM_X , ROOM_Y + 2, ROOM_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( ROOM_X , ROOM_Y + 3, ROOM_COL ,"â”‚æˆ¿é–“è™Ÿç¢¼: [     ]  æˆ¿é–“åç¨±                                               â”‚" );
+  print_string( ROOM_X , ROOM_Y + 4, ROOM_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( ROOM_X , ROOM_Y + 5, ROOM_COL ,"â”‚æè¿°                                                                      â”‚" );
+  print_string( ROOM_X , ROOM_Y + 6, ROOM_COL ,"â”‚                                                                          â”‚" );
+  print_string( ROOM_X , ROOM_Y + 7, ROOM_COL ,"â”‚                                                                          â”‚" );
+  print_string( ROOM_X , ROOM_Y + 8, ROOM_COL ,"â”‚                                                                          â”‚" );
+  print_string( ROOM_X , ROOM_Y + 9, ROOM_COL ,"â”‚                                                                          â”‚" );
+  print_string( ROOM_X , ROOM_Y +10, ROOM_COL ,"â”‚                                                                          â”‚" );
+  print_string( ROOM_X , ROOM_Y +11, ROOM_COL ,"â”‚                                                                          â”‚" );
+  print_string( ROOM_X , ROOM_Y +12, ROOM_COL ,"â”‚                                                                          â”‚" );
+  print_string( ROOM_X , ROOM_Y +13, ROOM_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( ROOM_X , ROOM_Y +14, ROOM_COL ,"â”‚æˆ¿é–“åœ°å½¢ [ ] å®¤å…§  [ ] åŸå¸‚  [ ] åŸé‡  [ ] æ£®æ—  [ ] å±±ä¸˜  [ ] å±±å€       â”‚" );
+  print_string( ROOM_X , ROOM_Y +15, ROOM_COL ,"â”‚         [ ] æ°´åŸŸä¸å¯æ¸¸æ³³    [ ] æ°´åŸŸå¯ä»¥æ¸¸æ³³    [ ] å¤©ç©º  [ ] æ²™æ¼        â”‚" );
+  print_string( ROOM_X , ROOM_Y +16, ROOM_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( ROOM_X , ROOM_Y +17, ROOM_COL ,"â”‚æˆ¿é–“æ——æ¨™ [ ] é»‘æš— [ ] æ²’æœ‰MOB [ ] å®¤å…§ [ ] ç§äºº [ ] å®‰å…¨ [ ] ä¸èƒ½å‚³é€     â”‚" );
+  print_string( ROOM_X , ROOM_Y +18, ROOM_COL ,"â”‚         [ ] æ°¸æ˜ [ ] é¢å±€    [ ] éŒ¢èŠ                                    â”‚" );
+  print_string( ROOM_X , ROOM_Y +19, ROOM_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( ROOM_X , ROOM_Y +20, ROOM_COL ,"â”‚< ç·¨è¼¯å‡ºå£> < ç·¨è¼¯é¡å¤–æè¿° > < å­˜æª” > < æ”¾æ£„ >                            â”‚" );
+  print_string( ROOM_X , ROOM_Y +21, ROOM_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜" );
 
-  /* ¦C¦LÀÉ¦W */
+  /* åˆ—å°æª”å */
   print_string( ROOM_X + 15 , ROOM_Y + 1 , ROOM_COL
     , pRoom->pFile->filename );
 
-  /* ¦C¦LÀÉ®×ªº±¡§Î */
+  /* åˆ—å°æª”æ¡ˆçš„æƒ…å½¢ */
   if ( pRoom->valid == 0 )
-    print_string( ROOM_X + 60 , ROOM_Y + 1 , ROOM_COL , "ÂÂÀÉ®×" );
+    print_string( ROOM_X + 60 , ROOM_Y + 1 , ROOM_COL , "èˆŠæª”æ¡ˆ" );
 
   else if ( pRoom->valid == 1 )
-    print_string( ROOM_X + 60 , ROOM_Y + 1 , ROOM_COL , "·sÀÉ®×" );
+    print_string( ROOM_X + 60 , ROOM_Y + 1 , ROOM_COL , "æ–°æª”æ¡ˆ" );
 
   else if ( pRoom->valid == 2 )
-    print_string( ROOM_X + 60 , ROOM_Y + 1 , ROOM_COL , "¤£¥¿½TªºÂÂÀÉ®×" );
+    print_string( ROOM_X + 60 , ROOM_Y + 1 , ROOM_COL , "ä¸æ­£ç¢ºçš„èˆŠæª”æ¡ˆ" );
 
   return;
 }
 
-/* Åã¥Ü©Ğ¶¡¦a§Î */
+/* é¡¯ç¤ºæˆ¿é–“åœ°å½¢ */
 void show_edit_room( int control )
 {
 
   print_string( ROOM_X + 2 , ROOM_Y + 3
-    ,( ( control == 1 ) ? ROOM_TAG : ROOM_COL ) , "©Ğ¶¡¸¹½X"     );
+    ,( ( control == 1 ) ? ROOM_TAG : ROOM_COL ) , "æˆ¿é–“è™Ÿç¢¼"     );
 
   print_string( ROOM_X + 21 , ROOM_Y + 3
-    ,( ( control == 2 ) ? ROOM_TAG : ROOM_COL ) , "©Ğ¶¡¦WºÙ"     );
+    ,( ( control == 2 ) ? ROOM_TAG : ROOM_COL ) , "æˆ¿é–“åç¨±"     );
 
   print_string( ROOM_X + 2 , ROOM_Y + 5
-    ,( ( control == 3 ) ? ROOM_TAG : ROOM_COL ) , "´y­z"         );
+    ,( ( control == 3 ) ? ROOM_TAG : ROOM_COL ) , "æè¿°"         );
 
   print_string( ROOM_X + 2 , ROOM_Y + 14
-    ,( ( control == 4 ) ? ROOM_TAG : ROOM_COL ) , "©Ğ¶¡¦a§Î"     );
+    ,( ( control == 4 ) ? ROOM_TAG : ROOM_COL ) , "æˆ¿é–“åœ°å½¢"     );
 
   print_string( ROOM_X + 2 , ROOM_Y + 17
-    ,( ( control == 5 ) ? ROOM_TAG : ROOM_COL ) , "©Ğ¶¡ºX¼Ğ"     );
+    ,( ( control == 5 ) ? ROOM_TAG : ROOM_COL ) , "æˆ¿é–“æ——æ¨™"     );
 
   print_string( ROOM_X + 4 , ROOM_Y + 20
-    ,( ( control == 6 ) ? ROOM_TAG : ROOM_COL ) , "½s¿è¥X¤f"     );
+    ,( ( control == 6 ) ? ROOM_TAG : ROOM_COL ) , "ç·¨è¼¯å‡ºå£"     );
 
   print_string( ROOM_X + 16, ROOM_Y + 20
-    ,( ( control == 7 ) ? ROOM_TAG : ROOM_COL ) , "½s¿èÃB¥~´y­z" );
+    ,( ( control == 7 ) ? ROOM_TAG : ROOM_COL ) , "ç·¨è¼¯é¡å¤–æè¿°" );
 
   print_string( ROOM_X + 33 , ROOM_Y + 20
-    ,( ( control == 8 ) ? ROOM_TAG : ROOM_COL ) , "¦sÀÉ"         );
+    ,( ( control == 8 ) ? ROOM_TAG : ROOM_COL ) , "å­˜æª”"         );
 
   print_string( ROOM_X + 42 , ROOM_Y + 20
-    ,( ( control == 9 ) ? ROOM_TAG : ROOM_COL ) , "©ñ±ó"         );
+    ,( ( control == 9 ) ? ROOM_TAG : ROOM_COL ) , "æ”¾æ£„"         );
 
   return;
 
@@ -197,34 +197,34 @@ void show_select_room_sector( int selection )
 {
 
   print_string( ROOM_X + 15 , ROOM_Y + 14
-    ,( ( selection == 0 ) ? ROOM_TAG : ROOM_COL ) , "«Ç¤º");
+    ,( ( selection == 0 ) ? ROOM_TAG : ROOM_COL ) , "å®¤å…§");
 
   print_string( ROOM_X + 25 , ROOM_Y + 14
-    ,( ( selection == 1 ) ? ROOM_TAG : ROOM_COL ) , "«°¥«" );
+    ,( ( selection == 1 ) ? ROOM_TAG : ROOM_COL ) , "åŸå¸‚" );
 
   print_string( ROOM_X + 35 , ROOM_Y + 14
-    ,( ( selection == 2 ) ? ROOM_TAG : ROOM_COL ) , "­ì³¥" );
+    ,( ( selection == 2 ) ? ROOM_TAG : ROOM_COL ) , "åŸé‡" );
 
   print_string( ROOM_X + 45 , ROOM_Y + 14
-    ,( ( selection == 3 ) ? ROOM_TAG : ROOM_COL ) , "´ËªL" );
+    ,( ( selection == 3 ) ? ROOM_TAG : ROOM_COL ) , "æ£®æ—" );
 
   print_string( ROOM_X + 55 , ROOM_Y + 14
-    ,( ( selection == 4 ) ? ROOM_TAG : ROOM_COL ) , "¤s¥C" );
+    ,( ( selection == 4 ) ? ROOM_TAG : ROOM_COL ) , "å±±ä¸˜" );
 
   print_string( ROOM_X + 65 , ROOM_Y + 14
-    ,( ( selection == 5 ) ? ROOM_TAG : ROOM_COL ) , "¤s°Ï" );
+    ,( ( selection == 5 ) ? ROOM_TAG : ROOM_COL ) , "å±±å€" );
 
   print_string( ROOM_X + 15 , ROOM_Y + 15
-    ,( ( selection == 6 ) ? ROOM_TAG : ROOM_COL ) , "¤ô°ì¤£¥i´åªa" );
+    ,( ( selection == 6 ) ? ROOM_TAG : ROOM_COL ) , "æ°´åŸŸä¸å¯æ¸¸æ³³" );
 
   print_string( ROOM_X + 35 , ROOM_Y + 15
-    ,( ( selection == 7 ) ? ROOM_TAG : ROOM_COL ) , "¤ô°ì¥i¥H´åªa" );
+    ,( ( selection == 7 ) ? ROOM_TAG : ROOM_COL ) , "æ°´åŸŸå¯ä»¥æ¸¸æ³³" );
 
   print_string( ROOM_X + 55 , ROOM_Y + 15
-    ,( ( selection == 8 ) ? ROOM_TAG : ROOM_COL ) , "¤ÑªÅ" );
+    ,( ( selection == 8 ) ? ROOM_TAG : ROOM_COL ) , "å¤©ç©º" );
 
   print_string( ROOM_X + 65 , ROOM_Y + 15
-    ,( ( selection == 9 ) ? ROOM_TAG : ROOM_COL ) , "¨Fºz" );
+    ,( ( selection == 9 ) ? ROOM_TAG : ROOM_COL ) , "æ²™æ¼ " );
 
   return;
 }
@@ -266,31 +266,31 @@ void show_select_room_flag( int selection )
 {
 
   print_string( ROOM_X + 15 , ROOM_Y + 17
-    ,( ( selection == 0 ) ? ROOM_TAG : ROOM_COL ) , "¶Â·t" );
+    ,( ( selection == 0 ) ? ROOM_TAG : ROOM_COL ) , "é»‘æš—" );
 
   print_string( ROOM_X + 24 , ROOM_Y + 17
-    ,( ( selection == 1 ) ? ROOM_TAG : ROOM_COL ) , "¨S¦³MOB" );
+    ,( ( selection == 1 ) ? ROOM_TAG : ROOM_COL ) , "æ²’æœ‰MOB" );
 
   print_string( ROOM_X + 36 , ROOM_Y + 17
-    ,( ( selection == 2 ) ? ROOM_TAG : ROOM_COL ) , "«Ç¤º" );
+    ,( ( selection == 2 ) ? ROOM_TAG : ROOM_COL ) , "å®¤å…§" );
 
   print_string( ROOM_X + 45 , ROOM_Y + 17
-    ,( ( selection == 3 ) ? ROOM_TAG : ROOM_COL ) , "¨p¤H" );
+    ,( ( selection == 3 ) ? ROOM_TAG : ROOM_COL ) , "ç§äºº" );
 
   print_string( ROOM_X + 54 , ROOM_Y + 17
-    ,( ( selection == 4 ) ? ROOM_TAG : ROOM_COL ) , "¦w¥ş" );
+    ,( ( selection == 4 ) ? ROOM_TAG : ROOM_COL ) , "å®‰å…¨" );
 
   print_string( ROOM_X + 63 , ROOM_Y + 17
-    ,( ( selection == 5 ) ? ROOM_TAG : ROOM_COL ) , "¤£¯à¶Ç°e" );
+    ,( ( selection == 5 ) ? ROOM_TAG : ROOM_COL ) , "ä¸èƒ½å‚³é€" );
 
   print_string( ROOM_X + 15 , ROOM_Y + 18
-    ,( ( selection == 6 ) ? ROOM_TAG : ROOM_COL ) , "¥Ã©ú" );
+    ,( ( selection == 6 ) ? ROOM_TAG : ROOM_COL ) , "æ°¸æ˜" );
 
   print_string( ROOM_X + 24 , ROOM_Y + 18
-    ,( ( selection == 7 ) ? ROOM_TAG : ROOM_COL ) , "Ãğ§½" );
+    ,( ( selection == 7 ) ? ROOM_TAG : ROOM_COL ) , "é¢å±€" );
 
   print_string( ROOM_X + 36 , ROOM_Y + 18
-    ,( ( selection == 8 ) ? ROOM_TAG : ROOM_COL ) , "¿ú²ø" );
+    ,( ( selection == 8 ) ? ROOM_TAG : ROOM_COL ) , "éŒ¢èŠ" );
 
   return;
 }
@@ -345,17 +345,17 @@ void do_edit_room( void )
   int           execute = 0;
   int           control_key;
 
-  /* ²M°£¿Ã¹õ¥H¤Î®ø°£´å¼Ğ */
+  /* æ¸…é™¤è¢å¹•ä»¥åŠæ¶ˆé™¤æ¸¸æ¨™ */
   clear_screen();
   set_cursor_type( NO_CURSOR );
 
-  /* ¶}±ÒÀÉ®× */
+  /* é–‹å•Ÿæª”æ¡ˆ */
   pFile = get_file_name( ".roo" );
 
-  /* ÀÉ®×µLªkÅª¨ú */
+  /* æª”æ¡ˆç„¡æ³•è®€å– */
   if ( pFile->information < 0 ) return;
 
-  /* ³]©w©Ğ¶¡ªº¹w³]­È */
+  /* è¨­å®šæˆ¿é–“çš„é è¨­å€¼ */
   set_room_default( pRoom );
   pRoom->valid        = pFile->information;
   pRoom->pFile        = pFile;
@@ -367,7 +367,7 @@ void do_edit_room( void )
   pRoom->pDesc->save_x_cursor   = 0;
   pRoom->pDesc->save_y_cursor   = 0;
 
-  /* ¸ü¤J©Ğ¶¡ÀÉ®× */
+  /* è¼‰å…¥æˆ¿é–“æª”æ¡ˆ */
   if ( pFile->information == 0 )
   {
     if ( !load_room( pRoom ) )
@@ -377,14 +377,14 @@ void do_edit_room( void )
     }
   }
 
-  /* Åã¥Ü½s¿è©Ğ¶¡ªºµe­± */
+  /* é¡¯ç¤ºç·¨è¼¯æˆ¿é–“çš„ç•«é¢ */
   show_room_shape( pRoom );
 
-  /* Åã¥Ü©Ğ¶¡¦a§Î */
+  /* é¡¯ç¤ºæˆ¿é–“åœ°å½¢ */
   show_room_sector( pRoom );
   show_room_flag( pRoom );
 
-  /* ¦C¦L©Ğ¶¡ªºÅÜ¼Æ */
+  /* åˆ—å°æˆ¿é–“çš„è®Šæ•¸ */
   print_long_string( 1 , pRoom->pName );
   print_long_string( 1 , pRoom->pDesc );
   print_number( 5 , pRoom->vnum , pRoom->pVnum );
@@ -392,10 +392,10 @@ void do_edit_room( void )
   do
   {
 
-    /* Åã¥Ü±±¨î¥ú´Î */
+    /* é¡¯ç¤ºæ§åˆ¶å…‰æ£’ */
     show_edit_room( control );
 
-    /* ±qÁä½L±o¨ú±±¨îÁä */
+    /* å¾éµç›¤å¾—å–æ§åˆ¶éµ */
     control_key = get_control_key();
 
     if ( control_key == RETURN_TAB    ) control++;
@@ -406,7 +406,7 @@ void do_edit_room( void )
     if ( control_key == RETURN_HOME   ) control = 1;
     if ( control_key == RETURN_END    ) control = 9;
 
-    /* ÀË¬d¬O§_¶W¹L½d³ò */
+    /* æª¢æŸ¥æ˜¯å¦è¶…éç¯„åœ */
     check_boundary( 1 , 9 , &control );
 
     switch ( execute )
@@ -414,7 +414,7 @@ void do_edit_room( void )
 
       case 1 :
 
-        /* ³]©w©Ğ¶¡¸¹½X¦r¦ê°_±Ò­È */
+        /* è¨­å®šæˆ¿é–“è™Ÿç¢¼å­—ä¸²èµ·å•Ÿå€¼ */
         pRoom->pVnum->save_x_cursor   = 0;
         pRoom->pVnum->save_y_cursor   = 0;
         clear_string( pRoom->pVnum );
@@ -447,7 +447,7 @@ void do_edit_room( void )
 
           do
           {
-            /* Åã¥Ü©Ğ¶¡¦a§Î */
+            /* é¡¯ç¤ºæˆ¿é–“åœ°å½¢ */
 
             show_room_sector( pRoom );
             show_select_room_sector( pRoom->room_sector );
@@ -542,13 +542,13 @@ void do_edit_room( void )
 
         }
 
-        /* Åã¥Ü©Ğ¶¡¦a§Î */
+        /* é¡¯ç¤ºæˆ¿é–“åœ°å½¢ */
         clear_screen();
         show_room_shape( pRoom );
         show_room_sector( pRoom );
         show_room_flag( pRoom );
 
-        /* ¦C¦L©Ğ¶¡ªºÅÜ¼Æ */
+        /* åˆ—å°æˆ¿é–“çš„è®Šæ•¸ */
         print_long_string( 1 , pRoom->pName );
         print_long_string( 1 , pRoom->pDesc );
         print_number( 5 , pRoom->vnum , pRoom->pVnum );
@@ -597,13 +597,13 @@ void do_edit_room( void )
 
         }
 
-        /* Åã¥Ü©Ğ¶¡¦a§Î */
+        /* é¡¯ç¤ºæˆ¿é–“åœ°å½¢ */
         clear_screen();
         show_room_shape( pRoom );
         show_room_sector( pRoom );
         show_room_flag( pRoom );
 
-        /* ¦C¦L©Ğ¶¡ªºÅÜ¼Æ */
+        /* åˆ—å°æˆ¿é–“çš„è®Šæ•¸ */
         print_long_string( 1 , pRoom->pName );
         print_long_string( 1 , pRoom->pDesc );
         print_number( 5 , pRoom->vnum , pRoom->pVnum );
@@ -634,23 +634,23 @@ void do_edit_room( void )
 void show_exit_shape( void )
 {
 
-  print_string( EXIT_X , EXIT_Y    , EXIT_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{ " );
-  print_string( EXIT_X , EXIT_Y + 1, EXIT_COL ,"¢x¥X¤f ¥_[     ] ªF[     ] «n[     ] ¦è[     ] ¤W[     ] ¤U[     ] < µ²§ô > ¢x " );
-  print_string( EXIT_X , EXIT_Y + 2, EXIT_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢} " );
+  print_string( EXIT_X , EXIT_Y    , EXIT_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” " );
+  print_string( EXIT_X , EXIT_Y + 1, EXIT_COL ,"â”‚å‡ºå£ åŒ—[     ] æ±[     ] å—[     ] è¥¿[     ] ä¸Š[     ] ä¸‹[     ] < çµæŸ > â”‚ " );
+  print_string( EXIT_X , EXIT_Y + 2, EXIT_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ " );
   print_string( EXIT_X , EXIT_Y + 3, EXIT_COL ,"                                                                               " );
   print_string( EXIT_X , EXIT_Y + 4, EXIT_COL ,"                                                                               " );
-  print_string( EXIT_X , EXIT_Y + 5, EXIT_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{ " );
-  print_string( EXIT_X , EXIT_Y + 6, EXIT_COL ,"¢x¥X¤f [  ] ³q©¹©Ğ¶¡ [     ]                                                ¢x " );
-  print_string( EXIT_X , EXIT_Y + 7, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y + 8, EXIT_COL ,"¢xªùªºª¬ºA [ ] ¨S¦³ªù [ ] ªù¬OÃö¤Wªº [ ] Âê¤W [ ] Âê¤W¥BµLªk¼À¶}ªº          ¢x " );
-  print_string( EXIT_X , EXIT_Y + 9, EXIT_COL ,"¢xÆ_°Í¸¹½X [     ]                                                          ¢x " );
-  print_string( EXIT_X , EXIT_Y +10, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y +11, EXIT_COL ,"¢xÃöÁä¦r                                                                    ¢x " );
-  print_string( EXIT_X , EXIT_Y +12, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y +13, EXIT_COL ,"¢x´y­z                                                                      ¢x " );
-  print_string( EXIT_X , EXIT_Y +14, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y +15, EXIT_COL ,"¢x< µ²§ô >                                                                  ¢x " );
-  print_string( EXIT_X , EXIT_Y +16, EXIT_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢} " );
+  print_string( EXIT_X , EXIT_Y + 5, EXIT_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” " );
+  print_string( EXIT_X , EXIT_Y + 6, EXIT_COL ,"â”‚å‡ºå£ [  ] é€šå¾€æˆ¿é–“ [     ]                                                â”‚ " );
+  print_string( EXIT_X , EXIT_Y + 7, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y + 8, EXIT_COL ,"â”‚é–€çš„ç‹€æ…‹ [ ] æ²’æœ‰é–€ [ ] é–€æ˜¯é—œä¸Šçš„ [ ] é–ä¸Š [ ] é–ä¸Šä¸”ç„¡æ³•æ’¬é–‹çš„          â”‚ " );
+  print_string( EXIT_X , EXIT_Y + 9, EXIT_COL ,"â”‚é‘°åŒ™è™Ÿç¢¼ [     ]                                                          â”‚ " );
+  print_string( EXIT_X , EXIT_Y +10, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y +11, EXIT_COL ,"â”‚é—œéµå­—                                                                    â”‚ " );
+  print_string( EXIT_X , EXIT_Y +12, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y +13, EXIT_COL ,"â”‚æè¿°                                                                      â”‚ " );
+  print_string( EXIT_X , EXIT_Y +14, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y +15, EXIT_COL ,"â”‚< çµæŸ >                                                                  â”‚ " );
+  print_string( EXIT_X , EXIT_Y +16, EXIT_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ " );
 
   return;
 }
@@ -658,20 +658,20 @@ void show_exit_shape( void )
 void print_exit_shape( int direction )
 {
 
-  char * const dir_name [] = { "¥_" ,"ªF" , "«n" , "¦è" , "¤W" , "¤U" };
+  char * const dir_name [] = { "åŒ—" ,"æ±" , "å—" , "è¥¿" , "ä¸Š" , "ä¸‹" };
 
-  print_string( EXIT_X , EXIT_Y + 5, EXIT_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{ " );
-  print_string( EXIT_X , EXIT_Y + 6, EXIT_COL ,"¢x¥X¤f [  ] ³q©¹©Ğ¶¡ [     ]                                                ¢x " );
-  print_string( EXIT_X , EXIT_Y + 7, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y + 8, EXIT_COL ,"¢xªùªºª¬ºA [ ] ¨S¦³ªù [ ] ªù¬OÃö¤Wªº [ ] Âê¤W [ ] Âê¤W¥BµLªk¼À¶}ªº          ¢x " );
-  print_string( EXIT_X , EXIT_Y + 9, EXIT_COL ,"¢xÆ_°Í¸¹½X [     ]                                                          ¢x " );
-  print_string( EXIT_X , EXIT_Y +10, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y +11, EXIT_COL ,"¢xÃöÁä¦r                                                                    ¢x " );
-  print_string( EXIT_X , EXIT_Y +12, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y +13, EXIT_COL ,"¢x´y­z                                                                      ¢x " );
-  print_string( EXIT_X , EXIT_Y +14, EXIT_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t " );
-  print_string( EXIT_X , EXIT_Y +15, EXIT_COL ,"¢x< µ²§ô >                                                                  ¢x " );
-  print_string( EXIT_X , EXIT_Y +16, EXIT_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢} " );
+  print_string( EXIT_X , EXIT_Y + 5, EXIT_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” " );
+  print_string( EXIT_X , EXIT_Y + 6, EXIT_COL ,"â”‚å‡ºå£ [  ] é€šå¾€æˆ¿é–“ [     ]                                                â”‚ " );
+  print_string( EXIT_X , EXIT_Y + 7, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y + 8, EXIT_COL ,"â”‚é–€çš„ç‹€æ…‹ [ ] æ²’æœ‰é–€ [ ] é–€æ˜¯é—œä¸Šçš„ [ ] é–ä¸Š [ ] é–ä¸Šä¸”ç„¡æ³•æ’¬é–‹çš„          â”‚ " );
+  print_string( EXIT_X , EXIT_Y + 9, EXIT_COL ,"â”‚é‘°åŒ™è™Ÿç¢¼ [     ]                                                          â”‚ " );
+  print_string( EXIT_X , EXIT_Y +10, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y +11, EXIT_COL ,"â”‚é—œéµå­—                                                                    â”‚ " );
+  print_string( EXIT_X , EXIT_Y +12, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y +13, EXIT_COL ,"â”‚æè¿°                                                                      â”‚ " );
+  print_string( EXIT_X , EXIT_Y +14, EXIT_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ " );
+  print_string( EXIT_X , EXIT_Y +15, EXIT_COL ,"â”‚< çµæŸ >                                                                  â”‚ " );
+  print_string( EXIT_X , EXIT_Y +16, EXIT_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ " );
 
   if ( direction >= 0 && direction < 6 )
     print_string( EXIT_X + 8  , EXIT_Y + 6, EXIT_COL
@@ -699,7 +699,7 @@ void show_exit_to_room( ROOM_INFO * pRoom )
 
      else
      {
-       strcpy( temp , " ±q¯Ê" );
+       strcpy( temp , " å¾ç¼º" );
      }
 
      print_string( EXIT_X + 10 + ( i * 10 ) , EXIT_Y + 1
@@ -710,25 +710,25 @@ void show_exit_to_room( ROOM_INFO * pRoom )
 void show_exit_bar( int control )
 {
   print_string( EXIT_X +  7 , EXIT_Y + 1
-    ,( ( control == 1 ) ? EXIT_TAG : EXIT_COL ) , "¥_" );
+    ,( ( control == 1 ) ? EXIT_TAG : EXIT_COL ) , "åŒ—" );
 
   print_string( EXIT_X + 17 , EXIT_Y + 1
-    ,( ( control == 2 ) ? EXIT_TAG : EXIT_COL ) , "ªF" );
+    ,( ( control == 2 ) ? EXIT_TAG : EXIT_COL ) , "æ±" );
 
   print_string( EXIT_X + 27 , EXIT_Y + 1
-    ,( ( control == 3 ) ? EXIT_TAG : EXIT_COL ) , "«n" );
+    ,( ( control == 3 ) ? EXIT_TAG : EXIT_COL ) , "å—" );
 
   print_string( EXIT_X + 37 , EXIT_Y + 1
-    ,( ( control == 4 ) ? EXIT_TAG : EXIT_COL ) , "¦è" );
+    ,( ( control == 4 ) ? EXIT_TAG : EXIT_COL ) , "è¥¿" );
 
   print_string( EXIT_X + 47 , EXIT_Y + 1
-    ,( ( control == 5 ) ? EXIT_TAG : EXIT_COL ) , "¤W" );
+    ,( ( control == 5 ) ? EXIT_TAG : EXIT_COL ) , "ä¸Š" );
 
   print_string( EXIT_X + 57 , EXIT_Y + 1
-    ,( ( control == 6 ) ? EXIT_TAG : EXIT_COL ) , "¤U" );
+    ,( ( control == 6 ) ? EXIT_TAG : EXIT_COL ) , "ä¸‹" );
 
   print_string( EXIT_X + 69 , EXIT_Y + 1
-    ,( ( control == 7 ) ? EXIT_TAG : EXIT_COL ) , "µ²§ô" );
+    ,( ( control == 7 ) ? EXIT_TAG : EXIT_COL ) , "çµæŸ" );
 
   return;
 }
@@ -736,22 +736,22 @@ void show_exit_bar( int control )
 void print_exit_bar( int control )
 {
   print_string( EXIT_X +  12 , EXIT_Y + 6
-    ,( ( control == 1 ) ? EXIT_TAG : EXIT_COL ) , "³q©¹©Ğ¶¡" );
+    ,( ( control == 1 ) ? EXIT_TAG : EXIT_COL ) , "é€šå¾€æˆ¿é–“" );
 
   print_string( EXIT_X +  2 , EXIT_Y + 8
-    ,( ( control == 2 ) ? EXIT_TAG : EXIT_COL ) , "ªùªºª¬ºA" );
+    ,( ( control == 2 ) ? EXIT_TAG : EXIT_COL ) , "é–€çš„ç‹€æ…‹" );
 
   print_string( EXIT_X +  2 , EXIT_Y + 9
-    ,( ( control == 3 ) ? EXIT_TAG : EXIT_COL ) , "Æ_°Í¸¹½X" );
+    ,( ( control == 3 ) ? EXIT_TAG : EXIT_COL ) , "é‘°åŒ™è™Ÿç¢¼" );
 
   print_string( EXIT_X +  2 , EXIT_Y + 11
-    ,( ( control == 4 ) ? EXIT_TAG : EXIT_COL ) , "ÃöÁä¦r"   );
+    ,( ( control == 4 ) ? EXIT_TAG : EXIT_COL ) , "é—œéµå­—"   );
 
   print_string( EXIT_X +  2 , EXIT_Y + 13
-    ,( ( control == 5 ) ? EXIT_TAG : EXIT_COL ) , "´y­z"     );
+    ,( ( control == 5 ) ? EXIT_TAG : EXIT_COL ) , "æè¿°"     );
 
   print_string( EXIT_X +  4 , EXIT_Y + 15
-    ,( ( control == 6 ) ? EXIT_TAG : EXIT_COL ) , "µ²§ô"     );
+    ,( ( control == 6 ) ? EXIT_TAG : EXIT_COL ) , "çµæŸ"     );
 
   return;
 }
@@ -762,19 +762,19 @@ void    print_exit_lock_title( int control )
 
   print_string( EXIT_X + 15 , EXIT_Y + 8
     ,( ( control == 0 ) ? EXIT_TAG : EXIT_COL )
-    , "¨S¦³ªù"     );
+    , "æ²’æœ‰é–€"     );
 
   print_string( EXIT_X + 26 , EXIT_Y + 8
     ,( ( control == 1 ) ? EXIT_TAG : EXIT_COL )
-    , "ªù¬OÃö¤Wªº" );
+    , "é–€æ˜¯é—œä¸Šçš„" );
 
   print_string( EXIT_X + 41 , EXIT_Y + 8
     ,( ( control == 2 ) ? EXIT_TAG : EXIT_COL )
-    , "Âê¤W"       );
+    , "é–ä¸Š"       );
 
   print_string( EXIT_X + 50 , EXIT_Y + 8
     ,( ( control == 3 ) ? EXIT_TAG : EXIT_COL )
-    , "Âê¤W¥BµLªk¼À¶}ªº" );
+    , "é–ä¸Šä¸”ç„¡æ³•æ’¬é–‹çš„" );
 
   return;
 }
@@ -804,19 +804,19 @@ void do_edit_exit( EXIT_INFO * pExit , int direction )
   int           execute = 0;
   int           touch;
 
-  /* ³]©w©Ğ¶¡¸¹½X¦r¦ê°_±Ò­È */
+  /* è¨­å®šæˆ¿é–“è™Ÿç¢¼å­—ä¸²èµ·å•Ÿå€¼ */
   pExit->pRoom->save_x_cursor   = 0;
   pExit->pRoom->save_y_cursor   = 0;
 
-  /* ³]©w©Ğ¶¡Æ_°Í¸¹½X¦r¦ê°_±Ò­È */
+  /* è¨­å®šæˆ¿é–“é‘°åŒ™è™Ÿç¢¼å­—ä¸²èµ·å•Ÿå€¼ */
   pExit->pKey->save_x_cursor   = 0;
   pExit->pKey->save_y_cursor   = 0;
 
-  /* ³]©w©Ğ¶¡¥X¤fÃöÁä¦r¦r¦ê°_±Ò­È */
+  /* è¨­å®šæˆ¿é–“å‡ºå£é—œéµå­—å­—ä¸²èµ·å•Ÿå€¼ */
   pExit->pKeyword->save_x_cursor   = 0;
   pExit->pKeyword->save_y_cursor   = 0;
 
-  /* ³]©w©Ğ¶¡¥X¤f´y­z¦r¦r¦ê°_±Ò­È */
+  /* è¨­å®šæˆ¿é–“å‡ºå£æè¿°å­—å­—ä¸²èµ·å•Ÿå€¼ */
   pExit->pDesc->save_x_cursor   = 0;
   pExit->pDesc->save_y_cursor   = 0;
 
@@ -943,24 +943,24 @@ void do_edit_exit( EXIT_INFO * pExit , int direction )
 void show_desc_shape( void )
 {
 
-  print_string( DESC_X , DESC_Y    , DESC_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{" );
-  print_string( DESC_X , DESC_Y + 1, DESC_COL ,"¢x [ ] ´y­z¤@  [ ] ´y­z¤G  [ ] ´y­z¤T  [ ] ´y­z¥|  [ ] ´y­z¤­  < µ²§ô >     ¢x" );
-  print_string( DESC_X , DESC_Y + 2, DESC_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}" );
+  print_string( DESC_X , DESC_Y    , DESC_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”" );
+  print_string( DESC_X , DESC_Y + 1, DESC_COL ,"â”‚ [ ] æè¿°ä¸€  [ ] æè¿°äºŒ  [ ] æè¿°ä¸‰  [ ] æè¿°å››  [ ] æè¿°äº”  < çµæŸ >     â”‚" );
+  print_string( DESC_X , DESC_Y + 2, DESC_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜" );
   print_string( DESC_X , DESC_Y + 3, DESC_COL ,"                                                                              " );
-  print_string( DESC_X , DESC_Y + 4, DESC_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{" );
-  print_string( DESC_X , DESC_Y + 5, DESC_COL ,"¢xÃöÁä¦r                                                                    ¢x" );
-  print_string( DESC_X , DESC_Y + 6, DESC_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( DESC_X , DESC_Y + 7, DESC_COL ,"¢x´y­z                                                                      ¢x" );
-  print_string( DESC_X , DESC_Y + 8, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y + 9, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +10, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +11, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +12, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +13, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +14, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +15, DESC_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( DESC_X , DESC_Y +16, DESC_COL ,"¢x< µ²§ô >                                                                  ¢x" );
-  print_string( DESC_X , DESC_Y +17, DESC_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}" );
+  print_string( DESC_X , DESC_Y + 4, DESC_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”" );
+  print_string( DESC_X , DESC_Y + 5, DESC_COL ,"â”‚é—œéµå­—                                                                    â”‚" );
+  print_string( DESC_X , DESC_Y + 6, DESC_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( DESC_X , DESC_Y + 7, DESC_COL ,"â”‚æè¿°                                                                      â”‚" );
+  print_string( DESC_X , DESC_Y + 8, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y + 9, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +10, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +11, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +12, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +13, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +14, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +15, DESC_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( DESC_X , DESC_Y +16, DESC_COL ,"â”‚< çµæŸ >                                                                  â”‚" );
+  print_string( DESC_X , DESC_Y +17, DESC_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜" );
 
   return;
 }
@@ -980,23 +980,23 @@ void show_desc_to_room( ROOM_INFO * pRoom )
 void print_desc_shape( int serial )
 {
 
-  char * const desc_name [] = { "´y­z¤@" , "´y­z¤G"
-    , "´y­z¤T" , "´y­z¥|" , "´y­z¤­" };
+  char * const desc_name [] = { "æè¿°ä¸€" , "æè¿°äºŒ"
+    , "æè¿°ä¸‰" , "æè¿°å››" , "æè¿°äº”" };
 
-  print_string( DESC_X , DESC_Y + 4, DESC_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{" );
-  print_string( DESC_X , DESC_Y + 5, DESC_COL ,"¢xÃöÁä¦r                                                                    ¢x" );
-  print_string( DESC_X , DESC_Y + 6, DESC_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( DESC_X , DESC_Y + 7, DESC_COL ,"¢x´y­z                                                                      ¢x" );
-  print_string( DESC_X , DESC_Y + 8, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y + 9, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +10, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +11, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +12, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +13, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +14, DESC_COL ,"¢x                                                                          ¢x" );
-  print_string( DESC_X , DESC_Y +15, DESC_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( DESC_X , DESC_Y +16, DESC_COL ,"¢x< µ²§ô >                                                                  ¢x" );
-  print_string( DESC_X , DESC_Y +17, DESC_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}" );
+  print_string( DESC_X , DESC_Y + 4, DESC_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”" );
+  print_string( DESC_X , DESC_Y + 5, DESC_COL ,"â”‚é—œéµå­—                                                                    â”‚" );
+  print_string( DESC_X , DESC_Y + 6, DESC_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( DESC_X , DESC_Y + 7, DESC_COL ,"â”‚æè¿°                                                                      â”‚" );
+  print_string( DESC_X , DESC_Y + 8, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y + 9, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +10, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +11, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +12, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +13, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +14, DESC_COL ,"â”‚                                                                          â”‚" );
+  print_string( DESC_X , DESC_Y +15, DESC_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( DESC_X , DESC_Y +16, DESC_COL ,"â”‚< çµæŸ >                                                                  â”‚" );
+  print_string( DESC_X , DESC_Y +17, DESC_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜" );
 
   if ( serial >= 0 && serial < 5 )
     print_string( DESC_X + 65  , DESC_Y + 5 , DESC_COL
@@ -1007,22 +1007,22 @@ void print_desc_shape( int serial )
 void show_desc_bar( int control )
 {
   print_string( DESC_X +  7 , DESC_Y + 1
-    ,( ( control == 1 ) ? DESC_TAG : DESC_COL ) , "´y­z¤@" );
+    ,( ( control == 1 ) ? DESC_TAG : DESC_COL ) , "æè¿°ä¸€" );
 
   print_string( DESC_X + 19 , DESC_Y + 1
-    ,( ( control == 2 ) ? DESC_TAG : DESC_COL ) , "´y­z¤G" );
+    ,( ( control == 2 ) ? DESC_TAG : DESC_COL ) , "æè¿°äºŒ" );
 
   print_string( DESC_X + 31 , DESC_Y + 1
-    ,( ( control == 3 ) ? DESC_TAG : DESC_COL ) , "´y­z¤T" );
+    ,( ( control == 3 ) ? DESC_TAG : DESC_COL ) , "æè¿°ä¸‰" );
 
   print_string( DESC_X + 43 , DESC_Y + 1
-    ,( ( control == 4 ) ? DESC_TAG : DESC_COL ) , "´y­z¥|" );
+    ,( ( control == 4 ) ? DESC_TAG : DESC_COL ) , "æè¿°å››" );
 
   print_string( DESC_X + 55 , DESC_Y + 1
-    ,( ( control == 5 ) ? DESC_TAG : DESC_COL ) , "´y­z¤­" );
+    ,( ( control == 5 ) ? DESC_TAG : DESC_COL ) , "æè¿°äº”" );
 
   print_string( DESC_X + 65 , DESC_Y + 1
-    ,( ( control == 6 ) ? DESC_TAG : DESC_COL ) , "µ²§ô" );
+    ,( ( control == 6 ) ? DESC_TAG : DESC_COL ) , "çµæŸ" );
 
   return;
 }
@@ -1030,13 +1030,13 @@ void show_desc_bar( int control )
 void print_desc_bar( int control )
 {
   print_string( DESC_X +  2 , DESC_Y + 5
-    ,( ( control == 1 ) ? DESC_TAG : DESC_COL ) , "ÃöÁä¦r" );
+    ,( ( control == 1 ) ? DESC_TAG : DESC_COL ) , "é—œéµå­—" );
 
   print_string( DESC_X +  2 , DESC_Y + 7
-    ,( ( control == 2 ) ? DESC_TAG : DESC_COL ) , "´y­z" );
+    ,( ( control == 2 ) ? DESC_TAG : DESC_COL ) , "æè¿°" );
 
   print_string( DESC_X +  4 , DESC_Y + 16
-    ,( ( control == 3 ) ? DESC_TAG : DESC_COL ) , "µ²§ô"     );
+    ,( ( control == 3 ) ? DESC_TAG : DESC_COL ) , "çµæŸ"     );
 
   return;
 }
@@ -1050,11 +1050,11 @@ void do_edit_desc( ROOM_DESC * pDesc , int serial )
 
   print_desc_shape( serial );
 
-  /* ³]©w©Ğ¶¡ÃöÁä¦r¦r¦ê°_±Ò­È */
+  /* è¨­å®šæˆ¿é–“é—œéµå­—å­—ä¸²èµ·å•Ÿå€¼ */
   pDesc->pKeyword->save_x_cursor   = 0;
   pDesc->pKeyword->save_y_cursor   = 0;
 
-  /* ³]©w©Ğ¶¡ÃöÁä¦r¦r¦ê°_±Ò­È */
+  /* è¨­å®šæˆ¿é–“é—œéµå­—å­—ä¸²èµ·å•Ÿå€¼ */
   pDesc->pDesc->save_x_cursor   = 0;
   pDesc->pDesc->save_y_cursor   = 0;
 

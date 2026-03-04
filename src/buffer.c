@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -22,7 +22,7 @@ static bool     StackFull  = FALSE;
 static char     Buffer[ MAX_OUTPUT_LENGTH ];
 static char     Stack[ MAX_OUTPUT_LENGTH ];
 char * const    Buffer_full_messages =
-  "\n\r\n\r\e[1;31m**** §Aªº¿é¥X½w½Ä°Ï¤Ó¤j¡M¨t²Î¦Û°Ê½Õ¾ã¡C****\n\r\e[0m";
+  "\n\r\n\r\e[1;31m**** ä½ çš„è¼¸å‡ºç·©è¡å€å¤ªå¤§ï¹ç³»çµ±è‡ªå‹•èª¿æ•´ã€‚****\n\r\e[0m";
 
 static char     BugBuffer[BUFSIZ] = { '\x0' };
 char            FileOop[BUFSIZ];
@@ -33,7 +33,7 @@ int             FileWord;
 
 void            file_seek       args( ( FILE_DATA * ) );
 
-/* ²M°£½w½Ä°Ï */
+/* æ¸…é™¤ç·©è¡å€ */
 void clear_buffer( void )
 {
   PUSH_FUNCTION( "clear_buffer" );
@@ -42,7 +42,7 @@ void clear_buffer( void )
   RETURN_NULL();
 }
 
-/* ²M°£°ïÅ|°Ï */
+/* æ¸…é™¤å †ç–Šå€ */
 void clear_stack( void )
 {
   PUSH_FUNCTION( "clear_stack" );
@@ -61,7 +61,7 @@ bool stack_full( void )
   return( StackFull );
 }
 
-/* ¼W¥[¦r¦ê¨ì½w½Ä°Ï */
+/* å¢åŠ å­—ä¸²åˆ°ç·©è¡å€ */
 void send_to_buffer( const char * string , ... )
 {
   va_list args;
@@ -76,7 +76,7 @@ void send_to_buffer( const char * string , ... )
 
   if ( BufferFull ) RETURN_NULL();
 
-  /* ¬O§_¶W¥X¬É½u, ¬OªÌ«h¤ÁÂ_¥L */
+  /* æ˜¯å¦è¶…å‡ºç•Œç·š, æ˜¯è€…å‰‡åˆ‡æ–·ä»– */
   if ( str_len( Buffer ) + str_len( buf ) >= sizeof( buf ) - 1 )
   {
     location = sizeof( buf ) - str_len( Buffer ) - str_len( buf ) - 1;
@@ -84,21 +84,21 @@ void send_to_buffer( const char * string , ... )
     BufferFull = TRUE;
   }
 
-  /* «ş¨©¨ì¥Øªº°Ï¸Ì */
+  /* æ‹·è²åˆ°ç›®çš„å€è£¡ */
   str_cat( Buffer, buf );
 
-  /* ­Y½w½Ä°Ï¤wº¡, «h°e¥XÄµ§i¦r¦ê */
+  /* è‹¥ç·©è¡å€å·²æ»¿, å‰‡é€å‡ºè­¦å‘Šå­—ä¸² */
   if ( BufferFull )
   {
     Buffer[ sizeof( buf ) - str_len( Buffer_full_messages ) - 1] = '\x0';
     str_cat( Buffer, Buffer_full_messages );
-    mudlog( LOG_INFO , "¡uBUFFER¡v ¿é¥X½w½Ä°Ï¤wº¡." );
+    mudlog( LOG_INFO , "ã€ŒBUFFERã€ è¼¸å‡ºç·©è¡å€å·²æ»¿." );
   }
 
   RETURN_NULL();
 }
 
-/* ¼W¥[¦r¦ê¨ì½w½Ä°Ï */
+/* å¢åŠ å­—ä¸²åˆ°ç·©è¡å€ */
 void send_to_stack( const char * string , ... )
 {
   va_list args;
@@ -113,7 +113,7 @@ void send_to_stack( const char * string , ... )
 
   if ( StackFull ) RETURN_NULL();
 
-  /* ¬O§_¶W¥X¬É½u, ¬OªÌ«h¤ÁÂ_¥L */
+  /* æ˜¯å¦è¶…å‡ºç•Œç·š, æ˜¯è€…å‰‡åˆ‡æ–·ä»– */
   if ( str_len( Stack ) + str_len( buf ) >= sizeof( buf ) - 1 )
   {
     location = sizeof( buf ) - str_len( Stack ) - str_len( buf ) - 1;
@@ -121,21 +121,21 @@ void send_to_stack( const char * string , ... )
     StackFull = TRUE;
   }
 
-  /* «ş¨©¨ì¥Øªº°Ï¸Ì */
+  /* æ‹·è²åˆ°ç›®çš„å€è£¡ */
   str_cat( Stack, buf );
 
-  /* ­Y½w½Ä°Ï¤wº¡, «h°e¥XÄµ§i¦r¦ê */
+  /* è‹¥ç·©è¡å€å·²æ»¿, å‰‡é€å‡ºè­¦å‘Šå­—ä¸² */
   if ( StackFull )
   {
     Stack[ sizeof( buf ) - str_len( Buffer_full_messages ) - 1] = '\x0';
     str_cat( Stack, Buffer_full_messages );
-    mudlog( LOG_INFO , "¡uSTACK¡v ¿é¥X°ïÅ|°Ï¤wº¡." );
+    mudlog( LOG_INFO , "ã€ŒSTACKã€ è¼¸å‡ºå †ç–Šå€å·²æ»¿." );
   }
 
   RETURN_NULL();
 }
 
-/* §â½w½Ä°Ïªº¸ê®Æ¥ş³¡°e¥X¥hµ¹ª±®a */
+/* æŠŠç·©è¡å€çš„è³‡æ–™å…¨éƒ¨é€å‡ºå»çµ¦ç©å®¶ */
 void print_buffer( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "print_buffer" );
@@ -144,7 +144,7 @@ void print_buffer( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* §â°ïÅ|°Ïªº¸ê®Æ¥ş³¡°e¥X¥hµ¹ª±®a */
+/* æŠŠå †ç–Šå€çš„è³‡æ–™å…¨éƒ¨é€å‡ºå»çµ¦ç©å®¶ */
 void print_stack( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "print_stack" );
@@ -153,14 +153,14 @@ void print_stack( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* §â°ïÅ|°Ïªº¸ê®Æ¦^¶Çµ¹¨ç¼Æ */
+/* æŠŠå †ç–Šå€çš„è³‡æ–™å›å‚³çµ¦å‡½æ•¸ */
 char * return_stack( void )
 {
   PUSH_FUNCTION( "return_stack" );
   RETURN( Stack );
 }
 
-/* ¿é¥Xµ¹ª±®a, ¥i¥H¦³ÅÜ¼Æ§Î¦¡ */
+/* è¼¸å‡ºçµ¦ç©å®¶, å¯ä»¥æœ‰è®Šæ•¸å½¢å¼ */
 void print_to_char( CHAR_DATA * ch , const char * format , ... )
 {
   va_list args;
@@ -194,7 +194,7 @@ void mudlog( int type , const char * buffer , ... )
 
   PUSH_FUNCTION( "mudlog" );
 
-  /* ¦pªG¤£¬O¥À¦æµ{ */
+  /* å¦‚æœä¸æ˜¯æ¯è¡Œç¨‹ */
   if ( getpid() != merc_pid ) RETURN_NULL();
 
   va_start( args , buffer );
@@ -207,7 +207,7 @@ void mudlog( int type , const char * buffer , ... )
   default :
     break;
 
-  /* ¨t²ÎÄY­«¿ù»~, ¦ı¬O¨t²ÎÁÙ¬O¥i¥H­«¸m */
+  /* ç³»çµ±åš´é‡éŒ¯èª¤, ä½†æ˜¯ç³»çµ±é‚„æ˜¯å¯ä»¥é‡ç½® */
   case LOG_EMERG:
   case LOG_STACK:
 
@@ -222,22 +222,22 @@ void mudlog( int type , const char * buffer , ... )
         break;
 
       case LOG_EMERG:
-        fprintf( pFile , "¡u¨t²ÎÁ{¬É¿ù»~¡v %s\n" , buffer );
+        fprintf( pFile , "ã€Œç³»çµ±è‡¨ç•ŒéŒ¯èª¤ã€ %s\n" , buffer );
         pop_function();
         break;
 
       case LOG_STACK:
-        fprintf( pFile , "¡u¨ç¼Æ°ïÅ|¿ù»~¡v %s\n" , buffer );
+        fprintf( pFile , "ã€Œå‡½æ•¸å †ç–ŠéŒ¯èª¤ã€ %s\n" , buffer );
         break;
       }
 
-      /* ¬O§_¶}±Ò°£¿ù¼Ò¦¡ */
+      /* æ˜¯å¦é–‹å•Ÿé™¤éŒ¯æ¨¡å¼ */
       if ( internal_debug )
       {
         for ( count = 0, loop = FunctionPointer + 1; loop < MAX_DEBUG; loop++ )
         {
           if ( !FunctionName[loop] ) break;
-          fprintf( pFile , "(%2d) ¨ç¼Æ¡R%-20s\n", ++count, FunctionName[loop] );
+          fprintf( pFile , "(%2d) å‡½æ•¸ï¹•%-20s\n", ++count, FunctionName[loop] );
         }
 
         fprintf( pFile, "\n" );
@@ -247,21 +247,21 @@ void mudlog( int type , const char * buffer , ... )
       FCLOSE( pFile );
     }
 
-    if ( LastCommand    ) mudlog( LOG_INFO, "³Ì«á©R¥O %s"  ,LastCommand->name);
-    if ( LastChar       ) mudlog( LOG_INFO, "³Ì«á¨Ï¥ÎªÌ %s", LastChar->name  );
-    if ( LastArgument[0]) mudlog( LOG_INFO, "³Ì«á°Ñ¼Æ %s"  , LastArgument    );
+    if ( LastCommand    ) mudlog( LOG_INFO, "æœ€å¾Œå‘½ä»¤ %s"  ,LastCommand->name);
+    if ( LastChar       ) mudlog( LOG_INFO, "æœ€å¾Œä½¿ç”¨è€… %s", LastChar->name  );
+    if ( LastArgument[0]) mudlog( LOG_INFO, "æœ€å¾Œåƒæ•¸ %s"  , LastArgument    );
 
-    /* ¹Á¸ÕÃö³¬©Ò¦³ªº socket */
+    /* å˜—è©¦é—œé–‰æ‰€æœ‰çš„ socket */
     if ( merc_exec == TRUE )
     {
       mudlog( LOG_INFO , ""               );
-      mudlog( LOG_INFO , "¨t²Î¤£¥¿±`²×¤î" );
+      mudlog( LOG_INFO , "ç³»çµ±ä¸æ­£å¸¸çµ‚æ­¢" );
       close_all_socket();
     }
 
     merc_exit( -1 );
 
-  /* ºò«æª¬ªp, ¦ı¬OÁÙ¬O¥i¥H­«¸m¨t²Î */
+  /* ç·Šæ€¥ç‹€æ³, ä½†æ˜¯é‚„æ˜¯å¯ä»¥é‡ç½®ç³»çµ± */
   case LOG_CRIT:
 
     mudlog( LOG_INFO , "%s", buf );
@@ -275,28 +275,28 @@ void mudlog( int type , const char * buffer , ... )
       FCLOSE( pFile );
     }
 
-    if ( LastCommand    ) mudlog( LOG_INFO, "³Ì«á©R¥O %s" ,LastCommand->name);
-    if ( LastChar       ) mudlog( LOG_INFO, "³Ì«á¨Ï¥ÎªÌ %s", LastChar->name );
-    if ( LastArgument[0]) mudlog( LOG_INFO, "³Ì«á°Ñ¼Æ %s"  , LastArgument   );
+    if ( LastCommand    ) mudlog( LOG_INFO, "æœ€å¾Œå‘½ä»¤ %s" ,LastCommand->name);
+    if ( LastChar       ) mudlog( LOG_INFO, "æœ€å¾Œä½¿ç”¨è€… %s", LastChar->name );
+    if ( LastArgument[0]) mudlog( LOG_INFO, "æœ€å¾Œåƒæ•¸ %s"  , LastArgument   );
 
-    /* ¹Á¸ÕÃö³¬©Ò¦³ªº socket */
+    /* å˜—è©¦é—œé–‰æ‰€æœ‰çš„ socket */
     if ( merc_exec == TRUE )
     {
       mudlog( LOG_INFO , ""               );
-      mudlog( LOG_INFO , "¨t²Î¤£¥¿±`²×¤î" );
+      mudlog( LOG_INFO , "ç³»çµ±ä¸æ­£å¸¸çµ‚æ­¢" );
       close_all_socket();
     }
 
     merc_exit( -1 );
 
-  /* ºò«æª¬ªp, ¨t²Î­«¸m«ØÄ³¤£­n */
+  /* ç·Šæ€¥ç‹€æ³, ç³»çµ±é‡ç½®å»ºè­°ä¸è¦ */
   case LOG_ERR:
 
-    mudlog( LOG_SHUTDOWN , "¨t²ÎÃö³¬" );
+    mudlog( LOG_SHUTDOWN , "ç³»çµ±é—œé–‰" );
     mudlog( LOG_CRIT     , "%s", buf  );
     break;
 
-  /* Âê©w¯«±Ú«ü¥O */
+  /* é–å®šç¥æ—æŒ‡ä»¤ */
   case LOG_WIZARD:
 
     if ( merc_exec && depth == 1 ) notify( L_GOD, NOTIFY_WIZARD, buf );
@@ -355,7 +355,7 @@ void mudlog( int type , const char * buffer , ... )
       {
         if ( ( pFile = FOPEN( bugs_file , "a" ) ) )
         {
-          fprintf( pFile ,"(%s) [***] BUG: ¤W­z°T®§«ùÄò %d ¦¸¡C\n"
+          fprintf( pFile ,"(%s) [***] BUG: ä¸Šè¿°è¨Šæ¯æŒçºŒ %d æ¬¡ã€‚\n"
             , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), BugTimes );
 
           fflush( pFile );
@@ -400,7 +400,7 @@ void mudlog( int type , const char * buffer , ... )
           FileWord++;
         }
 
-        sprintf( errormsg , "ÀÉ®× %s ²Ä %d ¦æ ²Ä %d ­Ó¦r¤§«e¦³¿ù»~."
+        sprintf( errormsg , "æª”æ¡ˆ %s ç¬¬ %d è¡Œ ç¬¬ %d å€‹å­—ä¹‹å‰æœ‰éŒ¯èª¤."
           , Now_File->filename, FileLine, FileWord );
 
         mudlog( LOG_INFO , "%s", errormsg );
@@ -415,7 +415,7 @@ void mudlog( int type , const char * buffer , ... )
         }
       }
 
-      mudlog( LOG_SHUTDOWN , "¨t²ÎÃö³¬" );
+      mudlog( LOG_SHUTDOWN , "ç³»çµ±é—œé–‰" );
       merc_exit( -1 );
     }
 
@@ -431,7 +431,7 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( failpass_file );
     }
 
@@ -446,7 +446,7 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( failpass_file );
     }
 
@@ -459,7 +459,7 @@ void mudlog( int type , const char * buffer , ... )
       fprintf( pFile ,"%s\n", buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( badobject_file );
     }
 
@@ -473,7 +473,7 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( bad_file );
     }
 
@@ -487,13 +487,13 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( suspect_file );
     }
 
     break;
 
-  /* ¯«±Ú¥N²zÀÉ®× */
+  /* ç¥æ—ä»£ç†æª”æ¡ˆ */
   case LOG_WIZFLAGS:
 
     if ( ( pFile = FOPEN( wizflags_log , "a" ) ) )
@@ -502,13 +502,13 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( wizflags_log );
     }
 
     break;
 
-  /* ¤@¯ë¸ê®Æ */
+  /* ä¸€èˆ¬è³‡æ–™ */
   case LOG_INFO:
 
     if ( merc_exec && depth == 1 ) notify( L_DEI, NOTIFY_INFO, buf );
@@ -525,7 +525,7 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( failexit_file );
     }
 
@@ -541,7 +541,7 @@ void mudlog( int type , const char * buffer , ... )
 
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( failload_file );
     }
 
@@ -568,13 +568,13 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( ideas_file );
     }
 
     break;
 
-  /* °O¿ı¤£¶®¦r */
+  /* è¨˜éŒ„ä¸é›…å­— */
   case LOG_LOWLIFE:
 
     if ( merc_exec && depth == 1 ) notify( L_ANG, NOTIFY_XNAME, buf );
@@ -585,7 +585,7 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( xname_log );
     }
 
@@ -600,12 +600,12 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( typo_file );
     }
     break;
 
-  /* Âê©wºô»Ú³s½u */
+  /* é–å®šç¶²éš›é€£ç·š */
   case LOG_NET:
 
     if ( merc_exec && depth == 1 ) notify( L_ANG, NOTIFY_NET, buf );
@@ -616,7 +616,7 @@ void mudlog( int type , const char * buffer , ... )
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), buf );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( net_file );
     }
 
@@ -636,7 +636,7 @@ void mudlog( int type , const char * buffer , ... )
 
     break;
 
-  /* ¼Ğ°O¦Û±ş */
+  /* æ¨™è¨˜è‡ªæ®º */
   case LOG_SUICIDE:
 
     if ( ( pFile = FOPEN( suicide_log , "a" ) ) )
@@ -646,13 +646,13 @@ void mudlog( int type , const char * buffer , ... )
 
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( suicide_log );
     }
 
     break;
 
-  /* ¼Ğ°O²M°£ª±®aÀÉ®× */
+  /* æ¨™è¨˜æ¸…é™¤ç©å®¶æª”æ¡ˆ */
   case LOG_PURGE:
 
     if ( ( pFile = FOPEN( purge_file , "a" ) ) )
@@ -662,7 +662,7 @@ void mudlog( int type , const char * buffer , ... )
 
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( purge_file );
     }
 
@@ -694,7 +694,7 @@ void notify( int level , int toggler , const char * buffer , ... )
       && get_trust( man->character ) >= level
       && !IS_SET( man->character->notify, toggler ) )
     {
-      print_to_char( man->character, "¡u\e[1;32m¨t²ÎºëÆF\e[0m¡v%s\n\r", buf );
+      print_to_char( man->character, "ã€Œ\e[1;32mç³»çµ±ç²¾éˆ\e[0mã€%s\n\r", buf );
     }
   }
 
@@ -711,7 +711,7 @@ void output_buffer( void )
   {
     if ( ( pFile = FOPEN( bugs_file , "a" ) ) )
     {
-      fprintf( pFile ,"(%s) [***] BUG: ¤W­z°T®§«ùÄò %d ¦¸¡C\n"
+      fprintf( pFile ,"(%s) [***] BUG: ä¸Šè¿°è¨Šæ¯æŒçºŒ %d æ¬¡ã€‚\n"
         , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ), BugTimes );
 
       fflush( pFile );

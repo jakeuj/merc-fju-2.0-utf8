@@ -16,104 +16,104 @@ void    do_save_shop            ( SHOP_INFO * , FILE * );
 void    set_shop_default        ( SHOP_INFO * );
 int     load_shop               ( SHOP_INFO * );
 
-/* Åã¥Ü°Ó©±ªº°_©lµe­± */
+/* é¡¯ç¤ºå•†åº—çš„èµ·å§‹ç•«é¢ */
 void show_edit_shop_shape( SHOP_INFO * pShop )
 {
 
   char show_number[ 10 ];
 
-  print_string( SHOP_X , SHOP_Y    , SHOP_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{" );
-  print_string( SHOP_X , SHOP_Y + 1, SHOP_COL ,"¢xÀÉ®×¦WºÙ :                                                          ¢x" );
-  print_string( SHOP_X , SHOP_Y + 2, SHOP_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( SHOP_X , SHOP_Y + 3, SHOP_COL ,"¢x°Ó©±¥D¤H : [     ]                                                  ¢x" );
-  print_string( SHOP_X , SHOP_Y + 4, SHOP_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( SHOP_X , SHOP_Y + 5, SHOP_COL ,"¢x³c½æª««~ºØÃş [ ] ¿OÅ¢ [ ] ±²¶b [ ] ªk§ú1 [ ] ªk§ú2 [ ] ªZ¾¹ [ ] Ä_ª«¢x" );
-  print_string( SHOP_X , SHOP_Y + 6, SHOP_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( SHOP_X , SHOP_Y + 7, SHOP_COL ,"¢x[ ] Å@¥Ò [ ] ÃÄ¤ô [ ] ®a¨ã [ ] ©U§£ [ ] ®e¾¹ [ ] ¤ô³U [ ] Æ_°Í      ¢x" );
-  print_string( SHOP_X , SHOP_Y + 8, SHOP_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( SHOP_X , SHOP_Y + 9, SHOP_COL ,"¢x[ ] ­¹ª« [ ] ¿ú [ ] ²î [ ] «Dª±®a«ÍÅé [ ] ª±®a«ÍÅé [ ] ¬u¤ô [ ] ÃÄ¤Y¢x" );
-  print_string( SHOP_X , SHOP_Y +10, SHOP_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( SHOP_X , SHOP_Y +11, SHOP_COL ,"¢x¶}©±®É¶¡ [  ]    Ãö©±®É¶¡ [  ]    ¶R¤J§Q¯q [   ]    ½æ¥X§Q¯q [   ]  ¢x" );
-  print_string( SHOP_X , SHOP_Y +12, SHOP_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( SHOP_X , SHOP_Y +13, SHOP_COL ,"¢x<¦sÀÉ>  <©ñ±ó>                                                      ¢x" );
-  print_string( SHOP_X , SHOP_Y +14, SHOP_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}" );
+  print_string( SHOP_X , SHOP_Y    , SHOP_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”" );
+  print_string( SHOP_X , SHOP_Y + 1, SHOP_COL ,"â”‚æª”æ¡ˆåç¨± :                                                          â”‚" );
+  print_string( SHOP_X , SHOP_Y + 2, SHOP_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( SHOP_X , SHOP_Y + 3, SHOP_COL ,"â”‚å•†åº—ä¸»äºº : [     ]                                                  â”‚" );
+  print_string( SHOP_X , SHOP_Y + 4, SHOP_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( SHOP_X , SHOP_Y + 5, SHOP_COL ,"â”‚è²©è³£ç‰©å“ç¨®é¡ [ ] ç‡ˆç±  [ ] æ²è»¸ [ ] æ³•æ–1 [ ] æ³•æ–2 [ ] æ­¦å™¨ [ ] å¯¶ç‰©â”‚" );
+  print_string( SHOP_X , SHOP_Y + 6, SHOP_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( SHOP_X , SHOP_Y + 7, SHOP_COL ,"â”‚[ ] è­·ç”² [ ] è—¥æ°´ [ ] å®¶å…· [ ] åƒåœ¾ [ ] å®¹å™¨ [ ] æ°´è¢‹ [ ] é‘°åŒ™      â”‚" );
+  print_string( SHOP_X , SHOP_Y + 8, SHOP_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( SHOP_X , SHOP_Y + 9, SHOP_COL ,"â”‚[ ] é£Ÿç‰© [ ] éŒ¢ [ ] èˆ¹ [ ] éç©å®¶å±é«” [ ] ç©å®¶å±é«” [ ] æ³‰æ°´ [ ] è—¥ä¸¸â”‚" );
+  print_string( SHOP_X , SHOP_Y +10, SHOP_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( SHOP_X , SHOP_Y +11, SHOP_COL ,"â”‚é–‹åº—æ™‚é–“ [  ]    é—œåº—æ™‚é–“ [  ]    è²·å…¥åˆ©ç›Š [   ]    è³£å‡ºåˆ©ç›Š [   ]  â”‚" );
+  print_string( SHOP_X , SHOP_Y +12, SHOP_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( SHOP_X , SHOP_Y +13, SHOP_COL ,"â”‚<å­˜æª”>  <æ”¾æ£„>                                                      â”‚" );
+  print_string( SHOP_X , SHOP_Y +14, SHOP_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜" );
 
-  /* ¦C¦LÀÉ¦W */
+  /* åˆ—å°æª”å */
   print_string( SHOP_X + 15 , SHOP_Y + 1 , SHOP_COL
     , pShop->pFile->filename );
 
-  /* ¦C¦LÀÉ®×ªº±¡§Î */
+  /* åˆ—å°æª”æ¡ˆçš„æƒ…å½¢ */
   if ( pShop->valid == 0 )
-    print_string( SHOP_X + 40 , SHOP_Y + 1 , SHOP_COL , "ÂÂÀÉ®×" );
+    print_string( SHOP_X + 40 , SHOP_Y + 1 , SHOP_COL , "èˆŠæª”æ¡ˆ" );
 
   else if ( pShop->valid == 1 )
-    print_string( SHOP_X + 40 , SHOP_Y + 1 , SHOP_COL , "·sÀÉ®×" );
+    print_string( SHOP_X + 40 , SHOP_Y + 1 , SHOP_COL , "æ–°æª”æ¡ˆ" );
 
   else if ( pShop->valid == 2 )
-    print_string( SHOP_X + 40 , SHOP_Y + 1 , SHOP_COL , "¤£¥¿½TªºÂÂÀÉ®×" );
+    print_string( SHOP_X + 40 , SHOP_Y + 1 , SHOP_COL , "ä¸æ­£ç¢ºçš„èˆŠæª”æ¡ˆ" );
 
-  /* Âà´«°Ó©±¥D¤HÅÜ¼Æ¦¨¦r¦ê, ¨Ã¥B¦V¥k¹ï»ô 5 */
+  /* è½‰æ›å•†åº—ä¸»äººè®Šæ•¸æˆå­—ä¸², ä¸¦ä¸”å‘å³å°é½Š 5 */
   number_to_string( pShop->keeper , show_number );
   align_word( show_number , 5 );
   print_string( SHOP_X + 14 , SHOP_Y + 3 , SHOP_COL , show_number );
 
-  /* Âà´«°Ó©±¶}©±®É¶¡ÅÜ¼Æ¦¨¦r¦ê, ¨Ã¥B¦V¥k¹ï»ô 2 */
+  /* è½‰æ›å•†åº—é–‹åº—æ™‚é–“è®Šæ•¸æˆå­—ä¸², ä¸¦ä¸”å‘å³å°é½Š 2 */
   number_to_string( pShop->openhour , show_number );
   align_word( show_number , 2 );
   print_string( SHOP_X + 12 , SHOP_Y +11 , SHOP_COL , show_number );
 
-  /* Âà´«°Ó©±Ãö©±®É¶¡ÅÜ¼Æ¦¨¦r¦ê, ¨Ã¥B¦V¥k¹ï»ô 2 */
+  /* è½‰æ›å•†åº—é—œåº—æ™‚é–“è®Šæ•¸æˆå­—ä¸², ä¸¦ä¸”å‘å³å°é½Š 2 */
   number_to_string( pShop->closehour , show_number );
   align_word( show_number , 2 );
   print_string( SHOP_X + 29 , SHOP_Y +11 , SHOP_COL , show_number );
 
-  /* Âà´«°Ó©±¶R¤J§Q¯qÅÜ¼Æ¦¨¦r¦ê, ¨Ã¥B¦V¥k¹ï»ô 3 */
+  /* è½‰æ›å•†åº—è²·å…¥åˆ©ç›Šè®Šæ•¸æˆå­—ä¸², ä¸¦ä¸”å‘å³å°é½Š 3 */
   number_to_string( pShop->buyprofit , show_number );
   align_word( show_number , 3 );
   print_string( SHOP_X + 46 , SHOP_Y +11 , SHOP_COL , show_number );
 
-  /* Âà´«°Ó©±°â¥X§Q¯qÅÜ¼Æ¦¨¦r¦ê, ¨Ã¥B¦V¥k¹ï»ô 3 */
+  /* è½‰æ›å•†åº—å”®å‡ºåˆ©ç›Šè®Šæ•¸æˆå­—ä¸², ä¸¦ä¸”å‘å³å°é½Š 3 */
   number_to_string( pShop->sellprofit , show_number );
   align_word( show_number , 3 );
   print_string( SHOP_X + 64 , SHOP_Y +11 , SHOP_COL , show_number );
 
-  /* Åã¥Ü³c½æª««~ºØÃş */
+  /* é¡¯ç¤ºè²©è³£ç‰©å“ç¨®é¡ */
   show_shop_object( pShop );
 
   return;
 }
 
-/* Åã¥Ü½s¿è®Éªº±±¨î¥ú´Î */
+/* é¡¯ç¤ºç·¨è¼¯æ™‚çš„æ§åˆ¶å…‰æ£’ */
 void show_edit_shop( int control )
 {
   print_string( SHOP_X + 2 , SHOP_Y + 3
-    ,( ( control == 1 ) ? SHOP_TAG : SHOP_COL ) , "°Ó©±¥D¤H"     );
+    ,( ( control == 1 ) ? SHOP_TAG : SHOP_COL ) , "å•†åº—ä¸»äºº"     );
 
   print_string( SHOP_X + 2 , SHOP_Y + 5
-    ,( ( control == 2 ) ? SHOP_TAG : SHOP_COL ) , "³c½æª««~ºØÃş" );
+    ,( ( control == 2 ) ? SHOP_TAG : SHOP_COL ) , "è²©è³£ç‰©å“ç¨®é¡" );
 
   print_string( SHOP_X + 2 , SHOP_Y + 11
-    ,( ( control == 3 ) ? SHOP_TAG : SHOP_COL ) , "¶}©±®É¶¡"     );
+    ,( ( control == 3 ) ? SHOP_TAG : SHOP_COL ) , "é–‹åº—æ™‚é–“"     );
 
   print_string( SHOP_X + 19 , SHOP_Y + 11
-    ,( ( control == 4 ) ? SHOP_TAG : SHOP_COL ) , "Ãö©±®É¶¡"     );
+    ,( ( control == 4 ) ? SHOP_TAG : SHOP_COL ) , "é—œåº—æ™‚é–“"     );
 
   print_string( SHOP_X + 36 , SHOP_Y + 11
-    ,( ( control == 5 ) ? SHOP_TAG : SHOP_COL ) , "¶R¤J§Q¯q"     );
+    ,( ( control == 5 ) ? SHOP_TAG : SHOP_COL ) , "è²·å…¥åˆ©ç›Š"     );
 
   print_string( SHOP_X + 54 , SHOP_Y + 11
-    ,( ( control == 6 ) ? SHOP_TAG : SHOP_COL ) , "½æ¥X§Q¯q"     );
+    ,( ( control == 6 ) ? SHOP_TAG : SHOP_COL ) , "è³£å‡ºåˆ©ç›Š"     );
 
   print_string( SHOP_X + 3 , SHOP_Y + 13
-    ,( ( control == 7 ) ? SHOP_TAG : SHOP_COL ) , "¦sÀÉ"         );
+    ,( ( control == 7 ) ? SHOP_TAG : SHOP_COL ) , "å­˜æª”"         );
 
   print_string( SHOP_X + 11 , SHOP_Y + 13
-    ,( ( control == 8 ) ? SHOP_TAG : SHOP_COL ) , "©ñ±ó"         );
+    ,( ( control == 8 ) ? SHOP_TAG : SHOP_COL ) , "æ”¾æ£„"         );
 
   return;
 }
 
-/* Åã¥Ü°Ó©±¥i¥H³c½æª««~ªººØÃş */
+/* é¡¯ç¤ºå•†åº—å¯ä»¥è²©è³£ç‰©å“çš„ç¨®é¡ */
 void show_shop_object( SHOP_INFO * pShop )
 {
 
@@ -180,7 +180,7 @@ void show_shop_object( SHOP_INFO * pShop )
   return;
 }
 
-/* Åã¥Ü°Ó©±¥i¥H³c½æª««~ºØÃşªº¦W¦r */
+/* é¡¯ç¤ºå•†åº—å¯ä»¥è²©è³£ç‰©å“ç¨®é¡çš„åå­— */
 void show_shop_object_title( int selection )
 {
   print_string( SHOP_X + 19 , SHOP_Y + 5
@@ -280,23 +280,23 @@ void do_edit_shop ( void )
   int           selection = 0;
   char          temp[10];
 
-  /* ²M°£¿Ã¹õ¥H¤Î®ø°£´å¼Ğ */
+  /* æ¸…é™¤è¢å¹•ä»¥åŠæ¶ˆé™¤æ¸¸æ¨™ */
   clear_screen();
   set_cursor_type( NO_CURSOR );
 
-  /* ¶}±ÒÀÉ®× */
+  /* é–‹å•Ÿæª”æ¡ˆ */
   pFile = get_file_name( ".sho" );
 
-  /* ÀÉ®×µLªkÅª¨ú */
+  /* æª”æ¡ˆç„¡æ³•è®€å– */
   if ( pFile->information < 0 ) return;
 
-  /* ³]©w°Ó©±ªº°_¨Ï­È */
+  /* è¨­å®šå•†åº—çš„èµ·ä½¿å€¼ */
   pShop               = &aShop;
   pShop->valid        = pFile->information;
   pShop->pFile        = pFile;
   set_shop_default( pShop );
 
-  /* ³]©w¤½¥Î¿é¤J¦r¦êªº°_©l­È */
+  /* è¨­å®šå…¬ç”¨è¼¸å…¥å­—ä¸²çš„èµ·å§‹å€¼ */
   pString                  = &aString;
   pString->y_len           = 1;
   pString->front_color     = BLUE;
@@ -307,10 +307,10 @@ void do_edit_shop ( void )
   pString->number          = NUMBER_ONLY;
   pString->address         = temp;
 
-  /* ¸ü¤J°Ó©±ÀÉ®× */
+  /* è¼‰å…¥å•†åº—æª”æ¡ˆ */
   if ( pFile->information == 0 )
   {
-    /* ¦pªG¦³¿ù»~ */
+    /* å¦‚æœæœ‰éŒ¯èª¤ */
     if ( !load_shop( pShop ) )
     {
       pShop->valid = 2;
@@ -318,15 +318,15 @@ void do_edit_shop ( void )
     }
   }
 
-  /* Åã¥Ü½s¿è°Ó©±ªºµe­± */
+  /* é¡¯ç¤ºç·¨è¼¯å•†åº—çš„ç•«é¢ */
   show_edit_shop_shape( pShop );
 
   do
   {
-    /* Åã¥Ü±±¨î¥ú´Î */
+    /* é¡¯ç¤ºæ§åˆ¶å…‰æ£’ */
     show_edit_shop( control );
 
-    /* ±qÁä½L±o¨ú±±¨îÁä */
+    /* å¾éµç›¤å¾—å–æ§åˆ¶éµ */
     control_key = get_control_key();
 
     if ( control_key == RETURN_TAB    ) control++;
@@ -341,7 +341,7 @@ void do_edit_shop ( void )
 
     switch ( execute )
     {
-      /* ½s¿è°Ó©±¥D¤H */
+      /* ç·¨è¼¯å•†åº—ä¸»äºº */
       case 1 :
 
         pString->x_pos           = SHOP_X + 14;
@@ -364,7 +364,7 @@ void do_edit_shop ( void )
         execute = 0;
         break;
 
-      /* ½s¿è³c½æª««~ªººØÃş */
+      /* ç·¨è¼¯è²©è³£ç‰©å“çš„ç¨®é¡ */
       case 2 :
 
         {
@@ -381,7 +381,7 @@ void do_edit_shop ( void )
             if ( control_key == RETURN_END   ) selection =19;
 
 
-            /* ­Y¬O PGDN ©Î¬O  PGUP «h²M°£©Ò¦³ªº¿ï¶µ */
+            /* è‹¥æ˜¯ PGDN æˆ–æ˜¯  PGUP å‰‡æ¸…é™¤æ‰€æœ‰çš„é¸é … */
             if ( control_key == RETURN_PGDN || control_key == RETURN_PGUP )
             {
               for ( loop = 0; loop < MAX_ITEM ; loop++ )
@@ -390,25 +390,25 @@ void do_edit_shop ( void )
 
             }
 
-            /* ªÅ¥ÕÁä«h¥Nªí¿ï¾Ü³oºØª««~¬O§_¥i¥H³c½æ */
+            /* ç©ºç™½éµå‰‡ä»£è¡¨é¸æ“‡é€™ç¨®ç‰©å“æ˜¯å¦å¯ä»¥è²©è³£ */
             if ( control_key == RETURN_SPACE
                  || control_key == RETURN_UP
                  || control_key == RETURN_DOWN )
             {
-              /* ­Y¬O¤w¸g°é¿ï, «h¤Ï¦V²M°£ */
+              /* è‹¥æ˜¯å·²ç¶“åœˆé¸, å‰‡åå‘æ¸…é™¤ */
               if ( pShop->object[selection] == 1 )
               {
                 pShop->object[selection] = 0;
                 pShop->object_count--;
               }
 
-              /* ­Y¨S°é¿ï, «h³]©w¥¦ */
+              /* è‹¥æ²’åœˆé¸, å‰‡è¨­å®šå®ƒ */
               else
               {
-                /* ­Y°é¿ïªº¼Æ¥Ø¦h¹L MAX_TRADE «h¤£³B²z */
+                /* è‹¥åœˆé¸çš„æ•¸ç›®å¤šé MAX_TRADE å‰‡ä¸è™•ç† */
                 if ( pShop->object_count < MAX_TRADE )
                 {
-                  /* ­Y³oºØª««~¤£¥i¥H³c½æ, ¤]¤£³B²z¥¦ */
+                  /* è‹¥é€™ç¨®ç‰©å“ä¸å¯ä»¥è²©è³£, ä¹Ÿä¸è™•ç†å®ƒ */
                   if ( item_type[selection].sell == 1 )
                   {
                     pShop->object[selection] = 1;
@@ -422,19 +422,19 @@ void do_edit_shop ( void )
               }
             }
 
-            /* ¬İ¬İ¿ï¾Ü¶µ¥Ø¬O§_¶W¥X¤F½d³ò */
+            /* çœ‹çœ‹é¸æ“‡é …ç›®æ˜¯å¦è¶…å‡ºäº†ç¯„åœ */
             check_boundary( 0 , MAX_ITEM - 1 , &selection );
 
-            /* Åã¥Ü¬O§_ª««~¥i¥H³Q³c½æ */
+            /* é¡¯ç¤ºæ˜¯å¦ç‰©å“å¯ä»¥è¢«è²©è³£ */
             show_shop_object( pShop );
 
-            /* Åã¥Ü¥ş³¡¥i¥H³c½æª««~ºØÃşªº¦WºÙ */
+            /* é¡¯ç¤ºå…¨éƒ¨å¯ä»¥è²©è³£ç‰©å“ç¨®é¡çš„åç¨± */
             show_shop_object_title( selection );
 
           } while ( control_key != RETURN_RETURN
               && control_key != RETURN_TAB );
 
-         /* ²M°£³c½æª««~ªº¿ï¾Ü¥ú´Î */
+         /* æ¸…é™¤è²©è³£ç‰©å“çš„é¸æ“‡å…‰æ£’ */
          show_shop_object_title( MAX_ITEM );
 
          execute = 0;
@@ -442,7 +442,7 @@ void do_edit_shop ( void )
 
         }
 
-      /* ³]©w°Ó©±¶}ªùªº®É¶¡ ½d³ò 0 - 24 */
+      /* è¨­å®šå•†åº—é–‹é–€çš„æ™‚é–“ ç¯„åœ 0 - 24 */
       case 3 :
 
         pString->x_pos           = SHOP_X + 12;
@@ -457,7 +457,7 @@ void do_edit_shop ( void )
         get_string( pString );
         pShop->openhour = atoi(pString->address );
 
-        /* ÀË¬d®É¶¡¬O§_¶W¥X½d³ò */
+        /* æª¢æŸ¥æ™‚é–“æ˜¯å¦è¶…å‡ºç¯„åœ */
         if ( pShop->openhour < 0  ) pShop->openhour = 0;
         if ( pShop->openhour > 24 ) pShop->openhour = 0;
 
@@ -468,7 +468,7 @@ void do_edit_shop ( void )
         execute = 0;
         break;
 
-      /* ³]©w°Ó©±Ãöªùªº®É¶¡ ½d³ò 0 - 24 */
+      /* è¨­å®šå•†åº—é—œé–€çš„æ™‚é–“ ç¯„åœ 0 - 24 */
       case 4 :
 
         pString->x_pos           = SHOP_X + 29;
@@ -483,7 +483,7 @@ void do_edit_shop ( void )
         get_string( pString );
         pShop->closehour = atoi(pString->address );
 
-        /* ÀË¬d®É¶¡¬O§_¶W¥X½d³ò */
+        /* æª¢æŸ¥æ™‚é–“æ˜¯å¦è¶…å‡ºç¯„åœ */
         if ( pShop->closehour <  0 ) pShop->closehour = 0;
         if ( pShop->closehour > 24 ) pShop->closehour = 0;
 
@@ -494,7 +494,7 @@ void do_edit_shop ( void )
         execute = 0;
         break;
 
-      /* ³]©w°Ó©±¶R¤Jªº§Q¯q ½d³ò 0 - 999 */
+      /* è¨­å®šå•†åº—è²·å…¥çš„åˆ©ç›Š ç¯„åœ 0 - 999 */
       case 5 :
 
         pString->x_pos           = SHOP_X + 46;
@@ -509,7 +509,7 @@ void do_edit_shop ( void )
         get_string( pString );
         pShop->buyprofit = atoi(pString->address );
 
-        /* ÀË¬d¬O§_¶W¥X½d³ò */
+        /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
         if ( pShop->buyprofit <  0 ) pShop->buyprofit = 0;
 
         number_to_string( pShop->buyprofit , pString->address );
@@ -519,7 +519,7 @@ void do_edit_shop ( void )
         execute = 0;
         break;
 
-      /* ³]©w°Ó©±½æ¥Xªº§Q¯q ½d³ò 0 - 999 */
+      /* è¨­å®šå•†åº—è³£å‡ºçš„åˆ©ç›Š ç¯„åœ 0 - 999 */
       case 6 :
 
         pString->x_pos           = SHOP_X + 64;
@@ -534,7 +534,7 @@ void do_edit_shop ( void )
         get_string( pString );
         pShop->sellprofit = atoi(pString->address );
 
-        /* ÀË¬d¬O§_¶W¥X½d³ò */
+        /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
         if ( pShop->sellprofit <  0 ) pShop->sellprofit = 0;
 
         number_to_string( pShop->sellprofit , pString->address );
@@ -545,7 +545,7 @@ void do_edit_shop ( void )
 
         break;
 
-     /* ¦sÀÉ */
+     /* å­˜æª” */
      case 7 :
 
        fclose( pFile->filehandler );
@@ -555,10 +555,10 @@ void do_edit_shop ( void )
        fclose( pFile->filehandler );
        return;
 
-     /* ©ñ±ó */
+     /* æ”¾æ£„ */
      case 8 :
 
-       /* ­Y¬O·sªºÀÉ®×«h§R°£ , ¤£µM«hÃöÀÉ. */
+       /* è‹¥æ˜¯æ–°çš„æª”æ¡ˆå‰‡åˆªé™¤ , ä¸ç„¶å‰‡é—œæª”. */
 
        if ( pFile->information == 1 ) delete_null_file( pFile );
        else fclose( pFile->filehandler );
@@ -569,7 +569,7 @@ void do_edit_shop ( void )
   return;
 }
 
-/* Àx¦s°Ó©±ÀÉ®×®æ¦¡ */
+/* å„²å­˜å•†åº—æª”æ¡ˆæ ¼å¼ */
 void do_save_shop( SHOP_INFO * pShop , FILE * fp )
 {
   fprintf( fp , "#SHOPS\n"                                 );
@@ -604,7 +604,7 @@ void do_save_shop( SHOP_INFO * pShop , FILE * fp )
   return;
 }
 
-/* ³]©w°Ó©±ªº°_©l­È */
+/* è¨­å®šå•†åº—çš„èµ·å§‹å€¼ */
 void set_shop_default( SHOP_INFO * pShop )
 {
   int loop;
@@ -620,7 +620,7 @@ void set_shop_default( SHOP_INFO * pShop )
   return;
 }
 
-/* ±qÀÉ®×¸ü¤J°Ó©±®æ¦¡ */
+/* å¾æª”æ¡ˆè¼‰å…¥å•†åº—æ ¼å¼ */
 int load_shop( SHOP_INFO * pShop )
 {
   char   word[ MAX_WORD_LENGTH ];
@@ -655,12 +655,12 @@ int load_shop( SHOP_INFO * pShop )
 
      case 'B' :
 
-       /* ¶R¤J§Q¯q ½d³ò 0 - 999 */
+       /* è²·å…¥åˆ©ç›Š ç¯„åœ 0 - 999 */
        if ( !strcmp( pWord , "BuyProfit" ) )
        {
           pShop->buyprofit = fread_number( pShop->pFile );
 
-          /* ÀË¬d¬O§_¶W¥X½d³ò */
+          /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
           if ( pShop->pFile->status == 1                      ) return FALSE;
           if ( pShop->buyprofit < 0 || pShop->buyprofit > 999 ) return FALSE;
 
@@ -672,12 +672,12 @@ int load_shop( SHOP_INFO * pShop )
 
      case 'C' :
 
-       /* Ãöªùªº®É¶¡ ½d³ò 0 - 24 */
+       /* é—œé–€çš„æ™‚é–“ ç¯„åœ 0 - 24 */
        if ( !strcmp( pWord , "CloseHour" ) )
        {
           pShop->closehour = fread_number( pShop->pFile );
 
-          /* ÀË¬d¬O§_¶W¥X½d³ò */
+          /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
           if ( pShop->pFile->status == 1                     ) return FALSE;
           if ( pShop->closehour < 0 || pShop->closehour > 24 ) return FALSE;
 
@@ -704,7 +704,7 @@ int load_shop( SHOP_INFO * pShop )
        {
           pShop->keeper = fread_number( pShop->pFile );
 
-          /* ÀË¬d¬O§_¶W¥X½d³ò */
+          /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
           if ( pShop->pFile->status == 1 ) return FALSE;
           if ( pShop->keeper < 0 )         return FALSE;
 
@@ -716,20 +716,20 @@ int load_shop( SHOP_INFO * pShop )
 
      case 'O' :
 
-       /* ¶}ªùªº®É¶¡ ½d³ò 0 - 24 */
+       /* é–‹é–€çš„æ™‚é–“ ç¯„åœ 0 - 24 */
        if ( !strcmp( pWord , "OpenHour" ) )
        {
           pShop->openhour = fread_number( pShop->pFile );
           if ( pShop->pFile->status == 1 ) return FALSE;
 
-          /* ÀË¬d¬O§_¶W¥X½d³ò */
+          /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
           if ( pShop->openhour < 0 || pShop->openhour > 24 ) return FALSE;
 
           Match = TRUE;
           break;
        }
 
-       /* ³c½æª««~ªººØÃş, ¶W¹L MAX_TRADE ­Ó¼Æªº¨t²Î¤£²z·| */
+       /* è²©è³£ç‰©å“çš„ç¨®é¡, è¶…é MAX_TRADE å€‹æ•¸çš„ç³»çµ±ä¸ç†æœƒ */
        if ( !strcmp( pWord , "Object" ) )
        {
           int iTrade = 0;
@@ -761,13 +761,13 @@ int load_shop( SHOP_INFO * pShop )
 
      case 'S' :
 
-       /* °â¥X§Q¯q ½d³ò 0 - 999 */
+       /* å”®å‡ºåˆ©ç›Š ç¯„åœ 0 - 999 */
        if ( !strcmp( pWord , "SellProfit" ) )
        {
           pShop->sellprofit = fread_number( pShop->pFile );
           if ( pShop->pFile->status == 1 ) return FALSE;
 
-          /* ÀË¬d¬O§_¶W¥X½d³ò */
+          /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
           if ( pShop->sellprofit < 0 || pShop->sellprofit > 999 )
             return FALSE;
 

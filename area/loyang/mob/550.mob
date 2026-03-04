@@ -1,10 +1,10 @@
 Vnum            550
 Name            sky shaman~
-ShortDesc       ¤Ñæ¢¹D~
-LongDesc        ¤Ñæ¢¹D(sky shaman)
+ShortDesc       å¤©ç’‡é“~
+LongDesc        å¤©ç’‡é“(sky shaman)
 ~
 Description
-¤@¨­°®²bªº¹DªA¡MÅã¥ÜÄYÂÔªº¥Í¬¡¡M¤£­e¨¥¯º¡M«Ü»{¯uªº¤@­Ó¤H¡C
+ä¸€èº«ä¹¾æ·¨çš„é“æœï¹é¡¯ç¤ºåš´è¬¹çš„ç”Ÿæ´»ï¹ä¸è‹Ÿè¨€ç¬‘ï¹å¾ˆèªçœŸçš„ä¸€å€‹äººã€‚
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -36,8 +36,8 @@ Type            speech_prog
 Argument        no~
 Text
 if ispc($n)
-  tell $n ³á¡K¡K¨º¡K¡K¨S¨Æ¡T
-  emote «ÜµJ«æ¡K¡K
+  tell $n å–”â€¦â€¦é‚£â€¦â€¦æ²’äº‹ï¹—
+  emote å¾ˆç„¦æ€¥â€¦â€¦
 endif
 ~
 End

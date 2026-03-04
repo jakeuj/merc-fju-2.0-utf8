@@ -15,31 +15,31 @@ int  load_area                  ( AREA_INFO * );
 
 void show_area_shape( AREA_INFO *pArea , FILE_INFO * pFile )
 {
-  print_string( AREA_X , AREA_Y   , AREA_COL ,"¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{" );
-  print_string( AREA_X , AREA_Y+1 , AREA_COL ,"¢x °Ï°ìÀÉ¦W:                                              ¢x" );
-  print_string( AREA_X , AREA_Y+2 , AREA_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( AREA_X , AREA_Y+3 , AREA_COL ,"¢x °Ï°ìªºÄİ©Ê: (*) ¤£Åã¥Ü (*) »İ­nÅã¥Ü                    ¢x" );
-  print_string( AREA_X , AREA_Y+4 , AREA_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( AREA_X , AREA_Y+5 , AREA_COL ,"¢x °Ï°ì´y­z  :                                            ¢x" );
-  print_string( AREA_X , AREA_Y+6 , AREA_COL ,"¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t" );
-  print_string( AREA_X , AREA_Y+7 , AREA_COL ,"¢x <¦sÀÉ>  <©ñ±ó>                                         ¢x" );
-  print_string( AREA_X , AREA_Y+8 , AREA_COL ,"¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}" );
+  print_string( AREA_X , AREA_Y   , AREA_COL ,"â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”" );
+  print_string( AREA_X , AREA_Y+1 , AREA_COL ,"â”‚ å€åŸŸæª”å:                                              â”‚" );
+  print_string( AREA_X , AREA_Y+2 , AREA_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( AREA_X , AREA_Y+3 , AREA_COL ,"â”‚ å€åŸŸçš„å±¬æ€§: (*) ä¸é¡¯ç¤º (*) éœ€è¦é¡¯ç¤º                    â”‚" );
+  print_string( AREA_X , AREA_Y+4 , AREA_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( AREA_X , AREA_Y+5 , AREA_COL ,"â”‚ å€åŸŸæè¿°  :                                            â”‚" );
+  print_string( AREA_X , AREA_Y+6 , AREA_COL ,"â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤" );
+  print_string( AREA_X , AREA_Y+7 , AREA_COL ,"â”‚ <å­˜æª”>  <æ”¾æ£„>                                         â”‚" );
+  print_string( AREA_X , AREA_Y+8 , AREA_COL ,"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜" );
 
-  /* ¦C¦LÀÉ¦W */
+  /* åˆ—å°æª”å */
   print_string( AREA_X + 15 , AREA_Y + 1 , AREA_COL , pFile->filename );
 
-  /* ¦C¦LÀÉ®×ªº±¡§Î */
+  /* åˆ—å°æª”æ¡ˆçš„æƒ…å½¢ */
   if ( pArea->valid == 0 )
-    print_string( AREA_X + 40 , AREA_Y + 1 , AREA_COL , "ÂÂÀÉ®×" );
+    print_string( AREA_X + 40 , AREA_Y + 1 , AREA_COL , "èˆŠæª”æ¡ˆ" );
 
   else if ( pArea->valid == 1 )
-    print_string( AREA_X + 40 , AREA_Y + 1 , AREA_COL , "·sÀÉ®×" );
+    print_string( AREA_X + 40 , AREA_Y + 1 , AREA_COL , "æ–°æª”æ¡ˆ" );
 
   else if ( pArea->valid == 2 )
-    print_string( AREA_X + 40 , AREA_Y + 1 , AREA_COL , "¤£¥¿½TªºÂÂÀÉ®×" );
+    print_string( AREA_X + 40 , AREA_Y + 1 , AREA_COL , "ä¸æ­£ç¢ºçš„èˆŠæª”æ¡ˆ" );
 
 
-  /* ¦C¦LÄİ©Ê */
+  /* åˆ—å°å±¬æ€§ */
   if ( pArea->attribution == 0 )
   {
     print_string( AREA_X + 16 , AREA_Y + 3 , AREA_COL , "*" );
@@ -52,38 +52,38 @@ void show_area_shape( AREA_INFO *pArea , FILE_INFO * pFile )
     print_string( AREA_X + 27 , AREA_Y + 3 , AREA_COL , "*" );
   }
 
-  /* ¦C¦L½s¿èªÌ */
+  /* åˆ—å°ç·¨è¼¯è€… */
 
   print_string( AREA_X + 15 , AREA_Y + 5 , AREA_COL , pArea->editor );
 
   return;
 }
 
-/* Åã¥Ü½s¿è°Ï°ì®æ¦¡ªºµe­± */
+/* é¡¯ç¤ºç·¨è¼¯å€åŸŸæ ¼å¼çš„ç•«é¢ */
 
 void show_edit_area( int control )
 {
   print_string( AREA_X + 3 , AREA_Y + 3
     ,( ( control == 1 ) ? AREA_TAG : AREA_COL )
-    , "°Ï°ìªºÄİ©Ê" );
+    , "å€åŸŸçš„å±¬æ€§" );
 
   print_string( AREA_X + 3 , AREA_Y + 5
     ,( ( control == 2 ) ? AREA_TAG : AREA_COL )
-    , "°Ï°ì´y­z" );
+    , "å€åŸŸæè¿°" );
 
   print_string( AREA_X + 4 , AREA_Y + 7
     ,( ( control == 3 ) ? AREA_TAG : AREA_COL )
-    , "¦sÀÉ" );
+    , "å­˜æª”" );
 
   print_string( AREA_X + 12 , AREA_Y + 7
     ,( ( control == 4 ) ? AREA_TAG : AREA_COL )
-    , "©ñ±ó" );
+    , "æ”¾æ£„" );
 
   return;
 
 }
 
-/* ½s¿è·s®æ¦¡°Ï°ìªº¥Dµ{¦¡ */
+/* ç·¨è¼¯æ–°æ ¼å¼å€åŸŸçš„ä¸»ç¨‹å¼ */
 
 void do_edit_area( void )
 {
@@ -96,23 +96,23 @@ void do_edit_area( void )
   int           execute = 0;
   int           control_key;
 
-  /* ²M°£¿Ã¹õ¥H¤Î®ø°£´å¼Ğ */
+  /* æ¸…é™¤è¢å¹•ä»¥åŠæ¶ˆé™¤æ¸¸æ¨™ */
   clear_screen();
   set_cursor_type( NO_CURSOR );
 
-  /* ¶}±ÒÀÉ®× */
+  /* é–‹å•Ÿæª”æ¡ˆ */
   pFile = get_file_name( ".sec" );
 
-  /* ÀÉ®×µLªkÅª¨ú */
+  /* æª”æ¡ˆç„¡æ³•è®€å– */
   if ( pFile->information < 0 ) return;
 
-  /* ³]©w°Ï°ìªº°_¨Ï­È */
+  /* è¨­å®šå€åŸŸçš„èµ·ä½¿å€¼ */
   pArea              = &area_formation;
   pArea->valid       = pFile->information;
   pArea->pEditor     = &aEditor;
   pArea->pFile       = pFile;
 
-  /* ³]©w½s¿èªÌ¦r¦ê°_±Ò­È */
+  /* è¨­å®šç·¨è¼¯è€…å­—ä¸²èµ·å•Ÿå€¼ */
   {
     pEditor                  = &aEditor;
     pEditor->x_pos           = AREA_X + 15;
@@ -131,14 +131,14 @@ void do_edit_area( void )
     clear_string( pEditor );
   }
 
-  /* ³]©w°Ï°ìªº°_¨Ï­È */
+  /* è¨­å®šå€åŸŸçš„èµ·ä½¿å€¼ */
   set_area_default( pArea );
 
-  /* ¸ü¤J°Ï°ìÀÉ®× */
+  /* è¼‰å…¥å€åŸŸæª”æ¡ˆ */
   if ( pFile->information == 0 )
   {
 
-    /* ¦pªG¦³¿ù»~ */
+    /* å¦‚æœæœ‰éŒ¯èª¤ */
     if ( !load_area( pArea ) )
     {
       pArea->valid = 2;
@@ -146,12 +146,12 @@ void do_edit_area( void )
     }
   }
 
-  /* Åã¥Ü¤@¶}©lªº½s¿è¿Ã¹õ */
+  /* é¡¯ç¤ºä¸€é–‹å§‹çš„ç·¨è¼¯è¢å¹• */
   show_area_shape( pArea , pFile );
 
   do
   {
-    /* Åã¥Ü¿Ã¹õªºÅÜ°Ê */
+    /* é¡¯ç¤ºè¢å¹•çš„è®Šå‹• */
     show_edit_area( control );
 
     control_key = get_control_key();
@@ -163,13 +163,13 @@ void do_edit_area( void )
     if ( control_key == RETURN_HOME   ) control = 1;
     if ( control_key == RETURN_END    ) control = 4;
 
-    /* ÀË¬d¬O§_¶W¥X½d³ò */
+    /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
     check_boundary( 1 , 4 , &control );
 
     switch ( execute )
     {
 
-     /* ½s¿è°Ï°ìªºÄİ©Ê */
+     /* ç·¨è¼¯å€åŸŸçš„å±¬æ€§ */
      case 1 :
 
        while ( TRUE )
@@ -182,7 +182,7 @@ void do_edit_area( void )
          if ( control_key == RETURN_LEFT  ) pArea->attribution++;
          if ( control_key == RETURN_RIGHT ) pArea->attribution--;
 
-         /* ÀË¬d¬O§_¶W¥X½d³ò */
+         /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
          check_boundary( 0 , 1 , &(pArea->attribution ) );
 
          show_edit_area( control );
@@ -203,7 +203,7 @@ void do_edit_area( void )
        execute = 0;
        break;
 
-     /* ½s¿è½s¿èªÌ */
+     /* ç·¨è¼¯ç·¨è¼¯è€… */
      case 2 :
 
        get_string( pEditor );
@@ -211,7 +211,7 @@ void do_edit_area( void )
        execute = 0;
        break;
 
-     /* ¦sÀÉ */
+     /* å­˜æª” */
      case 3 :
 
        fclose( pFile->filehandler );
@@ -233,11 +233,11 @@ void do_edit_area( void )
        fclose( pFile->filehandler );
        return;
 
-     /* ©ñ±ó½s¿è */
+     /* æ”¾æ£„ç·¨è¼¯ */
 
      case 4 :
 
-       /* ­Y¬O·sªºÀÉ®×«h§R°£ , ¤£µM«hÃöÀÉ. */
+       /* è‹¥æ˜¯æ–°çš„æª”æ¡ˆå‰‡åˆªé™¤ , ä¸ç„¶å‰‡é—œæª”. */
 
        if ( pFile->information == 1 )
          delete_null_file( pFile );
@@ -254,7 +254,7 @@ void do_edit_area( void )
 #undef AREA_COLOR
 #undef AREA_TAG
 
-/* ³]©w°Ï°ìªº¹w³]­È */
+/* è¨­å®šå€åŸŸçš„é è¨­å€¼ */
 
 void set_area_default( AREA_INFO *pArea )
 {

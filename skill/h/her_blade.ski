@@ -1,5 +1,5 @@
 Name            her blade~
-Cname           �r�s�M�k~
+Cname           猛龍刀法~
 Slot            SLOT_HER_BLADE
 Msgoff          ~
 Check           check_blade_attack~
@@ -30,18 +30,18 @@ Limit           CLASS_FIGHTER    1  45
 Limit           CLASS_GENERAL    1  90
 Limit           CLASS_BRAVO      1  75
 Help
-�r�s�M�k:
+猛龍刀法:
 
-�b�x���y�ǬƼs���M�k�M��Щl�̬O�֤w���i�ҡM�ۦ����M���j�M
-�������W��M�ӥB�O�@���M�k���ڥ��C
-�p�G������ǳo�򥻤M�k�Mť���b�������ӦѤH���b�б¡M���O�L
-�n���]������Ʊ������ð_�ӤF�C
+在軍中流傳甚廣的刀法﹐原創始者是誰已不可考﹐招式雖然不強﹐
+但極易上手﹐而且是一切刀法的根本。
+如果有興趣學這基本刀法﹐聽說在洛陽有個老人有在教授﹐但是他
+好像因為什麼事情而隱藏起來了。
 
 ~
 
 #Damage
 Description
-$n�⤤$O�˥X�M�ϥX�@��$Y�y�E��U�d�z$Z��$N$l�A�h�C~
+$n手中$O騰出﹐使出一式$Y『浩氣萬千』$Z往$N$l劈去。~
 Chance          10
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ End
 
 #Damage
 Description
-$n�@��$B�y��Y�z���z$Z�M�⤤$O�p�r��멹$N$l��h�C~
+$n一招$B『氣若干雲』$Z﹐手中$O如猛虎般往$N$l砍去。~
 Chance          10
 Value           20
 Parry           0
@@ -61,7 +61,7 @@ End
 
 #Damage
 Description
-$n���|�⤤$O�M�@��$S�y�U�Ҳ��ġz$Z��$N$l�A�h�C~
+$n高舉手中$O﹐一招$S『萬夫莫敵』$Z往$N$l劈去。~
 Chance          10
 Value           20
 Parry           0
@@ -71,7 +71,7 @@ End
 
 #Damage
 Description
-$n�N�⤤$O�@���M�@��$y�y�z��ɩ��z$Z��$N$l��h�C~
+$n將手中$O一撩﹐一招$y『干戈玉帛』$Z往$N$l砍去。~
 Chance          10
 Value           20
 Parry           0
@@ -81,9 +81,9 @@ End
 
 #Damage
 Description
-$n�ݷ�$N���ӶաM�L�@�����{�L�M�@�Ϥ�N����ϥX�F$Y�y�r�s�L���z$Z$A
-�M�զp�������������ܤ������e��h�M$N�@�ɤ���L�k�{�סM�Q�M�լ�ӥ���$A
-�˦a���_�C~
+$n看準$N的來勢﹐微一側身閃過﹐一反手就順手使出了$Y『猛龍過江』$Z$A
+刀勢如江浪之水般濤濤不絕的前攻去﹐$N一時不察無法閃避﹐被刀勢砍個正著$A
+倒地不起。~
 Chance          10
 Value           20
 Parry           0
@@ -93,8 +93,8 @@ End
 
 #Damage
 Description
-$n����������M���M�֨ӤߦܡM����y�o�M$n���Ѫ��S�@�n�ϥX$A
-$B�y��զp�i�z$Z�M�⤤�K�����M�պ������N$n�]��M�Φ��@�ӤM�y�N��x���C~
+$n正打的順手﹐忽然福來心至﹐豪氣頓發﹐$n仰天長嘯一聲使出$A
+$B『氣勢如虹』$Z﹐手中密集的刀勢漸漸的將$n包圍﹐形成一個刀球將其困死。~
 Chance          10
 Value           20
 Parry           0
@@ -104,9 +104,9 @@ End
 
 #Damage
 Description
-$n�N�⤤��$O�V�W�ߥX�M�H�]����D�W�M�����M�`�ѤW���U�ϥX�F$A
-$S�y���s��{�z$Z�u���@�����s�H���p���α��ժ��t�ױ��ӡM$A
-$N�uı���e�ȥ��j���M�w�Q$O�v�b�a�W�F�C~
+$n將手中的$O向上拋出﹐人也跟著躍上﹐握住刀柄由上住下使出了$A
+$S『雲龍初現』$Z只見一條銀龍以迅雷不及掩耳的速度殺來﹐$A
+$N只覺眼前銀光大盛﹐已被$O釘在地上了。~
 Chance          10
 Value           20
 Parry           0
@@ -116,10 +116,10 @@ End
 
 #Damage
 Description
-$n�H���O���}$N�M�X�䤺�����ծɻE�𾮯��M�H���O�e�`�M���M�ϥX$y�y�խi�e��z$Z
-�M�����o�X�}�}�G�H���M��M��$N�����u�v���Y��M���ɾ��@��M$A
-$n�����D�_�M�D�ܷ����᩹$N�ĥh�M�u��$n�H�M�X�@�Ʀ��@�խi�T$A
-��������$N���u�աM��$N$l�y���v�T�C~
+$n以內力振開$N﹐趁其內息失調時聚氣凝神﹐以內力貫注刀身﹐使出$y『白虹貫日』$Z
+刀身散發出陣陣逼人的刀氣﹐讓$N的防守逐漸崩潰﹐當時機一到﹐$A
+$n提氣躍起﹐躍至極限後往$N衝去﹐只見$n人刀合一化成一白虹﹗$A
+徹底擊潰$N的守勢﹐對$N$l造成影響。~
 Chance          10
 Value           20
 Parry           0

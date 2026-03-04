@@ -1,10 +1,10 @@
 Vnum            591
 Name            acajou~
-ShortDesc       ®ç¤ì~
+ShortDesc       æ¡ƒæœ¨~
 Description
-´²µo¥X²H²H®ç­»ªº¤ìÀY¡MÅý§AÁôÁô¦³¤@ªÑÄÆÄÆµMªº·PÄ±¡C
+æ•£ç™¼å‡ºæ·¡æ·¡æ¡ƒé¦™çš„æœ¨é ­ï¹è®“ä½ éš±éš±æœ‰ä¸€è‚¡é£„é£„ç„¶çš„æ„Ÿè¦ºã€‚
 ~
-Unit            ¬q~
+Unit            æ®µ~
 ItemType        ITEM_LIGHT
 WearLoc         ITEM_WEAR_LIGHT
 Takeable        Yes

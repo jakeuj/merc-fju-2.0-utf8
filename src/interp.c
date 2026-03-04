@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -61,13 +61,13 @@ void interpret( CHAR_DATA * ch, char * argument )
 
   if ( !IS_NPC( ch ) && IS_SET( ch->act, PLR_FREEZE ) )
   {
-    send_to_char( "¹ï¤£°_¡M§A³Q¸T¤î¤U¥ô¦ó«ü¥O¡C\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ è¢«ç¦æ­¢ä¸‹ä»»ä½•æŒ‡ä»¤ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   str_cpy( logline, argument );
 
-  /* Á×§K ' ³o­Ó«ü¥O·|³Q one_argument() ¦Y±¼ */
+  /* é¿å… ' é€™å€‹æŒ‡ä»¤æœƒè¢« one_argument() åƒæ‰ */
   if ( !isalpha( ( int ) argument[0] ) && !isdigit( ( int ) argument[0] ) )
   {
     command[0] = argument[0];
@@ -99,7 +99,7 @@ void interpret( CHAR_DATA * ch, char * argument )
     }
   }
 
-  /* ³B²z¼Ğ°Oªº¦r¦ê */
+  /* è™•ç†æ¨™è¨˜çš„å­—ä¸² */
   if ( pCommand )
   {
     if ( pCommand->log == LOG_NEVER )
@@ -108,7 +108,7 @@ void interpret( CHAR_DATA * ch, char * argument )
     if ( ( pCommand->log == LOG_WIZ && !IS_NPC( ch ) )
       || ( pCommand->wizlog && !IS_NPC( ch ) && IS_IMMORTAL( ch ) ) )
     {
-      mudlog( LOG_WIZARD , "Âê©w%sªº°Ê§@: %s", ch->name , logline );
+      mudlog( LOG_WIZARD , "é–å®š%sçš„å‹•ä½œ: %s", ch->name , logline );
       player_log( ch, logline );
     }
   }
@@ -117,10 +117,10 @@ void interpret( CHAR_DATA * ch, char * argument )
     || fLogAll
     || ( pCommand && ( pCommand->trace || pCommand->log == LOG_ALWAYS ) ) )
   {
-    mudlog( LOG_INFO , "Âê©w%sªº°Ê§@: %s", ch->name, logline );
+    mudlog( LOG_INFO , "é–å®š%sçš„å‹•ä½œ: %s", ch->name, logline );
   }
 
-  /* ¿é¥XºÊµøªº¦r¦ê */
+  /* è¼¸å‡ºç›£è¦–çš„å­—ä¸² */
   if ( ch->desc && ch->desc->snoop_by )
   {
     char buf[MAX_STRING_LENGTH ];
@@ -190,13 +190,13 @@ void interpret( CHAR_DATA * ch, char * argument )
   {
     if ( !check_social( ch, command, argument ) )
     {
-      send_to_char( "«ü¥O¿ù»~¡M½Ğ¬d¸ß(\e[1;32mhelp\e[0m) command "
-        "©Î¬O cmds¡C\n\r", ch );
+      send_to_char( "æŒ‡ä»¤éŒ¯èª¤ï¹è«‹æŸ¥è©¢(\e[1;32mhelp\e[0m) command "
+        "æˆ–æ˜¯ cmdsã€‚\n\r", ch );
 
-      /* ©Çª«¥¿°õ¦æ MOBPROGRAM */
+      /* æ€ªç‰©æ­£åŸ·è¡Œ MOBPROGRAM */
       if ( IS_NPC( ch ) && ch->pIndexData && ch->inprocess && *argument )
       {
-        mudlog( LOG_DEBUG, "interpret: ©Çª« %d «ü¥O %s °Ñ¼Æ %s ¿ù»~."
+        mudlog( LOG_DEBUG, "interpret: æ€ªç‰© %d æŒ‡ä»¤ %s åƒæ•¸ %s éŒ¯èª¤."
           , ch->pIndexData->vnum, command, argument );
       }
     }
@@ -208,7 +208,7 @@ void interpret( CHAR_DATA * ch, char * argument )
     || !str_cmp( argument , "-?" ) )
   {
     if ( !pCommand->help || pCommand->help == &str_empty[0] )
-      send_to_char( "¹ï¤£°_¡M³o­Ó«ü¥O¨S¦³½u¤W¨D§U¡C\n\r" , ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™å€‹æŒ‡ä»¤æ²’æœ‰ç·šä¸Šæ±‚åŠ©ã€‚\n\r" , ch );
 
     else
       send_to_char( pCommand->help, ch );
@@ -216,10 +216,10 @@ void interpret( CHAR_DATA * ch, char * argument )
     RETURN_NULL();
   }
 
-  /* ÀË¬d¬O§_¦³°Ñ¼Æªº«ü¥O */
+  /* æª¢æŸ¥æ˜¯å¦æœ‰åƒæ•¸çš„æŒ‡ä»¤ */
   if ( pCommand->argument == TRUE && argument[0] == '\x0' )
   {
-    act( "³o­Ó«ü¥O¥²¶·¦³°Ñ¼Æ¡M½Ğ¿é¤J $7$t /?$0 ¬d¸ß¡C"
+    act( "é€™å€‹æŒ‡ä»¤å¿…é ˆæœ‰åƒæ•¸ï¹è«‹è¼¸å…¥ $7$t /?$0 æŸ¥è©¢ã€‚"
       , ch, pCommand->name, NULL, TO_CHAR );
 
     RETURN_NULL();
@@ -230,19 +230,19 @@ void interpret( CHAR_DATA * ch, char * argument )
     switch( ch->position )
     {
     case POS_DEAD:
-      send_to_char( "§A¤w¸g¦º¤F­C¡M½Ğ¿é¤J \e[1;32mhelp death\e[0m¡C\n\r", ch );
+      send_to_char( "ä½ å·²ç¶“æ­»äº†è€¶ï¹è«‹è¼¸å…¥ \e[1;32mhelp death\e[0mã€‚\n\r", ch );
       break;
 
     case POS_SLEEPING:
-      send_to_char( "¬O§AºÎÄ±®Éªº¤Û¼vÁÙ¬O§A¨«¤õ¤JÅ]¤F¡S\n\r", ch );
+      send_to_char( "æ˜¯ä½ ç¡è¦ºæ™‚çš„å¹»å½±é‚„æ˜¯ä½ èµ°ç«å…¥é­”äº†ï¹–\n\r", ch );
       break;
 
     case POS_RESTING:
-      send_to_char( "°Ú¡M§AµÎªAªºª¦¤£°_¨Ó¤F¡C\n\r", ch);
+      send_to_char( "å•Šï¹ä½ èˆ’æœçš„çˆ¬ä¸èµ·ä¾†äº†ã€‚\n\r", ch);
       break;
 
     case POS_FIGHTING:
-      send_to_char( "¤£¦æ¡M§AÁÙ¦b¾Ô°«­C¡C\n\r", ch);
+      send_to_char( "ä¸è¡Œï¹ä½ é‚„åœ¨æˆ°é¬¥è€¶ã€‚\n\r", ch);
       break;
     }
     RETURN_NULL();
@@ -250,26 +250,26 @@ void interpret( CHAR_DATA * ch, char * argument )
 
   if ( !pCommand->dead && is_dead( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M³o­Ó«ü¥O·í§A¦º¤`®É¡M¬O¤£¯à°õ¦æªº¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹é€™å€‹æŒ‡ä»¤ç•¶ä½ æ­»äº¡æ™‚ï¹æ˜¯ä¸èƒ½åŸ·è¡Œçš„ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
-  /* «ü¥O¬O§_³QÂê©w */
+  /* æŒ‡ä»¤æ˜¯å¦è¢«é–å®š */
   if ( pCommand->lock == TRUE )
   {
-    send_to_char( "³o­Ó«ü¥O³QÂê©w¡M¦]¦¹¤£¯à°õ¦æ¡C\n\r" , ch );
+    send_to_char( "é€™å€‹æŒ‡ä»¤è¢«é–å®šï¹å› æ­¤ä¸èƒ½åŸ·è¡Œã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
   if ( !IS_NPC( ch ) && ch->jail > 0 && !pCommand->jail )
   {
-    send_to_char( "§A¥¿¦b¨ü¦D¤¤¡M³o­Ó«ü¥O§A¤£¯à¨Ï¥Î¡T\n\r", ch );
+    send_to_char( "ä½ æ­£åœ¨å—åˆ‘ä¸­ï¹é€™å€‹æŒ‡ä»¤ä½ ä¸èƒ½ä½¿ç”¨ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !IS_NPC( ch ) && ch->failed > 0 && !pCommand->lost )
   {
-    send_to_char( "§A¥¿¦b«ä¹L¤¤¡M³o­Ó«ü¥O§A¤£¯à¨Ï¥Î¡T\n\r", ch );
+    send_to_char( "ä½ æ­£åœ¨æ€éä¸­ï¹é€™å€‹æŒ‡ä»¤ä½ ä¸èƒ½ä½¿ç”¨ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -277,31 +277,31 @@ void interpret( CHAR_DATA * ch, char * argument )
   {
     if ( get_curr_str( ch ) <= 0 )
     {
-      send_to_char( "§Aªº¤O¶q¬°­t­È¡M³o­Ó«ü¥O¤£¯à°õ¦æ¡T\n\r", ch );
+      send_to_char( "ä½ çš„åŠ›é‡ç‚ºè² å€¼ï¹é€™å€‹æŒ‡ä»¤ä¸èƒ½åŸ·è¡Œï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( get_curr_int( ch ) <= 0 )
     {
-      send_to_char( "§Aªº´¼¼z¬°­t­È¡M³o­Ó«ü¥O¤£¯à°õ¦æ¡T\n\r", ch );
+      send_to_char( "ä½ çš„æ™ºæ…§ç‚ºè² å€¼ï¹é€™å€‹æŒ‡ä»¤ä¸èƒ½åŸ·è¡Œï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( get_curr_wis( ch ) <= 0 )
     {
-      send_to_char( "§Aªº¾ÇÃÑ¬°­t­È¡M³o­Ó«ü¥O¤£¯à°õ¦æ¡T\n\r", ch );
+      send_to_char( "ä½ çš„å­¸è­˜ç‚ºè² å€¼ï¹é€™å€‹æŒ‡ä»¤ä¸èƒ½åŸ·è¡Œï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( get_curr_dex( ch ) <= 0 )
     {
-      send_to_char( "§Aªº±Ó±¶¬°­t­È¡M³o­Ó«ü¥O¤£¯à°õ¦æ¡T\n\r", ch );
+      send_to_char( "ä½ çš„æ•æ·ç‚ºè² å€¼ï¹é€™å€‹æŒ‡ä»¤ä¸èƒ½åŸ·è¡Œï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( get_curr_con( ch ) <= 0 )
     {
-      send_to_char( "§AªºÅé®æ¬°­t­È¡M³o­Ó«ü¥O¤£¯à°õ¦æ¡T\n\r", ch );
+      send_to_char( "ä½ çš„é«”æ ¼ç‚ºè² å€¼ï¹é€™å€‹æŒ‡ä»¤ä¸èƒ½åŸ·è¡Œï¹—\n\r", ch );
       RETURN_NULL();
     }
   }
@@ -309,18 +309,18 @@ void interpret( CHAR_DATA * ch, char * argument )
   if ( pCommand->chat && !IS_NPC( ch ) )
     mudlog( LOG_CHAT, "%-12s %s", ch->name, argument );
 
-  /* °O¿ı¨Ï¥Îªº«ü¥O¦¸¼Æ */
+  /* è¨˜éŒ„ä½¿ç”¨çš„æŒ‡ä»¤æ¬¡æ•¸ */
   if ( !IS_NPC( ch ) ) pCommand->exec++;
 
-  /* °O¿ı³Ìªñ¨Ï¥Îª¬ªp */
+  /* è¨˜éŒ„æœ€è¿‘ä½¿ç”¨ç‹€æ³ */
   LastCommand = pCommand;
   LastChar    = ch;
   str_cpy( LastArgument , argument );
 
-  /* °õ¦æ©R¥O */
+  /* åŸ·è¡Œå‘½ä»¤ */
   ( *pCommand->function ) ( ch , argument );
 
-  /* ®ø°£³Ìªñ¨Ï¥Îª¬ªp */
+  /* æ¶ˆé™¤æœ€è¿‘ä½¿ç”¨ç‹€æ³ */
   LastCommand     = NULL;
   LastChar        = NULL;
   LastArgument[0] = '\x0';
@@ -339,7 +339,7 @@ bool check_social( CHAR_DATA * ch, char * command, char * argument )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "check_social: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "check_social: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -351,12 +351,12 @@ bool check_social( CHAR_DATA * ch, char * command, char * argument )
 
   if ( !social ) RETURN( FALSE );
 
-  /* ¦pªG¬O§¤ÃM¬O¨S¦³ªÀ¥æªº«ü¥O */
+  /* å¦‚æœæ˜¯åé¨æ˜¯æ²’æœ‰ç¤¾äº¤çš„æŒ‡ä»¤ */
   if ( IS_NPC( ch ) && get_rider( ch ) ) RETURN( FALSE );
 
   if ( !IS_NPC( ch ) && IS_SET( ch->act, PLR_NO_EMOTE ) )
   {
-    send_to_char( "¹ï¤£°_¡M§A³Q¸T¤î°µ¥ô¦óªºªÀ¥æ«ü¥O¡C\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ è¢«ç¦æ­¢åšä»»ä½•çš„ç¤¾äº¤æŒ‡ä»¤ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
@@ -364,13 +364,13 @@ bool check_social( CHAR_DATA * ch, char * command, char * argument )
   {
   case POS_DEAD:
 
-    send_to_char( "§A¤w¸g¦º¤F¡M«ç»ò°µªÀ¥æ«ü¥O°Ú¡C\n\r", ch );
+    send_to_char( "ä½ å·²ç¶“æ­»äº†ï¹æ€éº¼åšç¤¾äº¤æŒ‡ä»¤å•Šã€‚\n\r", ch );
     RETURN( TRUE );
 
   case POS_SLEEPING:
 
     if ( !str_cmp( social->name, "snore" ) )  break;
-    send_to_char( "§A¦bºÎÄ±¤F­C¡M¤£¯à°µªÀ¥æ«ü¥O¡C\n\r", ch );
+    send_to_char( "ä½ åœ¨ç¡è¦ºäº†è€¶ï¹ä¸èƒ½åšç¤¾äº¤æŒ‡ä»¤ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
@@ -387,22 +387,22 @@ bool check_social( CHAR_DATA * ch, char * command, char * argument )
 
   else if ( ( victim = get_char_room( ch, arg ) ) == NULL )
   {
-    send_to_char( "§Aªº¹ï¶H¤£¦b³o¸Ì¡C\n\r", ch );
+    send_to_char( "ä½ çš„å°è±¡ä¸åœ¨é€™è£¡ã€‚\n\r", ch );
   }
 
   else if ( get_rider( victim ) )
   {
-    send_to_char( "§A¤£¯à¹ï§¤ÃM°µªÀ¥æ«ü¥O¡C\n\r", ch );
+    send_to_char( "ä½ ä¸èƒ½å°åé¨åšç¤¾äº¤æŒ‡ä»¤ã€‚\n\r", ch );
   }
 
   else if ( victim->hirer )
   {
-    send_to_char( "§A¤£¯à¹ï¶Ä§L°µªÀ¥æ°Ê§@¡C\n\r", ch );
+    send_to_char( "ä½ ä¸èƒ½å°å‚­å…µåšç¤¾äº¤å‹•ä½œã€‚\n\r", ch );
   }
 
   else if ( victim->boss )
   {
-    send_to_char( "§A¤£¯à¹ï§O¤Hªº¤p°­°µªÀ¥æ°Ê§@¡T\n\r", ch );
+    send_to_char( "ä½ ä¸èƒ½å°åˆ¥äººçš„å°é¬¼åšç¤¾äº¤å‹•ä½œï¹—\n\r", ch );
   }
 
   else if ( victim == ch )
@@ -425,7 +425,7 @@ bool check_social( CHAR_DATA * ch, char * command, char * argument )
       , ch, NULL, victim, TO_NOTVICT );
 
     if ( is_affected( victim, SLOT_MASK ) )
-      send_to_char( "§Aªº©ö®e³N¦ü¥G³QÃÑ¯}¤F¡T\n\r", victim );
+      send_to_char( "ä½ çš„æ˜“å®¹è¡“ä¼¼ä¹è¢«è­˜ç ´äº†ï¹—\n\r", victim );
 
     if ( !IS_NPC( ch )
       && IS_NPC( victim )
@@ -457,9 +457,9 @@ bool check_social( CHAR_DATA * ch, char * command, char * argument )
         break;
 
       case 9: case 10: case 11: case 12:
-        act( "$n¥´¤F$N¤@¤Ú´x¡C", victim, NULL, ch, TO_NOTVICT );
-        act( "§A¥´¤F$N¤@¤Ú´x¡C", victim, NULL, ch, TO_CHAR    );
-        act( "$n¥´¤F§A¤@¤Ú´x¡C", victim, NULL, ch, TO_VICT    );
+        act( "$næ‰“äº†$Nä¸€å·´æŒã€‚", victim, NULL, ch, TO_NOTVICT );
+        act( "ä½ æ‰“äº†$Nä¸€å·´æŒã€‚", victim, NULL, ch, TO_CHAR    );
+        act( "$næ‰“äº†ä½ ä¸€å·´æŒã€‚", victim, NULL, ch, TO_VICT    );
         break;
       }
     }
@@ -498,7 +498,7 @@ char * one_argument( char * argument, char * arg_first )
 
   if ( !argument || !arg_first )
   {
-    mudlog( LOG_DEBUG, "one_argument: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "one_argument: ä¾†æºä¸æ­£ç¢º." );
     RETURN( NULL );
   }
 
@@ -529,7 +529,7 @@ char * one_statement( char * argument, char * arg_first )
 
   if ( !argument || !arg_first )
   {
-    mudlog( LOG_DEBUG, "one_statement: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "one_statement: ä¾†æºä¸æ­£ç¢º." );
     RETURN( NULL );
   }
 

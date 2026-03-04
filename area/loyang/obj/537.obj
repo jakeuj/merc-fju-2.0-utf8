@@ -1,10 +1,10 @@
 Vnum            537
 Name            fishing rod~
-ShortDesc       ³¨¬ñ~
+ShortDesc       é‡£ç«¿~
 Description
-¤@§â¤ì¨îªº³¨¬ñ(fishing rod) ¡M¦ü¥G¥i¥H·í§@ªZ¾¹¨Ó¥Î¡C
+ä¸€æŠŠæœ¨åˆ¶çš„é‡£ç«¿(fishing rod) ï¹ä¼¼ä¹å¯ä»¥ç•¶ä½œæ­¦å™¨ä¾†ç”¨ã€‚
 ~
-Unit            ®Ú~
+Unit            æ ¹~
 ItemType        ITEM_WEAPON
 Glow            Yes
 Cancachet       Yes

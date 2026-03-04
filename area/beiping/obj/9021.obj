@@ -1,9 +1,9 @@
 Vnum            9021
 Name            phoenix arms~
-ShortDesc       »ñµ¾Å@Áu~
+ShortDesc       é³³ç¿”è­·è‡‚~
 Description
-°ª¶¥½Ã¤h¥ÎªºÅ@Áu(Arms)~
-Unit            ¥ó~
+é«˜éšŽè¡›å£«ç”¨çš„è­·è‡‚(Arms)~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_ARMS
 Takeable        Yes

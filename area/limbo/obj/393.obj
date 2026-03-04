@@ -1,9 +1,9 @@
 Vnum            393
 Name            write pen book~
-ShortDesc       Á{®ÑÂI¥Þ¯µÓD~
+ShortDesc       è‡¨æ›¸é»žç©´ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

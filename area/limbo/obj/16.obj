@@ -1,9 +1,9 @@
 Vnum            16
 Name            silver helm~
-ShortDesc       ¥Õ»È¯}¨¸¯«²¯~
+ShortDesc       ç™½éŠ€ç ´é‚ªç¥žç›”~
 Description
-¤@³»±M¬°¤Ñ¯«»s§@ªº»È¦Ð²¯(helm)¡C~
-Unit            ³»~
+ä¸€é ‚å°ˆç‚ºå¤©ç¥žè£½ä½œçš„éŠ€ç¾½ç›”(helm)ã€‚~
+Unit            é ‚~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HEAD
 Takeable        Yes

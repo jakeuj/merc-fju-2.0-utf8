@@ -1,12 +1,12 @@
 Vnum            472
-Name            �W�h�ж� [rule]~
+Name            規則房間 [rule]~
 Description
-�{�b�ڭ̱N���A�A�� �T��n�� ���@�ǹC���W�w�M���p�A�H�ϤF�W�w
-�M�A�N�|�D���� Immortals ���B�@�C
+現在我們將讓你瞭解 三國歪傳 的一些遊戲規定﹐假如你違反了規定
+﹐你將會遭受到 Immortals 的處罰。
 
-�A�i�H�b�o�ɭԥ� help rule �n�n���A�ѥ��C�����W�w�C
+你可以在這時候打 help rule 好好的瞭解本遊戲之規定。
 
-          ���۽ЧA�~�򩹪F�� (east) ���C
+          接著請你繼續往東邊 (east) 走。
 
 ~
 SectorType      SECT_CITY

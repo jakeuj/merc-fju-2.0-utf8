@@ -1,5 +1,5 @@
 Name            tao spell~
-Cname           �_���P��~
+Cname           奇門遁甲~
 Slot            SLOT_TAO_SPELL
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,8 +38,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n�}�l�b$N���|�P�������ֳt�娫�M���O$S�_���P�Ҥ����L�ܤۼv$Z�M
-$N�uı�|�P���O$n�����v�M�ӥB�|�P���O���W�M�G��$N�L�k�X��C~
+$n開始在$N的四周不停的快速游走﹐正是$S奇門遁甲中的無蹤幻影$Z﹐
+$N只覺四周都是$n的身影﹐而且四周壓力漸增﹐逼的$N無法出手。~
 Chance          10
 Value           20
 Parry           0
@@ -48,7 +48,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$S�_���P�Ҥ����ۼv���k$Z�M�ۤƥX�ƭ�$n�M�׶}�F$N�������C~
+$n使出$S奇門遁甲中的幻影身法$Z﹐幻化出數個$n﹐避開了$N的攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -57,7 +57,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�@��$S�y����P���z$Z�M�N$N����պɨ���a�C~
+$n使出一招$S『斗轉星移』$Z﹐將$N的攻勢盡卸於地。~
 Chance          10
 Value           20
 Parry           0
@@ -66,7 +66,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�B�k����M���O$S���P����$Z�M���ζ������ʡM�פF�}�h�C~
+$n步法交錯﹐正是$S移星換位$Z﹐身形順間移動﹐避了開去。~
 Chance          10
 Value           20
 Parry           0

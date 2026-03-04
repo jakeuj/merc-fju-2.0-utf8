@@ -1,8 +1,8 @@
 #Situs
 Name            light~
-Type            ·Ó©ú~
-EqName          <·Ó©ú¥Î¨ã> ~
-Situs           ·Ó©ú~
+Type            ç…§æ˜~
+EqName          <ç…§æ˜ç”¨å…·> ~
+Situs           ç…§æ˜~
 Location        WEAR_LIGHT
 Attack          ATTACK_LIGHT
 Chance          50
@@ -10,32 +10,32 @@ ApplyAc         0
 Wield           No
 Wear            ITEM_WEAR_LIGHT
 ItemType        ITEM_LIGHT
-ShortDescr      ·Ó©ú~
-Message1        $n¥H$p·í§@·Ó©úª««~¡C~
-Message2        §A¥H$p·í§@·Ó©úª««~¡C~
+ShortDescr      ç…§æ˜~
+Message1        $nä»¥$pç•¶ä½œç…§æ˜ç‰©å“ã€‚~
+Message2        ä½ ä»¥$pç•¶ä½œç…§æ˜ç‰©å“ã€‚~
 End
 
 #Situs
 Name            head~
-Type            ÀY²¯~
-EqName          <ÀY²¯>     ~
-Situs           ÀY³¡~
+Type            é ­ç›”~
+EqName          <é ­ç›”>     ~
+Situs           é ­éƒ¨~
 Location        WEAR_HEAD
 Attack          ATTACK_HEAD
 Chance          100
 ApplyAc         200
 Wield           No
 Wear            ITEM_WEAR_HEAD
-ShortDescr      ÀY³¡~
-Message1        $n§â$pÀ¹¦b$nªºÀY¤W¡C~
-Message2        §A§â$pÀ¹¦b§AªºÀY¤W¡C~
+ShortDescr      é ­éƒ¨~
+Message1        $næŠŠ$pæˆ´åœ¨$nçš„é ­ä¸Šã€‚~
+Message2        ä½ æŠŠ$pæˆ´åœ¨ä½ çš„é ­ä¸Šã€‚~
 End
 
 #Situs
 Name            earring~
-Type            ¦ÕÀô~
-EqName          <¦Õ¦·>     ~
-Situs           ¦Õ³¡~
+Type            è€³ç’°~
+EqName          <è€³æœµ>     ~
+Situs           è€³éƒ¨~
 Location        WEAR_EARRING_L
 Attack          ATTACK_EARRING_1
 Associate       WEAR_EARRING_R
@@ -43,16 +43,16 @@ Chance          20
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_EARRING
-Message1        $n§â$pÀ¹¦b$s¦Õ¦·¤W¡C~
-Message2        §A§â$pÀ¹¦b§Aªº¦Õ¦·¤W¡C~
-ShortDescr      ¥ª¦Õ~
+Message1        $næŠŠ$pæˆ´åœ¨$sè€³æœµä¸Šã€‚~
+Message2        ä½ æŠŠ$pæˆ´åœ¨ä½ çš„è€³æœµä¸Šã€‚~
+ShortDescr      å·¦è€³~
 End
 
 #Situs
 Name            earring~
-Type            ¦ÕÀô~
-EqName          <¦Õ¦·>     ~
-Situs           ¦Õ³¡~
+Type            è€³ç’°~
+EqName          <è€³æœµ>     ~
+Situs           è€³éƒ¨~
 Location        WEAR_EARRING_R
 Attack          ATTACK_EARRING_2
 Associate       WEAR_EARRING_L
@@ -60,16 +60,16 @@ Chance          20
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_EARRING
-Message1        $n§â$pÀ¹¦b$s¦Õ¦·¤W¡C~
-Message2        §A§â$pÀ¹¦b§Aªº¦Õ¦·¤W¡C~
-ShortDescr      ¥k¦Õ~
+Message1        $næŠŠ$pæˆ´åœ¨$sè€³æœµä¸Šã€‚~
+Message2        ä½ æŠŠ$pæˆ´åœ¨ä½ çš„è€³æœµä¸Šã€‚~
+ShortDescr      å³è€³~
 End
 
 #Situs
 Name            neck~
-Type            ¶µÁå~
-EqName          <²ä¤l>     ~
-Situs           ÀV³¡~
+Type            é …éŠ~
+EqName          <è„–å­>     ~
+Situs           é ¸éƒ¨~
 Location        WEAR_NECK_1
 Attack          ATTACK_NECK_1
 Associate       WEAR_NECK_2
@@ -77,16 +77,16 @@ Chance          10
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_NECK
-ShortDescr      ÀV³¡(1)~
-Message1        $n§â$p³ò¦b$nªº²ä¤l¤W¡C~
-Message2        §A§â$p³ò¦b§Aªº²ä¤l¤W¡C~
+ShortDescr      é ¸éƒ¨(1)~
+Message1        $næŠŠ$påœåœ¨$nçš„è„–å­ä¸Šã€‚~
+Message2        ä½ æŠŠ$påœåœ¨ä½ çš„è„–å­ä¸Šã€‚~
 End
 
 #Situs
 Name            neck~
-Type            ¶µÁå~
-EqName          <²ä¤l>     ~
-Situs           ÀV³¡~
+Type            é …éŠ~
+EqName          <è„–å­>     ~
+Situs           é ¸éƒ¨~
 Location        WEAR_NECK_2
 Attack          ATTACK_NECK_2
 Associate       WEAR_NECK_1
@@ -94,32 +94,32 @@ Chance          10
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_NECK
-ShortDescr      ÀV³¡(2)~
-Message1        $n§â$p³ò¦b$nªº²ä¤l¤W¡C~
-Message2        §A§â$p³ò¦b§Aªº²ä¤l¤W¡C~
+ShortDescr      é ¸éƒ¨(2)~
+Message1        $næŠŠ$påœåœ¨$nçš„è„–å­ä¸Šã€‚~
+Message2        ä½ æŠŠ$påœåœ¨ä½ çš„è„–å­ä¸Šã€‚~
 End
 
 #Situs
 Name            arms~
-Type            Å@Áu~
-EqName          <¤âÁu>     ~
-Situs           ¤âÁu~
+Type            è­·è‡‚~
+EqName          <æ‰‹è‡‚>     ~
+Situs           æ‰‹è‡‚~
 Location        WEAR_ARMS
 Attack          ATTACK_ARMS
 Chance          80
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_ARMS
-ShortDescr      ¤âÁu~
-Message1        $n§â$p¸Ë³Æ¦b$s¤âÁu¤W¡C~
-Message2        §A§â$p¸Ë³Æ¦b§Aªº¤âÁu¤W¡C~
+ShortDescr      æ‰‹è‡‚~
+Message1        $næŠŠ$pè£å‚™åœ¨$sæ‰‹è‡‚ä¸Šã€‚~
+Message2        ä½ æŠŠ$pè£å‚™åœ¨ä½ çš„æ‰‹è‡‚ä¸Šã€‚~
 End
 
 #Situs
 Name            wrist~
-Type            ¤âµÃ~
-EqName          <¤âµÃ>     ~
-Situs           ¤â³¡~
+Type            æ‰‹è…•~
+EqName          <æ‰‹è…•>     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_WRIST_L
 Attack          ATTACK_WRIST_L
 Associate       WEAR_WRIST_R
@@ -127,16 +127,16 @@ Chance          40
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_WRIST
-ShortDescr      ¥ª¤âµÃ~
-Message1        $n§â$pÀ¹¨ì$nªº¥ª¤âµÃ¤W¡C~
-Message2        §A§â$pÀ¹¨ì§Aªº¥ª¤âµÃ¤W¡C~
+ShortDescr      å·¦æ‰‹è…•~
+Message1        $næŠŠ$pæˆ´åˆ°$nçš„å·¦æ‰‹è…•ä¸Šã€‚~
+Message2        ä½ æŠŠ$pæˆ´åˆ°ä½ çš„å·¦æ‰‹è…•ä¸Šã€‚~
 End
 
 #Situs
 Name            wrist~
-Type            ¤âµÃ~
-EqName          <¤âµÃ>     ~
-Situs           ¤â³¡~
+Type            æ‰‹è…•~
+EqName          <æ‰‹è…•>     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_WRIST_R
 Attack          ATTACK_WRIST_R
 Associate       WEAR_WRIST_L
@@ -144,48 +144,48 @@ Chance          40
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_WRIST
-ShortDescr      ¥k¤âµÃ~
-Message1        $n§â$pÀ¹¨ì$nªº¥k¤âµÃ¤W¡C~
-Message2        §A§â$pÀ¹¨ì§Aªº¥k¤âµÃ¤W¡C~
+ShortDescr      å³æ‰‹è…•~
+Message1        $næŠŠ$pæˆ´åˆ°$nçš„å³æ‰‹è…•ä¸Šã€‚~
+Message2        ä½ æŠŠ$pæˆ´åˆ°ä½ çš„å³æ‰‹è…•ä¸Šã€‚~
 End
 
 #Situs
 Name            wield~
-Type            ªZ¾¹~
-EqName          <¥k¤â>     ~
-Situs           ¤â³¡~
+Type            æ­¦å™¨~
+EqName          <å³æ‰‹>     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_WIELD
 Attack          ATTACK_WIELD
 Chance          50
 ApplyAc         100
 Wield           Yes
 Wear            ITEM_WIELD
-ShortDescr      ªZ¾¹~
-Message1        $n¤â¤¤´¤¦í$p¡C~
-Message2        §A¤â¤¤´¤¦í$p¡C~
+ShortDescr      æ­¦å™¨~
+Message1        $næ‰‹ä¸­æ¡ä½$pã€‚~
+Message2        ä½ æ‰‹ä¸­æ¡ä½$pã€‚~
 End
 
 #Situs
 Name            hold~
-Type            ªZ¾¹~
-EqName          <¥ª¤â>     ~
-Situs           ¤â³¡~
+Type            æ­¦å™¨~
+EqName          <å·¦æ‰‹>     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_HOLD
 Attack          ATTACK_HOLD
 Chance          50
 ApplyAc         100
 Wield           Yes
 Wear            ITEM_HOLD
-ShortDescr      ¤â´¤~
-Message1        $n§â$p´¤¦b$s¤â¤W¡C~
-Message2        §A¤â¤¤´¤¦í$p¡C~
+ShortDescr      æ‰‹æ¡~
+Message1        $næŠŠ$pæ¡åœ¨$sæ‰‹ä¸Šã€‚~
+Message2        ä½ æ‰‹ä¸­æ¡ä½$pã€‚~
 End
 
 #Situs
 Name            finger~
-Type            §Ù«ü~
-EqName          <§Ù¤l>     ~
-Situs           ¤â³¡~
+Type            æˆ’æŒ‡~
+EqName          <æˆ’å­>     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_FINGER_L
 Attack          ATTACK_FINGER_L
 Associate       WEAR_FINGER_R
@@ -193,16 +193,16 @@ Chance          30
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_FINGER
-ShortDescr      ¥ª¤â«ü~
-Message1        $nÀ¹¤W$p¦b$nªº¥ª¤â«ü¤W¡C~
-Message2        §A§â$pÀ¹¦b¥ª¤â«ü¤W¡C~
+ShortDescr      å·¦æ‰‹æŒ‡~
+Message1        $næˆ´ä¸Š$påœ¨$nçš„å·¦æ‰‹æŒ‡ä¸Šã€‚~
+Message2        ä½ æŠŠ$pæˆ´åœ¨å·¦æ‰‹æŒ‡ä¸Šã€‚~
 End
 
 #Situs
 Name            finger~
-Type            §Ù«ü~
-EqName          <§Ù¤l>     ~
-Situs           ¤â³¡~
+Type            æˆ’æŒ‡~
+EqName          <æˆ’å­>     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_FINGER_R
 Attack          ATTACK_FINGER_R
 Associate       WEAR_FINGER_L
@@ -210,135 +210,135 @@ Chance          30
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_FINGER
-ShortDescr      ¥k¤â«ü~
-Message1        $nÀ¹¤W$p¦b$nªº¥k¤â«ü¤W¡C~
-Message2        §A§â$pÀ¹¦b¥k¤â«ü¤W¡C~
+ShortDescr      å³æ‰‹æŒ‡~
+Message1        $næˆ´ä¸Š$påœ¨$nçš„å³æ‰‹æŒ‡ä¸Šã€‚~
+Message2        ä½ æŠŠ$pæˆ´åœ¨å³æ‰‹æŒ‡ä¸Šã€‚~
 End
 
 #Situs
 Name            body~
-Type            ¦çªA~
-EqName          <²¯¥Ò>     ~
-Situs           ¨­Åé~
+Type            è¡£æœ~
+EqName          <ç›”ç”²>     ~
+Situs           èº«é«”~
 Location        WEAR_BODY
 Attack          ATTACK_BODY
 Chance          150
 ApplyAc         300
 Wield           No
 Wear            ITEM_WEAR_BODY
-ShortDescr      ¨­Åé~
-Message1        $n§â$p¬ï¦b$nªº¨­¤W¡C~
-Message2        §A§â$p¬ï¦b¦Û¤vªº¨­¤W¡C~
+ShortDescr      èº«é«”~
+Message1        $næŠŠ$pç©¿åœ¨$nçš„èº«ä¸Šã€‚~
+Message2        ä½ æŠŠ$pç©¿åœ¨è‡ªå·±çš„èº«ä¸Šã€‚~
 End
 
 #Situs
 Name            about~
-Type            ¦ç³T~
-EqName          <©Ü­·>     ~
-Situs           ­I³¡~
+Type            è¡£è¢~
+EqName          <æŠ«é¢¨>     ~
+Situs           èƒŒéƒ¨~
 Location        WEAR_ABOUT
 Attack          ATTACK_ABOUT
 Chance          50
 ApplyAc         200
 Wield           No
 Wear            ITEM_WEAR_ABOUT
-ShortDescr      ©Ü­·~
-Message1        $n§â$p¬ï¦b$nªº¨­¤W¡C~
-Message2        §A§â$p¬ï¦b§Aªº¨­¤W¡C~
+ShortDescr      æŠ«é¢¨~
+Message1        $næŠŠ$pç©¿åœ¨$nçš„èº«ä¸Šã€‚~
+Message2        ä½ æŠŠ$pç©¿åœ¨ä½ çš„èº«ä¸Šã€‚~
 End
 
 #Situs
 Name            back~
-Type            ­I³U~
-EqName          <­I³U>     ~
-Situs           ­I³¡~
+Type            èƒŒè¢‹~
+EqName          <èƒŒè¢‹>     ~
+Situs           èƒŒéƒ¨~
 Location        WEAR_BACK
 Attack          ATTACK_BACK
 Chance          30
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_BACK
-ShortDescr      ­I³¡~
-Message1        $n§â$p­I¦b$s­I¤W¡C~
-Message2        §A§â$p­I¦b§Aªº­I¤W¡C~
+ShortDescr      èƒŒéƒ¨~
+Message1        $næŠŠ$pèƒŒåœ¨$sèƒŒä¸Šã€‚~
+Message2        ä½ æŠŠ$pèƒŒåœ¨ä½ çš„èƒŒä¸Šã€‚~
 End
 
 #Situs
 Name            shield~
-Type            ¬ŞµP~
-EqName          < ¬Ş >     ~
-Situs           ¤â³¡~
+Type            ç›¾ç‰Œ~
+EqName          < ç›¾ >     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_SHIELD
 Attack          ATTACK_SHIELD
 Chance          80
 ApplyAc         100
 Wield           Yes
 Wear            ITEM_WEAR_SHIELD
-ShortDescr      Å@¨ã~
-Message1        $n´¤¦í$p·í§@¨¾Å@¡C~
-Message2        §A´¤¦í$p·í§@¨¾Å@¡C~
+ShortDescr      è­·å…·~
+Message1        $næ¡ä½$pç•¶ä½œé˜²è­·ã€‚~
+Message2        ä½ æ¡ä½$pç•¶ä½œé˜²è­·ã€‚~
 End
 
 #Situs
 Name            hands~
-Type            ¤â®M~
-EqName          <¤â®M>     ~
-Situs           ¤â³¡~
+Type            æ‰‹å¥—~
+EqName          <æ‰‹å¥—>     ~
+Situs           æ‰‹éƒ¨~
 Location        WEAR_HANDS
 Attack          ATTACK_HANDS
 Chance          80
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_HANDS
-ShortDescr      ¤â~
-Message1        $n§â$p¬ï¦b$nªº¤â¤W¡C~
-Message2        §A§â$p¬ï¦b¦Û¤vªº¤â¤W¡C~
+ShortDescr      æ‰‹~
+Message1        $næŠŠ$pç©¿åœ¨$nçš„æ‰‹ä¸Šã€‚~
+Message2        ä½ æŠŠ$pç©¿åœ¨è‡ªå·±çš„æ‰‹ä¸Šã€‚~
 End
 
 #Situs
 Name            waist~
-Type            ¸y±a~
-EqName          <¸y±a>     ~
-Situs           ¸y³¡~
+Type            è…°å¸¶~
+EqName          <è…°å¸¶>     ~
+Situs           è…°éƒ¨~
 Location        WEAR_WAIST
 Attack          ATTACK_WAIST
 Chance          50
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_WAIST
-ShortDescr      ¸y³¡~
-Message1        $n§â$pÃ´¦b$nªº¸y¤W¡C~
-Message2        §A§â$pÃ´¦b§Aªº¸y¤W¡C~
+ShortDescr      è…°éƒ¨~
+Message1        $næŠŠ$pç¹«åœ¨$nçš„è…°ä¸Šã€‚~
+Message2        ä½ æŠŠ$pç¹«åœ¨ä½ çš„è…°ä¸Šã€‚~
 End
 
 #Situs
 Name            legs~
-Type            Å@½¥~
-EqName          < »L >     ~
-Situs           »L³¡~
+Type            è­·è†~
+EqName          < è…¿ >     ~
+Situs           è…¿éƒ¨~
 Location        WEAR_LEGS
 Attack          ATTACK_LEGS
 Chance          100
 ApplyAc         200
 Wield           No
 Wear            ITEM_WEAR_LEGS
-ShortDescr      »L³¡~
-Message1        $n§â$p¸Ë³Æ¦b$s»L¤W¡C~
-Message2        §A§â$p¸Ë³Æ¦b§Aªº»L¤W¡C~
+ShortDescr      è…¿éƒ¨~
+Message1        $næŠŠ$pè£å‚™åœ¨$sè…¿ä¸Šã€‚~
+Message2        ä½ æŠŠ$pè£å‚™åœ¨ä½ çš„è…¿ä¸Šã€‚~
 End
 
 #Situs
 Name            feet~
-Type            ¾c¤l~
-EqName          <¾c¤l>     ~
-Situs           ¸}³¡~
+Type            é‹å­~
+EqName          <é‹å­>     ~
+Situs           è…³éƒ¨~
 Location        WEAR_FEET
 Attack          ATTACK_FEET
 Chance          50
 ApplyAc         100
 Wield           No
 Wear            ITEM_WEAR_FEET
-ShortDescr      ¸}~
-Message1        $n§â$p¬ï¦b$s¸}¤W¡C~
-Message2        §A§â$p¬ï¦b§Aªº¸}¤W¡C~
+ShortDescr      è…³~
+Message1        $næŠŠ$pç©¿åœ¨$sè…³ä¸Šã€‚~
+Message2        ä½ æŠŠ$pç©¿åœ¨ä½ çš„è…³ä¸Šã€‚~
 End

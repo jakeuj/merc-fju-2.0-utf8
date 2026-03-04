@@ -1,10 +1,10 @@
 Vnum            543
 Name            steel blade~
-ShortDesc       ¿û¤M~
+ShortDesc       é‹¼åˆ€~
 Description
-³o¬O¤@§â¥Îºë¿û·Ò»s¦Ó¦¨ªº¤M(steel blade)¡M¤M¤b¤Q¤Àªº¾W§Q¡C
+é€™æ˜¯ä¸€æŠŠç”¨ç²¾é‹¼ç…‰è£½è€Œæˆçš„åˆ€(steel blade)ï¹åˆ€åˆƒååˆ†çš„é‹’åˆ©ã€‚
 ~
-Unit            §â~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

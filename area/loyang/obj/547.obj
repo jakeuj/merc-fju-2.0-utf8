@@ -1,10 +1,10 @@
 Vnum            547
 Name            tiger glove~
-ShortDesc       ªê¥Ö¤â®M~
+ShortDesc       è™çš®æ‰‹å¥—~
 Description
-ªê¥Ö»s¦¨ªº¤â®M ¡M¯à¤j¶q´£°ª¥»¨­ªº¯}Ãa¤O¡C
+è™çš®è£½æˆçš„æ‰‹å¥— ï¹èƒ½å¤§é‡æé«˜æœ¬èº«çš„ç ´å£åŠ›ã€‚
 ~
-Unit            Âù~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HANDS
 Takeable        Yes

@@ -1,11 +1,11 @@
 Vnum            554
 Name            sky shaman~
-ShortDesc       �����D~
-LongDesc        �����D(sky shaman)
+ShortDesc       瑤光道~
+LongDesc        瑤光道(sky shaman)
 ~
 Description
-�b�C�H�����M�L���~���̤p�M�]�O�ߤ@���k���M�`�`���b�M
-���L�ˬO�u���Q���i�R�M�O�H���Q�n�O�@�L���İʡC
+在七人之中﹐他的年紀最小﹐也是唯一的女的﹐常常撒嬌﹐
+不過倒是真的十分可愛﹐令人有想要保護他的衝動。
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -37,8 +37,8 @@ Type            greet_prog
 Chance          40
 Text
 if ispc($n)
-  say �w��Ө�ڪ��ж��M�A�n�T
-  say �̪񦳤���s�A�ƩO�S�n�Q���D��T
+  say 歡迎來到我的房間﹐你好﹗
+  say 最近有什麼新鮮事呢﹖好想知道喔﹗
   wince $n
 endif
 ~

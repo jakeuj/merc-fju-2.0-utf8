@@ -1,5 +1,5 @@
 Name            rulai~
-Cname           �p�ӯ��x~
+Cname           如來神掌~
 Slot            SLOT_RULAI
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -31,7 +31,7 @@ Help            ~
 
 #Damage
 Description
-$n�ϥX�@��$Y�y�����{�z$Z�M�𾮩�x�M�w�w���X�M���V$N�C~
+$n使出一招$Y『佛光初現』$Z﹐氣凝於掌﹐緩緩推出﹐擊向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -41,7 +41,7 @@ End
 
 #Damage
 Description
-$n�ϥX�@��$Y�y������O�z$Z�M$n���x��M�Ƭ��L�ƴx�v�MŢ�n��$N�C~
+$n使出一招$Y『金頂佛燈』$Z﹐$n雙掌突然化為無數掌影﹐籠罩住$N。~
 Chance          20
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ End
 
 #Damage
 Description
-$n�ϥX$Y�y����ӡz$Z�M���x�W���M�@�ѱj�j��lŧ�V$N�C~
+$n使出$Y『迎佛西來』$Z﹐雙掌上提﹐一股強大氣勁襲向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -61,7 +61,7 @@ End
 
 #Damage
 Description
-$n�j�ܤ@�n�M�ϥX$Y�y��ݭ{�ޡz$Z�M�L���n�i�Ƭ���l�M���V$N�C~
+$n大喝一聲﹐使出$Y『佛問迦邏』$Z﹐無形聲波化為實勁﹐擊向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -71,7 +71,7 @@ End
 
 #Damage
 Description
-$n�𾮩�W�M�ϥX$Y�y������ӡz$Z�M$n�u��V�|��ɮg�M���x���X�M���V$N�C~
+$n氣凝於淵﹐使出$Y『佛光普照』$Z﹐$n真氣向四方暴射﹐雙掌推出﹐擊向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -81,7 +81,7 @@ End
 
 #Damage
 Description
-$n�ϥX$Y�y����U�V�z$Z�M�@�n���S�M�j�j���u��ŧ�V�|�P�C~
+$n使出$Y『佛光萬丈』$Z﹐一聲長嘯﹐強大的真氣襲向四周。~
 Chance          20
 Value           20
 Parry           0
@@ -91,7 +91,7 @@ End
 
 #Damage
 Description
-$n��e���u�M��׫짻�M�ϥX$Y�y��ʤs�e�z$Z�M�Ƥs�ˮ����x�l�M���V$N�C~
+$n氣貫雙臂﹐氣度恢宏﹐使出$Y『佛動山河』$Z﹐排山倒海的掌勁﹐擊向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -101,8 +101,8 @@ End
 
 #Damage
 Description
-$n�u�a�ӧ��M�����L�����x�¤Ѱ��|�M�ϥX$Y�y�U��©v�z$Z�M�@�Ѳ��W��l�p�U��
-�b�˯�ŧ�V$N�C~
+$n席地而坐﹐雙眼微閉雙掌朝天高舉﹐使出$Y『萬佛朝宗』$Z﹐一股莫名氣勁如萬馬
+奔騰般襲向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -112,8 +112,8 @@ End
 
 #Damage
 Description
-�K�ɭ����ܦ�M���⨫��!$n�ϥX�p�ӯ��x�ĤE��$Y�y��k�L��z$Z�M$n�ۤƥX�L�ƭ�
-���v�M���۷��ѷ��a����աM���Q���������F�ɬ�����C~
+霎時風雲變色﹐飛砂走石!$n使出如來神掌第九式$Y『佛法無邊』$Z﹐$n幻化出無數個
+身影﹐挾著毀天滅地的氣勢﹐方圓十里之內生靈盡為之塗炭。~
 Chance          20
 Value           20
 Parry           0

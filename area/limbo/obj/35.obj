@@ -1,9 +1,9 @@
 Vnum            35
 Name            steel blade~
-ShortDesc       ¿û¤M~
+ShortDesc       é‹¼åˆ€~
 Description
-³o¬O¤@¬`¥Îºë¿û·Ò»s¦Ó¦¨ªº¤M(steel blade)¡M¤M¤b¤Q¤Àªº¾W§Q¡C~
-Unit            ¬`~
+é€™æ˜¯ä¸€æŸ„ç”¨ç²¾é‹¼ç…‰è£½è€Œæˆçš„åˆ€(steel blade)ï¹åˆ€åˆƒååˆ†çš„é‹’åˆ©ã€‚~
+Unit            æŸ„~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

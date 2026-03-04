@@ -1,9 +1,9 @@
 Vnum            74
 Name            blue skirt~
-ShortDesc       µµ»Aªø¸È~
+ShortDesc       ç´«ç¿ é•·è£™~
 Description
-¤@¥óÂ´¤uºë²Óªºµµ¦âÂÍµ·ªø¸È(blue skirt)¡M¤W­±Æ^µÛ²Ó²Óªºª÷½u¡MÅã±o®æ¥~¬üÄR¡C~
-Unit            ¥ó~
+ä¸€ä»¶ç¹”å·¥ç²¾ç´°çš„ç´«è‰²èŸ¬çµ²é•·è£™(blue skirt)ï¹ä¸Šé¢é‘²è‘—ç´°ç´°çš„é‡‘ç·šï¹é¡¯å¾—æ ¼å¤–ç¾éº—ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_LEGS
 Takeable        Yes

@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -38,7 +38,7 @@ FUNCTION( do_wanted )
   {
     if ( !wanted_list )
     {
-      send_to_char( "¹ï¤£°_¡M¥Ø«e¨S¦³¥ô¦óªºÄa½à¦W³æ¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç›®å‰æ²’æœ‰ä»»ä½•çš„æ‡¸è³åå–®ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -47,12 +47,12 @@ FUNCTION( do_wanted )
 
     for ( pWanted = wanted_list; pWanted; pWanted = pWanted->next )
     {
-      send_to_buffer( "%2d. \e[1;32m%-12s\e[0m ªá %13s ¨â»È¤l"
-        "¶R \e[1;33m%-12s\e[0m ¶µ¤W¤HÀY\n\r"
+      send_to_buffer( "%2d. \e[1;32m%-12s\e[0m èŠ± %13s å…©éŠ€å­"
+        "è²· \e[1;33m%-12s\e[0m é …ä¸Šäººé ­\n\r"
         , ++loop
-        , pWanted->bountier && *pWanted->bountier ? pWanted->bountier : "¤£¸Ô"
+        , pWanted->bountier && *pWanted->bountier ? pWanted->bountier : "ä¸è©³"
         , numberize( pWanted->reward, NULL )
-        , pWanted->wanted && *pWanted->wanted ? pWanted->wanted : "¤£¸Ô" );
+        , pWanted->wanted && *pWanted->wanted ? pWanted->wanted : "ä¸è©³" );
 
       if ( buffer_full() ) break;
     }
@@ -65,44 +65,44 @@ FUNCTION( do_wanted )
   {
     if ( !IS_NPC( ch ) && ch->level < level_limit )
     {
-      act( "¦b§A¤É¯Å¨ì$i¯Å«e¡M½Ğ¤£­n¥|³Bµ²¤³¡T"
+      act( "åœ¨ä½ å‡ç´šåˆ°$iç´šå‰ï¹è«‹ä¸è¦å››è™•çµä»‡ï¹—"
         , ch, &level_limit, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->donate > 0 )
     {
-      send_to_char( "¦b§A»â±ÏÀÙª÷ªº³o¬q®É¶¡¡M½Ğ§Ô­@¤@¤U§a¡T\n\r", ch );
+      send_to_char( "åœ¨ä½ é ˜æ•‘æ¿Ÿé‡‘çš„é€™æ®µæ™‚é–“ï¹è«‹å¿è€ä¸€ä¸‹å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->trade == FALSE )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤Ó¥i©È¤F¡M©Ò¥HµLªk°õ¦æ³o­Ó«ü¥O¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å¤ªå¯æ€•äº†ï¹æ‰€ä»¥ç„¡æ³•åŸ·è¡Œé€™å€‹æŒ‡ä»¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_world( ch, arg ) ) )
     {
-      act( "¹ï¤£°_¡M§ä¤£¨ì§A­n³q½rªº¤H $2$T$0¡T", ch, NULL, arg, TO_CHAR );
+      act( "å°ä¸èµ·ï¹æ‰¾ä¸åˆ°ä½ è¦é€šç·çš„äºº $2$T$0ï¹—", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( IS_NPC( victim ) )
     {
-      act( "$N¤£¥Î³q½r¡Mª½±µ®_±¼¥L´N¹ï¤F¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Nä¸ç”¨é€šç·ï¹ç›´æ¥å®°æ‰ä»–å°±å°äº†ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch == victim )
     {
-      send_to_char( "§A¦³¨S¦³·d¿ù¡M­n¶R¦Û¤vªº¤HÀY¡S\n\r", ch );
+      send_to_char( "ä½ æœ‰æ²’æœ‰æéŒ¯ï¹è¦è²·è‡ªå·±çš„äººé ­ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( IS_IMMORTAL( victim ) )
     {
-      act( "¦n¤ï$N¤]¬OºŞ²zªÌ¡M©ñ¥L¤@°¨¦n¤F¡T", ch, NULL, victim, TO_CHAR );
+      act( "å¥½æ­¹$Nä¹Ÿæ˜¯ç®¡ç†è€…ï¹æ”¾ä»–ä¸€é¦¬å¥½äº†ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -110,20 +110,20 @@ FUNCTION( do_wanted )
       && !IS_SET( victim->act, PLR_THIEF  )
       && !IS_SET( victim->act, PLR_BOLTER ) )
     {
-      act( "$N¨S¦³¥Ç¿ù¡M©Ò¥H§A¤£¯à³q½r¥L³á¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Næ²’æœ‰çŠ¯éŒ¯ï¹æ‰€ä»¥ä½ ä¸èƒ½é€šç·ä»–å–”ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     one_argument( argument, arg );
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      act( "§A¥´ºâªá¦h¤Ö¨â»È¤l¶R$Nªº¶µ¤W¤HÀY¡S", ch, NULL, victim, TO_CHAR );
+      act( "ä½ æ‰“ç®—èŠ±å¤šå°‘å…©éŠ€å­è²·$Nçš„é …ä¸Šäººé ­ï¹–", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ( reward = atoi( arg ) ) < WantedThreshold )
     {
-      act( "§A¥X³oºØ»ù¿ú¡M¤£·|«Ü´H»Ä¶Ü¡S¦Ü¤Ö­n$i¨â¶Àª÷°Õ¡T"
+      act( "ä½ å‡ºé€™ç¨®åƒ¹éŒ¢ï¹ä¸æœƒå¾ˆå¯’é…¸å—ï¹–è‡³å°‘è¦$iå…©é»ƒé‡‘å•¦ï¹—"
         , ch, &WantedThreshold, NULL, TO_CHAR );
 
       RETURN_NULL();
@@ -131,7 +131,7 @@ FUNCTION( do_wanted )
 
     if ( ch->gold < reward )
     {
-      send_to_char( "§Úª¾¹D§A³ø¤³¤ß¤Á¡M¦ı±o¤]¦³¿ú¨Ó¨Ïªº°­±À¿i¡T\n\r", ch );
+      send_to_char( "æˆ‘çŸ¥é“ä½ å ±ä»‡å¿ƒåˆ‡ï¹ä½†å¾—ä¹Ÿæœ‰éŒ¢ä¾†ä½¿çš„é¬¼æ¨ç£¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -160,13 +160,13 @@ FUNCTION( do_wanted )
     }
 
     chinese_number( reward, buf );
-    act( "$nªá¤F$t¨â»È¤l¶R$Nªº¶µ¤W¤HÀY¡T", ch, buf, victim, TO_CHAR );
+    act( "$nèŠ±äº†$tå…©éŠ€å­è²·$Nçš„é …ä¸Šäººé ­ï¹—", ch, buf, victim, TO_CHAR );
 
-    sprintf( buf1, "%s\e[0m(%s)ªá¤F%s¨â»È¤l¨Ó¶R%s\e[0m(%s)ªº¶µ¤W¤HÀY¡T"
+    sprintf( buf1, "%s\e[0m(%s)èŠ±äº†%så…©éŠ€å­ä¾†è²·%s\e[0m(%s)çš„é …ä¸Šäººé ­ï¹—"
       , ch->cname, ch->name, buf, victim->cname, victim->name );
 
-    talk_channel_2( buf1, CHANNEL_BULLETIN, "Äa½à" );
-    act( "§A³Q$NÄa½à¤F¡M½Ğ§A¨«¸ô¤p¤ß¤@ÂI§a¡T", victim, NULL, ch, TO_CHAR );
+    talk_channel_2( buf1, CHANNEL_BULLETIN, "æ‡¸è³" );
+    act( "ä½ è¢«$Næ‡¸è³äº†ï¹è«‹ä½ èµ°è·¯å°å¿ƒä¸€é»å§ï¹—", victim, NULL, ch, TO_CHAR );
 
     RETURN_NULL();
   }
@@ -184,7 +184,7 @@ void check_wanted( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim )
   {
-    mudlog( LOG_DEBUG, "check_wanted: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "check_wanted: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -192,7 +192,7 @@ void check_wanted( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( over_scale( ch ) )
   {
-    send_to_char( "¦]¬°§AªºÁ`¸ê²£¤w¹F¤W­­¡M©Ò¥H¨S®³¨ì¥b¤ò¿ú¡T\n\r", ch );
+    send_to_char( "å› ç‚ºä½ çš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹æ‰€ä»¥æ²’æ‹¿åˆ°åŠæ¯›éŒ¢ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -202,8 +202,8 @@ void check_wanted( CHAR_DATA * ch, CHAR_DATA * victim )
     zWanted = pWanted->next;
     if ( !str_cmp( pWanted->wanted, victim->name ) )
     {
-      send_to_buffer( "¦]¬°§A°£±¼¤F%s¡M©Ò¥H%sµ¹§A"
-        "¤@µ§¼úª÷¡M¬ù¦³%d¨â»È¤l¥H°µ¹SÁÂ¡T\n\r"
+      send_to_buffer( "å› ç‚ºä½ é™¤æ‰äº†%sï¹æ‰€ä»¥%sçµ¦ä½ "
+        "ä¸€ç­†çé‡‘ï¹ç´„æœ‰%då…©éŠ€å­ä»¥åšé…¬è¬ï¹—\n\r"
         , mob_name( NULL, victim ), pWanted->bountier, pWanted->reward );
 
       reward += pWanted->reward;
@@ -244,6 +244,6 @@ void extract_wanted( WANTED_DATA * pWanted )
     }
   }
 
-  mudlog( LOG_DEBUG, "extract_wanted: ¥¼µo²{¨ì±ı§R°£ªºµ²ºc." );
+  mudlog( LOG_DEBUG, "extract_wanted: æœªç™¼ç¾åˆ°æ¬²åˆªé™¤çš„çµæ§‹." );
   RETURN_NULL();
 }

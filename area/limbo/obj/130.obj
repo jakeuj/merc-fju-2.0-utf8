@@ -1,10 +1,10 @@
 Vnum            130
 Name            thousand light~
-ShortDesc       [1;37m╓dаH[1;36m╓╖╔З[0m~
+ShortDesc       [1;37mЕ█┐Г╕╖[1;36mД╧▀Е┘┴[0m~
 Description
-╔ц╩╥╓ё╥ю╙╨╔З, ╥сдё╖A╖з╙╨╓ъ╓╓, д@╖A╖зюH╝июH╕aЁё╞Ю╬ж╕Ё╖ж╪ж╙╨╓ъ╠║.
+Ф╟╦И│═Д╦█Ф╩┘Г └Е┘┴, Г┘╖Х──Д╫═Ф┬▒Г └Е©┐Д╦╜, И║≤Д╫═Ф┬▒И ╗Ф≥┌И ╗Е°╟И┐╫Х┐╫Ф⌠│Ф°┴Е©╚Ф╗┌Г └Е©┐Ф┐┘.
 ~
-Unit            а\~
+Unit            Г╦╥~
 ItemType        ITEM_LIGHT
 WearLoc         ITEM_WEAR_LIGHT
 Takeable        Yes

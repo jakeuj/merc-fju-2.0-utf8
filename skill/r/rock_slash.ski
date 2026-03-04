@@ -1,5 +1,5 @@
 Name            rock slash~
-Cname           �����ޡD�٩��C~
+Cname           必殺技．斬岩劍~
 Slot            SLOT_ROCK_SLASH
 Msgoff          ~
 Check           check_sword_attack~
@@ -28,20 +28,20 @@ Qutoient        1
 Adeptation      0
 Limit           CLASS_GENERAL    95 95
 Help
-�٩��C�k�G
+斬岩劍法：
 
-�L�J���������ޡA�D�n�ۦ������T�ۡA�﨤�I�Ѷ[�I�l�_�A
-�����ɱq��o�줻�s�o�����A�q�`�H�T�s�o�~�h�A���O����
-���H�ۮL�J�����߱��A�ӷ|����h���P���ܤƳs��ۥX�{�A
-�t�X�W�٩��C��O�p��K�l�C
+夏侯惇的必殺技，主要招式分為三招，穿角！天跋！烽斷，
+攻擊時從單發到六連發不等，通常以三連發居多，但是有時
+候隨著夏侯惇的心情，而會有更多不同的變化連續招出現，
+配合上斬岩劍更是如虎添翼。
 
 ~
 #Damage
 Description
-$P$n�C�y�}�l�e�۰��M�j�p���@����鹳�ӵ��@����¶�b$N���L���W�M$N�uı�o
-��W�L���V�ӶV���M��M���M$n�j�s�@�n$A$A
-$Y        �u�����ޡD�﨤�v$P$A$A
-�u��$n��W��$O��}�Ҧ��C��M�V$N�n�`$l��ӡC~
+$P$n劍尖開始畫著圈圈﹐大小不一的圈圈像細絲一般纏繞在$N的兵器上﹐$N只覺得
+手上兵器越來越重﹐突然間﹐$n大叫一聲$A$A
+$Y        「必殺技．穿角」$P$A$A
+只見$n手上的$O穿破所有劍圈﹐向$N要害$l刺來。~
 Chance          10
 Value           1200
 Parry           0
@@ -51,10 +51,10 @@ End
 
 #Damage
 Description
-$P$n�N$O�b$N�W�L�B�R�o���m���q�M��M���C�楪��M�N$N�U�L�]�ɼƫʦ��M
-�uť�o$n�N�N�����F�@�n$A$A
-$B        �u�����ޡD�Ѷ[�v$P$A$A
-�u���L�ƼC�v�q$N�Y�W�n�U�M�}�U�]�ɬO$n���~�����ۡC~
+$P$n將$O在$N上盤處舞得水瀉不通﹐突然間劍交左手﹐將$N下盤也盡數封死﹐
+只聽得$n冷冷的說了一聲$A$A
+$B        「必殺技．天跋」$P$A$A
+只見無數劍影從$N頭上罩下﹐腳下也盡是$n後繼的殺著。~
 Chance          10
 Value           20
 Parry           0
@@ -64,11 +64,11 @@ End
 
 #Damage
 Description
-$P$n���C�k�~�M�A�ܡM�p��d�a����a�𺢡M���M���Ͽ\�k�u����զb���C$N������W�e
-�w�����ڡM�u��$n�j�ۤ@�n$A$A
-$S        �u�����ޡD�W�_�v$P$A$A
-�u��$n�⤤��$O�H��ꤣ�ت��ۦ��q���c���i�M$N���Q��m���ڡM��M�oı�o�ۦ���ĭ�t
-����ե��Ƥs�ˮ��a�V�ۤv���ӡC~
+$P$n的劍法陡然丕變﹐如拖泥帶水般地遲滯﹐隱然有反璞歸真的氣勢在內。$N正打算上前
+硬拼之際﹐只見$n大喊一聲$A$A
+$S        「必殺技．鋒斷」$P$A$A
+只見$n手中的$O以樸實不華的招式從中宮挺進﹐$N正想抵禦之際﹐突然發覺這招式中蘊含
+的氣勢正排山倒海地向自己撲來。~
 Chance          10
 Value           20
 Parry           0

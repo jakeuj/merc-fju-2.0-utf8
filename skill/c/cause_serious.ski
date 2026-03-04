@@ -1,5 +1,5 @@
 Name            cause serious~
-Cname           ���׶ˮ`~
+Cname           中度傷害~
 Slot            SLOT_CAUSE_SERIOUS
 Msgoff          ~
 Check           check_unrigid_attack~

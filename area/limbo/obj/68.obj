@@ -1,9 +1,9 @@
 Vnum            68
 Name            steel pen~
-ShortDesc       �����~
+ShortDesc       精鋼筆~
 Description
-���K�g����ҼƤѥ��y�Ӧ��M�~���K�¡C~
-Unit            �K~
+生鐵經歷鍛煉數天打造而成﹐外表黝黑。~
+Unit            枝~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

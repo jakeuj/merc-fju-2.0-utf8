@@ -1,9 +1,9 @@
 Vnum            326
 Name            create water book~
-ShortDesc       ³y¤ô³N¯µÓD~
+ShortDesc       é€ æ°´è¡“ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

@@ -1,9 +1,9 @@
 Vnum            72
 Name            tiger blade~
-ShortDesc       ªêÀY¿û¤M~
+ShortDesc       è™é ­é‹¼åˆ€~
 Description
-³o¬O§âºë¿ûÅ±¦¨ªºªø¤M(blade)¡M¨è¤F­ÓªêÀY°µ¸Ë¹¢¡C~
-Unit            §â~
+é€™æ˜¯æŠŠç²¾é‹¼é‘„æˆçš„é•·åˆ€(blade)ï¹åˆ»äº†å€‹è™é ­åšè£é£¾ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

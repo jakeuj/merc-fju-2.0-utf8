@@ -1,9 +1,9 @@
 Vnum            40
 Name            yen sword~
-ShortDesc       ��z�C~
+ShortDesc       穿腸劍~
 Description
-�o�N�O����H�١u��z�C�v�q���ϩҨϥΪ��C�M���b�o��C�U���H�h�����p��ơC~
-Unit            ��~
+這就是江湖人稱「穿腸劍」司馬煙所使用的劍﹐死在這把劍下的人多的不計其數。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

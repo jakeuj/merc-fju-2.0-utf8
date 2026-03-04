@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -22,7 +22,7 @@ int  max_enable = MAX_ENABLE_COUNT;
 
 void driver_dodge  args( ( SKILL_DATA *, CHAR_DATA *, CHAR_DATA * ) );
 
-/* ³]©w¹w³]§Ş¯à */
+/* è¨­å®šé è¨­æŠ€èƒ½ */
 FUNCTION( do_enable )
 {
   int              number;
@@ -49,7 +49,7 @@ FUNCTION( do_enable )
   {
     if ( arg[0] == '@' && arg[1] == '\x0' )
     {
-      send_to_char( "§A¥²¶·µù©ú§A­nÆ[¬İªº¹ï¶H¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜ä½ è¦è§€çœ‹çš„å°è±¡ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -61,20 +61,20 @@ FUNCTION( do_enable )
     {
       if ( !( victim = get_char_world( ch, arg + 1 ) ) )
       {
-        act( "¨S¦³§ä¨ì§Aªº¹ï¶H$2$T$0¡C", ch, NULL, arg+1, TO_CHAR );
+        act( "æ²’æœ‰æ‰¾åˆ°ä½ çš„å°è±¡$2$T$0ã€‚", ch, NULL, arg+1, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( get_trust( ch ) < get_trust( victim ) )
       {
-        act( "§AªºÅv¤O¤£°÷¬İ$Nªº­P¯à¡C", ch, NULL, victim, TO_CHAR );
+        act( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹$Nçš„è‡´èƒ½ã€‚", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
 
     if ( !victim->enable )
     {
-      act( "$N¥¼§ä¨ì¥ô¦ó¹w³]ªº§Ş¯à¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Næœªæ‰¾åˆ°ä»»ä½•é è¨­çš„æŠ€èƒ½ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -106,7 +106,7 @@ FUNCTION( do_enable )
       }
     }
 
-    send_to_buffer( "%sªº¹w³]§Ş¯à¦³ %d ­Ó¡R\n\r%s"
+    send_to_buffer( "%sçš„é è¨­æŠ€èƒ½æœ‰ %d å€‹ï¹•\n\r%s"
       , mob_name( ch, victim ), enable_count( victim )
       , VERTICAL_LINE );
 
@@ -136,33 +136,33 @@ FUNCTION( do_enable )
 
     if ( number == 0 )
     {
-      send_to_buffer( "¥¼§ä¨ì¥ô¦ó¹w³]ªº§Ş¯à¡C\n\r" );
+      send_to_buffer( "æœªæ‰¾åˆ°ä»»ä½•é è¨­çš„æŠ€èƒ½ã€‚\n\r" );
     }
     else
     {
       send_to_buffer( "%s", VERTICAL_LINE );
 
-      send_to_buffer( "§ğÀ»¹w³]§Ş¯à¡R%-20s %-20s\n\r"
+      send_to_buffer( "æ”»æ“Šé è¨­æŠ€èƒ½ï¹•%-20s %-20s\n\r"
         , ( pFight && ( pSkill = pFight->skill ) )
-          ? pSkill->cname : "\e[1;31m±q¯Ê\e[0m"
+          ? pSkill->cname : "\e[1;31må¾ç¼º\e[0m"
         , ( pFight && ( pSkill = pFight->skill ) )
           ? pSkill->name : "" );
 
-      send_to_buffer( "°{¸ú¹w³]§Ş¯à¡R%-20s %-20s\n\r"
+      send_to_buffer( "é–ƒèº²é è¨­æŠ€èƒ½ï¹•%-20s %-20s\n\r"
         , ( pDodge && ( pSkill = pDodge->skill ) )
-          ? pSkill->cname : "\e[1;31m±q¯Ê\e[0m"
+          ? pSkill->cname : "\e[1;31må¾ç¼º\e[0m"
         , ( pDodge && ( pSkill = pDodge->skill ) )
           ? pSkill->name : "" );
 
-      send_to_buffer( "°k¶]¹w³]§Ş¯à¡R%-20s %-20s\n\r"
+      send_to_buffer( "é€ƒè·‘é è¨­æŠ€èƒ½ï¹•%-20s %-20s\n\r"
         , ( pFlee && ( pSkill = pFlee->skill ) )
-          ? pSkill->cname : "\e[1;31m±q¯Ê\e[0m"
+          ? pSkill->cname : "\e[1;31må¾ç¼º\e[0m"
         , ( pFlee && ( pSkill = pFlee->skill ) )
           ? pSkill->name : "" );
 
-      send_to_buffer( "­ß·Q¹w³]§Ş¯à¡R%-20s %-20s\n\r"
+      send_to_buffer( "å†¥æƒ³é è¨­æŠ€èƒ½ï¹•%-20s %-20s\n\r"
         , ( pMed && ( pSkill = pMed->skill ) )
-          ? pSkill->cname : "\e[1;31m±q¯Ê\e[0m"
+          ? pSkill->cname : "\e[1;31må¾ç¼º\e[0m"
         , ( pMed && ( pSkill = pMed->skill ) )
           ? pSkill->name : "" );
     }
@@ -175,46 +175,46 @@ FUNCTION( do_enable )
   {
     if ( arg[1] == '\x0' || !is_number( arg + 1 ) )
     {
-      send_to_char( "§A¥²¶·µù©úµêÀÀ©Çª«ªº¸¹½X¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜è™›æ“¬æ€ªç‰©çš„è™Ÿç¢¼ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     number = atoi( arg + 1 );
     if ( !( pIndex = get_mob_index( number ) ) )
     {
-      act( "§ä¤£¨ì½s¸¹ $x ªº©Çª«¡T", ch, &number, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ç·¨è™Ÿ $x çš„æ€ªç‰©ï¹—", ch, &number, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     argument = one_argument( argument, arg );
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "§A¥²¶·µù©ú§Ş¯àªº­^¤å¦WºÙ¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜æŠ€èƒ½çš„è‹±æ–‡åç¨±ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pSkill = skill_isname( arg ) ) )
     {
-      act( "§ä¤£¨ì $t ³oºØ§Ş¯à¦WºÙ¡T", ch, arg, NULL, TO_CHAR );
+      act( "æ‰¾ä¸åˆ° $t é€™ç¨®æŠ€èƒ½åç¨±ï¹—", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !pSkill->enable )
     {
-      act( "$w¬O¤£¥i¥H³Q­P¯àªº¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "$wæ˜¯ä¸å¯ä»¥è¢«è‡´èƒ½çš„ï¹—", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§Ş¯à¼ô½m«×¥²¶·¬O¤@­Ó¼Æ¦r¡T\n\r", ch );
+      send_to_char( "æŠ€èƒ½ç†Ÿç·´åº¦å¿…é ˆæ˜¯ä¸€å€‹æ•¸å­—ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     adept = atoi( argument );
     if ( adept < 0 || adept > 100 )
     {
-      send_to_char( "§Ş¯àªº¼ô½m«×¥²¶·¦b 0 ¨ì 100 ¤§¶¡¡T\n\r", ch );
+      send_to_char( "æŠ€èƒ½çš„ç†Ÿç·´åº¦å¿…é ˆåœ¨ 0 åˆ° 100 ä¹‹é–“ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -230,7 +230,7 @@ FUNCTION( do_enable )
 
           free_struct( pEnable , STRUCT_ENABLE_DATA );
 
-          act( "§A¨ú®ø¤F$tªº$W§Ş¯à¼ô½m«×¡T"
+          act( "ä½ å–æ¶ˆäº†$tçš„$WæŠ€èƒ½ç†Ÿç·´åº¦ï¹—"
             , ch, mob_index_name( NULL, pIndex ), pSkill, TO_CHAR );
 
           for ( victim = char_list; victim; victim = victim->next )
@@ -245,7 +245,7 @@ FUNCTION( do_enable )
           RETURN_NULL();
         }
       }
-      act( "$w¥»¨Ó´N¨S³Q­P¯à¡M©Ò¥HµLªk¨ú®ø¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "$wæœ¬ä¾†å°±æ²’è¢«è‡´èƒ½ï¹æ‰€ä»¥ç„¡æ³•å–æ¶ˆï¹—", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -257,7 +257,7 @@ FUNCTION( do_enable )
         {
           pIndex->skill[pSkill->slot] = adept;
 
-          sprintf( buf, "§A§â%sªº$w§Ş¯à¼ô½m«×§ïÅÜ¬°¦Ê¤À¤§$I¡T"
+          sprintf( buf, "ä½ æŠŠ%sçš„$wæŠ€èƒ½ç†Ÿç·´åº¦æ”¹è®Šç‚ºç™¾åˆ†ä¹‹$Iï¹—"
             , mob_index_name( NULL, pIndex ) );
 
           act( smash_act_keyword( buf, "neswIX" ), ch, pSkill, &adept, TO_CHAR );
@@ -272,15 +272,15 @@ FUNCTION( do_enable )
         }
       }
 
-      /* ³]©w¼ô½m«× */
+      /* è¨­å®šç†Ÿç·´åº¦ */
       pIndex->skill[pSkill->slot] = adept;
 
-      /* ¦pªG¦s¦b¤~°t¸m°O¾ĞÅéµ¹¥L */
+      /* å¦‚æœå­˜åœ¨æ‰é…ç½®è¨˜æ†¶é«”çµ¦ä»– */
       pEnable        = alloc_struct( STRUCT_ENABLE_DATA );
       pEnable->skill = pSkill;
       pEnable->next  = NULL;
 
-      /* §ä¥X³Ì«á¤@­Ó */
+      /* æ‰¾å‡ºæœ€å¾Œä¸€å€‹ */
       for ( zEnable = pIndex->enable;
             zEnable && zEnable->next;
             zEnable = zEnable->next );
@@ -288,7 +288,7 @@ FUNCTION( do_enable )
       if ( !zEnable ) pIndex->enable = pEnable;
       else            zEnable->next  = pEnable;
 
-      sprintf( buf, "§A§â%sªº$w§Ş¯à¼ô½m«×³]©w¬°¦Ê¤À¤§$I¡T"
+      sprintf( buf, "ä½ æŠŠ%sçš„$wæŠ€èƒ½ç†Ÿç·´åº¦è¨­å®šç‚ºç™¾åˆ†ä¹‹$Iï¹—"
         , mob_index_name( NULL, pIndex ) );
 
       act( smash_act_keyword( buf, "neswIX" ), ch, pSkill, &adept, TO_CHAR );
@@ -306,55 +306,55 @@ FUNCTION( do_enable )
     }
   }
 
-  /* ²M°£©Ò¦³¹w³]ªº§Ş¯à */
+  /* æ¸…é™¤æ‰€æœ‰é è¨­çš„æŠ€èƒ½ */
   if ( !str_prefix( arg , "!clean" ) )
   {
-    send_to_char( "¨t²Î¤w¸gÀ°§A²M°£©Ò¦³ªº¹w³]§Ş¯à¡C\n\r" , ch );
+    send_to_char( "ç³»çµ±å·²ç¶“å¹«ä½ æ¸…é™¤æ‰€æœ‰çš„é è¨­æŠ€èƒ½ã€‚\n\r" , ch );
     extract_enable( ch );
     RETURN_NULL();
   }
 
   if ( !( pSkill = skill_isname( arg ) ) )
   {
-    act( "¨S¦³µo²{§A­nªº§Ş¯à $2$T$0¡C" , ch, NULL, arg, TO_CHAR );
+    act( "æ²’æœ‰ç™¼ç¾ä½ è¦çš„æŠ€èƒ½ $2$T$0ã€‚" , ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( ch->skill[pSkill->slot] <= 0 )
   {
-    act( "§AÁÙ¤£·|$w³á¡M©Ò¥HµLªk­P¯à", ch, pSkill, NULL, TO_CHAR );
+    act( "ä½ é‚„ä¸æœƒ$wå–”ï¹æ‰€ä»¥ç„¡æ³•è‡´èƒ½", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( ( pEnable = enable_repeat( ch->enable , pSkill ) ) )
   {
-    act( "§A¨ú®ø¤F$w³o­Ó¹w³]§Ş¯à¡C", ch, pSkill, NULL, TO_CHAR );
+    act( "ä½ å–æ¶ˆäº†$wé€™å€‹é è¨­æŠ€èƒ½ã€‚", ch, pSkill, NULL, TO_CHAR );
     extract_an_enable( ch , pSkill );
     RETURN_NULL();
   }
 
   if ( !pSkill->enable )
   {
-    act( "¹ï¤£°_¡M$w¬O¤£¯à³Q­P¯à¡C" , ch, pSkill, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$wæ˜¯ä¸èƒ½è¢«è‡´èƒ½ã€‚" , ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¹w³]§Ş¯àªº­Ó¼Æ¬O§_¶W¹L¹w³]­È */
+  /* æª¢æŸ¥é è¨­æŠ€èƒ½çš„å€‹æ•¸æ˜¯å¦è¶…éé è¨­å€¼ */
   if ( !IS_IMMORTAL( ch ) && enable_count( ch ) > max_enable )
   {
-    act( "¹ï¤£°_¡M¨C­Ó¤H³Ì¦h¥u¯à¦³$i­Ó¹w³]§Ş¯à¡C"
+    act( "å°ä¸èµ·ï¹æ¯å€‹äººæœ€å¤šåªèƒ½æœ‰$iå€‹é è¨­æŠ€èƒ½ã€‚"
       , ch, &max_enable, NULL, TO_CHAR );
 
     RETURN_NULL();
   }
 
   set_enable( ch, pSkill );
-  act( "§A¹w³]ªº§Ş¯à³]©w¬° $w¡C", ch, pSkill, NULL, TO_CHAR );
+  act( "ä½ é è¨­çš„æŠ€èƒ½è¨­å®šç‚º $wã€‚", ch, pSkill, NULL, TO_CHAR );
 
   RETURN_NULL();
 }
 
-/* ÀË¬d¬Y­Ó¹w³]§Ş¯à¬O§_­«½Æ¤F */
+/* æª¢æŸ¥æŸå€‹é è¨­æŠ€èƒ½æ˜¯å¦é‡è¤‡äº† */
 ENABLE_DATA * enable_repeat( ENABLE_DATA * pEnable , SKILL_DATA * pSkill )
 {
   PUSH_FUNCTION( "enable_repeat" );
@@ -365,7 +365,7 @@ ENABLE_DATA * enable_repeat( ENABLE_DATA * pEnable , SKILL_DATA * pSkill )
   RETURN( NULL );
 }
 
-/* ­pºâ¬Y¤Hªº¹w³]§Ş¯à­Ó¼Æ */
+/* è¨ˆç®—æŸäººçš„é è¨­æŠ€èƒ½å€‹æ•¸ */
 size_t enable_count( CHAR_DATA * ch )
 {
   ENABLE_DATA * enable;
@@ -376,7 +376,7 @@ size_t enable_count( CHAR_DATA * ch )
   RETURN( count );
 }
 
-/* ¾P·´³æ¤@ªº¹w³]§Ş¯à */
+/* éŠ·æ¯€å–®ä¸€çš„é è¨­æŠ€èƒ½ */
 void extract_an_enable( CHAR_DATA * ch , SKILL_DATA * pSkill )
 {
   ENABLE_DATA * enable;
@@ -396,11 +396,11 @@ void extract_an_enable( CHAR_DATA * ch , SKILL_DATA * pSkill )
     }
   }
 
-  mudlog( LOG_DEBUG , "extract_an_enable: ¥¼µo²{¨ì±ı¾P·´ªº­P¯à¸ê®Æ." );
+  mudlog( LOG_DEBUG , "extract_an_enable: æœªç™¼ç¾åˆ°æ¬²éŠ·æ¯€çš„è‡´èƒ½è³‡æ–™." );
   RETURN_NULL();
 }
 
-/* ¾P·´©Ò¦³ªº¹w³]§Ş¯à */
+/* éŠ·æ¯€æ‰€æœ‰çš„é è¨­æŠ€èƒ½ */
 void extract_enable( CHAR_DATA * ch )
 {
   ENABLE_DATA * enable;
@@ -412,7 +412,7 @@ void extract_enable( CHAR_DATA * ch )
   {
     temp = enable->next;
 
-    /* ÄÀ©ñµ²ºc°O¾ĞÅé */
+    /* é‡‹æ”¾çµæ§‹è¨˜æ†¶é«” */
     free_struct( enable , STRUCT_ENABLE_DATA );
   }
 
@@ -430,22 +430,22 @@ ENABLE_DATA * exert_fight_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bKil
 
   if ( !ch || !verify_char( ch ) )
   {
-    mudlog( LOG_DEBUG, "exert_fight_enable: ¨Ó·½¬OªÅªº" );
+    mudlog( LOG_DEBUG, "exert_fight_enable: ä¾†æºæ˜¯ç©ºçš„" );
     RETURN( NULL );
   }
 
   if ( !can_damage( ch ) )
   {
-    mudlog( LOG_DEBUG, "exert_fight_enable: ¤Hª«¤w¦º¤`." );
+    mudlog( LOG_DEBUG, "exert_fight_enable: äººç‰©å·²æ­»äº¡." );
     RETURN( NULL );
   }
 
-  /* ª±®a¦³«ü¥Oµ¥«İ¿é¤J */
+  /* ç©å®¶æœ‰æŒ‡ä»¤ç­‰å¾…è¼¸å…¥ */
   if ( ch->desc && ch->desc->inbuf[0] ) RETURN( NULL );
 
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "exert_fight_enable: ¯Ê¥F¤Hª«©Ğ¶¡." );
+    mudlog( LOG_DEBUG, "exert_fight_enable: ç¼ºä¹äººç‰©æˆ¿é–“." );
     RETURN( NULL );
   }
 
@@ -460,17 +460,17 @@ ENABLE_DATA * exert_fight_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bKil
 
       if ( !victim || !verify_char( victim ) )
       {
-        mudlog( LOG_DEBUG, "exert_fight_enable: ¹ï¶H¬OªÅªº" );
+        mudlog( LOG_DEBUG, "exert_fight_enable: å°è±¡æ˜¯ç©ºçš„" );
         RETURN( NULL );
       }
 
       if ( !can_damage( victim ) )
       {
-        mudlog( LOG_DEBUG, "exert_fight_enable: ¹ï¶H¤Hª«¤w¦º¤`." );
+        mudlog( LOG_DEBUG, "exert_fight_enable: å°è±¡äººç‰©å·²æ­»äº¡." );
         RETURN( NULL );
       }
 
-      /* ¤w¸g¦³¥´°«¹ï¶H */
+      /* å·²ç¶“æœ‰æ‰“é¬¥å°è±¡ */
       if ( ch->fighting == victim )
       {
         sprintf( buffer, "'%s'", pSkill->name );
@@ -487,7 +487,7 @@ ENABLE_DATA * exert_fight_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bKil
         str_cpy( buf, name );
         number = 0;
 
-        /* §ä´M get_char_room ªº¤Hª«¶¶§Ç */
+        /* æ‰¾å°‹ get_char_room çš„äººç‰©é †åº */
         for ( rch = ch->in_room->people; rch; rch = rch->next_in_room )
         {
           if ( can_see( ch, rch ) && is_name( name, rch->name ) ) number++;
@@ -522,13 +522,13 @@ ENABLE_DATA * exert_dodge_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bDod
 
   if ( !ch || !verify_char( ch ) )
   {
-    mudlog( LOG_DEBUG, "exert_dodge_enable: ¨Ó·½¬OªÅªº" );
+    mudlog( LOG_DEBUG, "exert_dodge_enable: ä¾†æºæ˜¯ç©ºçš„" );
     RETURN( NULL );
   }
 
   if ( !can_damage( ch ) )
   {
-    mudlog( LOG_DEBUG, "exert_dodge_enable: ¤Hª«¤w¦º¤`." );
+    mudlog( LOG_DEBUG, "exert_dodge_enable: äººç‰©å·²æ­»äº¡." );
     RETURN( NULL );
   }
 
@@ -539,7 +539,7 @@ ENABLE_DATA * exert_dodge_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bDod
       && pSkill->type == TAR_DODGE
       && ( IS_NPC( ch ) || check_skill_cast( ch, pSkill, FALSE ) ) )
     {
-      /* ­pºâ®ø¯Óªº¼Æ­È¶q */
+      /* è¨ˆç®—æ¶ˆè€—çš„æ•¸å€¼é‡ */
       cost   = pSkill->cost;
       adept  = UMIN( 100, UMAX( ch->skill[pSkill->slot], 1 ) );
       cost   = UMAX( 1, UMAX( cost / 4, cost * adept / 100 ) );
@@ -547,32 +547,32 @@ ENABLE_DATA * exert_dodge_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bDod
       switch( pSkill->cost_type )
       {
       default:
-        mudlog( LOG_DEBUG, "exert_dodge_enable: ¿ù»~«¬ºA %d."
+        mudlog( LOG_DEBUG, "exert_dodge_enable: éŒ¯èª¤å‹æ…‹ %d."
           , pSkill->cost_type );
 
         RETURN( NULL );
 
-      /* ®ø¯Ó¥Í©R¤O */
+      /* æ¶ˆè€—ç”Ÿå‘½åŠ› */
       case COST_HIT:
         if ( ch->hit < cost ) RETURN( NULL );
         if ( bDodge ) ch->hit -= cost;
         break;
 
-      /* ®ø¯Óªk¤O */
+      /* æ¶ˆè€—æ³•åŠ› */
       case COST_MANA:
 
         if ( ch->mana < cost ) RETURN( NULL );
         if ( bDodge ) ch->mana -= cost;
         break;
 
-      /* ®ø¯ÓÅé¤O */
+      /* æ¶ˆè€—é«”åŠ› */
       case COST_MOVE:
 
         if ( ch->move < cost ) RETURN( NULL );
         if ( bDodge ) ch->move -= cost;
         break;
 
-      /* ®ø¯Óª÷¿ú */
+      /* æ¶ˆè€—é‡‘éŒ¢ */
       case COST_GOLD:
 
         if ( ch->gold < cost ) RETURN( NULL );
@@ -584,13 +584,13 @@ ENABLE_DATA * exert_dodge_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bDod
 
        if ( !victim || !verify_char( victim ) )
        {
-         mudlog( LOG_DEBUG, "exert_dodge_enable: ¹ï¶H¬OªÅªº" );
+         mudlog( LOG_DEBUG, "exert_dodge_enable: å°è±¡æ˜¯ç©ºçš„" );
          RETURN( NULL );
        }
 
       if ( !can_damage( victim ) )
       {
-        mudlog( LOG_DEBUG, "exert_dodge_enable: ¹ï¶H¤w¦º¤`." );
+        mudlog( LOG_DEBUG, "exert_dodge_enable: å°è±¡å·²æ­»äº¡." );
         RETURN( NULL );
       }
 
@@ -604,13 +604,13 @@ ENABLE_DATA * exert_dodge_enable( CHAR_DATA * ch , CHAR_DATA * victim, bool bDod
       else
       {
         if ( !pSkill->function )
-          mudlog( LOG_DEBUG, "exert_dodge_enable: §Ş¯à %s ¨S¦³¾Ş§@¨ç¼Æ."
+          mudlog( LOG_DEBUG, "exert_dodge_enable: æŠ€èƒ½ %s æ²’æœ‰æ“ä½œå‡½æ•¸."
             , pSkill->name );
         else
           ( *pSkill->function ) ( sn, get_practice( ch, sn ), ch, victim );
       }
 
-      /* Àò±o¼ô½m«× */
+      /* ç²å¾—ç†Ÿç·´åº¦ */
       if ( pSkill->slot ) gain_skill_exp( ch, pSkill->slot, TRUE );
 
       RETURN( pEnable );
@@ -634,19 +634,19 @@ void driver_dodge( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !pSkill || !ch )
   {
-    mudlog( LOG_DEBUG, "driver_dodge: ¨Ó·½¬OªÅªº." );
+    mudlog( LOG_DEBUG, "driver_dodge: ä¾†æºæ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
   if ( !pSkill->damage )
   {
-    mudlog( LOG_DEBUG, "driver_dodge: §Ş¯à%s¨S¦³§ğ¶Ë±Ô­z.", pSkill->name );
+    mudlog( LOG_DEBUG, "driver_dodge: æŠ€èƒ½%sæ²’æœ‰æ”»å‚·æ•˜è¿°.", pSkill->name );
     RETURN_NULL();
   }
 
   if ( ( total = pSkill->chance ) <= 0 )
   {
-    mudlog( LOG_DEBUG, "driver_dodge: §Ş¯à%sªº§ğ¶Ë¾÷²vÁ`©M¤p©óµ¥©ó¹s."
+    mudlog( LOG_DEBUG, "driver_dodge: æŠ€èƒ½%sçš„æ”»å‚·æ©Ÿç‡ç¸½å’Œå°æ–¼ç­‰æ–¼é›¶."
       , pSkill->name );
     RETURN_NULL();
   }
@@ -673,25 +673,25 @@ void driver_dodge( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
       if ( pDam->description && *pDam->description )
         sact( ch , victim , NULL, pDam->description );
 
-      /* ¬O§_¦³¯S§ğ */
+      /* æ˜¯å¦æœ‰ç‰¹æ”» */
       if ( pDam->routine )
       {
         ( *pDam->routine ) ( ch, victim, practice );
 
-        /* ¬İ¬İ­è­èªº°Ê§@¬O§_¨ÏªºÂù¤è¦º¤` */
+        /* çœ‹çœ‹å‰›å‰›çš„å‹•ä½œæ˜¯å¦ä½¿çš„é›™æ–¹æ­»äº¡ */
         if ( !verify_char( ch )
           || !can_damage( ch )
           || !verify_char( victim )
           || !can_damage( victim ) ) RETURN_NULL();
       }
 
-      /* ¬O§_¦³¯S®í®ÄÀ³ */
+      /* æ˜¯å¦æœ‰ç‰¹æ®Šæ•ˆæ‡‰ */
       for ( pEffect = pDam->effect; pEffect; pEffect = pEffect->next )
       {
-        /* ©I¥s¨ç¼Æ¾Ş§@ */
+        /* å‘¼å«å‡½æ•¸æ“ä½œ */
         effect_driver( ch, victim, pEffect );
 
-        /* ¬İ¬İ­è­èªº°Ê§@¬O§_¨ÏªºÂù¤è¦º¤` */
+        /* çœ‹çœ‹å‰›å‰›çš„å‹•ä½œæ˜¯å¦ä½¿çš„é›™æ–¹æ­»äº¡ */
         if ( !verify_char( ch )
           || !can_damage( ch )
           || !verify_char( victim )
@@ -703,7 +703,7 @@ void driver_dodge( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
     }
   }
 
-  mudlog( LOG_DEBUG, "driver_dodge: §ä¤£¨ì±Ô­z." );
+  mudlog( LOG_DEBUG, "driver_dodge: æ‰¾ä¸åˆ°æ•˜è¿°." );
   RETURN_NULL();
 }
 
@@ -716,7 +716,7 @@ void set_enable( CHAR_DATA * ch, SKILL_DATA * pSkill )
 
   if ( !ch || !pSkill )
   {
-    mudlog( LOG_DEBUG, "set_enable: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "set_enable: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -725,12 +725,12 @@ void set_enable( CHAR_DATA * ch, SKILL_DATA * pSkill )
   for ( pEnable = ch->enable; pEnable; pEnable = pEnable->next )
     if ( pEnable->skill == pSkill ) RETURN_NULL();
 
-  /* °t¸m¥¨¶°«ü¥Oµ²ºcªº°O¾ĞÅé */
+  /* é…ç½®å·¨é›†æŒ‡ä»¤çµæ§‹çš„è¨˜æ†¶é«” */
   pEnable        = alloc_struct( STRUCT_ENABLE_DATA );
   pEnable->skill = pSkill;
   pEnable->next  = NULL;
 
-  /* §ä¥X³Ì«á¤@­Ó */
+  /* æ‰¾å‡ºæœ€å¾Œä¸€å€‹ */
   for ( zEnable = ch->enable
     ; zEnable && zEnable->next
     ; zEnable = zEnable->next );
@@ -749,7 +749,7 @@ bool check_skill_enable( CHAR_DATA * ch, SKILL_DATA * pSkill )
 
   if ( !ch || !pSkill )
   {
-    mudlog( LOG_DEBUG, "check_skill_enable: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "check_skill_enable: ä¾†æºä¸æ­£ç¢º." );
     RETURN( FALSE );
   }
 

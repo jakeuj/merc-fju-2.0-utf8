@@ -1,7 +1,7 @@
 Name            detect mask~
-Cname           °»´ú©ö®e~
+Cname           åµæ¸¬æ˜“å®¹~
 Slot            SLOT_DETECT_MASK
-Msgoff          §A¦A¤]¬İ¤£¨£¯S®íªº¤H¤F¡T~
+Msgoff          ä½ å†ä¹Ÿçœ‹ä¸è¦‹ç‰¹æ®Šçš„äººäº†ï¹—~
 Function        cast_detect_mask~
 Check           check_unrigid_attack~
 Position        POS_STANDING

@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -30,17 +30,17 @@ FUNCTION( do_angel )
   {
     if ( AngelComing == FALSE && !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "¹ï¤£°_¡M¦uÅ@¯«¥¿¦b¦£¡Mµy«á¦A½Ğ¥L¥X¨Ó¦n¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹å®ˆè­·ç¥æ­£åœ¨å¿™ï¹ç¨å¾Œå†è«‹ä»–å‡ºä¾†å¥½äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !IS_SET( ch->act, PLR_ANGEL ) )
     {
-      send_to_char( "§A¨S¦³§â¦uÅ@¯«¿ï¶µ¥´¶}¡M½Ğ¿é¤J config +angel ¨Ó±Ò°Ê¡T\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æŠŠå®ˆè­·ç¥é¸é …æ‰“é–‹ï¹è«‹è¼¸å…¥ config +angel ä¾†å•Ÿå‹•ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "§A³]©w¦uÅ@¯«¶g´Á¬°$i¬í¡M¦A$I¬í«á¦uÅ@¯«·|¦A¨Ó¤@¦¸¡T"
+    act( "ä½ è¨­å®šå®ˆè­·ç¥é€±æœŸç‚º$iç§’ï¹å†$Iç§’å¾Œå®ˆè­·ç¥æœƒå†ä¾†ä¸€æ¬¡ï¹—"
       , ch, &ch->pcdata->angel_set, &ch->pcdata->angel_left, TO_CHAR );
 
     AngelComing = FALSE;
@@ -63,8 +63,8 @@ FUNCTION( do_angel )
     {
       ch->pcdata->angel_left = ch->pcdata->angel_set;
 
-      print_to_char( ch, "\e[1;32m§Aªº¦ÕÃä¤S¶Ç¨Ó¦uÅ@¯«ªº¥mÀ{¡R"
-          "\e[0m%s\e[0mªí²{ªº¤£¿ù³á¡MÄ~Äò¥[ªo¡M§Úµ¹§Aªº«ØÄ³¬O\n\r%s"
+      print_to_char( ch, "\e[1;32mä½ çš„è€³é‚Šåˆå‚³ä¾†å®ˆè­·ç¥çš„å®åš€ï¹•"
+          "\e[0m%s\e[0mè¡¨ç¾çš„ä¸éŒ¯å–”ï¹ç¹¼çºŒåŠ æ²¹ï¹æˆ‘çµ¦ä½ çš„å»ºè­°æ˜¯\n\r%s"
           , ch->cname, VERTICAL_LINE );
 
       ( *zAngel->function ) ( ch, TRUE );
@@ -73,7 +73,7 @@ FUNCTION( do_angel )
     }
     else
     {
-      send_to_char( "­ü¡M§A¥Ø«eªºª¬ªp§Ú¤]¤£ª¾¹D­n«ç»ò¿ì¡M½Ğ±Ğª±®a§a¡T\n\r", ch );
+      send_to_char( "å”‰ï¹ä½ ç›®å‰çš„ç‹€æ³æˆ‘ä¹Ÿä¸çŸ¥é“è¦æ€éº¼è¾¦ï¹è«‹æ•™ç©å®¶å§ï¹—\n\r", ch );
     }
     RETURN_NULL();
   }
@@ -83,35 +83,35 @@ FUNCTION( do_angel )
     one_argument( argument, arg );
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "§A¥²¶·¿é¤J¼Æ¦r¨Ó¥Nªí¦uÅ@¯«¥X²{ªº¶g´Á¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¼¸å…¥æ•¸å­—ä¾†ä»£è¡¨å®ˆè­·ç¥å‡ºç¾çš„é€±æœŸï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( count = atoi( arg ) ) < 10 )
     {
-      send_to_char( "³oºØ¶g´Á¦uÅ@¯«¬O·|²Ö¦ºªº¡T\n\r", ch );
+      send_to_char( "é€™ç¨®é€±æœŸå®ˆè­·ç¥æ˜¯æœƒç´¯æ­»çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( count > 300 )
     {
-      send_to_char( "Á`¤£¯àÅı¦uÅ@¯«µ¥¤Ó¤[§a¡T\n\r", ch );
+      send_to_char( "ç¸½ä¸èƒ½è®“å®ˆè­·ç¥ç­‰å¤ªä¹…å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     ch->pcdata->angel_left = ch->pcdata->angel_set = count;
-    act( "§A³]©w¨C$i¬í¦uÅ@¯«·|¥X²{¤@¦¸¡T", ch, &count, NULL, TO_CHAR );
+    act( "ä½ è¨­å®šæ¯$iç§’å®ˆè­·ç¥æœƒå‡ºç¾ä¸€æ¬¡ï¹—", ch, &count, NULL, TO_CHAR );
 
     if ( !IS_SET( ch->act, PLR_ANGEL ) )
     {
       SET_BIT( ch->act, PLR_ANGEL );
-      send_to_char( "¹ï¤F¡M¶¶«KÀ°§A§â¦uÅ@¯«¿ï¶µ¥´¶}¤F¡T\n\r", ch );
+      send_to_char( "å°äº†ï¹é †ä¾¿å¹«ä½ æŠŠå®ˆè­·ç¥é¸é …æ‰“é–‹äº†ï¹—\n\r", ch );
     }
   }
 
   else
   {
-    send_to_char( "§Aªº»yªk¤£¹ï¡M½Ğ¬d¸ß angel¡MÁÂÁÂ¡T\n\r", ch );
+    send_to_char( "ä½ çš„èªæ³•ä¸å°ï¹è«‹æŸ¥è©¢ angelï¹è¬è¬ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
@@ -135,7 +135,7 @@ void angel_update( void )
       && ch->pcdata
       && IS_SET( ch->act, PLR_ANGEL ) )
     {
-      /* ³]©w®É¶¡ */
+      /* è¨­å®šæ™‚é–“ */
       if ( --ch->pcdata->angel_left > 0 ) continue;
       ch->pcdata->angel_left = ch->pcdata->angel_set;
 
@@ -154,8 +154,8 @@ void angel_update( void )
 
       if ( zAngel )
       {
-        print_to_char( ch, "\e[1;32m§Aªº¦ÕÃä¤S¶Ç¨Ó¦uÅ@¯«ªº¥mÀ{¡R"
-          "\e[0m%s\e[0mªí²{ªº¤£¿ù³á¡MÄ~Äò¥[ªo¡M§Úµ¹§Aªº«ØÄ³¬O\n\r%s"
+        print_to_char( ch, "\e[1;32mä½ çš„è€³é‚Šåˆå‚³ä¾†å®ˆè­·ç¥çš„å®åš€ï¹•"
+          "\e[0m%s\e[0mè¡¨ç¾çš„ä¸éŒ¯å–”ï¹ç¹¼çºŒåŠ æ²¹ï¹æˆ‘çµ¦ä½ çš„å»ºè­°æ˜¯\n\r%s"
           "\e[0m%s\e[0m%s"
           , ch->cname, VERTICAL_LINE, zAngel->description, VERTICAL_LINE );
       }
@@ -177,8 +177,8 @@ ANGEL( angel_mount )
   if ( !ch->mount && !ch->mount_by )
   {
     if ( fPrint ) send_to_char(
-       "§A¬O¤£¬O¥i¥H¦Ò¼{§ä¤@¤Ç°¨¨ÓÃMÃM(\e[1;32mmount\[0m)¡S"
-       "§AÄ±±o¦p¦ó©O¡S\n\r", ch );
+       "ä½ æ˜¯ä¸æ˜¯å¯ä»¥è€ƒæ…®æ‰¾ä¸€åŒ¹é¦¬ä¾†é¨é¨(\e[1;32mmount\[0m)ï¹–"
+       "ä½ è¦ºå¾—å¦‚ä½•å‘¢ï¹–\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -193,7 +193,7 @@ ANGEL( angel_unmount )
   if ( ch->mount )
   {
     if ( fPrint ) send_to_char(
-      "§A¥¿ÃMµÛ¤@¤Ç°¨¡M¤£¿ù¡M¤U°¨½Ğ¿é¤J \e[1;32munmount\e[0m ¡C\n\r", ch );
+      "ä½ æ­£é¨è‘—ä¸€åŒ¹é¦¬ï¹ä¸éŒ¯ï¹ä¸‹é¦¬è«‹è¼¸å…¥ \e[1;32munmount\e[0m ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -209,8 +209,8 @@ ANGEL( angel_sleep )
     || ch->move < get_curr_move( ch ) / 3 )
   {
     if ( fPrint ) send_to_char(
-      "¬İ§A¨ü¶Ë«ÜÄY­«¡M½öµÛºÎÄ±(\e[1;32msleep\e[0m)©Î¬O"
-      "¥ğ®§(\e[1;32mrest\e[0m)¦n¶Ü¡S\n\r", ch );
+      "çœ‹ä½ å—å‚·å¾ˆåš´é‡ï¹èººè‘—ç¡è¦º(\e[1;32msleep\e[0m)æˆ–æ˜¯"
+      "ä¼‘æ¯(\e[1;32mrest\e[0m)å¥½å—ï¹–\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -225,8 +225,8 @@ ANGEL( angel_drink )
   if ( ch->pcdata && ch->pcdata->condition[COND_THIRST] <= 0 )
   {
     if ( fPrint ) send_to_char(
-      "¬İ§A¦n¹³«Ü¤f´÷ªº¼Ë¤l¡M¥h§ä¤ô¤«(\e[1;32mwell\e[0m)©Î¬O¶R"
-      "¤ô³U¨Ó³Ü(\e[1;32mdrink\e[0m)¡C\n\r", ch );
+      "çœ‹ä½ å¥½åƒå¾ˆå£æ¸´çš„æ¨£å­ï¹å»æ‰¾æ°´äº•(\e[1;32mwell\e[0m)æˆ–æ˜¯è²·"
+      "æ°´è¢‹ä¾†å–(\e[1;32mdrink\e[0m)ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
@@ -240,7 +240,7 @@ ANGEL( angel_eat )
   if ( ch->pcdata && ch->pcdata->condition[COND_FULL] <= 0 )
   {
     if ( fPrint ) send_to_char(
-      "¬İ§A¦n¹³«Ü¾jªº¼Ë¤l¡M¥h¶R¤@¨Ç­¹ª«¨Ó¦Y(\e[1;32meat\e[0m)§a¡C\n\r", ch );
+      "çœ‹ä½ å¥½åƒå¾ˆé¤“çš„æ¨£å­ï¹å»è²·ä¸€äº›é£Ÿç‰©ä¾†åƒ(\e[1;32meat\e[0m)å§ã€‚\n\r", ch );
     RETURN( TRUE );
   }
 
@@ -254,7 +254,7 @@ ANGEL( angel_marry )
   if ( get_age( ch ) > 20 && ch->pcdata && ch->pcdata->wooer )
   {
     if ( fPrint ) send_to_char(
-      "¦³¤F°l¨DªÌ¡M§A¥i¥H½Ğ½u¤Wªº¤j¯«À°§A­ÌÃÒ±B§a¡T\n\r", ch );
+      "æœ‰äº†è¿½æ±‚è€…ï¹ä½ å¯ä»¥è«‹ç·šä¸Šçš„å¤§ç¥å¹«ä½ å€‘è­‰å©šå§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -269,7 +269,7 @@ ANGEL( angel_wedding )
   if ( get_age( ch ) > 20 && ch->pcdata && !ch->pcdata->wooer )
   {
     if ( fPrint ) send_to_char(
-      "§A¦~¬ö¤]¤£¤p¤F¡M¬O¤£¬O¥i¥H¦Ò¼{µ²±B(\e[1;32mmarry\e[0m)¤F©O¡S\n\r", ch );
+      "ä½ å¹´ç´€ä¹Ÿä¸å°äº†ï¹æ˜¯ä¸æ˜¯å¯ä»¥è€ƒæ…®çµå©š(\e[1;32mmarry\e[0m)äº†å‘¢ï¹–\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -284,7 +284,7 @@ ANGEL( angel_alias )
   if ( get_alias_count( ch ) <= 2 )
   {
     if ( fPrint ) send_to_char(
-      "¬İ¨Ó§A¤£¤Ó·|¨Ï¥Î¥¨¶°«ü¥O(\e[1;32malias\e[0m)¡M¤£§«¸Õ¸Õ¬İ¡C\n\r", ch );
+      "çœ‹ä¾†ä½ ä¸å¤ªæœƒä½¿ç”¨å·¨é›†æŒ‡ä»¤(\e[1;32malias\e[0m)ï¹ä¸å¦¨è©¦è©¦çœ‹ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -298,8 +298,8 @@ ANGEL( angel_auction )
   if ( ch->carry_number >= 20 )
   {
     if ( fPrint ) send_to_char(
-      "«z¡M¨­¤W¨º»ò¦hªF¦è¡M®³´X¥ó¥X¨Ó©ç½æ(\e[1;32mauction\e[0m)"
-      "¬İ¬İ¹À¡T\n\r", ch );
+      "å“‡ï¹èº«ä¸Šé‚£éº¼å¤šæ±è¥¿ï¹æ‹¿å¹¾ä»¶å‡ºä¾†æ‹è³£(\e[1;32mauction\e[0m)"
+      "çœ‹çœ‹å˜›ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -315,8 +315,8 @@ ANGEL( angel_bet )
     && auction_info->obj->level <= ch->level )
   {
     if ( fPrint ) send_to_char(
-      "§A¥i¥H¦Ò¼{¶R¤U(\e[1;32mbet\e[0m)²{¦b©ç½æªºªF¦è¡M"
-      "©Î¬O¬İ¬İ¤]¦n(\e[1;32mbet help\e[0m)¡T\n\r", ch );
+      "ä½ å¯ä»¥è€ƒæ…®è²·ä¸‹(\e[1;32mbet\e[0m)ç¾åœ¨æ‹è³£çš„æ±è¥¿ï¹"
+      "æˆ–æ˜¯çœ‹çœ‹ä¹Ÿå¥½(\e[1;32mbet help\e[0m)ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -331,8 +331,8 @@ ANGEL( angel_areas )
   if ( ch->played <= 60 * 30 )
   {
     if ( fPrint ) send_to_char(
-      "§A¦n¡M·s¤â¡M¥i¥H¬d¸ß°Ï°ì¸ê®Æ(\e[1;32mareas\e[0m)¡M"
-      "¤§«á§¤°¨¨®(\e[1;32mbus\e[0m)¨Ó³}³}§a¡T\n\r", ch );
+      "ä½ å¥½ï¹æ–°æ‰‹ï¹å¯ä»¥æŸ¥è©¢å€åŸŸè³‡æ–™(\e[1;32mareas\e[0m)ï¹"
+      "ä¹‹å¾Œåé¦¬è»Š(\e[1;32mbus\e[0m)ä¾†é€›é€›å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -347,7 +347,7 @@ ANGEL( angel_xname )
   if ( ch->pcdata && ch->pcdata->xname >= 5 )
   {
     if ( fPrint ) send_to_char(
-      "¬İ¨Ó§A±`±`¨Ï¥Î¤£¶®¦r³á¡M´£¿ô§A¡M³o¥i¬O¤£¦nªº²ßºD³á¡T\n\r", ch );
+      "çœ‹ä¾†ä½ å¸¸å¸¸ä½¿ç”¨ä¸é›…å­—å–”ï¹æé†’ä½ ï¹é€™å¯æ˜¯ä¸å¥½çš„ç¿’æ…£å–”ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -361,7 +361,7 @@ ANGEL( angel_immortal )
 
   if ( IS_IMMORTAL( ch ) )
   {
-    if ( fPrint ) send_to_char( "·í¤F¤j¯«¤F¡MÁÙ¦b²V¡M¥h¼g°Ï°ì°Õ¡T\n\r", ch );
+    if ( fPrint ) send_to_char( "ç•¶äº†å¤§ç¥äº†ï¹é‚„åœ¨æ··ï¹å»å¯«å€åŸŸå•¦ï¹—\n\r", ch );
     RETURN( TRUE );
   }
   RETURN( FALSE );
@@ -374,7 +374,7 @@ ANGEL( angel_deposit_gold )
   if ( ch->gold > 50000 )
   {
     if ( fPrint ) send_to_char(
-      "¥¿©Ò¿×°]¤£ÅS¥Õ¡M»°ºò¥h§â¿ú¦s(\e[1;32mdeposit\e[0m)°_¨Ó§a¡T\n\r", ch );
+      "æ­£æ‰€è¬‚è²¡ä¸éœ²ç™½ï¹è¶•ç·Šå»æŠŠéŒ¢å­˜(\e[1;32mdeposit\e[0m)èµ·ä¾†å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -389,8 +389,8 @@ ANGEL( angel_deposit_obj )
   if ( ch->carry_number >= can_carry_n( ch ) - 2 )
   {
     if ( fPrint ) send_to_char(
-      "«z¡M§A¨­¤Wªº¸Ë³Æ¥i¤£¤Ö°Ú¡M»°ºò¥h¦s(\e[1;32mdeposit\e[0m)"
-      "°_¨Ó§a¡T\n\r", ch );
+      "å“‡ï¹ä½ èº«ä¸Šçš„è£å‚™å¯ä¸å°‘å•Šï¹è¶•ç·Šå»å­˜(\e[1;32mdeposit\e[0m)"
+      "èµ·ä¾†å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -405,7 +405,7 @@ ANGEL( angel_stock )
   if ( ch->bank > 1000000 )
   {
     if ( fPrint ) send_to_char(
-      "¬İ¨Ó§Aªº»È¦æ¦s´Ú¤£¤Ö³á¡M¦Ò¼{§ë¸êªÑ²¼(\e[1;32mstock\e[0m)«ç¼Ë¡S"
+      "çœ‹ä¾†ä½ çš„éŠ€è¡Œå­˜æ¬¾ä¸å°‘å–”ï¹è€ƒæ…®æŠ•è³‡è‚¡ç¥¨(\e[1;32mstock\e[0m)æ€æ¨£ï¹–"
       "\n\r", ch );
 
     RETURN( TRUE );
@@ -421,7 +421,7 @@ ANGEL( angel_gamble )
   if ( ch->gold > 1000000 )
   {
     if ( fPrint ) send_to_char(
-      "¬İ§A³Á§J³Á§Jªº¼Ë¤l¡M¨Ó½ä³Õ(\e[1;32mgamble\e[0m)¸Õ¸Õ¤â®ğ¹À¡T\n\r", ch );
+      "çœ‹ä½ éº¥å…‹éº¥å…‹çš„æ¨£å­ï¹ä¾†è³­åš(\e[1;32mgamble\e[0m)è©¦è©¦æ‰‹æ°£å˜›ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -451,7 +451,7 @@ ANGEL( angel_direction )
 
   if ( rem != ERRORCODE )
   {
-    if ( fPrint ) act( "§Aªº$t¤è¦n¹³¦³¥X¤f¡M¤£§«¥h«_ÀI¬İ¬İ¡T"
+    if ( fPrint ) act( "ä½ çš„$tæ–¹å¥½åƒæœ‰å‡ºå£ï¹ä¸å¦¨å»å†’éšªçœ‹çœ‹ï¹—"
       , ch, direction_name( rem ), NULL, TO_CHAR );
 
     RETURN( TRUE );
@@ -476,8 +476,8 @@ ANGEL( angel_shop )
       && keeper->pIndexData->pShop->type == SHOP_STORE )
     {
       if ( fPrint ) send_to_char(
-        "§A³o¸Ì¦n¹³¦³°Ó¤H­C¡M¤£§«¶R(\e[1;32mbuy\e[0m)­ÓªF¦è"
-        "¡M¬İ¬İ(\e[1;32mlist\e[0m)¤]¦n¡T\n\r", ch );
+        "ä½ é€™è£¡å¥½åƒæœ‰å•†äººè€¶ï¹ä¸å¦¨è²·(\e[1;32mbuy\e[0m)å€‹æ±è¥¿"
+        "ï¹çœ‹çœ‹(\e[1;32mlist\e[0m)ä¹Ÿå¥½ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -501,8 +501,8 @@ ANGEL( angel_smith )
       && keeper->pIndexData->pShop->type == SHOP_SMITH )
     {
       if ( fPrint ) send_to_char(
-        "§A³o¸Ì¦n¹³¦³ÅK¦K­C¡M¤£§«­×²z(\e[1;32mrepair\e[0m)"
-        "­ÓªF¦è¬İ¬İ¡T\n\r", ch );
+        "ä½ é€™è£¡å¥½åƒæœ‰éµåŒ è€¶ï¹ä¸å¦¨ä¿®ç†(\e[1;32mrepair\e[0m)"
+        "å€‹æ±è¥¿çœ‹çœ‹ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -526,7 +526,7 @@ ANGEL( angel_mercenary )
       && keeper->pIndexData->pShop->type == SHOP_MERCENARY )
     {
       if ( fPrint ) send_to_char(
-        "³o¸Ì¦³­Ó¶Ä§L©Ò¡M¤£§«¶±½Ğ(\e[1;32mhire\e[0m)¶Ä§L¨ÓÀ°¦£¡T\n\r", ch );
+        "é€™è£¡æœ‰å€‹å‚­å…µæ‰€ï¹ä¸å¦¨é›‡è«‹(\e[1;32mhire\e[0m)å‚­å…µä¾†å¹«å¿™ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -550,7 +550,7 @@ ANGEL( angel_coper )
       && keeper->pIndexData->pShop->type == SHOP_COPER )
     {
       if ( fPrint ) send_to_char(
-        "³o¸Ì¦³°¨³c¡M§A¥i¥H¸ò¥L¶R(\e[1;32mtrade\e[0m)¤Ç°¨ÃMÃM¬İ¡T\n\r", ch );
+        "é€™è£¡æœ‰é¦¬è²©ï¹ä½ å¯ä»¥è·Ÿä»–è²·(\e[1;32mtrade\e[0m)åŒ¹é¦¬é¨é¨çœ‹ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -571,7 +571,7 @@ ANGEL( angel_kill )
     if ( IS_NPC( victim )
       && abs( victim->level - ch->level ) <= 3 )
     {
-      if ( fPrint ) act( "§A³o¸Ì¦³­Ó$N¡M®_±¼($2kill$0)À³¸Ó¥i¥H¦³¤£¤Ö¸gÅç­È³á¡T"
+      if ( fPrint ) act( "ä½ é€™è£¡æœ‰å€‹$Nï¹å®°æ‰($2kill$0)æ‡‰è©²å¯ä»¥æœ‰ä¸å°‘ç¶“é©—å€¼å–”ï¹—"
         , ch, NULL, victim, TO_CHAR );
 
       RETURN( TRUE );
@@ -588,8 +588,8 @@ ANGEL( angel_bank )
   if ( ch->in_room && ch->in_room->DepositMoney )
   {
     if ( fPrint ) send_to_char(
-      "³o¸Ì­è¦n¦³­Ó¿ú²ø¡M¤£§«¦s¿ú(\e[1;32mdeposit\e[0m)"
-      "©Î¬O¬d¸ß(\e[1;32mcheck\e[0m)¦s´Ú¡T\n\r", ch );
+      "é€™è£¡å‰›å¥½æœ‰å€‹éŒ¢èŠï¹ä¸å¦¨å­˜éŒ¢(\e[1;32mdeposit\e[0m)"
+      "æˆ–æ˜¯æŸ¥è©¢(\e[1;32mcheck\e[0m)å­˜æ¬¾ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -604,8 +604,8 @@ ANGEL( angel_obj_bank )
   if ( ch->in_room && ch->in_room->StoreRoom )
   {
     if ( fPrint ) send_to_char(
-      "³o¸Ì­è¦n¦³¶¡Ãğ§½¡M¤£§«¦s(\e[1;32mdeposit\e[0m)ª««~¡M"
-      "©Î¬O¬d¸ß(\e[1;32mcheck\e[0m)¬İ¬İ¡C\n\r", ch );
+      "é€™è£¡å‰›å¥½æœ‰é–“é¢å±€ï¹ä¸å¦¨å­˜(\e[1;32mdeposit\e[0m)ç‰©å“ï¹"
+      "æˆ–æ˜¯æŸ¥è©¢(\e[1;32mcheck\e[0m)çœ‹çœ‹ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -630,7 +630,7 @@ ANGEL( angel_get )
       && obj->item_type != ITEM_TRASH )
     {
       if ( fPrint ) send_to_char(
-        "¦a¤W¦n¹³¦³ªF¦è¡M§A¥i¥H¸ÕµÛ§â¥¦µ¹¾ß(\e[1;32mget\e[0m)°_¨Ó¡T\n\r", ch );
+        "åœ°ä¸Šå¥½åƒæœ‰æ±è¥¿ï¹ä½ å¯ä»¥è©¦è‘—æŠŠå®ƒçµ¦æ’¿(\e[1;32mget\e[0m)èµ·ä¾†ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -652,7 +652,7 @@ ANGEL( angel_drop )
     if ( can_see_obj( ch, obj ) && obj->item_type == ITEM_TRASH )
     {
       if ( fPrint ) send_to_char(
-        "§A¨­¤W¦n¹³¦³¨Ç©U§£¡M³Ì¦n§â¥¦µ¹¥á±¼(\e[1;32mdrop\e[0m)¡C\n\r", ch );
+        "ä½ èº«ä¸Šå¥½åƒæœ‰äº›åƒåœ¾ï¹æœ€å¥½æŠŠå®ƒçµ¦ä¸Ÿæ‰(\e[1;32mdrop\e[0m)ã€‚\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -668,7 +668,7 @@ ANGEL( angel_withdraw )
   if ( ch->deposit )
   {
     if ( fPrint ) send_to_char(
-      "§A¦bÃğ§½¸Ì¦³¦s¨ÇªF¦è¡M§O§Ñ¤F­n§â¥¦µ¹»â(\e[1;32mwithdraw\e[0m)¥X¨Ó³á¡C\n\r", ch );
+      "ä½ åœ¨é¢å±€è£¡æœ‰å­˜äº›æ±è¥¿ï¹åˆ¥å¿˜äº†è¦æŠŠå®ƒçµ¦é ˜(\e[1;32mwithdraw\e[0m)å‡ºä¾†å–”ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -688,7 +688,7 @@ ANGEL( angel_call )
     if ( can_see_obj( ch, obj ) && obj->item_type == ITEM_SPIRITJADE )
     {
       if ( fPrint ) send_to_char(
-        "§A¨­¤W¦³Áû°­¥É­C¡M¤£§«¥l³ê(\e[1;32mcall\e[0m)¥X¨Ó¬İ¬İ¡C\n\r", ch );
+        "ä½ èº«ä¸Šæœ‰é¡†é¬¼ç‰è€¶ï¹ä¸å¦¨å¬å–š(\e[1;32mcall\e[0m)å‡ºä¾†çœ‹çœ‹ã€‚\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -704,7 +704,7 @@ ANGEL( angel_bus )
   if ( ch->in_room && is_platform( ch->in_room ) )
   {
     if ( fPrint ) send_to_char(
-      "§A¥Ø«e¥¿¦b¦aÅK¯¸¸Ì¡M¥i¥H¬d¸ß(\e[1;32mbus\e[0m)¬İ¬İ§Aªº¨®¨Ó¤F¶Ü¡S\n\r", ch );
+      "ä½ ç›®å‰æ­£åœ¨åœ°éµç«™è£¡ï¹å¯ä»¥æŸ¥è©¢(\e[1;32mbus\e[0m)çœ‹çœ‹ä½ çš„è»Šä¾†äº†å—ï¹–\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -724,8 +724,8 @@ ANGEL( angel_ship )
     if ( pShip->starting == ch->in_room )
     {
       if ( fPrint ) send_to_char(
-        "§A¥Ø«e¥¿¦b·f²îªº°_©lÂI¤W¡M¥i¥H¬d¸ß(\e[1;32mship\e[0m)¬İ¬İ§A"
-        "ªº²î¨Ó¤F¨S¡S\n\r", ch );
+        "ä½ ç›®å‰æ­£åœ¨æ­èˆ¹çš„èµ·å§‹é»ä¸Šï¹å¯ä»¥æŸ¥è©¢(\e[1;32mship\e[0m)çœ‹çœ‹ä½ "
+        "çš„èˆ¹ä¾†äº†æ²’ï¹–\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -747,8 +747,8 @@ ANGEL( angel_lore )
     if ( IS_NPC( victim ) )
     {
       if ( fPrint ) send_to_char(
-        "³o¸Ì¦³©Çª«¥i¥H¥´¡M¦ı¬O¬°¤F¤p¤ß¡MÁÙ¬O¥ıµû¶q"
-        "(\e[1;32mlore\e[0m)¬İ¬İ§a¡T\n\r", ch );
+        "é€™è£¡æœ‰æ€ªç‰©å¯ä»¥æ‰“ï¹ä½†æ˜¯ç‚ºäº†å°å¿ƒï¹é‚„æ˜¯å…ˆè©•é‡"
+        "(\e[1;32mlore\e[0m)çœ‹çœ‹å§ï¹—\n\r", ch );
       RETURN( TRUE );
     }
   }
@@ -769,7 +769,7 @@ ANGEL( angel_badman )
     if ( IS_NPC( victim ) && victim->level - ch->level >= 10 )
     {
       if ( fPrint ) send_to_char(
-        "³o¸Ì¦³°¦«Ü±jªº©Çª«¡MÁÙ¬OÂ÷¥L»·¤@ÂI§a¡T\n\r", ch );
+        "é€™è£¡æœ‰éš»å¾ˆå¼·çš„æ€ªç‰©ï¹é‚„æ˜¯é›¢ä»–é ä¸€é»å§ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -784,8 +784,8 @@ ANGEL( angel_wake )
   PUSH_FUNCTION( "angel_wake" );
 
   if ( fPrint ) send_to_char(
-    "§A¥¿¦b¥ğ®§©Î¬OºÎÄ±¡M¤£¿ù¡M°O±o­n°_§É"
-    "(\e[1;32mwake\e[0m ©Î \e[1;32mstand\e[0m)³á¡T\n\r", ch );
+    "ä½ æ­£åœ¨ä¼‘æ¯æˆ–æ˜¯ç¡è¦ºï¹ä¸éŒ¯ï¹è¨˜å¾—è¦èµ·åºŠ"
+    "(\e[1;32mwake\e[0m æˆ– \e[1;32mstand\e[0m)å–”ï¹—\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -797,8 +797,8 @@ ANGEL( angel_lotto )
   if ( !IS_SET( ch->turn, PLR_LOTTO ) )
   {
     if ( fPrint ) send_to_char(
-      "¬İ§AÁÙ¨S¦³­q(\e[1;32mturn\e[0m)¼Ö³z§Ö³ø³á¡M­q­q¬İ¡M"
-      "¤¤¤F¥i¬O¦³§K¦ºª÷µP³á¡C\n\r", ch );
+      "çœ‹ä½ é‚„æ²’æœ‰è¨‚(\e[1;32mturn\e[0m)æ¨‚é€å¿«å ±å–”ï¹è¨‚è¨‚çœ‹ï¹"
+      "ä¸­äº†å¯æ˜¯æœ‰å…æ­»é‡‘ç‰Œå–”ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -813,7 +813,7 @@ ANGEL( angel_hero )
   if ( ch->level >= ( LEVEL_IMMORTAL - 3 ) )
   {
     if ( fPrint ) send_to_char(
-      "§V¤O¤@ÂI³á¡M´N§Ö¤É¨ì­^¶¯(\e[1;32mhero\e[0m)¤F¡M¥[ªo¥[ªo¡T\n\r", ch );
+      "åŠªåŠ›ä¸€é»å–”ï¹å°±å¿«å‡åˆ°è‹±é›„(\e[1;32mhero\e[0m)äº†ï¹åŠ æ²¹åŠ æ²¹ï¹—\n\r", ch );
     RETURN( TRUE );
   }
 
@@ -827,7 +827,7 @@ ANGEL( angel_autosac )
   if ( !IS_SET( ch->act, PLR_AUTOSAC ) )
   {
     if ( fPrint ) send_to_char(
-      "¬°¤FÁ×§K«Í¾î¹M³¥¡M½Ğ¥´¶} \e[1;32mautosac\e[0m §a¡T\n\r", ch );
+      "ç‚ºäº†é¿å…å±æ©«éé‡ï¹è«‹æ‰“é–‹ \e[1;32mautosac\e[0m å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -842,8 +842,8 @@ ANGEL( angel_exact )
   if ( !IS_SET( ch->act, PLR_EXACT ) )
   {
     if ( fPrint ) send_to_char(
-      "§A±`±`Ä±±o¥u¬İ¨ì¤¤¤å¦WºÙ¦Ó¨S¦³­^¤å¦WºÙ"
-      "¦Ó³Â·Ğ¶Ü¡S¸Õ¸Õ \e[1;32mconfig +exact\e[0m\n\r", ch );
+      "ä½ å¸¸å¸¸è¦ºå¾—åªçœ‹åˆ°ä¸­æ–‡åç¨±è€Œæ²’æœ‰è‹±æ–‡åç¨±"
+      "è€Œéº»ç…©å—ï¹–è©¦è©¦ \e[1;32mconfig +exact\e[0m\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -858,8 +858,8 @@ ANGEL( angel_message )
   if ( IS_SET( ch->act, PLR_MESSAGE ) )
   {
     if ( fPrint ) send_to_char(
-      "¦pªG§AÄ±±oºô¸ô«ÜºC¡M§A¥i¥HÃö±¼¾Ô°«"
-      "±Ô­z(\e[1;32mconfig -message\e[0m)¡C\n\r", ch );
+      "å¦‚æœä½ è¦ºå¾—ç¶²è·¯å¾ˆæ…¢ï¹ä½ å¯ä»¥é—œæ‰æˆ°é¬¥"
+      "æ•˜è¿°(\e[1;32mconfig -message\e[0m)ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -874,7 +874,7 @@ ANGEL( angel_config_flee )
   if ( !IS_SET( ch->act, PLR_FLEE ) )
   {
     if ( fPrint ) send_to_char(
-      "¦pªG§A±`±`¾Ô°«Â_½u¡M½Ğ³]©w \e[1;32mconfig +flee\e[0m¡C\n\r", ch );
+      "å¦‚æœä½ å¸¸å¸¸æˆ°é¬¥æ–·ç·šï¹è«‹è¨­å®š \e[1;32mconfig +flee\e[0mã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -889,7 +889,7 @@ ANGEL( angel_autoloot )
   if ( !IS_SET( ch->act, PLR_AUTOLOOT ) )
   {
     if ( fPrint ) send_to_char(
-      "¬°¤F±o¨ì§ó¦h¾Ô§Q«~¡M¦Ò¼{¥´¶} \e[1;32mautoloot\e[0m §a¡T\n\r", ch );
+      "ç‚ºäº†å¾—åˆ°æ›´å¤šæˆ°åˆ©å“ï¹è€ƒæ…®æ‰“é–‹ \e[1;32mautoloot\e[0m å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -904,8 +904,8 @@ ANGEL( angel_friend )
   if ( friend_count( ch ) <= 0 )
   {
     if ( fPrint ) send_to_char(
-      "§A¥i¥H³]©w§Aªº¦n¤Í¦W³æ(\e[1;32mfriend\e[0m)¡M¨Ó³qª¾"
-      "§A¥L¬O§_¤W½u¡C\n\r", ch );
+      "ä½ å¯ä»¥è¨­å®šä½ çš„å¥½å‹åå–®(\e[1;32mfriend\e[0m)ï¹ä¾†é€šçŸ¥"
+      "ä½ ä»–æ˜¯å¦ä¸Šç·šã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -920,8 +920,8 @@ ANGEL( angel_wimpy )
   if ( ch->wimpy * 5 <= get_curr_hit( ch ) )
   {
     if ( fPrint ) send_to_char(
-      "¬°¤F§Aªº¨­®a¦w¥ş¡M½Ğ§â°k¶]ÂI¼Æ(\e[1;32mwimpy\e[0m)½Õ°ª"
-      "¤@ÂI§a¡T\n\r", ch );
+      "ç‚ºäº†ä½ çš„èº«å®¶å®‰å…¨ï¹è«‹æŠŠé€ƒè·‘é»æ•¸(\e[1;32mwimpy\e[0m)èª¿é«˜"
+      "ä¸€é»å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -935,8 +935,8 @@ ANGEL( angel_enable )
   if ( enable_count( ch ) <= 3 )
   {
     if ( fPrint ) send_to_char(
-      "§Aªº­P¯à(\e[1;32menable\e[0m)¤Ó¤Ö¤F³á¡Mª`·N¤@¤U³á¡M"
-      "­n¦³­P¯à(\e[1;32menable\e[0m)¡M¨t²Î¤~·|À°§A¥X©Û³á¡C\n\r", ch );
+      "ä½ çš„è‡´èƒ½(\e[1;32menable\e[0m)å¤ªå°‘äº†å–”ï¹æ³¨æ„ä¸€ä¸‹å–”ï¹"
+      "è¦æœ‰è‡´èƒ½(\e[1;32menable\e[0m)ï¹ç³»çµ±æ‰æœƒå¹«ä½ å‡ºæ‹›å–”ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -958,7 +958,7 @@ ANGEL( angel_flee )
   }
 
   if ( fPrint ) send_to_char(
-    "§A¨S¦³­P¯à(\e[1;32menable\e[0m)°k¶]ªº§Ş¯à³á¡M³o¼Ë«Ü¦MÀI­C¡T\n\r", ch );
+    "ä½ æ²’æœ‰è‡´èƒ½(\e[1;32menable\e[0m)é€ƒè·‘çš„æŠ€èƒ½å–”ï¹é€™æ¨£å¾ˆå±éšªè€¶ï¹—\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -977,8 +977,8 @@ ANGEL( angel_attack )
   }
 
   if ( fPrint ) send_to_char(
-    "§A¨S¦³­P¯à(\e[1;32menable\e[0m)§ğÀ»Ãşªº§Ş¯à³á¡M"
-    "³o¼Ë¤£¬O«Ü¦MÀI¶Ü¡S\n\r", ch );
+    "ä½ æ²’æœ‰è‡´èƒ½(\e[1;32menable\e[0m)æ”»æ“Šé¡çš„æŠ€èƒ½å–”ï¹"
+    "é€™æ¨£ä¸æ˜¯å¾ˆå±éšªå—ï¹–\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -997,8 +997,8 @@ ANGEL( angel_meditation )
   }
 
   if ( fPrint ) send_to_char(
-    "§A¨S¦³­P¯à(\e[1;32menable\e[0m)­ß·QÃşªº§Ş¯à³á¡M"
-    "»°§Ö¥h¾Ç(\e[1;32mlearn\e[0m)¤@­Ó¨Ó§a¡T\n\r", ch );
+    "ä½ æ²’æœ‰è‡´èƒ½(\e[1;32menable\e[0m)å†¥æƒ³é¡çš„æŠ€èƒ½å–”ï¹"
+    "è¶•å¿«å»å­¸(\e[1;32mlearn\e[0m)ä¸€å€‹ä¾†å§ï¹—\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -1010,8 +1010,8 @@ ANGEL( angel_description )
   if ( !ch->description || !*ch->description )
   {
     if ( fPrint ) send_to_char(
-      "§A¨S¦³´y­z(\e[1;32mdescription\e[0m)¡M"
-      "»°§Ö¥h½s¿è¤@­Ó¨Ó¬İ¬İ§a¡T\n\r", ch );
+      "ä½ æ²’æœ‰æè¿°(\e[1;32mdescription\e[0m)ï¹"
+      "è¶•å¿«å»ç·¨è¼¯ä¸€å€‹ä¾†çœ‹çœ‹å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1026,7 +1026,7 @@ ANGEL( angel_club )
   if ( !ch->club )
   {
     if ( fPrint ) send_to_char(
-      "§A¦n¹³ÁÙ¨S¦³¥[¤JÀ°¬£(\e[1;32mclub\e[0m)¡M¦Ò¼{°Ñ¥[¬İ¬İ§a¡T\n\r", ch );
+      "ä½ å¥½åƒé‚„æ²’æœ‰åŠ å…¥å¹«æ´¾(\e[1;32mclub\e[0m)ï¹è€ƒæ…®åƒåŠ çœ‹çœ‹å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1041,7 +1041,7 @@ ANGEL( angel_group )
   if ( ch->master || ch->leader )
   {
     if ( fPrint ) send_to_char(
-      "¹Îµ²´N¬O¤O¶q¡M§A¥i¥H¥Î \e[1;32mgtell\e[0m ¨Ó¦b¹ÎÅé¤ºÁ¿¸Ü¡C\n\r", ch );
+      "åœ˜çµå°±æ˜¯åŠ›é‡ï¹ä½ å¯ä»¥ç”¨ \e[1;32mgtell\e[0m ä¾†åœ¨åœ˜é«”å…§è¬›è©±ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1056,8 +1056,8 @@ ANGEL( angel_split )
   if ( ch->master || ch->leader )
   {
     if ( fPrint ) send_to_char(
-      "¬JµM²Õ¶¤(\e[1;32mgroup\e[0m)¤F¡M¥´¦º©Çª«ªº»È¤l³Ì"
-      "¦n¯à¥­¤À(\e[1;32msplit\e[0m)¡C\n\r", ch );
+      "æ—¢ç„¶çµ„éšŠ(\e[1;32mgroup\e[0m)äº†ï¹æ‰“æ­»æ€ªç‰©çš„éŠ€å­æœ€"
+      "å¥½èƒ½å¹³åˆ†(\e[1;32msplit\e[0m)ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1072,7 +1072,7 @@ ANGEL( angel_nogroup )
   if ( !ch->master || !ch->leader )
   {
     if ( fPrint ) send_to_char(
-      "¥¿©Ò¿×¹Îµ²´N¬O¤O¶q¡M¦Ò¼{²Õ¶¤(\e[1;32mgroup\e[0m)§a¡T\n\r", ch );
+      "æ­£æ‰€è¬‚åœ˜çµå°±æ˜¯åŠ›é‡ï¹è€ƒæ…®çµ„éšŠ(\e[1;32mgroup\e[0m)å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1087,8 +1087,8 @@ ANGEL( angel_reply )
   if ( ch->reply )
   {
     if ( fPrint ) send_to_char(
-      "§Aª¾¹D¦^µª§O¤Hªº¸Ü¥u¶·¥Î \e[1;32mreply\e[0m¡M"
-      "¤£¥²¦A¥Î \e[1;32mtell\e[0m ¤F¡C\n\r", ch );
+      "ä½ çŸ¥é“å›ç­”åˆ¥äººçš„è©±åªé ˆç”¨ \e[1;32mreply\e[0mï¹"
+      "ä¸å¿…å†ç”¨ \e[1;32mtell\e[0m äº†ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1109,7 +1109,7 @@ ANGEL( angel_fountain )
     if ( obj->item_type == ITEM_FOUNTAIN )
     {
       if ( fPrint ) send_to_char(
-        "³o¸Ì­è¦n¦³­Ó¤ô¦À¡M³Ü³Ü(\e[1;32mdrink\e[0m)¬İ§a¡T\n\r", ch );
+        "é€™è£¡å‰›å¥½æœ‰å€‹æ°´æ± ï¹å–å–(\e[1;32mdrink\e[0m)çœ‹å§ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -1131,8 +1131,8 @@ ANGEL( angel_food )
     if ( obj->item_type == ITEM_FOOD )
     {
       if ( fPrint ) send_to_char(
-        "³o¸Ì­è¦n¦³¨Ç­¹ª«¡M»°§Ö¾ß(\e[1;32mget\e[0m)°_¨Ó¡M"
-        "¦Y¦Y(\e[1;32meat\e[0m)¬İ§a¡T\n\r", ch );
+        "é€™è£¡å‰›å¥½æœ‰äº›é£Ÿç‰©ï¹è¶•å¿«æ’¿(\e[1;32mget\e[0m)èµ·ä¾†ï¹"
+        "åƒåƒ(\e[1;32meat\e[0m)çœ‹å§ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -1148,8 +1148,8 @@ ANGEL( angel_gambleset )
   if ( IS_SET( ch->deaf , CHANNEL_GAMBLE ) )
   {
     if ( fPrint ) send_to_char(
-      "§A¬O¤£¬OÄ±±o¦³®É­Ô½ä³ÕÀW¹D(\e[1;32mchannel\e[0m)ÁÙ¦³ÂI§n¡M"
-      "§A¥i¥H¥Î \e[1;32mchannel -gamble\e[0m Ãö±¼¥¦³á¡C\n\r", ch );
+      "ä½ æ˜¯ä¸æ˜¯è¦ºå¾—æœ‰æ™‚å€™è³­åšé »é“(\e[1;32mchannel\e[0m)é‚„æœ‰é»åµï¹"
+      "ä½ å¯ä»¥ç”¨ \e[1;32mchannel -gamble\e[0m é—œæ‰å®ƒå–”ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1163,8 +1163,8 @@ ANGEL( angel_weather )
   if ( IS_SET( ch->deaf , CHANNEL_WEATHER ) )
   {
     if ( fPrint ) send_to_char(
-      "§A¬O¤£¬OÄ±±o¤Ñ®ğÀW¹D¹ï§A¨S¦³¥Î©O¡S§A¥i¥H¥Î "
-      "\e[1;32mchannel -weather\e[0m Ãö±¼¥¦³á¡C\n\r", ch );
+      "ä½ æ˜¯ä¸æ˜¯è¦ºå¾—å¤©æ°£é »é“å°ä½ æ²’æœ‰ç”¨å‘¢ï¹–ä½ å¯ä»¥ç”¨ "
+      "\e[1;32mchannel -weather\e[0m é—œæ‰å®ƒå–”ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1185,8 +1185,8 @@ ANGEL( angel_repair )
       && obj->armor * 2 <= obj->max_armor )
     {
       if ( fPrint ) send_to_char(
-        "§A¨­¤W¦³¨Ç¸Ë³Æ§Ö­nÃa¤F¡M»°ºò§äÅK¦K©Î¬OÅ±¼C®v"
-        "­×²z(\e[1;32mrepair\e[0m)§a¡T\n\r", ch );
+        "ä½ èº«ä¸Šæœ‰äº›è£å‚™å¿«è¦å£äº†ï¹è¶•ç·Šæ‰¾éµåŒ æˆ–æ˜¯é‘„åŠå¸«"
+        "ä¿®ç†(\e[1;32mrepair\e[0m)å§ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -1202,7 +1202,7 @@ ANGEL( angel_crave )
   if ( ch->pcdata && ch->pcdata->corpse && ch->pcdata->corpse->in_room )
   {
     if ( fPrint ) send_to_char(
-      "ÁÙµ¥¤°»òµ¥¡S»°§Ö¨ú¦^(\e[1;32mcrave\e[0m)«ÍÅé§a¡T\n\r", ch );
+      "é‚„ç­‰ä»€éº¼ç­‰ï¹–è¶•å¿«å–å›(\e[1;32mcrave\e[0m)å±é«”å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1217,7 +1217,7 @@ ANGEL( angel_search )
   if ( ch->pcdata && ch->pcdata->corpse && ch->pcdata->corpse->in_room )
   {
     if ( fPrint ) send_to_char(
-      "ÁÙµ¥¤°»òµ¥¡S»°§Ö·j´M(\e[1;32msearch\e[0m)§Aªº«ÍÅé§a¡T\n\r", ch );
+      "é‚„ç­‰ä»€éº¼ç­‰ï¹–è¶•å¿«æœå°‹(\e[1;32msearch\e[0m)ä½ çš„å±é«”å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1232,8 +1232,8 @@ ANGEL( angel_sac )
   if ( ch->pcdata && ch->pcdata->corpse && ch->pcdata->corpse->in_room )
   {
     if ( fPrint ) send_to_char(
-      "»°§Ö±q§Aªº«ÍÅé¸Ì¾ß¦^©Ò¦³ªF¦è(\e[1;32mget all corpse\e[0m)¡M"
-      "´N¥i¥HÁÙ¶§(\e[1;32msac corpse\e[0m)¡C\n\r", ch );
+      "è¶•å¿«å¾ä½ çš„å±é«”è£¡æ’¿å›æ‰€æœ‰æ±è¥¿(\e[1;32mget all corpse\e[0m)ï¹"
+      "å°±å¯ä»¥é‚„é™½(\e[1;32msac corpse\e[0m)ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1251,7 +1251,7 @@ ANGEL( angel_wear )
     if ( get_eq_char( ch, pSitus->location ) ) RETURN( FALSE );
 
   if ( fPrint ) send_to_char(
-    "§A³£¤£¬ï(\e[1;32mwear\e[0m)¸Ë³Æªº³á¡M¤p¤ßµÛ²D³á¡T\n\r", ch );
+    "ä½ éƒ½ä¸ç©¿(\e[1;32mwear\e[0m)è£å‚™çš„å–”ï¹å°å¿ƒè‘—æ¶¼å–”ï¹—\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -1267,7 +1267,7 @@ ANGEL( angel_study )
     if ( can_see_obj( ch, obj ) && obj->item_type == ITEM_MYSTERY )
     {
       if ( fPrint ) send_to_char(
-        "³á¡M§A¨­¤W¦³¥»¯µÓD¡M»°§Ö®³¨ÓÅªÅª¬İ(\e[1;32mstudy\e[0m)¡T\n\r", ch );
+        "å–”ï¹ä½ èº«ä¸Šæœ‰æœ¬ç§˜ç¬ˆï¹è¶•å¿«æ‹¿ä¾†è®€è®€çœ‹(\e[1;32mstudy\e[0m)ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -1283,8 +1283,8 @@ ANGEL( angel_learn )
   if ( learn_count( ch ) <= 5 )
   {
     if ( fPrint ) send_to_char(
-      "§A¬O¤£¬OÀ³¸Ó¥X¥h«_ÀI¦h¦h¾Ç²ß(\e[1;32mlearn\e[0m)¤@¨Ç"
-      "§Ş¯à(\e[1;32mskill\e[0m)©O¡S\n\r", ch );
+      "ä½ æ˜¯ä¸æ˜¯æ‡‰è©²å‡ºå»å†’éšªå¤šå¤šå­¸ç¿’(\e[1;32mlearn\e[0m)ä¸€äº›"
+      "æŠ€èƒ½(\e[1;32mskill\e[0m)å‘¢ï¹–\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1299,7 +1299,7 @@ ANGEL( angel_recall )
   if ( ch->in_room && ch->in_room->Memorize )
   {
     if ( fPrint ) send_to_char(
-      "¬İ¨Ó³o¸Ì¥i¥H¦¨¬°¶Ç°eÂI¡M³]©w(\e[1;32mrecall\e[0m)¥L§a¡C\n\r", ch );
+      "çœ‹ä¾†é€™è£¡å¯ä»¥æˆç‚ºå‚³é€é»ï¹è¨­å®š(\e[1;32mrecall\e[0m)ä»–å§ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1319,7 +1319,7 @@ ANGEL( angel_recallset )
     if ( ch->pcdata->recall[loop] > 0 ) RETURN( FALSE );
 
   if ( fPrint ) send_to_char(
-    "¬İ¨Ó§A¤@­Ó¶Ç°eÂI³£¨S¦³³]©w¡M³]©w(\e[1;32mrecall\e[0m)¤@¤U§a¡T\n\r", ch );
+    "çœ‹ä¾†ä½ ä¸€å€‹å‚³é€é»éƒ½æ²’æœ‰è¨­å®šï¹è¨­å®š(\e[1;32mrecall\e[0m)ä¸€ä¸‹å§ï¹—\n\r", ch );
 
   RETURN( TRUE );
 }
@@ -1335,7 +1335,7 @@ ANGEL( angel_train )
     || ch->practice >= get_con_train( ch ) )
   {
     if ( fPrint ) send_to_char(
-      "¦³¤F°V½mÂI¼Æ¡M¤£­n®ö¶O¡M»°ºò¥h°V½m(\e[1;32mtrain\e[0m)§a¡T\n\r", ch );
+      "æœ‰äº†è¨“ç·´é»æ•¸ï¹ä¸è¦æµªè²»ï¹è¶•ç·Šå»è¨“ç·´(\e[1;32mtrain\e[0m)å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1350,8 +1350,8 @@ ANGEL( angel_forsake )
   if ( ch->class && learn_count( ch ) >= ( get_learnable( ch ) - 2 ) )
   {
     if ( fPrint ) send_to_char(
-      "§Ş¯à½m¤F¨º»ò¦h¡M¬O¤£¬O¥i¥H¦Û¼o¤@¨Ç"
-      "¨S¥ÎªºªZ¥\\(\e[1;32mforsake\e[0m)©O¡S\n\r", ch );
+      "æŠ€èƒ½ç·´äº†é‚£éº¼å¤šï¹æ˜¯ä¸æ˜¯å¯ä»¥è‡ªå»¢ä¸€äº›"
+      "æ²’ç”¨çš„æ­¦åŠŸ\(\e[1;32mforsake\e[0m)å‘¢ï¹–\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1365,7 +1365,7 @@ ANGEL( angel_enemy )
   if ( ch->enemy )
   {
     if ( fPrint ) send_to_char(
-      "§A¥i¬O¬Y­Ó«°ªº¤½¼Ä¡M«_ÀI®É½Ğ§A¦h¦h¤p¤ß¡C\n\r", ch );
+      "ä½ å¯æ˜¯æŸå€‹åŸçš„å…¬æ•µï¹å†’éšªæ™‚è«‹ä½ å¤šå¤šå°å¿ƒã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1380,7 +1380,7 @@ ANGEL( angel_blind )
   if ( is_affected( ch, SLOT_BLINDNESS ) )
   {
     if ( fPrint ) send_to_char(
-      "§Aªº²´·ú¤w¸g½M¤F¡M»°ºò§äÂå¥Í¥hÂåªv³á¡TÅ¥»¡¬¥¶§ªºÂå¥Í¤£¿ù³á¡T\n\r", ch );
+      "ä½ çš„çœ¼ç›å·²ç¶“çäº†ï¹è¶•ç·Šæ‰¾é†«ç”Ÿå»é†«æ²»å–”ï¹—è½èªªæ´›é™½çš„é†«ç”Ÿä¸éŒ¯å–”ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1395,7 +1395,7 @@ ANGEL( angel_poison )
   if ( is_affected( ch, SLOT_POISON ) )
   {
     if ( fPrint ) send_to_char(
-      "§A¤w¸g¤¤¬r¤F¡M»°ºò§äÂå¥Í¥hÂåªv³á¡TÅ¥»¡¬¥¶§ªºÂå¥Í¤£¿ù³á¡T\n\r", ch );
+      "ä½ å·²ç¶“ä¸­æ¯’äº†ï¹è¶•ç·Šæ‰¾é†«ç”Ÿå»é†«æ²»å–”ï¹—è½èªªæ´›é™½çš„é†«ç”Ÿä¸éŒ¯å–”ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1410,8 +1410,8 @@ ANGEL( angel_board )
   if ( ch->in_room && ch->in_room->board )
   {
     if ( fPrint ) send_to_char(
-      "¶â¡M³o¸Ì¦³­Ó¯d¨¥ª©¡M¸Õ¸Õ¬İ¯à¤£¯à¾\\Åª(\e[1;32mread\e[0m)"
-      "¸Ì­±ªº¤å³¹¡C\n\r", ch );
+      "å—¯ï¹é€™è£¡æœ‰å€‹ç•™è¨€ç‰ˆï¹è©¦è©¦çœ‹èƒ½ä¸èƒ½é–±\è®€(\e[1;32mread\e[0m)"
+      "è£¡é¢çš„æ–‡ç« ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1426,8 +1426,8 @@ ANGEL( angel_money )
   if ( ch->gold <= 100 )
   {
     if ( fPrint ) send_to_char(
-      "¥Xªù¦b¥~«ç»ò¥i¥H¤£±aÂI¿ú©O¡M»°§Ö¥h»â(\e[1;32mdeposit\e[1;32m)"
-      "©Î¬O¥hÁÈ°Õ¡T\n\r", ch );
+      "å‡ºé–€åœ¨å¤–æ€éº¼å¯ä»¥ä¸å¸¶é»éŒ¢å‘¢ï¹è¶•å¿«å»é ˜(\e[1;32mdeposit\e[1;32m)"
+      "æˆ–æ˜¯å»è³ºå•¦ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1442,7 +1442,7 @@ ANGEL( angel_firman )
   if ( ch->firman <= 0 )
   {
     if ( fPrint ) send_to_char(
-      "¤p¤ß³á¡M§Aªº§K¦ºª÷µP¥i¬O¥Î¥ú¤F³á¡M¦A¦º·|¦©§Ş¯àªº³á¡T\n\r", ch );
+      "å°å¿ƒå–”ï¹ä½ çš„å…æ­»é‡‘ç‰Œå¯æ˜¯ç”¨å…‰äº†å–”ï¹å†æ­»æœƒæ‰£æŠ€èƒ½çš„å–”ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1456,7 +1456,7 @@ ANGEL( angel_fighting_1 )
 
   if ( ch->hit * 2 > get_curr_hit( ch ) )
   {
-    if ( fPrint ) send_to_char( "©È¤°»ò¡M»°ºò§â¥Lµ¹®_±¼´N¬O¤F¡C\n\r", ch );
+    if ( fPrint ) send_to_char( "æ€•ä»€éº¼ï¹è¶•ç·ŠæŠŠä»–çµ¦å®°æ‰å°±æ˜¯äº†ã€‚\n\r", ch );
     RETURN( TRUE );
   }
   RETURN( FALSE );
@@ -1469,7 +1469,7 @@ ANGEL( angel_fighting_2 )
   if ( ch->hit * 2 <= get_curr_hit( ch ) )
   {
     if ( fPrint ) send_to_char(
-      "³£§Ö±¾ÂI¤F¡M¥s¯«¤]¨S¥Î¡M»°ºò°k¶](\e[1;32mflee\e[0m)§a¡C\n\r", ch );
+      "éƒ½å¿«æ›é»äº†ï¹å«ç¥ä¹Ÿæ²’ç”¨ï¹è¶•ç·Šé€ƒè·‘(\e[1;32mflee\e[0m)å§ã€‚\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1483,7 +1483,7 @@ ANGEL( angel_cname )
   if ( ch->pcdata && ch->pcdata->rechristen <= 2 )
   {
     if ( fPrint ) send_to_char(
-      "³o¸Ì§ï¦W¦rªº¦¸¼Æ¥i¬O¦³­­¨îªº¡M§O¥Î¥ú¤F³á¡T\n\r", ch );
+      "é€™è£¡æ”¹åå­—çš„æ¬¡æ•¸å¯æ˜¯æœ‰é™åˆ¶çš„ï¹åˆ¥ç”¨å…‰äº†å–”ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1498,7 +1498,7 @@ ANGEL( angel_nothing )
   if ( ch->level == LEVEL_HERO )
   {
     if ( fPrint ) send_to_char(
-      "®¥ÁH§A¤É¨ì­^¶¯¡M§A¥i¥H¦Ò¼{¥h¸ÑÁ¼(\e[1;32mtask\e[0m)Åo¡T\n\r", ch );
+      "æ­ç¦§ä½ å‡åˆ°è‹±é›„ï¹ä½ å¯ä»¥è€ƒæ…®å»è§£è¬(\e[1;32mtask\e[0m)å›‰ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1513,8 +1513,8 @@ ANGEL( angel_reboot )
   if ( wizlock )
   {
     if ( fPrint ) send_to_char(
-      "¨t²Î§Ö­n­«·s¶}¾÷¤F¡M½Ğ»°§Ö¦¬¬B¦¬¬BÂ÷½u(\e[1;32mquit\e[0m)¡M"
-      "«İ·|¦A¨Ó§a¡T\n\r", ch );
+      "ç³»çµ±å¿«è¦é‡æ–°é–‹æ©Ÿäº†ï¹è«‹è¶•å¿«æ”¶æ‹¾æ”¶æ‹¾é›¢ç·š(\e[1;32mquit\e[0m)ï¹"
+      "å¾…æœƒå†ä¾†å§ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1550,7 +1550,7 @@ ANGEL( angel_mobile )
   if ( mob )
   {
     if ( fPrint )
-      act( "¦ì©ó$tªº$N«Ü¾A¦X§A¤É¯Åªº©Çª«¡M»°§Ö¥h§ä¥L§a¡T"
+      act( "ä½æ–¼$tçš„$Nå¾ˆé©åˆä½ å‡ç´šçš„æ€ªç‰©ï¹è¶•å¿«å»æ‰¾ä»–å§ï¹—"
         , ch, mob->in_room->area->name, mob, TO_CHAR );
 
     RETURN( TRUE );
@@ -1572,8 +1572,8 @@ ANGEL( angel_note )
       && pnote->date_stamp > ch->last_note )
     {
       if ( fPrint ) send_to_char(
-        "§A¦³·sªº«H¥ó¶i¨Ó¡M»°§Ö¥Î \e[1;32mnotes\e[0m "
-        "¨Ó¾\\Åª³o«Ê«H§a¡T\n\r", ch );
+        "ä½ æœ‰æ–°çš„ä¿¡ä»¶é€²ä¾†ï¹è¶•å¿«ç”¨ \e[1;32mnotes\e[0m "
+        "ä¾†é–±\è®€é€™å°ä¿¡å§ï¹—\n\r", ch );
 
       RETURN( TRUE );
     }
@@ -1591,8 +1591,8 @@ ANGEL( angel_leftskill )
   if ( learn_count( ch ) * 2 < get_learnable( ch ) )
   {
     if ( fPrint ) send_to_char(
-      "¬İ¨Ó§A·|ªº§Ş¯à¤£¦h³á¡M¥Î¥Î \e[1;32mleftskill\e[0m ¨Ó¬İ¬İ"
-      "§AÁÙ¥i¥H¾Ç­ş¨Ç§Ş¯à¡T\n\r", ch );
+      "çœ‹ä¾†ä½ æœƒçš„æŠ€èƒ½ä¸å¤šå–”ï¹ç”¨ç”¨ \e[1;32mleftskill\e[0m ä¾†çœ‹çœ‹"
+      "ä½ é‚„å¯ä»¥å­¸å“ªäº›æŠ€èƒ½ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1607,7 +1607,7 @@ ANGEL( angel_north )
   if ( ch->in_room && ch->in_room->exit[DIR_NORTH] )
   {
     if ( fPrint ) send_to_char(
-      "§Aªº¥_¤è¦³¥X¸ô¡M§A¥i¥H¿é¤J \e[1;32mnorth\e[0m ©¹¥_¨«¡T\n\r" , ch );
+      "ä½ çš„åŒ—æ–¹æœ‰å‡ºè·¯ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32mnorth\e[0m å¾€åŒ—èµ°ï¹—\n\r" , ch );
     RETURN( TRUE );
   }
 
@@ -1621,7 +1621,7 @@ ANGEL( angel_south )
   if ( ch->in_room && ch->in_room->exit[DIR_SOUTH] )
   {
     if ( fPrint ) send_to_char(
-      "§Aªº«n¤è¦³¥X¸ô¡M§A¥i¥H¿é¤J \e[1;32msouth\e[0m ©¹«n¨«¡T\n\r" , ch );
+      "ä½ çš„å—æ–¹æœ‰å‡ºè·¯ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32msouth\e[0m å¾€å—èµ°ï¹—\n\r" , ch );
     RETURN( TRUE );
   }
 
@@ -1635,7 +1635,7 @@ ANGEL( angel_east )
   if ( ch->in_room && ch->in_room->exit[DIR_EAST] )
   {
     if ( fPrint ) send_to_char(
-      "§AªºªF¤è¦³¥X¸ô¡M§A¥i¥H¿é¤J \e[1;32meast\e[0m ©¹ªF¨«¡T\n\r" , ch );
+      "ä½ çš„æ±æ–¹æœ‰å‡ºè·¯ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32meast\e[0m å¾€æ±èµ°ï¹—\n\r" , ch );
     RETURN( TRUE );
   }
 
@@ -1649,7 +1649,7 @@ ANGEL( angel_west )
   if ( ch->in_room && ch->in_room->exit[DIR_WEST] )
   {
     if ( fPrint ) send_to_char(
-      "§Aªº¦è¤è¦³¥X¸ô¡M§A¥i¥H¿é¤J \e[1;32mwest\e[0m ©¹¦è¨«¡T\n\r" , ch );
+      "ä½ çš„è¥¿æ–¹æœ‰å‡ºè·¯ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32mwest\e[0m å¾€è¥¿èµ°ï¹—\n\r" , ch );
     RETURN( TRUE );
   }
 
@@ -1663,7 +1663,7 @@ ANGEL( angel_up )
   if ( ch->in_room && ch->in_room->exit[DIR_UP] )
   {
     if ( fPrint ) send_to_char(
-      "§Aªº¤W¤è¦³¥X¸ô¡M§A¥i¥H¿é¤J \e[1;32mup\e[0m ©¹¤W¨«¡T\n\r" , ch );
+      "ä½ çš„ä¸Šæ–¹æœ‰å‡ºè·¯ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32mup\e[0m å¾€ä¸Šèµ°ï¹—\n\r" , ch );
     RETURN( TRUE );
   }
 
@@ -1677,7 +1677,7 @@ ANGEL( angel_down )
   if ( ch->in_room && ch->in_room->exit[DIR_DOWN] )
   {
     if ( fPrint ) send_to_char(
-      "§Aªº¤U¤è¦³¥X¸ô¡M§A¥i¥H¿é¤J \e[1;32mdown\e[0m ©¹¤U¨«¡T\n\r" , ch );
+      "ä½ çš„ä¸‹æ–¹æœ‰å‡ºè·¯ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32mdown\e[0m å¾€ä¸‹èµ°ï¹—\n\r" , ch );
     RETURN( TRUE );
   }
 
@@ -1691,7 +1691,7 @@ ANGEL( angel_enter )
   if ( ch->in_room && ch->in_room->exit[DIR_ENTER] )
   {
     if ( fPrint ) send_to_char(
-      "§A¥i¥H¿é¤J \e[1;32menter\e[0m ¨Ó¶i¤J¬Y¶¡©Ğ¶¡¡T\n\r", ch );
+      "ä½ å¯ä»¥è¼¸å…¥ \e[1;32menter\e[0m ä¾†é€²å…¥æŸé–“æˆ¿é–“ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1706,7 +1706,7 @@ ANGEL( angel_out )
   if ( ch->in_room && ch->in_room->exit[DIR_OUT] )
   {
     if ( fPrint ) send_to_char(
-      "§A¥i¥H¿é¤J \e[1;32mout\e[0m ¨Ó¶i¤J¬Y¶¡©Ğ¶¡¡T\n\r", ch );
+      "ä½ å¯ä»¥è¼¸å…¥ \e[1;32mout\e[0m ä¾†é€²å…¥æŸé–“æˆ¿é–“ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1727,7 +1727,7 @@ ANGEL( angel_spy )
     if ( ch->in_room->exit[dir] )
     {
       if ( fPrint ) print_to_char( ch,
-        "§Aªº%s¤è¦³¥X¤f¡M§A¥i¥H¥hÆ[¹î(\e[1;32mspy %s\e[0m)¬İ¬İ³á¡T"
+        "ä½ çš„%sæ–¹æœ‰å‡ºå£ï¹ä½ å¯ä»¥å»è§€å¯Ÿ(\e[1;32mspy %s\e[0m)çœ‹çœ‹å–”ï¹—"
         , direction_name( dir ), direction_ename( dir ) );
       RETURN( TRUE );
     }
@@ -1748,7 +1748,7 @@ ANGEL( angel_exits )
     if ( ch->in_room->exit[dir] )
     {
       if ( fPrint ) print_to_char( ch,
-        "§A¥i¥H¿é¤J \e[1;32mexits\e[0m ¨ÓÆ[¹î§A¥|©Pªº¥X¤f¡T\n\r" );
+        "ä½ å¯ä»¥è¼¸å…¥ \e[1;32mexits\e[0m ä¾†è§€å¯Ÿä½ å››å‘¨çš„å‡ºå£ï¹—\n\r" );
 
       RETURN( TRUE );
     }
@@ -1770,8 +1770,8 @@ ANGEL( angel_cast )
       && pSkill->cast )
     {
       if ( fPrint ) print_to_char( ch,
-        "§A¾Ç·|¤F%s(%s)³o¶µ§Ş¯à¡M§A¥i¥H¨Ï¥Î \e[1;32mcast '%s'\e[0m "
-        "¨Ó¬I®i¥X¨Ó¡T\n\r"
+        "ä½ å­¸æœƒäº†%s(%s)é€™é …æŠ€èƒ½ï¹ä½ å¯ä»¥ä½¿ç”¨ \e[1;32mcast '%s'\e[0m "
+        "ä¾†æ–½å±•å‡ºä¾†ï¹—\n\r"
         , pSkill->cname, pSkill->name, pSkill->name );
 
       RETURN( TRUE );
@@ -1797,8 +1797,8 @@ ANGEL( angel_ply )
       && ( ch->skill[loop] < ( ch->level / UMAX( 1, pSkill->qutoient ) ) ) )
     {
       if ( fPrint ) print_to_char( ch,
-        "§A¾Ç·|¤F%s(%s)³o¶µ§Ş¯à¡M§A¥i¥H¨Ï¥Î \e[1;32mply '%s'\e[0m "
-        "¨Ó½m²ß¬İ¬İ¡T\n\r"
+        "ä½ å­¸æœƒäº†%s(%s)é€™é …æŠ€èƒ½ï¹ä½ å¯ä»¥ä½¿ç”¨ \e[1;32mply '%s'\e[0m "
+        "ä¾†ç·´ç¿’çœ‹çœ‹ï¹—\n\r"
         , pSkill->cname, pSkill->name, pSkill->name );
 
       RETURN( TRUE );
@@ -1816,7 +1816,7 @@ ANGEL( angel_inventory )
   if ( ch->carrying )
   {
     if ( fPrint ) send_to_char(
-      "§A¨­¤W¦³¨Ç¸Ë³Æ¡M§A¥i¥H¿é¤J \e[1;32minventory\e[0m ¨Ó¹î¬İ¡T\n\r", ch );
+      "ä½ èº«ä¸Šæœ‰äº›è£å‚™ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32minventory\e[0m ä¾†å¯Ÿçœ‹ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1850,7 +1850,7 @@ ANGEL( angel_fight_join )
     && !is_pk( ch ) )
   {
     if ( fPrint ) send_to_char(
-      "¥Ø«e¦³³õPK¤jÁÉ¡M§A¥i¥H¿é¤J \e[1;32mfight join\e[0m ¨Ó°Ñ¥[¡T\n\r", ch );
+      "ç›®å‰æœ‰å ´PKå¤§è³½ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32mfight join\e[0m ä¾†åƒåŠ ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1868,8 +1868,8 @@ ANGEL( angel_fight_bet )
     && ch->donate <= 0 )
   {
     if ( fPrint ) send_to_char(
-      "¥Ø«e¦³³õPK¤jÁÉ¡M§A¥i¥H¿é¤J \e[1;32mfight bet <ª±®a¸¹½X> <ª÷¿ú"
-      "\e[0m ¨Ó¤Uª`¡T\n\r", ch );
+      "ç›®å‰æœ‰å ´PKå¤§è³½ï¹ä½ å¯ä»¥è¼¸å…¥ \e[1;32mfight bet <ç©å®¶è™Ÿç¢¼> <é‡‘éŒ¢"
+      "\e[0m ä¾†ä¸‹æ³¨ï¹—\n\r", ch );
 
     RETURN( TRUE );
   }

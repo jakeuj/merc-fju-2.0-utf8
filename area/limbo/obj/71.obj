@@ -1,9 +1,9 @@
 Vnum            71
 Name            sliver sword~
-ShortDesc       �ջȼC~
+ShortDesc       白銀劍~
 Description
-�ѯ»ȻP���K��m���y�Ӧ��M�C�����ɵo�X���G�����m�C~
-Unit            ��~
+由純銀與精鐵粹練打造而成﹐劍身不時發出明亮的光彩。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

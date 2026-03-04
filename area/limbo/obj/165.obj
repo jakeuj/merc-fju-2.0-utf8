@@ -1,10 +1,10 @@
 Vnum            165
 Name            chen lightning potion~
-ShortDesc       ¾_¹pÃÄ¤ô~
+ShortDesc       éœ‡é›·è—¥æ°´~
 Description
-¤@²~¾_¹pÃÄ¤ô(chen lightning potion)¡M¨ã¦³°»´ú¨¸´cªº®ÄªG¡C
+ä¸€ç“¶éœ‡é›·è—¥æ°´(chen lightning potion)ï¹å…·æœ‰åµæ¸¬é‚ªæƒ¡çš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

@@ -1,9 +1,9 @@
 Vnum            92
 Name            smart pen~
-ShortDesc       �F�s�ѵ�~
+ShortDesc       靈龍天筆~
 Description
-�o�O�����@�N�۶Ǫ��t���M�۶ǬO�Τd�~���K���y�M�L�����R�C~
-Unit            �K~
+這是儒門世代相傳的聖物﹐相傳是用千年玄鐵打造﹐無堅不摧。~
+Unit            枝~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

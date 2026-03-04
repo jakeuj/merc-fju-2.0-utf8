@@ -1,10 +1,10 @@
 Vnum            573
 Name            button~
-ShortDesc       «ö¶s~
+ShortDesc       æŒ‰éˆ•~
 Description
-¤@­Ó¬õ¦âªº«ö¶s¡M§A¥i¥H«ö«ö¬İ( push )¡C
+ä¸€å€‹ç´…è‰²çš„æŒ‰éˆ•ï¹ä½ å¯ä»¥æŒ‰æŒ‰çœ‹( push )ã€‚
 ~
-Unit            ­Ó~
+Unit            å€‹~
 ItemType        ITEM_TRASH
 WearLoc         0
 Level           1

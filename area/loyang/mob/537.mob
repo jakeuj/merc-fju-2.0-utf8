@@ -1,10 +1,10 @@
 Vnum            537
 Name            trainer~
-ShortDesc       °V½m®v~
-LongDesc        ·O²»©MÄ§ªº°V½m®v(trainer)¥¿µ¥«İ§Aªº¥úÁ{¡C
+ShortDesc       è¨“ç·´å¸«~
+LongDesc        æ…ˆç¥¥å’Œè—¹çš„è¨“ç·´å¸«(trainer)æ­£ç­‰å¾…ä½ çš„å…‰è‡¨ã€‚
 ~
 Description
-¥L¤@Áy´²µo·O²»ªº¥ú¨~¡M¥O¤H¤£¦ÛÄ±ªº·Q­n¾aªñ¥L¡C
+ä»–ä¸€è‡‰æ•£ç™¼æ…ˆç¥¥çš„å…‰èŠ’ï¹ä»¤äººä¸è‡ªè¦ºçš„æƒ³è¦é è¿‘ä»–ã€‚
 ~
 Sentinel        Yes
 Train           Yes
@@ -42,13 +42,13 @@ Type            greet_prog
 Chance          100
 Text
 if ispc($n)
-  if isenemy($n) == '¬¥¶§'
-    tell $n «u§r¡T§A¬O¬¥¶§ªº¤½¼Ä»¡¡M­n¤£­n¥h±¼°Ú¡S
-    tell $n §Úª¾¹D¬Y¤H¥i¥H¨««áªù³á¡T
-    tell $n ©¹®c¸Ì¥h´N¥i¥H¤F¡T
+  if isenemy($n) == 'æ´›é™½'
+    tell $n å“å‘€ï¹—ä½ æ˜¯æ´›é™½çš„å…¬æ•µèªªï¹è¦ä¸è¦å»æ‰å•Šï¹–
+    tell $n æˆ‘çŸ¥é“æŸäººå¯ä»¥èµ°å¾Œé–€å–”ï¹—
+    tell $n å¾€å®®è£¡å»å°±å¯ä»¥äº†ï¹—
     wink $n
   endif
-  say §Ú¥i¥HÀ°§A°V½m³á¡T
+  say æˆ‘å¯ä»¥å¹«ä½ è¨“ç·´å–”ï¹—
 endif
 ~
 End

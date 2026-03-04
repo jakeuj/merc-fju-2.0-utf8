@@ -1,7 +1,7 @@
 Name            detect magic~
-Cname           °»´úÅ]ªk~
+Cname           åµæ¸¬é­”æ³•~
 Slot            SLOT_DETECT_MAGIC
-Msgoff          §AµLªk¦Aµo²{Å]ªkª«½è¤F¡T~
+Msgoff          ä½ ç„¡æ³•å†ç™¼ç¾é­”æ³•ç‰©è³ªäº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_detect_magic~
 Position        POS_STANDING

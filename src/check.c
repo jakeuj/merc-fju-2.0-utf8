@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -20,7 +20,7 @@ int     serial_loop = 1;
 
 void    log_serial_duplicate    args( ( OBJ_DATA * , OBJ_DATA * ) );
 
-/* °_©l¤Æ®É¶¡§Ç¸¹ÅÜ¼Æ */
+/* èµ·å§‹åŒ–æ™‚é–“åºè™Ÿè®Šæ•¸ */
 void initial_serial_time( void )
 {
   PUSH_FUNCTION( "initial_serial_time" );
@@ -35,7 +35,7 @@ void set_serial( SERIAL_DATA * pSerial )
 
   if ( !pSerial )
   {
-    mudlog( LOG_DEBUG, "set_serial: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_serial: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -61,29 +61,29 @@ void check_serial_number( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG , "check_serial_number: ÀË¬dª««~§Ç¸¹, ¤Hª«¬OªÅªº." );
+    mudlog( LOG_DEBUG , "check_serial_number: æª¢æŸ¥ç‰©å“åºè™Ÿ, äººç‰©æ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
-  /* ¬İ¬İ¹ï¶H¬O§_¬°µêÀÀ©Çª« */
+  /* çœ‹çœ‹å°è±¡æ˜¯å¦ç‚ºè™›æ“¬æ€ªç‰© */
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
-  /* ³]©w¦Û¤v¨­¤W±aªºª««~§Ç¸¹ */
+  /* è¨­å®šè‡ªå·±èº«ä¸Šå¸¶çš„ç‰©å“åºè™Ÿ */
   for ( obj = ch->carrying ; obj; obj = obj->next_content )
     set_serial( &obj->serial );
 
-  /* ³]©w¦Û¤v±H©ñª««~ªº§Ç¸¹ */
+  /* è¨­å®šè‡ªå·±å¯„æ”¾ç‰©å“çš„åºè™Ÿ */
   for ( obj = ch->deposit ; obj; obj = obj->next_content )
     set_serial( &obj->serial );
 
-  /* ·j´M¥ş¥@¬É¦s¦bªºª««~ */
+  /* æœå°‹å…¨ä¸–ç•Œå­˜åœ¨çš„ç‰©å“ */
   for ( temp = object_list; temp; temp = temp->next )
   {
     if ( !verify_obj( temp ) ) continue;
 
     if ( temp->serial.high == 0 || temp->serial.low == 0 ) continue;
 
-    /* ÀË¬d©ÒÄâ±aªºª««~ */
+    /* æª¢æŸ¥æ‰€æ”œå¸¶çš„ç‰©å“ */
     for ( obj = ch->carrying; obj; obj = obj->next_content )
     {
       if ( obj->serial.low  == temp->serial.low
@@ -101,7 +101,7 @@ void check_serial_number( CHAR_DATA * ch )
       }
     }
 
-    /* ÀË¬d©Ò±H©ñªºª««~ */
+    /* æª¢æŸ¥æ‰€å¯„æ”¾çš„ç‰©å“ */
     for ( obj = ch->deposit; obj; obj = obj->next_content )
     {
       if ( obj->serial.low  == temp->serial.low
@@ -120,12 +120,12 @@ void check_serial_number( CHAR_DATA * ch )
     }
   }
 
-  if ( marked ) mudlog( LOG_SUSPECT, "%s ¯A¶û«ş¨©¸Ë³Æ.", ch->name );
+  if ( marked ) mudlog( LOG_SUSPECT, "%s æ¶‰å«Œæ‹·è²è£å‚™.", ch->name );
 
   RETURN_NULL();
 }
 
-/* °O¿ı§Ç¸¹¬Û¦PªÌ¦ÜÀÉ®×¤¤ */
+/* è¨˜éŒ„åºè™Ÿç›¸åŒè€…è‡³æª”æ¡ˆä¸­ */
 void log_serial_duplicate( OBJ_DATA * org , OBJ_DATA * des )
 {
   FILE * pFile;
@@ -136,38 +136,38 @@ void log_serial_duplicate( OBJ_DATA * org , OBJ_DATA * des )
 
   if ( ( pFile = FOPEN( check_file , "a" ) ) )
   {
-    fprintf( pFile ,"¤é´Á         %s\n"
+    fprintf( pFile ,"æ—¥æœŸ         %s\n"
       , time_format( time( NULL ) , "%r, %a-%d-%b-%y" ) );
 
-    fprintf( pFile, "­ì©lª««~     [%s] (%s)( ¸¹½X¡R%d )\n"
+    fprintf( pFile, "åŸå§‹ç‰©å“     [%s] (%s)( è™Ÿç¢¼ï¹•%d )\n"
       , org->cname
       , org->name
       , org->pIndexData->vnum );
 
-    fprintf( pFile, "½Æ»sª««~     [%s] (%s)( ¸¹½X¡R%d )\n"
+    fprintf( pFile, "è¤‡è£½ç‰©å“     [%s] (%s)( è™Ÿç¢¼ï¹•%d )\n"
       , des->cname
       , des->name
       , des->pIndexData->vnum );
 
     if ( org->carried_by )
-      fprintf( pFile, "­ì©l¾Ö¦³ªÌ   %s\n" , org->carried_by->name );
+      fprintf( pFile, "åŸå§‹æ“æœ‰è€…   %s\n" , org->carried_by->name );
 
     else if ( org->deposit_by )
-      fprintf( pFile, "­ì©l±H©ñªÌ   %s\n" , org->deposit_by->name );
+      fprintf( pFile, "åŸå§‹å¯„æ”¾è€…   %s\n" , org->deposit_by->name );
 
     if ( des->carried_by )
-      fprintf( pFile, "½Æ»s¾Ö¦³ªÌ   %s\n" , des->carried_by->name );
+      fprintf( pFile, "è¤‡è£½æ“æœ‰è€…   %s\n" , des->carried_by->name );
 
     else if ( des->deposit_by )
-      fprintf( pFile, "½Æ»s±H©ñªÌ   %s\n" , des->deposit_by->name );
+      fprintf( pFile, "è¤‡è£½å¯„æ”¾è€…   %s\n" , des->deposit_by->name );
 
-    fprintf( pFile, "½Æ»s§Ç¸¹     %d-%d\n"
+    fprintf( pFile, "è¤‡è£½åºè™Ÿ     %d-%d\n"
       , des->serial.high , des->serial.low );
 
     fprintf( pFile , "-------------------------------------------\n" );
     FCLOSE( pFile );
 
-    /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+    /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
     set_file_mode( check_file );
 
   }
@@ -196,7 +196,7 @@ FUNCTION( do_serial )
 
     if ( !arg[0] || !arg1[0] || !is_number( arg ) || !is_number( arg1 ) )
     {
-      send_to_char( "§A¥²¶·¿é¤J¨â­Ó¼Æ¦r¨Ó¬d¸ß¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¼¸å…¥å…©å€‹æ•¸å­—ä¾†æŸ¥è©¢ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -204,19 +204,19 @@ FUNCTION( do_serial )
 
     if ( !pData )
     {
-      act( "¨S¦³ $x-$X ³o²Õ§Ç¸¹ªº¤H¡T", ch, &high, &low, TO_CHAR );
+      act( "æ²’æœ‰ $x-$X é€™çµ„åºè™Ÿçš„äººï¹—", ch, &high, &low, TO_CHAR );
     }
     else
     {
       if ( pData->exist )
       {
-        print_to_char( ch, "¥Ø«e¦³¤H¥s %s ¡M¥Lªº§Ç¸¹´N¬O %d-%d¡T\n\r"
+        print_to_char( ch, "ç›®å‰æœ‰äººå« %s ï¹ä»–çš„åºè™Ÿå°±æ˜¯ %d-%dï¹—\n\r"
           , pData->name, high, low );
       }
       else
       {
-        print_to_char( ch, "¤§«e¦³­Ó¤H¥s %s¡M¥L§Ç¸¹´N¬O %d-%d¡M¤£¹L¥L¤w"
-          "¸g¤£¦s¦b¤F¡T", pData->name, high, low );
+        print_to_char( ch, "ä¹‹å‰æœ‰å€‹äººå« %sï¹ä»–åºè™Ÿå°±æ˜¯ %d-%dï¹ä¸éä»–å·²"
+          "ç¶“ä¸å­˜åœ¨äº†ï¹—", pData->name, high, low );
       }
     }
   }
@@ -227,26 +227,26 @@ FUNCTION( do_serial )
 
     if ( !( obj = get_obj_carry( ch , arg ) ) )
     {
-      act( "©êºp¡M§A¨­¤W¨S¦³³o¼Ëª««~ $2$T$0¡C" , ch, NULL, arg, TO_CHAR );
+      act( "æŠ±æ­‰ï¹ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£ç‰©å“ $2$T$0ã€‚" , ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( obj->serial.high == 0 && obj->serial.low == 0 )
     {
-      act( "ª««~$p©|¥¼¦³¥ô¦ó§Ç¸¹¡C", ch, obj, NULL, TO_CHAR );
+      act( "ç‰©å“$på°šæœªæœ‰ä»»ä½•åºè™Ÿã€‚", ch, obj, NULL, TO_CHAR );
     }
 
     else
     {
       sprintf( buf, "%d-%d", obj->serial.high, obj->serial.low );
-      act( "$pªº¬y¤ô§Ç¸¹¬O $2$T$0¡C", ch, obj, buf, TO_CHAR );
+      act( "$pçš„æµæ°´åºè™Ÿæ˜¯ $2$T$0ã€‚", ch, obj, buf, TO_CHAR );
     }
   }
 
   RETURN_NULL();
 }
 
-/* ·j´M¬Y§Ç¸¹ªºª««~ */
+/* æœå°‹æŸåºè™Ÿçš„ç‰©å“ */
 FUNCTION( do_sefind )
 {
   char       arg[ MAX_INPUT_LENGTH ];
@@ -262,7 +262,7 @@ FUNCTION( do_sefind )
 
   if ( !is_number( arg ) || ( serial_number = atoi( arg ) ) <= 0 )
   {
-    send_to_char( "ª««~§Ç¸¹¤£¯à¤p©óµ¥©ó 0¡C\n\r" , ch );
+    send_to_char( "ç‰©å“åºè™Ÿä¸èƒ½å°æ–¼ç­‰æ–¼ 0ã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
@@ -272,7 +272,7 @@ FUNCTION( do_sefind )
 
     if ( obj->serial.low == serial_number )
     {
-      send_to_buffer( "[%3d] %s ªº§Ç¸¹¬° %d-%d %s\n\r"
+      send_to_buffer( "[%3d] %s çš„åºè™Ÿç‚º %d-%d %s\n\r"
         , ++count , obj_name( ch, obj ), obj->serial.high
         , obj->serial.low, object_locate( obj , ch ) );
 
@@ -280,7 +280,7 @@ FUNCTION( do_sefind )
     }
   }
 
-  if ( !count )  send_to_buffer( "©|¥¼µo²{¨ì¬Û¦P§Ç¸¹ªºª««~¡C\n\r" );
+  if ( !count )  send_to_buffer( "å°šæœªç™¼ç¾åˆ°ç›¸åŒåºè™Ÿçš„ç‰©å“ã€‚\n\r" );
   print_buffer( ch );
   RETURN_NULL();
 }

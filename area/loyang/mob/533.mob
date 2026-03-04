@@ -1,11 +1,11 @@
 Vnum            533
 Name            seller~
-ShortDesc       �p�c~
-LongDesc        ���ۤ@�Ǥp���~���p�c(seller)�����y�ݵۧA���۶R�F��C
+ShortDesc       小販~
+LongDesc        推著一些小物品的小販(seller)正笑臉看著你等著買東西。
 ~
 Description
-�L�̱M����@�Ǥp�p�����~�M���L�o�ǪF��ˬO�����Ϊ��M
-�]�\�b�A�N�Ӫ��_�I�ȳ~���|�ܦ����U�T
+他們專門賣一些小小的物品﹐不過這些東西倒是滿有用的﹐
+也許在你將來的冒險旅途中會很有幫助﹗
 ~
 Scavenger       Yes
 StayArea        Yes

@@ -1,9 +1,9 @@
 Vnum            91
 Name            bamboo pen~
-ShortDesc       �˵�~
+ShortDesc       竹筆~
 Description
-�o�O��Φˤl�@�������M���G�i�H���ӷ��Z���ϥΡC~
-Unit            �K~
+這是支用竹子作成的筆﹐似乎可以拿來當武器使用。~
+Unit            枝~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

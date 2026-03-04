@@ -1,5 +1,5 @@
 Name            tiger blade~
-Cname           �T�d�j�ӤM�k~
+Cname           三千古皇刀法~
 Slot            SLOT_TIGERBLADE
 Msgoff          ~
 Check           check_blade_attack~
@@ -31,8 +31,8 @@ Help            ~
 
 #Damage
 Description
-$n����@���M�ϥX$Y�j�ɭ���$R���С�$Y�u�j�x���ҡv$Z�M$A�⤤$O�ѥ��ӥk�٦V$N����
-�W�C~
+$n殺氣一提﹐使出$Y古銅飛霞$R之－－$Y「大軍壓境」$Z﹐$A手中$O由左而右斬向$N的身
+上。~
 Chance          20
 Value           20
 Parry           0
@@ -42,7 +42,7 @@ End
 
 #Damage
 Description
-$n��Ѩg�q�@�n$A$Y�i�T��d�����q�j���i������u��v  ����R��L�㲪�j$Z~
+$n驚天狂吼一聲$A$Y【三∼千∼奧∼義】之【飛∼花∼逝∼影  取∼命∼無∼痕】$Z~
 Chance          20
 Value           20
 Parry           0
@@ -52,8 +52,8 @@ End
 
 #Damage
 Description
-$n�N$Y�u�T�d�ƭ��v�u�T�d�®�v�u�T�d�@��v�u�T�d���}�v$Z���Ʀ�s�_�ӡM�p�e�q
-�g�p�A��$N�����O�ˡT�T�T~
+$n將$Y「三千飄香」「三千黑氣」「三千一氣」「三千極破」$Z全數串連起來﹐如疾電
+狂雷劈的$N滿身是傷﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -63,8 +63,8 @@ End
 
 #Damage
 Description
-$n���E�������l�M�ܹD�G$Y�y�j�Ӷ��q�z���i�Һ��s�ƫl�j$Z�M$A$n�⤤��$O�E�_�j�j��
-$R�a���Ҥ�$Z�M�N��$N�I�ѥs�a�T�T�T~
+$n凝聚全身邪勁﹐喝道：$Y『古皇奧義』之【煉獄龍傲勁】$Z﹐$A$n手中的$O聚起強大的
+$R地獄煉火$Z﹐燒的$N呼天叫地﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -74,9 +74,9 @@ End
 
 #Damage
 Description
-$n�ϥX��$Y�y�j�Ӷ��q  ��Ѥ������z$Z�Ĥ@��$Y�u�}�ѯ}�v$Z�M$A$n�⤤$O�޻E�E�ѯu��M
-$S��$Z�B$R��$Z�B$B�q$Z�B$G�p$Z�P�l�ۻ��۩ӡM���ܩR�M
-$A$N�y�ɤ����ұ��Q�o�{���@�M�����R���T�T�T~
+$n使出之$Y『古皇奧義  驚天六絕殺』$Z第一式$Y「開天破」$Z﹐$A$n手中$O引聚九天真氣﹐
+$S風$Z、$R火$Z、$B電$Z、$G雷$Z烈勁相輔相承﹐攝魂奪命﹐
+$A$N頓時不知所措被這臨門一刀當場命中﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -86,9 +86,9 @@ End
 
 #Damage
 Description
-$n���ըϥX����$Y�y�j�Ӷ��q  ��Ѥ������z$Z�ĤG��$G�u�P�a�H�v$Z�M
-$A$n�N�a�߯u�O�ޱ���⤤��$O�M��H�p�����K�M�իl��F�i�R�s���M$A
-��ۻE�U�v���O�M�O$N�B�l��L�k�۩ޡM���J�H�a�����T�T�T~
+$n順勢使出殺招$Y『古皇奧義  驚天六絕殺』$Z第二式$G「闢地碎」$Z﹐
+$A$n將地心真力操控於手中的$O﹐攝人如磁攝鐵﹐勢勁凌厲可摧山嶽﹐$A
+氣旋聚萬鈞之力﹐令$N運勁亦無法自拔﹐陷入碎地之中﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -98,9 +98,9 @@ End
 
 #Damage
 Description
-$n���μ���a�������M$Y�y�j�Ӷ��q  ��Ѥ������z$Z�ĤT��$S�u���F���v$Z�M
-$A$n�B�E���Ȥ����⤤$O�M�޻E�a�ߤ�$r�f�۫դ�$Z�M�իl��F�i�R�ѷ��a�M
-$A$n�ҧΦ���l�S�p�U�v���O�M�N$N�ιγ��$R�Ҥ�����$Z�T�T�T~
+$n身形潛伏於地底之中﹐$Y『古皇奧義  驚天六絕殺』$Z第三式$S「驚靈絕」$Z﹐
+$A$n運聚陰玄之氣於手中$O﹐引聚地心之$r黯幻幽火$Z﹐勢勁凌厲可摧天滅地﹐
+$A$n所形成氣勁猶如萬鈞重力﹐將$N團團圍於$R煉火之中$Z﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -110,10 +110,10 @@ End
 
 #Damage
 Description
-$n�ۤƦ��L�ƨ��ΡM�������k�M�O$N�L�k���N$Y�y�j�Ӷ��q  ��Ѥ������z$Z�ĥ|��$R
-�u�Ѧa�١v$Z�M$A
-$N�E���j�j��$G�խߤ���$Z��$O���W�M$n���H$G�խߤj��$Z�ٵ��j�a�M�٤H�եس�H�����M$A
-�C��$N�g���@���V�P���ɡM����$N�j�O���P�R�@���T�T�T~
+$n幻化成無數身形﹐忽左忽右﹐令$N無法捉摸$Y『古皇奧義  驚天六絕殺』$Z第四式$R
+「天地斬」$Z﹐$A
+$N聚集強大之$G幽冥之氣$Z於$O之上﹐$n欲以$G幽冥大氣$Z斬絕大地﹐障人耳目喪人神智﹐$A
+每於$N迷恍於一片混沌之時﹐給予$N強力的致命一擊﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -123,10 +123,10 @@ End
 
 #Damage
 Description
-$n�N�����l�O������⤤���M�����M����$N�F�X$Y�y�j�Ӷ��q��Ѥ������z$Z���s����
-$W�u���l�i�v$Z�M$A
-$n�E���t�z�j�j�E�������$O���W�M$n�N�гy�t�z��$b���l����$Z�M$A
-�ܱj�ܭ�M�¤O���H���ѷ��a�M$N��o���ۧ��������ұ��M�K�ɾ�ͦ��B�T�T�T~
+$n將全身勁力集中於手中雙刀之中﹐欲對$N轟出$Y『古皇奧義驚天六絕殺』$Z之究極式
+$W「元始搏」$Z﹐$A
+$n聚集宇宙強大浩翰之氣於$O之上﹐$n將創造宇宙的$b元始之氣$Z﹐$A
+至強至剛﹐威力足以毀天滅地﹐$N對這殺著完全不知所措﹐霎時橫屍此處﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -136,14 +136,14 @@ End
 
 #Damage
 Description
-$n�P���H����¶�M�ܹD�G$A
-$Y                     �y�j�Ӷ��q�z���i�������T�ءj$Z�M$A
-$n�⤤$O�E�X�L�ƪ��W�Q���B�W�M�媺$N���L���T�T�T$A
-�u��$n���⤤�P�ɾ��X�|�D�j�P���u��M$A
-$Y�u�T�d�ƭ��v�u�T�d�®�v�u�T�d�@��v�u�T�d���}�v$Z�M�ܹD�G$A
-$G      �ӫǤj�d���j�ӵ���$Y�y�T�d�P�@��E�f�ڶ����_�z$Z�M$A
-�u���|�D��l���}�ѻڡM�V$N���|�P���Y�T�T$A
-�u��$N������w�Q�|�D��l�ҧΦ����j�P���z���������H���T�T�T~
+$n周身寒氣環繞﹐喝道：$A
+$Y                     『古皇奧義』之【雪飄霜三尺】$Z﹐$A
+$n手中$O聚出無數的鋒利的冰鋒﹐砍的$N面無血色﹗﹗﹗$A
+只見$n的手中同時凝出四道強烈的真氣﹐$A
+$Y「三千飄香」「三千黑氣」「三千一氣」「三千極破」$Z﹐喝道：$A
+$G      皇室大千之古皇絕式$Y『三千同一氣•黯夢雲驚斷』$Z﹐$A
+只見四道氣勁劃破天際﹐向$N的四周直墜﹗﹗$A
+只見$N的身體已被四道氣勁所形成之強烈氣爆炸的粉身碎骨﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0

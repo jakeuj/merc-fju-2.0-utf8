@@ -1,5 +1,5 @@
 Name            g finger~
-Cname           �寫���k~
+Cname           驚神指法~
 Slot            SLOT_G_FINGER
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -38,8 +38,8 @@ Limit           CLASS_SMITH      1  20
 Help            ~
 #Damage
 Description
-$W$n�ϥX$R�y�寫���k�z$W���Ĥ@��$p�i���v�@���j$W�M�ƥX�@���g���M$p�p�ڦp��$W
-�M$N�Q�g�b�Ӥ���ı$Z�C~
+$W$n使出$R『驚神指法』$W之第一招$p【驚豔一指】$W﹐化出一片迷霧﹐$p如夢如幻$W
+﹐$N被迷惑而不自覺$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -48,8 +48,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n��x$B�P�j��@���M�o�X�s�u���n$R�y�寫���k�z$W�ĤG��$B�i���]�@���j$W�H
-�@�Ѧ��h�L�^�p�^�U�v���ծg�X$Z�C~
+$W$n手掌$B與大氣共振﹐發出龍吟之聲$R『驚神指法』$W第二招$B【驚魔一指】$W以
+一股有去無回雷霆萬鈞之勢射出$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -58,8 +58,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�H���s��M�ϥX�W�j����$R�y�寫���k�z$B���Ǥ����G$Y�i�寫�@���j$W ��Ѱ�
-�a�O�]�٦�M�@�ɤѩ��a�ʡM��륢��$Z�C~
+$W$n以神御氣﹐使出上古神技$R『驚神指法』$B不傳之祕：$Y【驚神一指】$W 驚天動
+地屠魔斬佛﹐一時天昏地動﹐日月失色$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -68,7 +68,7 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�ޭɤѦa����M�Ƭ�$B�j�y�a��$W�M�I�������O�G�o$N�ʼu���o�M�L�k�I�l$Z�C~
+$W$n引借天地之氣﹐化為$B迴流地獄$W﹐沉重的壓力逼得$N動彈不得﹐無法呼吸$Z。~
 Chance          10
 Value           20
 Parry           0

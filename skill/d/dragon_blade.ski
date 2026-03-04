@@ -1,5 +1,5 @@
 Name            dragon blade~
-Cname           �]�M~
+Cname           魔刀~
 Slot            SLOT_DRAGON_BLADE
 Msgoff          ~
 Check           check_blade_attack~
@@ -33,7 +33,7 @@ Help            ~
 
 #Damage
 Description
-$n�a���ӤW�M���a���Τ@��M�ϥX$R�u�j�s�f�١v�M$Z�⤤$O��$N��A�L�h�C~
+$n縱身而上﹐忽地身形一轉﹐使出$R「迴龍逆斬」﹐$Z手中$O往$N橫劈過去。~
 Chance          20
 Value           20
 Parry           0
@@ -43,7 +43,7 @@ End
 
 #Damage
 Description
-$n�B�_���\�M�N�u�O�e�i$O�M�@��$R�u�I�s�S�ѡv$Z�M$O���A$N�T�T~
+$n運起元功﹐將真力貫進$O﹐一招$R「呼龍嘯天」$Z﹐$O直劈$N﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -53,7 +53,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�s���M�@��$R�u�]�s�@���v$Z���a���X$N���A�T�T~
+$n手中$O連劃﹐一招$R「夜龍一炬」$Z忽地挺出$N直劈﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -63,7 +63,7 @@ End
 
 #Damage
 Description
-$n�@��$R�u�U�T�ɱˡv$Z�N�⤤$O�R���@���M����V$N�C~
+$n一招$R「萬劫盡捨」$Z將手中$O舞成一片刀網砍向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -73,7 +73,7 @@ End
 
 #Damage
 Description
-$n���ʤ⤤$O�ϥX$R�u�@�r�M�k�v$Z�M�u��$O���@�D�{�q�M���A$N�ӤU�C~
+$n揮動手中$O使出$R「一字刀法」$Z﹐只見$O像一道閃電﹐直劈$N而下。~
 Chance          20
 Value           20
 Parry           0
@@ -83,7 +83,7 @@ End
 
 #Damage
 Description
-$n�ϥX$R�u���M�١v$Z�M�u���M����������ɯɦV$N���U�C~
+$n使出$R「離刀斬」$Z﹐只見刀片像雪片般紛紛向$N落下。~
 Chance          20
 Value           20
 Parry           0
@@ -93,7 +93,7 @@ End
 
 #Damage
 Description
-$n�j�ܤ@�n�M�ϥX$R�u���s����v$Z�M�@�ɮ�_�s�e�M�@�}�M��$N���ĦӨӡC~
+$n大喝一聲﹐使出$R「江山易手」$Z﹐一時氣震山河﹐一陣刀氣往$N直衝而來。~
 Chance          20
 Value           20
 Parry           0
@@ -103,8 +103,8 @@ End
 
 #Damage
 Description
-$n�M�w�ϥX�������ޡM$Y�i���s�����j$Z$R�y�ҤѡB��a�B���s�A�{�T�z$Z�M�߰_$O�M
-�Ť�����T�P�b�M��սS�T~
+$n決定使出必殺之技﹐$Y【蟠龍鎖關】$Z$R『忌天、恨地、魚龍再現﹗』$Z﹐拋起$O﹐
+空中轉體三周半﹐氣勢磅礡﹗~
 Chance          20
 Value           20
 Parry           0
@@ -114,8 +114,8 @@ End
 
 #Damage
 Description
-$n��M���J�ƨg�M�f���j�ۡM$Y�i �a�Ѥw���T�T�]�M���ߡT�T�����O�P�j�k�T�T �j
-$Z�u��$n�H�M�b���V$N���ˤf�M��ŧl��$E���A��T�T~
+$n突然陷入瘋狂﹐口中大喊﹐$Y【 蒼天已死﹗﹗魔刀當立﹗﹗看攝魂屠仙大法﹗﹗ 】
+$Z只見$n以刀刃指向$N的傷口﹐凌空吸取$E的鮮血﹗﹗~
 Chance          20
 Value           20
 Parry           0

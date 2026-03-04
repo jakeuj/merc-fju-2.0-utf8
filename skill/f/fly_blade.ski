@@ -1,5 +1,5 @@
 Name            fly blade~
-Cname           ����Z~
+Cname           飛驚訣~
 Slot            SLOT_FLY_BLADE
 Msgoff          ~
 Check           check_blade_attack~
@@ -40,9 +40,9 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$P��M�T��$R��������$B�y�]�����ʡ�~��͡E���١�d��U���z$Z$A$A�u���d
-�D�j�j����l���}�ѻڡT�T$N������w�Q�d�D��l���������H���T�T�T$Z$A$R$n�j�n��
-�D�G�u$P���M��T�㦡�㤧��ѡ�U�㦳���$Z�v�C~
+$P血刀三式$R之毀滅式$B『魔∼轉∼百∼年∼生•血∼斬∼千∼萬∼魂』$Z$A$A只見千
+道強大的血勁劃破天際﹗﹗$N的身體已被千道血勁撕的粉身碎骨﹗﹗﹗$Z$A$R$n大聲喝
+道：「$P血∼刀∼三∼式∼之∼天∼下∼有∼血$Z」。~
 Chance          10
 Value           20
 Parry           0
@@ -51,9 +51,9 @@ Innate          0 0
 End
 #Damage
 Description
-$P��M�T��$R��������$B�y�]�����ʡ�~��͡E���١�d��U���z$Z$A$A�u���d
-�D�j�j����l���}�ѻڡT�T$N������w�Q�d�D��l���������H���T�T�T$R$n�j�n�ܹD�G
-�u$P���M��T�㦡�㤧�����š㶼���$Z�v$R�T�T�T$Z$A~
+$P血刀三式$R之毀滅式$B『魔∼轉∼百∼年∼生•血∼斬∼千∼萬∼魂』$Z$A$A只見千
+道強大的血勁劃破天際﹗﹗$N的身體已被千道血勁撕的粉身碎骨﹗﹗﹗$R$n大聲喝道：
+「$P血∼刀∼三∼式∼之∼長∼空∼飲∼血$Z」$R﹗﹗﹗$Z$A~
 Chance          10
 Value           20
 Parry           0
@@ -62,9 +62,9 @@ Innate          0 0
 End
 #Damage
 Description
-$P��M�T��$R��������$B�y�]�����ʡ�~��͡E���١�d��U���z$Z$A$A�u���d
-�D�j�j����l���}�ѻڡT�T$N������w�Q�d�D��l���������H���T�T�T$R$n�j�n�ܹD�G
-�u$P���M��T�㦡�㤧����V��s��e$Z�v$R�T�T�T$Z$A~
+$P血刀三式$R之毀滅式$B『魔∼轉∼百∼年∼生•血∼斬∼千∼萬∼魂』$Z$A$A只見千
+道強大的血勁劃破天際﹗﹗$N的身體已被千道血勁撕的粉身碎骨﹗﹗﹗$R$n大聲喝道：
+「$P血∼刀∼三∼式∼之∼血∼染∼山∼河$Z」$R﹗﹗﹗$Z$A~
 Chance          10
 Value           20
 Parry           0

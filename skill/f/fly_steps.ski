@@ -1,5 +1,5 @@
 Name            fly steps~
-Cname           ­¸¶³Áa~
+Cname           é£›é›²ç¸±~
 Slot            SLOT_FLY_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,7 +38,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n¨Ï¥X¤@­Ó$P¡yßìç¢À¸¤ô¡z$Zªº¨­ªk¡M¥ª¸}¤@±½¡M°¿¦a¤@­Ó±Û¨­¡MÄË¥X¤@¤V¥H¥~¡C~
+$nä½¿å‡ºä¸€å€‹$Pã€Žèœ‰è£æˆ²æ°´ã€$Zçš„èº«æ³•ï¹å·¦è…³ä¸€æŽƒï¹å€åœ°ä¸€å€‹æ—‹èº«ï¹é¨°å‡ºä¸€ä¸ˆä»¥å¤–ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -47,7 +47,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¹B°_¥þ¨­¯u¤O¡M¤@­Ó$P¡y­·±²¸¨ªá¡z$Z¤§¶Õ¡M©Þ°_¤T¤V¦h°ª¡C~
+$né‹èµ·å…¨èº«çœŸåŠ›ï¹ä¸€å€‹$Pã€Žé¢¨æ²è½èŠ±ã€$Zä¹‹å‹¢ï¹æ‹”èµ·ä¸‰ä¸ˆå¤šé«˜ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -56,7 +56,7 @@ Innate          0 0
 End
 #Damage
 Description
-$nÂùÁu¤@®¶¡M«K¥H$P¡y®ü¿P±°ªi¡z$Z¤§¶Õ¡M¡y¼R¡zªº±°­·Án¤¤¡M¨­§Î©Þ°_¤T¤V¦h°ª¡C~
+$né›™è‡‚ä¸€æŒ¯ï¹ä¾¿ä»¥$Pã€Žæµ·ç‡•æŽ æ³¢ã€$Zä¹‹å‹¢ï¹ã€Žå˜¶ã€çš„æŽ é¢¨è²ä¸­ï¹èº«å½¢æ‹”èµ·ä¸‰ä¸ˆå¤šé«˜ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -65,7 +65,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤£·W¤£¦£¡Mªø¼S¤@Án¡M¤@©Û$P¡yªF­·¬~¬h¡z$Z¡MÅD¤F¶}¥h¡C~
+$nä¸æ…Œä¸å¿™ï¹é•·å˜¯ä¸€è²ï¹ä¸€æ‹›$Pã€Žæ±é¢¨æ´—æŸ³ã€$Zï¹èºäº†é–‹åŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0

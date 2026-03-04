@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A�`�`�b���W����([1;32mchat[0m)�ܡS��꯸�W���O�u���@���W�D([1;32mchannel[0m)��M���U���U��
-���W�D�i�Ѫ��a��ܨϥΡM�A�i�H�Ҽ{��ܥ��}([1;32mchannel +xx[0m)�άO����([1;32mchannel -xx[0m)
-�A���W�D�M�ҥH�е��ΧA�ۤv���W�D�a�T
+你常常在站上閒聊([1;32mchat[0m)嗎﹖其實站上不是只有一個頻道([1;32mchannel[0m)喔﹐有各式各類
+的頻道可供玩家選擇使用﹐你可以考慮選擇打開([1;32mchannel +xx[0m)或是關閉([1;32mchannel -xx[0m)
+你的頻道﹐所以請善用你自己的頻道吧﹗
 
-�Ьd�ߡRchannel�Bchat
+請查詢﹕channel、chat
 ~
 End

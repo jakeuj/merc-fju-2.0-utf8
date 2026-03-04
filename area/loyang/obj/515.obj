@@ -1,10 +1,10 @@
 Vnum            515
 Name            snow recover plaster~
-ShortDesc       ³·³Ğ»I~
+ShortDesc       é›ªå‰µè†~
 Description
-¥Ñ¨Ê«°ÃÄ©±¬ãµo¥X¨Óªºªv¶ËÆFÃÄ(snow recover plaster)¡M¦¿´ò¤H¤h§¡Æg¤£µ´¤f¡C
+ç”±äº¬åŸè—¥åº—ç ”ç™¼å‡ºä¾†çš„æ²»å‚·éˆè—¥(snow recover plaster)ï¹æ±Ÿæ¹–äººå£«å‡è®šä¸çµ•å£ã€‚
 ~
-Unit            Åø~
+Unit            ç½~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

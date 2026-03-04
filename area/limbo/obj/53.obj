@@ -1,9 +1,9 @@
 Vnum            53
 Name            robe~
-ShortDesc       ªø³T~
+ShortDesc       é•·è¢~
 Description
-¤@¥ó¥Ñµ·Â´¦¨ªºªø³T(robe)¡C~
-Unit            ¥ó~
+ä¸€ä»¶ç”±çµ²ç¹”æˆçš„é•·è¢(robe)ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

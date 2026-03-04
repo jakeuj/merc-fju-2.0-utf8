@@ -1,9 +1,9 @@
 Vnum            18
 Name            thunder shield~
-ShortDesc       ¹p¯«¤§¬Þ~
+ShortDesc       é›·ç¥žä¹‹ç›¾~
 Description
-±M¬°¤Ñ¯«¥´³yªº¹p¯«¤§¬Þ(shield)¡C~
-Unit            ¨ã~
+å°ˆç‚ºå¤©ç¥žæ‰“é€ çš„é›·ç¥žä¹‹ç›¾(shield)ã€‚~
+Unit            å…·~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_SHIELD
 Takeable        Yes

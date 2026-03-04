@@ -1,10 +1,10 @@
 Vnum            534
 Name            blademan shield~
-ShortDesc       ¤MªÌ¤§¬Ş~
+ShortDesc       åˆ€è€…ä¹‹ç›¾~
 Description
-ªì¤J¦¿´ò¤§¤M«È³Ì¦h¥Îªº°ò¥»°t³Æ (blademan shield)¡C
+åˆå…¥æ±Ÿæ¹–ä¹‹åˆ€å®¢æœ€å¤šç”¨çš„åŸºæœ¬é…å‚™ (blademan shield)ã€‚
 ~
-Unit            ­±~
+Unit            é¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_SHIELD
 Takeable        Yes

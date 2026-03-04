@@ -1,9 +1,9 @@
 Vnum            58
 Name            short robe~
-ShortDesc       ÂÃ«Cµ·µu³T~
+ShortDesc       è—é’çµ²çŸ­è¢~
 Description
-³o¥óÂÃ«Cµ·µu³T(short robe)¡M°Åµô¦X¾A¡M¬ï°_¨Ó«D±`ªº¦X¨­¡C~
-Unit            ¥ó~
+é€™ä»¶è—é’çµ²çŸ­è¢(short robe)ï¹å‰ªè£åˆé©ï¹ç©¿èµ·ä¾†éå¸¸çš„åˆèº«ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

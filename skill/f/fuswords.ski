@@ -1,5 +1,5 @@
 Name            fu sword~
-Cname           ���s�C�k~
+Cname           神龍劍法~
 Slot            SLOT_FUSWORDS
 Msgoff          ~
 Check           check_sword_attack~
@@ -30,20 +30,20 @@ Limit           CLASS_FIGHTER    1  55
 Limit           CLASS_GENERAL    1  95
 Limit           CLASS_BRAVO      1  95
 Help
-���s�C�k:
+神龍劍法:
 
-�ѭ��s�Q�K�x��L�Ӧ����C�k�M���O�H�C�k�����F�n�ϥX�p���s�x
-���¤O�M���G���O����e���M��O���C�k�D�ۭ���l�O����ϡM��
-�p�m��@�w���J�M�[�W�C�ۤ���ơM����O�X���J�ơC�Ȧ��ӽסM
-���C�k�w�ݼC�����Q�̡C���]�p���M�ײߥ��C�k�ݭn���H�@�����O
-�q(str)�C
+由降龍十八掌脫胎而成的劍法﹐但是以劍法之輕靈要使出如降龍掌
+之威力﹐似乎不是那麼容易﹐於是本劍法乃著重於勁力之轉使﹐但
+如練到一定火侯﹐加上劍招之轉化﹐那更是出神入化。僅此而論﹐
+本劍法已屬劍中之霸者。惟因如此﹐修習本劍法需要高人一等的力
+量(str)。
 
 ~
 
 #Damage
 Description
-$n��M�⮩�F$B�y�C�H�ߵo�z$Z���D�z�M�}���}�L�V�e�u�X�M���O�@��$S�y�ſP��L�z
-$Z�C~
+$n突然領悟了$B『劍隨心發』$Z的道理﹐弓身屈腿向前彈出﹐正是一招$S『乳燕穿林』
+$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -53,7 +53,7 @@ End
 
 #Damage
 Description
-$n���C����@��M�ĤO�V�e��X�M�@��$b�y�p�^�U�v�z$Z��V$N�C~
+$n握劍之手一緊﹐奮力向前刺出﹐一招$b『雷霆萬鈞』$Z攻向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -63,7 +63,7 @@ End
 
 #Damage
 Description
-$n��p�E�]��M�P���j�ޡM�O�e�C�y�M������M���O�@��$S�y���_����z$Z�C~
+$n氣如九珠行遍周身大穴﹐力貫劍尖﹐僕布橫掃﹐正是一招$S『風起雲湧』$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -73,7 +73,7 @@ End
 
 #Damage
 Description
-$n�⤤���C�M�ۤư_�L�ƼC��M�N�N�C���N$N�]��䤤�M���O�@��$Y�y�B�మ�[�z$Z�C~
+$n手中之劍﹐幻化起無數劍圈﹐霍霍劍光將$N包圍其中﹐正是一招$Y『運轉乾坤』$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -83,8 +83,8 @@ End
 
 #Damage
 Description
-$n�����C�M�⤤���C���M�V�e���h�M���O�@��$Y�y���i�e��z$Z�M�h�դ��e��$N����
-�۬[�C~
+$n凝氣於劍﹐手中之劍忽然向前飛去﹐正是一招$Y『長虹貫日』$Z﹐去勢之疾使$N不及
+招架。~
 Chance          20
 Value           20
 Parry           0
@@ -94,7 +94,7 @@ End
 
 #Damage
 Description
-$n���M�D�_�V�l�M�ѥb�Ť��V$N�e��Ӧܥ��O�@��$R�y���s�b�ѡz$Z�C~
+$n忽然躍起丈餘﹐由半空中向$N疾攻而至正是一招$R『飛龍在天』$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -104,8 +104,8 @@ End
 
 #Damage
 Description
-$n�A���F�C�k�W�y�s�������z���u�q�M�⤤�ؼC�@���s�ϥX$S�y�ſP��L�z�y�p�^�U�v
-�z�y���_����z$Z�M����$N�P���j�ޡC~
+$n瞭悟了劍法上『連綿不絕』之真義﹐手中佩劍一盪連使出$S『乳燕穿林』『雷霆萬鈞
+』『風起雲湧』$Z﹐分攻$N周身大穴。~
 Chance          20
 Value           20
 Parry           0
@@ -115,8 +115,8 @@ End
 
 #Damage
 Description
-$n�⮩�F�y�H��s�C�z���u�q�M�B��������Ť����C��V$N�C���O�ǻ�����$P�y�s�C
-�N�z$Z�C~
+$n領悟了『以氣御劍』之真義﹐運氣於指控制空中之劍攻向$N。正是傳說中的$P『御劍
+術』$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -126,9 +126,9 @@ End
 
 #Damage
 Description
-$n�⮩�F�ҿ�$S�y�H�R��ʡz$Z�M�ߧY�ߦp����M�ݥX$N���}��M�@�s�ϥX$Y�y�ſP��
-�L�z�y�p�^�U�v�z�y���_����z�y�B�మ�[�z�y���i�e��z$Z�C��Φ��x���N$N�]���
-���C~
+$n領悟了所謂$S『以靜制動』$Z﹐立即心如明鏡﹐看出$N的破綻﹐一連使出$Y『乳燕穿
+林』『雷霆萬鈞』『風起雲湧』『運轉乾坤』『長虹貫日』$Z劍氣形成漩渦將$N包圍其
+中。~
 Chance          20
 Value           20
 Parry           0
@@ -138,8 +138,8 @@ End
 
 #Damage
 Description
-$n�w�o�C�k��n�M�@���ݹ��$N���ۦ��M�H��@�C�K�}�ѥL���ۦ��ñN�䭫�СM���O�C
-�k�����P$Y�y�L�۳Ӧ��ۡz$Z�C~
+$n已得劍法精要﹐一眼看對穿$N之招式﹐隨手一劍便破解他的招式並將其重創﹐正是劍
+法之極致$Y『無招勝有招』$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -149,8 +149,8 @@ End
 
 #Damage
 Description
-$n���S�L���M�����a�ѡM��$N��դw��M�u���Ť��C��{�{�M$n�q�e�����C�^¬�M$N�o
-�w���쨭�����ˡC~
+$n面露微笑﹐仰視蒼天﹐待$N攻勢已近﹐只見空中劍花閃閃﹐$n從容的收劍回竅﹐$N卻
+已受到身受重傷。~
 Chance          20
 Value           20
 Parry           0

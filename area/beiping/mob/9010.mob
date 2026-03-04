@@ -1,9 +1,9 @@
 Vnum            9010
 Name            bailiff~
-ShortDesc       «°ªù½Ã­x~
+ShortDesc       åŸé–€è¡›è»~
 Description
-¨Ê«°¤º¦ì¶¥¸û§Cªº­x©x¡M­t³d«°ªùªº¦u½Ã¤u§@¡M¤@¨­­xªA
-¬İ°_¨Ó«Ó§b¤F¡C
+äº¬åŸå…§ä½éšè¼ƒä½çš„è»å®˜ï¹è² è²¬åŸé–€çš„å®ˆè¡›å·¥ä½œï¹ä¸€èº«è»æœ
+çœ‹èµ·ä¾†å¸¥å‘†äº†ã€‚
 ~
 Sentinel        Yes
 StayArea        Yes
@@ -35,7 +35,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  say ´±¦b¦b¦¹·o¶Ã¡M¤£·Q¬¡¤F¬O§a¡T
+  say æ•¢åœ¨åœ¨æ­¤æ—äº‚ï¹ä¸æƒ³æ´»äº†æ˜¯å§ï¹—
 endif
 ~
 End

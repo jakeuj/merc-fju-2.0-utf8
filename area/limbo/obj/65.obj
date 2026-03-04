@@ -1,9 +1,9 @@
 Vnum            65
 Name            hood~
-ShortDesc       ºú¤y~
+ShortDesc       ç¶¸å·¾~
 Description
-±`¨£ªºÀY¤y(hood)¡M¬O®Ñ¥Íªº¼Ğ·Ç¸Ë§ê¡C~
-Unit            ±ø~
+å¸¸è¦‹çš„é ­å·¾(hood)ï¹æ˜¯æ›¸ç”Ÿçš„æ¨™æº–è£æ‰®ã€‚~
+Unit            æ¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HEAD
 Takeable        Yes

@@ -1,5 +1,5 @@
 Name            fan hammer~
-Cname           �Ԥ���k~
+Cname           樊氏錘法~
 Slot            SLOT_FAN_HAMMER
 Msgoff          ~
 Position        POS_FIGHTING
@@ -31,7 +31,7 @@ Limit           CLASS_BRAVO      1  80
 Help            ~
 #Damage
 Description
-�H������b$n�⤤���p�Ф�뻴���a�Q�R�ʵۡM$n�����ϥX$S�u�E��v$Z�M��$N�[�H�����C~
+沈重的錘在$n手中有如羽毛般輕易地被舞動著﹐$n順風使出$S「鴻毛」$Z﹐對$N加以重擊。~
 Chance          10
 Value           20
 Parry           0
@@ -40,7 +40,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��M�ۤU�M�N�⤤��$O��$N��$l���h�M$N�`���Ψ��M�Q$n��$Y�u�a�s�v$Z���˦b�a�C~
+$n突然蹲下﹐將手中的$O往$N的$l掃去﹐$N猝不及防﹐被$n的$Y「地龍」$Z打倒在地。~
 Chance          10
 Value           20
 Parry           0
@@ -49,8 +49,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�@�Ӱj�۸��L�F$N���������P�ɡM����򴤪Z���M���ζ��ի���M�I�i$S�u�ۭ��v$Z�M
-�Ƨ@�@�ѥR�����`�𮧪��ۭ��V$N�u���ӥh�T~
+$n一個迴旋躲過了$N的攻擊的同時﹐雙手緊握武器﹐身形順勢急轉﹐施展$S「旋風」$Z﹐
+化作一股充滿死亡氣息的旋風向$N席捲而去﹗~
 Chance          10
 Value           20
 Parry           0
@@ -59,8 +59,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$B�u�y�P�v$Z�M�N�⤤��$O����Y�X�M$N�{�פ��Υ����ݤf�M
-�����M$nť���F$N��$l�o�X�M�ܪ��H���n�T�T$n�Τ⩹��@�ۡM�N$O�H���l���^�C~
+$n使出$B「流星」$Z﹐將手中的$O脫手擲出﹐$N閃避不及正中胸口﹐
+瞬間﹐$n聽見了$N的$l發出清脆的碎裂聲﹗﹗$n用手往後一招﹐將$O以內勁收回。~
 Chance          10
 Value           20
 Parry           0
@@ -69,7 +69,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ݬ�$N�@�Ҫ��z�I�M�K�o�X�s��ӷǽT�������M�o��$R�u�}�ҡv$Z��$N�Q�X�X�f�A��T~
+$n看穿$N護甲的弱點﹐便發出連續而準確的重擊﹐這招$R「破甲」$Z使$N噴出幾口鮮血﹗~
 Chance          10
 Value           20
 Parry           0
@@ -78,9 +78,9 @@ Innate          0 0
 End
 #Damage
 Description
-$n�N�����l�O�����b�Z�����M�M�᭫�����V�a�����U�C$N���b���W�䧮�ɡM
-�}�U���j�a��M�H���M�L�ƪ��g�ۿE�g�ӥX�e��F$N������M���|�B���q�M
-���O$y�u�j�a����v$Z�T�T~
+$n將全身勁力集中在武器內﹐然後重重的向地面擊下。$N正在莫名其妙時﹐
+腳下的大地突然碎裂﹐無數的土石激射而出貫穿了$N的身體﹐血花四處飛濺﹐
+正是$y「大地之怒」$Z﹗﹗~
 Chance          10
 Value           20
 Parry           0
@@ -89,8 +89,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�j�q�@�n�G�u$P�y�P����$Z�T�v�M�⤤��$O���_���Y�X�B���^�M�ϩ��]�Ť����y�P�B��
-���s���_���V���h�T�T~
+$n大吼一聲：「$P流星風暴$Z﹗」﹐手中的$O不斷的擲出、收回﹐彷彿夜空中的流星雨般
+接連不斷的向飛去﹗﹗~
 Chance          10
 Value           20
 Parry           0
@@ -99,8 +99,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�����N���M���|��$O��$N���Y�{�U�M�o�@��$Y�u�x��v$Z�w��F�Ͽ\�k�u���ҬɡM
-$N�׵L�i�סT�T~
+$n集中意念﹐高舉著$O對$N當頭砸下﹐這一擊$Y「洪荒」$Z已到達反璞歸真的境界﹐
+$N避無可避﹗﹗~
 Chance          10
 Value           20
 Parry           0

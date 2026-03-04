@@ -1,9 +1,9 @@
 Vnum            9007
 Name            royal sword~
-ShortDesc       ©|¤èÄ_¼C~
+ShortDesc       å°šæ–¹å¯¶åŠ~
 Description
-¬Ó¤W±s½çªºÄ_¼C¡C~
-Unit            §â~
+çš‡ä¸Šå¾¡è³œçš„å¯¶åŠã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

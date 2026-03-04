@@ -1,5 +1,5 @@
 Name            gwhip~
-Cname           ���s�@�k~
+Cname           紫龍鞭法~
 Slot            SLOT_GWHIP
 Msgoff          ~
 Check           check_whip_attack~
@@ -38,18 +38,18 @@ Limit           CLASS_BRAVO      1  90
 Limit           CLASS_MAGE       1  40
 Limit           CLASS_SMITH      1  45
 Help
-���s�@�k�G
+紫龍鞭法：
 
-�o���ޯ�p��W�M���A���@�ɦ��p�@�����s�ûR�M�N�A���ĤH���J�@
-���L�i���������ɤ��M�y���L�񪺯}�a�O�M���L�M���@�H�H���|�M�n
-����X���޵ѫh�ݭn��J�@�ǭW�\�M�o�@���ޯ�ݭ����O���F������
-�ûP�M�����Y���M���o���P�����P���ˮ`�O�C�p�G�Q�Ǫ��ܡM��ĳ
-�A�i�H�������ݬݡM���̦����@������M�γ\�L�@�N�оɧA�C
+這項技能如其名﹐當你揮鞭時有如一條紫龍亂舞﹐將你的敵人但入一
+場無可比擬的風暴中﹐造成無比的破壞力﹐不過﹐揮鞭人人都會﹐要
+能夠出類拔萃則需要投入一些苦功﹐這一項技能看重的是較靈活的手
+腕與清楚的頭腦﹐方能發揮與眾不同的傷害力。如果想學的話﹐建議
+你可以到襄陽看看﹐那裡有用鞭的高手﹐或許他願意教導你。
 
 ~
 #Damage
 Description
-$n�Τ@�ۡu$Y�p�j����$Z�v�M�⤤$O�p�@���ȳD���V$N�C~
+$n用一招「$Y峰迴路轉$Z」﹐手中$O如一條銀蛇般刺向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -58,7 +58,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX���s�@�k�����u$G�s����$Z�v�M�⤤$O�e�A$N�C~
+$n使出紫龍鞭法中的「$G龍尾甩$Z」﹐手中$O疾劈$N。~
 Chance          20
 Value           20
 Parry           0
@@ -67,7 +67,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ĤO�ϥX�@�ۡu$P�s���Ӧ�$Z�v�M���ΰ~�M�ƥX�ƤءM�⤤$O�ئV$N�C~
+$n奮力使出一招「$P御風而行$Z」﹐身形陡然滑出數尺﹐手中$O拂向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -76,7 +76,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�⤤$O���c���i�M�@���u$G����F�@$Z�v���$N��X�C~
+$n手中$O中宮直進﹐一式「$G旭日東昇$Z」對準$N刺出。~
 Chance          20
 Value           20
 Parry           0
@@ -85,7 +85,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�a���@�D�M�⤤$O�@�ۡu$Y���s�\��$Z�v���$N�����A�U�C~
+$n縱身一躍﹐手中$O一招「$Y巨龍蓋頂$Z」對準$N直直劈下。~
 Chance          20
 Value           20
 Parry           0
@@ -94,7 +94,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��$O���ۥϥX�M�@��$g�r�s�p$Z��V$N�C~
+$n的$O螺旋甩出﹐一招$g毒龍鑽$Z刺向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -103,7 +103,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�⤤$O�V�~�@���M�Ϥ@�ۡu$P�h�t���$Z�v�Ϥ���$N��h�C~
+$n手中$O向外一分﹐使一招「$P柳暗花明$Z」反手對準$N刺去。~
 Chance          20
 Value           20
 Parry           0
@@ -112,7 +112,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�}��C�P�B�M���Τ@��⤤$O�Ϥ@�ۡu$B�Ũ���i$Z�v�e�X�@�D�����٦V$N�C~
+$n腳踏七星步﹐身形一轉手中$O使一招「$B空谷秋虹$Z」畫出一道光弧斬向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -121,7 +121,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�@��$s�ѹD��$Z�M���O�ɮg�M$O�e�I�V$N�C~
+$n一招$s天道擊$Z﹐內力暴射﹐$O疾點向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -130,7 +130,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��M�ɳܤ@�n�M�@��$R�p�F����$Z�M$O���ۤ@�ѥ��O�ĦV$N�C~
+$n突然暴喝一聲﹐一招$R雷厲風行$Z﹐$O挾著一股巨力衝向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -139,7 +139,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�@��$y�s����$Z�M�⤤$O�p�w���V$N�C~
+$n使出一招$y龍尾刺$Z﹐手中$O如針般刺向$N。~
 Chance          20
 Value           20
 Parry           0

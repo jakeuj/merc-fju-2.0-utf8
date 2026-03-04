@@ -1,11 +1,11 @@
 Vnum            CLASS_FIGHTER
 Name            fighter~
-Cname           ªZ  ©x~
-Title           »DÂû°_»R~
+Cname           æ­¦  å®˜~
+Title           èé›èµ·èˆ~
 LowerLimit      10
 UpperLimit      15
-LimitMsg        $Y$n¤j³Û¡R¡u§Ú¥H¨­¬°ªZ©xªººaÅAµo»}¡M­n±N§A¸H«Í¸U¬q¡T¡T¡v
-$n¤j³Û¡R¡u¥i´cªº$N¡M¯Ç©R¨Ó¡T¡T¡v$A$R~
+LimitMsg        $Y$nå¤§å–Šï¹•ã€Œæˆ‘ä»¥èº«ç‚ºæ­¦å®˜çš„æ¦®è­½ç™¼èª“ï¹è¦å°‡ä½ ç¢å±è¬æ®µï¹—ï¹—ã€
+$nå¤§å–Šï¹•ã€Œå¯æƒ¡çš„$Nï¹ç´å‘½ä¾†ï¹—ï¹—ã€$A$R~
 Limit           2500
 Multiplier      30
 RebirthGold     10000

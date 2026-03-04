@@ -1,10 +1,10 @@
 Vnum            114
 Name            rocket~
-ShortDesc       ·Ï¤õ~
+ShortDesc       ç…™ç«~
 Description
-³o¬O¤@²°¯S»sªº·Ï¤õ(rocket)¡M§A¥i¥H¬I©ñ(fire)¬İ¬İ
+é€™æ˜¯ä¸€ç›’ç‰¹è£½çš„ç…™ç«(rocket)ï¹ä½ å¯ä»¥æ–½æ”¾(fire)çœ‹çœ‹
 ~
-Unit            ²°~
+Unit            ç›’~
 ItemType        ITEM_FIREWORK
 Takeable        Yes
 Level           1

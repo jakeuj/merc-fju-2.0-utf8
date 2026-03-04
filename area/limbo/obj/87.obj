@@ -1,9 +1,9 @@
 Vnum            87
 Name            moon blade~
-ShortDesc       °l¤ë¤M ~
+ShortDesc       è¿½æœˆåˆ€ ~
 Description
-¼C¨­¾ã­Ó¥Î¤W¦nªººëÅK·Ò»s¡M¥Õ½J½Jªº¤M¥ú¦ü¥G§i¶D¤H­Ì¥¦ªº¤£¤Z¤§³B¡C~
-Unit            §â~
+åŠèº«æ•´å€‹ç”¨ä¸Šå¥½çš„ç²¾éµç…‰è£½ï¹ç™½çššçššçš„åˆ€å…‰ä¼¼ä¹Žå‘Šè¨´äººå€‘å®ƒçš„ä¸å‡¡ä¹‹è™•ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

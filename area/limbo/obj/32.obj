@@ -1,9 +1,9 @@
 Vnum            32
 Name            anlace~
-ShortDesc       �u�C~
+ShortDesc       短劍~
 Description
-�@�ⴶ�q���u�C(anlace)�M��ⳡ���Υ���¶�F�n�X��H����Z�����C~
-Unit            ��~
+一把普通的短劍(anlace)﹐把手部份用布纏繞了好幾圈以防止武器脫手。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

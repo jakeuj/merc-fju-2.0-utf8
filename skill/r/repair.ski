@@ -1,5 +1,5 @@
 Name            repair~
-Cname           �ײz�N~
+Cname           修理術~
 Slot            SLOT_REPAIR
 Msgoff          ~
 Function        cast_repair~
@@ -28,11 +28,11 @@ Qutoient        1
 Adeptation      0
 Limit           CLASS_SMITH      1  95
 Help
-�ײz�Z��:
+修理武器:
 
-�i�H�ײz�Z���M�������K�K�C
-���ŶV���M�ײz�V�֡M�ӥB�ײz�ɤ��|���a�Z���C
-�o���ޯ�һݨ�ƪ��O��Z�������ѻP�j������z�C
+可以修理武器﹐不必找鐵匠。
+等級越高﹐修理越快﹐而且修理時不會打壞武器。
+這項技能所需具備的是對武器的知識與強健的體魄。
 ~
 
 End

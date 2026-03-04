@@ -1,9 +1,9 @@
 Vnum            95
 Name            club~
-ShortDesc       ���ܴ�~
+ShortDesc       齊眉棍~
 Description
-�o�O�@��ݰ_�۷����q�����ܴ�(club)�M�ݨӬO�֪L���H�m�Z�M�Ϊ��C~
-Unit            ��~
+這是一把看起相當普通的齊眉棍(club)﹐看來是少林僧人練武專用的。~
+Unit            根~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

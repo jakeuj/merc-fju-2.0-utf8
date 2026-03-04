@@ -1,5 +1,5 @@
 Name            evil king~
-Cname           ���Ӯ�~
+Cname           邪皇拳~
 Slot            SLOT_EVIL_KING
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -33,7 +33,7 @@ Help            ~
 
 #Damage
 Description
-$G$n�����@�ʡM�ϥX�u$B���v��$G�v�H�i�B�s�����覡�M���Y���o$N�������n�`�C$Z~
+$G$n邪念一動﹐使出「$B邪影拳$G」以進步連環的方式﹐拳頭直搗$N的全身要害。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -43,8 +43,8 @@ End
 
 #Damage
 Description
-$G$n�j�ܤ@�n�M�ϥX�u$R�D��$G�v�M���Y�p�P�ܤƵL�Ϊ����D�@��M�H���i��ĳ������
-����$N�C$Z~
+$G$n大喝一聲﹐使出「$R蛇使$G」﹐拳頭如同變化無形的兇蛇一般﹐以不可思議的角度
+擊傷$N。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -54,7 +54,7 @@ End
 
 #Damage
 Description
-$G$n�⮱�l��`�b�k��M�ϥX�u$Y�L�׶P§$G�v�M�N���s�کް_���ߦV$N�C$Z~
+$G$n把拳勁灌注在右手﹐使出「$Y印度賀禮$G」﹐將對手連根拔起的拋向$N。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -64,8 +64,8 @@ End
 
 #Damage
 Description
-$G���F�����誺��ʡM$n�ϥX�F�u$W�s�ޤ�¦$G�v�M�N���Y���b$N���H���j�ޤW�M
-�Ϥ��L�k�ʼu�ӥ��̮_�ΡC$Z~
+$G為了封鎖對方的行動﹐$n使出了「$W零技之礎$G」﹐將拳頭打在$N的人身大穴上﹐
+使之無法動彈而任憑宰割。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -75,8 +75,8 @@ End
 
 #Damage
 Description
-$G�b$N���O�����U�M$n�N��@�n�M�ϥX�u$P�¬}����$G�v�M�l��$N���O�q�H�Y�����M
-$N�ϦӳQ$n���h�h���l�ӧ]���C$Z~
+$G在$N全力攻擊下﹐$n冷哼一聲﹐使出「$P黑洞效應$G」﹐吸收$N的力量隨即反擊﹐
+$N反而被$n的層層拳勁而吞噬。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -86,8 +86,8 @@ End
 
 #Damage
 Description
-$G$n�H���̥k�n�����k�M�������$N����l�M�ϥX�u$P�ߩ�����$G�v�M�H���t�즲�e�i�M
-�N���O�`��$N����̡M�y��$N���½�˦ӵL�k�����C$Z~
+$G$n以左晃右搖的身法﹐瞬間抓住$N的脖子﹐使出「$P冥府之門$G」﹐以高速拖曳前進﹐
+將內力注於$N身體裡﹐造成$N氣血翻騰而無法反擊。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -97,9 +97,9 @@ End
 
 #Damage
 Description
-$G$n��򪺪`��$N�M���M�H���t���B�k�b�ܲ��e�M�b$N���j���ڡM����$N��
-�|��M���O���ۡu$B�·t�E��$G�v�M�u�����񪺭��H$nť��M�H���t�����b����$N��
-����C$Z~
+$G$n緊緊的注視$N﹐忽然以極速的步法奔至眼前﹐在$N錯愕之際﹐扣住$N的
+咽喉﹐正是殺招「$B黑暗慟哭$G」﹐只見附近的風隨$n聽喚﹐以音速的風刃蠶食$N的
+身體。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -109,10 +109,10 @@ End
 
 #Damage
 Description
-$G����$N���ľԦӵL�k���ˡM$n�ߤ����`����M�N���Y�¤ѪŨço�ۡM�H�Y$b�j�a$G����
-�㸹�M$B�g�p$G�����v���M$B�l��$G�����@�T�M�⤤��M�_�_$P���V$G�M�l���U����ءM
-���O���Ӯ��̥i�Ȫ��@�ۡu$R���U�ɹp�x��$G�v�M�ƥH�U�p�����Y���b$N���W�M����$N
-�F�H�դ��}��C$Z~
+$G面對$N的奮戰而無法擊倒﹐$n心中異常忿怒﹐將拳頭朝天空並吶喊﹐隨即$b大地$G為之
+怒號﹐$B狂雷$G互相競走﹐$B勁風$G鼓鼓作響﹐手中突然冒起$P紫燄$G﹐吸收萬物精華﹐
+正是邪皇拳最可怕的一招「$R億萬暴雷漩渦$G」﹐數以萬計的拳頭打在$N身上﹐不把$N
+轟碎勢不罷休。$Z~
 Chance          10
 Value           20
 Parry           0

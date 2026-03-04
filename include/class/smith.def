@@ -1,10 +1,10 @@
 Vnum            CLASS_SMITH
 Name            smith~
-Cname           Å±¼C®v~
-Title           ¿i¼C«ë¤£§Q~
+Cname           é‘„åŠå¸«~
+Title           ç£¨åŠæ¨ä¸åˆ©~
 LowerLimit      50
 UpperLimit      L_HER
-LimitMsg        $Y$n»¡¹D¡G¡uÅı§A¬İ¬İ§Úªº·À¤H¤¿¾¹¡MÅı§Aª¾¹D·S§Úªº¤U³õ¡T¡v$Z~
+LimitMsg        $Y$nèªªé“ï¼šã€Œè®“ä½ çœ‹çœ‹æˆ‘çš„æ»…äººå‡¶å™¨ï¹è®“ä½ çŸ¥é“æƒ¹æˆ‘çš„ä¸‹å ´ï¹—ã€$Z~
 Limit           3500
 Multiplier      30
 RebirthGold     10000

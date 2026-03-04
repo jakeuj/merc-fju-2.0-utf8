@@ -1,10 +1,10 @@
 Vnum            542
 Name            small knife~
-ShortDesc       ¤pÅK¤M~
+ShortDesc       å°éµåˆ€~
 Description
-¤@§â¾W§Qªº¤pÅK¤M(small knife) ¡M¾A¦X¤O®ğ¤pªº¤H¨Ï¥Î¡C
+ä¸€æŠŠé‹’åˆ©çš„å°éµåˆ€(small knife) ï¹é©åˆåŠ›æ°£å°çš„äººä½¿ç”¨ã€‚
 ~
-Unit            §â~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

@@ -1,7 +1,7 @@
 Name            shield~
-Cname           Å@¬Þ³N~
+Cname           è­·ç›¾è¡“~
 Slot            SLOT_SHIELD
-Msgoff          ¦b§A¨­«eªºÅ@¬Þ®ø¥¢¤F¡T~
+Msgoff          åœ¨ä½ èº«å‰çš„è­·ç›¾æ¶ˆå¤±äº†ï¹—~
 Function        cast_shield~
 Check           check_unrigid_attack~
 Position        POS_STANDING
@@ -31,10 +31,10 @@ Limit           CLASS_DOCTOR     1  70
 Limit           CLASS_BARD       1  95
 
 Help
-Å@¬Þ³N:
+è­·ç›¾è¡“:
 
-§Q¥Î­·ªº±j¤j¤O¶q¡M¦b§Aªº¨­«e§Î¦¨¤@­ÓÅ@¬Þ¡MÅý§Aªº«OÅ@§ó¥[ªº©P
-©µ¡M¤@¯ëªºª«²z¶Ë®`³£·|¤ñ¸û¨S¦³¥Î¡C
+åˆ©ç”¨é¢¨çš„å¼·å¤§åŠ›é‡ï¹åœ¨ä½ çš„èº«å‰å½¢æˆä¸€å€‹è­·ç›¾ï¹è®“ä½ çš„ä¿è­·æ›´åŠ çš„å‘¨
+å»¶ï¹ä¸€èˆ¬çš„ç‰©ç†å‚·å®³éƒ½æœƒæ¯”è¼ƒæ²’æœ‰ç”¨ã€‚
 
 ~
 End

@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -46,7 +46,7 @@ static  OBJ_DATA *      rgObjNest       [MAX_NEST];
 #define DEPOSIT_OBJ     2
 #define SAVE_CORPSE     3
 
-/* °Ï°ì¨ç¼Æ */
+/* å€åŸŸå‡½æ•¸ */
 void    fwrite_char     args( ( CHAR_DATA *, FILE * ) );
 void    fwrite_obj      args( ( CHAR_DATA *, OBJ_DATA *, FILE *, int , int ) );
 bool    fread_char      args( ( CHAR_DATA *, FILE_DATA * ) );
@@ -78,7 +78,7 @@ void create_dir( const char * name )
 
   if ( !name || !*name )
   {
-    mudlog( LOG_DEBUG, "create_name: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "create_name: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -88,13 +88,13 @@ void create_dir( const char * name )
   if ( stat( pathname, &file_stat ) != 0 )
   {
     if ( mkdir( pathname, S_IRWXU | S_IRWXG ) != 0 )
-      mudlog( LOG_DEBUG, "create_dir: µLªk«Ø¥ß¥Ø¿ı %s.", name );
+      mudlog( LOG_DEBUG, "create_dir: ç„¡æ³•å»ºç«‹ç›®éŒ„ %s.", name );
 
     RETURN_NULL();
   }
 
   if ( !S_ISDIR( file_stat.st_mode ) )
-    mudlog( LOG_DEBUG, "create_dir: %s ¤w¸g«Ø¥ß, ¦ı¤£¬O¥Ø¿ı.", name );
+    mudlog( LOG_DEBUG, "create_dir: %s å·²ç¶“å»ºç«‹, ä½†ä¸æ˜¯ç›®éŒ„.", name );
 
   RETURN_NULL();
 }
@@ -107,7 +107,7 @@ char * file_name( const char * name, int type )
 
   if ( !name || !*name )
   {
-    mudlog( LOG_DEBUG, "file_name: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "file_name: ä¾†æºä¸æ­£ç¢º." );
     filename[0] = '\x0';
     RETURN( filename );
   }
@@ -116,7 +116,7 @@ char * file_name( const char * name, int type )
   {
   default :
     filename[0] = '\x0';
-    mudlog( LOG_DEBUG, "file_name: ¿ù»~ªº¼Ò¦¡ %d.", type );
+    mudlog( LOG_DEBUG, "file_name: éŒ¯èª¤çš„æ¨¡å¼ %d.", type );
     break;
 
   case SAVE_FILE:
@@ -158,7 +158,7 @@ void save_char_obj( CHAR_DATA * ch , int type )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "save_char_obj: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "save_char_obj: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -174,7 +174,7 @@ void save_char_obj( CHAR_DATA * ch , int type )
 
   if ( !( pFile = FOPEN( strsave, "w" ) ) )
   {
-    mudlog( LOG_DEBUG , "Save_char_obj: ¶}±ÒÀÉ®× %s ¿ù»~.", ch->name );
+    mudlog( LOG_DEBUG , "Save_char_obj: é–‹å•Ÿæª”æ¡ˆ %s éŒ¯èª¤.", ch->name );
   }
 
   else
@@ -185,10 +185,10 @@ void save_char_obj( CHAR_DATA * ch , int type )
     fprintf( pFile , "#END\n" );
     FCLOSE( pFile );
 
-    /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+    /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
     set_file_mode( strsave );
 
-    /* Åª¨úÀÉ®×¤j¤p */
+    /* è®€å–æª”æ¡ˆå¤§å° */
     char_filesize( ch );
 
     save_basic_file( ch );
@@ -221,9 +221,9 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
     , save_room( ( ch->in_room == RoomLimbo && ch->was_in_room )
       ? ch->was_in_room : ch->in_room ) );
 
-  /* ­Y¤£¥¿±`Â_½u */
+  /* è‹¥ä¸æ­£å¸¸æ–·ç·š */
   fprint_string( fp, "LastHost"
-    , ( ch->desc ) ? ch->desc->host : "¤£¥¿±`Â_½u" );
+    , ( ch->desc ) ? ch->desc->host : "ä¸æ­£å¸¸æ–·ç·š" );
 
   fprint_string( fp, "ShortDescr" , ch->byname      );
   fprint_string( fp, "LongDescr"  , ch->long_descr  );
@@ -279,7 +279,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
   fprint_number( fp, "Trust"      , ch->trust              );
   fprint_number( fp, "Adviser"    , ch->adviser            );
 
-  /* ¬ö¿ı°lÂÜ¸ô®| */
+  /* ç´€éŒ„è¿½è¹¤è·¯å¾‘ */
   for ( loop = 0; loop < MAX_TRACE; loop++ )
   {
     if ( !( pTrace = ch->pcdata->map[loop] ) ) continue;
@@ -344,7 +344,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
   fprint_number( fp, "Wimpy"      , ch->wimpy           );
   fprint_number( fp, "Deaf"       , ch->deaf            );
 
-  /* ±N­×¹¢­ÈÂk¹s */
+  /* å°‡ä¿®é£¾å€¼æ­¸é›¶ */
   if ( ch->pcdata )
   {
     ch->pcdata->mod_str = 0;
@@ -365,7 +365,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
   fprint_number( fp, "Con"        , ch->now_con         );
   fprint_number( fp, "ConMod"     , ch->pcdata->mod_con );
 
-  /* ¦A­«·s­pºâ */
+  /* å†é‡æ–°è¨ˆç®— */
   affect_recount( ch );
 
   fprint_number( fp, "Drunk"      , ch->pcdata->condition[0] );
@@ -375,7 +375,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
   fprint_number( fp, "Angel"      , ch->pcdata->angel_set);
   fprint_number( fp, "NSkill"     , ch->nskill          );
 
-  /* °O¿ı¶Ç°eÂI */
+  /* è¨˜éŒ„å‚³é€é» */
   if ( ch->pcdata )
   {
     fprintf( fp, str_space( "Recall" , BLANK_LENGTH ) );
@@ -445,7 +445,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
 
   if ( ch->pcdata )
   {
-    /* §âªÑ²¼¼g¤Jª±®aÀÉ®× */
+    /* æŠŠè‚¡ç¥¨å¯«å…¥ç©å®¶æª”æ¡ˆ */
     for ( sn = 0; sn < MAX_STOCK; sn++ )
     {
       if ( ch->pcdata->stock[sn] > 0 && stock_data[sn].name )
@@ -456,7 +456,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
       }
     }
 
-    /* §âª©­±Åª¨ú°O¿ı¼g¨ìÀÉ®× */
+    /* æŠŠç‰ˆé¢è®€å–è¨˜éŒ„å¯«åˆ°æª”æ¡ˆ */
     for ( sn = 0; sn < max_board; sn++ )
     {
       if ( ch->pcdata->board[sn] > 0 && board_lookup( sn ) )
@@ -471,7 +471,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
       fprint_number( fp, "AutoBackup", ch->pcdata->autobackup );
   }
 
-  /* §â§Ş¯à¼g¤Jª±®aªºÀÉ®×¤§¤¤ */
+  /* æŠŠæŠ€èƒ½å¯«å…¥ç©å®¶çš„æª”æ¡ˆä¹‹ä¸­ */
   for ( sn = 0; sn < MAX_SKILL; sn++ )
   {
     if ( ch->skill[sn] > 0 && ( ( pSkill = get_skill(sn) ) != NULL ) )
@@ -507,7 +507,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
   RETURN_NULL();
 }
 
-/* ¼g¤Jª««~ */
+/* å¯«å…¥ç‰©å“ */
 void fwrite_obj( CHAR_DATA * ch, OBJ_DATA * obj, FILE * fp
                 , int iNest, int type )
 {
@@ -556,7 +556,7 @@ void fwrite_obj( CHAR_DATA * ch, OBJ_DATA * obj, FILE * fp
   fprint_string( fp, "ShortDescr" , obj->cname            );
   fprint_string( fp, "Description", obj->description      );
 
-  str_cpy( Str1, symbol_string( TRUE, "ÅŞ¿è±`¼Æ" ) );
+  str_cpy( Str1, symbol_string( TRUE, "é‚è¼¯å¸¸æ•¸" ) );
 
   if ( obj->Takeable    ) fprintf( fp, "Takeable        %s\n", Str1 );
   if ( obj->Glow        ) fprintf( fp, "Glow            %s\n", Str1 );
@@ -594,7 +594,7 @@ void fwrite_obj( CHAR_DATA * ch, OBJ_DATA * obj, FILE * fp
     fprint_number( fp, "OwnerLow"  , obj->owner.low  );
   }
 
-  /* ¬O§_¦³¬r */
+  /* æ˜¯å¦æœ‰æ¯’ */
   if ( obj->venom > 0 ) fprint_number( fp, "Venom", obj->venom );
 
   if ( obj->max_armor > 0 )
@@ -645,10 +645,10 @@ int load_char_obj( DESCRIPTOR_DATA * d, char * name )
 
   PUSH_FUNCTION( "load_char_obj" );
 
-  /* °t¸m°O¾ĞÅé */
+  /* é…ç½®è¨˜æ†¶é«” */
   clear_char( ch = alloc_struct( STRUCT_CHAR_DATA ) );
 
-  /* °t¸m°O¾ĞÅé */
+  /* é…ç½®è¨˜æ†¶é«” */
   ch->pcdata = alloc_struct( STRUCT_PC_DATA );
 
   memset( ch->pcdata, 0, sizeof( PC_DATA ) );
@@ -715,7 +715,7 @@ int load_char_obj( DESCRIPTOR_DATA * d, char * name )
 
       if ( letter != '#' )
       {
-        mudlog( LOG_DEBUG , "Load_char_obj: ¥¼µo²{¨ì # ²Å¸¹ ." );
+        mudlog( LOG_DEBUG , "Load_char_obj: æœªç™¼ç¾åˆ° # ç¬¦è™Ÿ ." );
         f_close( aFile );
         RETURN( FILE_ERROR );
       }
@@ -752,7 +752,7 @@ int load_char_obj( DESCRIPTOR_DATA * d, char * name )
 
       else
       {
-        mudlog( LOG_DEBUG , "Load_char_obj: ª±®aÀÉ®×¤£¥¿½Tªº«¬ºA." );
+        mudlog( LOG_DEBUG , "Load_char_obj: ç©å®¶æª”æ¡ˆä¸æ­£ç¢ºçš„å‹æ…‹." );
         f_close( aFile );
         RETURN( FILE_ERROR );
       }
@@ -760,7 +760,7 @@ int load_char_obj( DESCRIPTOR_DATA * d, char * name )
 
     f_close( aFile );
 
-    /* Åª¨úÀÉ®×¤j¤p */
+    /* è®€å–æª”æ¡ˆå¤§å° */
     char_filesize( ch );
   }
 
@@ -789,7 +789,7 @@ void fwrite_failcode( CHAR_DATA * ch, const char * address )
 
   if ( !ch || IS_NPC( ch ) || !address || !*address )
   {
-    mudlog( LOG_DEBUG, "fwrite_failcode: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "fwrite_failcode: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -804,13 +804,13 @@ void fwrite_failcode( CHAR_DATA * ch, const char * address )
 
     FCLOSE( pFile );
 
-    /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+    /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
     set_file_mode( failcode );
   }
 
   else
   {
-    mudlog( LOG_DEBUG, "fwrite_failcode: µLªk¼g¤J¿ù»~±K½X°O¿ıÀÉ%s.", failcode );
+    mudlog( LOG_DEBUG, "fwrite_failcode: ç„¡æ³•å¯«å…¥éŒ¯èª¤å¯†ç¢¼è¨˜éŒ„æª”%s.", failcode );
   }
   RETURN_NULL();
 }
@@ -924,7 +924,7 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
 
         if ( ( pSkill = skill_isname( name ) ) )
         {
-          /* °t¸m°O¾ĞÅé */
+          /* é…ç½®è¨˜æ†¶é«” */
           pAffect = alloc_struct( STRUCT_AFFECT_DATA );
 
           pAffect->type      = pSkill->slot;
@@ -1034,7 +1034,7 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
 
         if ( !( pClass = is_class( ( pName = fread_string( fp ) ), TRUE ) ) )
         {
-          mudlog( LOG_DEBUG , "%s ªºÂ¾·~ %s ±q¯Ê.", ch->name , pName );
+          mudlog( LOG_DEBUG , "%s çš„è·æ¥­ %s å¾ç¼º.", ch->name , pName );
           pClass  = class_demos;
         }
 
@@ -1099,14 +1099,14 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
       {
         SKILL_DATA * pSkill;
 
-        /* ¦pªG§Ş¯à¤w¸g¤£¦s¦b */
+        /* å¦‚æœæŠ€èƒ½å·²ç¶“ä¸å­˜åœ¨ */
         if ( !( pSkill = skill_isname( fread_word( fp ) ) ) )
         {
           fMatch = TRUE;
           break;
         }
 
-        /* ¦pªG­«½Æ */
+        /* å¦‚æœé‡è¤‡ */
         if ( ( enable_repeat( ch->enable , pSkill ) ) )
         {
           fMatch = TRUE;
@@ -1234,7 +1234,7 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
 
         if ( ( pSkill = skill_isname( fread_word( fp ) ) ) == NULL )
         {
-          mudlog( LOG_DEBUG , "Fread_char: ¥¼ª¾ªº§Ş¯à." );
+          mudlog( LOG_DEBUG , "Fread_char: æœªçŸ¥çš„æŠ€èƒ½." );
         }
         else
         {
@@ -1336,7 +1336,7 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
         char * mark;
 
         if ( quest_lookup( mark = fread_string( fp ) ) ) set_quest( ch, mark );
-        else          mudlog( LOG_DEBUG , "Fread_char: ¥¼ª¾ªº¸ÑÁ¼ %s.", mark );
+        else          mudlog( LOG_DEBUG , "Fread_char: æœªçŸ¥çš„è§£è¬ %s.", mark );
 
         fMatch = TRUE;
         break;
@@ -1371,7 +1371,7 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
       {
         if ( !( ch->in_room = get_room_index( fread_number( fp ) ) ) )
         {
-          send_to_char( "§ä¤£¨ì§A­ì¨Óªº©Ğ¶¡¡M¥u¦n§â§A¶Ç°e¨ì°_©lÂI¡T\n\r" , ch );
+          send_to_char( "æ‰¾ä¸åˆ°ä½ åŸä¾†çš„æˆ¿é–“ï¹åªå¥½æŠŠä½ å‚³é€åˆ°èµ·å§‹é»ï¹—\n\r" , ch );
           ch->in_room = get_hometown( ch );
         }
 
@@ -1409,7 +1409,7 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
         gold   = fread_number( fp );
 
         if ( sn < 0 || sn >= MAX_STOCK || !stock_data[sn].name )
-          mudlog( LOG_DEBUG, "fread_char: ¥¼ª¾ªºªÑ²¼¼Æ­È %d.", sn );
+          mudlog( LOG_DEBUG, "fread_char: æœªçŸ¥çš„è‚¡ç¥¨æ•¸å€¼ %d.", sn );
 
         ch->pcdata->stock[sn] = UMIN( max_stock_buy, UMAX( 0, number ) );
 
@@ -1465,13 +1465,13 @@ bool fread_char( CHAR_DATA * ch, FILE_DATA * fp )
 
     if ( ReadNumberError )
     {
-      mudlog( LOG_DEBUG, "Fread_char: «¬ºA%s¼Æ¦rÅª¨ú¿ù»~.", word );
+      mudlog( LOG_DEBUG, "Fread_char: å‹æ…‹%sæ•¸å­—è®€å–éŒ¯èª¤.", word );
       RETURN( FALSE );
     }
 
     if ( !fMatch )
     {
-      mudlog( LOG_DEBUG , "Fread_char: §ä¤£¨ì¥¿½Tªº«¬ºA %s.", word );
+      mudlog( LOG_DEBUG , "Fread_char: æ‰¾ä¸åˆ°æ­£ç¢ºçš„å‹æ…‹ %s.", word );
       RETURN( FALSE );
     }
   }
@@ -1490,10 +1490,10 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
 
   PUSH_FUNCTION( "fread_obj" );
 
-  /* °t¸m°O¾ĞÅé */
+  /* é…ç½®è¨˜æ†¶é«” */
   obj = alloc_struct( STRUCT_OBJ_DATA );
 
-  /* ³]©w¹w³]­È */
+  /* è¨­å®šé è¨­å€¼ */
   obj->name        = str_dup( "" );
   obj->cname       = str_dup( "" );
   obj->description = str_dup( "" );
@@ -1530,7 +1530,7 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
 
         if ( ( pSkill = skill_isname( name ) ) )
         {
-          /* °t¸m°O¾ĞÅé */
+          /* é…ç½®è¨˜æ†¶é«” */
           pAffect = alloc_struct( STRUCT_AFFECT_DATA );
 
           pAffect->type      = pSkill->slot;
@@ -1608,7 +1608,7 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
       {
         EXTRA_DESCR_DATA * ed;
 
-        /* °t¸m°O¾ĞÅé */
+        /* é…ç½®è¨˜æ†¶é«” */
         ed = alloc_struct( STRUCT_EXTRA_DESCR_DATA );
 
         ed->keyword      = fread_string( fp );
@@ -1622,19 +1622,19 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
       {
         if ( !fNest || !fVnum )
         {
-          mudlog( LOG_DEBUG , "Fread_obj: ª««~¸ê®Æ¤£§¹¥ş." );
+          mudlog( LOG_DEBUG , "Fread_obj: ç‰©å“è³‡æ–™ä¸å®Œå…¨." );
           free_string( obj->name        );
           free_string( obj->description );
           free_string( obj->cname       );
 
-          /* ÄÀ©ñµ²ºc°O¾ĞÅé */
+          /* é‡‹æ”¾çµæ§‹è¨˜æ†¶é«” */
           free_struct( obj , STRUCT_OBJ_DATA );
           RETURN( FALSE );
         }
 
         obj->pIndexData->count++;
 
-        /* ª««~³æ¦ì */
+        /* ç‰©å“å–®ä½ */
         obj->unit = ( obj->pIndexData && obj->pIndexData->unit )
                   ? obj->pIndexData->unit : DefaultUnit;
 
@@ -1660,7 +1660,7 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
           break;
         }
 
-        /* ­×¥¿¼Æ­È 4.24 1999 */
+        /* ä¿®æ­£æ•¸å€¼ 4.24 1999 */
         switch( obj->item_type )
         {
         case ITEM_WEAPON:
@@ -1673,7 +1673,7 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
           break;
         }
 
-        /* ¦pªG¬O¨¾¨ãÃşªº */
+        /* å¦‚æœæ˜¯é˜²å…·é¡çš„ */
         if ( is_armor( obj ) && obj->max_armor <= 0 )
         {
           obj->max_armor = obj->level * 100;
@@ -1721,7 +1721,7 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
         iNest = fread_number( fp );
         if ( iNest < 0 || iNest >= MAX_NEST )
         {
-          mudlog( LOG_DEBUG , "Fread_obj: ¿ù»~ªº±_ª¬ %d.", iNest );
+          mudlog( LOG_DEBUG , "Fread_obj: éŒ¯èª¤çš„å·¢ç‹€ %d.", iNest );
         }
         else
         {
@@ -1756,12 +1756,12 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
 
         if ( !( pSkill = skill_isname( SkillName ) ) )
         {
-          mudlog( LOG_DEBUG , "Fread_obj: ¥¼ª¾ªº§Ş¯à %s.", SkillName );
+          mudlog( LOG_DEBUG , "Fread_obj: æœªçŸ¥çš„æŠ€èƒ½ %s.", SkillName );
         }
 
         else if ( iValue < 0 || iValue > 3 )
         {
-          mudlog( LOG_DEBUG , "Fread_obj: ¿ù»~ªº¼Æ­È %d.", iValue );
+          mudlog( LOG_DEBUG , "Fread_obj: éŒ¯èª¤çš„æ•¸å€¼ %d.", iValue );
         }
 
         else
@@ -1815,13 +1815,13 @@ bool fread_obj( CHAR_DATA * ch, FILE_DATA * fp , int type )
 
     if ( ReadNumberError )
     {
-      mudlog( LOG_DEBUG, "Fread_obj: «¬ºA %s ¼Æ¦rÅª¨ú¿ù»~.", word );
+      mudlog( LOG_DEBUG, "Fread_obj: å‹æ…‹ %s æ•¸å­—è®€å–éŒ¯èª¤.", word );
       RETURN( FALSE );
     }
 
     if ( !fMatch )
     {
-      mudlog( LOG_DEBUG , "Fread_obj: ª««~«¬ºA %s ¤£¥¿½T.", word );
+      mudlog( LOG_DEBUG , "Fread_obj: ç‰©å“å‹æ…‹ %s ä¸æ­£ç¢º.", word );
       RETURN( FALSE );
     }
   }
@@ -1864,7 +1864,7 @@ bool fread_failcode( CHAR_DATA * ch, FILE_DATA * pFile )
         pFailCode->address = fread_string( pFile );
         pFailCode->timer   = fread_number( pFile );
 
-        /* ¤@©wÅª§¹¤@¦æ */
+        /* ä¸€å®šè®€å®Œä¸€è¡Œ */
         fread_to_eol( pFile );
 
         pFailCode->next = ch->failcode;
@@ -1879,13 +1879,13 @@ bool fread_failcode( CHAR_DATA * ch, FILE_DATA * pFile )
 
     if ( ReadNumberError )
     {
-      mudlog( LOG_DEBUG, "Fread_failcode: «¬ºA %s ¼Æ¦rÅª¨ú¿ù»~.", word );
+      mudlog( LOG_DEBUG, "Fread_failcode: å‹æ…‹ %s æ•¸å­—è®€å–éŒ¯èª¤.", word );
       RETURN( FALSE );
     }
 
     if ( !fMatch )
     {
-      mudlog( LOG_DEBUG , "fread_failcode: §ä¤£¨ì¥¿½Tªº«¬ºA %s.", word );
+      mudlog( LOG_DEBUG , "fread_failcode: æ‰¾ä¸åˆ°æ­£ç¢ºçš„å‹æ…‹ %s.", word );
       RETURN( FALSE );
     }
   }
@@ -1906,7 +1906,7 @@ void check_null_object( CHAR_DATA * ch )
     {
       found = TRUE;
 
-      act( "$1§Aªºª««~$2$p$1§ä¤£¨ì¯Á¤Ş¡M©Ò¥H¨t²Î¦Û°Ê±N¥¦·l·´¡T$0"
+      act( "$1ä½ çš„ç‰©å“$2$p$1æ‰¾ä¸åˆ°ç´¢å¼•ï¹æ‰€ä»¥ç³»çµ±è‡ªå‹•å°‡å®ƒææ¯€ï¹—$0"
         , ch, obj, NULL, TO_CHAR );
 
       extract_obj( obj );
@@ -1917,7 +1917,7 @@ void check_null_object( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* ¦^¦sÀ°¬£¸ê®Æ */
+/* å›å­˜å¹«æ´¾è³‡æ–™ */
 void save_club( void )
 {
   CLUB_DATA * pClub;
@@ -1929,7 +1929,7 @@ void save_club( void )
 
   if ( !( pFile = FOPEN( club_file, "w" ) ) )
   {
-    mudlog( LOG_DEBUG , "Save_club: ¶}±ÒÀ°¬£ÀÉ®× %s ¿ù»~.", club_file );
+    mudlog( LOG_DEBUG , "Save_club: é–‹å•Ÿå¹«æ´¾æª”æ¡ˆ %s éŒ¯èª¤.", club_file );
     RETURN_NULL();
   }
 
@@ -1937,7 +1937,7 @@ void save_club( void )
   {
     if ( !pClub->master ) continue;
 
-    /* ­Y¬O¤£¬O²Ä¤@­Ó */
+    /* è‹¥æ˜¯ä¸æ˜¯ç¬¬ä¸€å€‹ */
     if ( !bStart ) fprintf( pFile, "\n" );
     bStart = FALSE;
 
@@ -1977,7 +1977,7 @@ void save_club( void )
 
   FCLOSE( pFile );
 
-  /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+  /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
   set_file_mode( club_file );
 
   RETURN_NULL();
@@ -2015,18 +2015,18 @@ void set_file_mode( const char * name )
 {
   PUSH_FUNCTION( "set_file_mode" );
 
-  /* ­Y¬O¤£¶}±Ò */
+  /* è‹¥æ˜¯ä¸é–‹å•Ÿ */
   if ( !SetFileMode ) RETURN_NULL();
 
   if ( !name || !*name )
   {
-    mudlog( LOG_DEBUG, "set_file_mode: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "set_file_mode: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
   if ( chmod( name, FileMode ) != 0 )
   {
-    mudlog( LOG_DEBUG, "set_file_mode: ³]©wÀÉ®× %s ¼Ò¦¡¿ù»~.", name );
+    mudlog( LOG_DEBUG, "set_file_mode: è¨­å®šæª”æ¡ˆ %s æ¨¡å¼éŒ¯èª¤.", name );
     RETURN_NULL();
   }
 
@@ -2039,15 +2039,15 @@ FUNCTION( do_filestat )
 
   if ( !SetFileMode )
   {
-    send_to_char( "¥Ø«e¨t²Î§ó§ï¼Ò¦¡¤£¶}±Ò¡T\n\r", ch );
+    send_to_char( "ç›®å‰ç³»çµ±æ›´æ”¹æ¨¡å¼ä¸é–‹å•Ÿï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   print_to_char( ch,
-    "¥Ø«e%sªºÀÉ®×¦s¤J¼Ò¦¡¬O¡R\n\r"
-    "¨Ï¥ÎªÌ ¥iÅª¡R%s ¥i¼g¡R%s ¥i°õ¦æ¡R%s\n\r"
-    "¦P±Ú¸s ¥iÅª¡R%s ¥i¼g¡R%s ¥i°õ¦æ¡R%s\n\r"
-    "¨ä¥LªÌ ¥iÅª¡R%s ¥i¼g¡R%s ¥i°õ¦æ¡R%s\n\r"
+    "ç›®å‰%sçš„æª”æ¡ˆå­˜å…¥æ¨¡å¼æ˜¯ï¹•\n\r"
+    "ä½¿ç”¨è€… å¯è®€ï¹•%s å¯å¯«ï¹•%s å¯åŸ·è¡Œï¹•%s\n\r"
+    "åŒæ—ç¾¤ å¯è®€ï¹•%s å¯å¯«ï¹•%s å¯åŸ·è¡Œï¹•%s\n\r"
+    "å…¶ä»–è€… å¯è®€ï¹•%s å¯å¯«ï¹•%s å¯åŸ·è¡Œï¹•%s\n\r"
     , mud_name
     , YESNO( FileMode & S_IRUSR )
     , YESNO( FileMode & S_IWUSR )
@@ -2075,7 +2075,7 @@ void char_filesize( CHAR_DATA * ch )
 
   if ( stat( strsave, &sData ) != 0 )
   {
-    mudlog( LOG_DEBUG, "char_filesize: Åª¨úÀÉ®× %s ¿ù»~.", strsave );
+    mudlog( LOG_DEBUG, "char_filesize: è®€å–æª”æ¡ˆ %s éŒ¯èª¤.", strsave );
     RETURN_NULL();
   }
 
@@ -2089,7 +2089,7 @@ bool excess_filequota( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "excess_filequota: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "excess_filequota: ä¾†æºä¸æ­£ç¢º." );
     RETURN( TRUE );
   }
 
@@ -2141,7 +2141,7 @@ void save_basic_file( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "save_basic_file: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "save_basic_file: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -2151,7 +2151,7 @@ void save_basic_file( CHAR_DATA * ch )
 
   if ( !( pFile = FOPEN( strsave, "w" ) ) )
   {
-    mudlog( LOG_DEBUG , "Save_basic_obj: ¶}±ÒÀÉ®× %s ¿ù»~.", ch->name );
+    mudlog( LOG_DEBUG , "Save_basic_obj: é–‹å•Ÿæª”æ¡ˆ %s éŒ¯èª¤.", ch->name );
   }
 
   else
@@ -2160,7 +2160,7 @@ void save_basic_file( CHAR_DATA * ch )
     fprintf( pFile, "Cname           %s\n", ch->cname );
     fprintf( pFile, "Email           %s\n", ch->email );
     fprintf( pFile, "LastHost        %s\n"
-      , ( ch->desc ) ? ch->desc->host : "¤£¥¿±`Â_½u" );
+      , ( ch->desc ) ? ch->desc->host : "ä¸æ­£å¸¸æ–·ç·š" );
 
     fprintf( pFile, "Level           %d\n", ch->level );
     fprintf( pFile, "Sex             %d\n", ch->sex   );
@@ -2199,7 +2199,7 @@ void player_log( CHAR_DATA * ch, const char * string )
 
   if ( !ch || !string )
   {
-    mudlog( LOG_DEBUG, "player_log: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "player_log: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 

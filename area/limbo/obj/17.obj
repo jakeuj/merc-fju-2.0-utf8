@@ -1,9 +1,9 @@
 Vnum            17
 Name            light~
-ShortDesc       ¯«¸tª÷¥ú~
+ShortDesc       ç¥è–é‡‘å…‰~
 Description
-¤@°é¤Ñ¯«¯S¦³ªº¯«¸t¥úÀô(light)¡C~
-Unit            ­Ó~
+ä¸€åœˆå¤©ç¥ç‰¹æœ‰çš„ç¥è–å…‰ç’°(light)ã€‚~
+Unit            å€‹~
 ItemType        ITEM_LIGHT
 WearLoc         ITEM_WEAR_LIGHT
 Takeable        Yes

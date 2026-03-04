@@ -1,9 +1,9 @@
 Vnum            254
 Name            dream blade book~
-ShortDesc       ¬Û«ä¸H¹Ú¤Mªk¯µÓD~
+ShortDesc       ç›¸æ€ç¢å¤¢åˆ€æ³•ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

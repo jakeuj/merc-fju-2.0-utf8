@@ -1,10 +1,10 @@
 Vnum            575
 Name            poison dog~
-ShortDesc       ¤¤¬rªº¯Tª¯~
-LongDesc        ¤¤¬rªº¯Tª¯(poison dog)
+ShortDesc       ä¸­æ¯’çš„ç‹¼ç‹—~
+LongDesc        ä¸­æ¯’çš„ç‹¼ç‹—(poison dog)
 ~
 Description
-¥L¤¤¬r¤£²L¡M¥i¯à¬O¦Y¨ì¤£¸Ó¦YªºªF¦è¡M¬Ý§A¬O¤£¬O¯à±Ï¥¦¡T
+ä»–ä¸­æ¯’ä¸æ·ºï¹å¯èƒ½æ˜¯åƒåˆ°ä¸è©²åƒçš„æ±è¥¿ï¹çœ‹ä½ æ˜¯ä¸æ˜¯èƒ½æ•‘å®ƒï¹—
 ~
 AutoSetValue    Yes
 StayArea        Yes

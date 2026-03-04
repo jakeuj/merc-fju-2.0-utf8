@@ -1,5 +1,5 @@
 Name            universe~
-Cname           ���Ѱ��[�\~
+Cname           先天乾坤功~
 Slot            SLOT_UNIVERSE
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -32,7 +32,7 @@ Help            ~
 
 #Damage
 Description
-$n�ϥX$P���[�Ĥ@��$Y�y���[�L�w�L�q�z$Z�M�𾮩�x�M�w�w���X�M���V$N�C~
+$n使出$P乾坤第一絕$Y『乾坤無定無量』$Z﹐氣凝於掌﹐緩緩推出﹐擊向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -41,7 +41,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�j�ܤ@�n�M�ϥX$P���[�ĤG��$Y�y�_��ʨ��z$Z�M�L���n�i�Ƭ���l�M���V$N�C~
+$n大喝一聲﹐使出$P乾坤第二絕$Y『震驚百里』$Z﹐無形聲波化為實勁﹐擊向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -50,8 +50,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��e���u�M��׫짻�M�ϥX$P���[�ĤT��$Y�y�Ѥ��R��z$Z�M�Ƥs�ˮ����x�l�M���V
-$N�C~
+$n氣貫雙臂﹐氣度恢宏﹐使出$P乾坤第三絕$Y『天火燎原』$Z﹐排山倒海的掌勁﹐擊向
+$N。~
 Chance          20
 Value           20
 Parry           0
@@ -60,8 +60,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�𾮩�W�M�ϥX$P���[�ĥ|��$Y�y�ѹD�`���z$Z�M$N�u��V�|��ɮg�M���x���X�M��
-�V$N�C~
+$n氣凝於淵﹐使出$P乾坤第四絕$Y『天道循環』$Z﹐$N真氣向四方暴射﹐雙掌推出﹐擊
+向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -70,7 +70,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$P���[�Ĥ���$Y�y�p�ʤE�ѡz$Z�M���x�W���M�@�ѱj�j��lŧ�V$N�C~
+$n使出$P乾坤第五絕$Y『雷動九天』$Z﹐雙掌上提﹐一股強大氣勁襲向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -79,7 +79,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$P���[�Ĥ���$Y�y�f�మ�[�z$Z�M�@�n���S�M�j�j���u��ŧ$N�C~
+$n使出$P乾坤第六絕$Y『逆轉乾坤』$Z﹐一聲長嘯﹐強大的真氣襲$N。~
 Chance          20
 Value           20
 Parry           0
@@ -88,7 +88,7 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�a���@�D�M�ϥX���Ѱ��[�\�����q�M���Y�p�d�x�U����a���V$N$Z�C~
+$W$n縱身一躍﹐使出先天乾坤功之奧義﹐拳頭如千軍萬馬般地擊向$N$Z。~
 Chance          20
 Value           20
 Parry           0

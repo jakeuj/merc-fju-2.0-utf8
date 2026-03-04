@@ -1,10 +1,10 @@
 Vnum            1
 Name            officer~
-ShortDesc       ����P�x~
-LongDesc        ����P�x(officer)���R�ۧP�x���M�J���ˬd�A���ͦ�ï
+ShortDesc       陰曹判官~
+LongDesc        陰曹判官(officer)揮舞著判官筆﹐仔細檢查你的生死簿
 ~
 Description
-�L�ݤF�ݧA���ͦ�ï�M���D: �p�l�M�A�����إ��ɡM���a�T
+他看了看你的生死簿﹐說道: 小子﹐你的陽壽未盡﹐走吧﹗
 ~
 Sentinel        Yes
 Alignment       0
@@ -31,7 +31,7 @@ Type            fight_prog
 Chance          100
 Text
 if rand(30)
-  say ����a���Ӽ����M�p�l�A�����F�T
+  say 敢到地獄來撒野﹐小子你活膩了﹗
   cast 'cast fire'
 endif
 ~

@@ -1,11 +1,11 @@
 Vnum            461
-Name            �ʧ@�ж� [social]~
+Name            動作房間 [social]~
 Description
-�o���ЫǬO�оɷs��̦p�󰵤@�ǰʧ@(social).
-�]�ǥѰʧ@�����O���C����[�H�ʤơM�]�Ԫ񪱮a�̤��������Y.
-���@�ǫܥi�R�άO�˱K���ʧ@����...
+這間教室是教導新手們如何做一些動作(social).
+也藉由動作的指令讓遊戲更加人性化﹐也拉近玩家們之間的關係.
+像一些很可愛或是親密的動作等等...
 
-�o�̦��@���i�ܵP (sign).
+這裡有一塊告示牌 (sign).
 
 ~
 SectorType      SECT_CITY
@@ -30,14 +30,14 @@ End
 Keyword         sign~
 Description
 
-��J social �i�H�ݨ�\�\�h�h���ʧ@���O.
-�o�ɧA�i�H��J���O�� �� ���a �Ǫ� ���o�ǰʧ@.
+鍵入 social 可以看到許許多多的動作指令.
+這時你可以鍵入指令對 神 玩家 怪物 做這些動作.
 ex:
-smile <���a>
+smile <玩家>
 
-�A�]�i�H�b�W�D�����ʧ@.
+你也可以在頻道中做動作.
 ex:
-chat* smile <���a>
+chat* smile <玩家>
 
 ~
 

@@ -1,5 +1,5 @@
 Name            make spring~
-Cname           �C�m�y���N~
+Cname           七彩造水術~
 Slot            SLOT_MAKE_SPRING
 Msgoff          ~
 Function        spell_make_spring~
@@ -31,11 +31,11 @@ Limit           CLASS_DOCTOR     1  65
 Limit           CLASS_BARD       1  90
 
 Help
-�C�m�y���N�R
+七彩造水術﹕
 
-�o�O�󰪯Ū��y���ޯ�M�Ѱ򥻪��y���N�ܤƦӨӡM���L�w�g���ݭn
-�ˤ����e���F�M�]���y�X�Ӫ����q�״I��Φ��@�Ӥp�������M�K�i�H
-�������ΡM�ܰ_�Ӥ��q�u���ٴλ��C
+這是更高級的造水技能﹐由基本的造水術變化而來﹐不過已經不需要
+裝水的容器了﹐因為造出來的水量豐富到形成一個小的池塘﹐便可以
+直接飲用﹐喝起來比礦泉水還棒說。
 
 ~
 End

@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -43,8 +43,8 @@
 #include <arpa/inet.h>
 #include "merc.h"
 
-/* Signal ³B²z. Apollo ¦b signal.h ¦³ __attribute(atomic) ªº°İÃD */
-/* ¦b³o­Ó¦a¤è¤£¦n³B²z */
+/* Signal è™•ç†. Apollo åœ¨ signal.h æœ‰ __attribute(atomic) çš„å•é¡Œ */
+/* åœ¨é€™å€‹åœ°æ–¹ä¸å¥½è™•ç† */
 
 #if defined(apollo)
 #define __attribute(x)
@@ -62,8 +62,8 @@ const   char    echo_off_str    [] = { IAC, WILL, TELOPT_ECHO, '\x0' };
 const   char    echo_on_str     [] = { IAC, WONT, TELOPT_ECHO, '\x0' };
 const   char    go_ahead_str    [] = { IAC, GA, '\x0' };
 
-/* ©M§@·~¨t²Î¦³Ãöªº«Å§i */
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* å’Œä½œæ¥­ç³»çµ±æœ‰é—œçš„å®£å‘Š */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if     defined(_AIX)
 #include <sys/select.h>
 int     accept          args( ( int, struct sockaddr *, int * ) );
@@ -76,14 +76,14 @@ int     setsockopt      args( ( int, int, int, void *, int ) );
 int     socket          args( ( int, int, int ) );
 #endif
 
-/* ©M§@·~¨t²Î¦³Ãöªº«Å§i, ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* å’Œä½œæ¥­ç³»çµ±æœ‰é—œçš„å®£å‘Š, é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 
 #if     defined(apollo)
 #include <unistd.h>
 #endif
 
-/* ©M§@·~¨t²Î¦³Ãöªº«Å§i */
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* å’Œä½œæ¥­ç³»çµ±æœ‰é—œçš„å®£å‘Š */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 
 #if     defined(__hpux)
 int     accept          args( ( int, void *, int * ) );
@@ -96,15 +96,15 @@ int     setsockopt      args( ( int, int, int, const void *, int ) );
 int     socket          args( ( int, int, int ) );
 #endif
 
-/* ©M§@·~¨t²Î¦³Ãöªº«Å§i */
-/* §Ú­Ì¨S¨Ï¥Î¨ì³o¸Ì */
+/* å’Œä½œæ¥­ç³»çµ±æœ‰é—œçš„å®£å‘Š */
+/* æˆ‘å€‘æ²’ä½¿ç”¨åˆ°é€™è£¡ */
 
 #if     defined(interactive)
 #include <net/errno.h>
 #include <sys/fcntl.h>
 #endif
 
-/* ©M§@·~¨t²Î¦³Ãöªº«Å§i */
+/* å’Œä½œæ¥­ç³»çµ±æœ‰é—œçš„å®£å‘Š */
 #if     defined(__linux__)
 /*
 int     accept          args( ( int, struct sockaddr *, int * ) );
@@ -121,7 +121,7 @@ int     write           args( ( int, char *, int ) );
 */
 #endif
 
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if     defined(macintosh)
 #include <console.h>
 #include <fcntl.h>
@@ -140,18 +140,18 @@ static  long                    theKeys [4];
 int     gettimeofday            args( ( struct timeval *, void * ) );
 #endif
 
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if     defined(MIPS_OS)
 extern  int             errno;
 #endif
 
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if     defined(MSDOS)
 int     gettimeofday    args( ( struct timeval *, void * ) );
 int     kbhit           args( ( void ) );
 #endif
 
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if     defined(NeXT)
 int     close           args( ( int ) );
 int     fcntl           args( ( int, int, int ) );
@@ -169,7 +169,7 @@ int     select          args( ( int, fd_set *, fd_set *, fd_set *, struct timeva
 int     write           args( ( int, char *, int ) );
 #endif
 
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if     defined(sequent)
 int     accept          args( ( int, struct sockaddr *, int * ) );
 int     bind            args( ( int, struct sockaddr *, int ) );
@@ -196,7 +196,7 @@ int     socket          args( ( int, int, int ) );
 int     write           args( ( int, char *, int ) );
 #endif
 
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if defined(sun)
 int     close           args( ( int ) );
 int     listen          args( ( int, int ) );
@@ -207,7 +207,7 @@ int     sigsetmask      args( ( int ) );
 void    (*signal        args( (int signum, void (*handler)(int))))(int);
 #endif
 
-/* ³o¸Ì¨S¦³¨Ï¥Î¨ì */
+/* é€™è£¡æ²’æœ‰ä½¿ç”¨åˆ° */
 #if defined(ultrix)
 int     accept          args( ( int, struct sockaddr *, int * ) );
 int     bind            args( ( int, struct sockaddr *, int ) );
@@ -223,37 +223,37 @@ int     socket          args( ( int, int, int ) );
 int     write           args( ( int, char *, int ) );
 #endif
 
-/* ¥ş°ìÅÜ¼Æ */
+/* å…¨åŸŸè®Šæ•¸ */
 DESCRIPTOR_DATA *   descriptor_list;         /* All open descriptors   */
-bool                merc_down;               /* ¨t²Î shutdown          */
-bool                merc_exec       = FALSE; /* ¬O§_ merc ¤w¸g°õ¦æ¤F   */
-bool                wizlock         = FALSE; /* ¹CÀ¸¬O§_³QÂê©w         */
+bool                merc_down;               /* ç³»çµ± shutdown          */
+bool                merc_exec       = FALSE; /* æ˜¯å¦ merc å·²ç¶“åŸ·è¡Œäº†   */
+bool                wizlock         = FALSE; /* éŠæˆ²æ˜¯å¦è¢«é–å®š         */
 bool                NewLock         = FALSE;
-bool                multilogin      = FALSE; /* ¬O§_¨¾¤î¦h­«³s½u       */
-bool                strict_password = FALSE; /* §óÄY®æªº±K½X           */
-bool                strict_email    = FALSE; /* §óÄY®æªº email- box    */
-bool                tick_permit     = TRUE;  /* ¬O§_¥i¥H¨Ï¥Î­p¼Æ¾¹     */
-bool                ChatRecord      = TRUE;  /* ¬O§_°O¿ı½Í¸Ü¾ú¥v       */
-int                 MudPort[MAX_PORT];       /* ©w¸q³Ì¦h¦³´X­Ó port    */
-int                 MudConnect[MAX_PORT];    /* ¨C­Ó³s±µ°ğªº³s½u¤H¼Æ   */
-int                 traceloop       = 0;     /* ¬O§_³´¤JµL½a¦^°éºÊ±±¾¹ */
-int                 max_stock_buy   = 0;     /* ¨CºØªÑ²¼³Ì¤j«ù¦³¼Æ     */
+bool                multilogin      = FALSE; /* æ˜¯å¦é˜²æ­¢å¤šé‡é€£ç·š       */
+bool                strict_password = FALSE; /* æ›´åš´æ ¼çš„å¯†ç¢¼           */
+bool                strict_email    = FALSE; /* æ›´åš´æ ¼çš„ email- box    */
+bool                tick_permit     = TRUE;  /* æ˜¯å¦å¯ä»¥ä½¿ç”¨è¨ˆæ•¸å™¨     */
+bool                ChatRecord      = TRUE;  /* æ˜¯å¦è¨˜éŒ„è«‡è©±æ­·å²       */
+int                 MudPort[MAX_PORT];       /* å®šç¾©æœ€å¤šæœ‰å¹¾å€‹ port    */
+int                 MudConnect[MAX_PORT];    /* æ¯å€‹é€£æ¥åŸ çš„é€£ç·šäººæ•¸   */
+int                 traceloop       = 0;     /* æ˜¯å¦é™·å…¥ç„¡çª®å›åœˆç›£æ§å™¨ */
+int                 max_stock_buy   = 0;     /* æ¯ç¨®è‚¡ç¥¨æœ€å¤§æŒæœ‰æ•¸     */
 int                 max_hire        = 3;
-int                 max_board       = MAX_BOARD; /* ¨t²Î³Ì¦h¥i¥H¦³´X­Óª©­± */
-int                 max_notes       = MAX_NOTES; /* ¨t²Î³Ì¦h¦³´X«Ê«H       */
-int                 Rechristen = MAX_RECHRISTEN; /* ¨C­Ó¤H³Ì¦h¥i¥H§ï¦W´X¦¸ */
-bool                first_warn      = TRUE;  /* ²Ä¤@¦¸­«·s¶}¾÷Äµ§i     */
-bool                second_warn     = TRUE;  /* ²Ä¤G¦¸­«·s¶}¾÷Äµ§i     */
-bool                third_warn      = TRUE;  /* ²Ä¤T¦¸­«·s¶}¾÷Äµ§i     */
-bool                AngelComing     = TRUE;  /* ¬O§_¦uÅ@¯«¥i¥H¨ì¨Ó     */
-bool                AutoBackup      = TRUE;  /* ¬O§_¦Û°Ê¨ú³Æ¥÷         */
-bool                CheckServer     = TRUE;  /* ¬O§_ÀË¬d¬O§_¬°¤u§@¯¸   */
-bool                GetFQDN         = TRUE;  /* ¬O§_¨ú±o FQDN          */
-bool                RecordFile      = FALSE; /* ¬O§_°O¿ı¶}ÀÉ°O¿ı       */
-int                 AngelTimes      = 1;     /* ¦uÅ@¯«¨C¬í¥u¨Ó¤@¦¸     */
-int                 AngelDefault    = 60;    /* ª±®a¦uÅ@¯«¶g´Á¹w³]­È   */
-int                 MaxConnect      = 0;     /* ³Ì¦h¤W½u¤H¼Æ           */
-int                 max_ip          = MAX_IP; /* ³Ì¦h­­¨î³s½u¦ì§}      */
+int                 max_board       = MAX_BOARD; /* ç³»çµ±æœ€å¤šå¯ä»¥æœ‰å¹¾å€‹ç‰ˆé¢ */
+int                 max_notes       = MAX_NOTES; /* ç³»çµ±æœ€å¤šæœ‰å¹¾å°ä¿¡       */
+int                 Rechristen = MAX_RECHRISTEN; /* æ¯å€‹äººæœ€å¤šå¯ä»¥æ”¹åå¹¾æ¬¡ */
+bool                first_warn      = TRUE;  /* ç¬¬ä¸€æ¬¡é‡æ–°é–‹æ©Ÿè­¦å‘Š     */
+bool                second_warn     = TRUE;  /* ç¬¬äºŒæ¬¡é‡æ–°é–‹æ©Ÿè­¦å‘Š     */
+bool                third_warn      = TRUE;  /* ç¬¬ä¸‰æ¬¡é‡æ–°é–‹æ©Ÿè­¦å‘Š     */
+bool                AngelComing     = TRUE;  /* æ˜¯å¦å®ˆè­·ç¥å¯ä»¥åˆ°ä¾†     */
+bool                AutoBackup      = TRUE;  /* æ˜¯å¦è‡ªå‹•å–å‚™ä»½         */
+bool                CheckServer     = TRUE;  /* æ˜¯å¦æª¢æŸ¥æ˜¯å¦ç‚ºå·¥ä½œç«™   */
+bool                GetFQDN         = TRUE;  /* æ˜¯å¦å–å¾— FQDN          */
+bool                RecordFile      = FALSE; /* æ˜¯å¦è¨˜éŒ„é–‹æª”è¨˜éŒ„       */
+int                 AngelTimes      = 1;     /* å®ˆè­·ç¥æ¯ç§’åªä¾†ä¸€æ¬¡     */
+int                 AngelDefault    = 60;    /* ç©å®¶å®ˆè­·ç¥é€±æœŸé è¨­å€¼   */
+int                 MaxConnect      = 0;     /* æœ€å¤šä¸Šç·šäººæ•¸           */
+int                 max_ip          = MAX_IP; /* æœ€å¤šé™åˆ¶é€£ç·šä½å€      */
 int                 Increase        = 5;
 int                 IncreaseLimit   = 300;
 int                 DepositMoney    = 1;
@@ -279,8 +279,8 @@ int                 BankThreshold   = MAX_ASSET / 4;
 int                 BankProfit      = BANK_PROFIT;
 int                 SacGold         = 3;
 
-time_t              current_time;            /* ¥Ø«eªº®É¶¡             */
-time_t              mud_boot_time;           /* ¨t²Î­«¸m®É¶¡           */
+time_t              current_time;            /* ç›®å‰çš„æ™‚é–“             */
+time_t              mud_boot_time;           /* ç³»çµ±é‡ç½®æ™‚é–“           */
 time_t              reboot_time   = ( time_t ) 0;
 time_t              shutdown_time = ( time_t ) 0;
 long                mud_boot_tick;
@@ -334,7 +334,7 @@ void    new_descriptor          args( ( int, int ) );
 bool    read_from_descriptor    args( ( DESCRIPTOR_DATA * ) );
 #endif
 
-/* ¨ä¥L©M§@·~¨t²ÎµLÃöªº°Ï°ìÅÜ¼Æ */
+/* å…¶ä»–å’Œä½œæ¥­ç³»çµ±ç„¡é—œçš„å€åŸŸè®Šæ•¸ */
 int     init_socket             args( ( int ) );
 bool    check_reconnect         args( ( DESCRIPTOR_DATA *, bool ) );
 bool    check_logon             args( ( char * ) );
@@ -366,8 +366,8 @@ static char inflect[] =
   '|' , '\\' , '-' , '/'
 };
 
-char * const he_she  [] = { "¥¦",   "¥L",   "¦o" };
-char * const his_her [] = { "¥¦ªº", "¥Lªº", "¦oªº" };
+char * const he_she  [] = { "å®ƒ",   "ä»–",   "å¥¹" };
+char * const his_her [] = { "å®ƒçš„", "ä»–çš„", "å¥¹çš„" };
 
 int    Control[MAX_PORT];
 int    Internal;
@@ -395,7 +395,7 @@ int main( int argc, char ** argv )
     if ( argv[pos][0] != '-' )
     {
       if ( str_len( argv[pos] ) > sizeof( filename ) )
-        mudlog( LOG_ERR, "main: °_©l¤ÆÀÉ®×¦WºÙ¹Lªø." );
+        mudlog( LOG_ERR, "main: èµ·å§‹åŒ–æª”æ¡ˆåç¨±éé•·." );
 
       str_cpy( filename, argv[pos] );
       break;
@@ -409,7 +409,7 @@ int main( int argc, char ** argv )
     if ( ( enviroment = getenv( "merc" ) ) )
     {
       if ( str_len( enviroment ) >= sizeof( filename ) -1 )
-        mudlog( LOG_ERR, "main: °_©l¤ÆÀÉ®×¦WºÙ¹Lªø." );
+        mudlog( LOG_ERR, "main: èµ·å§‹åŒ–æª”æ¡ˆåç¨±éé•·." );
 
       str_cpy( filename,  enviroment );
     }
@@ -417,72 +417,72 @@ int main( int argc, char ** argv )
     else
     {
       if ( str_len( INI_FILE ) >= sizeof( filename ) - 1 )
-        mudlog( LOG_ERR, "main: °_©l¤ÆÀÉ®×¦WºÙ¹Lªø." );
+        mudlog( LOG_ERR, "main: èµ·å§‹åŒ–æª”æ¡ˆåç¨±éé•·." );
 
       str_cpy( filename, INI_FILE );
     }
   }
 
-  /* ²M°£³s½uªº³s±µ°ğ */
+  /* æ¸…é™¤é€£ç·šçš„é€£æ¥åŸ  */
   for ( loop = 0; loop < MAX_PORT; loop++ )
     Control[loop] = MudPort[loop] = ERRORCODE;
 
-  /* ²M°£¹w©wªºª±®aª««~ */
+  /* æ¸…é™¤é å®šçš„ç©å®¶ç‰©å“ */
   for ( loop = 0; loop < MAX_DEFAULT_OBJECT; loop++ )
     DefaultObject[loop] = -1;
 
-  /* ¨ú±oµ{¦¡ªº¦æµ{¸¹½X */
-  mudlog( LOG_INFO, "¦æµ{¸¹½X¡R%d", merc_pid = getpid() );
+  /* å–å¾—ç¨‹å¼çš„è¡Œç¨‹è™Ÿç¢¼ */
+  mudlog( LOG_INFO, "è¡Œç¨‹è™Ÿç¢¼ï¹•%d", merc_pid = getpid() );
 
-  /* °_©l¤Æ°O¾ĞÅé */
+  /* èµ·å§‹åŒ–è¨˜æ†¶é«” */
   memory_ini();
 
-  /* Åª¨ú±Ò©lÀÉ®× */
+  /* è®€å–å•Ÿå§‹æª”æ¡ˆ */
   read_ini( filename );
 
-  /* ¸ô®|©ÎÀÉ®×¹w³]­È */
+  /* è·¯å¾‘æˆ–æª”æ¡ˆé è¨­å€¼ */
   default_file();
 
-  /* ±Ò©l¤ÆÀÉ®×¸ô®| */
+  /* å•Ÿå§‹åŒ–æª”æ¡ˆè·¯å¾‘ */
   adjust_filename();
 
-  mudlog( LOG_INFO, "%s¦s¨ú«Dªk¦ì§}«H¸¹", signal_segv ? "¶}±Ò" : "Ãö³¬" );
-  mudlog( LOG_INFO, "%s¯BÂI¹Bºâ¿ù»~«H¸¹", signal_fpe  ? "¶}±Ò" : "Ãö³¬" );
-  mudlog( LOG_INFO, "%s°Ñ¦Ò¤£·í¦ì§}«H¸¹", signal_bus  ? "¶}±Ò" : "Ãö³¬" );
-  mudlog( LOG_INFO, "%s«Dªk«ü¥O¶°«H¸¹"  , signal_ill  ? "¶}±Ò" : "Ãö³¬" );
+  mudlog( LOG_INFO, "%så­˜å–éæ³•ä½å€ä¿¡è™Ÿ", signal_segv ? "é–‹å•Ÿ" : "é—œé–‰" );
+  mudlog( LOG_INFO, "%sæµ®é»é‹ç®—éŒ¯èª¤ä¿¡è™Ÿ", signal_fpe  ? "é–‹å•Ÿ" : "é—œé–‰" );
+  mudlog( LOG_INFO, "%såƒè€ƒä¸ç•¶ä½å€ä¿¡è™Ÿ", signal_bus  ? "é–‹å•Ÿ" : "é—œé–‰" );
+  mudlog( LOG_INFO, "%séæ³•æŒ‡ä»¤é›†ä¿¡è™Ÿ"  , signal_ill  ? "é–‹å•Ÿ" : "é—œé–‰" );
 
-  /* ±Ò©l¤Æ°T¸¹ */
+  /* å•Ÿå§‹åŒ–è¨Šè™Ÿ */
   signal_setup();
 
-  /* ¨ú±o¥Ø«e¥Ø¿ı */
+  /* å–å¾—ç›®å‰ç›®éŒ„ */
   getcwd( CurrentDir, sizeof( CurrentDir ) - 1 );
 
-  /* ±Ò©l¤Æ®É¶¡ */
+  /* å•Ÿå§‹åŒ–æ™‚é–“ */
   gettimeofday( &now_time, NULL );
   mud_boot_time = current_time  = ( time_t ) now_time.tv_sec;
   mud_boot_tick = get_uptime();
 
   if ( reboot_time > 0 ) reboot_time += current_time;
 
-  /* «O¯d¤@­ÓÀÉ®×¥N½X¥H¨Ñ¨Ï¥Î */
+  /* ä¿ç•™ä¸€å€‹æª”æ¡ˆä»£ç¢¼ä»¥ä¾›ä½¿ç”¨ */
   if ( !( fpReserve = fopen( null_file , "r" ) ) )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_ERR , "µLªk«O¯d¦Ü¤Ö¤@­ÓÀÉ®×¥N½X" );
+    mudlog( LOG_ERR , "ç„¡æ³•ä¿ç•™è‡³å°‘ä¸€å€‹æª”æ¡ˆä»£ç¢¼" );
   }
 
-  /* ¥ı¨ú±o¥D¾÷ªº¦WºÙ, ¥Ñ /etc/hosts */
+  /* å…ˆå–å¾—ä¸»æ©Ÿçš„åç¨±, ç”± /etc/hosts */
   if ( gethostname( HostName, MAX_HOSTNAME ) != 0 )
-   mudlog( LOG_ERR, "µLªk¨ú±o¥D¾÷¦WºÙ." );
+   mudlog( LOG_ERR, "ç„¡æ³•å–å¾—ä¸»æ©Ÿåç¨±." );
 
-  mudlog( LOG_INFO, "¥D¾÷¦WºÙ %s", HostName );
+  mudlog( LOG_INFO, "ä¸»æ©Ÿåç¨± %s", HostName );
 
-  /* °_¨Ï¤Æ socket */
+  /* èµ·ä½¿åŒ– socket */
   for ( loop = 0; loop < MAX_PORT; loop++ )
   {
     if ( MudPort[loop] != ERRORCODE )
     {
-      mudlog( LOG_INFO , "¥D¦æµ{¡u³q«H°ğ¡R%4d¡vºŞ¹D %d"
+      mudlog( LOG_INFO , "ä¸»è¡Œç¨‹ã€Œé€šä¿¡åŸ ï¹•%4dã€ç®¡é“ %d"
       , MudPort[loop], Control[loop] = init_socket( MudPort[loop] ) );
     }
     else
@@ -491,33 +491,33 @@ int main( int argc, char ** argv )
     }
   }
 
-  /* °_¨Ï¤Æºô»Ú³s½u */
-  mudlog( LOG_NET , "ºô»ÚºŞ¹D %d", Internal = init_socket( internal_port ) );
+  /* èµ·ä½¿åŒ–ç¶²éš›é€£ç·š */
+  mudlog( LOG_NET , "ç¶²éš›ç®¡é“ %d", Internal = init_socket( internal_port ) );
 
-  /* ­­¨î³Ì¦h¤W½u¤H¼Æ */
+  /* é™åˆ¶æœ€å¤šä¸Šç·šäººæ•¸ */
   if ( ( maxdesc = getdtablesize() ) <= 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_ERR , "µLªk¨ú±o´y­zªí³Ì¤j­Ó¼Æ" );
+    mudlog( LOG_ERR , "ç„¡æ³•å–å¾—æè¿°è¡¨æœ€å¤§å€‹æ•¸" );
   }
 
   max_connect = UMIN( maxdesc - 8 , max_connect );
-  mudlog( LOG_INFO , "³Ì¦h¤W½u¤H¼Æ¤W½u %d" , max_connect );
+  mudlog( LOG_INFO , "æœ€å¤šä¸Šç·šäººæ•¸ä¸Šç·š %d" , max_connect );
 
-  /* ±Ò°Ê merc ¥Dµ{¦¡, ¨Ã¸ü¤J°Ï°ìÀÉ */
+  /* å•Ÿå‹• merc ä¸»ç¨‹å¼, ä¸¦è¼‰å…¥å€åŸŸæª” */
   boot_db();
 
-  /* ±Ò¨Ï¤Æ¦@¨É°O¾ĞÅé */
+  /* å•Ÿä½¿åŒ–å…±äº«è¨˜æ†¶é«” */
   init_share_memory( merc_ipc, merc_ipc_2 );
 
-  mudlog( LOG_INFO , "%s¶}©l¥¿±`¹B§@.", mud_name );
+  mudlog( LOG_INFO , "%sé–‹å§‹æ­£å¸¸é‹ä½œ.", mud_name );
 
-  /* ¯u¥¿°õ¦æ merc ¥Dµ{¦¡ */
+  /* çœŸæ­£åŸ·è¡Œ merc ä¸»ç¨‹å¼ */
   merc_exec = TRUE;
   game_loop();
   merc_exec = FALSE;
 
-  /* µ²§ô mud ¤u§@ */
+  /* çµæŸ mud å·¥ä½œ */
   for ( loop = 0; loop < MAX_PORT; loop++ )
   {
     if ( Control[loop] != ERRORCODE )
@@ -527,7 +527,7 @@ int main( int argc, char ** argv )
       #endif
 
       close( Control[loop] );
-      mudlog( LOG_INFO, "Ãö³¬³s±µ°ğ %5d ³s½u¡C", MudPort[loop] );
+      mudlog( LOG_INFO, "é—œé–‰é€£æ¥åŸ  %5d é€£ç·šã€‚", MudPort[loop] );
     }
   }
 
@@ -536,21 +536,21 @@ int main( int argc, char ** argv )
   #endif
 
   close( Internal );
-  mudlog( LOG_INFO, "Ãö³¬ºô»Ú³s½u %5d¡C", internal_port );
+  mudlog( LOG_INFO, "é—œé–‰ç¶²éš›é€£ç·š %5dã€‚", internal_port );
 
-  mudlog( LOG_INFO, "Á`¿é¥X¦ì¤¸²Õ %d,%d ¦ì¤¸²Õ.", WriteKiloBytes, WriteBytes );
-  mudlog( LOG_INFO, "Á`¿é¤J¦ì¤¸²Õ %d,%d ¦ì¤¸²Õ.", ReadKiloBytes, ReadBytes );
+  mudlog( LOG_INFO, "ç¸½è¼¸å‡ºä½å…ƒçµ„ %d,%d ä½å…ƒçµ„.", WriteKiloBytes, WriteBytes );
+  mudlog( LOG_INFO, "ç¸½è¼¸å…¥ä½å…ƒçµ„ %d,%d ä½å…ƒçµ„.", ReadKiloBytes, ReadBytes );
 
-  mudlog( LOG_INFO , "%s¥¿±`Ãö³¬. ÁÂÁÂ¨Ï¥Î." , mud_name );
+  mudlog( LOG_INFO , "%sæ­£å¸¸é—œé–‰. è¬è¬ä½¿ç”¨." , mud_name );
 
-  mudlog( LOG_INFO, "²M°£¹L´Áªºª±®aÀÉ®×." );
+  mudlog( LOG_INFO, "æ¸…é™¤éæœŸçš„ç©å®¶æª”æ¡ˆ." );
   system_cleanup();
-  mudlog( LOG_INFO, "²M°£¹L´Áª±®aÀÉ®×§¹²¦." );
+  mudlog( LOG_INFO, "æ¸…é™¤éæœŸç©å®¶æª”æ¡ˆå®Œç•¢." );
 
   return 0;
 }
 
-/* °_¨Ï¤Æ socket */
+/* èµ·ä½¿åŒ– socket */
 int init_socket( int port )
 {
   struct sockaddr_in sa;
@@ -565,28 +565,28 @@ int init_socket( int port )
 
   PUSH_FUNCTION( "init_socket" );
 
-  /* «Ø¥ß¤@­Ó socket */
+  /* å»ºç«‹ä¸€å€‹ socket */
   if ( ( fd = socket( AF_INET, SOCK_STREAM, 0 ) ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno )  );
-    mudlog( LOG_ERR , "µLªk±Ò°Ê socket (%d)", port );
+    mudlog( LOG_ERR , "ç„¡æ³•å•Ÿå‹• socket (%d)", port );
   }
 
-  /* ³]©w socket ªºª¬ºA */
+  /* è¨­å®š socket çš„ç‹€æ…‹ */
   if ( setsockopt( fd, SOL_SOCKET, SO_REUSEADDR
     ,( char * ) &optval, sizeof( optval ) ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_ERR , "µLªk³]©w socket (³q°T°ğ: %d)", port );
+    mudlog( LOG_ERR , "ç„¡æ³•è¨­å®š socket (é€šè¨ŠåŸ : %d)", port );
   }
 
 #ifdef __linux__
 
-  /* §â¸ê®Æ®w¤¤¦WºÙ¬° hostname ªº¸ê®Æµ¹Åª¨ú¶i¨Ó */
+  /* æŠŠè³‡æ–™åº«ä¸­åç¨±ç‚º hostname çš„è³‡æ–™çµ¦è®€å–é€²ä¾† */
   if ( !( hp = gethostbyname( HostName ) ) )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_ERR , "µLªk±Ò°Ê %d gethostbyname", port );
+    mudlog( LOG_ERR , "ç„¡æ³•å•Ÿå‹• %d gethostbyname", port );
   }
 
   memset( &sa , 0 , sizeof( struct sockaddr_in ) );
@@ -610,7 +610,7 @@ int init_socket( int port )
 
     close( fd );
     mudlog( LOG_INFO , strerror( errno ) );
-    mudlog( LOG_ERR, "µLªk±Ò°Ê bind (%d)" , port );
+    mudlog( LOG_ERR, "ç„¡æ³•å•Ÿå‹• bind (%d)" , port );
   }
 
   if ( listen( fd, MAX_CONNECT ) < 0 )
@@ -621,7 +621,7 @@ int init_socket( int port )
 
     close( fd );
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_ERR , "µLªk±Ò°Êµ¥«İ³s½u %d." , port );
+    mudlog( LOG_ERR , "ç„¡æ³•å•Ÿå‹•ç­‰å¾…é€£ç·š %d." , port );
   }
 
   RETURN( fd );
@@ -634,9 +634,9 @@ void game_loop( void )
   DESCRIPTOR_DATA       * man;
   DESCRIPTOR_DATA       * d;
   NET_DATA              * pNet;
-  fd_set                  in_set;   /* ¥iÅª¨úªº¶°¦X */
-  fd_set                  out_set;  /* ¥i¼g¤Jªº¶°¦X */
-  fd_set                  exc_set;  /*   ¨Ò¥~ªº¶°¦X */
+  fd_set                  in_set;   /* å¯è®€å–çš„é›†åˆ */
+  fd_set                  out_set;  /* å¯å¯«å…¥çš„é›†åˆ */
+  fd_set                  exc_set;  /*   ä¾‹å¤–çš„é›†åˆ */
   int                     maxdesc;
   int                     connect;
   int                     loop;
@@ -653,26 +653,26 @@ void game_loop( void )
          sigmask(SIGURG)  | sigmask(SIGXCPU) | sigmask(SIGHUP);
   #endif
 
-  /* ¥D­nªº°j°é */
+  /* ä¸»è¦çš„è¿´åœˆ */
   while ( !merc_down )
   {
-    /* «O¯d¤@­ÓÀÉ®×¥N½X¥H¨Ñ¨Ï¥Î */
+    /* ä¿ç•™ä¸€å€‹æª”æ¡ˆä»£ç¢¼ä»¥ä¾›ä½¿ç”¨ */
     if ( !fpReserve ) fopen( null_file, "r" );
     clear_reload_status();
 
-    /* ³]©w®É¶¡ */
+    /* è¨­å®šæ™‚é–“ */
     gettimeofday( &last_time, NULL );
     current_time = ( time_t ) last_time.tv_sec;
 
-    /* ÀË¬d¦@¨É­p¾ĞÅéªº timer, ¥B§R°£ idle ¤Ó¤[ªº¦@¨É­p¾ĞÅé*/
+    /* æª¢æŸ¥å…±äº«è¨ˆæ†¶é«”çš„ timer, ä¸”åˆªé™¤ idle å¤ªä¹…çš„å…±äº«è¨ˆæ†¶é«”*/
     inc_share_memory_timer();
 
-    /* ²M°£ÀÉ®×³B²z¥N½X¶°¦X¤¤©Ò¦³ªº¦ì¤¸ */
+    /* æ¸…é™¤æª”æ¡ˆè™•ç†ä»£ç¢¼é›†åˆä¸­æ‰€æœ‰çš„ä½å…ƒ */
     FD_ZERO( &in_set  );
     FD_ZERO( &out_set );
     FD_ZERO( &exc_set );
 
-    /* ³]©wÀÉ®×³B²z¥N½X¶°¦X¤¤¹ïÀ³©ó¬Y¨ÇÀÉ®×³B²z¥N½Xªº³æ¿W¦ì¤¸ */
+    /* è¨­å®šæª”æ¡ˆè™•ç†ä»£ç¢¼é›†åˆä¸­å°æ‡‰æ–¼æŸäº›æª”æ¡ˆè™•ç†ä»£ç¢¼çš„å–®ç¨ä½å…ƒ */
     FD_SET( Internal, &in_set );
 
     for ( maxdesc = loop = 0; loop < MAX_PORT; loop++ )
@@ -684,7 +684,7 @@ void game_loop( void )
       }
     }
 
-    /* ºâ¥X»İ­n°µÀË¬dªº³Ì°ª¦ì¼Æ¦r */
+    /* ç®—å‡ºéœ€è¦åšæª¢æŸ¥çš„æœ€é«˜ä½æ•¸å­— */
     for ( man = descriptor_list; man; man = man->next )
     {
       if ( !verify_desc( man ) ) continue;
@@ -695,10 +695,10 @@ void game_loop( void )
       FD_SET( man->descriptor, &exc_set );
     }
 
-    /* ¥[¤Jºô»Ú³s½u, ¨Ã¥B¥[¤J®É¶¡ */
+    /* åŠ å…¥ç¶²éš›é€£ç·š, ä¸¦ä¸”åŠ å…¥æ™‚é–“ */
     for ( pNet = net_list; pNet; pNet = pNet->next )
     {
-      /* ¿é¤J¤è­± */
+      /* è¼¸å…¥æ–¹é¢ */
       if ( valid_socket( pNet, NET_IMPORT ) )
       {
         pNet->import_duration++;
@@ -707,7 +707,7 @@ void game_loop( void )
         FD_SET( connect, &exc_set );
       }
 
-      /* ¿é¥X¤è­± */
+      /* è¼¸å‡ºæ–¹é¢ */
       if ( valid_socket( pNet, NET_EXPORT ) )
       {
         pNet->export_duration++;
@@ -717,7 +717,7 @@ void game_loop( void )
       }
     }
 
-    /* ³]©w select µ¥«İªº®É¶¡ */
+    /* è¨­å®š select ç­‰å¾…çš„æ™‚é–“ */
     timeout.tv_sec  = 1;
     timeout.tv_usec = 0;
 
@@ -728,27 +728,27 @@ void game_loop( void )
     if ( select( maxdesc+1, &in_set, &out_set, &exc_set, &timeout ) < 0 )
     {
       mudlog( LOG_INFO, strerror( errno ) );
-      mudlog( LOG_CRIT, "select() ¨ç¼Æ¦³°İÃD." );
+      mudlog( LOG_CRIT, "select() å‡½æ•¸æœ‰å•é¡Œ." );
     }
 
     #if !defined(sun)
     sigsetmask( 0 );
     #endif
 
-    /* ¦@¨É­p¾ĞÅé³B²z */
+    /* å…±äº«è¨ˆæ†¶é«”è™•ç† */
     handle_share_memory();
 
-    /* ¬O§_¦³·sªº³s½u ? */
+    /* æ˜¯å¦æœ‰æ–°çš„é€£ç·š ? */
     for ( loop = 0; loop < MAX_PORT; loop++ )
     {
       if ( Control[loop] != ERRORCODE && FD_ISSET( Control[loop], &in_set ) )
         new_descriptor( Control[loop], loop );
     }
 
-    /* ¬O§_¦³ºô»Ú³s½u */
+    /* æ˜¯å¦æœ‰ç¶²éš›é€£ç·š */
     if ( FD_ISSET( Internal, &in_set ) ) launch_internal( Internal );
 
-    /* ½ğ±¼¤£¥¿±`ªº³s½u */
+    /* è¸¢æ‰ä¸æ­£å¸¸çš„é€£ç·š */
     for ( d = descriptor_list; d; d = d->next )
     {
       if ( !verify_desc( d ) ) continue;
@@ -761,7 +761,7 @@ void game_loop( void )
         if ( d->character )
         {
           save_char_obj( d->character , SAVE_FILE );
-          mudlog( LOG_INFO , "%s ³s½u¤£¥¿±`." , d->character->name );
+          mudlog( LOG_INFO , "%s é€£ç·šä¸æ­£å¸¸." , d->character->name );
         }
 
         d->outtop = 0;
@@ -769,36 +769,36 @@ void game_loop( void )
       }
     }
 
-    /* ½ğ±¼¤£¥¿±`ªººô»Ú³s½u */
+    /* è¸¢æ‰ä¸æ­£å¸¸çš„ç¶²éš›é€£ç·š */
     for ( pNet = net_list; pNet; pNet = pNet->next )
     {
-      /* ¿é¤J³¡¥÷ */
+      /* è¼¸å…¥éƒ¨ä»½ */
       if ( valid_socket( pNet, NET_IMPORT ) )
       {
         if ( FD_ISSET( connect = pNet->import, &exc_set ) )
         {
           FD_CLR( connect, &in_set );
-          mudlog( LOG_NET, "[ºô»Ú³s½u] %s ¿é¤J¿ù»~.", pNet->address );
+          mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s è¼¸å…¥éŒ¯èª¤.", pNet->address );
           close_net_socket( pNet, NET_IMPORT );
         }
       }
 
-      /* ¿é¥X³¡¥÷ */
+      /* è¼¸å‡ºéƒ¨ä»½ */
       if ( valid_socket( pNet, NET_EXPORT ) )
       {
         if ( FD_ISSET( connect = pNet->export, &exc_set ) )
         {
           FD_CLR( connect, &out_set );
-          mudlog( LOG_NET, "[ºô»Ú³s½u] %s ¿é¥X¿ù»~.", pNet->address );
+          mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s è¼¸å‡ºéŒ¯èª¤.", pNet->address );
           close_net_socket( pNet, NET_EXPORT );
         }
       }
     }
 
-    /* ºô»Ú³s½u¿é¤J¿é¥X³¡¥÷ */
+    /* ç¶²éš›é€£ç·šè¼¸å…¥è¼¸å‡ºéƒ¨ä»½ */
     for ( pNet = net_list; pNet; pNet = pNet->next )
     {
-      /* ¿é¤J³¡¥÷ */
+      /* è¼¸å…¥éƒ¨ä»½ */
       if ( valid_socket( pNet, NET_IMPORT ) )
       {
         if ( FD_ISSET( connect = pNet->import ,&in_set ) )
@@ -812,7 +812,7 @@ void game_loop( void )
 
           if ( ( nRead = read( connect, buf, sizeof( buf ) - 10 ) ) > 0 )
           {
-            /* ®ø±¼´«¦æªº¦r¤¸ */
+            /* æ¶ˆæ‰æ›è¡Œçš„å­—å…ƒ */
             while ( nRead > 2 )
             {
               if ( buf[nRead-1] != '\n' && buf[nRead-1] != '\r' ) break;
@@ -825,10 +825,10 @@ void game_loop( void )
 
               pString = one_argument( buf, arg1 );
 
-              /* ¯S®í©R¥O */
+              /* ç‰¹æ®Šå‘½ä»¤ */
               if ( arg1[0] == '!' )
               {
-                /* ²Ö¥[­p¼Æ¾¹ */
+                /* ç´¯åŠ è¨ˆæ•¸å™¨ */
                 pNet->nRead++;
               }
 
@@ -840,16 +840,16 @@ void game_loop( void )
                 if ( arg1[0] && arg2[0] && arg3[0] )
                 {
                   sprintf( information,
-                    "¥Ñ»»»·ªº¤Í¯¸%sªº%s(%s)¶Ç¨Óªº°T®§¡R%s¡C\n\r"
+                    "ç”±é™é çš„å‹ç«™%sçš„%s(%s)å‚³ä¾†çš„è¨Šæ¯ï¹•%sã€‚\n\r"
                     , pNet->name, arg1, arg2, arg3 );
 
-                  /* ²Ö¥[­p¼Æ¾¹ */
+                  /* ç´¯åŠ è¨ˆæ•¸å™¨ */
                   pNet->nRead++;
 
-                  /* °eµ¹©Ò¦³ªºª±®a */
+                  /* é€çµ¦æ‰€æœ‰çš„ç©å®¶ */
                   send_to_all_char( information );
 
-                 /* ¬O§_­n°O¿ı */
+                 /* æ˜¯å¦è¦è¨˜éŒ„ */
                  if ( pNet->log )
                    mudlog( LOG_NET, "%s:%s", pNet->address, buf );
                 }
@@ -857,22 +857,22 @@ void game_loop( void )
             }
           }
 
-          /* Åª¨ú¿ù»~ */
+          /* è®€å–éŒ¯èª¤ */
           else if ( nRead == 0 )
           {
-            mudlog( LOG_NET, "[ºô»Ú³s½u] %s Åª¨ú¿ù»~.", pNet->address );
+            mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s è®€å–éŒ¯èª¤.", pNet->address );
             close_net_socket( pNet, NET_IMPORT );
           }
 
           else if ( errno != EWOULDBLOCK )
           {
-            mudlog( LOG_NET, "[ºô»Ú³s½u] %s Åª¨ú¿ù»~.", pNet->address );
+            mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s è®€å–éŒ¯èª¤.", pNet->address );
             close_net_socket( pNet, NET_IMPORT );
           }
         }
       }
 
-      /* ¿é¥X³¡¥÷ */
+      /* è¼¸å‡ºéƒ¨ä»½ */
       if ( valid_socket( pNet, NET_EXPORT ) )
       {
         int nWrite;
@@ -882,7 +882,7 @@ void game_loop( void )
 
         if ( ( nWrite = write( pNet->export, pNet->message, iLen ) ) < 0 )
         {
-          mudlog( LOG_NET, "[ºô»Ú³s½u] %s ¼g¤J¿ù»~.", pNet->address );
+          mudlog( LOG_NET, "[ç¶²éš›é€£ç·š] %s å¯«å…¥éŒ¯èª¤.", pNet->address );
           close_net_socket( pNet, NET_EXPORT );
         }
 
@@ -891,7 +891,7 @@ void game_loop( void )
       }
     }
 
-    /* ¿é¤J */
+    /* è¼¸å…¥ */
     for ( d = descriptor_list; d; d = d->next )
     {
       if ( !verify_desc( d ) ) continue;
@@ -909,7 +909,7 @@ void game_loop( void )
           if ( d->character )
           {
             save_char_obj( d->character , SAVE_FILE );
-            mudlog( LOG_INFO , "%s »·ºİÅª¨ú¤£¥¿±`." , d->character->name );
+            mudlog( LOG_INFO , "%s é ç«¯è®€å–ä¸æ­£å¸¸." , d->character->name );
           }
 
           d->outtop = 0;
@@ -918,31 +918,31 @@ void game_loop( void )
         }
       }
 
-      /* »¼´îª±®aªº­p¼Æ¾¹ */
+      /* éæ¸›ç©å®¶çš„è¨ˆæ•¸å™¨ */
       if ( d->tick_count > 0 ) d->tick_count--;
 
-      /* »¼´îª±®aªº chat_error */
+      /* éæ¸›ç©å®¶çš„ chat_error */
       if ( d->chat_error > 0 )
       {
         d->chat_error--;
         continue;
       }
 
-      /* »¼´îª±®aªº wait_time */
+      /* éæ¸›ç©å®¶çš„ wait_time */
       if ( d->character && d->character->wait > 0 )
       {
         d->character->wait--;
         continue;
       }
 
-      /* §âª±®a¿é¤Jªº¸ê®ÆÅª¤Jª±®a¸ê®Æ¸Ì­± */
+      /* æŠŠç©å®¶è¼¸å…¥çš„è³‡æ–™è®€å…¥ç©å®¶è³‡æ–™è£¡é¢ */
       read_from_buffer( d );
 
-      /* °õ¦æª±®aªº¿é¤J */
+      /* åŸ·è¡Œç©å®¶çš„è¼¸å…¥ */
       switch( d->connected )
       {
       default :
-        mudlog( LOG_DEBUG, "¿ù»~ªºª¬ºA %d.", d->connected );
+        mudlog( LOG_DEBUG, "éŒ¯èª¤çš„ç‹€æ…‹ %d.", d->connected );
         break;
 
       case CON_GET_FQDN   :
@@ -977,7 +977,7 @@ void game_loop( void )
 
           if ( d->connected == CON_PLAYING )
           {
-            /* ¬O§_¦³¥¼¿é¥X§¹ªº¦r¦ê */
+            /* æ˜¯å¦æœ‰æœªè¼¸å‡ºå®Œçš„å­—ä¸² */
             if ( d->edit_mode != EDIT_NONE )
             {
               accept_edit( d->character, d->incomm );
@@ -1007,10 +1007,10 @@ void game_loop( void )
       }
     }
 
-    /* ¦Û°ÊÄ²µo¹CÀ¸°Ê§@ */
+    /* è‡ªå‹•è§¸ç™¼éŠæˆ²å‹•ä½œ */
     update_handler();
 
-    /* ¿é¥X */
+    /* è¼¸å‡º */
     for ( d = descriptor_list; d; d = d->next )
     {
       if ( !verify_desc( d ) || d->edit_mode != EDIT_NONE ) continue;
@@ -1022,7 +1022,7 @@ void game_loop( void )
           if ( d->character )
           {
             save_char_obj( d->character , SAVE_FILE );
-            mudlog( LOG_INFO , "%s »·ºİ¿é¥X¤£¥¿±`." , d->character->name );
+            mudlog( LOG_INFO , "%s é ç«¯è¼¸å‡ºä¸æ­£å¸¸." , d->character->name );
           }
 
           d->outtop = 0;
@@ -1031,33 +1031,33 @@ void game_loop( void )
       }
     }
 
-    /* ¿é¤J¬İ¬İ¬O§_¿ù»~¤Ó¦h */
+    /* è¼¸å…¥çœ‹çœ‹æ˜¯å¦éŒ¯èª¤å¤ªå¤š */
     for ( d = descriptor_list; d; d = d->next )
     {
       if ( !verify_desc( d ) || d->connected == CON_PLAYING ) continue;
 
       if ( d->fqdn_limit )
       {
-        mudlog( LOG_INFO, "%s ¨S¦³ FQDN ³Q©Úµ´³s½u.", d->host );
-        write_to_descriptor( d, "§A¨S¦³ FQDN¡M©Úµ´³s½u¡MÃö³¬³s½u¡T\n\r", 0 );
+        mudlog( LOG_INFO, "%s æ²’æœ‰ FQDN è¢«æ‹’çµ•é€£ç·š.", d->host );
+        write_to_descriptor( d, "ä½ æ²’æœ‰ FQDNï¹æ‹’çµ•é€£ç·šï¹é—œé–‰é€£ç·šï¹—\n\r", 0 );
         d->outtop = 0;
         close_socket( d );
         continue;
       }
 
-      /* ¿ù»~¤Ó¦h */
+      /* éŒ¯èª¤å¤ªå¤š */
       if ( d->error >= MaxLoginError )
       {
-        mudlog( LOG_INFO , "%s ¶i¤J®É¿ù»~¤Ó¦h.", d->host );
+        mudlog( LOG_INFO , "%s é€²å…¥æ™‚éŒ¯èª¤å¤ªå¤š.", d->host );
         write_to_descriptor( d,
-          "\n\r\n\r§Aªº¿ù»~¤Ó¦h¤F¡M½Ğ§Aµy«á¦A¶i¤J¡C\n\r" , 0 );
+          "\n\r\n\rä½ çš„éŒ¯èª¤å¤ªå¤šäº†ï¹è«‹ä½ ç¨å¾Œå†é€²å…¥ã€‚\n\r" , 0 );
         d->outtop = 0;
         close_socket( d );
         continue;
       }
     }
 
-    /* »P®ÉÄÁ¦P¨B */
+    /* èˆ‡æ™‚é˜åŒæ­¥ */
     /* Sleep( last_time + 1/PULSE_PER_SECOND - now ). */
     /* Careful here of signed versus unsigned arithmetic. */
     {
@@ -1092,22 +1092,22 @@ void game_loop( void )
           , (fd_set * ) 0 , (fd_set * ) 0 , &stall_time ) < 0)
         {
           mudlog( LOG_INFO, strerror( errno ) );
-          mudlog( LOG_CRIT, "®É¶¡¦P¨Bªº¨ç¼Æ select() ¦³°İÃD" );
+          mudlog( LOG_CRIT, "æ™‚é–“åŒæ­¥çš„å‡½æ•¸ select() æœ‰å•é¡Œ" );
         }
       }
     }
 
-    /* §ó·sµ²ºc */
+    /* æ›´æ–°çµæ§‹ */
     struct_updates();
 
-    /* ¼W¥[¨t²Î­p¼Æ¾¹ */
+    /* å¢åŠ ç³»çµ±è¨ˆæ•¸å™¨ */
     traceloop++;
   }
 
   RETURN_NULL();
 }
 
-/* «Ø¥ß·sªº´y­zªí */
+/* å»ºç«‹æ–°çš„æè¿°è¡¨ */
 void new_descriptor( int control, int slot )
 {
   char                 buf[MAX_STRING_LENGTH];
@@ -1127,7 +1127,7 @@ void new_descriptor( int control, int slot )
   if ( ( desc = accept( control, (struct sockaddr *) &sock, &size) ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_INFO, "New_descriptor: accept ¨ç¼Æ¦³°İÃD." );
+    mudlog( LOG_INFO, "New_descriptor: accept å‡½æ•¸æœ‰å•é¡Œ." );
     RETURN_NULL();
   }
 
@@ -1138,11 +1138,11 @@ void new_descriptor( int control, int slot )
   if ( fcntl( desc, F_SETFL, FNDELAY ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_INFO, "New_descriptor: fcntl ¨ç¼Æ¦³°İÃD." );
+    mudlog( LOG_INFO, "New_descriptor: fcntl å‡½æ•¸æœ‰å•é¡Œ." );
     RETURN_NULL();
   }
 
-  /* ³s±µªñ¤@­Ó·sªº´y­zªí */
+  /* é€£æ¥è¿‘ä¸€å€‹æ–°çš„æè¿°è¡¨ */
   dnew = alloc_struct( STRUCT_DESCRIPTOR_DATA );
 
   dnew->descriptor     = desc;
@@ -1184,10 +1184,10 @@ void new_descriptor( int control, int slot )
   if ( getpeername( desc, ( struct sockaddr * ) &sock, &size ) < 0 )
   {
     mudlog( LOG_INFO, strerror( errno ) );
-    mudlog( LOG_INFO, "New_descriptor: getpeername ¨ç¼Æ¦³°İÃD." );
+    mudlog( LOG_INFO, "New_descriptor: getpeername å‡½æ•¸æœ‰å•é¡Œ." );
 
-    dnew->host    = str_dup( "(¥¼ª¾)" );
-    dnew->address = str_dup( "(¥¼ª¾)" );
+    dnew->host    = str_dup( "(æœªçŸ¥)" );
+    dnew->address = str_dup( "(æœªçŸ¥)" );
     dnew->naddr   = 0;
   }
 
@@ -1200,19 +1200,19 @@ void new_descriptor( int control, int slot )
         ( addr >> 24 ) & 0xFF, ( addr >> 16 ) & 0xFF,
         ( addr >>  8 ) & 0xFF, ( addr       ) & 0xFF );
 
-    mudlog( LOG_INFO , "±q¦ì§} %s ¦³°T¸¹¹L¨Ó" , buf );
+    mudlog( LOG_INFO , "å¾ä½å€ %s æœ‰è¨Šè™Ÿéä¾†" , buf );
 
     dnew->host      = str_dup( buf );
     dnew->address   = str_dup( buf );
     dnew->inet_addr = inet_addr( buf );
 
-    /* ÀË¬d¬O§_³Q¸T¤î³s±µ¶i¨Ó */
+    /* æª¢æŸ¥æ˜¯å¦è¢«ç¦æ­¢é€£æ¥é€²ä¾† */
     for ( pBan = ban_list; pBan; pBan = pBan->next )
     {
       if ( !str_prefix( pBan->name , dnew->host ) )
       {
-        write_to_descriptor( dnew, "¹ï¤£°_¡M§Aªº¦ì§}³Q¸T¤î³s±µ¹L¨Ó¡C\n\r", 0 );
-        mudlog( LOG_INFO, "%s ³Q¸T¤î³s½u¡C", dnew->host );
+        write_to_descriptor( dnew, "å°ä¸èµ·ï¹ä½ çš„ä½å€è¢«ç¦æ­¢é€£æ¥éä¾†ã€‚\n\r", 0 );
+        mudlog( LOG_INFO, "%s è¢«ç¦æ­¢é€£ç·šã€‚", dnew->host );
 
         #ifdef __linux__
         shutdown( desc ,2 );
@@ -1220,7 +1220,7 @@ void new_descriptor( int control, int slot )
 
         close( desc );
 
-        /* ÄÀ©ñµ²ºcªº°O¾ĞÅé */
+        /* é‡‹æ”¾çµæ§‹çš„è¨˜æ†¶é«” */
         free_struct( dnew , STRUCT_DESCRIPTOR_DATA );
         RETURN_NULL();
       }
@@ -1232,7 +1232,7 @@ void new_descriptor( int control, int slot )
 
       if ( slot < 0 )
       {
-        write_to_descriptor( dnew, "¹ï¤£°_¡M°O¾ĞÅé¤£¨¬¡MµLªk³s½u¡C\n\r", 0 );
+        write_to_descriptor( dnew, "å°ä¸èµ·ï¹è¨˜æ†¶é«”ä¸è¶³ï¹ç„¡æ³•é€£ç·šã€‚\n\r", 0 );
 
         #ifdef __linux__
         shutdown( desc ,2 );
@@ -1240,12 +1240,12 @@ void new_descriptor( int control, int slot )
 
         close( desc );
 
-        /* ÄÀ©ñµ²ºcªº°O¾ĞÅé */
+        /* é‡‹æ”¾çµæ§‹çš„è¨˜æ†¶é«” */
         free_struct( dnew , STRUCT_DESCRIPTOR_DATA );
         RETURN_NULL();
       }
 
-      /* ¥Ñ¤l¦æµ{¨Ó¬d¸ßª±®aªºFDQN ©M»·ºİ¨Ï¥ÎªÌ¸¹½X */
+      /* ç”±å­è¡Œç¨‹ä¾†æŸ¥è©¢ç©å®¶çš„FDQN å’Œé ç«¯ä½¿ç”¨è€…è™Ÿç¢¼ */
       switch( fork() )
       {
       case -1:
@@ -1253,10 +1253,10 @@ void new_descriptor( int control, int slot )
         SystemCrash = TRUE;
         clean_share_memory_address( slot );
         mudlog( LOG_INFO , strerror( errno ) );
-        mudlog( LOG_CRIT , "fork() ¨ç¼Æ¦³°İÃD." );
+        mudlog( LOG_CRIT , "fork() å‡½æ•¸æœ‰å•é¡Œ." );
         break;
 
-       /* ¤l¦æµ{³¡¥÷ */
+       /* å­è¡Œç¨‹éƒ¨ä»½ */
       case 0:
 
         SystemCrash = TRUE;
@@ -1264,7 +1264,7 @@ void new_descriptor( int control, int slot )
         signal( SIGPIPE, SIG_IGN );
         signal( SIGCHLD, SIG_IGN );
 
-        /* Ãö³¬©Ò¦³³q°T */
+        /* é—œé–‰æ‰€æœ‰é€šè¨Š */
         close_communication();
 
         switch( fork() )
@@ -1274,7 +1274,7 @@ void new_descriptor( int control, int slot )
           SystemCrash = TRUE;
           clean_share_memory_address( slot );
           mudlog( LOG_INFO, strerror( errno ) );
-          mudlog( LOG_CRIT, "fork() ¨ç¼Æ¦³°İÃD." );
+          mudlog( LOG_CRIT, "fork() å‡½æ•¸æœ‰å•é¡Œ." );
           exit( 0 );
 
         case 0:
@@ -1287,7 +1287,7 @@ void new_descriptor( int control, int slot )
 
             SystemCrash = TRUE;
 
-            /* Ãö³¬©Ò¦³³q°T */
+            /* é—œé–‰æ‰€æœ‰é€šè¨Š */
             close_communication();
 
             signal( SIGPIPE, SIG_IGN );
@@ -1313,7 +1313,7 @@ void new_descriptor( int control, int slot )
         }
         break;
 
-      /* ¤÷¦æµ{³¡¥÷ */
+      /* çˆ¶è¡Œç¨‹éƒ¨ä»½ */
       default:
         break;
       }
@@ -1326,7 +1326,7 @@ void new_descriptor( int control, int slot )
   }
 
 
-  write_to_descriptor( dnew, "ÀË¬d³s½u¦ì§}¡M½Ğµy«İ¤ù¨è..." , 0 );
+  write_to_descriptor( dnew, "æª¢æŸ¥é€£ç·šä½å€ï¹è«‹ç¨å¾…ç‰‡åˆ»..." , 0 );
   RETURN_NULL();
 }
 
@@ -1357,7 +1357,7 @@ void close_communication( void )
   RETURN_NULL();
 }
 
-/* Ãö³¬¤@­Ó socket */
+/* é—œé–‰ä¸€å€‹ socket */
 void close_socket( DESCRIPTOR_DATA * pDesc )
 {
   CHAR_DATA       * ch;
@@ -1368,11 +1368,11 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
 
   if ( !pDesc || !verify_desc( pDesc ) )
   {
-    mudlog( LOG_DEBUG, "close_socket: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "close_socket: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
-  /* Ãö³¬ÃöÁpªº¦@¨É­p¾ĞÅé */
+  /* é—œé–‰é—œè¯çš„å…±äº«è¨ˆæ†¶é«” */
   update_share_memory( pDesc );
 
   if ( pDesc->outtop > 0 ) process_output( pDesc, FALSE );
@@ -1380,17 +1380,17 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
   if ( pDesc->snoop_by )
   {
     set_descriptor_stack( pDesc->snoop_by );
-    write_to_buffer( pDesc->snoop_by, "§Aªº¥Ø¼Ğ¤w¸gÂ÷¶}¹CÀ¸¤F¡C\n\r", 0 );
+    write_to_buffer( pDesc->snoop_by, "ä½ çš„ç›®æ¨™å·²ç¶“é›¢é–‹éŠæˆ²äº†ã€‚\n\r", 0 );
     pDesc->snoop_by->stack = FALSE;
   }
 
-  /* ±N¦¹¤H³QºÊµø²M°£ */
+  /* å°‡æ­¤äººè¢«ç›£è¦–æ¸…é™¤ */
   for ( man = descriptor_list; man; man = man->next )
     if ( verify_desc( man ) && man->snoop_by == pDesc ) man->snoop_by = NULL;
 
   if ( ( ch = pDesc->character ) )
   {
-    mudlog( LOG_INFO , "%s ¬ğµM¥¢¥h³s½u.", ch->name );
+    mudlog( LOG_INFO , "%s çªç„¶å¤±å»é€£ç·š.", ch->name );
 
     if ( ch->answer )
     {
@@ -1398,13 +1398,13 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
       ch->answer = NULL;
     }
 
-    /* ÄÀ©ñ½ä³Õµ²ºc¸ê®Æ */
+    /* é‡‹æ”¾è³­åšçµæ§‹è³‡æ–™ */
     extract_gamble( ch );
     ch->gamble = NULL;
 
     if ( pDesc->connected == CON_PLAYING )
     {
-      act( "$n¬ğµM³Q¤@°}¤Ñ¤W¸¨¤U¨Óªº¹p¥´¨ì¡M¥¢¥hª¾Ä±¡M­±µLªí±¡¡T"
+      act( "$nçªç„¶è¢«ä¸€é™£å¤©ä¸Šè½ä¸‹ä¾†çš„é›·æ‰“åˆ°ï¹å¤±å»çŸ¥è¦ºï¹é¢ç„¡è¡¨æƒ…ï¹—"
         , ch, NULL, NULL, TO_ROOM );
 
       if ( is_pk( ch ) )
@@ -1413,14 +1413,14 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
         {
         case PK_JOIN:
 
-          /* ¹ï¤â°e¦^ */
+          /* å°æ‰‹é€å› */
           if ( fight_info->fight_1 && fight_info->fight_1 != ch )
           {
             char_from_room( fight_info->fight_1 );
             char_to_room( fight_info->fight_1
               , get_hometown( fight_info->fight_1 ) );
 
-            /* ²M°£°lÂÜ¬ö¿ıÂI */
+            /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
             clear_trace( fight_info->fight_1, TRUE );
           }
 
@@ -1430,11 +1430,11 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
             char_to_room( fight_info->fight_2
               , get_hometown( fight_info->fight_2 ) );
 
-            /* ²M°£°lÂÜ¬ö¿ıÂI */
+            /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
             clear_trace( fight_info->fight_2, TRUE );
           }
 
-          sprintf( buf, "%s°½°½¸¨¶]¤F¡M©Ò¥H¦Û°Ê±óÅv¡T", mob_name( NULL, ch ) );
+          sprintf( buf, "%så·å·è½è·‘äº†ï¹æ‰€ä»¥è‡ªå‹•æ£„æ¬Šï¹—", mob_name( NULL, ch ) );
           talk_channel_2( buf, CHANNEL_PK, "" );
 
           if ( fight_info->fight_1 == ch ) fight_info->fight_1 = NULL;
@@ -1446,14 +1446,14 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
 
         case PK_BET:
 
-          /* ¹ï¤â°e¦^ */
+          /* å°æ‰‹é€å› */
           if ( fight_info->fight_1 && fight_info->fight_1 != ch )
           {
             char_from_room( fight_info->fight_1 );
             char_to_room( fight_info->fight_1
               , get_hometown( fight_info->fight_1 ) );
 
-            /* ²M°£°lÂÜ¬ö¿ıÂI */
+            /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
             clear_trace( fight_info->fight_1, TRUE );
           }
 
@@ -1463,11 +1463,11 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
             char_to_room( fight_info->fight_2
               , get_hometown( fight_info->fight_2 ) );
 
-            /* ²M°£°lÂÜ¬ö¿ıÂI */
+            /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
             clear_trace( fight_info->fight_2, TRUE );
           }
 
-          sprintf( buf, "%s°½°½¸¨¶]¤F¡M©Ò¥H³o³õ¤ñÁÉ¤£ºâ¡T"
+          sprintf( buf, "%så·å·è½è·‘äº†ï¹æ‰€ä»¥é€™å ´æ¯”è³½ä¸ç®—ï¹—"
             , mob_name( NULL, ch ) );
 
           talk_channel_2( buf, CHANNEL_PK, "" );
@@ -1481,7 +1481,7 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
 
         case PK_FIGHT:
 
-          /* §â¥Lªº¥Í©R¤O­°§C¡M¦Û°ÊÅı damage ¥h³B²z */
+          /* æŠŠä»–çš„ç”Ÿå‘½åŠ›é™ä½ï¹è‡ªå‹•è®“ damage å»è™•ç† */
           if ( ch->hit > 1 ) ch->hit = 1;
           break;
         }
@@ -1502,10 +1502,10 @@ void close_socket( DESCRIPTOR_DATA * pDesc )
 
   close( pDesc->descriptor );
 
-  /* Âê©wª±®aÀÉ®× */
+  /* é–å®šç©å®¶æª”æ¡ˆ */
   lock_file( pDesc );
 
-  /* ÄÀ©ñµ²ºc°O¾ĞÅé */
+  /* é‡‹æ”¾çµæ§‹è¨˜æ†¶é«” */
   free_struct( pDesc , STRUCT_DESCRIPTOR_DATA );
 
   RETURN_NULL();
@@ -1517,20 +1517,20 @@ bool read_from_descriptor( DESCRIPTOR_DATA * d )
 
   PUSH_FUNCTION( "read_from_descriptor" );
 
-  /* ¦pªG¿é¤J½w½Ä°Ï¤£¬OªÅªº«h¦^¥h */
+  /* å¦‚æœè¼¸å…¥ç·©è¡å€ä¸æ˜¯ç©ºçš„å‰‡å›å» */
   if ( d->incomm[0] ) RETURN( TRUE );
 
-  /* ÀË¬d¬O§_¶W¥X½d³ò */
+  /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
   if ( ( iStart = str_len( d->inbuf ) ) >= ( int ) sizeof( d->inbuf ) - 10 )
   {
-    mudlog( LOG_INFO , "%s ¿é¤J½w½Ä°Ï¤wº¡.", d->host );
+    mudlog( LOG_INFO , "%s è¼¸å…¥ç·©è¡å€å·²æ»¿.", d->host );
 
     write_to_descriptor( d,
-      "\n\r§Aªº½w½Ä°Ï¤wº¡¡M¨t²Î¥u¦n§â§A±j¨îÂ_½u¡C\n\r", 0 );
+      "\n\rä½ çš„ç·©è¡å€å·²æ»¿ï¹ç³»çµ±åªå¥½æŠŠä½ å¼·åˆ¶æ–·ç·šã€‚\n\r", 0 );
     RETURN( FALSE );
   }
 
-  /* Åª¤J¿é¤J½w½Ä°Ï */
+  /* è®€å…¥è¼¸å…¥ç·©è¡å€ */
   for ( ;; )
   {
     int nRead;
@@ -1538,10 +1538,10 @@ bool read_from_descriptor( DESCRIPTOR_DATA * d )
 
     if ( ( iCount = sizeof( d->inbuf ) - 10 - iStart ) <= 0 )
     {
-      mudlog( LOG_INFO , "%s ¿é¤J½w½Ä°Ï¤wº¡.", d->host );
+      mudlog( LOG_INFO , "%s è¼¸å…¥ç·©è¡å€å·²æ»¿.", d->host );
 
       write_to_descriptor( d,
-        "\n\r§Aªº½w½Ä°Ï¤wº¡¡M¨t²Î¥u¦n§â§A±j¨îÂ_½u¡C\n\r", 0 );
+        "\n\rä½ çš„ç·©è¡å€å·²æ»¿ï¹ç³»çµ±åªå¥½æŠŠä½ å¼·åˆ¶æ–·ç·šã€‚\n\r", 0 );
       RETURN( FALSE );
     }
 
@@ -1564,7 +1564,7 @@ bool read_from_descriptor( DESCRIPTOR_DATA * d )
 
     else if ( nRead == 0 )
     {
-      mudlog( LOG_INFO , "±q¿é¤J½w½Ä°ÏÅª¨ì EOF (End Of File)." );
+      mudlog( LOG_INFO , "å¾è¼¸å…¥ç·©è¡å€è®€åˆ° EOF (End Of File)." );
       RETURN( FALSE );
     }
 
@@ -1580,7 +1580,7 @@ bool read_from_descriptor( DESCRIPTOR_DATA * d )
   RETURN( TRUE );
 }
 
-/* ±q¿é¤J½w½Ä°ÏÅª¶i¨Ó¤@¦æ¸ê®Æ */
+/* å¾è¼¸å…¥ç·©è¡å€è®€é€²ä¾†ä¸€è¡Œè³‡æ–™ */
 void read_from_buffer( DESCRIPTOR_DATA * d )
 {
   extern bool tick_permit;
@@ -1590,16 +1590,16 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
 
   PUSH_FUNCTION( "read_from_buffer" );
 
-  /* ¦pªG¿é¤J½w½Ä°Ï¤£¬OªÅªº«h¦^¥h, ¦]¬°©|¥¼³B²z¤W¦¸ªº«ü¥O. */
+  /* å¦‚æœè¼¸å…¥ç·©è¡å€ä¸æ˜¯ç©ºçš„å‰‡å›å», å› ç‚ºå°šæœªè™•ç†ä¸Šæ¬¡çš„æŒ‡ä»¤. */
   if ( d->incomm[0] ) RETURN_NULL();
 
-  /* ÀË¬d¬O§_­nÁä¤J­p¼Æ¾¹ªº©R¥O */
+  /* æª¢æŸ¥æ˜¯å¦è¦éµå…¥è¨ˆæ•¸å™¨çš„å‘½ä»¤ */
   if ( d->connected  == CON_PLAYING
     && d->tick_count == 0
     && d->character
     && ( tick_permit || IS_IMMORTAL( d->character ) ) )
   {
-    /* ¦pªG¤j©ó¨t²Îªº¹w³]­È */
+    /* å¦‚æœå¤§æ–¼ç³»çµ±çš„é è¨­å€¼ */
     if ( str_len( d->tick_command ) + str_len( d->inbuf )
       > sizeof( d->incomm ) - 10 )
     {
@@ -1621,12 +1621,12 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
     }
   }
 
-  /* ·j´M¦Ü¤Ö­n¦³¿é¤J¤@¦C */
+  /* æœå°‹è‡³å°‘è¦æœ‰è¼¸å…¥ä¸€åˆ— */
   for ( i = 0; d->inbuf[i] != '\n' && d->inbuf[i] != '\r'; i++ )
   {
     if ( i >= ( sizeof( d->inbuf ) - 2 ) )
     {
-      mudlog( LOG_DEBUG, "read_from_buffer: ¿é¤Jºİ²§±`." );
+      mudlog( LOG_DEBUG, "read_from_buffer: è¼¸å…¥ç«¯ç•°å¸¸." );
       d->inbuf[0]  = '\x0';
       d->incomm[0] = '\x0';
       RETURN_NULL();
@@ -1635,10 +1635,10 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
     if ( d->inbuf[i] == '\x0' ) RETURN_NULL();
   }
 
-  /* ¤À¹j¤À¸¹ */
+  /* åˆ†éš”åˆ†è™Ÿ */
   spilt_semicolon( d );
 
-  /* Âo±¼¤£¥¿±`ªº¦r */
+  /* æ¿¾æ‰ä¸æ­£å¸¸çš„å­— */
   for ( i = 0; d->inbuf[i]; i++ )
   {
     switch( d->inbuf[i] )
@@ -1646,9 +1646,9 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
     default:
       continue;
 
-    case '\x0e': /* ·|¨Ï¤¤¤åªá±¼ */
-    case '\a'  : /* ¹aÁn         */
-    case '\x09': /* Tab Áä       */
+    case '\x0e': /* æœƒä½¿ä¸­æ–‡èŠ±æ‰ */
+    case '\a'  : /* éˆ´è²         */
+    case '\x09': /* Tab éµ       */
 
       d->inbuf[i] = '+';
       break;
@@ -1657,17 +1657,17 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
 
   for ( i = k = 0; d->inbuf[i] != '\n' && d->inbuf[i] != '\r'; i++ )
   {
-    /* ÀË¬d¬O§_¶W¥X°}¦Cªº¤j¤p */
+    /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºé™£åˆ—çš„å¤§å° */
     if ( k >= sizeof( d->incomm ) - 10 )
     {
-      write_to_descriptor( d, "¿é¤J¦æ¤Óªø¡C\n\r", 0 );
+      write_to_descriptor( d, "è¼¸å…¥è¡Œå¤ªé•·ã€‚\n\r", 0 );
 
-      /* §â³Ñ¾lªº¦r®ø±¼ */
+      /* æŠŠå‰©é¤˜çš„å­—æ¶ˆæ‰ */
       for ( ; d->inbuf[i]; i++ )
       {
         if ( i >= sizeof( d->inbuf ) - 2 )
         {
-          mudlog( LOG_DEBUG, "read_from_buffer: ¿é¤Jºİ²§±`." );
+          mudlog( LOG_DEBUG, "read_from_buffer: è¼¸å…¥ç«¯ç•°å¸¸." );
           d->inbuf[0]  = '\x0';
           d->incomm[0] = '\x0';
           RETURN_NULL();
@@ -1681,7 +1681,7 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
       break;
     }
 
-    /* ¬O§_¬°­Ë°hÁä */
+    /* æ˜¯å¦ç‚ºå€’é€€éµ */
     if ( d->inbuf[i] == '\b' )
     {
       if ( k > 0 ) k--;
@@ -1693,12 +1693,12 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
     }
   }
 
-  /* §â¿é¤J½w½Ä°Ï°µ­Ó½Õ¾ã */
+  /* æŠŠè¼¸å…¥ç·©è¡å€åšå€‹èª¿æ•´ */
   while ( d->inbuf[i] == '\n' || d->inbuf[i] == '\r' )
   {
     if ( ++i >= sizeof( d->inbuf ) - 2 )
     {
-      mudlog( LOG_DEBUG, "read_from_buffer: ¿é¤Jºİ²§±`." );
+      mudlog( LOG_DEBUG, "read_from_buffer: è¼¸å…¥ç«¯ç•°å¸¸." );
       d->inbuf[0]  = '\x0';
       d->incomm[0] = '\x0';
       RETURN_NULL();
@@ -1709,7 +1709,7 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
   {
     if ( ( i+j ) >= sizeof( d->inbuf ) - 2 )
     {
-      mudlog( LOG_DEBUG, "read_from_buffer: ¿é¤Jºİ²§±`." );
+      mudlog( LOG_DEBUG, "read_from_buffer: è¼¸å…¥ç«¯ç•°å¸¸." );
       d->inbuf[0]  = '\x0';
       d->incomm[0] = '\x0';
       RETURN_NULL();
@@ -1718,16 +1718,16 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
 
   if ( k == 0 ) d->incomm[k++] = ' ';
 
-  /* §âÅª¤Jªº¿é¤J¦r¦ê¥[¤Jµ²§ô²Å¸¹ */
+  /* æŠŠè®€å…¥çš„è¼¸å…¥å­—ä¸²åŠ å…¥çµæŸç¬¦è™Ÿ */
   d->incomm[k] = '\x0';
 
-  /* Â½Ä¶¥¨¶°«ü¥O¦¨«ü¥O */
+  /* ç¿»è­¯å·¨é›†æŒ‡ä»¤æˆæŒ‡ä»¤ */
   translate_alias( d , d->incomm );
 
-  /* Â½Ä¶ # ©R¥O */
+  /* ç¿»è­¯ # å‘½ä»¤ */
   translate_command( d );
 
-  /* ¬İ¬İ¬O§_­«½Æ¦¸¼Æ¤Ó¦h */
+  /* çœ‹çœ‹æ˜¯å¦é‡è¤‡æ¬¡æ•¸å¤ªå¤š */
   if ( k > 1 || d->incomm[0] == '!' )
   {
     if ( d->incomm[0] != '!'
@@ -1740,9 +1740,9 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
     {
       if ( ++d->repeat > MaxRepeat )
       {
-        mudlog( LOG_INFO , "%s ¿é¤J­«½Æ¤Ó¦h.", d->host );
+        mudlog( LOG_INFO , "%s è¼¸å…¥é‡è¤‡å¤ªå¤š.", d->host );
 
-        write_to_descriptor( d, "\n\r§A¿é¤Jªº¦r¦ê­«½Æ¤Ó¦h¡C\n\r" , 0 );
+        write_to_descriptor( d, "\n\rä½ è¼¸å…¥çš„å­—ä¸²é‡è¤‡å¤ªå¤šã€‚\n\r" , 0 );
         str_cpy( d->incomm, "quit\x0" );
       }
     }
@@ -1750,7 +1750,7 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
 
   if ( d->connected == CON_PLAYING )
   {
-    /* ¨ú¥N ! ªº°Ê§@ */
+    /* å–ä»£ ! çš„å‹•ä½œ */
     if   ( d->incomm[0] == '!' )
     {
       int order;
@@ -1772,7 +1772,7 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
       }
     }
 
-    /* §_«h½Õ¾ã¿é¤Jªº°O¿ı */
+    /* å¦å‰‡èª¿æ•´è¼¸å…¥çš„è¨˜éŒ„ */
     else
     {
       int loop;
@@ -1789,7 +1789,7 @@ void read_from_buffer( DESCRIPTOR_DATA * d )
   RETURN_NULL();
 }
 
-/* §C¶¥¿é¥X¨ç¼Æ */
+/* ä½éšè¼¸å‡ºå‡½æ•¸ */
 bool process_output( DESCRIPTOR_DATA * d, bool fPrompt )
 {
   extern bool   merc_down;
@@ -1799,10 +1799,10 @@ bool process_output( DESCRIPTOR_DATA * d, bool fPrompt )
 
   PUSH_FUNCTION( "process_output" );
 
-  /* ¿é¥X´£¥Ü¦C */
+  /* è¼¸å‡ºæç¤ºåˆ— */
   if ( fPrompt && !merc_down && d->connected == CON_PLAYING )
   {
-    /* ¬O§_¦³¥¼¿é¥X§¹²¦ªº */
+    /* æ˜¯å¦æœ‰æœªè¼¸å‡ºå®Œç•¢çš„ */
     if ( d->showstr_point )
     {
       char buffer[ MAX_STRING_LENGTH ];
@@ -1814,7 +1814,7 @@ bool process_output( DESCRIPTOR_DATA * d, bool fPrompt )
       write_to_buffer( d, buffer , 0 );
     }
 
-    /* ¤w¸g¥ı«eªº¿é¥X§¹²¦¤F */
+    /* å·²ç¶“å…ˆå‰çš„è¼¸å‡ºå®Œç•¢äº† */
     else
     {
       ch = d->character;
@@ -1847,14 +1847,14 @@ bool process_output( DESCRIPTOR_DATA * d, bool fPrompt )
     }
   }
 
-  /* ¦pªG¿é¥X¬OªÅªº«h§Ö³tÂ÷¶} */
+  /* å¦‚æœè¼¸å‡ºæ˜¯ç©ºçš„å‰‡å¿«é€Ÿé›¢é–‹ */
   if ( d->outtop == 0 ) RETURN( TRUE );
 
-  /* ºÊµøµ{§Ç±±¨î¿é¥X */
+  /* ç›£è¦–ç¨‹åºæ§åˆ¶è¼¸å‡º */
   if ( d->snoop_by )
   {
     set_descriptor_stack( d->snoop_by );
-    write_to_buffer( d->snoop_by, "ºÊµø¡R", 0 );
+    write_to_buffer( d->snoop_by, "ç›£è¦–ï¹•", 0 );
     write_to_buffer( d->snoop_by, d->outbuf, d->outtop );
     d->snoop_by->stack = FALSE;
   }
@@ -1880,19 +1880,19 @@ void bust_fight_message( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim || !verify_char( ch ) || !verify_char( victim ) )
   {
-    mudlog( LOG_DEBUG, "bust_fight_message: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "bust_fight_message: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
   if ( get_curr_hit( ch ) > 0 && get_curr_hit( victim ) > 0 )
   {
-    /* ¦L¥X¦Û¤vªºª¬ªp */
-    sprintf( buf, "(\e[1;36m§A\e[0m%s\e[0m)\n\r"
+    /* å°å‡ºè‡ªå·±çš„ç‹€æ³ */
+    sprintf( buf, "(\e[1;36mä½ \e[0m%s\e[0m)\n\r"
       , status_message( ch ) );
 
     write_to_buffer( ch->desc , buf, 0 );
 
-    /* ¦L¥X¹ï¤âªºª¬ªp */
+    /* å°å‡ºå°æ‰‹çš„ç‹€æ³ */
     sprintf( buf , "(\e[1;36m%s\e[0m%s\e[0m)\n\r\n\r"
       , mob_name( ch, victim ), status_message( victim ) );
 
@@ -1902,7 +1902,7 @@ void bust_fight_message( CHAR_DATA * ch, CHAR_DATA * victim )
   RETURN_NULL();
 }
 
-/* °e¥X Prompt µ¹ª±®a */
+/* é€å‡º Prompt çµ¦ç©å®¶ */
 void bust_a_prompt( CHAR_DATA * ch )
 {
   char         buf[MAX_STRING_LENGTH];
@@ -1929,7 +1929,7 @@ void bust_a_prompt( CHAR_DATA * ch )
   {
     if ( len > sizeof( buf ) - 10 )
     {
-      mudlog( LOG_DEBUG, "bust_a_prompt: ¶W¥X½d³ò." );
+      mudlog( LOG_DEBUG, "bust_a_prompt: è¶…å‡ºç¯„åœ." );
       RETURN_NULL();
     }
 
@@ -1943,7 +1943,7 @@ void bust_a_prompt( CHAR_DATA * ch )
     str_cpy( buf2 , "^" );
     str_ncpy( new_format, str + 1, 3 );
 
-    /* ¥Í©R­È( ¥Hµuªø±øª¬Åã¥Ü ) */
+    /* ç”Ÿå‘½å€¼( ä»¥çŸ­é•·æ¢ç‹€é¡¯ç¤º ) */
     if ( !str_cmp( new_format , "hps" ) )
     {
       sprintf( buf2, "\e[1;32m%s\e[0m"
@@ -1951,7 +1951,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* ¥Í©R­È( ¥Hªøªø±øª¬Åã¥Ü ) */
+    /* ç”Ÿå‘½å€¼( ä»¥é•·é•·æ¢ç‹€é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "hpl" ) )
     {
       sprintf( buf2, "\e[1;32m%s\e[0m"
@@ -1959,7 +1959,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A²{¦bªº¥Í©R­È( ¥H¼Æ¦rÅã¥Ü ) */
+    /* ä½ ç¾åœ¨çš„ç”Ÿå‘½å€¼( ä»¥æ•¸å­—é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "hp1" ) )
     {
       if ( ch->hit >= get_curr_hit( ch ) )
@@ -1969,14 +1969,14 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A³Ì¤jªº¥Í©R­È( ¥H¼Æ¦rÅã¥Ü ) */
+    /* ä½ æœ€å¤§çš„ç”Ÿå‘½å€¼( ä»¥æ•¸å­—é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "hp2" ) )
     {
       sprintf( buf2, "\e[1;31m%d\e[0m" , get_curr_hit( ch ) );
       str += 3;
     }
 
-    /* ªk¤O­È( ¥Hªøªø±øª¬Åã¥Ü ) */
+    /* æ³•åŠ›å€¼( ä»¥é•·é•·æ¢ç‹€é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mps" ) )
     {
       sprintf( buf2, "\e[1;32m%s\e[0m"
@@ -1984,7 +1984,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* ªk¤O­È( ¥Hµuªø±øª¬Åã¥Ü ) */
+    /* æ³•åŠ›å€¼( ä»¥çŸ­é•·æ¢ç‹€é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mpl" ) )
     {
       sprintf( buf2, "\e[1;32m%s\e[0m"
@@ -1992,7 +1992,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A²{¦bªºªk¤O­È( ¥H¼Æ¦rÅã¥Ü ) */
+    /* ä½ ç¾åœ¨çš„æ³•åŠ›å€¼( ä»¥æ•¸å­—é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mp1" ) )
     {
       if ( ch->mana >= get_curr_mana( ch ) )
@@ -2002,14 +2002,14 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A³Ì¤jªºªk¤O­È( ¥H¼Æ¦rÅã¥Ü ) */
+    /* ä½ æœ€å¤§çš„æ³•åŠ›å€¼( ä»¥æ•¸å­—é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mp2" ) )
     {
       sprintf( buf2, "\e[1;36m%d\e[0m" , get_curr_mana( ch ) );
       str += 3;
     }
 
-    /* ²¾°Ê¤O( ¥Hµuªø±øª¬Åã¥Ü ) */
+    /* ç§»å‹•åŠ›( ä»¥çŸ­é•·æ¢ç‹€é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mvs" ) )
     {
       sprintf( buf2, "\e[1;32m%s\e[0m"
@@ -2017,7 +2017,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* ²¾°Ê¤O( ¥Hªøªø±øª¬Åã¥Ü ) */
+    /* ç§»å‹•åŠ›( ä»¥é•·é•·æ¢ç‹€é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mvl" ) )
     {
       sprintf( buf2, "\e[1;32m%s\e[0m"
@@ -2025,7 +2025,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A²{¦bªºÅé¤O­È( ¥H¼Æ¦rÅã¥Ü ) */
+    /* ä½ ç¾åœ¨çš„é«”åŠ›å€¼( ä»¥æ•¸å­—é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mv1" ) )
     {
       if ( ch->move >= get_curr_move( ch ) )
@@ -2035,79 +2035,79 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A³Ì¤jªºÅé¤O­È( ¥H¼Æ¦rÅã¥Ü ) */
+    /* ä½ æœ€å¤§çš„é«”åŠ›å€¼( ä»¥æ•¸å­—é¡¯ç¤º ) */
     else if ( !str_cmp( new_format , "mv2" ) )
     {
       sprintf( buf2, "\e[1;33m%d\e[0m" , get_curr_move( ch ) );
       str += 3;
     }
 
-    /* µ¥¯Å */
+    /* ç­‰ç´š */
     else if ( !str_cmp( new_format , "lvl" ) )
     {
       sprintf( buf2, "\e[1;37m%d\e[0m" , ch->level );
       str += 3;
     }
 
-    /* °}Àç */
+    /* é™£ç‡Ÿ */
     else if ( !str_cmp( new_format , "ali" ) )
     {
       sprintf( buf2, "%s\e[0m"
-        , IS_GOOD(ch) ? "\e[32mµ½¨}" : IS_EVIL(ch) ?
-         "\e[34m¨¸´c" : "\e[36m¤¤¥ß" );
+        , IS_GOOD(ch) ? "\e[32må–„è‰¯" : IS_EVIL(ch) ?
+         "\e[34mé‚ªæƒ¡" : "\e[36mä¸­ç«‹" );
       str += 3;
     }
 
-    /* ª÷¿ú */
+    /* é‡‘éŒ¢ */
     else if ( !str_cmp( new_format , "gol" ) )
     {
       sprintf( buf2, "\e[1;33m%d\e[0m" , ch->gold );
       str += 3;
     }
 
-    /* ¦~ÄÖ */
+    /* å¹´é½¡ */
     else if ( !str_cmp( new_format , "age" ) )
     {
       sprintf( buf2, "\e[34m%d\e[0m" , get_age( ch ) );
       str += 3;
     }
 
-    /* ¤O¶q */
+    /* åŠ›é‡ */
     else if ( !str_cmp( new_format , "str" ) )
     {
       sprintf( buf2, "\e[31m%d\e[0m" , get_curr_str( ch ) );
       str += 3;
     }
 
-    /* ´¼¤O */
+    /* æ™ºåŠ› */
     else if ( !str_cmp( new_format , "int" ) )
     {
       sprintf( buf2, "\e[32m%d\e[0m" , get_curr_int( ch ) );
       str += 3;
     }
 
-    /* ¾ÇÃÑ */
+    /* å­¸è­˜ */
     else if ( !str_cmp( new_format , "wis" ) )
     {
       sprintf( buf2, "\e[33m%d\e[0m" , get_curr_wis( ch ) );
       str += 3;
     }
 
-    /* ±Ó±¶ */
+    /* æ•æ· */
     else if ( !str_cmp( new_format , "dex" ) )
     {
       sprintf( buf2, "\e[34m%d\e[0m" , get_curr_dex( ch ) );
       str += 3;
     }
 
-    /* Åé®æ */
+    /* é«”æ ¼ */
     else if ( !str_cmp( new_format , "con" ) )
     {
       sprintf( buf2, "\e[35m%d\e[0m" , get_curr_con( ch ) );
       str += 3;
     }
 
-    /* §A©Ò³Ñ¤Uªº¸gÅç­È */
+    /* ä½ æ‰€å‰©ä¸‹çš„ç¶“é©—å€¼ */
     else if ( !str_cmp( new_format, "exl" ) )
     {
       sprintf( buf2, "\e[1;33m%d\e[0m",
@@ -2115,64 +2115,64 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A©Ò¾Ö¦³ªº¸gÅç­È */
+    /* ä½ æ‰€æ“æœ‰çš„ç¶“é©—å€¼ */
     else if ( !str_cmp( new_format , "exp" ) )
     {
       sprintf( buf2, "\e[36m%d\e[0m" , ch->exp );
       str += 3;
     }
 
-    /* §A©Ò¦bªº©Ğ¶¡¦WºÙ */
+    /* ä½ æ‰€åœ¨çš„æˆ¿é–“åç¨± */
     else if ( !str_cmp( new_format , "roo" ) )
     {
       if ( ch->in_room ) sprintf( buf2, "\e[1;35m%s\e[0m", ch->in_room->name );
-      else               sprintf( buf2, "¥¼ª¾¦Wªº©Ğ¶¡" );
+      else               sprintf( buf2, "æœªçŸ¥åçš„æˆ¿é–“" );
       str += 3;
     }
 
-    /* Åã¥Ü§A¥iÄâ±aªºª««~¼Ë¼Æ */
+    /* é¡¯ç¤ºä½ å¯æ”œå¸¶çš„ç‰©å“æ¨£æ•¸ */
     else if ( !str_cmp( new_format , "thi" ) )
     {
       sprintf( buf2, "\e[36m%d\e[0m" , can_carry_n( ch ) );
       str += 3;
     }
 
-    /* Åã¥Ü§A¥iÄâ±aªºª««~­«¶q */
+    /* é¡¯ç¤ºä½ å¯æ”œå¸¶çš„ç‰©å“é‡é‡ */
     else if ( !str_cmp( new_format , "wei" ) )
     {
       sprintf( buf2, "\e[1;34m%d\e[0m" , can_carry_w( ch ) );
       str += 3;
     }
 
-    /* ´«¦æ */
+    /* æ›è¡Œ */
     else if ( !str_cmp( new_format , "nex" ) )
     {
       str_cpy( buf2, "\n\r" );
       str += 3;
     }
 
-    /* §Aªº©R¤¤²v */
+    /* ä½ çš„å‘½ä¸­ç‡ */
     else if ( !str_cmp( new_format , "hit" ) )
     {
       sprintf( buf2, "\e[1;31m%d\e[0m" , get_hitroll( ch ) );
       str += 3;
     }
 
-    /* §Aªº¨¾Å@¤O */
+    /* ä½ çš„é˜²è­·åŠ› */
     else if ( !str_cmp( new_format , "arm" ) )
     {
       sprintf( buf2, "\e[1;32m%d\e[0m" , get_ac( ch ) );
       str += 3;
     }
 
-    /* §Aªº§ğÀ»¶Ë®`¤O */
+    /* ä½ çš„æ”»æ“Šå‚·å®³åŠ› */
     else if ( !str_cmp( new_format , "dam" ) )
     {
       sprintf( buf2, "\e[1;33m%d\e[0m" , get_damroll( ch ) );
       str += 3;
     }
 
-    /* §A©Ò¦b©Ğ¶¡ªº½s¸¹( ¯«±Ú«ü¥O ) */
+    /* ä½ æ‰€åœ¨æˆ¿é–“çš„ç·¨è™Ÿ( ç¥æ—æŒ‡ä»¤ ) */
     else if ( !str_cmp( new_format , "rrr" ) )
     {
       if ( IS_IMMORTAL( ch ) && ch->in_room )
@@ -2181,7 +2181,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       str += 3;
     }
 
-    /* §A©Ò¦b°Ï°ìªº¦WºÙ( ¯«±Ú«ü¥O ) */
+    /* ä½ æ‰€åœ¨å€åŸŸçš„åç¨±( ç¥æ—æŒ‡ä»¤ ) */
     else if ( !str_cmp( new_format , "zon" ) )
     {
       if ( IS_IMMORTAL( ch ) && ch->in_room )
@@ -2208,7 +2208,7 @@ void bust_a_prompt( CHAR_DATA * ch )
       while( ( *point = *i ) != '\x0' ) ++point, ++i, len++;
 
     else
-      mudlog( LOG_DEBUG , "bust_a_prompt: ¿é¥X¦r¦ê¶W¹L¨t²Î¦r¦êªø«×" );
+      mudlog( LOG_DEBUG , "bust_a_prompt: è¼¸å‡ºå­—ä¸²è¶…éç³»çµ±å­—ä¸²é•·åº¦" );
   }
 
   *point = '\x0';
@@ -2216,7 +2216,7 @@ void bust_a_prompt( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* §â¿é¥XªºªF¦è¥[¨ì¿é¥X½w½Ä°Ï¤¤ */
+/* æŠŠè¼¸å‡ºçš„æ±è¥¿åŠ åˆ°è¼¸å‡ºç·©è¡å€ä¸­ */
 void write_to_buffer( DESCRIPTOR_DATA * d, const char * txt, int length )
 {
   CHAR_DATA * victim;
@@ -2225,12 +2225,12 @@ void write_to_buffer( DESCRIPTOR_DATA * d, const char * txt, int length )
   int         outsize;
   bool        ansi;
   const char  warning[] =
-    "\n\r\n\r\e[1;31m**§Aªº¿é¥X½w½Ä°Ï¤Ó¤j.¨t²Î¦Û°Ê­«"
-    "·s³]©w§Aªº½w½Ä°Ï**\e[0m\n\r\n\r\0";
+    "\n\r\n\r\e[1;31m**ä½ çš„è¼¸å‡ºç·©è¡å€å¤ªå¤§.ç³»çµ±è‡ªå‹•é‡"
+    "æ–°è¨­å®šä½ çš„ç·©è¡å€**\e[0m\n\r\n\r\0";
 
   PUSH_FUNCTION( "write_to_buffer" );
 
-  /* ¦pªG©I¥sªÌ¥¼«ü©wªø«×, «h³]©wªø«× */
+  /* å¦‚æœå‘¼å«è€…æœªæŒ‡å®šé•·åº¦, å‰‡è¨­å®šé•·åº¦ */
   if ( length <= 0 ) length = str_len( txt );
 
   if ( d->stack
@@ -2240,7 +2240,7 @@ void write_to_buffer( DESCRIPTOR_DATA * d, const char * txt, int length )
     RETURN_NULL();
   }
 
-  /* ¦pªG¨S¦³ \n\r if «h±Ò©l¤Æ¥¦. */
+  /* å¦‚æœæ²’æœ‰ \n\r if å‰‡å•Ÿå§‹åŒ–å®ƒ. */
   if ( d->outtop == 0 && !d->fcommand )
   {
     if ( ( victim = d->character )
@@ -2260,10 +2260,10 @@ void write_to_buffer( DESCRIPTOR_DATA * d, const char * txt, int length )
     }
   }
 
-  /* ¦pªGªø«×¤£°÷«h°t¸m¤j¤@ÂIµ¹¥¦ */
+  /* å¦‚æœé•·åº¦ä¸å¤ å‰‡é…ç½®å¤§ä¸€é»çµ¦å®ƒ */
   while ( d->outtop + length >= d->outsize - 1 )
   {
-    /* ÀË¬d¬O§_¶W¥X°t¸m°O¾ĞÅéªº·¥­­ */
+    /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºé…ç½®è¨˜æ†¶é«”çš„æ¥µé™ */
     if ( ( outsize = ( d->outsize * 2 ) ) < MAX_OUTPUT_LENGTH )
     {
       outbuf = ( char * ) alloc_string( d->outsize * 2 );
@@ -2274,7 +2274,7 @@ void write_to_buffer( DESCRIPTOR_DATA * d, const char * txt, int length )
       d->outsize *= 2;
     }
 
-    /* ¶W¥X·¥­­«hÂk¹s */
+    /* è¶…å‡ºæ¥µé™å‰‡æ­¸é›¶ */
     else
     {
       outbuf  = ( char * ) alloc_string( ( outsize = 2000 ) );
@@ -2285,13 +2285,13 @@ void write_to_buffer( DESCRIPTOR_DATA * d, const char * txt, int length )
       d->outbuf  = outbuf;
       d->outtop  = 0;
       d->outsize = 2000;
-      mudlog( LOG_INFO , "[WARN] %s ¿é¥X½w½Ä°Ï¤Ó¤j, ¨t²Î¦Û°Ê­×¥¿"
+      mudlog( LOG_INFO , "[WARN] %s è¼¸å‡ºç·©è¡å€å¤ªå¤§, ç³»çµ±è‡ªå‹•ä¿®æ­£"
         , d->character->name );
       break;
     }
   }
 
-  /* ¹LÂo ANSI ¿é¥X¦r¤¸ */
+  /* éæ¿¾ ANSI è¼¸å‡ºå­—å…ƒ */
   target = d->outbuf + d->outtop;
   ansi   = ( d->character && IS_SET( d->character->turn , PLR_ANSI ) );
 
@@ -2319,15 +2319,15 @@ void write_to_buffer( DESCRIPTOR_DATA * d, const char * txt, int length )
   *target    = '\x0';
 
   if ( d->outtop >= d->outsize )
-    mudlog( LOG_DEBUG, "write_to_buffer: ¿é¥X¿ù»~." );
+    mudlog( LOG_DEBUG, "write_to_buffer: è¼¸å‡ºéŒ¯èª¤." );
 
   RETURN_NULL();
 }
 
-/* ³Ì§C¶¥¿é¥Xªº¨ç¼Æ, ¿é¥X¤@¬q¤å¦r¨ìÀÉ®×ªº´y­zªÌ. */
-/* ¦pªG³o¸Ì¦³µo²{°İÃDªº¸Ü(¨Ò¦p ofind all), «h¸Õ¸Õ§â MAX_BLOCK_SIZE ´î¤Ö */
-/* ¥L¬O§Q¥Î§â»·ºİ·Q¦V¦¨¤@­ÓÀÉ®×, ¤§«á§@¼g¤JÀÉ®×ªº°Ê§@§¹¦¨§C¶¥¿é¥X */
-/* desc «K¬O³o­Ó»·ºİÀÉ®×ªº handler */
+/* æœ€ä½éšè¼¸å‡ºçš„å‡½æ•¸, è¼¸å‡ºä¸€æ®µæ–‡å­—åˆ°æª”æ¡ˆçš„æè¿°è€…. */
+/* å¦‚æœé€™è£¡æœ‰ç™¼ç¾å•é¡Œçš„è©±(ä¾‹å¦‚ ofind all), å‰‡è©¦è©¦æŠŠ MAX_BLOCK_SIZE æ¸›å°‘ */
+/* ä»–æ˜¯åˆ©ç”¨æŠŠé ç«¯æƒ³å‘æˆä¸€å€‹æª”æ¡ˆ, ä¹‹å¾Œä½œå¯«å…¥æª”æ¡ˆçš„å‹•ä½œå®Œæˆä½éšè¼¸å‡º */
+/* desc ä¾¿æ˜¯é€™å€‹é ç«¯æª”æ¡ˆçš„ handler */
 bool write_to_descriptor( DESCRIPTOR_DATA * desc, char * txt, int length )
 {
   int iStart;
@@ -2338,7 +2338,7 @@ bool write_to_descriptor( DESCRIPTOR_DATA * desc, char * txt, int length )
 
   if ( !desc )
   {
-    mudlog( LOG_DEBUG, "write_to_descriptor: ¨S¦³¨Ó·½." );
+    mudlog( LOG_DEBUG, "write_to_descriptor: æ²’æœ‰ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -2349,7 +2349,7 @@ bool write_to_descriptor( DESCRIPTOR_DATA * desc, char * txt, int length )
     if ( ( nWrite = write( desc->descriptor, txt + iStart, nBlock ) ) < 0 )
     {
       mudlog( LOG_INFO, strerror( errno ) );
-      mudlog( LOG_INFO, "write_to_descriptor: ¼g¤J¿ù»~" );
+      mudlog( LOG_INFO, "write_to_descriptor: å¯«å…¥éŒ¯èª¤" );
       RETURN( FALSE );
     }
 
@@ -2368,7 +2368,7 @@ bool write_to_descriptor( DESCRIPTOR_DATA * desc, char * txt, int length )
   RETURN( TRUE );
 }
 
-/* ³B²z©|¥¼³s½u§¹²¦ªº socket */
+/* è™•ç†å°šæœªé€£ç·šå®Œç•¢çš„ socket */
 void nanny( DESCRIPTOR_DATA * d, char * argument )
 {
   char             buf[MAX_STRING_LENGTH];
@@ -2412,11 +2412,11 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
   {
   default:
 
-    mudlog( LOG_DEBUG , "Nanny: ¥¼©w¸qªº d->connected %d.", d->connected );
+    mudlog( LOG_DEBUG , "Nanny: æœªå®šç¾©çš„ d->connected %d.", d->connected );
     close_socket( d );
     RETURN_NULL();
 
-  /* ¨ú±o»·¤èªº FQDN ¥H¤Î¦W¦r */
+  /* å–å¾—é æ–¹çš„ FQDN ä»¥åŠåå­— */
   case CON_GET_FQDN:
 
     if ( d->check_fqdn == FALSE )
@@ -2427,15 +2427,15 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     else
     {
-      write_to_descriptor( d, "\b \n\rÀË¬d»·ºİ³s½u¸ê®Æ¡M½Ğµy«á..." , 0 );
+      write_to_descriptor( d, "\b \n\ræª¢æŸ¥é ç«¯é€£ç·šè³‡æ–™ï¹è«‹ç¨å¾Œ..." , 0 );
       d->connected    = CON_GET_FINGER;
       d->inflect      = 0;
       d->check_finger = TRUE;
 
-      /* ¯Ê¥F»·ºİÃ±¤J¦WºÙ */
+      /* ç¼ºä¹é ç«¯ç°½å…¥åç¨± */
       if ( !d->remote || !d->remote[0] )
       {
-        str_cpy( d->finger_data , "¯Ê¥F»·ºİÃ±¤J©m¦W¡C" );
+        str_cpy( d->finger_data , "ç¼ºä¹é ç«¯ç°½å…¥å§“åã€‚" );
         d->check_finger = TRUE;
       }
 
@@ -2445,7 +2445,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
         if ( slot < 0 )
         {
-          write_to_descriptor( d, "¹ï¤£°_¡M°O¾ĞÅé¤£¨¬¡MµLªk³s½u¡C\n\r", 0 );
+          write_to_descriptor( d, "å°ä¸èµ·ï¹è¨˜æ†¶é«”ä¸è¶³ï¹ç„¡æ³•é€£ç·šã€‚\n\r", 0 );
           close_socket( d );
           RETURN_NULL();
         }
@@ -2456,7 +2456,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
           if ( serv < 0 )
           {
-            write_to_descriptor( d, "¹ï¤£°_¡M°O¾ĞÅé¤£¨¬¡MµLªk³s½u¡C\n\r", 0 );
+            write_to_descriptor( d, "å°ä¸èµ·ï¹è¨˜æ†¶é«”ä¸è¶³ï¹ç„¡æ³•é€£ç·šã€‚\n\r", 0 );
             close_socket( d );
             RETURN_NULL();
           }
@@ -2473,18 +2473,18 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
           SystemCrash = TRUE;
           mudlog( LOG_INFO, strerror( errno ) );
-          mudlog( LOG_INFO, "fork() ¨ç¼Æ¦³°İÃD." );
-          str_cpy( d->finger_data , "°õ¦æ fork ¨ç¼Æ¦³°İÃD." );
+          mudlog( LOG_INFO, "fork() å‡½æ•¸æœ‰å•é¡Œ." );
+          str_cpy( d->finger_data , "åŸ·è¡Œ fork å‡½æ•¸æœ‰å•é¡Œ." );
           clean_share_memory_address( slot );
           d->check_finger = TRUE;
           break;
 
-        /* ¤l¦æµ{³¡¥÷ */
+        /* å­è¡Œç¨‹éƒ¨ä»½ */
         case 0 :
 
           SystemCrash = TRUE;
 
-          /* Ãö³¬©Ò¦³³q°T */
+          /* é—œé–‰æ‰€æœ‰é€šè¨Š */
           close_communication();
 
           signal( SIGPIPE, SIG_IGN );
@@ -2496,8 +2496,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
             SystemCrash = TRUE;
             mudlog( LOG_INFO, strerror( errno ) );
-            mudlog( LOG_INFO, "fork() ¨ç¼Æ¦³°İÃD." );
-            set_share_memory_text( slot , "µ{¦¡µLªk¶}±Ò fork." );
+            mudlog( LOG_INFO, "fork() å‡½æ•¸æœ‰å•é¡Œ." );
+            set_share_memory_text( slot , "ç¨‹å¼ç„¡æ³•é–‹å•Ÿ fork." );
             exit( 0 );
 
           case 0:
@@ -2509,7 +2509,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
               SystemCrash = TRUE;
 
-              /* Ãö³¬©Ò¦³³q°T */
+              /* é—œé–‰æ‰€æœ‰é€šè¨Š */
               close_communication();
 
               signal( SIGPIPE, SIG_IGN );
@@ -2542,7 +2542,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
               if ( !( fp = fdopen( cfd, "r+") ) )
               {
                 close( cfd );
-                set_share_memory_text( slot , "µ{¦¡µLªk¶}±Ò fdopen¡T" );
+                set_share_memory_text( slot , "ç¨‹å¼ç„¡æ³•é–‹å•Ÿ fdopenï¹—" );
                 exit( 0 );
               }
 
@@ -2552,7 +2552,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
               if ( connect( cfd, ( struct sockaddr *) & sin, sizeof( sin ) ) )
               {
                 close( cfd );
-                set_share_memory_text( slot, "¬d¸ßºİ¨S¦³¶}©ñ¬d¸ßªA°È¡T" );
+                set_share_memory_text( slot, "æŸ¥è©¢ç«¯æ²’æœ‰é–‹æ”¾æŸ¥è©¢æœå‹™ï¹—" );
                 exit( 0 );
               }
 
@@ -2577,7 +2577,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
           break;
 
-        /* ¤÷¦æµ{³¡¥÷, ¥u»İ­n°O¿ı¦æµ{¸¹½X¨Ó¿ëÃÑ */
+        /* çˆ¶è¡Œç¨‹éƒ¨ä»½, åªéœ€è¦è¨˜éŒ„è¡Œç¨‹è™Ÿç¢¼ä¾†è¾¨è­˜ */
         default:
           break;
         }
@@ -2597,7 +2597,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     else
     {
-      /* °e¥X greeting ªº°T®§, ¨Ã¥B¿é¥X¹CÀ¸ªºª¬ºA */
+      /* é€å‡º greeting çš„è¨Šæ¯, ä¸¦ä¸”è¼¸å‡ºéŠæˆ²çš„ç‹€æ…‹ */
       {
         GREETING_DATA * pGreet;
         GREETING_DATA * zGreet;
@@ -2617,15 +2617,15 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         }
         else
         {
-          mudlog( LOG_DEBUG, "nanny: §ä¤£¨ì¶i¯¸µe­±." );
-          write_to_descriptor( d, "¨S¦³¶i¯¸µe­±\n\r", 0 );
+          mudlog( LOG_DEBUG, "nanny: æ‰¾ä¸åˆ°é€²ç«™ç•«é¢." );
+          write_to_descriptor( d, "æ²’æœ‰é€²ç«™ç•«é¢\n\r", 0 );
         }
 
-        /* ¦L¥X¹CÀ¸ªºª¬ºA */
+        /* å°å‡ºéŠæˆ²çš„ç‹€æ…‹ */
         show_game_status( d );
 
-        /* ¶}©l¿é¤J°ò¥»¸ê®Æ¤F */
-        write_to_descriptor( d , "½Ğ¿é¤J§Aªº­^¤å¦W¦r ¡R" , 0 );
+        /* é–‹å§‹è¼¸å…¥åŸºæœ¬è³‡æ–™äº† */
+        write_to_descriptor( d , "è«‹è¼¸å…¥ä½ çš„è‹±æ–‡åå­— ï¹•" , 0 );
         d->inbuf[0]  = '\x0';
         d->incomm[0] = '\x0';
       }
@@ -2639,16 +2639,16 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     switch( d->file )
     {
     case FILE_CORRECT:
-      write_to_descriptor( d, "\b¥¿½T"  , 0 );
+      write_to_descriptor( d, "\bæ­£ç¢º"  , 0 );
       break;
 
     case FILE_NEW:
-      write_to_descriptor( d, "\b·sª±®a", 0 );
+      write_to_descriptor( d, "\bæ–°ç©å®¶", 0 );
 
       if ( NewLock )
       {
         write_to_descriptor( d,
-          "\n\r¥Ø«e¹CÀ¸¨S¦³¿ìªk·s¼Wª±®a, ½Ğµy«á¦A¸Õ!\n\r", 0 );
+          "\n\rç›®å‰éŠæˆ²æ²’æœ‰è¾¦æ³•æ–°å¢ç©å®¶, è«‹ç¨å¾Œå†è©¦!\n\r", 0 );
         close_socket( d );
         RETURN_NULL();
       }
@@ -2657,9 +2657,9 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     default:
 
-      write_to_descriptor( d, "\b¤£¥¿½T", 0 );
+      write_to_descriptor( d, "\bä¸æ­£ç¢º", 0 );
 
-      mudlog( LOG_DEBUG, "nanny: %s ÀÉ®×¤£¥¿½T.", d->username );
+      mudlog( LOG_DEBUG, "nanny: %s æª”æ¡ˆä¸æ­£ç¢º.", d->username );
 
       if ( AutoBackup )
       {
@@ -2668,13 +2668,13 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
       else
       {
-        sprintf( temp, "\n\r§AªºÀÉ®×¤w¸g·l·´¡M½Ğ¦Ü \e[1;32m%s\e[0m §iª¾"
-          "µ¹ºŞ²zªÌ±oª¾¡T\a\a\a\n\r", bbs_name );
+        sprintf( temp, "\n\rä½ çš„æª”æ¡ˆå·²ç¶“ææ¯€ï¹è«‹è‡³ \e[1;32m%s\e[0m å‘ŠçŸ¥"
+          "çµ¦ç®¡ç†è€…å¾—çŸ¥ï¹—\a\a\a\n\r", bbs_name );
 
         write_to_descriptor( d, temp, 0 );
       }
 
-      mudlog( LOG_BADFILE, "%s ÀÉ®×·l·´.", d->username );
+      mudlog( LOG_BADFILE, "%s æª”æ¡ˆææ¯€.", d->username );
       close_socket( d );
       RETURN_NULL();
     }
@@ -2684,12 +2684,12 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( IS_SET( ch->pcdata->suspect , PLR_COPYEQ ) && !IS_IMMORTAL( ch ) )
     {
-      sprintf( temp, "\n\r\a\a\a§A³Q©Úµ´¶i¤J¡M¦]¬°§A¯A¶û«ş¨©¸Ë³Æ¡C"
-                     "½Ğ¨ì \e[1;32m%s\e[0m ¥h»¡©ú¤@¤U¡C\n\r", bbs_name );
+      sprintf( temp, "\n\r\a\a\aä½ è¢«æ‹’çµ•é€²å…¥ï¹å› ç‚ºä½ æ¶‰å«Œæ‹·è²è£å‚™ã€‚"
+                     "è«‹åˆ° \e[1;32m%s\e[0m å»èªªæ˜ä¸€ä¸‹ã€‚\n\r", bbs_name );
 
       write_to_descriptor( d, temp, 0 );
-      mudlog( LOG_SUSPECT, "%s ¦]¯A¶û«ş¨©¸Ë³Æ¡M¸T¤î³s½u¡T", d->username );
-      mudlog( LOG_INFO , "%s ±q %s ¶i¨Ó, ¦ı¥L³Q©Úµ´¶i¤J, ¦]¬°¯A¶û«ş¨©¸Ë³Æ."
+      mudlog( LOG_SUSPECT, "%s å› æ¶‰å«Œæ‹·è²è£å‚™ï¹ç¦æ­¢é€£ç·šï¹—", d->username );
+      mudlog( LOG_INFO , "%s å¾ %s é€²ä¾†, ä½†ä»–è¢«æ‹’çµ•é€²å…¥, å› ç‚ºæ¶‰å«Œæ‹·è²è£å‚™."
          , ch->name , d->host );
 
       close_socket( d );
@@ -2701,21 +2701,21 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       && !is_server( d->host )
       && !IS_IMMORTAL( ch ) )
     {
-      mudlog( LOG_INFO, "%s ¦h­«³s½u.", d->host );
+      mudlog( LOG_INFO, "%s å¤šé‡é€£ç·š.", d->host );
 
       write_to_descriptor( d,
-        "\n\r¨t²Îµo²{§Aªº¦ì§}¦³¦h­«³s½u¡M½Ğ±q§Oªº¦ì§}³s½u¡MÁÂÁÂ¡T\n\r", 0 );
+        "\n\rç³»çµ±ç™¼ç¾ä½ çš„ä½å€æœ‰å¤šé‡é€£ç·šï¹è«‹å¾åˆ¥çš„ä½å€é€£ç·šï¹è¬è¬ï¹—\n\r", 0 );
       close_socket( d );
       RETURN_NULL();
     }
 
     if ( ch->pcdata->deny != 0 && !IS_IMMORTAL( ch ) )
     {
-      mudlog( LOG_INFO , "%s ±q %s ¶i¨Ó, ¦ı¥L³Q©Úµ´¶i¤J."
+      mudlog( LOG_INFO , "%s å¾ %s é€²ä¾†, ä½†ä»–è¢«æ‹’çµ•é€²å…¥."
         , ch->name , d->host );
 
-      sprintf( temp, "\n\r\a\a\a§A³Q©Úµ´¶i¤J¡M½Ğ©M¨t²ÎºŞ²zªÌ°Ó¶q§a¡M"
-               "©Î¬O¨ì \e[1;32m%s\e[0m ¥h¸ß°İ¤@¤U¡C\n\r" , bbs_name );
+      sprintf( temp, "\n\r\a\a\aä½ è¢«æ‹’çµ•é€²å…¥ï¹è«‹å’Œç³»çµ±ç®¡ç†è€…å•†é‡å§ï¹"
+               "æˆ–æ˜¯åˆ° \e[1;32m%s\e[0m å»è©¢å•ä¸€ä¸‹ã€‚\n\r" , bbs_name );
 
       write_to_descriptor( d, temp, 0 );
       close_socket( d );
@@ -2732,7 +2732,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         chinese_number( ( ch->pcdata->dormancy - time( NULL ) ) / ( 60 * 60 * 24 )
           , days );
 
-        sprintf( buf, "§AÁÙ¦b¥V¯v­C¡M§A­n%s¤Ñ«á¤~«á¿ô¨Ó³á¡T\n\r", days );
+        sprintf( buf, "ä½ é‚„åœ¨å†¬çœ è€¶ï¹ä½ è¦%så¤©å¾Œæ‰å¾Œé†’ä¾†å–”ï¹—\n\r", days );
         write_to_descriptor( d, buf, 0 );
         close_socket( d );
         RETURN_NULL();
@@ -2740,7 +2740,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
       else
       {
-        write_to_descriptor( d, "§A±q¥V¯vª¬ºA¤¤¿ô¤F¹L¨Ó¡M¦nµt³á¡T\n\r", 0 );
+        write_to_descriptor( d, "ä½ å¾å†¬çœ ç‹€æ…‹ä¸­é†’äº†éä¾†ï¹å¥½çå–”ï¹—\n\r", 0 );
         ch->pcdata->dormancy = 0;
       }
     }
@@ -2754,8 +2754,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     {
       if ( wizlock && !IS_IMMORTAL( ch ) )
       {
-        mudlog( LOG_INFO , "%s ¦]¬°Âê©w¦ÓµLªk³s½u." , ch->name );
-        write_to_buffer( d, "¹ï¤£°_¡M¹CÀ¸§Y±N­«·s¶}¾÷¡M½Ğµy«á¦A¨Ó¡C\n\r", 0 );
+        mudlog( LOG_INFO , "%s å› ç‚ºé–å®šè€Œç„¡æ³•é€£ç·š." , ch->name );
+        write_to_buffer( d, "å°ä¸èµ·ï¹éŠæˆ²å³å°‡é‡æ–°é–‹æ©Ÿï¹è«‹ç¨å¾Œå†ä¾†ã€‚\n\r", 0 );
         close_socket( d );
         RETURN_NULL();
       }
@@ -2763,9 +2763,9 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( fOld == FILE_CORRECT )
     {
-      /* ¦Ñª±®a */
-      sprintf( buf, "¶Ù¡T\e[1;32m%s\e[0m¡M§A¤W¦¸¥Ñ \e[1;32m%s\e[0m ³s±µ¶i¨Ó\n\r"
-                    "½Ğ¿é¤J§Aªº±K½X¡R" , ch->cname , ch->pcdata->lasthost );
+      /* è€ç©å®¶ */
+      sprintf( buf, "å—¨ï¹—\e[1;32m%s\e[0mï¹ä½ ä¸Šæ¬¡ç”± \e[1;32m%s\e[0m é€£æ¥é€²ä¾†\n\r"
+                    "è«‹è¼¸å…¥ä½ çš„å¯†ç¢¼ï¹•" , ch->cname , ch->pcdata->lasthost );
       write_to_buffer( d, buf , 0 );
       write_to_buffer( d, echo_off_str, 0 );
       d->connected = CON_GET_OLD_PASSWORD;
@@ -2774,10 +2774,10 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     else
     {
-      /* ·sª±®a */
+      /* æ–°ç©å®¶ */
       if ( check_playing( d, ch->name ) ) RETURN_NULL();
 
-      sprintf( buf, "³o¬O§A­nªº¦W¦r¶Ü¡S %s (\e[1;32mY\e[0m/\e[1;32mN\e[0m) "
+      sprintf( buf, "é€™æ˜¯ä½ è¦çš„åå­—å—ï¹– %s (\e[1;32mY\e[0m/\e[1;32mN\e[0m) "
         , d->username );
 
       write_to_buffer( d, buf, 0 );
@@ -2786,7 +2786,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     }
     break;
 
-  /* ÀË¬dÀÉ®× */
+  /* æª¢æŸ¥æª”æ¡ˆ */
   case CON_CHECK_FILE :
 
     if ( d->check_file == FALSE )
@@ -2803,12 +2803,12 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     break;
 
-  /* ¨ú±o©m¦W */
+  /* å–å¾—å§“å */
   case CON_GET_NAME :
 
     if ( !argument[0] )
     {
-      write_to_buffer( d , "½Ğ¿é¤J§Aªº­^¤å¦W¦r ¡R" , 0 );
+      write_to_buffer( d , "è«‹è¼¸å…¥ä½ çš„è‹±æ–‡åå­— ï¹•" , 0 );
       d->error++;
       RETURN_NULL();
     }
@@ -2822,8 +2822,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     {
       if ( fOld )
       {
-        write_to_buffer( d, "§AªºÂÂ­^¤å¦WºÙ¥i¯à»P¥Ø«e½u¤Wªº·s°Ï°ì¬Û½Ä¬ğ"
-                            "¡MÃö³¬³s½u¡T\n\r", 0 );
+        write_to_buffer( d, "ä½ çš„èˆŠè‹±æ–‡åç¨±å¯èƒ½èˆ‡ç›®å‰ç·šä¸Šçš„æ–°å€åŸŸç›¸è¡çª"
+                            "ï¹é—œé–‰é€£ç·šï¹—\n\r", 0 );
         close_socket( d );
         RETURN_NULL();
       }
@@ -2831,8 +2831,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       else
       {
         write_to_buffer( d ,
-          "\e[1;31m§Aªº¦W¦r¤£³Q¨t²Î©Ò±µ¨ü¡M½Ğ­«·s¿é¤J¡T\n\r\e[0m"
-          "½Ğ¿é¤J§Aªº©m¦W¡R" , 0 );
+          "\e[1;31mä½ çš„åå­—ä¸è¢«ç³»çµ±æ‰€æ¥å—ï¹è«‹é‡æ–°è¼¸å…¥ï¹—\n\r\e[0m"
+          "è«‹è¼¸å…¥ä½ çš„å§“åï¹•" , 0 );
       }
 
       d->error++;
@@ -2841,45 +2841,45 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( check_logon( argument ) )
     {
-      write_to_buffer( d, "¦³¬Û¦Pªº¦WºÙªºª±®a¦b¿é¤J±K½X¡M½Ğ­«·s¿é¤J¡T\n\r"
-        "½Ğ¿é¤J§Aªº©m¦W¡R" , 0 );
+      write_to_buffer( d, "æœ‰ç›¸åŒçš„åç¨±çš„ç©å®¶åœ¨è¼¸å…¥å¯†ç¢¼ï¹è«‹é‡æ–°è¼¸å…¥ï¹—\n\r"
+        "è«‹è¼¸å…¥ä½ çš„å§“åï¹•" , 0 );
       d->error++;
       RETURN_NULL();
     }
 
-    /* §âª±®aªº­^¤å¦WºÙ«ş¨©¨ì´y­zªí¤¤, ¤§«á·|¨Ï¥Î¨ì */
+    /* æŠŠç©å®¶çš„è‹±æ–‡åç¨±æ‹·è²åˆ°æè¿°è¡¨ä¸­, ä¹‹å¾Œæœƒä½¿ç”¨åˆ° */
     argument[sizeof( d->username ) - 1 ] = '\x0';
     str_cpy( d->username , argument );
 
-    /* °e¥X¦r¦ê */
-    sprintf( buf , "ÀË¬d %s ªºÀÉ®×..." , argument );
+    /* é€å‡ºå­—ä¸² */
+    sprintf( buf , "æª¢æŸ¥ %s çš„æª”æ¡ˆ..." , argument );
     write_to_buffer( d, buf , 0 );
 
     slot = get_free_share_memory( d, INTERNAL_CHECKFILE );
 
     if ( slot < 0 )
     {
-      write_to_descriptor( d, "¹ï¤£°_¡M°O¾ĞÅé¤£¨¬¡MµLªk³s½u¡C\n\r", 0 );
+      write_to_descriptor( d, "å°ä¸èµ·ï¹è¨˜æ†¶é«”ä¸è¶³ï¹ç„¡æ³•é€£ç·šã€‚\n\r", 0 );
       close_socket( d );
       RETURN_NULL();
     }
 
-    /* ¥Ñ¤l¦æµ{¨Ó¬d¸ßª±®aªºÀÉ®× */
+    /* ç”±å­è¡Œç¨‹ä¾†æŸ¥è©¢ç©å®¶çš„æª”æ¡ˆ */
     switch( fork() )
     {
     case -1:
       SystemCrash = TRUE;
       clean_share_memory_address( slot );
       mudlog( LOG_INFO , strerror( errno ) );
-      mudlog( LOG_CRIT , "fork() ¨ç¼Æ¦³°İÃD." );
+      mudlog( LOG_CRIT , "fork() å‡½æ•¸æœ‰å•é¡Œ." );
       break;
 
-    /* ¤l¦æµ{³¡¥÷ */
+    /* å­è¡Œç¨‹éƒ¨ä»½ */
     case 0:
 
       SystemCrash = TRUE;
 
-      /* Ãö³¬©Ò¦³³q°T */
+      /* é—œé–‰æ‰€æœ‰é€šè¨Š */
       close_communication();
 
       signal( SIGPIPE, SIG_IGN );
@@ -2892,7 +2892,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         SystemCrash = TRUE;
         clean_share_memory_address( slot );
         mudlog( LOG_INFO, strerror( errno ) );
-        mudlog( LOG_CRIT, "fork() ¨ç¼Æ¦³°İÃD." );
+        mudlog( LOG_CRIT, "fork() å‡½æ•¸æœ‰å•é¡Œ." );
         exit( 0 );
 
       case 0:
@@ -2901,7 +2901,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
           SystemCrash = TRUE;
 
-          /* Ãö³¬©Ò¦³³q°T */
+          /* é—œé–‰æ‰€æœ‰é€šè¨Š */
           close_communication();
 
           signal( SIGPIPE, SIG_IGN );
@@ -2918,7 +2918,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       }
       break;
 
-    /* ¤÷¦æµ{³¡¥÷ */
+    /* çˆ¶è¡Œç¨‹éƒ¨ä»½ */
     default:
       break;
     }
@@ -2926,7 +2926,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     d->connected = CON_CHECK_FILE;
     break;
 
-  /* ¨ú±o©Ê§O */
+  /* å–å¾—æ€§åˆ¥ */
   case CON_GET_SEX :
 
     switch ( argument[0] )
@@ -2941,14 +2941,14 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     default:
       d->error++;
-      write_to_buffer( d, "½Ğ¿é¤J \e[1;32m1\e[0m(¨k©Ê) ©Î "
-        "\e[1;32m2\e[0m(¤k©Ê)¡C", 0 );
+      write_to_buffer( d, "è«‹è¼¸å…¥ \e[1;32m1\e[0m(ç”·æ€§) æˆ– "
+        "\e[1;32m2\e[0m(å¥³æ€§)ã€‚", 0 );
 
       RETURN_NULL();
     }
 
-    write_to_buffer( d, "½Ğ¿ï¨ú¿é¥X¼Ò¦¡¡R(\e[1;32m1\e[0m) Merc ¼Ò¦¡"
-      " (\e[1;32m2\e[0m) LP ¼Ò¦¡¡R", 0 );
+    write_to_buffer( d, "è«‹é¸å–è¼¸å‡ºæ¨¡å¼ï¹•(\e[1;32m1\e[0m) Merc æ¨¡å¼"
+      " (\e[1;32m2\e[0m) LP æ¨¡å¼ï¹•", 0 );
 
     d->connected = CON_CHOOSE_MODE;
     break;
@@ -2969,15 +2969,15 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     default:
       d->error++;
-      write_to_buffer( d, "½Ğ¿ï¨ú¿é¥X¼Ò¦¡¡R(\e[1;32m1\e[0m) Merc ¼Ò¦¡ "
-        "(\e[1;32m2\e[0m) LP ¼Ò¦¡¡R", 0 );
+      write_to_buffer( d, "è«‹é¸å–è¼¸å‡ºæ¨¡å¼ï¹•(\e[1;32m1\e[0m) Merc æ¨¡å¼ "
+        "(\e[1;32m2\e[0m) LP æ¨¡å¼ï¹•", 0 );
 
       RETURN_NULL();
     }
 
-    write_to_buffer( d, "½Ğ¿ï¾Ü¦uÅ@¯«¥X²{ÀW²v¡R(\e[1;32m1\e[0m) ¸g±`"
-      " (\e[1;32m2\e[0m) ´¶³q (\e[1;32m3\e[0m) «Ü¤Ö"
-      "(\e[1;32m4\e[0m) ±q¤£¡R ", 0 );
+    write_to_buffer( d, "è«‹é¸æ“‡å®ˆè­·ç¥å‡ºç¾é »ç‡ï¹•(\e[1;32m1\e[0m) ç¶“å¸¸"
+      " (\e[1;32m2\e[0m) æ™®é€š (\e[1;32m3\e[0m) å¾ˆå°‘"
+      "(\e[1;32m4\e[0m) å¾ä¸ï¹• ", 0 );
 
     d->connected = CON_CHOOSE_ANGEL;
     break;
@@ -3005,7 +3005,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
           ch->pcdata->pagelen = 20;
           if ( IS_IMMORTAL( ch ) ) send_to_char( welcome_immortal, ch );
           send_to_char( welcome_message, ch );
-          send_to_char( "\e[1;32m½Ğ«ö \e[1;33mENTER\e[1;32m Ä~Äò¹CÀ¸\e[0m", ch );
+          send_to_char( "\e[1;32mè«‹æŒ‰ \e[1;33mENTER\e[1;32m ç¹¼çºŒéŠæˆ²\e[0m", ch );
           ch->pcdata->pagelen = lines;
           d->connected        = CON_READ_MOTD;
         }
@@ -3048,14 +3048,14 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     default:
       d->error++;
-      write_to_buffer( d, "½Ğ¿ï¾Ü¦uÅ@¯«¥X²{ÀW²v¡R(\e[1;32m1\e[0m) ¸g±` "
-        "(\e[1;32m2\e[0m) ´¶³q (\e[1;32m3\e[0m) «Ü¤Ö"
-        "(\e[1;32m4\e[0m) ±q¤£¡R ", 0 );
+      write_to_buffer( d, "è«‹é¸æ“‡å®ˆè­·ç¥å‡ºç¾é »ç‡ï¹•(\e[1;32m1\e[0m) ç¶“å¸¸ "
+        "(\e[1;32m2\e[0m) æ™®é€š (\e[1;32m3\e[0m) å¾ˆå°‘"
+        "(\e[1;32m4\e[0m) å¾ä¸ï¹• ", 0 );
 
       RETURN_NULL();
     }
 
-    write_to_buffer( d, "½Ğ¿é¤J§Aªº¤¤¤å¦W¦r¡R" , 0 );
+    write_to_buffer( d, "è«‹è¼¸å…¥ä½ çš„ä¸­æ–‡åå­—ï¹•" , 0 );
     d->connected = CON_GET_CNAME;
     break;
 
@@ -3070,7 +3070,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
       str_cpy( address, host_name( d ) );
 
-      /* ³qª¾½u¤Wªº¤H, ­Y¬O¦b½u¤W */
+      /* é€šçŸ¥ç·šä¸Šçš„äºº, è‹¥æ˜¯åœ¨ç·šä¸Š */
       for ( man = descriptor_list; man; man = man->next )
       {
         if ( verify_desc( man )
@@ -3079,16 +3079,16 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
           && man->character
           && !str_cmp( man->character->name, ch->name ) )
         {
-          act( "$B$B$2¦³¤H¥ø¹Ï¥H§Aªº¦WºÙ±q$1$t$2¦a¤è³s¶i¨Ó¡M¦ı¬O±K½X¿ù»~¡T$0"
+          act( "$B$B$2æœ‰äººä¼åœ–ä»¥ä½ çš„åç¨±å¾$1$t$2åœ°æ–¹é€£é€²ä¾†ï¹ä½†æ˜¯å¯†ç¢¼éŒ¯èª¤ï¹—$0"
             , man->character, address, NULL, TO_CHAR );
           break;
         }
       }
 
-      mudlog( LOG_FAILPASS , "%s(%s) ±K½X¿ù»~.", ch->name, address );
-      write_to_buffer( d, "±K½X¿ù»~¡M½Ğ­«·s¶i¤J¡C\n\r", 0 );
+      mudlog( LOG_FAILPASS , "%s(%s) å¯†ç¢¼éŒ¯èª¤.", ch->name, address );
+      write_to_buffer( d, "å¯†ç¢¼éŒ¯èª¤ï¹è«‹é‡æ–°é€²å…¥ã€‚\n\r", 0 );
 
-      /* °O¿ı¨ì±K½X¿ù»~°O¿ıÀÉ */
+      /* è¨˜éŒ„åˆ°å¯†ç¢¼éŒ¯èª¤è¨˜éŒ„æª” */
       fwrite_failcode( ch, address );
 
       close_socket( d );
@@ -3097,9 +3097,9 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( !check_limit_ip( d ) )
     {
-      mudlog( LOG_INFO, "[Limit] %s ­­¨î³s½u.", ch->name );
-      write_to_buffer( d, "¹ï¤£°_¡M³o¦ìª±®a­­¨î³s½u¦ì§}¡M"
-        "¦ı³o­Ó¦ì§}¬O«Dªkªº¡T\n\r", 0 );
+      mudlog( LOG_INFO, "[Limit] %s é™åˆ¶é€£ç·š.", ch->name );
+      write_to_buffer( d, "å°ä¸èµ·ï¹é€™ä½ç©å®¶é™åˆ¶é€£ç·šä½å€ï¹"
+        "ä½†é€™å€‹ä½å€æ˜¯éæ³•çš„ï¹—\n\r", 0 );
 
       close_socket( d );
       RETURN_NULL();
@@ -3109,30 +3109,30 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( d->lock_file )
     {
-      mudlog( LOG_INFO, "%s ÀÉ®×ÅÜ°Ê, ±j¨îÂ_½u.", ch->name );
-      write_to_buffer( d, "¹ï¤£°_¡M§AªºÀÉ®×¦³ÅÜ°Ê¡M½Ğ­«·s¶i¤J¡C\n\r", 0 );
+      mudlog( LOG_INFO, "%s æª”æ¡ˆè®Šå‹•, å¼·åˆ¶æ–·ç·š.", ch->name );
+      write_to_buffer( d, "å°ä¸èµ·ï¹ä½ çš„æª”æ¡ˆæœ‰è®Šå‹•ï¹è«‹é‡æ–°é€²å…¥ã€‚\n\r", 0 );
       close_socket( d );
       RETURN_NULL();
     }
 
-    /* ²M°£¿é¤J½w½Ä°Ïªº¸ê®Æ */
+    /* æ¸…é™¤è¼¸å…¥ç·©è¡å€çš„è³‡æ–™ */
     d->incomm[0] = '\x0';
     d->inbuf [0] = '\x0';
 
     if ( check_reconnect( d, TRUE ) )   RETURN_NULL();
     if ( check_playing( d, ch->name ) ) RETURN_NULL();
 
-    mudlog( LOG_INFO , "%s ±q %s ³s¶i¨Ó.", ch->name, host_name( d ) );
+    mudlog( LOG_INFO , "%s å¾ %s é€£é€²ä¾†.", ch->name, host_name( d ) );
 
     if ( imm_list && !IS_IMMORTAL( ch ) && get_total_user() > max_connect )
     {
-      mudlog( LOG_INFO , "%s ³s±µ®É¶W¹L¤W½u¤H¼Æ." , ch->name );
-      write_to_buffer( d, "¹ï¤£°_¡M¥Ø«e³s½u¤H¼Æ¤Ó¦h¡M½Ğµy«á¦A³s±µ¡C\n\r", 0 );
+      mudlog( LOG_INFO , "%s é€£æ¥æ™‚è¶…éä¸Šç·šäººæ•¸." , ch->name );
+      write_to_buffer( d, "å°ä¸èµ·ï¹ç›®å‰é€£ç·šäººæ•¸å¤ªå¤šï¹è«‹ç¨å¾Œå†é€£æ¥ã€‚\n\r", 0 );
       close_socket( d );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÄİ©Ê¹L°ª, ¥]§tÅª¤JªºÄİ©Ê­×¹¢­È */
+    /* æª¢æŸ¥å±¬æ€§éé«˜, åŒ…å«è®€å…¥çš„å±¬æ€§ä¿®é£¾å€¼ */
     if ( !IS_IMMORTAL( ch )
       && ( get_curr_str( ch ) > HUGE_ATTR
       || get_curr_int( ch ) > HUGE_ATTR
@@ -3140,8 +3140,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       || get_curr_dex( ch ) > HUGE_ATTR
       || get_curr_con( ch ) > HUGE_ATTR ) )
     {
-      write_to_buffer( d, "§Aªº¥şÅéÄİ©Ê¦³°İÃD, ½Ğ¸ò¨t²ÎºŞ²zªÌÁpµ¸, ©Î"
-        "³w¦æ¼g«H¨ì lc@mud.ch.fju.edu.tw, ÁÂÁÂ!.", 0 );
+      write_to_buffer( d, "ä½ çš„å…¨é«”å±¬æ€§æœ‰å•é¡Œ, è«‹è·Ÿç³»çµ±ç®¡ç†è€…è¯çµ¡, æˆ–"
+        "é€•è¡Œå¯«ä¿¡åˆ° lc@mud.ch.fju.edu.tw, è¬è¬!.", 0 );
       close_socket( d );
       RETURN_NULL();
     }
@@ -3153,7 +3153,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       if ( IS_IMMORTAL( ch ) ) send_to_char( welcome_immortal, ch );
 
       send_to_char( welcome_message, ch );
-      send_to_char( "\e[1;32m½Ğ«ö \e[1;33mENTER\e[1;32m Ä~Äò¹CÀ¸\e[0m", ch );
+      send_to_char( "\e[1;32mè«‹æŒ‰ \e[1;33mENTER\e[1;32m ç¹¼çºŒéŠæˆ²\e[0m", ch );
 
       ch->pcdata->pagelen = lines;
       d->connected        = CON_READ_MOTD;
@@ -3177,21 +3177,21 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
       if ( imm_list && ( now_connect = get_total_user() ) > max_connect )
       {
-        mudlog( LOG_INFO , "·sª±®a %s ³s±µ®É¶W¹L¤W½u¤H¼Æ." , ch->name );
-        write_to_buffer( d, "³s½u¤H¼Æ¤Ó¦h¡M½Ğµy«á¦A³s±µ¡C\n\r", 0 );
+        mudlog( LOG_INFO , "æ–°ç©å®¶ %s é€£æ¥æ™‚è¶…éä¸Šç·šäººæ•¸." , ch->name );
+        write_to_buffer( d, "é€£ç·šäººæ•¸å¤ªå¤šï¹è«‹ç¨å¾Œå†é€£æ¥ã€‚\n\r", 0 );
         close_socket( d );
         RETURN_NULL();
       }
 
       if ( !imm_list )
       {
-        sprintf( buf, "\a\a\a\e[1;32m§A¬O²Ä¤@­Ó·sª±®a¡M§A±N³Q¥ô©R¬°¶W¯Å"
-          "ºŞ²zªÌ¡M½Ğ¤p¤ß¦aµ¹ %s ¤@­Ó±K½X¡R\e[0m %s", ch->name, echo_off_str );
+        sprintf( buf, "\a\a\a\e[1;32mä½ æ˜¯ç¬¬ä¸€å€‹æ–°ç©å®¶ï¹ä½ å°‡è¢«ä»»å‘½ç‚ºè¶…ç´š"
+          "ç®¡ç†è€…ï¹è«‹å°å¿ƒåœ°çµ¦ %s ä¸€å€‹å¯†ç¢¼ï¹•\e[0m %s", ch->name, echo_off_str );
       }
 
       else
       {
-        sprintf( buf, "§A¬O¤@­Ó·sª±®a¡M½Ğµ¹ %s ¤@­Ó±K½X¡R %s"
+        sprintf( buf, "ä½ æ˜¯ä¸€å€‹æ–°ç©å®¶ï¹è«‹çµ¦ %s ä¸€å€‹å¯†ç¢¼ï¹• %s"
           , ch->name, echo_off_str );
       }
 
@@ -3201,7 +3201,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     case 'n': case 'N':
 
-      write_to_buffer( d, "¦n§a¡T½Ğ°İ§Aªº¦W¦r¬O¤°»ò¡S", 0 );
+      write_to_buffer( d, "å¥½å§ï¹—è«‹å•ä½ çš„åå­—æ˜¯ä»€éº¼ï¹–", 0 );
       free_char( d->character );
       d->character = NULL;
       d->connected = CON_GET_NAME;
@@ -3209,7 +3209,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       break;
 
     default:
-      write_to_buffer( d, "½Ğ¿é¤J [\e[1;32mY\e[0m] ©Î¬O [\e[1;32mN\e[0m]¡S", 0 );
+      write_to_buffer( d, "è«‹è¼¸å…¥ [\e[1;32mY\e[0m] æˆ–æ˜¯ [\e[1;32mN\e[0m]ï¹–", 0 );
       d->error++;
       break;
     }
@@ -3224,9 +3224,9 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       const char * pMessage;
 
       pMessage = ( strict_password )
-        ? "§Aªº±K½X¤ÓÂ²³æ¤F¡M½Ğ³]©w¥]²[¼Æ¦r©M¦r¥À¥B¤­­Ó¦r¥H¤Wªº±K½X¡T"
-          "\n\r½Ğ¿é¤J±K½X¡R"
-        : "§Aªº±K½X¤ÓÂ²³æ¤F¡M½Ğ³]©w¤­­Ó¦r¥H¤Wªº±K½X¡T\n\r½Ğ¿é¤J±K½X¡R";
+        ? "ä½ çš„å¯†ç¢¼å¤ªç°¡å–®äº†ï¹è«‹è¨­å®šåŒ…æ¶µæ•¸å­—å’Œå­—æ¯ä¸”äº”å€‹å­—ä»¥ä¸Šçš„å¯†ç¢¼ï¹—"
+          "\n\rè«‹è¼¸å…¥å¯†ç¢¼ï¹•"
+        : "ä½ çš„å¯†ç¢¼å¤ªç°¡å–®äº†ï¹è«‹è¨­å®šäº”å€‹å­—ä»¥ä¸Šçš„å¯†ç¢¼ï¹—\n\rè«‹è¼¸å…¥å¯†ç¢¼ï¹•";
 
       write_to_buffer( d, pMessage, 0 );
 
@@ -3239,14 +3239,14 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     {
       if ( *p == '~' )
       {
-        write_to_buffer( d, "§Aªº±K½X¤£¦X³W©w¡C\n\r½Ğ¿é¤J±K½X¡R", 0 );
+        write_to_buffer( d, "ä½ çš„å¯†ç¢¼ä¸åˆè¦å®šã€‚\n\rè«‹è¼¸å…¥å¯†ç¢¼ï¹•", 0 );
         RETURN_NULL();
       }
     }
 
     free_string( ch->pcdata->pwd );
     ch->pcdata->pwd = str_dup( pwdnew );
-    write_to_buffer( d, "½Ğ­«·s¿é¤J±K½X¨Ó½T»{¡R", 0 );
+    write_to_buffer( d, "è«‹é‡æ–°è¼¸å…¥å¯†ç¢¼ä¾†ç¢ºèªï¹•", 0 );
     d->connected = CON_CONFIRM_NEW_PASSWORD;
     break;
 
@@ -3254,28 +3254,28 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( str_len( argument ) > MaxCNameLen )
     {
-      write_to_buffer( d, "§Aªº¤¤¤å¦W¦r¤Óªø¤F, ½Ğ­«·s¿é¤J§Aªº¤¤¤å¦W¦r: ", 0 );
+      write_to_buffer( d, "ä½ çš„ä¸­æ–‡åå­—å¤ªé•·äº†, è«‹é‡æ–°è¼¸å…¥ä½ çš„ä¸­æ–‡åå­—: ", 0 );
       d->error++;
       RETURN_NULL();
     }
 
     if ( str_len( argument ) < MinCNameLen )
     {
-      write_to_buffer( d, "§Aªº¤¤¤å¦W¦r¤Óµu¤F¡M½Ğ­«·s¿é¤J§Aªº¤¤¤å¦W¦r¡R", 0 );
+      write_to_buffer( d, "ä½ çš„ä¸­æ–‡åå­—å¤ªçŸ­äº†ï¹è«‹é‡æ–°è¼¸å…¥ä½ çš„ä¸­æ–‡åå­—ï¹•", 0 );
       d->error++;
       RETURN_NULL();
     }
 
     if ( ( *argument < '\x81' || *argument > '\xFF' ) && *argument != '\e' )
     {
-      write_to_buffer( d, "³o¤£¬O¤@­Ó¤¤¤å¦W¦r¡M½Ğ­«·s¿é¤J§Aªº¤¤¤å¦W¦r¡R", 0 );
+      write_to_buffer( d, "é€™ä¸æ˜¯ä¸€å€‹ä¸­æ–‡åå­—ï¹è«‹é‡æ–°è¼¸å…¥ä½ çš„ä¸­æ–‡åå­—ï¹•", 0 );
       d->error++;
       RETURN_NULL();
     }
 
     if ( check_cname_xname( argument ) )
     {
-      write_to_buffer( d, "§A¤£¯à®³³o­Ó°µ¦W¦r¡M½Ğ­«·s¿é¤J§Aªº¤¤¤å¦W¦r¡R", 0 );
+      write_to_buffer( d, "ä½ ä¸èƒ½æ‹¿é€™å€‹åšåå­—ï¹è«‹é‡æ–°è¼¸å…¥ä½ çš„ä¸­æ–‡åå­—ï¹•", 0 );
       d->error++;
       RETURN_NULL();
     }
@@ -3287,7 +3287,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     ch->cname = str_dup( argument );
     ch->pcdata->pagelen = 22;
     ch->prompt =
-      str_dup( "< ¥Í©R¤O^hp1 ªk¤O^mp1 Åé¤O^mv1 ª÷¿ú^gol ¸gÅç­È^exp >" );
+      str_dup( "< ç”Ÿå‘½åŠ›^hp1 æ³•åŠ›^mp1 é«”åŠ›^mv1 é‡‘éŒ¢^gol ç¶“é©—å€¼^exp >" );
 
     if ( aInnate >= nInnate || aInnate <= 0 )
     {
@@ -3302,7 +3302,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         set_innate( d );
       }
 
-      print_to_char( ch , "\n\r\n\r%s\e[1;32m½Ğ«ö ENTER Ä~Äò¹CÀ¸¡R\e[0m"
+      print_to_char( ch , "\n\r\n\r%s\e[1;32mè«‹æŒ‰ ENTER ç¹¼çºŒéŠæˆ²ï¹•\e[0m"
         , welcome_message );
 
       d->connected = CON_READ_MOTD;
@@ -3317,7 +3317,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     break;
 
   case CON_CONTRACT:
-    print_to_char( ch , "\n\r%s\e[1;32m½Ğ«ö ENTER Ä~Äò¹CÀ¸¡R\e[0m"
+    print_to_char( ch , "\n\r%s\e[1;32mè«‹æŒ‰ ENTER ç¹¼çºŒéŠæˆ²ï¹•\e[0m"
       , welcome_message );
 
     set_innate( d );
@@ -3339,8 +3339,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
       if ( !selection[0] )
       {
-        write_to_buffer( d, "§A¥²¶·µù©ú°é¿ï¨º¤@­Ó¡M¨Ò¦p¡Rselect 1¡C"
-          "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+        write_to_buffer( d, "ä½ å¿…é ˆè¨»æ˜åœˆé¸é‚£ä¸€å€‹ï¹ä¾‹å¦‚ï¹•select 1ã€‚"
+          "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
 
         break;
       }
@@ -3349,8 +3349,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         || ( slot = atoi( selection ) ) <= 0
         || slot > nInnate )
       {
-        sprintf( buf, "§Aªº¿ï¶µ¥²¶·¬O¼Æ¦r¡M¥B¦b 1 ¨ì %d ¤§¶¡¡C¨Ò¦p¡Rselect 2"
-          "¡C½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", nInnate );
+        sprintf( buf, "ä½ çš„é¸é …å¿…é ˆæ˜¯æ•¸å­—ï¹ä¸”åœ¨ 1 åˆ° %d ä¹‹é–“ã€‚ä¾‹å¦‚ï¹•select 2"
+          "ã€‚è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", nInnate );
 
         write_to_buffer( d, buf, 0 );
         break;
@@ -3358,8 +3358,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
       if ( d->select[--slot] == FALSE && get_innate( d ) >= aInnate )
       {
-        write_to_buffer( d, "§Aªº¿ï¨úªº§Ş¯à¶W¥X§A¥i¥H¿ïªºÁ`¼Æ¡C"
-          "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+        write_to_buffer( d, "ä½ çš„é¸å–çš„æŠ€èƒ½è¶…å‡ºä½ å¯ä»¥é¸çš„ç¸½æ•¸ã€‚"
+          "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
 
         break;
       }
@@ -3374,8 +3374,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
       if ( !selection[0] )
       {
-        write_to_buffer( d, "§A¥²¶·µù©ú¬d¸ß¨º¤@­Ó§Ş¯à¡M¨Ò¦p¡Rquery 1¡C"
-          "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+        write_to_buffer( d, "ä½ å¿…é ˆè¨»æ˜æŸ¥è©¢é‚£ä¸€å€‹æŠ€èƒ½ï¹ä¾‹å¦‚ï¹•query 1ã€‚"
+          "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
         break;
       }
 
@@ -3383,8 +3383,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         || ( slot = atoi( selection ) ) <= 0
         || slot > nInnate )
       {
-        sprintf( buf, "§Aªº¿ï¶µ¥²¶·¬O¼Æ¦r¡M¥B¦b 1 ¨ì %d ¤§¶¡¡C¨Ò¦p¡Rquery 1¡C"
-          "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", nInnate );
+        sprintf( buf, "ä½ çš„é¸é …å¿…é ˆæ˜¯æ•¸å­—ï¹ä¸”åœ¨ 1 åˆ° %d ä¹‹é–“ã€‚ä¾‹å¦‚ï¹•query 1ã€‚"
+          "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", nInnate );
 
         write_to_buffer( d, buf, 0 );
         break;
@@ -3394,44 +3394,44 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         || !pSkill->help
         || !*pSkill->help )
       {
-        write_to_buffer( d, "¹ï¤£°_¡M³o­Ó§Ş¯à¨S¦³»¡©ú¤å¥ó¡T"
-          "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+        write_to_buffer( d, "å°ä¸èµ·ï¹é€™å€‹æŠ€èƒ½æ²’æœ‰èªªæ˜æ–‡ä»¶ï¹—"
+          "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
         break;
       }
 
       write_to_buffer( d, pSkill->help, 0 );
-      write_to_buffer( d, "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+      write_to_buffer( d, "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
     }
 
     else if ( !str_prefix( selection, "help" ) )
     {
     write_to_descriptor( d,
-      "\n\r    ¥Ø«e§A¥¿¦b¿ï¨ú¤@¨Ç°ò¥»ªº§Ş¯à¡M¤]´N¬O¤@¶}©l¶i¤J¹CÀ¸«e´N·|ªº°ò¥»¥\\¤Ò¡C\n\r"
-      "´£¥Ü¦C·|Åã¥Ü¥Ø«e§A¥i¥H°é¿ï´X­Ó¡MÁÙ¦³§A¤w¸g¿ï¤F´X­Ó¡T¤@¶}©l§A¥i¥H¿é¤J\n\r"
-      "query 1 ¨Ó¬d¸ß¤@¸¹§Ş¯àªº¬ÛÃö¸ê®Æ¡M§A¥i¥HÄ~Äò¬d¸ß¨ä¥L§Ş¯àªºª¬ªp¡M¨ì©³¾A¤£\n\r"
-      "¾A¦X¦Û¤v¾Ç²ß¡C·í§A¤w¸g¨M©w­n°é¿ï®É¡M°²©w§A­n°é¿ï©w²Ä¤G¸¹§Ş¯à¡M§A¥i¥H¿é¤J\n\r"
-      "select 2¡C¤§«á¡M²Ä¤G¸¹§Ş¯à®ÇÃäªº°é¿ï¨Ó«K·|¦³­Ó°O¸¹¡M¥Nªí§A¤w¸g°é¿ï¹L¤F¡M\n\r"
-      "¦pªG§A«á®¬¡M§A¥i¥H¦A¤@¦¸¿é¤J select 2 ¡M«h³o­Ó°O¸¹«K·|®ø±¼¡C·í§A°é¿ï¦n¤F\n\r"
-      "¡M§A«h¥i¥H¿é¤J done ¡M¥Nªí¤w¸g§¹¦¨°é¿ï¡M¦ı¬O§A°é¿ïªº¼Æ¥Ø¤£¯à¤Ö©óÀ³¸Ó°é¿ï\n\r"
-      "ªº¼Æ¥Ø¡M§_«h¨t²Î·|½Ğ§A¦b¦Ò¼{°é¿ï¨ä¥L§Ş¯à¡C¥H¤U¬O³o¨Ç«ü¥OªºÂ²³æ»¡©ú¡R\n\r\n\r"
-      "  1¡B\e[1;35mselect\e[0m (¸¹½X) °é¿ï©Î®ø°£°ò¥»§Ş¯à\n\r"
-      "  2¡B\e[1;35mquery\e[0m  (¸¹½X) ¬d¸ß¬Y­Ó§Ş¯àªº¸ê°T\n\r"
-      "  3¡B\e[1;35mclear\e[0m         ²M°£¤§«eªº³]©w\n\r"
-      "  4¡B\e[1;35mhelp\e[0m          ¥Ø«eªº¨D§Uµe­±\n\r"
-      "  5¡B\e[1;35mdone\e[0m          §¹¦¨°é¿ïªº°Ê§@\n\r\n\r"
-      "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+      "\n\r    ç›®å‰ä½ æ­£åœ¨é¸å–ä¸€äº›åŸºæœ¬çš„æŠ€èƒ½ï¹ä¹Ÿå°±æ˜¯ä¸€é–‹å§‹é€²å…¥éŠæˆ²å‰å°±æœƒçš„åŸºæœ¬åŠŸ\å¤«ã€‚\n\r"
+      "æç¤ºåˆ—æœƒé¡¯ç¤ºç›®å‰ä½ å¯ä»¥åœˆé¸å¹¾å€‹ï¹é‚„æœ‰ä½ å·²ç¶“é¸äº†å¹¾å€‹ï¹—ä¸€é–‹å§‹ä½ å¯ä»¥è¼¸å…¥\n\r"
+      "query 1 ä¾†æŸ¥è©¢ä¸€è™ŸæŠ€èƒ½çš„ç›¸é—œè³‡æ–™ï¹ä½ å¯ä»¥ç¹¼çºŒæŸ¥è©¢å…¶ä»–æŠ€èƒ½çš„ç‹€æ³ï¹åˆ°åº•é©ä¸\n\r"
+      "é©åˆè‡ªå·±å­¸ç¿’ã€‚ç•¶ä½ å·²ç¶“æ±ºå®šè¦åœˆé¸æ™‚ï¹å‡å®šä½ è¦åœˆé¸å®šç¬¬äºŒè™ŸæŠ€èƒ½ï¹ä½ å¯ä»¥è¼¸å…¥\n\r"
+      "select 2ã€‚ä¹‹å¾Œï¹ç¬¬äºŒè™ŸæŠ€èƒ½æ—é‚Šçš„åœˆé¸ä¾†ä¾¿æœƒæœ‰å€‹è¨˜è™Ÿï¹ä»£è¡¨ä½ å·²ç¶“åœˆé¸éäº†ï¹\n\r"
+      "å¦‚æœä½ å¾Œæ‚”ï¹ä½ å¯ä»¥å†ä¸€æ¬¡è¼¸å…¥ select 2 ï¹å‰‡é€™å€‹è¨˜è™Ÿä¾¿æœƒæ¶ˆæ‰ã€‚ç•¶ä½ åœˆé¸å¥½äº†\n\r"
+      "ï¹ä½ å‰‡å¯ä»¥è¼¸å…¥ done ï¹ä»£è¡¨å·²ç¶“å®Œæˆåœˆé¸ï¹ä½†æ˜¯ä½ åœˆé¸çš„æ•¸ç›®ä¸èƒ½å°‘æ–¼æ‡‰è©²åœˆé¸\n\r"
+      "çš„æ•¸ç›®ï¹å¦å‰‡ç³»çµ±æœƒè«‹ä½ åœ¨è€ƒæ…®åœˆé¸å…¶ä»–æŠ€èƒ½ã€‚ä»¥ä¸‹æ˜¯é€™äº›æŒ‡ä»¤çš„ç°¡å–®èªªæ˜ï¹•\n\r\n\r"
+      "  1ã€\e[1;35mselect\e[0m (è™Ÿç¢¼) åœˆé¸æˆ–æ¶ˆé™¤åŸºæœ¬æŠ€èƒ½\n\r"
+      "  2ã€\e[1;35mquery\e[0m  (è™Ÿç¢¼) æŸ¥è©¢æŸå€‹æŠ€èƒ½çš„è³‡è¨Š\n\r"
+      "  3ã€\e[1;35mclear\e[0m         æ¸…é™¤ä¹‹å‰çš„è¨­å®š\n\r"
+      "  4ã€\e[1;35mhelp\e[0m          ç›®å‰çš„æ±‚åŠ©ç•«é¢\n\r"
+      "  5ã€\e[1;35mdone\e[0m          å®Œæˆåœˆé¸çš„å‹•ä½œ\n\r\n\r"
+      "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
     }
 
     else if ( !str_prefix( selection, "done" ) )
     {
       if ( get_innate( d ) < aInnate )
       {
-        write_to_buffer( d, "§A©|¦³ÂI¼Æ¥i¥H°é¿ï¡M½Ğ¤£­n©ñ±ó¡T"
-          "½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+        write_to_buffer( d, "ä½ å°šæœ‰é»æ•¸å¯ä»¥åœˆé¸ï¹è«‹ä¸è¦æ”¾æ£„ï¹—"
+          "è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
         break;
       }
 
-      write_to_buffer( d, "½Ğ«ö¥ô¦óÁäÄ~Äò¡T", 0 );
+      write_to_buffer( d, "è«‹æŒ‰ä»»ä½•éµç¹¼çºŒï¹—", 0 );
       d->connected = CON_CONTRACT;
     }
 
@@ -3443,7 +3443,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     else
     {
-      write_to_buffer( d, "µL®Äªº«ü¥O¡T½Ğ«ö \e[1;32mENTER\e[0m Ä~Äò°é¿ï ", 0 );
+      write_to_buffer( d, "ç„¡æ•ˆçš„æŒ‡ä»¤ï¹—è«‹æŒ‰ \e[1;32mENTER\e[0m ç¹¼çºŒåœˆé¸ ", 0 );
     }
 
     break;
@@ -3453,14 +3453,14 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     write_to_buffer( d, "\n\r", 0 );
     if ( str_cmp( crypt( argument, ch->pcdata->pwd ), ch->pcdata->pwd ) )
     {
-      write_to_buffer( d, "±K½X¤£¦X¡C\n\r½Ğ­«·s¿é¤J§Aªº±K½X¡R", 0 );
+      write_to_buffer( d, "å¯†ç¢¼ä¸åˆã€‚\n\rè«‹é‡æ–°è¼¸å…¥ä½ çš„å¯†ç¢¼ï¹•", 0 );
       d->connected = CON_GET_NEW_PASSWORD;
       d->error++;
       RETURN_NULL();
     }
 
     write_to_buffer( d, echo_on_str , 0 );
-    write_to_buffer( d, "½Ğ¿é¤J§Aªº¹q¤l¶l¥ó«H½c¡R", 0 );
+    write_to_buffer( d, "è«‹è¼¸å…¥ä½ çš„é›»å­éƒµä»¶ä¿¡ç®±ï¹•", 0 );
 
     d->connected = CON_GET_EMAIL_ADDRESS;
     d->incomm[0] = '\x0';
@@ -3471,21 +3471,21 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( str_len( argument ) > 50 )
     {
-      write_to_buffer( d, "§Aªº«H½c¦WºÙ¤Óªø¤F¡M½Ğ­«·s¿é¤J§Aªº¹q¤l«H½c¡R", 0 );
+      write_to_buffer( d, "ä½ çš„ä¿¡ç®±åç¨±å¤ªé•·äº†ï¹è«‹é‡æ–°è¼¸å…¥ä½ çš„é›»å­ä¿¡ç®±ï¹•", 0 );
       d->error++;
       RETURN_NULL();
     }
 
     if ( str_len( argument ) < 10 )
     {
-      write_to_buffer( d, "§Aªº¹q¤l«H½c¦WºÙ¤Óµu¤F¡M½Ğ­«·s¿é¤J§Aªº¹q¤l«H½c¡R", 0 );
+      write_to_buffer( d, "ä½ çš„é›»å­ä¿¡ç®±åç¨±å¤ªçŸ­äº†ï¹è«‹é‡æ–°è¼¸å…¥ä½ çš„é›»å­ä¿¡ç®±ï¹•", 0 );
       d->error++;
       RETURN_NULL();
     }
 
     if ( !check_email_address( argument ) )
     {
-      write_to_buffer( d, "§Aªº¹q¤l«H½c¦WºÙ¤£¦Xªk¡M½Ğ­«·s¿é¤J§Aªº¹q¤l«H½c¡R", 0 );
+      write_to_buffer( d, "ä½ çš„é›»å­ä¿¡ç®±åç¨±ä¸åˆæ³•ï¹è«‹é‡æ–°è¼¸å…¥ä½ çš„é›»å­ä¿¡ç®±ï¹•", 0 );
       d->error++;
       RETURN_NULL();
     }
@@ -3494,8 +3494,8 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     free_string( ch->email);
     ch->email = str_dup( argument );
 
-    write_to_buffer( d, "½Ğ¿ï¾Ü§Aªº©Ê§O \e[1;32m1\e[0m(¨k©Ê)"
-      " \e[1;32m2\e[0m(¤k©Ê) ", 0 );
+    write_to_buffer( d, "è«‹é¸æ“‡ä½ çš„æ€§åˆ¥ \e[1;32m1\e[0m(ç”·æ€§)"
+      " \e[1;32m2\e[0m(å¥³æ€§) ", 0 );
 
     d->connected = CON_GET_SEX;
     d->incomm[0] = '\x0';
@@ -3506,21 +3506,21 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     if ( ch->level > MAX_LEVEL )
     {
-      mudlog( LOG_INFO, "­×¥¿ %s µ¥¯Å %d -> %d."
+      mudlog( LOG_INFO, "ä¿®æ­£ %s ç­‰ç´š %d -> %d."
         , ch->name, ch->level, MAX_LEVEL );
       ch->level = MAX_LEVEL;
     }
 
     d->connected = CON_PLAYING;
 
-    act( "$A$2Åwªï§A¨Ó¨ì$5$t$2¡MÁÂÁÂ§Aªº¤ä«ù¡M¨Ã½Ğ¦h¦h¥úÁ{¡T$0$A"
+    act( "$A$2æ­¡è¿ä½ ä¾†åˆ°$5$t$2ï¹è¬è¬ä½ çš„æ”¯æŒï¹ä¸¦è«‹å¤šå¤šå…‰è‡¨ï¹—$0$A"
       , ch, mud_name, NULL, TO_CHAR );
 
-    /* °e¥X¤µ¤é®ø®§ */
+    /* é€å‡ºä»Šæ—¥æ¶ˆæ¯ */
     if ( motd_message && *motd_message )
     {
       send_to_char(
-        "\n\r--------------------------------- \e[1;32m¤µ¤é®ø®§\e[0m "
+        "\n\r--------------------------------- \e[1;32mä»Šæ—¥æ¶ˆæ¯\e[0m "
         "---------------------------------\n\r", ch );
 
       send_to_char( motd_message, ch );
@@ -3555,7 +3555,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         }
       }
 
-      /* µ¥¯Å¤@ªº°ò¥»Äİ©Ê */
+      /* ç­‰ç´šä¸€çš„åŸºæœ¬å±¬æ€§ */
       ch->level   = 1;
       ch->now_str = DefaultStr;
       ch->now_int = DefaultInt;
@@ -3563,13 +3563,13 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       ch->now_dex = DefaultDex;
       ch->now_con = DefaultCon;
 
-      /* µ¥¯Å¤@ªºª÷¿ú¼Æ¥Ø */
+      /* ç­‰ç´šä¸€çš„é‡‘éŒ¢æ•¸ç›® */
       gold_to_char( ch, DefaultGold );
       ch->hit     = get_curr_hit( ch );
       ch->mana    = get_curr_mana( ch );
       ch->move    = get_curr_move( ch );
 
-      /* ³]©w©ïÀY */
+      /* è¨­å®šæŠ¬é ­ */
       ch->class = class_demos;
       str_cpy( buf,  ch->class->title );
       set_title( ch, buf );
@@ -3589,9 +3589,9 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         }
       }
 
-      mudlog( LOG_NEWPLAYER , "%s ±q %s ³s¶i¨Óªº·sª±®a.", ch->name, d->host );
+      mudlog( LOG_NEWPLAYER , "%s å¾ %s é€£é€²ä¾†çš„æ–°ç©å®¶.", ch->name, d->host );
 
-      /*  ³]©w¦UÀW¹D */
+      /*  è¨­å®šå„é »é“ */
       if ( !ChannelAuction  ) SET_BIT( ch->deaf, CHANNEL_AUCTION  );
       if ( !ChannelChat     ) SET_BIT( ch->deaf, CHANNEL_CHAT     );
       if ( !ChannelBulletin ) SET_BIT( ch->deaf, CHANNEL_BULLETIN );
@@ -3612,7 +3612,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       if ( !ChannelGroup    ) SET_BIT( ch->deaf, CHANNEL_GROUP    );
       if ( !ChannelPK       ) SET_BIT( ch->deaf, CHANNEL_PK       );
 
-      /* ³]©w¦U²ÕºA */
+      /* è¨­å®šå„çµ„æ…‹ */
       ch->act    = 0;
       ch->turn   = 0;
       ch->notify = 0;
@@ -3647,7 +3647,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       if ( !NotifyXname     ) SET_BIT( ch->notify, NOTIFY_XNAME      );
       if ( !NotifyNet       ) SET_BIT( ch->notify, NOTIFY_NET        );
 
-      /* ¬O§_¬°²Ä¤@­Óª±®a¡M¬Oªº¸Üµ¹¥L¿é¤J¬°¤j¯« */
+      /* æ˜¯å¦ç‚ºç¬¬ä¸€å€‹ç©å®¶ï¹æ˜¯çš„è©±çµ¦ä»–è¼¸å…¥ç‚ºå¤§ç¥ */
       if ( !imm_list )
       {
         IMMLIST_DATA * pImm;
@@ -3658,7 +3658,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
           fprintf( pFile, "#Immortal\n"                      );
           fprintf( pFile, "Name            %s~\n", ch->name  );
           fprintf( pFile, "Level           %d\n" , MAX_LEVEL );
-          fprintf( pFile, "Adviser         %s\n", symbol_string( FALSE, "ÅŞ¿è±`¼Æ" ) );
+          fprintf( pFile, "Adviser         %s\n", symbol_string( FALSE, "é‚è¼¯å¸¸æ•¸" ) );
           fprintf( pFile, "Description\n~\nEnd\n\nEnd"       );
           FCLOSE( pFile );
 
@@ -3672,13 +3672,13 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
           ch->level = MAX_LEVEL;
 
-          act( "$B$B$B$A$A$2§A¬O²Ä¤@­Ó¶i¤J$tªº¤H¡M©Ò¥H§A³Q¥ô©R¬°¤j¯«¡C$A$0"
+          act( "$B$B$B$A$A$2ä½ æ˜¯ç¬¬ä¸€å€‹é€²å…¥$tçš„äººï¹æ‰€ä»¥ä½ è¢«ä»»å‘½ç‚ºå¤§ç¥ã€‚$A$0"
             , ch, mud_name, NULL, TO_CHAR );
         }
 
         else
         {
-          mudlog( LOG_DEBUG, "µLªk¶}±Ò¯«±ÚÀÉ®×." );
+          mudlog( LOG_DEBUG, "ç„¡æ³•é–‹å•Ÿç¥æ—æª”æ¡ˆ." );
         }
       }
     }
@@ -3687,7 +3687,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     {
       if ( ch->in_room->NoQuit )
       {
-        send_to_char( "§A¤W¦¸¥hªº¦a¤è¦n¹³®ø¥¢¤F¡C\n\r", ch );
+        send_to_char( "ä½ ä¸Šæ¬¡å»çš„åœ°æ–¹å¥½åƒæ¶ˆå¤±äº†ã€‚\n\r", ch );
         char_to_room( ch, get_hometown( ch ) );
       }
 
@@ -3714,7 +3714,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         char_from_room( ch );
         char_to_room( ch, RoomJail );
 
-        /* ²M°£°lÂÜ¬ö¿ıÂI */
+        /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
         clear_trace( ch, TRUE );
       }
     }
@@ -3726,7 +3726,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         char_from_room( ch );
         char_to_room( ch, RoomFail );
 
-        /* ²M°£°lÂÜ¬ö¿ıÂI */
+        /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
         clear_trace( ch, TRUE );
       }
     }
@@ -3736,30 +3736,30 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       char_from_room( ch );
       char_to_room( ch, get_hometown( ch ) );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( ch, TRUE );
     }
 
-    /* ­Y¤w¤£¥²«ä¹L¡MÁÙ¦b«ä¹L±V */
+    /* è‹¥å·²ä¸å¿…æ€éï¹é‚„åœ¨æ€éå´– */
     if ( ch && ch->failed <= 0 && ch->in_room == RoomFail )
     {
       char_from_room( ch );
       char_to_room( ch, get_hometown( ch ) );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( ch, TRUE );
     }
 
-    /* ÀË¬dª««~¬O§_¥¿½T */
+    /* æª¢æŸ¥ç‰©å“æ˜¯å¦æ­£ç¢º */
     check_null_object( ch );
 
-    /* ÀË¬dª««~§Ç¸¹¬O§_­«½Æ */
+    /* æª¢æŸ¥ç‰©å“åºè™Ÿæ˜¯å¦é‡è¤‡ */
     check_serial_number( ch );
 
-    /* ¨ú±oÀ°¬£ */
+    /* å–å¾—å¹«æ´¾ */
     char_attach_club( ch );
 
-    /* ­×¥¿µ¥¯Å */
+    /* ä¿®æ­£ç­‰ç´š */
     if ( ch->level >= LEVEL_IMMORTAL ) ch->level = LEVEL_HERO;
     if ( ch->trust >= LEVEL_IMMORTAL ) ch->trust = LEVEL_HERO;
 
@@ -3775,30 +3775,30 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
 
     ch->bank = UMAX( 0, ch->bank  );
 
-    /* ­×¥¿¨S¦³«ÍÅé¡M¦ıª¬ºA¦º¤` */
+    /* ä¿®æ­£æ²’æœ‰å±é«”ï¹ä½†ç‹€æ…‹æ­»äº¡ */
     if ( ch->position == POS_DEAD && ch->pcdata && !ch->pcdata->corpse )
     {
       ch->position = POS_STANDING;
       char_from_room( ch );
       char_to_room( ch, get_hometown( ch ) );
 
-      /* ²M°£°lÂÜ¬ö¿ıÂI */
+      /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
       clear_trace( ch, TRUE );
     }
 
-    /* ³]©wª±®a§Ç¸¹ */
+    /* è¨­å®šç©å®¶åºè™Ÿ */
     set_serial( &ch->serial );
 
-    /* «Ø¥ß¸ê®Æ®w */
+    /* å»ºç«‹è³‡æ–™åº« */
     set_database( ch );
 
-    act( "$n ­¼¶³¾rÃú±qªÅ¦Ó­°¡M©{¦p¤Ñ¯«¡T", ch, NULL, NULL, TO_ROOM );
+    act( "$n ä¹˜é›²é§•éœ§å¾ç©ºè€Œé™ï¹å®›å¦‚å¤©ç¥ï¹—", ch, NULL, NULL, TO_ROOM );
     do_look( ch, "auto" );
 
-    /* ÀË¬d¥X¥Í¦a */
+    /* æª¢æŸ¥å‡ºç”Ÿåœ° */
     get_home( ch );
 
-    /* ­×¥¿Äİ©Ê */
+    /* ä¿®æ­£å±¬æ€§ */
     while ( get_curr_hit( ch  ) > MaxHit  ) ch->max_hit--;
     while ( get_curr_mana( ch ) > MaxMana ) ch->max_mana--;
     while ( get_curr_move( ch ) > MaxMove ) ch->max_move--;
@@ -3814,7 +3814,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     ch->practice    = UMIN( MaxPractice, ch->practice    );
     ch->pcdata->ply = UMIN( PlyQuota   , ch->pcdata->ply );
 
-    /* ­×¥¿§Ş¯à */
+    /* ä¿®æ­£æŠ€èƒ½ */
     for ( notes = 0; notes < MAX_SKILL; notes++ )
     {
       if ( ch->skill[notes] > 0 && ( pSkill = get_skill( notes ) ) )
@@ -3836,7 +3836,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
             {
               cancel_skill( ch, pSkill );
 
-              act( "$B$B§A¤w¸gº¥º¥¦a¿ò§Ñ$1$w$0³o¶µ§Ş¯à¤F¡T"
+              act( "$B$Bä½ å·²ç¶“æ¼¸æ¼¸åœ°éºå¿˜$1$w$0é€™é …æŠ€èƒ½äº†ï¹—"
                 , ch, pSkill, NULL, TO_CHAR );
             }
           }
@@ -3849,18 +3849,18 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
         && pnote->date_stamp > ch->last_note ) notes++;
 
     if ( notes > 0 )
-      act( "$3§A¦³$i«Ê«H©|¥¼Åª¨ú¡M½Ğ¥Î ¡u$7note$3¡v «ü¥OÅª¨ú¡C$0$B$B"
+      act( "$3ä½ æœ‰$iå°ä¿¡å°šæœªè®€å–ï¹è«‹ç”¨ ã€Œ$7note$3ã€ æŒ‡ä»¤è®€å–ã€‚$0$B$B"
         , ch, &notes, NULL, TO_CHAR );
 
     if ( ( notes = vote_count( ch ) ) > 0 )
-      act( "§A©|¦³$i³õ²¼¨S¦³§ë¡M½Ğ¥Î¡u$6vote$0¡v¨Ó¶i¦æ§ë²¼¡T"
+      act( "ä½ å°šæœ‰$iå ´ç¥¨æ²’æœ‰æŠ•ï¹è«‹ç”¨ã€Œ$6vote$0ã€ä¾†é€²è¡ŒæŠ•ç¥¨ï¹—"
         , ch, &notes, NULL, TO_CHAR );
 
     if ( IS_SET( ch->act, PLR_WIZINVIS ) )
     {
-      send_to_char( "\e[1;32m¼N¡M§A¥¿Áô¨­¤¤³á¡T\e[0m\n\r", ch );
+      send_to_char( "\e[1;32må™“ï¹ä½ æ­£éš±èº«ä¸­å–”ï¹—\e[0m\n\r", ch );
     }
-    /* °e¥X¦n¤Í¦W³æ */
+    /* é€å‡ºå¥½å‹åå–® */
     else
     {
       friend_msg( ch );
@@ -3873,35 +3873,35 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
     }
 
     if ( ch->jail > 0 )
-      send_to_char( "\e[1;32m§A¥¿¦bªA¦D¤¤¡T\e[0m\n\r", ch );
+      send_to_char( "\e[1;32mä½ æ­£åœ¨æœåˆ‘ä¸­ï¹—\e[0m\n\r", ch );
 
     else if ( ch->failed > 0 )
-      send_to_char( "\e[1;32m§A¥¿¦b«ä¹L¤¤¡T\e[0m\n\r", ch );
+      send_to_char( "\e[1;32mä½ æ­£åœ¨æ€éä¸­ï¹—\e[0m\n\r", ch );
 
-    /* ³]©w¦Û°Ê¦sÀÉ©M³Æ¥÷®É¶¡ */
+    /* è¨­å®šè‡ªå‹•å­˜æª”å’Œå‚™ä»½æ™‚é–“ */
     ch->pcdata->autobackup_tick = ch->pcdata->autobackup;
     ch->pcdata->autosave_tick   = ch->pcdata->autosave;
 
-    /* ½T©w°t°¸ */
+    /* ç¢ºå®šé…å¶ */
     check_mate( ch );
 
-    /* ÀË¬dª÷¿ú­«¶q */
+    /* æª¢æŸ¥é‡‘éŒ¢é‡é‡ */
     fix_gold_weight( ch );
 
     if ( over_scale( ch ) )
-      send_to_char( "\e[1;31m§AªºÁ`¸ê²£¤w¹F¤W­­¡T¡T¡T\e[0m\n\r", ch );
+      send_to_char( "\e[1;31mä½ çš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹—ï¹—ï¹—\e[0m\n\r", ch );
 
-    /* ½ßÀvªÑ²¼ */
+    /* è³ å„Ÿè‚¡ç¥¨ */
     if ( ch->pcdata )
     {
       if ( StockBote > 0 ) bote_stock( ch );
       stock_value( ch );
     }
 
-    /* ­«·s³]©wª±®aªº armor */
+    /* é‡æ–°è¨­å®šç©å®¶çš„ armor */
     calculate_armor( ch );
 
-    /* Åã¥Ü¤§«e¶i¤J¿ù»~±K½X */
+    /* é¡¯ç¤ºä¹‹å‰é€²å…¥éŒ¯èª¤å¯†ç¢¼ */
     if ( ch->failcode )
     {
       char filename[MAX_FILE_LENGTH];
@@ -3909,7 +3909,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
       show_failcode( ch );
       extract_failcode( ch );
 
-      /* §R°£ÀÉ®× */
+      /* åˆªé™¤æª”æ¡ˆ */
       str_cpy( filename, file_name( ch->name, FAILCODE_FILE ) );
       unlink( filename );
     }
@@ -3926,7 +3926,7 @@ void nanny( DESCRIPTOR_DATA * d, char * argument )
   RETURN_NULL();
 }
 
-/* ÀË¬d ID ¬O§_²Å¦X³W©w */
+/* æª¢æŸ¥ ID æ˜¯å¦ç¬¦åˆè¦å®š */
 bool check_parse_name( char * name )
 {
   XNAMES_DATA    * xnames;
@@ -3936,18 +3936,18 @@ bool check_parse_name( char * name )
 
   PUSH_FUNCTION( "check_parse_name" );
 
-  /* «O¯d¦r */
+  /* ä¿ç•™å­— */
   for ( xnames = xnames_first; xnames; xnames = xnames->next )
     if ( ( xnames->type == XNAMES_SYSTEM || xnames->type == XNAMES_CACONYM )
       &&  !str_cmp( xnames->word , name ) ) RETURN( FALSE );
 
-  /* ªø«×­­¨î */
+  /* é•·åº¦é™åˆ¶ */
   if ( str_len(name) <  3 || str_len( name ) > NAME_LENGTH ) RETURN( FALSE );
 
-  /* ¥u¦³­^¤å©M¼Æ¦r¥i¥H·í§@¦W¦r */
+  /* åªæœ‰è‹±æ–‡å’Œæ•¸å­—å¯ä»¥ç•¶ä½œåå­— */
   for ( pc = name; *pc; pc++ ) if ( !isalpha( ( int ) *pc ) ) RETURN( FALSE );
 
-  /* ¹w¨¾ª±®a©M MOB ¬Û¦P ID */
+  /* é é˜²ç©å®¶å’Œ MOB ç›¸åŒ ID */
   for ( iHash = 0; iHash < MAX_KEY_HASH; iHash++ )
   {
     for ( pMob = mob_index_hash[iHash]; pMob; pMob = pMob->next )
@@ -3957,7 +3957,7 @@ bool check_parse_name( char * name )
   RETURN( TRUE );
 }
 
-/* ÀË¬d¬O§_­«·s³s½u */
+/* æª¢æŸ¥æ˜¯å¦é‡æ–°é€£ç·š */
 bool check_reconnect( DESCRIPTOR_DATA * d, bool fConn )
 {
   CHAR_DATA * ch;
@@ -3966,7 +3966,7 @@ bool check_reconnect( DESCRIPTOR_DATA * d, bool fConn )
 
   if ( !d )
   {
-    mudlog( LOG_DEBUG, "check_reconnect: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "check_reconnect: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -3991,33 +3991,33 @@ bool check_reconnect( DESCRIPTOR_DATA * d, bool fConn )
         ch->desc     = d;
         ch->timer    = 0;
 
-        /* ­×¥¿¦º¤`¦ı¬O¨S¦³«ÍÅéªºª¬ªp */
+        /* ä¿®æ­£æ­»äº¡ä½†æ˜¯æ²’æœ‰å±é«”çš„ç‹€æ³ */
         if ( ch->position == POS_DEAD && ch->pcdata && !ch->pcdata->corpse )
         {
           ch->position = POS_STANDING;
           char_from_room( ch );
           char_to_room( ch, get_hometown( ch ) );
 
-          /* ²M°£°lÂÜ¬ö¿ıÂI */
+          /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
           clear_trace( ch, TRUE );
         }
 
-        send_to_char( "§A¦^´_¤Fª¾Ä±¡T\n\r", ch );
-        act( "$n¦^´_¤Fª¾Ä±¡T", ch, NULL, NULL, TO_ROOM );
+        send_to_char( "ä½ å›å¾©äº†çŸ¥è¦ºï¹—\n\r", ch );
+        act( "$nå›å¾©äº†çŸ¥è¦ºï¹—", ch, NULL, NULL, TO_ROOM );
 
-        /* ÀË¬dª÷¿ú­«¶q */
+        /* æª¢æŸ¥é‡‘éŒ¢é‡é‡ */
         fix_gold_weight( ch );
 
-        mudlog( LOG_INFO , "%s ±q %s ­«·s³s½u .", ch->name, d->host );
+        mudlog( LOG_INFO , "%s å¾ %s é‡æ–°é€£ç·š .", ch->name, d->host );
 
         d->connected = CON_PLAYING;
         d->inbuf[0]  = '\x0';
         d->incomm[0] = '\x0';
 
-        /* ­«·sÀË¬d¸Ë³Æªk³NÄİ©Ê */
+        /* é‡æ–°æª¢æŸ¥è£å‚™æ³•è¡“å±¬æ€§ */
         affect_login_check( ch );
 
-        /* ÄÀ©ñ½ä³Õµ²ºc¸ê®Æ */
+        /* é‡‹æ”¾è³­åšçµæ§‹è³‡æ–™ */
         extract_gamble( ch );
 
         light_adjust( ch , get_eq_char( ch , WEAR_LIGHT ) , TRUE );
@@ -4045,7 +4045,7 @@ bool check_logon( char * name )
   RETURN( FALSE );
 }
 
-/* ÀË¬d¬O§_¤w¸g¦b¹CÀ¸¤¤ */
+/* æª¢æŸ¥æ˜¯å¦å·²ç¶“åœ¨éŠæˆ²ä¸­ */
 bool check_playing( DESCRIPTOR_DATA * d, char * name )
 {
   DESCRIPTOR_DATA * dold;
@@ -4062,8 +4062,8 @@ bool check_playing( DESCRIPTOR_DATA * d, char * name )
       && dold->connected != CON_GET_OLD_PASSWORD
       && !str_cmp( name, dold->character->name ) )
     {
-      write_to_buffer( d, "¤w¸g¦³¬Û¦P¦W¦rªºª±®a¦b¹CÀ¸¤¤¤F¡M"
-                          "½Ğ­«·s¿é¤J§Aªº¦W¦r\n\r§Aªº¦W¦r¡R", 0 );
+      write_to_buffer( d, "å·²ç¶“æœ‰ç›¸åŒåå­—çš„ç©å®¶åœ¨éŠæˆ²ä¸­äº†ï¹"
+                          "è«‹é‡æ–°è¼¸å…¥ä½ çš„åå­—\n\rä½ çš„åå­—ï¹•", 0 );
 
       d->username[0] = '\x0';
 
@@ -4076,7 +4076,7 @@ bool check_playing( DESCRIPTOR_DATA * d, char * name )
         process_stack( dold );
       }
 
-      write_to_buffer( dold , "\n\r¬Û¦PID¶i¤J¡M±j¨îÂ_½u¡C\n\r" , 0 );
+      write_to_buffer( dold , "\n\rç›¸åŒIDé€²å…¥ï¹å¼·åˆ¶æ–·ç·šã€‚\n\r" , 0 );
 
       d->connected = CON_GET_NAME;
       if ( d->character )
@@ -4091,7 +4091,7 @@ bool check_playing( DESCRIPTOR_DATA * d, char * name )
   RETURN( FALSE );
 }
 
-/* °±¤î idle */
+/* åœæ­¢ idle */
 void stop_idling( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "stop_idling" );
@@ -4107,9 +4107,9 @@ void stop_idling( CHAR_DATA * ch )
   char_from_room( ch );
   char_to_room( ch, ch->was_in_room );
   ch->was_in_room = NULL;
-  act( "$n±qµêµL¤§¹Ò¦^´_¹L¨Ó¡T", ch, NULL, NULL, TO_ROOM );
+  act( "$nå¾è™›ç„¡ä¹‹å¢ƒå›å¾©éä¾†ï¹—", ch, NULL, NULL, TO_ROOM );
 
-  /* ²M°£°lÂÜ¬ö¿ıÂI */
+  /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
   clear_trace( ch, TRUE );
 
   RETURN_NULL();
@@ -4123,11 +4123,11 @@ void send_to_all_char( const char * txt )
 
   if ( !txt )
   {
-    mudlog( LOG_DEBUG, "send_to_all_char: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "send_to_all_char: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
-  /* §Ö³tÀË¬d */
+  /* å¿«é€Ÿæª¢æŸ¥ */
   if ( !*txt ) RETURN_NULL();
 
   for ( man = descriptor_list; man; man = man->next )
@@ -4139,7 +4139,7 @@ void send_to_all_char( const char * txt )
   RETURN_NULL();
 }
 
-/* °e¤@¬q°T®§µ¹¬YÀ°¬£ */
+/* é€ä¸€æ®µè¨Šæ¯çµ¦æŸå¹«æ´¾ */
 void send_to_club( const char * txt, CLUB_DATA * pClub )
 {
   DESCRIPTOR_DATA * man;
@@ -4148,11 +4148,11 @@ void send_to_club( const char * txt, CLUB_DATA * pClub )
 
   if ( !txt || !pClub )
   {
-    mudlog( LOG_DEBUG, "send_to_club: ¨Ó·½¤£¥¿½T" );
+    mudlog( LOG_DEBUG, "send_to_club: ä¾†æºä¸æ­£ç¢º" );
     RETURN_NULL();
   }
 
-  /* §Ö³tÀË¬d */
+  /* å¿«é€Ÿæª¢æŸ¥ */
   if ( !*txt ) RETURN_NULL();
 
   for ( man = descriptor_list; man; man = man->next )
@@ -4167,7 +4167,7 @@ void send_to_club( const char * txt, CLUB_DATA * pClub )
   RETURN_NULL();
 }
 
-/* ¿é¥Xµ¹¬Y¶¡©Ğ¶¡ªº©Ò¦³ªº¤Hª« */
+/* è¼¸å‡ºçµ¦æŸé–“æˆ¿é–“çš„æ‰€æœ‰çš„äººç‰© */
 void sendmsg_to_room( const char * txt, CHAR_DATA * ch )
 {
   CHAR_DATA * victim;
@@ -4176,11 +4176,11 @@ void sendmsg_to_room( const char * txt, CHAR_DATA * ch )
 
   if ( !txt || !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "sendmsg_to_room: ¨Ó·½¤£¥¿½T" );
+    mudlog( LOG_DEBUG, "sendmsg_to_room: ä¾†æºä¸æ­£ç¢º" );
     RETURN_NULL();
   }
 
-  /* §Ö³tÀË¬d */
+  /* å¿«é€Ÿæª¢æŸ¥ */
   if ( !*txt ) RETURN_NULL();
 
   for ( victim = ch->in_room->people; victim; victim = victim->next_in_room )
@@ -4189,7 +4189,7 @@ void sendmsg_to_room( const char * txt, CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* °e°T®§¨ì¬Y¶¡©Ğ¶¡ */
+/* é€è¨Šæ¯åˆ°æŸé–“æˆ¿é–“ */
 void sendmsg_to_someroom( const char * txt , ROOM_INDEX_DATA * pRoom )
 {
   CHAR_DATA * victim;
@@ -4198,11 +4198,11 @@ void sendmsg_to_someroom( const char * txt , ROOM_INDEX_DATA * pRoom )
 
   if ( !txt || !pRoom )
   {
-    mudlog( LOG_DEBUG, "sendmsg_to_someroom: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "sendmsg_to_someroom: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
-  /* §Ö³tÀË¬d */
+  /* å¿«é€Ÿæª¢æŸ¥ */
   if ( !*txt ) RETURN_NULL();
 
   for ( victim = pRoom->people; victim; victim = victim->next_in_room )
@@ -4211,7 +4211,7 @@ void sendmsg_to_someroom( const char * txt , ROOM_INDEX_DATA * pRoom )
   RETURN_NULL();
 }
 
-/* ¿é¥Xµ¹ª±®a */
+/* è¼¸å‡ºçµ¦ç©å®¶ */
 void send_to_char( const char * txt, CHAR_DATA * ch )
 {
   DESCRIPTOR_DATA * d;
@@ -4220,13 +4220,13 @@ void send_to_char( const char * txt, CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "send_to_char: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "send_to_char: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
   if ( !txt || !( d = ch->desc ) ) RETURN_NULL();
 
-  /* ¦pªG¦r¦ê«Ü¤p«hª½±µ¿é¥X */
+  /* å¦‚æœå­—ä¸²å¾ˆå°å‰‡ç›´æ¥è¼¸å‡º */
   if ( d->showstr_point || d->edit_mode != EDIT_NONE )
   {
     d->stack = TRUE;
@@ -4235,7 +4235,7 @@ void send_to_char( const char * txt, CHAR_DATA * ch )
     RETURN_NULL();
   }
 
-  /* ­Y¦³©|¥¼¿é¥X§¹²¦ªº¦r¦ê«h§â¥Lµ¹ÄÀ©ñ±¼ */
+  /* è‹¥æœ‰å°šæœªè¼¸å‡ºå®Œç•¢çš„å­—ä¸²å‰‡æŠŠä»–çµ¦é‡‹æ”¾æ‰ */
   /*
   if ( d->showstr_point ) free_string( d->showstr_head );
   */
@@ -4246,7 +4246,7 @@ void send_to_char( const char * txt, CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* ¿é¥Xªº¥D­n®Ö¤ß */
+/* è¼¸å‡ºçš„ä¸»è¦æ ¸å¿ƒ */
 void show_string( struct descriptor_data * d, char * input )
 {
   char   buffer[ MAX_SCREEN_BUFFER ];
@@ -4263,39 +4263,39 @@ void show_string( struct descriptor_data * d, char * input )
 
   switch( UPPER( buf[0] ) )
   {
-  /* ¤U¤@­¶ */
+  /* ä¸‹ä¸€é  */
   case '\x0':
   case 'C'  :
     lines = 0;
     break;
 
-  /* ­«·s¿é¥Xµe­± */
+  /* é‡æ–°è¼¸å‡ºç•«é¢ */
   case 'R':
     lines = - 1 - ( d->character->pcdata->pagelen );
     break;
 
-   /* ¤W¤@­¶ */
+   /* ä¸Šä¸€é  */
   case 'B':
     lines = -( 2 * d->character->pcdata->pagelen );
     break;
 
-  /* Åã¥Ü¨D§U */
+  /* é¡¯ç¤ºæ±‚åŠ© */
   case 'H':
     write_to_buffer( d,
-      "C ©Î RETURN [¤U¤@­¶]¡MR [­«·s¿é¥Xµe­±]¡M\n\r"
-      "B = [¤W¤@­¶]¡MH = [¨D§U]¡MQ ©Î¨ä¥LÁä [µ²§ô]¡C\n\r\n\r" , 0 );
+      "C æˆ– RETURN [ä¸‹ä¸€é ]ï¹R [é‡æ–°è¼¸å‡ºç•«é¢]ï¹\n\r"
+      "B = [ä¸Šä¸€é ]ï¹H = [æ±‚åŠ©]ï¹Q æˆ–å…¶ä»–éµ [çµæŸ]ã€‚\n\r\n\r" , 0 );
 
     lines = - 1 - ( d->character->pcdata->pagelen );
     break;
 
-  /* ¤£µMµ²§ô¿Ã¹õ¿é¥X */
+  /* ä¸ç„¶çµæŸè¢å¹•è¼¸å‡º */
   default:
 
     cease_stack( d );
     RETURN_NULL();
   }
 
-  /* ¦pªG­n°h¨ì¤W¤@±iµe­± */
+  /* å¦‚æœè¦é€€åˆ°ä¸Šä¸€å¼µç•«é¢ */
   if ( lines < 0 )
   {
     for ( scan = d->showstr_point; scan > d->showstr_head; scan-- )
@@ -4312,29 +4312,29 @@ void show_string( struct descriptor_data * d, char * input )
   toggle = 1;
   for ( lines = limit = 0, scan = buffer; ; scan++, d->showstr_point++ )
   {
-    /* ¨t²Î¦Û§Ú«OÅ@ */
+    /* ç³»çµ±è‡ªæˆ‘ä¿è­· */
     if ( limit++ > MAX_SCREEN_BUFFER - 2 )
     {
       *d->showstr_point = '\x0';
-      mudlog( LOG_DEBUG , "show_string:µe­±¿é¥X¤w¶W¹L MAX_SCREEN_BUFFER ¤j¤p." );
-      mudlog( LOG_DEBUG , "show_string:½Ğ¨ì merc.h §â MAX_SCREEN_BUFFER ¥[¤j." );
+      mudlog( LOG_DEBUG , "show_string:ç•«é¢è¼¸å‡ºå·²è¶…é MAX_SCREEN_BUFFER å¤§å°." );
+      mudlog( LOG_DEBUG , "show_string:è«‹åˆ° merc.h æŠŠ MAX_SCREEN_BUFFER åŠ å¤§." );
     }
 
-    /* ­pºâ´«¦æªº¦æ¼Æ */
+    /* è¨ˆç®—æ›è¡Œçš„è¡Œæ•¸ */
     if ( ( ( *scan = *d->showstr_point ) == '\n' || *scan == '\r' )
       && ( toggle = -toggle ) < 0 ) lines++;
 
-    /* ¬O§_¥i¥H¿é¥Xµ¹ª±®a¤F */
+    /* æ˜¯å¦å¯ä»¥è¼¸å‡ºçµ¦ç©å®¶äº† */
     else if ( *scan == '\x0' || ( d->character && !IS_NPC( d->character )
            && lines >= d->character->pcdata->pagelen ) )
     {
       *scan = '\x0';
       write_to_buffer( d, buffer, 0 );
 
-      /* ¦pªG³Ñ¤U³¡¥÷¥u¬OªÅ¥Õ, «h¸õ¹L, ºâ¬O¿é¥X§¹²¦ */
+      /* å¦‚æœå‰©ä¸‹éƒ¨ä»½åªæ˜¯ç©ºç™½, å‰‡è·³é, ç®—æ˜¯è¼¸å‡ºå®Œç•¢ */
       for ( chk = d->showstr_point; *chk == ' ' ; chk++ );
 
-      /* ¿é¥Xµ²§ô */
+      /* è¼¸å‡ºçµæŸ */
       if ( *chk == '\x0' ) cease_stack( d );
       RETURN_NULL();
     }
@@ -4342,56 +4342,56 @@ void show_string( struct descriptor_data * d, char * input )
   RETURN_NULL();
 }
 
-/* °Ñ¼Æ
-1. ¦r¦ê¨Ó·½.
-2. ¥D­n¾Ş§@¤Hª«
-3. ¥i¥H¬O¦r¦ê¤@, ª««~¤@
-4. ¥i¥H¬O¦r¦ê¤G, ³Q¾Ş§@¤Hª«.
-5. «¬ºA.
-   a) TO_CHAR   µ²ªG¥u¿é¥Xµ¹¥D­n¾Ş§@¤Hª«, §Y°Ñ¼Æ¤G.
-   b) TO_VICT   µ²ªG¥u¿é¥Xµ¹³Q¾Ş§@¤Hª«, ¦ı³o­Ó³Q¾Ş§@¤H¤£¥i¥H¬O¥D­n¾Ş§@¤Hª«
-   c) TO_ROOM   µ²ªG¿é¥Xµ¹¥D­n¾Ş§@¤Hª«©Ğ¶¡©Ò¦³ªº¤H, °£¤F¥D­n¾Ş§@¤Hª«.
-   d) TO_NOVICT µ²ªG¿é¥Xµ¹°£¤F¥D­n¾Ş§@©M³Q¾Ş§@¤Hª«¥H¥~¦P¤@©Ğ¶¡ªº¤H.
+/* åƒæ•¸
+1. å­—ä¸²ä¾†æº.
+2. ä¸»è¦æ“ä½œäººç‰©
+3. å¯ä»¥æ˜¯å­—ä¸²ä¸€, ç‰©å“ä¸€
+4. å¯ä»¥æ˜¯å­—ä¸²äºŒ, è¢«æ“ä½œäººç‰©.
+5. å‹æ…‹.
+   a) TO_CHAR   çµæœåªè¼¸å‡ºçµ¦ä¸»è¦æ“ä½œäººç‰©, å³åƒæ•¸äºŒ.
+   b) TO_VICT   çµæœåªè¼¸å‡ºçµ¦è¢«æ“ä½œäººç‰©, ä½†é€™å€‹è¢«æ“ä½œäººä¸å¯ä»¥æ˜¯ä¸»è¦æ“ä½œäººç‰©
+   c) TO_ROOM   çµæœè¼¸å‡ºçµ¦ä¸»è¦æ“ä½œäººç‰©æˆ¿é–“æ‰€æœ‰çš„äºº, é™¤äº†ä¸»è¦æ“ä½œäººç‰©.
+   d) TO_NOVICT çµæœè¼¸å‡ºçµ¦é™¤äº†ä¸»è¦æ“ä½œå’Œè¢«æ“ä½œäººç‰©ä»¥å¤–åŒä¸€æˆ¿é–“çš„äºº.
 
-°Ñ¼Æ
-$t «ş¨©¦r¦ê¤@ªº¤º®e.
-$T «ş¨©¦r¦ê¤Gªº¤º®e.
-$n ¥D¨¤¤Hª«(1)
-$N ¥D¨¤¤Hª«(2)
+åƒæ•¸
+$t æ‹·è²å­—ä¸²ä¸€çš„å…§å®¹.
+$T æ‹·è²å­—ä¸²äºŒçš„å…§å®¹.
+$n ä¸»è§’äººç‰©(1)
+$N ä¸»è§’äººç‰©(2)
 $e
 $E
 $s
 $S
-$p ª««~¤@
-$P ª««~¤G
-$d °Ñ¼Æ¤G¦³Ãöªùªº±Ô­z
-$A ´«¦æ
+$p ç‰©å“ä¸€
+$P ç‰©å“äºŒ
+$d åƒæ•¸äºŒæœ‰é—œé–€çš„æ•˜è¿°
+$A æ›è¡Œ
 $$ $
-$C ÃC¦â±±¨î½X
-$0 ÁÙ­ìÃC¦â
-$1 °ª«G«×¬õ¦â
-$2 °ª«G«×ºñ¦â
-$3 °ª«G«×¶À¦â
-$4 °ª«G«×ÂÅ¦â
-$5 °ª«G«×µµ¦â
-$6 °ª«G«×¤ÑªÅ¦â
-$7 °ª«G«×¥Õ¦â
-$z ¤Hª«ªº­^¤å¦WºÙ
-$Z ¤Hª«ªº­^¤å¦WºÙ
-$B ¹aÁn
-$w §Ş¯à¦WºÙ(1)
-$W §Ş¯à¦WºÙ(2)
-$y À°¬£¦WºÙ(1)
-$Y À°¬£¦WºÙ(2)
-$i ¤¤¤å¤Æ¾ã¼Æ(1)
-$I ¤¤¤å¤Æ¾ã¼Æ(2)
-$x ¼Æ¦r«¬ºA¾ã¼Æ(1)
-$X ¼Æ¦r«¬ºA¾ã¼Æ(2)
-$r ©Ğ¶¡¦WºÙ(1)
-$R ©Ğ¶¡¦WºÙ(2)
+$C é¡è‰²æ§åˆ¶ç¢¼
+$0 é‚„åŸé¡è‰²
+$1 é«˜äº®åº¦ç´…è‰²
+$2 é«˜äº®åº¦ç¶ è‰²
+$3 é«˜äº®åº¦é»ƒè‰²
+$4 é«˜äº®åº¦è—è‰²
+$5 é«˜äº®åº¦ç´«è‰²
+$6 é«˜äº®åº¦å¤©ç©ºè‰²
+$7 é«˜äº®åº¦ç™½è‰²
+$z äººç‰©çš„è‹±æ–‡åç¨±
+$Z äººç‰©çš„è‹±æ–‡åç¨±
+$B éˆ´è²
+$w æŠ€èƒ½åç¨±(1)
+$W æŠ€èƒ½åç¨±(2)
+$y å¹«æ´¾åç¨±(1)
+$Y å¹«æ´¾åç¨±(2)
+$i ä¸­æ–‡åŒ–æ•´æ•¸(1)
+$I ä¸­æ–‡åŒ–æ•´æ•¸(2)
+$x æ•¸å­—å‹æ…‹æ•´æ•¸(1)
+$X æ•¸å­—å‹æ…‹æ•´æ•¸(2)
+$r æˆ¿é–“åç¨±(1)
+$R æˆ¿é–“åç¨±(2)
 */
 
-/* ®æ¦¡¤Æ¿é¥Xªº¥D­n®Ö¤ß */
+/* æ ¼å¼åŒ–è¼¸å‡ºçš„ä¸»è¦æ ¸å¿ƒ */
 void act( const char * format, CHAR_DATA * ch, const void * arg1,
          const void * arg2, int type )
 {
@@ -4418,11 +4418,11 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "act: ¨Ó·½¤£¥¿½T, ­ì¦r¦ê '%s'", format );
+    mudlog( LOG_DEBUG, "act: ä¾†æºä¸æ­£ç¢º, åŸå­—ä¸² '%s'", format );
     RETURN_NULL();
   }
 
-  /* ©¿²¤ªÅªº©Î¬Oªø«×¬°¹sªº°T®§ */
+  /* å¿½ç•¥ç©ºçš„æˆ–æ˜¯é•·åº¦ç‚ºé›¶çš„è¨Šæ¯ */
   if ( !ch->in_room || !format || !*format ) RETURN_NULL();
 
   to = ch->in_room->people;
@@ -4431,7 +4431,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
   {
     if ( !vch || !vch->in_room )
     {
-      mudlog( LOG_DEBUG , "act: vch ¨Ó·½¤£¥¿½T¡M­ì¦r¦ê '%s'", format );
+      mudlog( LOG_DEBUG , "act: vch ä¾†æºä¸æ­£ç¢ºï¹åŸå­—ä¸² '%s'", format );
       RETURN_NULL();
     }
 
@@ -4461,7 +4461,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
     {
       if ( len > sizeof( buf ) - 10 )
       {
-        mudlog( LOG_DEBUG, "act: ¿é¥X¹Lªø¡M­ì¦r¦ê '%s'", format );
+        mudlog( LOG_DEBUG, "act: è¼¸å‡ºéé•·ï¹åŸå­—ä¸² '%s'", format );
         RETURN_NULL();
       }
 
@@ -4476,7 +4476,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
       {
       default:
 
-        mudlog( LOG_DEBUG , "act: ¿ù»~ªº©R¥O '%c'¡M­ì¦r¦ê '%s'"
+        mudlog( LOG_DEBUG , "act: éŒ¯èª¤çš„å‘½ä»¤ '%c'ï¹åŸå­—ä¸² '%s'"
           , *str, format );
 
         i = " <@@@> ";
@@ -4486,57 +4486,57 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
         i = "$";
         break;
 
-      /* ÁÙ­ìÃC¦â */
+      /* é‚„åŸé¡è‰² */
       case '0':
         i = "\e[0m";
         break;
 
-      /* ¬õ¦â */
+      /* ç´…è‰² */
       case '1':
         i = "\e[1;31m";
         break;
 
-      /* ºñ¦â */
+      /* ç¶ è‰² */
       case '2':
         i = "\e[1;32m";
         break;
 
-      /* ¶À¦â */
+      /* é»ƒè‰² */
       case '3':
         i = "\e[1;33m";
         break;
 
-      /* ÂÅ¦â */
+      /* è—è‰² */
       case '4':
         i = "\e[1;34m";
         break;
 
-      /* µµ¦â */
+      /* ç´«è‰² */
       case '5':
         i = "\e[1;35m";
         break;
 
-      /* ¤ÑªÅ¦â */
+      /* å¤©ç©ºè‰² */
       case '6':
         i = "\e[1;36m";
         break;
 
-      /* ¥Õ¦â */
+      /* ç™½è‰² */
       case '7':
         i = "\e[1;37m";
         break;
 
-      /* ´«¦æ */
+      /* æ›è¡Œ */
       case 'A':
         i = "\n\r";
         break;
 
-      /* ¹aÁn */
+      /* éˆ´è² */
       case 'B':
         i = "\a";
         break;
 
-      /* ³]©wÃC¦â±±¨î½X */
+      /* è¨­å®šé¡è‰²æ§åˆ¶ç¢¼ */
       case 'C':
         i = "\e[";
         break;
@@ -4545,7 +4545,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !arg1 )
         {
-          mudlog( LOG_DEBUG, "act: arg1 ¨Ó·½¤£¥¿½T(t), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: arg1 ä¾†æºä¸æ­£ç¢º(t), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
@@ -4557,7 +4557,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !arg2 )
         {
-          mudlog( LOG_DEBUG, "act: arg2 ¨Ó·½¤£¥¿½T(T), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: arg2 ä¾†æºä¸æ­£ç¢º(T), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
@@ -4569,7 +4569,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !skill1 )
         {
-          mudlog( LOG_DEBUG, "act: skill1 ¨Ó·½¤£¥¿½T(w), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: skill1 ä¾†æºä¸æ­£ç¢º(w), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
@@ -4591,7 +4591,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !skill2 )
         {
-          mudlog( LOG_DEBUG, "act: skill2 ¨Ó·½¤£¥¿½T(W), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: skill2 ä¾†æºä¸æ­£ç¢º(W), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
@@ -4613,7 +4613,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( to == ch )
         {
-          i = "§A";
+          i = "ä½ ";
           break;
         }
 
@@ -4639,7 +4639,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
         }
         else
         {
-          str_cpy( buffer,  "¬Y¤£ª¾¦W¤Hª«" );
+          str_cpy( buffer,  "æŸä¸çŸ¥åäººç‰©" );
         }
 
         break;
@@ -4648,14 +4648,14 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !vch )
         {
-          mudlog( LOG_DEBUG, "act: vch ¨Ó·½¤£¥¿½T(N), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: vch ä¾†æºä¸æ­£ç¢º(N), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
 
         if ( to == vch )
         {
-          i = "§A";
+          i = "ä½ ";
           break;
         }
 
@@ -4681,7 +4681,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         else
         {
-          str_cpy( buffer, "¬Y¤£ª¾¦W¤Hª«" );
+          str_cpy( buffer, "æŸä¸çŸ¥åäººç‰©" );
         }
 
         break;
@@ -4692,49 +4692,49 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
         break;
 
       case 'e':
-        i = ( to == ch ) ? "§A" : he_she[ URANGE( SEX_NEUTRAL, ch->sex, SEX_FEMALE ) ];
+        i = ( to == ch ) ? "ä½ " : he_she[ URANGE( SEX_NEUTRAL, ch->sex, SEX_FEMALE ) ];
         break;
 
       case 'E':
 
         if ( !vch )
         {
-          mudlog( LOG_DEBUG, "act: vch ¨Ó·½¤£¥¿½T(E), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: vch ä¾†æºä¸æ­£ç¢º(E), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
 
-        i = ( to == vch ) ? "§A" : he_she[ URANGE( SEX_NEUTRAL, vch->sex, SEX_FEMALE ) ];
+        i = ( to == vch ) ? "ä½ " : he_she[ URANGE( SEX_NEUTRAL, vch->sex, SEX_FEMALE ) ];
         break;
 
       case 's':
-        i = ( to == ch ) ? "§Aªº" : his_her[ URANGE( SEX_NEUTRAL, ch->sex, SEX_FEMALE ) ];
+        i = ( to == ch ) ? "ä½ çš„" : his_her[ URANGE( SEX_NEUTRAL, ch->sex, SEX_FEMALE ) ];
         break;
 
       case 'S':
 
         if ( !vch )
         {
-          mudlog( LOG_DEBUG, "act: vch ¨Ó·½¤£¥¿½T(S), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: vch ä¾†æºä¸æ­£ç¢º(S), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
 
-        i = ( to == vch ) ? "§Aªº" : his_her[ URANGE( SEX_NEUTRAL, vch->sex, SEX_FEMALE ) ];
+        i = ( to == vch ) ? "ä½ çš„" : his_her[ URANGE( SEX_NEUTRAL, vch->sex, SEX_FEMALE ) ];
         break;
 
       case 'p':
 
         if ( !obj1 )
         {
-          mudlog( LOG_DEBUG, "act: obj1 ¨Ó·½¤£¥¿½T(p), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: obj1 ä¾†æºä¸æ­£ç¢º(p), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
 
         if ( obj1->corpse_owner && obj1->corpse_owner == to )
         {
-          i = "¦Û¤v«ÍÅé(corpse)";
+          i = "è‡ªå·±å±é«”(corpse)";
         }
         else
         {
@@ -4749,7 +4749,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
           }
           else
           {
-            i = "¬Yª«";
+            i = "æŸç‰©";
           }
         }
 
@@ -4759,14 +4759,14 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !obj2 )
         {
-          mudlog( LOG_DEBUG, "act: obj2 ¨Ó·½¤£¥¿½T(P), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: obj2 ä¾†æºä¸æ­£ç¢º(P), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
 
         if ( obj2->corpse_owner && obj2->corpse_owner == to )
         {
-          i = "¦Û¤v«ÍÅé(corpse)";
+          i = "è‡ªå·±å±é«”(corpse)";
         }
         else
         {
@@ -4781,7 +4781,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
           }
           else
           {
-            i = "¬Yª«";
+            i = "æŸç‰©";
           }
         }
 
@@ -4791,7 +4791,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !arg1 )
         {
-          mudlog( LOG_DEBUG, "act: ¾ã¼Æ¨Ó·½¤£¥¿½T(x), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: æ•´æ•¸ä¾†æºä¸æ­£ç¢º(x), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
         }
 
@@ -4807,7 +4807,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !arg2 )
         {
-          mudlog( LOG_DEBUG, "act: ¾ã¼Æ¨Ó·½¤£¥¿½T(X), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: æ•´æ•¸ä¾†æºä¸æ­£ç¢º(X), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
         }
 
@@ -4823,7 +4823,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !arg1 )
         {
-          mudlog( LOG_DEBUG, "act: ¾ã¼Æ¨Ó·½¤£¥¿½T(i), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: æ•´æ•¸ä¾†æºä¸æ­£ç¢º(i), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
         }
 
@@ -4839,7 +4839,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !arg2 )
         {
-          mudlog( LOG_DEBUG, "act: ¾ã¼Æ¨Ó·½¤£¥¿½T(I), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: æ•´æ•¸ä¾†æºä¸æ­£ç¢º(I), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
         }
 
@@ -4855,7 +4855,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !club1 )
         {
-          mudlog( LOG_DEBUG, "act: club1 ¨Ó·½¤£¥¿½T(y), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: club1 ä¾†æºä¸æ­£ç¢º(y), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
@@ -4868,7 +4868,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !club2 )
         {
-          mudlog( LOG_DEBUG, "act: club2 ¨Ó·½¤£¥¿½T(Y), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: club2 ä¾†æºä¸æ­£ç¢º(Y), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
@@ -4881,7 +4881,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !arg2 || ( ( char * ) arg2)[0] == '\x0' )
         {
-          i = "ªù";
+          i = "é–€";
         }
 
         else
@@ -4906,7 +4906,7 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
         if ( !vch )
         {
-          mudlog( LOG_DEBUG, "act: vch ¨Ó·½¤£¥¿½T(Z), ­ì¦r¦ê '%s'", format );
+          mudlog( LOG_DEBUG, "act: vch ä¾†æºä¸æ­£ç¢º(Z), åŸå­—ä¸² '%s'", format );
           i = " <@@@> ";
           break;
         }
@@ -4946,30 +4946,30 @@ void act( const char * format, CHAR_DATA * ch, const void * arg1,
 
 /*
 $$ $
-$n ¥D®æ
-$N ¨ü®æ
-$O ª««~
-$Z ÁÙ­ìÃC¦â
-$C ³]©wÃC¦â
-$A ´«¦æ
-$l ¨ü¶Ë³¡¦ì
-$R °ª«G«×ªº¬õ¦â   1;31m
-$r §C«G«×ªº¬õ¦â   0;31m
-$G °ª«G«×ªººñ¦â   1;32m
-$g §C«G«×ªººñ¦â   0;32m
-$Y °ª«G«×ªº¶À¦â   1;33m
-$y §C«G«×ªº¶À¦â   0;33m
-$B °ª«G«×ªºÂÅ¦â   1;34m
-$b §C«G«×ªºÂÅ¦â   0;34m
-$P °ª«G«×ªºµµ¦â   1;35m
-$p §C«G«×ªºµµ¦â   0;35m
-$S °ª«G«×ªº¤ÑªÅ¦â 1;36m
-$s §C«G«×ªº¤ÑªÅ¦â 0;36m
-$W °ª«G«×ªº¥Õ¦â   1;37m
-$w §C«G«×ªº¥Õ¦â   0;37m
+$n ä¸»æ ¼
+$N å—æ ¼
+$O ç‰©å“
+$Z é‚„åŸé¡è‰²
+$C è¨­å®šé¡è‰²
+$A æ›è¡Œ
+$l å—å‚·éƒ¨ä½
+$R é«˜äº®åº¦çš„ç´…è‰²   1;31m
+$r ä½äº®åº¦çš„ç´…è‰²   0;31m
+$G é«˜äº®åº¦çš„ç¶ è‰²   1;32m
+$g ä½äº®åº¦çš„ç¶ è‰²   0;32m
+$Y é«˜äº®åº¦çš„é»ƒè‰²   1;33m
+$y ä½äº®åº¦çš„é»ƒè‰²   0;33m
+$B é«˜äº®åº¦çš„è—è‰²   1;34m
+$b ä½äº®åº¦çš„è—è‰²   0;34m
+$P é«˜äº®åº¦çš„ç´«è‰²   1;35m
+$p ä½äº®åº¦çš„ç´«è‰²   0;35m
+$S é«˜äº®åº¦çš„å¤©ç©ºè‰² 1;36m
+$s ä½äº®åº¦çš„å¤©ç©ºè‰² 0;36m
+$W é«˜äº®åº¦çš„ç™½è‰²   1;37m
+$w ä½äº®åº¦çš„ç™½è‰²   0;37m
 */
 
-/* §Ş¯àÅã¥Ü¦r¦ê */
+/* æŠ€èƒ½é¡¯ç¤ºå­—ä¸² */
 void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
 {
   CHAR_DATA  * to;
@@ -4982,28 +4982,28 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
 
   PUSH_FUNCTION( "sact" );
 
-  /* ´ú¸Õ¤Hª« */
+  /* æ¸¬è©¦äººç‰© */
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "sact: ¹ï¶H¤Hª«¬OªÅªº, ­ì¦r¦ê '%s'", format );
+    mudlog( LOG_DEBUG, "sact: å°è±¡äººç‰©æ˜¯ç©ºçš„, åŸå­—ä¸² '%s'", format );
     RETURN_NULL();
   }
 
-  /* ©¿²¤ªÅªº©Î¬Oªø«×¬°¹sªº°T®§ */
+  /* å¿½ç•¥ç©ºçš„æˆ–æ˜¯é•·åº¦ç‚ºé›¶çš„è¨Šæ¯ */
   if ( !format || !*format )
   {
-    mudlog( LOG_DEBUG, "sact: ¨Ó·½¦r¦ê¬OªÅªº, '%s'", format );
+    mudlog( LOG_DEBUG, "sact: ä¾†æºå­—ä¸²æ˜¯ç©ºçš„, '%s'", format );
     RETURN_NULL();
   }
 
-  /* ÀË¬d©Ğ¶¡¬O§_¬OªÅªº, §_«h¥i¯à¾É­P·í¾÷ */
+  /* æª¢æŸ¥æˆ¿é–“æ˜¯å¦æ˜¯ç©ºçš„, å¦å‰‡å¯èƒ½å°è‡´ç•¶æ©Ÿ */
   if ( !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "sact: ¤Hª«©Ğ¶¡¬OªÅªº, '%s'", format );
+    mudlog( LOG_DEBUG, "sact: äººç‰©æˆ¿é–“æ˜¯ç©ºçš„, '%s'", format );
     RETURN_NULL();
   }
 
-  /* °eµ¹©Ğ¶¡ªº¨C¤@­Ó¤Hª« */
+  /* é€çµ¦æˆ¿é–“çš„æ¯ä¸€å€‹äººç‰© */
   for ( to = ch->in_room->people; to; to = to->next_in_room )
   {
     if ( !to->desc
@@ -5013,14 +5013,14 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
     *( pBuf = buf ) = '\x0';
     for ( len = 0, pSource = format; *pSource; pSource++ )
     {
-      /* ÀË¬d¦r¦êªºªø«× */
+      /* æª¢æŸ¥å­—ä¸²çš„é•·åº¦ */
       if ( len > sizeof( buf ) - 10 )
       {
-        mudlog( LOG_DEBUG, "sact: ¦r¦ê¶W¥X½d³ò, '%s'", format );
+        mudlog( LOG_DEBUG, "sact: å­—ä¸²è¶…å‡ºç¯„åœ, '%s'", format );
         RETURN_NULL();
       }
 
-      /* ¦pªG¤£¬O©R¥O¦r¤¸ */
+      /* å¦‚æœä¸æ˜¯å‘½ä»¤å­—å…ƒ */
       if ( *pSource != '$' )
       {
         *pBuf++ = *pSource;
@@ -5031,7 +5031,7 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
       switch( *(++pSource ) )
       {
       default :
-        mudlog( LOG_DEBUG , "sact: ¿ù»~ªº©R¥O '%c', ­ì¦r¦ê '%s'"
+        mudlog( LOG_DEBUG , "sact: éŒ¯èª¤çš„å‘½ä»¤ '%c', åŸå­—ä¸² '%s'"
           , *pSource, format );
 
         pStr = "<@@@>";
@@ -5045,37 +5045,37 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
         pStr = "\n\r";
         break;
 
-      /* °ª«G«×ÂÅ¦â */
+      /* é«˜äº®åº¦è—è‰² */
       case 'B':
         pStr = "\e[1;34m";
         break;
 
-      /* §C«G«×ÂÅ¦â */
+      /* ä½äº®åº¦è—è‰² */
       case 'b':
         pStr = "\e[0;34m";
         break;
 
-      /* ³]©wÃC¦â */
+      /* è¨­å®šé¡è‰² */
       case 'C':
         pStr = "\e[";
         break;
 
       case 'E':
-             if ( !victim      ) pStr = "¤£ª¾¦W¤Hª«";
-        else if ( to == victim ) pStr = "§A";
+             if ( !victim      ) pStr = "ä¸çŸ¥åäººç‰©";
+        else if ( to == victim ) pStr = "ä½ ";
         else                     pStr = he_she[ URANGE( SEX_NEUTRAL, victim->sex, SEX_FEMALE ) ];
         break;
 
       case 'e':
-        pStr = ( to == ch ) ? "§A" : he_she[ URANGE( SEX_NEUTRAL, ch->sex, SEX_FEMALE ) ];
+        pStr = ( to == ch ) ? "ä½ " : he_she[ URANGE( SEX_NEUTRAL, ch->sex, SEX_FEMALE ) ];
         break;
 
-      /* °ª«G«×ºñ¦â */
+      /* é«˜äº®åº¦ç¶ è‰² */
       case 'G':
         pStr = "\e[1;32m";
         break;
 
-      /* §C«G«×ºñ¦â */
+      /* ä½äº®åº¦ç¶ è‰² */
       case 'g':
         pStr = "\e[0;32m";
         break;
@@ -5084,7 +5084,7 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
 
         if ( !victim )
         {
-          mudlog( LOG_DEBUG, "sact: ¹ï¶H¬OªÅªº, '%s'", format );
+          mudlog( LOG_DEBUG, "sact: å°è±¡æ˜¯ç©ºçš„, '%s'", format );
           RETURN_NULL();
         }
 
@@ -5095,81 +5095,81 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
         else pStr = pSitus->situs_name;
         break;
 
-      /* ¨üµü */
+      /* å—è© */
       case 'N':
-             if ( !victim )      pStr = "¤£ª¾¦W¤Hª«";
-        else if ( to == victim ) pStr = "§A";
+             if ( !victim )      pStr = "ä¸çŸ¥åäººç‰©";
+        else if ( to == victim ) pStr = "ä½ ";
         else                     pStr = mob_name( to, victim );
         break;
 
-      /* ¥Dµü */
+      /* ä¸»è© */
       case 'n':
-        pStr = ( to == ch ) ? "§A" : mob_name( to, ch );
+        pStr = ( to == ch ) ? "ä½ " : mob_name( to, ch );
         break;
 
-      /* ª««~ */
+      /* ç‰©å“ */
       case 'O':
 
         if ( !obj )
         {
-          mudlog( LOG_DEBUG , "sact: ª««~¬OªÅªº, '%s'", format );
+          mudlog( LOG_DEBUG , "sact: ç‰©å“æ˜¯ç©ºçš„, '%s'", format );
           RETURN_NULL();
         }
 
-        pStr = can_see_obj( to, obj ) ? obj->cname : "¬Yª«";
+        pStr = can_see_obj( to, obj ) ? obj->cname : "æŸç‰©";
         break;
 
-      /* °ª«G«×µµ¦â */
+      /* é«˜äº®åº¦ç´«è‰² */
       case 'P':
         pStr = "\e[1;35m";
         break;
 
-      /* §C«G«×µµ¦â */
+      /* ä½äº®åº¦ç´«è‰² */
       case 'p':
         pStr = "\e[0;35m";
         break;
 
-      /* °ª«G«×¬õ¦â */
+      /* é«˜äº®åº¦ç´…è‰² */
       case 'R':
         pStr = "\e[1;31m";
         break;
 
-      /* §C«G«×¬õ¦â */
+      /* ä½äº®åº¦ç´…è‰² */
       case 'r':
         pStr = "\e[0;31m";
         break;
 
-      /* ³]©w°ª«G«×¤ÑªÅ¦â */
+      /* è¨­å®šé«˜äº®åº¦å¤©ç©ºè‰² */
       case 'S':
         pStr = "\e[1;36m";
         break;
 
-      /* ³]©w§C«G«×¤ÑªÅ¦â */
+      /* è¨­å®šä½äº®åº¦å¤©ç©ºè‰² */
       case 's':
         pStr = "\e[0;36m";
         break;
 
-      /* ³]©w°ª«G«×¥Õ¦â */
+      /* è¨­å®šé«˜äº®åº¦ç™½è‰² */
       case 'W':
         pStr = "\e[1;37m";
         break;
 
-      /* ³]©w§C«G«×¥Õ¦â */
+      /* è¨­å®šä½äº®åº¦ç™½è‰² */
       case 'w':
         pStr = "\e[0;37m";
         break;
 
-      /* ³]©w°ª«G«×¶À¦â */
+      /* è¨­å®šé«˜äº®åº¦é»ƒè‰² */
       case 'Y':
         pStr = "\e[1;33m";
         break;
 
-      /* ³]©w§C«G«×¶À¦â */
+      /* è¨­å®šä½äº®åº¦é»ƒè‰² */
       case 'y':
         pStr = "\e[0;33m";
         break;
 
-      /* ÁÙ­ìÃC¦â½X */
+      /* é‚„åŸé¡è‰²ç¢¼ */
       case 'Z':
         pStr = "\e[0m";
         break;
@@ -5179,19 +5179,19 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
 
       if ( len + str_len( pStr ) > sizeof( buf ) - 10 )
       {
-        mudlog( LOG_DEBUG, "sact: ³s±µ¦r¦ê¶W¥X½d³ò, '%s'", format );
+        mudlog( LOG_DEBUG, "sact: é€£æ¥å­—ä¸²è¶…å‡ºç¯„åœ, '%s'", format );
         RETURN_NULL();
       }
 
       while ( ( *pBuf = *pStr ) != '\x0' ) ++pBuf, ++pStr, len++;
     }
 
-    /* ±µ¤W´«¦æ¦r¤¸, ¥H¤Î¦r¦êµ²§À¦r¤¸ */
+    /* æ¥ä¸Šæ›è¡Œå­—å…ƒ, ä»¥åŠå­—ä¸²çµå°¾å­—å…ƒ */
     *pBuf++ =  '\n';
     *pBuf++ =  '\r';
     *pBuf++ = '\x0';
 
-    /* ®Ú¾Ú¤£¦Pªº¹ï¶H°e¥X¤£¦Pªº¦r¦ê */
+    /* æ ¹æ“šä¸åŒçš„å°è±¡é€å‡ºä¸åŒçš„å­—ä¸² */
     set_descriptor_stack( to->desc );
     write_to_buffer( to->desc, buf, 0 );
     to->desc->stack = FALSE;
@@ -5200,7 +5200,7 @@ void sact( CHAR_DATA * ch, CHAR_DATA * victim, OBJ_DATA * obj, char * format )
   RETURN_NULL();
 }
 
-/* ¤À¹j¤À¸¹ */
+/* åˆ†éš”åˆ†è™Ÿ */
 void spilt_semicolon( DESCRIPTOR_DATA * d )
 {
   char buffer[ MAX_INPUT_LENGTH * 2 ];
@@ -5209,7 +5209,7 @@ void spilt_semicolon( DESCRIPTOR_DATA * d )
 
   PUSH_FUNCTION( "spilt_semicolon" );
 
-  /* ­Y¤£¬O¤w¸g¶i¤J¹CÀ¸«h¤£¦æ */
+  /* è‹¥ä¸æ˜¯å·²ç¶“é€²å…¥éŠæˆ²å‰‡ä¸è¡Œ */
   if ( !d || d->connected != CON_PLAYING ) RETURN_NULL();
 
   for ( buffer[0] = '\x0', source = target = 0; d->inbuf[source]; source++ )
@@ -5230,11 +5230,11 @@ void spilt_semicolon( DESCRIPTOR_DATA * d )
 
   buffer[target] = '\x0';
 
-  /* ¬İ¬İ¬O§_¶W¥X½d³ò */
+  /* çœ‹çœ‹æ˜¯å¦è¶…å‡ºç¯„åœ */
   if ( target >= sizeof( d->inbuf )  - 10 )
   {
     write_to_buffer( d,
-      "\n\r§A¿é¤J¤w¶W¥X¨t²Îªº½d³ò¡M©Ò¥H²M°£§Aªº¿é¤J½w½Ä°Ï¡C\n\r", 0 );
+      "\n\rä½ è¼¸å…¥å·²è¶…å‡ºç³»çµ±çš„ç¯„åœï¹æ‰€ä»¥æ¸…é™¤ä½ çš„è¼¸å…¥ç·©è¡å€ã€‚\n\r", 0 );
 
     str_cpy( d->inbuf, "\n\r" );
   }
@@ -5258,29 +5258,29 @@ void translate_command( DESCRIPTOR_DATA * d )
 
   PUSH_FUNCTION( "translate_command" );
 
-  /* ­Y¥¼¶i¤J¹CÀ¸«h¤£¦æ */
+  /* è‹¥æœªé€²å…¥éŠæˆ²å‰‡ä¸è¡Œ */
   if ( !d
     || d->connected != CON_PLAYING
     || str_len( d->incomm ) >= sizeof( buf1 ) - 2 ) RETURN_NULL();
 
-  /* ¥ı§â¦r¦ê³B²z¤@¤U */
+  /* å…ˆæŠŠå­—ä¸²è™•ç†ä¸€ä¸‹ */
   str_cpy( ( pBuf = buf1 ) , d->incomm );
   while ( *pBuf == ' ' ) pBuf++;
 
-  /* ­Y¤£¬O©R¥O°_ÀY«h¤£¦æ */
+  /* è‹¥ä¸æ˜¯å‘½ä»¤èµ·é ­å‰‡ä¸è¡Œ */
   if ( *pBuf != SYMBOL_COMMAND ) RETURN_NULL();
 
-  /* ¼Æ¦r³¡¥÷ */
+  /* æ•¸å­—éƒ¨ä»½ */
   pDest = test_number( pBuf + 1 , &dup );
 
   if ( dup > 0 && dup < MaxRepeat - 1 )
   {
-    /* ÀË¬d¬O§_¶W¥X½d³ò */
+    /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
     if ( str_len( d->inbuf ) + ( dup * ( str_len( pDest ) + 2 ) )
       > sizeof( d->incomm ) - 10 )
     {
       write_to_buffer( d,
-        "\n\r§A¿é¤J¤w¶W¥X¨t²Îªº½d³ò¡M©Ò¥H²M°£§Aªº¿é¤J½w½Ä°Ï¡C\n\r", 0 );
+        "\n\rä½ è¼¸å…¥å·²è¶…å‡ºç³»çµ±çš„ç¯„åœï¹æ‰€ä»¥æ¸…é™¤ä½ çš„è¼¸å…¥ç·©è¡å€ã€‚\n\r", 0 );
       str_cpy( d->incomm, " \x0" );
       RETURN_NULL();
     }
@@ -5297,7 +5297,7 @@ void translate_command( DESCRIPTOR_DATA * d )
     RETURN_NULL();
   }
 
-  /* ©R¥O #BEEP */
+  /* å‘½ä»¤ #BEEP */
   if ( !str_cmp( pBuf + 1 , "beep" ) )
   {
     write_to_buffer( d, "##BEEP!!!\a\n\r" , 0 );
@@ -5308,7 +5308,7 @@ void translate_command( DESCRIPTOR_DATA * d )
   RETURN_NULL();
 }
 
-/* Åã¥Ü¥X¹CÀ¸ªºª¬ºA */
+/* é¡¯ç¤ºå‡ºéŠæˆ²çš„ç‹€æ…‹ */
 void show_game_status( DESCRIPTOR_DATA * man )
 {
   char buffer[MAX_STRING_LENGTH];
@@ -5321,7 +5321,7 @@ void show_game_status( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "show_game_status: ¨Ó·½¬OªÅªº." );
+    mudlog( LOG_DEBUG, "show_game_status: ä¾†æºæ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
@@ -5331,11 +5331,11 @@ void show_game_status( DESCRIPTOR_DATA * man )
   chinese_number( MaxConnect      , buf4 );
 
   sprintf( buffer,
-    "\n\r\e[1;33mÅwªï¨Ó¨ì\e[1;37m¡i\e[1;44;36m%s\e[0m\e[1;37m¡j"
-    "( ¥»¨t²Î¤w¸g±Ò°Ê¤F\e[1;33m%s \e[1;37m)\n\r"
-    "\e[1;33m¨t²Î­t¸ü¶q¬° %s%% Á`¤W¯¸¤H¼Æ¦³%s¦¸¡M¤W½u¤H¼Æ³Ì°ª°O¿ı%s¤H\n\r"
-    "¥Ø«e¦@¦³%s¤H¦b¦¹»»»·ªº%s¾Ä°«¡M"
-    "¥t¥~ÁÙ¦³%s­Ó¤H¹Á¸Õ³s½u¤¤¡C\e[0m\n\r\n\r"
+    "\n\r\e[1;33mæ­¡è¿ä¾†åˆ°\e[1;37mã€\e[1;44;36m%s\e[0m\e[1;37mã€‘"
+    "( æœ¬ç³»çµ±å·²ç¶“å•Ÿå‹•äº†\e[1;33m%s \e[1;37m)\n\r"
+    "\e[1;33mç³»çµ±è² è¼‰é‡ç‚º %s%% ç¸½ä¸Šç«™äººæ•¸æœ‰%sæ¬¡ï¹ä¸Šç·šäººæ•¸æœ€é«˜è¨˜éŒ„%säºº\n\r"
+    "ç›®å‰å…±æœ‰%säººåœ¨æ­¤é™é çš„%så¥®é¬¥ï¹"
+    "å¦å¤–é‚„æœ‰%så€‹äººå˜—è©¦é€£ç·šä¸­ã€‚\e[0m\n\r\n\r"
     , mud_name, get_worktime_string(), get_loading()
     , buf1, buf4, buf2, mud_name, buf3 );
 
@@ -5343,7 +5343,7 @@ void show_game_status( DESCRIPTOR_DATA * man )
   RETURN_NULL();
 }
 
-/* ¨ú¦^³Æ¥÷ÀÉ®× */
+/* å–å›å‚™ä»½æª”æ¡ˆ */
 void recover_file( DESCRIPTOR_DATA * man )
 {
   char   source[MAX_FILE_LENGTH];
@@ -5359,13 +5359,13 @@ void recover_file( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "recover_file: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "recover_file: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
   name = man->username;
 
-  /* ¥ı¬å±¼±K½X¿ù»~ÀÉ */
+  /* å…ˆç æ‰å¯†ç¢¼éŒ¯èª¤æª” */
   str_cpy( failcode, file_name( name, FAILCODE_FILE ) );
   unlink( failcode );
 
@@ -5377,25 +5377,25 @@ void recover_file( DESCRIPTOR_DATA * man )
     if ( ( fp_target = fopen( target, "w+" ) ) )
     {
       write_to_descriptor( man,
-        "§AªºÀÉ®×¤w¸g·l·´¡M¨t²Î¦Û°ÊÀ°§A¨ú¦^³Æ¥÷ÀÉ¡T\n\r", 0 );
-      mudlog( LOG_DEBUG , "[Bad_File] %s ªºÀÉ®×·l·´¡M¨t²Î¦Û°Ê¨ú¦^¡C", name );
+        "ä½ çš„æª”æ¡ˆå·²ç¶“ææ¯€ï¹ç³»çµ±è‡ªå‹•å¹«ä½ å–å›å‚™ä»½æª”ï¹—\n\r", 0 );
+      mudlog( LOG_DEBUG , "[Bad_File] %s çš„æª”æ¡ˆææ¯€ï¹ç³»çµ±è‡ªå‹•å–å›ã€‚", name );
       while ( ( transfer = fgetc( fp_source ) ) != EOF )
         fputc( transfer , fp_target );
       fclose( fp_target );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( target );
     }
 
     else
     {
       sprintf( buf,
-        "\n\r\a\a\a§AªºÀÉ®×¤w¸g·l·´¡M¦ı¬O¨t²ÎµLªkÀ°§A¨ú¦^³Æ¥÷ÀÉ¡M"
-        "½Ğ¦Ü \e[1;32m%s\e[0m ³ø§i¡C\n\r" , bbs_name );
+        "\n\r\a\a\aä½ çš„æª”æ¡ˆå·²ç¶“ææ¯€ï¹ä½†æ˜¯ç³»çµ±ç„¡æ³•å¹«ä½ å–å›å‚™ä»½æª”ï¹"
+        "è«‹è‡³ \e[1;32m%s\e[0m å ±å‘Šã€‚\n\r" , bbs_name );
 
       write_to_descriptor( man, buf, 0 );
 
-      mudlog( LOG_DEBUG , "[Bad_File] %s ªºÀÉ®×·l·´¡M¦ı¨t²ÎµLªk¨ú¦^.", name );
+      mudlog( LOG_DEBUG , "[Bad_File] %s çš„æª”æ¡ˆææ¯€ï¹ä½†ç³»çµ±ç„¡æ³•å–å›.", name );
     }
 
     fclose( fp_source );
@@ -5405,11 +5405,11 @@ void recover_file( DESCRIPTOR_DATA * man )
   {
 
     sprintf( buf,
-      "\n\r\a\a\a§AªºÀÉ®×¤w¸g·l·´¡M¦ı¬O¨t²ÎµLªkÀ°§A¨ú¦^³Æ¥÷ÀÉ¡M"
-      "½Ğ¦Ü \e[1;32m%s\e[0m ³ø§i¡C\n\r" , bbs_name );
+      "\n\r\a\a\aä½ çš„æª”æ¡ˆå·²ç¶“ææ¯€ï¹ä½†æ˜¯ç³»çµ±ç„¡æ³•å¹«ä½ å–å›å‚™ä»½æª”ï¹"
+      "è«‹è‡³ \e[1;32m%s\e[0m å ±å‘Šã€‚\n\r" , bbs_name );
 
     write_to_descriptor( man, buf, 0 );
-    mudlog( LOG_DEBUG , "[Bad_File] %s ªºÀÉ®×·l·´, ¦ı¨t²ÎµLªk¨ú¦^.", name );
+    mudlog( LOG_DEBUG , "[Bad_File] %s çš„æª”æ¡ˆææ¯€, ä½†ç³»çµ±ç„¡æ³•å–å›.", name );
   }
 
   RETURN_NULL();
@@ -5475,7 +5475,7 @@ void lock_file( DESCRIPTOR_DATA * pDesc )
 
   if ( !pDesc )
   {
-    mudlog( LOG_DEBUG, "lock_file: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "lock_file: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -5501,7 +5501,7 @@ bool check_multi_login( DESCRIPTOR_DATA * man )
 
   if ( !man || !man->host || !*man->host )
   {
-    mudlog( LOG_DEBUG, "check_multi_login: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "check_multi_login: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -5540,7 +5540,7 @@ void set_innate( DESCRIPTOR_DATA * man )
 
   if ( !man || !( ch = man->character ) )
   {
-    mudlog( LOG_DEBUG, "set_innate: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_innate: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -5583,7 +5583,7 @@ void show_home( DESCRIPTOR_DATA * man )
       str_cat( buf1, buf2 );
   }
 
-  sprintf( buf2, "\n\r%s½Ğ¿ï¾Ü§Aªº¥X¥Í¦a(\e[1;32m1\e[0m-\e[1;32m%d\e[0m)¡R "
+  sprintf( buf2, "\n\r%sè«‹é¸æ“‡ä½ çš„å‡ºç”Ÿåœ°(\e[1;32m1\e[0m-\e[1;32m%d\e[0m)ï¹• "
     , VERTICAL_LINE, loop -1 );
   str_cat( buf1, buf2 );
 
@@ -5605,15 +5605,15 @@ void show_innate( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "show_innate: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "show_innate: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
   chinese_number( aInnate          , chinese1 );
   chinese_number( get_innate( man ), chinese2 );
 
-  sprintf( buf1, "\n\r½Ğ¿ï¨ú§A·Q­nªº§Ş¯à¡u§A¥i¥H°é¿ï%s­Ó§Ş¯à¡M§A¤w¸g°é¤F%s­Ó"
-    "¡v\n\r%s", chinese1, chinese2, VERTICAL_LINE );
+  sprintf( buf1, "\n\rè«‹é¸å–ä½ æƒ³è¦çš„æŠ€èƒ½ã€Œä½ å¯ä»¥åœˆé¸%så€‹æŠ€èƒ½ï¹ä½ å·²ç¶“åœˆäº†%så€‹"
+    "ã€\n\r%s", chinese1, chinese2, VERTICAL_LINE );
 
   for ( count = loop = 0; loop < MAX_INNATE; loop++ )
   {
@@ -5640,9 +5640,9 @@ void show_innate( DESCRIPTOR_DATA * man )
   if ( str_len( buf1 ) + str_len( VERTICAL_LINE ) < sizeof( buf1 ) - 10 )
     str_cat( buf1, VERTICAL_LINE );
 
-  sprintf( buf2, "½Ğ¿é¤J \e[1;36mselect\e[0m(¿ï¾Ü) \e[1;36mhelp\e[0m(¨D§U)"
-    " \e[1;36mdone\e[0m(§¹¦¨) \e[1;36mclear\e[0m(²M°£) "
-    "\e[1;36mquery\e[0m(¬d¸ß) " );
+  sprintf( buf2, "è«‹è¼¸å…¥ \e[1;36mselect\e[0m(é¸æ“‡) \e[1;36mhelp\e[0m(æ±‚åŠ©)"
+    " \e[1;36mdone\e[0m(å®Œæˆ) \e[1;36mclear\e[0m(æ¸…é™¤) "
+    "\e[1;36mquery\e[0m(æŸ¥è©¢) " );
 
   if ( str_len( buf1 ) + str_len( buf2 ) < sizeof( buf1 ) - 10 )
     str_cat( buf1, buf2 );
@@ -5661,7 +5661,7 @@ int get_innate( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "show_innate: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "show_innate: ç¼ºä¹ä¾†æº." );
     RETURN( 0 );
   }
 
@@ -5719,7 +5719,7 @@ bool set_descriptor_stack( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "set_descriptor_stack: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_descriptor_stack: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -5742,7 +5742,7 @@ void save_to_stack( DESCRIPTOR_DATA * man, const char * txt, int len )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "save_to_stack: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "save_to_stack: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -5769,14 +5769,14 @@ void process_stack( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "process_stack: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "process_stack: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
   if ( man->buffer && *man->buffer )
   {
     write_to_buffer( man, "\n\r                          ----"
-      "¡u\e[1;37m¿é¥X¼È¦s¤º®e\e[0m¡v----\n\r\n\r", 0 );
+      "ã€Œ\e[1;37mè¼¸å‡ºæš«å­˜å…§å®¹\e[0mã€----\n\r\n\r", 0 );
 
     write_to_buffer( man, man->buffer, 0 );
     free_string( man->buffer );
@@ -5794,7 +5794,7 @@ void cease_stack( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "cease_stack: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "cease_stack: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -5832,7 +5832,7 @@ void immortal_on_line( CHAR_DATA * ch )
 
   if ( !ch || !verify_char( ch ) )
   {
-    mudlog( LOG_DEBUG, "immortal_on_line: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "immortal_on_line: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -5844,7 +5844,7 @@ void immortal_on_line( CHAR_DATA * ch )
       && IS_IMMORTAL( victim )
       && get_trust( victim ) >= get_trust( ch )
       && victim != ch )
-      act( "$2¡u¤W½u³qª¾¡v$0 ¯«±Ú $N (µ¥¯Å¡R$2$x$0 ) ¤W½u¨Ó¤F¡T"
+      act( "$2ã€Œä¸Šç·šé€šçŸ¥ã€$0 ç¥æ— $N (ç­‰ç´šï¹•$2$x$0 ) ä¸Šç·šä¾†äº†ï¹—"
         , victim, &ch->level, ch, TO_CHAR );
   }
 
@@ -5860,7 +5860,7 @@ void immortal_off_line( CHAR_DATA * ch )
 
   if ( !ch || !verify_char( ch ) )
   {
-    mudlog( LOG_DEBUG, "immortal_off_line: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "immortal_off_line: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -5872,7 +5872,7 @@ void immortal_off_line( CHAR_DATA * ch )
       && IS_IMMORTAL( victim )
       && get_trust( victim ) >= get_trust( ch )
       && victim != ch )
-      act( "$2¡uÂ÷½u³qª¾¡v$0 ¯«±Ú $N (µ¥¯Å¡R$2$x$0 ) Â÷½u¤F¡T"
+      act( "$2ã€Œé›¢ç·šé€šçŸ¥ã€$0 ç¥æ— $N (ç­‰ç´šï¹•$2$x$0 ) é›¢ç·šäº†ï¹—"
         , victim, &ch->level, ch, TO_CHAR );
   }
 

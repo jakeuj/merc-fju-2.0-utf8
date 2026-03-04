@@ -1,10 +1,10 @@
 Vnum            116
 Name            saltpeter~
-ShortDesc       µv¥Û~
+ShortDesc       ç¡çŸ³~
 Description
-³o¬O¤@²°¯S»sªºµv¥Û(saltpeter)¡M§A¥i¥H¬I©ñ(fire)¬İ¬İ
+é€™æ˜¯ä¸€ç›’ç‰¹è£½çš„ç¡çŸ³(saltpeter)ï¹ä½ å¯ä»¥æ–½æ”¾(fire)çœ‹çœ‹
 ~
-Unit            ²°~
+Unit            ç›’~
 ItemType        ITEM_FIREWORK
 Takeable        Yes
 Level           1

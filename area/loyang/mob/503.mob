@@ -1,10 +1,10 @@
 Vnum            503
 Name            city guard~
-ShortDesc       «°ªù¦u½Ã~
-LongDesc        ¦uÅ@µÛ«°ªùªº¦u½Ã(city guard)¦b¦¹¯¸±^¡C
+ShortDesc       åŸé–€å®ˆè¡›~
+LongDesc        å®ˆè­·è‘—åŸé–€çš„å®ˆè¡›(city guard)åœ¨æ­¤ç«™å´—ã€‚
 ~
 Description
-¥L­Ì¬O¯S§O¦b¦¹«OÅ@«°¥«ªº¦w¥ş¡M¥¿¥ş¤O±Mª`ªº¬İµÛ¨Ó©¹ªº¦æ¤H¡C
+ä»–å€‘æ˜¯ç‰¹åˆ¥åœ¨æ­¤ä¿è­·åŸå¸‚çš„å®‰å…¨ï¹æ­£å…¨åŠ›å°ˆæ³¨çš„çœ‹è‘—ä¾†å¾€çš„è¡Œäººã€‚
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -44,8 +44,8 @@ endif
 if isimmort($n)
   break
 endif
-if isenemy($n) != '¬¥¶§'
-  mpsetenemy $n '¬¥¶§'
+if isenemy($n) != 'æ´›é™½'
+  mpsetenemy $n 'æ´›é™½'
 endif
 ~
 End
@@ -55,8 +55,8 @@ Type            rand_prog
 Chance          30
 Text
 if rand(30)
-  emote ¥¿¨ì³B¨µÅŞµÛ¡K
-  say ¤£­nÅı§Úµo²{¨ì¹H¤Ï¬ö«ßªº¨Æ¡M§_«h¡K¼K¼K¡K
+  emote æ­£åˆ°è™•å·¡é‚è‘—â€¦
+  say ä¸è¦è®“æˆ‘ç™¼ç¾åˆ°é•åç´€å¾‹çš„äº‹ï¹å¦å‰‡â€¦å˜¿å˜¿â€¦
 endif
 ~
 End

@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A�Q�n�ɯŦ��S�W�L���ɡM�ꥩ�ﭱ�ӭӭ˷����H�M�i�O�٤����D�˷���
-�O�L�٬O�A�ɡM����O�S�ӱj�i��|�Q�����M�Ӯz�S���F�S�g��ȡM�S���Y
-�M�u�ݸձ�([1;32mlore[0m�B[1;32mconsider[0m)�ݬݡM�t�η|�i�D�A�A���A�X��([1;32mkill[0m)�L����C
+當你想要升級但又苦無對手時﹐恰巧對面來個倒楣的人﹐可是還不知道倒楣的
+是他還是你時﹐怎麼辦呢﹖太強可能會被打死﹐太弱又打了沒經驗值﹐沒關係
+﹐只需試探([1;32mlore[0m、[1;32mconsider[0m)看看﹐系統會告訴你適不適合打([1;32mkill[0m)他的喔。
 
-�Ьd�ߡRkill�Blore�Bconsider
+請查詢﹕kill、lore、consider
 ~
 End

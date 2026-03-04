@@ -1,9 +1,9 @@
 Vnum            741
-Name            �c��~
+Name            宮殿~
 Description
-�J�ٵe�ɪ����f�M���L�j���򳬵ۡM�A�L�k�i�h�C�j������e�s�M��
-�ǩ|���۷�M���G�ᬰ�­��C�p�G�A�n�i�h���ܡM�i�H�յۺV�V (
-knock ) ���C
+雕樑畫棟的門口﹐不過大門緊閉著﹐你無法進去。大門極其寬廣﹐兩
+旁尚有石獅﹐似乎頗為威風。如果你要進去的話﹐可以試著敲敲 (
+knock ) 門。
 
 ~
 SectorType      SECT_CITY
@@ -20,7 +20,7 @@ End
 #Exit
 Direction       NORTH
 ExitVnum        720
-ExitDesc        �c��~
+ExitDesc        宮殿~
 ExitKeyword     door~
 ExitKey         574
 IsDoor          Yes

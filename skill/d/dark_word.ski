@@ -1,5 +1,5 @@
 Name            dark word~
-Cname           �}�@���r���N�Z~
+Cname           破世陰字奧意訣~
 Slot            SLOT_DARK_WORD
 Msgoff          ~
 Position        POS_FIGHTING
@@ -39,11 +39,11 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$P$n�餺�u��y��M�N�l�O���E���������W�M�����ŵM�ӥX�M
-�B�_�}�@���r���Ĥ@�Z$Z$A$A
-$S            �i �}��@�㳱��r�㤧��}��r��Z��j  $Z$A$A
-$P$n�H�Q�D�����l�����ӥh�M���l���g�M�S�p���B�j�ܤ��աM
-$N�u�n�O���o�Z�C$Z~
+$P$n體內真氣流轉﹐將勁力凝聚於雙拳之上﹐殺招豁然而出﹐
+運起破世陰字之第一訣$Z$A$A
+$S            【 破∼世∼陰∼字∼之∼破∼字∼訣∼】  $Z$A$A
+$P$n以霸道的拳勁反擊而去﹐拳勁之狂﹐猶如風雨大至之勢﹐
+$N只好力接這訣。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -52,11 +52,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�}�񤭦�M�v�p�g�ܡM���Ʀ��|�Ө��ΡM��M�q$n���I��
-�h�U����M�B�_�ĤG�Z$Z$A$A
-$P             �i �}��@�㳱��r�㤧�����r��Z��j  $Z$A$A
-$P$n�y���F�X�Ʈ��M���V�|�譸���M��$N�������۱q��ӨӡM
-�y�ɦh�F�ƹD�ˤf�C$Z~
+$P$n腳踏五行﹐影如迷蹤﹐分化成四個身形﹐突然從$n的背部
+痛下殺手﹐運起第二訣$Z$A$A
+$P             【 破∼世∼陰∼字∼之∼兇∼字∼訣∼】  $Z$A$A
+$P$n頓時轟出數拳﹐分向四方飛擊﹐讓$N不知殺招從何而來﹐
+頓時多了數道傷口。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -65,11 +65,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�I�i�Ŷ��B���U���L���M���t���ĦV$N�M�����ƺ��嵷��
-��q�D�G�}�@���r���ĤT�Z$Z$A$A
-$G             �i �}��@�㳱��r�㤧��ݡ�r��Z��j  $Z$A$A
-$P$n���Y�����c�b��M�V$Nŧ�h�M���l���r�M��F���F�V$N�M
-�O$N�_�h�ƨB�C$Z~
+$P$n施展剪雲步之萬里無雲﹐迅速的衝向$N﹐雙眼怖滿血絲的
+怒吼道：破世陰字之第三訣$Z$A$A
+$G             【 破∼世∼陰∼字∼之∼殘∼字∼訣∼】  $Z$A$A
+$P$n有若兇神惡剎般﹐向$N襲去﹐拳勁之猛﹐凌厲的轟向$N﹐
+令$N震退數步。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -78,11 +78,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�w�w�H���O��_�ۤv�����ߡC�Ϩ��ƯB��b�Ť����C�B�_
-�}�@���r���ĥ|�Z$Z$A$A
-$Y             �i �}��@�㳱��r�㤧�㷥��r��Z��j  $Z$A$A
-$P�r�P�����l�M���a�۶��p�L�񪺤��O�M�������F�h�M�u��
-$N�Q�_���g�R��C$Z~
+$P$n緩緩以內力抽起自己的身軀。使其飄浮於半空之中。運起
+破世陰字之第四訣$Z$A$A
+$Y             【 破∼世∼陰∼字∼之∼極∼字∼訣∼】  $Z$A$A
+$P猛烈的拳勁﹐挾帶著雄厚無比的內力﹐直直的轟去﹐只見
+$N被震的狂吐血。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -91,11 +91,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�F������ʨ��ߡM�q�ֳt�����Τ�����X$N���z�I�M$n�B�_
-�}�@���r���Ĥ��Z$Z$A$A
-$R             �i �}��@�㳱��r�㤧�����r��Z��j  $Z$A$A
-$P$n�p�q�F�X�ʮ��M�ʮ��k�@�M����@�I�M�O�����K�ɱj�r�I�p�M
-�K�g�ɪ��F�V$N�C$Z~
+$P$n靈巧的轉動身軀﹐從快速的身形之中找出$N的弱點﹐$n運起
+破世陰字之第五訣$Z$A$A
+$R             【 破∼世∼陰∼字∼之∼滅∼字∼訣∼】  $Z$A$A
+$P$n如電轟出百拳﹐百拳歸一﹐凝於一點﹐令拳勢霎時強猛沉厚﹐
+便狂暴的轟向$N。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -104,11 +104,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n���E�߯��M�N�u�𶰩����x�M$n�����۩I�����X�M
-�B�_�}�@���r���Ĥ��Z$Z$A$A
-$W             �i �}��@�㳱��r�㤧�����r��Z��j  $Z$A$A
-$P$n���K����´���@�Ӯ����M�N$N�����n�b���������M
-�O$N�@�L�ߨ����a�C$Z~
+$P$n重聚心神﹐將真氣集於雙掌﹐$n的殺招呼之欲出﹐
+運起破世陰字之第六訣$Z$A$A
+$W             【 破∼世∼陰∼字∼之∼哭∼字∼訣∼】  $Z$A$A
+$P$n的鐵拳交織成一個拳網﹐將$N完全罩在拳網之中﹐
+令$N毫無立足之地。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -117,11 +117,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�j�ܤ@�n�M���ʥ����u��M�b$n���}�e�e�X�@�D���~�P�M
-�B�_�}�@���r���ĤC�Z$Z$A$A
-$B             �i �}��@�㳱��r�㤧����r��Z��j  $Z$A$A
-$P�uť��$N���@�n�G�h���s�z�M�u���|�P�����L�ƭ޻�c������
-�E�������V$N�C$Z~
+$P$n大喝一聲﹐鼓動全身真氣﹐在$n的腳前畫出一道六芒星﹐
+運起破世陰字之第七訣$Z$A$A
+$B             【 破∼世∼陰∼字∼之∼喪∼字∼訣∼】  $Z$A$A
+$P只聽見$N的一聲慘痛的哀嚎﹐只見四周似有無數冤魂惡鬼互衝
+激盪怒擊向$N。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -130,12 +130,12 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n���ʥ����u��M����ۤƩ�L�ΡM���ͤ@�Ѱ���M�ܹD�G�y�}�@���r
-���׷����q�z$Z$A$A
-$W             �i $S�}$W��$P��$W��$G��$W��$Y��$W��
-$R��$W�����$B��$W��C��Z��X��@��j$Z$A$A
-$P$n�y���}�@���r�����q�M�@�����ۤ@���M�����ۦ��M
-�����������V$N�g���ӥh�C$Z~
+$P$n鼓動全身真氣﹐雙手幻化於無形﹐產生一股鬥氣﹐喝道：『破世陰字
+之終極奧義』$Z$A$A
+$W             【 $S破$W∼$P兇$W∼$G殘$W∼$Y極$W∼
+$R滅$W∼哭∼$B喪$W∼七∼訣∼合∼一∼】$Z$A$A
+$P$n頓悟破世陰字的奧義﹐一式接著一式﹐環環相扣﹐
+綿延不絕的向$N狂擊而去。$Z~
 Chance          10
 Value           20
 Parry           0

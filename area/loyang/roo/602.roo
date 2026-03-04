@@ -1,7 +1,7 @@
 Vnum            602
-Name            »È¦æ~
+Name            éŠ€è¡Œ~
 Description
-¦b¦¹³B§A¥i¥H¦s´Ú¡B´£´Ú¡M±N§Aªº¸êª÷°µ¦³®ÄªºÀ³¥Î¡C
+åœ¨æ­¤è™•ä½ å¯ä»¥å­˜æ¬¾ã€ææ¬¾ï¹å°‡ä½ çš„è³‡é‡‘åšæœ‰æ•ˆçš„æ‡‰ç”¨ã€‚
 
 ~
 SectorType      SECT_CITY
@@ -16,11 +16,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         ¿ú²ø~
+Keyword         éŒ¢èŠ~
 End
 
 #Enquire
-Keyword         »È¦æ~
+Keyword         éŠ€è¡Œ~
 End
 
 End

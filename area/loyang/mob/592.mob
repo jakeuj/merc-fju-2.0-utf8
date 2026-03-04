@@ -1,7 +1,7 @@
 Vnum            592
 Name            wildly cat~
-ShortDesc       ³¥¿ß~
-LongDesc        ³¥¿ß(wildly cat)
+ShortDesc       é‡Žè²“~
+LongDesc        é‡Žè²“(wildly cat)
 ~
 Description
 ~
@@ -33,7 +33,7 @@ Process
 Type            fight_prog
 Chance          30
 Text
-say Øp¡T
+say å–µï¹—
 ~
 End
 

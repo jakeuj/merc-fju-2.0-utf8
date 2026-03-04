@@ -1,7 +1,7 @@
 Name            slow~
-Cname           �𺢳N~
+Cname           遲滯術~
 Slot            SLOT_SLOW
-Msgoff          �A�P��ʧ@�S�ܧ֤F~
+Msgoff          你感到動作又變快了~
 Function        cast_slow~
 Position        POS_STANDING
 Type            TAR_CHAR_OFFENSIVE

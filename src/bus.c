@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -13,16 +13,16 @@
 #include "merc.h"
 
 int     bus_tick        =       0;
-char *  company_name    =       "¤T°ê°êÀçÅæ¯¸¤½¥q";
+char *  company_name    =       "ä¸‰åœ‹åœ‹ç‡Ÿé©›ç«™å…¬å¸";
 char *  platform_descr  =
-  "  ³o¸Ì¬OÅæ¯¸ªº­Ô¨®³B¡M­Y¬O·Q§¤¨®½Ğ©ó¦¹µ¥­Ô±a¦ì\n\r";
+  "  é€™è£¡æ˜¯é©›ç«™çš„å€™è»Šè™•ï¹è‹¥æ˜¯æƒ³åè»Šè«‹æ–¼æ­¤ç­‰å€™å¸¶ä½\n\r";
 
 char *  loge_descr      =
-  "³o¬O¤T°ê³Ì¤jªº°êÀçÅæ°¨¨®¡M¥ú¬İ³o³W¼Ò´Nª¾¹Dªº½Tªá¤F¤@µf¤ß«ä¨Ó§G¸m¡M" \
-  "ÀJ¼Ùµe´É¡M¶]°_¨Ó¬O¦p¦¹ªºµÎªA§Ö±¶¡M¥O¤H·Q¤@§¤¦A§¤¡C\n\r";
+  "é€™æ˜¯ä¸‰åœ‹æœ€å¤§çš„åœ‹ç‡Ÿé©›é¦¬è»Šï¹å…‰çœ‹é€™è¦æ¨¡å°±çŸ¥é“çš„ç¢ºèŠ±äº†ä¸€ç•ªå¿ƒæ€ä¾†ä½ˆç½®ï¹" \
+  "é›•æ¨‘ç•«æ£Ÿï¹è·‘èµ·ä¾†æ˜¯å¦‚æ­¤çš„èˆ’æœå¿«æ·ï¹ä»¤äººæƒ³ä¸€åå†åã€‚\n\r";
 
-char *  platform_short  =       "­Ô¨®³B";
-char *  loge_short      =       "¨®´[";
+char *  platform_short  =       "å€™è»Šè™•";
+char *  loge_short      =       "è»Šå»‚";
 
 BUS_DATA *      bus_next        args( ( BUS_DATA * ) );
 
@@ -39,32 +39,32 @@ FUNCTION( do_bus )
 
   if ( !bus_first )
   {
-    act( "¹ï¤£°_¡M$t¨S¦³¥ô¦óÅæ¯¸¡C", ch, mud_name, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$tæ²’æœ‰ä»»ä½•é©›ç«™ã€‚", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   one_argument( argument, arg );
 
-  /* ¨S¦³«h¬O¬d¸ßÅæ¯¸ */
+  /* æ²’æœ‰å‰‡æ˜¯æŸ¥è©¢é©›ç«™ */
   if ( !arg[0] )
   {
     if ( ( pBus = is_platform( ch->in_room ) ) )
     {
       clear_buffer();
 
-      send_to_buffer( "¥»¯¸¬O%s¡M¤U¤@¯¸¬O%s¡C "
+      send_to_buffer( "æœ¬ç«™æ˜¯%sï¹ä¸‹ä¸€ç«™æ˜¯%sã€‚ "
         , pBus->name, bus_next( pBus )->name );
 
       if ( bus_tick > 0 && bus_tick < 100 )
       {
         chinese_number( 100 - bus_tick, buf );
-        send_to_buffer( "¥»¦C¨®¦b%s¤À«á¶}°Ê¡C\n\r", buf );
+        send_to_buffer( "æœ¬åˆ—è»Šåœ¨%såˆ†å¾Œé–‹å‹•ã€‚\n\r", buf );
       }
 
       else
       {
         chinese_number( 300 - bus_tick, buf );
-        send_to_buffer( "¤U¯Z¨®¦b%s¤À«á¨ì¹F¡C\n\r", buf );
+        send_to_buffer( "ä¸‹ç­è»Šåœ¨%såˆ†å¾Œåˆ°é”ã€‚\n\r", buf );
       }
 
       print_buffer( ch );
@@ -73,20 +73,20 @@ FUNCTION( do_bus )
     else if ( ( pBus = is_loge( ch->in_room ) ) )
     {
       chinese_number( 300 - bus_tick, buf );
-      act( "§A¥¿¦b©¹$tªº¦C¨®¤W¡M¹w¦ô¦b$T¤À«á¨ì¹F¡C"
+      act( "ä½ æ­£åœ¨å¾€$tçš„åˆ—è»Šä¸Šï¹é ä¼°åœ¨$Tåˆ†å¾Œåˆ°é”ã€‚"
         , ch, bus_next( pBus )->name, buf, TO_CHAR );
     }
 
     else
     {
       clear_buffer();
-      send_to_buffer( "%sªº¦C¨®¸ê®Æ¦p¤U¡R\n\r"
-        "\e[1;33;44m½s    ¸¹ ¯¸            ¦W »ù      ®æ\e[0m\n\r", mud_name );
+      send_to_buffer( "%sçš„åˆ—è»Šè³‡æ–™å¦‚ä¸‹ï¹•\n\r"
+        "\e[1;33;44mç·¨    è™Ÿ ç«™            å åƒ¹      æ ¼\e[0m\n\r", mud_name );
 
       for ( count = 0, pBus = bus_first; pBus; pBus = pBus->next )
       {
-        send_to_buffer( "²Ä %2d ¯¸ ¡u\e[1;33m%-12s\e[0m¡v "
-          "¡u$\e[1;32m%5d\e[0m¡v\n\r"
+        send_to_buffer( "ç¬¬ %2d ç«™ ã€Œ\e[1;33m%-12s\e[0mã€ "
+          "ã€Œ$\e[1;32m%5d\e[0mã€\n\r"
           , ++count, pBus->name, pBus->cost );
 
         if ( buffer_full() ) break;
@@ -97,12 +97,12 @@ FUNCTION( do_bus )
     RETURN_NULL();
   }
 
-  /* ¬d¸ß¸ô®| */
+  /* æŸ¥è©¢è·¯å¾‘ */
   else if ( !str_prefix( arg, "!path" ) && IS_IMMORTAL( ch ) )
   {
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m¯¸¼Æ ¯¸              ¦W   °â ²¼ ³B   "
-      "¤ë    ¥x   ¨®    ´[  ¨®    ¸ê  ¤H    ¼Æ\e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mç«™æ•¸ ç«™              å   å”® ç¥¨ è™•   "
+      "æœˆ    å°   è»Š    å»‚  è»Š    è³‡  äºº    æ•¸\e[0m\n\r" );
 
     for ( count = 0, pBus = bus_first; pBus; pBus = pBus->next )
     {
@@ -117,11 +117,11 @@ FUNCTION( do_bus )
     RETURN_NULL();
   }
 
-  send_to_char( "¹ï¤£°_¡M½Ğ¥Î bus /? ¬d¸ß bus ªº¥¿½T¨Ï¥Î¤èªk¡C\n\r" , ch );
+  send_to_char( "å°ä¸èµ·ï¹è«‹ç”¨ bus /? æŸ¥è©¢ bus çš„æ­£ç¢ºä½¿ç”¨æ–¹æ³•ã€‚\n\r" , ch );
   RETURN_NULL();
 }
 
-/* ÀË¬d¬O§_¥i¥H¬O¦aÅK¤W¤U¯¸ */
+/* æª¢æŸ¥æ˜¯å¦å¯ä»¥æ˜¯åœ°éµä¸Šä¸‹ç«™ */
 bool check_station( ROOM_INDEX_DATA * pRoom )
 {
   PUSH_FUNCTION( "check_station" );
@@ -129,7 +129,7 @@ bool check_station( ROOM_INDEX_DATA * pRoom )
   RETURN( TRUE );
 }
 
-/* «Ø¥ß¦aÅK¯¸¤ë¥x */
+/* å»ºç«‹åœ°éµç«™æœˆå° */
 ROOM_INDEX_DATA * create_platform( int vnum, char * name, AREA_DATA * pArea )
 {
   ROOM_INDEX_DATA * pRoom;
@@ -141,7 +141,7 @@ ROOM_INDEX_DATA * create_platform( int vnum, char * name, AREA_DATA * pArea )
 
   if ( vnum <= 0 || !pArea ) RETURN( NULL );
 
-  /* ¥ı«Ø¥ß°_¯¸¦W */
+  /* å…ˆå»ºç«‹èµ·ç«™å */
   sprintf( buf, "%s%s", name, platform_short );
 
   pRoom = alloc_struct( STRUCT_ROOM_INDEX_DATA );
@@ -154,7 +154,7 @@ ROOM_INDEX_DATA * create_platform( int vnum, char * name, AREA_DATA * pArea )
   pRoom->area            = pArea;
   pRoom->name            = str_dup( buf );
   pRoom->description     = str_dup( platform_descr );
-  pRoom->filename        = str_dup( "¨t²Î«Ø¥ß" );
+  pRoom->filename        = str_dup( "ç³»çµ±å»ºç«‹" );
   pRoom->vnum            = vnum;
   pRoom->Safe            = TRUE;
   pRoom->NoRecall        = TRUE;
@@ -173,7 +173,7 @@ ROOM_INDEX_DATA * create_platform( int vnum, char * name, AREA_DATA * pArea )
   RETURN( pRoom );
 }
 
-/* «Ø¥ß¦aÅK¯¸¨®´[ */
+/* å»ºç«‹åœ°éµç«™è»Šå»‚ */
 ROOM_INDEX_DATA * create_loge( int vnum , char * name , AREA_DATA * pArea )
 {
   ROOM_INDEX_DATA * pRoom;
@@ -185,7 +185,7 @@ ROOM_INDEX_DATA * create_loge( int vnum , char * name , AREA_DATA * pArea )
 
   if ( vnum <= 0 || !pArea ) RETURN( NULL );
 
-  /* ¥ı«Ø¥ß°_¦WºÙ */
+  /* å…ˆå»ºç«‹èµ·åç¨± */
   sprintf( buf, "%s%s", name, loge_short );
 
   pRoom = alloc_struct( STRUCT_ROOM_INDEX_DATA );
@@ -196,7 +196,7 @@ ROOM_INDEX_DATA * create_loge( int vnum , char * name , AREA_DATA * pArea )
   pRoom->area            = pArea;
   pRoom->name            = str_dup( buf );
   pRoom->description     = str_dup( loge_descr );
-  pRoom->filename        = str_dup( "¨t²Î«Ø¥ß" );
+  pRoom->filename        = str_dup( "ç³»çµ±å»ºç«‹" );
   pRoom->vnum            = vnum;
   pRoom->Safe            = TRUE;
   pRoom->NoRecall        = TRUE;
@@ -215,7 +215,7 @@ ROOM_INDEX_DATA * create_loge( int vnum , char * name , AREA_DATA * pArea )
   RETURN( pRoom );
 }
 
-/* ¬O§_¬°¦aÅKªº¤ë¥x¡M©Î¬O¥]´[¡M³o¨Ç¬O¨t²Î«Ø¥ß°_¨Óªº¡M¹ê»Ú¤£¦s¦bªº */
+/* æ˜¯å¦ç‚ºåœ°éµçš„æœˆå°ï¹æˆ–æ˜¯åŒ…å»‚ï¹é€™äº›æ˜¯ç³»çµ±å»ºç«‹èµ·ä¾†çš„ï¹å¯¦éš›ä¸å­˜åœ¨çš„ */
 BUS_DATA * is_station( ROOM_INDEX_DATA * pRoom )
 {
   BUS_DATA * pBus;
@@ -230,7 +230,7 @@ BUS_DATA * is_station( ROOM_INDEX_DATA * pRoom )
   RETURN( NULL );
 }
 
-/* ¬O§_¬°¤ë¥x */
+/* æ˜¯å¦ç‚ºæœˆå° */
 BUS_DATA * is_platform( ROOM_INDEX_DATA * pRoom )
 {
   BUS_DATA * pBus;
@@ -245,7 +245,7 @@ BUS_DATA * is_platform( ROOM_INDEX_DATA * pRoom )
   RETURN( NULL );
 }
 
-/* ¬O§_¬°¨®´[ */
+/* æ˜¯å¦ç‚ºè»Šå»‚ */
 BUS_DATA * is_loge( ROOM_INDEX_DATA * pRoom )
 {
   BUS_DATA * pBus;
@@ -260,7 +260,7 @@ BUS_DATA * is_loge( ROOM_INDEX_DATA * pRoom )
   RETURN( NULL );
 }
 
-/* ³B²z¬O§_¦b¦aÅK¯¸¦sÀÉ */
+/* è™•ç†æ˜¯å¦åœ¨åœ°éµç«™å­˜æª” */
 int save_room( ROOM_INDEX_DATA * pRoom )
 {
   BUS_DATA        * pBus;
@@ -271,7 +271,7 @@ int save_room( ROOM_INDEX_DATA * pRoom )
   RETURN( pRoom->vnum );
 }
 
-/* ¤W¤U³sµ²¨®¯¸¸ô½u */
+/* ä¸Šä¸‹é€£çµè»Šç«™è·¯ç·š */
 bool link_path( ROOM_INDEX_DATA * aRoom, ROOM_INDEX_DATA * bRoom )
 {
   EXIT_DATA * aExit;
@@ -279,13 +279,13 @@ bool link_path( ROOM_INDEX_DATA * aRoom, ROOM_INDEX_DATA * bRoom )
 
   PUSH_FUNCTION( "link_path" );
 
-  /* °t¸m°O¾ĞÅé */
+  /* é…ç½®è¨˜æ†¶é«” */
   set_exit_default( aExit = alloc_struct( STRUCT_EXIT_DATA ) );
   set_exit_default( bExit = alloc_struct( STRUCT_EXIT_DATA ) );
 
   if ( !aRoom || !bRoom || !aExit || !bExit ) RETURN( FALSE );
 
-  /* ²M°£°ò¥»­È */
+  /* æ¸…é™¤åŸºæœ¬å€¼ */
   aExit->description = bExit->description = str_dup( "" );
   aExit->keyword     = bExit->keyword     = str_dup( "" );
   aExit->closed      = bExit->closed      = FALSE;
@@ -294,10 +294,10 @@ bool link_path( ROOM_INDEX_DATA * aRoom, ROOM_INDEX_DATA * bRoom )
   aExit->pick        = bExit->pick        = FALSE;
   aExit->key         = bExit->key         = 0;
 
-  aExit->message     = str_dup( "§A¨«¶i¤FÅæ¯¸¸Ì­±¡T" );
-  bExit->message     = str_dup( "§A±qÅæ¯¸¨«¤F¥X¨Ó¡T" );
+  aExit->message     = str_dup( "ä½ èµ°é€²äº†é©›ç«™è£¡é¢ï¹—" );
+  bExit->message     = str_dup( "ä½ å¾é©›ç«™èµ°äº†å‡ºä¾†ï¹—" );
 
-  /* «Ø¥ß³sµ² */
+  /* å»ºç«‹é€£çµ */
   aExit->vnum = bRoom->vnum;
   bExit->vnum = aRoom->vnum;
 
@@ -318,22 +318,22 @@ void bus_update( void )
 
   PUSH_FUNCTION( "bus_update" );
 
-  /* ¦pªG¨t²Î¨S¦³¸ü¤J¥ô¦óÅæ¯¸¨t²Î */
+  /* å¦‚æœç³»çµ±æ²’æœ‰è¼‰å…¥ä»»ä½•é©›ç«™ç³»çµ± */
   if ( !bus_first ) RETURN_NULL();
 
-  /* ­p¼Æ */
+  /* è¨ˆæ•¸ */
   if ( ++bus_tick > 300 ) bus_tick = 0;
 
   switch( bus_tick )
   {
-  /* °e¥X¨ì¯¸°T®§ */
+  /* é€å‡ºåˆ°ç«™è¨Šæ¯ */
   case 0:
 
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
       sprintf( buf,
-        "\e[1;33m%s¯¸¨ì¤F¡M½Ğ­n¤U¨®ªº®È«È¦b¦¹¤U¨®¡M"
-        "¥X¤f¤è¦V¦b¤W¤è\e[0m¡C\n\r %s ºÜ¸ÛÅwªï§Aªº·f­¼¡C\n\r"
+        "\e[1;33m%sç«™åˆ°äº†ï¹è«‹è¦ä¸‹è»Šçš„æ—…å®¢åœ¨æ­¤ä¸‹è»Šï¹"
+        "å‡ºå£æ–¹å‘åœ¨ä¸Šæ–¹\e[0mã€‚\n\r %s ç«­èª æ­¡è¿ä½ çš„æ­ä¹˜ã€‚\n\r"
         , bus_next( pBus )->name , company_name );
       sendmsg_to_someroom( buf, pBus->loge );
     }
@@ -341,20 +341,20 @@ void bus_update( void )
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
       str_cpy( buf,
-        "\e[1;33m¦C¨®¶i¯¸¤F¡M½Ğ¤j®a¤£­n¾a¦bÅK¸ôÃä¡M"
-        "¥H¨¾¦MÀI¡C\e[0m\n\r" );
+        "\e[1;33måˆ—è»Šé€²ç«™äº†ï¹è«‹å¤§å®¶ä¸è¦é åœ¨éµè·¯é‚Šï¹"
+        "ä»¥é˜²å±éšªã€‚\e[0m\n\r" );
 
       sendmsg_to_someroom( buf, bus_next( pBus )->platform );
     }
 
     break;
 
-  /* ·h²¾®È«È */
+  /* æ¬ç§»æ—…å®¢ */
   case 1:
 
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
-      /* ­pºâ¥ı«eªº©M¤§«áªº©Ğ¶¡ */
+      /* è¨ˆç®—å…ˆå‰çš„å’Œä¹‹å¾Œçš„æˆ¿é–“ */
       aRoom = pBus->loge;
       bRoom = bus_next( pBus )->platform;
 
@@ -366,48 +366,48 @@ void bus_update( void )
 
         if ( ch->position == POS_RESTING || ch->position == POS_SLEEPING )
         {
-          send_to_char( "³Ş¡M¦C¨®¨ì¯¸¤F¡M¸Ó°_§É¤F¡C\n\r" , ch );
+          send_to_char( "å–‚ï¹åˆ—è»Šåˆ°ç«™äº†ï¹è©²èµ·åºŠäº†ã€‚\n\r" , ch );
 
-          /* ¦pªG¬O©üºÎ */
+          /* å¦‚æœæ˜¯æ˜ç¡ */
           if ( !is_affected( ch, SLOT_SLEEP ) ) ch->position = POS_STANDING;
         }
 
-        act( "$n±q³o¯Z¦C¨®¨«¤F¥X¥h¡C", ch, NULL, NULL, TO_ALL );
+        act( "$nå¾é€™ç­åˆ—è»Šèµ°äº†å‡ºå»ã€‚", ch, NULL, NULL, TO_ALL );
 
         char_from_room( ch );
         char_to_room( ch, bRoom );
-        act( "$n±q³o¯Z¦C¨®¤W¨«¤F¥X¨Ó¡C", ch, NULL, NULL, TO_ROOM );
+        act( "$nå¾é€™ç­åˆ—è»Šä¸Šèµ°äº†å‡ºä¾†ã€‚", ch, NULL, NULL, TO_ROOM );
         do_look( ch, "auto" );
 
-        /* ²M°£°lÂÜ¬ö¿ıÂI */
+        /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
         clear_trace( ch, TRUE );
       }
     }
     break;
 
-  /* °e¥X§Y±N¶}¨®ªº°T®§ */
+  /* é€å‡ºå³å°‡é–‹è»Šçš„è¨Šæ¯ */
   case 20:
   case 80:
 
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
       sprintf( buf,
-        "¥»¦C¨®§Y±N¶}©¹%s¡M­n¤U¨®ªº®È«È½Ğ¾¨³t¥Ñ¤W¤è¥X¤fÂ÷¶}¡C\n\r"
-        "­Ô¨®ªº®È«È½Ğµyµ¥¤ù¨èµ¥­Ô¶}¨®¡M%sºÜ¸ÛÅwªï§Aªº¥úÁ{¡C\n\r"
+        "æœ¬åˆ—è»Šå³å°‡é–‹å¾€%sï¹è¦ä¸‹è»Šçš„æ—…å®¢è«‹å„˜é€Ÿç”±ä¸Šæ–¹å‡ºå£é›¢é–‹ã€‚\n\r"
+        "å€™è»Šçš„æ—…å®¢è«‹ç¨ç­‰ç‰‡åˆ»ç­‰å€™é–‹è»Šï¹%sç«­èª æ­¡è¿ä½ çš„å…‰è‡¨ã€‚\n\r"
         , bus_next( pBus)->name , company_name );
 
       sendmsg_to_someroom( buf, pBus->platform );
     }
     break;
 
-  /* ¶}¨®ªº°T®§ */
+  /* é–‹è»Šçš„è¨Šæ¯ */
   case 99:
 
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
-      sprintf( buf, "\e[1;33m¥»¦C¨®°¨¤W­n¥Xµo¡M½Ğ®È«È­Ìµy§@¥ğ®§¡C\e[0m\n\r"
-        "­Y¤£±ı¤W¨®ªº®È«È¡M½ĞºÉ³t¥Ñ¤W¤èÂ÷¶}¡C\n\r"
-        "¥»¦C¨®µo¨®«á§Y±N¶}©¹%s¡M%sºÜ¸ÛÅwªï§Aªº¥úÁ{¡C\n\r"
+      sprintf( buf, "\e[1;33mæœ¬åˆ—è»Šé¦¬ä¸Šè¦å‡ºç™¼ï¹è«‹æ—…å®¢å€‘ç¨ä½œä¼‘æ¯ã€‚\e[0m\n\r"
+        "è‹¥ä¸æ¬²ä¸Šè»Šçš„æ—…å®¢ï¹è«‹ç›¡é€Ÿç”±ä¸Šæ–¹é›¢é–‹ã€‚\n\r"
+        "æœ¬åˆ—è»Šç™¼è»Šå¾Œå³å°‡é–‹å¾€%sï¹%sç«­èª æ­¡è¿ä½ çš„å…‰è‡¨ã€‚\n\r"
         , bus_next( pBus )->name , company_name );
 
       sendmsg_to_someroom( buf, pBus->loge );
@@ -415,17 +415,17 @@ void bus_update( void )
     break;
 
 
-  /* ·h²¾®È«È */
+  /* æ¬ç§»æ—…å®¢ */
   case 100:
 
-    /* ¨t²Î­«¸m, ¦aÅKÃö³¬ */
+    /* ç³»çµ±é‡ç½®, åœ°éµé—œé–‰ */
     if ( ( reboot_time   > 0 && ( ( reboot_time   - current_time ) < 300 ) )
       || ( shutdown_time > 0 && ( ( shutdown_time - current_time ) < 300 ) ) )
       break;
 
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
-      /* ­pºâ¥ı«eªº©M¤§«áªº©Ğ¶¡ */
+      /* è¨ˆç®—å…ˆå‰çš„å’Œä¹‹å¾Œçš„æˆ¿é–“ */
       aRoom = pBus->platform;
       bRoom = pBus->loge;
 
@@ -433,59 +433,59 @@ void bus_update( void )
       {
         ch_next = ch->next_in_room;
 
-        /* ­Y¬O©Çª«©Î¬O¿ú¤£°÷ªº¤£·h */
+        /* è‹¥æ˜¯æ€ªç‰©æˆ–æ˜¯éŒ¢ä¸å¤ çš„ä¸æ¬ */
         if ( IS_NPC( ch )
           || ch->gold < pBus->cost
           || ch->position != POS_STANDING )
         {
           if ( ch->gold < pBus->cost )
-            send_to_char( "§Aªº¿ú¤£°÷¡MµLªk·f­¼¥»¦C¨®¡C\n\r" , ch );
+            send_to_char( "ä½ çš„éŒ¢ä¸å¤ ï¹ç„¡æ³•æ­ä¹˜æœ¬åˆ—è»Šã€‚\n\r" , ch );
           continue;
         }
 
-        /* ¦©¿ú */
+        /* æ‰£éŒ¢ */
         gold_from_char( ch, pBus->cost );
         pBus->count++;
 
-        /* ·h²¾¤Hª« */
-        act( "$n¥I¤F¿ú¡M·f¤W¤F¦aÅK¡C", ch, NULL, NULL, TO_ALL );
+        /* æ¬ç§»äººç‰© */
+        act( "$nä»˜äº†éŒ¢ï¹æ­ä¸Šäº†åœ°éµã€‚", ch, NULL, NULL, TO_ALL );
         char_from_room( ch );
         char_to_room( ch, bRoom );
-        act( "$n¥I¤F¿ú¡M¨«¤W¤F³o¯Z¦aÅK¡C", ch, NULL, NULL, TO_ROOM );
+        act( "$nä»˜äº†éŒ¢ï¹èµ°ä¸Šäº†é€™ç­åœ°éµã€‚", ch, NULL, NULL, TO_ROOM );
 
         do_look( ch, "auto" );
 
-        /* ²M°£°lÂÜ¬ö¿ıÂI */
+        /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
         clear_trace( ch, TRUE );
       }
     }
     break;
 
-  /* ¶}¨®ªº°T®§ */
+  /* é–‹è»Šçš„è¨Šæ¯ */
   case 101:
 
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
-      sprintf( buf, "\e[1;33m¥»¦C¨®¤w¸g¥Xµo¡M½Ğ®È«È­Ìµy§@¥ğ®§¡C\e[0m\n\r"
-        "¥»¦C¨®§Y±N¶}©¹%s¡C %sºÜ¸ÛÅwªï§Aªº¥úÁ{¡C\n\r"
+      sprintf( buf, "\e[1;33mæœ¬åˆ—è»Šå·²ç¶“å‡ºç™¼ï¹è«‹æ—…å®¢å€‘ç¨ä½œä¼‘æ¯ã€‚\e[0m\n\r"
+        "æœ¬åˆ—è»Šå³å°‡é–‹å¾€%sã€‚ %sç«­èª æ­¡è¿ä½ çš„å…‰è‡¨ã€‚\n\r"
         , bus_next( pBus )->name , company_name );
 
       sendmsg_to_someroom( buf, pBus->loge );
-      sendmsg_to_someroom( "\e[1;33m¦C¨®¤w¸g¥Xµo¡M±ı­¼§¤ªÌ¡M½Ğ"
-        "µy«İ¤U¤@¯Z¡C\e[0m\n\r", pBus->platform );
+      sendmsg_to_someroom( "\e[1;33måˆ—è»Šå·²ç¶“å‡ºç™¼ï¹æ¬²ä¹˜åè€…ï¹è«‹"
+        "ç¨å¾…ä¸‹ä¸€ç­ã€‚\e[0m\n\r", pBus->platform );
     }
 
     break;
 
-  /* °e¥X§Y±N¨ì¯¸ªº°T®§ */
+  /* é€å‡ºå³å°‡åˆ°ç«™çš„è¨Šæ¯ */
   case 150:
   case 200:
   case 250:
 
     for ( pBus = bus_first; pBus; pBus = pBus->next )
     {
-      sprintf( buf, "¥»¦C¨®¥¿¶}©¹¤U¤@¯¸%s¡M½Ğ®È«Èµy§@¥ğ®§¡M­@¤ßµ¥­Ô¡C\n\r"
-        "%sºÜ¸ÛÅwªï§Aªº¥úÁ{¡C\n\r"
+      sprintf( buf, "æœ¬åˆ—è»Šæ­£é–‹å¾€ä¸‹ä¸€ç«™%sï¹è«‹æ—…å®¢ç¨ä½œä¼‘æ¯ï¹è€å¿ƒç­‰å€™ã€‚\n\r"
+        "%sç«­èª æ­¡è¿ä½ çš„å…‰è‡¨ã€‚\n\r"
         , bus_next( pBus )->name , company_name );
       sendmsg_to_someroom( buf, pBus->loge );
     }
@@ -496,7 +496,7 @@ void bus_update( void )
   RETURN_NULL();
 }
 
-/* ¤U¤@¯¸ */
+/* ä¸‹ä¸€ç«™ */
 BUS_DATA * bus_next( BUS_DATA * pBus )
 {
   PUSH_FUNCTION( "bus_next" );

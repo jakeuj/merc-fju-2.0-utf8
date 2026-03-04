@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -53,14 +53,14 @@ void main( int argc, char ** argv )
       switch( argv[loop][1] )
       {
       default:
-        printf( "¤£¦X²zªº°Ñ¼Æ¡C\n\r" );
+        printf( "ä¸åˆç†çš„åƒæ•¸ã€‚\n\r" );
         exit( -1 );
 
       case 'I':
       case 'i':
         if ( ( interval = atoi( argv[loop] + 2 ) ) <= 0 )
         {
-          printf( "¶¡¹j®É¶¡¤£¦Xªk¡C\n\r" );
+          printf( "é–“éš”æ™‚é–“ä¸åˆæ³•ã€‚\n\r" );
           exit( -1 );
         }
         break;
@@ -69,7 +69,7 @@ void main( int argc, char ** argv )
       case 's':
         if ( ( sleep_time = atoi( argv[loop] + 2 ) ) <= 0 )
         {
-          printf( "ºÎ¯v®É¶¡¤£¦Xªk¡C\n\r" );
+          printf( "ç¡çœ æ™‚é–“ä¸åˆæ³•ã€‚\n\r" );
           exit( -1 );
         }
         break;
@@ -81,13 +81,13 @@ void main( int argc, char ** argv )
     {
       if ( port >= MAX_PORT )
       {
-        printf( "³Ì¤j¥u¯àºÊµø %d ­Ó PORT¡C\n\r", MAX_PORT );
+        printf( "æœ€å¤§åªèƒ½ç›£è¦– %d å€‹ PORTã€‚\n\r", MAX_PORT );
         exit( -1 );
       }
 
       if ( ( address = atoi( argv[loop] ) ) <= 0 || address > 65535 )
       {
-        printf( "ºÊÅ¥°ğ %d ¤£¦Xªk¡C\n\r", address );
+        printf( "ç›£è½åŸ  %d ä¸åˆæ³•ã€‚\n\r", address );
         exit( -1 );
       }
 
@@ -95,7 +95,7 @@ void main( int argc, char ** argv )
       {
         if ( listen_port[check] == address )
         {
-          printf( "ºÊÅ¥°ğ %d ­«½Æ¡C\n\r", address );
+          printf( "ç›£è½åŸ  %d é‡è¤‡ã€‚\n\r", address );
           exit( -1 );
         }
       }
@@ -107,17 +107,17 @@ void main( int argc, char ** argv )
 
   if ( port <= 0 )
   {
-    printf( "³Ì¤Ö­n¦³¤@­ÓºÊÅ¥°ğ¡C\n\r" );
+    printf( "æœ€å°‘è¦æœ‰ä¸€å€‹ç›£è½åŸ ã€‚\n\r" );
     exit( -1 );
   }
   else
   {
-    printf( "ºÊÅ¥¤U¦Cªº¿é¥X°ğ¡R" );
+    printf( "ç›£è½ä¸‹åˆ—çš„è¼¸å‡ºåŸ ï¹•" );
     for ( loop = 0; loop < port; loop++ ) printf( " %d", listen_port[loop] );
     printf( "\n\r" );
 
-    printf( "ºÎ¯v®É¶¡¡R%d\n\r", sleep_time );
-    printf( "¶¡¹j®É¶¡¡R%d\n\r", interval   );
+    printf( "ç¡çœ æ™‚é–“ï¹•%d\n\r", sleep_time );
+    printf( "é–“éš”æ™‚é–“ï¹•%d\n\r", interval   );
   }
 
   /* sleep( sleep_time ); */
@@ -126,7 +126,7 @@ void main( int argc, char ** argv )
   {
     if ( !( pFile = fopen( FILENAME, "r" ) ) )
     {
-      printf( "µLªk¶}±ÒÀÉ®× %s¡C\n\r", FILENAME );
+      printf( "ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ %sã€‚\n\r", FILENAME );
       exit( -1 );
     }
 

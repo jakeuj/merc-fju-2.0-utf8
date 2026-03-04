@@ -1,5 +1,5 @@
 Name            shadow kill sword~
-Cname           �t�v�C�k~
+Cname           暗影劍法~
 Slot            SLOT_SHADOW_KILL
 Msgoff          ~
 Check           check_sword_attack~
@@ -40,8 +40,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n��M�ϥX$S�y�����ʳ��M�a���K��z$Z���������ۡM��]�U���p��M�C�i�y�P�Y�B
-�몺�V$N�n�h�M��$N�׵L�i�סC~
+$n斗然使出$S『停雲催雪﹐地落八荒』$Z的絕情殺著﹐氣吞萬里如虎﹐劍虹流星墜雨
+般的向$N罩去﹐讓$N避無可避。~
 Chance          10
 Value           20
 Parry           0
@@ -50,8 +50,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��M�ĹD�G����j�H�^�����M��j�H�B�����^�g�ա�C�v�J�M�H�ۨ����M���N�M�ϥX
-$B�y���s�d�|�M�b���г��z$Z�V$N�h�h���h�M�۩۫��V�n�`�C~
+$n喟然嘆道：不恨古人吾不見﹐恨古人、不見吾狂耳∼劍影驟然隨著那悵然殺意﹐使出
+$B『雲山千疊﹐駭浪覆頂』$Z向$N層層遞去﹐招招指向要害。~
 Chance          10
 Value           20
 Parry           0
@@ -60,8 +60,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�����D���M�~�~��_$b�y���z�z$Z�߳Z�C�u��$n��W��$O�@�ٵ��^�]�_�M����
-�۰ʡM�E�_�@�D���b�V$N�y����A�C~
+$n似笑非笑﹐悽悽唸起$b『棄魂散魄』$Z心訣。只見$n手上的$O一抹紫孽蒸起﹐不住
+旋動﹐激起一道風刃向$N腰間急劈。~
 Chance          10
 Value           20
 Parry           0
@@ -70,8 +70,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�f���C�ȨB�k�M�ϥX$g�y�öH���Ρz$Z�������M��$N�󤭦���줧��ªŶ��C�C��
-�I�M���V�ʩШ�����ߨ���M�u��$N���V�^�^�����a�V$O�b�h�C~
+$n逆走青玄步法﹐使出$g『亂象錯形』$Z的奧秘﹐陷$N於五行易位之闇黑空間。劍首
+寂然指向京房卦之血脈卦位﹐只見$N正向跌跌撞撞地向$O奔去。~
 Chance          10
 Value           20
 Parry           0
@@ -80,8 +80,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�N���@�_�@�������M���Τw�M$p�y�p�J�����]�a�z$Z�M�⤤$O�v�p�Ӧp�h�M�L�n��
-�L���a���V$N�C~
+$n意念一起一息之間﹐身形已然$p『如入不動魔地』$Z﹐手中$O影如來如去﹐無聲亦
+無息地遞向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -90,9 +90,9 @@ Innate          0 0
 End
 #Damage
 Description
-$n���ӧ��ߡB�u¬�q���M�ŵM�y���F$Y�y�@�����μC�k�M$y�p�ڤ۪w�v$W�M$b�p�S��
-�p�q$W�z$Z�C�L�h�ҾǪ���v�C�k�M�@�ɤ����ķ|�e�q�M�������_�b�⤤�ϥX�M�Ƭ�
-���i��q���մ�V$N�C~
+$n內照形軀、守竅通關﹐豁然頓悟了$Y『一切有形劍法﹐$y如夢幻泡影$W﹐$b如露亦
+如電$W』$Z。過去所學的闇影劍法﹐一時之間融會貫通﹐源源不斷在手中使出﹐化為
+不可思量之勢湧向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -101,8 +101,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��M�ϥX�y�����ʳ��M�a���K��z���������ۡM��]�U���p��M�C�i�y�P�Y�B�몺�V
-$N�n�h�M��$N�׵L�i�סC~
+$n斗然使出『停雲催雪﹐地落八荒』的絕情殺著﹐氣吞萬里如虎﹐劍虹流星墜雨般的向
+$N罩去﹐讓$N避無可避。~
 Chance          10
 Value           20
 Parry           0
@@ -111,8 +111,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��M�ĹD�G����j�H�^�����M��j�H�B�����^�g�ա�C�v�J�M�H�ۨ����M���N�M�ϥX
-�y���s�d�|�M�b���г��z�V$N�h�h���h�M�۩۫��V�n�`�C~
+$n喟然嘆道：不恨古人吾不見﹐恨古人、不見吾狂耳∼劍影驟然隨著那悵然殺意﹐使出
+『雲山千疊﹐駭浪覆頂』向$N層層遞去﹐招招指向要害。~
 Chance          10
 Value           20
 Parry           0
@@ -121,8 +121,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�����D���M�~�~��_�y���z�z�߳Z�C�u��$n��W��$O�@�ٵ��^�]�_�M�����۰�
-�M�E�_�@�D���b�V$N�y����A�C~
+$n似笑非笑﹐悽悽唸起『棄魂散魄』心訣。只見$n手上的$O一抹紫孽蒸起﹐不住旋動
+﹐激起一道風刃向$N腰間急劈。~
 Chance          10
 Value           20
 Parry           0
@@ -131,8 +131,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�f���C�ȨB�k�M�ϥX�y�öH���Ρz�������M��$N�󤭦���줧��ªŶ��C�C���I�M
-���V�ʩШ�����ߨ���M�u��$N���V�^�^�����a�V$O�b�h�C~
+$n逆走青玄步法﹐使出『亂象錯形』的奧秘﹐陷$N於五行易位之闇黑空間。劍首寂然
+指向京房卦之血脈卦位﹐只見$N正向跌跌撞撞地向$O奔去。~
 Chance          10
 Value           20
 Parry           0
@@ -141,8 +141,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�N���@�_�@�������M���Τw�M�y�p�J�����]�a�z�M�⤤$O�v�p�Ӧp�h�M�L�n��L���a
-���V$N�C~
+$n意念一起一息之間﹐身形已然『如入不動魔地』﹐手中$O影如來如去﹐無聲亦無息地
+遞向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -151,7 +151,7 @@ Innate          0 0
 End
 #Damage
 Description
-�X��$N����۬[�o�K�p�c�P�몺�������ڡM$n�������i���M�C�կe�j�M�N���A�i�@�ۡC~
+趁著$N忙於招架這密如繁星般的攻擊之際﹐$n見機不可失﹐劍勢疾迴﹐意欲再進一招。~
 Chance          10
 Value           20
 Parry           0
@@ -160,7 +160,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��$O�W�P�����޻�M������$n�}�}���𪺶ʰʡM�q�C�W��X�M�V$N�����ӥh�C~
+$n的$O上枉死的冤魂﹐受不住$n陣陣殺氣的催動﹐從劍鋒脫出﹐向$N撲噬而去。~
 Chance          10
 Value           20
 Parry           0
@@ -169,8 +169,8 @@ Innate          0 0
 End
 #Damage
 Description
-�u���q$N�ˤf�Q�x�ӥX���A��M��M�����L�Ʀ�W�M�p�F�D��V$N«�h�M�ᨫ$N��
-��z�C~
+只見從$N傷口噴灑而出的鮮血﹐突然凝成無數血柱﹐如靈蛇般向$N竄去﹐攝走$N的
+魂魄。~
 Chance          10
 Value           20
 Parry           0
@@ -179,7 +179,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n����˴�$W�M���ۤv�ݤf�e�h�СЫo����$N�ݤf�@�D��W�p���u��Q�X�C~
+$n雙手倒握$W﹐往自己胸口送去－－卻見到$N胸口一道血柱如飛泉般噴出。~
 Chance          10
 Value           20
 Parry           0
@@ -188,7 +188,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�l��$B��$Z�v�ƨ��P$N�r���C$n���k���w�V$N�I��¶�h�M���ⴣ�C��$N���F�����C~
+$n召喚$B風$Z影化身與$N廝殺。$n的法身逕向$N背後繞去﹐雙手提劍往$N天靈直落。~
 Chance          10
 Value           20
 Parry           0
@@ -197,8 +197,8 @@ Innate          0 0
 End
 #Damage
 Description
-�A���Ѥ@�ġ���ճo�ëD�C�k�����P�M���ҿ�$Y�u�ƭ����״¡M�J�B���פ�v$Z�C��
-�O���k���ɡM�P�y����C~
+你仰天一嘆∼明白這並非劍法之極致﹐正所謂$Y「飄風不終朝﹐驟雨不終日」$Z。於
+是氣歸元牝﹐周流六虛。~
 Chance          10
 Value           20
 Parry           0

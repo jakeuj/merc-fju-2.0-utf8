@@ -1,9 +1,9 @@
 Vnum            15
 Name            god armor~
-ShortDesc       Âí¥P¾Ô¥Ò~
+ShortDesc       éŽ®ä»™æˆ°ç”²~
 Description
-¤@¥ó¤Ñ¯«±M¥Îªº¾Ô¥Ò(armor)¡C~
-Unit            ¨ã~
+ä¸€ä»¶å¤©ç¥žå°ˆç”¨çš„æˆ°ç”²(armor)ã€‚~
+Unit            å…·~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

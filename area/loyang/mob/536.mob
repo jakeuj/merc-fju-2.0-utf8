@@ -1,10 +1,10 @@
 Vnum            536
 Name            fighter~
-ShortDesc       Ãğ®v~
-LongDesc        ªZ¸Ëµ²§ôªºÃğ®v(fighter)¥¿µ¥«İ§Aªº¥úÁ{¡C
+ShortDesc       é¢å¸«~
+LongDesc        æ­¦è£çµæŸçš„é¢å¸«(fighter)æ­£ç­‰å¾…ä½ çš„å…‰è‡¨ã€‚
 ~
 Description
-¥Lªº¥ş¨­¦Ù¦×¬O«HÅAªº«OÃÒ¡C
+ä»–çš„å…¨èº«è‚Œè‚‰æ˜¯ä¿¡è­½çš„ä¿è­‰ã€‚
 ~
 Sentinel        Yes
 StayArea        Yes

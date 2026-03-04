@@ -1,9 +1,9 @@
 Vnum            9025
 Name            tiger helmet~
-ShortDesc       ¥ñªêÅÕ~
+ShortDesc       ä¼è™Žçº“~
 Description
-¤@³»¥H¤W¦nºë¿û¥´³y¦Ó¦¨ªºÀY²¯¡M¦b¤é¥úªº·ÓÄ£¤U´²µo¥XÄ£²´ªº¥ú¨~¡C~
-Unit            ³»~
+ä¸€é ‚ä»¥ä¸Šå¥½ç²¾é‹¼æ‰“é€ è€Œæˆçš„é ­ç›”ï¹åœ¨æ—¥å…‰çš„ç…§è€€ä¸‹æ•£ç™¼å‡ºè€€çœ¼çš„å…‰èŠ’ã€‚~
+Unit            é ‚~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HEAD
 Takeable        Yes

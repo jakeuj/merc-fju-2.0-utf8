@@ -1,10 +1,10 @@
 Vnum            510
 Name            lounge pant~
-ShortDesc       °ª¯Å¦è¸Ë¿Ç~
+ShortDesc       é«˜ç´šè¥¿è£è¤²~
 Description
-¤@¥ó°ª¯Å¦è¸Ë¿Ç(lounge pant)¡M¥­®É¦bµ²±Bªº®É­Ô¬ï¡C
+ä¸€ä»¶é«˜ç´šè¥¿è£è¤²(lounge pant)ï¹å¹³æ™‚åœ¨çµå©šçš„æ™‚å€™ç©¿ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_LEGS
 Takeable        Yes

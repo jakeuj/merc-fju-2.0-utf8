@@ -1,11 +1,11 @@
 Vnum            25002
 Name            rabbit~
-ShortDesc       ¤p¥Õ¨ß~
-LongDesc        ¤p¥Õ¨ß(rabbit)
+ShortDesc       å°ç™½å…”~
+LongDesc        å°ç™½å…”(rabbit)
 ~
 Description
-¬¡ÂÛ¶Ã¸õªº¡M¤@¨­¥Î¤£§¹ªºÅé¤O¡Mªø¦Õ¦·¬õ²´·ú¡M
-³Ì³ßÅwªº­¹ª«¬O¬õÅÚ½³¡C
+æ´»è¹¦äº‚è·³çš„ï¹ä¸€èº«ç”¨ä¸å®Œçš„é«”åŠ›ï¹é•·è€³æœµç´…çœ¼ç›ï¹
+æœ€å–œæ­¡çš„é£Ÿç‰©æ˜¯ç´…è˜¿è””ã€‚
 ~
 Sentinel        Yes
 Alignment       0

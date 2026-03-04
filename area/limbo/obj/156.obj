@@ -1,11 +1,11 @@
 Vnum            156
 Name            gold spicy plaster~
-ShortDesc       ¤Ñ­»Â_Äò»I~
+ShortDesc       å¤©é¦™æ–·çºŒè†~
 Description
-ÂK¶Â¶Â»IÃÄ(gold spicy plaster)¡MÁÙ¦³¤@ªÑ¨¯»¶ªº¨ı¹D¡M
-¦ı«o¬O¦è°ì¤@±a¶Ç¨Ó³Ì¨ãÀø®ÄªºÃÄ»I¡C
+é»é»‘é»‘è†è—¥(gold spicy plaster)ï¹é‚„æœ‰ä¸€è‚¡è¾›è¾£çš„å‘³é“ï¹
+ä½†å»æ˜¯è¥¿åŸŸä¸€å¸¶å‚³ä¾†æœ€å…·ç™‚æ•ˆçš„è—¥è†ã€‚
 ~
-Unit            Åø~
+Unit            ç½~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

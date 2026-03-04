@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ≥o¨O•—ª≤§j§∆æ«®tªsß@∏s©“º∂ºg™∫πC¿∏°M•D≈È•— merc ßÔΩs¶”®”°M©“¶≥™∫™©≈v    *
-*  ±N∑|≥Q´OØd°M¶˝≈w™Ô§jÆa≠◊ßÔ°M¶˝ß⁄≠Ã§]ß∆±ÊßA≠Ã§]Ø‡¥£®—µπ§jÆa°M©“¶≥™∫∞”    *
-*  ∑~¶Ê¨∞±N§£≥Q§π≥\°C                                                      *
+*  ÈÄôÊòØÁî±ËºîÂ§ßÂåñÂ≠∏Á≥ªË£Ω‰ΩúÁæ§ÊâÄÊí∞ÂØ´ÁöÑÈÅäÊà≤Ôπê‰∏ªÈ´îÁî± merc ÊîπÁ∑®ËÄå‰æÜÔπêÊâÄÊúâÁöÑÁâàÊ¨ä    *
+*  Â∞áÊúÉË¢´‰øùÁïôÔπê‰ΩÜÊ≠°ËøéÂ§ßÂÆ∂‰øÆÊîπÔπê‰ΩÜÊàëÂÄë‰πüÂ∏åÊúõ‰Ω†ÂÄë‰πüËÉΩÊèê‰æõÁµ¶Â§ßÂÆ∂ÔπêÊâÄÊúâÁöÑÂïÜ    *
+*  Ê•≠Ë°åÁÇ∫Â∞á‰∏çË¢´ÂÖÅË®±„ÄÇ                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -96,7 +96,7 @@ void accept_edit( CHAR_DATA * ch, char * argument )
       {
         if ( str_len( ch->stack ) <= 10 )
         {
-          send_to_char( "πÔ§£∞_°MßA™∫©–∂°±‘≠z§”µu§F°T\n\r", ch );
+          send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÊàøÈñìÊïòËø∞Â§™Áü≠‰∫ÜÔπó\n\r", ch );
           ch->bank += HomeGoldDescr;
         }
         else
@@ -106,9 +106,9 @@ void accept_edit( CHAR_DATA * ch, char * argument )
 
           if ( !write_new_room( ch->in_room ) )
           {
-            mudlog( LOG_DEBUG, "create_new_room: µL™k¶s¿… %s."
+            mudlog( LOG_DEBUG, "create_new_room: ÁÑ°Ê≥ïÂ≠òÊ™î %s."
               , ch->in_room->filename );
-            send_to_char( "πÔ§£∞_°MßA™∫©–∂°µL™k¶s¿…°T\n\r", ch );
+            send_to_char( "Â∞ç‰∏çËµ∑Ôπê‰Ω†ÁöÑÊàøÈñìÁÑ°Ê≥ïÂ≠òÊ™îÔπó\n\r", ch );
             RETURN_NULL();
           }
         }
@@ -153,7 +153,7 @@ void accept_edit( CHAR_DATA * ch, char * argument )
     free_string( ch->stack );
     ch->stack = str_dup( "" );
 
-    send_to_char( "\n\rΩsøË®˙Æ¯°T\n\r", ch );
+    send_to_char( "\n\rÁ∑®ËºØÂèñÊ∂àÔπó\n\r", ch );
   }
 
   else
@@ -183,12 +183,12 @@ void show_editor( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "show_edit: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "show_edit: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN_NULL();
   }
 
-  str_cpy( buf, "°i ™d§⁄¬≤©ˆΩsøËæπ(v1.0)  µ≤ßÙΩsøËΩ–øÈ§J \e[1;32m.\e[0m"
-    " ®˙Æ¯ΩsøË \e[1;32m@\e[0m ΩsøË§∫Æe°R" );
+  str_cpy( buf, "„Äê Ê≥•Â∑¥Á∞°ÊòìÁ∑®ËºØÂô®(v1.0)  ÁµêÊùüÁ∑®ËºØË´ãËº∏ÂÖ• \e[1;32m.\e[0m"
+    " ÂèñÊ∂àÁ∑®ËºØ \e[1;32m@\e[0m Á∑®ËºØÂÖßÂÆπÔπï" );
 
   mode = ( ch->desc ) ? ch->desc->edit_mode : EDIT_NONE;
 
@@ -196,35 +196,35 @@ void show_editor( CHAR_DATA * ch )
   {
   default:
   case EDIT_NONE:
-    str_cat( buf, "\e[1;33m§£∏‘\e[0m" );
+    str_cat( buf, "\e[1;33m‰∏çË©≥\e[0m" );
     break;
 
   case EDIT_NOTE:
-    str_cat( buf, "\e[1;33mΩsøË´H•Û§∫Æe\e[0m" );
+    str_cat( buf, "\e[1;33mÁ∑®ËºØ‰ø°‰ª∂ÂÖßÂÆπ\e[0m" );
     break;
 
   case EDIT_VOTE:
-    str_cat( buf, "\e[1;33mΩsøËßÎ≤º¥y≠z\e[0m" );
+    str_cat( buf, "\e[1;33mÁ∑®ËºØÊäïÁ•®ÊèèËø∞\e[0m" );
     break;
 
   case EDIT_POST:
-    str_cat( buf, "\e[1;33mΩsøË±˝µo™Ì§Â≥π\e[0m" );
+    str_cat( buf, "\e[1;33mÁ∑®ËºØÊ¨≤ÁôºË°®ÊñáÁ´†\e[0m" );
     break;
 
   case EDIT_SELF_DESCRIPTION:
-    str_cat( buf, "\e[1;33mΩsøË¶€§v¥y≠z\e[0m" );
+    str_cat( buf, "\e[1;33mÁ∑®ËºØËá™Â∑±ÊèèËø∞\e[0m" );
     break;
 
   case EDIT_NOTEPAD:
-    str_cat( buf, "\e[1;33mΩsøË∞O®∆•ª\e[0m" );
+    str_cat( buf, "\e[1;33mÁ∑®ËºØË®ò‰∫ãÊú¨\e[0m" );
     break;
 
   case EDIT_HOME_DESCR:
-    str_cat( buf, "\e[1;33mΩsøË©–∂°±‘≠z\e[0m" );
+    str_cat( buf, "\e[1;33mÁ∑®ËºØÊàøÈñìÊïòËø∞\e[0m" );
     break;
   }
 
-  str_cat( buf, " °j\n\r" );
+  str_cat( buf, " „Äë\n\r" );
   str_cat( buf, VERTICAL_LINE );
 
   if ( ch->desc ) write_to_descriptor( ch->desc, buf, 0 );
@@ -237,7 +237,7 @@ bool is_edit( DESCRIPTOR_DATA * man )
 
   if ( !man )
   {
-    mudlog( LOG_DEBUG, "is_edit: Ø •F®”∑Ω." );
+    mudlog( LOG_DEBUG, "is_edit: Áº∫‰πè‰æÜÊ∫ê." );
     RETURN( FALSE );
   }
 

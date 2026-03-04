@@ -1,9 +1,9 @@
 Vnum            9004
 Name            crayon~
-ShortDesc       ¬´µ§~
+ShortDesc       ç‚­ç­†~
 Description
-¤@¤ä¥Ñ¾ğªK¿N»s¦Ó¦¨ªº¬´µ§(crayon)¡M¥i¥Î¨Ó¨ì³B¶î¾~¡C~
-Unit            °¦~
+ä¸€æ”¯ç”±æ¨¹æç‡’è£½è€Œæˆçš„ç‚­ç­†(crayon)ï¹å¯ç”¨ä¾†åˆ°è™•å¡—é´‰ã€‚~
+Unit            éš»~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

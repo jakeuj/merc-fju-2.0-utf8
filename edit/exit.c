@@ -1,11 +1,11 @@
 #include "edit.h"
 
-/* ╬Ц╜с╣{╕║╣╡╖Т */
+/* Ф∙╢Е─▀Г╗▀Е╪▐Г╣░Ф²÷ */
 
 void do_exit( void )
 {
   clear_screen();
-  print_string( 1 , 1 , GREEN , "абаб╖A╗о╔н Mud 3838 ╟о╟Л╫s©Х╬╧.\n" );
+  print_string( 1 , 1 , GREEN , "Х╛²Х╛²Д╫═Д╫©Г■╗ Mud 3838 Е█─Е÷÷Г╥╗Х╪╞Е≥╗.\n" );
 
   #if defined (unix)
   refresh();

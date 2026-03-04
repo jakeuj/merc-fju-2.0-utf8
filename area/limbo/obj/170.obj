@@ -1,9 +1,9 @@
 Vnum            170
 Name            letter~
-ShortDesc       «H¥ó~
+ShortDesc       ä¿¡ä»¶~
 Description
-¤@«Ê«Ü´¶³qªº«H¥ó¡M¤£ª¾¹D¥i¥H·F¤°»ò¡S~
-Unit            «Ê~
+ä¸€å°å¾ˆæ™®é€šçš„ä¿¡ä»¶ï¹ä¸çŸ¥é“å¯ä»¥å¹¹ä»€éº¼ï¹–~
+Unit            å°~
 ItemType        ITEM_LETTER
 Takeable        Yes
 NoSave          Yes

@@ -1,9 +1,9 @@
 Vnum            404
 Name            tai chi sword~
-ShortDesc       �u�Z�ӷ��C~
+ShortDesc       真武太極劍~
 Description
-�ڻ��O�i�T�שҨϥΪ��W�C�M�����q��ӨӤw���i�ҡC~
-Unit            ��~
+據說是張三豐所使用的名劍﹐本身從何而來已不可考。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

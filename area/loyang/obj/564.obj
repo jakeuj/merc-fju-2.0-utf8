@@ -1,10 +1,10 @@
 Vnum            564
 Name            general door key~
-ShortDesc       ±N­x±b¤jªùÆ_°Í~
+ShortDesc       å°‡è»å¸³å¤§é–€é‘°åŒ™~
 Description
-³o¬O¤@§â«Üºë½oªºÆ_°Í¡M¤W­±ÁÙ¦³¤@¨Ç±nªá¡C
+é€™æ˜¯ä¸€æŠŠå¾ˆç²¾ç·»çš„é‘°åŒ™ï¹ä¸Šé¢é‚„æœ‰ä¸€äº›å½«èŠ±ã€‚
 ~
-Unit            ¤ä~
+Unit            æ”¯~
 ItemType        ITEM_KEY
 Takeable        Yes
 Level           3

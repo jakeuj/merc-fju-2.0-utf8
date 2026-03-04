@@ -1,9 +1,9 @@
 Vnum            203
 Name            flower hand book~
-ShortDesc       ¥É¤k§é±ö¤â¯µÓD~
+ShortDesc       çŽ‰å¥³æŠ˜æ¢…æ‰‹ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

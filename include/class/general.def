@@ -1,10 +1,10 @@
 Vnum            CLASS_GENERAL
 Name            general~
-Cname           ±N  ­x~
-Title           ¦Ê½mª÷­è~
+Cname           å°‡  è»~
+Title           ç™¾ç·´é‡‘å‰›~
 LowerLimit      50
 UpperLimit      L_HER
-LimitMsg        $Y$n¤j³Û¡R¡u³º´±¦b§Úªº­±«e¯Zªù§Ë©ò¡MÅı§A¤U¦aº»¥h§a¡T¡v$A~
+LimitMsg        $Y$nå¤§å–Šï¹•ã€Œç«Ÿæ•¢åœ¨æˆ‘çš„é¢å‰ç­é–€å¼„æ–§ï¹è®“ä½ ä¸‹åœ°ç„å»å§ï¹—ã€$A~
 Limit           4500
 Multiplier      50
 RebirthGold     10000

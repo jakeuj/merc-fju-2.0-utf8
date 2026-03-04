@@ -1,9 +1,9 @@
 Vnum            90
 Name            snake sword~
-ShortDesc       ���������M~
+ShortDesc       金鱗蟒邪刀~
 Description
-�o�O�@�⵴�@�L���M�۶ǬO�@�N�_�L�\���үd�ǤU�Ӫ��C~
-Unit            ��~
+這是一把絕世兵器﹐相傳是一代奇俠枯葉所留傳下來的。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

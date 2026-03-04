@@ -1,10 +1,10 @@
 Vnum            511
 Name            job'-tears pill~
-ShortDesc       íõ¤¯¤¦~
+ShortDesc       è–ä»ä¸¹~
 Description
-¤@²Éíõ¤¯¤¦(job's-tears pill)¡M¥i¥Î¨Ó¸É¦å¡M§A¥i¥H§]¤U¥¦(eat pill)¡C
+ä¸€ç²’è–ä»ä¸¹(job's-tears pill)ï¹å¯ç”¨ä¾†è£œè¡€ï¹ä½ å¯ä»¥åä¸‹å®ƒ(eat pill)ã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

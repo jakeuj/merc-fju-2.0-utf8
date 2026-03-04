@@ -1,5 +1,5 @@
 Name            monkey stick~
-Cname           �U��~
+Cname           猴棍~
 Slot            SLOT_MONKEY_STICK
 Msgoff          ~
 Check           check_club_attack~
@@ -38,16 +38,16 @@ Limit           CLASS_BRAVO      1  90
 Limit           CLASS_MAGE       1  20
 Limit           CLASS_SMITH      1  20
 Help
-�U�ҡG
+猴棍：
 
-�@���ھڵU�l�ӱ����ʧ@�o�i�ӨӪ��Ҫk�M�O�ݵU�l���{���i�h�Ӫ�
-�Ҫk�M���M�ܰ򥻡M���L���ˤO���p�M�åB������סM�O�@�Ӥ�����
-�ޯ�M�p�G�Q�n�ǲߪ��ܡM��M���M�n��U�l�աC
+一項根據猴子敏捷的動作發展而來的棍法﹐是看猴子的閃躲進退來的
+棍法﹐雖然很基本﹐不過殺傷力不小﹐並且很難抵擋﹐是一個不錯的
+技能﹐如果想要學習的話﹐嗯﹐當然要找猴子啦。
 
 ~
 #Damage
 Description
-$n�Ϥ@��$y�y��U�H�ҤW�z$Z�M�⤤$O�@�Y�@���M����$N�����СC~
+$n使一招$y『潑猴隨棍上』$Z﹐手中$O一縮一伸﹐突擊$N的丹田。~
 Chance          10
 Value           20
 Parry           0
@@ -57,7 +57,7 @@ End
 
 #Damage
 Description
-$n�@��$y�y�x�U�ĩߴҡz$Z�M$n���N���N�⤤$O�ߵ�$N�C~
+$n一招$y『頑猴怯拋棍』$Z﹐$n假意的將手中$O拋給$N。~
 Chance          10
 Value           20
 Parry           0
@@ -67,7 +67,7 @@ End
 
 #Damage
 Description
-$n�@��$y�y�F�U½�ѦL�z$Z�M$n½���N$O��$N�Y������C~
+$n一招$y『靈猴翻天印』$Z﹐$n翻身將$O往$N頭部重鎚。~
 Chance          10
 Value           20
 Parry           0
@@ -77,7 +77,7 @@ End
 
 #Damage
 Description
-$n�@��$Y�y��U�g�j���z$Z�M$n�N$O���b�Y������M����$N�C~
+$n一招$Y『怒猴狂搜姿』$Z﹐$n將$O夾在頭部旋轉﹐直衝$N。~
 Chance          10
 Value           20
 Parry           0
@@ -87,7 +87,7 @@ End
 
 #Damage
 Description
-$n�@��$Y�y�P�U���S��z$Z�M$n�@�s���M�N$O�ѤU���W����$N���U�ڡC~
+$n一招$Y『仙猴偷蹯桃』$Z﹐$n一彎身﹐將$O由下往上直撞$N的下巴。~
 Chance          10
 Value           20
 Parry           0

@@ -1,5 +1,5 @@
 Name            tendo slash~
-Cname           �ѹD�E�C~
+Cname           天道九劍~
 Slot            SLOT_TENDO_SLASH
 Msgoff          ~
 Check           check_sword_attack~
@@ -32,9 +32,9 @@ Help            ~
 
 #Damage
 Description
-$n�餺�u��y��M�ϥX$W�y�ѹD�E�C�z$Z�Ĥ@�C$R�u�@�C�F�ӡv$Z�M�C�����l�M�Q�D
-���V$N$l�E�g�ӥh�M�ᦳ�ۯ}����M���B�j�ܤ��աM�O$N�u���q�q���Ө��o�j�P���@
-���T�T�T~
+$n體內真氣流轉﹐使出$W『天道九劍』$Z第一劍$R「一劍東來」$Z﹐劍路雄勁﹐霸道
+的向$N$l激射而去﹐頗有石破天驚﹐風雨大至之勢﹐令$N只能默默的承受這強烈的一
+擊﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -44,9 +44,9 @@ End
 
 #Damage
 Description
-$n�}�񤭦�M��q���u�M$W�y�ѹD�E�C�z$Z�ĤG�C$R�u��Įi�͡v$Z�u��$n������S
-�h�X�@��$O�M�C�H����M�K�ɼC��p���z�g�M���V�|�譸���M$N���L��W�M$N�y�ɦh
-�F�ƹD�ˤf�T�T�T~
+$n腳踏五行﹐氣通雙臂﹐$W『天道九劍』$Z第二劍$R「鳳凰展翅」$Z只見$n的左手又
+多出一把$O﹐劍隨心轉﹐霎時劍花如煙爆射﹐分向四方飛擊﹐$N難攖其鋒﹐$N頓時多
+了數道傷口﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -56,9 +56,9 @@ End
 
 #Damage
 Description
-$n�H���p���α��ժ��B��ĦV$N�M�ܹD�G$W�y�ѹD�E�C�z$Z�ĤT�C$P�u�g�ܦ���v$Z
-�M$n�����k�M���Y�^�y�S�R��M�O$N�L�k���N�M�u��$n�Z�M���X�@�D���r���C��M��
-�F����V$N�T�T�T~
+$n以迅雷不及掩耳的步伐衝向$N﹐喝道：$W『天道九劍』$Z第三劍$P「迷蹤行殺」$Z
+﹐$n的身法﹐有若魑魅魍魎般﹐令$N無法捉摸﹐只見$n驀然揮出一道兇猛的劍氣﹐凌
+厲的刺向$N﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -68,9 +68,9 @@ End
 
 #Damage
 Description
-$n�w�w�H���O��_�|���åۡM�åۤɪŦb$n���|�P�Φ��@�D�D�����m���M$W�y�ѹD�E
-�C�z$Z�ĥ|�C$G�u�s���I�D�v$Z�o�����}��ʥX�M���|�P�����m���O$N��L�k������
-�a��$n�M$n�A�H���p�L�񪺼C��M�۱����R$N�������M��������V�䭺�T�T�T~
+$n緩緩以內力抽起四野亂石﹐亂石升空在$n的四周形成一道道的防禦網﹐$W『天道九
+劍』$Z第四劍$G「龍騰險道」$Z這招雖破綻百出﹐但四周的防禦網令$N亦無法輕易的
+靠近$n﹐$n再以雄厚無比的劍氣﹐旋捲飛舞$N的全身﹐直直的刺向其首﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -80,9 +80,9 @@ End
 
 #Damage
 Description
-$n�ֳt���ʤ⤤��$O�M$W�y�ѹD�E�C�z$Z�Ĥ��C$B�u�ʳ��°ġv$Z���զӥX�M$n�p�q
-��X�ʼC�M�ʼC�k�@�M����@�I�M�O�������C�b�ܱo�j�r�I�p�M�K�p�^�U�v�o��V$N
-�T�T�T~
+$n快速揮動手中的$O﹐$W『天道九劍』$Z第五劍$B「百鳥朝凰」$Z順勢而出﹐$n如電
+刺出百劍﹐百劍歸一﹐凝於一點﹐令單薄的劍刃變得強猛沉厚﹐便雷霆萬鈞得刺向$N
+﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -92,9 +92,9 @@ End
 
 #Damage
 Description
-$n���E�߯��M�⤤��$O�R�ʪ��t�׷U�ӷU�֡M����$W�y�ѹD�E�C�z$Z�Ĥ��C$S�u�s��
-�n���v$Z�I�����X�M$n���C���´���@�ӱK���z�����C���M�C���U���U��M�N$N�n�b
-�䤤�T�T�T~
+$n重聚心神﹐手中之$O舞動的速度愈來愈快﹐殺招$W『天道九劍』$Z第六劍$S「龍捲
+歪風」$Z呼之欲出﹐$n的劍氣交織成一個密不透風的劍網﹐劍網愈收愈緊﹐將$N罩在
+其中﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -104,8 +104,8 @@ End
 
 #Damage
 Description
-$n�j�ܤ@�n�M���ʥ����u��M���l�y��M�C���I�D�M�ϥX$W�y�ѹD�E�C�z$Z�ĤC�C$Y
-�u�X�ͤJ���v$Z�M�����L�ƨ��p�e�����ĿE���V$N�g��d�U�C�T�T�T~
+$n大喝一聲﹐鼓動全身真氣﹐內勁流轉﹐劍走險道﹐使出$W『天道九劍』$Z第七劍$Y
+「出生入死」$Z﹐似有無數迅雷疾風互衝激盪向$N狂刺千萬劍﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -115,8 +115,8 @@ End
 
 #Damage
 Description
-$n�t�B���O�M���P��l�v�M�M���ةƺ��嵷�M�ܹD�G$W�y�ѹD�E�C�z$Z�ĤK�C$Y�y�C
-�~�H�`�z$Z�M�C�~�S�p�Ƥs�ˮ��M�@�i�i��V$N���ߤf����T�T�T~
+$n暗運內力﹐身周氣勁影然﹐雙目怖滿血絲﹐喝道：$W『天道九劍』$Z第八劍$Y『劍
+芒人亡』$Z﹐劍芒猶如排山倒海﹐一波波刺向$N的心口直刺﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0
@@ -126,9 +126,9 @@ End
 
 #Damage
 Description
-�H�𩿦a�_��M$n�P��W��$O�X�Ӭ��@�M�a����q�G$W�y�ѹD�E�C�z$Z�ĤE�C$P�u��
-�ּC�~�v$Z�M$n�ҤƦ����ּC�~�M�p�����m�a�M�L�դ��i�M�H�j�r��F����աM�N$N
-�����e��T�T�T~
+寒氣忽地冒湧﹐$n與手上的$O合而為一﹐縱身怒吼：$W『天道九劍』$Z第九劍$P「極
+樂劍芒」$Z﹐$n所化成極樂劍芒﹐如水銀瀉地﹐無孔不進﹐以強猛凌厲的攻勢﹐將$N
+直接貫穿﹗﹗﹗~
 Chance          20
 Value           20
 Parry           0

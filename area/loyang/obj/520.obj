@@ -1,11 +1,11 @@
 Vnum            520
 Name            white wedding skirt~
-ShortDesc       ¥Õ¦â·s®Q¦²¦aªø¸È~
+ShortDesc       ç™½è‰²æ–°å¨˜æ›³åœ°é•·è£™~
 Description
-¤@¥ó¶H¼x¯Â¯u°ª¶®ªº¥Õ¦â·s®Q¦²¦aªø¸È(white wedding skirt)
-¡M¥i¥H¦bµ²±Bªº®É­Ô¬ï¡C
+ä¸€ä»¶è±¡å¾µç´”çœŸé«˜é›…çš„ç™½è‰²æ–°å¨˜æ›³åœ°é•·è£™(white wedding skirt)
+ï¹å¯ä»¥åœ¨çµå©šçš„æ™‚å€™ç©¿ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_LEGS
 Takeable        Yes

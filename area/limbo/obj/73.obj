@@ -1,9 +1,9 @@
 Vnum            73
 Name            chainlet~
-ShortDesc       Â_¥É¤âÁå~
+ShortDesc       æ–·ç‰æ‰‹éŠ~
 Description
-ºë²Óªº¤@±ø¤pÁå¤l(chainlet)¡M¥i¥Hµ²¦bÂù¤âªºµÃ¤W¡C~
-Unit            ±ø~
+ç²¾ç´°çš„ä¸€æ¢å°éŠå­(chainlet)ï¹å¯ä»¥çµåœ¨é›™æ‰‹çš„è…•ä¸Šã€‚~
+Unit            æ¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_WAIST
 Takeable        Yes

@@ -1,31 +1,31 @@
-¼ĞÃD: ¦p¦ó¦b¦Û¤vªº±b¸¹ compiler merc ©Î envy mud!
+æ¨™é¡Œ: å¦‚ä½•åœ¨è‡ªå·±çš„å¸³è™Ÿ compiler merc æˆ– envy mud!
 
-        ¥H¤U°w¹ï SunOS + gcc ªº±b¸¹, ·íµM quota ­n°÷...ccc
+        ä»¥ä¸‹é‡å° SunOS + gcc çš„å¸³è™Ÿ, ç•¶ç„¶ quota è¦å¤ ...ccc
 
-        ­º¥ı­n ftp ¤@¥÷ merc ©Î envy ªºÀ£ÁYÀÉ
-        ¥H merc ¬°¨Ò, ¥s merc.tar.gz ¦n¤F
+        é¦–å…ˆè¦ ftp ä¸€ä»½ merc æˆ– envy çš„å£“ç¸®æª”
+        ä»¥ merc ç‚ºä¾‹, å« merc.tar.gz å¥½äº†
 
-        ¦b§A­n«Ø¥ßªº¤l¥Ø¿ı¤UÁä¤J(merc.tar.gz ­n¦b¨º­Ó¥Ø¿ı¸Ì)
+        åœ¨ä½ è¦å»ºç«‹çš„å­ç›®éŒ„ä¸‹éµå…¥(merc.tar.gz è¦åœ¨é‚£å€‹ç›®éŒ„è£¡)
 
         gzip -dc merc.tar.gz | tar -xvf -
 
-        µM«á´N·|¦³
+        ç„¶å¾Œå°±æœƒæœ‰
 
-        Merc22/ ³o­Ó¥Ø¿ı¥X²{
+        Merc22/ é€™å€‹ç›®éŒ„å‡ºç¾
 
-        ¸Ì­±¦³«Ü¦h¥Ø¿ı, ¨ì Merc22/src ¸Ì­±¦³ Makefile
-        Áä¤J make ´N·|¶}©l compile
-        µM«á´N·|¦b Merc22/src ¥Ø¿ı¤U¥X²{ merc* ³o­Ó¥i°õ¦æÀÉ
+        è£¡é¢æœ‰å¾ˆå¤šç›®éŒ„, åˆ° Merc22/src è£¡é¢æœ‰ Makefile
+        éµå…¥ make å°±æœƒé–‹å§‹ compile
+        ç„¶å¾Œå°±æœƒåœ¨ Merc22/src ç›®éŒ„ä¸‹å‡ºç¾ merc* é€™å€‹å¯åŸ·è¡Œæª”
 
-        ¨ì Merc22/area ¥Ø¿ı¤UÁä¤J ../src/merc 4000
-        ´N·|§â merc ¶}¦b 4000 port
-        µM«á´N¥i¥H telnet ¨ì 4000 port ¶i¤J§A compile ¦nªº merc ©Î envy mud
+        åˆ° Merc22/area ç›®éŒ„ä¸‹éµå…¥ ../src/merc 4000
+        å°±æœƒæŠŠ merc é–‹åœ¨ 4000 port
+        ç„¶å¾Œå°±å¯ä»¥ telnet åˆ° 4000 port é€²å…¥ä½  compile å¥½çš„ merc æˆ– envy mud
 
-        ¥t¥~¤@ºØ°õ¦æ merc ¥B·|¦Û°Ê reboot ªº¤èªk¬O¦b Merc22/src
-        °õ¦æ startup &
-        ¦pªG§A¨S¦³­×§ï startup ³o­Ó shell script ªº¤º®eªº¸Ü
-        ·|¶}¦b 1234 port
+        å¦å¤–ä¸€ç¨®åŸ·è¡Œ merc ä¸”æœƒè‡ªå‹• reboot çš„æ–¹æ³•æ˜¯åœ¨ Merc22/src
+        åŸ·è¡Œ startup &
+        å¦‚æœä½ æ²’æœ‰ä¿®æ”¹ startup é€™å€‹ shell script çš„å…§å®¹çš„è©±
+        æœƒé–‹åœ¨ 1234 port
 
-        ¥H¤Wµ{§Ç³Ì®e©ö¥X°İÃD¦b compile ¤¤¶¡
-        ¥i¯à¦]¬°§Aªº OS ©Î compiler ªº³]©w¤£¦P¦³Ãö...
-        ¸Ô²Ó±¡§Î´N¤£ÂØ­z¤F...
+        ä»¥ä¸Šç¨‹åºæœ€å®¹æ˜“å‡ºå•é¡Œåœ¨ compile ä¸­é–“
+        å¯èƒ½å› ç‚ºä½ çš„ OS æˆ– compiler çš„è¨­å®šä¸åŒæœ‰é—œ...
+        è©³ç´°æƒ…å½¢å°±ä¸è´…è¿°äº†...

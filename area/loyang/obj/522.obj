@@ -1,10 +1,10 @@
 Vnum            522
 Name            apron~
-ShortDesc       ³ò¸È~
+ShortDesc       åœè£™~
 Description
-¤@±ø®a®x¥D°ü¬ïµÛªº³ò¸È(apron)¡C
+ä¸€æ¢å®¶åº­ä¸»å©¦ç©¿è‘—çš„åœè£™(apron)ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_LEGS
 Takeable        Yes

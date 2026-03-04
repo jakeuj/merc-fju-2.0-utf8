@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -20,19 +20,19 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
   PUSH_FUNCTION( "check_obj_value" );
 
   *ret = 0;
-  if ( loc < 0 || loc >= MAX_OBJECT_VALUE ) RETURN( "°}¦C¶W¥X¬É½u¡T" );
+  if ( loc < 0 || loc >= MAX_OBJECT_VALUE ) RETURN( "é™£åˆ—è¶…å‡ºç•Œç·šï¹—" );
 
   switch( type )
   {
   default:
-    RETURN( "¤£©úªº«¬ºA¡T" );
+    RETURN( "ä¸æ˜çš„å‹æ…‹ï¹—" );
 
   case ITEM_LIGHT:
 
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 2:
@@ -40,7 +40,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value == 0 )
       {
         *ret = 1;
-        RETURN( "¿OÅ¢Ãşª««~·Ó©ú®É¶¡¥²¶·¤£¯àµ¥©ó¹s¡T" );
+        RETURN( "ç‡ˆç± é¡ç‰©å“ç…§æ˜æ™‚é–“å¿…é ˆä¸èƒ½ç­‰æ–¼é›¶ï¹—" );
       }
     }
 
@@ -53,7 +53,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -61,7 +61,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < -10000 || value > 10000 )
       {
         *ret = 0;
-        RETURN( "ÃÄ«~Ãşª««~¼vÅTªº¼Æ­È¥²¶·¤¶©ó -10000 ¨ì 10000 ¤§¶¡¡T" );
+        RETURN( "è—¥å“é¡ç‰©å“å½±éŸ¿çš„æ•¸å€¼å¿…é ˆä»‹æ–¼ -10000 åˆ° 10000 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -73,7 +73,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
         {
         default:
           *ret = 0;
-          RETURN( "ÃÄ«~Ãşª««~¼vÅT«¬ºA¼Æ­È¤£¦b©w¸q¤º¡T" );
+          RETURN( "è—¥å“é¡ç‰©å“å½±éŸ¿å‹æ…‹æ•¸å€¼ä¸åœ¨å®šç¾©å…§ï¹—" );
 
         case OBJ_CAST_HIT:
         case OBJ_CAST_MANA:
@@ -105,7 +105,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value > 0 && !get_skill( value ) )
       {
         *ret = 0;
-        RETURN( "ÃÄ«~Ãşª««~©Ò¬I®iªºªk³N¸¹½X¤£¦X²z¡T" );
+        RETURN( "è—¥å“é¡ç‰©å“æ‰€æ–½å±•çš„æ³•è¡“è™Ÿç¢¼ä¸åˆç†ï¹—" );
       }
       break;
 
@@ -114,7 +114,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > 10000 )
       {
         *ret = 0;
-        RETURN( "ÃÄ«~ÃşªºÃÄ¾¯¶q¥²¶·¤¶©ó 0 ¨ì 10000 ¤§¶¡¡T" );
+        RETURN( "è—¥å“é¡çš„è—¥åŠ‘é‡å¿…é ˆä»‹æ–¼ 0 åˆ° 10000 ä¹‹é–“ï¹—" );
       }
       break;
     }
@@ -127,7 +127,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 4:
@@ -137,7 +137,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
         {
         default:
           *ret = 0;
-          RETURN( "ªk§ú¤º¥[±j¤ÀÃşªº¸¹½X¤£¦s¦b¡T" );
+          RETURN( "æ³•æ–å…§åŠ å¼·åˆ†é¡çš„è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
 
         case RATING_SKILL:
         case RATING_WIND:
@@ -168,7 +168,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > 1000 )
       {
         *ret = 0;
-        RETURN( "ªk§ú¥[±j±j«×¥²¶·¤¶©ó 0 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "æ³•æ–åŠ å¼·å¼·åº¦å¿…é ˆä»‹æ–¼ 0 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -177,7 +177,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > MaxMana )
       {
         *ret = 0;
-        RETURN( "ªk§ú¤º³Ì¤jªk¤O¥²¶·¤j©óµ¥©ó¹s¡T" );
+        RETURN( "æ³•æ–å…§æœ€å¤§æ³•åŠ›å¿…é ˆå¤§æ–¼ç­‰æ–¼é›¶ï¹—" );
       }
 
       break;
@@ -187,7 +187,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > MaxMana )
       {
         *ret = 0;
-        RETURN( "ªk§ú¤º¥Ø«eªk¤O¥²¶·¤j©óµ¥©ó¹s¡T" );
+        RETURN( "æ³•æ–å…§ç›®å‰æ³•åŠ›å¿…é ˆå¤§æ–¼ç­‰æ–¼é›¶ï¹—" );
       }
 
       break;
@@ -200,14 +200,14 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 1:
       if ( value <= 0 || value > 1000 )
       {
         *ret = 100;
-        RETURN( "ªZ¾¹³Ì¤p¶Ë®`­È¥²¶·¦b 0 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "æ­¦å™¨æœ€å°å‚·å®³å€¼å¿…é ˆåœ¨ 0 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -215,7 +215,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 1000 )
       {
         *ret = 100;
-        RETURN( "ªZ¾¹³Ì¤j¶Ë®`­È¥²¶·¦b 0 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "æ­¦å™¨æœ€å¤§å‚·å®³å€¼å¿…é ˆåœ¨ 0 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -224,7 +224,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       {
       default:
         *ret = WEAPON_HAND;
-        RETURN( "ªZ¾¹ªººØÃş¦b¥¼©w¸q½d³ò¤º¡T" );
+        RETURN( "æ­¦å™¨çš„ç¨®é¡åœ¨æœªå®šç¾©ç¯„åœå…§ï¹—" );
 
       case WEAPON_HAND:
       case WEAPON_DAGGER:
@@ -261,7 +261,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
     }
 
@@ -272,14 +272,14 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
       if ( value < -1000 || value > 1000 )
       {
         *ret = 0;
-        RETURN( "¨¾¨ãªº¨¾Å@µ¥¯Å¥²¶·¦b -1000 ¨ì 1000 ¤§¶¡" );
+        RETURN( "é˜²å…·çš„é˜²è­·ç­‰ç´šå¿…é ˆåœ¨ -1000 åˆ° 1000 ä¹‹é–“" );
       }
     }
 
@@ -290,7 +290,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -298,7 +298,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 1000 )
       {
         *ret = 1;
-        RETURN( "®e¾¹ªº³Ì¤j®e¶q¥²¶·¦b 1 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "å®¹å™¨çš„æœ€å¤§å®¹é‡å¿…é ˆåœ¨ 1 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
 
       break;
@@ -308,7 +308,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( ( value & ~flags ) != 0 )
       {
         *ret = 0;
-        RETURN( "®e¾¹ªºª¬ºAºX¼Ğ¤£¹ï¡T" );
+        RETURN( "å®¹å™¨çš„ç‹€æ…‹æ——æ¨™ä¸å°ï¹—" );
       }
       break;
 
@@ -319,13 +319,13 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
         if ( !( pObjIndex = get_obj_index( value ) ) )
         {
           *ret = 0;
-          RETURN( "®e¾¹ªºÆ_°Í¸¹½Xª««~¤£¦s¦b¡T" );
+          RETURN( "å®¹å™¨çš„é‘°åŒ™è™Ÿç¢¼ç‰©å“ä¸å­˜åœ¨ï¹—" );
         }
 
         if ( pObjIndex->item_type != ITEM_KEY )
         {
           *ret = 0;
-          RETURN( "®e¾¹Æ_°Íª««~«¬ºA¤£¬OÆ_°Í¡T" );
+          RETURN( "å®¹å™¨é‘°åŒ™ç‰©å“å‹æ…‹ä¸æ˜¯é‘°åŒ™ï¹—" );
         }
       }
 
@@ -339,7 +339,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -347,7 +347,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 1000 )
       {
         *ret = 1;
-        RETURN( "²GÅé®e¾¹ªº³Ì¤j®e¶q¤£¦Xªk¡T" );
+        RETURN( "æ¶²é«”å®¹å™¨çš„æœ€å¤§å®¹é‡ä¸åˆæ³•ï¹—" );
       }
 
       break;
@@ -356,7 +356,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 1000 )
       {
         *ret = 1;
-        RETURN( "²GÅé®e¾¹ªº¥Ø«e®e¶q¤£¦Xªk¡T" );
+        RETURN( "æ¶²é«”å®¹å™¨çš„ç›®å‰å®¹é‡ä¸åˆæ³•ï¹—" );
       }
 
       break;
@@ -366,7 +366,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value != 0 && !liq_lookup( value ) )
       {
         *ret = liq_water->slot;
-        RETURN( "²GÅé®e¾¹¤º²GÅé¸¹½X¤£¥¿½T¡T" );
+        RETURN( "æ¶²é«”å®¹å™¨å…§æ¶²é«”è™Ÿç¢¼ä¸æ­£ç¢ºï¹—" );
       }
 
       break;
@@ -375,7 +375,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value != TRUE && value != FALSE )
       {
         *ret = FALSE;
-        RETURN( "²GÅé®e¾¹¬O§_¦³¬r¼Æ­È¥u¯à¬O 0 ©Î 1¡T" );
+        RETURN( "æ¶²é«”å®¹å™¨æ˜¯å¦æœ‰æ¯’æ•¸å€¼åªèƒ½æ˜¯ 0 æˆ– 1ï¹—" );
       }
 
       break;
@@ -388,14 +388,14 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
       if ( value <= 0 || value > 1000 )
       {
         *ret = 1;
-        RETURN( "­¹ª«ªº»GÃa®É¶¡¥²¶·¤¶©ó 1 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "é£Ÿç‰©çš„è…å£æ™‚é–“å¿…é ˆä»‹æ–¼ 1 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
 
       break;
@@ -405,7 +405,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > 1000 )
       {
         *ret = 1;
-        RETURN( "­¹ª«ªº²{¦³ªº¥i­¹¥Î¦¸¼Æ¥²¶·¤¶©ó 0 ¨ì 1000¡T" );
+        RETURN( "é£Ÿç‰©çš„ç¾æœ‰çš„å¯é£Ÿç”¨æ¬¡æ•¸å¿…é ˆä»‹æ–¼ 0 åˆ° 1000ï¹—" );
       }
 
       break;
@@ -415,7 +415,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 1000 )
       {
         *ret = 1;
-        RETURN( "­¹ª«ªº¤@¤f­¹¶q¥²¶·¤¶©ó 1 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "é£Ÿç‰©çš„ä¸€å£é£Ÿé‡å¿…é ˆä»‹æ–¼ 1 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -423,7 +423,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value != TRUE && value != FALSE )
       {
         *ret = FALSE;
-        RETURN( "­¹ª«¬O§_¦³¬r¼Æ­È¥u¯à¬O 0 ©Î 1¡T" );
+        RETURN( "é£Ÿç‰©æ˜¯å¦æœ‰æ¯’æ•¸å€¼åªèƒ½æ˜¯ 0 æˆ– 1ï¹—" );
       }
       break;
 
@@ -432,7 +432,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value != 0 && !get_obj_index( value ) )
       {
         *ret = 0;
-        RETURN( "­¹ª«²£¥Íªºª««~¸¹½X¤£¦s¦b¡T" );
+        RETURN( "é£Ÿç‰©ç”¢ç”Ÿçš„ç‰©å“è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
       }
 
       break;
@@ -445,14 +445,14 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
       if ( value < 0 )
       {
         *ret = 0;
-        RETURN( "ª÷¿úªº¼Æ¶q¤p©ó¹s¡T" );
+        RETURN( "é‡‘éŒ¢çš„æ•¸é‡å°æ–¼é›¶ï¹—" );
       }
       break;
     }
@@ -464,7 +464,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -493,7 +493,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -501,7 +501,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value != 0 && !get_mob_index( value ) )
       {
         *ret = 0;
-        RETURN( "°­¥Éªº¤p°­¸¹½X¤£¦s¦b¡T" );
+        RETURN( "é¬¼ç‰çš„å°é¬¼è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
       }
 
       break;
@@ -510,7 +510,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > LEVEL_HERO )
       {
         *ret = 0;
-        RETURN( "°­¥É¤º¤p°­µ¥¯Å¥²¶·¦b 0 ¨ì 100 ¤§¶¡¡T" );
+        RETURN( "é¬¼ç‰å…§å°é¬¼ç­‰ç´šå¿…é ˆåœ¨ 0 åˆ° 100 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -519,7 +519,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 )
       {
         *ret = 0;
-        RETURN( "°­¥É¤º¤p°­¸gÅç­È¥²¶·¤j©óµ¥©ó¹s¡T" );
+        RETURN( "é¬¼ç‰å…§å°é¬¼ç¶“é©—å€¼å¿…é ˆå¤§æ–¼ç­‰æ–¼é›¶ï¹—" );
       }
       break;
 
@@ -528,7 +528,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( !get_skill( value ) )
       {
         *ret = 1;
-        RETURN( "¤p°­ªº§Ş¯à¸¹½X¤£¦s¦b¡T" );
+        RETURN( "å°é¬¼çš„æŠ€èƒ½è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
       }
       break;
 
@@ -537,7 +537,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 100 )
       {
         *ret = 1;
-        RETURN( "¤p°­§Ş¯àªº¼ô½m«×¥²¶·¦b 1 ¨ì 100 ¤§¶¡¡T" );
+        RETURN( "å°é¬¼æŠ€èƒ½çš„ç†Ÿç·´åº¦å¿…é ˆåœ¨ 1 åˆ° 100 ä¹‹é–“ï¹—" );
       }
       break;
     }
@@ -549,7 +549,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -557,7 +557,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( !get_skill( value ) )
       {
         *ret = 1;
-        RETURN( "¯µÓDªº§Ş¯à¸¹½X¤£¦s¦b¡T" );
+        RETURN( "ç§˜ç¬ˆçš„æŠ€èƒ½è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
       }
       break;
 
@@ -566,7 +566,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 100 )
       {
         *ret = 1;
-        RETURN( "¯µÓDªº¼ô½m«×¥²¶·¤¶©ó 1 ¨ì 100 ¤§¶¡¡T" );
+        RETURN( "ç§˜ç¬ˆçš„ç†Ÿç·´åº¦å¿…é ˆä»‹æ–¼ 1 åˆ° 100 ä¹‹é–“ï¹—" );
       }
       break;
     }
@@ -578,7 +578,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -586,7 +586,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 )
       {
         *ret = 0;
-        RETURN( "«H¥óªº³Ñ¾l®É¶¡¥²¶·¤j©óµ¥©ó¹s¡T" );
+        RETURN( "ä¿¡ä»¶çš„å‰©é¤˜æ™‚é–“å¿…é ˆå¤§æ–¼ç­‰æ–¼é›¶ï¹—" );
       }
       break;
     }
@@ -598,7 +598,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -606,7 +606,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( !get_obj_index( value ) )
       {
         *ret = ObjProtypeVnum;
-        RETURN( "Äqª«¥´³y¥Xª««~¸¹½X¤£¦s¦b¡T" );
+        RETURN( "ç¤¦ç‰©æ‰“é€ å‡ºç‰©å“è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
       }
 
       break;
@@ -616,7 +616,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > LEVEL_HERO )
       {
          *ret = 1;
-         RETURN( "Äqª«¥´³yªÌµ¥¯Å¥²¶·¤¶©ó 1 ¨ì 100 ¤§¶¡¡T" );
+         RETURN( "ç¤¦ç‰©æ‰“é€ è€…ç­‰ç´šå¿…é ˆä»‹æ–¼ 1 åˆ° 100 ä¹‹é–“ï¹—" );
       }
 
       break;
@@ -626,7 +626,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 10000 )
       {
         *ret = 1;
-        RETURN( "Äqª«¥´³y¦¨¥\\¾÷²v¥²¶·¤¶©ó 1 ¨ì 10000¡T" );
+        RETURN( "ç¤¦ç‰©æ‰“é€ æˆåŠŸ\æ©Ÿç‡å¿…é ˆä»‹æ–¼ 1 åˆ° 10000ï¹—" );
       }
       break;
 
@@ -634,7 +634,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 )
       {
         *ret = 1;
-        RETURN( "Äqª«¥´³yªº¶O¥Î¥²¶·¤j©ó¹s¡T" );
+        RETURN( "ç¤¦ç‰©æ‰“é€ çš„è²»ç”¨å¿…é ˆå¤§æ–¼é›¶ï¹—" );
       }
       break;
     }
@@ -646,7 +646,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -654,7 +654,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 )
       {
         *ret = 1;
-        RETURN( "»EÄ_¬Öªº³Ì¤j®e¶q¥²¶·¤j©ó¹s¡T" );
+        RETURN( "èšå¯¶ç›†çš„æœ€å¤§å®¹é‡å¿…é ˆå¤§æ–¼é›¶ï¹—" );
       }
 
       break;
@@ -664,7 +664,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 )
       {
         *ret = 0;
-        RETURN( "»EÄ_¬Öªº²Ö¿n®e¶q¥²¶·¤j©óµ¥©ó¹s¡T" );
+        RETURN( "èšå¯¶ç›†çš„ç´¯ç©å®¹é‡å¿…é ˆå¤§æ–¼ç­‰æ–¼é›¶ï¹—" );
       }
       break;
 
@@ -672,7 +672,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > MAX_LEVEL )
       {
         *ret = 1;
-        RETURN( "»EÄ_¬Ö¥á¤Jª««~³Ì§Cµ¥¯Å¥²¶·¤¶©ó 1 ¨ì 120 ¤§¶¡¡T" );
+        RETURN( "èšå¯¶ç›†ä¸Ÿå…¥ç‰©å“æœ€ä½ç­‰ç´šå¿…é ˆä»‹æ–¼ 1 åˆ° 120 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -690,7 +690,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value > 0 && !get_obj_index( value ) )
       {
         *ret = ObjProtypeVnum;
-        RETURN( "»EÄ_¬Ö²£¥Íªºª««~¤£¦s¦b¡T" );
+        RETURN( "èšå¯¶ç›†ç”¢ç”Ÿçš„ç‰©å“ä¸å­˜åœ¨ï¹—" );
       }
 
       break;
@@ -703,7 +703,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -711,7 +711,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 )
       {
         *ret = 1;
-        RETURN( "·Ï¤õ¬I©ñªº¶ZÂ÷¥²¶·¤j©ó¹s¡T" );
+        RETURN( "ç…™ç«æ–½æ”¾çš„è·é›¢å¿…é ˆå¤§æ–¼é›¶ï¹—" );
       }
       break;
 
@@ -719,7 +719,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 10000 )
       {
         *ret = 1;
-        RETURN( "·Ï¤õ¬I©ñ¦¨¥\\¾÷²v¥²¶·¤¶©ó 1 ¨ì 10000 ¤§¶¡¡T" );
+        RETURN( "ç…™ç«æ–½æ”¾æˆåŠŸ\æ©Ÿç‡å¿…é ˆä»‹æ–¼ 1 åˆ° 10000 ä¹‹é–“ï¹—" );
       }
       break;
     }
@@ -731,14 +731,14 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
       if ( value > 0 && !get_mob_index( value ) )
       {
         *ret = 0;
-        RETURN( "§¯³ı¸Ì«Ê¦Lªº©Çª«¸¹½X¤£¦s¦b¡T" );
+        RETURN( "å¦–å£ºè£¡å°å°çš„æ€ªç‰©è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
       }
       break;
 
@@ -747,7 +747,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > MaxHit )
       {
         *ret = 0;
-        RETURN( "§¯³ı¸Ì©Çª«ªº¥Í©R­È¥²¶·¤j©ó¹s¡T" );
+        RETURN( "å¦–å£ºè£¡æ€ªç‰©çš„ç”Ÿå‘½å€¼å¿…é ˆå¤§æ–¼é›¶ï¹—" );
       }
 
       break;
@@ -757,7 +757,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > MaxMana )
       {
         *ret = 0;
-        RETURN( "§¯³ı¸Ì©Çª«ªºªk¤O¼Æ­È¥²¶·¤j©ó¹s¡T" );
+        RETURN( "å¦–å£ºè£¡æ€ªç‰©çš„æ³•åŠ›æ•¸å€¼å¿…é ˆå¤§æ–¼é›¶ï¹—" );
       }
 
       break;
@@ -767,7 +767,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 || value > MaxMove )
       {
         *ret = 0;
-        RETURN( "§¯³ı¸Ì©Çª«ªºÅé¤O¼Æ­È¥²¶·¤j©ó¹s¡T" );
+        RETURN( "å¦–å£ºè£¡æ€ªç‰©çš„é«”åŠ›æ•¸å€¼å¿…é ˆå¤§æ–¼é›¶ï¹—" );
       }
 
       break;
@@ -780,7 +780,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -788,7 +788,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 )
       {
         *ret = 1;
-        RETURN( "½b³U¸Ì³Ì¤j¸Ë¸ü¶q¥²¶·¤j©ó¹s¡T" );
+        RETURN( "ç®­è¢‹è£¡æœ€å¤§è£è¼‰é‡å¿…é ˆå¤§æ–¼é›¶ï¹—" );
       }
       break;
 
@@ -797,7 +797,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value < 0 )
       {
         *ret = 0;
-        RETURN( "½b³U¸Ì¥Ø«e¸Ë¸ü¶q¥²¶·¤j©óµ¥©ó¹s¡T" );
+        RETURN( "ç®­è¢‹è£¡ç›®å‰è£è¼‰é‡å¿…é ˆå¤§æ–¼ç­‰æ–¼é›¶ï¹—" );
       }
       break;
 
@@ -808,12 +808,12 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
         if ( !( pObjIndex = get_obj_index( value ) ) )
         {
           *ret = 0;
-          RETURN( "½b³U¸ÌªºªZ¾¹¸¹½X¤£¦s¦b¡T" );
+          RETURN( "ç®­è¢‹è£¡çš„æ­¦å™¨è™Ÿç¢¼ä¸å­˜åœ¨ï¹—" );
         }
         else if ( pObjIndex->item_type != ITEM_WEAPON )
         {
           *ret = 0;
-          RETURN( "½b³U¸Ì¸Ëªºª««~¤£¬OªZ¾¹ÃşªºªF¦è¡T" );
+          RETURN( "ç®­è¢‹è£¡è£çš„ç‰©å“ä¸æ˜¯æ­¦å™¨é¡çš„æ±è¥¿ï¹—" );
         }
       }
 
@@ -827,7 +827,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
     switch( loc )
     {
     default:
-      if ( unused && value != 0 ) RETURN( "¼Æ­È¥¼¨Ï¥Î¡M¦Ó«o³]©w¦¹¼Æ­È¡T" );
+      if ( unused && value != 0 ) RETURN( "æ•¸å€¼æœªä½¿ç”¨ï¹è€Œå»è¨­å®šæ­¤æ•¸å€¼ï¹—" );
       RETURN( "" );
 
     case 0:
@@ -835,7 +835,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 1000 )
       {
         *ret = 100;
-        RETURN( "¤}½b³Ì¤j¶Ë®`­È¥²¶·¦b 0 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "å¼“ç®­æœ€å¤§å‚·å®³å€¼å¿…é ˆåœ¨ 0 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
       break;
 
@@ -844,7 +844,7 @@ char * check_obj_value( int type, int loc, int value, int * ret, bool unused )
       if ( value <= 0 || value > 1000 )
       {
         *ret = 100;
-        RETURN( "¤}½b³Ì¤p¶Ë®`­È¥²¶·¦b 0 ¨ì 1000 ¤§¶¡¡T" );
+        RETURN( "å¼“ç®­æœ€å°å‚·å®³å€¼å¿…é ˆåœ¨ 0 åˆ° 1000 ä¹‹é–“ï¹—" );
       }
       break;
     }

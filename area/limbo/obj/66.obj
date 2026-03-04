@@ -1,9 +1,9 @@
 Vnum            66
 Name            katana~
-ShortDesc       �Z�h�M~
+ShortDesc       武士刀~
 Description
-�o�O�饻�Z�h�̺D�Ϊ��Z���M�M���������סM�M�W�{ģ�۫C�~�C~
-Unit            ��~
+這是日本武士們慣用的武器﹐刀身略有弧度﹐刀鋒閃耀著青芒。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

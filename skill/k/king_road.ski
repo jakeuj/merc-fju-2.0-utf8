@@ -1,5 +1,5 @@
 Name            king road~
-Cname           ���̤���~
+Cname           王者之路~
 Slot            SLOT_KING_ROAD
 Msgoff          ~
 Check           check_sword_attack~
@@ -41,7 +41,7 @@ Help            ~
 
 #Damage
 Description
-$n�⤤��$O�@�A�M�ϥX$S�y�f�s���ʤ@�C���z$Z�u���⤤��$O�o�X�@�ѱj�j���C��M�㦳�}�s�P�a����աM��ŧ$N������C~
+$n手中的$O一劈﹐使出$S『廬山不動一劍痕』$Z只見手中的$O發出一股強大的劍氣﹐具有開山闢地的氣勢﹐直襲$N的身體。~
 Chance          10
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ End
 
 #Damage
 Description
-$n�⤤��$O�@�ݡM�ϥX$S�y���椧���z$Z���Ѫ��C�v�Φ��@�ӥ��j���x����$N�x�b�x���������C~
+$n手中的$O一抖﹐使出$S『慾望之海』$Z漫天的劍影形成一個巨大的漩渦把$N困在漩渦的中央。~
 Chance          10
 Value           20
 Parry           0
@@ -61,7 +61,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�@�̡M�C�H����M�ϥX$S�y�H�ߩұ��z$Z�N$O���X�M�H���i��ĳ���N�p���ש�$N���}���h�C~
+$n手中$O一晃﹐劍隨心轉﹐使出$S『隨心所欲』$Z將$O揮出﹐以不可思議的刁鑽角度往$N的破綻刺去。~
 Chance          10
 Value           20
 Parry           0
@@ -71,7 +71,7 @@ End
 
 #Damage
 Description
-$n�N��̪�$O�����|�_�M���a�⤤$O���ܩۼơM�@��$S�y�ѱ���Сz$Z�s����������$N���C~
+$n將手裡的$O高高舉起﹐忽地手中$O急變招數﹐一招$S『忘棄紅塵』$Z連綿不絕的往$N急刺。~
 Chance          10
 Value           20
 Parry           0
@@ -81,7 +81,7 @@ End
 
 #Damage
 Description
-$n�����$O�M���^�����٦סM�@��$S�y�i�R�z$Z���U�@���a��$N�ĥh�M�o�g�����g��$N������C~
+$n雙手緊握$O﹐緊繃全身肌肉﹐一招$S『搏命』$Z不顧一切地往$N衝去﹐發狂似的狂砍$N的身體。~
 Chance          10
 Value           20
 Parry           0
@@ -91,7 +91,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�@�ߡM�@��$S�y���P�ѡz$Z�b�b�Ū�$O�t�X�x�W�ҵo�X����\�M��$N����h�C~
+$n手中$O一拋﹐一招$S『日月同天』$Z在半空的$O配合掌上所發出的氣功﹐往$N飛刺去。~
 Chance          10
 Value           20
 Parry           0
@@ -101,7 +101,7 @@ End
 
 #Damage
 Description
-$n�N�⤤$O�J�T�M�[�𾮯��M�C�Ѥߥ͡M�@��$S�y�߼C�z$Z�Ѥ��ߵo�X�@�ѱj�j���C��M��$N����h�C~
+$n將手中$O入鞘﹐稟氣凝神﹐劍由心生﹐一招$S『心劍』$Z由內心發出一股強大的劍氣﹐往$N飛刺去。~
 Chance          10
 Value           20
 Parry           0
@@ -111,7 +111,7 @@ End
 
 #Damage
 Description
-$n�⤤$O���W�@�ߡM�H��s�C�M�@��$S�y�Ѱ��l�z$Z�b�W�Ū�$O�{�p�@���C�s���R�M��$N���b�L�h�C~
+$n手中$O往上一拋﹐以氣御劍﹐一招$S『天堂之翼』$Z在上空的$O宛如一條青龍飛舞﹐往$N飛奔過去。~
 Chance          10
 Value           20
 Parry           0
@@ -121,7 +121,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�@½�M�@��$S�y�L��L�סz$Z��̪�$O�Φ��L�ƪ��C��M��$N�{�p���B�۹ҡM���ɤ⤤��$O�w��V$N�������C~
+$n手中$O一翻﹐一招$S『無怨無尤』$Z手裡的$O形成無數的劍花﹐讓$N宛如身處幻境﹐此時手中的$O已刺向$N的全身。~
 Chance          10
 Value           20
 Parry           0
@@ -131,7 +131,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�@���M�@��$S�y��d�q�z$Z��̪�$O�o�X�@�}�}���C��g�b$N���ߴ��M�P�ɤ⤤��$O�]��$N���V����h�C~
+$n手中$O一振﹐一招$S『秋末悲歌』$Z手裡的$O發出一陣陣的劍鳴迷惑$N的心智﹐同時手中的$O也往$N的頸部砍去。~
 Chance          10
 Value           20
 Parry           0
@@ -141,7 +141,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�@½�M�@��$S�y�w��x�x�z$Z��̪�$O�o�X�ƤQ�D�A���⪺�C�~�M��$N��h�C~
+$n手中$O一翻﹐一招$S『瀝血肝膽』$Z手裡的$O發出數十道鮮紅色的劍芒﹐往$N刺去。~
 Chance          10
 Value           20
 Parry           0

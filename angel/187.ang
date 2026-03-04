@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�ڭn��򪾹D�ڥi�H�ǲ߭��ǧޯ�O�S�A�u�n��J [1;32mleftskill[0m�M�t�δN�|�i�D�A�M
-�A�ثe������M�쩳�i�H�ǲ߭��ǧޯ��M���L�o�O�n���I�p�����C����M�A�i�H
-�Q�� [1;32mpry[0m �ӥ�ť�o�ӧޯ઺��T�M�H�K�A�ǲ�([1;32mlearn[0m)�C
+我要怎麼知道我可以學習哪些技能呢﹖你只要輸入 [1;32mleftskill[0m﹐系統就會告訴你﹐
+你目前的條件﹐到底可以學習哪些技能喔﹐不過這是要花點小錢的。之後﹐你可以
+利用 [1;32mpry[0m 來打聽這個技能的資訊﹐以便你學習([1;32mlearn[0m)。
 
-�Ьd�ߡRleftskill�Blearn�Bpry
+請查詢﹕leftskill、learn、pry
 ~
 End

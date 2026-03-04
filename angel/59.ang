@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A��W����ӬۦP�������˳ƮɡM������O�S���ݦW�r�q�`�O���Ǫ��M�S���Y�M
-�A�i�H���([1;32mcompare[0m)�ݬݨӨM�w�A�쩳�n�˳�([1;32mwear[0m)���@�M�C
+當你手上有兩個相同類型的裝備時﹐怎麼比較呢﹖光看名字通常是不準的﹐沒關係﹐
+你可以比較([1;32mcompare[0m)看看來決定你到底要裝備([1;32mwear[0m)哪一套。
 
-�Ьd�ߡR compare�Bwear
+請查詢﹕ compare、wear
 ~
 End

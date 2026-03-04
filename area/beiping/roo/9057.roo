@@ -1,11 +1,11 @@
 Vnum            9057
-Name            �ʫ����O����~
+Name            京城乾記錢莊~
 Description
-���찮�q�Ѫ��������b���iù�����U�ѤU����M�M�N����
-�·��x�M�G�iù���N���\�h���Ȩ�M�ín�D�L�d�b�ʫ�
-�M�ҥH���q�Ѥ~�|�����Ѫ��]�I�P�a��C�o�ӷ��Q�]�O�L
-���겣���@�C�M�b�o�A�i�H�H��(deposit)�M���M�]�i�Hū
-�^(withdraw)�C
+當初乾通天的曾祖父在替波羅王打下天下之後﹐決意不為
+朝當官﹐故波羅王就賞賜許多的銀兩﹐並要求他留在京城
+﹐所以乾通天才會有今天的財富與地位。這個當鋪也是他
+的資產之一。﹐在這你可以寄放(deposit)﹐當然也可以贖
+回(withdraw)。
 
 ~
 SectorType      SECT_CITY
@@ -20,11 +20,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         �ߧ�~
+Keyword         鑣局~
 End
 
 #Enquire
-Keyword         ��~
+Keyword         鏢局~
 End
 
 End

@@ -1,9 +1,9 @@
 Vnum            9020
 Name            castle arms~
-ShortDesc       ¸T½Ã­xÅ@Áu~
+ShortDesc       ç¦è¡›è»è­·è‡‚~
 Description
-¸T½Ã­x°ª¯Å­x©x¥ÎªºÅ@Áu(Arms)~
-Unit            ¥ó~
+ç¦è¡›è»é«˜ç´šè»å®˜ç”¨çš„è­·è‡‚(Arms)~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_ARMS
 Takeable        Yes

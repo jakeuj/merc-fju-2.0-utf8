@@ -1,9 +1,9 @@
 Vnum            242
 Name            tao spell book~
-ShortDesc       ©_ªù¹P¥Ò¯µÓD~
+ShortDesc       å¥‡é–€éç”²ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

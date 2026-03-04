@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A�ݨ�A�Q�n�������ĤH�ɫ���S���M�O�r�l�����o�M�A�u�n��J [1;32mkill xxxx[0m
-�t�δN�|���A�}�Ҿ԰��M���F�Y�Ǩҥ~�C���A���P��([1;32menable[0m)�ɡM�t���ٷ|���A�۰�
-��J�A�Ĥ@�ӲŦX���󪺧ޯ�M�Ӥ��βr�V��L�o�C
+當你看到你想要殺死的敵人時怎麼辦﹖當然是猛追不捨囉﹐你只要輸入 [1;32mkill xxxx[0m
+系統就會幫你開啟戰鬥﹐除了某些例外。當你有致能([1;32menable[0m)時﹐系統還會幫你自動
+輸入你第一個符合條件的技能﹐而不用猛敲鍵盤囉。
 
-�Ьd�ߡRkill�Bmurder�Benable
+請查詢﹕kill、murder、enable
 ~
 End

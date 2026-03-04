@@ -1,10 +1,10 @@
 Vnum            451
 Name            green potion~
-ShortDesc       ºñ¦âÃÄ¤ô~
+ShortDesc       ç¶ è‰²è—¥æ°´~
 Description
-¤@Åøºñ¦â²~¼ß(green potion)ªºÃÄ¤ô³Q¥á¦b¦a¤W¡C
+ä¸€ç½ç¶ è‰²ç“¶æ¼¿(green potion)çš„è—¥æ°´è¢«ä¸Ÿåœ¨åœ°ä¸Šã€‚
 ~
-Unit            Åø~
+Unit            ç½~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

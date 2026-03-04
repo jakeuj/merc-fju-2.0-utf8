@@ -1,9 +1,9 @@
 Vnum            81
 Name            duster~
-ShortDesc       ©Ø¹Ğ~
+ShortDesc       æ‹‚å¡µ~
 Description
-³o¬O¤@¥ó¥´±½¦Ç¹Ğªº©Ø¹Ğ(duster)~
-Unit            §â~
+é€™æ˜¯ä¸€ä»¶æ‰“æƒç°å¡µçš„æ‹‚å¡µ(duster)~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

@@ -1,12 +1,12 @@
 Vnum            1210
 Name            skeleton~
-ShortDesc       �u�\�u��~
-LongDesc        �u�\�u��(skeleton).
+ShortDesc       骷髏守衛~
+LongDesc        骷髏守衛(skeleton).
 ~
 Description
-�@�㦺�F�ܤ[���u�\�M���O�Q�@�쵽�}�D�h�I�F�ũG�M�ܦ��F�ݦu
-�Ǫ����çL�M�b�����u�^��M�קK���ͤH�i�J�̭��D���Ǫ������`
-�M����D�R�C
+一具死了很久的骷髏﹐但是被一位善良道士施了符咒﹐變成了看守
+怪物的衛兵﹐在此堅守崗位﹐避免讓生人進入裡面遭受怪物的迫害
+﹐死於非命。
 ~
 Sentinel        Yes
 StayArea        Yes

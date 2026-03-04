@@ -1,10 +1,10 @@
 Vnum            565
 Name            long spear~
-ShortDesc       ���j~
+ShortDesc       長槍~
 Description
-�o�O�j�L�򥻪��˳ơM���q���M�Ĩ뵥�ʧ@���ܦp�N�C
+這是槍兵基本的裝備﹐重量輕﹐衝刺等動作都很如意。
 ~
-Unit            ��~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

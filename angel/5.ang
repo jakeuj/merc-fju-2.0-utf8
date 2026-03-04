@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�Aı�o�A�������t�׫ܺC�ܡS�`�`ı�o�԰��ɱԭz�ܦh�ܡS���A�i�H²�ƧA����X
-�e������M�A�i�H�ո� [1;32mconfig -message[0m�C
+你覺得你的網路速度很慢嗎﹖常常覺得戰鬥時敘述很多嗎﹖其實你可以簡化你的輸出
+畫面的喔﹐你可以試試 [1;32mconfig -message[0m。
 
-�Ьd�ߡRauto�Bconfig
+請查詢﹕auto、config
 ~
 
 End

@@ -1,10 +1,10 @@
 Vnum            549
 Name            sky shaman~
-ShortDesc       ¤Ñ¼Ï¹D~
-LongDesc        ¤Ñ¼Ï¹D(sky shaman)
+ShortDesc       å¤©æ¨é“~
+LongDesc        å¤©æ¨é“(sky shaman)
 ~
 Description
-¥Lº¡ÁyºÖºÖªº¡M¥Ã»·¹ï¤H³£¬O¤@°Æ¯ºÁy¡MÅı§A¤]·P¨ì¤ß±¡«Ü´r§Ö¡T
+ä»–æ»¿è‡‰ç¦ç¦çš„ï¹æ°¸é å°äººéƒ½æ˜¯ä¸€å‰¯ç¬‘è‡‰ï¹è®“ä½ ä¹Ÿæ„Ÿåˆ°å¿ƒæƒ…å¾ˆæ„‰å¿«ï¹—
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -36,7 +36,7 @@ Type            greet_prog
 Chance          35
 Text
 if ispc($n)
-  say ¶Ù¡T§A¦n°Ú¡T¤µ¤Ñ¤S¬O¦n¤Ñ®ğ»¡¡T
+  say å—¨ï¹—ä½ å¥½å•Šï¹—ä»Šå¤©åˆæ˜¯å¥½å¤©æ°£èªªï¹—
   hoho $n
 endif
 ~
@@ -47,15 +47,15 @@ Type            rand_prog
 Chance          100
 Text
 if rand(1)
-  say «°¤ºªº¿ß¥Í¤F¤­­M­L»¡¡T¯u¼F®`¡T
+  say åŸå…§çš„è²“ç”Ÿäº†äº”èƒèƒèªªï¹—çœŸå²å®³ï¹—
   break
 endif
 if rand(1)
-  say ¬Q¤Ñ«°¤º¤S¦³¤@³õ±BÂ§»¡¡T¯u¬O¼ö¾x©O¡T
+  say æ˜¨å¤©åŸå…§åˆæœ‰ä¸€å ´å©šç¦®èªªï¹—çœŸæ˜¯ç†±é¬§å‘¢ï¹—
   break
 endif
 if rand(1)
-  say ¤Ñ®ğ¬O«Ü¦n¡T¤£¹L»»Æ[¤Ñ¶H¦ü¥G¦³¤£´M±`($2uncommon$0)ªº¨Æ±¡¡T
+  say å¤©æ°£æ˜¯å¾ˆå¥½ï¹—ä¸éé™è§€å¤©è±¡ä¼¼ä¹æœ‰ä¸å°‹å¸¸($2uncommon$0)çš„äº‹æƒ…ï¹—
   hmm
   break
 endif
@@ -66,7 +66,7 @@ Process
 Type            speech_prog
 Argument        no~
 Text
-tell $n ³á¡M¨S¨Æ¡MÙTÙT¡T
+tell $n å–”ï¹æ²’äº‹ï¹æ°æ°ï¹—
 ponder
 ~
 End

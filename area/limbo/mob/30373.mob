@@ -1,10 +1,10 @@
 Vnum            30373
 Name            han xian di~
-ShortDesc       º~Äm«Ò~
-LongDesc        º~Äm«Ò(han xian di)
+ShortDesc       æ¼¢ç»å¸~
+LongDesc        æ¼¢ç»å¸(han xian di)
 ~
 Description
-º~´Â³Ì«áªº¤@­Ó¬Ó«Ò¡C
+æ¼¢æœæœ€å¾Œçš„ä¸€å€‹çš‡å¸ã€‚
 ~
 Sentinel        Yes
 Alignment       0
@@ -28,5 +28,5 @@ DodgeRatio      100
 Migrate         0
 Sex             SEX_MALE
 Auction
-³o¨Ç®c¤º°]Ä_¡M¿ğ¦­³£¬O¨º¨Ç­x»Öªº¤F¡M¤£¶X¦¹®É½æ½æ´«²{ª÷¡M§ó«İ¦ó®É¡C~
+é€™äº›å®®å…§è²¡å¯¶ï¹é²æ—©éƒ½æ˜¯é‚£äº›è»é–¥çš„äº†ï¹ä¸è¶æ­¤æ™‚è³£è³£æ›ç¾é‡‘ï¹æ›´å¾…ä½•æ™‚ã€‚~
 End

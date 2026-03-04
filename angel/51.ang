@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A�Q��Y�ӤH���ܡM�p�G�o�ӤH�b�P�@���ж��̡M�A�i�H�� [1;32msay[0m �M�o�˦P�@���ж�
-�̪��Ҧ��H���i�Hť��M���O�A�Q��ܪ��H���b�P�@���ж��M�άO�����K�n�ӽ͡M�A
-�i�H�Ҽ{�� [1;32mtell[0m �ӧi�D�L�M����A�i�H�� [1;32mreply[0m �Ӧ^�ܡC
+當你想跟某個人說話﹐如果這個人在同一間房間裡﹐你可以用 [1;32msay[0m ﹐這樣同一間房間
+裡的所有人都可以聽到﹐但是你想對話的人不在同一間房間﹐或是有秘密要商談﹐你
+可以考慮用 [1;32mtell[0m 來告訴他﹐之後你可以用 [1;32mreply[0m 來回話。
 
-�Ьd�ߡR tell�Bsay�Breply
+請查詢﹕ tell、say、reply
 ~
 End

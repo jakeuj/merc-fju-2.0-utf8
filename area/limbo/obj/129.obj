@@ -1,11 +1,11 @@
 Vnum            129
 Name            x'mas pill~
-ShortDesc       [1;33m¸t½Ï[1;35m¤Y[0m~
+ShortDesc       [1;33mè–èª•[1;35mä¸¸[0m~
 Description
-¤@²É¤p¤pªºÃÄ¤Y¡M«oµo¥X©_²§ªº¤C±m¥ú¨~¡C
+ä¸€ç²’å°å°çš„è—¥ä¸¸ï¹å»ç™¼å‡ºå¥‡ç•°çš„ä¸ƒå½©å…‰èŠ’ã€‚
 
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_PILL
 Glow            Yes
 Contraband      Yes

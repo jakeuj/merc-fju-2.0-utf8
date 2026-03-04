@@ -1,10 +1,10 @@
 Vnum            463
-Name            �����ж� [drink]~
+Name            水池房間 [drink]~
 Description
-���C�������|�X�{�y�A�f�����r�ˡz�M�N���A�{�b������B��f����
-�A�M�o�ɱo����ɥR�����~�O.
+當遊戲中控會出現『你口渴的字樣』﹐代表你現在的身體處於口渴狀
+態﹐這時得趕緊補充水分才是.
 
-�o�̦��@���i�ܵP (sign).
+這裡有一塊告示牌 (sign).
 
 ~
 SectorType      SECT_CITY
@@ -29,16 +29,16 @@ End
 Keyword         sign~
 Description
 
-�p�G�A�P��f���F�M�A�i�H�b����(fountain)�M�e�y��y�ܤ��C�A�]
-�i�H�ϥΤ��֤��U(buffalo water skin)�Ӹˤ�.
+如果你感到口渴了﹐你可以在水池(fountain)﹐河流湖泊喝水。你也
+可以使用牛皮水袋(buffalo water skin)來裝水.
 
-�ܤ������O�O drink water�C�A�Q�ܮ����S�藍�_�M���O����ܪ�.
-���A�ݭn���~�Ȧ檺�ɭԡM�A�i�H�쩱�̶R�@�Ǥ��U�M�ӷ��A�b�_�I
-���ȳ~���J��i�H�ܪ����M�A�]�i�H�γo�Ǥ��Ӹ˺��A�����U.
+喝水的指令是 drink water。你想喝海水﹖對不起﹐那是不能喝的.
+當你需要長途旅行的時候﹐你可以到店裡買一些水袋﹐而當你在冒險
+的旅途中遇到可以喝的水﹐你也可以用這些水來裝滿你的水袋.
 
-�ˤ������O�O fill <���U�W�r>�M�Ҧp fill water �άO fill skin
-�b�o�̧A�]�i�H����L���������~�㦳���U���\�ΡC���~�M�f����
-���|�ɭP���`�M�u�O�A�|�P�줣�A�Ӥw.
+裝水的指令是 fill <水袋名字>﹐例如 fill water 或是 fill skin
+在這裡你也可以找到其他種類的物品具有水袋的功用。此外﹐口渴並
+不會導致死亡﹐只是你會感到不適而已.
 
 ~
 

@@ -1,9 +1,9 @@
 Vnum            9006
 Name            royal blade~
-ShortDesc       ¬Ó®aª÷¤M~
+ShortDesc       çš‡å®¶é‡‘åˆ€~
 Description
-³o¬O¤@¬`¥¨¤jªº¾Ô¤M(blade)¡M­«¤­¤Q¤ç¡M¤@¯ë¤H®£©ÈÃø¥H¨Ï±o°Ê¡C~
-Unit            ¬`~
+é€™æ˜¯ä¸€æŸ„å·¨å¤§çš„æˆ°åˆ€(blade)ï¹é‡äº”åæ–¤ï¹ä¸€èˆ¬äººææ€•é›£ä»¥ä½¿å¾—å‹•ã€‚~
+Unit            æŸ„~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

@@ -1,10 +1,10 @@
 Vnum            548
 Name            sky shaman~
-ShortDesc       ¤Ñ¿Y¹D~
-LongDesc        ¤Ñ¿Y¹D(sky shaman)
+ShortDesc       å¤©ç’£é“~
+LongDesc        å¤©ç’£é“(sky shaman)
 ~
 Description
-¤@¨­´X¥Gªx¶Àªº¹D³T¡Mº¡ÁyÄG´í¡M¦ü¥G¥Í¬¡¹L±o«Ü¼ã­Ë¡C
+ä¸€èº«å¹¾ä¹æ³›é»ƒçš„é“è¢ï¹æ»¿è‡‰é¬æ¸£ï¹ä¼¼ä¹ç”Ÿæ´»éå¾—å¾ˆæ½¦å€’ã€‚
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -36,13 +36,13 @@ Type            rand_prog
 Chance          10
 Text
 if rand(3)
-  say «u¡T¦nµL²á³á¡T
+  say å“ï¹—å¥½ç„¡èŠå–”ï¹—
   yawn
   break
 endif
 if rand(3)
-  say ³Ìªñ¦n¦£($2busy$0)³á¡T¸ò§Úªº­·®æ³£¤£¤@¼Ë¡T
-  say ¦nÃh©À¨ººØ¦Û¥Ñ¦Û¦bªº¥Í¬¡¡K
+  say æœ€è¿‘å¥½å¿™($2busy$0)å–”ï¹—è·Ÿæˆ‘çš„é¢¨æ ¼éƒ½ä¸ä¸€æ¨£ï¹—
+  say å¥½æ‡·å¿µé‚£ç¨®è‡ªç”±è‡ªåœ¨çš„ç”Ÿæ´»â€¦
   sigh
   break
 endif
@@ -55,8 +55,8 @@ Argument        busy~
 Text
 if ispc($n)
   hmm $n
-  tell $n §Ú¬İ§A¤]¨S¦³³o­Ó¯à­@À°§Ú¡M§A·Q­n¸Õ¸Õ¬İ¶Ü¡S($2yes$0/$2no$0)
-  emote «ì´_¨H«äªºª¬ºA¡K
+  tell $n æˆ‘çœ‹ä½ ä¹Ÿæ²’æœ‰é€™å€‹èƒ½è€å¹«æˆ‘ï¹ä½ æƒ³è¦è©¦è©¦çœ‹å—ï¹–($2yes$0/$2no$0)
+  emote æ¢å¾©æ²ˆæ€çš„ç‹€æ…‹â€¦
 endif
 ~
 End
@@ -66,7 +66,7 @@ Type            speech_prog
 Argument        no~
 Text
 if ispc($n)
-  say §Öºu¡M¤£­n¥´ÂZ§Ú«ä¦Ò¡T¤@¬í¤º®ø¥¢§Úªº²´«e¡M¤£µM­n§A¦n¬İ¡T
+  say å¿«æ»¾ï¹ä¸è¦æ‰“æ“¾æˆ‘æ€è€ƒï¹—ä¸€ç§’å…§æ¶ˆå¤±æˆ‘çš„çœ¼å‰ï¹ä¸ç„¶è¦ä½ å¥½çœ‹ï¹—
   growl $n
 endif
 ~

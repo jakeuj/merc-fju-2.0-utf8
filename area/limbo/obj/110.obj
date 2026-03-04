@@ -1,10 +1,10 @@
 Vnum            110
 Name            rice dumpling~
-ShortDesc       ºê¤l~
+ShortDesc       ç²½å­~
 Description
-¤@²É¼öÄËÄËªººê¤l¡M¦Y¤F¥i¥HÅı§Aºë¯«¦Ê­¿¡M§A¥i¥H¦Y¦Y¬İ(eat rice)¡C
+ä¸€ç²’ç†±é¨°é¨°çš„ç²½å­ï¹åƒäº†å¯ä»¥è®“ä½ ç²¾ç¥ç™¾å€ï¹ä½ å¯ä»¥åƒåƒçœ‹(eat rice)ã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

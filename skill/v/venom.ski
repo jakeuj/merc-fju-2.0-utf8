@@ -1,5 +1,5 @@
 Name            venom~
-Cname           �٬r~
+Cname           抹毒~
 Slot            SLOT_VENOM
 Msgoff          ~
 Function        cast_venom~
@@ -37,9 +37,9 @@ Limit           CLASS_BRAVO      1  70
 Limit           CLASS_MAGE       1  70
 Limit           CLASS_SMITH      1  70
 Help
-�٬r:
+抹毒:
 
-�@�ذ򥻪��٬r�ޥ��M���O���M����O�A�n��Ƥ@�Ǭr�������ѡC
+一種基本的抹毒技巧﹐但是先決條件是你要具備一些毒物的知識。
 ~
 
 End

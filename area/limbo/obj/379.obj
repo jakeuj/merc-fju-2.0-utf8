@@ -1,9 +1,9 @@
 Vnum            379
 Name            sneak book~
-ShortDesc       ¼ç¦æ³N¯µÓD~
+ShortDesc       æ½›è¡Œè¡“ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

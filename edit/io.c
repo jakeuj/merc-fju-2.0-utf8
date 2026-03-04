@@ -1,6 +1,6 @@
 #include "edit.h"
 
-/* ²M°£¿Ã¹õ. */
+/* æ¸…é™¤è¢å¹•. */
 void clear_screen( void )
 {
   #if defined(MSDOS)
@@ -17,7 +17,7 @@ void clear_screen( void )
   return;
 }
 
-/* Åã¥Ü´¡¤J¼Ò¦¡ªº´å¼Ğ¼Ò¦¡ */
+/* é¡¯ç¤ºæ’å…¥æ¨¡å¼çš„æ¸¸æ¨™æ¨¡å¼ */
 void show_cursor( int x , int y , int cursor_mode )
 {
   if ( cursor_mode == 0 ) set_cursor_type( NORMAL_CURSOR  );
@@ -27,11 +27,11 @@ void show_cursor( int x , int y , int cursor_mode )
   return;
 }
 
-/* Åã¥Ü´å¼Ğªº¥~«¬
+/* é¡¯ç¤ºæ¸¸æ¨™çš„å¤–å‹
 
-NO_CURSOR      ¨S¦³´å¼Ğ
-NORMAL_CURSOR  ¥¿±`´å¼Ğ
-INSERT_CURSOR  ´¡¤J¼Ò¦¡ªº´å¼Ğ
+NO_CURSOR      æ²’æœ‰æ¸¸æ¨™
+NORMAL_CURSOR  æ­£å¸¸æ¸¸æ¨™
+INSERT_CURSOR  æ’å…¥æ¨¡å¼çš„æ¸¸æ¨™
 
 */
 
@@ -47,7 +47,7 @@ void set_cursor_type( int cursor_type )
   return;
 }
 
-/* ©w¦ì´å¼Ğ */
+/* å®šä½æ¸¸æ¨™ */
 
 void locate_cursor( int x , int y )
 {
@@ -68,7 +68,7 @@ void locate_cursor( int x , int y )
 
 }
 
-/* Àx¦sµøµ¡ªº¤å¦r¸ê®Æ, ¤£¬Û®e. */
+/* å„²å­˜è¦–çª—çš„æ–‡å­—è³‡æ–™, ä¸ç›¸å®¹. */
 void save_windows( int left , int top , int right
                    , int bottom , char * string )
 {
@@ -80,7 +80,7 @@ void save_windows( int left , int top , int right
   return;
 }
 
-/* ¦^¦sµøµ¡ªº¤å¦r¸ê®Æ, ¤£¬Û®e. */
+/* å›å­˜è¦–çª—çš„æ–‡å­—è³‡æ–™, ä¸ç›¸å®¹. */
 void restore_windows( int left , int top , int right
                       , int bottom , char * string )
 {
@@ -91,7 +91,7 @@ void restore_windows( int left , int top , int right
   return;
 }
 
-/* §C¶¥ªº±µ¦¬¤@­Ó¦r¤¸, ¤£¬Û®e.*/
+/* ä½éšçš„æ¥æ”¶ä¸€å€‹å­—å…ƒ, ä¸ç›¸å®¹.*/
 #if defined (MSDOS)
 unsigned char get_key( void )
 {
@@ -126,7 +126,7 @@ unsigned char get_key( void )
 
 #endif
 
-/* §ïÅÜ¿é¥X¦r¦êªºÃC¦â */
+/* æ”¹è®Šè¼¸å‡ºå­—ä¸²çš„é¡è‰² */
 
 void change_color( int color )
 {
@@ -138,7 +138,7 @@ void change_color( int color )
   return;
 }
 
-/* ¨Ï²×ºİ¾÷µo¥XÄµ§iÁn­µ */
+/* ä½¿çµ‚ç«¯æ©Ÿç™¼å‡ºè­¦å‘Šè²éŸ³ */
 void warning_beep( void )
 {
   printf( "\x07" );

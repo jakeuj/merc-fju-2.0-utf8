@@ -1,10 +1,10 @@
 Vnum            550
 Name            wolf blade~
-ShortDesc       �T���x�M~
+ShortDesc       狼牙軍刀~
 Description
-�W������һs�Ӧ� �M�@���O�u�ö��ƶ��Y�̱o�O���U��C
+上等精鋼煉製而成 ﹐一直是守衛隊副隊頭最得力的助手。
 ~
-Unit            ��~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

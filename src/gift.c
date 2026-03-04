@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -24,7 +24,7 @@ void set_gift_time( GIFT_DATA * pGift )
 
   if ( !pGift )
   {
-    mudlog( LOG_DEBUG, "set_gift_time: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_gift_time: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -146,8 +146,8 @@ void gift_update( void )
         if ( pGift->message && ch->in_room )
           sendmsg_to_someroom( pGift->message, ch->in_room );
 
-        sprintf( buf, "%s»¡¹D¡R¡u³o¬O°eµ¹§AªºÂ§ª«\e[1;32m%s\e[0m¡M"
-          "½Ğ§A¦¬¤U¡M¯¬§A\e[1;33m%s\e[0m´r§Ö¡T¡v\n\r"
+        sprintf( buf, "%sèªªé“ï¹•ã€Œé€™æ˜¯é€çµ¦ä½ çš„ç¦®ç‰©\e[1;32m%s\e[0mï¹"
+          "è«‹ä½ æ”¶ä¸‹ï¹ç¥ä½ \e[1;33m%s\e[0mæ„‰å¿«ï¹—ã€\n\r"
           , mob_index_name( ch, pMobIndex )
           , obj_name( ch, Gift )
           , pGift->title );
@@ -158,7 +158,7 @@ void gift_update( void )
           || ( ch->carry_number + get_obj_number( Gift ) > can_carry_n( ch ) )
           || ( get_carry_weight( ch ) + get_obj_weight( Gift ) > can_carry_w( ch ) ) )
         {
-          act( "¦]¬°§A®³¤£°Ê$p¡M©Ò¥H´N§â¥¦µ¹¨ì¦a¤W¤F¡T", ch, Gift, NULL, TO_CHAR );
+          act( "å› ç‚ºä½ æ‹¿ä¸å‹•$pï¹æ‰€ä»¥å°±æŠŠå®ƒçµ¦åˆ°åœ°ä¸Šäº†ï¹—", ch, Gift, NULL, TO_CHAR );
           obj_to_room( Gift, ch->in_room );
           WAIT_STATE( ch, 10 );
         }
@@ -170,8 +170,8 @@ void gift_update( void )
 
         if ( pGift->gold > 0 && !over_scale( ch ) )
         {
-          sprintf( buf, "%s»¡¹D¡R¡u³o¬O°eµ¹§AªºÂ§ª÷ \e[1;32m%d\e[0m ¨â¡M"
-            "½Ğ§A¦¬¤U¡M¯¬§A\e[1;33m%s\e[0m´r§Ö¡T¡v\n\r"
+          sprintf( buf, "%sèªªé“ï¹•ã€Œé€™æ˜¯é€çµ¦ä½ çš„ç¦®é‡‘ \e[1;32m%d\e[0m å…©ï¹"
+            "è«‹ä½ æ”¶ä¸‹ï¹ç¥ä½ \e[1;33m%s\e[0mæ„‰å¿«ï¹—ã€\n\r"
             , mob_index_name( ch, pMobIndex )
             , pGift->gold
             , pGift->title );
@@ -205,7 +205,7 @@ FUNCTION( do_gift )
 
   if ( !gift_list )
   {
-    act( "¹ï¤£°_¡M$t¨S¦³¥ô¦óÂ§ª«ªº¸ê®Æ¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$tæ²’æœ‰ä»»ä½•ç¦®ç‰©çš„è³‡æ–™ï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -215,8 +215,8 @@ FUNCTION( do_gift )
   {
     clear_buffer();
 
-    send_to_buffer( "\e[1;33;44m¶¶§Ç Â§  ª«  ¼Ğ  ÃD     ¤é ´Á "
-      "µo°e ¦¸¼Æ §Ç    ¸¹ ¶¡¹j ³Ñ¾l µo°eªÌ µ¥   ¯Å Â§  ª÷\e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mé †åº ç¦®  ç‰©  æ¨™  é¡Œ     æ—¥ æœŸ "
+      "ç™¼é€ æ¬¡æ•¸ åº    è™Ÿ é–“éš” å‰©é¤˜ ç™¼é€è€… ç­‰   ç´š ç¦®  é‡‘\e[0m\n\r" );
 
     for ( loop = 1, pGift = gift_list; pGift; pGift = pGift->next, loop++ )
     {
@@ -249,30 +249,30 @@ FUNCTION( do_gift )
 
     if ( !pGift )
     {
-      send_to_char( "¹ï¤£°_¡M¨S¦³¨º­Ó§Ç¸¹ªºÂ§ª«¸ê®Æ¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£å€‹åºè™Ÿçš„ç¦®ç‰©è³‡æ–™ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     pIndex = get_mob_index( pGift->sender );
 
     print_to_char( ch,
-      "½s    ¸¹¡R%d\n\r"
-      "Â§ª«¼ĞÃD¡R%s\n\r"
-      "µo°e¤é´Á¡R%d ¤ë %d ¸¹\n\r"
-      "¬O§_¨ì´Á¡R%s\n\r"
-      "Á|¿ì¤Ñ¼Æ¡R%d ¤Ñ\n\r"
-      "µo°e¦¸¼Æ¡R%d\n\r"
-      "Â§ª«§Ç¸¹¡R%d\n\r"
-      "µo°e¶¡¹j¡R%d ¤p®É\n\r"
-      "³Ñ¾l¶¡¹j¡R%d ¤p®É\n\r"
-      "µo°e®É¯ß¡R%d\n\r"
-      "ºI¤î®É¯ß¡R%d\n\r"
-      "¥Ø«e®É¯ß¡R%d\n\r"
-      "µo °e ªÌ¡R%s ¡u½s¸¹¡R%d¡v\n\r"
-      "µ¥¯Å­­¨î¡R%d ¨ì %d ¤§¶¡\n\r"
-      "Â§«~¦WºÙ¡R%s ¡u½s¸¹¡R%d¡v\n\r"
-      "Â§ª÷¼Æ¶q¡R%d ¨â¶Àª÷\n\r"
-      "µo°e°T®§¡R%s\n\r"
+      "ç·¨    è™Ÿï¹•%d\n\r"
+      "ç¦®ç‰©æ¨™é¡Œï¹•%s\n\r"
+      "ç™¼é€æ—¥æœŸï¹•%d æœˆ %d è™Ÿ\n\r"
+      "æ˜¯å¦åˆ°æœŸï¹•%s\n\r"
+      "èˆ‰è¾¦å¤©æ•¸ï¹•%d å¤©\n\r"
+      "ç™¼é€æ¬¡æ•¸ï¹•%d\n\r"
+      "ç¦®ç‰©åºè™Ÿï¹•%d\n\r"
+      "ç™¼é€é–“éš”ï¹•%d å°æ™‚\n\r"
+      "å‰©é¤˜é–“éš”ï¹•%d å°æ™‚\n\r"
+      "ç™¼é€æ™‚è„ˆï¹•%d\n\r"
+      "æˆªæ­¢æ™‚è„ˆï¹•%d\n\r"
+      "ç›®å‰æ™‚è„ˆï¹•%d\n\r"
+      "ç™¼ é€ è€…ï¹•%s ã€Œç·¨è™Ÿï¹•%dã€\n\r"
+      "ç­‰ç´šé™åˆ¶ï¹•%d åˆ° %d ä¹‹é–“\n\r"
+      "ç¦®å“åç¨±ï¹•%s ã€Œç·¨è™Ÿï¹•%dã€\n\r"
+      "ç¦®é‡‘æ•¸é‡ï¹•%d å…©é»ƒé‡‘\n\r"
+      "ç™¼é€è¨Šæ¯ï¹•%s\n\r"
       , loop
       , pGift->title
       , pGift->month
@@ -286,11 +286,11 @@ FUNCTION( do_gift )
       , pGift->starting
       , pGift->ending
       , time( NULL )
-      , pIndex ? mob_index_name( NULL, pIndex ) : "±q¯Ê"
+      , pIndex ? mob_index_name( NULL, pIndex ) : "å¾ç¼º"
       , pGift->sender
       , pGift->low
       , pGift->high
-      , pGift->gift ? pGift->gift->short_descr : "±q¯Ê"
+      , pGift->gift ? pGift->gift->short_descr : "å¾ç¼º"
       , pGift->gift ? pGift->gift->vnum : -1
       , pGift->gold
       , pGift->message );
@@ -298,7 +298,7 @@ FUNCTION( do_gift )
 
   else
   {
-    send_to_char( "¹ï¤£°_¡M§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß gift ªº¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ gift çš„ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
   RETURN_NULL();
 }
@@ -311,7 +311,7 @@ bool check_gift_stamp( CHAR_DATA * ch, int number )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "check_gift_stamp: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "check_gift_stamp: ä¾†æºä¸æ­£ç¢º." );
     RETURN( FALSE );
   }
 
@@ -331,7 +331,7 @@ void set_gift_stamp( CHAR_DATA * ch, int number )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "set_gift_stamp: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_gift_stamp: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 

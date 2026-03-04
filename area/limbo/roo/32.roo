@@ -1,10 +1,10 @@
 Vnum            32
-Name            �ũж�~
+Name            空房間~
 Description
-�o�O�@�ӶR�Ӫ��зǩж��M�̭����M�ثe���򳣨S���M���L�A�i�H
-�C�C���K�ʳè�R��A���a�C
+這是一個買來的標準房間﹐裡面雖然目前什麼都沒有﹐不過你可以
+慢慢的添購傢具充實你的家。
 
-    �Шϥ� [1;32mhome /? [0m�Ӭd�߬����Ϊk�C
+    請使用 [1;32mhome /? [0m來查詢相關用法。
 
 ~
 SectorType      SECT_INSIDE

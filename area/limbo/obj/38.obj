@@ -1,9 +1,9 @@
 Vnum            38
 Name            thin blade~
-ShortDesc       �����h���M~
+ShortDesc       極風柳葉刀~
 Description
-�o�O�@�`�Q���Ӫ����M(thin blade)�M���ɥi�H�æb�S���M�H�o���X���Ϊ��_ŧ�ĪG�C~
-Unit            �`~
+這是一柄十分細長的刀(thin blade)﹐平時可以藏在袖中﹐以發揮出絕佳的奇襲效果。~
+Unit            柄~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

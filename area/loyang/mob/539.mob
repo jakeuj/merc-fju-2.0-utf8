@@ -1,10 +1,10 @@
 Vnum            539
 Name            shaman~
-ShortDesc       ¤p¹D¤h~
-LongDesc        ¤­¤æ¦Ì¹Dªºªº¤p¹D¤h(shaman)¡C
+ShortDesc       å°é“å£«~
+LongDesc        äº”æ–—ç±³é“çš„çš„å°é“å£«(shaman)ã€‚
 ~
 Description
-¦Û±q¤­¤æ¦Ì¥¢§Q¤§«á¡M¥L´N¤@ª½¸ú¦b³o¸Ì¡K
+è‡ªå¾äº”æ–—ç±³å¤±åˆ©ä¹‹å¾Œï¹ä»–å°±ä¸€ç›´èº²åœ¨é€™è£¡â€¦
 ~
 Sentinel        Yes
 Train           Yes
@@ -51,13 +51,13 @@ Type            rand_prog
 Chance          10
 Text
 if rand(1)
-  say ®v¤÷­Ì©R§Ú¦u¦b³o¸Ì¡M¤£ª¾¹D¥L­Ì³¬Ãö³¬ªº¦p¦ó¤F¡S
-  emote ¬İ°_¨Ó¤Q¤ÀµJ«æ¡K
+  say å¸«çˆ¶å€‘å‘½æˆ‘å®ˆåœ¨é€™è£¡ï¹ä¸çŸ¥é“ä»–å€‘é–‰é—œé–‰çš„å¦‚ä½•äº†ï¹–
+  emote çœ‹èµ·ä¾†ååˆ†ç„¦æ€¥â€¦
 else
   if rand(1)
-    say °Ú¡T§Úªº¨º­ÓªF¦è¤£¨£¤F¡T
-    say ¦p¦ó¹ï®v¤÷­Ì¥æ¥N¡S
-    emote ¥¿¦b¥|³B´M§ä($2search$0)¡C
+    say å•Šï¹—æˆ‘çš„é‚£å€‹æ±è¥¿ä¸è¦‹äº†ï¹—
+    say å¦‚ä½•å°å¸«çˆ¶å€‘äº¤ä»£ï¹–
+    emote æ­£åœ¨å››è™•å°‹æ‰¾($2search$0)ã€‚
   endif
 endif
 ~
@@ -69,7 +69,7 @@ Chance          100
 Text
 if ispc($n)
   if rand(30)
-    say ¤Ó¥i´c¤F§A¡TÅı§A¬İ¬İ¼F®`¡T
+    say å¤ªå¯æƒ¡äº†ä½ ï¹—è®“ä½ çœ‹çœ‹å²å®³ï¹—
     cast 'cast fire' $n
   endif
 endif

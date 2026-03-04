@@ -1,10 +1,10 @@
 Vnum            504
 Name            soldier~
-ShortDesc       ¤h§L~
-LongDesc        ¶¥¯Å»á§Cªº¤h§L(soldier)¦b¦¹¾Ş½m¡C
+ShortDesc       å£«å…µ~
+LongDesc        éšç´šé —ä½çš„å£«å…µ(soldier)åœ¨æ­¤æ“ç·´ã€‚
 ~
 Description
-§A¬İ¥L¤@°Æ»{¯uªº¼Ò¼Ë¡M¦ü¥G·Q­n¦³¤@µf§@¬°¡C
+ä½ çœ‹ä»–ä¸€å‰¯èªçœŸçš„æ¨¡æ¨£ï¹ä¼¼ä¹æƒ³è¦æœ‰ä¸€ç•ªä½œç‚ºã€‚
 ~
 StayArea        Yes
 AutoSetValue    Yes

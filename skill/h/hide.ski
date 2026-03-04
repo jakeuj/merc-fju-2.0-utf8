@@ -1,7 +1,7 @@
 Name            hide~
-Cname           ���óN~
+Cname           隱藏術~
 Slot            SLOT_HIDE
-Msgoff          �A�S�X�A�����ܡC~
+Msgoff          你露出你的行蹤。~
 Function        skill_hide~
 Position        POS_STANDING
 Type            TAR_CHAR_SELF

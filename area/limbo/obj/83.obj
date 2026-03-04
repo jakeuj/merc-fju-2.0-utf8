@@ -1,9 +1,9 @@
 Vnum            83
 Name            bastard axe~
-ShortDesc       »a¯T¨¸©ò~
+ShortDesc       è’¼ç‹¼é‚ªæ–§~
 Description
-³o¬O¤@§â·¥¨ä¨H­«ªº¾Ô©ò(bastard axe)¡C¾Ú»¡¸Ì­±¦³µÛ¨¸´cªº¤O¶q¡C~
-Unit            §â~
+é€™æ˜¯ä¸€æŠŠæ¥µå…¶æ²ˆé‡çš„æˆ°æ–§(bastard axe)ã€‚æ“šèªªè£¡é¢æœ‰è‘—é‚ªæƒ¡çš„åŠ›é‡ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

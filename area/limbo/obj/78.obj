@@ -1,9 +1,9 @@
 Vnum            78
 Name            mandyas cloth~
-ShortDesc       µµ»A¦çªA~
+ShortDesc       ç´«ç¿ è¡£æœ~
 Description
-¤@¥óÂ´¤uºë²Óªºµµ¦âÂÍµ·½è¦çªA(cloth)¡M¤W­±Æ^µÛ¯Qª÷¡M¥i¨£¥¦ªº¦W¶Q¡C~
-Unit            ¥ó~
+ä¸€ä»¶ç¹”å·¥ç²¾ç´°çš„ç´«è‰²èŸ¬çµ²è³ªè¡£æœ(cloth)ï¹ä¸Šé¢é‘²è‘—çƒé‡‘ï¹å¯è¦‹å®ƒçš„åè²´ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

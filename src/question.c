@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -51,7 +51,7 @@ FUNCTION( do_query )
 
   if ( !question_list )
   {
-    act( "¹ï¤£°_¡M$t¨S¦³¥ô¦óªº°İÃD¶°¸ê®Æ¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$tæ²’æœ‰ä»»ä½•çš„å•é¡Œé›†è³‡æ–™ï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -60,7 +60,7 @@ FUNCTION( do_query )
   if ( arg[0] == '\x0' )
   {
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m¶¶§Ç ¦¸¼Æ µª¿ù ¼ĞÃD                       "
+    send_to_buffer( "\e[1;33;44mé †åº æ¬¡æ•¸ ç­”éŒ¯ æ¨™é¡Œ                       "
               "                                  \e[0m\n\r" );
 
     loop = 0;
@@ -75,25 +75,25 @@ FUNCTION( do_query )
   {
     if ( QuestionLock == TRUE )
     {
-      send_to_char( "¥Ø«eµLªkµ¹¤©ÃD¥Ø´ú¸Õ¡C\n\r", ch );
+      send_to_char( "ç›®å‰ç„¡æ³•çµ¦äºˆé¡Œç›®æ¸¬è©¦ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "¹ï¤£°_¡M§A­n¥XÃD¥Øµ¹¨º­Ó¤H¦^µª©O¡S\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ è¦å‡ºé¡Œç›®çµ¦é‚£å€‹äººå›ç­”å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_world( ch, arg + 1 ) ) )
     {
-      act( "§ä¤£¨ì§Aªº¹ï¶H $2$T$0¡C", ch, NULL, arg+1, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ çš„å°è±¡ $2$T$0ã€‚", ch, NULL, arg+1, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim->answer )
     {
-      act( "$N¥¿¦b¦^µªÃD¥Ø¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Næ­£åœ¨å›ç­”é¡Œç›®ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -103,25 +103,25 @@ FUNCTION( do_query )
       || victim->was_in_room
       || victim->position == POS_FIGHTING )
     {
-      act( "¹ï¤£°_¡M$N¥Ø«e¤£¾A¦X¦^µªÃD¥Ø¡T", ch, NULL, victim, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$Nç›®å‰ä¸é©åˆå›ç­”é¡Œç›®ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( victim == ch )
     {
-      send_to_char( "§A¬°¤°»ò­n¥XÃD¥Øµ¹¦Û¤vµª©O¡S\n\r", ch );
+      send_to_char( "ä½ ç‚ºä»€éº¼è¦å‡ºé¡Œç›®çµ¦è‡ªå·±ç­”å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( get_trust( victim ) >= get_trust( ch ) )
     {
-      act( "$Nªºµ¥¯Å¤ñ§AÁÙ­n°ª¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Nçš„ç­‰ç´šæ¯”ä½ é‚„è¦é«˜ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     give_question( victim );
 
-    act( "$n¥X¤F¤@­ÓÃD¥Øµ¹$N¦^µª¡T", ch, NULL, victim, TO_CHAR );
+    act( "$nå‡ºäº†ä¸€å€‹é¡Œç›®çµ¦$Nå›ç­”ï¹—", ch, NULL, victim, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -129,19 +129,19 @@ FUNCTION( do_query )
   {
     if ( !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "§A¨S¦³§ó°ÊÂê©wªºÅv§Q¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ›´å‹•é–å®šçš„æ¬Šåˆ©ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( QuestionLock == FALSE )
     {
-      send_to_char( "§A§â°İÃD¸ê®ÆÂê©w¤F¡C\n\r", ch );
+      send_to_char( "ä½ æŠŠå•é¡Œè³‡æ–™é–å®šäº†ã€‚\n\r", ch );
       QuestionLock = TRUE;
       RETURN_NULL();
     }
     else
     {
-      send_to_char( "§A§â°İÃD¸ê®ÆÂê©w¨ú®ø¤F¡C\n\r", ch );
+      send_to_char( "ä½ æŠŠå•é¡Œè³‡æ–™é–å®šå–æ¶ˆäº†ã€‚\n\r", ch );
       QuestionLock = FALSE;
       RETURN_NULL();
     }
@@ -153,19 +153,19 @@ FUNCTION( do_query )
 
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "§A­n¹î¬İ½Öªº°İÃD¡S\n\r", ch );
+      send_to_char( "ä½ è¦å¯Ÿçœ‹èª°çš„å•é¡Œï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_world( ch, arg ) ) )
     {
-      act( "¹ï¤£°_¡M§ä¤£¨ì§Aªº¹ï¶H $2$T$0¡T", ch, NULL, arg, TO_CHAR );
+      act( "å°ä¸èµ·ï¹æ‰¾ä¸åˆ°ä½ çš„å°è±¡ $2$T$0ï¹—", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !victim->answer )
     {
-      act( "¹ï¤£°_¡M$N¨Ã¨S¦³¦^µª°İÃD¡T", ch, NULL, victim, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$Nä¸¦æ²’æœ‰å›ç­”å•é¡Œï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -178,19 +178,19 @@ FUNCTION( do_query )
 
     if ( arg[0] == '\x0' )
     {
-      send_to_char( "§A­n¸Ñ°£½Öªº°İÃD¡S\n\r", ch );
+      send_to_char( "ä½ è¦è§£é™¤èª°çš„å•é¡Œï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_world( ch, arg ) ) )
     {
-      act( "¹ï¤£°_¡M§ä¤£¨ì§Aªº¹ï¶H $2$T$0¡T", ch, NULL, arg, TO_CHAR );
+      act( "å°ä¸èµ·ï¹æ‰¾ä¸åˆ°ä½ çš„å°è±¡ $2$T$0ï¹—", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !victim->answer )
     {
-      act( "¹ï¤£°_¡M$N¨Ã¨S¦³¦^µª°İÃD¡T", ch, NULL, victim, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$Nä¸¦æ²’æœ‰å›ç­”å•é¡Œï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -199,18 +199,18 @@ FUNCTION( do_query )
     victim->answer = NULL;
     if ( victim->pcdata ) victim->pcdata->ply = 0;
 
-    send_to_char( "§A¥i¥H¤£¥Î¦^µª°İÃD¤F¡T\n\r", victim );
-    if ( ch != victim ) act( "$N¥i¥H¤£¥Î¦^µª°İÃD¡T", ch, NULL, victim, TO_CHAR );
+    send_to_char( "ä½ å¯ä»¥ä¸ç”¨å›ç­”å•é¡Œäº†ï¹—\n\r", victim );
+    if ( ch != victim ) act( "$Nå¯ä»¥ä¸ç”¨å›ç­”å•é¡Œï¹—", ch, NULL, victim, TO_CHAR );
   }
 
   else if ( !str_prefix( arg, "info" ) )
   {
     print_to_char( ch,
-      "½m¥\\¦¸¼Æ­­¨î¡R%d ¦¸\n\r"
-      "½m ¥\\ ³B »@ ¡R%d ¤Ñ\n\r"
-      "§@ µª ®É ¶¡  ¡R%d ¬í\n\r"
-      "µª ¿ù ¦¸ ¼Æ  ¡R%d ¦¸\n\r"
-      "´£ ¿ô ¶¡ ¹j  ¡R%d ¬í\n\r"
+      "ç·´åŠŸ\æ¬¡æ•¸é™åˆ¶ï¹•%d æ¬¡\n\r"
+      "ç·´ åŠŸ\ è™• ç½° ï¹•%d å¤©\n\r"
+      "ä½œ ç­” æ™‚ é–“  ï¹•%d ç§’\n\r"
+      "ç­” éŒ¯ æ¬¡ æ•¸  ï¹•%d æ¬¡\n\r"
+      "æ é†’ é–“ éš”  ï¹•%d ç§’\n\r"
       , PlyQuota
       , PlyPenalty
       , QuestionTimer
@@ -224,13 +224,13 @@ FUNCTION( do_query )
 
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "½Ğ¿é¤J±ı¬d¸ßªº¸¹½X¶¶§Ç¡T\n\r", ch );
+      send_to_char( "è«‹è¼¸å…¥æ¬²æŸ¥è©¢çš„è™Ÿç¢¼é †åºï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( count = atoi( arg ) ) <= 0 )
     {
-      send_to_char( "§Aªº¶¶§Ç¸¹½X¤£¦X²z¡T\n\r", ch );
+      send_to_char( "ä½ çš„é †åºè™Ÿç¢¼ä¸åˆç†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -240,7 +240,7 @@ FUNCTION( do_query )
       if ( ++loop == count )
       {
         clear_buffer();
-        send_to_buffer( "§Ç¸¹¡R %d\n\rÃD¥Ø¡R %s\n\r"
+        send_to_buffer( "åºè™Ÿï¹• %d\n\ré¡Œç›®ï¹• %s\n\r"
           , count, pQuestion->title );
 
         for ( cycle = 0; cycle < MAX_QUESTION; cycle++ )
@@ -248,7 +248,7 @@ FUNCTION( do_query )
           if ( !pQuestion->question[cycle] || !*pQuestion->question[cycle] )
             break;
 
-          send_to_buffer( "µª®×¡R %s %s\n\r"
+          send_to_buffer( "ç­”æ¡ˆï¹• %s %s\n\r"
             , YESNO( pQuestion->answer[cycle] ), pQuestion->question[cycle] );
         }
 
@@ -257,13 +257,13 @@ FUNCTION( do_query )
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M§ä¤£¨ìK¨º­Ó§Ç¸¹ªº°İÃD¸ê®Æ¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ‰¾ä¸åˆ°Ké‚£å€‹åºè™Ÿçš„å•é¡Œè³‡æ–™ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
   else
   {
-    send_to_char( "§Aªº°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß query ªº¨Ï¥Î¤èªk ¡T\n\r", ch );
+    send_to_char( "ä½ çš„åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢ query çš„ä½¿ç”¨æ–¹æ³• ï¹—\n\r", ch );
   }
   RETURN_NULL();
 }
@@ -317,13 +317,13 @@ void question_update( void )
 
         if ( jail_someone( NULL, ch, PlyPenalty, FALSE ) )
         {
-          sprintf( buf, "%s¬°¾÷¾¹¤H¶ûºÃ¥Ç¡M³Q¨t²Î®»°_¨Ó¤F¡T"
+          sprintf( buf, "%sç‚ºæ©Ÿå™¨äººå«Œç–‘çŠ¯ï¹è¢«ç³»çµ±æ‰èµ·ä¾†äº†ï¹—"
             , mob_name( NULL, ch ) );
 
-          talk_channel_2( buf, CHANNEL_BULLETIN, "¤½§i" );
+          talk_channel_2( buf, CHANNEL_BULLETIN, "å…¬å‘Š" );
 
-          send_to_char( "¦]¬°§A¦b­­®É¤º¥¼¯à¸Ñµª¡M"
-            "©Ò¥H¨t²Î»{©w§A¬O¾÷¾¹¤H¡T\n\r", ch );
+          send_to_char( "å› ç‚ºä½ åœ¨é™æ™‚å…§æœªèƒ½è§£ç­”ï¹"
+            "æ‰€ä»¥ç³»çµ±èªå®šä½ æ˜¯æ©Ÿå™¨äººï¹—\n\r", ch );
 
           pQuestion->fail++;
           free_struct( pAnswer, STRUCT_ANSWER_DATA );
@@ -332,7 +332,7 @@ void question_update( void )
 
         else
         {
-          send_to_char( "§A¬°¾÷¾¹¤H¶ûºÃ¥Ç¡T\n\r", ch );
+          send_to_char( "ä½ ç‚ºæ©Ÿå™¨äººå«Œç–‘çŠ¯ï¹—\n\r", ch );
         }
       }
 
@@ -361,7 +361,7 @@ void send_answer( CHAR_DATA * ch, CHAR_DATA * looker )
     || !( pAnswer = ch->answer )
     || !( pQuestion = pAnswer->question ) )
   {
-    mudlog( LOG_DEBUG, "send_answer: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "send_answer: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -369,8 +369,8 @@ void send_answer( CHAR_DATA * ch, CHAR_DATA * looker )
 
   clear_buffer();
   send_to_buffer(
-    "¥Ñ©ó§A¦³­«ÂĞ½m¥\\ªº±¡ªp¡M©Ò¥H¨t²Î¥X­Ó°İÃD¦Ò¦Ò§A¡R\n\r%s"
-    "ÃD¥Ø¡R\e[1;32m%s\e[0m\n\r"
+    "ç”±æ–¼ä½ æœ‰é‡è¦†ç·´åŠŸ\çš„æƒ…æ³ï¹æ‰€ä»¥ç³»çµ±å‡ºå€‹å•é¡Œè€ƒè€ƒä½ ï¹•\n\r%s"
+    "é¡Œç›®ï¹•\e[1;32m%s\e[0m\n\r"
     , VERTICAL_LINE, pQuestion->title );
 
   for ( loop = 0; loop < MAX_QUESTION; loop++ )
@@ -386,8 +386,8 @@ void send_answer( CHAR_DATA * ch, CHAR_DATA * looker )
   }
 
   chinese_number( pAnswer->timer, buf );
-  send_to_buffer( "\n\r³Ñ¤U%s%s\e[0m¬í¥i¥H°µµª(answer)¡T"
-    "¦pªGµª®×¬° 1¡M«h¿é¤J \e[1;32manswer 1\e[0m¡M¥H¦¹Ãş±À¡T\n\r%s"
+  send_to_buffer( "\n\rå‰©ä¸‹%s%s\e[0mç§’å¯ä»¥åšç­”(answer)ï¹—"
+    "å¦‚æœç­”æ¡ˆç‚º 1ï¹å‰‡è¼¸å…¥ \e[1;32manswer 1\e[0mï¹ä»¥æ­¤é¡æ¨ï¹—\n\r%s"
       , pAnswer->timer <= 30 ? "\e[1;31m\a\a" : ""
       , buf, VERTICAL_LINE );
 
@@ -410,13 +410,13 @@ void give_question( CHAR_DATA * ch )
 
   if ( !ch || !verify_char( ch ) || IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "give_question: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "give_question: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
   if ( ch->answer )
   {
-    mudlog( LOG_DEBUG, "give_question: ¨Ó·½¤w¦³°İÃD." );
+    mudlog( LOG_DEBUG, "give_question: ä¾†æºå·²æœ‰å•é¡Œ." );
     RETURN_NULL();
   }
 

@@ -1,9 +1,9 @@
 Vnum            109
 Name            vellum~
-ShortDesc       �ϥ֯�~
+ShortDesc       羊皮紙~
 Description
 ~
-Unit            �i~
+Unit            張~
 ItemType        ITEM_VELLUM
 Takeable        Yes
 NoSave          Yes

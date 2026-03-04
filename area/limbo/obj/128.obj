@@ -1,11 +1,11 @@
 Vnum            128
 Name            x'mas hat~
-ShortDesc       [1;33m¸t½Ï[1;35m´U[0m~
+ShortDesc       [1;33mè–èª•[1;35må¸½[0m~
 Description
-³o¬O­Ó¯«©_ªº¸t½Ï´UËç¡ã¶Ç»¡¯à°÷¹³Å]³N®v¤@¯ëªº±q´U¤l¤¤
-®³¥X³\¦hªºªF¦è¡M¦ü¥G¯uªº«Ü¦³½ì¡K
+é€™æ˜¯å€‹ç¥žå¥‡çš„è–èª•å¸½å‘¦âˆ¼å‚³èªªèƒ½å¤ åƒé­”è¡“å¸«ä¸€èˆ¬çš„å¾žå¸½å­ä¸­
+æ‹¿å‡ºè¨±å¤šçš„æ±è¥¿ï¹ä¼¼ä¹ŽçœŸçš„å¾ˆæœ‰è¶£â€¦
 ~
-Unit            ³»~
+Unit            é ‚~
 ItemType        ITEM_CONTAINER
 WearLoc         ITEM_WEAR_HEAD
 Takeable        Yes

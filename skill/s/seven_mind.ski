@@ -1,5 +1,5 @@
 Name            seven mind~
-Cname           �C�_�F���B~
+Cname           七奇靈馭步~
 Slot            SLOT_SEVEN_MIND
 Msgoff          ~
 Position        POS_FIGHTING
@@ -39,7 +39,7 @@ Help            ~
 
 #Damage
 Description
-$n�ϥX�y$W�D��Z$Z�z����@�̡M�p�D��뻴�F�M�ƹL$N�����ǡM���L�F$N�������C~
+$n使出『$W蛇行訣$Z』身行一晃﹐如蛇行般輕靈﹐滑過$N的身旁﹐躲過了$N的攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -49,7 +49,7 @@ End
 
 #Damage
 Description
-$n�ϥX�y$G�b�R��$Z�z���Φp�b�M�����R�W���ݡM�������{�L$N�������C~
+$n使出『$G鶴沖天$Z』身形如鶴﹐飛身沖上雲端﹐輕易的閃過$N的攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -59,7 +59,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$P�N��]$Z�z$n�n���N�M¶��$N���l���L�S�ۡM�°����M�X�صo�ۡC~
+$n施展『$P鷹凌霄$Z』$n好比飛鷹﹐繞著$N身子左盤又旋﹐兜圈急轉﹐趁隙發招。~
 Chance          10
 Value           20
 Parry           0
@@ -69,7 +69,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$Y�񽺻R$Z�z��$N����աM�ɫl�@�e�M���G$N����զp�H�J�j���@��C~
+$n施展『$Y鳳蝶舞$Z』把$N的攻勢﹐借勁一送﹐結果$N的攻勢如沈入大海一般。~
 Chance          10
 Value           20
 Parry           0
@@ -79,7 +79,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$B�s�u��$Z�z��B��СM�o�X�s�u��\�@��M��$N����աM�����˸ѡC~
+$n施展『$B龍吟行$Z』氣運單田﹐發出龍吟氣功護體﹐把$N的攻勢﹐輕易瓦解。~
 Chance          10
 Value           20
 Parry           0
@@ -89,8 +89,8 @@ End
 
 #Damage
 Description
-$n�I�i�y$R���ܤ�$Z�z�u��$n�����p���I����M�p���Q�����M�j�㯫�¡M$N����է�
-���L�ΡC~
+$n施展『$R麟蹤火$Z』只見$n全身如火焚身般﹐如火麒麟附體﹐大顯神威﹐$N的攻勢完
+全無用。~
 Chance          10
 Value           20
 Parry           0
@@ -100,7 +100,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$S���D��$Z�z$n���p�r��@����r�M�ʧ@�F���M���G��$N����աM���Y�L�@�C~
+$n施展『$S虎躍衝$Z』$n有如猛虎一般兇猛﹐動作靈活﹐結果把$N的攻勢﹐視若無睹。~
 Chance          10
 Value           20
 Parry           0

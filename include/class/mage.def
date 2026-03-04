@@ -1,10 +1,10 @@
 Vnum            CLASS_MAGE
 Name            mage~
-Cname           ╓я  ╝v~
-Title           ╓ёфF╓ё╕╛©З~
+Cname           Е╓╘  Е╦╚~
+Title           Д╦█И²┬Д╦█Ф■╤И▄╒~
 LowerLimit      50
 UpperLimit      L_HER
-LimitMsg        $Y╔H╙k╝v╙╨╕ш╢L╧Й╕b╓ё╝eЁ\╕b╕Ё╓H╧О╕ш╓v╢╖╝╠║M╜╠╧О$N╙╨╗се╖║M╕A╓]╖т╗Э╓ё╓F╕с╣o╔X╜P╘R╓@ю╩║T$Z~
+LimitMsg        $YД╩╔ФЁ∙Е╦╚Г └Х┤╙Е╟┼Е╞╕Е°╗Д╦█Е╝╧Х╗╠Е°╗Ф°┴Д╨╨Е╟█Х┤╙Е╥╠Ф▐╝Ф▀ЁО╧░И²╒Е╟█$NГ └Д╬├Х╔╡О╧░Е├█Д╧÷Е©█Е▐≈Д╦█Д╨├Х─▄Г≥╪Е┤╨Х┤╢Е▒╫Д╦─Ф⌠┼О╧≈$Z~
 Limit           3500
 Multiplier      35
 RebirthGold     10000

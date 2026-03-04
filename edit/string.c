@@ -9,28 +9,28 @@ void    condense_string ( STRING_INFO * );
 #define REAL_ADDRESS    ( ( string->address ) + ( Y_SHIFT ) + ( cursor_x ) )
 #define Y_SHIFT         ( cursor_y ) * ( string->x_len + 1 )
 
-/* ¨D§Uªº¦r¦ê */
+/* æ±‚åŠ©çš„å­—ä¸² */
 
-char * const help_message = "^E ²M°£¦Ü¦æ¥½ ^K §R°£ ^N ³sµ² ^P ²M°£"
-                            "PgDn ¦æ¥½ Enter ´«¦æ TAB §¹¦¨¿é¤J";
+char * const help_message = "^E æ¸…é™¤è‡³è¡Œæœ« ^K åˆªé™¤ ^N é€£çµ ^P æ¸…é™¤"
+                            "PgDn è¡Œæœ« Enter æ›è¡Œ TAB å®Œæˆè¼¸å…¥";
 
-/* µøµ¡¦¡¿é¤J¤@­Ó¦r¦ê, »İ­n¶Ç¤J¤@­Óµ²ºc¦p¤U
+/* è¦–çª—å¼è¼¸å…¥ä¸€å€‹å­—ä¸², éœ€è¦å‚³å…¥ä¸€å€‹çµæ§‹å¦‚ä¸‹
 
           struct string_info
           {
-            int    x_pos            --------> ¦r¦ê¤@¶}©lªº X ®y¼Ğ
-            int    y_pos;           --------> ¦r¦ê¤@¶}©lªº Y ®y¼Ğ
-            int    x_len;           --------> ¦r¦ê¥i¥H¦³´X¦æ
-            int    y_len;           --------> ¦r¦ê¥i¥H¦³´X¦C
-            int    front_color;     --------> ¦r¦êªº«e´ºÃC¦â
-            int    back_color;      --------> ¦r¦êªº­I´ºÃC¦â
-            int    save_x_cursor;   --------> ¤W¤@¦¸ x ®y¼Ğªº¦ì¸m
-            int    save_y_cursor;   --------> ¤W¤@¦¸ y ®y¼Ğªº¦ì¸m
-            int    org_front_color; --------> ¦r¦ê­ì©lªº«e´ºÃC¦â
-            int    org_back_color;  --------> ¦r¦ê­ì©lªº­I´ºÃC¦â
-            int    smash;           --------> ¦r¦ê¬O§_¥i¥H¦³~²Å¸¹
-            int    number;          --------> ¦r¦ê¬O§_¬°¼Æ¦r¦r¦ê
-            char * address;         --------> ¦r¦êªº¦ì§}
+            int    x_pos            --------> å­—ä¸²ä¸€é–‹å§‹çš„ X åº§æ¨™
+            int    y_pos;           --------> å­—ä¸²ä¸€é–‹å§‹çš„ Y åº§æ¨™
+            int    x_len;           --------> å­—ä¸²å¯ä»¥æœ‰å¹¾è¡Œ
+            int    y_len;           --------> å­—ä¸²å¯ä»¥æœ‰å¹¾åˆ—
+            int    front_color;     --------> å­—ä¸²çš„å‰æ™¯é¡è‰²
+            int    back_color;      --------> å­—ä¸²çš„èƒŒæ™¯é¡è‰²
+            int    save_x_cursor;   --------> ä¸Šä¸€æ¬¡ x åº§æ¨™çš„ä½ç½®
+            int    save_y_cursor;   --------> ä¸Šä¸€æ¬¡ y åº§æ¨™çš„ä½ç½®
+            int    org_front_color; --------> å­—ä¸²åŸå§‹çš„å‰æ™¯é¡è‰²
+            int    org_back_color;  --------> å­—ä¸²åŸå§‹çš„èƒŒæ™¯é¡è‰²
+            int    smash;           --------> å­—ä¸²æ˜¯å¦å¯ä»¥æœ‰~ç¬¦è™Ÿ
+            int    number;          --------> å­—ä¸²æ˜¯å¦ç‚ºæ•¸å­—å­—ä¸²
+            char * address;         --------> å­—ä¸²çš„ä½å€
           }
 */
 
@@ -45,32 +45,32 @@ void get_string( STRING_INFO * string )
   char   input;
   char * tempaddress;
 
-  /* ³]©w x ,y ¬°¤W¤@¦¸ªº®y¼Ğ */
+  /* è¨­å®š x ,y ç‚ºä¸Šä¸€æ¬¡çš„åº§æ¨™ */
   cursor_x    = string->save_x_cursor;
   cursor_y    = string->save_y_cursor;
 
-  /* ³]©w¤@¨Ç°ò¥»ªº°Ñ¼Æ */
+  /* è¨­å®šä¸€äº›åŸºæœ¬çš„åƒæ•¸ */
   insert_mode = 0;
   pic_change  = 1;
 
-  /* Åã¥Ü¨D§Uµe­± */
+  /* é¡¯ç¤ºæ±‚åŠ©ç•«é¢ */
   show_help();
 
   while ( TRUE )
   {
 
-    /* ¦pªGµe­±¦³§ïÅÜ, «h§âµøµ¡µe­±Ã¸¥X */
+    /* å¦‚æœç•«é¢æœ‰æ”¹è®Š, å‰‡æŠŠè¦–çª—ç•«é¢ç¹ªå‡º */
 
     if ( pic_change == 1 ) print_long_string( 0, string );
 
-    /* Åã¥Ü insert ªºª¬ºA */
+    /* é¡¯ç¤º insert çš„ç‹€æ…‹ */
     show_insert( insert_mode );
 
-    /* Åã¥Ü´å¼Ğªº©Ò¦b */
+    /* é¡¯ç¤ºæ¸¸æ¨™çš„æ‰€åœ¨ */
     show_cursor( string->x_pos + cursor_x , string->y_pos + cursor_y
       , insert_mode );
 
-    /* ¤º©wµe­±·|¦³ÅÜ°Ê */
+    /* å…§å®šç•«é¢æœƒæœ‰è®Šå‹• */
     pic_change = 1;
 
     switch( input = get_key() )
@@ -84,10 +84,10 @@ void get_string( STRING_INFO * string )
         switch ( input = get_key() )
         {
 
-         /* ±N´å¼Ğ¦^¨ì¦æ­º */
+         /* å°‡æ¸¸æ¨™å›åˆ°è¡Œé¦– */
          case MY_CURSOR_HOME  :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            #if defined (unix)
@@ -97,11 +97,11 @@ void get_string( STRING_INFO * string )
            cursor_x = 0;
            break;
 
-         /* ±N´å¼Ğ²¾¨ì¥»¦æ¦r¦êªº¥½ºİ */
+         /* å°‡æ¸¸æ¨™ç§»åˆ°æœ¬è¡Œå­—ä¸²çš„æœ«ç«¯ */
 
          case MY_CURSOR_END   :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            #if defined (unix)
@@ -114,10 +114,10 @@ void get_string( STRING_INFO * string )
 
            break;
 
-         /* ±N´å¼Ğ¦V¥k²¾¤@®æ */
+         /* å°‡æ¸¸æ¨™å‘å³ç§»ä¸€æ ¼ */
          case MY_CURSOR_RIGHT :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            if ( ++cursor_x == string->x_len )
@@ -135,10 +135,10 @@ void get_string( STRING_INFO * string )
            }
            break;
 
-         /* §â´å¼Ğ¦V¥ª²¾¤@®æ */
+         /* æŠŠæ¸¸æ¨™å‘å·¦ç§»ä¸€æ ¼ */
          case MY_CURSOR_LEFT  :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            if ( --cursor_x < 0 )
@@ -156,31 +156,31 @@ void get_string( STRING_INFO * string )
 
            break;
 
-         /* §â´å¼Ğ¦V¤W²¾¤@®æ */
+         /* æŠŠæ¸¸æ¨™å‘ä¸Šç§»ä¸€æ ¼ */
 
          case MY_CURSOR_UP     :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            if ( cursor_y > 0 ) cursor_y--;
            break;
 
-         /* §â´å¼Ğ¦V¤U²¾¤@®æ */
+         /* æŠŠæ¸¸æ¨™å‘ä¸‹ç§»ä¸€æ ¼ */
 
          case MY_CURSOR_DOWN   :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            if ( ++cursor_y == string->y_len ) cursor_y--;
            break;
 
-         /* ¤Á´«´¡¤J¼Ò¦¡ */
+         /* åˆ‡æ›æ’å…¥æ¨¡å¼ */
 
          case MY_CURSOR_INSERT :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            #if defined (unix)
@@ -190,7 +190,7 @@ void get_string( STRING_INFO * string )
            insert_mode = ( ++insert_mode ) & 1;
            break;
 
-         /* §R°£¤@­Ó¦r¤¸ */
+         /* åˆªé™¤ä¸€å€‹å­—å…ƒ */
 
          case MY_CURSOR_DELETE :
 
@@ -211,11 +211,11 @@ void get_string( STRING_INFO * string )
 
           break;
 
-         /* ±N´å¼Ğ²¾¨ì¥»¦æªº¥½ºİ */
+         /* å°‡æ¸¸æ¨™ç§»åˆ°æœ¬è¡Œçš„æœ«ç«¯ */
 
          case MY_CURSOR_PGDN   :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            #if defined (unix)
@@ -225,10 +225,10 @@ void get_string( STRING_INFO * string )
            cursor_x = string->x_len - 1;
            break;
 
-         /* Åã¥Ü¨D§Uµe­± , ¥u¦b DOS ¦³¥Î */
+         /* é¡¯ç¤ºæ±‚åŠ©ç•«é¢ , åªåœ¨ DOS æœ‰ç”¨ */
          case MY_CURSOR_F1     :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            get_help();
@@ -236,7 +236,7 @@ void get_string( STRING_INFO * string )
 
          case MY_CURSOR_PGUP   :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            #if defined (unix)
@@ -247,7 +247,7 @@ void get_string( STRING_INFO * string )
 
          default               :
 
-           /* µe­±¤£·|§ó°Ê */
+           /* ç•«é¢ä¸æœƒæ›´å‹• */
            pic_change = 0;
 
            break;
@@ -255,41 +255,41 @@ void get_string( STRING_INFO * string )
 
         break;
 
-      /* ©¹¤U²¾¤@¦æ, ­Y¥u¦³¤@¦æ«h§¹¦¨¿é¤J */
+      /* å¾€ä¸‹ç§»ä¸€è¡Œ, è‹¥åªæœ‰ä¸€è¡Œå‰‡å®Œæˆè¼¸å…¥ */
       case MY_KEY_RETURN :
 
         {
-          /* ­Y¥u¦³¤@¦æ«h§¹¦¨¿é¤J */
+          /* è‹¥åªæœ‰ä¸€è¡Œå‰‡å®Œæˆè¼¸å…¥ */
           if ( string->y_len == 1 )
           {
 
-           /* °O¿ı³o¤@¦¸³Ì«áªº x , y ®y¼Ğ */
+           /* è¨˜éŒ„é€™ä¸€æ¬¡æœ€å¾Œçš„ x , y åº§æ¨™ */
             string->save_x_cursor = cursor_x;
             string->save_y_cursor = cursor_y;
 
-            /* §â¦r¦ê«á­±µL¥ÎªºªÅ¥Õ®ø±¼ */
+            /* æŠŠå­—ä¸²å¾Œé¢ç„¡ç”¨çš„ç©ºç™½æ¶ˆæ‰ */
             condense_string( string );
 
-            /* ¦pªG¦r¦ê¤£¯à¦³ ~ ²Å¸¹«h§â ~ ÅÜ¦¨ - */
+            /* å¦‚æœå­—ä¸²ä¸èƒ½æœ‰ ~ ç¬¦è™Ÿå‰‡æŠŠ ~ è®Šæˆ - */
             if ( string->smash == SMASH_EXECUTE )
               smash_string( string );
 
-            /* ²M°£¨D§Uµe­± */
+            /* æ¸…é™¤æ±‚åŠ©ç•«é¢ */
             clear_help();
 
-            /* ±N´å¼Ğ®ø°£ */
+            /* å°‡æ¸¸æ¨™æ¶ˆé™¤ */
             set_cursor_type( NO_CURSOR );
 
-            /* ±N¦r¦êÁÙ­ì¦¨­ì¨ÓªºÃC¦â */
+            /* å°‡å­—ä¸²é‚„åŸæˆåŸä¾†çš„é¡è‰² */
             print_long_string( 1 , string );
 
             return;
            }
 
-          /* ­Y¦b³Ì©³¤@¦æ, «h¤£³B²z */
+          /* è‹¥åœ¨æœ€åº•ä¸€è¡Œ, å‰‡ä¸è™•ç† */
           if ( cursor_y == string->y_len - 1 ) break;
 
-          /* ©¹¤U²¾¤@¦æ */
+          /* å¾€ä¸‹ç§»ä¸€è¡Œ */
           tempaddress = string->address
             + ( ( string->y_len - 1 ) * ( string->x_len + 1 ) );
 
@@ -330,32 +330,32 @@ void get_string( STRING_INFO * string )
           break;
         }
 
-      /* §¹¦¨¿é¤J */
+      /* å®Œæˆè¼¸å…¥ */
 
       case MY_KEY_TAB :
 
-        /* °O¿ı³o¤@¦¸³Ì«áªº x , y ®y¼Ğ */
+        /* è¨˜éŒ„é€™ä¸€æ¬¡æœ€å¾Œçš„ x , y åº§æ¨™ */
         string->save_x_cursor = cursor_x;
         string->save_y_cursor = cursor_y;
 
-        /* §â¦r¦ê«á­±µL¥ÎªºªÅ¥Õ®ø±¼ */
+        /* æŠŠå­—ä¸²å¾Œé¢ç„¡ç”¨çš„ç©ºç™½æ¶ˆæ‰ */
         condense_string( string );
 
-        /* ¦pªG¦r¦ê¤£¯à¦³ ~ ²Å¸¹«h§â ~ ÅÜ¦¨ - */
+        /* å¦‚æœå­—ä¸²ä¸èƒ½æœ‰ ~ ç¬¦è™Ÿå‰‡æŠŠ ~ è®Šæˆ - */
         if ( string->smash == 1 ) smash_string( string );
 
-        /* ²M°£¨D§Uµe­± */
+        /* æ¸…é™¤æ±‚åŠ©ç•«é¢ */
         clear_help();
 
-        /* ±N´å¼Ğ®ø°£ */
+        /* å°‡æ¸¸æ¨™æ¶ˆé™¤ */
         set_cursor_type( NO_CURSOR );
 
-        /* ±N¦r¦êÁÙ­ì¦¨­ì¨ÓªºÃC¦â */
+        /* å°‡å­—ä¸²é‚„åŸæˆåŸä¾†çš„é¡è‰² */
         print_long_string( 1 , string );
 
         return;
 
-      /* §R°£¤@¦æ */
+      /* åˆªé™¤ä¸€è¡Œ */
 
       case MY_KEY_CTRL_K :
 
@@ -384,7 +384,7 @@ void get_string( STRING_INFO * string )
 
         break;
 
-      /* ²M°£¤@¦æ */
+      /* æ¸…é™¤ä¸€è¡Œ */
 
       case MY_KEY_CTRL_P :
 
@@ -394,7 +394,7 @@ void get_string( STRING_INFO * string )
         cursor_x = 0;
         break;
 
-      /* §R°£¦Ü¦æ¥½ */
+      /* åˆªé™¤è‡³è¡Œæœ« */
 
       case MY_KEY_CTRL_E :
 
@@ -411,7 +411,7 @@ void get_string( STRING_INFO * string )
 
         }
 
-      /* ³sµ²¨â¦æ */
+      /* é€£çµå…©è¡Œ */
 
       case MY_KEY_CTRL_N :
 
@@ -458,7 +458,7 @@ void get_string( STRING_INFO * string )
           break;
         }
 
-      /* ­Ë°h²¾°£¤@­Ó¦r¤¸ */
+      /* å€’é€€ç§»é™¤ä¸€å€‹å­—å…ƒ */
       case MY_KEY_BACKSPACE :
 
         {
@@ -522,7 +522,7 @@ void get_string( STRING_INFO * string )
 
       default:
 
-        /* ¦pªG number ³]©w¬°1 , ¨º¥u¯à¿é¤J¼Æ¦r */
+        /* å¦‚æœ number è¨­å®šç‚º1 , é‚£åªèƒ½è¼¸å…¥æ•¸å­— */
         if ( ( !isdigit( input ) && input != '-' )
              && string->number == NUMBER_ONLY )
         {
@@ -530,7 +530,7 @@ void get_string( STRING_INFO * string )
           break;
         }
 
-        /* §P©w¬O§_¬O¥¿±`¦r¤¸©Î¬O¤¤¤å¦r¤¸ */
+        /* åˆ¤å®šæ˜¯å¦æ˜¯æ­£å¸¸å­—å…ƒæˆ–æ˜¯ä¸­æ–‡å­—å…ƒ */
 
         if ( !iscntrl(input) || IsChinese( input ) )
         {
@@ -574,7 +574,7 @@ void get_string( STRING_INFO * string )
   }
 }
 
-/* ¿é¤J¦r¦êªº¨D§Uµe­± */
+/* è¼¸å…¥å­—ä¸²çš„æ±‚åŠ©ç•«é¢ */
 
 void get_help( void )
 {
@@ -587,16 +587,16 @@ void get_help( void )
   color = LIGHTGREEN + ( BLUE << 4 );
   set_cursor_type( NO_CURSOR );
 
-  print_string( 19 , 10 , color , " ¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{ " );
-  print_string( 19 , 11 , color , " ¢xctrl+P  ²M°£¾ã¦æ.   <HOME> ²¾¨ì¦æ­º ¢x " );
-  print_string( 19 , 12 , color , " ¢xctrl+K  §R°£¾ã¦æ.   <END>  ²¾¨ì¤å¥½ ¢x " );
-  print_string( 19 , 13 , color , " ¢xctrl+E  ²M°£¦Ü¦æ¥½. <PgDw> ²¾¨ì¦æ¥½ ¢x " );
-  print_string( 19 , 14 , color , " ¢xctrl+N  ³sµ²¨â¦C    <Curs> ¤W¤U¥ª¥k ¢x " );
-  print_string( 19 , 15 , color , " ¢x<F1>    ¨D§U        <Back> ­Ë°h§R°£ ¢x " );
-  print_string( 19 , 16 , color , " ¢x<TAB>   §¹¦¨¿é¤J    <Ins>  ´¡¤J¼Ò¦¡ ¢x " );
-  print_string( 19 , 17 , color , " ¢x<ENTER> ´«¦æ        <Del>  §R°£¤å¦r ¢x " );
-  print_string( 19 , 18 , color , " ¢x           * «ö¥ô¦óÁäÄ~Äò *         ¢x " );
-  print_string( 19 , 19 , color , " ¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢} " );
+  print_string( 19 , 10 , color , " â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” " );
+  print_string( 19 , 11 , color , " â”‚ctrl+P  æ¸…é™¤æ•´è¡Œ.   <HOME> ç§»åˆ°è¡Œé¦– â”‚ " );
+  print_string( 19 , 12 , color , " â”‚ctrl+K  åˆªé™¤æ•´è¡Œ.   <END>  ç§»åˆ°æ–‡æœ« â”‚ " );
+  print_string( 19 , 13 , color , " â”‚ctrl+E  æ¸…é™¤è‡³è¡Œæœ«. <PgDw> ç§»åˆ°è¡Œæœ« â”‚ " );
+  print_string( 19 , 14 , color , " â”‚ctrl+N  é€£çµå…©åˆ—    <Curs> ä¸Šä¸‹å·¦å³ â”‚ " );
+  print_string( 19 , 15 , color , " â”‚<F1>    æ±‚åŠ©        <Back> å€’é€€åˆªé™¤ â”‚ " );
+  print_string( 19 , 16 , color , " â”‚<TAB>   å®Œæˆè¼¸å…¥    <Ins>  æ’å…¥æ¨¡å¼ â”‚ " );
+  print_string( 19 , 17 , color , " â”‚<ENTER> æ›è¡Œ        <Del>  åˆªé™¤æ–‡å­— â”‚ " );
+  print_string( 19 , 18 , color , " â”‚           * æŒ‰ä»»ä½•éµç¹¼çºŒ *         â”‚ " );
+  print_string( 19 , 19 , color , " â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ " );
 
   get_control_key();
 
@@ -604,20 +604,20 @@ void get_help( void )
 
 }
 
-/* ±o¨ì¤@¨Ç¯S®íªº«öÁä, ¶Ç¦^­È ¦p¤U
+/* å¾—åˆ°ä¸€äº›ç‰¹æ®Šçš„æŒ‰éµ, å‚³å›å€¼ å¦‚ä¸‹
 
-¶Ç¦^­È ´å¼Ğ¤W   RETURN_UP        1
-¶Ç¦^­È ´å¼Ğ¤U   RETURN_DOWN      2
-¶Ç¦^­È ´å¼Ğ¥ª   RETURN_LEFT      3
-¶Ç¦^­È ´å¼Ğ¥k   RETURN_RIGHT     4
-¶Ç¦^­È ´å¼ĞHOME RETURN_HOME      5
-¶Ç¦^­È ´å¼ĞEND  RETURN_END       6
-¶Ç¦^­È RETURN   RETURN_RETURN   10
-¶Ç¦^­È TAB      RETURN_TAB      11
-¶Ç¦^­È SPACE    RETURN_SPACE    12
-¶Ç¦^­È PGDN     RETURN_PGDN     13
-¶Ç¦^­È PGUP     RETURN_PGUP     14
-¨ä¥Lªº«öÁä      RETURN_NONE      0
+å‚³å›å€¼ æ¸¸æ¨™ä¸Š   RETURN_UP        1
+å‚³å›å€¼ æ¸¸æ¨™ä¸‹   RETURN_DOWN      2
+å‚³å›å€¼ æ¸¸æ¨™å·¦   RETURN_LEFT      3
+å‚³å›å€¼ æ¸¸æ¨™å³   RETURN_RIGHT     4
+å‚³å›å€¼ æ¸¸æ¨™HOME RETURN_HOME      5
+å‚³å›å€¼ æ¸¸æ¨™END  RETURN_END       6
+å‚³å›å€¼ RETURN   RETURN_RETURN   10
+å‚³å›å€¼ TAB      RETURN_TAB      11
+å‚³å›å€¼ SPACE    RETURN_SPACE    12
+å‚³å›å€¼ PGDN     RETURN_PGDN     13
+å‚³å›å€¼ PGUP     RETURN_PGUP     14
+å…¶ä»–çš„æŒ‰éµ      RETURN_NONE      0
 
 */
 
@@ -694,29 +694,29 @@ int get_control_key( void )
 
 }
 
-/* Åã¥Ü´¡¤J¼Ò¦¡ªºª¬ºA */
+/* é¡¯ç¤ºæ’å…¥æ¨¡å¼çš„ç‹€æ…‹ */
 
 void show_insert( int insert_mode )
 {
 
   if ( insert_mode == 0 )
-    print_string( 75 , 23 , WHITE , "¥¿±`" );
+    print_string( 75 , 23 , WHITE , "æ­£å¸¸" );
 
   else
-    print_string( 75 , 23 , WHITE , "´¡¤J" );
+    print_string( 75 , 23 , WHITE , "æ’å…¥" );
 
   return;
 
 }
 
-/* Åã¥Ü¿é¤Jªº¨D§Uªºµe­± */
+/* é¡¯ç¤ºè¼¸å…¥çš„æ±‚åŠ©çš„ç•«é¢ */
 void show_help( void )
 {
   print_string( 1 , 23 , WHITE , help_message );
   return;
 }
 
-/* ²M°£¿é¤Jªº¨D§Uµe­± */
+/* æ¸…é™¤è¼¸å…¥çš„æ±‚åŠ©ç•«é¢ */
 void clear_help( void )
 {
 
@@ -732,7 +732,7 @@ void clear_help( void )
 
 }
 
-/* §â¦r¦ê«á­±µL¥ÎªºªÅ¥Õ®ø±¼ */
+/* æŠŠå­—ä¸²å¾Œé¢ç„¡ç”¨çš„ç©ºç™½æ¶ˆæ‰ */
 
 void condense_string( STRING_INFO * string )
 {
@@ -752,7 +752,7 @@ void condense_string( STRING_INFO * string )
   return;
 }
 
-/* ²M°£¦r¦ê¸Ì­±§t¦³ ~ ªº¦r¤¸ */
+/* æ¸…é™¤å­—ä¸²è£¡é¢å«æœ‰ ~ çš„å­—å…ƒ */
 void smash_string( STRING_INFO *pString )
 {
   int    loop;
@@ -796,11 +796,11 @@ void clear_string( STRING_INFO * pString )
   {
     for ( j = 0; j < pString->x_len ; j++ )
     {
-      /* ²M°£¨C¤@­Ó¦r¤¸ */
+      /* æ¸…é™¤æ¯ä¸€å€‹å­—å…ƒ */
       *( pString->address + ( i * ( pString->x_len + 1 ) ) + j ) = '\x0';
     }
 
-    /* ¨C¤@¦æ¦r§À³]©w¬° 0 */
+    /* æ¯ä¸€è¡Œå­—å°¾è¨­å®šç‚º 0 */
     *( pString->address + ( i * ( pString->x_len + 1 ) ) + j ) = '\x0';
 
   }
@@ -858,18 +858,18 @@ void align_word( char * address , int len )
   return;
 }
 
-/* §ä´M source ¦r¦ê¸Ì­±¬O§_¦³ dest ¦r¦ê */
+/* æ‰¾å°‹ source å­—ä¸²è£¡é¢æ˜¯å¦æœ‰ dest å­—ä¸² */
 
 int string_compare( char * source , char * dest )
 {
   char * string_1;
   char * string_2;
 
-  /* ¿ù»~ªº°_¨Ï­È */
+  /* éŒ¯èª¤çš„èµ·ä½¿å€¼ */
   if ( *dest   == '\x0' ) return FALSE;
   if ( *source == '\x0' ) return FALSE;
 
-  /* ¦pªG¦b DOS , «hÂà´«¤p¼g¦¨¤j¼g */
+  /* å¦‚æœåœ¨ DOS , å‰‡è½‰æ›å°å¯«æˆå¤§å¯« */
   #if defined (MSDOS)
 
   string_1 = dest;

@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A���׺ݾ��O�m�⪺�٬O�¥ժ��ܡS�p�G�A���׺ݾ��O���䴩 ANSI ����X�ӾɭP
-�ýX�X�{�M�A�i�H��J [1;32mconfig -ansi[0m ������ ANSI ��X��C
+你的終端機是彩色的還是黑白的嗎﹖如果你的終端機是不支援 ANSI 的輸出而導致
+亂碼出現﹐你可以輸入 [1;32mconfig -ansi[0m 來關掉 ANSI 輸出喔。
 
-�Ьd�ߡRauto�Bconfig
+請查詢﹕auto、config
 ~
 
 End

@@ -1,5 +1,5 @@
 Name            fire lance~
-Cname           �R��j�k~
+Cname           燎原槍法~
 Slot            SLOT_FIRE_LANCE
 Msgoff          ~
 Check           check_spear_attack~
@@ -31,9 +31,9 @@ Help            ~
 
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$Y�m�ƥ��E�{�n$Z$A$A$n��⤤���j�@��M�ߧY�I�i$S�u��
-���d�x�v$Z�M��X�L�ƭӺj�v�M�L�k�۬[���ۦA�ϥX$P�u���s�X�}�v$Z�M�@�D�����}��
-�ӥX�M��$N�]�k�ӥh�C~
+$R燎原槍法「三十擊」$W－$Y《曙光乍現》$Z$A$A$n把手中的槍一橫﹐立即施展$S「橫
+掃千軍」$Z﹐刺出無數個槍影﹐無法招架接著再使出$P「火龍出洞」$Z﹐一道紅光破體
+而出﹐朝$N吞蝕而去。~
 Chance          20
 Value           20
 Parry           0
@@ -43,9 +43,9 @@ End
 
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$G�m�������ݡn$Z$A$A$n�����j�����ߡM�j���I�i�X$S�u�s
-�����v$Z�M�a�W�Фg�ѤU���_�M�@�ɭ��F���ۡM������y�j�ۥ|�P�M����@�a�I�i$Y�u
-�y�P�B�v$Z�M�L�ƭӬP�I�q�Ѧӭ��MŢ�n��P�B���U�ӵL�k���סC~
+$R燎原槍法「三十擊」$W－$G《風捲雲殘》$Z$A$A$n握住槍的中心﹐迴身施展出$S「龍
+捲風」$Z﹐地上塵土由下捲起﹐一時飛沙走石﹐全身氣流迴旋四周﹐身體一縱施展$Y「
+流星雨」$Z﹐無數個星點從天而降﹐籠罩於星雨之下而無法躲避。~
 Chance          20
 Value           20
 Parry           0
@@ -55,9 +55,9 @@ End
 
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$P�m�꦳����n$Z$A$A$n�������ӱj�M�����H�w�I�w�M��
-���Ө��M��M��j�@��M�I�i�X$Y�u�^���j�v$Z�M$N���⤣�ΡM�s���{�סM���ɦA�I�X
-$R�u�R��@���v$Z�M�j�p���K�H���Ӱ_�M$N�P�쭢�b�ܱ�M���w���ۡC~
+$R燎原槍法「三十擊」$W－$P《虛有其表》$Z$A$A$n眼見對方太強﹐不易以硬碰硬﹐轉
+身而走﹐突然把槍一轉﹐施展出$Y「回馬槍」$Z﹐$N措手不及﹐連忙閃避﹐此時再施出
+$R「燎原一炬」$Z﹐槍如火焰隨風而起﹐$N感到迫在眉梢﹐必已中招。~
 Chance          20
 Value           20
 Parry           0
@@ -66,9 +66,9 @@ Innate          0 0
 End
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$Y�m�e�q�b�p�n$Z$A$A$n��j���ѪŤ@�|�M�@�D�{�q�q�ѹ�
-�U�M���ɬI�i$W�u�q�����ۡv$Z�M�j�p�P�{�q�g�X�M�a�W�N�X�@�D�������]��M�L
-�k�ʼu�M���ɨϥX$G�u���k�ͭ��v$Z�M�j���I����M�@Ĳ���M�j���߮ɩ��t�@��R�h�C~
+$R燎原槍法「三十擊」$W－$Y《疾電奔雷》$Z$A$A$n把槍往天空一舉﹐一道閃電從天劃
+下﹐此時施展$W「電光火石」$Z﹐槍如同閃電射出﹐地上燒出一道火牆把對手包圍﹐無
+法動彈﹐此時使出$G「左右生風」$Z﹐槍先點左方﹐一觸對方﹐槍尾立時往另一方吐去。~
 Chance          20
 Value           20
 Parry           0
@@ -77,9 +77,9 @@ Innate          0 0
 End
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$S�m�������R�n$Z$A$A$n�f�����ۻy�M��M�|�P��y�p��
-�b��M���ѪŤ@�D�ϥX$P�u����ġv$Z�M������������$N�b�h�M�p�P��ÿN�ɤ@���M
-�����ਭ�@�_�M�I�i$R�u�D�����͡v$Z�M�ߧY���}�K�����a�C~
+$R燎原槍法「三十擊」$W－$S《不知火舞》$Z$A$A$n口中喃喃自語﹐突然四周氣流如火
+奔放﹐往天空一躍使出$P「火鳳凰」$Z﹐全身怒火之氣朝$N奔去﹐如同日冕燒盡一切﹐
+此時轉身一起﹐施展$R「浴火重生」$Z﹐立即離開熾火之地。~
 Chance          20
 Value           20
 Parry           0
@@ -88,9 +88,9 @@ Innate          0 0
 End
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$B�m�e�����h�n$Z$A$A$n�I�i$G�u�F�D�X�}�v$Z�M�j�p�D�R
-�H�@�몺�g�X�M�F�����p�J��誺���m�����M��M��j�@���M�ϥX$P�u���a���͡v$Z�M
-�}���j���M��j¼�_�íץ��F���סM�B�l�@�D�M�j�ߧY�Ѧa�W�E�g�פW�M����$N�C~
+$R燎原槍法「三十擊」$W－$B《疾風驚蟄》$Z$A$A$n施展$G「靈蛇出洞」$Z﹐槍如蛇吐
+信一般的射出﹐靈巧的鑽入對方的防禦之中﹐突然把槍一收﹐使出$P「平地風生」$Z﹐
+腳跺槍尾﹐把槍翹起並修正了角度﹐運勁一挑﹐槍立即由地上激射斜上﹐正中$N。~
 Chance          20
 Value           20
 Parry           0
@@ -99,9 +99,9 @@ Innate          0 0
 End
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$G�m��d�x�n$Z$A$A$n�B�_���\�M�j���o�X��䪺�n�T�M
-���ɴ��x�X$R�u�T�N�u���v$Z�M�餺�T�D���l�ֵo�M�g���i����Ƨ@�T�i�M�@������M
-�A�ϥX$S�u���N�ۡv$Z�M���w���_�M�j�P�i�͡M�ѤѦӤU�M�����ƹs����$N���C�@�B�C~
+$R燎原槍法「三十擊」$W－$G《橫掃千軍》$Z$A$A$n運起內功﹐槍身發出嗡嗡的聲響﹐
+此時揮灑出$R「三昧真火」$Z﹐體內三道內勁併發﹐狂風波浪般化作三波﹐一氣呵成﹐
+再使出$S「飛鷹旋」$Z﹐身已飛起﹐大鵬展翅﹐由天而下﹐旋轉飄零攻擊$N的每一處。~
 Chance          20
 Value           20
 Parry           0
@@ -110,9 +110,9 @@ Innate          0 0
 End
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$S�m�ۯ}����n$Z$A$A$n�I�i$Y�u����N�ɤE���ѡv$Z�M��
-���u���_��X�M��y�ѱۦa���¶�����M�ϥX�R��j�k�̬����ۡX�X$B�u�­�ѤU�v
-$Z�M�j�զp�d�x�U���M�@��ӤW�C~
+$R燎原槍法「三十擊」$W－$S《石破天驚》$Z$A$A$n施展$Y「怒火燒盡九重天」$Z﹐體
+內真氣不斷湧出﹐氣流天旋地轉傳繞全身﹐使出燎原槍法最狠殺招——$B「威凌天下」
+$Z﹐槍勢如千軍萬馬﹐一湧而上。~
 Chance          20
 Value           20
 Parry           0
@@ -121,15 +121,15 @@ Innate          0 0
 End
 #Damage
 Description
-$R�R��j�k�u�T�Q���v$W��$P�m�T�_�ݩ��n$Z$A$A$n�ϥX$G�u��u�A�{�v$Z�M��M�ޮ�
-�@���M�@�Φ�q�f���Q�X�M���ɥ����u���{�M�˩R�ϥX�R��j�k���̲׶����X�X$B�y
-���᳷��M�ʪ��ƹs�z$Z�C$A$A$W$n�ϥX$B�R��j�k���T�_$Z�X�X$G�u�ḭ�Ʊ��v$W�M
-�ḭ�Ƹ��M�y���L���M���R���𦳦p�����H���ƦV$N�C$Z$A$W$n�ϥX$B�R��j�k���T�_
-$Z�X�X$S�u���i���ʡv$W�M�_���L���M���ƶ����M�ۦ��p����@�i�i���T�S��$N�C$Z$A
-$W$n�ϥX$B�R��j�k���T�_$Z�X�X$Y�u�۽��m���v$W�M�m���ûR�M���m�}�ɡM�p�I�R�]
-�Ū������P���I�V$N�C$Z$A$W$n�ϥX$B�R��j�k���T�_$Z�X�X$P�u�ʪ����v$W�M�ᶼ
-���S�M�d���ݭ��M�j����p�������_���鱲�V$N�C$Z$A$W$n�ϥX$B�R��j�k���T�_$Z�X
-�X$B�u�U���i�i�v$W�M����E�ۡM�U���b�ˡM�j�v�p�����ƴ��H��Ţ�n��$N�C$Z$A~
+$R燎原槍法「三十擊」$W－$P《禁斷殘念》$Z$A$A$n使出$G「湧泉再現」$Z﹐突然舌根
+一甜﹐一團血從口中噴出﹐此時全身真氣湧現﹐捨命使出燎原槍法之最終奧祕——$B『
+風花雪月﹐百花飄零』$Z。$A$A$W$n使出$B燎原槍法之禁斷$Z——$G「花葉飄殺」$W﹐
+花葉飄落﹐流水無情﹐絕命殺氣有如落花隨風飄向$N。$Z$A$W$n使出$B燎原槍法之禁斷
+$Z——$S「水波雲動」$W﹐斷水無痕﹐風飄雲散﹐招式如潮浪一波波的淹沒著$N。$Z$A
+$W$n使出$B燎原槍法之禁斷$Z——$Y「幻蝶彩飛」$W﹐彩蝶亂舞﹐五彩繽紛﹐如寂靜夜
+空的朵朵星光點向$N。$Z$A$W$n使出$B燎原槍法之禁斷$Z——$P「百花齊放」$W﹐花飲
+玉露﹐千里殘香﹐槍旋轉如風車風起雲湧捲向$N。$Z$A$W$n使出$B燎原槍法之禁斷$Z—
+—$B「萬浪波瀾」$W﹐浪花激石﹐萬馬奔騰﹐槍影如水幕飄散隨風籠罩著$N。$Z$A~
 Chance          20
 Value           20
 Parry           0

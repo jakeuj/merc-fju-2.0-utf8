@@ -1,10 +1,10 @@
 Vnum            1214
 Name            guard~
-ShortDesc       ¤õª¢¸]¦u½Ã~
-LongDesc        ¤õª¢¸]¦u½Ã(guard).
+ShortDesc       ç«ç‚çªŸå®ˆè¡›~
+LongDesc        ç«ç‚çªŸå®ˆè¡›(guard).
 ~
 Description
-ªø¦~§â¦u¦b³o­Óª¢¸]·í¤¤ªº©Çª«¡M¤@°Æºë¯«§İÂ]ªº¼Ë¤l¡C
+é•·å¹´æŠŠå®ˆåœ¨é€™å€‹ç‚çªŸç•¶ä¸­çš„æ€ªç‰©ï¹ä¸€å‰¯ç²¾ç¥æŠ–æ“»çš„æ¨£å­ã€‚
 ~
 Sentinel        Yes
 StayArea        Yes

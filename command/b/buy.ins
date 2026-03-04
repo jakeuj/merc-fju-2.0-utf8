@@ -1,5 +1,5 @@
 Name            buy~
-Cname           �ʶR���~~
+Cname           購買物品~
 Function        do_buy~
 Position        POS_RESTING
 Level           0
@@ -15,30 +15,30 @@ Lost            NO
 Lock            NO
 Limit           YES
 Help
-�y�k�Rbuy <���~�W��>
-�y�k�Rbuy @<���~�s��>
+語法﹕buy <物品名稱>
+語法﹕buy @<物品編號>
 
-    �o�ӫ��O�O�����a���ʶR�ۤv�Q�n���F��M�b�� mud�M�T��a�p�U�R��M
-�Ҧ����F�賣�O���窺�M�ҥH�R��F�賣�O�z�L����M�ҥH�A�����b buy  �o��
-���O�᭱�[�J���󪺦W�١M�A�u�ݭn��J�A�n�R���F�誺�W�٧Y�i�M
+    這個指令是讓玩家來購買自己想要的東西﹐在本 mud﹐禁止玩家私下買賣﹐
+所有的東西都是國營的﹐所以買賣東西都是透過老闆﹐所以你不必在 buy  這個
+指令後面加入老闆的名稱﹐你只需要輸入你要買的東西的名稱即可﹐
 
-    �Ҧp buy boot�M�N�O�R�c�l�C���O��
+    例如 buy boot﹐就是買鞋子。但是當
 
-  1) �A�Ҧb�a�S������
-  2) ����S����o�˪F��( �i�H�� list �d�� )
-  3) �A���W�S���������Ȥl( �i�H�� list �d�� )
-  4) ���R���F�赥�ŤӰ��M���A�X�A������
-  5) ���W�a���F��Ӧh
-  6) ���W�a���F�譫�q�ӭ�
+  1) 你所在地沒有老闆
+  2) 老闆沒有賣這樣東西( 可以用 list 查詢 )
+  3) 你身上沒有足夠的銀子( 可以用 list 查詢 )
+  4) 欲買的東西等級太高﹐不適合你的等級
+  5) 身上帶的東西太多
+  6) 身上帶的東西重量太重
 
-�A�L�k�F���R���ʧ@�C
+你無法達成買的動作。
 
-    �p�G�A�n�R���F��O�ĤG�ӡM����N�o��J
-    buy 2.boot �o�˴N�i�H�R��L�ҳc�檺�ĤG�Ӫ��~�C
+    如果你要買的東西是第二個﹐那麼就得輸入
+    buy 2.boot 這樣就可以買到他所販賣的第二個物品。
 
-    �p�G�Ĥ@�ӰѼƬO�H @���}�Y�M�᭱�N�����[�J�s���M�o�ӽs���N�O�A list
-�Ҭݨ쪺�s���M�o�˥i�H���A�٤U���֥\�ҡC
+    如果第一個參數是以 @當開頭﹐後面就必須加入編號﹐這個編號就是你 list
+所看到的編號﹐這樣可以讓你省下不少功夫。
 
-�������O�Rlist �Mvalue �Msell�Btrade
+相關指令﹕list ﹐value ﹐sell、trade
 ~
 End

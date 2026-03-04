@@ -1,10 +1,10 @@
 Vnum            9059
-Name            �j�q�毸~
+Name            大通驛站~
 Description
-��b�æw�J�P�����ߡM�����n���M�O�Ӷ}�毸�����Φa
-�I�M�A���T�تA�ѪO���ͷN�����C����X�����O���٦�
-�X�i���M�Q���O�����~�[�A���H�t�̥𮧥Ϊ��M���U
-�N�O�毸�o�C
+位在永安胡同的中心﹐近鎮南門﹐是個開驛站的絕佳地
+點﹐你不禁佩服老板的生意眼光。旁邊幾條長板凳還有
+幾張木桌﹐想必是給長途跋涉的信差們休息用的﹐往下
+就是驛站囉。
 
 ~
 SectorType      SECT_CITY
@@ -19,23 +19,23 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         ����~
+Keyword         車站~
 End
 
 #Enquire
-Keyword         �毸~
+Keyword         驛站~
 End
 
 #Enquire
-Keyword         �O���I~
+Keyword         記憶點~
 End
 
 #Enquire
-Keyword         ����~
+Keyword         水池~
 End
 
 #Enquire
-Keyword         ����~
+Keyword         水井~
 End
 
 End

@@ -1,10 +1,10 @@
 Vnum            9019
 Name            eunuch~
-ShortDesc       �Ӻ�~
+ShortDesc       太監~
 Description
-�o�O�b�ӫ��̪��@��ӺʡM���`�N���H�b�ӫҩΦm�l�ǪA�͡M
-���o�@�ƩǸ̩Ǯ𳱨H�H���@�ˤl�M�@�ݴN���D�@�w���Oԣ
-�n�F��C
+這是在皇城裡的一位太監﹐平常就跟隨在皇帝或妃子旁服侍﹐
+長得一副怪裡怪氣陰沈沈的一樣子﹐一看就知道一定不是啥
+好東西。
 ~
 StayArea        Yes
 Ask             Yes

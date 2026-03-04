@@ -1,10 +1,10 @@
 Vnum            549
 Name            wide brimmed rain hat~
-ShortDesc       ¤æ²Á~
+ShortDesc       æ–—ç¬ ~
 Description
-¥Ñ²Ê¥¬©Ò»s ¡M¥Î¨Ó¾B¥ú¾×«B¡C
+ç”±ç²—å¸ƒæ‰€è£½ ï¹ç”¨ä¾†é®å…‰æ“‹é›¨ã€‚
 ~
-Unit            ³»~
+Unit            é ‚~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HEAD
 Takeable        Yes

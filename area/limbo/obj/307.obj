@@ -1,9 +1,9 @@
 Vnum            307
 Name            cast fire book~
-ShortDesc       ¤T¬N¯u¤õ¯µÓD~
+ShortDesc       ä¸‰æ˜§çœŸç«ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

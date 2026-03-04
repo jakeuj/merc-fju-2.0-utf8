@@ -1,5 +1,5 @@
 Name            dragon dagger~
-Cname           ½LÀs¤Pªk~
+Cname           ç›¤é¾åŒ•æ³•~
 Slot            SLOT_DRAGON_DAGGER
 Msgoff          ~
 Check           check_dagger_attack~
@@ -40,7 +40,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n¤@©Û$W¡u½LÀs¥X¨¦¡v$Z¡M¤â¤¤$O©¹¥~¹º¥X¡M¦V$Nª½½Ä¦Ó¨Ó¡C~
+$nä¸€æ‹›$Wã€Œç›¤é¾å‡ºè°·ã€$Zï¹æ‰‹ä¸­$Oå¾€å¤–åŠƒå‡ºï¹å‘$Nç›´è¡è€Œä¾†ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -49,7 +49,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤â¤¤$O¤@®¼¥X¡M¤@©Û$W¡uÀs©b¥|®ü¡v$Z¦p¨gÀs¯ë©¹$N¨ë¥h¡C~
+$næ‰‹ä¸­$Oä¸€æŒºå‡ºï¹ä¸€æ‹›$Wã€Œé¾å¥”å››æµ·ã€$Zå¦‚ç‹‚é¾èˆ¬å¾€$Nåˆºå»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -58,7 +58,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤@©Û$W¡u±jÀs¨ÖªÓ¡v$Z±N¤â¤¤$O©¹$N¾G¥h¡MÀH§Y­¸¨­½ğ¥h¡M¨Ã±µ¦^$O¡C~
+$nä¸€æ‹›$Wã€Œå¼·é¾ä½µè‚©ã€$Zå°‡æ‰‹ä¸­$Oå¾€$Né„­å»ï¹éš¨å³é£›èº«è¸¢å»ï¹ä¸¦æ¥å›$Oã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -67,7 +67,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥X$W ½LÀs¤Pªk$Z¤§$Y¡y §x ¡z$Z¦r³Z¡M¥H¦u±a§ğªº¦V$NÅ§¥h¡C~
+$nä½¿å‡º$W ç›¤é¾åŒ•æ³•$Zä¹‹$Yã€ å›° ã€$Zå­—è¨£ï¹ä»¥å®ˆå¸¶æ”»çš„å‘$Nè¥²å»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -76,7 +76,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥X$W ½LÀs¤Pªk$Z¤§$G¡y ¥Í ¡z$Z¦r³Z¡M¥H¦u±a§ğªº¦V$NÅ§¥h¡C~
+$nä½¿å‡º$W ç›¤é¾åŒ•æ³•$Zä¹‹$Gã€ ç”Ÿ ã€$Zå­—è¨£ï¹ä»¥å®ˆå¸¶æ”»çš„å‘$Nè¥²å»ã€‚~
 Chance          10
 Value           20
 Parry           0

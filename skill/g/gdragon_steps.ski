@@ -1,5 +1,5 @@
 Name            gdragon steps~
-Cname           �C�Ȩ��k~
+Cname           青玄身法~
 Slot            SLOT_GDRAGON_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -31,15 +31,15 @@ Limit           CLASS_BRAVO     50  80
 Limit           CLASS_MAGE      50  50
 Limit           CLASS_SMITH     50  50
 Help
-�C�Ȩ��k:
+青玄身法:
 
-�����B�m�ܷ��P��M�N�L�k������ꤧ���ĤJ�䶡�M�ҭl�ͦӥX
-���N�O�C�Ȩ��k�C�]���C�Ȩ��k�h�b�O�Z�x�׽m�~�h�C
+翦雲步練至極致後﹐將兵法中的虛實之說融入其間﹐所衍生而出
+的就是青玄身法。因此青玄身法多半是武官修練居多。
 ~
 
 #Damage
 Description
-$n���}��C�P�M�ϥX�F�y$W�C�Ȩ��k$Z�z�����y$B�V�P��}$Z�z�N$N�������Ƭ��L���C~
+$n的腳踏七星﹐使出了『$W青玄身法$Z』中的『$B混沌初開$Z』將$N的攻擊化為無物。~
 Chance          20
 Value           20
 Parry           0
@@ -49,8 +49,8 @@ End
 
 #Damage
 Description
-����$N�������M$n���@����ϥX�y$W�C�Ȩ��k$Z�z�����y$G�H���R��$Z�z�M$A
-$n�ϩ��w�Ʀ������M����b$N�ۦ����_�ؤ����M�p���ۦb�C~
+面對$N的攻擊﹐$n略一提氣使出『$W青玄身法$Z』中的『$G隨風舞動$Z』﹐$A
+$n彷彿已化成輕風﹐穿梭在$N招式的縫隙之中﹐逍遙自在。~
 Chance          20
 Value           20
 Parry           0
@@ -60,7 +60,7 @@ End
 
 #Damage
 Description
-$n�����v���ʡM����$N��������ɡM��M�����b$N���e�M���O�@�ۡy$R�ݥH�ۤH$Z�z�C~
+$n的身影不動﹐等到$N的攻擊到時﹐突然消失在$N面前﹐正是一招『$R殘以欺人$Z』。~
 Chance          20
 Value           20
 Parry           0
@@ -70,9 +70,9 @@ End
 
 #Damage
 Description
-$N�H�p�^�U�v����զV$n��ӡM$n�B�����O�V$N��h�M$A
-$N��$n��Ӥ]�������O�@���M�b�|�x�֬۱��ɡM$n�H�@�ۡy$Y�n�F����$Z�z$A
-���H�H���ݵ�$N�H���O���b�@�����Y�W�C~
+$N以雷霆萬鈞的攻勢向$n攻來﹐$n運足內力向$N攻去﹐$A
+$N看$n攻來也鼓足全力一拼﹐在四掌快相接時﹐$n以一招『$Y聲東擊西$Z』$A
+笑嘻嘻的看著$N以全力打在一塊石頭上。~
 Chance          20
 Value           20
 Parry           0
@@ -82,8 +82,8 @@ End
 
 #Damage
 Description
-$n���α�¶�M�������@�ۡy$Y���s�b��$Z�z�ƭ��ਭ�M�N$N����դƬ��p�M���j�L�@��
-���L�`�C~
+$n身形旋繞﹐輕巧的一招『$Y飛龍在天$Z』數個轉身﹐將$N的攻勢化為如清風吹過一般
+的無害。~
 Chance          20
 Value           20
 Parry           0
@@ -93,9 +93,9 @@ End
 
 #Damage
 Description
-��$N����պ��K�M�ּ������ɡM$n�j�ܤ@�n�y$C�ȤѤۨB$Z�z$A
-���U�}�l��ۤ���K���M���^�H���n�\�M$N�uı���e�H�v�̰ʡM�دt���g�M$A
-�w���h$n�����v�C~
+當$N的攻勢漸密﹐快撐不往時﹐$n大喝一聲『$C玄天幻步$Z』$A
+足下開始踏著五行八掛﹐身体隨風搖擺﹐$N只覺眼前人影晃動﹐目眩神迷﹐$A
+已失去$n的身影。~
 Chance          20
 Value           20
 Parry           0
@@ -105,8 +105,8 @@ End
 
 #Damage
 Description
-$n�֨B����M���v���֩��C�M�ܤƲ����M���O�y$W�C�Ȩ��k$Z�z�����̰��Ҭ� �ССy
-$S��ꤣ��$Z�z�СШ�$N���������ġC~
+$n快步移位﹐身影忽快忽慢﹐變化莫測﹐正是『$W青玄身法$Z』中的最高境界 －－『
+$S實虛不分$Z』－－使$N的攻擊失效。~
 Chance          20
 Value           20
 Parry           0

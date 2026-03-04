@@ -1,5 +1,5 @@
 Name            day stick~
-Cname           ��̴Ҫk~
+Cname           日晃棍法~
 Slot            SLOT_DAYSTICK
 Msgoff          ~
 Check           check_club_attack~
@@ -33,7 +33,7 @@ Help            ~
 
 #Damage
 Description
-$n��$O���a�W�@���M�@��$S�y����_��z$Z�M�Ƹ�$N���h�h���u�M��V$N��$l�C~
+$n把$O往地上一撐﹐一招$S『狠踢北蛟』$Z﹐化解$N的層層防守﹐攻向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -42,7 +42,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ҶզV�ѡM�@��$P�y�����鳻�z$Z�M�a�۩I�I���S�n�r�O���V$N���Ѯx�\�C~
+$n棍勢向天﹐一招$P『醍醐灌頂』$Z﹐帶著呼呼的嘯聲猛力打向$N的天庭蓋。~
 Chance          20
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�@��$S�y���D�H�ҤW�z$Z�M�B�_���O�N$w�Ƭ�¶���X�몺��$N��$lŧ�h�C~
+$n使出一招$S『打蛇隨棍上』$Z﹐運起內力將$w化為繞指柔般的往$N的$l襲去。~
 Chance          20
 Value           20
 Parry           0
@@ -60,7 +60,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�H�ҨϺj�M�@��$P�y���I�Y�z$Z�M�Ҷի�驿���M���p�I�I�P�����H���N�C~
+$n以棍使槍﹐一式$P『鳳點頭』$Z﹐棍勢恍恍忽忽﹐有如點點星光難以捉摸。~
 Chance          20
 Value           20
 Parry           0
@@ -69,7 +69,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�j�ܤ@�n�M�@��$Y�y��d�x�z$Z�ѥ��ӥk�ΤO��V$N��$l�M�ҥ���M�l���ܡC~
+$n大喝一聲﹐一招$Y『橫掃千軍』$Z由左而右用力急向$N的$l﹐棍未到﹐勁先至。~
 Chance          20
 Value           20
 Parry           0

@@ -1,7 +1,7 @@
 Name            fly dance~
-Cname           ­¸µ¾³N~
+Cname           é£›ç¿”è¡“~
 Slot            SLOT_FLY
-Msgoff          §A¸}¤Uªº¶³ºCºCªº®ø¥¢¤£¨£¤F¡C~
+Msgoff          ä½ è…³ä¸‹çš„é›²æ…¢æ…¢çš„æ¶ˆå¤±ä¸è¦‹äº†ã€‚~
 Function        cast_fly~
 Position        POS_STANDING
 Type            TAR_CHAR_DEFENSIVE
@@ -36,6 +36,6 @@ Location        AFF_NONE
 End
 
 Help
-³o­Ó§Þ¯à¥i¥HÀ°§U§A¦Û¤v©Î§O¤H­¸µ¾¦bªÅ¤¤¡M¥i¥H´ç¹Lªe¤ôµ¥»ÙÃªª«¡C
+é€™å€‹æŠ€èƒ½å¯ä»¥å¹«åŠ©ä½ è‡ªå·±æˆ–åˆ¥äººé£›ç¿”åœ¨ç©ºä¸­ï¹å¯ä»¥æ¸¡éŽæ²³æ°´ç­‰éšœç¤™ç‰©ã€‚
 ~
 End

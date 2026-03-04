@@ -1,5 +1,5 @@
 Name            ghost steps~
-Cname           �խߨ��k~
+Cname           幽冥身法~
 Slot            SLOT_GHOST_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,8 +38,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n���M�H���y�몺�t�רϥX�խߨ��k�����@��$S�u�խߤۼv�v$Z�M���Ӧb�F�M���Ӧb
-��M��$N�L�k���D$n���b���C~
+$n忽然以鬼魅般的速度使出幽冥身法中的一招$S「幽冥幻影」$Z﹐忽而在東﹐忽而在
+西﹐使$N無法知道$n身在何方。~
 Chance          10
 Value           20
 Parry           0
@@ -48,8 +48,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���l�@�n�M�����V���u�h�M���������L�F$N�������M���O�խߨ��k����$S�u���L
-�w�v$Z�C~
+$n身子一軟﹐全身向後攤去﹐巧妙的躲過了$N的攻擊﹐正是幽冥身法中的$S「氣游無
+定」$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -58,7 +58,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX�խߨ��k����$S�u��۵L�Ρv$Z�M�u���L���Τ@�̡M$N�������u�O�ݹ��C~
+$n使出幽冥身法中的$S「虛幻無形」$Z﹐只見他身形一晃﹐$N擊中的只是殘像。~
 Chance          10
 Value           20
 Parry           0
@@ -67,7 +67,7 @@ Innate          0 0
 End
 #Damage
 Description
-�u��$n���Τ@�_�M�ϥX�խߨ��k������$S�u�ƴ��L�ܡv$Z�M�L�n�L����¶��F$N����C~
+只見$n身形一起﹐使出幽冥身法的絕技$S「飄渺無蹤」$Z﹐無聲無息的繞到了$N身後。~
 Chance          10
 Value           20
 Parry           0

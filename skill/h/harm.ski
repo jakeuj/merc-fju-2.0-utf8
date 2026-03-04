@@ -1,5 +1,5 @@
 Name            harm~
-Cname           �ˮ`�N~
+Cname           傷害術~
 Slot            SLOT_HARM
 Msgoff          ~
 Check           check_unrigid_attack~

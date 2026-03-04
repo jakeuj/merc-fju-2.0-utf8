@@ -1,7 +1,7 @@
 Name            mass invis~
-Cname           ¥şÅéÁô§Î~
+Cname           å…¨é«”éš±å½¢~
 Slot            SLOT_MASS_INVIS
-Msgoff          §A¤£¦AÁô§Î¤F¡T~
+Msgoff          ä½ ä¸å†éš±å½¢äº†ï¹—~
 Function        cast_mass_invis~
 Check           check_unrigid_attack~
 Position        POS_STANDING

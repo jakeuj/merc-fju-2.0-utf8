@@ -1,9 +1,9 @@
 Vnum            9029
-Name            �U�ֻ�~
+Name            萬福閣~
 Description
-�U�ֻլO���l�M�c�̰��j���ؿv�����@�M�ռӰ��T�h�M��F
-��ⰼ�U���@�y��h�Ӫ��ռӡC�T�ռӤ������λչD�۳q�M
-�y���۷��O�o�C
+萬福閣是全雍和宮最高大的建築物之一﹐閣樓高三層﹐其東
+西兩側各有一座兩層樓的閣樓。三閣樓之間都用閣道相通﹐
+造型相當別緻。
 
 ~
 SectorType      SECT_CITY
@@ -25,15 +25,15 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         �V�m��~
+Keyword         訓練者~
 End
 
 #Enquire
-Keyword         �V�m�v~
+Keyword         訓練師~
 End
 
 #Enquire
-Keyword         �V�m~
+Keyword         訓練~
 End
 
 End

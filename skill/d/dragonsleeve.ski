@@ -1,5 +1,5 @@
 Name            dragon sleeve sword~
-Cname           �s�S�C�k~
+Cname           龍袖劍法~
 Slot            SLOT_DRAGONSLEEVE
 Msgoff          ~
 Check           check_sword_attack~
@@ -29,18 +29,18 @@ Adeptation      0
 Limit           CLASS_GENERAL   50  85
 Limit           CLASS_BRAVO     50  95
 Help
-�s�S�C�k:
+龍袖劍法:
 
-�ʤs�C�k����W�@�h�M�j�����u�n���s�Ӥp�ѤU�v�M���C�k���O
-�@�찪�H��n������Ү��X�M���W�s�S�H�ܥ��C�k����n�N���M
-�D�b�󻴬��F�ʡM�p�s�é�S���C
+封山劍法的更上一層﹐古有云「登泰山而小天下」﹐本劍法正是
+一位高人於登高之後所悟出﹐取名龍袖以示本劍法之精要意旨﹐
+乃在於輕盈靈動﹐如龍藏於袖中。
 
 ~
 
 #Damage
 Description
-$n�����V$N�������ʡM$n�ϥX$W�y�a�s���@�z$Z�M$n�V���V�֡M�⤤$O�V$N��$l�s��
-�T�C�M$N�s�s���ۡC~
+$n不住向$N左側移動﹐$n使出$W『蒼龍見世』$Z﹐$n越移越快﹐手中$O向$N的$l連刺
+三劍﹐$N連連中招。~
 Chance          20
 Value           20
 Parry           0
@@ -50,8 +50,8 @@ End
 
 #Damage
 Description
-$n�H�C�u�~�աM�ϥX�s�S�C�k��$B�y�}�����s�z$Z�M�k�⤤$O�o����$N�ܤߡM�X��Ií�M
-�l�O���p�C~
+$n以劍守外勢﹐使出龍袖劍法中$B『破雲藏龍』$Z﹐右手中$O卻直取$N眉心﹐出手沉穩﹐
+勁力渾厚。~
 Chance          20
 Value           20
 Parry           0
@@ -61,7 +61,7 @@ End
 
 #Damage
 Description
-$n�@��$W�y�s�����s�z$Z�M���$N���X�@�D���ΡM�ΦV$N�۬[�����C~
+$n一招$W『御風行龍』$Z﹐對準$N劃出一道弧形﹐割向$N招架不住。~
 Chance          20
 Value           20
 Parry           0
@@ -71,8 +71,8 @@ End
 
 #Damage
 Description
-$n�H����M�C����M��U���M�ϥX$p�y���s�L�ۡz$Z�s�X�T�U����M�⤤$O�V$N���U
-�L岱��M�ϱo$N�L�U���ۡC~
+$n人未到﹐劍先到﹐淩下擊﹐使出$p『翔龍盤旋』$Z連出三下殺手﹐手中$O向$N的下
+盤撗掃﹐使得$N盤下中招。~
 Chance          20
 Value           20
 Parry           0
@@ -82,8 +82,8 @@ End
 
 #Damage
 Description
-$n�C�v�{�ʡM�^���@�C���e����U�h�ϥX$g�y�s�ϼ橳�z$Z�C�ۨ�}�ӶաM$N�ߨ設�ΡM
-��í�����ʡM$O�V$N�U����U�C~
+$n青影閃動﹐回身一劍當前直刺下去使出$g『龍蟠潭底』$Z劍招制開來勢﹐$N立刻身形﹐
+郤穩凝不動﹐$O向$N下腹刺下。~
 Chance          20
 Value           20
 Parry           0
@@ -93,7 +93,7 @@ End
 
 #Damage
 Description
-$n�ϥX$B�y�s�v�����z$Z�۳N�_�ۡM�ܤƵL�a�M$N��M�P�����H���ɤF�M�s�򤤩ۡC~
+$n使出$B『龍影莫測』$Z招術奇幻﹐變化無窮﹐$N突然感到難以抵檔了﹐連續中招。~
 Chance          20
 Value           20
 Parry           0
@@ -103,7 +103,7 @@ End
 
 #Damage
 Description
-$n�b���椧�U�ϥX$G�y�s�Τ۷��z$Z��˪סM�ۦa�u��M$O�w���C�V$N�A�L�h�C~
+$n在情急之下使出$G『龍形幻滅』$Z橫身倒臥﹐著地滾轉﹐$O已揮劍向$N劈過去。~
 Chance          20
 Value           20
 Parry           0
@@ -113,17 +113,17 @@ End
 
 #Damage
 Description
-$n���㤧�U�M�a���N�ϥX�s�S�C�k����$R�y�a�s�C�{�z$Z�M$N�u��
-$n���ΦV�����뤣������ʡC$A$A
-$P             $n�y�ɱN$Y�s�S�C�k$R�a�s�C�{$W�@�@�{�X�C$Z$A
-$W             �s�򤣵����C�v�H��$n���α���ӥX!!$Z$A$A
-$R                       ���a�s�{�@���$Z$A
-$b                       ���p�s�G�{���$Z$A
-$B                       �����s�T�{���$Z$A
-$g                       ���g�s�|�{���$Z$A
-$R                       ��㪢�s���{���$Z$A
-$Y                       �����s���{���$Z$A
-$P                       ���a�s�C�{���$Z~
+$n盛怒之下﹐縱身就使出龍袖劍法殺著$R『窮龍七現』$Z﹐$N只見
+$n身形向陀螺般不停的轉動。$A$A
+$P             $n頓時將$Y龍袖劍法$R窮龍七現$W一一現出。$Z$A
+$W             連續不絕的劍影隨著$n身形旋轉而出!!$Z$A$A
+$R                       ∼∼蒼龍現世∼∼$Z$A
+$b                       ∼∼雷龍二現∼∼$Z$A
+$B                       ∼∼海龍三現∼∼$Z$A
+$g                       ∼∼土龍四現∼∼$Z$A
+$R                       ∼∼炎龍五現∼∼$Z$A
+$Y                       ∼∼金龍六現∼∼$Z$A
+$P                       ∼∼窮龍七現∼∼$Z~
 Chance          20
 Value           20
 Parry           0

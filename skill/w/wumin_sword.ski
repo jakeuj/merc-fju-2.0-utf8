@@ -1,5 +1,5 @@
 Name            wumin sword~
-Cname           �L�W�C~
+Cname           無名劍~
 Slot            SLOT_WUMIN_SWORD
 Msgoff          ~
 Check           check_sword_attack~
@@ -40,8 +40,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$Y�m�s��աn$Z$A$n��$O�{�p�@�٨Ӧ۷��誺�y���M���O�ѲM�N���~�q�M�P������
-���a�զX�����b��Τb�v�M�u��ģ�����{���̰ʡM$O�w�Ө�$N���e�C~
+$Y《彎月勢》$Z$A$n的$O宛如一抹來自極西的流光﹐那是由清冷的芒電﹐與晶瑩的
+光帶組合成的半月形刃影﹐只見耀眼的閃光晃動﹐$O已來到$N身前。~
 Chance          10
 Value           20
 Parry           0
@@ -50,8 +50,8 @@ Innate          0 0
 End
 #Damage
 Description
-$R�m�E��աn$Z$A$n����$O�M�C��Ÿ�ݦp�i�M$O�K�b���ɤۦ��F�@�׺�ģ���઺����
-�M�����o�O�d�ʪ��C�v�Ѯt���g�M�u���d�ʹD�a��C��g��$N�C~
+$R《浩日勢》$Z$A$n輕轉$O﹐劍身顫抖如波﹐$O便在此時幻成了一度精耀旋轉的光輪
+﹐輪齒卻是千百的劍影參差蓬射﹐只見千百道縱橫的劍氣射往$N。~
 Chance          10
 Value           20
 Parry           0
@@ -60,8 +60,8 @@ Innate          0 0
 End
 #Damage
 Description
-$B�m�U�C�աn$Z$A$n��$O�`�M�X�i���@�������M�����E�{�M�S��ӸH���M�ۦ��F���Ѫ�
-���I�~�B�g���M�b�o���ةҨ�������qģ���M��{�X�d�ʩǳD�]�����y�i«�V$N�C~
+$B《萬劍勢》$Z$A$n的$O猝然擴展成一片晶幕﹐晶幕乍現﹐又突而碎散﹐幻成了滿天的
+光點芒雨射落﹐在這極目所見的燦爛電耀中﹐突閃出千百怪蛇也似的流虹竄向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -70,8 +70,8 @@ Innate          0 0
 End
 #Damage
 Description
-$G�m�k�y�աn$Z$A$n�⤤$O���Ѫe�����M�@�ݤ��U�ʷ��m���M���Ƚ������|�����@�b��
-�M$N�H�ĤJ�䤤�M�S���֪��ݥX�@������r�n$N�C~
+$G《歸流勢》$Z$A$n手中$O似天河之水﹐一抖之下滔滔瀉落﹐當銀輝瑩光四溢的一剎那
+﹐$N人融入其中﹐又極快的抖出一輪光圈猛罩$N。~
 Chance          10
 Value           20
 Parry           0
@@ -80,8 +80,8 @@ Innate          0 0
 End
 #Damage
 Description
-$P�m½���աn$Z$A$n�j�ܤ@�n�M�ۨ���¶�M��O�d�ʼC�v�K�b�@��馨�Ϊ��l��̳�
-�@�D�D�굩�������ץѥ|���K�詹�~�ɮg�K�ɼC���a���F�����V$N�C~
+$P《翻雲勢》$Z$A$n大喝一聲﹐旋身飛繞﹐於是千百劍影便在一圈圈成形的勁氣裡圍成
+一道道圓筒似的弧度由四面八方往外暴射霎時劍氣縱橫凌厲的掃向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -90,8 +90,8 @@ Innate          0 0
 End
 #Damage
 Description
-$Y�m�ЫB�աn$Z$A$O�~�M�֭��M��ʤ@�Q�E�C�|����g�M�ۦ��F�@�j�����u�Ѯt���M�S
-�K���M�S��F�����~�M�ϩ��@�ӺӤj�����y�z�H�Mģ�����N�~���q�M���|��ﱰ�C~
+$Y《覆雨勢》$Z$A$O陡然併飛﹐兩百一十九劍四散穿射﹐幻成了一大蓬長短參差的﹐又
+密集﹐又凌厲的光芒﹐彷彿一個碩大的光球爆碎﹐耀眼的冷芒紫電﹐往四方穿掠。~
 Chance          10
 Value           20
 Parry           0
@@ -100,9 +100,9 @@ Innate          0 0
 End
 #Damage
 Description
-$S�m�}�H��šn$Z$A$n��M�ۿE�����ͩ��R�M���⤧�������y�S�X��M���w��M��M
-��$n�����߳��b�����Ө�$N��e�M��$O�󪽴��V$N���ا֪k���H���t�׳o��r���N�q��
-���Q���C~
+$S《破碎虛空》$Z$A$n突然自激憤中趨於平靜﹐神色之間隱隱流露出湛然的安寧﹐突然
+間$n的身軀竟在瞬間來到$N近前﹐而$O更直插向$N那種快法足以讓速度這兩字的意義化
+為烏有。~
 Chance          10
 Value           20
 Parry           0
@@ -111,9 +111,9 @@ Innate          0 0
 End
 #Damage
 Description
-$B�m���C�X�@�Z�n$Z$A�������M$n�N�a½�u�M�ӴN���]�k�@�ˡM�b����½�u���P�ɡM
-�y�N�z���@�n�H�q�q��ݤW�h�N�p�P�@�ѥ��i�M�@���֮g�ۧN�~�P�������s�M���ˤE
-�ѯ몺�}�ũ�$N�ӥh�C~
+$B《身劍合一訣》$Z$A瞬息間﹐$n就地翻滾﹐而就像魔法一樣﹐在身形翻滾的同時﹐
+『霍』的一聲寒電裹體看上去就如同一股光虹﹐一條併射著冷芒星輝的光龍﹐飛騰九
+天般的破空往$N而去。~
 Chance          10
 Value           20
 Parry           0
@@ -122,8 +122,8 @@ Innate          0 0
 End
 #Damage
 Description
-$G�m�s�C�Z�n$Z$A$n���Ѫ��S�M������l���ʡM�⤤$O�b�u��E���U����Ÿ�ʡM���M
-$O���p�e�q��V$N���g�ӥh�C~
+$G《御劍訣》$Z$A$n仰天長嘯﹐全身氣勁鼓動﹐手中$O在真氣激盪下不住顫動﹐倏然
+$O有如疾電般向$N飛射而去。~
 Chance          10
 Value           20
 Parry           0

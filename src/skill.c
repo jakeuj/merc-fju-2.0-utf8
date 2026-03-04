@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -58,12 +58,12 @@ int effect_wand( CHAR_DATA * ch, SKILL_DATA * pSkill )
     {
       if ( pObj->value[6] < pObj->value[7] )
       {
-        act( "$pªºªk¤O®ø¯Ó¬pºÉ¡MµLªk¦A»²§U§A¤F¡T", ch, pObj, NULL, TO_CHAR );
+        act( "$pçš„æ³•åŠ›æ¶ˆè€—æ®†ç›¡ï¹ç„¡æ³•å†è¼”åŠ©ä½ äº†ï¹—", ch, pObj, NULL, TO_CHAR );
         extract_obj( pObj );
         RETURN( 100 );
       }
 
-      act( "$3$n¤â¤Wªº$pµo¥X¤F¤@°}Ä£²´ªº¥ú¨~¡MÀH§Y¤S«ì´_¥¿±`¡T$0"
+      act( "$3$næ‰‹ä¸Šçš„$pç™¼å‡ºäº†ä¸€é™£è€€çœ¼çš„å…‰èŠ’ï¹éš¨å³åˆæ¢å¾©æ­£å¸¸ï¹—$0"
         , ch, pObj, NULL, TO_ALL );
 
       pObj->value[6] = UMAX( 0, pObj->value[6] - pObj->value[7] );
@@ -75,12 +75,12 @@ int effect_wand( CHAR_DATA * ch, SKILL_DATA * pSkill )
       {
         if ( pObj->value[6] < pObj->value[7] )
         {
-          act( "$pªºªk¤O®ø¯Ó¬pºÉ¡MµLªk¦A»²§U§A¤F¡T", ch, pObj, NULL, TO_CHAR );
+          act( "$pçš„æ³•åŠ›æ¶ˆè€—æ®†ç›¡ï¹ç„¡æ³•å†è¼”åŠ©ä½ äº†ï¹—", ch, pObj, NULL, TO_CHAR );
           extract_obj( pObj );
           RETURN( 100 );
         }
 
-        act( "$3$n¤â¤Wªº$pµo¥X¤F¤@°}Ä£²´ªº¥ú¨~¡MÀH§Y¤S«ì´_¥¿±`¡T$0"
+        act( "$3$næ‰‹ä¸Šçš„$pç™¼å‡ºäº†ä¸€é™£è€€çœ¼çš„å…‰èŠ’ï¹éš¨å³åˆæ¢å¾©æ­£å¸¸ï¹—$0"
           , ch, pObj, NULL, TO_ALL );
 
         pObj->value[6] = UMAX( 0, pObj->value[6] - pObj->value[7] );
@@ -110,25 +110,25 @@ FUNCTION( do_llink )
 
   if ( !arg[0] )
   {
-    send_to_char( "§A­n¬d¸ß­ş¤@­Ó§Ş¯àªº³sµ²¡S\n\r", ch );
+    send_to_char( "ä½ è¦æŸ¥è©¢å“ªä¸€å€‹æŠ€èƒ½çš„é€£çµï¹–\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !( pSkill = skill_isname( arg ) ) )
   {
-    act( "§ä¤£¨ì§A­nªºªk³N©Î¬O§Ş¯à¦WºÙ $2$T$0¡C", ch, NULL, arg, TO_CHAR );
+    act( "æ‰¾ä¸åˆ°ä½ è¦çš„æ³•è¡“æˆ–æ˜¯æŠ€èƒ½åç¨± $2$T$0ã€‚", ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( !( get_skill( pSkill->associate ) ) )
   {
-    act( "$w¨S¦³¬ÛÃöªº³sµ²§Ş¯à¡C", ch, pSkill, NULL, TO_CHAR );
+    act( "$wæ²’æœ‰ç›¸é—œçš„é€£çµæŠ€èƒ½ã€‚", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   for ( clear_buffer(); pSkill; pSkill = get_skill( pSkill->associate ) )
   {
-    send_to_buffer( "¶¶§Ç¡R%2d ¾÷²v¡R%4d%%%% %-20s %-20s\n\r"
+    send_to_buffer( "é †åºï¹•%2d æ©Ÿç‡ï¹•%4d%%%% %-20s %-20s\n\r"
       , ++count, pSkill->degree, pSkill->name, pSkill->cname );
   }
 
@@ -158,7 +158,7 @@ FUNCTION( do_cast )
 
   PUSH_FUNCTION( "do_cast" );
 
-  /* ¦pªGµêÀÀ©Çª«³Q°g´b«h¤£¯à¬I®iªk³N©Î§Ş¯à */
+  /* å¦‚æœè™›æ“¬æ€ªç‰©è¢«è¿·æƒ‘å‰‡ä¸èƒ½æ–½å±•æ³•è¡“æˆ–æŠ€èƒ½ */
   if ( IS_NPC( ch ) && is_affected( ch, SLOT_CHARM_PERSON ) )
     RETURN_NULL();
 
@@ -167,29 +167,29 @@ FUNCTION( do_cast )
   pString = argument = one_argument( argument , arg1 );
   one_argument( argument , arg2 );
 
-  /* ¨S¦³¥ô¦óªº°Ñ¼Æ */
+  /* æ²’æœ‰ä»»ä½•çš„åƒæ•¸ */
   if ( !arg1[0] )
   {
-    send_to_char( "§A­n¬I®i¤°»ò§Ş¯à©O¡S\n\r" , ch );
+    send_to_char( "ä½ è¦æ–½å±•ä»€éº¼æŠ€èƒ½å‘¢ï¹–\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* ¥ıÀË¬d¬O§_¥i¥H¬I®i³o¼Ëªk³N */
+  /* å…ˆæª¢æŸ¥æ˜¯å¦å¯ä»¥æ–½å±•é€™æ¨£æ³•è¡“ */
   pSkill = skill_isname( arg1 );
 
   if ( !pSkill || ( !IS_NPC( ch ) && ch->skill[pSkill->slot] <= 0 ) )
   {
-    send_to_char( "§AÁÙ¤£·|³o¶µ§Ş¯à§a¡T\n\r" , ch );
+    send_to_char( "ä½ é‚„ä¸æœƒé€™é …æŠ€èƒ½å§ï¹—\n\r" , ch );
     RETURN_NULL();
   }
 
   if ( is_dead( ch ) )
   {
-    act( "§A¤w¸g¦º¤F, µLªk¬I®i$w.", ch, pSkill, NULL, TO_CHAR );
+    act( "ä½ å·²ç¶“æ­»äº†, ç„¡æ³•æ–½å±•$w.", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* §Ş¯à©Ê§Oªº­­¨î */
+  /* æŠ€èƒ½æ€§åˆ¥çš„é™åˆ¶ */
   switch( pSkill->sex )
   {
   default:
@@ -201,13 +201,13 @@ FUNCTION( do_cast )
 
     if ( ch->sex != pSkill->sex )
     {
-      send_to_char( "§A¤£¯à¨Ï¥Î¤£¬O§A©Ê§Oªº§Ş¯à¡T\n\r", ch );
+      send_to_char( "ä½ ä¸èƒ½ä½¿ç”¨ä¸æ˜¯ä½ æ€§åˆ¥çš„æŠ€èƒ½ï¹—\n\r", ch );
       RETURN_NULL();
     }
     break;
   }
 
-  /* ÀË¬d§Ş¯àªº­­¨î */
+  /* æª¢æŸ¥æŠ€èƒ½çš„é™åˆ¶ */
   for ( pRest = pSkill->restrict; pRest; pRest = pRest->next )
   {
     switch( pRest->type )
@@ -232,7 +232,7 @@ FUNCTION( do_cast )
         && !IS_IMMORTAL( ch )
         && !IS_NPC( ch ) )
       {
-        act( "$B$B§A¤w¸gº¥º¥¦a¿ò§Ñ$1$w$0³o¶µ§Ş¯à¤F¡T", ch, pSkill, NULL, TO_CHAR );
+        act( "$B$Bä½ å·²ç¶“æ¼¸æ¼¸åœ°éºå¿˜$1$w$0é€™é …æŠ€èƒ½äº†ï¹—", ch, pSkill, NULL, TO_CHAR );
         cancel_skill( ch, pSkill );
         RETURN_NULL();
       }
@@ -250,7 +250,7 @@ FUNCTION( do_cast )
         && !IS_IMMORTAL( ch )
         && !IS_NPC( ch ) )
       {
-        act( "§AµLªk¨Ï¥Î¦p¦¹Á}²`ªº$w¡T", ch, pSkill, NULL, TO_CHAR );
+        act( "ä½ ç„¡æ³•ä½¿ç”¨å¦‚æ­¤è‰±æ·±çš„$wï¹—", ch, pSkill, NULL, TO_CHAR );
         RETURN_NULL();
       }
       break;
@@ -259,7 +259,7 @@ FUNCTION( do_cast )
 
   if ( pFind == FALSE && !IS_IMMORTAL( ch ) && !IS_NPC( ch ) )
   {
-    act( "$w¤£¾A¦X§A¥Ø«eªºÂ¾·~¡C", ch, pSkill, NULL, TO_CHAR );
+    act( "$wä¸é©åˆä½ ç›®å‰çš„è·æ¥­ã€‚", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -272,7 +272,7 @@ FUNCTION( do_cast )
   case RATING_SAINT:
     if ( !IS_GOOD( ch ) && !IS_IMMORTAL( ch ) && !IS_NPC( ch ) )
     {
-      act( "§A¤Ó¨¸´c¤F¡MµLªk¨Ï¥X$w¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ å¤ªé‚ªæƒ¡äº†ï¹ç„¡æ³•ä½¿å‡º$wï¹—", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
     break;
@@ -280,7 +280,7 @@ FUNCTION( do_cast )
   case RATING_EVIL:
     if ( !IS_EVIL( ch ) && !IS_IMMORTAL( ch ) && !IS_NPC( ch ) )
     {
-      act( "§Aªº¤ß¦a¤Óµ½¨}¡MµLªk¨Ï¥X$w¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ çš„å¿ƒåœ°å¤ªå–„è‰¯ï¹ç„¡æ³•ä½¿å‡º$wï¹—", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
     break;
@@ -289,49 +289,49 @@ FUNCTION( do_cast )
 
   if ( pSkill->cast == FALSE )
   {
-    act( "$w¬OµLªk¥Î³oºØ¤èªk¬I®i¡C", ch, pSkill, NULL, TO_CHAR );
+    act( "$wæ˜¯ç„¡æ³•ç”¨é€™ç¨®æ–¹æ³•æ–½å±•ã€‚", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¥²¶·¦³¦X²zªºª¬ºA¤~¯à¬I®iªk³N */
+  /* å¿…é ˆæœ‰åˆç†çš„ç‹€æ…‹æ‰èƒ½æ–½å±•æ³•è¡“ */
   if ( ch->position < pSkill->position )
   {
-    act( "§AµLªk±M¤ß¬I®i$w¡C", ch, pSkill, NULL, TO_CHAR );
+    act( "ä½ ç„¡æ³•å°ˆå¿ƒæ–½å±•$wã€‚", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ©w¦ì¥Ø¼Ğ */
+  /* å®šä½ç›®æ¨™ */
   victim = NULL;
   obj    = NULL;
   vo     = NULL;
   sn     = pSkill->slot;
 
-  /* ­pºâ®ø¯Óªº¼Æ­È¶q */
+  /* è¨ˆç®—æ¶ˆè€—çš„æ•¸å€¼é‡ */
   cost   = pSkill->cost;
   adept  = UMIN( 100, UMAX( ch->skill[sn], 1 ) );
   cost   = UMAX( 1, UMAX( cost / 4, cost * adept / 100 ) );
   attack = TRUE;
 
-  /* ÀË¬d¬O§_»İ­n²Ä¤G­Ó°Ñ¼Æ */
+  /* æª¢æŸ¥æ˜¯å¦éœ€è¦ç¬¬äºŒå€‹åƒæ•¸ */
   switch ( pSkill->type )
   {
   default :
 
-    mudlog( LOG_DEBUG , "Do_cast: ªk³N%sªº«¬ºA¿ù»~", pSkill->name );
+    mudlog( LOG_DEBUG , "Do_cast: æ³•è¡“%sçš„å‹æ…‹éŒ¯èª¤", pSkill->name );
     RETURN_NULL();
 
-  /* ¤£»İ­n¥Ø¼Ğ */
+  /* ä¸éœ€è¦ç›®æ¨™ */
   case TAR_IGNORE:
     break;
 
-  /* §ğÀ»©Êªk³N */
+  /* æ”»æ“Šæ€§æ³•è¡“ */
   case TAR_CHAR_OFFENSIVE:
 
     if ( !arg2[0] )
     {
       if ( !( victim = ch->fighting ) )
       {
-        act( "­n¹ï½Ö¬I®i$w©O¡S", ch, pSkill, NULL, TO_CHAR );
+        act( "è¦å°èª°æ–½å±•$wå‘¢ï¹–", ch, pSkill, NULL, TO_CHAR );
         RETURN_NULL();
       }
     }
@@ -340,14 +340,14 @@ FUNCTION( do_cast )
     {
       if ( !( victim = get_char_room( ch, arg2 ) ) )
       {
-        act( "§Aªº¹ï¶H $2$t$0 ¨Ã¤£¦b³o¸Ì¡C", ch, arg2, NULL, TO_CHAR );
+        act( "ä½ çš„å°è±¡ $2$t$0 ä¸¦ä¸åœ¨é€™è£¡ã€‚", ch, arg2, NULL, TO_CHAR );
         RETURN_NULL();
       }
       else
       {
         if ( victim == ch )
         {
-          send_to_char( "¤H¥Íµuµu¼Æ¤Q¦~¡M¦ó¥²¦Ûµô¡T\n\r" , ch );
+          send_to_char( "äººç”ŸçŸ­çŸ­æ•¸åå¹´ï¹ä½•å¿…è‡ªè£ï¹—\n\r" , ch );
           RETURN_NULL();
         }
       }
@@ -355,7 +355,7 @@ FUNCTION( do_cast )
 
     if ( !can_damage( victim ) )
     {
-      act( "§AµLªk¹ï$N¦A¶i¦æ§ğÀ»¤F.", ch, NULL, victim, TO_CHAR );
+      act( "ä½ ç„¡æ³•å°$Nå†é€²è¡Œæ”»æ“Šäº†.", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -363,21 +363,21 @@ FUNCTION( do_cast )
     {
       if ( fight_info->status != PK_FIGHT )
       {
-        send_to_char( "¦b³o¬q®É¶¡¡MÁÙ¬O¦n¦n¦a¥ğ®§¤@¤U§a¡T\n\r", ch );
+        send_to_char( "åœ¨é€™æ®µæ™‚é–“ï¹é‚„æ˜¯å¥½å¥½åœ°ä¼‘æ¯ä¸€ä¸‹å§ï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
 
-    /* ÀË¬d¬O§_¥i¥Hµo¥Í¾Ô°« */
+    /* æª¢æŸ¥æ˜¯å¦å¯ä»¥ç™¼ç”Ÿæˆ°é¬¥ */
     if ( !can_fight( ch , victim ) ) RETURN_NULL();
 
     vo = ( void * ) victim;
     break;
 
-  /* ¨¾¿m©Êªk³N */
+  /* é˜²ç¦¦æ€§æ³•è¡“ */
   case TAR_CHAR_DEFENSIVE:
 
-    /* ¦pªG¨S¦³°Ñ¼Æ¹ï¶H´N¬O¦Û¤v */
+    /* å¦‚æœæ²’æœ‰åƒæ•¸å°è±¡å°±æ˜¯è‡ªå·± */
     if ( !arg2[0] )
     {
       victim = ch;
@@ -387,63 +387,63 @@ FUNCTION( do_cast )
     {
       if ( !( victim = get_char_room( ch, arg2 ) ) )
       {
-        act( "§ä¤£¨ì§Aªº¹ï¶H $2$T$0¡T", ch, NULL, arg2, TO_CHAR );
+        act( "æ‰¾ä¸åˆ°ä½ çš„å°è±¡ $2$T$0ï¹—", ch, NULL, arg2, TO_CHAR );
         RETURN_NULL();
       }
     }
 
     if ( !can_damage( victim ) )
     {
-      act( "§AµLªk¹ï$N¬I®i$w.", ch, pSkill, victim, TO_CHAR );
+      act( "ä½ ç„¡æ³•å°$Næ–½å±•$w.", ch, pSkill, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     vo = ( void * ) victim;
     break;
 
-  /* ¥u¯à¬I®i¦b¦Û¤v¨­¤Wªºªk³N */
+  /* åªèƒ½æ–½å±•åœ¨è‡ªå·±èº«ä¸Šçš„æ³•è¡“ */
   case TAR_CHAR_SELF:
 
     if ( arg2[0] && !is_name( arg2, ch->name ) )
     {
-      act( "$w¥u¯à¬I®i¦b¦Û¤v¨­¤W¡C", ch, pSkill, NULL, TO_CHAR );
+      act( "$wåªèƒ½æ–½å±•åœ¨è‡ªå·±èº«ä¸Šã€‚", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     vo = ( void * ) ch;
     break;
 
-  /* ¬I®i¦b¦Û¤v©ÒÄâ±aªºªZ¾¹¤W */
+  /* æ–½å±•åœ¨è‡ªå·±æ‰€æ”œå¸¶çš„æ­¦å™¨ä¸Š */
   case TAR_OBJ_INV:
 
-    /* ¤@©w­n¦³°Ñ¼Æ, ³o­Ó°Ñ¼Æ¬O¸Ë³Æªº¦W¦r */
+    /* ä¸€å®šè¦æœ‰åƒæ•¸, é€™å€‹åƒæ•¸æ˜¯è£å‚™çš„åå­— */
     if ( !arg2[0] )
     {
-      act( "§A­n¬I®i$w¨ì§Aªº¤°»ò¸Ë³Æ¤W©O¡S", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ è¦æ–½å±•$wåˆ°ä½ çš„ä»€éº¼è£å‚™ä¸Šå‘¢ï¹–", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ¬İ¬İ¬O§_¦³Äâ±a³o¼ËªºªZ¾¹ */
+    /* çœ‹çœ‹æ˜¯å¦æœ‰æ”œå¸¶é€™æ¨£çš„æ­¦å™¨ */
     if ( !( obj = get_obj_carry( ch, arg2 ) ) )
     {
-      act( "§A¨Ã¨S¦³Äâ±aª««~ $2$T$0¡C", ch, NULL, arg2, TO_CHAR );
+      act( "ä½ ä¸¦æ²’æœ‰æ”œå¸¶ç‰©å“ $2$T$0ã€‚", ch, NULL, arg2, TO_CHAR );
       RETURN_NULL();
     }
 
     vo = ( void * ) obj;
     break;
 
-  /* °{¸ú§Ş¯à©Î¬O°½¿s§Ş */
+  /* é–ƒèº²æŠ€èƒ½æˆ–æ˜¯å·çªºæŠ€ */
   case TAR_DODGE:
 
-    act( "$w¥u¯à­P¯à®É¡M¦Û°Ê¬I®i¡T", ch, pSkill, NULL, TO_CHAR );
+    act( "$wåªèƒ½è‡´èƒ½æ™‚ï¹è‡ªå‹•æ–½å±•ï¹—", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
 
   case TAR_ARGUMENT:
 
     if ( !pString || !*pString )
     {
-      act( "¹ï¤£°_¡M$w«á­±¥²¶·¥[¤J°Ñ¼Æ¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$wå¾Œé¢å¿…é ˆåŠ å…¥åƒæ•¸ï¹—", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -454,54 +454,54 @@ FUNCTION( do_cast )
 
     if ( arg2[0] == '\x0' )
     {
-      act( "¹ï¤£°_¡M$w«á­±¥²¶·¥[¤J°Ñ¼Æ¡C", ch, pSkill, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$wå¾Œé¢å¿…é ˆåŠ å…¥åƒæ•¸ã€‚", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     vo = ( char * ) arg2;
     break;
 
-  /* °k¶]§Ş¯à */
+  /* é€ƒè·‘æŠ€èƒ½ */
   case TAR_FLEE:
 
     if ( !ch->fighting )
     {
-      send_to_char( "§A¨S¦³¦b¾Ô°«¬°¦ó­n°k¶]¡S\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åœ¨æˆ°é¬¥ç‚ºä½•è¦é€ƒè·‘ï¹–\n\r", ch );
       RETURN_NULL();
     }
     break;
 
-  /* Âø¶µ */
+  /* é›œé … */
   case TAR_NO_CAST:
 
-    act( "$w¬OµLªk¥Î³oºØ¤è¦¡¬I®i¥X¨Ó¡C", ch, pSkill, NULL, TO_CHAR );
+    act( "$wæ˜¯ç„¡æ³•ç”¨é€™ç¨®æ–¹å¼æ–½å±•å‡ºä¾†ã€‚", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
 
-  /* ÃM³N */
+  /* é¨è¡“ */
   case TAR_MOUNT:
 
-    act( "$w¬O·í§AÃM°¨®É¡M¤~·|¦Û°Ê¨Ï¥Î¡T", ch, pSkill, NULL, TO_CHAR );
+    act( "$wæ˜¯ç•¶ä½ é¨é¦¬æ™‚ï¹æ‰æœƒè‡ªå‹•ä½¿ç”¨ï¹—", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
 
-  /* ­ß·QÃş */
+  /* å†¥æƒ³é¡ */
   case TAR_MEDITATION:
 
-    act( "$w¬O·í¦b§AºÎÄ±®É¡M·|¦Û°Ê¬I®i¡T", ch, pSkill, NULL, TO_CHAR );
+    act( "$wæ˜¯ç•¶åœ¨ä½ ç¡è¦ºæ™‚ï¹æœƒè‡ªå‹•æ–½å±•ï¹—", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
 
   case TAR_OBJ_ROOM:
 
-    /* ¤@©w­n¦³°Ñ¼Æ, ³o­Ó°Ñ¼Æ¬O¸Ë³Æªº¦W¦r */
+    /* ä¸€å®šè¦æœ‰åƒæ•¸, é€™å€‹åƒæ•¸æ˜¯è£å‚™çš„åå­— */
     if ( !arg2[0] || !ch->in_room )
     {
-      act( "§A­n¬I®i$w¨ì¦a¤W¤°»òª««~¤W©O¡S", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ è¦æ–½å±•$wåˆ°åœ°ä¸Šä»€éº¼ç‰©å“ä¸Šå‘¢ï¹–", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ¬İ¬İ¬O§_¦³Äâ±a³o¼ËªºªZ¾¹ */
+    /* çœ‹çœ‹æ˜¯å¦æœ‰æ”œå¸¶é€™æ¨£çš„æ­¦å™¨ */
     if ( !( obj = get_obj_list( ch, arg2, ch->in_room->contents ) ) )
     {
-      act( "³o¸Ì¨Ã¨S¦³ $2$T$0 ­C¡T", ch, NULL, arg2, TO_CHAR );
+      act( "é€™è£¡ä¸¦æ²’æœ‰ $2$T$0 è€¶ï¹—", ch, NULL, arg2, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -509,129 +509,129 @@ FUNCTION( do_cast )
     break;
   }
 
-  /* ÀË¬d¬O§_¦³¨¬°÷ªºªk¤O©Î¬OÅé¤O©Î¬O¨ä¥L....*/
+  /* æª¢æŸ¥æ˜¯å¦æœ‰è¶³å¤ çš„æ³•åŠ›æˆ–æ˜¯é«”åŠ›æˆ–æ˜¯å…¶ä»–....*/
   switch( pSkill->cost_type )
   {
   default :
 
-    mudlog( LOG_DEBUG , "do_cast: ªk³N %s ªº¯Ó·l«¬ºA¿ù»~", pSkill->name );
+    mudlog( LOG_DEBUG , "do_cast: æ³•è¡“ %s çš„è€—æå‹æ…‹éŒ¯èª¤", pSkill->name );
     RETURN_NULL();
 
-  /* ®ø¯Ó¥Í©R¤O */
+  /* æ¶ˆè€—ç”Ÿå‘½åŠ› */
   case COST_HIT:
 
     if ( ch->hit < cost )
     {
-      act( "§Aªº¥Í©R¤O¤Ó§C¡MµLªk¬I®i$w¡C", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ çš„ç”Ÿå‘½åŠ›å¤ªä½ï¹ç„¡æ³•æ–½å±•$wã€‚", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     break;
 
-  /* ®ø¯Óªk¤O */
+  /* æ¶ˆè€—æ³•åŠ› */
   case COST_MANA:
 
     if ( ch->mana < cost )
     {
-      act( "§A¨S¦³¨¬°÷ªºªk¤O¨Ó¬I®i$w¡C", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ æ²’æœ‰è¶³å¤ çš„æ³•åŠ›ä¾†æ–½å±•$wã€‚", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     break;
 
-  /* ®ø¯ÓÅé¤O */
+  /* æ¶ˆè€—é«”åŠ› */
   case COST_MOVE:
 
     if ( ch->move < cost )
     {
-      act( "§AªºÅé¤O¤£ÀÙ¡MµLªk¬I®i$w¡C", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ çš„é«”åŠ›ä¸æ¿Ÿï¹ç„¡æ³•æ–½å±•$wã€‚", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     break;
 
-  /* ®ø¯Óª÷¿ú */
+  /* æ¶ˆè€—é‡‘éŒ¢ */
   case COST_GOLD:
 
     if ( ch->gold < cost )
     {
-      act( "§A¨S¦³¨¬°÷ªº»È¨â¡MµLªk¬I®i$w¡C", ch, pSkill, NULL, TO_CHAR );
+      act( "ä½ æ²’æœ‰è¶³å¤ çš„éŠ€å…©ï¹ç„¡æ³•æ–½å±•$wã€‚", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     break;
   }
 
-  /* ¬İ¬İ¬O§_»İ­n°á¥X©G»y */
+  /* çœ‹çœ‹æ˜¯å¦éœ€è¦å”¸å‡ºå’’èª */
   if ( pSkill->say_spell ) murmur_spell( ch , pSkill );
 
-  /* ªk³N©Î¬O§Ş¯àªºµ¥«İ®É¶¡ */
+  /* æ³•è¡“æˆ–æ˜¯æŠ€èƒ½çš„ç­‰å¾…æ™‚é–“ */
   WAIT_STATE( ch, pSkill->wait );
 
-  /* ÀË¬d¬O§_¦³·N§Ó¤£¶°¤¤ªº±¡§Î */
+  /* æª¢æŸ¥æ˜¯å¦æœ‰æ„å¿—ä¸é›†ä¸­çš„æƒ…å½¢ */
   if ( pSkill->concentration == TRUE && lost_concentration( ch, sn ) == TRUE )
   {
     cost   = UMAX( 1, cost / 2 );
     attack = FALSE;
   }
 
-  /* ¦©°£¼Æ­È */
+  /* æ‰£é™¤æ•¸å€¼ */
   switch( pSkill->cost_type )
   {
   default :
-    mudlog( LOG_DEBUG , "Do_cast: ªk³N%sªº¯Ó·l«¬ºA¿ù»~.", pSkill->name );
+    mudlog( LOG_DEBUG , "Do_cast: æ³•è¡“%sçš„è€—æå‹æ…‹éŒ¯èª¤.", pSkill->name );
     RETURN_NULL();
 
-  /* ®ø¯Ó¥Í©R¤O */
+  /* æ¶ˆè€—ç”Ÿå‘½åŠ› */
   case COST_HIT:
     ch->hit = UMAX( 1, ch->hit - cost );
     break;
 
-  /* ®ø¯Óªk¤O */
+  /* æ¶ˆè€—æ³•åŠ› */
   case COST_MANA:
     ch->mana = UMAX( 0, ch->mana - cost );
     break;
 
-  /* ®ø¯ÓÅé¤O */
+  /* æ¶ˆè€—é«”åŠ› */
   case COST_MOVE:
     ch->move = UMAX( 0, ch->move - cost );
     break;
 
-  /* ®ø¯Óª÷¿ú */
+  /* æ¶ˆè€—é‡‘éŒ¢ */
   case COST_GOLD:
     gold_from_char( ch, cost );
     break;
   }
 
-  /* ÀË¬d¬O§_¥i¥H¬Iªk */
+  /* æª¢æŸ¥æ˜¯å¦å¯ä»¥æ–½æ³• */
   if ( pSkill->check && ( ( *pSkill->check ) ( ch, TRUE ) ) == FALSE )
     RETURN_NULL();
 
-  /* ·N§Ó¤£¶°¤¤ªº®É­Ô */
+  /* æ„å¿—ä¸é›†ä¸­çš„æ™‚å€™ */
   if ( attack == FALSE )
   {
-    act( "§Aªººë¯«·N§Ó¤£¶°¤¤¡M$wµLªk¬I®i¡C", ch, pSkill, NULL, TO_CHAR );
+    act( "ä½ çš„ç²¾ç¥æ„å¿—ä¸é›†ä¸­ï¹$wç„¡æ³•æ–½å±•ã€‚", ch, pSkill, NULL, TO_CHAR );
   }
 
-  /* ¯u¥¿­n¬I®iªk³N */
+  /* çœŸæ­£è¦æ–½å±•æ³•è¡“ */
   else
   {
-    /* ¬O§_¦³©T©w¼Ò¦¡ */
+    /* æ˜¯å¦æœ‰å›ºå®šæ¨¡å¼ */
     if ( pSkill->damage )
     {
       switch ( pSkill->type )
       {
       default:
-        mudlog( LOG_DEBUG, "%s ªº¨S¦³©T©w¼Ò¦¡(%d)."
+        mudlog( LOG_DEBUG, "%s çš„æ²’æœ‰å›ºå®šæ¨¡å¼(%d)."
           , pSkill->name, pSkill->type );
         break;
 
-      /* §ğÀ»©Êªk³N */
+      /* æ”»æ“Šæ€§æ³•è¡“ */
       case TAR_CHAR_OFFENSIVE:
         driver_kill( pSkill, ch, ( CHAR_DATA * ) vo );
         break;
 
-      /* °k¶] */
+      /* é€ƒè·‘ */
       case TAR_FLEE:
 
         driver_flee( pSkill, ch );
@@ -639,12 +639,12 @@ FUNCTION( do_cast )
       }
     }
 
-    /* ¨S¦³«h©I¥s¨ç¼Æ¨Ó¹Bºâ */
+    /* æ²’æœ‰å‰‡å‘¼å«å‡½æ•¸ä¾†é‹ç®— */
     else
     {
       if ( !pSkill->function )
       {
-        mudlog( LOG_DEBUG, "do_cast: §Ş¯à %s ¨S¦³¾Ş§@¨ç¼Æ.", pSkill->name );
+        mudlog( LOG_DEBUG, "do_cast: æŠ€èƒ½ %s æ²’æœ‰æ“ä½œå‡½æ•¸.", pSkill->name );
         RETURN_NULL();
       }
 
@@ -652,7 +652,7 @@ FUNCTION( do_cast )
       {
         if ( ( prac = effect_wand( ch, pSkill ) ) == ERRORCODE )
         {
-          mudlog( LOG_DEBUG, "do_cast: µLªkÀò±oªk§ú¥[¦¨." );
+          mudlog( LOG_DEBUG, "do_cast: ç„¡æ³•ç²å¾—æ³•æ–åŠ æˆ." );
           prac = 100;
         }
 
@@ -664,13 +664,13 @@ FUNCTION( do_cast )
     }
   }
 
-  /* Àò±o§Ş¯àªº¼ô½m«× */
+  /* ç²å¾—æŠ€èƒ½çš„ç†Ÿç·´åº¦ */
   if ( gain ) gain_skill_exp( ch , sn , attack );
 
-  /* ­Y¨ä¤¤¦³¤@ªÌ¦º¤`, «h¤£°µ¤U¦C°Ê§@ */
+  /* è‹¥å…¶ä¸­æœ‰ä¸€è€…æ­»äº¡, å‰‡ä¸åšä¸‹åˆ—å‹•ä½œ */
   if ( !can_damage( ch ) || !can_damage( victim ) ) RETURN_NULL();
 
-  /* ¹ï¤è­nª¾¹D¾Ô°«¤F, ¥i¥H¥X©Û¤F, ¦ı¬O¹ï¤è¤£¯à¬O¦Û¤v©Î¬O¦Û¤vªº³¡Äİ */
+  /* å°æ–¹è¦çŸ¥é“æˆ°é¬¥äº†, å¯ä»¥å‡ºæ‹›äº†, ä½†æ˜¯å°æ–¹ä¸èƒ½æ˜¯è‡ªå·±æˆ–æ˜¯è‡ªå·±çš„éƒ¨å±¬ */
   if ( pSkill->type == TAR_CHAR_OFFENSIVE
     && victim->master != ch
     && victim != ch
@@ -712,13 +712,13 @@ void driver_kill( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
   if ( !pSkill || !ch || !victim || !verify_char( ch )
     || !verify_char( victim ) )
   {
-    mudlog( LOG_DEBUG, "driver_kill: ¨Ó·½¬OªÅªº." );
+    mudlog( LOG_DEBUG, "driver_kill: ä¾†æºæ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
   if ( !pSkill->damage )
   {
-    mudlog( LOG_DEBUG, "driver_kill: §Ş¯à %s ¨S¦³§ğ¶Ë±Ô­z.", pSkill->name );
+    mudlog( LOG_DEBUG, "driver_kill: æŠ€èƒ½ %s æ²’æœ‰æ”»å‚·æ•˜è¿°.", pSkill->name );
     RETURN_NULL();
   }
 
@@ -731,7 +731,7 @@ void driver_kill( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( ( total = pSkill->chance ) <= 0 )
   {
-    mudlog( LOG_DEBUG, "driver_kill: §Ş¯à%sªº§ğ¶Ë¾÷²vÁ`©M¤p©óµ¥©ó¹s."
+    mudlog( LOG_DEBUG, "driver_kill: æŠ€èƒ½%sçš„æ”»å‚·æ©Ÿç‡ç¸½å’Œå°æ–¼ç­‰æ–¼é›¶."
       , pSkill->name );
     RETURN_NULL();
   }
@@ -758,12 +758,12 @@ void driver_kill( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
       if ( pDam->description && *pDam->description )
         sact( ch , victim , pObj, pDam->description );
 
-      /* ¬O§_¦³¯S§ğ */
+      /* æ˜¯å¦æœ‰ç‰¹æ”» */
       if ( pDam->routine )
       {
         ( *pDam->routine ) ( ch, victim, practice );
 
-        /* ¬İ¬İ­è­èªº°Ê§@¬O§_¨ÏªºÂù¤è¦º¤` */
+        /* çœ‹çœ‹å‰›å‰›çš„å‹•ä½œæ˜¯å¦ä½¿çš„é›™æ–¹æ­»äº¡ */
         if ( !verify_char( ch )
           || !can_damage( ch )
           || !verify_char( victim )
@@ -772,13 +772,13 @@ void driver_kill( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
           RETURN_NULL();
       }
 
-      /* ¬O§_¦³¯S®í®ÄÀ³ */
+      /* æ˜¯å¦æœ‰ç‰¹æ®Šæ•ˆæ‡‰ */
       for ( pEffect = pDam->effect; pEffect; pEffect = pEffect->next )
       {
-        /* ©I¥s¨ç¼Æ¾Ş§@ */
+        /* å‘¼å«å‡½æ•¸æ“ä½œ */
         effect_driver( ch, victim, pEffect );
 
-        /* ¬İ¬İ­è­èªº°Ê§@¬O§_¨ÏªºÂù¤è¦º¤` */
+        /* çœ‹çœ‹å‰›å‰›çš„å‹•ä½œæ˜¯å¦ä½¿çš„é›™æ–¹æ­»äº¡ */
         if ( !verify_char( ch )
           || !can_damage( ch )
           || !verify_char( victim )
@@ -789,13 +789,13 @@ void driver_kill( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
 
       value = pDam->value;
 
-      /* §Ş¯àªºªk¾¹¥[¦¨ */
+      /* æŠ€èƒ½çš„æ³•å™¨åŠ æˆ */
       if ( pObj
         && verify_obj( pObj )
         && pDam->obj_vnum == pObj->pIndexData->vnum )
         value = value * pDam->multiple / 100;
 
-      /* ªZ¾¹ªº¥[¦¨ */
+      /* æ­¦å™¨çš„åŠ æˆ */
       if ( !IS_NPC( ch )
         && pObj
         && pObj->item_type == ITEM_WEAPON
@@ -818,7 +818,7 @@ void driver_kill( SKILL_DATA * pSkill, CHAR_DATA * ch, CHAR_DATA * victim )
     }
   }
 
-  mudlog( LOG_DEBUG, "driver_kill: §ä¤£¨ì±Ô­z." );
+  mudlog( LOG_DEBUG, "driver_kill: æ‰¾ä¸åˆ°æ•˜è¿°." );
   RETURN_NULL();
 }
 
@@ -842,26 +842,26 @@ void driver_flee( SKILL_DATA * pSkill, CHAR_DATA * ch )
 
   if ( !pSkill || !ch || !( victim = ch->fighting ) )
   {
-    mudlog( LOG_DEBUG, "driver_flee: ¨Ó·½¬OªÅªº." );
+    mudlog( LOG_DEBUG, "driver_flee: ä¾†æºæ˜¯ç©ºçš„." );
     RETURN_NULL();
   }
 
   if ( !pSkill->damage )
   {
-    mudlog( LOG_DEBUG, "driver_flee: §Ş¯à%s¨S¦³§ğ¶Ë±Ô­z.", pSkill->name );
+    mudlog( LOG_DEBUG, "driver_flee: æŠ€èƒ½%sæ²’æœ‰æ”»å‚·æ•˜è¿°.", pSkill->name );
     RETURN_NULL();
   }
 
   if ( ( total = pSkill->chance ) <= 0 )
   {
-    mudlog( LOG_DEBUG, "driver_flee: §Ş¯à%sªº§ğ¶Ë¾÷²vÁ`©M¤p©óµ¥©ó¹s."
+    mudlog( LOG_DEBUG, "driver_flee: æŠ€èƒ½%sçš„æ”»å‚·æ©Ÿç‡ç¸½å’Œå°æ–¼ç­‰æ–¼é›¶."
       , pSkill->name );
     RETURN_NULL();
   }
 
   if ( !( was_in = ch->in_room ) )
   {
-    mudlog( LOG_DEBUG, "driver_flee: ¤Hª«©Ò¦b©Ğ¶¡¤£¦s¦b." );
+    mudlog( LOG_DEBUG, "driver_flee: äººç‰©æ‰€åœ¨æˆ¿é–“ä¸å­˜åœ¨." );
     RETURN_NULL();
   }
 
@@ -877,32 +877,32 @@ void driver_flee( SKILL_DATA * pSkill, CHAR_DATA * ch )
       if ( pDam->description && *pDam->description )
         sact( ch, victim, NULL, pDam->description );
 
-      /* ¬O§_¦³¯S§ğ */
+      /* æ˜¯å¦æœ‰ç‰¹æ”» */
       if ( pDam->routine )
       {
         ( *pDam->routine ) ( ch, victim, practice );
 
-        /* ¬İ¬İ­è­èªº°Ê§@¬O§_¨ÏªºÂù¤è¦º¤` */
+        /* çœ‹çœ‹å‰›å‰›çš„å‹•ä½œæ˜¯å¦ä½¿çš„é›™æ–¹æ­»äº¡ */
         if ( !verify_char( ch )
           || !can_damage( ch )
           || !verify_char( victim )
           || !can_damage( victim ) ) RETURN_NULL();
       }
 
-      /* ¬O§_¦³¯S®í®ÄÀ³ */
+      /* æ˜¯å¦æœ‰ç‰¹æ®Šæ•ˆæ‡‰ */
       for ( pEffect = pDam->effect; pEffect; pEffect = pEffect->next )
       {
-        /* ©I¥s¨ç¼Æ¾Ş§@ */
+        /* å‘¼å«å‡½æ•¸æ“ä½œ */
         effect_driver( ch, victim, pEffect );
 
-        /* ¬İ¬İ­è­èªº°Ê§@¬O§_¨ÏªºÂù¤è¦º¤` */
+        /* çœ‹çœ‹å‰›å‰›çš„å‹•ä½œæ˜¯å¦ä½¿çš„é›™æ–¹æ­»äº¡ */
         if ( !verify_char( ch )
           || !can_damage( ch )
           || !verify_char( victim )
           || !can_damage( victim ) ) RETURN_NULL();
       }
 
-      /* ¥ı§ä¥X¤f */
+      /* å…ˆæ‰¾å‡ºå£ */
       for ( attemp = pDam->value; attemp > 0; attemp-- )
       {
         if ( number_range( 0, victim->level - pDam->vicevalue ) > ch->level
@@ -918,10 +918,10 @@ void driver_flee( SKILL_DATA * pSkill, CHAR_DATA * ch )
         move_char( ch, door );
         if ( ( now_in = ch->in_room ) == was_in ) continue;
 
-        /* ®yÃM·|°g¥¢ */
+        /* åº§é¨æœƒè¿·å¤± */
         if ( ch->mount ) unmount_char( ch, ch->mount );
 
-        /* ¶Ä§L¤]·|¤£¨£ */
+        /* å‚­å…µä¹Ÿæœƒä¸è¦‹ */
         if ( ch->mercenary ) all_mercenary_from_char( ch );
 
         if ( IS_NPC( ch ) && ch->talk_buf )
@@ -932,18 +932,18 @@ void driver_flee( SKILL_DATA * pSkill, CHAR_DATA * ch )
         }
 
         ch->in_room = was_in;
-        act( "$n¤£¼Ä¡M©êÀY¹«Â«°k¥h¡T", ch, NULL, NULL, TO_ROOM );
+        act( "$nä¸æ•µï¹æŠ±é ­é¼ ç«„é€ƒå»ï¹—", ch, NULL, NULL, TO_ROOM );
         ch->in_room = now_in;
 
         if ( !IS_NPC( ch ) )
         {
-          send_to_char("§A¶¶§Q±q¾Ô°«¤¤°kÂ÷¡M¤£¹L§A³à¥¢¤F25ÂI¸gÅç­È¡T\n\r", ch );
+          send_to_char("ä½ é †åˆ©å¾æˆ°é¬¥ä¸­é€ƒé›¢ï¹ä¸éä½ å–ªå¤±äº†25é»ç¶“é©—å€¼ï¹—\n\r", ch );
           gain_exp( ch, -25 );
         }
 
         if ( is_pk( ch ) && is_pk( victim ) )
         {
-          sprintf( buf, "%s¥ÑªZ°«¤j·|¹ï¨M¤¤¡M³ºµM°k¶]¡T", mob_name( NULL, ch ) );
+          sprintf( buf, "%sç”±æ­¦é¬¥å¤§æœƒå°æ±ºä¸­ï¹ç«Ÿç„¶é€ƒè·‘ï¹—", mob_name( NULL, ch ) );
           talk_channel_2( buf, CHANNEL_PK, "" );
         }
 
@@ -951,17 +951,17 @@ void driver_flee( SKILL_DATA * pSkill, CHAR_DATA * ch )
         RETURN_NULL();
       }
 
-      send_to_char( "§A°k¶]¥¢±Ñ¡M§A³à¥¢ \e[1;33m10\e[0m ÂI¸gÅç­È¡T\n\r", ch );
+      send_to_char( "ä½ é€ƒè·‘å¤±æ•—ï¹ä½ å–ªå¤± \e[1;33m10\e[0m é»ç¶“é©—å€¼ï¹—\n\r", ch );
       gain_exp( ch, -10 );
       RETURN_NULL();
     }
   }
 
-  mudlog( LOG_DEBUG, "driver_flee: §ä¤£¨ì±Ô­z." );
+  mudlog( LOG_DEBUG, "driver_flee: æ‰¾ä¸åˆ°æ•˜è¿°." );
   RETURN_NULL();
 }
 
-/* °á¥X©G»y */
+/* å”¸å‡ºå’’èª */
 void murmur_spell( CHAR_DATA * ch , SKILL_DATA * pSkill )
 {
   char         buf [MAX_STRING_LENGTH] = { 0 };
@@ -1028,10 +1028,10 @@ void murmur_spell( CHAR_DATA * ch , SKILL_DATA * pSkill )
     if ( length == 0 ) length = 1;
   }
 
-  sprintf( buf1, "$n¤f¤¤°á°á¦³µü»¡¹D: '%s'", buf );
-  sprintf( buf,  "$n¤f¤¤°á°á¦³µü»¡¹D: '%s'", pSkill->name );
+  sprintf( buf1, "$nå£ä¸­å”¸å”¸æœ‰è©èªªé“: '%s'", buf );
+  sprintf( buf,  "$nå£ä¸­å”¸å”¸æœ‰è©èªªé“: '%s'", pSkill->name );
 
-  /* °eµ¹©Ğ¶¡¸Ìªº¨C¤@­Ó¤H */
+  /* é€çµ¦æˆ¿é–“è£¡çš„æ¯ä¸€å€‹äºº */
   for ( rch = ch->in_room->people; rch; rch = rch->next_in_room )
   {
     if ( rch != ch )
@@ -1040,7 +1040,7 @@ void murmur_spell( CHAR_DATA * ch , SKILL_DATA * pSkill )
   RETURN_NULL();
 }
 
-/* ÀË¬d¬O§_·N§Ó¤£¶°¤¤ */
+/* æª¢æŸ¥æ˜¯å¦æ„å¿—ä¸é›†ä¸­ */
 bool lost_concentration( CHAR_DATA * ch , int sn )
 {
   sh_int     chance;
@@ -1049,25 +1049,25 @@ bool lost_concentration( CHAR_DATA * ch , int sn )
 
   if ( !ch || sn < 0 || sn >= MAX_SKILL )
   {
-    mudlog( LOG_DEBUG, "lost_concentration: ¨Ó·½¤£¦X²z." );
+    mudlog( LOG_DEBUG, "lost_concentration: ä¾†æºä¸åˆç†." );
     RETURN( TRUE );
   }
 
-  /* ­pºâ¾÷²v */
+  /* è¨ˆç®—æ©Ÿç‡ */
   if ( !IS_NPC( ch ) )
     chance = 50 - ( ( ch->skill[sn] + get_curr_wis( ch ) ) / 2 );
   else chance = ( 50 - ( ch->level + get_curr_wis( ch ) ) ) / 2;
 
   chance = URANGE( 1, chance, 100 );
 
-  /* ¨S¦³¥¢¥h±M¤ß -- ¥i¥Hµo¥X§Ş¯à */
+  /* æ²’æœ‰å¤±å»å°ˆå¿ƒ -- å¯ä»¥ç™¼å‡ºæŠ€èƒ½ */
   if ( number_percent() >= chance ) RETURN( FALSE );
 
-  /* ¤£±M¤ß, µLªk¬I¥X§Ş¯à */
+  /* ä¸å°ˆå¿ƒ, ç„¡æ³•æ–½å‡ºæŠ€èƒ½ */
   RETURN( TRUE );
 }
 
-/* ÀË¬d¬O§_¥i¥H´£ª@¼ô½m«× */
+/* æª¢æŸ¥æ˜¯å¦å¯ä»¥ææ˜‡ç†Ÿç·´åº¦ */
 bool gain_skill_exp( CHAR_DATA * ch , int sn , bool fTrue )
 {
   SKILL_DATA * pSkill;
@@ -1081,7 +1081,7 @@ bool gain_skill_exp( CHAR_DATA * ch , int sn , bool fTrue )
 
   if ( !ch || sn < 0 || sn >= MAX_SKILL )
   {
-    mudlog( LOG_DEBUG, "gain_skill_exp: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "gain_skill_exp: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -1090,20 +1090,20 @@ bool gain_skill_exp( CHAR_DATA * ch , int sn , bool fTrue )
     || fTrue == FALSE
     || !ch->class ) RETURN( FALSE );
 
-  /* »â·|¨ä¥LªZ¥\ */
+  /* é ˜æœƒå…¶ä»–æ­¦åŠŸ */
   if ( pSkill->associate != ERRORCODE ) learn_expert_skill( ch, pSkill );
 
-  /* §Ş¯à¤wº¡ */
+  /* æŠ€èƒ½å·²æ»¿ */
   if ( ch->skill[sn] >= 100 ) RETURN( FALSE );
 
-  /* ¥´°¨¤]¨S¦³ */
+  /* æ‰“é¦¬ä¹Ÿæ²’æœ‰ */
   if ( ch->fighting && ch->fighting->tractable > 0 ) RETURN( FALSE );
 
-  /* ©Ê§O¤£¹ï */
+  /* æ€§åˆ¥ä¸å° */
   if ( pSkill->sex && pSkill->sex > ERRORCODE && pSkill->sex < MAX_SEX )
     if ( ch->sex != pSkill->sex ) RETURN( FALSE );
 
-  /* ¬O§_¶W¥XÂ¾·~ªº­­¨î */
+  /* æ˜¯å¦è¶…å‡ºè·æ¥­çš„é™åˆ¶ */
   for ( pLimit = pSkill->limit; pLimit; pLimit = pLimit->next )
   {
     if ( pLimit->class == ch->class )
@@ -1115,19 +1115,19 @@ bool gain_skill_exp( CHAR_DATA * ch , int sn , bool fTrue )
     }
   }
 
-  /* ­Y¬O§ä¤£¨ì¤]¤£¯à¤É¼ô½m«× */
+  /* è‹¥æ˜¯æ‰¾ä¸åˆ°ä¹Ÿä¸èƒ½å‡ç†Ÿç·´åº¦ */
   if ( pFind == FALSE && !IS_NPC( ch ) ) RETURN( FALSE );
 
-  /* ³]©w¾÷²v */
+  /* è¨­å®šæ©Ÿç‡ */
   chance_base = 10000 + ( 200 * ( ch->skill[sn] + ch->level ) / 2 );
   chance      = get_curr_wis( ch ) + pSkill->exp;
 
-  /* ¥¢±Ñ */
+  /* å¤±æ•— */
   if ( number_range( 1, chance_base ) >= chance ) RETURN( FALSE );
 
-  /* Àò±o¤@ÂI¼ô½m«× */
-  sprintf( buf , "\n\r\e[1;33m§Aªº§V¤O­W½m²×©óÀò±o¦^³ø¤F¡M§Aªº%s"
-                 "§Ş¯à¼ô½m«×¼W¥[¤F¡T\e[0m\n\r\n\r", pSkill->cname );
+  /* ç²å¾—ä¸€é»ç†Ÿç·´åº¦ */
+  sprintf( buf , "\n\r\e[1;33mä½ çš„åŠªåŠ›è‹¦ç·´çµ‚æ–¼ç²å¾—å›å ±äº†ï¹ä½ çš„%s"
+                 "æŠ€èƒ½ç†Ÿç·´åº¦å¢åŠ äº†ï¹—\e[0m\n\r\n\r", pSkill->cname );
 
   act( smash_act_keyword( buf, "nes" ), ch->boss ? ch->boss : ch , NULL, NULL, TO_CHAR );
   ch->skill[sn]++;
@@ -1135,21 +1135,21 @@ bool gain_skill_exp( CHAR_DATA * ch , int sn , bool fTrue )
   RETURN( TRUE );
 }
 
-/* Àò±o¼ô½m«× */
+/* ç²å¾—ç†Ÿç·´åº¦ */
 int get_practice( CHAR_DATA * ch , int sn )
 {
   PUSH_FUNCTION( "get_practice" );
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "get_practice: ¤Hª«¬OªÅªº." );
+    mudlog( LOG_DEBUG, "get_practice: äººç‰©æ˜¯ç©ºçš„." );
     RETURN( 0 );
   }
 
-  /* ©Çª«³¡¥÷ */
+  /* æ€ªç‰©éƒ¨ä»½ */
   if ( IS_NPC( ch ) && ch->skill[sn] <= 0 ) RETURN( ch->level );
 
-  /* ª±®a³¡¥÷ */
+  /* ç©å®¶éƒ¨ä»½ */
   RETURN( ch->skill[sn] );
 }
 
@@ -1159,7 +1159,7 @@ SKILL( skill_sneak )
 
   PUSH_FUNCTION( "skill_sneak" );
 
-  send_to_char( "§A¸ÕµÛ»´²¾§Aªº¸}¨B¡C\n\r", ch );
+  send_to_char( "ä½ è©¦è‘—è¼•ç§»ä½ çš„è…³æ­¥ã€‚\n\r", ch );
   affect_release( ch, SLOT_SNEAK );
 
   pAf.type      = sn;
@@ -1185,19 +1185,19 @@ SKILL( skill_mask )
 
   if ( is_affected( ch, sn ) )
   {
-    send_to_char( "§A¤w¸g©ö®e¤F¡T\n\r", ch );
+    send_to_char( "ä½ å·²ç¶“æ˜“å®¹äº†ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( ch->position != POS_STANDING )
   {
-    send_to_char( "§A¥Ø«eªºª¬ºA¤£¾A¦X©ö®e¡T\n\r", ch );
+    send_to_char( "ä½ ç›®å‰çš„ç‹€æ…‹ä¸é©åˆæ˜“å®¹ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
   if ( is_pk( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M§A¥Ø«e¤£¯à¬I®i³oºØªk³N¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ ç›®å‰ä¸èƒ½æ–½å±•é€™ç¨®æ³•è¡“ï¹—\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -1215,7 +1215,7 @@ SKILL( skill_mask )
 
   if ( !zMob )
   {
-    send_to_char( "¹ï¤£°_¡M§ä¤£¨ì¥i¥H©ö®eªº¹ï¶H¡C\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ‰¾ä¸åˆ°å¯ä»¥æ˜“å®¹çš„å°è±¡ã€‚\n\r", ch );
     RETURN( FALSE );
   }
 
@@ -1226,7 +1226,7 @@ SKILL( skill_mask )
   pAf.level     = ch->level;
   affect_to_char( ch, &pAf );
 
-  act( "$n°Ê¤F¨Ç¤â¸}¡M©ö®e¦¨$t¤F¡M³o¡S"
+  act( "$nå‹•äº†äº›æ‰‹è…³ï¹æ˜“å®¹æˆ$täº†ï¹é€™ï¹–"
     , ch, mob_index_name( ch, zMob ), NULL, TO_ALL );
 
   ch->mask = zMob->vnum;
@@ -1240,7 +1240,7 @@ SKILL( skill_hide )
 
   PUSH_FUNCTION( "skill_hide" );
 
-  send_to_char( "§A¸ÕµÛÁôÂÃ¦Û¤v¡C\n\r", ch );
+  send_to_char( "ä½ è©¦è‘—éš±è—è‡ªå·±ã€‚\n\r", ch );
 
   if ( is_affected( ch, sn ) ) RETURN( FALSE );
 
@@ -1267,19 +1267,19 @@ FUNCTION( do_forsake )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "§A­n¨ú®ø¨º¤@­Ó§Ş¯à¡M½Ğ¬d¸ß forsake¡C\n\r", ch );
+    send_to_char( "ä½ è¦å–æ¶ˆé‚£ä¸€å€‹æŠ€èƒ½ï¹è«‹æŸ¥è©¢ forsakeã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !( pSkill = skill_isname( arg ) ) )
   {
-    act( "§ä¤£¨ì§A­n¨ú®øªº§Ş¯à $2$T$0¡T", ch, NULL, arg, TO_CHAR );
+    act( "æ‰¾ä¸åˆ°ä½ è¦å–æ¶ˆçš„æŠ€èƒ½ $2$T$0ï¹—", ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( ch->skill[ ( sn = pSkill->slot ) ] <= 0 )
   {
-    act( "§A¦Û¤v¤]¤£·|$w¡M«ç»ò¨ú®ø¡S", ch, pSkill, NULL, TO_CHAR );
+    act( "ä½ è‡ªå·±ä¹Ÿä¸æœƒ$wï¹æ€éº¼å–æ¶ˆï¹–", ch, pSkill, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -1287,13 +1287,13 @@ FUNCTION( do_forsake )
   {
     if ( pEnable->skill == pSkill )
     {
-      act( "$wÁÙ¦b­P¯à¡M¥ı¨ú®ø¥¦§a¡T", ch, pSkill, NULL, TO_CHAR );
+      act( "$wé‚„åœ¨è‡´èƒ½ï¹å…ˆå–æ¶ˆå®ƒå§ï¹—", ch, pSkill, NULL, TO_CHAR );
       RETURN_NULL();
     }
   }
 
   cancel_skill( ch, pSkill );
-  act( "§A¦Û¼o¤F$w³o¶µ§Ş¯à¤F¡C", ch, pSkill, NULL, TO_CHAR );
+  act( "ä½ è‡ªå»¢äº†$wé€™é …æŠ€èƒ½äº†ã€‚", ch, pSkill, NULL, TO_CHAR );
   RETURN_NULL();
 }
 
@@ -1308,7 +1308,7 @@ bool learn_expert_skill( CHAR_DATA * ch, SKILL_DATA * pSkill )
 
   if ( !ch || !pSkill )
   {
-    mudlog( LOG_DEBUG, "learn_expert_skill: ¿ù»~ªº¨Ó·½." );
+    mudlog( LOG_DEBUG, "learn_expert_skill: éŒ¯èª¤çš„ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -1317,13 +1317,13 @@ bool learn_expert_skill( CHAR_DATA * ch, SKILL_DATA * pSkill )
     || !( aSkill = get_skill( pSkill->associate ) ) )
     RETURN( FALSE );
 
-  /* §Ş¯à©Ê§O­­¨î */
+  /* æŠ€èƒ½æ€§åˆ¥é™åˆ¶ */
   if ( aSkill->sex && aSkill->sex > ERRORCODE && aSkill->sex < MAX_SEX )
     RETURN( FALSE );
 
   if ( ( slot = aSkill->slot ) < 0 || slot >= MAX_SKILL )
   {
-    mudlog( LOG_DEBUG, "learn_expert_skill: ¶W¥X½d³ò." );
+    mudlog( LOG_DEBUG, "learn_expert_skill: è¶…å‡ºç¯„åœ." );
     RETURN( FALSE );
   }
 
@@ -1348,10 +1348,10 @@ bool learn_expert_skill( CHAR_DATA * ch, SKILL_DATA * pSkill )
   if ( max <= 0 ) RETURN( FALSE );
   ch->skill[slot] = max;
 
-  act( "$A$A$A$7®¥ÁH§A±q$w»â·|¨ì$2$W$7³o¤@ªù¥\\¤Ò¡T$0$A$A$A"
+  act( "$A$A$A$7æ­ç¦§ä½ å¾$wé ˜æœƒåˆ°$2$W$7é€™ä¸€é–€åŠŸ\å¤«ï¹—$0$A$A$A"
     , ch, pSkill, aSkill, TO_CHAR );
 
-  act( "$A$A$A$7$n$7±o¤Ñ¿W«p¡M¾Ç·|¤F$2$W$7³o¤@¶µ¥\\¤Ò¡T$0$A$A$A"
+  act( "$A$A$A$7$n$7å¾—å¤©ç¨åšï¹å­¸æœƒäº†$2$W$7é€™ä¸€é …åŠŸ\å¤«ï¹—$0$A$A$A"
     , ch, NULL, aSkill, TO_ROOM );
 
   RETURN( TRUE );
@@ -1366,7 +1366,7 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
 
   if ( !ch || !victim || !pEffect )
   {
-    mudlog( LOG_DEBUG, "effect_driver: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "effect_driver: ä¾†æºéŒ¯èª¤." );
     RETURN( FALSE );
   }
 
@@ -1376,10 +1376,10 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
   switch( pEffect->type )
   {
   default:
-    mudlog( LOG_DEBUG, "effect_driver: ¿ï¶µ %d ¿ù»~.", pEffect->type );
+    mudlog( LOG_DEBUG, "effect_driver: é¸é … %d éŒ¯èª¤.", pEffect->type );
     RETURN( FALSE );
 
-  /* §ó§ï¹ï¤èªk¤O */
+  /* æ›´æ”¹å°æ–¹æ³•åŠ› */
   case EFFECT_VICTIM_MANA:
 
     oldvalue = victim->mana;
@@ -1389,22 +1389,22 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
 
     if ( oldvalue < victim->mana )
     {
-      act( "$3$nªºªk¤O¬ğµM¤§¶¡¤W¤É¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$3$nçš„æ³•åŠ›çªç„¶ä¹‹é–“ä¸Šå‡äº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     else if ( oldvalue > victim->mana )
     {
-      act( "$1$nªºªk¤O¬ğµM¤§¶¡¤U­°¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$1$nçš„æ³•åŠ›çªç„¶ä¹‹é–“ä¸‹é™äº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     if ( victim->mana <= 0 )
     {
-      act( "$2$nªºªk¤O¤w¸g¯ÓºÉ¡M²´¬İ¬O¤£¦æ¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$2$nçš„æ³•åŠ›å·²ç¶“è€—ç›¡ï¹çœ¼çœ‹æ˜¯ä¸è¡Œäº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     break;
 
-  /* §ó§ï¦Û¤vªk¤O */
+  /* æ›´æ”¹è‡ªå·±æ³•åŠ› */
   case EFFECT_SELF_MANA:
 
     oldvalue = ch->mana;
@@ -1414,22 +1414,22 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
 
     if ( oldvalue < ch->mana )
     {
-      act( "$3$nªºªk¤O¬ğµM¤§¶¡¤W¤É¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$3$nçš„æ³•åŠ›çªç„¶ä¹‹é–“ä¸Šå‡äº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     else if ( oldvalue > ch->mana )
     {
-      act( "$1$nªºªk¤O¬ğµM¤§¶¡¤U­°¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$1$nçš„æ³•åŠ›çªç„¶ä¹‹é–“ä¸‹é™äº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     if ( ch->mana <= 0 )
     {
-      act( "$2$nªºªk¤O¤w¸g¯ÓºÉ¡M²´¬İ¬O¤£¦æ¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$2$nçš„æ³•åŠ›å·²ç¶“è€—ç›¡ï¹çœ¼çœ‹æ˜¯ä¸è¡Œäº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     break;
 
-  /* §ó§ï¹ï¤èÅé¤O */
+  /* æ›´æ”¹å°æ–¹é«”åŠ› */
   case EFFECT_VICTIM_MOVE:
 
     oldvalue = victim->move;
@@ -1439,22 +1439,22 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
 
     if ( oldvalue < victim->move )
     {
-      act( "$3$nªºÅé¤O¬ğµM¤§¶¡¤W¤É¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$3$nçš„é«”åŠ›çªç„¶ä¹‹é–“ä¸Šå‡äº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     else if ( oldvalue > victim->move )
     {
-      act( "$1$nªºÅé¤O¬ğµM¤§¶¡¤U­°¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$1$nçš„é«”åŠ›çªç„¶ä¹‹é–“ä¸‹é™äº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     if ( victim->move <= 0 )
     {
-      act( "$2$nªºÅé¤O¤w¸g¯ÓºÉ¡M²´¬İ¬O¤£¦æ¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$2$nçš„é«”åŠ›å·²ç¶“è€—ç›¡ï¹çœ¼çœ‹æ˜¯ä¸è¡Œäº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     break;
 
-  /* §ó§ï¦Û¤vÅé¤O */
+  /* æ›´æ”¹è‡ªå·±é«”åŠ› */
   case EFFECT_SELF_MOVE:
     oldvalue = ch->move;
 
@@ -1463,25 +1463,25 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
 
     if ( oldvalue < ch->move )
     {
-      act( "$3$nªºÅé¤O¬ğµM¤§¶¡¤W¤É¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$3$nçš„é«”åŠ›çªç„¶ä¹‹é–“ä¸Šå‡äº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     else if ( oldvalue > ch->move )
     {
-      act( "$1$nªºÅé¤O¬ğµM¤§¶¡¤U­°¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$1$nçš„é«”åŠ›çªç„¶ä¹‹é–“ä¸‹é™äº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     if ( ch->move <= 0 )
     {
-      act( "$2$nªºÅé¤O¤w¸g¯ÓºÉ¡M²´¬İ¬O¤£¦æ¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$2$nçš„é«”åŠ›å·²ç¶“è€—ç›¡ï¹çœ¼çœ‹æ˜¯ä¸è¡Œäº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     break;
 
-  /* ¹ï¤è²´ª¼ */
+  /* å°æ–¹çœ¼ç›² */
   case EFFECT_VICTIM_BLINDNESS:
 
-    /* ­Y¤w¸g²´ª¼«h¤£°Ê§@ */
+    /* è‹¥å·²ç¶“çœ¼ç›²å‰‡ä¸å‹•ä½œ */
     if ( is_affected( victim, SLOT_BLINDNESS ) ) break;
 
     pAffect.type      = SLOT_BLINDNESS;
@@ -1491,13 +1491,13 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
     pAffect.level     = ch->level;
     affect_to_char( victim, &pAffect );
 
-    act( "±j¥ú¤@°{¡M$n¼È®É¥¢©ú¤F¡T", victim, NULL, NULL, TO_ALL );
+    act( "å¼·å…‰ä¸€é–ƒï¹$næš«æ™‚å¤±æ˜äº†ï¹—", victim, NULL, NULL, TO_ALL );
     break;
 
-  /* ¹ï¤è¶A©G */
+  /* å°æ–¹è©›å’’ */
   case EFFECT_VICTIM_CURSE:
 
-    /* ­Y¤w¸g³Q¶A©G«h¤£°Ê§@ */
+    /* è‹¥å·²ç¶“è¢«è©›å’’å‰‡ä¸å‹•ä½œ */
     if ( is_affected( victim, SLOT_CURSE ) ) break;
 
     pAffect.type      = SLOT_CURSE;
@@ -1511,16 +1511,16 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
     pAffect.modifier  = 1;
     affect_to_char( victim, &pAffect );
 
-    act( "$n·P¨ì¤@°}·t¶ÂÀ£§íµÛ$nªº¤O¶q¡C", victim, NULL, NULL, TO_ALL );
+    act( "$næ„Ÿåˆ°ä¸€é™£æš—é»‘å£“æŠ‘è‘—$nçš„åŠ›é‡ã€‚", victim, NULL, NULL, TO_ALL );
 
     break;
 
-  /* ¹ï¤è¤¤¬r */
+  /* å°æ–¹ä¸­æ¯’ */
   case EFFECT_VICTIM_POISON:
 
     if ( get_curr_str( victim ) > 2 )
     {
-      /* ³o­Ó·|²Ö­p */
+      /* é€™å€‹æœƒç´¯è¨ˆ */
       pAffect.type      = SLOT_POISON;
       pAffect.duration  = pEffect->value[1];
       pAffect.location  = APPLY_STR;
@@ -1528,28 +1528,28 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
       pAffect.level     = ch->level;
       affect_join( victim, &pAffect );
 
-      act( "$nÁy¤W¤@°}«C¤@°}¥Õ¡M¦ü¥G¬O¤¤¤F¬r¡T", victim, NULL, NULL, TO_ALL );
+      act( "$nè‡‰ä¸Šä¸€é™£é’ä¸€é™£ç™½ï¹ä¼¼ä¹æ˜¯ä¸­äº†æ¯’ï¹—", victim, NULL, NULL, TO_ALL );
     }
 
     break;
 
-  /* ¹ï¤è©üºÎ */
+  /* å°æ–¹æ˜ç¡ */
   case EFFECT_VICTIM_SLEEP:
     break;
 
-  /* ¹ï¤è³Â·ô */
+  /* å°æ–¹éº»ç—º */
   case EFFECT_VICTIM_PARA:
-    /* ©Çª«¨S¦³³Â·ô */
+    /* æ€ªç‰©æ²’æœ‰éº»ç—º */
     if ( IS_NPC( victim ) ) RETURN( FALSE );
 
     WAIT_STATE( victim, pEffect->value[0] );
-    act( "$2$n»L³Q½ğ¨ì¤@¤U¡M¼È®É¤£¤Ó·|°Ê¡T$0", victim, NULL, NULL, TO_ALL );
+    act( "$2$nè…¿è¢«è¸¢åˆ°ä¸€ä¸‹ï¹æš«æ™‚ä¸å¤ªæœƒå‹•ï¹—$0", victim, NULL, NULL, TO_ALL );
     break;
 
-  /* ¹ï¤èºëÆF¤§¤õ */
+  /* å°æ–¹ç²¾éˆä¹‹ç« */
   case EFFECT_VICTIM_FAERIE_FIRE:
 
-    /* ­Y¤w¸g³Q¬Iªk«h¤£°Ê§@ */
+    /* è‹¥å·²ç¶“è¢«æ–½æ³•å‰‡ä¸å‹•ä½œ */
     if ( is_affected( victim, SLOT_FAERIE_FIRE ) ) break;
 
     pAffect.type      = SLOT_FAERIE_FIRE;
@@ -1559,11 +1559,11 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
     pAffect.level     = ch->level;
     affect_to_char( victim, &pAffect );
 
-    act( "$n³Q¤@¹Î¯»¬õ·ÏÃú¥]³òµÛ¡C", victim, NULL, NULL, TO_ALL );
+    act( "$nè¢«ä¸€åœ˜ç²‰ç´…ç…™éœ§åŒ…åœè‘—ã€‚", victim, NULL, NULL, TO_ALL );
 
     break;
 
-  /* §ó§ï¹ï¤è¥Í©R¤O */
+  /* æ›´æ”¹å°æ–¹ç”Ÿå‘½åŠ› */
   case EFFECT_VICTIM_HIT:
 
     oldvalue = victim->hit;
@@ -1573,21 +1573,21 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
 
     if ( oldvalue < victim->hit )
     {
-      act( "$3$nªº¥Í©R¤O¬ğµM¤§¶¡¤W¤É¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$3$nçš„ç”Ÿå‘½åŠ›çªç„¶ä¹‹é–“ä¸Šå‡äº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     else if ( oldvalue > victim->hit )
     {
-      act( "$1$nªº¥Í©R¤O¬ğµM¤§¶¡¤U­°¤F¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$1$nçš„ç”Ÿå‘½åŠ›çªç„¶ä¹‹é–“ä¸‹é™äº†ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
 
     if ( victim->hit <= 0 )
     {
-      act( "$2$nªº¥Í©R¤O¤w¸g¯ÓºÉ¡M¨£ÀF¤ı¥h§a¡T$0", victim, NULL, NULL, TO_ALL );
+      act( "$2$nçš„ç”Ÿå‘½åŠ›å·²ç¶“è€—ç›¡ï¹è¦‹é–»ç‹å»å§ï¹—$0", victim, NULL, NULL, TO_ALL );
     }
     break;
 
-  /* §ó§ï¦Û¤v¥Í©R¤O */
+  /* æ›´æ”¹è‡ªå·±ç”Ÿå‘½åŠ› */
   case EFFECT_SELF_HIT:
 
     oldvalue = ch->hit;
@@ -1597,29 +1597,29 @@ bool effect_driver( CHAR_DATA * ch, CHAR_DATA * victim, EFFECT_DATA * pEffect )
 
     if ( oldvalue < ch->hit )
     {
-      act( "$3$nªº¥Í©R¤O¬ğµM¤§¶¡¤W¤É¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$3$nçš„ç”Ÿå‘½åŠ›çªç„¶ä¹‹é–“ä¸Šå‡äº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     else if ( oldvalue > ch->hit )
     {
-      act( "$1$nªº¥Í©R¤O¬ğµM¤§¶¡¤U­°¤F¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$1$nçš„ç”Ÿå‘½åŠ›çªç„¶ä¹‹é–“ä¸‹é™äº†ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     if ( ch->hit <= 0 )
     {
-      act( "$2$nªº¥Í©R¤O¤w¸g¯ÓºÉ¡M¦a©²¨£¡T$0", ch, NULL, NULL, TO_ALL );
+      act( "$2$nçš„ç”Ÿå‘½åŠ›å·²ç¶“è€—ç›¡ï¹åœ°åºœè¦‹ï¹—$0", ch, NULL, NULL, TO_ALL );
     }
 
     break;
 
-  /* ¤@À»¥²±ş */
+  /* ä¸€æ“Šå¿…æ®º */
   case EFFECT_HIT_DIE:
     if ( victim->hit >= 0 ) victim->hit = 0;
-    act( "\n\r$2$nµo¥X¥²±ş¤@À»¡M$Nªº»î¾zÀş¶¡´N³Q¦º¯«¤Ä¨«¤F¡T$0\n\r"
+    act( "\n\r$2$nç™¼å‡ºå¿…æ®ºä¸€æ“Šï¹$Nçš„é­‚é­„ç¬é–“å°±è¢«æ­»ç¥å‹¾èµ°äº†ï¹—$0\n\r"
       , ch, NULL, victim, TO_CHAR );
-    act( "\n\r$2$nµo¥X¥²±ş¤@À»¡M$Nªº»î¾zÀş¶¡´N³Q¦º¯«¤Ä¨«¤F¡T$0\n\r"
+    act( "\n\r$2$nç™¼å‡ºå¿…æ®ºä¸€æ“Šï¹$Nçš„é­‚é­„ç¬é–“å°±è¢«æ­»ç¥å‹¾èµ°äº†ï¹—$0\n\r"
       , ch, NULL, victim, TO_VICT );
-    act( "\n\r$2$nµo¥X¥²±ş¤@À»¡M$Nªº»î¾zÀş¶¡´N³Q¦º¯«¤Ä¨«¤F¡T$0\n\r"
+    act( "\n\r$2$nç™¼å‡ºå¿…æ®ºä¸€æ“Šï¹$Nçš„é­‚é­„ç¬é–“å°±è¢«æ­»ç¥å‹¾èµ°äº†ï¹—$0\n\r"
       , ch, NULL, victim, TO_NOTVICT );
     break;
   }
@@ -1644,13 +1644,13 @@ FUNCTION( do_leftskill )
 
   if ( ch->gold < cost )
   {
-    act( "µ¥§A´ê¨¬$i¨â»È¤l¡M§Ú´N§i¶D§A¡T", ch, &cost, NULL, TO_CHAR );
+    act( "ç­‰ä½ æ¹Šè¶³$iå…©éŠ€å­ï¹æˆ‘å°±å‘Šè¨´ä½ ï¹—", ch, &cost, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( learn_count( ch ) >= get_learnable( ch ) )
   {
-    act( "¹ï¤£°_¡M§A¤w¸g¶W¹L$T¥i¥H¾Ç²ß§Ş¯àªºÁ`¼Æ¡T"
+    act( "å°ä¸èµ·ï¹ä½ å·²ç¶“è¶…é$Tå¯ä»¥å­¸ç¿’æŠ€èƒ½çš„ç¸½æ•¸ï¹—"
       , ch, NULL, class_name( ch->class, TRUE ), TO_CHAR );
 
     RETURN_NULL();
@@ -1658,8 +1658,8 @@ FUNCTION( do_leftskill )
 
   clear_buffer();
 
-  send_to_buffer( "\e[1;33;44m¶¶§Ç §Ş ¯à ¤¤ ¤å ¦W ºÙ    §Ş ¯à ­^ ¤å ¦W ºÙ"
-    "    ±Ğ¾É ¤À    Ãş  ³Ì°ª¼ô½m ¥Ø«e¼ô½m \e[0m\n\r" );
+  send_to_buffer( "\e[1;33;44mé †åº æŠ€ èƒ½ ä¸­ æ–‡ å ç¨±    æŠ€ èƒ½ è‹± æ–‡ å ç¨±"
+    "    æ•™å° åˆ†    é¡  æœ€é«˜ç†Ÿç·´ ç›®å‰ç†Ÿç·´ \e[0m\n\r" );
 
   for ( count = loop = 0; loop < MAX_SKILL; loop++ )
   {
@@ -1685,14 +1685,14 @@ FUNCTION( do_leftskill )
 
     send_to_buffer( "%4d %-20s %-20s %4s %8s %s%s %s\n\r"
       , ++count, pSkill->cname, pSkill->name
-      , pSkill->teach ? "¥i¥H" : "¤£¥i"
+      , pSkill->teach ? "å¯ä»¥" : "ä¸å¯"
       , skill_type( pSkill->type )
       , CanInc ? " " : "\e[1;32m*\e[0m"
       , adeptation_name( pLimit->adept )
       , adeptation_name( ch->skill[loop] ) );
   }
 
-  if ( count == 0 ) send_to_buffer( "§A¤w¸g¨S¦³§Ş¯à¥i¥H¾Ç²ß¤F¡T\n\r" );
+  if ( count == 0 ) send_to_buffer( "ä½ å·²ç¶“æ²’æœ‰æŠ€èƒ½å¯ä»¥å­¸ç¿’äº†ï¹—\n\r" );
   else gold_from_char( ch, cost );
 
   print_buffer( ch );

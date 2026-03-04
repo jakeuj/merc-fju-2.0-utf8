@@ -1,5 +1,5 @@
 Name            hundred steps~
-Cname           �ʤۨ��k~
+Cname           百幻身法~
 Slot            SLOT_HUNDRED_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -39,7 +39,7 @@ Help            ~
 
 #Damage
 Description
-$n�ϥX�ʤۨ��k�_�⦡$G�y�����g�ߡz$Z�M���ߦ��L�ߡM�������L$N�������C~
+$n使出百幻身法起手式$G『漫不經心』$Z﹐有心似無心﹐輕易躲過$N的攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -49,8 +49,8 @@ End
 
 #Damage
 Description
-$n�i�{�ʤۨ��k�ĤG��$R�y�H���ӳu�z$Z�M�ǥѲM�����O�M���ƵM�����$N�I��M�O$N
-�����ұ��C~
+$n展現百幻身法第二式$R『隨風而逝』$Z﹐藉由清風之力﹐飄飄然般轉至$N背後﹐令$N
+不知所措。~
 Chance          10
 Value           20
 Parry           0
@@ -60,8 +60,8 @@ End
 
 #Damage
 Description
-$n�f����ᦳ���M���X�ʤۨ��k�ĤT��$Y�y���δ���z$Z�M�@�Φʼv�M���t����M�w��
-$N���I��C~
+$n口中唸唸有詞﹐祭出百幻身法第三式$Y『移形換位』$Z﹐一形百影﹐迅速移位﹐已到
+$N的背後。~
 Chance          10
 Value           20
 Parry           0
@@ -71,8 +71,8 @@ End
 
 #Damage
 Description
-$n�f���G�y���_�M�ϥX�ʤۨ��k�ĥ|��$B�y�p�j����z$Z�M�P$N�k�ض����Z���M�y�ɦ�
-�F�ʤؤ����C~
+$n口中咒語不斷﹐使出百幻身法第四式$B『峰迴路轉』$Z﹐與$N趾尺間的距離﹐頓時成
+了百尺之遠。~
 Chance          10
 Value           20
 Parry           0
@@ -82,8 +82,8 @@ End
 
 #Damage
 Description
-$n�i�X�ʤۨ��k�Ĥ���$P�y�����F�N�z$Z�M�⤤���C�K�ɵo�X�d�V�C�����$N�M�O$N�L
-�k���סC~
+$n展出百幻身法第五式$P『分身乏術』$Z﹐手中長劍霎時發出千丈劍氣攻擊$N﹐令$N無
+法躲避。~
 Chance          10
 Value           20
 Parry           0
@@ -93,7 +93,7 @@ End
 
 #Damage
 Description
-$n���ըϥX�ʤۨ��k�Ĥ���$S�y�������v�z$Z�M�t����$N�w�Q�w���M�L�k�ʼu�C~
+$n嘗試使出百幻身法第六式$S『捉風捕影』$Z﹐差那間$N已被定住﹐無法動彈。~
 Chance          10
 Value           20
 Parry           0
@@ -103,8 +103,8 @@ End
 
 #Damage
 Description
-$n�ϥX�ʤۨ��k�ĤC��$W�y�m�C���@�z$Z�M�⤤���C���ӥX�M�ߩ�C�W����Ѥ���$N
-�L�k�����C~
+$n使出百幻身法第七式$W『禦劍飛昇』$Z﹐手中長劍脫手而出﹐立於劍上翔於天中使$N
+無法攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -114,7 +114,7 @@ End
 
 #Damage
 Description
-�u��$n�}��C�P�i�X�ʤۨ��k�̲צ�$y�y�d�ܸU�ơz$Z�M$N�w�Q$n�x��䤤�M�L�k�ʼu�C~
+只見$n腳踏七星展出百幻身法最終式$y『千變萬化』$Z﹐$N已被$n困於其中﹐無法動彈。~
 Chance          10
 Value           20
 Parry           0

@@ -1,9 +1,9 @@
 Vnum            39
 Name            silver needle~
-ShortDesc       �p�Ȱw~
+ShortDesc       小銀針~
 Description
-�o�O�@����ͱM�Ϊ��Ȱw(needle)�M�p�G���o�ϥΧޥ����ܡM�N�i�o���X���j���¤O�C~
-Unit            ��~
+這是一支醫生專用的銀針(needle)﹐如果懂得使用技巧的話﹐將可發揮出極大的威力。~
+Unit            支~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

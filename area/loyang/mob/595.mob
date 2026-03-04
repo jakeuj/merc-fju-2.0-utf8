@@ -1,6 +1,6 @@
 Vnum            595
 Name            servant~
-ShortDesc       ¸³¨ô¹²¤H~
+ShortDesc       è‘£å“åƒ•äºº~
 Description
 ~
 AutoSetValue    Yes
@@ -36,7 +36,7 @@ if isnpc($n)
   break
 endif
 if rand(30)
-  say §ä¦º¡M§Ú¤]¬O¦³·tÂÃ´X©Ûªº¡T
+  say æ‰¾æ­»ï¹æˆ‘ä¹Ÿæ˜¯æœ‰æš—è—å¹¾æ‹›çš„ï¹—
   cast 'li br'
 endif
 ~

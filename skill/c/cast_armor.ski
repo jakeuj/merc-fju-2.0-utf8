@@ -1,7 +1,7 @@
 Name            armor~
-Cname           д╤плжu┼@~
+Cname           хдйчеЮхоИшн╖~
 Slot            SLOT_CAST_ARMOR
-Msgoff          зA─▒к║иSи║╗ЄлO┼@дFбT~
+Msgoff          ф╜ашж║чЪДц▓ТщВгщ║╝ф┐Эшн╖ф║Жя╣Ч~
 Function        spell_cast_armor~
 Position        POS_STANDING
 Type            TAR_CHAR_DEFENSIVE
@@ -30,9 +30,9 @@ Limit           CLASS_SCHOLAR    1  45
 Limit           CLASS_DOCTOR     1  70
 Limit           CLASS_BARD       1  95
 Help
-д╤плжu┼@:
+хдйчеЮхоИшн╖:
 
-йIеsд╤плбM╡╣дйзAд@йw╡{л╫к║лO┼@бM┼¤зAеiеHй╙и№╕√дjк║╢╦о`бT
+хС╝хПлхдйчеЮя╣Рч╡жф║Иф╜аф╕АхоЪчиЛх║жчЪДф┐Эшн╖я╣РшоУф╜ахПпф╗ецЙ┐хПЧш╝ГхдзчЪДхВ╖хо│я╣Ч
 
 ~
 End

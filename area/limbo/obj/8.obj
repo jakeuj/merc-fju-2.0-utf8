@@ -1,9 +1,9 @@
 Vnum            8
 Name            arm~
-ShortDesc       %sªº¤âÁu~
+ShortDesc       %sçš„æ‰‹è‡‚~
 Description
-%sªº¤âÁu(arm)³Q¬åÂ_±¼¸¨¦¹¦a¡C~
-Unit            °¦~
+%sçš„æ‰‹è‡‚(arm)è¢«ç æ–·æ‰è½æ­¤åœ°ã€‚~
+Unit            éš»~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           0

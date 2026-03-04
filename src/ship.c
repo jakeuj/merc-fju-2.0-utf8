@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -29,7 +29,7 @@ FUNCTION( do_ship )
 
   if ( !ship_list )
   {
-    act( "$t¨S¦³¥ô¦óªº¥æ³q¤u¨ã¸ê®Æ¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "$tæ²’æœ‰ä»»ä½•çš„äº¤é€šå·¥å…·è³‡æ–™ï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -40,8 +40,8 @@ FUNCTION( do_ship )
   if ( !arg[0] )
   {
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m¥X µo °Ï °ì ¥X   µo   ÂI "
-      "¥Ø ªº °Ï °ì ¥Ø   ªº   ¦a ¶O¥Î ®É ¶¡ ¯è   ¦æ   ª¬    ºA\e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44må‡º ç™¼ å€ åŸŸ å‡º   ç™¼   é» "
+      "ç›® çš„ å€ åŸŸ ç›®   çš„   åœ° è²»ç”¨ æ™‚ é–“ èˆª   è¡Œ   ç‹€    æ…‹\e[0m\n\r" );
 
     for ( count = 1, pShip = ship_list; pShip; pShip = pShip->next, count++ )
     {
@@ -50,14 +50,14 @@ FUNCTION( do_ship )
       send_to_buffer( "%-11s %-12s %-11s %-12s %4d %2d:%2d %-17s\n\r"
         , ( pShip->starting
           && ( pArea = pShip->starting->area )
-          && pArea->name ) ? pArea->name : "¤£ª¾¦W°Ï°ì"
+          && pArea->name ) ? pArea->name : "ä¸çŸ¥åå€åŸŸ"
         , pShip->starting && pShip->starting->name
-          ? pShip->starting->name : "¤£ª¾¦W¦a¤è"
+          ? pShip->starting->name : "ä¸çŸ¥ååœ°æ–¹"
         , ( pShip->destination
           && ( pArea = pShip->destination->area )
-          && pArea->name ) ? pArea->name : "¤£ª¾¦W°Ï°ì"
+          && pArea->name ) ? pArea->name : "ä¸çŸ¥åå€åŸŸ"
         , pShip->starting && pShip->destination->name
-          ? pShip->destination->name : "¤£ª¾¦W¦a¤è"
+          ? pShip->destination->name : "ä¸çŸ¥ååœ°æ–¹"
         , pShip->cost, pShip->sailing, pShip->waiting
         , ship_status( pShip ) );
     }
@@ -72,84 +72,84 @@ FUNCTION( do_ship )
         chinese_number( pShip->cost, buf1 );
 
         send_to_buffer(
-          "\n\r§A¥¿¦b%sªº¥XµoÂI¤W¡M¥¦ªº¥Øªº¦a¬O%sªº%s¡M¯è¦æ®É¶¡¦ô­p"
-          "¬ù¬°%s¤p®É¡T\n\r¦Ó¥B¯è¶O°ª¶Q¤£¶Q¡M¥uªá§A%s¨â»È¤l¡C\n\r"
+          "\n\rä½ æ­£åœ¨%sçš„å‡ºç™¼é»ä¸Šï¹å®ƒçš„ç›®çš„åœ°æ˜¯%sçš„%sï¹èˆªè¡Œæ™‚é–“ä¼°è¨ˆ"
+          "ç´„ç‚º%så°æ™‚ï¹—\n\rè€Œä¸”èˆªè²»é«˜è²´ä¸è²´ï¹åªèŠ±ä½ %så…©éŠ€å­ã€‚\n\r"
           , pShip->name
           , pShip->destination && pShip->destination->area
-            ? pShip->destination->area->name : "¬Y¤£ª¾¦W°Ï°ì"
-          , pShip->destination ? pShip->destination->name : "¬Y¤£ª¾¦W¦a¤è"
+            ? pShip->destination->area->name : "æŸä¸çŸ¥åå€åŸŸ"
+          , pShip->destination ? pShip->destination->name : "æŸä¸çŸ¥ååœ°æ–¹"
           , buf, buf1 );
 
         if ( pShip->waiting_tick > 0 )
         {
           chinese_number( pShip->waiting_tick, buf );
 
-          send_to_buffer( "¤£¹L½Ğ§AºÉ§Öµn¤W¥æ³q¤u¨ã¡M¦]¬°%s±N¦b%s¤p®É«á¥Xµo¡C\n\r"
+          send_to_buffer( "ä¸éè«‹ä½ ç›¡å¿«ç™»ä¸Šäº¤é€šå·¥å…·ï¹å› ç‚º%så°‡åœ¨%så°æ™‚å¾Œå‡ºç™¼ã€‚\n\r"
             , pShip->name, buf );
         }
         else
         {
           chinese_number( pShip->sailing_tick, buf );
 
-          send_to_buffer( "¦ı¬O%s¤w¸g¥Xµo¤F¡M¤U¯Z¥æ³q¤u¨ã±N¦b%s¤p®É«á¥Xµo¡C\n\r"
+          send_to_buffer( "ä½†æ˜¯%så·²ç¶“å‡ºç™¼äº†ï¹ä¸‹ç­äº¤é€šå·¥å…·å°‡åœ¨%så°æ™‚å¾Œå‡ºç™¼ã€‚\n\r"
             , pShip->name, buf );
         }
 
         if ( pShip->pirate >= 1000 )
-          send_to_buffer( "¤£¹L¡M´£¿ô§A³o¤@±a±jµsÀW¶Ç¡M©^ÄU§A¤p¤ß³á¡T\n\r" );
+          send_to_buffer( "ä¸éï¹æé†’ä½ é€™ä¸€å¸¶å¼·ç›œé »å‚³ï¹å¥‰å‹¸ä½ å°å¿ƒå–”ï¹—\n\r" );
 
         else if ( pShip->pirate >= 500 )
-          send_to_buffer( "Å¥»¡¡M±jµs´¿¦b³o¤@±a¥X¨S¡M½Ğ§A­n¦h¥[¤p¤ß¡T\n\r" );
+          send_to_buffer( "è½èªªï¹å¼·ç›œæ›¾åœ¨é€™ä¸€å¸¶å‡ºæ²’ï¹è«‹ä½ è¦å¤šåŠ å°å¿ƒï¹—\n\r" );
 
         else if ( pShip->pirate >= 100 )
-          send_to_buffer( "¶Ç»D¡M³o¸Ì¼h¥X²{¹L±jµs¡M½Ğ§A­n¦h¦h¤p¤ß¡T\n\r" );
+          send_to_buffer( "å‚³èï¹é€™è£¡å±¤å‡ºç¾éå¼·ç›œï¹è«‹ä½ è¦å¤šå¤šå°å¿ƒï¹—\n\r" );
 
         else if ( pShip->pirate >= 30 )
-          send_to_buffer( "ÁöµM±jµs«Ü¤Ö¦b¦¹¥X¨S¡M¦ı¬OÁÙ¬O¤p¤ßªº¦n¡T\n\r" );
+          send_to_buffer( "é›–ç„¶å¼·ç›œå¾ˆå°‘åœ¨æ­¤å‡ºæ²’ï¹ä½†æ˜¯é‚„æ˜¯å°å¿ƒçš„å¥½ï¹—\n\r" );
 
         else
-          send_to_buffer( "±jµs·¥¤Ö¦b³o¤@±a¥X¨S¡MÀ³¸Ó¬O­·¥­®öÀR¤~¹ï§a¡T\n\r" );
+          send_to_buffer( "å¼·ç›œæ¥µå°‘åœ¨é€™ä¸€å¸¶å‡ºæ²’ï¹æ‡‰è©²æ˜¯é¢¨å¹³æµªéœæ‰å°å§ï¹—\n\r" );
       }
 
       else if ( pShip->cabin == ch->in_room )
       {
         chinese_number( pShip->sailing, buf );
 
-        send_to_buffer( "\n\r§A¥¿¦b%sªº¥ÒªO¸Ì¡M¥¦ªº¥Øªº¦a¬O%sªº%s¡M"
-          "¯è¦æ®É¶¡¬ù¬°%s¤p®É¡T\n\r"
+        send_to_buffer( "\n\rä½ æ­£åœ¨%sçš„ç”²æ¿è£¡ï¹å®ƒçš„ç›®çš„åœ°æ˜¯%sçš„%sï¹"
+          "èˆªè¡Œæ™‚é–“ç´„ç‚º%så°æ™‚ï¹—\n\r"
           , pShip->name
           , pShip->destination && pShip->destination->area
-            ? pShip->destination->area->name : "¬Y¤£ª¾¦W°Ï°ì"
-          , pShip->destination ? pShip->destination->name : "¬Y¤£ª¾¦W¦a¤è"
+            ? pShip->destination->area->name : "æŸä¸çŸ¥åå€åŸŸ"
+          , pShip->destination ? pShip->destination->name : "æŸä¸çŸ¥ååœ°æ–¹"
           , buf );
 
         if ( pShip->waiting_tick > 0 )
         {
           chinese_number( pShip->waiting_tick, buf );
-          send_to_buffer( "½Ğ§Aµy°µ¥ğ®§¡M¥æ³q¤u¨ã±N¦b%s¤p®É«á¥Xµo¡TÁÂÁÂ¡T\n\r"
+          send_to_buffer( "è«‹ä½ ç¨åšä¼‘æ¯ï¹äº¤é€šå·¥å…·å°‡åœ¨%så°æ™‚å¾Œå‡ºç™¼ï¹—è¬è¬ï¹—\n\r"
             , buf );
         }
         else
         {
           chinese_number( pShip->sailing_tick, buf );
-          send_to_buffer( "½Ğ§A­@¤ßµ¥­Ô¡M¥æ³q¤u¨ã±N¦b%s¤p®É«á¨ì¹F¥Øªº¦a¡TÁÂÁÂ¡T\n\r"
+          send_to_buffer( "è«‹ä½ è€å¿ƒç­‰å€™ï¹äº¤é€šå·¥å…·å°‡åœ¨%så°æ™‚å¾Œåˆ°é”ç›®çš„åœ°ï¹—è¬è¬ï¹—\n\r"
             , buf );
         }
 
         if ( pShip->pirate >= 1000 )
-          send_to_buffer( "¤£¹L¡M´£¿ô§A³o¤@±a±jµsÀW¶Ç¡M©^ÄU§A¤p¤ß³á¡T\n\r" );
+          send_to_buffer( "ä¸éï¹æé†’ä½ é€™ä¸€å¸¶å¼·ç›œé »å‚³ï¹å¥‰å‹¸ä½ å°å¿ƒå–”ï¹—\n\r" );
 
         else if ( pShip->pirate >= 500 )
-          send_to_buffer( "Å¥»¡¡M±jµs´¿¦b³o¤@±a¥X¨S¡M½Ğ§A­n¦h¥[¤p¤ß¡T\n\r" );
+          send_to_buffer( "è½èªªï¹å¼·ç›œæ›¾åœ¨é€™ä¸€å¸¶å‡ºæ²’ï¹è«‹ä½ è¦å¤šåŠ å°å¿ƒï¹—\n\r" );
 
         else if ( pShip->pirate >= 100 )
-          send_to_buffer( "¶Ç»D¡M³o¸Ì¼h¥X²{¹L±jµs¡M½Ğ§A­n¦h¦h¤p¤ß¡T\n\r" );
+          send_to_buffer( "å‚³èï¹é€™è£¡å±¤å‡ºç¾éå¼·ç›œï¹è«‹ä½ è¦å¤šå¤šå°å¿ƒï¹—\n\r" );
 
         else if ( pShip->pirate >= 30 )
-          send_to_buffer( "ÁöµM±jµs«Ü¤Ö¦b¦¹¥X¨S¡M¦ı¬OÁÙ¬O¤p¤ßªº¦n¡T\n\r" );
+          send_to_buffer( "é›–ç„¶å¼·ç›œå¾ˆå°‘åœ¨æ­¤å‡ºæ²’ï¹ä½†æ˜¯é‚„æ˜¯å°å¿ƒçš„å¥½ï¹—\n\r" );
 
         else
-          send_to_buffer( "±jµs·¥¤Ö¦b³o¤@±a¥X¨S¡MÀ³¸Ó¬O­·¥­®öÀR¤~¹ï§a¡T\n\r" );
+          send_to_buffer( "å¼·ç›œæ¥µå°‘åœ¨é€™ä¸€å¸¶å‡ºæ²’ï¹æ‡‰è©²æ˜¯é¢¨å¹³æµªéœæ‰å°å§ï¹—\n\r" );
       }
     }
 
@@ -163,73 +163,73 @@ FUNCTION( do_ship )
 
     if ( !pShip || IS_NPC( ch ) )
     {
-      act( "¦b$r¬O·f¤£¨ì¥æ³q¤u¨ãªº¡M§A³QÄF¤F§a¡T", ch, NULL, NULL, TO_CHAR );
+      act( "åœ¨$ræ˜¯æ­ä¸åˆ°äº¤é€šå·¥å…·çš„ï¹ä½ è¢«é¨™äº†å§ï¹—", ch, NULL, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( pShip->lock )
     {
-      send_to_char( "¥æ³q¤u¨ã¦Ñ¤j¶]¸ô¥h¤F¡M³o¿´¥æ³q¤u¨ã¨S¦³¿ìªk¬°§AªA°È¤F¡T\n\r", ch );
+      send_to_char( "äº¤é€šå·¥å…·è€å¤§è·‘è·¯å»äº†ï¹é€™è‰˜äº¤é€šå·¥å…·æ²’æœ‰è¾¦æ³•ç‚ºä½ æœå‹™äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pShip->waiting_tick <= 0 || pShip->sailing_tick > 0 )
     {
-      send_to_char( "¹ï¤£°_¡M³o¿´¥æ³q¤u¨ãÁÙ¨S¦³¾a©¤­C¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™è‰˜äº¤é€šå·¥å…·é‚„æ²’æœ‰é å²¸è€¶ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( reboot_time   > 0 && ( ( reboot_time   - current_time ) < 600 ) )
       || ( shutdown_time > 0 && ( ( shutdown_time - current_time ) < 600 ) ) )
     {
-      act( "$t§Y±NÃö³¬¡M©Ò¥H¨S¦³¿ìªk·f¤W¥æ³q¤u¨ã¡C", ch, mud_name, NULL, TO_CHAR );
+      act( "$tå³å°‡é—œé–‰ï¹æ‰€ä»¥æ²’æœ‰è¾¦æ³•æ­ä¸Šäº¤é€šå·¥å…·ã€‚", ch, mud_name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ch->gold < pShip->cost )
     {
-      send_to_char( "µ¥§A¦³¨¬°÷ªº¿ú¦A¨Ó·f§a¡M³o¸Ì¥i¤£¬O·Oµ½¨Æ·~¡T\n\r", ch );
+      send_to_char( "ç­‰ä½ æœ‰è¶³å¤ çš„éŒ¢å†ä¾†æ­å§ï¹é€™è£¡å¯ä¸æ˜¯æ…ˆå–„äº‹æ¥­ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "§AÁÙ¦b¦£«¨¡M«İ·|¦A·f§a¡T\n\r", ch );
+      send_to_char( "ä½ é‚„åœ¨å¿™å’§ï¹å¾…æœƒå†æ­å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( get_mount( ch ) )
     {
-      send_to_char( "¹ï¤£°_¡M¬°ºûÅ@¾ã¼ä¡MÄY¸T°Êª«¤J¤º¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç‚ºç¶­è­·æ•´æ½”ï¹åš´ç¦å‹•ç‰©å…¥å…§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->spirit )
     {
-      act( "§A±aµÛ$N¬O·|À~¨ì¨ä¥L®È«Èªº¡T", ch, NULL, ch->spirit, TO_CHAR );
+      act( "ä½ å¸¶è‘—$Næ˜¯æœƒåš‡åˆ°å…¶ä»–æ—…å®¢çš„ï¹—", ch, NULL, ch->spirit, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( ( IS_SET( ch->act, PLR_KILLER ) || IS_SET( ch->act, PLR_THIEF ) )
       && !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "®Ú¾Ú¤W¯Å³W©w¡M§Ú­Ì¬O¤£¯àÀ°§A°½´çªº¡T\n\r", ch );
+      send_to_char( "æ ¹æ“šä¸Šç´šè¦å®šï¹æˆ‘å€‘æ˜¯ä¸èƒ½å¹«ä½ å·æ¸¡çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¦©¿ú */
+    /* æ‰£éŒ¢ */
     gold_from_char( ch, pShip->cost );
     pShip->count++;
 
-    /* ·h²¾¤Hª« */
-    act( "$n¥I¤F¿ú¡Mµn¤W¤F$t¡C", ch, pShip->name, NULL, TO_ALL );
+    /* æ¬ç§»äººç‰© */
+    act( "$nä»˜äº†éŒ¢ï¹ç™»ä¸Šäº†$tã€‚", ch, pShip->name, NULL, TO_ALL );
 
     char_from_room( ch );
     char_to_room( ch, pShip->cabin );
-    act( "$n¥I¤F¿ú¡M½w½w¦a±q¥ÒªO¨ººİ¥X²{¡C", ch, NULL, NULL, TO_ROOM );
+    act( "$nä»˜äº†éŒ¢ï¹ç·©ç·©åœ°å¾ç”²æ¿é‚£ç«¯å‡ºç¾ã€‚", ch, NULL, NULL, TO_ROOM );
     do_look( ch, "auto" );
 
-    /* ²M°£°lÂÜ¬ö¿ıÂI */
+    /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
     clear_trace( ch, TRUE );
   }
 
@@ -240,42 +240,42 @@ FUNCTION( do_ship )
 
     if ( !pShip || IS_NPC( ch ) )
     {
-      send_to_char( "§A¤S¨S¦³¦b¥æ³q¤u¨ã¤W¡M«ç»ò¯à°÷¤U¥h©O¡S\n\r", ch );
+      send_to_char( "ä½ åˆæ²’æœ‰åœ¨äº¤é€šå·¥å…·ä¸Šï¹æ€éº¼èƒ½å¤ ä¸‹å»å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pShip->waiting_tick <= 0 )
     {
-      send_to_char( "¹ï¤£°_¡M¥æ³q¤u¨ã¤w¸g¥Xµo¤F¡M©Ò¥H¨S¦³¿ìªk¤U¥h¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹äº¤é€šå·¥å…·å·²ç¶“å‡ºç™¼äº†ï¹æ‰€ä»¥æ²’æœ‰è¾¦æ³•ä¸‹å»äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->position != POS_STANDING )
     {
-      send_to_char( "§AÁÙ¦b¦£«¨¡M©Ò¥H¨S¦³¿ìªk¤U¥h¥æ³q¤u¨ã­ù¡T\n\r", ch );
+      send_to_char( "ä½ é‚„åœ¨å¿™å’§ï¹æ‰€ä»¥æ²’æœ‰è¾¦æ³•ä¸‹å»äº¤é€šå·¥å…·å“©ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( get_mount( ch ) )
     {
-      send_to_char( "¥ÒªO¤£¤j¡M©Ò¥H½Ğ§A¥ı±q§Aªº§¤ÃM¤W¤U¨Ó§a¡T\n\r", ch );
+      send_to_char( "ç”²æ¿ä¸å¤§ï¹æ‰€ä»¥è«‹ä½ å…ˆå¾ä½ çš„åé¨ä¸Šä¸‹ä¾†å§ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÁÙ¿ú */
+    /* é‚„éŒ¢ */
     gold_to_char( ch, pShip->cost / 2 );
     pShip->count = UMAX( 0, pShip->count - 1 );
 
-    /* ·h²¾¤Hª« */
-    act( "¥æ³q¤u¨ã¦Ñ¤j§â´ç¸êÁÙµ¹$n¡M$n½w½w¦a¨«¤U$t¤F¡T"
+    /* æ¬ç§»äººç‰© */
+    act( "äº¤é€šå·¥å…·è€å¤§æŠŠæ¸¡è³‡é‚„çµ¦$nï¹$nç·©ç·©åœ°èµ°ä¸‹$täº†ï¹—"
       , ch, pShip->name, NULL, TO_ALL );
 
     char_from_room( ch );
     char_to_room( ch, pShip->starting );
-    act( "$n©ğµÛ¥]¥]¡M±q$t¨«¤F¤U¨Ó¡C", ch, pShip->name, NULL, TO_ROOM );
+    act( "$næ‹è‘—åŒ…åŒ…ï¹å¾$tèµ°äº†ä¸‹ä¾†ã€‚", ch, pShip->name, NULL, TO_ROOM );
     do_look( ch, "auto" );
 
-    /* ²M°£°lÂÜ¬ö¿ıÂI */
+    /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
     clear_trace( ch, TRUE );
   }
 
@@ -287,34 +287,34 @@ FUNCTION( do_ship )
       if ( ++count == slot )
       {
         print_to_char( ch,
-          "½s¸¹          ¡R%d\n\r"
-          "²î°¦¦WºÙ      ¡R%s\n\r"
-          "¥XµoÂI©Ğ¶¡¸¹½X¡R%d\n\r"
-          "¥Øªº¦a©Ğ¶¡¸¹½X¡R%d\n\r"
-          "²î¿µ©Ğ¶¡¸¹½X  ¡R%d\n\r"
-          "²î¿µªº±Ô­z    ¡R%s"
-          "´ç²î¶O¥Î      ¡R%d ¨â»È¤l\n\r"
-          "¾a¯¸±Ô­z      ¡R%s"
-          "¶i¯¸±Ô­z      ¡R%s"
-          "´ç²î¤H¼Æ      ¡R%d\n\r"
-          "±jµs¾÷²v      ¡R¸U¤À¤§%d\n\r"
-          "±jµs¥X²{¦¸¼Æ  ¡R%d\n\r"
-          "©µ´Á¾÷²v      ¡R¸U¤À¤§%d\n\r"
-          "¯è¦æ®É¶¡      ¡R%d\n\r"
-          "«İ¾÷®É¶¡      ¡R%d\n\r"
-          "¥Ø«e¯è¦æ®É¶¡  ¡R%d\n\r"
-          "¥Ø«eµ¥«İ®É¶¡  ¡R%d\n\r"
-          "¥Ø«eª¬ºA      ¡R%s\n\r"
-          "Âê©w          ¡R%s\n\r"
+          "ç·¨è™Ÿ          ï¹•%d\n\r"
+          "èˆ¹éš»åç¨±      ï¹•%s\n\r"
+          "å‡ºç™¼é»æˆ¿é–“è™Ÿç¢¼ï¹•%d\n\r"
+          "ç›®çš„åœ°æˆ¿é–“è™Ÿç¢¼ï¹•%d\n\r"
+          "èˆ¹è‰™æˆ¿é–“è™Ÿç¢¼  ï¹•%d\n\r"
+          "èˆ¹è‰™çš„æ•˜è¿°    ï¹•%s"
+          "æ¸¡èˆ¹è²»ç”¨      ï¹•%d å…©éŠ€å­\n\r"
+          "é ç«™æ•˜è¿°      ï¹•%s"
+          "é€²ç«™æ•˜è¿°      ï¹•%s"
+          "æ¸¡èˆ¹äººæ•¸      ï¹•%d\n\r"
+          "å¼·ç›œæ©Ÿç‡      ï¹•è¬åˆ†ä¹‹%d\n\r"
+          "å¼·ç›œå‡ºç¾æ¬¡æ•¸  ï¹•%d\n\r"
+          "å»¶æœŸæ©Ÿç‡      ï¹•è¬åˆ†ä¹‹%d\n\r"
+          "èˆªè¡Œæ™‚é–“      ï¹•%d\n\r"
+          "å¾…æ©Ÿæ™‚é–“      ï¹•%d\n\r"
+          "ç›®å‰èˆªè¡Œæ™‚é–“  ï¹•%d\n\r"
+          "ç›®å‰ç­‰å¾…æ™‚é–“  ï¹•%d\n\r"
+          "ç›®å‰ç‹€æ…‹      ï¹•%s\n\r"
+          "é–å®š          ï¹•%s\n\r"
           , count
-          , pShip->name && *pShip->name ? pShip->name : "±q¯Ê"
+          , pShip->name && *pShip->name ? pShip->name : "å¾ç¼º"
           , pShip->starting    ? pShip->starting->vnum    : -1
           , pShip->destination ? pShip->destination->vnum : -1
           , pShip->cabin       ? pShip->cabin->vnum       : -1
-          , pShip->description ? pShip->description : "±q¯Ê"
+          , pShip->description ? pShip->description : "å¾ç¼º"
           , pShip->cost
-          , pShip->msg_land     ? pShip->msg_land     : "±q¯Ê"
-          , pShip->msg_entrance ? pShip->msg_entrance : "±q¯Ê"
+          , pShip->msg_land     ? pShip->msg_land     : "å¾ç¼º"
+          , pShip->msg_entrance ? pShip->msg_entrance : "å¾ç¼º"
           , pShip->count, pShip->pirate, pShip->pirate_count
           , pShip->delay, pShip->sailing, pShip->waiting
           , pShip->sailing_tick, pShip->waiting_tick
@@ -324,14 +324,14 @@ FUNCTION( do_ship )
       }
     }
 
-    send_to_char( "¨S¦³³o­Ó½s¸¹ªº²î°¦¡T\n\r", ch );
+    send_to_char( "æ²’æœ‰é€™å€‹ç·¨è™Ÿçš„èˆ¹éš»ï¹—\n\r", ch );
   }
 
   else if ( !str_prefix( arg, "info" ) && IS_IMMORTAL( ch ) )
   {
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m¶¶§Ç ¦W        ºÙ °_©lÂI ¥Øªº¦a ²î  ¿µ "
-       "ªá  ¶O ¤H  ¼Æ ®ü  µs ¦¸  ¼Æ Âê©w\e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mé †åº å        ç¨± èµ·å§‹é» ç›®çš„åœ° èˆ¹  è‰™ "
+       "èŠ±  è²» äºº  æ•¸ æµ·  ç›œ æ¬¡  æ•¸ é–å®š\e[0m\n\r" );
 
     for ( count = 0, pShip = ship_list; pShip; pShip = pShip->next )
     {
@@ -354,7 +354,7 @@ FUNCTION( do_ship )
     argument = one_argument( argument, arg );
     if ( !arg[0] || !is_number( arg ) )
     {
-      send_to_char( "§A­nÂê©w©Î¬O¸Ñ°£Âê©w¨º¤@°¦²î°¦¡S\n\r", ch );
+      send_to_char( "ä½ è¦é–å®šæˆ–æ˜¯è§£é™¤é–å®šé‚£ä¸€éš»èˆ¹éš»ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -367,11 +367,11 @@ FUNCTION( do_ship )
         chinese_number( count, buf );
         pShip->lock = pShip->lock ? FALSE : TRUE;
 
-        act( "§A$t²Ä$T¿´²î°¦ªºª¬ºA¡T"
-          , ch, pShip->lock ? "Âê©w" : "¸Ñ°£Âê©w", buf, TO_CHAR );
+        act( "ä½ $tç¬¬$Tè‰˜èˆ¹éš»çš„ç‹€æ…‹ï¹—"
+          , ch, pShip->lock ? "é–å®š" : "è§£é™¤é–å®š", buf, TO_CHAR );
 
-        mudlog( LOG_WIZARD, "%s%s²Ä%s¿´²î°¦ª¬ºA."
-          , ch->name, pShip->lock ? "Âê©w" : "¸Ñ°£Âê©w", buf );
+        mudlog( LOG_WIZARD, "%s%sç¬¬%sè‰˜èˆ¹éš»ç‹€æ…‹."
+          , ch->name, pShip->lock ? "é–å®š" : "è§£é™¤é–å®š", buf );
 
         if ( !pShip->lock )
         {
@@ -382,10 +382,10 @@ FUNCTION( do_ship )
 
         else
         {
-          sendmsg_to_someroom( "°Ú¡T¾D¤F¡M²î¦Ñ¤j¶]¸ô¥h¤F¡M³o¿´²î§Y±NÃö³¬¡T"
+          sendmsg_to_someroom( "å•Šï¹—é­äº†ï¹èˆ¹è€å¤§è·‘è·¯å»äº†ï¹é€™è‰˜èˆ¹å³å°‡é—œé–‰ï¹—"
             , pShip->cabin );
 
-          sendmsg_to_someroom( "²î¦Ñ¤j¶]¸ô¥h¤F¡M§A¦A¤]·f¤£¨ì³o¿´²î¤F¡T"
+          sendmsg_to_someroom( "èˆ¹è€å¤§è·‘è·¯å»äº†ï¹ä½ å†ä¹Ÿæ­ä¸åˆ°é€™è‰˜èˆ¹äº†ï¹—"
             , pShip->starting );
         }
 
@@ -393,7 +393,7 @@ FUNCTION( do_ship )
       }
     }
 
-    send_to_char( "§ä¤£¨ì§A­nªº²î°¦¸¹½X¡M°Ê§@¨ú®ø¡T\n\r", ch );
+    send_to_char( "æ‰¾ä¸åˆ°ä½ è¦çš„èˆ¹éš»è™Ÿç¢¼ï¹å‹•ä½œå–æ¶ˆï¹—\n\r", ch );
   }
 
   else if ( !str_prefix( arg, "set" ) && IS_IMMORTAL( ch ) )
@@ -404,13 +404,13 @@ FUNCTION( do_ship )
 
     if ( !arg[0] || !arg1[0] || !arg2[0] )
     {
-      send_to_char( "§A­n§ó§ï­ş¤@¿´²î°¦ªº­ş¨Ç³]©w¡S½Ğ¬d¸ß ship ¥Îªk\n\r", ch );
+      send_to_char( "ä½ è¦æ›´æ”¹å“ªä¸€è‰˜èˆ¹éš»çš„å“ªäº›è¨­å®šï¹–è«‹æŸ¥è©¢ ship ç”¨æ³•\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !is_number( arg ) )
     {
-      send_to_char( "¹ï¤£°_¡M²î°¦ªº¸¹½X¥²¶·¬O¼Æ¦r¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹èˆ¹éš»çš„è™Ÿç¢¼å¿…é ˆæ˜¯æ•¸å­—ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -424,8 +424,8 @@ FUNCTION( do_ship )
         {
           free_string( pShip->name );
           pShip->name = str_dup( arg2 );
-          act( "§A§ó§ï²Ä$t¿´¦WºÙ¬°$T¡C", ch, buf, arg2, TO_CHAR );
-          mudlog( LOG_DEBUG, "%s§ó§ï²Ä%s¿´²î°¦ªº¦WºÙ", ch->name, buf );
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜åç¨±ç‚º$Tã€‚", ch, buf, arg2, TO_CHAR );
+          mudlog( LOG_DEBUG, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»çš„åç¨±", ch->name, buf );
           RETURN_NULL();
         }
 
@@ -433,19 +433,19 @@ FUNCTION( do_ship )
         {
           if ( !is_number( arg2 ) )
           {
-            send_to_char( "´ç²î¶O¥Î¥²¶·¬O¼Æ¦r¡T\n\r", ch );
+            send_to_char( "æ¸¡èˆ¹è²»ç”¨å¿…é ˆæ˜¯æ•¸å­—ï¹—\n\r", ch );
             RETURN_NULL();
           }
 
           if ( ( slot = atoi( arg2 ) ) <= 0 || slot >= MAX_ASSET )
           {
-            act( "´ç²î¶O¥Î $i ¤£¦X²z¡T", ch, &slot, NULL, TO_CHAR );
+            act( "æ¸¡èˆ¹è²»ç”¨ $i ä¸åˆç†ï¹—", ch, &slot, NULL, TO_CHAR );
             RETURN_NULL();
           }
 
           chinese_number( ( pShip->cost = slot ), buf1 );
-          act( "§A§ó§ï²Ä$t¿´²î°¦´ç²î¶O¥Î¬°$T¡C", ch, buf, buf1, TO_CHAR );
-          mudlog( LOG_WIZARD, "%s§ó§ï²Ä%s¿´²î°¦´ç²î¶O¥Î¬°%s¡C\n\r"
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜èˆ¹éš»æ¸¡èˆ¹è²»ç”¨ç‚º$Tã€‚", ch, buf, buf1, TO_CHAR );
+          mudlog( LOG_WIZARD, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»æ¸¡èˆ¹è²»ç”¨ç‚º%sã€‚\n\r"
             , ch->name, buf, buf1 );
 
           RETURN_NULL();
@@ -455,19 +455,19 @@ FUNCTION( do_ship )
         {
           if ( !is_number( arg2 ) )
           {
-            send_to_char( "¹J¨ì±jµs¾÷²v¥²¶·¬O¼Æ¦r¡T\n\r", ch );
+            send_to_char( "é‡åˆ°å¼·ç›œæ©Ÿç‡å¿…é ˆæ˜¯æ•¸å­—ï¹—\n\r", ch );
             RETURN_NULL();
           }
 
           if ( ( slot = atoi( arg2 ) ) < 0 || slot >= 10000 )
           {
-            act( "±jµs¥X²{¾÷²v $i ¤£¦X²z¡T", ch, &slot, NULL, TO_CHAR );
+            act( "å¼·ç›œå‡ºç¾æ©Ÿç‡ $i ä¸åˆç†ï¹—", ch, &slot, NULL, TO_CHAR );
             RETURN_NULL();
           }
 
           chinese_number( ( pShip->pirate = slot ), buf1 );
-          act( "§A§ó§ï²Ä$t¿´²î°¦±jµs¾÷²v¬°¸U¤À¤§$T¡C", ch, buf, buf1, TO_CHAR );
-          mudlog( LOG_WIZARD, "%s§ó§ï²Ä%s¿´²î°¦±jµs¾÷²v¬°¸U¤À¤§%s¡C\n\r"
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜èˆ¹éš»å¼·ç›œæ©Ÿç‡ç‚ºè¬åˆ†ä¹‹$Tã€‚", ch, buf, buf1, TO_CHAR );
+          mudlog( LOG_WIZARD, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»å¼·ç›œæ©Ÿç‡ç‚ºè¬åˆ†ä¹‹%sã€‚\n\r"
             , ch->name, buf, buf1 );
 
           RETURN_NULL();
@@ -477,19 +477,19 @@ FUNCTION( do_ship )
         {
           if ( !is_number( arg2 ) )
           {
-            send_to_char( "©µ´Áªº¾÷²v¥²¶·¬O¼Æ¦r¡T\n\r", ch );
+            send_to_char( "å»¶æœŸçš„æ©Ÿç‡å¿…é ˆæ˜¯æ•¸å­—ï¹—\n\r", ch );
             RETURN_NULL();
           }
 
           if ( ( slot = atoi( arg2 ) ) < 0 || slot >= 10000 )
           {
-            act( "©µ´Áªº¾÷²v $i ¤£¦X²z¡T", ch, &slot, NULL, TO_CHAR );
+            act( "å»¶æœŸçš„æ©Ÿç‡ $i ä¸åˆç†ï¹—", ch, &slot, NULL, TO_CHAR );
             RETURN_NULL();
           }
 
           chinese_number( ( pShip->pirate = slot ), buf1 );
-          act( "§A§ó§ï²Ä$t¿´²î°¦©µ´Áªº¾÷²v¬°¸U¤À¤§$T¡C", ch, buf, buf1, TO_CHAR );
-          mudlog( LOG_WIZARD, "%s§ó§ï²Ä%s¿´²î°¦©µ´Áªº¾÷²v¬°¸U¤À¤§%s¡C\n\r"
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜èˆ¹éš»å»¶æœŸçš„æ©Ÿç‡ç‚ºè¬åˆ†ä¹‹$Tã€‚", ch, buf, buf1, TO_CHAR );
+          mudlog( LOG_WIZARD, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»å»¶æœŸçš„æ©Ÿç‡ç‚ºè¬åˆ†ä¹‹%sã€‚\n\r"
             , ch->name, buf, buf1 );
 
           RETURN_NULL();
@@ -499,19 +499,19 @@ FUNCTION( do_ship )
         {
           if ( !is_number( arg2 ) )
           {
-            send_to_char( "¯è¦æ®É¶¡¥²¶·¬O¼Æ¦r¡T\n\r", ch );
+            send_to_char( "èˆªè¡Œæ™‚é–“å¿…é ˆæ˜¯æ•¸å­—ï¹—\n\r", ch );
             RETURN_NULL();
           }
 
           if ( ( slot = atoi( arg2 ) ) <= 0 )
           {
-            act( "¯è¦æ®É¶¡ $i ¤£¦X²z¡T", ch, &slot, NULL, TO_CHAR );
+            act( "èˆªè¡Œæ™‚é–“ $i ä¸åˆç†ï¹—", ch, &slot, NULL, TO_CHAR );
             RETURN_NULL();
           }
 
           chinese_number( ( pShip->sailing = slot ), buf1 );
-          act( "§A§ó§ï²Ä$t¿´²î°¦¯è¦æ®É¶¡¬°$T¤p®É¡C", ch, buf, buf1, TO_CHAR );
-          mudlog( LOG_WIZARD, "%s§ó§ï²Ä%s¿´²î°¦¯è¦æ®É¶¡¬°%s¤p®É¡C\n\r"
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜èˆ¹éš»èˆªè¡Œæ™‚é–“ç‚º$Tå°æ™‚ã€‚", ch, buf, buf1, TO_CHAR );
+          mudlog( LOG_WIZARD, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»èˆªè¡Œæ™‚é–“ç‚º%så°æ™‚ã€‚\n\r"
             , ch->name, buf, buf1 );
 
           RETURN_NULL();
@@ -521,19 +521,19 @@ FUNCTION( do_ship )
         {
           if ( !is_number( arg2 ) )
           {
-            send_to_char( "«İ¾÷®É¶¡¥²¶·¬O¼Æ¦r¡T\n\r", ch );
+            send_to_char( "å¾…æ©Ÿæ™‚é–“å¿…é ˆæ˜¯æ•¸å­—ï¹—\n\r", ch );
             RETURN_NULL();
           }
 
           if ( ( slot = atoi( arg2 ) ) <= 0 )
           {
-            act( "«İ¾÷®É¶¡ $i ¤£¦X²z¡T", ch, &slot, NULL, TO_CHAR );
+            act( "å¾…æ©Ÿæ™‚é–“ $i ä¸åˆç†ï¹—", ch, &slot, NULL, TO_CHAR );
             RETURN_NULL();
           }
 
           chinese_number( ( pShip->waiting = slot ), buf1 );
-          act( "§A§ó§ï²Ä$t¿´²î°¦«İ¾÷®É¶¡¬°$T¤p®É¡C", ch, buf, buf1, TO_CHAR );
-          mudlog( LOG_WIZARD, "%s§ó§ï²Ä%s¿´²î°¦«İ¾÷®É¶¡¬°%s¤p®É¡C\n\r"
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜èˆ¹éš»å¾…æ©Ÿæ™‚é–“ç‚º$Tå°æ™‚ã€‚", ch, buf, buf1, TO_CHAR );
+          mudlog( LOG_WIZARD, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»å¾…æ©Ÿæ™‚é–“ç‚º%så°æ™‚ã€‚\n\r"
             , ch->name, buf, buf1 );
 
           RETURN_NULL();
@@ -543,8 +543,8 @@ FUNCTION( do_ship )
         {
           free_string( pShip->msg_entrance );
           pShip->msg_entrance = str_dup( arg2 );
-          act( "§A§ó§ï²Ä$t¿´¶i´ä±Ô­z¬°$T¡C", ch, buf, arg2, TO_CHAR );
-          mudlog( LOG_DEBUG, "%s§ó§ï²Ä%s¿´²î°¦ªº¶i´ä±Ô­z", ch->name, buf );
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜é€²æ¸¯æ•˜è¿°ç‚º$Tã€‚", ch, buf, arg2, TO_CHAR );
+          mudlog( LOG_DEBUG, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»çš„é€²æ¸¯æ•˜è¿°", ch->name, buf );
           RETURN_NULL();
         }
 
@@ -552,22 +552,22 @@ FUNCTION( do_ship )
         {
           free_string( pShip->msg_land );
           pShip->msg_land = str_dup( arg2 );
-          act( "§A§ó§ï²Ä$t¿´¾a´ä±Ô­z¬°$T¡C", ch, buf, arg2, TO_CHAR );
-          mudlog( LOG_DEBUG, "%s§ó§ï²Ä%s¿´²î°¦ªº¾a´ä±Ô­z", ch->name, buf );
+          act( "ä½ æ›´æ”¹ç¬¬$tè‰˜é æ¸¯æ•˜è¿°ç‚º$Tã€‚", ch, buf, arg2, TO_CHAR );
+          mudlog( LOG_DEBUG, "%sæ›´æ”¹ç¬¬%sè‰˜èˆ¹éš»çš„é æ¸¯æ•˜è¿°", ch->name, buf );
           RETURN_NULL();
         }
 
-        send_to_char( "³]©wªº¿ï¶µ¿ù»~¡M½Ğ¬d¸ß ship ¥Îªk¡T\n\r", ch );
+        send_to_char( "è¨­å®šçš„é¸é …éŒ¯èª¤ï¹è«‹æŸ¥è©¢ ship ç”¨æ³•ï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
 
-    send_to_char( "§ä¤£¨ì§A­nªº²î°¦¸¹½X¡M°Ê§@¨ú®ø¡T\n\r", ch );
+    send_to_char( "æ‰¾ä¸åˆ°ä½ è¦çš„èˆ¹éš»è™Ÿç¢¼ï¹å‹•ä½œå–æ¶ˆï¹—\n\r", ch );
   }
 
   else
   {
-    send_to_char( "°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß ship ªº¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢ ship çš„ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
@@ -591,7 +591,7 @@ void ship_update( void )
   {
     if ( pShip->waiting <= 0 || pShip->sailing <= 0 )
     {
-      mudlog( LOG_DEBUG, "ship_update: ²î°¦ªì©l­p®É¾¹¿ù»~." );
+      mudlog( LOG_DEBUG, "ship_update: èˆ¹éš»åˆå§‹è¨ˆæ™‚å™¨éŒ¯èª¤." );
       pShip->waiting = 2;
       pShip->sailing = 10;
 
@@ -614,7 +614,7 @@ void ship_update( void )
     {
       if ( pShip->cabin )
       {
-        mudlog( LOG_DEBUG, "ship_update: ²î¿µ©Ğ¶¡¤£¥¿½T." );
+        mudlog( LOG_DEBUG, "ship_update: èˆ¹è‰™æˆ¿é–“ä¸æ­£ç¢º." );
       }
 
       else
@@ -627,21 +627,21 @@ void ship_update( void )
 
           if ( ch->position == POS_RESTING || ch->position == POS_SLEEPING )
           {
-            send_to_char( "³Ş¡M²î¨ì¤F¡M¸Ó°_§É¤F¡C\n\r" , ch );
+            send_to_char( "å–‚ï¹èˆ¹åˆ°äº†ï¹è©²èµ·åºŠäº†ã€‚\n\r" , ch );
 
-            /* ¦pªG¬O©üºÎ */
+            /* å¦‚æœæ˜¯æ˜ç¡ */
             if ( !is_affected( ch, SLOT_SLEEP ) ) ch->position = POS_STANDING;
           }
 
-          send_to_char( "²î¦Ñ¤j¤£°µ§Aªº¥Í·N¤F¡Mºu§a¡T\n\r", ch );
-          act( "$n³Q²î¦Ñ¤j±q$t»°¤F¤U¥h¡C", ch, pShip->name, NULL, TO_ROOM );
+          send_to_char( "èˆ¹è€å¤§ä¸åšä½ çš„ç”Ÿæ„äº†ï¹æ»¾å§ï¹—\n\r", ch );
+          act( "$nè¢«èˆ¹è€å¤§å¾$tè¶•äº†ä¸‹å»ã€‚", ch, pShip->name, NULL, TO_ROOM );
           char_from_room( ch );
           char_to_room( ch, pShip->destination );
 
-          act( "$n³Q²î¦Ñ¤j±q$t¤W»°¤F¤U¨Ó¡C", ch, pShip->name, NULL, TO_ROOM );
+          act( "$nè¢«èˆ¹è€å¤§å¾$tä¸Šè¶•äº†ä¸‹ä¾†ã€‚", ch, pShip->name, NULL, TO_ROOM );
           do_look( ch, "auto" );
 
-          /* ²M°£°lÂÜ¬ö¿ıÂI */
+          /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
           clear_trace( ch, TRUE );
         }
 
@@ -654,7 +654,7 @@ void ship_update( void )
     if ( ( pShip->waiting_tick < 0 && pShip->sailing_tick < 0 )
       || ( pShip->waiting_tick > 0 && pShip->sailing_tick > 0 ) )
     {
-      mudlog( LOG_DEBUG, "ship_update: ²î°¦­p®É¾¹¿ù»~." );
+      mudlog( LOG_DEBUG, "ship_update: èˆ¹éš»è¨ˆæ™‚å™¨éŒ¯èª¤." );
       pShip->waiting_tick = pShip->waiting;
       pShip->sailing_tick = -1;
       continue;
@@ -664,15 +664,15 @@ void ship_update( void )
     {
       if ( --pShip->waiting_tick <= 0 )
       {
-        sprintf( buf, "%s\e[0m¥Xµo¤F¡M½Ğ®È«È§ä­Ó¦n¦ì¸m§¤¤U¡C\n\r¶¶«KªY½àªu³~"
-          "©ú´Aªº­·¥ú¡M%s\e[0mºÜ¸Û·PÁÂ§Aªº¥úÁ{¡T\n\r"
+        sprintf( buf, "%s\e[0må‡ºç™¼äº†ï¹è«‹æ—…å®¢æ‰¾å€‹å¥½ä½ç½®åä¸‹ã€‚\n\ré †ä¾¿æ¬£è³æ²¿é€”"
+          "æ˜åªšçš„é¢¨å…‰ï¹%s\e[0mç«­èª æ„Ÿè¬ä½ çš„å…‰è‡¨ï¹—\n\r"
           , pShip->name, mud_name );
 
         sendmsg_to_someroom( buf, pShip->cabin );
 
         chinese_number( pShip->sailing, buf1 );
-        sprintf( buf, "%s\e[0m¥Xµo¤F¡M½Ğ±ı·f­¼¥»¯Z²îªº®È«È¡M"
-          "¦Aµ¥%s¤p®Éµ¥¤U¤@¯Z¡T\n\r", pShip->name, buf1 );
+        sprintf( buf, "%s\e[0må‡ºç™¼äº†ï¹è«‹æ¬²æ­ä¹˜æœ¬ç­èˆ¹çš„æ—…å®¢ï¹"
+          "å†ç­‰%så°æ™‚ç­‰ä¸‹ä¸€ç­ï¹—\n\r", pShip->name, buf1 );
 
         sendmsg_to_someroom( buf, pShip->starting );
 
@@ -689,7 +689,7 @@ void ship_update( void )
       if ( pShip->delay > 0 && number_range( 1, 10000 ) <= pShip->delay )
       {
         sendmsg_to_someroom(
-          "»·³B¯Q¶³±K§G¡M­·«B±ı¨Ó¡M²î°¦¥i¯à¨S¦³¿ìªk¦p´Á¨ì¹F¥Øªº¦a¤F¡T\n\r"
+          "é è™•çƒé›²å¯†ä½ˆï¹é¢¨é›¨æ¬²ä¾†ï¹èˆ¹éš»å¯èƒ½æ²’æœ‰è¾¦æ³•å¦‚æœŸåˆ°é”ç›®çš„åœ°äº†ï¹—\n\r"
           , pShip->cabin );
 
         pShip->sailing_tick++;
@@ -699,7 +699,7 @@ void ship_update( void )
       {
         if ( !pShip->cabin )
         {
-          mudlog( LOG_DEBUG, "ship_update: ²î¿µ©Ğ¶¡¤£¥¿½T." );
+          mudlog( LOG_DEBUG, "ship_update: èˆ¹è‰™æˆ¿é–“ä¸æ­£ç¢º." );
         }
 
         else
@@ -715,20 +715,20 @@ void ship_update( void )
 
             if ( ch->position == POS_RESTING || ch->position == POS_SLEEPING )
             {
-              send_to_char( "³Ş¡M²î¨ì¤F¡M¸Ó°_§É¤F¡C\n\r" , ch );
+              send_to_char( "å–‚ï¹èˆ¹åˆ°äº†ï¹è©²èµ·åºŠäº†ã€‚\n\r" , ch );
 
-              /* ¦pªG¬O©üºÎ */
+              /* å¦‚æœæ˜¯æ˜ç¡ */
               if ( !is_affected( ch, SLOT_SLEEP ) ) ch->position = POS_STANDING;
             }
 
-            act( "$n±q$t¨«¤F¤U¥h¡C", ch, pShip->name, NULL, TO_ROOM );
+            act( "$nå¾$tèµ°äº†ä¸‹å»ã€‚", ch, pShip->name, NULL, TO_ROOM );
             char_from_room( ch );
             char_to_room( ch, pShip->destination );
 
-            act( "$n±q$t¤W¨«¤F¤U¨Ó¡C", ch, pShip->name, NULL, TO_ROOM );
+            act( "$nå¾$tä¸Šèµ°äº†ä¸‹ä¾†ã€‚", ch, pShip->name, NULL, TO_ROOM );
             do_look( ch, "auto" );
 
-            /* ²M°£°lÂÜ¬ö¿ıÂI */
+            /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
             clear_trace( ch, TRUE );
           }
         }
@@ -740,18 +740,18 @@ void ship_update( void )
         pShip->sailing_tick = -1;
       }
 
-      /* ±jµs */
+      /* å¼·ç›œ */
       else if ( pShip->sailing_tick == 1
         && pShip->pirate > 0
         && number_range( 1, 10000 ) <= pShip->pirate )
       {
         sendmsg_to_someroom(
-          "»·³B¤@¿´¿´ªºÅK´ß²îºCºC¦a¥X²{¡M¾D¤F¡M¨º¤£´N¬O¶Ç»Dªº±jµs¶Ü¡S\n\r"
-          "¥u¨£²@µL©è§Ü¯à¤Oªº²î¦Ñ¤j´d¶Ë¦aÁ|°_¥ÕºX¡M¦VµL±¡ªº±jµs­Ì§ë­°¡C\n\r"
-          "­ü¡T¯u¬O­Ë·°¡M¥X¥~®È¹C³ºµM¸I¨ì¤F±jµs¡M·íµM¨­¤Wªºª÷¿ú¬O³Q¬~§T¤@ªÅ¡C\n\r"
-          "Áö»¡¿ú¬O¨S¤F¡M¦ı©¯¦nÁÙ¯à«O¦í¤@±ø¤p©R¡C­ü¡T¯dªº«C¤s¦b¡M¤£©È¨S§÷¿N¡C\n\r"
-          "¸g¹L¤@µf­â­h«á¡M¤@¿´¿´ªºÅK´ß²î¤SºCºC¦a®ø¥¢¦b¦a¥­½u¤F¡T\n\r"
-          "¯u¬Oªº¡M¸Ó¦ºªº±jµs­Ì¡T¤U¦¸´N¤£­n³Q§Úµ¹¶e¨ì¡T\n\r\n\r", pShip->cabin );
+          "é è™•ä¸€è‰˜è‰˜çš„éµæ®¼èˆ¹æ…¢æ…¢åœ°å‡ºç¾ï¹é­äº†ï¹é‚£ä¸å°±æ˜¯å‚³èçš„å¼·ç›œå—ï¹–\n\r"
+          "åªè¦‹æ¯«ç„¡æŠµæŠ—èƒ½åŠ›çš„èˆ¹è€å¤§æ‚²å‚·åœ°èˆ‰èµ·ç™½æ——ï¹å‘ç„¡æƒ…çš„å¼·ç›œå€‘æŠ•é™ã€‚\n\r"
+          "å”‰ï¹—çœŸæ˜¯å€’æ¥£ï¹å‡ºå¤–æ—…éŠç«Ÿç„¶ç¢°åˆ°äº†å¼·ç›œï¹ç•¶ç„¶èº«ä¸Šçš„é‡‘éŒ¢æ˜¯è¢«æ´—åŠ«ä¸€ç©ºã€‚\n\r"
+          "é›–èªªéŒ¢æ˜¯æ²’äº†ï¹ä½†å¹¸å¥½é‚„èƒ½ä¿ä½ä¸€æ¢å°å‘½ã€‚å”‰ï¹—ç•™çš„é’å±±åœ¨ï¹ä¸æ€•æ²’æç‡’ã€‚\n\r"
+          "ç¶“éä¸€ç•ªå‡Œè™å¾Œï¹ä¸€è‰˜è‰˜çš„éµæ®¼èˆ¹åˆæ…¢æ…¢åœ°æ¶ˆå¤±åœ¨åœ°å¹³ç·šäº†ï¹—\n\r"
+          "çœŸæ˜¯çš„ï¹è©²æ­»çš„å¼·ç›œå€‘ï¹—ä¸‹æ¬¡å°±ä¸è¦è¢«æˆ‘çµ¦é€®åˆ°ï¹—\n\r\n\r", pShip->cabin );
 
         for ( ch = pShip->cabin->people; ch; ch = ch_next )
         {
@@ -762,32 +762,32 @@ void ship_update( void )
           if ( ch->fighting )
           {
             stop_fighting( ch, TRUE );
-            send_to_char( "¦Ñ¤l¨Ó·m§T¡M§AÁÙ¦b¥´¬[¡S§ä¦º°Ú¡T\n\r", ch );
+            send_to_char( "è€å­ä¾†æ¶åŠ«ï¹ä½ é‚„åœ¨æ‰“æ¶ï¹–æ‰¾æ­»å•Šï¹—\n\r", ch );
           }
 
           if ( ch->position == POS_RESTING || ch->position == POS_SLEEPING )
           {
-            send_to_char( "³Ş¡M±jµs·m§T¡M°_¨Ó¨ü¦º§a¡T«¢«¢«¢¡T\n\r" , ch );
+            send_to_char( "å–‚ï¹å¼·ç›œæ¶åŠ«ï¹èµ·ä¾†å—æ­»å§ï¹—å“ˆå“ˆå“ˆï¹—\n\r" , ch );
 
-            /* ¦pªG¬O©üºÎ */
+            /* å¦‚æœæ˜¯æ˜ç¡ */
             if ( !is_affected( ch, SLOT_SLEEP ) ) ch->position = POS_STANDING;
           }
 
-          /* ·m¿ú */
+          /* æ¶éŒ¢ */
           if ( ch->gold > 0 )
           {
             gold_from_char( ch, ch->gold );
-            send_to_char( "¤p¤l¡M§â¿úµ¹¥æ¥X¨Ó§a¡M«¢«¢«¢¡M¦Ñ¤l­n©w¤F¡T\n\r"
+            send_to_char( "å°å­ï¹æŠŠéŒ¢çµ¦äº¤å‡ºä¾†å§ï¹å“ˆå“ˆå“ˆï¹è€å­è¦å®šäº†ï¹—\n\r"
               , ch );
           }
 
           else
           {
-            send_to_char( "¯ä¤p¤l¡M«ç»ò¨­¤W¤@¤ò¿ú³£¨S¦³¡M¥h¥h¥h¡T"
-              "·í±jµs³£¤ñ§A±j¦h¤F\n\r", ch );
+            send_to_char( "è‡­å°å­ï¹æ€éº¼èº«ä¸Šä¸€æ¯›éŒ¢éƒ½æ²’æœ‰ï¹å»å»å»ï¹—"
+              "ç•¶å¼·ç›œéƒ½æ¯”ä½ å¼·å¤šäº†\n\r", ch );
           }
 
-          /* ·m¨­¤WªºªF¦è, ¥ı¥á¨ì¦a¤W */
+          /* æ¶èº«ä¸Šçš„æ±è¥¿, å…ˆä¸Ÿåˆ°åœ°ä¸Š */
           for ( obj = ch->carrying; obj; obj = obj_next )
           {
             obj_next = obj->next_content;
@@ -796,28 +796,28 @@ void ship_update( void )
               && can_drop_obj( ch, obj )
               && !obj->address )
             {
-              act( "³Ş¡M§Aªº$p§Ú­Ì¥S§Ì­Ì­n©w¤F¡C", ch, obj, NULL, TO_CHAR );
-              act( "$nªº$p³Q±jµs·m¨«¤F¡C", ch, obj, NULL, TO_ROOM );
+              act( "å–‚ï¹ä½ çš„$pæˆ‘å€‘å…„å¼Ÿå€‘è¦å®šäº†ã€‚", ch, obj, NULL, TO_CHAR );
+              act( "$nçš„$pè¢«å¼·ç›œæ¶èµ°äº†ã€‚", ch, obj, NULL, TO_ROOM );
               obj_from_char( obj );
               obj_to_room( obj, ch->in_room );
             }
           }
         }
 
-        /* ²M°£©Ğ¶¡¸Ì­±©Ò¦³ªºªF¦è */
+        /* æ¸…é™¤æˆ¿é–“è£¡é¢æ‰€æœ‰çš„æ±è¥¿ */
         for ( obj = pShip->cabin->contents; obj; obj = obj_next )
         {
           obj_next = obj->next_content;
           if ( obj->item_type != ITEM_CORPSE_PC ) extract_obj( obj );
         }
 
-        sprintf( buf, "¶}©¹%s%sªº%s¾D¨ì±jµs¬~§T¤@ªÅ¡M²î¤Wªº®È«ÈµL¤@­Æ§K¡C"
+        sprintf( buf, "é–‹å¾€%s%sçš„%sé­åˆ°å¼·ç›œæ´—åŠ«ä¸€ç©ºï¹èˆ¹ä¸Šçš„æ—…å®¢ç„¡ä¸€å€–å…ã€‚"
           , pShip->destination && pShip->destination->area
-            ? pShip->destination->area->name : "¬Y¤£ª¾¦W°Ï°ì"
-          , pShip->destination ? pShip->destination->name : "¬Y¤£ª¾¦W¦a¤è"
+            ? pShip->destination->area->name : "æŸä¸çŸ¥åå€åŸŸ"
+          , pShip->destination ? pShip->destination->name : "æŸä¸çŸ¥ååœ°æ–¹"
           , pShip->name );
 
-        talk_channel_2( buf, CHANNEL_BULLETIN, "§Ö³ø" );
+        talk_channel_2( buf, CHANNEL_BULLETIN, "å¿«å ±" );
         pShip->pirate_count++;
       }
 

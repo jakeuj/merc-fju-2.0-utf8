@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�˳ƶR�F����h�M����W�h�]�O�S���ΡM������O�S���M�O�˳�([1;32mwear[0m)�W�h�ڡM
-�o�̧ڭ̦��ӶK�ߤp�]�p�M�N�O [1;32mwear all[0m �t�η|���A��W�Ҧ����˳ƪ���C�쩳
-�n�˳ƭ��@�M�O�S���M�O�n�����([1;32mcompare[0m)�ݬݦn�a�o�C
+裝備買了那麼多﹐不穿上去也是沒有用﹐那怎麼辦呢﹖當然是裝備([1;32mwear[0m)上去啊﹐
+這裡我們有個貼心小設計﹐就是 [1;32mwear all[0m 系統會幫你穿上所有的裝備的喔。到底
+要裝備哪一套呢﹖當然是要先比較([1;32mcompare[0m)看看好壞囉。
 
-�Ьd�ߡRcompare�Bwear
+請查詢﹕compare、wear
 ~
 End

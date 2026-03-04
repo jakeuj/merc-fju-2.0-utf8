@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A���F�褣�Q�a�b���W�ɡM�A�i�H�Ҽ{�s��([1;32mdeposit[0m)�b�𧽸̡M�C�Ӥj���̳�
-�|���𧽪��C���A�Q�n��^([1;32mwithdraw[0m)�M�A�i�H�P�˨��𧽥h��^�M���άO�P�@
-���𧽳�C�o�̪��𧽳��O�p�窺��T�A�i�H��C���𧽥h���([1;32mcheck[0m)�ۤv�Ҧs
-�񪺪F��C
+當你有東西不想帶在身上時﹐你可以考慮存放([1;32mdeposit[0m)在鏢局裡﹐每個大城裡都
+會有鏢局的。當你想要領回([1;32mwithdraw[0m)﹐你可以同樣到鏢局去領回﹐不用是同一
+個鏢局喔。這裡的鏢局都是聯營的喔﹗你可以到每間鏢局去察看([1;32mcheck[0m)自己所存
+放的東西。
 
-�Ьd�ߡRwithdraw�Bdeposit�Bcheck
+請查詢﹕withdraw、deposit、check
 ~
 End

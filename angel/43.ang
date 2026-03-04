@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A�O���ɱ`�ݨ�Y�ӤH�M�۰����F�L�өO�S�S���M�o�̬O�i�H�M�����M���O�����A��
-���o�����@�ǰ��άO�R�@�ǰ��C����A�N�i�H�M�W([1;32mmount[0m)�e�F�C���M���ǰ��i��
-�O����n���A���M�A�o�h�մX���a�T���A�Q�n�U���ɡM�A�i�H��J([1;32munmount[0m)�C����
-ԣ���ΡS���A�_�I�ɨ�������O�M�i���O�ᰨ���Ӥ��O�A����O��C
+你是不時常看到某個人騎著馬走了過來呢﹖沒錯﹐這裡是可以騎馬的﹐但是首先你必
+須得先找到一匹馬或是買一匹馬。之後你就可以騎上([1;32mmount[0m)牠了。當然有些馬可不
+是那麼好馴服的﹐你得多試幾次吧﹗當你想要下馬時﹐你可以輸入([1;32munmount[0m)。馬有
+啥做用﹖當你冒險時走路的體力﹐可都是花馬的而不是你的體力喔。
 
-�Ьd�ߡRmount�Bunmount
+請查詢﹕mount、unmount
 ~
 End

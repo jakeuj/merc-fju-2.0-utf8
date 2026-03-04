@@ -1,9 +1,9 @@
 Vnum            260
 Name            fast blade book~
-ShortDesc       ¹÷Ã¹¤d¸­¤Mªk¯µÓD~
+ShortDesc       å¹”ç¾…åƒè‘‰åˆ€æ³•ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

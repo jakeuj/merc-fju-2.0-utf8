@@ -1,9 +1,9 @@
 Vnum            52
 Name            sword~
-ShortDesc       ­è¼C~
+ShortDesc       å‰›åŠ~
 Description
-¤@§â»È¥Õ¦â°{«Gªº¿û¼C(sword)¡C~
-Unit            §â~
+ä¸€æŠŠéŠ€ç™½è‰²é–ƒäº®çš„é‹¼åŠ(sword)ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

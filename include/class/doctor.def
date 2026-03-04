@@ -1,10 +1,10 @@
 Vnum            CLASS_DOCTOR
 Name            doctor~
-Cname           ­¦  ¤¤~
-Title           ÃÄ¨ì©R°£~
+Cname           éƒ  ä¸­~
+Title           è—¥åˆ°å‘½é™¤~
 LowerLimit      50
 UpperLimit      L_HER
-LimitMsg        $Y$n»¡¹D¡G¡u§i¶D§A¡M§ÚÁöÂå¤H¡M­n±ş¤H¤]¬O©ö¦p¤Ï´x°Ú¡T¡v$Z~
+LimitMsg        $Y$nèªªé“ï¼šã€Œå‘Šè¨´ä½ ï¹æˆ‘é›–é†«äººï¹è¦æ®ºäººä¹Ÿæ˜¯æ˜“å¦‚åæŒå•Šï¹—ã€$Z~
 Limit           3000
 Multiplier      25
 RebirthGold     10000

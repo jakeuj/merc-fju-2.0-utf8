@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -29,7 +29,7 @@ int     hex_to_int      args( ( char *, int ) );
 
 static  jmp_buf timebuf;
 
-/* ­­®É */
+/* é™æ™‚ */
 static void timeout( int sig )
 {
   longjmp( timebuf, sig );
@@ -37,8 +37,8 @@ static void timeout( int sig )
 
 char * get_user_name( int desc, struct sockaddr_in * there )
 {
-  struct sockaddr_in   here;          /* ¥»¦aªºµ²ºc */
-  struct sockaddr_in   sin;           /* ¹ï¤èªºµ²ºc*/
+  struct sockaddr_in   here;          /* æœ¬åœ°çš„çµæ§‹ */
+  struct sockaddr_in   sin;           /* å°æ–¹çš„çµæ§‹*/
   int                  length;
   int                  s;
   unsigned int         remote;
@@ -52,7 +52,7 @@ char * get_user_name( int desc, struct sockaddr_in * there )
 
   result = FromUnknown;
 
-  /* §ä¥X¥»¦aªº¦ì§}¥H¤Îªú */
+  /* æ‰¾å‡ºæœ¬åœ°çš„ä½å€ä»¥åŠé˜œ */
   length = sizeof( here );
   if ( getsockname( desc, (struct sockaddr *) & here, &length ) < 0 )
     RETURN( result );
@@ -63,10 +63,10 @@ char * get_user_name( int desc, struct sockaddr_in * there )
   sin.sin_port = 0;
   if ( bind( s, (struct sockaddr *)&sin, sizeof(sin) ) < 0 ) RETURN( result );
 
-  /* ³]©w­­®É */
+  /* è¨­å®šé™æ™‚ */
   signal( SIGALRM, timeout );
 
-  /* ²Ä¤@¦¸©I¥s¤@©w¬° 0, ­Y¬O timeout «á¤~·|¸õ¨ì³o¸Ì */
+  /* ç¬¬ä¸€æ¬¡å‘¼å«ä¸€å®šç‚º 0, è‹¥æ˜¯ timeout å¾Œæ‰æœƒè·³åˆ°é€™è£¡ */
   if ( setjmp( timebuf ) != 0 )
   {
     close( s );
@@ -106,7 +106,7 @@ char * get_user_name( int desc, struct sockaddr_in * there )
   RETURN( result );
 }
 
-/* ÀË¬d¦h­«³s½uªº«ü¥O */
+/* æª¢æŸ¥å¤šé‡é€£ç·šçš„æŒ‡ä»¤ */
 FUNCTION( do_multi )
 {
   char              arg[MAX_INPUT_LENGTH];
@@ -126,7 +126,7 @@ FUNCTION( do_multi )
 
   if ( !arg[0] )
   {
-    /* ÀË¬d³Ì¤j­È */
+    /* æª¢æŸ¥æœ€å¤§å€¼ */
     for ( max = 0 , d = descriptor_list; d; d = d->next )
     {
       if ( !verify_desc( d )
@@ -135,15 +135,15 @@ FUNCTION( do_multi )
       max = UMAX( max , d->multi );
     }
 
-    /* ®Ú¥»¨S¦³¤H¦h­«³s½u */
+    /* æ ¹æœ¬æ²’æœ‰äººå¤šé‡é€£ç·š */
     if ( max == 0 )
     {
-      send_to_char( "¨S¦³µo²{¦³¤H¦h­«³s½u¡T\n\r" , ch );
+      send_to_char( "æ²’æœ‰ç™¼ç¾æœ‰äººå¤šé‡é€£ç·šï¹—\n\r" , ch );
       RETURN_NULL();
     }
 
     clear_buffer();
-    send_to_buffer( "µo²{¦³ %d ²Õ¦h­«³s½u¡C¤À§O¬O¡R" , max );
+    send_to_buffer( "ç™¼ç¾æœ‰ %d çµ„å¤šé‡é€£ç·šã€‚åˆ†åˆ¥æ˜¯ï¹•" , max );
 
     for ( loop = 0; loop < max; loop++ )
     {
@@ -156,10 +156,10 @@ FUNCTION( do_multi )
 
         if ( d->multi == loop + 1 )
         {
-          send_to_buffer( "[%2d-%2d] ¤u§@¯¸: %s %s\e[0m(%s)\e[80C\e[35D"
+          send_to_buffer( "[%2d-%2d] å·¥ä½œç«™: %s %s\e[0m(%s)\e[80C\e[35D"
             , loop + 1
             , ++count
-            , CheckServer ? YESNO( d->server ) : "¡S"
+            , CheckServer ? YESNO( d->server ) : "ï¹–"
             , d->character->cname
             , d->character->name );
 
@@ -177,32 +177,32 @@ FUNCTION( do_multi )
   {
     if ( ( victim = get_char_world( ch , arg ) ) == NULL )
     {
-      act( "¨S¦³§ä¨ì§Aªº¹ï¶H $2$T$0¡C" , ch, NULL, arg, TO_CHAR );
+      act( "æ²’æœ‰æ‰¾åˆ°ä½ çš„å°è±¡ $2$T$0ã€‚" , ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( IS_NPC( victim ) )
     {
-      act( "$N¬OµêÀÀ©Çª«¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Næ˜¯è™›æ“¬æ€ªç‰©ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !victim->desc )
     {
-      act( "$NÂ÷½u¡M¦]¦¹¨S¦³´y­zªí¥i¨Ñ¬d¸ß¡C", ch, NULL, victim, TO_CHAR );
+      act( "$Né›¢ç·šï¹å› æ­¤æ²’æœ‰æè¿°è¡¨å¯ä¾›æŸ¥è©¢ã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     check_multi_update();
     if ( victim->desc->multi == 0 )
     {
-      act( "$N¨S¦³¦h­«³s½uªº±¡§Î¡C" , ch, NULL, victim, TO_CHAR );
+      act( "$Næ²’æœ‰å¤šé‡é€£ç·šçš„æƒ…å½¢ã€‚" , ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     clear_buffer();
 
-    send_to_buffer( "»P%s ¦h­«³s½uªº¦³¡R\n\r", mob_name( NULL, victim ) );
+    send_to_buffer( "èˆ‡%s å¤šé‡é€£ç·šçš„æœ‰ï¹•\n\r", mob_name( NULL, victim ) );
 
     for ( d = descriptor_list , count = 0; d; d = d->next )
     {
@@ -212,9 +212,9 @@ FUNCTION( do_multi )
         || d == victim->desc
         || d->multi != victim->desc->multi ) continue;
 
-      send_to_buffer( "[%2d] ¤u§@¯¸: %s %s\e[0m(%s)\e[80C\e[35D"
+      send_to_buffer( "[%2d] å·¥ä½œç«™: %s %s\e[0m(%s)\e[80C\e[35D"
         , ++count
-        , CheckServer ? YESNO( d->server ) : "¡S"
+        , CheckServer ? YESNO( d->server ) : "ï¹–"
         , d->character->cname
         , d->character->name );
 
@@ -229,7 +229,7 @@ FUNCTION( do_multi )
   RETURN_NULL();
 }
 
-/* ÀË¬d¬O§_¦³¦h­«³s½u */
+/* æª¢æŸ¥æ˜¯å¦æœ‰å¤šé‡é€£ç·š */
 void check_multi_update( void )
 {
   DESCRIPTOR_DATA * d;
@@ -239,14 +239,14 @@ void check_multi_update( void )
 
   PUSH_FUNCTION( "check_multi_update" );
 
-  /* ²M°£¸ê®Æ */
+  /* æ¸…é™¤è³‡æ–™ */
   for ( d = descriptor_list; d; d = d->next )
     if ( verify_desc( d ) ) d->multi = 0;
 
-  /* ÀË¬d¬O§_¦³¬Û¦PÃ±¤J¦ì§} */
+  /* æª¢æŸ¥æ˜¯å¦æœ‰ç›¸åŒç°½å…¥ä½å€ */
   for ( loop = 1 , d = descriptor_list; d; d = d->next )
   {
-    /* ­Y¥¼³s½u§¹²¦ªÌ, ©Î¬O¤Ï¬d¸ß¥¼§¹¦¨¤£¦C¤J­pºâ */
+    /* è‹¥æœªé€£ç·šå®Œç•¢è€…, æˆ–æ˜¯åæŸ¥è©¢æœªå®Œæˆä¸åˆ—å…¥è¨ˆç®— */
     if ( !verify_desc( d )
       || d->connected != CON_PLAYING
       || !d->character
@@ -255,7 +255,7 @@ void check_multi_update( void )
 
     for ( touch = FALSE, d_next = d->next; d_next; d_next = d_next->next )
     {
-      /* ­Y¥¼³s½u§¹²¦ªÌ, ©Î¬O¤Ï¬d¸ß¥¼§¹¦¨¤£¦C¤J­pºâ */
+      /* è‹¥æœªé€£ç·šå®Œç•¢è€…, æˆ–æ˜¯åæŸ¥è©¢æœªå®Œæˆä¸åˆ—å…¥è¨ˆç®— */
       if ( !verify_desc( d_next )
         || d_next->connected != CON_PLAYING
         || !d_next->character
@@ -312,7 +312,7 @@ FUNCTION( do_finger )
 
   if ( !arg[0] )
   {
-    send_to_char( "§A·Q¬d¸ß½Öªº¸ê®Æ¡S\n\r" , ch );
+    send_to_char( "ä½ æƒ³æŸ¥è©¢èª°çš„è³‡æ–™ï¹–\n\r" , ch );
     RETURN_NULL();
   }
 
@@ -320,31 +320,31 @@ FUNCTION( do_finger )
   {
     if ( !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "§A¨S¦³¨¬°÷ªºÅv¤O¨ÓÆ[¬İ¨ä¥L¤Hªº¸ê®Æ¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰è¶³å¤ çš„æ¬ŠåŠ›ä¾†è§€çœ‹å…¶ä»–äººçš„è³‡æ–™ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !arg[1] )
     {
-      send_to_char( "§A­nÆ[¬İ½Öªº¸ê®Æ©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦è§€çœ‹èª°çš„è³‡æ–™å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = get_char_world( ch, arg + 1 ) ) )
     {
-      act( "§ä¤£¨ì§A«ü©wªº¤Hª« $2$T$0¡C" , ch, NULL, arg+1, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ æŒ‡å®šçš„äººç‰© $2$T$0ã€‚" , ch, NULL, arg+1, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( IS_NPC( victim ) )
     {
-      act( "¤£¯à¬d¸ß«Dª±®a$N¡C", ch, NULL, victim, TO_CHAR );
+      act( "ä¸èƒ½æŸ¥è©¢éç©å®¶$Nã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !( pDesc = victim->desc ) )
     {
-      act( "$N¨S¦³´y­zªí¡MµLªk¬d¸ß¸ê®Æ¡C" , ch, NULL, victim, TO_CHAR );
+      act( "$Næ²’æœ‰æè¿°è¡¨ï¹ç„¡æ³•æŸ¥è©¢è³‡æ–™ã€‚" , ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -352,39 +352,39 @@ FUNCTION( do_finger )
       act( "$t", ch, pDesc->finger_data, NULL, TO_CHAR );
 
     else
-      act( "´y­zªí¤º¨S¦³Ãö©ó$Nªº¸ê®Æ¡C", ch, NULL, victim, TO_CHAR );
+      act( "æè¿°è¡¨å…§æ²’æœ‰é—œæ–¼$Nçš„è³‡æ–™ã€‚", ch, NULL, victim, TO_CHAR );
   }
 
   else
   {
     if ( !( pData = name2database( arg ) ) )
     {
-      act( "¹ï¤£°_¡M$t¨S¦³ $2$T$0 ³o¤@¸¹¤Hª«¡T", ch, mud_name, arg, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$tæ²’æœ‰ $2$T$0 é€™ä¸€è™Ÿäººç‰©ï¹—", ch, mud_name, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !pData->exist )
     {
-      act( "¹ï¤£°_¡M$t¤w¸g¦¨¬°¹L¥h¦¡¤F¡T", ch, arg, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$tå·²ç¶“æˆç‚ºéå»å¼äº†ï¹—", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     str_cpy( name, file_name( arg, SAVE_FILE ) );
     if ( access( name , R_OK ) != 0 )
     {
-      act( "¹ï¤£°_¡M$t¨S¦³$T³o¤@¸¹¤Hª«¡T", ch, mud_name, arg, TO_CHAR );
+      act( "å°ä¸èµ·ï¹$tæ²’æœ‰$Té€™ä¸€è™Ÿäººç‰©ï¹—", ch, mud_name, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( stat( name, &sData ) != 0 )
     {
-      act( "Åª¨ú $2$T$0 ¸ê®Æµo¥Í¿ù»~¡T", ch, NULL, arg, TO_CHAR );
+      act( "è®€å– $2$T$0 è³‡æ–™ç™¼ç”ŸéŒ¯èª¤ï¹—", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !( sTime = localtime( &sData.st_mtime ) ) )
     {
-      act( "­pºâ¹ï¤è $2$T$0 ¸ê®Æ®Éµo¥Í¿ù»~¡T", ch, NULL, arg, TO_CHAR );
+      act( "è¨ˆç®—å°æ–¹ $2$T$0 è³‡æ–™æ™‚ç™¼ç”ŸéŒ¯èª¤ï¹—", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -394,11 +394,11 @@ FUNCTION( do_finger )
     chinese_number( sTime->tm_min       , buf5 );
     chinese_number( sTime->tm_hour > 12 ? sTime->tm_hour - 12 : sTime->tm_hour , buf4 );
 
-    sprintf( timebuf, "¥Á°ê%s¦~%s¤ë%s¸¹%s%sÂI%s¤À"
+    sprintf( timebuf, "æ°‘åœ‹%så¹´%sæœˆ%sè™Ÿ%s%sé»%såˆ†"
       , buf1
       , buf2
       , buf3
-      , sTime->tm_hour < 12 ? "¦­¤W" : "¤U¤È"
+      , sTime->tm_hour < 12 ? "æ—©ä¸Š" : "ä¸‹åˆ"
       , buf4
       , buf5 );
 
@@ -414,7 +414,7 @@ FUNCTION( do_finger )
 
     if ( !( pBasic = serial2basic( &( pData->serial ) ) ) )
     {
-      act( "¹ï¤£°_¡MµLªkÅª¨ú$tªº¸ê®Æ¡T", ch, arg, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ç„¡æ³•è®€å–$tçš„è³‡æ–™ï¹—", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -435,12 +435,12 @@ FUNCTION( do_finger )
       }
       else
       {
-        str_cpy( couple, "§ä¤£¨ì°t°¸¸ê®Æ" );
+        str_cpy( couple, "æ‰¾ä¸åˆ°é…å¶è³‡æ–™" );
       }
     }
     else
     {
-      str_cpy( couple, "¨S¦³°t°¸" );
+      str_cpy( couple, "æ²’æœ‰é…å¶" );
     }
 
     if ( pBasic->club[0] ) pClub = clubname_lookup( pBasic->club, CLUB_NAME );
@@ -450,28 +450,28 @@ FUNCTION( do_finger )
     else                    pClass = NULL;
 
     print_to_char( ch,
-      "­^¤å¥N¸¹    ¡R%s\n\r"
-      "¤¤¤å¥N¸¹    ¡R%s\e[0m\n\r"
-      "¹q¤l«H½c    ¡R%s\n\r"
-      "ª±®a¦~ÄÖ    ¡R%d ·³\n\r"
-      "³s½uÁ`¼Æ    ¡R%s\n\r"
-      "µ¥    ¯Å    ¡R%d\n\r"
-      "©Ê    §O    ¡R%s\n\r"
-      "°t    °¸    ¡R%s\n\r"
-      "À°    ¬£    ¡R%s\e[0m\n\r"
-      "Â¾    ·~    ¡R%s\n\r"
-      "³s½u¦ì§}    ¡R%s\n\r"
-      "³Ì«á³s½u®É¶¡¡R%s\n\r"
-      "ÀÉ®×¤j¤p    ¡R%s ¦ì¤¸²Õ\n\r"
+      "è‹±æ–‡ä»£è™Ÿ    ï¹•%s\n\r"
+      "ä¸­æ–‡ä»£è™Ÿ    ï¹•%s\e[0m\n\r"
+      "é›»å­ä¿¡ç®±    ï¹•%s\n\r"
+      "ç©å®¶å¹´é½¡    ï¹•%d æ­²\n\r"
+      "é€£ç·šç¸½æ•¸    ï¹•%s\n\r"
+      "ç­‰    ç´š    ï¹•%d\n\r"
+      "æ€§    åˆ¥    ï¹•%s\n\r"
+      "é…    å¶    ï¹•%s\n\r"
+      "å¹«    æ´¾    ï¹•%s\e[0m\n\r"
+      "è·    æ¥­    ï¹•%s\n\r"
+      "é€£ç·šä½å€    ï¹•%s\n\r"
+      "æœ€å¾Œé€£ç·šæ™‚é–“ï¹•%s\n\r"
+      "æª”æ¡ˆå¤§å°    ï¹•%s ä½å…ƒçµ„\n\r"
       , arg
       , victim ? victim->cname : pBasic->cname
       , victim ? victim->email : pBasic->email
       , victim ? get_age( victim ) : ( pBasic->played / 14400 ) + BornAge
-      , iTime > 0 ? date_string( iTime ) : "¤£¸Ô"
+      , iTime > 0 ? date_string( iTime ) : "ä¸è©³"
       , victim ? victim->level : pBasic->level
       , sex_name( pBasic->sex )
       , couple
-      , pClub ? pClub->cname : "¨S¦³À°¬£"
+      , pClub ? pClub->cname : "æ²’æœ‰å¹«æ´¾"
       , class_name( pClass, TRUE )
       , victim ? buf : pBasic->address
       , timebuf
@@ -481,10 +481,10 @@ FUNCTION( do_finger )
     {
       print_to_char( ch,
         "%s"
-        "ÀÉ®×¦ì¸m    ¡R%s\n\r"
-        "ÀÉ®×¾Ö¦³ªÌ  ¡R%s\n\r"
-        "ÀÉ®×±Ú¸sªÌ  ¡R%s\n\r"
-        "ÀÉ®×Äİ©Ê    ¡R%s\n\r"
+        "æª”æ¡ˆä½ç½®    ï¹•%s\n\r"
+        "æª”æ¡ˆæ“æœ‰è€…  ï¹•%s\n\r"
+        "æª”æ¡ˆæ—ç¾¤è€…  ï¹•%s\n\r"
+        "æª”æ¡ˆå±¬æ€§    ï¹•%s\n\r"
         , VERTICAL_LINE
         , name
         , pw_lookup( sData.st_uid )
@@ -507,7 +507,7 @@ char * address_mode( const char * address, int mode )
 
   if ( !address || !*address )
   {
-    mudlog( LOG_DEBUG, "address_mode: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "address_mode: ä¾†æºéŒ¯èª¤." );
     RETURN( "" );
   }
 
@@ -591,7 +591,7 @@ FUNCTION( do_address )
         , pAddress->number, pAddress->alpha, pAddress->count );
     }
 
-    if ( !bFound ) send_to_buffer( "¦ì§}ªí¤¤¨S¦³¥ô¦ó¸ê®Æ¡C\n\r" );
+    if ( !bFound ) send_to_buffer( "ä½å€è¡¨ä¸­æ²’æœ‰ä»»ä½•è³‡æ–™ã€‚\n\r" );
     print_buffer( ch );
   }
 
@@ -605,16 +605,16 @@ FUNCTION( do_address )
           , pAddress->number , pAddress->alpha , pAddress->count );
       }
 
-      if ( ch ) send_to_char( "¦ì§}¸ê°T¦sÀÉ§¹²¦¡T\n\r" , ch );
+      if ( ch ) send_to_char( "ä½å€è³‡è¨Šå­˜æª”å®Œç•¢ï¹—\n\r" , ch );
       FCLOSE( pFile );
 
-      /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+      /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
       set_file_mode( address_file );
 
     }
     else
     {
-      mudlog( LOG_DEBUG, "do_address: µLªk¼g¤J¦ì§}ÀÉ®× %s.", address_file );
+      mudlog( LOG_DEBUG, "do_address: ç„¡æ³•å¯«å…¥ä½å€æª”æ¡ˆ %s.", address_file );
     }
   }
 
@@ -632,7 +632,7 @@ FUNCTION( do_address )
       }
     }
 
-    if ( !bFound ) send_to_buffer( "¨S¦³§ä¨ì¬ÛÃöªº¦ì§}¡T\n\r" );
+    if ( !bFound ) send_to_buffer( "æ²’æœ‰æ‰¾åˆ°ç›¸é—œçš„ä½å€ï¹—\n\r" );
     print_buffer( ch );
   }
 
@@ -651,7 +651,7 @@ int hex_to_int( char * buf, int len )
 
   if ( !buf || len <= 0 )
   {
-    mudlog( LOG_DEBUG, "hex_to_int: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "hex_to_int: ä¾†æºä¸æ­£ç¢º." );
     RETURN( -1 );
   }
 
@@ -702,7 +702,7 @@ FUNCTION( do_tcp )
   {
     if ( !is_number( arg ) )
     {
-      send_to_char( "§A¥²¶·¿é¤J¼Æ¦r¨Óªí¥Ü¿é¥X°ğ¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¼¸å…¥æ•¸å­—ä¾†è¡¨ç¤ºè¼¸å‡ºåŸ ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -720,14 +720,14 @@ FUNCTION( do_tcp )
 
     if ( listen == ERRORCODE )
     {
-      send_to_char( "§A«ü©wªº¿é¥X°ğ¤£¬O¦Xªkªº¡T\n\r", ch );
+      send_to_char( "ä½ æŒ‡å®šçš„è¼¸å‡ºåŸ ä¸æ˜¯åˆæ³•çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
   }
 
   if ( !( pFile = fopen( TCP_FILENAME, "r" ) ) )
   {
-    act( "µLªk¶}±ÒÆ[¹îÀÉ®× $t¡T", ch, TCP_FILENAME, NULL, TO_CHAR );
+    act( "ç„¡æ³•é–‹å•Ÿè§€å¯Ÿæª”æ¡ˆ $tï¹—", ch, TCP_FILENAME, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -763,8 +763,8 @@ FUNCTION( do_tcp )
       , hex_to_int( buf + 22, 2 )
       , hex_to_int( buf + 20, 2 ) );
 
-    if ( count == 0 ) send_to_buffer( "\e[1;33;44m½s¸¹ ¥»¦a°ğ "
-      "»·  ºİ  ¦ì  §}  »·ºİ°ğ ¹O  ®É ª¬ºA              "
+    if ( count == 0 ) send_to_buffer( "\e[1;33;44mç·¨è™Ÿ æœ¬åœ°åŸ  "
+      "é   ç«¯  ä½  å€  é ç«¯åŸ  é€¾  æ™‚ ç‹€æ…‹              "
       "                    \e[0m\n\r" );
 
     send_to_buffer( "%4d %6d %-15s %6d %6d %-s\n\r"
@@ -776,7 +776,7 @@ FUNCTION( do_tcp )
       , tcp_status( hex_to_int( buf + 34, 2 ) ) );
   }
 
-  if ( count == 0 ) send_to_buffer( "³o­Ó¿é¥X°ğ¨S¦³¥ô¦ó¸ê®Æ¡T\n\r" );
+  if ( count == 0 ) send_to_buffer( "é€™å€‹è¼¸å‡ºåŸ æ²’æœ‰ä»»ä½•è³‡æ–™ï¹—\n\r" );
 
   print_buffer( ch );
   fclose( pFile );

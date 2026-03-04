@@ -1,5 +1,5 @@
 Name            make sword~
-Cname           Å]ªk¼C~
+Cname           é­”æ³•åŠ~
 Slot            SLOT_MAKE_SWORD
 Function        cast_make_sword~
 Check           check_unrigid_attack~

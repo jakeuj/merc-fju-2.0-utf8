@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -15,11 +15,11 @@
 #include <string.h>
 #include "merc.h"
 
-/* ªí¥Ü°O¾ÐÅé°Ï¶ôªºÅ]³N¼Æ¦r, ¥i¥H§ïÅÜ */
+/* è¡¨ç¤ºè¨˜æ†¶é«”å€å¡Šçš„é­”è¡“æ•¸å­—, å¯ä»¥æ”¹è®Š */
 #define MAGIC_NUMBER    'J'
 #define KILO_BYTE       1024
 
-/* °t¸m°O¾ÐÅéªº¤j¤p */
+/* é…ç½®è¨˜æ†¶é«”çš„å¤§å° */
 int rgSizeList [MAX_MEM_LIST]  =
 {
   16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768
@@ -31,102 +31,102 @@ struct magic_block
   char type;
 };
 
-/* ¤@¤Á°t¸mªºµ²ºc¸ê®Æ */
+/* ä¸€åˆ‡é…ç½®çš„çµæ§‹è³‡æ–™ */
 struct  struct_data struct_block [] =
 {
-  { STRUCT_OBJ_DATA        ,sizeof( OBJ_DATA        ), "ª««~"    , 0, 0 },
-  { STRUCT_CHAR_DATA       ,sizeof( CHAR_DATA       ), "¤Hª«"    , 0, 0 },
-  { STRUCT_AFFECT_DATA     ,sizeof( AFFECT_DATA     ), "¼vÅT"    , 0, 0 },
-  { STRUCT_FRIEND_DATA     ,sizeof( FRIEND_DATA     ), "¦n¤Í¦W³æ", 0, 0 },
-  { STRUCT_BASIC_DATA      ,sizeof( BASIC_DATA      ), "°ò¥»¸ê®Æ", 0, 0 },
-  { STRUCT_ENABLE_DATA     ,sizeof( ENABLE_DATA     ), "­P¯à"    , 0, 0 },
-  { STRUCT_FAILCODE_DATA   ,sizeof( FAILCODE_DATA   ), "¿ù»~±K½X", 0, 0 },
-  { STRUCT_QUEST_DATA      ,sizeof( QUEST_DATA      ), "¸ÑÁ¼"    , 0, 0 },
-  { STRUCT_DATABASE_DATA   ,sizeof( DATABASE_DATA   ), "¸ê®Æ®w"  , 0, 0 },
-  { STRUCT_FILE_DATA       ,sizeof( FILE_DATA       ), "ÀÉ®×"    , 0, 0 },
-  { STRUCT_EXIT_DATA       ,sizeof( EXIT_DATA       ), "¥X¤f"    , 0, 0 },
-  { STRUCT_ALIAS_DATA      ,sizeof( ALIAS_DATA      ), "¥¨¶°"    , 0, 0 },
-  { STRUCT_DESCRIPTOR_DATA ,sizeof( DESCRIPTOR_DATA ), "´y­z¤l"  , 0, 0 },
-  { STRUCT_RESET_DATA      ,sizeof( RESET_DATA      ), "­«¸m"    , 0, 0 },
-  { STRUCT_ROOM_INDEX_DATA ,sizeof( ROOM_INDEX_DATA ), "©Ð¶¡­ì«¬", 0, 0 },
-  { STRUCT_PC_DATA         ,sizeof( PC_DATA         ), "ª±®a¯S§O", 0, 0 },
-  { STRUCT_ENROLL_DATA     ,sizeof( ENROLL_DATA     ), "°O¤³"    , 0, 0 },
-  { STRUCT_MPROG_DATA      ,sizeof( MPROG_DATA      ), "©Çª«µ{¦¡", 0, 0 },
-  { STRUCT_MPROG_ACT_LIST  ,sizeof( MPROG_ACT_LIST  ), "©Çª«°Ê§@", 0, 0 },
-  { STRUCT_ENEMY_DATA      ,sizeof( ENEMY_DATA      ), "¤½¼Ä"    , 0, 0 },
-  { STRUCT_MOB_INDEX_DATA  ,sizeof( MOB_INDEX_DATA  ), "©Çª«­ì«¬", 0, 0 },
-  { STRUCT_OBJ_INDEX_DATA  ,sizeof( OBJ_INDEX_DATA  ), "ª««~­ì«¬", 0, 0 },
-  { STRUCT_LIMIT_DATA      ,sizeof( LIMIT_DATA      ), "­­¨î¸ê®Æ", 0, 0 },
-  { STRUCT_SYMBOL_DATA     ,sizeof( SYMBOL_DATA     ), "²Å¸¹"    , 0, 0 },
-  { STRUCT_NOTE_DATA       ,sizeof( NOTE_DATA       ), "«H¥ó"    , 0, 0 },
-  { STRUCT_BAN_DATA        ,sizeof( BAN_DATA        ), "¦ì§}¸T¤î", 0, 0 },
-  { STRUCT_EXTRA_DESCR_DATA,sizeof( EXTRA_DESCR_DATA), "ÃB¥~´y­z", 0, 0 },
-  { STRUCT_CMD_DATA        ,sizeof( CMD_DATA        ), "©R¥O"    , 0, 0 },
-  { STRUCT_AREA_DATA       ,sizeof( AREA_DATA       ), "°Ï°ì"    , 0, 0 },
-  { STRUCT_HELP_DATA       ,sizeof( HELP_DATA       ), "¨D§U"    , 0, 0 },
-  { STRUCT_SHOP_DATA       ,sizeof( SHOP_DATA       ), "°Ó©±"    , 0, 0 },
-  { STRUCT_SYMBOL_DATA     ,sizeof( SYMBOL_DATA     ), "²Å¸¹"    , 0, 0 },
-  { STRUCT_SKILL_DATA      ,sizeof( SKILL_DATA      ), "§Þ¯à"    , 0, 0 },
-  { STRUCT_SOCIAL_DATA     ,sizeof( SOCIAL_DATA     ), "ªÀ¥æ"    , 0, 0 },
-  { STRUCT_GAMBLE_DATA     ,sizeof( GAMBLE_DATA     ), "½ä³Õ"    , 0, 0 },
-  { STRUCT_TEACH_DATA      ,sizeof( TEACH_DATA      ), "±Ð¾É"    , 0, 0 },
-  { STRUCT_XNAME_DATA      ,sizeof( XNAMES_DATA     ), "¤£¶®¦r"  , 0, 0 },
-  { STRUCT_SECTOR_DATA     ,sizeof( SECTOR_DATA     ), "¦a§Î¸ê®Æ", 0, 0 },
-  { STRUCT_CLASS_DATA      ,sizeof( CLASS_DATA      ), "Â¾·~¸ê®Æ", 0, 0 },
-  { STRUCT_ADDRESS_DATA    ,sizeof( ADDRESS_DATA    ), "¦ì§}¸ê®Æ", 0, 0 },
-  { STRUCT_BUS_DATA        ,sizeof( BUS_DATA        ), "¦aÅK¸ê®Æ", 0, 0 },
-  { STRUCT_NET_DATA        ,sizeof( NET_DATA        ), "ºô»Ú³s½u", 0, 0 },
-  { STRUCT_CLUB_DATA       ,sizeof( CLUB_DATA       ), "À°¬£¸ê®Æ", 0, 0 },
-  { STRUCT_DAMAGE_DATA     ,sizeof( DAMAGE_DATA     ), "§ð¶Ë¸ê®Æ", 0, 0 },
-  { STRUCT_PW_DATA         ,sizeof( PW_DATA         ), "¨Ï¥ÎªÌ"  , 0, 0 },
-  { STRUCT_GR_DATA         ,sizeof( GR_DATA         ), "±Ú¸s"    , 0, 0 },
-  { STRUCT_CACHET_DATA     ,sizeof( CACHET_DATA     ), "«Ê¦LÅ]¥Û", 0, 0 },
-  { STRUCT_LIQ_DATA        ,sizeof( LIQ_DATA        ), "²GÅé"    , 0, 0 },
-  { STRUCT_RESTRICT_DATA   ,sizeof( RESTRICT_DATA   ), "¸Ë³Æ­­¨î", 0, 0 },
-  { STRUCT_JOB_DATA        ,sizeof( JOB_DATA        ), "¯S®í¨ç¼Æ", 0, 0 },
-  { STRUCT_QUEST_INFO      ,sizeof( QUEST_INFO      ), "¸Ñ°g¸ê®Æ", 0, 0 },
-  { STRUCT_IMMLIST_DATA    ,sizeof( IMMLIST_DATA    ), "¯«±Ú¸ê®Æ", 0, 0 },
-  { STRUCT_SHIP_DATA       ,sizeof( SHIP_DATA       ), "´ç²î¦W³æ", 0, 0 },
-  { STRUCT_BOARD_DATA      ,sizeof( BOARD_DATA      ), "ª©­±"    , 0, 0 },
-  { STRUCT_POST_DATA       ,sizeof( POST_DATA       ), "¤å³¹"    , 0, 0 },
-  { STRUCT_HERO_DATA       ,sizeof( HERO_DATA       ), "­^¶¯"    , 0, 0 },
-  { STRUCT_EFFECT_DATA     ,sizeof( EFFECT_DATA     ), "®ÄÀ³"    , 0, 0 },
-  { STRUCT_MESSAGE_DATA    ,sizeof( MESSAGE_DATA    ), "±Ô­z"    , 0, 0 },
-  { STRUCT_ANGEL_DATA      ,sizeof( ANGEL_DATA      ), "¦uÅ@¯«"  , 0, 0 },
-  { STRUCT_SALE_DATA       ,sizeof( SALE_DATA       ), "©ç½æ«~"  , 0, 0 },
-  { STRUCT_FIGHT_DATA      ,sizeof( FIGHT_DATA      ), "¢Þ¢Ù"    , 0, 0 },
-  { STRUCT_SERIAL_DATA     ,sizeof( SERIAL_DATA     ), "§Ç¸¹"    , 0, 0 },
-  { STRUCT_TOP_DATA        ,sizeof( TOP_DATA        ), "²Î­p"    , 0, 0 },
-  { STRUCT_WANTED_DATA     ,sizeof( WANTED_DATA     ), "³q½r"    , 0, 0 },
-  { STRUCT_VOTE_DATA       ,sizeof( VOTE_DATA       ), "§ë²¼"    , 0, 0 },
-  { STRUCT_IP_DATA         ,sizeof( IP_DATA         ), "³s½u"    , 0, 0 },
-  { STRUCT_JOKE_DATA       ,sizeof( JOKE_DATA       ), "¯º¸Ü"    , 0, 0 },
-  { STRUCT_TRACE_DATA      ,sizeof( TRACE_DATA      ), "¦a¹Ï"    , 0, 0 },
-  { STRUCT_VARIABLE_DATA   ,sizeof( VARIABLE_DATA   ), "ÅÜ¼Æ"    , 0, 0 },
-  { STRUCT_TICKET_DATA     ,sizeof( TICKET_DATA     ), "±m¨é"    , 0, 0 },
-  { STRUCT_ORDER_DATA      ,sizeof( ORDER_DATA      ), "¤¤¼ú"    , 0, 0 },
-  { STRUCT_GIFT_DATA       ,sizeof( GIFT_DATA       ), "Â§ª«"    , 0, 0 },
-  { STRUCT_STAMP_DATA      ,sizeof( STAMP_DATA      ), "¼Ð°O"    , 0, 0 },
-  { STRUCT_MINERAL_DATA    ,sizeof( MINERAL_DATA    ), "Äq²£"    , 0, 0 },
-  { STRUCT_MINE_DATA       ,sizeof( MINE_DATA       ), "Äq²£"    , 0, 0 },
-  { STRUCT_EVENT_DATA      ,sizeof( EVENT_DATA      ), "¨Æ¥ó"    , 0, 0 },
-  { STRUCT_BOUNTY_DATA     ,sizeof( BOUNTY_DATA     ), "Äa½à¸ê®Æ", 0, 0 },
-  { STRUCT_SERVER_DATA     ,sizeof( SERVER_DATA     ), "¤u§@¯¸"  , 0, 0 },
-  { STRUCT_CACHET_DATA     ,sizeof( CACHET_DATA     ), "«Ê¦LÅ]¥Û", 0, 0 },
-  { STRUCT_QUESTION_DATA   ,sizeof( QUESTION_DATA   ), "°ÝÃD¶°"  , 0, 0 },
-  { STRUCT_ANSWER_DATA     ,sizeof( ANSWER_DATA     ), "µª®×"    , 0, 0 },
-  { STRUCT_ENQUIRE_DATA    ,sizeof( ENQUIRE_DATA    ), "°Ý¸ô"    , 0, 0 },
-  { STRUCT_GREETING_DATA   ,sizeof( GREETING_DATA   ), "¶i¯¸"    , 0, 0 },
-  { STRUCT_SITUS_DATA      ,sizeof( SITUS_DATA      ), "³¡¦ì"    , 0, 0 },
+  { STRUCT_OBJ_DATA        ,sizeof( OBJ_DATA        ), "ç‰©å“"    , 0, 0 },
+  { STRUCT_CHAR_DATA       ,sizeof( CHAR_DATA       ), "äººç‰©"    , 0, 0 },
+  { STRUCT_AFFECT_DATA     ,sizeof( AFFECT_DATA     ), "å½±éŸ¿"    , 0, 0 },
+  { STRUCT_FRIEND_DATA     ,sizeof( FRIEND_DATA     ), "å¥½å‹åå–®", 0, 0 },
+  { STRUCT_BASIC_DATA      ,sizeof( BASIC_DATA      ), "åŸºæœ¬è³‡æ–™", 0, 0 },
+  { STRUCT_ENABLE_DATA     ,sizeof( ENABLE_DATA     ), "è‡´èƒ½"    , 0, 0 },
+  { STRUCT_FAILCODE_DATA   ,sizeof( FAILCODE_DATA   ), "éŒ¯èª¤å¯†ç¢¼", 0, 0 },
+  { STRUCT_QUEST_DATA      ,sizeof( QUEST_DATA      ), "è§£è¬Ž"    , 0, 0 },
+  { STRUCT_DATABASE_DATA   ,sizeof( DATABASE_DATA   ), "è³‡æ–™åº«"  , 0, 0 },
+  { STRUCT_FILE_DATA       ,sizeof( FILE_DATA       ), "æª”æ¡ˆ"    , 0, 0 },
+  { STRUCT_EXIT_DATA       ,sizeof( EXIT_DATA       ), "å‡ºå£"    , 0, 0 },
+  { STRUCT_ALIAS_DATA      ,sizeof( ALIAS_DATA      ), "å·¨é›†"    , 0, 0 },
+  { STRUCT_DESCRIPTOR_DATA ,sizeof( DESCRIPTOR_DATA ), "æè¿°å­"  , 0, 0 },
+  { STRUCT_RESET_DATA      ,sizeof( RESET_DATA      ), "é‡ç½®"    , 0, 0 },
+  { STRUCT_ROOM_INDEX_DATA ,sizeof( ROOM_INDEX_DATA ), "æˆ¿é–“åŽŸåž‹", 0, 0 },
+  { STRUCT_PC_DATA         ,sizeof( PC_DATA         ), "çŽ©å®¶ç‰¹åˆ¥", 0, 0 },
+  { STRUCT_ENROLL_DATA     ,sizeof( ENROLL_DATA     ), "è¨˜ä»‡"    , 0, 0 },
+  { STRUCT_MPROG_DATA      ,sizeof( MPROG_DATA      ), "æ€ªç‰©ç¨‹å¼", 0, 0 },
+  { STRUCT_MPROG_ACT_LIST  ,sizeof( MPROG_ACT_LIST  ), "æ€ªç‰©å‹•ä½œ", 0, 0 },
+  { STRUCT_ENEMY_DATA      ,sizeof( ENEMY_DATA      ), "å…¬æ•µ"    , 0, 0 },
+  { STRUCT_MOB_INDEX_DATA  ,sizeof( MOB_INDEX_DATA  ), "æ€ªç‰©åŽŸåž‹", 0, 0 },
+  { STRUCT_OBJ_INDEX_DATA  ,sizeof( OBJ_INDEX_DATA  ), "ç‰©å“åŽŸåž‹", 0, 0 },
+  { STRUCT_LIMIT_DATA      ,sizeof( LIMIT_DATA      ), "é™åˆ¶è³‡æ–™", 0, 0 },
+  { STRUCT_SYMBOL_DATA     ,sizeof( SYMBOL_DATA     ), "ç¬¦è™Ÿ"    , 0, 0 },
+  { STRUCT_NOTE_DATA       ,sizeof( NOTE_DATA       ), "ä¿¡ä»¶"    , 0, 0 },
+  { STRUCT_BAN_DATA        ,sizeof( BAN_DATA        ), "ä½å€ç¦æ­¢", 0, 0 },
+  { STRUCT_EXTRA_DESCR_DATA,sizeof( EXTRA_DESCR_DATA), "é¡å¤–æè¿°", 0, 0 },
+  { STRUCT_CMD_DATA        ,sizeof( CMD_DATA        ), "å‘½ä»¤"    , 0, 0 },
+  { STRUCT_AREA_DATA       ,sizeof( AREA_DATA       ), "å€åŸŸ"    , 0, 0 },
+  { STRUCT_HELP_DATA       ,sizeof( HELP_DATA       ), "æ±‚åŠ©"    , 0, 0 },
+  { STRUCT_SHOP_DATA       ,sizeof( SHOP_DATA       ), "å•†åº—"    , 0, 0 },
+  { STRUCT_SYMBOL_DATA     ,sizeof( SYMBOL_DATA     ), "ç¬¦è™Ÿ"    , 0, 0 },
+  { STRUCT_SKILL_DATA      ,sizeof( SKILL_DATA      ), "æŠ€èƒ½"    , 0, 0 },
+  { STRUCT_SOCIAL_DATA     ,sizeof( SOCIAL_DATA     ), "ç¤¾äº¤"    , 0, 0 },
+  { STRUCT_GAMBLE_DATA     ,sizeof( GAMBLE_DATA     ), "è³­åš"    , 0, 0 },
+  { STRUCT_TEACH_DATA      ,sizeof( TEACH_DATA      ), "æ•™å°Ž"    , 0, 0 },
+  { STRUCT_XNAME_DATA      ,sizeof( XNAMES_DATA     ), "ä¸é›…å­—"  , 0, 0 },
+  { STRUCT_SECTOR_DATA     ,sizeof( SECTOR_DATA     ), "åœ°å½¢è³‡æ–™", 0, 0 },
+  { STRUCT_CLASS_DATA      ,sizeof( CLASS_DATA      ), "è·æ¥­è³‡æ–™", 0, 0 },
+  { STRUCT_ADDRESS_DATA    ,sizeof( ADDRESS_DATA    ), "ä½å€è³‡æ–™", 0, 0 },
+  { STRUCT_BUS_DATA        ,sizeof( BUS_DATA        ), "åœ°éµè³‡æ–™", 0, 0 },
+  { STRUCT_NET_DATA        ,sizeof( NET_DATA        ), "ç¶²éš›é€£ç·š", 0, 0 },
+  { STRUCT_CLUB_DATA       ,sizeof( CLUB_DATA       ), "å¹«æ´¾è³‡æ–™", 0, 0 },
+  { STRUCT_DAMAGE_DATA     ,sizeof( DAMAGE_DATA     ), "æ”»å‚·è³‡æ–™", 0, 0 },
+  { STRUCT_PW_DATA         ,sizeof( PW_DATA         ), "ä½¿ç”¨è€…"  , 0, 0 },
+  { STRUCT_GR_DATA         ,sizeof( GR_DATA         ), "æ—ç¾¤"    , 0, 0 },
+  { STRUCT_CACHET_DATA     ,sizeof( CACHET_DATA     ), "å°å°é­”çŸ³", 0, 0 },
+  { STRUCT_LIQ_DATA        ,sizeof( LIQ_DATA        ), "æ¶²é«”"    , 0, 0 },
+  { STRUCT_RESTRICT_DATA   ,sizeof( RESTRICT_DATA   ), "è£å‚™é™åˆ¶", 0, 0 },
+  { STRUCT_JOB_DATA        ,sizeof( JOB_DATA        ), "ç‰¹æ®Šå‡½æ•¸", 0, 0 },
+  { STRUCT_QUEST_INFO      ,sizeof( QUEST_INFO      ), "è§£è¿·è³‡æ–™", 0, 0 },
+  { STRUCT_IMMLIST_DATA    ,sizeof( IMMLIST_DATA    ), "ç¥žæ—è³‡æ–™", 0, 0 },
+  { STRUCT_SHIP_DATA       ,sizeof( SHIP_DATA       ), "æ¸¡èˆ¹åå–®", 0, 0 },
+  { STRUCT_BOARD_DATA      ,sizeof( BOARD_DATA      ), "ç‰ˆé¢"    , 0, 0 },
+  { STRUCT_POST_DATA       ,sizeof( POST_DATA       ), "æ–‡ç« "    , 0, 0 },
+  { STRUCT_HERO_DATA       ,sizeof( HERO_DATA       ), "è‹±é›„"    , 0, 0 },
+  { STRUCT_EFFECT_DATA     ,sizeof( EFFECT_DATA     ), "æ•ˆæ‡‰"    , 0, 0 },
+  { STRUCT_MESSAGE_DATA    ,sizeof( MESSAGE_DATA    ), "æ•˜è¿°"    , 0, 0 },
+  { STRUCT_ANGEL_DATA      ,sizeof( ANGEL_DATA      ), "å®ˆè­·ç¥ž"  , 0, 0 },
+  { STRUCT_SALE_DATA       ,sizeof( SALE_DATA       ), "æ‹è³£å“"  , 0, 0 },
+  { STRUCT_FIGHT_DATA      ,sizeof( FIGHT_DATA      ), "ï¼°ï¼«"    , 0, 0 },
+  { STRUCT_SERIAL_DATA     ,sizeof( SERIAL_DATA     ), "åºè™Ÿ"    , 0, 0 },
+  { STRUCT_TOP_DATA        ,sizeof( TOP_DATA        ), "çµ±è¨ˆ"    , 0, 0 },
+  { STRUCT_WANTED_DATA     ,sizeof( WANTED_DATA     ), "é€šç·"    , 0, 0 },
+  { STRUCT_VOTE_DATA       ,sizeof( VOTE_DATA       ), "æŠ•ç¥¨"    , 0, 0 },
+  { STRUCT_IP_DATA         ,sizeof( IP_DATA         ), "é€£ç·š"    , 0, 0 },
+  { STRUCT_JOKE_DATA       ,sizeof( JOKE_DATA       ), "ç¬‘è©±"    , 0, 0 },
+  { STRUCT_TRACE_DATA      ,sizeof( TRACE_DATA      ), "åœ°åœ–"    , 0, 0 },
+  { STRUCT_VARIABLE_DATA   ,sizeof( VARIABLE_DATA   ), "è®Šæ•¸"    , 0, 0 },
+  { STRUCT_TICKET_DATA     ,sizeof( TICKET_DATA     ), "å½©åˆ¸"    , 0, 0 },
+  { STRUCT_ORDER_DATA      ,sizeof( ORDER_DATA      ), "ä¸­çŽ"    , 0, 0 },
+  { STRUCT_GIFT_DATA       ,sizeof( GIFT_DATA       ), "ç¦®ç‰©"    , 0, 0 },
+  { STRUCT_STAMP_DATA      ,sizeof( STAMP_DATA      ), "æ¨™è¨˜"    , 0, 0 },
+  { STRUCT_MINERAL_DATA    ,sizeof( MINERAL_DATA    ), "ç¤¦ç”¢"    , 0, 0 },
+  { STRUCT_MINE_DATA       ,sizeof( MINE_DATA       ), "ç¤¦ç”¢"    , 0, 0 },
+  { STRUCT_EVENT_DATA      ,sizeof( EVENT_DATA      ), "äº‹ä»¶"    , 0, 0 },
+  { STRUCT_BOUNTY_DATA     ,sizeof( BOUNTY_DATA     ), "æ‡¸è³žè³‡æ–™", 0, 0 },
+  { STRUCT_SERVER_DATA     ,sizeof( SERVER_DATA     ), "å·¥ä½œç«™"  , 0, 0 },
+  { STRUCT_CACHET_DATA     ,sizeof( CACHET_DATA     ), "å°å°é­”çŸ³", 0, 0 },
+  { STRUCT_QUESTION_DATA   ,sizeof( QUESTION_DATA   ), "å•é¡Œé›†"  , 0, 0 },
+  { STRUCT_ANSWER_DATA     ,sizeof( ANSWER_DATA     ), "ç­”æ¡ˆ"    , 0, 0 },
+  { STRUCT_ENQUIRE_DATA    ,sizeof( ENQUIRE_DATA    ), "å•è·¯"    , 0, 0 },
+  { STRUCT_GREETING_DATA   ,sizeof( GREETING_DATA   ), "é€²ç«™"    , 0, 0 },
+  { STRUCT_SITUS_DATA      ,sizeof( SITUS_DATA      ), "éƒ¨ä½"    , 0, 0 },
   { ERRORCODE              , -1                      , NULL     , -1, 0 }
 };
 
-/* «Å§i°Ï°ì¨ç¼Æ */
+/* å®£å‘Šå€åŸŸå‡½æ•¸ */
 void * alloc_memory     args( ( int , bool ) );
 void   free_mem         args( ( void * ) );
 int    mem_block        args( ( int ) );
 
-/* °Ï°ìÅÜ¼Æ */
+/* å€åŸŸè®Šæ•¸ */
 void *  rgFreeList [MAX_MEM_LIST];
 int     rgAllocList[MAX_MEM_LIST];
 int     nAllocPerm      = 0;
@@ -135,7 +135,7 @@ int     nAllocPermBlock = 0;
 int     iMemPerm        = 0;
 char  * pMemPerm;
 
-/* °_©l¤Æ°O¾ÐÅé°Ï¶ô */
+/* èµ·å§‹åŒ–è¨˜æ†¶é«”å€å¡Š */
 void memory_ini( void )
 {
   int iList;
@@ -144,19 +144,19 @@ void memory_ini( void )
 
   for ( iList = 0; iList < MAX_MEM_LIST; iList++ )
   {
-    /* Round off ¥H«á­n°t¸m°O¾ÐÅéªº¤j¤p */
+    /* Round off ä»¥å¾Œè¦é…ç½®è¨˜æ†¶é«”çš„å¤§å° */
     while ( rgSizeList[iList] % sizeof( long ) ) rgSizeList[iList]++;
 
-    /* ¦pªG°t¸mªº¤j¤p¤ñ¤@¾ã¶ôªº°Ï¶ôÁÙ¤j, ³o¬O¤£¦æªº */
+    /* å¦‚æžœé…ç½®çš„å¤§å°æ¯”ä¸€æ•´å¡Šçš„å€å¡Šé‚„å¤§, é€™æ˜¯ä¸è¡Œçš„ */
     if ( rgSizeList[iList] > MAX_PERM_BLOCK )
     {
-      perror( "memory_ini: °O¾ÐÅé³]©w¿ù»~" );
+      perror( "memory_ini: è¨˜æ†¶é«”è¨­å®šéŒ¯èª¤" );
       merc_exit( -1 );
     }
 
     if ( rgSizeList[iList] <= sizeof( struct magic_block ) )
     {
-      perror( "memory_ini: °O¾ÐÅé³]©w¿ù»~" );
+      perror( "memory_ini: è¨˜æ†¶é«”è¨­å®šéŒ¯èª¤" );
       merc_exit( -1 );
     }
   }
@@ -164,7 +164,7 @@ void memory_ini( void )
   RETURN_NULL();
 }
 
-/* °t¸m°O¾ÐÅéªº®Ö¤ßµ{¦¡³¡¥÷ */
+/* é…ç½®è¨˜æ†¶é«”çš„æ ¸å¿ƒç¨‹å¼éƒ¨ä»½ */
 void * alloc_memory( int sMem , bool record )
 {
   struct magic_block * magic;
@@ -175,21 +175,21 @@ void * alloc_memory( int sMem , bool record )
   PUSH_FUNCTION( "alloc_memory" );
 
   if ( ( ( iList = mem_block( sMem + sizeof( struct magic_block ) ) ) == ERRORCODE ) )
-    mudlog( LOG_CRIT, "alloc_memory: °t¸m %d ¦ì¤¸²Õ°O¾ÐÅé¤Ó¤j" , sMem );
+    mudlog( LOG_CRIT, "alloc_memory: é…ç½® %d ä½å…ƒçµ„è¨˜æ†¶é«”å¤ªå¤§" , sMem );
 
   sMem = rgSizeList[iList];
 
-  /* °²¦p¨S¦³³Æ¥Îªº°O¾ÐÅé */
+  /* å‡å¦‚æ²’æœ‰å‚™ç”¨çš„è¨˜æ†¶é«” */
   if ( !rgFreeList[iList] )
   {
     if ( !pMemPerm || iMemPerm + sMem > MAX_PERM_BLOCK )
     {
-      /* ¥ý¬Ý¬Ý¬O§_ÁÙ¬O¤Á¦¨¨ä¥L§ó¤pªº°Ï¶ôµ¹¥H«á¨Ï¥Î */
+      /* å…ˆçœ‹çœ‹æ˜¯å¦é‚„æ˜¯åˆ‡æˆå…¶ä»–æ›´å°çš„å€å¡Šçµ¦ä»¥å¾Œä½¿ç”¨ */
       if ( pMemPerm )
       {
         for ( loop = MAX_MEM_LIST - 1; loop >= 0; loop-- )
         {
-          /* ¤Áµ¹§ó¤p°Ï¶ô¥H¨Ñ¥H«á¨Ï¥Î */
+          /* åˆ‡çµ¦æ›´å°å€å¡Šä»¥ä¾›ä»¥å¾Œä½¿ç”¨ */
           while ( iMemPerm + rgSizeList[loop] <= MAX_PERM_BLOCK )
           {
             pMem        = pMemPerm + iMemPerm;
@@ -204,9 +204,9 @@ void * alloc_memory( int sMem , bool record )
         }
       }
 
-      /* ¦V¨t²Î°t¸m°O¾ÐÅé */
+      /* å‘ç³»çµ±é…ç½®è¨˜æ†¶é«” */
       if ( !( pMemPerm = calloc( 1, MAX_PERM_BLOCK ) ) )
-        mudlog( LOG_CRIT , "alloc_memory: µLªk¦V¨t²Î­n¨D°O¾ÐÅé" );
+        mudlog( LOG_CRIT , "alloc_memory: ç„¡æ³•å‘ç³»çµ±è¦æ±‚è¨˜æ†¶é«”" );
 
       nAllocPermBlock++;
       iMemPerm = 0;
@@ -220,17 +220,17 @@ void * alloc_memory( int sMem , bool record )
     if ( record == TRUE ) rgAllocList[iList]++;
   }
 
-  /* ¦³³Æ¥Îªº°O¾ÐÅé, ©Ò¥H¤£¥Î¯u¥¿¥h¤Á°O¾ÐÅé¨Ó¨Ï¥Î */
+  /* æœ‰å‚™ç”¨çš„è¨˜æ†¶é«”, æ‰€ä»¥ä¸ç”¨çœŸæ­£åŽ»åˆ‡è¨˜æ†¶é«”ä¾†ä½¿ç”¨ */
   else
   {
     pMem              = rgFreeList[iList];
     rgFreeList[iList] = * ( ( void ** ) rgFreeList[iList] );
   }
 
-  /* ²M°£°O¾ÐÅé */
+  /* æ¸…é™¤è¨˜æ†¶é«” */
   memset( pMem, 0, rgSizeList[iList] );
 
-  /* ³]©wÅ]³N¼Æ¦r¥H¤Î°O¼Ð³o­Ó°Ï¶ôªº¤j¤p«¬ºA */
+  /* è¨­å®šé­”è¡“æ•¸å­—ä»¥åŠè¨˜æ¨™é€™å€‹å€å¡Šçš„å¤§å°åž‹æ…‹ */
   magic = ( struct magic_block * ) pMem;
   magic->magic_number = ( char ) MAGIC_NUMBER;
   magic->type         = ( char ) iList;
@@ -251,7 +251,7 @@ char * str_dup( const char * str )
   RETURN( target );
 }
 
-/* ÄÀ©ñ°O¾ÐÅé, ±N¤§©ñ¨ì³Q¥Î°Ï¶ô¤¤ */
+/* é‡‹æ”¾è¨˜æ†¶é«”, å°‡ä¹‹æ”¾åˆ°è¢«ç”¨å€å¡Šä¸­ */
 void free_mem( void * pMem )
 {
   struct magic_block * magic;
@@ -275,20 +275,20 @@ void free_mem( void * pMem )
 
     buf[loop] = '\x0';
 
-    mudlog( LOG_DEBUG, "free_mem: ¤£¥¿±`°O¾ÐÅé¤º®e [%s]", buf );
-    mudlog( LOG_EMERG , "free_mem: ÄÀ©ñªº°O¾ÐÅé°Ï¶ô¨S¦³Å]³N¼Æ¦r" );
+    mudlog( LOG_DEBUG, "free_mem: ä¸æ­£å¸¸è¨˜æ†¶é«”å…§å®¹ [%s]", buf );
+    mudlog( LOG_EMERG , "free_mem: é‡‹æ”¾çš„è¨˜æ†¶é«”å€å¡Šæ²’æœ‰é­”è¡“æ•¸å­—" );
   }
 
   iList = ( int ) magic->type;
 
-  /* °e¤J¶¢¸mªº¦ê¦C¤§¤¤ */
+  /* é€å…¥é–’ç½®çš„ä¸²åˆ—ä¹‹ä¸­ */
   * ( ( void ** ) pMem ) = rgFreeList[iList];
   rgFreeList[iList]      = pMem;
 
   RETURN_NULL();
 }
 
-/* °t¸m¦r¦ê«¬ºA°O¾ÐÅé */
+/* é…ç½®å­—ä¸²åž‹æ…‹è¨˜æ†¶é«” */
 void * alloc_string( int sMem )
 {
   void * target;
@@ -299,7 +299,7 @@ void * alloc_string( int sMem )
   RETURN( target );
 }
 
-/* ÄÀ©ñ¦r¦ê«¬ºAªº°O¾ÐÅé */
+/* é‡‹æ”¾å­—ä¸²åž‹æ…‹çš„è¨˜æ†¶é«” */
 void free_string( char * pstr )
 {
   PUSH_FUNCTION( "free_string" );
@@ -310,7 +310,7 @@ void free_string( char * pstr )
   RETURN_NULL();
 }
 
-/* °t¸mµ²ºc */
+/* é…ç½®çµæ§‹ */
 void * alloc_struct( int type )
 {
   CHAR_DATA       * pChar;
@@ -324,7 +324,7 @@ void * alloc_struct( int type )
   for ( iList = size = 0; ; iList++ )
   {
     if ( struct_block[iList].type == ERRORCODE )
-      mudlog( LOG_ERR , "°t¸m¿ù»~«¬ºAªºµ²ºc %d", type );
+      mudlog( LOG_ERR , "é…ç½®éŒ¯èª¤åž‹æ…‹çš„çµæ§‹ %d", type );
 
     if ( struct_block[iList].type == type )
     {
@@ -338,7 +338,7 @@ void * alloc_struct( int type )
   {
   case STRUCT_CHAR_DATA:
 
-    /* ´M§ä¶¢¸mªºµ²ºc */
+    /* å°‹æ‰¾é–’ç½®çš„çµæ§‹ */
     if ( FreeChar > 0 )
     {
       for ( pChar = char_list; pChar; pChar = pChar->next )
@@ -347,7 +347,7 @@ void * alloc_struct( int type )
         {
           CHAR_DATA * pNext;
 
-          /* ÄÀ©ñ¤W¤@¦¸ªº¤º®e */
+          /* é‡‹æ”¾ä¸Šä¸€æ¬¡çš„å…§å®¹ */
           free_string( pChar->name        );
           free_string( pChar->cname       );
           free_string( pChar->byname      );
@@ -359,11 +359,11 @@ void * alloc_struct( int type )
           free_string( pChar->editing     );
           free_string( pChar->stack       );
 
-          /* °O¿ý¥»¨Óªº¤U¤@­Óµ²ºc, ¨Ã²M°£¦¹°O¾ÐÅé¤º®e¬°¹s */
+          /* è¨˜éŒ„æœ¬ä¾†çš„ä¸‹ä¸€å€‹çµæ§‹, ä¸¦æ¸…é™¤æ­¤è¨˜æ†¶é«”å…§å®¹ç‚ºé›¶ */
           pNext = pChar->next;
           memset( pChar, 0, sizeof( CHAR_DATA ) );
 
-          /* ­«·s«ü¦V, ¨Ã³]©w¬°¥¼²M°£ */
+          /* é‡æ–°æŒ‡å‘, ä¸¦è¨­å®šç‚ºæœªæ¸…é™¤ */
           pChar->delete  = FALSE;
           pChar->next    = pNext;
 
@@ -373,14 +373,14 @@ void * alloc_struct( int type )
       }
     }
 
-    /* ¨S¦³¶¢¸mªºµ²ºc, ¥²¶·¥t¦æ°t¸m */
+    /* æ²’æœ‰é–’ç½®çš„çµæ§‹, å¿…é ˆå¦è¡Œé…ç½® */
     struct_block[iList].nAlloc++;
     pChar = alloc_memory( size, FALSE );
 
-    /* ²M°£°O¾ÐÅé¤º®e¬°¹s */
+    /* æ¸…é™¤è¨˜æ†¶é«”å…§å®¹ç‚ºé›¶ */
     memset( pChar, 0, sizeof( CHAR_DATA ) );
 
-    /* ½Õ¾ã¦ê¦Cªº¶¶§Ç, ¨Ã¥B³]©w¬°¥¼²M°£ */
+    /* èª¿æ•´ä¸²åˆ—çš„é †åº, ä¸¦ä¸”è¨­å®šç‚ºæœªæ¸…é™¤ */
     pChar->next    = char_list;
     char_list      = pChar;
     pChar->delete  = FALSE;
@@ -389,7 +389,7 @@ void * alloc_struct( int type )
 
   case STRUCT_OBJ_DATA:
 
-    /* ´M§ä¶¢¸mªºµ²ºc */
+    /* å°‹æ‰¾é–’ç½®çš„çµæ§‹ */
 
     if ( FreeObject > 0 )
     {
@@ -399,16 +399,16 @@ void * alloc_struct( int type )
         {
           OBJ_DATA * pNext;
 
-          /* ÄÀ©ñ¤W¤@¦¸ªº¤º®e */
+          /* é‡‹æ”¾ä¸Šä¸€æ¬¡çš„å…§å®¹ */
           free_string( pObj->name        );
           free_string( pObj->cname       );
           free_string( pObj->description );
 
-          /* °O¿ý¥»¨Óªº¤U¤@­Óµ²ºc, ¨Ã²M°£¦¹°O¾ÐÅé¤º®e¬°¹s */
+          /* è¨˜éŒ„æœ¬ä¾†çš„ä¸‹ä¸€å€‹çµæ§‹, ä¸¦æ¸…é™¤æ­¤è¨˜æ†¶é«”å…§å®¹ç‚ºé›¶ */
           pNext = pObj->next;
           memset( pObj, 0, sizeof( OBJ_DATA ) );
 
-          /* ­«·s«ü¦V, ¨Ã³]©w¬°¥¼²M°£ */
+          /* é‡æ–°æŒ‡å‘, ä¸¦è¨­å®šç‚ºæœªæ¸…é™¤ */
           pObj->delete  = FALSE;
           pObj->next    = pNext;
 
@@ -418,14 +418,14 @@ void * alloc_struct( int type )
       }
     }
 
-    /* ¨S¦³¶¢¸mªºµ²ºc, ¥²¶·¥t¦æ°t¸m */
+    /* æ²’æœ‰é–’ç½®çš„çµæ§‹, å¿…é ˆå¦è¡Œé…ç½® */
     struct_block[iList].nAlloc++;
     pObj = alloc_memory( size, FALSE );
 
-    /* ²M°£°O¾ÐÅé¤º®e¬°¹s */
+    /* æ¸…é™¤è¨˜æ†¶é«”å…§å®¹ç‚ºé›¶ */
     memset( pObj, 0, sizeof( OBJ_DATA ) );
 
-    /* ½Õ¾ã¦ê¦Cªº¶¶§Ç, ¨Ã¥B³]©w¬°¥¼²M°£ */
+    /* èª¿æ•´ä¸²åˆ—çš„é †åº, ä¸¦ä¸”è¨­å®šç‚ºæœªæ¸…é™¤ */
     pObj->next    = object_list;
     object_list   = pObj;
     pObj->delete  = FALSE;
@@ -434,7 +434,7 @@ void * alloc_struct( int type )
 
   case STRUCT_DESCRIPTOR_DATA:
 
-    /* ´M§ä¶¢¸mªºµ²ºc */
+    /* å°‹æ‰¾é–’ç½®çš„çµæ§‹ */
     if ( FreeDesc > 0 )
     {
       for ( pDesc = descriptor_list; pDesc; pDesc = pDesc->next )
@@ -443,7 +443,7 @@ void * alloc_struct( int type )
         {
           DESCRIPTOR_DATA * pNext;
 
-          /* ÄÀ©ñ¤W¤@¦¸ªº¤º®e */
+          /* é‡‹æ”¾ä¸Šä¸€æ¬¡çš„å…§å®¹ */
           free_string( pDesc->address );
           free_string( pDesc->host    );
           free_string( pDesc->remote  );
@@ -451,11 +451,11 @@ void * alloc_struct( int type )
           free_string( pDesc->buffer  );
           free_string( pDesc->path    );
 
-          /* °O¿ý¥»¨Óªº¤U¤@­Óµ²ºc, ¨Ã²M°£¦¹°O¾ÐÅé¤º®e¬°¹s */
+          /* è¨˜éŒ„æœ¬ä¾†çš„ä¸‹ä¸€å€‹çµæ§‹, ä¸¦æ¸…é™¤æ­¤è¨˜æ†¶é«”å…§å®¹ç‚ºé›¶ */
           pNext = pDesc->next;
           memset( pDesc, 0, sizeof( DESCRIPTOR_DATA ) );
 
-          /* ­«·s«ü¦V, ¨Ã³]©w¬°¥¼²M°£ */
+          /* é‡æ–°æŒ‡å‘, ä¸¦è¨­å®šç‚ºæœªæ¸…é™¤ */
           pDesc->next      = pNext;
           pDesc->delete    = FALSE;
           pDesc->edit_mode = EDIT_NONE;
@@ -466,44 +466,44 @@ void * alloc_struct( int type )
       }
     }
 
-    /* ¨S¦³¶¢¸mªºµ²ºc, ¥²¶·¥t¦æ°t¸m */
+    /* æ²’æœ‰é–’ç½®çš„çµæ§‹, å¿…é ˆå¦è¡Œé…ç½® */
     struct_block[iList].nAlloc++;
     pDesc = alloc_memory( size, FALSE );
 
-    /* ²M°£°O¾ÐÅé¤º®e¬°¹s */
+    /* æ¸…é™¤è¨˜æ†¶é«”å…§å®¹ç‚ºé›¶ */
     memset( pDesc, 0, sizeof( DESCRIPTOR_DATA ) );
 
-    /* ½Õ¾ã¦ê¦Cªº¶¶§Ç, ¨Ã¥B³]©w¬°¥¼²M°£ */
+    /* èª¿æ•´ä¸²åˆ—çš„é †åº, ä¸¦ä¸”è¨­å®šç‚ºæœªæ¸…é™¤ */
     pDesc->next     = descriptor_list;
     descriptor_list = pDesc;
     pDesc->delete   = FALSE;
 
-    /* ³s½u¤H¼Æ¥[¤@ */
+    /* é€£ç·šäººæ•¸åŠ ä¸€ */
     MaxConnect++;
 
     RETURN( ( void * ) pDesc );
   }
 
-  /* °O¿ý¨ì©³°t¸m¤F´X­Ó */
+  /* è¨˜éŒ„åˆ°åº•é…ç½®äº†å¹¾å€‹ */
   struct_block[iList].nAlloc++;
   RETURN( alloc_memory( size , FALSE ) );
 }
 
-/* ÄÀ©ñµ²ºc */
+/* é‡‹æ”¾çµæ§‹ */
 void free_struct( void * aMem , int type )
 {
   int iList;
 
   PUSH_FUNCTION( "free_struct" );
 
-  if ( !aMem ) mudlog( LOG_ERR , "ÄÀ©ñµ²ºc«¬ºA %d «ü¼Ð¬OªÅªº" , type );
+  if ( !aMem ) mudlog( LOG_ERR , "é‡‹æ”¾çµæ§‹åž‹æ…‹ %d æŒ‡æ¨™æ˜¯ç©ºçš„" , type );
 
   for ( iList = 0; ; iList++ )
   {
     if ( struct_block[iList].type == ERRORCODE )
-      mudlog( LOG_ERR, "ÄÀ©ñµ²ºc«¬ºA¿ù»~ %d" , type );
+      mudlog( LOG_ERR, "é‡‹æ”¾çµæ§‹åž‹æ…‹éŒ¯èª¤ %d" , type );
 
-    /* ¬Ý¬Ý³oºØµ²ºc¯à¤£¯à³QÄÀ©ñ, §_«h¬O¿ù»~ªºÄÀ©ñ */
+    /* çœ‹çœ‹é€™ç¨®çµæ§‹èƒ½ä¸èƒ½è¢«é‡‹æ”¾, å¦å‰‡æ˜¯éŒ¯èª¤çš„é‡‹æ”¾ */
     if ( struct_block[iList].type == type ) break;
   }
 
@@ -513,7 +513,7 @@ void free_struct( void * aMem , int type )
 
     if ( ( ( ( CHAR_DATA * ) aMem )->delete ) == TRUE )
     {
-      mudlog( LOG_DEBUG, "free_struct: ­«½ÆÄÀ©ñ¤Hª«µ²ºc." );
+      mudlog( LOG_DEBUG, "free_struct: é‡è¤‡é‡‹æ”¾äººç‰©çµæ§‹." );
       RETURN_NULL();
     }
 
@@ -525,7 +525,7 @@ void free_struct( void * aMem , int type )
 
     if ( ( ( ( OBJ_DATA * ) aMem )->delete ) == TRUE )
     {
-      mudlog( LOG_DEBUG, "free_struct: ­«½ÆÄÀ©ñª««~µ²ºc." );
+      mudlog( LOG_DEBUG, "free_struct: é‡è¤‡é‡‹æ”¾ç‰©å“çµæ§‹." );
       RETURN_NULL();
     }
 
@@ -537,7 +537,7 @@ void free_struct( void * aMem , int type )
 
     if ( ( ( ( DESCRIPTOR_DATA * ) aMem )->delete ) == TRUE )
     {
-      mudlog( LOG_DEBUG, "free_struct: ­«½ÆÄÀ©ñ´y­z¤lµ²ºc." );
+      mudlog( LOG_DEBUG, "free_struct: é‡è¤‡é‡‹æ”¾æè¿°å­çµæ§‹." );
       RETURN_NULL();
     }
 
@@ -547,14 +547,14 @@ void free_struct( void * aMem , int type )
     RETURN_NULL();
   }
 
-  /* °O¿ý¨ì©³°t¸m¤F´X­Ó */
+  /* è¨˜éŒ„åˆ°åº•é…ç½®äº†å¹¾å€‹ */
   struct_block[iList].nAlloc--;
 
   free_mem( aMem );
   RETURN_NULL();
 }
 
-/* Åã¥Ü¨t²Îªº°O¾ÐÅé¨Ï¥Î±¡§Î */
+/* é¡¯ç¤ºç³»çµ±çš„è¨˜æ†¶é«”ä½¿ç”¨æƒ…å½¢ */
 FUNCTION( do_memory )
 {
   char arg[MAX_INPUT_LENGTH];
@@ -567,34 +567,34 @@ FUNCTION( do_memory )
   if ( !arg[0] )
   {
     print_to_char( ch ,
-      "¼vÅT(affect)       %5d\n\r"
-      "°Ï°ì(area)         %5d\n\r"
-      "ÃB¥~´y­z(ExtDes)   %5d\n\r"
-      "¥X¤f(exit)         %5d\n\r"
-      "¨D§U(help)         %5d\n\r"
-      "©Çª«(mob)          %5d\n\r"
-      "ª««~(obj)          %5d\n\r"
-      "­«¸m(reset)        %5d\n\r"
-      "©Ð¶¡(room)         %5d\n\r"
-      "°Ó©±(shop)         %5d\n\r"
-      "±Ð¾É(teach)        %5d\n\r"
-      "¶i¯¸µe­±(greet)    %5d\n\r"
-      "¦a§Î¸ê®Æ(sector)   %5d\n\r"
-      "Äqª«¸ê®Æ(mineral)  %5d\n\r"
-      "Â¾·~¸ê®Æ(class)    %5d\n\r"
-      "²GÅé¸ê®Æ(liq)      %5d\n\r"
-      "­­¨î¸ê®Æ(restrict) %5d\n\r"
-      "¸ÑÁ¼¸ê®Æ(quest)    %5d\n\r"
-      "¯«±Ú¸ê®Æ(immlist)  %5d\n\r"
-      "´ç²î(ship)         %5d\n\r"
-      "ª©­±(board)        %5d\n\r"
-      "¦uÅ@¯«(angel)      %5d\n\r"
-      "Â§ª«(gift)         %5d\n\r"
-      "\n\r¡½¡½¡½¡½ ¦³Ãö°t¸mªº°O¾ÐÅé°Ï¶ô ³¡¥÷ ¡½¡½¡½¡½\n\r"
-      "¡´ °Ï¶ô°t¸m %d ®æ¡M¨C®æ°t¸m %d bytes¡M¨C®æ %dK ¦@ %d bytes¡M%dK¡C\n\r"
-      "¡´ Á`¦@¤À°tµ¹ %d ­Óµ²ºc¡Mªá¥h %s ¦ì¤¸²Õ¡M¬ù %dK¡C\n\r"
-      "¡´ ¥Ø«e°Ï¶ô«ü¼Ð %d¡M³Ñ¤U­È %d¡M¤w¸g¨Ï¥Î %d.%d%%¡C\n\r"
-      "¡´ ¦r¦ê¥H¤Î°Ï¶ô¦@°t¸m %13s ¦ì¤¸²Õ¡M¬ù %d.%dK\n\r"
+      "å½±éŸ¿(affect)       %5d\n\r"
+      "å€åŸŸ(area)         %5d\n\r"
+      "é¡å¤–æè¿°(ExtDes)   %5d\n\r"
+      "å‡ºå£(exit)         %5d\n\r"
+      "æ±‚åŠ©(help)         %5d\n\r"
+      "æ€ªç‰©(mob)          %5d\n\r"
+      "ç‰©å“(obj)          %5d\n\r"
+      "é‡ç½®(reset)        %5d\n\r"
+      "æˆ¿é–“(room)         %5d\n\r"
+      "å•†åº—(shop)         %5d\n\r"
+      "æ•™å°Ž(teach)        %5d\n\r"
+      "é€²ç«™ç•«é¢(greet)    %5d\n\r"
+      "åœ°å½¢è³‡æ–™(sector)   %5d\n\r"
+      "ç¤¦ç‰©è³‡æ–™(mineral)  %5d\n\r"
+      "è·æ¥­è³‡æ–™(class)    %5d\n\r"
+      "æ¶²é«”è³‡æ–™(liq)      %5d\n\r"
+      "é™åˆ¶è³‡æ–™(restrict) %5d\n\r"
+      "è§£è¬Žè³‡æ–™(quest)    %5d\n\r"
+      "ç¥žæ—è³‡æ–™(immlist)  %5d\n\r"
+      "æ¸¡èˆ¹(ship)         %5d\n\r"
+      "ç‰ˆé¢(board)        %5d\n\r"
+      "å®ˆè­·ç¥ž(angel)      %5d\n\r"
+      "ç¦®ç‰©(gift)         %5d\n\r"
+      "\n\râ– â– â– â–  æœ‰é—œé…ç½®çš„è¨˜æ†¶é«”å€å¡Š éƒ¨ä»½ â– â– â– â– \n\r"
+      "â— å€å¡Šé…ç½® %d æ ¼ï¹æ¯æ ¼é…ç½® %d bytesï¹æ¯æ ¼ %dK å…± %d bytesï¹%dKã€‚\n\r"
+      "â— ç¸½å…±åˆ†é…çµ¦ %d å€‹çµæ§‹ï¹èŠ±åŽ» %s ä½å…ƒçµ„ï¹ç´„ %dKã€‚\n\r"
+      "â— ç›®å‰å€å¡ŠæŒ‡æ¨™ %dï¹å‰©ä¸‹å€¼ %dï¹å·²ç¶“ä½¿ç”¨ %d.%d%%ã€‚\n\r"
+      "â— å­—ä¸²ä»¥åŠå€å¡Šå…±é…ç½® %13s ä½å…ƒçµ„ï¹ç´„ %d.%dK\n\r"
       , top_affect, top_area, top_ed, top_exit, top_help, top_mob_index
       , top_obj_index, top_reset, top_room
       , top_shop, top_teach, top_greeting, top_sector, top_mineral
@@ -619,13 +619,13 @@ FUNCTION( do_memory )
 
   else
   {
-    send_to_char( "¿ù»~ªº°Ñ¼Æ¡M½Ð¬d¸ß¥¿½T¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "éŒ¯èª¤çš„åƒæ•¸ï¹è«‹æŸ¥è©¢æ­£ç¢ºä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
 }
 
-/* ¹î¬Ý¨t²Î©Ò­n¨D°O¾ÐÅéªº¨Ï¥Îª¬ªp */
+/* å¯Ÿçœ‹ç³»çµ±æ‰€è¦æ±‚è¨˜æ†¶é«”çš„ä½¿ç”¨ç‹€æ³ */
 FUNCTION( do_perm )
 {
   int  count;
@@ -635,13 +635,13 @@ FUNCTION( do_perm )
   PUSH_FUNCTION( "do_perm" );
 
   clear_buffer();
-  send_to_buffer( "°O¾ÐÅé¨Ï¥Îª¬ªp¦Cªí¡R\n\r\n\r" );
+  send_to_buffer( "è¨˜æ†¶é«”ä½¿ç”¨ç‹€æ³åˆ—è¡¨ï¹•\n\r\n\r" );
 
   for ( count = iList = 0; iList < MAX_MEM_LIST; iList++ )
   {
     size = rgSizeList[iList] * rgAllocList[iList];
 
-    send_to_buffer( "¦r¦ê²Õ       %5d ­Ó¡M¨C­Ó%6d¡M¦@ %12s "
+    send_to_buffer( "å­—ä¸²çµ„       %5d å€‹ï¹æ¯å€‹%6dï¹å…± %12s "
                      "byte(%5dK)%4d.%1d%%\n\r"
       , rgAllocList[iList] , rgSizeList[iList]
       , numberize( size, NULL )
@@ -666,7 +666,7 @@ FUNCTION( do_perm )
     count += num;
 
     send_to_buffer(
-      "%-12s %5d ­Ó¡M¨C­Ó%6d¡M¦@ %12s "
+      "%-12s %5d å€‹ï¹æ¯å€‹%6dï¹å…± %12s "
       "byte(%5dK)%4d.%1d%% %6d\n\r"
       , struct_block[iList].name , num , size
       , numberize( num * ReallySize, NULL )
@@ -676,7 +676,7 @@ FUNCTION( do_perm )
       , struct_block[iList].ref );
   }
 
-  send_to_buffer( "\n\rÁ`­p¡R¦@ %d­Ó¡M¦@ªá %s ¦ì¤¸²Õ( %dK )\n\r"
+  send_to_buffer( "\n\rç¸½è¨ˆï¹•å…± %då€‹ï¹å…±èŠ± %s ä½å…ƒçµ„( %dK )\n\r"
     , count , numberize( sAllocPerm, NULL )
     , sAllocPerm / KILO_BYTE );
 
@@ -684,7 +684,7 @@ FUNCTION( do_perm )
   RETURN_NULL();
 }
 
-/* ¹î¬Ý³Q¥Î°O¾ÐÅéªº±¡ªp */
+/* å¯Ÿçœ‹è¢«ç”¨è¨˜æ†¶é«”çš„æƒ…æ³ */
 FUNCTION( do_free )
 {
   CHAR_DATA       * pChar;
@@ -710,7 +710,7 @@ FUNCTION( do_free )
     }
 
     rgFreeList[loop] = temp_address;
-    send_to_buffer( "¦r¦ê( %6d bytes) ¦³ %4d ­Ó³Æ¥Î¡M¤w°t¸m¤F %5d ­Ó\n\r"
+    send_to_buffer( "å­—ä¸²( %6d bytes) æœ‰ %4d å€‹å‚™ç”¨ï¹å·²é…ç½®äº† %5d å€‹\n\r"
       , rgSizeList[loop] , count , rgAllocList[loop] );
   }
 
@@ -718,14 +718,14 @@ FUNCTION( do_free )
     if ( pChar->delete ) count++;
     else                 total++;
 
-  send_to_buffer( "\n\r¤Hª«µ²ºc¶¢¸m %d­Ó( ¦@ %d­Ó)¡C\n\r"
+  send_to_buffer( "\n\räººç‰©çµæ§‹é–’ç½® %då€‹( å…± %då€‹)ã€‚\n\r"
     , count, count + total );
 
   for ( total = count = 0, pObj = object_list; pObj; pObj = pObj->next )
     if ( pObj->delete ) count++;
     else                total++;
 
-  send_to_buffer( "ª««~µ²ºc¶¢¸m %d­Ó( ¦@ %d­Ó)¡C\n\r", count, count + total );
+  send_to_buffer( "ç‰©å“çµæ§‹é–’ç½® %då€‹( å…± %då€‹)ã€‚\n\r", count, count + total );
 
   for ( total = count = 0, pObj = object_list; pObj; pObj = pObj->next )
     if ( pObj->delete ) count++;
@@ -736,13 +736,13 @@ FUNCTION( do_free )
     if ( pDesc->delete ) count++;
     else                 total++;
 
-  send_to_buffer( "¤Hª«´y­zªí¶¢¸m %d­Ó( ¦@ %d­Ó)¡C\n\r", count, count + total );
+  send_to_buffer( "äººç‰©æè¿°è¡¨é–’ç½® %då€‹( å…± %då€‹)ã€‚\n\r", count, count + total );
 
   print_buffer( ch );
   RETURN_NULL();
 }
 
-/* ­pºâ¯u¥¿°t¸m°O¾ÐÅéªº¤j¤p */
+/* è¨ˆç®—çœŸæ­£é…ç½®è¨˜æ†¶é«”çš„å¤§å° */
 int mem_block( int sMem )
 {
   int iList;

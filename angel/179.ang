@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���W�Y�O���@�Ǹ˳ƷQ�n���ˮɡM����S��²��M����L���氣([1;32mremove[0m)�M����
-���B�z�N�ݧA���o�C��F�M�A�����@�U�M��W�h�O [1;32mwear[0m ��T
+身上若是有一些裝備想要換裝時﹐怎麼辦﹖很簡單﹐先把他給脫除([1;32mremove[0m)﹐之後
+的處理就看你的囉。對了﹐再提醒一下﹐穿上去是 [1;32mwear[0m 喔﹗
 
-�Ьd�ߡRremove�Bwear
+請查詢﹕remove、wear
 ~
 End

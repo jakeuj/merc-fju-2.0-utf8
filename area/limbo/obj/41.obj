@@ -1,9 +1,9 @@
 Vnum            41
 Name            axe~
-ShortDesc       ÅK©ò~
+ShortDesc       éµæ–§~
 Description
-¤@§â¤Q¤À¾W§Qªº³æ¤b©òÀY(axe)¡M¥þ¨­¥H¿ûÅKÅ±¦¨¡M®³°_¨Ó¤Q¤À¦a­«¡C~
-Unit            §â~
+ä¸€æŠŠååˆ†é‹’åˆ©çš„å–®åˆƒæ–§é ­(axe)ï¹å…¨èº«ä»¥é‹¼éµé‘„æˆï¹æ‹¿èµ·ä¾†ååˆ†åœ°é‡ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

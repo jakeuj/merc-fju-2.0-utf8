@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�o�̬O�i�H�M�۰��h�_�I����M�A�i�H���ݥ|�P�O�_�����ǡM�p�G�����ܡM�i�H����
-�ϥ� [1;32mmount[0m �o�ӫ��O���M�W�L�T�Y�O���Q�M�F�M�i�H [1;32munmount[0m �ӤU���T
+這裡是可以騎著馬去冒險的喔﹐你可以找找看四周是否有馬匹﹐如果有的話﹐可以嘗試
+使用 [1;32mmount[0m 這個指令來騎上他﹗若是不想騎了﹐可以 [1;32munmount[0m 來下馬﹗
 
-�Ьd�ߡRmount�Bunmount
+請查詢﹕mount、unmount
 ~
 
 End

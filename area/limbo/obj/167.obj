@@ -1,10 +1,10 @@
 Vnum            167
 Name            dai swamp potion~
-ShortDesc       §I¿AÃÄ¤ô~
+ShortDesc       å…Œæ¾¤è—¥æ°´~
 Description
-¤@²~§I¿AÃÄ¤ô(dai swamp potion)¡M¨ã¦³¼ç¦æªº®ÄªG¡C
+ä¸€ç“¶å…Œæ¾¤è—¥æ°´(dai swamp potion)ï¹å…·æœ‰æ½›è¡Œçš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

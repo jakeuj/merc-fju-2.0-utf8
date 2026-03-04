@@ -1,10 +1,10 @@
 Vnum            532
 Name            medicine boss~
-ShortDesc       ÃÄ©Ğ¦ÑÁó~
-LongDesc        ¥X°âÃÄª«ªºÃÄ©Ğ¦ÑÁó(medicine boss)¯¸¦b¦¹³B¡C
+ShortDesc       è—¥æˆ¿è€é—†~
+LongDesc        å‡ºå”®è—¥ç‰©çš„è—¥æˆ¿è€é—†(medicine boss)ç«™åœ¨æ­¤è™•ã€‚
 ~
 Description
-¥L¤@ÁyºÖºÖªº¼Ë¤l¡MÅı¤H·P¨ì¥L¬O¤@­Ó´°«pªºªøªÌ¡C
+ä»–ä¸€è‡‰ç¦ç¦çš„æ¨£å­ï¹è®“äººæ„Ÿåˆ°ä»–æ˜¯ä¸€å€‹æ•¦åšçš„é•·è€…ã€‚
 ~
 Sentinel        Yes
 NoKill          Yes

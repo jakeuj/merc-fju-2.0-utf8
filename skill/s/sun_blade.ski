@@ -1,5 +1,5 @@
 Name            sun blade~
-Cname           µq¤é¤Mªk~
+Cname           çš“æ—¥åˆ€æ³•~
 Slot            SLOT_SUN_BLADE
 Msgoff          ~
 Check           check_blade_attack~
@@ -33,7 +33,7 @@ Help            ~
 
 #Damage
 Description
-$n¤â¤¤$OÄË¥X¡M¨Ï¥X¤@¦¡¡y$W¯E®ğ¸U¤d$Z¡z¡M¤M¶Õ¥Rº¡¯EÃv¥¿®ğ©¹$N$l¼A¥h¡C~
+$næ‰‹ä¸­$Oé¨°å‡ºï¹ä½¿å‡ºä¸€å¼ã€$Wæµ©æ°£è¬åƒ$Zã€ï¹åˆ€å‹¢å……æ»¿æµ©ç€šæ­£æ°£å¾€$N$låŠˆå»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -43,7 +43,7 @@ End
 
 #Damage
 Description
-$n¤@©Û¡y$S½Ñ¸¯¬P±J$Z¡z¡M¥u¨£$N¯««Â¤j®i¡M¤â¤¤$O¦p²rªê¯ë©¹$N$l¬å¥h¡C~
+$nä¸€æ‹›ã€$Sè«¸è‘›æ˜Ÿå®¿$Zã€ï¹åªè¦‹$Nç¥å¨å¤§å±•ï¹æ‰‹ä¸­$Oå¦‚çŒ›è™èˆ¬å¾€$N$lç å»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -52,17 +52,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n°ªÁ|¤â¤¤$O¡M¤@©Û¡y$Rªê«Â´LÀs$Z¡z¡M¤M¶Õ§¨µÛ«l­·¡M¹p¾^¸U¶v¦a©¹$N$l¼A¥h¡C~
-Chance          10
-Value           20
-Parry           0
-Situs           ATTACK_RANDOM
-Innate          0 0
-End
-
-#Damage
-Description
-$n±N¤â¤¤$O¤@¼º¡M¤@©Û¡y$B¾Ô·NµL½a$Z¡z©¹$N$l±Ù¥h¡C~
+$né«˜èˆ‰æ‰‹ä¸­$Oï¹ä¸€æ‹›ã€$Rè™å¨å°Šé¾$Zã€ï¹åˆ€å‹¢å¤¾è‘—å‹é¢¨ï¹é›·éœ†è¬éˆåœ°å¾€$N$låŠˆå»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -72,7 +62,7 @@ End
 
 #Damage
 Description
-$n¤M¦¡¤@±Û¡M¥ª¥k³sÀô¨â¤M¡M¤@©Û¡y$G¥ª¾Ö¥k©ê$Z¡z¤M¶Õ¥Ñ¨âÃä§â$N³ò¦í¡T~
+$nå°‡æ‰‹ä¸­$Oä¸€æ’©ï¹ä¸€æ‹›ã€$Bæˆ°æ„ç„¡çª®$Zã€å¾€$N$læ–¬å»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -82,7 +72,17 @@ End
 
 #Damage
 Description
-$n±N$O¥Ñ¤W©¹¤Uª½¼A¡M¤@©Û¡y$Y¤£¸¨¬ÓºX$Z¡z¬½¬½©¹$N¼A¥h¡T~
+$nåˆ€å¼ä¸€æ—‹ï¹å·¦å³é€£ç’°å…©åˆ€ï¹ä¸€æ‹›ã€$Gå·¦æ“å³æŠ±$Zã€åˆ€å‹¢ç”±å…©é‚ŠæŠŠ$Nåœä½ï¹—~
+Chance          10
+Value           20
+Parry           0
+Situs           ATTACK_RANDOM
+Innate          0 0
+End
+
+#Damage
+Description
+$nå°‡$Oç”±ä¸Šå¾€ä¸‹ç›´åŠˆï¹ä¸€æ‹›ã€$Yä¸è½çš‡æ——$Zã€ç‹ ç‹ å¾€$NåŠˆå»ï¹—~
 Chance          10
 Value           20
 Parry           0

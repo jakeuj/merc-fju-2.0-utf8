@@ -1,7 +1,7 @@
 Name            sleep~
-Cname           ºÎ¯v³N~
+Cname           ç¡çœ è¡“~
 Slot            SLOT_SLEEP
-Msgoff          §Aªººë¯«¦ü¥G¤ñ¸û¦n¤F¡T~
+Msgoff          ä½ çš„ç²¾ç¥ä¼¼ä¹æ¯”è¼ƒå¥½äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_sleep~
 Position        POS_STANDING

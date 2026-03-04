@@ -479,7 +479,7 @@ rand     (num)			Is random percentage less than or equal to num
 isnpc     ($*)			Is $* an NPC
 ispc      ($*)			Is $* a PC
 isgood    ($*)			Does $* have a good alignment
-isevil    ($*) 			§PÂ_ $* ¬O§_¬°¨¸´c°}Àç
+isevil    ($*) 			åˆ¤æ–· $* æ˜¯å¦ç‚ºé‚ªæƒ¡é™£ç‡Ÿ
 isfight   ($*)			Is $* fighting
 isimmort  ($*)			Is the level of $* greater than max_mortal
 ischarmed ($*)			Is $* affected by charm

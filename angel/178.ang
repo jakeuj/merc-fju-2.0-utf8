@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�F��@�����M�A�i�H�R�ӳU�l�Ӹ˳o�����C���K���F��M���O����i�h�O�S
-�ϥ� [1;32mput[0m �N��F�M�ۤϦa�M�A�i�H�ϥ� [1;32mget[0m ��L�����X�ӡC
+東西一堆怎麼辦﹐你可以買個袋子來裝這些雜七雜八的東西﹐但是怎麼放進去呢﹖
+使用 [1;32mput[0m 就對了﹐相反地﹐你可以使用 [1;32mget[0m 把他給拿出來。
 
-�Ьd�ߡRput�Bget
+請查詢﹕put、get
 ~
 End

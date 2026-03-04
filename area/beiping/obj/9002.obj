@@ -1,9 +1,9 @@
 Vnum            9002
 Name            blue robe~
-ShortDesc       ╢Обе╕Б╙ЬЁT~
+ShortDesc       Ф╧⌡Х≈█Х┴╡И∙╥Х╒█~
 Description
-╢Обе╙╨╓я╙е╕Б║M╗о╙╨╬Ц╔С╙ЬЁT(robe)╕Э╔G╕Ё╨ьЁz╘З╙╨╥Pд╠║C~
-Unit            ╔С~
+Ф╧⌡Х≈█Г └Е╓╘Г╘╨Х┴╡О╧░Д╫©Г └Ф∙╢Д╩╤И∙╥Х╒█(robe)Д╪╪Д╧▌Ф°┴Г╗╝И─▐Ф≤▌Г └Ф└÷Х╕╨Ц─┌~
+Unit            Д╩╤~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

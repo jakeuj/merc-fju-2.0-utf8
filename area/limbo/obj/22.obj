@@ -1,9 +1,9 @@
 Vnum            22
 Name            war glove~
-ShortDesc       ¾Ô¯«¤â®M~
+ShortDesc       æˆ°ç¥žæ‰‹å¥—~
 Description
-¤Ñ¯«±M¥Î¤â®M(glove)¡C~
-Unit            Âù~
+å¤©ç¥žå°ˆç”¨æ‰‹å¥—(glove)ã€‚~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HANDS
 Takeable        Yes

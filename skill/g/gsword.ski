@@ -1,5 +1,5 @@
 Name            gsword~
-Cname           �L�q���C~
+Cname           無量神劍~
 Slot            SLOT_GSWORD
 Msgoff          ~
 Check           check_sword_attack~
@@ -33,16 +33,16 @@ Limit           CLASS_BRAVO      1  95
 Limit           CLASS_MAGE       1  30
 Limit           CLASS_SMITH      1  30
 Help
-�L�q���C�R
+無量神劍﹕
 
-���۹D�a�L�q���M�D����C�k�����@�M���C�h�O��n�j�z��H
-���M��ť���j�z���L�q�v�M�����P�o�L�q���C���h�����s�C
+源自道家無量說﹐乃兩儀劍法之提昇﹐此劍多是西南大理國人
+精研﹐更聽說大理有無量宗﹐不知與這無量神劍有多少關連。
 
 ~
 
 #Damage
 Description
-$n�餺�F��P�u�����M�@��$y�y�ѹD�L�q�z$Z�M�⤤$O�p�@���ȳD���V$N��$l�C~
+$n體內靈氣與真氣鼓盪﹐一招$y『天道無量』$Z﹐手中$O如一條銀蛇般刺向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -52,7 +52,7 @@ End
 
 #Damage
 Description
-$n�ϥX�L�q���C����$S�y�L��L�q�z$Z�M�⤤$O�B�l����$N��$l�C~
+$n使出無量神劍中的$S『無邊無量』$Z﹐手中$O運勁擊刺$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -62,7 +62,7 @@ End
 
 #Damage
 Description
-$n��B���СM�ϥX�@��$G�y���[�L���z$Z�M���ΰ~�M���D�ƤءM�⤤$O��V$N��$l�C~
+$n氣運丹田﹐使出一招$G『乾坤無極』$Z﹐身形陡然飛躍數尺﹐手中$O刺向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -72,7 +72,7 @@ End
 
 #Damage
 Description
-$n�⤤$O���c���i�M�@��$R�y�̤ӷ��C�z$Z���$N��$l�~�M��X�C~
+$n手中$O中宮直進﹐一式$R『裡太極劍』$Z對準$N的$l陡然刺出。~
 Chance          20
 Value           20
 Parry           0
@@ -82,7 +82,7 @@ End
 
 #Damage
 Description
-$n�a���@�D�M�⤤$O�@��$W�y�L��a�ơz$Z���$N��$l�����A�U�C~
+$n縱身一躍﹐手中$O一招$W『無邊蒼穹』$Z對準$N的$l直直劈下。~
 Chance          20
 Value           20
 Parry           0
@@ -92,7 +92,7 @@ End
 
 #Damage
 Description
-$n�_�ʤ⤤��$O�o�X�X�X�n�T�M�@��$B�y�Ѿ������z$Z��V$N��$l�C~
+$n震動手中的$O發出嚶嚶聲響﹐一招$B『天機莫測』$Z刺向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -102,7 +102,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�V�~�@���M�Ϥ@��$Y�y�s���ѻڡz$Z�Ϥ���$N$l��h�C~
+$n手中$O向外一分﹐使一招$Y『龍雲天際』$Z反手對準$N$l刺去。~
 Chance          20
 Value           20
 Parry           0
@@ -112,7 +112,7 @@ End
 
 #Damage
 Description
-$n�}��C�P�B�M���Τ@��⤤$O�Ϥ@��$P�y�ѹD�`���z$Z�e�X�@�D�����٦V$N��$l�C~
+$n腳踏七星步﹐身形一轉手中$O使一招$P『天道循環』$Z畫出一道光弧斬向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -122,7 +122,7 @@ End
 
 #Damage
 Description
-$n�@��$S�ѹD��$Z�M���O�ɮg�M$O�e�I�V$N��$l�C~
+$n一招$S天道擊$Z﹐內力暴射﹐$O疾點向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -132,7 +132,7 @@ End
 
 #Damage
 Description
-$n��M���S�@�n�M�@��$g�y�|���}���z$Z�M$O���ۤ@�ѥ��O�ĦV$N��$l�C~
+$n突然長嘯一聲﹐一招$g『四路開泰』$Z﹐$O挾著一股巨力衝向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -142,7 +142,7 @@ End
 
 #Damage
 Description
-$n�ϥX�@��$s�y����P���z$Z�M������C�M�k��N��誺�ۦ��p�Ʃ^�١C~
+$n使出一招$s『斗轉星移』$Z﹐左手持劍﹐右手將對方的招式如數奉還。~
 Chance          20
 Value           20
 Parry           0

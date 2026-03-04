@@ -1,15 +1,15 @@
-* �o���ɮ׬O�ΨӴy�z�t�άD�X�a�઺�W��M�C�@�ӥH #Bounty �����MEnd ����
-* �C�@�Ӧr�����N��p�U
+* 這個檔案是用來描述系統挑出懸賞的名單﹐每一個以 #Bounty 為首﹐End 結尾
+* 每一個字首的意思如下
 
-* Mobile    �N���Ǫ������X�M�����s�b�C
-* Room      �N���X�{���ж����X�M-1 �N����Ӱϰ쳣�|�X�{
-* Message   �N���X�{���ԭz
-* MaxNumber �N����ӥ@�ɥX�{���̤j�ƶq
-* Chance    �N�����v�M�d�����h�֡M�C�Ӥp�ɭp��@��
-* Type      �N�����A�MBOUNTY_GOLD �N������MBOUNTY_FIRMAN �N�����K�����P
-* Value     �N���W�z�����A�һݭn���ƭ�
-* Migrate   �N���O�_�|�E���M���ж����X���Ȧb���ݰϰ�E���M�_�h�O��Ӱϰ�C
-* Lock      �N���O�_�i�H����
+* Mobile    代表怪物的號碼﹐必須存在。
+* Room      代表出現的房間號碼﹐-1 代表整個區域都會出現
+* Message   代表出現的敘述
+* MaxNumber 代表整個世界出現的最大數量
+* Chance    代表機率﹐千分之多少﹐每個小時計算一次
+* Type      代表型態﹐BOUNTY_GOLD 代表賞金﹐BOUNTY_FIRMAN 代表給免死金牌
+* Value     代表上述的型態所需要的數值
+* Migrate   代表是否會遷移﹐有房間號碼的僅在所屬區域遷移﹐否則是整個區域。
+* Lock      代表是否可以執行
 
 Limit           20
 
@@ -17,7 +17,7 @@ Limit           20
 Mobile          589
 Room            501
 Message
-�������񪺵s��S�X�ӧ@�äF~
+洛陽附近的盜賊又出來作亂了~
 Chance          50
 MaxNumber       2
 Type            BOUNTY_GOLD
@@ -30,7 +30,7 @@ End
 Mobile          590
 Room            -1
 Message
-���@�������p���F�����t�W���s����~
+有一隻野狗叼走了當今聖上的御內褲~
 Chance          70
 MaxNumber       3
 Type            BOUNTY_GOLD
@@ -43,7 +43,7 @@ End
 Mobile          594
 Room            -1
 Message
-�@���O�H�ݤF�N�R�����Z�å�q~
+一隻令人看了就吐的狗擾亂交通~
 Chance          70
 MaxNumber       3
 Type            BOUNTY_GOLD
@@ -56,7 +56,7 @@ End
 Mobile          591
 Room            -1
 Message
-���@�ӳå�b�@�ɦU�a�������@��~
+有一個傢伙在世界各地不停的作亂~
 Chance          1
 MaxNumber       1
 Type            BOUNTY_FIRMAN
@@ -69,7 +69,7 @@ End
 Mobile          592
 Room            -1
 Message
-���@�䳥�߫r���F�����ӦZ���s��°�~
+有一支野貓咬走了當今皇后的御圍兜兜~
 Chance          15
 MaxNumber       2
 Type            BOUNTY_GOLD
@@ -82,7 +82,7 @@ End
 Mobile          595
 Room            -1
 Message
-�����j�n�۹D�R�u�ڪ����H�����I�q�ڡT�v�M�ٷQ�]��~
+董卓大聲喊道﹕「我的僕人竟敢背叛我﹗」﹐還想跑路~
 Chance          2
 MaxNumber       1
 Type            BOUNTY_FIRMAN
@@ -95,7 +95,7 @@ End
 Mobile          597
 Room            -1
 Message
-�k�̪ͭ`�N�M�X�{�F�ܮz���Ī�j�s~
+女生們注意﹐出現了很弱的採花大盜~
 Chance          15
 MaxNumber       2
 Type            BOUNTY_GOLD

@@ -1,7 +1,7 @@
 Name            detect hidden~
-Cname           �����ð�~
+Cname           偵測藏匿~
 Slot            SLOT_DETECT_HIDDEN
-Msgoff          �A���P�D���ܤƸ��S���P���O�F�T~
+Msgoff          你對於周遭的變化較沒有感受力了﹗~
 Check           check_unrigid_attack~
 Function        cast_detect_hidden~
 Position        POS_STANDING
@@ -37,11 +37,11 @@ Location        AFF_NONE
 End
 
 Help
-�����ðγN:
+偵測藏匿術:
 
-�o�@���k�N�i�H�ϧA���|�P���ܤƷP�������M�i�H��ı��@����
-�ΰ_�Ӫ��H�Ϊ��M���|�D�창ŧ�άO�@�����ê������M���A���_�I
-�ȵ{���i�ίʡC
+這一項法術可以使你對於四周的變化感受更明顯﹐可以察覺到一些隱
+匿起來的人或物﹐不會遭到偷襲或是一些隱藏的陷阱﹐對於你的冒險
+旅程不可或缺。
 
 ~
 

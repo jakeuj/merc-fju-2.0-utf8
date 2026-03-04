@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A�Q��Y�Ǫ��~���ص��P�@���ж����H�ɡM�A�i�H�ϥ� [1;32mgive[0m �ӧ�F��浹�O�H�M
-���O�Y�O�A�����ŤӧC�M�o�Ӱʧ@�i�O�����Ӫ���T
+當你想把某些物品轉贈給同一間房間的人時﹐你可以使用 [1;32mgive[0m 來把東西交給別人﹐
+但是若是你的等級太低﹐這個動作可是做不來的喔﹗
 
-�Ьd�ߡRgive
+請查詢﹕give
 ~
 End

@@ -1,7 +1,7 @@
 Name            bless~
-Cname           ¸s¥P¯¬ºÖ~
+Cname           ç¾¤ä»™ç¥ç¦~
 Slot            SLOT_CAST_BLESS
-Msgoff          §A·P¨ì¸û¤£¨ü«O¦ö¤F¡T~
+Msgoff          ä½ æ„Ÿåˆ°è¼ƒä¸å—ä¿ä½‘äº†ï¹—~
 Function        spell_cast_bless~
 Position        POS_STANDING
 Type            TAR_CHAR_DEFENSIVE

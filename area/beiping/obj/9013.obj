@@ -1,10 +1,10 @@
 Vnum            9013
 Name            agraffe robe~
-ShortDesc       «Cµ·³n¥Ò~
+ShortDesc       é’çµ²è»Ÿç”²~
 Description
-ÁöµM¬O¥Îª÷ÄÝµ·½u¥´»s¦¨ªº¡M¦ý¬O¤@ÂI¤]¤£·|¼vÅT¨­Åéªº¬¡°Ê¡M
-¯à´£¨Ñ¤£¿ùªº«OÅ@¯à¤O¡C~
-Unit            ¥ó~
+é›–ç„¶æ˜¯ç”¨é‡‘å±¬çµ²ç·šæ‰“è£½æˆçš„ï¹ä½†æ˜¯ä¸€é»žä¹Ÿä¸æœƒå½±éŸ¿èº«é«”çš„æ´»å‹•ï¹
+èƒ½æä¾›ä¸éŒ¯çš„ä¿è­·èƒ½åŠ›ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

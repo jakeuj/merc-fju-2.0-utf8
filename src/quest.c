@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -25,26 +25,26 @@ void set_quest( CHAR_DATA * ch, char * mark )
 
   if ( !ch || !mark || !*mark )
   {
-    mudlog( LOG_DEBUG, "set_quest: ¨Ó·½¦³°İÃD." );
+    mudlog( LOG_DEBUG, "set_quest: ä¾†æºæœ‰å•é¡Œ." );
     RETURN_NULL();
   }
 
   if ( IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "set_quest: ¹ï¶H¬O«Dª±®a." );
+    mudlog( LOG_DEBUG, "set_quest: å°è±¡æ˜¯éç©å®¶." );
     RETURN_NULL();
   }
 
-  /* Á×§K¦sÀÉ®É¦³ ~ ³o­Ó²Å¸¹ */
+  /* é¿å…å­˜æª”æ™‚æœ‰ ~ é€™å€‹ç¬¦è™Ÿ */
   smash_tilde( mark );
 
   if ( !( aQuest = quest_lookup( mark ) ) )
   {
-    mudlog( LOG_DEBUG, "set_quest: ¿ù»~ÃöÁä¦r%s.", mark );
+    mudlog( LOG_DEBUG, "set_quest: éŒ¯èª¤é—œéµå­—%s.", mark );
     RETURN_NULL();
   }
 
-  /* ÀË¬d¬O§_¦³­«½Æ */
+  /* æª¢æŸ¥æ˜¯å¦æœ‰é‡è¤‡ */
   for ( pQuest = ch->quest; pQuest; pQuest = pQuest->next )
     if ( pQuest->link == aQuest ) RETURN_NULL();
 
@@ -65,19 +65,19 @@ bool check_quest( CHAR_DATA * ch, const char * mark )
 
   if ( !ch || !mark || !*mark )
   {
-    mudlog( LOG_DEBUG, "check_quest: ¨Ó·½¦³¿ù»~." );
+    mudlog( LOG_DEBUG, "check_quest: ä¾†æºæœ‰éŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "check_quest: ¹ï¶H¬O«Dª±®a." );
+    mudlog( LOG_DEBUG, "check_quest: å°è±¡æ˜¯éç©å®¶." );
     RETURN( FALSE );
   }
 
   if ( !( aQuest = quest_lookup( mark ) ) )
   {
-    mudlog( LOG_DEBUG, "check_quest: ¿ù»~ÃöÁä¦r%s.", mark );
+    mudlog( LOG_DEBUG, "check_quest: éŒ¯èª¤é—œéµå­—%s.", mark );
     RETURN( FALSE );
   }
 
@@ -111,13 +111,13 @@ void rem_quest( CHAR_DATA * ch, const char * mark )
 
   if ( !ch || !mark || !*mark )
   {
-    mudlog( LOG_DEBUG, "rem_quest: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "rem_quest: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
   if ( !( aQuest = quest_lookup( mark ) ) )
   {
-    mudlog( LOG_DEBUG, "rem_quest: ¿ù»~ÃöÁä¦r%s.", mark );
+    mudlog( LOG_DEBUG, "rem_quest: éŒ¯èª¤é—œéµå­—%s.", mark );
     RETURN_NULL();
   }
 
@@ -135,7 +135,7 @@ void rem_quest( CHAR_DATA * ch, const char * mark )
     prev = pQuest;
   }
 
-  mudlog( LOG_DEBUG, "rem_quest: §ä¤£¨ì¼Ğ°O %s.", mark );
+  mudlog( LOG_DEBUG, "rem_quest: æ‰¾ä¸åˆ°æ¨™è¨˜ %s.", mark );
   RETURN_NULL();
 }
 
@@ -155,13 +155,13 @@ FUNCTION( do_qstat )
   {
     if ( !quest_list )
     {
-      act( "$t¨S¦³¥ô¦ó¸ÑÁ¼¸ê°T¡T", ch, mud_name, NULL, TO_CHAR );
+      act( "$tæ²’æœ‰ä»»ä½•è§£è¬è³‡è¨Šï¹—", ch, mud_name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m¶¶§Ç ¸ÑÁ¼ÃöÁä¦r           ¸ÑÁ¼¸Ñ»¡°T®§"
-      "                  Åã¥Ü                  \n\r\e[0m" );
+    send_to_buffer( "\e[1;33;44mé †åº è§£è¬é—œéµå­—           è§£è¬è§£èªªè¨Šæ¯"
+      "                  é¡¯ç¤º                  \n\r\e[0m" );
     for ( count = 0, aQuest = quest_list; aQuest; aQuest = aQuest->next )
     {
       send_to_buffer( "%3d. %-20s %-30s %s\n\r"
@@ -174,7 +174,7 @@ FUNCTION( do_qstat )
 
   if ( !( victim = get_char_world( ch, arg ) ) )
   {
-    act( "¨S¦³§ä¨ì§Aªº¹ï¶H $2$T$0¡C", ch, NULL, arg, TO_CHAR );
+    act( "æ²’æœ‰æ‰¾åˆ°ä½ çš„å°è±¡ $2$T$0ã€‚", ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -186,13 +186,13 @@ FUNCTION( do_qstat )
     for ( count = 0, pQuest = victim->quest; pQuest; pQuest = pQuest->next )
     {
       if ( !( aQuest = pQuest->link ) ) continue;
-      if ( count == 0 ) send_to_buffer( "%sªº¸Ñ°gÃöÁä¦r¦³\n\r"
+      if ( count == 0 ) send_to_buffer( "%sçš„è§£è¿·é—œéµå­—æœ‰\n\r"
         , mob_name( ch, victim ) );
 
       send_to_buffer( "%2d. %s %s\n\r", ++count, aQuest->mark, aQuest->info );
     }
 
-    if ( count == 0 ) send_to_buffer( "%s¨S¦³¥ô¦óªº¸Ñ°gÃöÁä¦r¡C\n\r"
+    if ( count == 0 ) send_to_buffer( "%sæ²’æœ‰ä»»ä½•çš„è§£è¿·é—œéµå­—ã€‚\n\r"
       , mob_name( ch, victim ) );
 
     print_buffer( ch );
@@ -202,7 +202,7 @@ FUNCTION( do_qstat )
   {
     if ( !( aQuest = quest_lookup( arg ) ) )
     {
-      act( "¨t²Î¨S¦³$t¸Ñ°gÃöÁä¦r¡C", ch, arg, NULL, TO_CHAR );
+      act( "ç³»çµ±æ²’æœ‰$tè§£è¿·é—œéµå­—ã€‚", ch, arg, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -210,12 +210,12 @@ FUNCTION( do_qstat )
     {
       if ( pQuest->link == aQuest )
       {
-        act( "$N¦³$t³o­Ó¸Ñ°gÃöÁä¦r¡C", ch, aQuest->mark, victim, TO_CHAR );
+        act( "$Næœ‰$té€™å€‹è§£è¿·é—œéµå­—ã€‚", ch, aQuest->mark, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
 
-    act( "$N¨S¦³$t¸Ñ°gÃöÁä¦r¡C", ch, arg, victim, TO_CHAR );
+    act( "$Næ²’æœ‰$tè§£è¿·é—œéµå­—ã€‚", ch, arg, victim, TO_CHAR );
   }
   RETURN_NULL();
 }
@@ -231,19 +231,19 @@ FUNCTION( do_qset )
 
   if ( !arg[0] )
   {
-    send_to_char( "§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß qset\n\r", ch );
+    send_to_char( "ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ qset\n\r", ch );
     RETURN_NULL();
   }
 
   if ( !( victim = get_char_world( ch, arg ) ) )
   {
-    act( "§ä¤£¨ì§Aªº¹ï¶H $2$T$0¡T", ch, NULL, arg, TO_CHAR );
+    act( "æ‰¾ä¸åˆ°ä½ çš„å°è±¡ $2$T$0ï¹—", ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
   if ( IS_NPC( victim ) )
   {
-    act( "¤£¯à¨Ï¥Î¦b«Dª±®a$N¨­¤W¡T", ch, NULL, victim, TO_CHAR );
+    act( "ä¸èƒ½ä½¿ç”¨åœ¨éç©å®¶$Nèº«ä¸Šï¹—", ch, NULL, victim, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -253,54 +253,54 @@ FUNCTION( do_qset )
   {
   default:
 
-    send_to_char( "§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß qset¡C\n\r", ch );
+    send_to_char( "ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ qsetã€‚\n\r", ch );
     break;
 
   case '+':
 
     if ( !arg[1] )
     {
-      send_to_char( "§A­n¥[¤J­ş¤@­ÓÃöÁä¦r¡S\n\r", ch );
+      send_to_char( "ä½ è¦åŠ å…¥å“ªä¸€å€‹é—œéµå­—ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( check_quest( victim, arg + 1 ) )
     {
-      act( "¹ï¤£°_¡M³o­ÓÃöÁä¦r $t ¤w¸g¦³¤F³á¡T", ch, arg + 1, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹é€™å€‹é—œéµå­— $t å·²ç¶“æœ‰äº†å–”ï¹—", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !quest_lookup( arg + 1 ) )
     {
-      act( "¹ï¤£°_¡M¨t²Î¨S¦³³o­Ó¸ÑÁ¼ÃöÁä¦r $t¡C", ch, arg + 1, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ç³»çµ±æ²’æœ‰é€™å€‹è§£è¬é—œéµå­— $tã€‚", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     set_quest( victim, arg + 1 );
-    act( "§A¬°$N¥[¤J¤F$t³o­ÓÃöÁä¦r¡C", ch, arg + 1, victim, TO_CHAR );
+    act( "ä½ ç‚º$NåŠ å…¥äº†$té€™å€‹é—œéµå­—ã€‚", ch, arg + 1, victim, TO_CHAR );
     break;
 
   case '-':
 
     if ( !arg[1] )
     {
-      send_to_char( "§A­n§R°£­ş¤@­ÓÃöÁä¦r¡S\n\r", ch );
+      send_to_char( "ä½ è¦åˆªé™¤å“ªä¸€å€‹é—œéµå­—ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !quest_lookup( arg + 1 ) )
     {
-      act( "¨t²Î¤º¨S¦³ $2$T$0 ³o­ÓÃöÁä¦r¡C", ch, NULL, arg+1, TO_CHAR );
+      act( "ç³»çµ±å…§æ²’æœ‰ $2$T$0 é€™å€‹é—œéµå­—ã€‚", ch, NULL, arg+1, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !check_quest( victim, arg + 1 ) )
     {
-      act( "$N¨S¦³³o­ÓÃöÁä¦r $t¡C", ch, arg + 1, victim, TO_CHAR );
+      act( "$Næ²’æœ‰é€™å€‹é—œéµå­— $tã€‚", ch, arg + 1, victim, TO_CHAR );
       RETURN_NULL();
     }
 
-    act( "§A²¾¥h¤F$NªºÃöÁä¦r$t¡C", ch, arg+1, victim, TO_CHAR );
+    act( "ä½ ç§»å»äº†$Nçš„é—œéµå­—$tã€‚", ch, arg+1, victim, TO_CHAR );
     rem_quest( victim, arg + 1 );
     break;
   }
@@ -317,14 +317,14 @@ bool is_quest( CHAR_DATA * ch, char * opr, char * val )
 
   if ( IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "is_quest: ¹ï¶H¬O«Dª±®a." );
+    mudlog( LOG_DEBUG, "is_quest: å°è±¡æ˜¯éç©å®¶." );
     RETURN( FALSE );
   }
 
   one_argument( val, arg );
   if ( !arg[0] || !opr || !*opr )
   {
-    mudlog( LOG_DEBUG, "is_quest: ¨S¦³¤Ş¼Æ" );
+    mudlog( LOG_DEBUG, "is_quest: æ²’æœ‰å¼•æ•¸" );
     RETURN( FALSE );
   }
 
@@ -333,7 +333,7 @@ bool is_quest( CHAR_DATA * ch, char * opr, char * val )
   if ( !str_cmp( opr, "!=" ) ) RETURN( !found );
   if ( !str_cmp( opr, "==" ) ) RETURN( found );
 
-  mudlog( LOG_DEBUG, "is_quest: ¿ù»~ªº¹Bºâ¤¸ %s.", opr );
+  mudlog( LOG_DEBUG, "is_quest: éŒ¯èª¤çš„é‹ç®—å…ƒ %s.", opr );
   RETURN( FALSE );
 }
 
@@ -352,13 +352,13 @@ FUNCTION( do_mpsetquest )
 
   if ( !arg1[0] || !arg2[0] )
   {
-    mudlog( LOG_DEBUG, "do_mpsetquest: MOB %d ¤Ş¼Æ¿ù»~.", vnum );
+    mudlog( LOG_DEBUG, "do_mpsetquest: MOB %d å¼•æ•¸éŒ¯èª¤.", vnum );
     RETURN_NULL();
   }
 
   if ( !( victim = get_pc_room( ch, arg1 ) ) )
   {
-    mudlog( LOG_DEBUG, "do_mpsetquest: MOB %d ¹ï¶H¤£¦s¦b.", vnum );
+    mudlog( LOG_DEBUG, "do_mpsetquest: MOB %d å°è±¡ä¸å­˜åœ¨.", vnum );
     RETURN_NULL();
   }
 
@@ -383,13 +383,13 @@ FUNCTION( do_mpremquest )
 
   if ( !arg1[0] || !arg2[0] )
   {
-    mudlog( LOG_DEBUG, "do_mpremquest: MOB %d ¤Ş¼Æ¿ù»~.", vnum );
+    mudlog( LOG_DEBUG, "do_mpremquest: MOB %d å¼•æ•¸éŒ¯èª¤.", vnum );
     RETURN_NULL();
   }
 
   if ( !( victim = get_pc_room( ch, arg1 ) ) )
   {
-    mudlog( LOG_DEBUG, "do_mpremquest: MOB %d ¹ï¶H¤£¦s¦b.", vnum );
+    mudlog( LOG_DEBUG, "do_mpremquest: MOB %d å°è±¡ä¸å­˜åœ¨.", vnum );
     RETURN_NULL();
   }
 
@@ -412,7 +412,7 @@ FUNCTION( do_task )
 
   if ( !ch || !verify_char( ch ) )
   {
-    mudlog( LOG_DEBUG, "do_task: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "do_task: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -436,7 +436,7 @@ FUNCTION( do_task )
 
     else if ( !IS_IMMORTAL( ch ) )
     {
-      send_to_char( "§AªºÅv¤O¤£°÷¬İ§O¤Hªº¥ô°È«ü¥Ü¡C\n\r", ch );
+      send_to_char( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹åˆ¥äººçš„ä»»å‹™æŒ‡ç¤ºã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -444,19 +444,19 @@ FUNCTION( do_task )
     {
       if ( !( victim = get_char_world( ch, arg ) ) )
       {
-        act( "§ä¤£¨ì§A­nÆ[¬İªº¹ï¶H $2$T$0¡C", ch, NULL, arg, TO_CHAR );
+        act( "æ‰¾ä¸åˆ°ä½ è¦è§€çœ‹çš„å°è±¡ $2$T$0ã€‚", ch, NULL, arg, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( IS_NPC( victim ) )
       {
-        act( "«Dª±®a$N¬O¨S¦³¥ô°È«ü¥Ü¡C", ch, NULL, victim, TO_CHAR );
+        act( "éç©å®¶$Næ˜¯æ²’æœ‰ä»»å‹™æŒ‡ç¤ºã€‚", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( get_trust( ch ) < get_trust( victim ) )
       {
-        act( "§AªºÅv¤O¤£°÷¬İ$Nªº¥ô°È«ü¥Ü¡C", ch, NULL, victim, TO_CHAR );
+        act( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹$Nçš„ä»»å‹™æŒ‡ç¤ºã€‚", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
@@ -468,17 +468,17 @@ FUNCTION( do_task )
       if ( !aQuest->title
         && !check_quest( victim, aQuest->mark )
         && !IS_IMMORTAL( victim ) ) continue;
-      if ( count == 0 ) send_to_buffer( "%s¦b%s¸ÑÁ¼¥ô°È¦³¡R\n\r"
+      if ( count == 0 ) send_to_buffer( "%såœ¨%sè§£è¬ä»»å‹™æœ‰ï¹•\n\r"
         , mob_name( ch, victim ), mud_name );
 
       chinese_number( ++count, buf );
-      send_to_buffer( "%12s¡B %-30s %s%2s\e[0m\n\r"
+      send_to_buffer( "%12sã€ %-30s %s%2s\e[0m\n\r"
         , buf, aQuest->info
         , check_quest( victim, aQuest->mark ) ? "\e[1;32m" : ""
         , YESNO( check_quest( victim, aQuest->mark ) ) );
     }
 
-    if ( count == 0 ) send_to_buffer( "%s¦b%s¨S¦³¥ô¦ó©úÅãªº¸ÑÁ¼°Ê§@¡C\n\r"
+    if ( count == 0 ) send_to_buffer( "%såœ¨%sæ²’æœ‰ä»»ä½•æ˜é¡¯çš„è§£è¬å‹•ä½œã€‚\n\r"
       , mob_name( ch, victim ), mud_name );
 
     print_buffer( ch );
@@ -491,13 +491,13 @@ FUNCTION( do_task )
 
     if ( !quest_list )
     {
-      act( "$t¨S¦³¥ô¦ó¥ô°È¸ÑÁ¼°Ê§@¡C", ch, mud_name, NULL, TO_CHAR );
+      act( "$tæ²’æœ‰ä»»ä½•ä»»å‹™è§£è¬å‹•ä½œã€‚", ch, mud_name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !arg[0] )
     {
-      send_to_char( "§A­n¬İ¨º¤@­Ó¥ô°Èªº´£¥Ü©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦çœ‹é‚£ä¸€å€‹ä»»å‹™çš„æç¤ºå‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -509,17 +509,17 @@ FUNCTION( do_task )
       || !aQuest->help
       || !aQuest->help[0] )
     {
-      send_to_char( "¹ï¤£°_¡M¨S¦³Ãö©ó³o­Ó¥ô°Èªº´£¥Ü¡M§A·Q¤Ó¦h¤F¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é—œæ–¼é€™å€‹ä»»å‹™çš„æç¤ºï¹ä½ æƒ³å¤ªå¤šäº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "Ãö©ó$tªº¥ô°È´£¥Ü¦p¤U¡R$A$T", ch, aQuest->info, aQuest->help, TO_CHAR );
+    act( "é—œæ–¼$tçš„ä»»å‹™æç¤ºå¦‚ä¸‹ï¹•$A$T", ch, aQuest->info, aQuest->help, TO_CHAR );
     RETURN_NULL();
   }
 
   else if ( !IS_IMMORTAL( ch ) )
   {
-    send_to_char( "§AªºÅv¤O¤£°÷¬İ§O¤Hªº¥ô°È«ü¥Ü¡C\n\r", ch );
+    send_to_char( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹åˆ¥äººçš„ä»»å‹™æŒ‡ç¤ºã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -527,19 +527,19 @@ FUNCTION( do_task )
   {
     if ( !( victim = get_char_world( ch, arg ) ) )
     {
-      act( "§ä¤£¨ì§A­nÆ[¬İªº¹ï¶H $2$T$0¡C", ch, NULL, arg, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ è¦è§€çœ‹çš„å°è±¡ $2$T$0ã€‚", ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( IS_NPC( victim ) )
     {
-      act( "«Dª±®a$N¬O¨S¦³¥ô°È«ü¥Ü¡C", ch, NULL, victim, TO_CHAR );
+      act( "éç©å®¶$Næ˜¯æ²’æœ‰ä»»å‹™æŒ‡ç¤ºã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( get_trust( ch ) < get_trust( victim ) )
     {
-      act( "§AªºÅv¤O¤£°÷¬İ$Nªº¥ô°È«ü¥Ü¡C", ch, NULL, victim, TO_CHAR );
+      act( "ä½ çš„æ¬ŠåŠ›ä¸å¤ çœ‹$Nçš„ä»»å‹™æŒ‡ç¤ºã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
   }
@@ -549,14 +549,14 @@ FUNCTION( do_task )
   {
     if ( !( aQuest = pQuest->link ) || !aQuest->show ) continue;
 
-    if ( count == 0 ) send_to_buffer( "%sªº¥ô°È«ü¥Ü¦p¤U¡R\n\r"
+    if ( count == 0 ) send_to_buffer( "%sçš„ä»»å‹™æŒ‡ç¤ºå¦‚ä¸‹ï¹•\n\r"
       , mob_name( ch, victim ) );
 
     chinese_number( ++count, buf );
-    send_to_buffer( "%4s¡B%-30s\n\r", buf, aQuest->info );
+    send_to_buffer( "%4sã€%-30s\n\r", buf, aQuest->info );
   }
 
-  if ( count == 0 ) send_to_buffer( "%s¨S¦³¥ô¦ó¥ô°È«ü¥Ü¡C\n\r"
+  if ( count == 0 ) send_to_buffer( "%sæ²’æœ‰ä»»ä½•ä»»å‹™æŒ‡ç¤ºã€‚\n\r"
     , mob_name( ch, victim ) );
 
   print_buffer( ch );

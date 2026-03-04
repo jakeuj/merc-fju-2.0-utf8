@@ -3,11 +3,11 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A���D�A�ثe���ӤH�]�w�ܡS�A�i�H���տ�J([1;32mauto[0m)�ӹ�ݳ�M�A�٥i�H��J
-([1;32mconfig[0m)�ӧ��ӤH���]�w�C���O�A�i�H�۰ʩ^�m�Q�A�������H����B�۰����
-�X�f�����C
+你知道你目前的個人設定嗎﹖你可以嘗試輸入([1;32mauto[0m)來察看喔﹐你還可以輸入
+([1;32mconfig[0m)來更改個人的設定。像是你可以自動奉獻被你殺死的人屍體、自動顯示
+出口等等。
 
-�Ьd�ߡRauto�Bconfig
+請查詢﹕auto、config
 ~
 
 End

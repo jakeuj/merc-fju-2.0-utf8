@@ -1,10 +1,10 @@
 Vnum            CLASS_BRAVO
 Name            bravo~
-Cname           ¨ë  «È~
-Title           ¤d¤s§Ú¿W¦æ~
+Cname           åˆº  å®¢~
+Title           åƒå±±æˆ‘ç¨è¡Œ~
 LowerLimit      50
 UpperLimit      L_HER
-LimitMsg        $Y$n¤j³Û¡R¡u¥i´c¡T¯uªº¨º»ò·Q­n¦º¶Ü¡S§Ú¦¨¥ş§A¡M¬İ©Û¡T¡v$Z~
+LimitMsg        $Y$nå¤§å–Šï¹•ã€Œå¯æƒ¡ï¹—çœŸçš„é‚£éº¼æƒ³è¦æ­»å—ï¹–æˆ‘æˆå…¨ä½ ï¹çœ‹æ‹›ï¹—ã€$Z~
 Limit           3500
 Multiplier      40
 RebirthGold     10000

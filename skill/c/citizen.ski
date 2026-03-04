@@ -1,5 +1,5 @@
 Name            citizen~
-Cname           �î�~
+Cname           亂拳~
 Slot            SLOT_CITIZEN
 Msgoff          ~
 Position        POS_FIGHTING
@@ -26,12 +26,12 @@ Qutoient        1
 Adeptation      0
 Limit           CLASS_DEMOS      1  95
 Help
-�o�O��H�Ϊ��ۦ��C
+這是行人用的招式。
 
 ~
 #Damage
 Description
-$n��$N�Żؤj�}�M�N�V$N���X�u�î��v�M$N�u���@�諸���v�V$N���ӡM$N�L�k���{�L�M�Q���������C�@�����@���C~
+$n看$N空隙大開﹐就向$N打出「亂拳」﹐$N只見一堆的拳影向$N打來﹐$N無法全閃過﹐被打的全身青一塊紫一塊。~
 Chance          10
 Value           20
 Parry           0
@@ -41,7 +41,7 @@ End
 
 #Damage
 Description
-$n�ݡu�î��v�L�k�ѨM$N�M�u�n�ϥX�u�ûL�v�V$N�W�B���B�U�T�L��h�M$N�L�k�{�סM�Q�𪺦R��˦a�C~
+$n看「亂拳」無法解決$N﹐只好使出「亂腿」向$N上、中、下三盤踢去﹐$N無法閃避﹐被踢的吐血倒地。~
 Chance          10
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ End
 
 #Damage
 Description
-$n��$N�p���������B�M�u�n�ϥX���ۡu�å��v�M$N�u��$n���Y�M����M�L�M�ӡM���M�Ϊ��W�����V$N��ӡM$N�Q�����V�᭸�X�T�V�M�˦a���_�C~
+$n看$N如此的難收拾﹐只好使出絕招「亂打」﹐$N只見$n用頭﹐手爪﹐腿﹐肩﹐膝﹐用的上的全向$N攻來﹐$N被打的向後飛出三丈﹐倒地不起。~
 Chance          10
 Value           20
 Parry           0

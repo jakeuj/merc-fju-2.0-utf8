@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A�O���Oı�o�C���� [1;32mareas[0m ���M�i�H���D�C�����ϰ�M���O�٬O���Ӿ�o�ϰ쪺
-�a�z��m�ܡS�S���Y�M�o�̦��Ӥp�]�p�M�ո� [1;32mmap[0m �ݬݧa�T
+你是不是覺得每次打 [1;32mareas[0m 雖然可以知道遊戲的區域﹐但是還是不太曉得區域的
+地理位置嗎﹖沒關係﹐這裡有個小設計﹐試試 [1;32mmap[0m 看看吧﹗
 
-�Ьd�ߡRmap
+請查詢﹕map
 ~
 End

@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -22,7 +22,7 @@ void set_enroll( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim )
   {
-    mudlog( LOG_DEBUG, "set_enroll: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_enroll: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -54,7 +54,7 @@ bool is_enroll( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim )
   {
-    mudlog( LOG_DEBUG, "is_enroll: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "is_enroll: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -75,7 +75,7 @@ void extract_enroll( CHAR_DATA * ch, const char * name )
 
   if ( !ch || !name || !*name )
   {
-    mudlog( LOG_DEBUG, "extract_enroll: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "extract_enroll: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -107,7 +107,7 @@ void mprog_enroll_trigger( CHAR_DATA * ch )
 
   if ( !ch || !ch->in_room )
   {
-    mudlog( LOG_DEBUG, "mprog_enroll_trigger: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "mprog_enroll_trigger: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -145,17 +145,17 @@ void mprog_enroll_trigger( CHAR_DATA * ch )
     {
     default:
     case 0:
-      sprintf( buf, "%s\e[0m¡M§A³o­Ó¤p¨ßØæ¥J¡M¤S³Q§Ú¶e¨ì¤F§a¡C"
+      sprintf( buf, "%s\e[0mï¹ä½ é€™å€‹å°å…”å´½ä»”ï¹åˆè¢«æˆ‘é€®åˆ°äº†å§ã€‚"
         , mob_name( ch, victim ) );
       break;
 
     case 1:
-      sprintf( buf, "§A³o­Ó¤Ñ±şªº%s\e[0m¡MÁÙ¯u¬O­Ş®a¸ô¯¶¡C"
+      sprintf( buf, "ä½ é€™å€‹å¤©æ®ºçš„%s\e[0mï¹é‚„çœŸæ˜¯å†¤å®¶è·¯çª„ã€‚"
         , mob_name( ch, victim ) );
       break;
 
     case 2:
-      sprintf( buf, "½ñ¯}ÅK¾cµL³V³B¡M±o¨Ó¥ş¤£¶O¥\\¤Ò¡C%s\e[0m¡M¨ü¦º§a¡C"
+      sprintf( buf, "è¸ç ´éµé‹ç„¡è¦“è™•ï¹å¾—ä¾†å…¨ä¸è²»åŠŸ\å¤«ã€‚%s\e[0mï¹å—æ­»å§ã€‚"
         , mob_name( ch, victim ) );
       break;
     }

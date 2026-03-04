@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A���D�o�̤]���d�����ܡS�A�i�H�ϥ� [1;32mread[0m �Ӿ\Ū�L��T�p�G�A�n�o���峹�M
-�A�i�H�ϥ� [1;32medit[0m �ӽs�誺�A���峹�M����ϥ� [1;32mpost[0m �ӵo���C
+你知道這裡也有留言版嗎﹖你可以使用 [1;32mread[0m 來閱讀他喔﹗如果你要發表文章﹐
+你可以使用 [1;32medit[0m 來編輯的你的文章﹐之後使用 [1;32mpost[0m 來發表。
 
-�Ьd�ߡRedit�Bread�Bpost
+請查詢﹕edit、read、post
 ~
 End

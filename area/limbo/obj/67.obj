@@ -1,9 +1,9 @@
 Vnum            67
 Name            peanut~
-ShortDesc       ´ÔÆQªá¥Í~
+ShortDesc       æ¤’é¹½èŠ±ç”Ÿ~
 Description
-¤@³UÅxº¡¯S»sÆQ¤Ú¡M¬İ°_¨Ó«Ü¦n¦Yªºªá¥Í(peanut)¡C~
-Unit            ½L~
+ä¸€è¢‹ç‘æ»¿ç‰¹è£½é¹½å·´ï¹çœ‹èµ·ä¾†å¾ˆå¥½åƒçš„èŠ±ç”Ÿ(peanut)ã€‚~
+Unit            ç›¤~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           1

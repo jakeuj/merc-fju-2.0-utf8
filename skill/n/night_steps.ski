@@ -1,5 +1,5 @@
 Name            night steps~
-Cname           �ʰ��]��B~
+Cname           百鬼夜行步~
 Slot            SLOT_NIGHT_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -32,8 +32,8 @@ Help            ~
 
 #Damage
 Description
-$n�ϥX$P�i�ʰ��]��B�j$Z�Ĥ@��$b�y���v�����z$Z�M���ΥѤ@�ܤQ�M�ѤQ�ܦʡM��
-��h�ɬO$n�����v�M�p��$N���ۦ��L�q�U��C~
+$n使出$P【百鬼夜行步】$Z第一式$b『鬼影重重』$Z﹐身形由一變十﹐由十變百﹐放眼
+望去盡是$n的身影﹐如使$N的招式無從下手。~
 Chance          10
 Value           20
 Parry           0
@@ -43,8 +43,8 @@ End
 
 #Damage
 Description
-$n���M�I��R�n�M�ϥX$P�i�ʰ��]��B�j$Z�ĤG��$Y�y�]�α����z$Z�ۤƦ��L�Ƨ��]
-���ǡM�N$N���ۦ��@�@�ƸѡC~
+$n忽然沉氣吐聲﹐使出$P【百鬼夜行步】$Z第二式$Y『魔形掩身』$Z幻化成無數妖魔
+鬼怪﹐將$N的招式一一化解。~
 Chance          10
 Value           20
 Parry           0
@@ -54,8 +54,8 @@ End
 
 #Damage
 Description
-$n���ίe�ۡM�N�P���y�۰ʺ���¶�ۦۤv�M�ϥX$P�i�ʰ��]��B�j$Z�ĤT��$B�y��
-���P�Ρz$Z$N�Q��ʪ���y�a�ʡM�L�k��$n�o�X�����C~
+$n身形疾旋﹐將周邊氣流旋動緊緊圍繞著自己﹐使出$P【百鬼夜行步】$Z第三式$B『借
+風遁形』$Z$N被轉動的氣流帶動﹐無法對$n發出攻擊。~
 Chance          10
 Value           20
 Parry           0
@@ -65,8 +65,8 @@ End
 
 #Damage
 Description
-$n��M���S�C���M�i�L�@�R�M�@�}�}�C�ϱq$n���L���_�X�M��$N�������b��西�O$P
-�i�ʰ��]��B�j$Z�ĥ|��$G�y���𱻧Ρz$Z~
+$n突然眼露青光﹐張嘴一吐﹐一陣陣青煙從$n的嘴中冒出﹐使$N不知身在何方正是$P
+【百鬼夜行步】$Z第四式$G『鬼氣掩形』$Z~
 Chance          10
 Value           20
 Parry           0
@@ -76,8 +76,8 @@ End
 
 #Damage
 Description
-$n�f����䦳���M�|�P���M�ٮ�|�_�M���O$P�i�ʰ��]��B�j$Z�Ĥ���$g�y�U�]�׻١z
-$Z�M��$N�p�Y���������M�L�q�o�ۡC~
+$n口中喃喃有詞﹐四周忽然障氣四起﹐正是$P【百鬼夜行步】$Z第五式$g『萬魔避障』
+$Z﹐使$N如墜五里霧中﹐無從發招。~
 Chance          10
 Value           20
 Parry           0
@@ -87,8 +87,8 @@ End
 
 #Damage
 Description
-$n�}��C�P�B�M¤���b�e�M���j�b��M���O$P�i�ʰ��]��B�j$Z�̫�@��$R�y�]�P�ۦ��z
-$Z�M�i�S�������������M�N$N����պɤƬ��L�ΡC~
+$n腳踏七星步﹐瞻之在前﹐忽焉在後﹐正是$P【百鬼夜行步】$Z最後一招$R『魔星幻式』
+$Z﹐展露神鬼莫測之像﹐將$N的攻勢盡化為無形。~
 Chance          10
 Value           20
 Parry           0

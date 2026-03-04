@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -16,7 +16,7 @@
 
 CHAR_DATA * get_rebirth_char args( ( CHAR_DATA * , char * ) );
 
-/* ÂàÂ¾ */
+/* è½‰è· */
 FUNCTION( do_rebirth )
 {
   char         arg[MAX_INPUT_LENGTH];
@@ -27,28 +27,28 @@ FUNCTION( do_rebirth )
 
   PUSH_FUNCTION( "do_rebirth" );
 
-  /* «Dª±®a¤£¯àÂàÂ¾ */
+  /* éç©å®¶ä¸èƒ½è½‰è· */
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
   if ( !ch->class )
   {
-    send_to_char( "§AªºÂ¾·~¥¼©ú¡MµLªkÂàÂ¾¡C\n\r", ch );
+    send_to_char( "ä½ çš„è·æ¥­æœªæ˜ï¹ç„¡æ³•è½‰è·ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   argument = one_argument( argument , arg );
 
-  /* ¿é¤J¦r¦ê¬°ªÅ¦r¦ê */
+  /* è¼¸å…¥å­—ä¸²ç‚ºç©ºå­—ä¸² */
   if ( !arg[0] )
   {
-    send_to_char( "§A¦pªG¹ïÂàÂ¾¤£ÁA¸Ñ¡M½Ğ¬d¸ß rebirth¡C\n\r" , ch );
+    send_to_char( "ä½ å¦‚æœå°è½‰è·ä¸ç­è§£ï¹è«‹æŸ¥è©¢ rebirthã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
   if ( !str_prefix( arg, "!list" ) )
   {
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m¶¶§Ç °Ï °ì¦W ºÙ ¦P°Ï Â¾·~¦W ¤¤¤å¦WºÙ"
+    send_to_buffer( "\e[1;33;44mé †åº å€ åŸŸå ç¨± åŒå€ è·æ¥­å ä¸­æ–‡åç¨±"
       "                                            \e[0m\n\r" );
 
     for ( count = 0, mob = char_list; mob; mob = mob->next )
@@ -60,7 +60,7 @@ FUNCTION( do_rebirth )
         area = mob->in_room && mob->in_room->area ? mob->in_room->area : NULL;
         send_to_buffer( "%3d. %10s  %2s  %6s %-s\n\r"
           , ++count
-          , area ? area->name : "±q¯Ê"
+          , area ? area->name : "å¾ç¼º"
           , YESNO( area && ch->in_room && ch->in_room->area == area )
           , class_name( mob->class, FALSE )
           , mob_name( ch, mob ) );
@@ -69,83 +69,83 @@ FUNCTION( do_rebirth )
       }
     }
 
-    if ( count == 0 ) send_to_char( "¨S¦³¥i¥HÂàÂ¾ªº¤H¡T\n\r", ch );
+    if ( count == 0 ) send_to_char( "æ²’æœ‰å¯ä»¥è½‰è·çš„äººï¹—\n\r", ch );
     else print_buffer( ch );
 
     RETURN_NULL();
   }
 
-  /* IMM ¤£¯àÂàÂ¾ */
+  /* IMM ä¸èƒ½è½‰è· */
   if ( IS_IMMORTAL( ch ) )
   {
-    send_to_char( "§AªºÂ¾·~¬O¨t²ÎºŞ²z­û¡MÂà¤°»òÂ¾°Ú¡C\n\r" , ch );
+    send_to_char( "ä½ çš„è·æ¥­æ˜¯ç³»çµ±ç®¡ç†å“¡ï¹è½‰ä»€éº¼è·å•Šã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* §ä¨ì¦P¤@­Ó·Q­nÂà¦¨Â¾·~ªº¤H */
+  /* æ‰¾åˆ°åŒä¸€å€‹æƒ³è¦è½‰æˆè·æ¥­çš„äºº */
   if ( !( mob = get_rebirth_char( ch , arg ) ) )
   {
-    act( "³o¸Ì¨S¦³ÂàÂ¾ªÌ $T¡MÁÙ¬O¦V§O¤H¥´Å¥¬İ¬İ§a¡C" , ch, NULL, arg, TO_CHAR );
+    act( "é€™è£¡æ²’æœ‰è½‰è·è€… $Tï¹é‚„æ˜¯å‘åˆ¥äººæ‰“è½çœ‹çœ‹å§ã€‚" , ch, NULL, arg, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¬O§_Ä@·NÀ°§O¤HÂàÂ¾, «Dª±®a³¡¥÷ */
+  /* æ˜¯å¦é¡˜æ„å¹«åˆ¥äººè½‰è·, éç©å®¶éƒ¨ä»½ */
   if ( (  IS_NPC( mob ) && !IS_SET( mob->act,  ACT_REBIRTH ) )
     || ( !IS_NPC( mob ) && !IS_SET( mob->turn, PLR_REBIRTH ) ) )
   {
-    act( "¹ï¤£°_¡M$NµLªkÀ°§AÂàÂ¾¡T", ch, NULL, mob, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$Nç„¡æ³•å¹«ä½ è½‰è·ï¹—", ch, NULL, mob, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¤£¯à­«½ÆÂàÂ¾ */
+  /* ä¸èƒ½é‡è¤‡è½‰è· */
   if ( ch->level >= ch->class->low_rebirth
     && ch->level <= ch->class->high_rebirth )
   {
-    send_to_char( "¹ï¤£°_¡M§A¤£¯à­«½ÆÂàÂ¾¡C", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ ä¸èƒ½é‡è¤‡è½‰è·ã€‚", ch );
     RETURN_NULL();
   }
 
   if ( !( pClass = mob->class ) )
   {
-    send_to_char( "¨t²ÎÂ¾·~¦³°İÃD¡C" , ch );
-    mudlog( LOG_DEBUG , "do_rebirth: ©Çª« %d Â¾·~¦³°İÃD"
+    send_to_char( "ç³»çµ±è·æ¥­æœ‰å•é¡Œã€‚" , ch );
+    mudlog( LOG_DEBUG , "do_rebirth: æ€ªç‰© %d è·æ¥­æœ‰å•é¡Œ"
       , mob->pIndexData ? mob->pIndexData->vnum : -1 );
     RETURN_NULL();
   }
 
-  /* µ¥¯Å©|¥¼¹F¨ì */
+  /* ç­‰ç´šå°šæœªé”åˆ° */
   if ( ch->level < pClass->low_rebirth || ch->level > pClass->high_rebirth )
   {
-    act( "§A¤£¾A¦X²{¦bÂà¥ô$T¡C", ch, NULL, class_name( pClass, TRUE ), TO_CHAR );
+    act( "ä½ ä¸é©åˆç¾åœ¨è½‰ä»»$Tã€‚", ch, NULL, class_name( pClass, TRUE ), TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ¬İ¬İ°÷¤£°÷ÂàÂ¾ª÷ */
+  /* çœ‹çœ‹å¤ ä¸å¤ è½‰è·é‡‘ */
   if ( ch->gold < pClass->rebirth_gold )
   {
-    send_to_char( "©êºp¡M§A¨­¤Wªº¿ú¤£¤Ó°÷®³¨ÓÂàÂ¾­C¡C" , ch );
+    send_to_char( "æŠ±æ­‰ï¹ä½ èº«ä¸Šçš„éŒ¢ä¸å¤ªå¤ æ‹¿ä¾†è½‰è·è€¶ã€‚" , ch );
     RETURN_NULL();
   }
 
-  /* ¬Y¨ÇÂ¾·~¤£¯àÂàÂ¾±o¨ì */
+  /* æŸäº›è·æ¥­ä¸èƒ½è½‰è·å¾—åˆ° */
   if ( pClass->associate != ch->class->vnum )
   {
-    act( "©êºp¡M§A¤£¯à³o¼ËÂàÂ¾¦¨$T¡C" , ch, NULL, class_name( pClass, TRUE ), TO_CHAR );
+    act( "æŠ±æ­‰ï¹ä½ ä¸èƒ½é€™æ¨£è½‰è·æˆ$Tã€‚" , ch, NULL, class_name( pClass, TRUE ), TO_CHAR );
     RETURN_NULL();
   }
 
-  /* µ¥¯Å¤w¸g¹F¨ìÂàÂ¾¼Ğ·Ç */
+  /* ç­‰ç´šå·²ç¶“é”åˆ°è½‰è·æ¨™æº– */
   ch->class = mob->class;
   gold_from_char( ch, pClass->rebirth_gold );
   set_title( ch, pClass->title );
 
-  act( "®¥ÁH§A¡M§A¤w¸gÂàÂ¾¦¨$t³o¶µÂ¾·~¤F¡C§A¥I¤F$I¨â»È¤l¡C"
+  act( "æ­ç¦§ä½ ï¹ä½ å·²ç¶“è½‰è·æˆ$té€™é …è·æ¥­äº†ã€‚ä½ ä»˜äº†$Iå…©éŠ€å­ã€‚"
     , ch, class_name( pClass, TRUE ) , &pClass->rebirth_gold, TO_CHAR );
 
   RETURN_NULL();
 }
 
-/* ¬d¸ßÂ¾·~ */
+/* æŸ¥è©¢è·æ¥­ */
 FUNCTION( do_vocation )
 {
   int           count;
@@ -160,7 +160,7 @@ FUNCTION( do_vocation )
 
   one_argument( argument , arg );
 
-  /* ¨S¦³°Ñ¼Æ«h¦C¦L©Ò¦³ªºÂ¾·~Â²ªí */
+  /* æ²’æœ‰åƒæ•¸å‰‡åˆ—å°æ‰€æœ‰çš„è·æ¥­ç°¡è¡¨ */
   if ( !arg[0] )
   {
     for ( pClass = class_list; pClass; pClass = pClass->next )
@@ -175,26 +175,26 @@ FUNCTION( do_vocation )
     RETURN_NULL();
   }
 
-  /* ¥ı§ä¥X¬İ¬İ¬O§_²Å¦XÂ¾·~ªº¿ï¶µ */
+  /* å…ˆæ‰¾å‡ºçœ‹çœ‹æ˜¯å¦ç¬¦åˆè·æ¥­çš„é¸é … */
   if ( ( pClass = is_class( arg, TRUE ) ) )
   {
     clear_buffer();
-    send_to_buffer( "Â¾·~¸¹½X¡R%d\n\r"
-                    "­^¤å¦WºÙ¡R%s\n\r"
-                    "¤¤¤å¦WºÙ¡R%s\n\r"
-                    "¹w³]©ïÀY¡R%s\n\r"
-                    "ÂàÂ¾µ¥¯Å¤U­­¡R%d\n\r"
-                    "ÂàÂ¾µ¥¯Å¤W­­¡R%d\n\r"
-                    "ÂàÂ¾©Ò»İª÷¿ú¡R%d\n\r"
-                    "ÂàÂ¾Äµ§iµ¥¯Å¡R%d\n\r"
-                    "¥i¾Ç§Ş¯à¼Æ¥Ø¡R%d\n\r"
-                    "­­¨îÂI¼Æ    ¡R%d\n\r"
-                    "­­¨î­¿¼Æ    ¡R%d\n\r"
-                    "­­¨î±Ô­z    ¡R%s\n\r"
-                    "¯à§_±o¨ìªk¤O¡R%s\n\r"
-                    "¹w³]Â¾·~¡R    %s\n\r"
-                    "±j¨îÂàÂ¾Â¾·~¡R%s\n\r"
-                    "¬O§_¥i¥H¿ï¾Ü¡R%s\n\r"
+    send_to_buffer( "è·æ¥­è™Ÿç¢¼ï¹•%d\n\r"
+                    "è‹±æ–‡åç¨±ï¹•%s\n\r"
+                    "ä¸­æ–‡åç¨±ï¹•%s\n\r"
+                    "é è¨­æŠ¬é ­ï¹•%s\n\r"
+                    "è½‰è·ç­‰ç´šä¸‹é™ï¹•%d\n\r"
+                    "è½‰è·ç­‰ç´šä¸Šé™ï¹•%d\n\r"
+                    "è½‰è·æ‰€éœ€é‡‘éŒ¢ï¹•%d\n\r"
+                    "è½‰è·è­¦å‘Šç­‰ç´šï¹•%d\n\r"
+                    "å¯å­¸æŠ€èƒ½æ•¸ç›®ï¹•%d\n\r"
+                    "é™åˆ¶é»æ•¸    ï¹•%d\n\r"
+                    "é™åˆ¶å€æ•¸    ï¹•%d\n\r"
+                    "é™åˆ¶æ•˜è¿°    ï¹•%s\n\r"
+                    "èƒ½å¦å¾—åˆ°æ³•åŠ›ï¹•%s\n\r"
+                    "é è¨­è·æ¥­ï¹•    %s\n\r"
+                    "å¼·åˆ¶è½‰è·è·æ¥­ï¹•%s\n\r"
+                    "æ˜¯å¦å¯ä»¥é¸æ“‡ï¹•%s\n\r"
       , pClass->vnum
       , pClass->name
       , pClass->cname
@@ -206,20 +206,20 @@ FUNCTION( do_vocation )
       , pClass->nskill
       , pClass->limit
       , pClass->multiplier
-      , pClass->msg_limit ? pClass->msg_limit : "(±q¯Ê)"
+      , pClass->msg_limit ? pClass->msg_limit : "(å¾ç¼º)"
       , YESNO( pClass->fMana    )
       , YESNO( pClass->rudiment )
       , YESNO( pClass->force    )
       , YESNO( pClass->select   ) );
 
       if ( ( pAssociate = class_lookup( pClass->associate ) ) )
-        send_to_buffer( "¥Ñ¤°»òÂ¾·~ÂàÂ¾¦Ó¨Ó¡R%s\n\r"
+        send_to_buffer( "ç”±ä»€éº¼è·æ¥­è½‰è·è€Œä¾†ï¹•%s\n\r"
           , pAssociate->cname );
 
       for ( count = 0; count < MAX_ATTR; count++ )
       {
-        send_to_buffer( "%2d.%sÄİ©Êªº¤W­­¡R%2d Äİ©Êªº¦]¼Æ¡R%3d "
-          "¹w³]¤W­­¡R%2d ¹w³]¤U­­¡R%2d ­^¶¯¥[¦¨¡R%2d\n\r"
+        send_to_buffer( "%2d.%så±¬æ€§çš„ä¸Šé™ï¹•%2d å±¬æ€§çš„å› æ•¸ï¹•%3d "
+          "é è¨­ä¸Šé™ï¹•%2d é è¨­ä¸‹é™ï¹•%2d è‹±é›„åŠ æˆï¹•%2d\n\r"
           , count + 1
           , attr_name[count]
           , pClass->attr[count]
@@ -232,7 +232,7 @@ FUNCTION( do_vocation )
       RETURN_NULL();
   }
 
-  send_to_char( "¨S¦³§ä¨ì§A­n¬d¸ßªºÂ¾·~¸ê®Æ¡M½Ğ¬d¸ß vocation¡C\n\r", ch );
+  send_to_char( "æ²’æœ‰æ‰¾åˆ°ä½ è¦æŸ¥è©¢çš„è·æ¥­è³‡æ–™ï¹è«‹æŸ¥è©¢ vocationã€‚\n\r", ch );
   RETURN_NULL();
 }
 
@@ -244,7 +244,7 @@ CHAR_DATA * get_rebirth_char( CHAR_DATA * ch , char * arg )
 
   if ( !( mob = get_char_room( ch , arg ) ) ) RETURN( NULL );
 
-  /* ¬İ¬İ¬O¤£¬O¨t²ÎºŞ²z­û, ¬Oªº¸Ü³£¥i¥HÀ°§O¤HÂà */
+  /* çœ‹çœ‹æ˜¯ä¸æ˜¯ç³»çµ±ç®¡ç†å“¡, æ˜¯çš„è©±éƒ½å¯ä»¥å¹«åˆ¥äººè½‰ */
   if ( IS_IMMORTAL( mob ) ) RETURN( mob );
 
   RETURN( mob );
@@ -256,7 +256,7 @@ char * class_name( CLASS_DATA * pClass, bool bFull )
 
   PUSH_FUNCTION( "class_name" );
 
-  if ( !pClass ) RETURN( "¤£  ¸Ô" );
+  if ( !pClass ) RETURN( "ä¸  è©³" );
 
   if ( bFull ) sprintf( buf, "%s(%s)", pClass->cname, pClass->name );
   else         str_cpy( buf, pClass->cname );
@@ -299,7 +299,7 @@ CLASS_DATA * is_class( char * name, bool Exact )
   RETURN( pClass );
 }
 
-/* ¬O§_¬°¦P¤@­ÓÂ¾·~ */
+/* æ˜¯å¦ç‚ºåŒä¸€å€‹è·æ¥­ */
 bool is_same_class( CHAR_DATA * ach, CHAR_DATA * bch )
 {
   PUSH_FUNCTION( "is_same_class" );

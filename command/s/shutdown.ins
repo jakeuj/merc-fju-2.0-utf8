@@ -1,5 +1,5 @@
 Name            shutdown~
-Cname           ����~
+Cname           關機~
 Function        do_shutdown~
 Position        POS_DEAD
 Level           L_SUP
@@ -15,24 +15,24 @@ Lost            NO
 Lock            NO
 Limit           NO
 Help
-�y�k�Rshutdown
+語法﹕shutdown
       shutdown now
       shutdown cancel
-      shutdown [������]
+      shutdown [分鐘數]
       shutdown at xx:xx:xx
 
-    �o�ӫ��O�i�H�Ϩt�������M�p�G�᭱���[�ѼƩάO�ѼƬ� now�M�h�t�η|�ߨ�
-�����M�Y�᭱�[�Jxx�����M�h�t�η|�۰ʦb�X����������.
+    這個指令可以使系統關閉﹐如果後面不加參數或是參數為 now﹐則系統會立刻
+關閉﹐若後面加入xx分鐘﹐則系統會自動在幾分鐘後關閉.
 
-    �ӥB�M�t�η|�b 1�M3�M5�����������a�M�t�αN�n�����M�кɧ�����,�åB�۰�
-��t����w�M�����@�몱�a�i�J.
+    而且﹐系統會在 1﹐3﹐5分鐘提醒玩家﹐系統將要關閉﹐請盡快離站,並且自動
+把系統鎖定﹐不讓一般玩家進入.
 
-    shutdown cancel �i�H�������e�ҳ]�w���t�������ʧ@.
+    shutdown cancel 可以取消之前所設定的系統關閉動作.
 
-    shutdown at �o�ӫ��O�i�H���w�b��ɥi�H�����t�ΡM�ɶ��O��24�p�ɨ�M���O
-�t�Τ��|��w�C��.
+    shutdown at 這個指令可以限定在何時可以關閉系統﹐時間是用24小時制﹐但是
+系統不會鎖定遊戲.
 
-������� �Rwizlock �Mreboot.
+相關資料 ﹕wizlock ﹐reboot.
 
 ~
 End

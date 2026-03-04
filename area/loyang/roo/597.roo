@@ -1,10 +1,10 @@
 Vnum            597
-Name            �����Z����~
+Name            洛陽武器店~
 Description
-�A�@�i�ӥu���Y�㺡�ت��Z����b��W�M�@�Ӥ��~����ʥ����T���k
-�l���}�}�����b�A���e�M���ݵۧA���f�U�C
+你一進來只見琳瑯滿目的武器放在牆上﹐一個中年身穿粗布長袍的男
+子笑咪咪的站在你面前﹐等待著你的惠顧。
 
-��W���ۤ@�i�r��( paper )�M�A�i�H�ݬ�( look )�C
+牆上掛著一張字條( paper )﹐你可以看看( look )。
 
 ~
 SectorType      SECT_CITY
@@ -21,19 +21,19 @@ End
 #Keyword
 Keyword         paper~
 Description
-�o�̬O�����̤j���Z�����M�w����[����C
+這裡是洛陽最大的武器店﹐歡迎參觀比較。
 
-�p�����ʽХ� LIST �Ӭݽ�@�Ǥ���F��M���ʶR�Х� BUY �C
+如欲選購請用 LIST 來看賣一些什麼東西﹐欲購買請用 BUY 。
 
 ~
 End
 
 #Enquire
-Keyword         �ө�~
+Keyword         商店~
 End
 
 #Enquire
-Keyword         �Z����~
+Keyword         武器屋~
 End
 
 End

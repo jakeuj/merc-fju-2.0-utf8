@@ -1,9 +1,9 @@
 Vnum            36
 Name            lion blade~
-ShortDesc       ·à¤ý¾Ô¤M~
+ShortDesc       ç…çŽ‹æˆ°åˆ€~
 Description
-³o¬O¤@¬`¥¨¤jªº¾Ô¤M(blade)¡M¤M¨­¨¬¨¬¦³¤T¤Øªø¡M­«¹O¦Ê¤ç¡M¤@¯ë¤H®£©ÈÃø¥H¨Ï±o°Ê¡C~
-Unit            ¬`~
+é€™æ˜¯ä¸€æŸ„å·¨å¤§çš„æˆ°åˆ€(blade)ï¹åˆ€èº«è¶³è¶³æœ‰ä¸‰å°ºé•·ï¹é‡é€¾ç™¾æ–¤ï¹ä¸€èˆ¬äººææ€•é›£ä»¥ä½¿å¾—å‹•ã€‚~
+Unit            æŸ„~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

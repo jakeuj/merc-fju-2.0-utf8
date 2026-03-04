@@ -1,8 +1,8 @@
 Vnum            520
-Name            �T�e��~
+Name            三叉路~
 Description
-��Ъ��ǤJ�u���Ө줤�쪺���H�άO�ѩ�T���Өө��󤤭�B���
-���ӤH�|�ߨ�H���M�Ӻ~�H�u���n�_�o�@�ǤH���H�����ΦӤw�C
+佛教的傳入只有來到中原的西域人或是由於貿易而來往於中原、西域
+的商人會立刻信仰﹐而漢人只有好奇這一些人的信仰情形而已。
 
 ~
 SectorType      SECT_CITY
@@ -41,11 +41,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         �ө�~
+Keyword         商店~
 End
 
 #Enquire
-Keyword         ������~
+Keyword         食物店~
 End
 
 End

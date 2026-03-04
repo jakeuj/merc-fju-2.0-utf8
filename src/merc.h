@@ -16,15 +16,15 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *                                                                          *
 ***************************************************************************/
 
-/* ½Ğ¤Å¦Û¦æ§ó§ï */
+/* è«‹å‹¿è‡ªè¡Œæ›´æ”¹ */
 #define MUD_VERSION             "89-6-20"
 #define STRUCT_NOTE_DATA        20
 #define STRUCT_BAN_DATA         21
@@ -157,13 +157,13 @@
 #define ERROR_WORD              0x00000010
 #define ERROR_OTHER             0x00000020
 
-/* ²Å¸¹©w¸q */
+/* ç¬¦è™Ÿå®šç¾© */
 #define ALIAS_SEPRATOR          ':'
 #define SYMBOL_SEMICOLON        '&'
 #define SYMBOL_COMMAND          '#'
 #define VERTICAL_LINE           "--------------------------------------" \
                                 "-------------------------------------\n\r"
-/* ª©­±³]©w */
+/* ç‰ˆé¢è¨­å®š */
 #define MAX_BOARD               50
 #define MAX_NOTES               100
 #define POST_ALL                1
@@ -171,14 +171,14 @@
 #define POST_MARK               3
 #define BLANK_LENGTH            17
 
-/* ¦sÀÉ¼Ò¦¡ */
+/* å­˜æª”æ¨¡å¼ */
 #define SAVE_FILE               1
 #define BACKUP_FILE             2
 #define FAILCODE_FILE           3
 #define BASIC_FILE              4
 #define LOG_FILE                5
 
-/* Automap ªº°Ñ¼Æ */
+/* Automap çš„åƒæ•¸ */
 #define MAX_PATH                30
 #define MAX_TRACE               10
 #define TRACE_NONE              -1
@@ -186,22 +186,22 @@
 #define SHOP_SELL               1
 #define SHOP_BUY                2
 
-/* ¦ì§}ºX¼Ğ */
+/* ä½å€æ——æ¨™ */
 #define BAN_LOGIN               1
 #define BAN_FQDN                2
 #define BAN_FINGER              3
 
-/* ¿é¥X½w½Ä°Ïªº±±¨î½X */
+/* è¼¸å‡ºç·©è¡å€çš„æ§åˆ¶ç¢¼ */
 #define MODE_ABSENT             0
 #define MODE_SAY                1
 #define MODE_CHAT               2
 
-/* Äµ§i®É¶¡, ¤ÀÄÁ¬°³æ¦ì */
+/* è­¦å‘Šæ™‚é–“, åˆ†é˜ç‚ºå–®ä½ */
 #define FIRST_WARN              5
 #define SECOND_WARN             3
 #define THIRD_WARN              1
 
-/* ¨t²Î«O¯d¦rªººX¼Ğ */
+/* ç³»çµ±ä¿ç•™å­—çš„æ——æ¨™ */
 #define XNAMES_SYSTEM           1
 #define XNAMES_CACONYM          2
 #define XNAMES_CHAT             3
@@ -212,27 +212,27 @@
 #define VARIABLE_DIFFERENT      3
 #define VARIABLE_NOT_DEFINE     4
 
-#define MAX_RECHRISTEN          5    /* ¨C­Óª±®a³Ì¦h¥i¥H§ï¦W´X¦¸     */
-#define NAME_LENGTH             12   /* ª±®a­^¤å¦WºÙªºªø«×           */
-#define CHAT_REPEAT             3    /* °O¿ı´X­Ó¹ï¸Üªº¦¸¼Æ           */
-#define CHAT_PENALTY            15   /* Á¿­«½Æ¸ÜªºÃg»@               */
-#define IPC_BLOCK               100  /* ¥i¥H¦³´X¶ô°O¾ĞÅé°Ï¶ô         */
-#define IPC_IDLE                1000 /* ¶¢¸m¦h¤[¨t²Î®É¶¡«h§R°£¦¹°Ï¶ô */
+#define MAX_RECHRISTEN          5    /* æ¯å€‹ç©å®¶æœ€å¤šå¯ä»¥æ”¹åå¹¾æ¬¡     */
+#define NAME_LENGTH             12   /* ç©å®¶è‹±æ–‡åç¨±çš„é•·åº¦           */
+#define CHAT_REPEAT             3    /* è¨˜éŒ„å¹¾å€‹å°è©±çš„æ¬¡æ•¸           */
+#define CHAT_PENALTY            15   /* è¬›é‡è¤‡è©±çš„æ‡²ç½°               */
+#define IPC_BLOCK               100  /* å¯ä»¥æœ‰å¹¾å¡Šè¨˜æ†¶é«”å€å¡Š         */
+#define IPC_IDLE                1000 /* é–’ç½®å¤šä¹…ç³»çµ±æ™‚é–“å‰‡åˆªé™¤æ­¤å€å¡Š */
 #define EQ_MAX_CAPCITY          80
 #define EQ_MIN_CAPCITY          20
 #define PILLS_PER_DAY           5
 #define DOSAGE_LIMIT            60
 #define DOSAGE_UPDATE           2
-#define MAX_HITROLL             150  /* ³Ì¤j©R¤¤²v                   */
+#define MAX_HITROLL             150  /* æœ€å¤§å‘½ä¸­ç‡                   */
 
-/* ªÑ²¼ªº©w¸q±`¼Æ */
-#define MAX_STOCK_COST  1000000      /* ªÑ²¼ªº³Ì¤j­±­È         */
-#define MIN_STOCK_COST  3000         /* ªÑ²¼ªº³Ì§C­±­È         */
-#define STOCK_SHOCK     100          /* ¨C¶R½æ´X±iº¦¶^´T·|ªi°Ê */
-#define STOCK_TAX       5            /* ÃÒ¥æµ|                 */
-#define MAX_STOCK_WIN   200          /* ªÑ²¼ªº³Ì¤jº¦´T         */
-#define MAX_STOCK_LOST  200          /* ªÑ²¼ªº³Ì¤j¶^´T         */
-#define MAX_ASSET       1000000000   /* ª±®a³Ì¦h¥i¥H¦³ªºÁ`¸ê²£ */
+/* è‚¡ç¥¨çš„å®šç¾©å¸¸æ•¸ */
+#define MAX_STOCK_COST  1000000      /* è‚¡ç¥¨çš„æœ€å¤§é¢å€¼         */
+#define MIN_STOCK_COST  3000         /* è‚¡ç¥¨çš„æœ€ä½é¢å€¼         */
+#define STOCK_SHOCK     100          /* æ¯è²·è³£å¹¾å¼µæ¼²è·Œå¹…æœƒæ³¢å‹• */
+#define STOCK_TAX       5            /* è­‰äº¤ç¨…                 */
+#define MAX_STOCK_WIN   200          /* è‚¡ç¥¨çš„æœ€å¤§æ¼²å¹…         */
+#define MAX_STOCK_LOST  200          /* è‚¡ç¥¨çš„æœ€å¤§è·Œå¹…         */
+#define MAX_ASSET       1000000000   /* ç©å®¶æœ€å¤šå¯ä»¥æœ‰çš„ç¸½è³‡ç”¢ */
 #define MAX_STOCK_TRADE 100000000
 #define STOCK_BOTE      200
 #define STOCK_BUY       1
@@ -242,20 +242,20 @@
 #define STOCK_QUOTA     100
 #define STOCK_RELEASE   10000
 
-/* ¹CÀ¸¥»¨­ªº¤@¨Ç°Ñ¼Æªº«Å§i */
-#define MAX_SKILL                  270               /* ³Ì¦h§Ş¯à¼Æ¶q   */
-#define MAX_RECALL                 10                /* ³Ì¦h¦^Âk¦ì¸m   */
+/* éŠæˆ²æœ¬èº«çš„ä¸€äº›åƒæ•¸çš„å®£å‘Š */
+#define MAX_SKILL                  270               /* æœ€å¤šæŠ€èƒ½æ•¸é‡   */
+#define MAX_RECALL                 10                /* æœ€å¤šå›æ­¸ä½ç½®   */
 #define MAX_INNATE                 10
-#define MAX_STOCK                  100               /* ³Ì¦hªÑ²¼¤½¥q   */
-#define MAX_FIRMAN                 100               /* ³Ì¦h§K¦ºª÷µP   */
-#define FULL_FIRMAN                10                /* ¨¬°÷ªº§K¦ºª÷µP */
-#define MAX_LEVEL                  120               /* ¹CÀ¸³Ì°ªµ¥¯Å   */
-#define LEVEL_NODEATH              ( MAX_LEVEL - 1 ) /* ¤£¦ºªºµ¥¯Å     */
+#define MAX_STOCK                  100               /* æœ€å¤šè‚¡ç¥¨å…¬å¸   */
+#define MAX_FIRMAN                 100               /* æœ€å¤šå…æ­»é‡‘ç‰Œ   */
+#define FULL_FIRMAN                10                /* è¶³å¤ çš„å…æ­»é‡‘ç‰Œ */
+#define MAX_LEVEL                  120               /* éŠæˆ²æœ€é«˜ç­‰ç´š   */
+#define LEVEL_NODEATH              ( MAX_LEVEL - 1 ) /* ä¸æ­»çš„ç­‰ç´š     */
 #define LEVEL_HERO                 ( MAX_LEVEL - 20 )
 #define LEVEL_IMMORTAL             ( MAX_LEVEL - 19 )
 #define LEV_IMM                    LEVEL_IMMORTAL
 
-/* ³]©w log ªº¼h¯Å */
+/* è¨­å®š log çš„å±¤ç´š */
 #define LOG_EMERG               1
 #define LOG_CRIT                2
 #define LOG_ERR                 3
@@ -281,7 +281,7 @@
 #define LOG_SUSPECT             23
 #define LOG_BADOBJECT           24
 
-/* notify ªººX¼Ğ */
+/* notify çš„æ——æ¨™ */
 #define NOTIFY_DEBUG            0x00000001
 #define NOTIFY_INFO             0x00000002
 #define NOTIFY_WIZARD           0x00000004
@@ -299,12 +299,12 @@
 #define INTERNAL_CHECKFILE      4
 #define INTERNAL_CHECKSERV      5
 
-/* ³Ì¤j¥i¥H¦P®É¦³´X­Ó¤H³s½u */
+/* æœ€å¤§å¯ä»¥åŒæ™‚æœ‰å¹¾å€‹äººé€£ç·š */
 #define MAX_CONNECT             5
 #define MAX_HOSTNAME            256
 #define MAX_IP                  10
 
-/* ©w¸qºô¸ô³s½u±`¼Æ */
+/* å®šç¾©ç¶²è·¯é€£ç·šå¸¸æ•¸ */
 #define NET_NAME                1
 #define NET_ADDRESS             2
 #define NET_IMPORT              1
@@ -313,7 +313,7 @@
 #define ADDRESS_ALPHA           1
 #define ADDRESS_NUMBER          2
 
-/* ©w¸qª««~¼vÅTªº«¬ºA */
+/* å®šç¾©ç‰©å“å½±éŸ¿çš„å‹æ…‹ */
 #define OBJ_CAST_HIT            1
 #define OBJ_CAST_MANA           2
 #define OBJ_CAST_MOVE           3
@@ -335,7 +335,7 @@
 #define OBJ_CAST_ALL            19
 #define OBJ_DETECT_MASK         20
 
-/* ©w¸q®ÄÀ³ */
+/* å®šç¾©æ•ˆæ‡‰ */
 #define EFFECT_NONE                     0
 #define EFFECT_VICTIM_MANA              1
 #define EFFECT_SELF_MANA                2
@@ -351,10 +351,10 @@
 #define EFFECT_SELF_HIT                 12
 #define EFFECT_HIT_DIE                  13
 
-/* ­­¨îªº®É¾÷ */
+/* é™åˆ¶çš„æ™‚æ©Ÿ */
 #define OCCASION_NONE                   0
 
-/* ©w¸q±Ô­zªº§ÎºA */
+/* å®šç¾©æ•˜è¿°çš„å½¢æ…‹ */
 #define ACT_WHEN_EAT                    1
 #define ACT_WHEN_WEAR                   2
 #define ACT_WHEN_DROP                   3
@@ -385,7 +385,7 @@
 #define ACT_WHEN_SLUP                   28
 #define ACT_WHEN_STUDY                  29
 
-/* ©w¸q¤Hª«ªº°ò¥»Äİ©Ê */
+/* å®šç¾©äººç‰©çš„åŸºæœ¬å±¬æ€§ */
 #define DEFAULT_HIT             100
 #define DEFAULT_MOVE            100
 #define DEFAULT_MANA            100
@@ -395,7 +395,7 @@
 #define DEFAULT_DEX             1
 #define DEFAULT_CON             1
 
-/* ©w¸qÄİ©Ê¦WºÙ */
+/* å®šç¾©å±¬æ€§åç¨± */
 #define TYPE_STR                1
 #define TYPE_INT                2
 #define TYPE_WIS                3
@@ -410,7 +410,7 @@
 #define SPELL_CLASS_MOB         6
 #define SPELL_CLASS_MAG         7
 
-/* ©w¸q¨t²Î³]©w©Çª«¦U¶µ¼Æ­È¥[¦¨ */
+/* å®šç¾©ç³»çµ±è¨­å®šæ€ªç‰©å„é …æ•¸å€¼åŠ æˆ */
 #define LOAD_ATTRIB_PLUS        1
 #define LOAD_ARMOR_PLUS         1
 #define LOAD_GOLD_PLUS         10
@@ -419,32 +419,32 @@
 #define LOAD_MANA_PLUS         50
 #define LOAD_MOVE_PLUS         50
 
-/* ©w¸q¯«±Ú³Ì¤j­t¸ü¼Æ¥H¤Î­t¸ü¶q */
+/* å®šç¾©ç¥æ—æœ€å¤§è² è¼‰æ•¸ä»¥åŠè² è¼‰é‡ */
 #define MAX_CARRY_N             1000
 #define MAX_CARRY_W             1000000
 
-/* ©w¸q¤Hª«¤@¶}©lªºª÷¿ú¼Æ¥Ø */
+/* å®šç¾©äººç‰©ä¸€é–‹å§‹çš„é‡‘éŒ¢æ•¸ç›® */
 #define DEFAULT_GOLD            1000
 
-/* ©w¸q³Ì¤jªº·¥­­­È */
+/* å®šç¾©æœ€å¤§çš„æ¥µé™å€¼ */
 #define MAX_LIMIT_VALUE         30000
 
-/* ©w¸q³Ì¤j¥i«Ê¦L¼Æ */
+/* å®šç¾©æœ€å¤§å¯å°å°æ•¸ */
 #define MAX_CAN_CACHET            3
 
-/* ©w¸qª±®a¥i¥H¹F¨ìªº³Ì¤j°ò¥»Äİ©Ê, ¶W¹Lµø¬°§@¹ú */
+/* å®šç¾©ç©å®¶å¯ä»¥é”åˆ°çš„æœ€å¤§åŸºæœ¬å±¬æ€§, è¶…éè¦–ç‚ºä½œå¼Š */
 #define HUGE_ATTR                80
 
-/* ©w¸q­¹ª«Ãa±¼ªº®É¶¡ */
+/* å®šç¾©é£Ÿç‰©å£æ‰çš„æ™‚é–“ */
 #define FOOD_DEGRADE             30
 
-/* ©w¸q³Ì¤jÅ]¥Ûµ¥¯Å */
+/* å®šç¾©æœ€å¤§é­”çŸ³ç­‰ç´š */
 #define MAX_CACHET_LEVEL        100
 
-/* ©w¸q­^¶¯¼W¥[ªº§K¦ºª÷µP */
+/* å®šç¾©è‹±é›„å¢åŠ çš„å…æ­»é‡‘ç‰Œ */
 #define HERO_ADD_FIRMAN          10
 
-/* ©w¸qªk³N§Ş¯à³Ì¤j§ğ¶Ë */
+/* å®šç¾©æ³•è¡“æŠ€èƒ½æœ€å¤§æ”»å‚· */
 #define LEVEL_ONE_DAM           350
 #define LEVEL_TWO_DAM           700
 #define LEVEL_THR_DAM          1300
@@ -453,15 +453,15 @@
 #define MOB_ATTACK_DAM        20000
 #define MAG_ATTACK_DAM         4000
 
-/* ©w¸qÂ¾·~ªº±`¼Æ */
+/* å®šç¾©è·æ¥­çš„å¸¸æ•¸ */
 #define MAX_DEFAULT_CLASS       11
 #define FORCE_LEVEL             15
 
-/* ©w¸q³Ì¤p³Ì¤j´«­¶¦æ¼Æ */
+/* å®šç¾©æœ€å°æœ€å¤§æ›é è¡Œæ•¸ */
 #define MAX_PAGELEN             300
 #define MIN_PAGELEN             5
 
-/* ©w¸q³Ì¦h´X¶µÄİ©Ê */
+/* å®šç¾©æœ€å¤šå¹¾é …å±¬æ€§ */
 #define MAX_ATTR                5
 #define STR_UPGRADE             2
 #define STR_ITEM                0
@@ -477,12 +477,12 @@
 #define MAX_PRACTICE            20000
 #define MAX_NSKILL              100
 
-/* ©w¸qªù­«¸mªºª¬ºA */
+/* å®šç¾©é–€é‡ç½®çš„ç‹€æ…‹ */
 #define DOOR_OPEN               0
 #define DOOR_CLOSED             1
 #define DOOR_LOCKED             2
 
-/* ©w¸q³Ì¤jªº¥Í©R¤Oªk¤O¥H¤Î²¾°Ê¤O */
+/* å®šç¾©æœ€å¤§çš„ç”Ÿå‘½åŠ›æ³•åŠ›ä»¥åŠç§»å‹•åŠ› */
 #define MAX_HIT                 20000
 #define MAX_MANA                20000
 #define MAX_MOVE                20000
@@ -502,7 +502,7 @@
 #define BOUNTY_GOLD        1
 #define BOUNTY_FIRMAN      2
 
-/* mpadd ªº°Ñ¼Æ */
+/* mpadd çš„åƒæ•¸ */
 #define LOC_STR            1
 #define LOC_INT            2
 #define LOC_WIS            3
@@ -529,7 +529,7 @@
 #define L_ANG                   L_DEI - 1
 #define L_HER                   L_ANG - 1
 
-/* ®æ¦¡¤Æ¦r¦êªº¿ï¶µ */
+/* æ ¼å¼åŒ–å­—ä¸²çš„é¸é … */
 #define FORMAT_CLEAN            1
 #define FORMAT_SET              2
 #define FORMAT_RETURN           3
@@ -538,19 +538,19 @@
 #define FORMAT_LOCATE_STRING    6
 #define FORMAT_LOCATE_NUM       7
 
-/* ½m²ß§Ş¯à©Ò¯ÓªºÅé¤O */
+/* ç·´ç¿’æŠ€èƒ½æ‰€è€—çš„é«”åŠ› */
 #define PRACTICE_MOVE           5
 
-/* ¦³Ãö PK */
-#define BORN_AGE                17            /* ¥X¥Íªº¦~¬ö     */
-#define PK_AGE                  21            /* ¥i¥H¹ï¾Ôªº¦~¬ö */
-#define PK_LEVEL                50            /* ¥i¥H¹ï¾Ôªºµ¥¯Å */
-#define PK_JOIN                 1             /* ¹ï¾Ô¥[¤J¤¤     */
-#define PK_BET                  2             /* ¹ï¾Ô¤Uª`¤¤     */
-#define PK_FIGHT                3             /* ¹ï¾Ô¤¤         */
-#define PK_STOP                 4             /* ¹ï¾Ôµ²§ô       */
-#define PK_DESERT               5             /* ¹ï¾Ô¶¢¸m¤¤     */
-#define PK_CONTRAST_LEVEL       20            /* ¹ï¾Ô¬Û®tµ¥¯Å   */
+/* æœ‰é—œ PK */
+#define BORN_AGE                17            /* å‡ºç”Ÿçš„å¹´ç´€     */
+#define PK_AGE                  21            /* å¯ä»¥å°æˆ°çš„å¹´ç´€ */
+#define PK_LEVEL                50            /* å¯ä»¥å°æˆ°çš„ç­‰ç´š */
+#define PK_JOIN                 1             /* å°æˆ°åŠ å…¥ä¸­     */
+#define PK_BET                  2             /* å°æˆ°ä¸‹æ³¨ä¸­     */
+#define PK_FIGHT                3             /* å°æˆ°ä¸­         */
+#define PK_STOP                 4             /* å°æˆ°çµæŸ       */
+#define PK_DESERT               5             /* å°æˆ°é–’ç½®ä¸­     */
+#define PK_CONTRAST_LEVEL       20            /* å°æˆ°ç›¸å·®ç­‰ç´š   */
 #define MIN_PK_GOLD             100
 #define MAX_PK_GOLD             100000
 #define MAX_PK_TOTAL            10000000
@@ -567,7 +567,7 @@
 #define SKILL(c)        bool (c)( int sn, int level, CHAR_DATA * ch, void * vo )
 #define ANGEL(c)        bool (c)( CHAR_DATA * ch, bool fPrint )
 
-/* ¥H²Å¦XÂÂ«¬ªº ANSI ªº½sÄ¶¾¹ */
+/* ä»¥ç¬¦åˆèˆŠå‹çš„ ANSI çš„ç·¨è­¯å™¨ */
 #if defined(TRADITIONAL)
 #define const
 #define args( list )                    ( )
@@ -616,29 +616,29 @@ typedef short    int                    sh_int;
 typedef unsigned char                   bool;
 #endif
 
-/* ©w¸qÀ°¬£¦WºÙ¬d¸ß¤è¦¡ */
-#define CLUB_NAME               1               /* ¥Î­^¤å¦WºÙ¬d¸ß */
-#define CLUB_CNAME              2               /* ¥Î¤¤¤å¦WºÙ¬d¸ß */
+/* å®šç¾©å¹«æ´¾åç¨±æŸ¥è©¢æ–¹å¼ */
+#define CLUB_NAME               1               /* ç”¨è‹±æ–‡åç¨±æŸ¥è©¢ */
+#define CLUB_CNAME              2               /* ç”¨ä¸­æ–‡åç¨±æŸ¥è©¢ */
 #define CLUB_MONEY              3
 #define CLUB_STATUS             4
 #define CLUB_TIMER              5
-#define MAX_CLUB_MEMBER         100              /* À°¬£³Ì¦h´X­Ó¤H */
-#define MAX_CLUB_DOYEN          10               /* À°¬£ªø¦Ñ¼Æ¥Ø   */
-#define CLUB_STATUS_UNKNOW      0               /* ¥¼ª¾ªºÀ°¬£ª¬ºA */
-#define CLUB_STATUS_COUNTERSIGN 1               /* À°¬£³s¸p¤¤     */
-#define CLUB_STATUS_UNIONIZE    2               /* À°¬£¤w¸g¦¨¥ß   */
-#define MEMBER_VERIFY           TRUE            /* »İ­n»{ÃÒÀ°²³   */
-#define MEMBER_NO_VERIFY        FALSE           /* ¤£»İ­n»{ÃÒÀ°²³ */
-#define CLUB_MASTER             6               /* Â¾¦ì->À°¥D     */
-#define CLUB_VICEMASTER         5               /* Â¾¦ì->°ÆÀ°¥D   */
-#define CLUB_DOYEN              4               /* Â¾¦ì->ªø¦Ñ     */
-#define CLUB_MEMBER             3               /* Â¾¦ì->À°²³     */
-#define CLUB_FOLLOWER           2               /* Â¾¦ì->§Ì¤l     */
-#define CLUB_ALL                1               /* Â¾¦ì->¤£©ú     */
-#define CLUB_NO_RELATION        -1              /* ¨S¦³¥ô¦óÃö«Y   */
-#define BANK_PROFIT             100000          /* À°®wªº§Q®§     */
-#define PLAYER_HOLD_DAY         90              /* ª±®a«O¯d¤Ñ¼Æ   */
-#define PLAYER_FILE_QUOTA       200000          /* ª±®aÀÉ®×¤j¤p   */
+#define MAX_CLUB_MEMBER         100              /* å¹«æ´¾æœ€å¤šå¹¾å€‹äºº */
+#define MAX_CLUB_DOYEN          10               /* å¹«æ´¾é•·è€æ•¸ç›®   */
+#define CLUB_STATUS_UNKNOW      0               /* æœªçŸ¥çš„å¹«æ´¾ç‹€æ…‹ */
+#define CLUB_STATUS_COUNTERSIGN 1               /* å¹«æ´¾é€£ç½²ä¸­     */
+#define CLUB_STATUS_UNIONIZE    2               /* å¹«æ´¾å·²ç¶“æˆç«‹   */
+#define MEMBER_VERIFY           TRUE            /* éœ€è¦èªè­‰å¹«çœ¾   */
+#define MEMBER_NO_VERIFY        FALSE           /* ä¸éœ€è¦èªè­‰å¹«çœ¾ */
+#define CLUB_MASTER             6               /* è·ä½->å¹«ä¸»     */
+#define CLUB_VICEMASTER         5               /* è·ä½->å‰¯å¹«ä¸»   */
+#define CLUB_DOYEN              4               /* è·ä½->é•·è€     */
+#define CLUB_MEMBER             3               /* è·ä½->å¹«çœ¾     */
+#define CLUB_FOLLOWER           2               /* è·ä½->å¼Ÿå­     */
+#define CLUB_ALL                1               /* è·ä½->ä¸æ˜     */
+#define CLUB_NO_RELATION        -1              /* æ²’æœ‰ä»»ä½•é—œä¿‚   */
+#define BANK_PROFIT             100000          /* å¹«åº«çš„åˆ©æ¯     */
+#define PLAYER_HOLD_DAY         90              /* ç©å®¶ä¿ç•™å¤©æ•¸   */
+#define PLAYER_FILE_QUOTA       200000          /* ç©å®¶æª”æ¡ˆå¤§å°   */
 
 #define MAX_VOTES               10
 #define MAX_POLL                100
@@ -647,7 +647,7 @@ typedef unsigned char                   bool;
 #define VOTE_DAYS               10
 #define VOTE_MIN_DAYS           5
 
-/* µ²ºcªº«¬ºA«Å§i */
+/* çµæ§‹çš„å‹æ…‹å®£å‘Š */
 typedef struct  alias_data              ALIAS_DATA;
 typedef struct  teach_data              TEACH_DATA;
 typedef struct  cmd_data                CMD_DATA;
@@ -746,7 +746,7 @@ typedef struct  friend_data             FRIEND_DATA;
 typedef struct  database_data           DATABASE_DATA;
 typedef struct  situs_data              SITUS_DATA;
 
-/* «Å§i¤@¨Ç¨ç¼Æªº­ì«¬«¬ºA */
+/* å®£å‘Šä¸€äº›å‡½æ•¸çš„åŸå‹å‹æ…‹ */
 typedef void DO_FUN      args( ( CHAR_DATA * , char * ) );
 typedef bool SPEC_FUN    args( ( CHAR_DATA * ) );
 typedef bool SPELL_FUN   args( ( int, int, CHAR_DATA *, void * ) );
@@ -756,7 +756,7 @@ typedef void EVENT_FUN   args( ( void ) );
 typedef bool ANGEL_FUN   args( ( CHAR_DATA *, bool ) );
 typedef bool ROUTINE_FUN args( ( CHAR_DATA *, CHAR_DATA *, int level ) );
 
-/* ¦r¦ê¥H¤Î°O¾ĞÅéºŞ²zªº°Ñ¼Æ«Å§i */
+/* å­—ä¸²ä»¥åŠè¨˜æ†¶é«”ç®¡ç†çš„åƒæ•¸å®£å‘Š */
 #define MAX_KEY_HASH             1024
 #define MAX_STRING_LENGTH        4096
 #define MAX_BUFFER_LENGTH        4000
@@ -773,7 +773,7 @@ typedef bool ROUTINE_FUN args( ( CHAR_DATA *, CHAR_DATA *, int level ) );
 #define MAX_SCREEN_BUFFER       32768
 #define MAX_STOCK_HISTORY          20
 
-/* ¦³Ãö°O¾ĞÅéºŞ²z°Ñ¼Æ«Å§i */
+/* æœ‰é—œè¨˜æ†¶é«”ç®¡ç†åƒæ•¸å®£å‘Š */
 extern  int     top_restrict;
 extern  int     top_board;
 extern  int     top_affect;
@@ -833,7 +833,7 @@ extern  int     VoteGold;
 extern  bool    NewLock;
 extern  CLASS_DATA * iClass[];
 
-/* ¦³Ãö¦r¦ê±±¨îÅÜ¼Æ */
+/* æœ‰é—œå­—ä¸²æ§åˆ¶è®Šæ•¸ */
 extern  char      str_empty       [1];
 extern  void *    rgFreeList      [MAX_MEM_LIST];
 extern  int       rgAllocList     [MAX_MEM_LIST];
@@ -932,7 +932,7 @@ struct wanted_data
   int           reward;
 };
 
-/* §Ş¯à­P¯àªºµ²ºc«Å§i */
+/* æŠ€èƒ½è‡´èƒ½çš„çµæ§‹å®£å‘Š */
 struct enable_data
 {
   ENABLE_DATA * next;
@@ -958,7 +958,7 @@ struct net_data
   char       message[MAX_INPUT_LENGTH];
 };
 
-/* À°¬£¸ê®Æµ²ºc */
+/* å¹«æ´¾è³‡æ–™çµæ§‹ */
 struct  club_data
 {
   CLUB_DATA       * next;
@@ -976,7 +976,7 @@ struct  club_data
   int               money;
 };
 
-/* ¦aÅK¸ê®Æ */
+/* åœ°éµè³‡æ–™ */
 struct bus_data
 {
   BUS_DATA        * next;
@@ -988,30 +988,30 @@ struct bus_data
   int               count;
 };
 
-/* ²î°¦ªº¸ê®Æ */
+/* èˆ¹éš»çš„è³‡æ–™ */
 struct ship_data
 {
   SHIP_DATA       * next;
-  char            * name;               /* ²î°¦ªº¤¤¤å¦WºÙ         */
-  char            * msg_entrance;       /* ²î°¦¤J´äªº°T®§         */
-  char            * msg_land;           /* ²î°¦¾a´äªº°T®§         */
-  char            * description;        /* ²î¿µªº±Ô­z             */
-  ROOM_INDEX_DATA * starting;           /* ²î°¦ªº¥XµoÂI           */
-  ROOM_INDEX_DATA * cabin;              /* ²î°¦ªº²î¿µ             */
-  ROOM_INDEX_DATA * destination;        /* ²î°¦ªº¥Øªº¦a           */
-  int               cost;               /* ¤W²îªº¶O¥Î             */
-  int               sailing;            /* ²î°¦ªº¯è¦æ®É¶¡         */
-  int               waiting;            /* ²î°¦µ¥«İ¤W²îªº®É¶¡     */
-  int               sailing_tick;       /* ²î°¦ªº¥Ø«e¯è¦æ®É¶¡     */
-  int               waiting_tick;       /* ²î°¦¥Ø«eµ¥«İ¤W²îªº®É¶¡ */
-  int               count;              /* ²î°¦ªº¤W²î¤H¼Æ         */
-  int               pirate;             /* ²î°¦¹J¨ì®üµsªº¾÷²v     */
-  int               pirate_count;       /* ²î°¦¹J¨ì®üµsªº¦¸¼Æ     */
-  int               delay;              /* ²î°¦©µ´Áªº¾÷²v         */
-  bool              lock;               /* ²î°¦¬O§_¾D¨ìÂê©w       */
+  char            * name;               /* èˆ¹éš»çš„ä¸­æ–‡åç¨±         */
+  char            * msg_entrance;       /* èˆ¹éš»å…¥æ¸¯çš„è¨Šæ¯         */
+  char            * msg_land;           /* èˆ¹éš»é æ¸¯çš„è¨Šæ¯         */
+  char            * description;        /* èˆ¹è‰™çš„æ•˜è¿°             */
+  ROOM_INDEX_DATA * starting;           /* èˆ¹éš»çš„å‡ºç™¼é»           */
+  ROOM_INDEX_DATA * cabin;              /* èˆ¹éš»çš„èˆ¹è‰™             */
+  ROOM_INDEX_DATA * destination;        /* èˆ¹éš»çš„ç›®çš„åœ°           */
+  int               cost;               /* ä¸Šèˆ¹çš„è²»ç”¨             */
+  int               sailing;            /* èˆ¹éš»çš„èˆªè¡Œæ™‚é–“         */
+  int               waiting;            /* èˆ¹éš»ç­‰å¾…ä¸Šèˆ¹çš„æ™‚é–“     */
+  int               sailing_tick;       /* èˆ¹éš»çš„ç›®å‰èˆªè¡Œæ™‚é–“     */
+  int               waiting_tick;       /* èˆ¹éš»ç›®å‰ç­‰å¾…ä¸Šèˆ¹çš„æ™‚é–“ */
+  int               count;              /* èˆ¹éš»çš„ä¸Šèˆ¹äººæ•¸         */
+  int               pirate;             /* èˆ¹éš»é‡åˆ°æµ·ç›œçš„æ©Ÿç‡     */
+  int               pirate_count;       /* èˆ¹éš»é‡åˆ°æµ·ç›œçš„æ¬¡æ•¸     */
+  int               delay;              /* èˆ¹éš»å»¶æœŸçš„æ©Ÿç‡         */
+  bool              lock;               /* èˆ¹éš»æ˜¯å¦é­åˆ°é–å®š       */
 };
 
-/* ½ä³Õ¸ê®Æªº«Å§i */
+/* è³­åšè³‡æ–™çš„å®£å‘Š */
 struct  gamble_data
 {
   GAMBLE_DATA * next;
@@ -1020,7 +1020,7 @@ struct  gamble_data
   int           horse[ MAX_HORSES ];
 };
 
-/* ¦a§Îµ²ºcªº«Å§i */
+/* åœ°å½¢çµæ§‹çš„å®£å‘Š */
 struct sector_data
 {
   SECTOR_DATA * next;
@@ -1033,7 +1033,7 @@ struct sector_data
   bool          swim    : 1;
 };
 
-/* ±`¼Æ²Å¸¹ªºµ²ºc«Å§i */
+/* å¸¸æ•¸ç¬¦è™Ÿçš„çµæ§‹å®£å‘Š */
 struct  symbol_data
 {
   SYMBOL_DATA * next;
@@ -1050,7 +1050,7 @@ struct  ban_data
   int        type;
 };
 
-/* ¤£¶®¦rªºµ²ºc */
+/* ä¸é›…å­—çš„çµæ§‹ */
 struct xnames_data
 {
   XNAMES_DATA * next;
@@ -1058,7 +1058,7 @@ struct xnames_data
   int           type;
 };
 
-/* °İÃD¶°µ²ºc */
+/* å•é¡Œé›†çµæ§‹ */
 struct question_data
 {
   QUESTION_DATA * next;
@@ -1127,14 +1127,14 @@ struct situs_data
   bool         wield  : 1;
 };
 
-/* ¸ÑÁ¼ªºµ²ºc */
+/* è§£è¬çš„çµæ§‹ */
 struct quest_data
 {
   QUEST_DATA * next;
   QUEST_INFO * link;
 };
 
-/* ¸Ñ°gªº¸ê®Æ */
+/* è§£è¿·çš„è³‡æ–™ */
 struct quest_info
 {
   QUEST_INFO * next;
@@ -1145,7 +1145,7 @@ struct quest_info
   bool         title;
 };
 
-/* ¯«±Ú¸ê®Æ */
+/* ç¥æ—è³‡æ–™ */
 struct immlist_data
 {
   IMMLIST_DATA * next;
@@ -1156,21 +1156,21 @@ struct immlist_data
   bool           adviser : 1;
 };
 
-/* ¦n¤Í¦W³æµ²ºc */
+/* å¥½å‹åå–®çµæ§‹ */
 struct friend_data
 {
   FRIEND_DATA * next;
   char          name[NAME_LENGTH+1];
 };
 
-/* ¤½¼Äªºµ²ºc */
+/* å…¬æ•µçš„çµæ§‹ */
 struct enemy_data
 {
   ENEMY_DATA * next;
   char       * city;
 };
 
-/* ®É¶¡¥H¤Î¤Ñ®ğªº°Ñ¼Æ«Å§i */
+/* æ™‚é–“ä»¥åŠå¤©æ°£çš„åƒæ•¸å®£å‘Š */
 #define SUN_DARK                0
 #define SUN_RISE                1
 #define SUN_LIGHT               2
@@ -1198,7 +1198,7 @@ struct  weather_data
   int sunlight;
 };
 
-/* ³s½u¥Ø«eªºª¬ºA«Å§i */
+/* é€£ç·šç›®å‰çš„ç‹€æ…‹å®£å‘Š */
 #define CON_PLAYING                     0
 #define CON_GET_FQDN                    1
 #define CON_GET_FINGER                  2
@@ -1220,7 +1220,7 @@ struct  weather_data
 #define CON_CHOOSE_HOME                18
 #define CON_CONTRACT                   19
 
-/* §Ş¯àªº¤ÀÃş */
+/* æŠ€èƒ½çš„åˆ†é¡ */
 #define RATING_SKILL                    1
 #define RATING_WIND                     2
 #define RATING_EARTH                    3
@@ -1239,7 +1239,7 @@ struct  weather_data
 #define RATING_MURDER                  16
 #define RATING_CREATE                  17
 #define RATING_THIEF                   18
-#define RATING_ALL                     19 /* ©Ò¦³¨t³£¥]§t */
+#define RATING_ALL                     19 /* æ‰€æœ‰ç³»éƒ½åŒ…å« */
 
 struct  descriptor_data
 {
@@ -1476,14 +1476,14 @@ struct  struct_data
   int    ref;
 };
 
-/* act ¨ç¼Æ©Ò»İ­nªº°Ñ¼Æ */
+/* act å‡½æ•¸æ‰€éœ€è¦çš„åƒæ•¸ */
 #define TO_ROOM                 0
 #define TO_NOTVICT              1
 #define TO_VICT                 2
 #define TO_CHAR                 3
 #define TO_ALL                  4
 
-/* ¨D§Uµ²ºcªº«Å§i */
+/* æ±‚åŠ©çµæ§‹çš„å®£å‘Š */
 struct  help_data
 {
   HELP_DATA * next;
@@ -1492,7 +1492,7 @@ struct  help_data
   sh_int      level;
 };
 
-/* ¦³Ãö°Ó©±ªº«Å§i */
+/* æœ‰é—œå•†åº—çš„å®£å‘Š */
 #define MAX_TRADE               5
 
 struct  shop_data
@@ -1509,38 +1509,38 @@ struct  shop_data
   int               close_hour;             /* First closing hour           */
 };
 
-/* Â¾·~µ²ºcªº©w¸q */
+/* è·æ¥­çµæ§‹çš„å®šç¾© */
 struct  class_data
 {
   CLASS_DATA * next;
-  char       * name;                 /* ­^¤å¦WºÙ       */
-  char       * cname;                /* ¤¤¤å¦WºÙ       */
-  char       * title;                /* ©ïÀY¦WºÙ       */
-  char       * rank[MAX_LEVEL+1];    /* ©ïÀY           */
-  char       * msg_limit;            /* ·¥­­°T®§       */
-  int          vnum;                 /* Â¾·~½s¸¹       */
-  int          low_rebirth;          /* ÂàÂ¾µ¥¯Å¤U­­   */
-  int          high_rebirth;         /* ÂàÂ¾µ¥¯Å¤W­­   */
-  int          rebirth_gold;         /* ÂàÂ¾ª÷         */
-  int          warn;                 /* ÂàÂ¾Äµ§i       */
-  int          associate;            /* ¯à¤£¯àÂàÂ¾     */
-  int          limit;                /* ·¥­­­È         */
-  int          nskill;               /* ¥i¾Ç§Ş¯à¼Æ¥Ø   */
-  int          multiplier;           /* ·¥­­­¿¼Æ       */
-  int          mask;                 /* ºX¼Ğ           */
-  int          attr[ MAX_ATTR ];     /* ©Ò¦³Äİ©Êªº¤W­­ */
-  int          factor[ MAX_ATTR ];   /* ©Ò¦³Äİ©Êªº¦]¼Æ */
-  int          max_default[MAX_ATTR];/* Äİ©Ê¹w³]³Ì¤j­È */
-  int          min_default[MAX_ATTR];/* Äİ©Ê¹w³]³Ì¤p­È */
-  int          hero[MAX_ATTR];       /* ¤É¯Å¬°­^¶¯¥[ªº¼Æ­È */
-  bool         fMana     : 1;        /* ¯à¤£¯à±o¨ìªk¤O */
-  bool         rudiment  : 1;        /* ¬O§_¬°¹w³]Â¾·~ */
-  bool         force     : 1;        /* ¬O§_¬°±j¨îÂ¾·~ */
-  bool         innate    : 1;        /* ¬O§_¬°¥i¿ïÂ¾·~ */
-  bool         select    : 1;        /* ¬O§_¤@¶}©l¥i¥H¿ï¾Ü */
+  char       * name;                 /* è‹±æ–‡åç¨±       */
+  char       * cname;                /* ä¸­æ–‡åç¨±       */
+  char       * title;                /* æŠ¬é ­åç¨±       */
+  char       * rank[MAX_LEVEL+1];    /* æŠ¬é ­           */
+  char       * msg_limit;            /* æ¥µé™è¨Šæ¯       */
+  int          vnum;                 /* è·æ¥­ç·¨è™Ÿ       */
+  int          low_rebirth;          /* è½‰è·ç­‰ç´šä¸‹é™   */
+  int          high_rebirth;         /* è½‰è·ç­‰ç´šä¸Šé™   */
+  int          rebirth_gold;         /* è½‰è·é‡‘         */
+  int          warn;                 /* è½‰è·è­¦å‘Š       */
+  int          associate;            /* èƒ½ä¸èƒ½è½‰è·     */
+  int          limit;                /* æ¥µé™å€¼         */
+  int          nskill;               /* å¯å­¸æŠ€èƒ½æ•¸ç›®   */
+  int          multiplier;           /* æ¥µé™å€æ•¸       */
+  int          mask;                 /* æ——æ¨™           */
+  int          attr[ MAX_ATTR ];     /* æ‰€æœ‰å±¬æ€§çš„ä¸Šé™ */
+  int          factor[ MAX_ATTR ];   /* æ‰€æœ‰å±¬æ€§çš„å› æ•¸ */
+  int          max_default[MAX_ATTR];/* å±¬æ€§é è¨­æœ€å¤§å€¼ */
+  int          min_default[MAX_ATTR];/* å±¬æ€§é è¨­æœ€å°å€¼ */
+  int          hero[MAX_ATTR];       /* å‡ç´šç‚ºè‹±é›„åŠ çš„æ•¸å€¼ */
+  bool         fMana     : 1;        /* èƒ½ä¸èƒ½å¾—åˆ°æ³•åŠ› */
+  bool         rudiment  : 1;        /* æ˜¯å¦ç‚ºé è¨­è·æ¥­ */
+  bool         force     : 1;        /* æ˜¯å¦ç‚ºå¼·åˆ¶è·æ¥­ */
+  bool         innate    : 1;        /* æ˜¯å¦ç‚ºå¯é¸è·æ¥­ */
+  bool         select    : 1;        /* æ˜¯å¦ä¸€é–‹å§‹å¯ä»¥é¸æ“‡ */
 };
 
-/* NOTE µ²ºcªº«Å§i */
+/* NOTE çµæ§‹çš„å®£å‘Š */
 struct note_data
 {
   NOTE_DATA * next;
@@ -1573,7 +1573,7 @@ struct vote_data
   int         moninal;
 };
 
-/* AFFECT µ²ºcªº«Å§i */
+/* AFFECT çµæ§‹çš„å®£å‘Š */
 struct  affect_data
 {
   AFFECT_DATA * next;
@@ -1584,7 +1584,7 @@ struct  affect_data
   int           level;
 };
 
-/* ³Q±şªºµ²ºc«Å§i */
+/* è¢«æ®ºçš„çµæ§‹å®£å‘Š */
 struct  kill_data
 {
   int number;
@@ -1702,37 +1702,37 @@ struct angel_data
 };
 
 /***************************************************************************
- *                   ¦³Ãö°Ï°ìÀÉªº«Å§i³¡¥÷                                  *
+ *                   æœ‰é—œå€åŸŸæª”çš„å®£å‘Šéƒ¨ä»½                                  *
  ***************************************************************************/
 
-/* MOB ªº ACT ªº¼Æ­Èªí */
-#define ACT_IS_NPC              0x00000001 /* ©Çª«ªº³]©w           */
-#define ACT_SENTINEL            0x00000002 /* °±¦b­ì¦ì¡M¤£·|¨«°Ê   */
-#define ACT_SCAVENGER           0x00000004 /* ·|¦Û°Ê¾ß°_ªF¦è       */
-#define ACT_AGGRESSIVE          0x00000020 /* ·|¦Û°Ê§ğÀ»           */
-#define ACT_STAY_AREA           0x00000040 /* ¤£·|Â÷¶}°Ï°ì         */
+/* MOB çš„ ACT çš„æ•¸å€¼è¡¨ */
+#define ACT_IS_NPC              0x00000001 /* æ€ªç‰©çš„è¨­å®š           */
+#define ACT_SENTINEL            0x00000002 /* åœåœ¨åŸä½ï¹ä¸æœƒèµ°å‹•   */
+#define ACT_SCAVENGER           0x00000004 /* æœƒè‡ªå‹•æ’¿èµ·æ±è¥¿       */
+#define ACT_AGGRESSIVE          0x00000020 /* æœƒè‡ªå‹•æ”»æ“Š           */
+#define ACT_STAY_AREA           0x00000040 /* ä¸æœƒé›¢é–‹å€åŸŸ         */
 #define ACT_WIMPY               0x00000080 /* Flees when hurt      */
 #define ACT_PET                 0x00000100 /* Auto set for pets    */
 #define ACT_TRAIN               0x00000200 /* Can train PC's       */
 #define ACT_PRACTICE            0x00000400 /* Can practice PC's    */
-#define ACT_REBIRTH             0x00000800 /* ¥i¥H´Àª±®aÂàÂ¾       */
-#define ACT_REBORN_FIGHT        0x00001000 /* ·|¦A¥Í¦¨¨ä¥L©Çª«     */
-#define ACT_ASK                 0x00002000 /* ·|¥s¤H¥´¤u           */
-#define AUTOSET_VALUE           0x00004000 /* ¥Ñ¨t²Î³]©w¤@¨Ç¼Æ­È   */
-#define ACT_NOREBORN            0x00008000 /* ¤£·|­«¥Í             */
-#define ACT_NOKILL              0x00010000 /* ¤£¯à±ş®`             */
-#define ACT_ENROLL              0x00020000 /* °O«ë                 */
-#define ACT_ALIGN_GOOD          0x00040000 /* °}Àçµ½¨}ªº©Çª«       */
-#define ACT_ALIGN_EVIL          0x00080000 /* °}Àç¨¸´cªº©Çª«       */
-#define ACT_NOSUMMON            0x00100000 /* ¤£¯à³Q¥l³ê           */
+#define ACT_REBIRTH             0x00000800 /* å¯ä»¥æ›¿ç©å®¶è½‰è·       */
+#define ACT_REBORN_FIGHT        0x00001000 /* æœƒå†ç”Ÿæˆå…¶ä»–æ€ªç‰©     */
+#define ACT_ASK                 0x00002000 /* æœƒå«äººæ‰“å·¥           */
+#define AUTOSET_VALUE           0x00004000 /* ç”±ç³»çµ±è¨­å®šä¸€äº›æ•¸å€¼   */
+#define ACT_NOREBORN            0x00008000 /* ä¸æœƒé‡ç”Ÿ             */
+#define ACT_NOKILL              0x00010000 /* ä¸èƒ½æ®ºå®³             */
+#define ACT_ENROLL              0x00020000 /* è¨˜æ¨                 */
+#define ACT_ALIGN_GOOD          0x00040000 /* é™£ç‡Ÿå–„è‰¯çš„æ€ªç‰©       */
+#define ACT_ALIGN_EVIL          0x00080000 /* é™£ç‡Ÿé‚ªæƒ¡çš„æ€ªç‰©       */
+#define ACT_NOSUMMON            0x00100000 /* ä¸èƒ½è¢«å¬å–š           */
 
-/* ©Ê§O */
+/* æ€§åˆ¥ */
 #define SEX_NEUTRAL             0
 #define SEX_MALE                1
 #define SEX_FEMALE              2
 #define MAX_SEX                 3
 
-/* ±`¥Îªºª««~ªºµêÀÀ¸¹½X */
+/* å¸¸ç”¨çš„ç‰©å“çš„è™›æ“¬è™Ÿç¢¼ */
 #define OBJ_VNUM_PROTYPE        1
 #define OBJ_VNUM_MONEY_ONE      2
 #define OBJ_VNUM_MONEY_SOME     3
@@ -1760,7 +1760,7 @@ struct angel_data
 #define OBJ_VNUM_LETTER         170
 #define OBJ_VNUM_URN            171
 
-/* ª««~ªº«¬ºA±`¼Æ */
+/* ç‰©å“çš„å‹æ…‹å¸¸æ•¸ */
 #define ITEM_LIGHT              1
 #define ITEM_SCROLL             2
 #define ITEM_WAND               3
@@ -1794,29 +1794,29 @@ struct angel_data
 #define ITEM_BACKBAG            31
 #define ITEM_ARROW              32
 
-/* ªZ¾¹ªº§ÎºA */
+/* æ­¦å™¨çš„å½¢æ…‹ */
 #define WEAPON_ALL              65535
-#define WEAPON_HAND             1        /* ªÅ¤â§ğÀ» */
-#define WEAPON_DAGGER           2        /* ¤P­º§ğÀ» */
-#define WEAPON_SWORD            3        /* ªø¼C§ğÀ» */
-#define WEAPON_BLADE            4        /* ¤j¤M§ğÀ» */
-#define WEAPON_AXE              5        /* ©òÀY§ğÀ» */
-#define WEAPON_WHIP             6        /* ªøÃ@§ğÀ» */
-#define WEAPON_SPEAR            7        /* ªøºj§ğÀ» */
-#define WEAPON_PEN              8        /* µ§®°§ğÀ» */
-#define WEAPON_HAMMER           9        /* ÂñÃş§ğÀ» */
-#define WEAPON_CLUB             10       /* ´Ò´Î§ğÀ» */
-#define WEAPON_BOW              11       /* ¤}½b§ğÀ» */
-#define WEAPON_FORCE            12       /* ®ğ¥\§ğÀ» */
-#define WEAPON_STEPS            13       /* ¨Bªk§Ş¯à */
-#define WEAPON_FLEE             14       /* °k¶]§Ş¯à */
+#define WEAPON_HAND             1        /* ç©ºæ‰‹æ”»æ“Š */
+#define WEAPON_DAGGER           2        /* åŒ•é¦–æ”»æ“Š */
+#define WEAPON_SWORD            3        /* é•·åŠæ”»æ“Š */
+#define WEAPON_BLADE            4        /* å¤§åˆ€æ”»æ“Š */
+#define WEAPON_AXE              5        /* æ–§é ­æ”»æ“Š */
+#define WEAPON_WHIP             6        /* é•·é­æ”»æ“Š */
+#define WEAPON_SPEAR            7        /* é•·æ§æ”»æ“Š */
+#define WEAPON_PEN              8        /* ç­†æ‰‡æ”»æ“Š */
+#define WEAPON_HAMMER           9        /* éšé¡æ”»æ“Š */
+#define WEAPON_CLUB             10       /* æ£æ£’æ”»æ“Š */
+#define WEAPON_BOW              11       /* å¼“ç®­æ”»æ“Š */
+#define WEAPON_FORCE            12       /* æ°£åŠŸæ”»æ“Š */
+#define WEAPON_STEPS            13       /* æ­¥æ³•æŠ€èƒ½ */
+#define WEAPON_FLEE             14       /* é€ƒè·‘æŠ€èƒ½ */
 
 #define SHOP_STORE              1
 #define SHOP_SMITH              2
 #define SHOP_MERCENARY          3
 #define SHOP_COPER              4
 
-/* ª««~ªºÃB¥~ºX¼Ğ¼Æ­Èªí */
+/* ç‰©å“çš„é¡å¤–æ——æ¨™æ•¸å€¼è¡¨ */
 #define ITEM_GLOW               0x00000001
 #define ITEM_HUM                0x00000002
 #define ITEM_DARK               0x00000004
@@ -1837,11 +1837,11 @@ struct angel_data
 #define ITEM_CONTRABAND         0x00020000
 #define ITEM_LOADABLE           0x00040000
 
-/* ª««~ªº¬ïÀ¹ºX¼Ğªº¼Æ­Èªí */
+/* ç‰©å“çš„ç©¿æˆ´æ——æ¨™çš„æ•¸å€¼è¡¨ */
 #define ITEM_NOT_TAKE           0x00000000
-#define ITEM_WEAR_LIGHT         131072          /* 6.26.2000 ²¾°£ */
+#define ITEM_WEAR_LIGHT         131072          /* 6.26.2000 ç§»é™¤ */
 
-/* ª««~ªº¼vÅT«¬ºAªº¼Æ­Èªí */
+/* ç‰©å“çš„å½±éŸ¿å‹æ…‹çš„æ•¸å€¼è¡¨ */
 #define APPLY_NONE              0
 #define APPLY_STR               1
 #define APPLY_DEX               2
@@ -1868,13 +1868,13 @@ struct angel_data
 #define APPLY_SAVING_BREATH     23
 #define APPLY_SAVING_SPELL      24
 
-/* ®e¾¹Ãşª««~¤¤ªº Value[1] ¤¤ªººØÃş¼Æ­Èªí */
+/* å®¹å™¨é¡ç‰©å“ä¸­çš„ Value[1] ä¸­çš„ç¨®é¡æ•¸å€¼è¡¨ */
 #define CONT_CLOSEABLE          0x00000001
 #define CONT_PICKPROOF          0x00000002
 #define CONT_CLOSED             0x00000004
 #define CONT_LOCKED             0x00000008
 
-/* ©Ğ¶¡ªº¤è¦V¼Æ­Èªí */
+/* æˆ¿é–“çš„æ–¹å‘æ•¸å€¼è¡¨ */
 #define DIR_NORTH               0
 #define DIR_EAST                1
 #define DIR_SOUTH               2
@@ -1885,37 +1885,37 @@ struct angel_data
 #define DIR_OUT                 7
 #define DIR_MAX                 8
 
-/* ª««~¸Ë³Æ¸ËÀ¹¦ì¸m¼Æ­Èªí, -1 ¥Nªí¨S¦³ */
+/* ç‰©å“è£å‚™è£æˆ´ä½ç½®æ•¸å€¼è¡¨, -1 ä»£è¡¨æ²’æœ‰ */
 #define WEAR_NONE               -1
 #define WEAR_LIGHT              0
 #define WEAR_WIELD              16
 #define WEAR_HOLD               17
 
-/* §Ş¯à§ğÀ»³¡¦ì */
+/* æŠ€èƒ½æ”»æ“Šéƒ¨ä½ */
 #define ATTACK_RANDOM           0x00000000
 
-/* ¤Hª«ª¬ºA */
+/* äººç‰©ç‹€æ…‹ */
 #define COND_DRUNK              0
 #define COND_FULL               1
 #define COND_THIRST             2
 
-/* ¤Hª«¥Ø«eªº±¡§Î */
+/* äººç‰©ç›®å‰çš„æƒ…å½¢ */
 #define POS_DEAD                0
 #define POS_SLEEPING            1
 #define POS_RESTING             2
 #define POS_FIGHTING            3
 #define POS_STANDING            4
 
-/* ¥N²z¯«±Ú¥\¯à */
+/* ä»£ç†ç¥æ—åŠŸèƒ½ */
 #define WIZ_SILENCE             0x00000001
 #define WIZ_NOTELL              0x00000002
 #define WIZ_NOEMOTE             0x00000004
 
-#define MAX_TRIBUNAL            100                 /* ³Ì¤jÃg»@®É¶¡     */
-#define MAX_TRIBUNAL_PC         5                   /* ¯«±ÚÅv¤O³Ì¤jÃg»@ */
+#define MAX_TRIBUNAL            100                 /* æœ€å¤§æ‡²ç½°æ™‚é–“     */
+#define MAX_TRIBUNAL_PC         5                   /* ç¥æ—æ¬ŠåŠ›æœ€å¤§æ‡²ç½° */
 
-/* ¤Hª«ªº ACT ªº¼Æ­È¹ï·Óªí */
-#define PLR_IS_NPC              0x00000001          /* ¤£¯à¶Ã³]©w */
+/* äººç‰©çš„ ACT çš„æ•¸å€¼å°ç…§è¡¨ */
+#define PLR_IS_NPC              0x00000001          /* ä¸èƒ½äº‚è¨­å®š */
 #define PLR_BOUGHT_PET          0x00000002
 #define PLR_AUCTION             0x00000004
 #define PLR_AUTOEXIT            0x00000008
@@ -1949,14 +1949,14 @@ struct angel_data
 
 #define PLR_COPYEQ              0x00000001
 
-/* ©w¸qµ¹ turn ³o­ÓÅÜ¼Æ¥Îªº */
+/* å®šç¾©çµ¦ turn é€™å€‹è®Šæ•¸ç”¨çš„ */
 #define PLR_REBIRTH             0x00000001
 #define PLR_TRAIN               0x00000002
 #define PLR_PRACTICE            0x00000004
 #define PLR_ANSI                0x00000008
 #define PLR_LOTTO               0x00000010
 
-/* ÀW¹D¼Æ­È¹ï·Óªí */
+/* é »é“æ•¸å€¼å°ç…§è¡¨ */
 #define CHANNEL_AUCTION         0x00000001
 #define CHANNEL_CHAT            0x00000002
 #define CHANNEL_BULLETIN        0x00000004
@@ -1977,106 +1977,106 @@ struct angel_data
 #define CHANNEL_GROUP           0x00020000
 #define CHANNEL_PK              0x00040000
 
-/* ¿W¥ß¨Æ¥óÅ]¥Û */
-#define STONE_SPEED              1                   /* ¥[³t«×   */
-#define STONE_STRENGTH           2                   /* ¥[¤O¶q   */
-#define STONE_CON                3                   /* ¥[Åé®æ   */
-#define STONE_WIS                4                   /* ¥[¾ÇÃÑ   */
-#define STONE_LUCKY              5                   /* ©¯¹B     */
-#define STONE_PARRY              6                   /* ©è¾×     */
-#define STONE_BLOCK              7                   /* ªZ¾¹©è¾× */
-#define STONE_REVERSEHPMP        8                   /* ¼Æ­È¤¬´« */
-#define STONE_REVERSEHPMOVE      9                   /* ¼Æ­È¤¬´« */
-#define STONE_MAGIC             10                   /* ¥[Å]¤O   */
-#define STONE_HPUP              11                   /* ¥[¥Í©R¤O */
-#define STONE_MANAUP            12                   /* ¥[ªk¤O   */
-#define STONE_MOVEUP            13                   /* ¥[Åé¤O   */
-#define STONE_LIMITGAINUP       14                   /* ¼W¥[·¥­­ */
-#define STONE_REKICK            15                   /* ¤ÏÀ»     */
-#define STONE_DEFEND            16                   /* ¨¾¿m     */
-#define STONE_MONEYUP           17                   /* ª÷¿ú¼W¥[ */
-#define STONE_EXPUP             18                   /* ¸gÅç¼W¥[ */
-#define STONE_UNDEATH           19                   /* ¤£¦Ñ     */
-#define STONE_STEAL             20                   /* °½ÅÑ     */
-#define STONE_KNOW              21                   /* ¿s¬İ¹ï¤è */
-#define STONE_POWER             22                   /* ¾Ä¤O¤@À» */
-#define STONE_CHANGE            23                   /* ª«¤Æ¹ï¤è */
-#define STONE_TWOMAGIC          24                   /* ¯Ó·l´î¥b */
-#define STONE_TWOATTACK         25                   /* ¯Ó·l´î¥b */
-#define STONE_TWOSUMMON         26                   /* ¯Ó·l´î¥b */
-#define STONE_THROW             27                   /* §ëÂY     */
-#define STONE_ARMOR             28                   /* ¨¾¿m¤Wª@ */
-#define STONE_STEALMP           29                   /* °½ÅÑªk¤O */
-#define STONE_STEALHP           30                   /* °½ÅÑ¥Í©R */
-#define STONE_STEALMOVE         31                   /* °½ÅÑÅé¤O */
-#define STONE_MPPOWERUP         32                   /* «Â¤O¤Wª@ */
-#define STONE_MOVEPOWERUP       33                   /* «Â¤O¤Wª@ */
-#define STONE_DEATH             34                   /* ¦ÛÃz     */
-#define STONE_WITH              35                   /* °t¦X«Â¤O */
-#define STONE_HITROLL           36                   /* ¥[±j©R¤¤ */
+/* ç¨ç«‹äº‹ä»¶é­”çŸ³ */
+#define STONE_SPEED              1                   /* åŠ é€Ÿåº¦   */
+#define STONE_STRENGTH           2                   /* åŠ åŠ›é‡   */
+#define STONE_CON                3                   /* åŠ é«”æ ¼   */
+#define STONE_WIS                4                   /* åŠ å­¸è­˜   */
+#define STONE_LUCKY              5                   /* å¹¸é‹     */
+#define STONE_PARRY              6                   /* æŠµæ“‹     */
+#define STONE_BLOCK              7                   /* æ­¦å™¨æŠµæ“‹ */
+#define STONE_REVERSEHPMP        8                   /* æ•¸å€¼äº’æ› */
+#define STONE_REVERSEHPMOVE      9                   /* æ•¸å€¼äº’æ› */
+#define STONE_MAGIC             10                   /* åŠ é­”åŠ›   */
+#define STONE_HPUP              11                   /* åŠ ç”Ÿå‘½åŠ› */
+#define STONE_MANAUP            12                   /* åŠ æ³•åŠ›   */
+#define STONE_MOVEUP            13                   /* åŠ é«”åŠ›   */
+#define STONE_LIMITGAINUP       14                   /* å¢åŠ æ¥µé™ */
+#define STONE_REKICK            15                   /* åæ“Š     */
+#define STONE_DEFEND            16                   /* é˜²ç¦¦     */
+#define STONE_MONEYUP           17                   /* é‡‘éŒ¢å¢åŠ  */
+#define STONE_EXPUP             18                   /* ç¶“é©—å¢åŠ  */
+#define STONE_UNDEATH           19                   /* ä¸è€     */
+#define STONE_STEAL             20                   /* å·ç«Š     */
+#define STONE_KNOW              21                   /* çªºçœ‹å°æ–¹ */
+#define STONE_POWER             22                   /* å¥®åŠ›ä¸€æ“Š */
+#define STONE_CHANGE            23                   /* ç‰©åŒ–å°æ–¹ */
+#define STONE_TWOMAGIC          24                   /* è€—ææ¸›åŠ */
+#define STONE_TWOATTACK         25                   /* è€—ææ¸›åŠ */
+#define STONE_TWOSUMMON         26                   /* è€—ææ¸›åŠ */
+#define STONE_THROW             27                   /* æŠ•æ“²     */
+#define STONE_ARMOR             28                   /* é˜²ç¦¦ä¸Šæ˜‡ */
+#define STONE_STEALMP           29                   /* å·ç«Šæ³•åŠ› */
+#define STONE_STEALHP           30                   /* å·ç«Šç”Ÿå‘½ */
+#define STONE_STEALMOVE         31                   /* å·ç«Šé«”åŠ› */
+#define STONE_MPPOWERUP         32                   /* å¨åŠ›ä¸Šæ˜‡ */
+#define STONE_MOVEPOWERUP       33                   /* å¨åŠ›ä¸Šæ˜‡ */
+#define STONE_DEATH             34                   /* è‡ªçˆ†     */
+#define STONE_WITH              35                   /* é…åˆå¨åŠ› */
+#define STONE_HITROLL           36                   /* åŠ å¼·å‘½ä¸­ */
 
-/* §ğÀ»Å]¥Û */
-#define STONE_FIRE              37                   /* ¤õ¨tÅ]ªk */
-#define STONE_LIGHTNING         38                   /* ¹p¨tÅ]ªk */
-#define STONE_ICE               39                   /* ¦B¨tÅ]ªk */
-#define STONE_EARTH             40                   /* ¤g¨tÅ]ªk */
-#define STONE_POISON            41                   /* ¬r¨tÅ]ªk */
-#define STONE_LIGHT             42                   /* ¥ú¨tÅ]ªk */
-#define STONE_DARKNESS          43                   /* îî¨tÅ]ªk */
-#define STONE_SAINT             44                   /* ¸t¨tÅ]ªk */
-#define STONE_EVIL              45                   /* ¨¸¨tÅ]ªk */
-#define STONE_VOID              46                   /* µêµLÅ]ªk */
-#define STONE_WIND              47                   /* ­·¨tÅ]ªk */
-#define STONE_BEST              48                   /* ¨s·¥Å]ªk */
-#define STONE_WATER             49                   /* ¤ô¨tÅ]ªk */
-#define STONE_NOATTR            50                   /* µLÄİ©Ê   */
+/* æ”»æ“Šé­”çŸ³ */
+#define STONE_FIRE              37                   /* ç«ç³»é­”æ³• */
+#define STONE_LIGHTNING         38                   /* é›·ç³»é­”æ³• */
+#define STONE_ICE               39                   /* å†°ç³»é­”æ³• */
+#define STONE_EARTH             40                   /* åœŸç³»é­”æ³• */
+#define STONE_POISON            41                   /* æ¯’ç³»é­”æ³• */
+#define STONE_LIGHT             42                   /* å…‰ç³»é­”æ³• */
+#define STONE_DARKNESS          43                   /* é—‡ç³»é­”æ³• */
+#define STONE_SAINT             44                   /* è–ç³»é­”æ³• */
+#define STONE_EVIL              45                   /* é‚ªç³»é­”æ³• */
+#define STONE_VOID              46                   /* è™›ç„¡é­”æ³• */
+#define STONE_WIND              47                   /* é¢¨ç³»é­”æ³• */
+#define STONE_BEST              48                   /* ç©¶æ¥µé­”æ³• */
+#define STONE_WATER             49                   /* æ°´ç³»é­”æ³• */
+#define STONE_NOATTR            50                   /* ç„¡å±¬æ€§   */
 
-/* «ì´_©Î»²§UÅ]¥Û */
-#define STONE_HEAL              51                   /* ¦^´_¥Í©R */
-#define STONE_RECOVER           52                   /* ¦^´_Åé¤O */
-#define STONE_MEDITATION        53                   /* ¦^´_ªk¤O */
-#define STONE_CURE_POISON       54                   /* Àø¬rÅ]ªk */
-#define STONE_PRAY              55                   /* ¬èÃ«Å]ªk */
-#define STONE_BESTHEAL          56                   /* ¨s·¥¦^´_ */
-#define STONE_CURE_POSITION     57                   /* ¦^´_ª¬ºA */
-#define STONE_DISPALMAGIC       58                   /* ¥h°£Å]ªk */
-#define STONE_ARMORSPELL        59                   /* ¨¾¿mÅ]ªk */
-#define STONE_CALLDEATH         60                   /* ¥²±şÅ]ªk */
-#define STONE_BESTARMOR         61                   /* ¨s·¥¨¾¿m */
-#define STONE_REBIRTH           62                   /* ´_¬¡Å]ªk */
-#define STONE_MINIMIZE          63                   /* ÁY¤pÅ]ªk */
-#define STONE_ESCAPE            64                   /* °k¶]Å]ªk */
-#define STONE_SILENCE           65                   /* ¨HÀqÅ]ªk */
+/* æ¢å¾©æˆ–è¼”åŠ©é­”çŸ³ */
+#define STONE_HEAL              51                   /* å›å¾©ç”Ÿå‘½ */
+#define STONE_RECOVER           52                   /* å›å¾©é«”åŠ› */
+#define STONE_MEDITATION        53                   /* å›å¾©æ³•åŠ› */
+#define STONE_CURE_POISON       54                   /* ç™‚æ¯’é­”æ³• */
+#define STONE_PRAY              55                   /* ç¥ˆç¦±é­”æ³• */
+#define STONE_BESTHEAL          56                   /* ç©¶æ¥µå›å¾© */
+#define STONE_CURE_POSITION     57                   /* å›å¾©ç‹€æ…‹ */
+#define STONE_DISPALMAGIC       58                   /* å»é™¤é­”æ³• */
+#define STONE_ARMORSPELL        59                   /* é˜²ç¦¦é­”æ³• */
+#define STONE_CALLDEATH         60                   /* å¿…æ®ºé­”æ³• */
+#define STONE_BESTARMOR         61                   /* ç©¶æ¥µé˜²ç¦¦ */
+#define STONE_REBIRTH           62                   /* å¾©æ´»é­”æ³• */
+#define STONE_MINIMIZE          63                   /* ç¸®å°é­”æ³• */
+#define STONE_ESCAPE            64                   /* é€ƒè·‘é­”æ³• */
+#define STONE_SILENCE           65                   /* æ²ˆé»˜é­”æ³• */
 
-/* ¥l³êÅ]¥Û */
-#define STONE_SUMMONEAGLE       66                   /* ¥l³ê¦ÑÆN */
-#define STONE_SUMMONLION        67                   /* ¥l³ê·à¤l */
-#define STONE_SUMMONCOLD        68                   /* ¥l³ê³·¤k */
-#define STONE_SUMMONFIRE        69                   /* ¨Ì¥±¨½¯S */
-#define STONE_SUMMONLAM         70                   /* ¥l³ê©Ô©i */
-#define STONE_SUMMONTAITAN      71                   /* ¥l³ê®õ©Z */
-#define STONE_SUMMONOODIN       72                   /* ¥l³ê¼Ú¤B */
-#define STONE_SUMMONSNAKE       73                   /* ¥l³ê¤ô³D */
-#define STONE_SUMMONBAHAMUT     74                   /* ¤Ú«¢©i¯S */
-#define STONE_SUMMONCOW         75                   /* ¥l³ê¯«¤û */
-#define STONE_SUMMONSAINT       76                   /* ¸t¤§¼f§P */
-#define STONE_SUMMONFIREBIRD    77                   /* Âà¥Í¤§ª¢ */
-#define STONE_SUMMONBAHAMUT2    78                   /* ¤Ú«¢©i¯SII */
-#define STONE_SUMMONEVILKING    79                   /* ¥l³ê­ß¤ı */
-#define STONE_SUMMONTWOFACE     80                   /* ¤Ñ¦a±YÃa */
-#define STONE_SUMMONBAHAMUTZERO 81                   /* ¤Ú«¢©i¯S¹s¦¡ */
-#define STONE_SUMMONRIDER       82                   /* ¶ê®àªZ¤h */
-#define STONE_BESTSUMMON        83                   /* ¨s·¥¥l³ê */
-#define STONE_SUMMONGOLEM       84                   /* ¥l³ê¥Û¤H */
+/* å¬å–šé­”çŸ³ */
+#define STONE_SUMMONEAGLE       66                   /* å¬å–šè€é·¹ */
+#define STONE_SUMMONLION        67                   /* å¬å–šç…å­ */
+#define STONE_SUMMONCOLD        68                   /* å¬å–šé›ªå¥³ */
+#define STONE_SUMMONFIRE        69                   /* ä¾å¼—é‡Œç‰¹ */
+#define STONE_SUMMONLAM         70                   /* å¬å–šæ‹‰å§† */
+#define STONE_SUMMONTAITAN      71                   /* å¬å–šæ³°å¦ */
+#define STONE_SUMMONOODIN       72                   /* å¬å–šæ­ä¸ */
+#define STONE_SUMMONSNAKE       73                   /* å¬å–šæ°´è›‡ */
+#define STONE_SUMMONBAHAMUT     74                   /* å·´å“ˆå§†ç‰¹ */
+#define STONE_SUMMONCOW         75                   /* å¬å–šç¥ç‰› */
+#define STONE_SUMMONSAINT       76                   /* è–ä¹‹å¯©åˆ¤ */
+#define STONE_SUMMONFIREBIRD    77                   /* è½‰ç”Ÿä¹‹ç‚ */
+#define STONE_SUMMONBAHAMUT2    78                   /* å·´å“ˆå§†ç‰¹II */
+#define STONE_SUMMONEVILKING    79                   /* å¬å–šå†¥ç‹ */
+#define STONE_SUMMONTWOFACE     80                   /* å¤©åœ°å´©å£ */
+#define STONE_SUMMONBAHAMUTZERO 81                   /* å·´å“ˆå§†ç‰¹é›¶å¼ */
+#define STONE_SUMMONRIDER       82                   /* åœ“æ¡Œæ­¦å£« */
+#define STONE_BESTSUMMON        83                   /* ç©¶æ¥µå¬å–š */
+#define STONE_SUMMONGOLEM       84                   /* å¬å–šçŸ³äºº */
 
-/* ªZ¾¹§Ş¯à¸Ë³Æ¨Ï¥Î­­¨îµ²ºc«Å§i */
+/* æ­¦å™¨æŠ€èƒ½è£å‚™ä½¿ç”¨é™åˆ¶çµæ§‹å®£å‘Š */
 struct restrict_data
 {
   RESTRICT_DATA * next;
-  int             occasion;     /* ­­¨îªº®É¾÷     */
-  int             type;         /* ­­¨î«¬ºA       */
-  int             value;        /* ­­¨î¼Æ­È       */
-  int             vicevalue;    /* ­­¨îªº°Æ¼Æ­È   */
+  int             occasion;     /* é™åˆ¶çš„æ™‚æ©Ÿ     */
+  int             type;         /* é™åˆ¶å‹æ…‹       */
+  int             value;        /* é™åˆ¶æ•¸å€¼       */
+  int             vicevalue;    /* é™åˆ¶çš„å‰¯æ•¸å€¼   */
 };
 
 struct job_data
@@ -2114,24 +2114,24 @@ struct stock_data
   bool   lock;
 };
 
-/* ­­¨îºØÃş */
-#define RES_STR                 1                    /* ¹ï¤O¶q¤§­­¨î   */
-#define RES_INT                 2                    /* ¹ï´¼¤O¤§­­¨î   */
-#define RES_WIS                 3                    /* ¹ï¾ÇÃÑ¤§­­¨î   */
-#define RES_DEX                 4                    /* ¹ï±Ó±¶¤§­­¨î   */
-#define RES_CON                 5                    /* ¹ïÅé®æ¤§­­¨î   */
-#define RES_HP                  6                    /* ¹ï¥Í©R¤§­­¨î   */
-#define RES_MANA                7                    /* ¹ïªk¤O¤§­­¨î   */
-#define RES_MOVE                8                    /* ¹ïÅé¤O¤§­­¨î   */
-#define RES_CLASS               9                    /* ¹ïÂ¾·~¤§­­¨î   */
-#define RES_TRUST              10                    /* ¹ï«H¥ô­È¤§­­¨î */
-#define RES_SKILL              11                    /* ¹ï§Ş¯à¤§­­¨î   */
-#define RES_SEX                12                    /* ¹ï©Ê§O¤§­­¨î   */
-#define RES_LEVEL              13                    /* ¹ïµ¥¯Å¤§­­¨î   */
-#define RES_NOSKILL            14                    /* ¬Û«g§Ş¯à­­¨î   */
-#define RES_ALIGN              15                    /* °}Àçªº­­¨î     */
+/* é™åˆ¶ç¨®é¡ */
+#define RES_STR                 1                    /* å°åŠ›é‡ä¹‹é™åˆ¶   */
+#define RES_INT                 2                    /* å°æ™ºåŠ›ä¹‹é™åˆ¶   */
+#define RES_WIS                 3                    /* å°å­¸è­˜ä¹‹é™åˆ¶   */
+#define RES_DEX                 4                    /* å°æ•æ·ä¹‹é™åˆ¶   */
+#define RES_CON                 5                    /* å°é«”æ ¼ä¹‹é™åˆ¶   */
+#define RES_HP                  6                    /* å°ç”Ÿå‘½ä¹‹é™åˆ¶   */
+#define RES_MANA                7                    /* å°æ³•åŠ›ä¹‹é™åˆ¶   */
+#define RES_MOVE                8                    /* å°é«”åŠ›ä¹‹é™åˆ¶   */
+#define RES_CLASS               9                    /* å°è·æ¥­ä¹‹é™åˆ¶   */
+#define RES_TRUST              10                    /* å°ä¿¡ä»»å€¼ä¹‹é™åˆ¶ */
+#define RES_SKILL              11                    /* å°æŠ€èƒ½ä¹‹é™åˆ¶   */
+#define RES_SEX                12                    /* å°æ€§åˆ¥ä¹‹é™åˆ¶   */
+#define RES_LEVEL              13                    /* å°ç­‰ç´šä¹‹é™åˆ¶   */
+#define RES_NOSKILL            14                    /* ç›¸å‰‹æŠ€èƒ½é™åˆ¶   */
+#define RES_ALIGN              15                    /* é™£ç‡Ÿçš„é™åˆ¶     */
 
-/* MOB ­ì«¬µ²ºcªí«Å§i */
+/* MOB åŸå‹çµæ§‹è¡¨å®£å‘Š */
 struct  mob_index_data
 {
   MOB_INDEX_DATA * next;
@@ -2207,7 +2207,7 @@ struct  mob_index_data
   bool             NoSummon     : 1;
 };
 
-/* ª±®a©Î¬OµêÀÀ©Çª«³£¦³ªºµ²ºc */
+/* ç©å®¶æˆ–æ˜¯è™›æ“¬æ€ªç‰©éƒ½æœ‰çš„çµæ§‹ */
 struct  char_data
 {
   CHAR_DATA       * next;
@@ -2338,7 +2338,7 @@ struct  char_data
   bool              adviser      : 1;
 };
 
-/* ª±®a±M¦³ªº¸ê®Æµ²ºc */
+/* ç©å®¶å°ˆæœ‰çš„è³‡æ–™çµæ§‹ */
 struct  pc_data
 {
   PC_DATA      * next;
@@ -2396,7 +2396,7 @@ struct  pc_data
   bool           contract;
 };
 
-/* ©Çª«µ{¦¡ªºµ²ºc */
+/* æ€ªç‰©ç¨‹å¼çš„çµæ§‹ */
 struct  mob_prog_act_list
 {
   MPROG_ACT_LIST * next;
@@ -2430,7 +2430,7 @@ bool    MOBtrigger;
 #define GIVE_PROG               0x00000200
 #define BRIBE_PROG              0x00000400
 
-/* ²GÅé */
+/* æ¶²é«” */
 struct liq_data
 {
   LIQ_DATA  * next;
@@ -2452,7 +2452,7 @@ struct body_type
   int    chance;
 };
 
-/* ©Ğ¶¡©Î¬Oª««~ªºÃB¥~´y­z */
+/* æˆ¿é–“æˆ–æ˜¯ç‰©å“çš„é¡å¤–æè¿° */
 struct  extra_descr_data
 {
   EXTRA_DESCR_DATA * next;
@@ -2460,7 +2460,7 @@ struct  extra_descr_data
   char             * description;
 };
 
-/* ª««~ªº­ì«¬µ²ºc */
+/* ç‰©å“çš„åŸå‹çµæ§‹ */
 struct  obj_index_data
 {
   OBJ_INDEX_DATA   * next;
@@ -2513,7 +2513,7 @@ struct  obj_index_data
   bool               Sale         : 1;
 };
 
-/* ¯u¥¿ª««~ªºµ²ºc */
+/* çœŸæ­£ç‰©å“çš„çµæ§‹ */
 struct  obj_data
 {
   OBJ_DATA         * next;
@@ -2572,7 +2572,7 @@ struct  obj_data
   bool               Takeable     : 1;
 };
 
-/* ¥X¤f¸ê®Æµ²ºc */
+/* å‡ºå£è³‡æ–™çµæ§‹ */
 struct  exit_data
 {
   ROOM_INDEX_DATA * to_room;
@@ -2602,7 +2602,7 @@ struct  exit_data
  *   'S': stop (end of list)
  */
 
-/* °Ï°ì reset ©R¥Oªº©w¸q */
+/* å€åŸŸ reset å‘½ä»¤çš„å®šç¾© */
 struct  reset_data
 {
   RESET_DATA * next;
@@ -2613,7 +2613,7 @@ struct  reset_data
   int          arg3;
 };
 
-/* °Ï°ì©w¸q */
+/* å€åŸŸå®šç¾© */
 struct  area_data
 {
   AREA_DATA       * next;
@@ -2645,7 +2645,7 @@ struct  area_data
   bool              fight   : 1;
 };
 
-/* ©Ğ¶¡­ì«¬¸ê®Æµ²ºc */
+/* æˆ¿é–“åŸå‹è³‡æ–™çµæ§‹ */
 struct  room_index_data
 {
   ROOM_INDEX_DATA  * next;
@@ -2703,20 +2703,20 @@ struct  room_index_data
   bool               PracRoom     : 1;
 };
 
-/* ansi code ªº¸ê®Æµ²ºc */
+/* ansi code çš„è³‡æ–™çµæ§‹ */
 struct ansi_data
 {
   char * code;
 };
 
-/* ½Õ¦â½Lªº¸ê®Æµ²ºc */
+/* èª¿è‰²ç›¤çš„è³‡æ–™çµæ§‹ */
 struct palette_data
 {
   char character;
   int  color;
 };
 
-/* §Ş¯à¶Ë®`¸ê®Æµ²ºc */
+/* æŠ€èƒ½å‚·å®³è³‡æ–™çµæ§‹ */
 struct damage_data
 {
   DAMAGE_DATA    * next;
@@ -2752,7 +2752,7 @@ struct scan_data
 #define TYPE_HIT                1000
 #define TYPE_HIT_COST           3
 
-/* ªk³N¬Iªkªº§ÎºA */
+/* æ³•è¡“æ–½æ³•çš„å½¢æ…‹ */
 #define TAR_IGNORE              0
 #define TAR_CHAR_OFFENSIVE      1
 #define TAR_CHAR_DEFENSIVE      2
@@ -2767,58 +2767,58 @@ struct scan_data
 #define TAR_MOUNT               11
 #define TAR_NO_CAST             12
 
-/* ªk³N®ø¯Óªº§ÎºA */
+/* æ³•è¡“æ¶ˆè€—çš„å½¢æ…‹ */
 #define COST_HIT                0
 #define COST_MANA               1
 #define COST_MOVE               2
 #define COST_GOLD               3
 
-/* §Ş¯à¸ê®Æµ²ºc */
+/* æŠ€èƒ½è³‡æ–™çµæ§‹ */
 struct  skill_data
 {
   SKILL_DATA    * next;
-  SPELL_FUN     * function;           /* ªk³N¬Iªkªº¨ç¼Æ         */
-  CHECK_FUN     * check;              /* ¬Iªk½T»{¨ç¼Æ           */
-  LIMIT_DATA    * limit;              /* ¦UÂ¾·~ªº­­¨î           */
-  DAMAGE_DATA   * damage;             /* ¶Ë®`°T®§               */
-  RESTRICT_DATA * restrict;           /* ­­¨î¸ê®Æ               */
-  AFFECT_DATA   * affected;           /* ¼vÅT                   */
-  char          * name;               /* ­^¤å¦WºÙ               */
-  char          * cname;              /* ¤¤¤å¦WºÙ               */
-  char          * msg_off;            /* ªk³N®ø¥¢ªº°T®§         */
-  char          * help;               /* ¨D§U¸ê°T               */
-  char          * message;            /* §ğÀ»°T®§               */
-  int             slot;               /* ªk³Nªº½s¸¹             */
-  int             position;           /* ªk³N©Ò»İ³Ì§Cª¬ºA       */
-  int             type;               /* ªk³NªºÃş§O             */
-  int             cost_type;          /* ¬Iªk©Ò¯Óªº«¬ºA         */
-  int             cost;               /* ¬Iªk©Ò¯ÓªºÂI¼Æ         */
-  int             wait;               /* ¬Iªk«áªº©µ¿ğ®É¶¡       */
-  int             exp;                /* ¬Iªk«áÀò±o¸gÅç­Èªº¾÷²v */
-  int             associate;          /* Ãö³sªºªk³N½s¸¹         */
-  int             degree;             /* Ãö³sªºµ{«×, ¤d¤À¤§¤@   */
-  int             weapon;             /* ªZ¾¹                   */
-  int             sex;                /* ©Ê§O                   */
-  int             chance;             /* ¾÷²vªºÁ`©M             */
-  int             affect;             /* ªk³N®ÄÀ³¸¹½X           */
-  int             affect_id;          /* ¬Iªk®ÄÀ³½s¸¹, ª««~¹ï·Ó */
-  int             rating;             /* ÃÑ§O¸¹½X               */
-  int             antirating;         /* ¬Û«g§Ş¯à               */
-  int             choosen;            /* ¿ï¨úªº¤H¼Æ             */
-  int             adeptation;         /* ¿ï¨ú«á¹w³]¼ô½m«×       */
-  int             ply;                /* ½m²ßªº¾÷²v             */
-  int             qutoient;           /* ½m²ßµ¥¯Åªº°Ó¼Æ         */
-  bool            teach         : 1;  /* ¬O§_¥i¥H¤¬¬Û±Ğ¾É       */
-  bool            enable        : 1;  /* ¬O§_¥i¥H³Q­P¯à         */
-  bool            say_spell     : 1;  /* ¬O§_­n°á¥X©G»y         */
-  bool            concentration : 1;  /* ¬O§_·|·N§Ó¤£¶°¤¤       */
-  bool            cast          : 1;  /* ¬O§_¥i¥H¥Î cast ¬I®i   */
-  bool            innate        : 1;  /* ¬O§_¬°¹w³]§Ş¯à         */
-  bool            canask        : 1;  /* ¬O§_¥i¥H¬d¸ß           */
-  bool            valid         : 1;  /* ¬O§_¶}©ñ               */
+  SPELL_FUN     * function;           /* æ³•è¡“æ–½æ³•çš„å‡½æ•¸         */
+  CHECK_FUN     * check;              /* æ–½æ³•ç¢ºèªå‡½æ•¸           */
+  LIMIT_DATA    * limit;              /* å„è·æ¥­çš„é™åˆ¶           */
+  DAMAGE_DATA   * damage;             /* å‚·å®³è¨Šæ¯               */
+  RESTRICT_DATA * restrict;           /* é™åˆ¶è³‡æ–™               */
+  AFFECT_DATA   * affected;           /* å½±éŸ¿                   */
+  char          * name;               /* è‹±æ–‡åç¨±               */
+  char          * cname;              /* ä¸­æ–‡åç¨±               */
+  char          * msg_off;            /* æ³•è¡“æ¶ˆå¤±çš„è¨Šæ¯         */
+  char          * help;               /* æ±‚åŠ©è³‡è¨Š               */
+  char          * message;            /* æ”»æ“Šè¨Šæ¯               */
+  int             slot;               /* æ³•è¡“çš„ç·¨è™Ÿ             */
+  int             position;           /* æ³•è¡“æ‰€éœ€æœ€ä½ç‹€æ…‹       */
+  int             type;               /* æ³•è¡“çš„é¡åˆ¥             */
+  int             cost_type;          /* æ–½æ³•æ‰€è€—çš„å‹æ…‹         */
+  int             cost;               /* æ–½æ³•æ‰€è€—çš„é»æ•¸         */
+  int             wait;               /* æ–½æ³•å¾Œçš„å»¶é²æ™‚é–“       */
+  int             exp;                /* æ–½æ³•å¾Œç²å¾—ç¶“é©—å€¼çš„æ©Ÿç‡ */
+  int             associate;          /* é—œé€£çš„æ³•è¡“ç·¨è™Ÿ         */
+  int             degree;             /* é—œé€£çš„ç¨‹åº¦, åƒåˆ†ä¹‹ä¸€   */
+  int             weapon;             /* æ­¦å™¨                   */
+  int             sex;                /* æ€§åˆ¥                   */
+  int             chance;             /* æ©Ÿç‡çš„ç¸½å’Œ             */
+  int             affect;             /* æ³•è¡“æ•ˆæ‡‰è™Ÿç¢¼           */
+  int             affect_id;          /* æ–½æ³•æ•ˆæ‡‰ç·¨è™Ÿ, ç‰©å“å°ç…§ */
+  int             rating;             /* è­˜åˆ¥è™Ÿç¢¼               */
+  int             antirating;         /* ç›¸å‰‹æŠ€èƒ½               */
+  int             choosen;            /* é¸å–çš„äººæ•¸             */
+  int             adeptation;         /* é¸å–å¾Œé è¨­ç†Ÿç·´åº¦       */
+  int             ply;                /* ç·´ç¿’çš„æ©Ÿç‡             */
+  int             qutoient;           /* ç·´ç¿’ç­‰ç´šçš„å•†æ•¸         */
+  bool            teach         : 1;  /* æ˜¯å¦å¯ä»¥äº’ç›¸æ•™å°       */
+  bool            enable        : 1;  /* æ˜¯å¦å¯ä»¥è¢«è‡´èƒ½         */
+  bool            say_spell     : 1;  /* æ˜¯å¦è¦å”¸å‡ºå’’èª         */
+  bool            concentration : 1;  /* æ˜¯å¦æœƒæ„å¿—ä¸é›†ä¸­       */
+  bool            cast          : 1;  /* æ˜¯å¦å¯ä»¥ç”¨ cast æ–½å±•   */
+  bool            innate        : 1;  /* æ˜¯å¦ç‚ºé è¨­æŠ€èƒ½         */
+  bool            canask        : 1;  /* æ˜¯å¦å¯ä»¥æŸ¥è©¢           */
+  bool            valid         : 1;  /* æ˜¯å¦é–‹æ”¾               */
 };
 
-/* ¤@¨Ç±`¥Îªº¥¨¶° */
+/* ä¸€äº›å¸¸ç”¨çš„å·¨é›† */
 #define UMIN(a, b)              ((int) (a) < (int) (b) ? (a) : (b))
 #define UMAX(a, b)              ((int) (a) > (int) (b) ? (a) : (b))
 #define URANGE(a, b, c)         ((b) < (a) ? (a) : ((b) > (c) ? (c) : (b)))
@@ -2833,9 +2833,9 @@ struct  skill_data
                                   ( (x) = ( (y) - (x) ) ); }
 #define SQUARE(x)               ( (x) * (x) )
 #define NOSPACE( c )            while ( *(c) == ' ' || *(c) == '\t' ) (c)++
-#define YESNO( comp )           ( ( comp ) ? "¡³" : "¡Ñ" )
+#define YESNO( comp )           ( ( comp ) ? "â—‹" : "Ã—" )
 
-/* ¦³Ãö¤Hª«¥¨¶° */
+/* æœ‰é—œäººç‰©å·¨é›† */
 #define IS_NPC(ch)              (IS_SET((ch)->act, ACT_IS_NPC))
 #define IS_IMMORTAL(ch)         (get_trust(ch) >= LEVEL_IMMORTAL)
 #define IS_GOD(ch)              ( (ch)->level >= MAX_LEVEL )
@@ -2853,7 +2853,7 @@ struct  skill_data
 #define IS_OUTSIDE(ch)          ( (ch)->in_room->Indoors == FALSE )
 #define WAIT_STATE(ch, npulse)  ((ch)->wait = UMAX((ch)->wait, (npulse)))
 
-/* ª««~ªº¥¨¶° */
+/* ç‰©å“çš„å·¨é›† */
 #define CAN_WEAR(obj, part)     (IS_SET((obj)->wear_flags,  (part)))
 
 struct cmd_data
@@ -2883,7 +2883,7 @@ struct cmd_data
   bool       trace    : 1;
 };
 
-/* ªÀ¥æ«ü¥Oªºµ²ºc */
+/* ç¤¾äº¤æŒ‡ä»¤çš„çµæ§‹ */
 struct  social_data
 {
   SOCIAL_DATA * next;
@@ -2898,11 +2898,11 @@ struct  social_data
   char        * others_auto;
 };
 
-/* °Ï°ì±`¼Æ */
+/* å€åŸŸå¸¸æ•¸ */
 extern  const   struct  social_data     social_table    [];
 extern  char *  const                   attr_name       [MAX_ATTR];
 
-/* ¥ş°ìÅÜ¼Æ */
+/* å…¨åŸŸè®Šæ•¸ */
 extern          HELP_DATA         *     help_first;
 extern          HELP_DATA         *     help_last;
 extern          BAN_DATA          *     ban_list;
@@ -3894,7 +3894,7 @@ DECLARE_SPELL_FUN( cast_water_cloud_blast   );
 DECLARE_SPELL_FUN( cast_fun_wu_blast        );
 DECLARE_SPELL_FUN( cast_make_sword          );
 
-/* ½T»{§Ş¯àªº¨ç¼Æ */
+/* ç¢ºèªæŠ€èƒ½çš„å‡½æ•¸ */
 DECLARE_CHECK_FUN( check_sword_attack       );
 DECLARE_CHECK_FUN( check_unrigid_attack     );
 DECLARE_CHECK_FUN( check_pc_attack          );
@@ -3908,17 +3908,17 @@ DECLARE_CHECK_FUN( check_pen_attack         );
 DECLARE_CHECK_FUN( check_bow_attack         );
 DECLARE_CHECK_FUN( check_hammer_attack      );
 
-/* ¯S§ğ¨ç¼Æ */
+/* ç‰¹æ”»å‡½æ•¸ */
 DECLARE_ROUTINE_FUN( routine_none           );
 
-/* Ä²µo¨Æ¥ó¨ç¼Æ */
+/* è§¸ç™¼äº‹ä»¶å‡½æ•¸ */
 DECLARE_EVENT_FUN( event_thunder       );
 DECLARE_EVENT_FUN( event_solar_eclipse );
 DECLARE_EVENT_FUN( event_month_eclipse );
 DECLARE_EVENT_FUN( event_drought       );
 DECLARE_EVENT_FUN( event_locust        );
 
-/* ¦uÅ@¯«ªº¨ç¼Æ */
+/* å®ˆè­·ç¥çš„å‡½æ•¸ */
 DECLARE_ANGEL_FUN( angel_mount        );
 DECLARE_ANGEL_FUN( angel_sleep        );
 DECLARE_ANGEL_FUN( angel_drink        );

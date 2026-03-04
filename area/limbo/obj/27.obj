@@ -1,9 +1,9 @@
 Vnum            27
 Name            demon ring~
-ShortDesc       Å]¤§§Ù~
+ShortDesc       é­”ä¹‹æˆ’~
 Description
-¤Ñ¯«±M¥Î¤§Å]§Ù(ring)¡C~
-Unit            ¥u~
+å¤©ç¥å°ˆç”¨ä¹‹é­”æˆ’(ring)ã€‚~
+Unit            åª~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FINGER
 Takeable        Yes

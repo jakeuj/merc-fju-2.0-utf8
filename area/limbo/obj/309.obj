@@ -1,9 +1,9 @@
 Vnum            309
 Name            control weather book~
-ShortDesc       ±±¨î¤Ñ®ð³N¯µÓD~
+ShortDesc       æŽ§åˆ¶å¤©æ°£è¡“ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

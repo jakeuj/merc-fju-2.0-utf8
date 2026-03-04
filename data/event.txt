@@ -1,5 +1,5 @@
 #Event
-Title           ¦h¦æ¤£¸q~
+Title           å¤šè¡Œä¸ç¾©~
 Function        event_thunder~
 Keyword         thunder~
 Chance          100
@@ -7,7 +7,7 @@ Lock            NO
 End
 
 #Event
-Title           ¤é»k~
+Title           æ—¥è•~
 Function        event_solar_eclipse~
 Keyword         solar_eclipse~
 Lock            NO
@@ -15,7 +15,7 @@ Chance          100
 End
 
 #Event
-Title           ¤ë»k~
+Title           æœˆè•~
 Function        event_month_eclipse~
 Keyword         month_eclipse~
 Lock            NO
@@ -23,7 +23,7 @@ Chance          100
 End
 
 #Event
-Title           §ò¨a~
+Title           æ—±ç½~
 Function        event_drought~
 Keyword         drought~
 Lock            NO
@@ -31,7 +31,7 @@ Chance          100
 End
 
 #Event
-Title           ½À®`~
+Title           è—å®³~
 Function        event_locust~
 Keyword         locust~
 Lock            NO

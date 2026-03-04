@@ -1,5 +1,5 @@
 Name            sha steps~
-Cname           ­¸¥P±s¼C¨B~
+Cname           é£›ä»™å¾¡åŠæ­¥~
 Slot            SLOT_SHA_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,7 +38,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-¦ý¬O$n¨Ï¥X­¸¥P±s¼C¨B¤¤ªº$W¡uæù¶³¨­ªk¡v$Z¡M»´ÄÆÄÆ¦a¦­¤w°h¦b´X¨B¤§¥~¡C~
+ä½†æ˜¯$nä½¿å‡ºé£›ä»™å¾¡åŠæ­¥ä¸­çš„$Wã€Œç¿¦é›²èº«æ³•ã€$Zï¹è¼•é£„é£„åœ°æ—©å·²é€€åœ¨å¹¾æ­¥ä¹‹å¤–ã€‚~
 Chance          20
 Value           20
 Parry           0
@@ -47,7 +47,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥X¤F­¸¥P±s¼C¨B¤¤ªº$R¡y±s¼C¶Ã³Z¡z$Z¡M¨­¼v´Ý¤Û¡M¨Ï$Nªº§ðÀ»©Û¦¡¥þ³¡¸¨ªÅ¡C~
+$nä½¿å‡ºäº†é£›ä»™å¾¡åŠæ­¥ä¸­çš„$Rã€Žå¾¡åŠäº‚è¨£ã€$Zï¹èº«å½±æ®˜å¹»ï¹ä½¿$Nçš„æ”»æ“Šæ‹›å¼å…¨éƒ¨è½ç©ºã€‚~
 Chance          20
 Value           20
 Parry           0
@@ -56,7 +56,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥X$B¡y­Ë½ò¤C¬P¨B¡z$Z©¹«á³s°h¼Æ¨B¨Ï$Nªº§ðÀ»¥þ³¡¸¨ªÅ¡M³s$nªº¦çªA³£¨Sªg¨ì¡C~
+$nä½¿å‡º$Bã€Žå€’è¸©ä¸ƒæ˜Ÿæ­¥ã€$Zå¾€å¾Œé€£é€€æ•¸æ­¥ä½¿$Nçš„æ”»æ“Šå…¨éƒ¨è½ç©ºï¹é€£$nçš„è¡£æœéƒ½æ²’æ²¾åˆ°ã€‚~
 Chance          20
 Value           20
 Parry           0
@@ -65,7 +65,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥X¤Fµ´³»ªº$G¡y±s¼C¯ó¤W­¸¡z$Z¡M»´¥©¦aÁ×¹L¤F$Nªº³o°O±þ©Û¡C~
+$nä½¿å‡ºäº†çµ•é ‚çš„$Gã€Žå¾¡åŠè‰ä¸Šé£›ã€$Zï¹è¼•å·§åœ°é¿éŽäº†$Nçš„é€™è¨˜æ®ºæ‹›ã€‚~
 Chance          20
 Value           20
 Parry           0
@@ -74,7 +74,7 @@ Innate          0 0
 End
 #Damage
 Description
-¦ý$n¨Ï¥X$S¡y½ñ¤ôµL²ª¡z$Z»´¥\¡M²@µL§xÃø¦a°{¹L¤F³o©Û¡C~
+ä½†$nä½¿å‡º$Sã€Žè¸æ°´ç„¡ç—•ã€$Zè¼•åŠŸï¹æ¯«ç„¡å›°é›£åœ°é–ƒéŽäº†é€™æ‹›ã€‚~
 Chance          20
 Value           20
 Parry           0
@@ -83,7 +83,7 @@ Innate          0 0
 End
 #Damage
 Description
-¦ý$n¨Ï¥X$P¡y¹L²´¨­·Ï¡z$Z¨­ªk¡M¨Ï$N¥u§ðÀ»¨ì$n´Ý¯dªº¤Û¼v¡C~
+ä½†$nä½¿å‡º$Pã€ŽéŽçœ¼èº«ç…™ã€$Zèº«æ³•ï¹ä½¿$Nåªæ”»æ“Šåˆ°$næ®˜ç•™çš„å¹»å½±ã€‚~
 Chance          20
 Value           20
 Parry           0

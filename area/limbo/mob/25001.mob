@@ -1,11 +1,11 @@
 Vnum            25001
 Name            pigeon~
-ShortDesc       �H�F~
-LongDesc        �H�F(pigeon)
+ShortDesc       信鴿~
+LongDesc        信鴿(pigeon)
 ~
 Description
-�`�b�H�s���ͬ����n�B�͡M����t�ק֡M�O�ʫܦn
-�M�ǻ������̤���C
+常在人群中生活的好朋友﹐飛行速度快﹐記性很好
+﹐傳遞消息最內行。
 ~
 Sentinel        Yes
 Alignment       0

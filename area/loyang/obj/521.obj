@@ -1,10 +1,10 @@
 Vnum            521
 Name            white wedding suit~
-ShortDesc       ¥Õ¦â·s®QÂ§ªA~
+ShortDesc       ç™½è‰²æ–°å¨˜ç¦®æœ~
 Description
-¤@¥ó¶H¼x¯Â¯u°ª¶®ªº¥Õ¦â¥Õ¦â·s®QÂ§ªA(white wedding suit)¡M¦bµ²±B®É¬ïªº¡C
+ä¸€ä»¶è±¡å¾µç´”çœŸé«˜é›…çš„ç™½è‰²ç™½è‰²æ–°å¨˜ç¦®æœ(white wedding suit)ï¹åœ¨çµå©šæ™‚ç©¿çš„ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

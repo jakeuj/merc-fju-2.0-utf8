@@ -1,9 +1,9 @@
 Vnum            334
 Name            detect hidden book~
-ShortDesc       °»´úÂÃ°Î¯µÓD~
+ShortDesc       åµæ¸¬è—åŒ¿ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

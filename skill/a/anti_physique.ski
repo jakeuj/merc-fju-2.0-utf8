@@ -1,5 +1,5 @@
 Name            anti physique~
-Cname           �g�߰f��~
+Cname           經脈逆行~
 Slot            SLOT_ANTI_PHYSIQUE
 Msgoff          ~
 Function        cast_anti_physique~
@@ -29,11 +29,11 @@ Limit           CLASS_FIGHTER    10  35
 Limit           CLASS_GENERAL    50  95
 Limit           CLASS_BRAVO      50  70
 Help
-�g�߰f��:
+經脈逆行:
 
-�ǻ��ѡu��r�v�ڶ��W�q�����u�E���u�g�v���w�m�X�Ӫ��\�ҡM
-�o�]�]���\�O�j�W�M�b�ĤG���u�ؤs�׼C�v�ɳs�ѡu�_���v�x�C
-���P�u�F���v���Įv�M�o���\�ҥD�n�b��g�߯u��f��M���ͷ�
-���������ͩR�O�M�ڶ��W�]�]���n�W�j���C
+傳說由「西毒」歐陽鋒從假的「九陰真經」中硬練出來的功夫﹐
+卻也因此功力大增﹐在第二次「華山論劍」時連敗「北丐」洪七
+公與「東邪」黃藥師﹐這門功夫主要在於經脈真氣逆轉﹐產生源
+源不絕的生命力﹐歐陽鋒也因此聲名大噪。
 ~
 End

@@ -1,7 +1,7 @@
 Name            stone skin~
-Cname           �ֽ��ۤƳN~
+Cname           皮膚石化術~
 Slot            SLOT_STONE_SKIN
-Msgoff          �A���ֽ��S�^���Ӫ����A�T~
+Msgoff          你的皮膚又回到原來的狀態﹗~
 Check           check_unrigid_attack~
 Function        cast_stone_skin~
 Position        POS_STANDING
@@ -31,10 +31,10 @@ Limit           CLASS_SCHOLAR    15  40
 Limit           CLASS_DOCTOR     50  80
 Limit           CLASS_BARD       50  95
 Help
-�ֽ��ۤƳN:
+皮膚石化術:
 
-�o�Ӫk�N��ƧA���k�O�ܦ��@�ӫO�@�i���ê��N�A���ֽ��ۤơM���
-�~�Ӫ��@�Ǫ��z�����|���������Ө��C
+這個法術轉化你的法力變成一個保護磨均勻的將你的皮膚石化﹐對於
+外來的一些物理攻擊會比較的能夠承受。
 
 ~
 End

@@ -1,10 +1,10 @@
 Vnum            518
 Name            wedding ring~
-ShortDesc       [1;37mµ²±B§Ù«ü[0m~
+ShortDesc       [1;37mçµå©šæˆ’æŒ‡[0m~
 Description
-¶H¼x¥Ã«í°í©wªºµ²±B§Ù«ü(wedding ring)¡MÄmµ¹³o¨ü¤W¤Ñ¯¬ºÖªº¨â¤H¡C
+è±¡å¾µæ°¸æ†å …å®šçš„çµå©šæˆ’æŒ‡(wedding ring)ï¹ç»çµ¦é€™å—ä¸Šå¤©ç¥ç¦çš„å…©äººã€‚
 ~
-Unit            ¥u~
+Unit            åª~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

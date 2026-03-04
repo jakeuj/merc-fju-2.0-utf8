@@ -1,5 +1,5 @@
 Name            yu steps~
-Cname           �C�_�װ{~
+Cname           七奇避閃~
 Slot            SLOT_YU_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,7 +38,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n���ߤ@�ޡM����$O�����f�b$N���Z���W�M�@��$W�y�d�����z$Z�N$N���Z�����F�}�h�C~
+$n身軀一引﹐指間$O平平搭在$N的武器上﹐一招$W『攔雀尾』$Z將$N的武器曳了開去。~
 Chance          10
 Value           20
 Parry           0
@@ -47,7 +47,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�N����a�V$N�M�@��$W�y�g��Q�K�^�z$Z�M�N$N�H�b��a�M�Ϥ��}�ۦ��T~
+$n將身體靠向$N﹐一招$W『沾衣十八跌』$Z﹐將$N黏在原地﹐使不開招式﹗~
 Chance          10
 Value           20
 Parry           0
@@ -56,7 +56,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�⤤$O�W�U�R�ʡM�@��$W�y���r���i�z$Z�M�G�o$N���o���u���ۨ��T~
+$n手中$O上下舞動﹐一招$W『飛瀑長虹』$Z﹐逼得$N不得不守住自身﹗~
 Chance          10
 Value           20
 Parry           0
@@ -65,7 +65,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��⤤��$O�R�������@��$W�y���j���z$Z�M�N$N����պɼƾפF�U�ӡC~
+$n把手中的$O舞成圓環一招$W『雲迴圓月』$Z﹐將$N的攻勢盡數擋了下來。~
 Chance          10
 Value           20
 Parry           0
@@ -74,7 +74,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�H�R��ʡM�⤤$O���|�ݫe�M�@��$W�y�p�ʦ����z$Z�M�ƸѤF$N����աT~
+$n以靜制動﹐手中$O平舉胸前﹐一招$W『如封似閉』$Z﹐化解了$N的攻勢﹗~
 Chance          10
 Value           20
 Parry           0

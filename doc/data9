@@ -1,38 +1,38 @@
-��  �D: Envy/Merc Chinese Patch
+標  題: Envy/Merc Chinese Patch
 
-�o�O�ڥH�e�� POST ...
-�ثe������ Patch �u�� 140.114.77.5 �� Wyvern �s�@����تO ,�]���� post �b
-�L���O�D���e ,�S������ ,�ҥH�� Post �@�� ,���L�����i�h�n�F :)
-�����쪺�H�i�H�� 140.114.77.5 ���[�@�U�C
+這是我以前的 POST ...
+目前有收錄 Patch 只有 140.114.77.5 的 Wyvern 製作的精華板 ,因為原 post 在
+他當板主之前 ,沒收錄到 ,所以重 Post 一份 ,讓他收錄進去好了 :)
+有興趣的人可以到 140.114.77.5 參觀一下。
 
-�e�@�}�l���H�b MUD���W�� Merc MUD �p��ѨM������D ....
-�{�b���C�X�U���X�Ӥ�����n���ץ����� ,�ڬݹL Merc22 , Envy10 �� TheIsles1x
-�� Source ...
-�򥻤W�J�쪺���D�O�q�T�MŪArea �ɪ����� ,
+前一陣子有人在 MUD版上問 Merc MUD 如何解決中文問題 ....
+現在先列出下面幾個比較重要的修正部份 ,我看過 Merc22 , Envy10 及 TheIsles1x
+的 Source ...
+基本上遇到的問題是通訊和讀Area 檔的部份 ,
 
-�@�B�q�T�����ק� comm.c
-�b void read_from_buffer �̦��X��
+一、通訊部份修改 comm.c
+在 void read_from_buffer 裡有幾行
 >       if ( d->inbuf[i] == '\b' && k > 0 )
 >           --k;
 >       else if ( isascii(d->inbuf[i] ) && isprint( d->inbuf[i] ) )
 >           d->incomm[k++] = d->inbuf[i];
-�אּ
+改為
 >       if ( d->inbuf[i] == '\b' && k > 0 )
 >           --k;
 >       else /* if ( isascii( d->inbuf[i] ) && isprint( d->inbuf[i] ) ) */
 >                                         /*  by pass all characters */
 >           d->incomm[k++] = d->inbuf[i];
-���Ҧ����r�곣�i�J d->incomm ��...
+讓所有的字串都進入 d->incomm 裡...
 
-�M��b void nanny �̫ŧi���ܼƫᴡ�J�@��
+然後在 void nanny 裡宣告完變數後插入一行
 >    while ( isspace(*argument) || *argument<0           /* delete illegal  */
 >       || !isascii(*argument) || !isprint(*argument) ) /* chars -- Wyvern */
 >       argument++;
 
-�o�ˤl�q�T�譱��������D ,���ӴN��ѨM�F!
+這樣子通訊方面的中文問題 ,應該就算解決了!
 
-�G�BŪ�����峡������ db.c
-�b fread_string �̪�
+二、讀取中文部份更改原 db.c
+在 fread_string 裡的
 >char *fread_string( FILE *fp )
 >{
 >    char *plast;
@@ -86,7 +86,7 @@
 >
 >       case '~':
 >           plast++;
-�אּ
+改為
 >char *fread_string( FILE *fp )
 >{
 >    char *plast;
@@ -159,8 +159,8 @@
 >       case '~':
 >           plast++;
 >           if (fLast) break;
-�j�P�W�i�ѨMŪ�ɮ� ~ �O�_�Q����]�t�����D�C
-�M����ª� smash_tilde �令�U���������Y�i
+大致上可解決讀檔時 ~ 是否被中文包含的問題。
+然後把舊的 smash_tilde 改成下面的型式即可
 /*
  * Removes the tildes from a string.
  * Used for player-entered strings that go into disk files.
@@ -186,12 +186,12 @@ void smash_tilde( char *str )
     return;
 }
 
-�p���j�P�W ,Merc�̦�������B�z�����D���ӴN��O�ѨM�F!
-��L�p���D�N�d���ۤv���ө�� GOD���Ѧ�̦ۦ�ѨM�F ,���O���A�Q�ק�@��
-�s�� Merc/Envy��TheIsles�� ,���Q�Q�O�_����������O��J�o���u�@ ,�p�G�S
-������ ,���ثe��L�� MUD�� Imm�@�B�@�B�ݬݧO�H�p���_�� ,�A�c�v�@����
-�ؤ��z�Q��MUD �i��|�n�@�ǡC
+如此大致上 ,Merc裡有關中文處理的問題應該就算是解決了!
+其他小問題就留給自己有志於當 GOD的諸位們自行解決了 ,但是當你想修改一份
+新的 Merc/Envy或TheIsles時 ,先想想是否有足夠的精力投入這項工作 ,如果沒
+有的話 ,當目前其他的 MUD的 Imm一步一步看看別人如何改起來 ,再構築一份心
+目中理想的MUD 可能會好一些。
 
-�W���Ҧ�����������ѨM��״N�O�ثe�������ȯS�������ұĥΪ��{���X ,�q�T
-�����O�u�� 4040 ����k ,Area�ɳ����O�ۤv�g�� ,�Ʊ���L�Q����ƪ��H��
-�Ѥ@�Ǹg�� ,��֤���ƮɩҪ᪺�ɶ��C
+上面所有有關的中文解決方案就是目前消失的亞特蘭提斯所採用的程式碼 ,通訊
+部份是沿用 4040 的方法 ,Area檔部份是自己寫的 ,希望對其他想中文化的人提
+供一些經驗 ,減少中文化時所花的時間。

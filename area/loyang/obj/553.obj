@@ -1,10 +1,10 @@
 Vnum            553
 Name            wolf legging~
-ShortDesc       ¯T¥ÖÅ@½¥~
+ShortDesc       ç‹¼çš®è­·è†~
 Description
-¥Î¯T¥Ö»s¦¨ªºÅ@½¥ ¡M¯à´£°ªÂù¸}ªº±Ó±¶«×¡C
+ç”¨ç‹¼çš®è£½æˆçš„è­·è† ï¹èƒ½æé«˜é›™è…³çš„æ•æ·åº¦ã€‚
 ~
-Unit            ¨ã~
+Unit            å…·~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_LEGS
 Takeable        Yes

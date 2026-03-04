@@ -1,13 +1,13 @@
-Envy/Merc ¨Ã¤£·|±N idle ¦b name: password: ªÌ½ð¥X MUD.
-¥H¤U¬O¤@¬q®É¶¡¤º·|±N idle ¹L¤[ªÌ½ð¥Xªº patch .
-¦b  weather_update( ) of update.c
-¸Ìªº
+Envy/Merc ä¸¦ä¸æœƒå°‡ idle åœ¨ name: password: è€…è¸¢å‡º MUD.
+ä»¥ä¸‹æ˜¯ä¸€æ®µæ™‚é–“å…§æœƒå°‡ idle éŽä¹…è€…è¸¢å‡ºçš„ patch .
+åœ¨  weather_update( ) of update.c
+è£¡çš„
     DESCRIPTOR_DATA *d;
 
-§ï¦¨
+æ”¹æˆ
     DESCRIPTOR_DATA *d,*d_next;
 
-¦b ³Ì«á¤@­Ó return; ¤§«e´¡¤J
+åœ¨ æœ€å¾Œä¸€å€‹ return; ä¹‹å‰æ’å…¥
 
     for ( d = descriptor_list; d; d = d_next )
     {
@@ -22,10 +22,10 @@ Envy/Merc ¨Ã¤£·|±N idle ¦b name: password: ªÌ½ð¥X MUD.
                 sprintf( log_buf, "%s idle too long !", d->host );
                 log_string( log_buf );
                 write_to_buffer( d,
-                                "¶¢¸m¹L¤[, Ãö³¬³s½uª¬ºA¡C\n\r", 0 );
+                                "é–’ç½®éŽä¹…, é—œé–‰é€£ç·šç‹€æ…‹ã€‚\n\r", 0 );
                 close_socket ( d );
             }
     }
 
-¦pªG¥¼¸Ë OLC
-¤W­±ªº CON_?EDITOR ªº±ø¥ó¦¡¥i§R°£ .
+å¦‚æžœæœªè£ OLC
+ä¸Šé¢çš„ CON_?EDITOR çš„æ¢ä»¶å¼å¯åˆªé™¤ .

@@ -1,6 +1,6 @@
 Echo    NO_ECHO
 Editor  Cutty Ene~
-Name    �s���~
+Name    新手區~
 Fog     -1
 Upper   LEVEL_PC
 Lower   1
@@ -8,10 +8,10 @@ Serial  4
 Capital 0
 NewHand Yes
 Description
-�a�z���p�R���Ϭ��s��ǮաM�p�G�A�糧�C���٤��O�ܼ����ܡM��ĳ
-�A�i�H��o�̨ӳ}�}�M���ǲߤ@�ǹC�����ޥ��P��k�M��A���ܤj��
-���U�C
-��q���p�R�A�u�n�b recall �I�]�����������^��J new  �����O�K
-�i�H�^��s��ϡM���L�Ӱ����Ū��K���i�H�^�h�F�T
+地理狀況﹕此區為新手學校﹐如果你對本遊戲還不是很熟的話﹐建議
+你可以到這裡來逛逛﹐先學習一些遊戲的技巧與方法﹐對你有很大的
+幫助。
+交通狀況﹕你只要在 recall 點（洛陽的水池）鍵入 new  的指令便
+可以回到新手區﹐不過太高等級的便不可以回去了﹗
 ~
 End

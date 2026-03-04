@@ -1,9 +1,9 @@
 Vnum            402
 Name            dragon sword~
-ShortDesc       Às¬uÄ_¼C~
+ShortDesc       é¾æ³‰å¯¶åŠ~
 Description
-¶Ç»¡»PÀs¦³¬Û¦P¯à¤OªºªZ¾¹¤§¤@¡C~
-Unit            §â~
+å‚³èªªèˆ‡é¾æœ‰ç›¸åŒèƒ½åŠ›çš„æ­¦å™¨ä¹‹ä¸€ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

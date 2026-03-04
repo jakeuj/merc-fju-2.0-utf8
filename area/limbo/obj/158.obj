@@ -1,10 +1,10 @@
 Vnum            158
 Name            sanchin wax pill~
-ShortDesc       ¤T²MÄ_Äú¤Y~
+ShortDesc       ä¸‰æ¸…å¯¶è Ÿä¸¸~
 Description
-¤@²ÉªvÀø²´ª¼ªº¤¦ÃÄ(sanchin wax pill)¡C
+ä¸€ç²’æ²»ç™‚çœ¼ç›²çš„ä¸¹è—¥(sanchin wax pill)ã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

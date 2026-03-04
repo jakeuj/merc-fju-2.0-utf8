@@ -1,11 +1,11 @@
 Vnum            513
 Name            loyang weapon keeper~
-ShortDesc       ªZ¾¹©±¦ÑÁó~
-LongDesc        Àç°âªZ¾¹ªºªZ¾¹©±¦ÑÁó(weapon keeper)¯¸¦b¦¹³B¡C
+ShortDesc       æ­¦å™¨åº—è€é—†~
+LongDesc        ç‡Ÿå”®æ­¦å™¨çš„æ­¦å™¨åº—è€é—†(weapon keeper)ç«™åœ¨æ­¤è™•ã€‚
 ~
 Description
-¨­¬ï²Ê¥¬ªø³T¡Mº¡ÁyÄG´í¡M¬Ý¨Ó»á¸g­·Á÷¡M¹ï©óªZ¾¹¤Q¤À¦³¬ã¨s¡M­Y
-¦³¤£À´ªº¥i¥H°Ý¥L( value )¡C
+èº«ç©¿ç²—å¸ƒé•·è¢ï¹æ»¿è‡‰é¬æ¸£ï¹çœ‹ä¾†é —ç¶“é¢¨éœœï¹å°æ–¼æ­¦å™¨ååˆ†æœ‰ç ”ç©¶ï¹è‹¥
+æœ‰ä¸æ‡‚çš„å¯ä»¥å•ä»–( value )ã€‚
 ~
 Sentinel        Yes
 NoKill          Yes

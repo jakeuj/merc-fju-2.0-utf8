@@ -1,10 +1,10 @@
 Vnum            527
 Name            knowledge robe~
-ShortDesc       ¤Õ¤l¾§ªA~
+ShortDesc       å­”å­å„’æœ~
 Description
-¶Ç»¡¤¤¦Ü¸t¥ı®v¬ï¹Lªº¾§ªA(knowledge robe)¡M¬y¶Ç¦Ü¤µ¤é¤w¬OµL»ù¤§Ä_¡C
+å‚³èªªä¸­è‡³è–å…ˆå¸«ç©¿éçš„å„’æœ(knowledge robe)ï¹æµå‚³è‡³ä»Šæ—¥å·²æ˜¯ç„¡åƒ¹ä¹‹å¯¶ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

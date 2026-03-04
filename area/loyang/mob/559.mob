@@ -1,10 +1,10 @@
 Vnum            559
 Name            city guard~
-ShortDesc       «°¥«Å@½Ã~
-LongDesc        ºûÅ@«°¥«©M¥­ªºÅ@½Ã(guard)¦b¦¹¯¸±^¡C
+ShortDesc       åŸå¸‚è­·è¡›~
+LongDesc        ç¶­è­·åŸå¸‚å’Œå¹³çš„è­·è¡›(guard)åœ¨æ­¤ç«™å´—ã€‚
 ~
 Description
-¥L­Ì¬O¯S§O¦b¦¹«OÅ@«°¥«ªº¦w¥ş¡M¥¿¥ş¤O±Mª`ªº¬İµÛ¨Ó©¹ªº¦æ¤H¡C
+ä»–å€‘æ˜¯ç‰¹åˆ¥åœ¨æ­¤ä¿è­·åŸå¸‚çš„å®‰å…¨ï¹æ­£å…¨åŠ›å°ˆæ³¨çš„çœ‹è‘—ä¾†å¾€çš„è¡Œäººã€‚
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -44,8 +44,8 @@ endif
 if isimminvis($n)
   break
 endif
-if isenemy($n) != '¬¥¶§'
-  mpsetenemy $n '¬¥¶§'
+if isenemy($n) != 'æ´›é™½'
+  mpsetenemy $n 'æ´›é™½'
 endif
 ~
 End
@@ -55,7 +55,7 @@ Type            rand_prog
 Chance          30
 Text
 if rand(10)
-  say ³Ìªñ¦¬¤J¦³°÷¤Ö¡K
+  say æœ€è¿‘æ”¶å…¥æœ‰å¤ å°‘â€¦
   sigh
 endif
 ~
@@ -72,12 +72,12 @@ endif
 if isimminvis($n)
   break
 endif
-if isenemy($n) == '¬¥¶§'
-  tell $n ¦n¤F¡T§A¤£¦A¬O¤½¼Ä¤F¡T¥hª±§a¡T
-  mpremenemy $n '¬¥¶§'
+if isenemy($n) == 'æ´›é™½'
+  tell $n å¥½äº†ï¹—ä½ ä¸å†æ˜¯å…¬æ•µäº†ï¹—å»ç©å§ï¹—
+  mpremenemy $n 'æ´›é™½'
   break
 endif
-say µ¹§Ú¿ú°µ¤°»ò¡S
+say çµ¦æˆ‘éŒ¢åšä»€éº¼ï¹–
 ~
 End
 
@@ -87,7 +87,7 @@ Gold            0
 Text
 mppurge coins
 if ispc($n)
-  say µ¹§Ú¿ú°µ¤°»ò¡S¯u©_©Ç¡TÁÙ¬O¦¬¤U¦n¤F¡T
+  say çµ¦æˆ‘éŒ¢åšä»€éº¼ï¹–çœŸå¥‡æ€ªï¹—é‚„æ˜¯æ”¶ä¸‹å¥½äº†ï¹—
   ? $n
 endif
 ~

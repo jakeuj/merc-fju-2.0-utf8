@@ -1,10 +1,10 @@
 Vnum            18
 Name            dream girl~
-ShortDesc       ¬üÄR¤k¤l~
-LongDesc        ¬üÄR¤k¤l(dream girl)
+ShortDesc       ç¾éº—å¥³å­~
+LongDesc        ç¾éº—å¥³å­(dream girl)
 ~
 Description
-¦oªº¯«¦â²Y­W¡M¤£ª¾¨ü¤F¤°»ò«s©}¡C
+å¥¹çš„ç¥è‰²æ·’è‹¦ï¹ä¸çŸ¥å—äº†ä»€éº¼å“€å±ˆã€‚
 ~
 Sentinel        Yes
 NoKill          Yes
@@ -64,22 +64,22 @@ if class($n) != CLASS_GENERAL
   endif
 endif
 if isquest($n) != 'dream_soul_26'
-  tell $n ¹ï¤£°_¡M³o¹ï§Ú¨Ó»¡§¹¥ş¨S¦³À°§U¡M§A½Ğ¦^§a¡T
+  tell $n å°ä¸èµ·ï¹é€™å°æˆ‘ä¾†èªªå®Œå…¨æ²’æœ‰å¹«åŠ©ï¹ä½ è«‹å›å§ï¹—
   sorry $n
   mpsetquest $n 'dream_soul_broken'
   mptransfer $n 501
   break
 endif
-tell $n ÁÂÁÂ§A¤F¡M³o¬İ¨Ó¥i¥Hªv¦n§Úªº¯f¡T
-emote ±N¦B´İ(ice left)¦Y¤F¤U¥h¡C
-tell $n §A±Ï¤F§Ú¡M§A·|Àò±o§A¸Ó±oªº¡T
+tell $n è¬è¬ä½ äº†ï¹é€™çœ‹ä¾†å¯ä»¥æ²»å¥½æˆ‘çš„ç—…ï¹—
+emote å°‡å†°æ®˜(ice left)åƒäº†ä¸‹å»ã€‚
+tell $n ä½ æ•‘äº†æˆ‘ï¹ä½ æœƒç²å¾—ä½ è©²å¾—çš„ï¹—
 smile $n
 mpoload 408
 give book $n
 mpadd $n firman 10
-mpecho $6§A·P¨ì¥ş¨­¦A«×¯h¾Î¡M¤S©ü©ü¨H¨HºÎ¥h¡M¿ô¨Ó¤w¸g¤£¦b­ì¦a¤F¡T$0
-mpecho §A¨­¤W¤S¦h¤F´X±i§K¦ºª÷µP¡K
-echo $6Åı§Ú­Ì®¥ÁH$n$6±o¨ì¹Ú»î¤Cµ´¡T$0
+mpecho $6ä½ æ„Ÿåˆ°å…¨èº«å†åº¦ç–²æ†Šï¹åˆæ˜æ˜æ²ˆæ²ˆç¡å»ï¹é†’ä¾†å·²ç¶“ä¸åœ¨åŸåœ°äº†ï¹—$0
+mpecho ä½ èº«ä¸Šåˆå¤šäº†å¹¾å¼µå…æ­»é‡‘ç‰Œâ€¦
+echo $6è®“æˆ‘å€‘æ­ç¦§$n$6å¾—åˆ°å¤¢é­‚ä¸ƒçµ•ï¹—$0
 mpsetquest $n 'dream_soul_ok'
 mpremquest $n 'dream_soul'
 mpremquest $n 'dream_soul_1'

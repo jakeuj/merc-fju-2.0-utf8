@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�o�̤ɯŪ��W�h�O�M���赥�ť��t�T�Ť����M�g��ȳ̦h�M���t���Τ������C
-�W�L�o�ӽd��M���ާA�����򳣨S���g��Ȫ���C��򪾹D���Ū��t���O�S
-�S���Y�M�i�H���ձ�([1;32mlore[0m�B[1;32mconsider[0m)�L���T
+這裡升級的規則是﹐雙方等級正負三級之內﹐經驗值最多﹐正負六及內次之。
+超過這個範圍﹐不管你打什麼都沒有經驗值的喔。怎麼知道等級的差異呢﹖
+沒關係﹐可以先試探([1;32mlore[0m、[1;32mconsider[0m)他嘛﹗
 
-�Ьd�ߡRlore�Bconsider
+請查詢﹕lore、consider
 ~
 End

@@ -1,9 +1,9 @@
 Vnum            3
 Name            coins~
-ShortDesc       %d¨â¶Àª÷~
+ShortDesc       %då…©é»ƒé‡‘~
 Description
-¤@°ï¶Àª÷(coins)¡C~
-Unit            °ï~
+ä¸€å †é»ƒé‡‘(coins)ã€‚~
+Unit            å †~
 ItemType        ITEM_MONEY
 Takeable        Yes
 Level           0

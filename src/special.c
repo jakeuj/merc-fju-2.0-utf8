@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -79,37 +79,37 @@ bool spec_new_doctor( CHAR_DATA * ch )
   {
   case 1:
   default:
-    act( "$n»´Án§u¹D¡R¡uÄ@¯««OÅ@§A¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œé¡˜ç¥žä¿è­·ä½ ã€‚ã€", ch, NULL, NULL, TO_ROOM );
     sprintf( buf, " 'armor' %s", victim->name );
     do_cast( ch, buf );
     RETURN( TRUE );
 
   case 2:
-    act( "$n»´Án§u¹D¡R¡uÄ@¯«¯¬ºÖ§A¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œé¡˜ç¥žç¥ç¦ä½ ã€‚ã€", ch, NULL, NULL, TO_ROOM );
     sprintf( buf, " 'bless' %s", victim->name );
     do_cast( ch, buf );
     RETURN( TRUE );
 
   case 3:
-    act( "$n»´Án§u¹D¡R¡u¥¢¥h¥ú¨~ªºµL§U²´¯«¦^´_§a¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œå¤±åŽ»å…‰èŠ’çš„ç„¡åŠ©çœ¼ç¥žå›žå¾©å§ã€‚ã€", ch, NULL, NULL, TO_ROOM );
     sprintf( buf, " 'cure blindness' %s", victim->name );
     do_cast( ch, buf );
     RETURN( TRUE );
 
   case 4:
-    act( "$n»´Án§u¹D¡R¡uÄ@¯«¦^´_§Aªº«C¬K¬¡¤O¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œé¡˜ç¥žå›žå¾©ä½ çš„é’æ˜¥æ´»åŠ›ã€‚ã€", ch, NULL, NULL, TO_ROOM );
     sprintf( buf, " 'cure light' %s", victim->name );
     do_cast( ch, buf );
     RETURN( TRUE );
 
   case 5:
-    act( "$n»´Án§u¹D¡R¡u´c¬r¤£¦A­°Á{¤j¦a¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œæƒ¡æ¯’ä¸å†é™è‡¨å¤§åœ°ã€‚ã€", ch, NULL, NULL, TO_ROOM );
     sprintf( buf, " 'cure poison' %s", victim->name );
     do_cast( ch, buf );
     RETURN( TRUE );
 
   case 6:
-    act( "$n»´Án§u¹D¡R¡uÄ@¯««ì´_§AªºÅé¤O¬u·½¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œé¡˜ç¥žæ¢å¾©ä½ çš„é«”åŠ›æ³‰æºã€‚ã€", ch, NULL, NULL, TO_ROOM );
     sprintf( buf, " 'refresh' %s", victim->name );
     do_cast( ch, buf );
     RETURN( TRUE );
@@ -118,7 +118,7 @@ bool spec_new_doctor( CHAR_DATA * ch )
     for ( obj = ch->in_room->contents; obj; obj = obj->next_content )
       if ( obj->item_type == ITEM_FOUNTAIN ) RETURN( FALSE );
 
-    act( "$n»´Án§u¹D¡R¡u¤j¦aÂ×´Iªº¬u·½´é¥X§a¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œå¤§åœ°è±å¯Œçš„æ³‰æºæ¹§å‡ºå§ã€‚ã€", ch, NULL, NULL, TO_ROOM );
     do_cast( ch, " 'make spring'" );
     RETURN( TRUE );
 
@@ -126,12 +126,12 @@ bool spec_new_doctor( CHAR_DATA * ch )
     for ( obj = ch->in_room->contents; obj; obj = obj->next_content )
       if ( obj->item_type == ITEM_FOOD ) RETURN( FALSE );
 
-    act( "$n»´Án§u¹D¡R¡u¤j¦aÄ­§tªº­¹ª«¥X¨Ó§a¡C¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œå¤§åœ°è˜Šå«çš„é£Ÿç‰©å‡ºä¾†å§ã€‚ã€", ch, NULL, NULL, TO_ROOM );
     do_cast( ch, " 'create food'" );
     RETURN( TRUE );
 
   case 9:
-    act( "$n»´Án§u¹D¡R¡u¬r¯«¤£¦A­°Á{¡T¡v", ch, NULL, NULL, TO_ROOM );
+    act( "$nè¼•è²åŸé“ï¹•ã€Œæ¯’ç¥žä¸å†é™è‡¨ï¹—ã€", ch, NULL, NULL, TO_ROOM );
     sprintf( buf, " 'cure overdose' %s", victim->name );
     do_cast( ch, buf );
     RETURN( TRUE );
@@ -165,8 +165,8 @@ bool spec_thief( CHAR_DATA * ch )
       && over_scale( ch )
       && number_range( 0, ch->level ) == 0 )
     {
-      act( "§Aµo²{$n°½°½§â¤â¦ù¤J§Aªº¥Ö¥]¸Ì¡T", ch, NULL, victim, TO_VICT );
-      act( "$Nµo²{$nªº¤â°½°½¦ù¤J$Sªº¥Ö¥]¸Ì¡T", ch, NULL, victim, TO_NOTVICT );
+      act( "ä½ ç™¼ç¾$nå·å·æŠŠæ‰‹ä¼¸å…¥ä½ çš„çš®åŒ…è£¡ï¹—", ch, NULL, victim, TO_VICT );
+      act( "$Nç™¼ç¾$nçš„æ‰‹å·å·ä¼¸å…¥$Sçš„çš®åŒ…è£¡ï¹—", ch, NULL, victim, TO_NOTVICT );
       RETURN( TRUE );
     }
     else

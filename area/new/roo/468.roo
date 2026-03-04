@@ -1,12 +1,12 @@
 Vnum            468
-Name            �ө� [buy & sell & value]~
+Name            商店 [buy & sell & value]~
 Description
-�o�̬O�s��Ǯժ��ө��M�b�o�̧A�i�H�R��\�h���G�������n�F��C
-���O list �i�H�C�X�c�檺���e�Mbuy & sell <���~> �i�H�ʶR�H��
-�汼���~�Mvalue <���~> �i�H�磌�~�Ӧ����C
+這裡是新手學校的商店﹐在這裡你可以買到許多價廉物美的好東西。
+指令 list 可以列出販賣的內容﹐buy & sell <物品> 可以購買以及
+賣掉物品﹐value <物品> 可以對物品來估價。
 
-�_�䦳�ЧA�p��u�W���F��.
-�o�̦��@���i�ܵP (sign).
+北邊有教你如何線上拍賣東西.
+這裡有一塊告示牌 (sign).
 
 ~
 SectorType      SECT_CITY
@@ -39,23 +39,23 @@ End
 Keyword         sign~
 Description
 
-�b�ө��̦��c��˳ƤΪ��~�M�n�ݩ��̽�Ǥ���i�H�Ϋ��O list.
-�p�G�A�u�n�ݤ@�ظ˳ơM�A�i�H�� list <�˳ƪ�����>
+在商店裡有販賣裝備及物品﹐要看店裡賣些什麼可以用指令 list.
+如果你只要看一種裝備﹐你可以用 list <裝備的種類>
 ex: list leggings.
-���p�A�n�R�����~����@�ӡM�A���������O�ĴX�ӥH�K�R��.
+假如你要買的物品不止一個﹐你必須註明是第幾個以免買錯.
 ex: buy 2.leggings
-���O sell ���Ϊk�M buy �O�@�˪��M�b�浹���󤧫e�M�A�i�H�n�D
-��������M���������O�O value <���~>
+指令 sell 的用法和 buy 是一樣的﹐在賣給老闆之前﹐你可以要求
+老闆估價﹐估價的指令是 value <物品>
 
 ~
 End
 
 #Enquire
-Keyword         �ө�~
+Keyword         商店~
 End
 
 #Enquire
-Keyword         �D���~
+Keyword         道具屋~
 End
 
 End

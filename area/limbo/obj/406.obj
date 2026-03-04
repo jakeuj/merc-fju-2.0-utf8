@@ -1,10 +1,10 @@
 Vnum            406
 Name            mo ya sword~
-ShortDesc       �����C~
+ShortDesc       莫邪劍~
 Description
-�@��W�j�W�C�M��z�N�O�ݩ�@�諸�M�O�ѦWű�C�v�z�N
-�һs�y���W�C(sword)�C~
-Unit            ��~
+一把上古名劍﹐跟干將是屬於一對的﹐是由名鑄劍師干將
+所製造的名劍(sword)。~
+Unit            把~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

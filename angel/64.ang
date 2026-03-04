@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A�ն�([1;32mgroup[0m)�άO�i�ܹ�O�ɡM�p����{�O�S�A�i�H�^��([1;32mreport[0m)���P�@���ж�
-�Ҧ��H���D�A�ثe���ͩR�O�B��O�B�k�O���ƭȡC
+當你組隊([1;32mgroup[0m)或是展示實力時﹐如何表現呢﹖你可以回報([1;32mreport[0m)給同一間房間
+所有人知道你目前的生命力、體力、法力的數值。
 
-�Ьd�ߡR report�Bgroup
+請查詢﹕ report、group
 ~
 End

@@ -1,7 +1,7 @@
 Name            iron shield~
-Cname           ÅK¥¬­m~
+Cname           éµå¸ƒè¡«~
 Slot            SLOT_IRON_SHIELD
-Msgoff          ¦b§A¨­¤W¾®»Eªº¯u®ğº¥º¥´²¥h¡T~
+Msgoff          åœ¨ä½ èº«ä¸Šå‡èšçš„çœŸæ°£æ¼¸æ¼¸æ•£å»ï¹—~
 Function        cast_iron_shield~
 Check           check_unrigid_attack~
 Position        POS_STANDING

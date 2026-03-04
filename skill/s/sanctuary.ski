@@ -1,7 +1,7 @@
 Name            sanctuary~
-Cname           ¸t¥ú³N~
+Cname           è–å…‰è¡“~
 Slot            SLOT_SANCTUARY
-Msgoff          ³òÂ¶§A¨­Ãäªº¥úÀô®ø¥¢¤F¡T~
+Msgoff          åœç¹ä½ èº«é‚Šçš„å…‰ç’°æ¶ˆå¤±äº†ï¹—~
 Function        cast_sanctuary~
 Check           check_unrigid_attack~
 Position        POS_STANDING

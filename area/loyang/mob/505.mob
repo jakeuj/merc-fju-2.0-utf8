@@ -1,10 +1,10 @@
 Vnum            505
 Name            citizen~
-ShortDesc       ©~¥Á~
-LongDesc        ¬¥¶§«°ªº©~¥Á(citizen)¦b¦¹¹C¿º¡C
+ShortDesc       å±…æ°‘~
+LongDesc        æ´›é™½åŸŽçš„å±…æ°‘(citizen)åœ¨æ­¤éŠè•©ã€‚
 ~
 Description
-¬Ý¥L¤@°ÆµL©Ò¨Æ¨Æªº¼Ë¤l¡MÅý§A¤Q¤Àªº¸r¼}¥L¡C
+çœ‹ä»–ä¸€å‰¯ç„¡æ‰€äº‹äº‹çš„æ¨£å­ï¹è®“ä½ ååˆ†çš„ç¾¨æ…•ä»–ã€‚
 ~
 StayArea        Yes
 AutoSetValue    Yes
@@ -34,8 +34,8 @@ Type            greet_prog
 Chance          25
 Text
 if ispc($n)
-  say Å¥»¡«°¸Ì¨º­ÓÃð®v¤§«e¦b¨ä¥L¦a¤è¾Ç¹LªZÃÀ¡M³£¨S¦³¤H´±§T¥LªºÃð¡T
-  say ¶â¡M¤HÁÙ¬O¦³¤@§Þ¤§ªøªº¦n¡T
+  say è½èªªåŸŽè£¡é‚£å€‹é¢å¸«ä¹‹å‰åœ¨å…¶ä»–åœ°æ–¹å­¸éŽæ­¦è—ï¹éƒ½æ²’æœ‰äººæ•¢åŠ«ä»–çš„é¢ï¹—
+  say å—¯ï¹äººé‚„æ˜¯æœ‰ä¸€æŠ€ä¹‹é•·çš„å¥½ï¹—
   ponder
 endif
 ~

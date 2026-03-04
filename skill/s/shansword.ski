@@ -1,5 +1,5 @@
 Name            shan sword~
-Cname           ¾P»î¼Cªk~
+Cname           éŠ·é­‚åŠæ³•~
 Slot            SLOT_SHANSWORD
 Msgoff          ~
 Check           check_sword_attack~
@@ -40,7 +40,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n¨Ï¤@©Û$B¡y©ìªd±a¤ô¡z$Z¡M¤â¤¤$O¥­¥­¨ë¦V¼Ä¤H$Nªº$l¡M¥h¶Õ³º¬O·¥¨ä½wºC¡C~
+$nä½¿ä¸€æ‹›$Bã€Žæ‹–æ³¥å¸¶æ°´ã€$Zï¹æ‰‹ä¸­$Oå¹³å¹³åˆºå‘æ•µäºº$Nçš„$lï¹åŽ»å‹¢ç«Ÿæ˜¯æ¥µå…¶ç·©æ…¢ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -49,7 +49,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨Ï¥XÅfµM¾P»î¼C¤¤ªº$B¡y­Ë¦æ°f¬I¡z$Z¡M¤âµÃÂ½Âà³º¥H¼C­º´Â¼Ä¤H$l¨ë¥h¡C~
+$nä½¿å‡ºé»¯ç„¶éŠ·é­‚åŠä¸­çš„$Bã€Žå€’è¡Œé€†æ–½ã€$Zï¹æ‰‹è…•ç¿»è½‰ç«Ÿä»¥åŠé¦–æœæ•µäºº$låˆºåŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -58,7 +58,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤@©Û$S¡y±e¤H¦ÛÂZ¡z$Z¡M¨­§Î°~¦V«á·Æ¥X¼Æ¤Ø¡M¤â¤¤$O´Â$N$l¬å¥h¡C~
+$nä¸€æ‹›$Sã€Žåº¸äººè‡ªæ“¾ã€$Zï¹èº«å½¢é™¡å‘å¾Œæ»‘å‡ºæ•¸å°ºï¹æ‰‹ä¸­$Oæœ$N$lç åŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -67,7 +67,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n­±­Y¦³«ä¡M¤@¦¡$s¡y§û¤H¼~¤Ñ¡z$Z¹ï·Ç$Nªº$l¨ë¥X¤@¼C¡C~
+$né¢è‹¥æœ‰æ€ï¹ä¸€å¼$sã€Žæžäººæ†‚å¤©ã€$Zå°æº–$Nçš„$låˆºå‡ºä¸€åŠã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -76,7 +76,7 @@ Innate          0 0
 End
 #Damage
 Description
-¥u¨£$n«r¤ú¤Á¾¦¡M¾î¼C¤W«e¡MÅZ¦a¸Ì¤@©Û$P¡y¶¼«ë§]Án¡z$Z´Â$Nªº$l¨ë¥h¡C~
+åªè¦‹$nå’¬ç‰™åˆ‡é½’ï¹æ©«åŠä¸Šå‰ï¹é©€åœ°è£¡ä¸€æ‹›$Pã€Žé£²æ¨åžè²ã€$Zæœ$Nçš„$låˆºåŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -85,7 +85,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n©¿­ú©¿¯º¡M¯«±¡¸Þ²§¡M°~µM¨Ï¥X¤@©Û$p¡y·Q¤J«D«D¡z$Z¨ë¦V$Nªº$l¡C~
+$nå¿½å“­å¿½ç¬‘ï¹ç¥žæƒ…è©­ç•°ï¹é™¡ç„¶ä½¿å‡ºä¸€æ‹›$pã€Žæƒ³å…¥éžéžã€$Zåˆºå‘$Nçš„$lã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -94,7 +94,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¬ðµM¥þ¨­©e¹y¾l¦a¡M¨Ï¤@©Û$y¡y¤O¤£±q¤ß¡z$Z¤Ï¤â¹ï·Ç$N$l¤@¼C¨ë¥h¡C~
+$nçªç„¶å…¨èº«å§”é “é¤˜åœ°ï¹ä½¿ä¸€æ‹›$yã€ŽåŠ›ä¸å¾žå¿ƒã€$Zåæ‰‹å°æº–$N$lä¸€åŠåˆºåŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -103,8 +103,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n¬ðµM±þ·N¼É°_¡M½Õ®§¥þ¨­¤º¤O©ó¼C¦y¡M¤j³Ü¤@Án´Â$N¨ë¥h¡M¥¿¬OÅfµM¾P»î¼C¤¤³Ì±jªº
-$W¡y$Y½a$S³~$G¥½$B¸ô$W¡z$Z¡C~
+$nçªç„¶æ®ºæ„æš´èµ·ï¹èª¿æ¯å…¨èº«å…§åŠ›æ–¼åŠå°–ï¹å¤§å–ä¸€è²æœ$NåˆºåŽ»ï¹æ­£æ˜¯é»¯ç„¶éŠ·é­‚åŠä¸­æœ€å¼·çš„
+$Wã€Ž$Yçª®$Sé€”$Gæœ«$Bè·¯$Wã€$Zã€‚~
 Chance          10
 Value           20
 Parry           0

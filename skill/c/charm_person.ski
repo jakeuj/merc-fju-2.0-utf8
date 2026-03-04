@@ -1,7 +1,7 @@
 Name            charm person~
-Cname           °g´b³N~
+Cname           è¿·æƒ‘è¡“~
 Slot            SLOT_CHARM_PERSON
-Msgoff          §A¤S¯à±±¨î¦Û§Ú¤F¡T~
+Msgoff          ä½ åˆèƒ½æ§åˆ¶è‡ªæˆ‘äº†ï¹—~
 Check           check_unrigid_attack~
 Function        cast_charm_person~
 Position        POS_STANDING

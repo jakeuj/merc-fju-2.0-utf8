@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�A�������o�����ߺD�ܡS�o�̪����~�C�@�ӳ��|���@�ӧǸ�([1;32mserial[0m)�M�o�ӧǸ��N��
-�Τ@�o�����s���M�t�ΨC�ѳ��|�}�X�@�ո��X�M�A�i�H�ھڳo�ո��X�ӹ��([1;32mlotto[0m)�C
+你有收集發票的習慣嗎﹖這裡的物品每一個都會有一個序號([1;32mserial[0m)﹐這個序號就像
+統一發票的編號﹐系統每天都會開出一組號碼﹐你可以根據這組號碼來對獎([1;32mlotto[0m)。
 
-�Ьd�ߡRserial�Mlotto
+請查詢﹕serial﹐lotto
 ~
 End

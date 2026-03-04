@@ -1,5 +1,5 @@
 Name            magic blast~
-Cname           �]�ۤ}�k~
+Cname           魔幻弓法~
 Slot            SLOT_MAGIC_BLAST
 Check           check_bow_attack~
 Msgoff          ~
@@ -35,7 +35,7 @@ Help            ~
 
 #Damage
 Description
-$n�Զ}$O�M�ϥX$R<<����>>$Z�M�g�X$r���K$Z���b�ڡM$N�{�פ��ΡM�����Q$r��$Z�N�ˡC
+$n拉開$O﹐使出$R<<紅蓮>>$Z﹐射出$r火焰$Z的箭矢﹐$N閃避不及﹐全身被$r火$Z燒傷。
 ~
 Chance          10
 Value           20
@@ -46,7 +46,7 @@ End
 
 #Damage
 Description
-$n�������o�X$s�H�N$Z���𮧡M�g�X$s�H��$Z���b�ڡM���O�]�۽b�k����$S<<���>>$Z�C
+$n全身散發出$s寒冷$Z的氣息﹐射出$s寒凍$Z的箭矢﹐正是魔幻箭法中的$S<<凍牙>>$Z。
 ~
 Chance          10
 Value           20
@@ -57,7 +57,7 @@ End
 
 #Damage
 Description
-$n�����G���F$s�q��$Z�M���O$B<<�F��>>$Z���_�ۨB�J�M���M�g�X�a$s�q$Z���b�ڡM$s�q$Z��$N�T�T�s�C
+$n全身佈滿了$s電網$Z﹐正是$B<<轟天>>$Z的起招步驟﹐赫然射出帶$s電$Z的箭矢﹐$s電$Z的$N嘰嘰叫。
 ~
 Chance          10
 Value           20
@@ -68,7 +68,7 @@ End
 
 #Damage
 Description
-$n�l�X$Y<<�į}>>$Z�M�E�𪺮g�X�@�b�M��j�P�����է�$N�j��b�Ť��M$N�^�o�����H���C
+$n始出$Y<<衝破>>$Z﹐聚氣的射出一箭﹐其強烈的風勢把$N吹到半空中﹐$N跌得粉身碎骨。
 ~
 Chance          10
 Value           20
@@ -79,7 +79,7 @@ End
 
 #Damage
 Description
-$n�g�s�@�n�M�ϥX$W<<�_��>>$Z�M��X�p�U�B�몺�b�ڡM$N�n���ܦ��F��糡C
+$n狂叫一聲﹐使出$W<<震天>>$Z﹐放出如下雨般的箭矢﹐$N登時變成了刺蝟。
 ~
 Chance          10
 Value           20
@@ -90,7 +90,7 @@ End
 
 #Damage
 Description
-$n�Ժ�$O�M�ϥX$P<<�l��>>$Z�M���@��M�b�ڳe��$N�C
+$n拉滿$O﹐使出$P<<鷲羽>>$Z﹐單手一放﹐箭矢貫穿$N。
 ~
 Chance          10
 Value           20
@@ -101,7 +101,7 @@ End
 
 #Damage
 Description
-$n�ϥX$S<<�e��>>$Z�M���t�a�s�g�ƽb�M$N���פ��ΡM�Q�b�g������.�C
+$n使出$S<<疾風>>$Z﹐迅速地連射數箭﹐$N躲避不及﹐被箭射成重傷.。
 ~
 Chance          10
 Value           20
@@ -112,7 +112,7 @@ End
 
 #Damage
 Description
-$n���X���j���ڡM�ϥX$G<<�j��>>$Z�M�ĤO�@�g�M��$N���p$Y�ۯ}����$Z���жˡC
+$n拿出巨大的矢﹐使出$G<<大牙>>$Z﹐奮力一射﹐對$N有如$Y石破天驚$Z的創傷。
 ~
 Chance          10
 Value           20
@@ -123,7 +123,7 @@ End
 
 #Damage
 Description
-$n�ϥX�]�۽b�k�̱j���@��----$R<<�O�s>>$Z�M�g�X�t��$w����$Z���j�P�b�ڡC
+$n使出魔幻箭法最強的一式----$R<<屠龍>>$Z﹐射出含有$w鬥氣$Z的強烈箭矢。
 ~
 Chance          10
 Value           20

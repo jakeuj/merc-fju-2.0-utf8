@@ -1,9 +1,9 @@
 Vnum            9023
 Name            castle legging~
-ShortDesc       ¸T½Ã­xÅ@½¥~
+ShortDesc       ç¦è¡›è»è­·è†~
 Description
-¸T½Ã­x°ª¶¥­x©x¥ÎªºÅ@½¥¡C~
-Unit            Âù~
+ç¦è¡›è»é«˜éšè»å®˜ç”¨çš„è­·è†ã€‚~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_LEGS
 Takeable        Yes

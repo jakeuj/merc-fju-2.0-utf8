@@ -1,10 +1,10 @@
 Vnum            557
 Name            soldier boot~
-ShortDesc       Ã~¥Ö­x¹u~
+ShortDesc       ç¸çš®è»é´~
 Description
-¤@ÂùÃ~¥Ö©Ò»sªº¹u¤l(soldier boot)¡C
+ä¸€é›™ç¸çš®æ‰€è£½çš„é´å­(soldier boot)ã€‚
 ~
-Unit            Âù~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

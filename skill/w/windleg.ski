@@ -1,5 +1,5 @@
 Name            wind leg~
-Cname           �����L~
+Cname           風神腿~
 Slot            SLOT_WINDLEG
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -31,8 +31,8 @@ Limit           CLASS_BRAVO      1  90
 Help            ~
 #Damage
 Description
-$n�ϥX�����L��$G�u�������v�v$Z�M���v�̰ʶ��M��M�ĦV$N�e�M�h�յL�v�B�b�Y�y�P
-�T�T~
+$n使出風神腿之$G「捕風捉影」$Z﹐身影晃動間﹐突然衝向$N前﹐去勢無影、奔若流星
+﹗﹗~
 Chance          10
 Value           20
 Parry           0
@@ -41,8 +41,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�D�Y�e���M�@��$G�u�����l��v$Z�M�p�����ɭ��M��զ��p����󰳡M�L�v�I�I��
-�V$N�T�T~
+$n躍若疾風﹐一招$G「風中勁草」$Z﹐如飛絮紛飛﹐其勢有如風行草偃﹐腿影點點落
+向$N﹗﹗~
 Chance          10
 Value           20
 Parry           0
@@ -51,8 +51,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�}��F�d�M��u���СM�H�Y�t�l�@�o�M$S�u�����Ӵݡv$Z�M�u�Ƨ�M�ߨ�$N�줣���x
-�T�T~
+$n腳踩沙泥﹐氣守丹田﹐隨即暗勁一牽﹐$S「風捲樓殘」$Z﹐守化攻﹐立使$N潰不成軍
+﹗﹗~
 Chance          10
 Value           20
 Parry           0
@@ -61,7 +61,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Τ@��M$S�u�������ơv$Z�M�{�p�I���f���M�@�D�@�i���M�F�ʦa��V$N�C~
+$n身形一轉﹐$S「乘水風飄」$Z﹐宛如點水蜻蜓﹐一躍一進間﹐靈動地攻向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -70,7 +70,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�a�����_�M���թ�šM�ɦR$B�u�ɫB�g���v$Z�M�@�}�S�@�}�{�Y���ɯ�u��$N�T�T~
+$n縱身飛起﹐凝勢於空﹐盡吐$B「暴雨狂風」$Z﹐一陣又一陣宛若風暴般席捲$N﹗﹗~
 Chance          10
 Value           20
 Parry           0
@@ -79,7 +79,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n���@�ۡu�������v�v�M�S�@��$G�u�����l��v$Z�M�L���s�s�M��$N���⤣�ΡT~
+$n先一招「捕風捉影」﹐又一招$G「風中勁草」$Z﹐腿風連連﹐攻的$N措手不及﹗~
 Chance          10
 Value           20
 Parry           0
@@ -88,8 +88,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�L�ۦp�s���L�ɡM$Y�u�������v�v$S�u�����l��v$G�u�����Ӵݡv$Z�@�۱��ۤ@�ۡM
-����$N�L�k�ݮ��T~
+$n腿招如連綿無盡﹐$Y「捕風捉影」$S「風中勁草」$G「風捲樓殘」$Z一招接著一招﹐
+打的$N無法喘息﹗~
 Chance          10
 Value           20
 Parry           0
@@ -98,8 +98,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�L�ջR��v���|�P�M�����l�O����@�I�M�r��$S�u�p�F����v$Z�M�ѤU�ӤW�M�r�P�X
-�ۡT�T~
+$n腿勢舞於己身四周﹐畢身勁力凝於一點﹐猛招$S「雷厲風行」$Z﹐由下而上﹐猛烈出
+招﹗﹗~
 Chance          10
 Value           20
 Parry           0
@@ -108,8 +108,8 @@ Innate          0 0
 End
 #Damage
 Description
-��M$n�@�n��Ѱʦa���g�q�M$N����ճQ�w�ͥͪ��צ��M����$R�u�������z�v$Z�p����
-��ŧ�V$N�T�T~
+突然$n一聲驚天動地的狂吼﹐$N的攻勢被硬生生的擋住﹐殺招$R「神風怒嚎」$Z如浪潮
+般襲向$N﹗﹗~
 Chance          10
 Value           20
 Parry           0

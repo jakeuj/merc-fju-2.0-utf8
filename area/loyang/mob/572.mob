@@ -1,11 +1,11 @@
 Vnum            572
 Name            kindly doctor~
-ShortDesc       ­¦¤¤~
-LongDesc        ­¦¤¤(kindly doctor)
+ShortDesc       éƒä¸­~
+LongDesc        éƒä¸­(kindly doctor)
 ~
 Description
-¥L¤@¨«¹L¨­Ãä´N¦³¤@ªÑ«Ü¿@­«ªºÃÄ¨ı¡MÅı§A¦³¤@ÂI¶æ¡M¤£¹L¦³¤@¨Ç­Ë
-¬O¬Û·í¤£¿ùªº±Ï©R¤u¨ã¡C
+ä»–ä¸€èµ°éèº«é‚Šå°±æœ‰ä¸€è‚¡å¾ˆæ¿ƒé‡çš„è—¥å‘³ï¹è®“ä½ æœ‰ä¸€é»å—†ï¹ä¸éæœ‰ä¸€äº›å€’
+æ˜¯ç›¸ç•¶ä¸éŒ¯çš„æ•‘å‘½å·¥å…·ã€‚
 ~
 AutoSetValue    Yes
 Alignment       0
@@ -35,7 +35,7 @@ Type            fight_prog
 Chance          30
 Text
 if ispc($n)
-  say ¥i´cªº¤p¸é¡MÀ|À|§Úªº¼F®`§a¡T
+  say å¯æƒ¡çš„å°è³Šï¹åšåšæˆ‘çš„å²å®³å§ï¹—
   cast 'burning hands' $n
 endif
 ~
@@ -46,7 +46,7 @@ Type            greet_prog
 Chance          30
 Text
 if ispc($n)
-  say §A¦n¡T¦³¨S¦³»İ­n§ÚªA°Èªº¦a¤è¡S
+  say ä½ å¥½ï¹—æœ‰æ²’æœ‰éœ€è¦æˆ‘æœå‹™çš„åœ°æ–¹ï¹–
   smile $n
 endif
 ~

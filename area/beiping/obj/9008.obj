@@ -1,9 +1,9 @@
 Vnum            9008
 Name            ziwei sword~
-ShortDesc       µµ·L³n¼C~
+ShortDesc       ç´«å¾®è»ŸåŠ~
 Description
-¼C¨­¬X³nªºªø¼C¡C~
-Unit            §â~
+åŠèº«æŸ”è»Ÿçš„é•·åŠã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

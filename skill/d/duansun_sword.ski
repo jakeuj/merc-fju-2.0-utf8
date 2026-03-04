@@ -1,5 +1,5 @@
 Name            duansun sword~
-Cname           �_�a�k��C�k~
+Cname           斷家蝕日劍法~
 Slot            SLOT_DUANSUN_SWORD
 Msgoff          ~
 Check           check_sword_attack~
@@ -40,10 +40,10 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$P��$N�۶դw�ɡM$n��M�ܩۡM$O�ɪ��M�ϥX$R�_�a�k��
-�C�k���Ĥ@��$Z$A$A
-$W                      ��         ��         �}         ��  $Z$A$A
-$P$O�n�X��إ��ءM�벴�p���D�M�C�T�p�g�ϼ��M�ϱo$N�����L�k�C�}�����C$Z~
+$P當$N招勢已盡﹐$n突然變招﹐$O暴長﹐使出$R斷家蝕日
+劍法的第一式$Z$A$A
+$W                      白         陽         破         磽  $Z$A$A
+$P$O迸出昡目光華﹐刺眼如末乃﹐劍劫如狂反撲﹐使得$N瞬間無法睜開雙眼。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -52,11 +52,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n��M���Ӥ�աM���M�C�k�ܤۡM$O�����{�ʡM�ϥX$R
-�_�a�k��C�k���ĤG��$Z$A$A
-$W                       ��         ��         �}         ��$Z$A$A
-$P�����n�M����$N�ݫ�I��U�h�M�C�@�C���O�N�H���R�������ۼơM���M��ܡM�e�V
-$N���W�C�B��h�M$N�@���d���Q$O�۩ۨ뤤�C$Z~
+$P$n突然打個手勢﹐忽然劍法變幻﹐$O紅光閃動﹐使出$R
+斷家蝕日劍法的第二式$Z$A$A
+$W                       長         空         破         日$Z$A$A
+$P刷刷數聲﹐都往$N胸後背刺下去﹐每一劍都是就人死命的狠辣招數﹐忽然怒喝﹐疾向
+$N身上七處刺去﹐$N一不留神被$O招招刺中。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -65,11 +65,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n���⻴���M$O�b�Ť���ΡM$O�eŸ�T�U�M�ϥX$R�_�a�k
-��C�k���ĤT��$Z$A$A
-$W                     ��         ��         �L         ��  $Z$A$A
-$P�uť�o�E�E�E�T�n�s�T�M���I�V$N�y�W�y�ﭻ�z�M�y�_�z�M�y�H���z�T�ӥ޹D�M�X
-�⤧�֡M�{�줧�ǡC$N�j�大�U�M���l����M�٬O�����}$N�������M�s�s���ۡC$Z~
+$P$n左手輕揚﹐$O在空中轉形﹐$O疾顫三下﹐使出$R斷家蝕
+日劍法的第三式$Z$A$A
+$W                     日         月         無         光  $Z$A$A
+$P只聽得玎玎玎三聲連響﹐分點向$N臉上『迎香』﹐『泣』﹐『人中』三個穴道﹐出
+手之快﹐認位之準。$N大驚之下﹐身子後仰﹐還是躲不開$N的攻擊﹐連連中招。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -78,11 +78,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$O��p�p�M���R�E�]�M$n���δ¯��O����½�M�ϥX$R�_�a�k��C�k
-���ĥ|��$Z$A$A
-$W                      ��         �R         ��         ��$Z$A$A
-$P�H�C���D�p�g�M��Ť@���Mģ�p�P��M�զp���y�R�V�M�Q�ѻ\�a�ӤU�M�r�ۤ@�ϡM
-����$N���غɨ��M�����b�ơM$N�Q����C�뤤�C$Z~
+$P$O抨如雷﹐直沖九霄﹐$n身形朝草叢中急翻﹐使出$R斷家蝕日劍法
+的第四式$Z$A$A
+$W                      日         麗         中         天$Z$A$A
+$P人劍雀躍如狂﹐凌空一劃﹐耀如烈日﹐勢如火球吐燄﹐鋪天蓋地而下﹐猛招一使﹐
+但見$N雙目盡赤﹐神情半瘋﹐$N被火麟劍刺中。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -91,11 +91,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$N�ʧ@�@���M�L���ԦM�M���C�@��M���H�C�X�M�ϥX$R�_�a�k��
-�C�k���Ĥ���$Z$A$A
-$W                       ��         ��         �T        ��$Z$A$A
-$P�U�L���ӥb�t�M�ᨭ�ɫl�M�C���ɺ�M����Ÿ�ʡM�I���n�p�]�T���M$n�C�ʦp������
-�T�M$N��l���j�M�����K���F���ۡC$Z~
+$P$N動作一滯﹐兵凶戰危﹐挺劍一圈﹐身隨劍出﹐使出$R斷家蝕日
+劍法的第五式$Z$A$A
+$W                       日         坐         愁        城$Z$A$A
+$P下盤劃個半孤﹐扭身借勁﹐劍光暴綻﹐紅光顫動﹐碰擊聲如珠響絕﹐$n劍動如金湯之
+固﹐$N氣勁雖強﹐亦難免不了中招。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -104,11 +104,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n�ݤf����W��M���_$O�s�����M��F�L�e�M�ϥX$R�_�a�k��C�k
-���Ĥ���$Z$A$A
-$W                      ��         ��        ��         �s $Z$A$A
-$P$O�\�ʡM�C�k��_�L��M�C�ۨC�����X�G$N�N�ơM�۩۳��O����$N�n�`�M�G�o$N�⦣
-�}�áM�Q$O�����뤤�n�`�C$Z~
+$P$n胸口熱血上湧﹐提起$O連環急攻﹐凌厲無前﹐使出$R斷家蝕日劍法
+的第六式$Z$A$A
+$W                      日         薄        赤         山 $Z$A$A
+$P$O擺動﹐劍法精奇無比﹐每招每式都出乎$N意料﹐招招都是直指$N要害﹐逼得$N手忙
+腳亂﹐被$O狠狠刺中要害。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -117,11 +117,11 @@ Innate          0 0
 End
 #Damage
 Description
-$P$n���W�����ۨ��ܩۡM�ۦ���_�M�Ӷթ_��M��F���C��M�ΥX$R�_�a
-�k��C�k���ĤC��$Z$A$A
-$W                       �B         ��         ��        �� $Z$A$A
-$P�C�𱲹L�M�C��֥i�ȡM�ֱo�b�H�M����w��M�C��E�V���W�M����ﰪ�M�C�J�e��
-�M$N�稾���Ө��M�k�U�߮ɳQ$O�@��Ӥ��C$Z~
+$P$n不慌不忙旋身變招﹐招式精奇﹐來勢奇急﹐凌厲的劍氣﹐用出$R斷家
+蝕日劍法的第七式$Z$A$A
+$W                       浮         雲         蔽        日 $Z$A$A
+$P劍氣捲過﹐劍氣快可怕﹐快得駭人﹐倏急已到﹐劍氣激越而頻﹐鏗鏘鳴高﹐劍穗疾揮
+﹐$N亦防不勝防﹐右頰立時被$O一刺而中。$Z~
 Chance          10
 Value           20
 Parry           0

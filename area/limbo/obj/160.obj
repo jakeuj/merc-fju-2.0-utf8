@@ -1,11 +1,11 @@
 Vnum            160
 Name            fire scroll~
-ShortDesc       ª¢«Òªk¨÷~
+ShortDesc       ç‚å¸æ³•å·~
 Description
-ª¢«Òªk¨÷(fire scroll)¤º°O¸üµÛª¢«ÒÀ|¦Ê¯ó«áªº°O¿ı¡M
-¯àÅı¤HÁA¸Ñ¦UºØª««~¬O§_¨ã¦³¬r©Ê¡C
+ç‚å¸æ³•å·(fire scroll)å…§è¨˜è¼‰è‘—ç‚å¸åšç™¾è‰å¾Œçš„è¨˜éŒ„ï¹
+èƒ½è®“äººç­è§£å„ç¨®ç‰©å“æ˜¯å¦å…·æœ‰æ¯’æ€§ã€‚
 ~
-Unit            ±²~
+Unit            æ²~
 ItemType        ITEM_SCROLL
 Takeable        Yes
 Level           10

@@ -1,10 +1,10 @@
 Vnum            546
 Name            war horse~
-ShortDesc       ¾Ô°¨~
-LongDesc        ¾Ô°¨(war horse)¦b³o¸Ì¡C
+ShortDesc       æˆ°é¦¬~
+LongDesc        æˆ°é¦¬(war horse)åœ¨é€™è£¡ã€‚
 ~
 Description
-¨e¬O¤@¤Ç¨«¥¢ªº°¨¡M¦b³o¸Ì±y¶¢ªº¦YµÛ¯ó¡K
+ç‰ æ˜¯ä¸€åŒ¹èµ°å¤±çš„é¦¬ï¹åœ¨é€™è£¡æ‚ é–’çš„åƒè‘—è‰â€¦
 ~
 AutoSetValue    Yes
 Sentinel        Yes

@@ -1,10 +1,10 @@
 Vnum            502
 Name            wedding swallowtail~
-ShortDesc       ·s­¦¿P§ÀªA~
+ShortDesc       æ–°éƒç‡•å°¾æœ~
 Description
-¤@¥ó°ª¯Å·s­¦¿P§ÀªA(wedding swallowtail)¡MÀ³¸Ó³£¬Oµ²±Bªº®É­Ô¬ï¡C
+ä¸€ä»¶é«˜ç´šæ–°éƒç‡•å°¾æœ(wedding swallowtail)ï¹æ‡‰è©²éƒ½æ˜¯çµå©šçš„æ™‚å€™ç©¿ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

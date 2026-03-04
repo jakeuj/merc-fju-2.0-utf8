@@ -1,5 +1,5 @@
 Name            seven star~
-Cname           �C�P�l��B~
+Cname           七星追魂步~
 Slot            SLOT_SEVEN_STAR
 Msgoff          ~
 Position        POS_FIGHTING
@@ -39,7 +39,7 @@ Help            ~
 
 #Damage
 Description
-$n�ϥX�y$W����$Z�z����@�̡M�p��K��Ī���ƹL�M���L�F$N�������C~
+$n使出『$W瑤光$Z』身行一晃﹐如初春的蘆葦滑過﹐躲過了$N的攻擊。~
 Chance          20
 Value           20
 Parry           0
@@ -49,7 +49,7 @@ End
 
 #Damage
 Description
-$n�ϥX�y$G���v$Z�z���Φp�b�M�����R�W���ݡM�������{�L$N�������C~
+$n使出『$G天權$Z』身形如鶴﹐飛身沖上雲端﹐輕易的閃過$N的攻擊。~
 Chance          20
 Value           20
 Parry           0
@@ -59,7 +59,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$P�}��$Z�z$n�Φ������M¶��$N���L�k�ۡM�°����M�X�صo�ۡC~
+$n施展『$P開陽$Z』$n形似分身﹐繞著$N左盤右旋﹐兜圈急轉﹐趁隙發招。~
 Chance          20
 Value           20
 Parry           0
@@ -69,7 +69,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$Y�ɿ�$Z�z�M�ɤO�ϤO�M���G$N����զp�H�J�j���@��C~
+$n施展『$Y玉衡$Z』﹐借力使力﹐結果$N的攻勢如沈入大海一般。~
 Chance          20
 Value           20
 Parry           0
@@ -79,7 +79,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$B�Ѽ�$Z�z��B���СM�P���@���l��$N����ջ����˸ѡC~
+$n施展『$B天樞$Z』氣運丹田﹐周身護體氣勁把$N的攻勢輕易瓦解。~
 Chance          20
 Value           20
 Parry           0
@@ -89,8 +89,8 @@ End
 
 #Damage
 Description
-$n�I�i�y$R�ѱ�$Z�z�u��$n�P����X�ۭ����K�M�j�㯫�¡M$N����է�
-���L�ΡC~
+$n施展『$R天旋$Z』只見$n周身放出旋風火焰﹐大顯神威﹐$N的攻勢完
+全無用。~
 Chance          20
 Value           20
 Parry           0
@@ -100,7 +100,7 @@ End
 
 #Damage
 Description
-$n�I�i�y$S�Ѿ�$Z�z�M$n���ʧ@�u��@�y�ܧήe�M�Ѿ����i���|�C~
+$n施展『$S天機$Z』﹐$n的動作只能一句話形容﹐天機不可洩漏。~
 Chance          20
 Value           20
 Parry           0

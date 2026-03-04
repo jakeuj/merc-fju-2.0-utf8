@@ -1,10 +1,10 @@
 Vnum            166
 Name            li fire potion~
-ShortDesc       Â÷¤õÃÄ¤ô~
+ShortDesc       é›¢ç«è—¥æ°´~
 Description
-¤@²~Â÷¤õÃÄ¤ô(li fire potion)¡M¨ã¦³°»´úÅ]ªkªº®ÄªG¡C
+ä¸€ç“¶é›¢ç«è—¥æ°´(li fire potion)ï¹å…·æœ‰åµæ¸¬é­”æ³•çš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -65,7 +65,7 @@ FUNCTION( do_reload )
 
   if ( arg[0] == '\x0' )
   {
-    send_to_char( "§A­n­«·s¸ü¤J­þºØ®æ¦¡ªºÀÉ®×©O¡S\n\r", ch );
+    send_to_char( "ä½ è¦é‡æ–°è¼‰å…¥å“ªç¨®æ ¼å¼çš„æª”æ¡ˆå‘¢ï¹–\n\r", ch );
     RETURN_NULL();
   }
 
@@ -73,13 +73,13 @@ FUNCTION( do_reload )
   {
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§A¥²¶·µù©ú¸ü¤Jª««~ªº¸¹½X¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜Žè¼‰å…¥ç‰©å“çš„è™Ÿç¢¼ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pObjIndex = get_obj_index( vnum = atoi( argument ) ) ) )
     {
-      act( "­ì¥»´N¨S¦³¸¹½X $x ªºª««~¡T", ch, &vnum, NULL, TO_CHAR );
+      act( "åŽŸæœ¬å°±æ²’æœ‰è™Ÿç¢¼ $x çš„ç‰©å“ï¹—", ch, &vnum, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -88,19 +88,19 @@ FUNCTION( do_reload )
     if ( !( nObjIndex = load_object( pObjIndex->filename ) ) )
     {
       print_to_char( ch,
-        "\e[1;33m¸ü¤J¥¢±Ñ¡M¸Ô²Ó¸ê®Æ¦p¤U¡R\n\r\e[0m"
-        "¦WºÙ¡R%s\e[0m(%s)\n\r"
-        "¸¹½X¡R%d\n\r"
-        "¦æ¼Æ¡R%d\n\r"
-        "¦r¼Æ¡R%d\n\r"
-        "­ì¦]¡R\n\r%s%s%s"
+        "\e[1;33mè¼‰å…¥å¤±æ•—ï¹è©³ç´°è³‡æ–™å¦‚ä¸‹ï¹•\n\r\e[0m"
+        "åç¨±ï¹•%s\e[0m(%s)\n\r"
+        "è™Ÿç¢¼ï¹•%d\n\r"
+        "è¡Œæ•¸ï¹•%d\n\r"
+        "å­—æ•¸ï¹•%d\n\r"
+        "åŽŸå› ï¹•\n\r%s%s%s"
         , pObjIndex->short_descr
         , pObjIndex->name
         , vnum
         , FileLine
         , FileWord
         , VERTICAL_LINE
-        , FileOop[0] ? FileOop : "­ì¦]¤£©ú"
+        , FileOop[0] ? FileOop : "åŽŸå› ä¸æ˜Ž"
         , VERTICAL_LINE );
 
       clear_reload_status();
@@ -118,14 +118,14 @@ FUNCTION( do_reload )
         clear_buffer();
 
         send_to_buffer(
-          "ª««~¼Æ­È¤£¦Xªk¡M¸ê®Æ¦p¤U¡R\n\r"
-          "ª««~¸¹½X¡R%-5d\n\r"
-          "ª««~¦WºÙ¡R%s(%s)\n\r"
-          "ª««~«¬ºA¡R%s\n\r"
-          "ª««~¸ô®|¡R%s\n\r"
-          "¼Æ­È %3d¡R %-8d\n\r"
-          "«Ø Ä³ ­È¡R%-8d\n\r"
-          "­ì    ¦]¡R%s\n\r"
+          "ç‰©å“æ•¸å€¼ä¸åˆæ³•ï¹è³‡æ–™å¦‚ä¸‹ï¹•\n\r"
+          "ç‰©å“è™Ÿç¢¼ï¹•%-5d\n\r"
+          "ç‰©å“åç¨±ï¹•%s(%s)\n\r"
+          "ç‰©å“åž‹æ…‹ï¹•%s\n\r"
+          "ç‰©å“è·¯å¾‘ï¹•%s\n\r"
+          "æ•¸å€¼ %3dï¹• %-8d\n\r"
+          "å»º è­° å€¼ï¹•%-8d\n\r"
+          "åŽŸ    å› ï¹•%s\n\r"
           , nObjIndex->vnum, nObjIndex->short_descr
           , nObjIndex->name
           , item_kind_name( nObjIndex->item_type )
@@ -139,7 +139,7 @@ FUNCTION( do_reload )
       }
     }
 
-    /* ¦³¨Ç¼Æ­È¥²¶·«O¯d */
+    /* æœ‰äº›æ•¸å€¼å¿…é ˆä¿ç•™ */
     nObjIndex->vnum          = pObjIndex->vnum;
     nObjIndex->count         = pObjIndex->count;
     nObjIndex->auction_times = pObjIndex->auction_times;
@@ -150,7 +150,7 @@ FUNCTION( do_reload )
       clear_reload_status();
       free_obj_index( pObjIndex );
 
-      act( "§A¤w¸g­«·s¸ü¤J¸¹½X $x ªºª««~¡T¸ê®Æ¦p¤U¡R", ch, &vnum, NULL, TO_CHAR );
+      act( "ä½ å·²ç¶“é‡æ–°è¼‰å…¥è™Ÿç¢¼ $x çš„ç‰©å“ï¹—è³‡æ–™å¦‚ä¸‹ï¹•", ch, &vnum, NULL, TO_CHAR );
       sprintf( buf, "%d", vnum );
       do_olist( ch, buf );
     }
@@ -158,7 +158,7 @@ FUNCTION( do_reload )
     {
       clear_reload_status();
       free_obj_index( nObjIndex );
-      act( "µLªk¸m´«ª««~¸¹½X $x¡T", ch, &vnum, NULL, TO_CHAR );
+      act( "ç„¡æ³•ç½®æ›ç‰©å“è™Ÿç¢¼ $xï¹—", ch, &vnum, NULL, TO_CHAR );
     }
   }
 
@@ -166,13 +166,13 @@ FUNCTION( do_reload )
   {
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§A¥²¶·µù©ú¸ü¤J©Çª«ªº¸¹½X¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜Žè¼‰å…¥æ€ªç‰©çš„è™Ÿç¢¼ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pMobIndex = get_mob_index( vnum = atoi( argument ) ) ) )
     {
-      act( "­ì¥»´N¨S¦³¸¹½X $x ªº©Çª«¡T", ch, &vnum, NULL, TO_CHAR );
+      act( "åŽŸæœ¬å°±æ²’æœ‰è™Ÿç¢¼ $x çš„æ€ªç‰©ï¹—", ch, &vnum, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -182,25 +182,25 @@ FUNCTION( do_reload )
     {
       clear_reload_status();
       print_to_char( ch,
-        "\e[1;33m¸ü¤J¥¢±Ñ¡M¸Ô²Ó¸ê®Æ¦p¤U¡R\n\r\e[0m"
-        "¦WºÙ¡R%s\e[0m(%s)\n\r"
-        "¸¹½X¡R%d\n\r"
-        "¦æ¼Æ¡R%d\n\r"
-        "¦r¼Æ¡R%d\n\r"
-        "­ì¦]¡R\n\r%s%s%s"
+        "\e[1;33mè¼‰å…¥å¤±æ•—ï¹è©³ç´°è³‡æ–™å¦‚ä¸‹ï¹•\n\r\e[0m"
+        "åç¨±ï¹•%s\e[0m(%s)\n\r"
+        "è™Ÿç¢¼ï¹•%d\n\r"
+        "è¡Œæ•¸ï¹•%d\n\r"
+        "å­—æ•¸ï¹•%d\n\r"
+        "åŽŸå› ï¹•\n\r%s%s%s"
         , pMobIndex->short_descr
         , pMobIndex->name
         , vnum
         , FileLine
         , FileWord
         , VERTICAL_LINE
-        , FileOop[0] ? FileOop : "­ì¦]¤£©ú"
+        , FileOop[0] ? FileOop : "åŽŸå› ä¸æ˜Ž"
         , VERTICAL_LINE );
 
       RETURN_NULL();
     }
 
-    /* ¦³¨Ç¼Æ­È¥²¶·«O¯d */
+    /* æœ‰äº›æ•¸å€¼å¿…é ˆä¿ç•™ */
     nMobIndex->vnum          = pMobIndex->vnum;
     nMobIndex->count         = pMobIndex->count;
     nMobIndex->pShop         = pMobIndex->pShop;
@@ -219,21 +219,21 @@ FUNCTION( do_reload )
       clear_reload_status();
       free_mob_index( pMobIndex );
 
-      act( "§A¤w¸g­«·s¸ü¤J©Çª« $x ªºª««~¡T¸ê®Æ¦p¤U¡R", ch, &vnum, NULL, TO_CHAR );
+      act( "ä½ å·²ç¶“é‡æ–°è¼‰å…¥æ€ªç‰© $x çš„ç‰©å“ï¹—è³‡æ–™å¦‚ä¸‹ï¹•", ch, &vnum, NULL, TO_CHAR );
       sprintf( buf, "%d", vnum );
       do_mlist( ch, buf );
     }
     else
     {
       clear_reload_status();
-      act( "µLªk¸m´«©Çª«¸¹½X $x¡T", ch, &vnum, NULL, TO_CHAR );
+      act( "ç„¡æ³•ç½®æ›æ€ªç‰©è™Ÿç¢¼ $xï¹—", ch, &vnum, NULL, TO_CHAR );
       free_mob_index( pMobIndex );
     }
   }
 
   else
   {
-    send_to_char( "¸ü¤J®æ¦¡¿ù»~¡M½Ð¬d¸ß reload ªº¥¿½T¥Îªk¡T\n\r", ch );
+    send_to_char( "è¼‰å…¥æ ¼å¼éŒ¯èª¤ï¹è«‹æŸ¥è©¢ reload çš„æ­£ç¢ºç”¨æ³•ï¹—\n\r", ch );
   }
   RETURN_NULL();
 }
@@ -257,18 +257,18 @@ bool replace_obj_index( OID * pOld, OID * pNew )
 
   PUSH_FUNCTION( "replace_obj_index" );
 
-  /* ¦pªG¸¹½X¤£¤@¼Ë */
+  /* å¦‚æžœè™Ÿç¢¼ä¸ä¸€æ¨£ */
   if ( pOld->vnum != pNew->vnum ) RETURN( FALSE );
 
-  /* ¸m´«©ç½æ */
+  /* ç½®æ›æ‹è³£ */
   for ( pSale = sale_list; pSale; pSale = pSale->next )
     if ( pSale->obj == pOld ) pSale->obj = pNew;
 
-  /* ¸m´«Â§ª« */
+  /* ç½®æ›ç¦®ç‰© */
   for ( pGift = gift_list; pGift; pGift = pGift->next )
     if ( pGift->gift == pOld ) pGift->gift = pNew;
 
-  /* ¸m´«Äqª« */
+  /* ç½®æ›ç¤¦ç‰© */
   for ( pArea = area_first; pArea; pArea = pArea->next )
   {
     for ( pMineral = pArea->mineral; pMineral; pMineral = pMineral->next )
@@ -282,17 +282,17 @@ bool replace_obj_index( OID * pOld, OID * pNew )
     }
   }
 
-  /* ¸m´«¶Ë®` */
+  /* ç½®æ›å‚·å®³ */
   for ( pSkill = skill_list; pSkill; pSkill = pSkill->next )
   {
     for ( pDamage = pSkill->damage; pDamage; pDamage = pDamage->next )
       if ( pDamage->innate == pOld ) pDamage->innate = pNew;
   }
 
-  /* ¸m´«­ì«¬ */
+  /* ç½®æ›åŽŸåž‹ */
   iHash = pOld->vnum % MAX_KEY_HASH;
 
-  /* ¥ý²¾°£ */
+  /* å…ˆç§»é™¤ */
   if ( pOld == obj_index_hash[iHash] )
   {
     obj_index_hash[iHash] = pOld->next;
@@ -309,7 +309,7 @@ bool replace_obj_index( OID * pOld, OID * pNew )
     }
   }
 
-  /* ¦A´¡¤J */
+  /* å†æ’å…¥ */
   pNew->next            = obj_index_hash[iHash];
   obj_index_hash[iHash] = pNew;
 
@@ -340,7 +340,7 @@ bool replace_obj_index( OID * pOld, OID * pNew )
   if ( pNew->vnum == ObjLetterVnum     ) ObjLetter     = pNew;
   if ( pNew->vnum == ObjUrnVnum        ) ObjUrn        = pNew;
 
-  /* ¸m´«ª««~ */
+  /* ç½®æ›ç‰©å“ */
   for ( pObj = object_list; pObj; pObj = pObj->next )
   {
     if ( verify_obj( pObj ) && pObj->pIndexData == pOld )
@@ -378,7 +378,7 @@ bool replace_obj_index( OID * pOld, OID * pNew )
       free_string( pObj->name );
       pObj->name = str_dup( pNew->name );
 
-      /* Á×§K¦³¨Ç¦³ %s ³o¨Ç¦r¦ê */
+      /* é¿å…æœ‰äº›æœ‰ %s é€™äº›å­—ä¸² */
       if ( strstr( pNew->description, "%" ) == NULL )
       {
         free_string( pObj->description );
@@ -387,12 +387,12 @@ bool replace_obj_index( OID * pOld, OID * pNew )
 
       if ( ( victim = pObj->carried_by ) && verify_char( victim ) )
       {
-        /* ­×¥¿­«¶q */
+        /* ä¿®æ­£é‡é‡ */
         victim->carry_weight -= pOld->weight;
         victim->carry_weight += pNew->weight;
         victim->carry_weight  = UMAX( 1, victim->carry_weight );
 
-        /* ­×¥¿¼vÅT */
+        /* ä¿®æ­£å½±éŸ¿ */
         if ( pObj->wear_loc != WEAR_NONE )
         {
           for ( pAffect = pOld->affected; pAffect; pAffect = pAffect->next )
@@ -409,10 +409,10 @@ bool replace_obj_index( OID * pOld, OID * pNew )
         }
       }
 
-      /* ­×¥¿«¬ºA */
+      /* ä¿®æ­£åž‹æ…‹ */
       if ( pNew->wear_flags != pOld->wear_flags )
       {
-        /* ¥¿³Q¸Ë³ÆµÛ */
+        /* æ­£è¢«è£å‚™è‘— */
         if ( ( victim = pObj->carried_by )
           && verify_char( victim )
           && pObj->wear_loc != WEAR_NONE )
@@ -438,7 +438,7 @@ bool replace_mob_index( MID * pOld, MID * pNew )
 
   PUSH_FUNCTION( "replace_mob_index" );
 
-  /* ¦pªG¸¹½X¤£¤@¼Ë */
+  /* å¦‚æžœè™Ÿç¢¼ä¸ä¸€æ¨£ */
   if ( pOld->vnum != pNew->vnum ) RETURN( FALSE );
 
   for ( pBounty = bounty_list; pBounty; pBounty = pBounty->next )
@@ -446,10 +446,10 @@ bool replace_mob_index( MID * pOld, MID * pNew )
 
   if ( pNew->vnum == MobVampireVnum  ) MobVampire  = pNew;
   if ( pNew->vnum == MobPracticeVnum ) MobPractice = pNew;
-  /* ¸m´«­ì«¬ */
+  /* ç½®æ›åŽŸåž‹ */
   iHash = pOld->vnum % MAX_KEY_HASH;
 
-  /* ¥ý²¾°£ */
+  /* å…ˆç§»é™¤ */
   if ( pOld == mob_index_hash[iHash] )
   {
     mob_index_hash[iHash] = pOld->next;
@@ -466,7 +466,7 @@ bool replace_mob_index( MID * pOld, MID * pNew )
     }
   }
 
-  /* ¦A´¡¤J */
+  /* å†æ’å…¥ */
   pNew->next            = mob_index_hash[iHash];
   mob_index_hash[iHash] = pNew;
 
@@ -481,7 +481,7 @@ bool replace_mob_index( MID * pOld, MID * pNew )
       mob->class      = pNew->class;
       mob->enable     = pNew->enable;
 
-      /* ¤£¬O¤p°­ */
+      /* ä¸æ˜¯å°é¬¼ */
       if ( !mob->boss )
       {
         mob->tractable  = pNew->tractable;
@@ -612,7 +612,7 @@ void reset_object_value( OBJ_DATA * pObj, OBJ_INDEX_DATA * pIndex, bool bSame )
     pObj->value[4] = pIndex->value[4];
     break;
 
-  /* ¥¼½Õ¾ã ???? */
+  /* æœªèª¿æ•´ ???? */
   case ITEM_MAGICSTONE:
     break;
   }

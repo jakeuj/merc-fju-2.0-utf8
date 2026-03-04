@@ -1,5 +1,5 @@
 Name            flee~
-Cname           ���Ͳ��~
+Cname           金蟬脫殼~
 Slot            SLOT_FLEE
 Msgoff          ~
 Position        POS_FIGHTING
@@ -36,18 +36,18 @@ Limit           CLASS_BRAVO      1  95
 Limit           CLASS_MAGE       1  60
 Limit           CLASS_SMITH      1  85
 Help
-���Ͳ�ߡG
+金蟬脫殼：
 
-�]�l�L�k�W�������G�u�T�Q���p�M�����W���T�v�M�k�]���ޯ�O�ܭ�
-�n���M�ҥH�o�ӧޯ�O�@�w�n�Ǫ���T
-�p�G�A�n�ǳo�ӧޯ઺�ܡM�i�H�쬥������v����( / 3e 2s e ) ��
-�O�s��Ϫ����R���k���٦����������Y�����оɡM�@�w�n�h�ǳ�T
+孫子兵法上面有說：「三十六計﹐走為上策﹗」﹐逃跑的技能是很重
+要的﹐所以這個技能是一定要學的喔﹗
+如果你要學這個技能的話﹐可以到洛陽的鏢師那裡( / 3e 2s e ) 或
+是新手區的飛舞的女孩還有襄陽的教頭都有教導﹐一定要去學喔﹗
 
 ~
 
 #Damage
 Description
-$n���ݱ��Τ���M�ߨ�Q�_�]�l�L�k���̰��Ҭɡy$W�����W��$Z�z�M�޻L�N�]�C~
+$n眼看情形不對﹐立刻想起孫子兵法中最高境界『$W走為上策$Z』﹐拔腿就跑。~
 Chance          10
 Value           1
 Innate          0 0
@@ -55,7 +55,7 @@ End
 
 #Damage
 Description
-$n���ġM���O�ᦳ�j�N���d�M�@�ۡy$Y���Ͳ��$Z�z����M$n�N�����ܼv�C~
+$n不敵﹐但是頗有大將風範﹐一招『$Y金蟬脫殼$Z』之後﹐$n就不見蹤影。~
 Chance          10
 Value           2
 Innate          0 0
@@ -63,7 +63,7 @@ End
 
 #Damage
 Description
-$n�P�D���p�����M�ߨ貽�X�L�k�ܰ����k�y$P�k���Ԥ�$Z�z�M�ߨ�޻L�N�]�C~
+$n周遭情況不妙﹐立刻祭出兵法至高妙法『$P逃之夭夭$Z』﹐立刻拔腿就跑。~
 Chance          10
 Value           3
 Innate          0 0

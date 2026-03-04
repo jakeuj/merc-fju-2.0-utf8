@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-ºÎ¹¡([1;32msleep[0m)©Î¬O¥ğ®§([1;32mrest[0m)°÷¤F«ç»ò¿ì¡S·íµM¬O°_§É([1;32mwake[0m,[1;32mstand[0m)¡MÃø¹DÁÙ­n¿à
-§É¶Ü¡S
+ç¡é£½([1;32msleep[0m)æˆ–æ˜¯ä¼‘æ¯([1;32mrest[0m)å¤ äº†æ€éº¼è¾¦ï¹–ç•¶ç„¶æ˜¯èµ·åºŠ([1;32mwake[0m,[1;32mstand[0m)ï¹é›£é“é‚„è¦è³´
+åºŠå—ï¹–
 
-½Ğ¬d¸ß¡Rsleep¡Brest¡Bwake¡Bstand
+è«‹æŸ¥è©¢ï¹•sleepã€restã€wakeã€stand
 ~
 End

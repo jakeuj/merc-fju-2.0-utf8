@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -32,13 +32,13 @@ FILE * FOPEN( const char * path , const char * mode )
 
   PUSH_FUNCTION( "FOPEN" );
 
-  if ( RecordFile ) mudlog( LOG_INFO, "¶}±ÒÀÉ®×¡R%s", path );
+  if ( RecordFile ) mudlog( LOG_INFO, "é–‹å•Ÿæª”æ¡ˆï¹•%s", path );
 
   if ( fpReserve ) fclose( fpReserve );
 
   if ( !( pFile = fopen( path , mode ) ) )
   {
-    mudlog( LOG_INFO , "µLªk¶}±ÒÀÉ®× %s %s", path, strerror( errno ) );
+    mudlog( LOG_INFO , "ç„¡æ³•é–‹å•Ÿæª”æ¡ˆ %s %s", path, strerror( errno ) );
     fpReserve = fopen( null_file , "r" );
     RETURN( NULL );
   }
@@ -57,7 +57,7 @@ void FCLOSE( FILE * stream )
   RETURN_NULL();
 }
 
-/* ¶}±Ò©Ò¦³°Ï°ìªº¥D­nµ{¦¡³¡¥÷ */
+/* é–‹å•Ÿæ‰€æœ‰å€åŸŸçš„ä¸»è¦ç¨‹å¼éƒ¨ä»½ */
 void open_area_directory( void )
 {
   char        directory    [ MAX_FILE_LENGTH ];
@@ -71,19 +71,19 @@ void open_area_directory( void )
 
   PUSH_FUNCTION( "open_area_directory" );
 
-  /* ¥ý§ä¨ì¥Ø¿ý¨Ã¥B¹î¬Ý¬O§_­n¶ñ¤J¥Ø¿ýªº°O¸¹ */
+  /* å…ˆæ‰¾åˆ°ç›®éŒ„ä¸¦ä¸”å¯Ÿçœ‹æ˜¯å¦è¦å¡«å…¥ç›®éŒ„çš„è¨˜è™Ÿ */
   fill_path( str_cpy( directory, area_dir ) );
 
-  /* §ä¨ì°Ï°ìÀÉ®×¥Ø¿ý¦CªíÀÉ */
+  /* æ‰¾åˆ°å€åŸŸæª”æ¡ˆç›®éŒ„åˆ—è¡¨æª” */
   sprintf( filename , "%s%s" , directory , dir_file );
 
-  /* ¬Ý¬Ý¬O§_¥i¥H¶}ÀÉ */
+  /* çœ‹çœ‹æ˜¯å¦å¯ä»¥é–‹æª” */
   if ( ( pFile = f_open( filename , "r" ) ) )
   {
-    /* ¤@ª½Åª¨ìÀÉ®×¥½ºÝ¤~°±¤î */
+    /* ä¸€ç›´è®€åˆ°æª”æ¡ˆæœ«ç«¯æ‰åœæ­¢ */
     while ( !if_eof( pFile ) )
     {
-      /* Åª¤J·Q­nÅª¨úªº°Ï°ì¥Ø¿ý */
+      /* è®€å…¥æƒ³è¦è®€å–çš„å€åŸŸç›®éŒ„ */
       word = fread_word( pFile );
       if ( word[0] == '*' )
       {
@@ -93,94 +93,94 @@ void open_area_directory( void )
 
       sprintf( buf , "%s%s" , directory , word );
 
-      /* ÀË¬d¬O§_¬°¥i¥H¦s¨úªº¤l¥Ø¿ý */
+      /* æª¢æŸ¥æ˜¯å¦ç‚ºå¯ä»¥å­˜å–çš„å­ç›®éŒ„ */
       if ( is_directory( buf ) )
       {
-        /* ¦A¹î¬Ý¬O§_¦³¯Á¤ÞÀÉ */
+        /* å†å¯Ÿçœ‹æ˜¯å¦æœ‰ç´¢å¼•æª” */
         sprintf( work_dir_name , "%s%s" , directory , word );
         fill_path( work_dir_name );
         sprintf( index , "%s%s" , work_dir_name , index_file );
 
-        /* ¦pªG¦³¯Á¤ÞÀÉ«hÅª¤J©Ò¦³¸ê®Æ */
+        /* å¦‚æžœæœ‰ç´¢å¼•æª”å‰‡è®€å…¥æ‰€æœ‰è³‡æ–™ */
         if ( is_regular( index ) )
         {
           pArea = load_zone( work_dir_name );
           if ( !DefaultArea ) DefaultArea = pArea;
         }
 
-        /* ¤£µM°e¥X¿ù»~ªº°T®§ */
+        /* ä¸ç„¶é€å‡ºéŒ¯èª¤çš„è¨Šæ¯ */
         else
         {
-          mudlog( LOG_ERR , "°Ï°ì¥Ø¿ý %s ¨S¦³¯Á¤ÞÀÉ" , work_dir_name );
+          mudlog( LOG_ERR , "å€åŸŸç›®éŒ„ %s æ²’æœ‰ç´¢å¼•æª”" , work_dir_name );
         }
       }
 
-      /* °Ï°ì¥Ø¿ý®Ú¥»¤£¯à¦s¨ú */
+      /* å€åŸŸç›®éŒ„æ ¹æœ¬ä¸èƒ½å­˜å– */
       else
       {
-        mudlog( LOG_ERR , "°Ï°ì¥Ø¿ý %s µLªk¦s¨ú" , buf );
+        mudlog( LOG_ERR , "å€åŸŸç›®éŒ„ %s ç„¡æ³•å­˜å–" , buf );
       }
     }
     f_close( pFile );
   }
 
-  /* ®Ú¥»¨S¦³°Ï°ì¥Ø¿ý¦CªíÀÉ, °e¥X¿ù»~°T®§ */
+  /* æ ¹æœ¬æ²’æœ‰å€åŸŸç›®éŒ„åˆ—è¡¨æª”, é€å‡ºéŒ¯èª¤è¨Šæ¯ */
   else
   {
-    mudlog( LOG_ERR , "¨S¦³°Ï°ì¤l¥Ø¿ý¦CªíÀÉ" );
+    mudlog( LOG_ERR , "æ²’æœ‰å€åŸŸå­ç›®éŒ„åˆ—è¡¨æª”" );
   }
 
-  if ( !DefaultArea ) mudlog( LOG_ERR , "¨S¦³¹w³]°Ï°ì." );
+  if ( !DefaultArea ) mudlog( LOG_ERR , "æ²’æœ‰é è¨­å€åŸŸ." );
 
-  /* Åª¤Jª±®a¼gªº°Ï°ì */
+  /* è®€å…¥çŽ©å®¶å¯«çš„å€åŸŸ */
   if ( PlayerArea[0] )
   {
-    /* ÀË¬d¬O§_¬°¥i¥H¦s¨úªº¤l¥Ø¿ý */
+    /* æª¢æŸ¥æ˜¯å¦ç‚ºå¯ä»¥å­˜å–çš„å­ç›®éŒ„ */
     if ( is_directory( PlayerArea ) )
     {
-      /* ¦A¹î¬Ý¬O§_¦³¯Á¤ÞÀÉ */
+      /* å†å¯Ÿçœ‹æ˜¯å¦æœ‰ç´¢å¼•æª” */
       str_cpy( work_dir_name, PlayerArea );
       fill_path( work_dir_name );
       sprintf( index , "%s%s" , work_dir_name , index_file );
 
-      /* ¦pªG¦³¯Á¤ÞÀÉ«hÅª¤J©Ò¦³¸ê®Æ */
+      /* å¦‚æžœæœ‰ç´¢å¼•æª”å‰‡è®€å…¥æ‰€æœ‰è³‡æ–™ */
       if ( is_regular( index ) )
       {
         PlayerZone = load_zone( work_dir_name );
       }
 
-      /* ¤£µM°e¥X¿ù»~ªº°T®§ */
+      /* ä¸ç„¶é€å‡ºéŒ¯èª¤çš„è¨Šæ¯ */
       else
       {
-        mudlog( LOG_ERR , "ª±®a°Ï°ì¥Ø¿ý %s ¨S¦³¯Á¤ÞÀÉ" , PlayerArea );
+        mudlog( LOG_ERR , "çŽ©å®¶å€åŸŸç›®éŒ„ %s æ²’æœ‰ç´¢å¼•æª”" , PlayerArea );
       }
     }
 
-    /* °Ï°ì¥Ø¿ý®Ú¥»¤£¯à¦s¨ú */
+    /* å€åŸŸç›®éŒ„æ ¹æœ¬ä¸èƒ½å­˜å– */
     else
     {
-      mudlog( LOG_ERR , "ª±®a°Ï°ì¥Ø¿ý %s µLªk¦s¨ú" , PlayerArea );
+      mudlog( LOG_ERR , "çŽ©å®¶å€åŸŸç›®éŒ„ %s ç„¡æ³•å­˜å–" , PlayerArea );
     }
   }
 
   RETURN_NULL();
 }
 
-/* ¬Ý¬Ý¬O§_¦³¥²­n¶ñ¤J¥Ø¿ýµ²§À²Å¸¹ '/' */
+/* çœ‹çœ‹æ˜¯å¦æœ‰å¿…è¦å¡«å…¥ç›®éŒ„çµå°¾ç¬¦è™Ÿ '/' */
 void fill_path( char * pathname )
 {
   PUSH_FUNCTION( "fill_path" );
 
-  /* ¥Ø¿ý¦WºÙªø«×¬°¹s, ¤@©w¿ù»~ */
-  if ( !pathname || !*pathname ) mudlog( LOG_ERR , "¸ü¤J¥Ø¿ý¦³¿ù»~" );
+  /* ç›®éŒ„åç¨±é•·åº¦ç‚ºé›¶, ä¸€å®šéŒ¯èª¤ */
+  if ( !pathname || !*pathname ) mudlog( LOG_ERR , "è¼‰å…¥ç›®éŒ„æœ‰éŒ¯èª¤" );
 
-  /* ¬Ý¬Ý¬O§_¦³¥²­n¶ñ¤J¥Ø¿ýµ²§À²Å¸¹ '/' */
+  /* çœ‹çœ‹æ˜¯å¦æœ‰å¿…è¦å¡«å…¥ç›®éŒ„çµå°¾ç¬¦è™Ÿ '/' */
   if ( pathname[ str_len( pathname ) - 1 ] != '/' ) str_cat( pathname , "/" );
 
   RETURN_NULL();
 }
 
-/* ¬d¸ß¬O§_¯uªº¦³³o­ÓÀÉ®× */
+/* æŸ¥è©¢æ˜¯å¦çœŸçš„æœ‰é€™å€‹æª”æ¡ˆ */
 bool is_regular( const char * filename )
 {
   struct stat st;
@@ -193,7 +193,7 @@ bool is_regular( const char * filename )
   RETURN( FALSE );
 }
 
-/* ¬d¸ß¬O§_¯uªº¦³³o­Ó¥Ø¿ý */
+/* æŸ¥è©¢æ˜¯å¦çœŸçš„æœ‰é€™å€‹ç›®éŒ„ */
 bool is_directory( const char * path )
 {
   struct stat st;
@@ -204,7 +204,7 @@ bool is_directory( const char * path )
   RETURN( FALSE );
 }
 
-/* ¸ü¤J¾ã­Ó¥Ø¿ý©Ò¦³ªº¸ê®Æ */
+/* è¼‰å…¥æ•´å€‹ç›®éŒ„æ‰€æœ‰çš„è³‡æ–™ */
 AREA_DATA * load_zone( char * pathname )
 {
   AREA_DATA * pArea;
@@ -212,12 +212,12 @@ AREA_DATA * load_zone( char * pathname )
 
   PUSH_FUNCTION( "load_zone" );
 
-  /* ¥ý³]©w¯Á¤ÞÀÉªºÀÉ¦W */
+  /* å…ˆè¨­å®šç´¢å¼•æª”çš„æª”å */
   sprintf( index_file_name , "%s%s" , pathname , index_file );
 
-  /* ¸ü¤J¯Á¤ÞÀÉ®× */
+  /* è¼‰å…¥ç´¢å¼•æª”æ¡ˆ */
   if ( !( pArea = load_area( index_file_name ) ) )
-    mudlog( LOG_ERR , "¸ü¤J¥Ø¿ý %s ¯Á¤ÞÀÉ¦³°ÝÃD" , pathname );
+    mudlog( LOG_ERR , "è¼‰å…¥ç›®éŒ„ %s ç´¢å¼•æª”æœ‰å•é¡Œ" , pathname );
 
   if ( !area_first ) area_first      = pArea;
   if (  area_last  ) area_last->next = pArea;
@@ -226,30 +226,30 @@ AREA_DATA * load_zone( char * pathname )
   pArea->next = NULL;
   top_area++;
 
-  /* ¸ü¤J©Ð¶¡ */
+  /* è¼‰å…¥æˆ¿é–“ */
   pArea->room += index_boot( pathname , ROOM_MODE, pArea );
 
-  /* ¸ü¤J©Çª« */
+  /* è¼‰å…¥æ€ªç‰© */
   pArea->mob += index_boot( pathname , MOB_MODE, pArea );
 
-  /* ¸ü¤Jª««~ */
+  /* è¼‰å…¥ç‰©å“ */
   pArea->obj += index_boot( pathname , OBJ_MODE, pArea );
 
-  /* ¸ü¤J°Ó©± */
+  /* è¼‰å…¥å•†åº— */
   pArea->shop += index_boot( pathname , SHOP_MODE, pArea );
 
-  /* ¸ü¤J­«¸m */
+  /* è¼‰å…¥é‡ç½® */
   pArea->reset += index_boot( pathname , RESET_MODE, pArea );
 
-  /* ¸ü¤JÄqª« */
+  /* è¼‰å…¥ç¤¦ç‰© */
   pArea->reset += index_boot( pathname , MINERAL_MODE, pArea );
 
-  /* ÀË¬d­º³£ */
+  /* æª¢æŸ¥é¦–éƒ½ */
   check_capital( pArea );
   RETURN( pArea );
 }
 
-/* ¸ü¤J¦UºØÀÉ®×®æ¦¡ªº¥Dµ{¦¡ */
+/* è¼‰å…¥å„ç¨®æª”æ¡ˆæ ¼å¼çš„ä¸»ç¨‹å¼ */
 int index_boot( char * path , int mode , AREA_DATA * pArea )
 {
   MOB_INDEX_DATA  * pMobIndex;
@@ -268,44 +268,44 @@ int index_boot( char * path , int mode , AREA_DATA * pArea )
 
   PUSH_FUNCTION( "index_boot" );
 
-  /* ¥ý¬Ý¬Ý»Ý­n­þ¤@ºØªº¥Ø¿ý¦WºÙ */
+  /* å…ˆçœ‹çœ‹éœ€è¦å“ªä¸€ç¨®çš„ç›®éŒ„åç¨± */
   switch( mode )
   {
-  /* ¿ù»~ªº¼Ò¦¡ */
+  /* éŒ¯èª¤çš„æ¨¡å¼ */
   default:
-    mudlog( LOG_ERR , "Index_boot: ¥¼©w¸qªº¶µ¥Ø %d." , mode );
+    mudlog( LOG_ERR , "Index_boot: æœªå®šç¾©çš„é …ç›® %d." , mode );
 
-  /* ¸ü¤J©Ð¶¡ */
+  /* è¼‰å…¥æˆ¿é–“ */
   case ROOM_MODE:
     sprintf( dir_name , "%s%s" , path , room_dir );
     strcpy( ext, room_ext );
     break;
 
-  /* ¸ü¤J©Çª« */
+  /* è¼‰å…¥æ€ªç‰© */
   case MOB_MODE:
     sprintf( dir_name , "%s%s" , path , mob_dir );
     strcpy( ext, mob_ext );
     break;
 
-  /* ¸ü¤Jª««~ */
+  /* è¼‰å…¥ç‰©å“ */
   case OBJ_MODE:
     sprintf( dir_name , "%s%s" , path , obj_dir );
     strcpy( ext, obj_ext );
     break;
 
-  /* ¸ü¤J°Ó©± */
+  /* è¼‰å…¥å•†åº— */
   case SHOP_MODE:
     sprintf( dir_name , "%s%s" , path , shop_dir );
     strcpy( ext, shop_ext );
     break;
 
-  /* ¸ü¤J­«¸m */
+  /* è¼‰å…¥é‡ç½® */
   case RESET_MODE:
     sprintf( dir_name , "%s%s" , path , reset_dir );
     strcpy( ext, reset_ext );
     break;
 
-  /* ¸ü¤JÄqª« */
+  /* è¼‰å…¥ç¤¦ç‰© */
   case MINERAL_MODE:
     sprintf( dir_name , "%s%s" , path , mineral_dir );
     strcpy( ext, mineral_ext );
@@ -322,17 +322,17 @@ int index_boot( char * path , int mode , AREA_DATA * pArea )
       sprintf( filename, "%s%s", dir_name, result.gl_pathv[loop] );
       if ( !is_regular( filename ) ) continue;
 
-      /* ¦A¬Ý¬Ý¸Õ¸Õ­þ¤@ºØ¨Ó¨M©w¸ü¤Jªºµ{¦¡ */
+      /* å†çœ‹çœ‹è©¦è©¦å“ªä¸€ç¨®ä¾†æ±ºå®šè¼‰å…¥çš„ç¨‹å¼ */
       switch( mode )
       {
-      /* ¿ù»~ªº¼Ò¦¡ */
+      /* éŒ¯èª¤çš„æ¨¡å¼ */
       default :
-        mudlog( LOG_ERR , "Index_boot: ¥¼©w¸qªº¶µ¥Ø" );
+        mudlog( LOG_ERR , "Index_boot: æœªå®šç¾©çš„é …ç›®" );
 
-      /* ¸ü¤J©Ð¶¡ */
+      /* è¼‰å…¥æˆ¿é–“ */
       case ROOM_MODE:
 
-        /* ¸ü¤J¸ê®Æ */
+        /* è¼‰å…¥è³‡æ–™ */
         pRoomIndex = load_room( filename );
 
         pRoomIndex->area       = pArea;
@@ -355,15 +355,15 @@ int index_boot( char * path , int mode , AREA_DATA * pArea )
 
         break;
 
-      /* ¸ü¤J©Çª« */
+      /* è¼‰å…¥æ€ªç‰© */
       case MOB_MODE:
 
-        /* ¶}±ÒÀÉ®×¨Ã¥B¸ü¤J¸ê®Æ */
+        /* é–‹å•Ÿæª”æ¡ˆä¸¦ä¸”è¼‰å…¥è³‡æ–™ */
         if ( !( pMobIndex = load_mobiles( filename ) ) )
-          mudlog( LOG_DEBUG, "index_boot: ¸ü¤J©Çª«¥¢±Ñ." );
+          mudlog( LOG_DEBUG, "index_boot: è¼‰å…¥æ€ªç‰©å¤±æ•—." );
 
         if ( get_mob_index( pMobIndex->vnum ) )
-          mudlog( LOG_DEBUG, "index_boot: ¸ü¤J­«½Æ©Çª« %s ¸¹½X %d."
+          mudlog( LOG_DEBUG, "index_boot: è¼‰å…¥é‡è¤‡æ€ªç‰© %s è™Ÿç¢¼ %d."
             , filename, pMobIndex->vnum );
 
         pMobIndex->area       = pArea;
@@ -376,14 +376,14 @@ int index_boot( char * path , int mode , AREA_DATA * pArea )
         count++;
         break;
 
-      /* ¸ü¤Jª««~ */
+      /* è¼‰å…¥ç‰©å“ */
       case OBJ_MODE:
 
         if ( !( pObjIndex = load_object( filename ) ) )
-          mudlog( LOG_DEBUG, "index_boot: ¸ü¤Jª««~¥¢±Ñ." );
+          mudlog( LOG_DEBUG, "index_boot: è¼‰å…¥ç‰©å“å¤±æ•—." );
 
         if ( get_obj_index( pObjIndex->vnum ) )
-          mudlog( LOG_DEBUG, "index_boot: ¸ü¤J­«½Æª««~ %s ¸¹½X %d."
+          mudlog( LOG_DEBUG, "index_boot: è¼‰å…¥é‡è¤‡ç‰©å“ %s è™Ÿç¢¼ %d."
             , filename, pObjIndex->vnum );
 
         iHash                 = pObjIndex->vnum % MAX_KEY_HASH;
@@ -394,10 +394,10 @@ int index_boot( char * path , int mode , AREA_DATA * pArea )
         count++;
         break;
 
-      /* ¸ü¤J°Ó©± */
+      /* è¼‰å…¥å•†åº— */
       case SHOP_MODE:
 
-        /* ¶}±ÒÀÉ®×¨Ã¥B¸ü¤J¸ê®Æ */
+        /* é–‹å•Ÿæª”æ¡ˆä¸¦ä¸”è¼‰å…¥è³‡æ–™ */
         pShop = load_shop( filename );
 
         pShop->filename  = str_dup( filename );
@@ -411,10 +411,10 @@ int index_boot( char * path , int mode , AREA_DATA * pArea )
         count++;
         break;
 
-      /* ¸ü¤JÄqª« */
+      /* è¼‰å…¥ç¤¦ç‰© */
       case MINERAL_MODE:
 
-        /* ¶}±ÒÀÉ®×¨Ã¥B¸ü¤J¸ê®Æ */
+        /* é–‹å•Ÿæª”æ¡ˆä¸¦ä¸”è¼‰å…¥è³‡æ–™ */
         pMineral = load_mineral( filename );
         pMineral->next = pArea->mineral;
         pArea->mineral = pMineral;
@@ -422,10 +422,10 @@ int index_boot( char * path , int mode , AREA_DATA * pArea )
         count++;
         break;
 
-      /* ¸ü¤J­«¸m */
+      /* è¼‰å…¥é‡ç½® */
       case RESET_MODE:
 
-        /* ¶}±ÒÀÉ®×¨Ã¥B¸ü¤J¸ê®Æ */
+        /* é–‹å•Ÿæª”æ¡ˆä¸¦ä¸”è¼‰å…¥è³‡æ–™ */
         load_resets( filename , pArea );
         count++;
         break;
@@ -444,7 +444,7 @@ void check_capital( AREA_DATA * pArea )
 
   PUSH_FUNCTION( "check_capital" );
 
-  if ( !pArea ) mudlog( LOG_ERR, "check_capital: ¨Ó·½¤£¥¿½T." );
+  if ( !pArea ) mudlog( LOG_ERR, "check_capital: ä¾†æºä¸æ­£ç¢º." );
 
   if ( ( capital = pArea->capital_no ) <= 0 ) RETURN_NULL();
 
@@ -456,6 +456,6 @@ void check_capital( AREA_DATA * pArea )
       RETURN_NULL();
     }
   }
-  mudlog( LOG_ERR, "°Ï°ì %s ªº­º³£ %d ¤£¦s¦b.", pArea->name, capital );
+  mudlog( LOG_ERR, "å€åŸŸ %s çš„é¦–éƒ½ %d ä¸å­˜åœ¨.", pArea->name, capital );
   RETURN_NULL();
 }

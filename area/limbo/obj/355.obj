@@ -1,9 +1,9 @@
 Vnum            355
 Name            heal book~
-ShortDesc       «ì´_³N¯µÓD~
+ShortDesc       æ¢å¾©è¡“ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

@@ -1,10 +1,10 @@
 Vnum            161
 Name            kan water potion~
-ShortDesc       §¢¤ôÃÄ¤ô~
+ShortDesc       åæ°´è—¥æ°´~
 Description
-¤@²~§¢¤ôÃÄ¤ô(kan water potion)¡M¨ã¦³°»´úÁô§Îªº®ÄªG¡C
+ä¸€ç“¶åæ°´è—¥æ°´(kan water potion)ï¹å…·æœ‰åµæ¸¬éš±å½¢çš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

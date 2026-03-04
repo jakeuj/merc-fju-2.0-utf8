@@ -1,5 +1,5 @@
 Name            physique~
-Cname           �����g~
+Cname           易筋經~
 Slot            SLOT_PHYSIQUE
 Msgoff          ~
 Function        cast_physique~
@@ -29,9 +29,9 @@ Limit           CLASS_SCHOLAR    10  35
 Limit           CLASS_DOCTOR     50  50
 Limit           CLASS_BARD       50  50
 Help
-�����g:
+易筋經:
 
-�۶ǬO�֪L�x�W�������\�M��ϥ𮧪̷��������a�^�_
-�үӥ�����O�C
+相傳是少林寺獨門的內功﹐能使休息者源源不絕地回復
+所耗失的體力。
 ~
 End

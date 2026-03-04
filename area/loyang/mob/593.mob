@@ -1,7 +1,7 @@
 Vnum            593
 Name            world traveller~
-ShortDesc       ®È¹C®a~
-LongDesc        ®È¹C®a(world traveller)
+ShortDesc       æ—…éŠå®¶~
+LongDesc        æ—…éŠå®¶(world traveller)
 ~
 Description
 ~
@@ -54,7 +54,7 @@ Process
 Type            rand_prog
 Chance          40
 Text
-say ³Ìªñ¾Ç¤F¤@­Ó·sªºªk³N¡M­n±`±`½m²ß¤~¤£·|§Ñ°O¡T
+say æœ€è¿‘å­¸äº†ä¸€å€‹æ–°çš„æ³•è¡“ï¹è¦å¸¸å¸¸ç·´ç¿’æ‰ä¸æœƒå¿˜è¨˜ï¹—
 ~
 End
 

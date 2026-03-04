@@ -1,11 +1,11 @@
 Vnum            574
 Name            temple gate key~
-ShortDesc       ®c·µ¤jªùÆ_°Í~
+ShortDesc       å®®æ®¿å¤§é–€é‘°åŒ™~
 Description
-³o¤@°¦Æ_°Í¤Q¤À¥¨¤j¡MÁöµM¤W­±ÀJ¤u¨Ã¤£º}«G¡M¤£¹L¥Lªº¤j¤p­Ë¬OÅý
-§A¶}¤F²´¬É¡C
+é€™ä¸€éš»é‘°åŒ™ååˆ†å·¨å¤§ï¹é›–ç„¶ä¸Šé¢é›•å·¥ä¸¦ä¸æ¼‚äº®ï¹ä¸éŽä»–çš„å¤§å°å€’æ˜¯è®“
+ä½ é–‹äº†çœ¼ç•Œã€‚
 ~
-Unit            ¤ä~
+Unit            æ”¯~
 ItemType        ITEM_KEY
 Takeable        Yes
 Level           35

@@ -1,5 +1,5 @@
 Name            fouen eight~
-Cname           �����K��~
+Cname           風雲八式~
 Slot            SLOT_FOUEN
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -39,8 +39,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n�g�q�@�n�M�W�ť�������T�o�M�����a�M�k��Ѱʤ��l�M�@��$Y�y���{�s�e�ʡz$Z
-�M�}�ѦӥX�M�x�l�p�s�M�E�_�L�ܪ���l�M���۹p�^�U�s���մ�$N�ӨӡC~
+$n狂吼一聲﹐上空平身挪後三寸﹐左手拍地﹐右手股動內勁﹐一招$Y『氣臨山河動』$Z
+﹐破天而出﹐掌勁如山﹐激起無濤的氣勁﹐夾著雷霆萬駒之勢朝$N而來。~
 Chance          10
 Value           20
 Parry           0
@@ -49,9 +49,9 @@ Innate          0 0
 End
 #Damage
 Description
-$N�ϥX�@��$R�y�p���_�s�t�z$Z�M�O�P���|�M�l�ѷN�͡M�@�����������l�C�_�ۨ����M
-���l���X�M�s���n�n���T�M�����o��$P�y�@�t�H�ۤj�p��z$Z����q�M$N�l���ح��M�w
-�B�U�T�I�ҡM��ꪺ�l�����V$N�ݤf�C~
+$N使出一招$R『雷鼓震山川』$Z﹐力與神會﹐勁由意生﹐一鼓雄渾的內勁。起自足底﹐
+順勁推出﹐連暴聲聲巨響﹐完全發揮$P『一川碎石大如斗』$Z之精義﹐$N勁風拂面﹐已
+處萬劫險境﹐虎虎的勁風擊向$N胸口。~
 Chance          10
 Value           20
 Parry           0
@@ -60,8 +60,8 @@ Innate          0 0
 End
 #Damage
 Description
-$N�ϥX���p�K��$Y�y����յ��ۡz$Z�M���x�r���M�@���C�⪺�l��M�צp�U�V���r�M��
-�ۤ@�ѱƤs�ˮ����x���M�ĦV$N���e�M����x�ܯ몺���V$N�C~
+$N使出風雷八式$Y『水精勢絕倫』$Z﹐雙掌猛揚﹐一片青色的勁氣﹐尤如萬丈飛瀑﹐夾
+著一股排山倒海的掌風﹐衝向$N身前﹐怒海洪濤般的擊向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -70,9 +70,9 @@ Innate          0 0
 End
 #Damage
 Description
-$n������M���y�H���M��S�@���ϥX$G�y���F�t�]�q�z$Z�M���ɨg���ذ_�M�ШF����
-�M�D�Z�Z��$Y�y���F�������J�ѡM�H�����a�۶è��z$Z�M$n�X���F���ۤ��ڡM��$N����
-�F�\�s���X�ƴx�C~
+$n左足橫移﹐挫腰沈身﹐單袖一揚使出$G『風沙暗夜吼』$Z﹐瞬時狂風拂起﹐塵沙飛揚
+﹐乃武訣之$Y『平沙莽莽黃入天﹐隨風滿地石亂走』$Z﹐$n趁飛沙走石之際﹐朝$N的天
+靈蓋連續拍出數掌。~
 Chance          10
 Value           20
 Parry           0
@@ -81,8 +81,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�B�_����u��M���F�E�_�@�������M���Τ@�ۡM���x���l�M�ϥX$G�y�����R�Ѥ�z$Z
-�M�@��M�@�R�M�ʰ_�@�ѭ�F����K�M���V$N�C~
+$n運起陽剛真氣﹐天靈聚起一片炙火﹐身形一旋﹐雙掌內攏﹐使出$G『火光燎天戈』$Z
+﹐一圈﹐一吐﹐催起一股凌厲的氣焰﹐掃向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -91,8 +91,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���x���ơM�s���ƤQ�x�M�⮩�Z�Z����$Y�y�����j�L�B�Y�ˡz$Z�M���D���p�K����$R
-�y�B���}�s�ۡz$Z�M�x�v�j���M�ݦ��g���ɫB�M�x�𦳦p�ӫB��P���x�V$N�����n�ޡC~
+$n雙掌飄飄﹐連遞數十掌﹐領悟武訣中之$Y『長風吹林雨墜瓦』$Z﹐此乃風雷八式之$R
+『雨凝破山石』$Z﹐掌影瀰漫﹐看似狂風暴雨﹐掌氣有如細雨般同時灑向$N全身要穴。~
 Chance          10
 Value           20
 Parry           0
@@ -101,9 +101,9 @@ Innate          0 0
 End
 #Damage
 Description
-$n�|���ӤW�M�ƵM�Ʀ�M���ըϥX$Y�y�q��ӤѪe�z$Z�M ���x�p�M�p�C�M ���ʤ��ڡM
-�x�_�@�����~�M���p�q�����աM$N�y�ɲ��e�n�W�@�������M�@�}���t�M���M���t����$N
-�U�����h�C~
+$n揉身而上﹐飄然滑行﹐順勢使出$Y『電花照天河』$Z﹐ 雙掌如刀如劍﹐ 揮動之際﹐
+泛起一片光芒﹐有如電光之勢﹐$N頓時眼前罩上一片炙光﹐一陣昏眩﹐光刀迅速的朝$N
+各部位砍去。~
 Chance          10
 Value           20
 Parry           0
@@ -112,9 +112,9 @@ Innate          0 0
 End
 #Damage
 Description
-$n�B�_�H�B�u��M��ı��x�B��M�����H���j�@�M���_�@�}�H���M�������x�e�R�M�I�i
-�@��$W�y�B�H���H�ߡz$Z�M�ٮɴH��q�x���ƥX�M$N�w�Q�H��G���B�k���áM�방�B�H
-���x��M���_����$N�U�B��h�C~
+$n運起寒冰真氣﹐不覺體泛冰氣﹐瞬間寒風大作﹐捲起一陣寒風﹐此時雙掌疾吐﹐施展
+一招$W『冰寒囓人心』$Z﹐煞時寒氣從掌心飄出﹐$N已被寒氣逼的步法錯亂﹐刺骨冰寒
+的掌氣﹐不斷的往$N各處拍去。~
 Chance          10
 Value           20
 Parry           0

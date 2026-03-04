@@ -1,10 +1,10 @@
 Vnum            515
 Name            loyang inventory keeper~
-ShortDesc       ¹D¨ã©±¦ÑÁó~
-LongDesc        Àç°â¹D¨ãªº¹D¨ã©±¦ÑÁó(inventory keeper)¯¸¦b¦¹³B¡C
+ShortDesc       é“å…·åº—è€é—†~
+LongDesc        ç‡Ÿå”®é“å…·çš„é“å…·åº—è€é—†(inventory keeper)ç«™åœ¨æ­¤è™•ã€‚
 ~
 Description
-Àç°â¹D¨ãªº¹D¨ã©±¦ÑÁó(inventory keeper)¯¸¦b¦¹³B¡C
+ç‡Ÿå”®é“å…·çš„é“å…·åº—è€é—†(inventory keeper)ç«™åœ¨æ­¤è™•ã€‚
 ~
 StayArea        Yes
 NoKill          Yes

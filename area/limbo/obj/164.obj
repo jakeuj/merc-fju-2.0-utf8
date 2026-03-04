@@ -1,10 +1,10 @@
 Vnum            164
 Name            kun earth potion~
-ShortDesc       ©[¦aÃÄ¤ô~
+ShortDesc       å¤åœ°è—¥æ°´~
 Description
-¤@²~©[¦aÃÄ¤ô(kun earth potion)¡M¨ã¦³°»´úÂÃ°Îªº®ÄªG¡C
+ä¸€ç“¶å¤åœ°è—¥æ°´(kun earth potion)ï¹å…·æœ‰åµæ¸¬è—åŒ¿çš„æ•ˆæœã€‚
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

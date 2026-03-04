@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���A����X�e���@�U�l�I�X�C�K�Q��ɡM�A�s�ݳ��Ӥ��ήɫ���O�S�S���Y�M�A�i�H
-�]�w����([1;32mpagelength[0m)����ơC�o�˨C����A�]�w����ƮɡM�e���N�|�Ȧ�M�Ӥ��|�@
-�U��������ܥX�ӡC
+當你的輸出畫面一下子碰出七八十行時﹐你連看都來不及時怎麼辦呢﹖沒關係﹐你可以
+設定換行([1;32mpagelength[0m)的行數。這樣每當到你設定的行數時﹐畫面就會暫行﹐而不會一
+下都全部顯示出來。
 
-�Ьd�ߡR pagelength
+請查詢﹕ pagelength
 ~
 End

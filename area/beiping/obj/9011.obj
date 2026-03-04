@@ -1,10 +1,10 @@
 Vnum            9011
 Name            castle heavy armor~
-ShortDesc       ¸T½Ã­x­««¬¾ÔñZ~
+ShortDesc       ç¦è¡›è»é‡å‹æˆ°é§~
 Description
-¶W­««¬ñZ¥Ò¡C
+è¶…é‡å‹é§ç”²ã€‚
 ~
-Unit            ®M~
+Unit            å¥—~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

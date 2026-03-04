@@ -1,12 +1,12 @@
 Vnum            126
 Name            x'mas sock~
-ShortDesc       [1;33m�t��[1;35m��[0m~
+ShortDesc       [1;33m聖誕[1;35m襪[0m~
 Description
-�o�O�Ѧ�j�����묹�ۤv�����l�Ү��X�Ӫ��K
-���L��ߦn�աM���藍�|�����󲧨��K
-����ߡS ��L�h�D�@�D�r�K ^_^
+這是諸位大神們犧牲自己的襪子所捐出來的…
+不過放心好啦﹐絕對不會有任何異味…
+不放心﹖ 湊過去聞一聞呀… ^_^
 ~
-Unit            ��~
+Unit            雙~
 ItemType        ITEM_CONTAINER
 Takeable        Yes
 Level           10

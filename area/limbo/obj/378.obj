@@ -1,9 +1,9 @@
 Vnum            378
 Name            flee book~
-ShortDesc       ª÷ÂÍ²æ´ß¯µÓD~
+ShortDesc       é‡‘èŸ¬è„«æ®¼ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

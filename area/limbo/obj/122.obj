@@ -1,10 +1,10 @@
 Vnum            122
 Name            magic stone~
-ShortDesc       ¤C±m´³Äãªº¥ÛÀY~
+ShortDesc       ä¸ƒå½©æ–‘æ–•çš„çŸ³é ­~
 Description
-¤@Áû¤C±m´³Äãªº¥ÛÀY(magic stone)
+ä¸€é¡†ä¸ƒå½©æ–‘æ–•çš„çŸ³é ­(magic stone)
 ~
-Unit            Áû~
+Unit            é¡†~
 ItemType        ITEM_MAGICSTONE
 Takeable        Yes
 Level           99

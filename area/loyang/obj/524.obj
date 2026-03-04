@@ -1,10 +1,10 @@
 Vnum            524
 Name            bento~
-ShortDesc       «K·í~
+ShortDesc       ä¾¿ç•¶~
 Description
-¤@²°­»¼Q¼Qªº«K·í(bento)¡M¥O§A¤£¸T­¹«ü¤j°Ê¡C
+ä¸€ç›’é¦™å™´å™´çš„ä¾¿ç•¶(bento)ï¹ä»¤ä½ ä¸ç¦é£ŸæŒ‡å¤§å‹•ã€‚
 ~
-Unit            ²°~
+Unit            ç›’~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           5

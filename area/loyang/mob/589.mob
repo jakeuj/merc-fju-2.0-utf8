@@ -1,10 +1,10 @@
 Vnum            589
 Name            thief bandit~
-ShortDesc       µs¸é~
-LongDesc        µs¸é(thief bandit)
+ShortDesc       ç›œè³Š~
+LongDesc        ç›œè³Š(thief bandit)
 ~
 Description
-¥L¤£¦ı°½¨úªF¦è¡M¦pªG³Qµo²{«K·|±ş¤H·À¤f¡M¬Û·íªº´İ§Ô¡C
+ä»–ä¸ä½†å·å–æ±è¥¿ï¹å¦‚æœè¢«ç™¼ç¾ä¾¿æœƒæ®ºäººæ»…å£ï¹ç›¸ç•¶çš„æ®˜å¿ã€‚
 ~
 AutoSetValue    Yes
 Alignment       -300
@@ -34,7 +34,7 @@ Process
 Type            fight_prog
 Chance          30
 Text
-say ¾Ì§A¤]·Q­n¥´±Ñ§Ú¡S¦^®a¦b½m´X¦~§a¡T
+say æ†‘ä½ ä¹Ÿæƒ³è¦æ‰“æ•—æˆ‘ï¹–å›å®¶åœ¨ç·´å¹¾å¹´å§ï¹—
 ~
 End
 

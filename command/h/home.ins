@@ -1,5 +1,5 @@
 Name            home~
-Cname           �^�a~
+Cname           回家~
 Function        do_home~
 Position        POS_STANDING
 Level           30
@@ -15,57 +15,57 @@ Lost            YES
 Lock            NO
 Limit           NO
 Help
-�y�k�Rhome
-�y�k�Rhome list
-�y�k: home status
-�y�k�Rhome create
-�y�k�Rhome goto <���X>
-�y�k�Rhome title <�W��>
-�y�k: home edit
-�y�k: home link <�ж����X> <��V>
-�y�k: home information                                <���ګ��O>
-�y�k: home set <����> <�ƭ�>                          <���ګ��O>
-�y�k: home lock                                       <���ګ��O>
-�y�k: home unlink <��V>
-�y�k: home upgrade <�\��>
-�y�k: home practice
+語法﹕home
+語法﹕home list
+語法: home status
+語法﹕home create
+語法﹕home goto <號碼>
+語法﹕home title <名稱>
+語法: home edit
+語法: home link <房間號碼> <方向>
+語法: home information                                <神族指令>
+語法: home set <項目> <數值>                          <神族指令>
+語法: home lock                                       <神族指令>
+語法: home unlink <方向>
+語法: home upgrade <功能>
+語法: home practice
 
-home �P home  list ���O�C�X�A�ثe�Ҿ֦����ж��C
-home status �i�H�C�X�ثe�Ҧb�ж����ԲӪ��p�C
-home create �h�O�R�@���s���ж��M���L�A�Ȧ檺���n���C
-home goto <���X> �h�O�^��A���ж��M �Y�O�A���ն��άO���H�l�H�A���M
-     �h�A������]�i�H��A�a�@�ȡM���L�ж��٬O���D�H���K
-home title <�W��> �h�O�N�A���ж����W�١M���L�]�O�n�����C
-home edit �h�i�H�}�Ҥ@�ӽs�边�����A�s��A���ж��y�z�M�� . �N�i�H�s�� �C
-     ���L ���ж��y�z�򥻤W�]�O�n�����C
-home link �O�Ψӳs���ж����L�ж��ΡM�Y���O�A���ж��h�����O�A�����ͪ��ж�
-     �]�L�k���Ƴs���M�ܩ��V�i�H�ϥέ^�媺��V�p north�Bsouth ��
-     �t�~�M�o�@���A�Ȥ]�O�n���O���M�ҥH�Ф��n�å��}�K
-home unlink �ΨӧR���X�f�s���M�]�O�n���O�C
-home information �O���ګ��O�M��ܤ@�Ǧ��������ػP�C�X�Ҧ��w�Q�R���ж��C
-home set �b��Ȯɩʳ]�w�����ж����򥻳]�w
+home 與 home  list 都是列出你目前所擁有的房間。
+home status 可以列出目前所在房間的詳細狀況。
+home create 則是買一間新的房間﹐不過你銀行的錢要夠。
+home goto <號碼> 則是回到你的房間﹐ 若是你有組隊或是有人追隨你的﹐
+     則你的隊伍也可以到你家作客﹐不過房間還是有主人的…
+home title <名稱> 則是將你的房間更改名稱﹐不過也是要錢的。
+home edit 則可以開啟一個編輯器來讓你編輯你的房間描述﹐用 . 就可以存檔 。
+     不過 更改房間描述基本上也是要錢的。
+home link 是用來連結房間到其他房間用﹐若不是你的房間則必須是你的隊友的房間
+     也無法重複連結﹐至於方向可以使用英文的方向如 north、south 等
+     另外﹐這一項服務也是要收費的﹐所以請不要亂打洞…
+home unlink 用來刪除出口連結﹐也是要收費。
+home information 是神族指令﹐顯示一些有關的項目與列出所有已被買的房間。
+home set 在於暫時性設定有關房間的基本設定
 
-     Cost      �R�Фl�һݪ�����
-     Title     �ק�W�٩һݪ�����
-     Descr     �ק�y�z�һݪ�����
-     Upgrade   �ɯũж��t�Ʃһݪ�����
+     Cost      買房子所需的金錢
+     Title     修改名稱所需的金錢
+     Descr     修改描述所需的金錢
+     Upgrade   升級房間配備所需的金錢
 
-home lock �]�w��w�R�ж��M�Ҧ���ﳣ�L�k�i��C
-home upgrade �O�ɯũж����\��M���L�@���ж��u��ɯŤ@�ӥ\��
-     �ݭn��������ק�ԭz�h�@�I�I�M�i�H�ɯŪ��\��p�U�R
+home lock 設定鎖定買房間﹐所有更改都無法進行。
+home upgrade 是升級房間的功能﹐不過一間房間只能升級一個功能
+     需要的金錢比修改敘述多一點點﹐可以升級的功能如下﹕
 
-     Waterful  �ж��h���\��
-     Foodful   �ж��h�����\��
-     HitCure   �ͩR��_�ҥ\��
-     ManaCure  �k�O��_�ҥ\��
-     MoveCure  ��O��_�ҥ\��
-     Deposit   �����\��
-     Store     �𧽥\��
-     practice  �m�\���\��
+     Waterful  房間多水功能
+     Foodful   房間多食物功能
+     HitCure   生命恢復所功能
+     ManaCure  法力恢復所功能
+     MoveCure  體力恢復所功能
+     Deposit   錢莊功能
+     Store     鏢局功能
+     practice  練功場功能
 
-�����ɯŽm�\���\��ɡM�i�H�ϥ� home practice �Ӳ��ͩǪ����ѽm�ߥ�
-���L�Ǫ���Ʃ��Q�M�Фp�ߨϥΡC
+當有升級練功場功能時﹐可以使用 home practice 來產生怪物提供練習用
+不過怪物原料昂貴﹐請小心使用。
 
-�������O�Rrstat rset
+相關指令﹕rstat rset
 ~
 End

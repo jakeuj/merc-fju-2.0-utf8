@@ -1,7 +1,7 @@
 Name            change sex~
-Cname           §ïÅÜ©Ê§O~
+Cname           æ”¹è®Šæ€§åˆ¥~
 Slot            SLOT_CHANGE_SEX
-Msgoff          §A·P¨ì¨­Åé¦³¤@ÂI§ïÅÜ¡T~
+Msgoff          ä½ æ„Ÿåˆ°èº«é«”æœ‰ä¸€é»žæ”¹è®Šï¹—~
 Check           check_unrigid_attack~
 Function        cast_change_sex~
 Position        POS_FIGHTING

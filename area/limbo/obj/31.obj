@@ -1,9 +1,9 @@
 Vnum            31
 Name            knife~
-ShortDesc       ¤p¤M~
+ShortDesc       å°åˆ€~
 Description
-¤@§â¾W§Qªº¤p¤M(knife)¡M¾A¦Xªñ¨­·i°«®É¨Ï¥Î¡C~
-Unit            §â~
+ä¸€æŠŠé‹’åˆ©çš„å°åˆ€(knife)ï¹é©åˆè¿‘èº«æé¬¥æ™‚ä½¿ç”¨ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

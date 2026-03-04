@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�p�G�O�b�P�@���ж��̪���ܡM�i�H�ɶq���n�ϥ� [1;32mchat[0m�M�]���o�˷|���Ҧ����H����
-��A�̪���ܳ�M�A�i�H��� [1;32msay[0m �ݬݡM�o�u�|���P�@���ж����H�ݨ�ӥH��C
+如果是在同一間房間裡的對話﹐可以盡量不要使用 [1;32mchat[0m﹐因為這樣會讓所有的人都看
+到你們的對話喔﹐你可以改用 [1;32msay[0m 看看﹐這只會讓同一間房間的人看到而以喔。
 
-�Ьd�ߡRsay�Bchat
+請查詢﹕say、chat
 ~
 End

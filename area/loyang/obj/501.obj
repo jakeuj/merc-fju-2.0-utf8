@@ -1,9 +1,9 @@
 Vnum            501
 Name            uniform armor~
-ShortDesc       ¨î¦¡¾Ô¥Ò~
+ShortDesc       åˆ¶å¼æˆ°ç”²~
 Description
-¼Ğ·Ç¸Ë³Æ¾Ô¥Ò(armor)¬İ¨Ó¨¾Å@¤OÁÙ¤£¿ù¡C~
-Unit            ¥ó~
+æ¨™æº–è£å‚™æˆ°ç”²(armor)çœ‹ä¾†é˜²è­·åŠ›é‚„ä¸éŒ¯ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

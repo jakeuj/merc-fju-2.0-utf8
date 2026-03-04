@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -40,17 +40,17 @@
 #endif
 
 
-/* ¥~±¾ÅÜ¼Æ */
+/* å¤–æ›è®Šæ•¸ */
 extern SYMBOL_DATA *      symbol_hash[26][20];
 extern bool               fReload;
 extern unsigned int       FileError;
 
-/* ¥~±¾¨ç¼Æ */
+/* å¤–æ›å‡½æ•¸ */
 extern void    mprog_read_programs     args( ( FILE_DATA * , MOB_INDEX_DATA * ) );
 extern void    set_exit_default        args( ( EXIT_DATA * ) );
 extern int     glob_file        args( ( const char *, const char *, glob_t * ) );
 
-/* °Ï°ì¨ç¼Æ */
+/* å€åŸŸå‡½æ•¸ */
 void set_area_default     args( ( AREA_DATA       * ) );
 void set_room_default     args( ( ROOM_INDEX_DATA * ) );
 void set_exit_default     args( ( EXIT_DATA       * ) );
@@ -125,7 +125,7 @@ SITUS_DATA    * load_a_situs            args( ( FILE_DATA * ) );
 
 #define TEST_READ_ERROR         { if ( FileError ) break; }
 
-/* ³]©w°Ï°ìÀÉ¤¤ªº°Ï°ìªº¹w³]­È */
+/* è¨­å®šå€åŸŸæª”ä¸­çš„å€åŸŸçš„é è¨­å€¼ */
 void set_area_default( AREA_DATA * pArea )
 {
   PUSH_FUNCTION( "set_area_default" );
@@ -158,7 +158,7 @@ void set_area_default( AREA_DATA * pArea )
   RETURN_NULL();
 }
 
-/* ³]©w°Ï°ìÀÉ¤¤ªº©Çª«ªº¹w³]­È */
+/* è¨­å®šå€åŸŸæª”ä¸­çš„æ€ªç‰©çš„é è¨­å€¼ */
 void set_mobile_default( MOB_INDEX_DATA * pMobIndex )
 {
   int loop;
@@ -233,7 +233,7 @@ void set_mobile_default( MOB_INDEX_DATA * pMobIndex )
   RETURN_NULL();
 }
 
-/* ³]©w°Ï°ìÀÉ¤¤ªº©Çª«±Ğ¾Éªº¹w³]­È */
+/* è¨­å®šå€åŸŸæª”ä¸­çš„æ€ªç‰©æ•™å°çš„é è¨­å€¼ */
 void set_teach_default( TEACH_DATA * teach )
 {
   PUSH_FUNCTION( "set_teach_default" );
@@ -244,7 +244,7 @@ void set_teach_default( TEACH_DATA * teach )
   RETURN_NULL();
 }
 
-/* ³]©w°Ï°ìÀÉ¤¤ªº©Ğ¶¡ªº¹w³]­È */
+/* è¨­å®šå€åŸŸæª”ä¸­çš„æˆ¿é–“çš„é è¨­å€¼ */
 void set_room_default( ROOM_INDEX_DATA * pRoomIndex )
 {
   PUSH_FUNCTION( "set_room_default" );
@@ -303,7 +303,7 @@ void set_room_default( ROOM_INDEX_DATA * pRoomIndex )
   RETURN_NULL();
 }
 
-/* ¼Æ©w©Ğ¶¡¥X¤fªº¹w³]­È */
+/* æ•¸å®šæˆ¿é–“å‡ºå£çš„é è¨­å€¼ */
 void set_exit_default( EXIT_DATA * pExit )
 {
   PUSH_FUNCTION( "set_exit_default" );
@@ -321,7 +321,7 @@ void set_exit_default( EXIT_DATA * pExit )
   RETURN_NULL();
 }
 
-/* ³]©wª««~ªº¹w³]­È */
+/* è¨­å®šç‰©å“çš„é è¨­å€¼ */
 void set_object_default( OBJ_INDEX_DATA * pObjIndex )
 {
   int loop;
@@ -380,7 +380,7 @@ void set_object_default( OBJ_INDEX_DATA * pObjIndex )
   RETURN_NULL();
 }
 
-/* ³]©wª««~Äİ©Êªº¹w³]­È */
+/* è¨­å®šç‰©å“å±¬æ€§çš„é è¨­å€¼ */
 void set_affect_default( AFFECT_DATA * pAffect )
 {
   PUSH_FUNCTION( "set_affect_default" );
@@ -392,7 +392,7 @@ void set_affect_default( AFFECT_DATA * pAffect )
   RETURN_NULL();
 }
 
-/* ³]©w°Ó©±ªº¹w©w­È */
+/* è¨­å®šå•†åº—çš„é å®šå€¼ */
 void set_shop_default( SHOP_DATA * pShop )
 {
   int Trade;
@@ -580,7 +580,7 @@ void set_liq_default( LIQ_DATA * pLiq )
   RETURN_NULL();
 }
 
-/* ³]©w¦aÅK¸ê®Æªº¹w³]­È */
+/* è¨­å®šåœ°éµè³‡æ–™çš„é è¨­å€¼ */
 void set_bus_default( BUS_DATA * pBus )
 {
   PUSH_FUNCTION( "set_bus_default" );
@@ -624,7 +624,7 @@ void set_enquire_default( ENQUIRE_DATA * pEnquire )
 
   RETURN_NULL();
 }
-/* ³]©wºô»Ú³s½uªº¹w³]­È */
+/* è¨­å®šç¶²éš›é€£ç·šçš„é è¨­å€¼ */
 void set_station_default( NET_DATA * pNet )
 {
   PUSH_FUNCTION( "set_station_default" );
@@ -646,7 +646,7 @@ void set_station_default( NET_DATA * pNet )
   RETURN_NULL();
 }
 
-/* ²M°£À°¬£ªº¸ê®Æ */
+/* æ¸…é™¤å¹«æ´¾çš„è³‡æ–™ */
 void set_club_default( CLUB_DATA * pClub )
 {
   int loop;
@@ -663,18 +663,18 @@ void set_club_default( CLUB_DATA * pClub )
   pClub->money       = 0;
   pClub->status      = CLUB_STATUS_UNKNOW;
 
-  /* ²M°£À°²³ªº¸ê®Æ */
+  /* æ¸…é™¤å¹«çœ¾çš„è³‡æ–™ */
   for ( loop = 0; loop < MAX_CLUB_MEMBER; loop++ )
   {
     pClub->verify[loop] = MEMBER_NO_VERIFY;
     pClub->member[loop] = NULL;
   }
 
-  /* ²M°£ªø¦Ñªº¸ê®Æ */
+  /* æ¸…é™¤é•·è€çš„è³‡æ–™ */
   for ( loop = 0; loop < MAX_CLUB_DOYEN; loop++ )
     pClub->doyen[loop] = NULL;
 
-  /* ²M°£À°®wªº¸ê®Æ */
+  /* æ¸…é™¤å¹«åº«çš„è³‡æ–™ */
   for ( loop = 0; loop < MAX_LEVEL; loop++ )
   {
     for ( loop_2 = 0; loop_2 < MAX_STAFF; loop_2++ )
@@ -686,7 +686,7 @@ void set_club_default( CLUB_DATA * pClub )
   RETURN_NULL();
 }
 
-/* ³]©wª««~­­¨îµ²ºcªì­È */
+/* è¨­å®šç‰©å“é™åˆ¶çµæ§‹åˆå€¼ */
 void set_restrict_default( RESTRICT_DATA * pRestrict )
 {
   PUSH_FUNCTION( "set_restrict_default" );
@@ -699,7 +699,7 @@ void set_restrict_default( RESTRICT_DATA * pRestrict )
     pRestrict->vicevalue = 0;
   }
 
-  else mudlog( LOG_DEBUG, "set_restrict_default¡R¶Ç¤Jµ²ºc¤£¦s¦b¡C" );
+  else mudlog( LOG_DEBUG, "set_restrict_defaultï¹•å‚³å…¥çµæ§‹ä¸å­˜åœ¨ã€‚" );
 
   RETURN_NULL();
 }
@@ -908,7 +908,7 @@ void set_vote_default( VOTE_DATA * pVote )
 
   if ( !pVote )
   {
-    mudlog( LOG_DEBUG, "set_vote_default¡R¯Ê¥F¨Ó·½¡C" );
+    mudlog( LOG_DEBUG, "set_vote_defaultï¹•ç¼ºä¹ä¾†æºã€‚" );
     RETURN_NULL();
   }
 
@@ -986,7 +986,7 @@ void set_database_default( DATABASE_DATA * pData )
   RETURN_NULL();
 }
 
-/* ¸ü¤J·s®æ¦¡ªº°Ï°ìÀÉªº°Ï°ì®æ¦¡ */
+/* è¼‰å…¥æ–°æ ¼å¼çš„å€åŸŸæª”çš„å€åŸŸæ ¼å¼ */
 AREA_DATA * load_area( char * filename )
 {
   AREA_DATA * pArea;
@@ -999,10 +999,10 @@ AREA_DATA * load_area( char * filename )
 
   if ( !( pFile = f_open( filename , "r" ) ) ) RETURN( NULL );
 
-  /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_area_default( pArea = alloc_struct( STRUCT_AREA_DATA ) );
 
-  /* ¸ü¤J°Ï°ìªº¥Dµ{¦¡³¡¥÷ */
+  /* è¼‰å…¥å€åŸŸçš„ä¸»ç¨‹å¼éƒ¨ä»½ */
   for ( ;; )
   {
     word   = if_eof( pFile ) ? "End" : fread_word( pFile );
@@ -1010,7 +1010,7 @@ AREA_DATA * load_area( char * filename )
 
     switch ( UPPER(word[0]) )
     {
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
 
       fMatch = TRUE;
@@ -1025,7 +1025,7 @@ AREA_DATA * load_area( char * filename )
 
       if ( !str_scmp( word, "Description", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pArea->description = fread_string( pFile );
         break;
       }
@@ -1036,22 +1036,22 @@ AREA_DATA * load_area( char * filename )
 
       if ( !str_scmp( word, "End", &fMatch ) )
       {
-        /* ÀË¬d¬O§_¦³¿ù»~ */
+        /* æª¢æŸ¥æ˜¯å¦æœ‰éŒ¯èª¤ */
         if ( !pArea->name )
         {
-          mudlog( LOG_DEBUG , "Load_area¡RÀÉ®× %s ¯Ê¥F°Ï°ì¦W¦r¡C", filename );
+          mudlog( LOG_DEBUG , "Load_areaï¹•æª”æ¡ˆ %s ç¼ºä¹å€åŸŸåå­—ã€‚", filename );
           break;
         }
 
         if ( !pArea->editor )
         {
-          mudlog( LOG_DEBUG , "Load_area¡RÀÉ®× %s ¯Ê¥F°Ï°ì¼¶¼gªÌ¡C", filename );
+          mudlog( LOG_DEBUG , "Load_areaï¹•æª”æ¡ˆ %s ç¼ºä¹å€åŸŸæ’°å¯«è€…ã€‚", filename );
           break;
         }
 
         if ( IS_ERROR( pArea->serial ) )
         {
-          mudlog( LOG_DEBUG, "Load_area¡R°Ï°ì %s ¯Ê¥F§Ç¸¹¡C", pArea->name );
+          mudlog( LOG_DEBUG, "Load_areaï¹•å€åŸŸ %s ç¼ºä¹åºè™Ÿã€‚", pArea->name );
           break;
         }
 
@@ -1095,7 +1095,7 @@ AREA_DATA * load_area( char * filename )
         for ( zArea = area_first; zArea; zArea = zArea->next )
         {
           if ( zArea->serial == serial )
-             mudlog( LOG_DEBUG, "Load_area¡R°Ï°ì§Ç¸¹ %d ­«½Æ¡C", serial );
+             mudlog( LOG_DEBUG, "Load_areaï¹•å€åŸŸåºè™Ÿ %d é‡è¤‡ã€‚", serial );
         }
 
         pArea->serial = serial;
@@ -1109,14 +1109,14 @@ AREA_DATA * load_area( char * filename )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_Area¡RÀÉ®×©R¥O %s ¿ù»~¡C" , word );
+      mudlog( LOG_DEBUG , "Load_Areaï¹•æª”æ¡ˆå‘½ä»¤ %s éŒ¯èª¤ã€‚" , word );
   }
   RETURN( NULL );
 }
 
-/* ¸ü¤J·s®æ¦¡ªº°Ï°ìÀÉªº©Çª«®æ¦¡ */
+/* è¼‰å…¥æ–°æ ¼å¼çš„å€åŸŸæª”çš„æ€ªç‰©æ ¼å¼ */
 MOB_INDEX_DATA * load_mobiles( const char * filename )
 {
   MOB_INDEX_DATA * pMobIndex;
@@ -1134,11 +1134,11 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_FAILLOAD , "Load_mobiles¡R¸ü¤J©Çª«ÀÉ®× %s ¥¢±Ñ¡C\n" , filename );
+    mudlog( LOG_FAILLOAD , "Load_mobilesï¹•è¼‰å…¥æ€ªç‰©æª”æ¡ˆ %s å¤±æ•—ã€‚\n" , filename );
     RETURN( NULL );
   }
 
-  /* ¹w³]¤@¨Ç¼Æ­È */
+  /* é è¨­ä¸€äº›æ•¸å€¼ */
   set_mobile_default( pMobIndex = alloc_struct( STRUCT_MOB_INDEX_DATA ) );
 
   for ( ;; )
@@ -1148,7 +1148,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
     switch ( UPPER(word[0]) )
     {
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
 
       fMatch = TRUE;
@@ -1163,7 +1163,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( !( pJob = load_job( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_mobile¡R¸ü¤J©Çª«¯S®í¨ç¼Æ¥¢±Ñ¡C" );
+          mudlog( LOG_DEBUG, "Load_mobileï¹•è¼‰å…¥æ€ªç‰©ç‰¹æ®Šå‡½æ•¸å¤±æ•—ã€‚" );
           break;
         }
 
@@ -1176,7 +1176,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
       {
         if ( !( teach = load_mob_teach( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_mobile¡R¸ü¤J©Çª«±Ğ¾É¥¢±Ñ¡C" );
+          mudlog( LOG_DEBUG, "Load_mobileï¹•è¼‰å…¥æ€ªç‰©æ•™å°å¤±æ•—ã€‚" );
           break;
         }
 
@@ -1200,7 +1200,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
       if ( !str_scmp( word , "Auction", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pMobIndex->auction = fread_string( pFile );
         break;
       }
@@ -1213,41 +1213,41 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
         ENABLE_DATA * zEnable;
         SKILL_DATA  * pSkill;
 
-        /* ¦pªG§Ş¯à¤w¸g¤£¦s¦b */
+        /* å¦‚æœæŠ€èƒ½å·²ç¶“ä¸å­˜åœ¨ */
         word = fread_word( pFile );
         TEST_READ_ERROR
 
         if ( !( pSkill = skill_isname( word ) ) )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª«§Ş¯à­P¯à¿ù»~¡C" );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰©æŠ€èƒ½è‡´èƒ½éŒ¯èª¤ã€‚" );
           break;
         }
 
-        /* ¬İ¬İ³o­Ó§Ş¯à¬O§_¥i¥H³Q­P¯à */
+        /* çœ‹çœ‹é€™å€‹æŠ€èƒ½æ˜¯å¦å¯ä»¥è¢«è‡´èƒ½ */
         if ( !pSkill->enable )
         {
-          mudlog( LOG_DEBUG, "Load_mobiles¡R©Çª«­P¯à %s ¬O¤£¯à­P¯àªº¡C"
+          mudlog( LOG_DEBUG, "Load_mobilesï¹•æ€ªç‰©è‡´èƒ½ %s æ˜¯ä¸èƒ½è‡´èƒ½çš„ã€‚"
             , pSkill->cname );
           break;
         }
 
-        /* ¦pªG­«½Æ */
+        /* å¦‚æœé‡è¤‡ */
         if ( ( enable_repeat( pMobIndex->enable , pSkill ) ) )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª«§Ş¯à­P¯à­«½Æ¡C" );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰©æŠ€èƒ½è‡´èƒ½é‡è¤‡ã€‚" );
           break;
         }
 
         if ( ( practice = get_adeptation( pSkill, pMobIndex ) ) < 0 )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R§Ş¯à %s µLªk¦Û°Ê­P¯à¡C"
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æŠ€èƒ½ %s ç„¡æ³•è‡ªå‹•è‡´èƒ½ã€‚"
             , pSkill->name );
           break;
         }
 
         if ( practice >= 100 )
         {
-          mudlog( LOG_FAILENABLE, "©Çª«½s¸¹ %d §Ş¯à %s ¤Ó®t¡M«ØÄ³´«±¼¡C"
+          mudlog( LOG_FAILENABLE, "æ€ªç‰©ç·¨è™Ÿ %d æŠ€èƒ½ %s å¤ªå·®ï¹å»ºè­°æ›æ‰ã€‚"
             , pMobIndex->vnum, pSkill->name );
 
           practice = 100;
@@ -1255,21 +1255,21 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( practice <= 1 )
         {
-          mudlog( LOG_FAILENABLE, "©Çª«½s¸¹ %d §Ş¯à %s ¤Ó°ª¡M«ØÄ³´«±¼¡C"
+          mudlog( LOG_FAILENABLE, "æ€ªç‰©ç·¨è™Ÿ %d æŠ€èƒ½ %s å¤ªé«˜ï¹å»ºè­°æ›æ‰ã€‚"
             , pMobIndex->vnum, pSkill->name );
 
           practice = 1;
         }
 
-        /* ³]©w¼ô½m«× */
+        /* è¨­å®šç†Ÿç·´åº¦ */
         pMobIndex->skill[pSkill->slot] = practice;
 
-        /* ¦pªG¦s¦b¤~°t¸m°O¾ĞÅéµ¹¥L */
+        /* å¦‚æœå­˜åœ¨æ‰é…ç½®è¨˜æ†¶é«”çµ¦ä»– */
         pEnable        = alloc_struct( STRUCT_ENABLE_DATA );
         pEnable->skill = pSkill;
         pEnable->next  = NULL;
 
-        /* §ä¥X³Ì«á¤@­Ó */
+        /* æ‰¾å‡ºæœ€å¾Œä¸€å€‹ */
         for ( zEnable = pMobIndex->enable;
               zEnable && zEnable->next;
               zEnable = zEnable->next );
@@ -1294,7 +1294,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( !( pClass = class_lookup( vnum ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_mobiles¡R¸¹½X %d ªº©Çª«Â¾·~ %d ±q¯Ê¡C"
+          mudlog( LOG_DEBUG, "Load_mobilesï¹•è™Ÿç¢¼ %d çš„æ€ªç‰©è·æ¥­ %d å¾ç¼ºã€‚"
             , pMobIndex->vnum , vnum );
 
           break;
@@ -1315,14 +1315,14 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
       if ( !str_scmp( word , "Description", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pMobIndex->description = fread_string( pFile );
         break;
       }
 
       if ( !str_scmp( word , "Deadmsg", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pMobIndex->deadmsg = fread_string( pFile );
         break;
       }
@@ -1339,50 +1339,50 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
         ENABLE_DATA * zEnable;
         SKILL_DATA  * pSkill;
 
-        /* ¥ıÅª¤J¼ô½m«× */
+        /* å…ˆè®€å…¥ç†Ÿç·´åº¦ */
         practice = fread_number( pFile );
         TEST_READ_ERROR
 
         if ( practice > 100 || practice <= 0 )
         {
-          mudlog( LOG_DEBUG, "Load_mobiles¡R©Çª«§Ş¯à¼ô½m«×¦³°İÃD¡C" );
+          mudlog( LOG_DEBUG, "Load_mobilesï¹•æ€ªç‰©æŠ€èƒ½ç†Ÿç·´åº¦æœ‰å•é¡Œã€‚" );
           break;
         }
 
-        /* ¦pªG§Ş¯à¤w¸g¤£¦s¦b */
+        /* å¦‚æœæŠ€èƒ½å·²ç¶“ä¸å­˜åœ¨ */
         word = fread_word( pFile );
         TEST_READ_ERROR
 
         if ( !( pSkill = skill_isname( word ) ) )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª«§Ş¯à­P¯à¿ù»~¡C" );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰©æŠ€èƒ½è‡´èƒ½éŒ¯èª¤ã€‚" );
           break;
         }
 
-        /* ¬İ¬İ³o­Ó§Ş¯à¬O§_¥i¥H³Q­P¯à */
+        /* çœ‹çœ‹é€™å€‹æŠ€èƒ½æ˜¯å¦å¯ä»¥è¢«è‡´èƒ½ */
         if ( !pSkill->enable )
         {
-          mudlog( LOG_DEBUG, "Load_mobiles¡R©Çª«­P¯à %s ¬O¤£¯à­P¯àªº¡C"
+          mudlog( LOG_DEBUG, "Load_mobilesï¹•æ€ªç‰©è‡´èƒ½ %s æ˜¯ä¸èƒ½è‡´èƒ½çš„ã€‚"
             , pSkill->cname );
           break;
         }
 
-        /* ¦pªG­«½Æ */
+        /* å¦‚æœé‡è¤‡ */
         if ( ( enable_repeat( pMobIndex->enable , pSkill ) ) )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª«§Ş¯à­P¯à­«½Æ¡C" );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰©æŠ€èƒ½è‡´èƒ½é‡è¤‡ã€‚" );
           break;
         }
 
-        /* ³]©w¼ô½m«× */
+        /* è¨­å®šç†Ÿç·´åº¦ */
         pMobIndex->skill[pSkill->slot] = practice;
 
-        /* ¦pªG¦s¦b¤~°t¸m°O¾ĞÅéµ¹¥L */
+        /* å¦‚æœå­˜åœ¨æ‰é…ç½®è¨˜æ†¶é«”çµ¦ä»– */
         pEnable        = alloc_struct( STRUCT_ENABLE_DATA );
         pEnable->skill = pSkill;
         pEnable->next  = NULL;
 
-        /* §ä¥X³Ì«á¤@­Ó */
+        /* æ‰¾å‡ºæœ€å¾Œä¸€å€‹ */
         for ( zEnable = pMobIndex->enable;
               zEnable && zEnable->next;
               zEnable = zEnable->next );
@@ -1400,14 +1400,14 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( !( pSkill = skill_isname( name ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_mobiles¡R©Çª« %d ¨S¦³§Ş¯à %s¡C"
+          mudlog( LOG_DEBUG, "Load_mobilesï¹•æ€ªç‰© %d æ²’æœ‰æŠ€èƒ½ %sã€‚"
             , pMobIndex->vnum, name );
           break;
         }
 
         if ( !pSkill->affected )
         {
-          mudlog( LOG_DEBUG, "Load_mobiles¡R©Çª« %d §Ş¯à %s ¤£¯à¦¨®ÄÀ³¡C"
+          mudlog( LOG_DEBUG, "Load_mobilesï¹•æ€ªç‰© %d æŠ€èƒ½ %s ä¸èƒ½æˆæ•ˆæ‡‰ã€‚"
             , pMobIndex->vnum, pSkill->name );
           break;
         }
@@ -1416,7 +1416,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
         {
           if ( pAffect->type == pSkill->slot )
           {
-            mudlog( LOG_DEBUG, "Load_mobiles¡R©Çª« %d ®ÄÀ³ %s ­«ÂĞ¡C"
+            mudlog( LOG_DEBUG, "Load_mobilesï¹•æ€ªç‰© %d æ•ˆæ‡‰ %s é‡è¦†ã€‚"
               , pMobIndex->vnum, pSkill->name );
             break;
           }
@@ -1431,7 +1431,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
         pAffect->modifier  = 0;
         pAffect->duration  = -1;
 
-        /* §ä¥X³Ì«á¤@­Ó */
+        /* æ‰¾å‡ºæœ€å¾Œä¸€å€‹ */
         for ( zAffect = pMobIndex->affected;
               zAffect && zAffect->next;
               zAffect = zAffect->next );
@@ -1448,25 +1448,25 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( IS_ERROR( vnum ) )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª«¨S¦³¸¹½X¡C" );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰©æ²’æœ‰è™Ÿç¢¼ã€‚" );
           break;
         }
 
         if ( !pMobIndex->name )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª« %d ¨S¦³¦W¦r¡C", vnum );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰© %d æ²’æœ‰åå­—ã€‚", vnum );
           break;
         }
 
         if ( !pMobIndex->short_descr )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª« %d ¨S¦³µu´y­z¡C", vnum );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰© %d æ²’æœ‰çŸ­æè¿°ã€‚", vnum );
           break;
         }
 
         if ( !pMobIndex->description )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª« %d ¨S¦³´y­z¡C", vnum );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰© %d æ²’æœ‰æè¿°ã€‚", vnum );
           break;
         }
 
@@ -1526,7 +1526,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( level <= 0 || level > MAX_LEVEL )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R©Çª« %d µ¥¯Å %d ¤£¦X²z¡C"
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•æ€ªç‰© %d ç­‰ç´š %d ä¸åˆç†ã€‚"
             , pMobIndex->vnum, level );
 
           break;
@@ -1572,7 +1572,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( !( pProg = load_program( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_mobile¡R¸ü¤J©Çª«µ{¦¡¿ù»~¡C" );
+          mudlog( LOG_DEBUG, "Load_mobileï¹•è¼‰å…¥æ€ªç‰©ç¨‹å¼éŒ¯èª¤ã€‚" );
           break;
         }
 
@@ -1605,7 +1605,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
         switch( pMobIndex->sex = fread_number( pFile ) )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_mobiles¡R©Çª«©Ê§O %d ¤£¦X²z¡C", pMobIndex->sex );
+          mudlog( LOG_DEBUG, "Load_mobilesï¹•æ€ªç‰©æ€§åˆ¥ %d ä¸åˆç†ã€‚", pMobIndex->sex );
           break;
 
         case SEX_MALE:
@@ -1626,7 +1626,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
 
         if ( !( pMobIndex->spec_fun = spec_lookup( word ) ) )
         {
-          mudlog( LOG_DEBUG , "Load_mobiles¡R¯S®í¨ç¼Æ %s ¤£¦s¦b¡C", word );
+          mudlog( LOG_DEBUG , "Load_mobilesï¹•ç‰¹æ®Šå‡½æ•¸ %s ä¸å­˜åœ¨ã€‚", word );
           break;
         }
 
@@ -1659,10 +1659,10 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_mobile¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_mobileï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
       if ( fReload )
       {
         free_mob_index( pMobIndex );
@@ -1675,7 +1675,7 @@ MOB_INDEX_DATA * load_mobiles( const char * filename )
   RETURN( NULL );
 }
 
-/* ¸ü¤J©Çª«±Ğ¾Éµ²ºc */
+/* è¼‰å…¥æ€ªç‰©æ•™å°çµæ§‹ */
 TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
 {
   TEACH_DATA * teach;
@@ -1684,7 +1684,7 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_mob_teach" );
 
-  /* °t¸m±Ğ¾É©Ò»İ­nªº°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®æ•™å°æ‰€éœ€è¦çš„è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_teach_default( teach = alloc_struct( STRUCT_TEACH_DATA ) );
 
   for ( ;; )
@@ -1708,7 +1708,7 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
 
         if ( teach->adept < 0 || teach->adept > 100 )
         {
-          mudlog( LOG_DEBUG, "Load_mob_teach¡Rªk³N¼ô½m«× %d ¤£¦X²z¡C"
+          mudlog( LOG_DEBUG, "Load_mob_teachï¹•æ³•è¡“ç†Ÿç·´åº¦ %d ä¸åˆç†ã€‚"
             , teach->adept );
           break;
         }
@@ -1727,7 +1727,7 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
 
         if ( teach->cost < 0 )
         {
-          mudlog( LOG_DEBUG, "Load_mob_teach¡Rªk³N±Ğ±Âª÷ %d ¤£¦X²z¡C"
+          mudlog( LOG_DEBUG, "Load_mob_teachï¹•æ³•è¡“æ•™æˆé‡‘ %d ä¸åˆç†ã€‚"
             , teach->cost );
           break;
         }
@@ -1743,7 +1743,7 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
       {
         if ( IS_ERROR( teach->slot ) )
         {
-          mudlog( LOG_DEBUG, "Load_mob_teach¡R¨S¦³ªk³N¸¹½X¡C" );
+          mudlog( LOG_DEBUG, "Load_mob_teachï¹•æ²’æœ‰æ³•è¡“è™Ÿç¢¼ã€‚" );
           break;
         }
 
@@ -1761,7 +1761,7 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
 
         if ( teach->inventory < 0 || teach->inventory > 100 )
         {
-          mudlog( LOG_DEBUG, "Load_mob_teach¡Rªk³NÁôÂÃºX¼Ğ¤£¹ï¡C" );
+          mudlog( LOG_DEBUG, "Load_mob_teachï¹•æ³•è¡“éš±è—æ——æ¨™ä¸å°ã€‚" );
           break;
         }
 
@@ -1782,7 +1782,7 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
 
         if ( !( pSkill = skill_isname( name_string ) ) )
         {
-          mudlog( LOG_DEBUG , "Load_mob_teach¡Rªk³N %s ¤£¹ï¡C", name_string );
+          mudlog( LOG_DEBUG , "Load_mob_teachï¹•æ³•è¡“ %s ä¸å°ã€‚", name_string );
           break;
         }
 
@@ -1792,10 +1792,10 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_mob_teach¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_mob_teachï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
       if ( fReload )
       {
         free_teach( teach );
@@ -1807,7 +1807,7 @@ TEACH_DATA * load_mob_teach( FILE_DATA * pFile )
   RETURN( NULL );
 }
 
-/* ¸ü¤J·s®æ¦¡ªº°Ï°ìÀÉªº©Ğ¶¡®æ¦¡ */
+/* è¼‰å…¥æ–°æ ¼å¼çš„å€åŸŸæª”çš„æˆ¿é–“æ ¼å¼ */
 ROOM_INDEX_DATA * load_room( const char * filename )
 {
   ROOM_INDEX_DATA  * pRoomIndex;
@@ -1821,14 +1821,14 @@ ROOM_INDEX_DATA * load_room( const char * filename )
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_FAILLOAD , "¸ü¤J©Ğ¶¡ÀÉ®× %s ¥¢±Ñ¡C\n" , filename );
+    mudlog( LOG_FAILLOAD , "è¼‰å…¥æˆ¿é–“æª”æ¡ˆ %s å¤±æ•—ã€‚\n" , filename );
     RETURN( NULL );
   }
 
-  /* °t¸m©Ğ¶¡ªÅ¶¡¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®æˆ¿é–“ç©ºé–“ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_room_default( pRoomIndex = alloc_struct( STRUCT_ROOM_INDEX_DATA ) );
 
-  /* ¥¿¦¡¸ü¤J°Ï°ìÀÉ¤¤ªº©Ğ¶¡ */
+  /* æ­£å¼è¼‰å…¥å€åŸŸæª”ä¸­çš„æˆ¿é–“ */
   for ( ;; )
   {
     word   = if_eof( pFile ) ? "End" : fread_word( pFile );
@@ -1845,11 +1845,11 @@ ROOM_INDEX_DATA * load_room( const char * filename )
 
       if ( !str_scmp( word , "#Exit", &fMatch ) )
       {
-        /* Á×§K¨S¦³©Ğ¶¡¸¹½X´N¸ü¤J¥X¤f */
+        /* é¿å…æ²’æœ‰æˆ¿é–“è™Ÿç¢¼å°±è¼‰å…¥å‡ºå£ */
         if ( IS_ERROR( pRoomIndex->vnum ) )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¸¹½XÁÙ¨S³]©w, µLªk³]©w¥X¤f¡C" );
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“è™Ÿç¢¼é‚„æ²’è¨­å®š, ç„¡æ³•è¨­å®šå‡ºå£ã€‚" );
 
-        /* ¸ü¤J©Ğ¶¡¥X¤f®æ¦¡ */
+        /* è¼‰å…¥æˆ¿é–“å‡ºå£æ ¼å¼ */
         pExit = load_exit( pFile );
 
         pRoomIndex->exit[pExit->direction] = pExit;
@@ -1858,16 +1858,16 @@ ROOM_INDEX_DATA * load_room( const char * filename )
         break;
       }
 
-      /* ¸ü¤J©Ğ¶¡ªºÃöÁä¦r³¡¥÷ */
+      /* è¼‰å…¥æˆ¿é–“çš„é—œéµå­—éƒ¨ä»½ */
       if ( !str_scmp( word , "#Keyword", &fMatch ) )
       {
-        /* Á×§K¨S¦³©Ğ¶¡¸¹½X´N¸ü¤JÃöÁä¦r */
+        /* é¿å…æ²’æœ‰æˆ¿é–“è™Ÿç¢¼å°±è¼‰å…¥é—œéµå­— */
         if ( IS_ERROR( pRoomIndex->vnum ) )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¸¹½XÁÙ¨S³]©w, µLªk³]©wÃöÁä¦r¡C" );
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“è™Ÿç¢¼é‚„æ²’è¨­å®š, ç„¡æ³•è¨­å®šé—œéµå­—ã€‚" );
 
         if ( !( pExtra = load_extra_descr( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_room¡R©Ğ¶¡ÃB¥~´y­z¸ü¤J¥¢±Ñ¡C" );
+          mudlog( LOG_DEBUG, "Load_roomï¹•æˆ¿é–“é¡å¤–æè¿°è¼‰å…¥å¤±æ•—ã€‚" );
           break;
         }
 
@@ -1883,7 +1883,7 @@ ROOM_INDEX_DATA * load_room( const char * filename )
 
         if ( !( pJob = load_job( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_room¡R¸ü¤J©Ğ¶¡¯S®í¨ç¼Æ¥¢±Ñ¡C" );
+          mudlog( LOG_DEBUG, "Load_roomï¹•è¼‰å…¥æˆ¿é–“ç‰¹æ®Šå‡½æ•¸å¤±æ•—ã€‚" );
           break;
         }
 
@@ -1917,7 +1917,7 @@ ROOM_INDEX_DATA * load_room( const char * filename )
 
       if ( !str_scmp( word , "Description", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pRoomIndex->description = fread_string( pFile );
         break;
       }
@@ -1927,18 +1927,18 @@ ROOM_INDEX_DATA * load_room( const char * filename )
 
       if ( !str_scmp( word, "End", &fMatch ) )
       {
-        /* Á×§K¦³¨Ç­«­n­È©|¥¼¸ü¤J´Nµ²§ô */
+        /* é¿å…æœ‰äº›é‡è¦å€¼å°šæœªè¼‰å…¥å°±çµæŸ */
         if ( !pRoomIndex->name )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¨S¦³¦WºÙ¡C" );
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“æ²’æœ‰åç¨±ã€‚" );
 
         if ( !pRoomIndex->description )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¨S¦³´y­z¡C" );
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“æ²’æœ‰æè¿°ã€‚" );
 
         if ( IS_ERROR( pRoomIndex->vnum ) )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¨S¦³¸¹½X¡C" );
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“æ²’æœ‰è™Ÿç¢¼ã€‚" );
 
         if ( !pRoomIndex->sector )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¨S¦³¦a§Î¡C" );
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“æ²’æœ‰åœ°å½¢ã€‚" );
 
         f_close( pFile );
         RETURN( pRoomIndex );
@@ -2017,7 +2017,7 @@ ROOM_INDEX_DATA * load_room( const char * filename )
 
         iSector = fread_number( pFile );
         if ( !( pSector = get_sector_index( iSector ) ) )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¦a«¬½s¸¹ %d ¤£¦s¦b¡C" , iSector );
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“åœ°å‹ç·¨è™Ÿ %d ä¸å­˜åœ¨ã€‚" , iSector );
 
         pRoomIndex->sector = pSector;
         pSector->count++;
@@ -2043,9 +2043,9 @@ ROOM_INDEX_DATA * load_room( const char * filename )
       {
         pRoomIndex->vnum = fread_number( pFile ) ;
 
-        /* Á×§K©Ğ¶¡¸¹½X·|¦³­«½Æ */
+        /* é¿å…æˆ¿é–“è™Ÿç¢¼æœƒæœ‰é‡è¤‡ */
         if ( get_room_index( pRoomIndex->vnum ) )
-          mudlog( LOG_DEBUG , "Load_room¡R©Ğ¶¡¸¹½X %d ­«½Æ¡C"
+          mudlog( LOG_DEBUG , "Load_roomï¹•æˆ¿é–“è™Ÿç¢¼ %d é‡è¤‡ã€‚"
             , pRoomIndex->vnum );
 
         break;
@@ -2054,14 +2054,14 @@ ROOM_INDEX_DATA * load_room( const char * filename )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
 
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_room¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_roomï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 }
 
-/* ¸ü¤J©Ğ¶¡ªº¥X¤f */
+/* è¼‰å…¥æˆ¿é–“çš„å‡ºå£ */
 EXIT_DATA * load_exit( FILE_DATA * pFile )
 {
   EXIT_DATA * pExit;
@@ -2071,10 +2071,10 @@ EXIT_DATA * load_exit( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_exit" );
 
-  /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_exit_default( pExit = alloc_struct( STRUCT_EXIT_DATA ) );
 
-  /* ¸ü¤J°Ï°ìÀÉ©Ğ¶¡¥X¤f³¡¥÷ */
+  /* è¼‰å…¥å€åŸŸæª”æˆ¿é–“å‡ºå£éƒ¨ä»½ */
   for ( direction = -1;; )
   {
     word   = if_eof( pFile ) ? "End" : fread_word( pFile );
@@ -2104,7 +2104,7 @@ EXIT_DATA * load_exit( FILE_DATA * pFile )
         switch( direction = fread_number( pFile ) )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_exit¡R¿ù»~ªº¤è¦V %d¡C", direction );
+          mudlog( LOG_DEBUG, "Load_exitï¹•éŒ¯èª¤çš„æ–¹å‘ %dã€‚", direction );
           break;
 
         case DIR_NORTH:
@@ -2128,18 +2128,18 @@ EXIT_DATA * load_exit( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "End" , &fMatch ) )
       {
-        /* Á×§K¦³¨Ç­«­n­È©|¬°Åª¨ú´NÂ÷¶} */
+        /* é¿å…æœ‰äº›é‡è¦å€¼å°šç‚ºè®€å–å°±é›¢é–‹ */
         if ( IS_ERROR( direction ) )
-          mudlog( LOG_DEBUG , "Load_exit¡R¥X¤f¤è¦V¨S¦³³]©w¡C" );
+          mudlog( LOG_DEBUG , "Load_exitï¹•å‡ºå£æ–¹å‘æ²’æœ‰è¨­å®šã€‚" );
 
         if ( IS_ERROR( pExit->vnum ) )
-          mudlog( LOG_DEBUG , "Load_exit¡R©Ğ¶¡¥X¤f¨S¦³¸¹½X¡C" );
+          mudlog( LOG_DEBUG , "Load_exitï¹•æˆ¿é–“å‡ºå£æ²’æœ‰è™Ÿç¢¼ã€‚" );
 
         if ( !pExit->description )
-          mudlog( LOG_DEBUG , "Load_exit¡R©Ğ¶¡¥X¤f¨S¦³´y­z¡C" );
+          mudlog( LOG_DEBUG , "Load_exitï¹•æˆ¿é–“å‡ºå£æ²’æœ‰æè¿°ã€‚" );
 
         if ( !pExit->keyword )
-          mudlog( LOG_DEBUG , "Load_exit¡R©Ğ¶¡¥X¤f¨S¦³ÃöÁä¦r¡C" );
+          mudlog( LOG_DEBUG , "Load_exitï¹•æˆ¿é–“å‡ºå£æ²’æœ‰é—œéµå­—ã€‚" );
 
         RETURN( pExit );
       }
@@ -2200,15 +2200,15 @@ EXIT_DATA * load_exit( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_exit¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_exitï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J©Ğ¶¡ªºÃöÁä¦r */
+/* è¼‰å…¥æˆ¿é–“çš„é—œéµå­— */
 EXTRA_DESCR_DATA * load_extra_descr( FILE_DATA * pFile )
 {
   EXTRA_DESCR_DATA * ed;
@@ -2217,14 +2217,14 @@ EXTRA_DESCR_DATA * load_extra_descr( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_extra_descr" );
 
-  /* °t¸m°O¾ĞÅé */
+  /* é…ç½®è¨˜æ†¶é«” */
   ed = alloc_struct( STRUCT_EXTRA_DESCR_DATA );
 
-  /* ³]©w¹w³]­È */
+  /* è¨­å®šé è¨­å€¼ */
   ed->keyword     = NULL;
   ed->description = NULL;
 
-  /*¸ü¤J°Ï°ìÀÉ©Ğ¶¡ªºÃöÁä¦r³¡¥÷ */
+  /*è¼‰å…¥å€åŸŸæª”æˆ¿é–“çš„é—œéµå­—éƒ¨ä»½ */
 
   for ( ;; )
   {
@@ -2243,7 +2243,7 @@ EXTRA_DESCR_DATA * load_extra_descr( FILE_DATA * pFile )
 
       if ( !str_scmp( word , "Description", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         ed->description = fread_string( pFile );
         break;
       }
@@ -2256,13 +2256,13 @@ EXTRA_DESCR_DATA * load_extra_descr( FILE_DATA * pFile )
       {
         if ( !ed->description )
         {
-          mudlog( LOG_DEBUG , "Load_extra_descr¡R¨S¦³´y­z¡C" );
+          mudlog( LOG_DEBUG , "Load_extra_descrï¹•æ²’æœ‰æè¿°ã€‚" );
           break;
         }
 
         if ( !ed->keyword )
         {
-          mudlog( LOG_DEBUG , "Load_extra_descr¡R´y­z¨S¦³ÃöÁä¦r¡C" );
+          mudlog( LOG_DEBUG , "Load_extra_descrï¹•æè¿°æ²’æœ‰é—œéµå­—ã€‚" );
           break;
         }
 
@@ -2277,10 +2277,10 @@ EXTRA_DESCR_DATA * load_extra_descr( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_extra_descr¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_extra_descrï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
       if ( FileError )
       {
         free_extra_descr( ed );
@@ -2292,7 +2292,7 @@ EXTRA_DESCR_DATA * load_extra_descr( FILE_DATA * pFile )
   RETURN( NULL );
 }
 
-/* ¸ü¤J·s®æ¦¡ªº°Ó©±®æ¦¡ */
+/* è¼‰å…¥æ–°æ ¼å¼çš„å•†åº—æ ¼å¼ */
 SHOP_DATA * load_shop( const char * filename )
 {
   MOB_INDEX_DATA  * pMobIndex;
@@ -2307,14 +2307,14 @@ SHOP_DATA * load_shop( const char * filename )
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_FAILLOAD , "¸ü¤J°Ó©±ÀÉ®× %s ¥¢±Ñ¡C\n" , filename );
+    mudlog( LOG_FAILLOAD , "è¼‰å…¥å•†åº—æª”æ¡ˆ %s å¤±æ•—ã€‚\n" , filename );
     RETURN( NULL );
   }
 
-  /* °t¸m°Ó©±©Ò»İ­nªº°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®å•†åº—æ‰€éœ€è¦çš„è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_shop_default( pShop = alloc_struct( STRUCT_SHOP_DATA ) );
 
-  /* ¸ü¤J°Ï°ìÀÉ¸Ì­±ªº°Ó©±³¡¥÷ */
+  /* è¼‰å…¥å€åŸŸæª”è£¡é¢çš„å•†åº—éƒ¨ä»½ */
   for ( ;; )
   {
     word   = if_eof( pFile ) ? "End" : fread_word( pFile );
@@ -2339,18 +2339,18 @@ SHOP_DATA * load_shop( const char * filename )
 
       if ( !str_scmp( word, "End", &fMatch ) )
       {
-        /* Á×§K¨S¦³©±ªøªº¿ù»~ */
+        /* é¿å…æ²’æœ‰åº—é•·çš„éŒ¯èª¤ */
         if ( IS_ERROR( pShop->keeper ) )
-          mudlog( LOG_DEBUG , "Load_shop¡R¨S¦³¸ü¤J©±¥D¡C" );
+          mudlog( LOG_DEBUG , "Load_shopï¹•æ²’æœ‰è¼‰å…¥åº—ä¸»ã€‚" );
 
         if ( IS_ERROR( pShop->type ) )
-          mudlog( LOG_DEBUG, "Load_shop¡R¨S¦³¸ü¤J©±®a«¬ºA¡C" );
+          mudlog( LOG_DEBUG, "Load_shopï¹•æ²’æœ‰è¼‰å…¥åº—å®¶å‹æ…‹ã€‚" );
 
         if ( !( pMobIndex = get_mob_index( pShop->keeper ) ) )
-          mudlog( LOG_DEBUG, "Load_shop¡R¨S¦³©±¥D¸¹½X %d¡C", pShop->keeper );
+          mudlog( LOG_DEBUG, "Load_shopï¹•æ²’æœ‰åº—ä¸»è™Ÿç¢¼ %dã€‚", pShop->keeper );
 
         if ( pMobIndex->pShop )
-          mudlog( LOG_DEBUG, "Load_shop¡R©Çª« %d ¤w¦³°Ó©±µ²ºc¡C"
+          mudlog( LOG_DEBUG, "Load_shopï¹•æ€ªç‰© %d å·²æœ‰å•†åº—çµæ§‹ã€‚"
             , pMobIndex->vnum );
 
         switch( pShop->type )
@@ -2367,7 +2367,7 @@ SHOP_DATA * load_shop( const char * filename )
             if ( ( slot = pShop->buy_type[iTrade] ) == 0 ) continue;
 
             if ( !( get_mob_index( slot ) ) )
-              mudlog( LOG_DEBUG, "Load_shop¡R¶Ä§L¸¹½X %d ¤£¦s¦b¡C", slot );
+              mudlog( LOG_DEBUG, "Load_shopï¹•å‚­å…µè™Ÿç¢¼ %d ä¸å­˜åœ¨ã€‚", slot );
           }
 
           break;
@@ -2381,10 +2381,10 @@ SHOP_DATA * load_shop( const char * filename )
             if ( ( slot = pShop->buy_type[iTrade] ) == 0 ) continue;
 
             if ( !( pVictim = get_mob_index( slot ) ) )
-              mudlog( LOG_DEBUG, "Load_shop¡R®yÃM¸¹½X %d ¤£¦s¦b¡C", slot );
+              mudlog( LOG_DEBUG, "Load_shopï¹•åº§é¨è™Ÿç¢¼ %d ä¸å­˜åœ¨ã€‚", slot );
 
             if ( pVictim->tractable <= 0 )
-              mudlog( LOG_DEBUG, "Load_shop¡R¸¹½X %d ¤£¬O®yÃM¡C", slot );
+              mudlog( LOG_DEBUG, "Load_shopï¹•è™Ÿç¢¼ %d ä¸æ˜¯åº§é¨ã€‚", slot );
           }
 
           break;
@@ -2467,7 +2467,7 @@ SHOP_DATA * load_shop( const char * filename )
 
         vnum = fread_number( pFile );
         if ( !( pRoomIndex = get_room_index( vnum ) ) )
-          mudlog( LOG_DEBUG, "Load_shop¡R§ä¤£¨ì©±­±©Ğ¶¡¸¹½X %d¡C", vnum );
+          mudlog( LOG_DEBUG, "Load_shopï¹•æ‰¾ä¸åˆ°åº—é¢æˆ¿é–“è™Ÿç¢¼ %dã€‚", vnum );
 
         pShop->sential = pRoomIndex;
         break;
@@ -2481,7 +2481,7 @@ SHOP_DATA * load_shop( const char * filename )
         switch( ( iTrade = fread_number( pFile ) ) )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_shop¡R«¬ºA %d ¿ù»~¡C", iTrade );
+          mudlog( LOG_DEBUG, "Load_shopï¹•å‹æ…‹ %d éŒ¯èª¤ã€‚", iTrade );
           break;
 
         case SHOP_STORE:
@@ -2498,15 +2498,15 @@ SHOP_DATA * load_shop( const char * filename )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_shop¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_shopï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J·s®æ¦¡ªºÄqª«®æ¦¡ */
+/* è¼‰å…¥æ–°æ ¼å¼çš„ç¤¦ç‰©æ ¼å¼ */
 MINERAL_DATA * load_mineral( const char * filename )
 {
   MINERAL_DATA * pMineral;
@@ -2518,15 +2518,15 @@ MINERAL_DATA * load_mineral( const char * filename )
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_FAILLOAD , "¸ü¤JÄqª«ÀÉ®× %s ¥¢±Ñ¡C\n" , filename );
+    mudlog( LOG_FAILLOAD , "è¼‰å…¥ç¤¦ç‰©æª”æ¡ˆ %s å¤±æ•—ã€‚\n" , filename );
     RETURN( NULL );
   }
 
-  /* °t¸m°Ó©±©Ò»İ­nªº°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®å•†åº—æ‰€éœ€è¦çš„è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   pMineral = alloc_struct( STRUCT_MINERAL_DATA );
   set_mineral_default( pMineral );
 
-  /* ¸ü¤J°Ï°ìÀÉ¸Ì­±ªº°Ó©±³¡¥÷ */
+  /* è¼‰å…¥å€åŸŸæª”è£¡é¢çš„å•†åº—éƒ¨ä»½ */
   for ( ;; )
   {
     word   = if_eof( pFile ) ? "End" : fread_word( pFile );
@@ -2548,10 +2548,10 @@ MINERAL_DATA * load_mineral( const char * filename )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( IS_ERROR( pMineral->count ) )
-          mudlog( LOG_DEBUG , "Load_mineral¡R¨S¦³¼Æ¶q¡C" );
+          mudlog( LOG_DEBUG , "Load_mineralï¹•æ²’æœ‰æ•¸é‡ã€‚" );
 
         if ( !pMineral->mineral )
-          mudlog( LOG_DEBUG , "Load_mineral¡R¨S¦³Äqª«¡C" );
+          mudlog( LOG_DEBUG , "Load_mineralï¹•æ²’æœ‰ç¤¦ç‰©ã€‚" );
 
         f_close( pFile );
         RETURN( pMineral );
@@ -2576,7 +2576,7 @@ MINERAL_DATA * load_mineral( const char * filename )
         slot = fread_number( pFile );
 
         if ( !( pMineral->mineral = get_obj_index( slot ) ) )
-          mudlog( LOG_DEBUG , "Load_mineral¡RÄqª«¸¹½X %d ¤£¦s¦b¡C", slot );
+          mudlog( LOG_DEBUG , "Load_mineralï¹•ç¤¦ç‰©è™Ÿç¢¼ %d ä¸å­˜åœ¨ã€‚", slot );
 
         break;
       }
@@ -2584,15 +2584,15 @@ MINERAL_DATA * load_mineral( const char * filename )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_mineral¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_mineralï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤Jª««~ */
+/* è¼‰å…¥ç‰©å“ */
 OBJ_INDEX_DATA * load_object( const char * filename )
 {
   OBJ_INDEX_DATA * pObjIndex;
@@ -2611,11 +2611,11 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_FAILLOAD , "¸ü¤Jª««~ÀÉ®× %s ¥¢±Ñ¡C\n" , filename );
+    mudlog( LOG_FAILLOAD , "è¼‰å…¥ç‰©å“æª”æ¡ˆ %s å¤±æ•—ã€‚\n" , filename );
     RETURN( NULL );
   }
 
-  /* °t¸mª««~©Ò»İ­nªº°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®ç‰©å“æ‰€éœ€è¦çš„è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_object_default( pObjIndex = alloc_struct( STRUCT_OBJ_INDEX_DATA ) );
 
   for ( ;; )
@@ -2634,17 +2634,17 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word , "#Affect", &fMatch ) )
       {
-        /* Á×§K¨S¦³ª««~¸¹½X´N¸ü¤JÄİ©Ê */
+        /* é¿å…æ²’æœ‰ç‰©å“è™Ÿç¢¼å°±è¼‰å…¥å±¬æ€§ */
         if ( IS_ERROR( pObjIndex->vnum ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡Rª««~¸¹½XÁÙ¨S³]©w¡MµLªk³]©wÄİ©Ê¡C" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•ç‰©å“è™Ÿç¢¼é‚„æ²’è¨­å®šï¹ç„¡æ³•è¨­å®šå±¬æ€§ã€‚" );
           break;
         }
 
-        /* ¸ü¤Jª««~Äİ©Ê®æ¦¡ */
+        /* è¼‰å…¥ç‰©å“å±¬æ€§æ ¼å¼ */
         if ( !( pAffect = load_affect( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡R¸ü¤Jª««~¼vÅT¥¢±Ñ¡T" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•è¼‰å…¥ç‰©å“å½±éŸ¿å¤±æ•—ï¹—" );
           break;
         }
 
@@ -2655,17 +2655,17 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word , "#Impact", &fMatch ) )
       {
-        /* Á×§K¨S¦³ª««~¸¹½X´N¸ü¤JÄİ©Ê */
+        /* é¿å…æ²’æœ‰ç‰©å“è™Ÿç¢¼å°±è¼‰å…¥å±¬æ€§ */
         if ( IS_ERROR( pObjIndex->vnum ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡Rª««~¸¹½XÁÙ¨S³]©w¡MµLªk³]©wÄİ©Ê¡C" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•ç‰©å“è™Ÿç¢¼é‚„æ²’è¨­å®šï¹ç„¡æ³•è¨­å®šå±¬æ€§ã€‚" );
           break;
         }
 
-        /* ¸ü¤Jª««~Äİ©Ê®æ¦¡ */
+        /* è¼‰å…¥ç‰©å“å±¬æ€§æ ¼å¼ */
         if ( !( pAffect = load_affect( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡R¸ü¤Jª««~Å]¥Û®ÄÀ³¥¢±Ñ¡T" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•è¼‰å…¥ç‰©å“é­”çŸ³æ•ˆæ‡‰å¤±æ•—ï¹—" );
           break;
         }
 
@@ -2676,10 +2676,10 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word, "#Restrict", &fMatch ) )
       {
-        /* ¸ü¤Jª««~¸Ë³Æ­­¨î */
+        /* è¼‰å…¥ç‰©å“è£å‚™é™åˆ¶ */
         if ( !( pRestrict = load_restrict( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡R¸ü¤Jª««~­­¨î«¬ºA¥¢±Ñ¡T" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•è¼‰å…¥ç‰©å“é™åˆ¶å‹æ…‹å¤±æ•—ï¹—" );
           break;
         }
 
@@ -2688,7 +2688,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
           if ( zRestrict->type == pRestrict->type
             && zRestrict->type != RES_SKILL )
           {
-            mudlog( LOG_DEBUG , "Load_object¡Rª««~­­¨î«¬ºA %d ­«½Æ¡C"
+            mudlog( LOG_DEBUG , "Load_objectï¹•ç‰©å“é™åˆ¶å‹æ…‹ %d é‡è¤‡ã€‚"
               , pRestrict->type );
             break;
           }
@@ -2702,10 +2702,10 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word, "#Message", &fMatch ) )
       {
-        /* ¸ü¤Jª««~¸Ë³Æ±Ô­z */
+        /* è¼‰å…¥ç‰©å“è£å‚™æ•˜è¿° */
         if ( !( pMessage = load_message( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡R¸ü¤Jª««~±Ô­z¥¢±Ñ¡T" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•è¼‰å…¥ç‰©å“æ•˜è¿°å¤±æ•—ï¹—" );
           break;
         }
 
@@ -2716,19 +2716,19 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word , "#Extra", &fMatch ) )
       {
-        /* Á×§K¨S¦³ª««~¸¹½X´N¸ü¤JÃB¥~´y­z */
+        /* é¿å…æ²’æœ‰ç‰©å“è™Ÿç¢¼å°±è¼‰å…¥é¡å¤–æè¿° */
         if ( IS_ERROR( pObjIndex->vnum ) )
         {
           mudlog( LOG_DEBUG ,
-            "Load_object¡Rª««~¸¹½XÁÙ¨S³]©w¡MµLªk³]©wÃB¥~´y­z¡C" );
+            "Load_objectï¹•ç‰©å“è™Ÿç¢¼é‚„æ²’è¨­å®šï¹ç„¡æ³•è¨­å®šé¡å¤–æè¿°ã€‚" );
 
           break;
         }
 
-        /* ¸ü¤Jª««~Äİ©Ê®æ¦¡ */
+        /* è¼‰å…¥ç‰©å“å±¬æ€§æ ¼å¼ */
         if ( !( pExtra = load_extra_descr( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡R¸ü¤Jª««~ÃB¥~´y­z¥¢±Ñ¡T" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•è¼‰å…¥ç‰©å“é¡å¤–æè¿°å¤±æ•—ï¹—" );
           break;
         }
 
@@ -2744,7 +2744,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
         if ( !( pJob = load_job( pFile ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_object¡R¸ü¤Jª««~¯S®í¨ç¼Æ¥¢±Ñ¡T" );
+          mudlog( LOG_DEBUG, "Load_objectï¹•è¼‰å…¥ç‰©å“ç‰¹æ®Šå‡½æ•¸å¤±æ•—ï¹—" );
           break;
         }
 
@@ -2786,7 +2786,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word , "Description", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pObjIndex->description = fread_string( pFile );
         break;
       }
@@ -2811,37 +2811,37 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
         if ( IS_ERROR( ( vnum = pObjIndex->vnum ) ) )
         {
-          mudlog( LOG_DEBUG , "Load_object¡Rª««~¨S¦³¸¹½X¡C" );
+          mudlog( LOG_DEBUG , "Load_objectï¹•ç‰©å“æ²’æœ‰è™Ÿç¢¼ã€‚" );
           break;
         }
 
         if ( !pObjIndex->name )
         {
-          mudlog( LOG_DEBUG , "Load_object¡Rª««~ %d ¨S¦³¦W¦r¡C", vnum );
+          mudlog( LOG_DEBUG , "Load_objectï¹•ç‰©å“ %d æ²’æœ‰åå­—ã€‚", vnum );
           break;
         }
 
         if ( !pObjIndex->short_descr )
         {
-          mudlog( LOG_DEBUG , "Load_object¡Rª««~ %d ¨S¦³µu±Ô­z¡C", vnum );
+          mudlog( LOG_DEBUG , "Load_objectï¹•ç‰©å“ %d æ²’æœ‰çŸ­æ•˜è¿°ã€‚", vnum );
           break;
         }
 
         if ( !pObjIndex->description )
         {
-          mudlog( LOG_DEBUG , "Load_object¡Rª««~ %d ¨S¦³ªø±Ô­z¡C", vnum );
+          mudlog( LOG_DEBUG , "Load_objectï¹•ç‰©å“ %d æ²’æœ‰é•·æ•˜è¿°ã€‚", vnum );
           break;
         }
 
         if ( IS_ERROR( pObjIndex->item_type ) )
         {
-          mudlog( LOG_DEBUG , "Load_object¡Rª««~ %d ¨S¦³ª««~«¬ºA¡C", vnum );
+          mudlog( LOG_DEBUG , "Load_objectï¹•ç‰©å“ %d æ²’æœ‰ç‰©å“å‹æ…‹ã€‚", vnum );
           break;
         }
 
         if ( pObjIndex->weight < 0 )
         {
-          mudlog( LOG_DEBUG, "Load_object¡Rª««~ %d ¨S¦³­«¶q¡C", vnum );
+          mudlog( LOG_DEBUG, "Load_objectï¹•ç‰©å“ %d æ²’æœ‰é‡é‡ã€‚", vnum );
           break;
         }
 
@@ -2850,13 +2850,13 @@ OBJ_INDEX_DATA * load_object( const char * filename )
         default:
 
           if ( pObjIndex->cost > pObjIndex->level * 20 )
-            mudlog( LOG_INFO, "Load_object¡R[ª««~¤Ó¶Q] ª««~ %d »ù¿ú¤Ó°ª¡C", vnum );
+            mudlog( LOG_INFO, "Load_objectï¹•[ç‰©å“å¤ªè²´] ç‰©å“ %d åƒ¹éŒ¢å¤ªé«˜ã€‚", vnum );
 
           if ( pObjIndex->item_type == ITEM_MAGICSTONE && !pObjIndex->impact )
-            mudlog( LOG_INFO, "Load_obj¡RÅ]¥Û %d ¨S¦³«ü©w®ÄÀ³¡C", vnum );
+            mudlog( LOG_INFO, "Load_objï¹•é­”çŸ³ %d æ²’æœ‰æŒ‡å®šæ•ˆæ‡‰ã€‚", vnum );
 
           if ( pObjIndex->item_type != ITEM_MAGICSTONE && pObjIndex->impact )
-            mudlog( LOG_INFO, "Load_object¡R«DÅ]¥Û %d ¦³«ü©w®ÄÀ³¡C", vnum );
+            mudlog( LOG_INFO, "Load_objectï¹•éé­”çŸ³ %d æœ‰æŒ‡å®šæ•ˆæ‡‰ã€‚", vnum );
 
           for ( count = 0, paf = pObjIndex->affected; paf; paf = paf->next )
           {
@@ -2869,8 +2869,8 @@ OBJ_INDEX_DATA * load_object( const char * filename )
             case APPLY_MANA:
             case APPLY_MOVE:
               if ( paf->modifier > pObjIndex->level * 10 )
-                mudlog( LOG_DEBUG, "Load_object¡Rª««~ %-5d µ¥¯Å %-3d ¼W¥["
-                  "ÂI¼Æ %4d ¤Ó¦h¡C", vnum, pObjIndex->level, paf->modifier );
+                mudlog( LOG_DEBUG, "Load_objectï¹•ç‰©å“ %-5d ç­‰ç´š %-3d å¢åŠ "
+                  "é»æ•¸ %4d å¤ªå¤šã€‚", vnum, pObjIndex->level, paf->modifier );
               break;
 
             case APPLY_STR:
@@ -2879,8 +2879,8 @@ OBJ_INDEX_DATA * load_object( const char * filename )
             case APPLY_DEX:
             case APPLY_CON:
               if ( paf->modifier > 3 )
-                mudlog( LOG_DEBUG, "Load_object¡Rª««~ %-5d µ¥¯Å %-3d ¼W¥[Äİ"
-                  "©Ê %2d ¤Ó¦h¡C", vnum, pObjIndex->level, paf->modifier );
+                mudlog( LOG_DEBUG, "Load_objectï¹•ç‰©å“ %-5d ç­‰ç´š %-3d å¢åŠ å±¬"
+                  "æ€§ %2d å¤ªå¤šã€‚", vnum, pObjIndex->level, paf->modifier );
               count += paf->modifier;
               break;
             }
@@ -2889,7 +2889,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
           if ( count > 2 )
           {
             mudlog( LOG_DEBUG,
-              "Load_object¡Rª««~ %-5d µ¥¯Å %-3d ¼W¥[Äİ©Ê %2d ¤Ó¦h¡C"
+              "Load_objectï¹•ç‰©å“ %-5d ç­‰ç´š %-3d å¢åŠ å±¬æ€§ %2d å¤ªå¤šã€‚"
               , vnum, pObjIndex->level, count );
           }
 
@@ -2916,7 +2916,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
         if ( pObjIndex->item_type == ITEM_POTION ) pObjIndex->NoDrop = TRUE;
 
-        /* ÀË¬dª««~¼Æ­È */
+        /* æª¢æŸ¥ç‰©å“æ•¸å€¼ */
         switch( pObjIndex->item_type )
         {
         default:
@@ -2930,7 +2930,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
         case ITEM_WEAPON:
 
-          /* ·íªZ¾¹§ğ¶Ë¤p©óµ¥©ó¹s®Éªº³B²z */
+          /* ç•¶æ­¦å™¨æ”»å‚·å°æ–¼ç­‰æ–¼é›¶æ™‚çš„è™•ç† */
           if ( pObjIndex->value[1] <= 0 || pObjIndex->value[2] <= 0 )
           {
             int max;
@@ -3008,17 +3008,17 @@ OBJ_INDEX_DATA * load_object( const char * filename )
           switch( pObjIndex->value[1] )
           {
           default:
-            mudlog( LOG_DEBUG , "Load_object¡R¬Iªkª««~ %d ¼Æ­È¿ù»~¡C", vnum );
+            mudlog( LOG_DEBUG , "Load_objectï¹•æ–½æ³•ç‰©å“ %d æ•¸å€¼éŒ¯èª¤ã€‚", vnum );
             break;
 
-          /* ¤£»İ­n³]©w§Ş¯à¸¹½X */
+          /* ä¸éœ€è¦è¨­å®šæŠ€èƒ½è™Ÿç¢¼ */
           case OBJ_CAST_HIT:
           case OBJ_CAST_MANA:
           case OBJ_CAST_MOVE:
           case OBJ_CAST_ALL:
             break;
 
-          /* ¤£»İ­n³]©w§Ş¯à¸¹½X */
+          /* ä¸éœ€è¦è¨­å®šæŠ€èƒ½è™Ÿç¢¼ */
           case OBJ_CAST_IDENT:
           case OBJ_CURE_POISON:
           case OBJ_DETECT_INVS:
@@ -3040,7 +3040,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
               if ( pSkill->affect_id == pObjIndex->value[1] ) break;
 
             if ( !pSkill )
-              mudlog( LOG_DEBUG , "Load_object¡R¬Iªkª««~ %d §Ş¯à¿ù»~¡C", vnum );
+              mudlog( LOG_DEBUG , "Load_objectï¹•æ–½æ³•ç‰©å“ %d æŠ€èƒ½éŒ¯èª¤ã€‚", vnum );
 
             pObjIndex->value[2] = pSkill->slot;
             break;
@@ -3087,7 +3087,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
         if ( pObjIndex->level < 0 || pObjIndex->level > MAX_LEVEL )
         {
-          mudlog( LOG_DEBUG , "Load_object¡Rª««~µ¥¯Å %d ¿ù»~¡C", pObjIndex->level );
+          mudlog( LOG_DEBUG , "Load_objectï¹•ç‰©å“ç­‰ç´š %d éŒ¯èª¤ã€‚", pObjIndex->level );
           break;
         }
 
@@ -3116,7 +3116,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word , "Remmsg", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pObjIndex->remmsg = fread_string( pFile );
         break;
       }
@@ -3182,7 +3182,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
       if ( !str_scmp( word , "Wearmsg", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pObjIndex->wearmsg = fread_string( pFile );
         break;
       }
@@ -3191,10 +3191,10 @@ OBJ_INDEX_DATA * load_object( const char * filename )
 
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_object¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_objectï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
       if ( fReload )
       {
         free_obj_index( pObjIndex );
@@ -3207,7 +3207,7 @@ OBJ_INDEX_DATA * load_object( const char * filename )
   RETURN( NULL );
 }
 
-/* ¸ü¤Jª««~ªº¼vÅT */
+/* è¼‰å…¥ç‰©å“çš„å½±éŸ¿ */
 AFFECT_DATA * load_affect( FILE_DATA * pFile )
 {
   AFFECT_DATA * pAffect;
@@ -3216,7 +3216,7 @@ AFFECT_DATA * load_affect( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_affect" );
 
-  /* °t¸mª««~Äİ©Êªº°O¾ĞÅé©M³]©w¹w³]­È */
+  /* é…ç½®ç‰©å“å±¬æ€§çš„è¨˜æ†¶é«”å’Œè¨­å®šé è¨­å€¼ */
   set_affect_default( pAffect = alloc_struct( STRUCT_AFFECT_DATA ) );
 
   for ( ;; )
@@ -3236,7 +3236,7 @@ AFFECT_DATA * load_affect( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( IS_ERROR( pAffect->location ) )
-          mudlog( LOG_DEBUG , "Load_affect¡R¨S¦³³]©w¼vÅTÄİ©Êªº«¬ºA¡C" );
+          mudlog( LOG_DEBUG , "Load_affectï¹•æ²’æœ‰è¨­å®šå½±éŸ¿å±¬æ€§çš„å‹æ…‹ã€‚" );
 
         TEST_READ_ERROR
         if ( !fReload )  top_affect++;
@@ -3262,10 +3262,10 @@ AFFECT_DATA * load_affect( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_affect¡R©R¥O %s ¤£¥¿½T¡C", word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_affectï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
       if ( fReload )
       {
         free_affect( pAffect );
@@ -3277,7 +3277,7 @@ AFFECT_DATA * load_affect( FILE_DATA * pFile )
   RETURN( NULL );
 }
 
-/* ¸ü¤Jª««~¸Ë³Æ¡B§Ş¯à¤§­­¨î */
+/* è¼‰å…¥ç‰©å“è£å‚™ã€æŠ€èƒ½ä¹‹é™åˆ¶ */
 RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
 {
   RESTRICT_DATA * pRestrict;
@@ -3286,7 +3286,7 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_restrict" );
 
-  /* °t¸mª««~Äİ©Êªº°O¾ĞÅé©M³]©w¹w³]­È */
+  /* é…ç½®ç‰©å“å±¬æ€§çš„è¨˜æ†¶é«”å’Œè¨­å®šé è¨­å€¼ */
   set_restrict_default( pRestrict = alloc_struct( STRUCT_RESTRICT_DATA ) );
 
   for ( ;; )
@@ -3307,13 +3307,13 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
       {
         if ( IS_ERROR( pRestrict->type ) )
         {
-          mudlog( LOG_DEBUG, "Load_restrict¡R­­¨î¯Ê¥F«¬ºA¡C" );
+          mudlog( LOG_DEBUG, "Load_restrictï¹•é™åˆ¶ç¼ºä¹å‹æ…‹ã€‚" );
           break;
         }
 
         if ( IS_ERROR( pRestrict->value ) )
         {
-          mudlog( LOG_DEBUG, "Load_restrict¡R­­¨î¨S¦³¼Æ­È¡C" );
+          mudlog( LOG_DEBUG, "Load_restrictï¹•é™åˆ¶æ²’æœ‰æ•¸å€¼ã€‚" );
           break;
         }
 
@@ -3321,37 +3321,37 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
         {
         case RES_STR:
           if ( pRestrict->value > MaxStr || pRestrict->value < 0 )
-            mudlog( LOG_DEBUG, "Load_restrict¡R¤O¶q¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•åŠ›é‡æ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
            break;
 
         case RES_INT:
           if ( pRestrict->value > MaxInt || pRestrict->value < 0 )
-            mudlog( LOG_DEBUG, "Load_restrict¡R´¼¤O¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•æ™ºåŠ›æ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
            break;
 
         case RES_WIS:
           if ( pRestrict->value > MaxWis || pRestrict->value < 0 )
-            mudlog( LOG_DEBUG, "Load_restrict¡R¾ÇÃÑ¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•å­¸è­˜æ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
            break;
 
         case RES_DEX:
           if ( pRestrict->value > MaxDex || pRestrict->value < 0 )
-            mudlog( LOG_DEBUG, "Load_restrict¡R±Ó±¶¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•æ•æ·æ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
            break;
 
         case RES_CON:
           if ( pRestrict->value > MaxCon || pRestrict->value < 0 )
-            mudlog( LOG_DEBUG, "Load_restrict¡RÅé®æ¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•é«”æ ¼æ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
            break;
 
         case RES_TRUST:
           if ( pRestrict->value > MAX_LEVEL || pRestrict->value < 0 )
-            mudlog( LOG_DEBUG, "Load_restrict¡R«H¥ô¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•ä¿¡ä»»æ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
            break;
 
@@ -3360,7 +3360,7 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
           switch( pRestrict->value )
           {
           default:
-            mudlog( LOG_DEBUG, "Load_restrict¡R©Ê§O %d ¿ù»~¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•æ€§åˆ¥ %d éŒ¯èª¤ã€‚"
               , pRestrict->value );
             break;
 
@@ -3372,7 +3372,7 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
 
         case RES_LEVEL:
           if ( pRestrict->value > MAX_LEVEL || pRestrict->value < 0 )
-            mudlog( LOG_DEBUG, "Load_restrict¡Rµ¥¯Å¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•ç­‰ç´šæ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
 
           break;
@@ -3380,7 +3380,7 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
         case RES_ALIGN:
 
           if ( pRestrict->value < -1000 || pRestrict->value > 1000 )
-            mudlog( LOG_DEBUG, "Load_restrict¡R°}Àç¼Æ­È %d ¤£¦X²z¡C"
+            mudlog( LOG_DEBUG, "Load_restrictï¹•é™£ç‡Ÿæ•¸å€¼ %d ä¸åˆç†ã€‚"
               , pRestrict->value );
            break;
         }
@@ -3402,7 +3402,7 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
         switch( pRestrict->occasion )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_restrict¡R®É¾÷ %d ¿ù»~¡C"
+          mudlog( LOG_DEBUG, "Load_restrictï¹•æ™‚æ©Ÿ %d éŒ¯èª¤ã€‚"
             , pRestrict->occasion );
           break;
 
@@ -3426,7 +3426,7 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
 
         if ( !( pSkill = skill_isname( pWord ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_restrict¡R¨S¦³³oºØ§Ş¯à %s¡C", pWord );
+          mudlog( LOG_DEBUG, "Load_restrictï¹•æ²’æœ‰é€™ç¨®æŠ€èƒ½ %sã€‚", pWord );
           break;
         }
 
@@ -3445,7 +3445,7 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
         switch( pRestrict->type )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_restrict¡R­­¨î«¬ºA %d ¿ù»~¡C"
+          mudlog( LOG_DEBUG, "Load_restrictï¹•é™åˆ¶å‹æ…‹ %d éŒ¯èª¤ã€‚"
             , pRestrict->type );
           break;
 
@@ -3477,10 +3477,10 @@ RESTRICT_DATA * load_restrict( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_restrict¡R©R¥O %s ¤£¥¿½T¡C", word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_restrictï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
       if ( fReload )
       {
         free_restrict( pRestrict );
@@ -3500,7 +3500,7 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_message" );
 
-  /* °t¸mª««~Äİ©Êªº°O¾ĞÅé©M³]©w¹w³]­È */
+  /* é…ç½®ç‰©å“å±¬æ€§çš„è¨˜æ†¶é«”å’Œè¨­å®šé è¨­å€¼ */
   set_message_default( pMessage= alloc_struct( STRUCT_MESSAGE_DATA ) );
 
   for ( ;; )
@@ -3521,19 +3521,19 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
       {
         if ( IS_ERROR( pMessage->type ) )
         {
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z¨S¦³§ÎºA¡C" );
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°æ²’æœ‰å½¢æ…‹ã€‚" );
           break;
         }
 
         if ( !pMessage->self )
         {
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z¨S¦³±Ô­z¦r¦ê¡C" );
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°æ²’æœ‰æ•˜è¿°å­—ä¸²ã€‚" );
           break;
         }
 
         if ( !pMessage->others )
         {
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z¨S¦³±Ô­z¦r¦ê¡C" );
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°æ²’æœ‰æ•˜è¿°å­—ä¸²ã€‚" );
           break;
         }
 
@@ -3549,11 +3549,11 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
       {
         if ( pMessage->others )
         {
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z­«ÂĞ©w¸q¡C" );
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°é‡è¦†å®šç¾©ã€‚" );
           break;
         }
 
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pMessage->others = fread_string( pFile );
         break;
       }
@@ -3566,11 +3566,11 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
       {
         if ( pMessage->self )
         {
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z­«ÂĞ©w¸q¡C" );
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°é‡è¦†å®šç¾©ã€‚" );
           break;
         }
 
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pMessage->self = fread_string( pFile );
         break;
       }
@@ -3579,17 +3579,17 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
       {
         if ( pMessage->self )
         {
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z­«ÂĞ©w¸q¡C" );
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°é‡è¦†å®šç¾©ã€‚" );
           break;
         }
 
         if ( pMessage->others )
         {
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z­«ÂĞ©w¸q¡C" );
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°é‡è¦†å®šç¾©ã€‚" );
           break;
         }
 
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pMessage->self   = fread_string( pFile );
         TEST_READ_ERROR
         pMessage->others = str_dup( pMessage->self );
@@ -3608,7 +3608,7 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
         switch( pMessage->type )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_message¡R±Ô­z«¬ºA %d ¿ù»~¡C"
+          mudlog( LOG_DEBUG, "Load_messageï¹•æ•˜è¿°å‹æ…‹ %d éŒ¯èª¤ã€‚"
             , pMessage->type );
           break;
 
@@ -3648,10 +3648,10 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_message¡R©R¥O %s ¤£¥¿½T¡C", word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_messageï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
       if ( FileError )
       {
         free_message( pMessage );
@@ -3663,7 +3663,7 @@ MESSAGE_DATA * load_message( FILE_DATA * pFile )
   RETURN( NULL );
 }
 
-/* Åª¤J°Ï°ìÀÉªº reset */
+/* è®€å…¥å€åŸŸæª”çš„ reset */
 void load_resets( char * filename , AREA_DATA * pArea )
 {
   ROOM_INDEX_DATA * pRoomIndex;
@@ -3676,12 +3676,12 @@ void load_resets( char * filename , AREA_DATA * pArea )
 
   if ( !( pFile = f_open( filename , "r" ) ) )
   {
-    mudlog( LOG_FAILLOAD , "¸ü¤JÀÉ®× %s ¥¢±Ñ¡C\n" , filename );
+    mudlog( LOG_FAILLOAD , "è¼‰å…¥æª”æ¡ˆ %s å¤±æ•—ã€‚\n" , filename );
     RETURN_NULL();
   }
 
   if ( !pArea )
-    mudlog( LOG_DEBUG , "Load_resets¡R¨S¦³¥ô¦óªº #AREA ©Ò¥H¤£¯à°µ reset ¡C" );
+    mudlog( LOG_DEBUG , "Load_resetsï¹•æ²’æœ‰ä»»ä½•çš„ #AREA æ‰€ä»¥ä¸èƒ½åš reset ã€‚" );
 
   for ( ;; )
   {
@@ -3694,7 +3694,7 @@ void load_resets( char * filename , AREA_DATA * pArea )
       continue;
     }
 
-    /* °t¸m°O¾ĞÅé */
+    /* é…ç½®è¨˜æ†¶é«” */
     pReset          = alloc_struct( STRUCT_RESET_DATA );
     pReset->command = letter;
     pReset->arg1    = fread_number( pFile );
@@ -3707,36 +3707,36 @@ void load_resets( char * filename , AREA_DATA * pArea )
     switch ( letter )
     {
     default:
-      mudlog( LOG_DEBUG , "Load_resets¡R¥¼©w¸qªº RESET ©R¥O '%c'¡C", letter );
+      mudlog( LOG_DEBUG , "Load_resetsï¹•æœªå®šç¾©çš„ RESET å‘½ä»¤ '%c'ã€‚", letter );
       break;
 
     case 'M':
 
       if ( !get_mob_index ( pReset->arg1 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(M) ¨S¦³©Çª«½s¸¹ %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(M) æ²’æœ‰æ€ªç‰©ç·¨è™Ÿ %dã€‚", pReset->arg1 );
 
       if ( !get_room_index( pReset->arg3 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(M) ¨S¦³©Ğ¶¡½s¸¹ %d¡C", pReset->arg3 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(M) æ²’æœ‰æˆ¿é–“ç·¨è™Ÿ %dã€‚", pReset->arg3 );
 
       break;
 
     case 'O':
 
       if ( !get_obj_index ( pReset->arg1 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(O) ¨S¦³ª««~¸¹½X %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(O) æ²’æœ‰ç‰©å“è™Ÿç¢¼ %dã€‚", pReset->arg1 );
 
       if ( !get_room_index( pReset->arg3 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(O)  ¨S¦³©Ğ¶¡½s¸¹ %d¡C", pReset->arg3 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(O)  æ²’æœ‰æˆ¿é–“ç·¨è™Ÿ %dã€‚", pReset->arg3 );
 
       break;
 
     case 'P':
 
       if ( !get_obj_index( pReset->arg1 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(P) ¨S¦³ª««~¤@¸¹½X %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(P) æ²’æœ‰ç‰©å“ä¸€è™Ÿç¢¼ %dã€‚", pReset->arg1 );
 
       if ( !get_obj_index( pReset->arg3 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(P) ¨S¦³ª««~¤G¸¹½X %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(P) æ²’æœ‰ç‰©å“äºŒè™Ÿç¢¼ %dã€‚", pReset->arg1 );
 
       break;
 
@@ -3744,44 +3744,44 @@ void load_resets( char * filename , AREA_DATA * pArea )
     case 'G':
 
       if ( !get_obj_index( pReset->arg1 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(EG) ¨S¦³ª««~¸¹½X %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(EG) æ²’æœ‰ç‰©å“è™Ÿç¢¼ %dã€‚", pReset->arg1 );
 
       break;
 
     case 'A':
 
       if ( !get_mob_index( pReset->arg1 ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(A) ¨S¦³©Çª«¸¹½X %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(A) æ²’æœ‰æ€ªç‰©è™Ÿç¢¼ %dã€‚", pReset->arg1 );
 
       break;
 
     case 'D':
 
       if ( !( pRoomIndex = get_room_index( pReset->arg1 ) ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(D) ¨S¦³©Ğ¶¡¸¹½X %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(D) æ²’æœ‰æˆ¿é–“è™Ÿç¢¼ %dã€‚", pReset->arg1 );
 
       if ( pReset->arg2 < 0
         || pReset->arg2 > ( DIR_MAX - 1 )
         || ( pExit = pRoomIndex->exit[pReset->arg2] ) == NULL
         || !pExit->isdoor )
       {
-        mudlog( LOG_DEBUG , "Load_resets¡R'D'¡R¥X¤f %d ¤£¬O¤@­Óªù¡C"
+        mudlog( LOG_DEBUG , "Load_resetsï¹•'D'ï¹•å‡ºå£ %d ä¸æ˜¯ä¸€å€‹é–€ã€‚"
           , pReset->arg2 );
       }
 
       if ( pReset->arg3 < 0 || pReset->arg3 > 2 )
-        mudlog( LOG_DEBUG , "Load_resets¡R'D'¡R¿ù»~ªºÂê¡R%d¡C", pReset->arg3 );
+        mudlog( LOG_DEBUG , "Load_resetsï¹•'D'ï¹•éŒ¯èª¤çš„é–ï¹•%dã€‚", pReset->arg3 );
 
       break;
 
     case 'R':
 
       if ( !( pRoomIndex = get_room_index( pReset->arg1 ) ) )
-        mudlog( LOG_DEBUG, "Load_reset¡R(R) ¨S¦³©Ğ¶¡¸¹½X %d¡C", pReset->arg1 );
+        mudlog( LOG_DEBUG, "Load_resetï¹•(R) æ²’æœ‰æˆ¿é–“è™Ÿç¢¼ %dã€‚", pReset->arg1 );
 
 
       if ( pReset->arg2 < 0 || pReset->arg2 > 6 )
-        mudlog( LOG_DEBUG , "Load_resets¡R'R'¡R¿ù»~¥X¤f %d¡C", pReset->arg2 );
+        mudlog( LOG_DEBUG , "Load_resetsï¹•'R'ï¹•éŒ¯èª¤å‡ºå£ %dã€‚", pReset->arg2 );
 
       break;
     }
@@ -3810,7 +3810,7 @@ void load_mail( const char * path )
 
   PUSH_FUNCTION( "load_mail" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, note_ext, &result ) ) >= 0 )
@@ -3822,7 +3822,7 @@ void load_mail( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_ERR , "Load_mail¡R¶}±Ò«H¥óÀÉ %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_ERR , "Load_mailï¹•é–‹å•Ÿä¿¡ä»¶æª” %s æœ‰å•é¡Œã€‚" , buf );
 
         pNote = load_a_note( pFile );
 
@@ -3839,7 +3839,7 @@ void load_mail( const char * path )
 
   else
   {
-    mudlog( LOG_ERR , "Load_mail¡R¨S¦³¶l¥ó¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_ERR , "Load_mailï¹•æ²’æœ‰éƒµä»¶å­ç›®éŒ„ %sã€‚", path );
   }
 
   RETURN_NULL();
@@ -3876,14 +3876,14 @@ NOTE_DATA * load_a_note( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "End", &fMatch ) )
       {
-        if ( !pNote->sender  ) mudlog( LOG_DEBUG , "Load_a_note¡R¯Ê¥F±H«HªÌ¡C" );
-        if ( !pNote->date    ) mudlog( LOG_DEBUG , "Load_a_note¡R¯Ê¥F®É¶¡¡C"   );
-        if ( !pNote->to_list ) mudlog( LOG_DEBUG , "Load_a_note¡R¯Ê¥F¦¬«HªÌ¡C" );
-        if ( !pNote->subject ) mudlog( LOG_DEBUG , "Load_a_note¡R¯Ê¥F¥DÃD¡C"   );
-        if ( !pNote->text    ) mudlog( LOG_DEBUG , "Load_a_note¡R¯Ê¥F¤º®e¡C"   );
+        if ( !pNote->sender  ) mudlog( LOG_DEBUG , "Load_a_noteï¹•ç¼ºä¹å¯„ä¿¡è€…ã€‚" );
+        if ( !pNote->date    ) mudlog( LOG_DEBUG , "Load_a_noteï¹•ç¼ºä¹æ™‚é–“ã€‚"   );
+        if ( !pNote->to_list ) mudlog( LOG_DEBUG , "Load_a_noteï¹•ç¼ºä¹æ”¶ä¿¡è€…ã€‚" );
+        if ( !pNote->subject ) mudlog( LOG_DEBUG , "Load_a_noteï¹•ç¼ºä¹ä¸»é¡Œã€‚"   );
+        if ( !pNote->text    ) mudlog( LOG_DEBUG , "Load_a_noteï¹•ç¼ºä¹å…§å®¹ã€‚"   );
 
         if ( IS_ERROR( pNote->date_stamp ) )
-          mudlog( LOG_DEBUG , "Load_a_note¡R¯Ê¥F¶lÂW¡C" );
+          mudlog( LOG_DEBUG , "Load_a_noteï¹•ç¼ºä¹éƒµæˆ³ã€‚" );
 
         RETURN( pNote );
       }
@@ -3911,7 +3911,7 @@ NOTE_DATA * load_a_note( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "Text", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pNote->text = fread_string( pFile );
         break;
       }
@@ -3919,9 +3919,9 @@ NOTE_DATA * load_a_note( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_ERR , "Load_a_note¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_ERR , "Load_a_noteï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
@@ -3940,7 +3940,7 @@ void load_joke( const char * path )
 
   PUSH_FUNCTION( "load_joke" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, joke_ext, &result ) ) >= 0 )
@@ -3952,7 +3952,7 @@ void load_joke( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_DEBUG , "Load_joke¡R¶}±Ò¯º¸ÜÀÉ %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_DEBUG , "Load_jokeï¹•é–‹å•Ÿç¬‘è©±æª” %s æœ‰å•é¡Œã€‚" , buf );
 
         pJoke = load_a_joke( pFile );
         pJoke->stamp = ++top_joke;
@@ -3977,10 +3977,10 @@ void load_joke( const char * path )
 
   else
   {
-    mudlog( LOG_DEBUG , "Load_joke¡R¨S¦³¯º¸Ü¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_DEBUG , "Load_jokeï¹•æ²’æœ‰ç¬‘è©±å­ç›®éŒ„ %sã€‚", path );
   }
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó¯º¸ÜÀÉ¡C" , top_joke );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹ç¬‘è©±æª”ã€‚" , top_joke );
   RETURN_NULL();
 }
 
@@ -4012,13 +4012,13 @@ JOKE_DATA * load_a_joke( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pJoke->title || !*pJoke->title )
-          mudlog( LOG_DEBUG , "Load_a_joke¡R¯Ê¥F¼ĞÃD¡C" );
+          mudlog( LOG_DEBUG , "Load_a_jokeï¹•ç¼ºä¹æ¨™é¡Œã€‚" );
 
         if ( !pJoke->org )
-          mudlog( LOG_DEBUG, "Load_a_joke¡R¯Ê¥F¥X³B¡C" );
+          mudlog( LOG_DEBUG, "Load_a_jokeï¹•ç¼ºä¹å‡ºè™•ã€‚" );
 
         if ( !pJoke->text || !*pJoke->text )
-          mudlog( LOG_DEBUG , "Load_a_joke¡R¯Ê¥F¥»¤å¡C" );
+          mudlog( LOG_DEBUG , "Load_a_jokeï¹•ç¼ºä¹æœ¬æ–‡ã€‚" );
 
         RETURN( pJoke );
       }
@@ -4035,7 +4035,7 @@ JOKE_DATA * load_a_joke( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "Text", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pJoke->text = fread_string( pFile );
 
         break;
@@ -4044,9 +4044,9 @@ JOKE_DATA * load_a_joke( FILE_DATA * pFile )
 
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_joke¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_jokeï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
@@ -4066,7 +4066,7 @@ void load_vote( const char * path )
 
   PUSH_FUNCTION( "load_vote" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, vote_ext, &result ) ) >= 0 )
@@ -4077,18 +4077,18 @@ void load_vote( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_DEBUG , "Load_vote¡R¶}±Ò§ë²¼ÀÉ %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_DEBUG , "Load_voteï¹•é–‹å•ŸæŠ•ç¥¨æª” %s æœ‰å•é¡Œã€‚" , buf );
 
         pVote = load_a_vote( pFile );
         f_close( pFile );
 
-        /* ¦pªG¤w¸g¶}²¼«h¥H«H¥ó¤è¦¡¤½§G */
+        /* å¦‚æœå·²ç¶“é–‹ç¥¨å‰‡ä»¥ä¿¡ä»¶æ–¹å¼å…¬ä½ˆ */
         if ( vote_timeup( pVote ) )
         {
           vote_to_note( pVote );
 
           if ( unlink( buf ) != 0 )
-            mudlog( LOG_INFO, "Load_vote¡R²¾°£§ë²¼ÀÉ %s ¥¢±Ñ¡C", buf );
+            mudlog( LOG_INFO, "Load_voteï¹•ç§»é™¤æŠ•ç¥¨æª” %s å¤±æ•—ã€‚", buf );
 
           free_string( pVote->poster  );
           free_string( pVote->subject );
@@ -4126,10 +4126,10 @@ void load_vote( const char * path )
   }
   else
   {
-    mudlog( LOG_DEBUG , "Load_vote¡R¨S¦³§ë²¼¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_DEBUG , "Load_voteï¹•æ²’æœ‰æŠ•ç¥¨å­ç›®éŒ„ %sã€‚", path );
   }
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó§ë²¼ÀÉ¡C" , top_vote );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹æŠ•ç¥¨æª”ã€‚" , top_vote );
   RETURN_NULL();
 }
 
@@ -4220,7 +4220,7 @@ VOTE_DATA * load_a_vote( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "Text", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pVote->text = fread_string( pFile );
 
         break;
@@ -4241,9 +4241,9 @@ VOTE_DATA * load_a_vote( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_ERR , "Load_a_vote¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_ERR , "Load_a_voteï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
@@ -4262,24 +4262,24 @@ void load_symbol( const char * filename )
   PUSH_FUNCTION( "load_symbol" );
 
   if ( !( fp = f_open( filename , "r" ) ) )
-    mudlog( LOG_ERR , "µLªk¶}±Ò±`¼ÆÂà´«ÀÉ %s¡C" , filename );
+    mudlog( LOG_ERR , "ç„¡æ³•é–‹å•Ÿå¸¸æ•¸è½‰æ›æª” %sã€‚" , filename );
 
   for ( ; ; )
   {
     word = fread_word( fp );
     if ( if_eof( fp ) ) break;
 
-    /* symbol.def ¨C¦æ¥H*¬°¶}ÀYªº³£·í§@¬O¼Ğ°O¤£·|Åª¨ú */
+    /* symbol.def æ¯è¡Œä»¥*ç‚ºé–‹é ­çš„éƒ½ç•¶ä½œæ˜¯æ¨™è¨˜ä¸æœƒè®€å– */
     if ( word[0] == '*' )
     {
       fread_to_eol( fp );
       continue;
     }
 
-    /* symbol.def ­Y¬O¥X²{ #END «h¥NªíÀÉ®×µ²§À¡M¤§«áªº¤£·|¦AÅª¨ú */
+    /* symbol.def è‹¥æ˜¯å‡ºç¾ #END å‰‡ä»£è¡¨æª”æ¡ˆçµå°¾ï¹ä¹‹å¾Œçš„ä¸æœƒå†è®€å– */
     if ( !str_cmp( word , "#END" ) ) break;
 
-    /* °t¸m°O¾ĞÅé */
+    /* é…ç½®è¨˜æ†¶é«” */
     pSymbol = alloc_struct( STRUCT_SYMBOL_DATA );
 
     pSymbol->str   = str_dup( word );
@@ -4291,7 +4291,7 @@ void load_symbol( const char * filename )
     count++;
 
     if ( !isalpha( ( int ) pSymbol->str[0] ) )
-      mudlog( LOG_ERR , "Load_symbol¡R%s ¤£¬O­^¤å²Å¸¹¡C" , pSymbol->str );
+      mudlog( LOG_ERR , "Load_symbolï¹•%s ä¸æ˜¯è‹±æ–‡ç¬¦è™Ÿã€‚" , pSymbol->str );
 
     letter                    = LOWER( pSymbol->str[0] ) - 'a';
     iLen                      = UMIN( 19, str_len( pSymbol->str ) - 1 );
@@ -4303,7 +4303,7 @@ void load_symbol( const char * filename )
   }
 
   f_close( fp );
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó±`¼Æ²Å¸¹¡C" , count );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹å¸¸æ•¸ç¬¦è™Ÿã€‚" , count );
   RETURN_NULL();
 }
 
@@ -4319,7 +4319,7 @@ void load_help( const char * path )
 
   PUSH_FUNCTION( "load_help" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, help_ext, &result ) ) >= 0 )
@@ -4328,11 +4328,11 @@ void load_help( const char * path )
     {
       sprintf( buf, "%s%s", directory, result.gl_pathv[count] );
 
-      /* ªşÀÉ¦W¬° hlp ªºÀÉ®× */
+      /* é™„æª”åç‚º hlp çš„æª”æ¡ˆ */
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_ERR , "Load_help¡R¶}±Ò¨D§UÀÉ %s ¦³°İÃD" , buf );
+          mudlog( LOG_ERR , "Load_helpï¹•é–‹å•Ÿæ±‚åŠ©æª” %s æœ‰å•é¡Œ" , buf );
 
         pHelp          = alloc_struct( STRUCT_HELP_DATA );
         pHelp->level   = fread_number( pFile );
@@ -4354,10 +4354,10 @@ void load_help( const char * path )
 
   else
   {
-    mudlog( LOG_ERR , "Load_help¡R¨S¦³¨D§U¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_ERR , "Load_helpï¹•æ²’æœ‰æ±‚åŠ©å­ç›®éŒ„ %sã€‚", path );
   }
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó¨D§UÀÉ¡C" , top_help );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹æ±‚åŠ©æª”ã€‚" , top_help );
   RETURN_NULL();
 }
 
@@ -4373,7 +4373,7 @@ void load_social( const char * path , const char * index )
 
   PUSH_FUNCTION( "load_social" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   str_cpy( directory, path );
   fill_path( directory );
 
@@ -4396,7 +4396,7 @@ void load_social( const char * path , const char * index )
 
       if ( ( pFile = f_open( buf , "r" ) ) )
       {
-        /* °t¸m°O¾ĞÅé */
+        /* é…ç½®è¨˜æ†¶é«” */
         pSocial = alloc_struct( STRUCT_SOCIAL_DATA );
 
         pSocial->name          = fread_string( pFile );
@@ -4420,17 +4420,17 @@ void load_social( const char * path , const char * index )
 
       else
       {
-        mudlog( LOG_ERR , "Load_social¡RµLªk¶}°_ªÀ¥æ°Ê°µÀÉ %s¡C" , buf );
+        mudlog( LOG_ERR , "Load_socialï¹•ç„¡æ³•é–‹èµ·ç¤¾äº¤å‹•åšæª” %sã€‚" , buf );
       }
     }
   }
   else
   {
-    mudlog( LOG_ERR , "Load_social¡RµLªk¶}±ÒªÀ¥æ¯Á¤ŞÀÉ %s¡C" , indexfile );
+    mudlog( LOG_ERR , "Load_socialï¹•ç„¡æ³•é–‹å•Ÿç¤¾äº¤ç´¢å¼•æª” %sã€‚" , indexfile );
   }
 
   f_close( aFile );
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­ÓªÀ¥æ°Ê§@ÀÉ¡C" , top_social );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹ç¤¾äº¤å‹•ä½œæª”ã€‚" , top_social );
   RETURN_NULL();
 }
 
@@ -4446,7 +4446,7 @@ void load_angel( const char * path )
 
   PUSH_FUNCTION( "load_angel" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, angel_ext, &result ) ) >= 0 )
@@ -4457,7 +4457,7 @@ void load_angel( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_ERR , "Load_angel¡R¶}±Ò¦uÅ@¯«ÀÉ %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_ERR , "Load_angelï¹•é–‹å•Ÿå®ˆè­·ç¥æª” %s æœ‰å•é¡Œã€‚" , buf );
 
         pAngel       = load_a_angel( pFile );
         pAngel->next = angel_list;
@@ -4472,14 +4472,14 @@ void load_angel( const char * path )
 
   else
   {
-    mudlog( LOG_ERR , "Load_angel¡R¨S¦³¦uÅ@¯«¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_ERR , "Load_angelï¹•æ²’æœ‰å®ˆè­·ç¥å­ç›®éŒ„ %sã€‚", path );
   }
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó¦uÅ@¯«¸ê®ÆÀÉ¡C" , top_angel );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹å®ˆè­·ç¥è³‡æ–™æª”ã€‚" , top_angel );
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­Ó¦uÅ@¯«¸ê®Æ */
+/* è®€å–ä¸€å€‹å®ˆè­·ç¥è³‡æ–™ */
 ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
 {
   ANGEL_DATA * pAngel;
@@ -4488,7 +4488,7 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_a_angel" );
 
-  /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_angel_default( pAngel = alloc_struct( STRUCT_ANGEL_DATA ) );
 
   for ( ;; )
@@ -4508,7 +4508,7 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
 
       if ( !str_scmp( word , "Description", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pAngel->description = fread_string( pFile );
         break;
       }
@@ -4520,10 +4520,10 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( pAngel->description && pAngel->function )
-          mudlog( LOG_DEBUG, "Load_a_angel¡R¦uÅ@¯«¦³¨ç¼Æ¤S¦³´y­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_angelï¹•å®ˆè­·ç¥æœ‰å‡½æ•¸åˆæœ‰æè¿°ã€‚" );
 
         if ( !pAngel->description && !pAngel->function )
-          mudlog( LOG_DEBUG, "Load_a_angel¡R¦uÅ@¯«¨S¦³¨ç¼Æ¤S¨S¦³´y­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_angelï¹•å®ˆè­·ç¥æ²’æœ‰å‡½æ•¸åˆæ²’æœ‰æè¿°ã€‚" );
 
         RETURN( pAngel );
       }
@@ -4542,7 +4542,7 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
         if ( name[0] )
         {
           if ( !( function = angel_function( name ) ) )
-            mudlog( LOG_DEBUG , "Load_a_angel¡R¦uÅ@¯«ªº¨ç¼Æ %s §ä¤£¨ì¡C" , name );
+            mudlog( LOG_DEBUG , "Load_a_angelï¹•å®ˆè­·ç¥çš„å‡½æ•¸ %s æ‰¾ä¸åˆ°ã€‚" , name );
 
           free_string( name );
           pAngel->function = function;
@@ -4559,7 +4559,7 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
         int level;
 
         if ( ( level = fread_number( pFile ) ) < 0 || level > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "Load_a_angel¡R¦uÅ@³Ì°ªµ¥¯Å %d ¤£¹ï¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_angelï¹•å®ˆè­·æœ€é«˜ç­‰ç´š %d ä¸å°ã€‚", level );
 
         pAngel->higher = level;
         break;
@@ -4574,7 +4574,7 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
         int level;
 
         if ( ( level = fread_number( pFile ) ) < 0 || level > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "Load_a_angel¡R¦uÅ@³Ì§Cµ¥¯Å %d ¤£¹ï¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_angelï¹•å®ˆè­·æœ€ä½ç­‰ç´š %d ä¸å°ã€‚", level );
 
         pAngel->lower = level;
         break;
@@ -4591,7 +4591,7 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
         switch( ( position = fread_number( pFile ) ) )
         {
         default:
-           mudlog( LOG_DEBUG, "Load_a_angel¡R¦uÅ@ª¬ºA¤£¹ï¡C", position );
+           mudlog( LOG_DEBUG, "Load_a_angelï¹•å®ˆè­·ç‹€æ…‹ä¸å°ã€‚", position );
            break;
 
         case POS_DEAD:
@@ -4609,15 +4609,15 @@ ANGEL_DATA * load_a_angel( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_angel¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_angelï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J¶i¯¸µe­± */
+/* è¼‰å…¥é€²ç«™ç•«é¢ */
 void load_welcome_immortal( const char * filename )
 {
   FILE_DATA * pFile;
@@ -4625,7 +4625,7 @@ void load_welcome_immortal( const char * filename )
   PUSH_FUNCTION( "load_welcome_immortal" );
 
   if ( !( pFile = f_open( filename , "r" ) ) )
-    mudlog( LOG_ERR , "Load_welcome_immortal¡R¶}±ÒÅwªï¯«±Úµe­±ÀÉ %s ¦³°İÃD¡C"
+    mudlog( LOG_ERR , "Load_welcome_immortalï¹•é–‹å•Ÿæ­¡è¿ç¥æ—ç•«é¢æª” %s æœ‰å•é¡Œã€‚"
     , filename );
 
   welcome_immortal = str_dup( map_file( pFile ) );
@@ -4634,7 +4634,7 @@ void load_welcome_immortal( const char * filename )
   RETURN_NULL();
 }
 
-/* ¸ü¤J¶i¯¸µe­± */
+/* è¼‰å…¥é€²ç«™ç•«é¢ */
 void load_welcome( const char * filename )
 {
   FILE_DATA * pFile;
@@ -4642,7 +4642,7 @@ void load_welcome( const char * filename )
   PUSH_FUNCTION( "load_welcome" );
 
   if ( !( pFile = f_open( filename , "r" ) ) )
-    mudlog( LOG_ERR , "Load_welcome¡R¶}±ÒÅwªïµe­±ÀÉ %s ¦³°İÃD¡C" , filename );
+    mudlog( LOG_ERR , "Load_welcomeï¹•é–‹å•Ÿæ­¡è¿ç•«é¢æª” %s æœ‰å•é¡Œã€‚" , filename );
 
   welcome_message = str_dup( map_file( pFile ) );
   f_close( pFile );
@@ -4656,7 +4656,7 @@ void load_motd( const char * filename )
   PUSH_FUNCTION( "load_motd" );
 
   if ( !( pFile = f_open( filename , "r" ) ) )
-    mudlog( LOG_ERR , "Load_motd¡R¶}±Ò¤µ¤é®ø®§ÀÉ %s ¦³°İÃD¡C" , filename );
+    mudlog( LOG_ERR , "Load_motdï¹•é–‹å•Ÿä»Šæ—¥æ¶ˆæ¯æª” %s æœ‰å•é¡Œã€‚" , filename );
 
   motd_message = str_dup( map_file( pFile ) );
   f_close( pFile );
@@ -4664,7 +4664,7 @@ void load_motd( const char * filename )
   RETURN_NULL();
 }
 
-/* ¸ü¤J¶i¯¸µe­± */
+/* è¼‰å…¥é€²ç«™ç•«é¢ */
 void load_greeting( const char * path )
 {
   GREETING_DATA * pGreet;
@@ -4677,7 +4677,7 @@ void load_greeting( const char * path )
 
   PUSH_FUNCTION( "load_greeting" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, greet_ext, &result ) ) >= 0 )
@@ -4689,7 +4689,7 @@ void load_greeting( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_ERR , "Load_greeting¡R¶}±Ò¶i¯¸µe­±ÀÉ %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_ERR , "Load_greetingï¹•é–‹å•Ÿé€²ç«™ç•«é¢æª” %s æœ‰å•é¡Œã€‚" , buf );
 
         pGreet        = alloc_struct( STRUCT_GREETING_DATA );
         pGreet->text  = str_dup( map_file( pFile ) );
@@ -4704,17 +4704,17 @@ void load_greeting( const char * path )
 
   else
   {
-    mudlog( LOG_ERR , "Load_greeting¡R¨S¦³¶i¯¸µe­±¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_ERR , "Load_greetingï¹•æ²’æœ‰é€²ç«™ç•«é¢å­ç›®éŒ„ %sã€‚", path );
   }
 
   if ( top_greeting <= 0 )
-    mudlog( LOG_ERR, "Load_greeting¡R¦Ü¤Ö­n¦³¤@­Ó¶i¯¸µe­±¡C" );
+    mudlog( LOG_ERR, "Load_greetingï¹•è‡³å°‘è¦æœ‰ä¸€å€‹é€²ç«™ç•«é¢ã€‚" );
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó¶i¯¸µe­±ÀÉ¡C" , top_greeting );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹é€²ç«™ç•«é¢æª”ã€‚" , top_greeting );
   RETURN_NULL();
 }
 
-/* ¸ü¤J¦a§Î¸ê®ÆÀÉ®×, °ÆÀÉ¦W¬° def */
+/* è¼‰å…¥åœ°å½¢è³‡æ–™æª”æ¡ˆ, å‰¯æª”åç‚º def */
 void load_sector( const char * path )
 {
   glob_t        result;
@@ -4731,7 +4731,7 @@ void load_sector( const char * path )
 
   PUSH_FUNCTION( "load_sector" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, sector_ext, &result ) ) >= 0 )
@@ -4743,7 +4743,7 @@ void load_sector( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_ERR , "Load_sector¡R¶}±Ò¦a§ÎÀÉ®× %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_ERR , "Load_sectorï¹•é–‹å•Ÿåœ°å½¢æª”æ¡ˆ %s æœ‰å•é¡Œã€‚" , buf );
 
         pSector = alloc_struct( STRUCT_SECTOR_DATA );
         set_sector_default( pSector );
@@ -4755,7 +4755,7 @@ void load_sector( const char * path )
 
           switch ( UPPER( word[0] ) )
           {
-          /* µù¸Ñ */
+          /* è¨»è§£ */
           case '*':
             fMatch = TRUE;
             fread_to_eol( pFile );
@@ -4776,7 +4776,7 @@ void load_sector( const char * path )
               if ( fread_number( pFile ) == TRUE )
               {
                 if ( DefaultSector )
-                  mudlog( LOG_DEBUG, "Load_sector¡R¹w³]¦a§Î­«ÂĞ¡C" );
+                  mudlog( LOG_DEBUG, "Load_sectorï¹•é è¨­åœ°å½¢é‡è¦†ã€‚" );
 
                 DefaultSector = pSector;
               }
@@ -4790,13 +4790,13 @@ void load_sector( const char * path )
             if ( !str_scmp( word, "End", &fMatch ) )
             {
               if ( IS_ERROR( pSector->vnum ) )
-                mudlog( LOG_DEBUG , "Load_sector¡R¦a§ÎÀÉ®×¨S¦³½s¸¹¡C" );
+                mudlog( LOG_DEBUG , "Load_sectorï¹•åœ°å½¢æª”æ¡ˆæ²’æœ‰ç·¨è™Ÿã€‚" );
 
               if ( IS_ERROR( pSector->movement ) )
-                mudlog( LOG_DEBUG , "Load_sector¡R¦a§ÎÀÉ®×¨S¦³²¾°Ê®ø¯Ó¼Æ­È¡C" );
+                mudlog( LOG_DEBUG , "Load_sectorï¹•åœ°å½¢æª”æ¡ˆæ²’æœ‰ç§»å‹•æ¶ˆè€—æ•¸å€¼ã€‚" );
 
               if ( !pSector->cname )
-                mudlog( LOG_DEBUG , "Load_sector¡R¦a§ÎÀÉ®×¨S¦³¤¤¤å¦WºÙ¡C" );
+                mudlog( LOG_DEBUG , "Load_sectorï¹•åœ°å½¢æª”æ¡ˆæ²’æœ‰ä¸­æ–‡åç¨±ã€‚" );
 
               pSector->next   = sector_list;
               sector_list     = pSector;
@@ -4831,11 +4831,11 @@ void load_sector( const char * path )
             if ( !str_scmp( word , "Vnum", &fMatch ) )
             {
               if ( get_sector_index( ( vnum = fread_number( pFile ) ) ) )
-                mudlog( LOG_DEBUG , "Load_sector¡R½s¸¹ %d ªº¦a«¬¸¹½X­«ÂĞ¡C"
+                mudlog( LOG_DEBUG , "Load_sectorï¹•ç·¨è™Ÿ %d çš„åœ°å‹è™Ÿç¢¼é‡è¦†ã€‚"
                   , vnum );
 
               if ( vnum < 0 )
-                mudlog( LOG_DEBUG , "Load_sector¡R½s¸¹ %d ªº¦a«¬ÀÉ®×ªº½s¸¹¤£¦Xªk¡C"
+                mudlog( LOG_DEBUG , "Load_sectorï¹•ç·¨è™Ÿ %d çš„åœ°å‹æª”æ¡ˆçš„ç·¨è™Ÿä¸åˆæ³•ã€‚"
                   , vnum );
 
               pSector->vnum = vnum;
@@ -4845,9 +4845,9 @@ void load_sector( const char * path )
             break;
           }
 
-          /* «ü¥O«¬ºA¿ù»~ */
+          /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
           if ( !fMatch )
-            mudlog( LOG_DEBUG , "Load_sector¡R©R¥O %s ¤£¥¿½T¡C" , word );
+            mudlog( LOG_DEBUG , "Load_sectorï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
         }
 
         f_close( pFile );
@@ -4858,16 +4858,16 @@ void load_sector( const char * path )
 
   else
   {
-    mudlog( LOG_ERR , "Load_sector¡R¨S¦³¦a§Î¸ê®Æªº¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_ERR , "Load_sectorï¹•æ²’æœ‰åœ°å½¢è³‡æ–™çš„å­ç›®éŒ„ %sã€‚", path );
   }
 
-  if ( !DefaultSector ) mudlog( LOG_ERR, "Load_sector¡R¨S¦³¹w³]¦a§Î¡C" );
+  if ( !DefaultSector ) mudlog( LOG_ERR, "Load_sectorï¹•æ²’æœ‰é è¨­åœ°å½¢ã€‚" );
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó¦a§Î¸ê®ÆÀÉ¡C" , top_sector );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹åœ°å½¢è³‡æ–™æª”ã€‚" , top_sector );
   RETURN_NULL();
 }
 
-/* ¸ü¤JÂ¾·~¸ê®ÆÀÉ®×, °ÆÀÉ¦W¬° def */
+/* è¼‰å…¥è·æ¥­è³‡æ–™æª”æ¡ˆ, å‰¯æª”åç‚º def */
 void load_class( const char * path )
 {
   glob_t       result;
@@ -4885,7 +4885,7 @@ void load_class( const char * path )
 
   PUSH_FUNCTION( "load_class" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, class_ext, &result ) ) >= 0 )
@@ -4897,7 +4897,7 @@ void load_class( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_ERR , "Load_class¡R¶}±ÒÂ¾·~ÀÉ®× %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_ERR , "Load_classï¹•é–‹å•Ÿè·æ¥­æª”æ¡ˆ %s æœ‰å•é¡Œã€‚" , buf );
 
         pClass = alloc_struct( STRUCT_CLASS_DATA );
         set_class_default( pClass );
@@ -4909,7 +4909,7 @@ void load_class( const char * path )
 
           switch ( UPPER( word[0] ) )
           {
-          /* µù¸Ñ */
+          /* è¨»è§£ */
           case '*':
             fMatch = TRUE;
             fread_to_eol( pFile );
@@ -5004,28 +5004,28 @@ void load_class( const char * path )
             if ( !str_scmp( word , "End", &fMatch ) )
             {
               if ( IS_ERROR( pClass->vnum ) )
-                mudlog( LOG_DEBUG , "Load_class¡RÂ¾·~ÀÉ¨S¦³½s¸¹¡C" );
+                mudlog( LOG_DEBUG , "Load_classï¹•è·æ¥­æª”æ²’æœ‰ç·¨è™Ÿã€‚" );
 
               if ( pClass->mask == 0 )
-                mudlog( LOG_DEBUG , "Load_class¡RÂ¾·~ÀÉ¨S¦³¾B¸nºX¼Ğ¡C" );
+                mudlog( LOG_DEBUG , "Load_classï¹•è·æ¥­æª”æ²’æœ‰é®ç½©æ——æ¨™ã€‚" );
 
               if ( !pClass->name )
-                mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~ÀÉ¨S¦³­^¤å¦WºÙ¡C" );
+                mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­æª”æ²’æœ‰è‹±æ–‡åç¨±ã€‚" );
 
               if ( !pClass->cname )
-                mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~ÀÉ¨S¦³¤¤¤å¦WºÙ¡C" );
+                mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­æª”æ²’æœ‰ä¸­æ–‡åç¨±ã€‚" );
 
               if ( !pClass->title )
-                mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~ÀÉ¨S¦³©ïÀY¡C" );
+                mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­æª”æ²’æœ‰æŠ¬é ­ã€‚" );
 
               if ( pClass->limit > 0 && !pClass->msg_limit )
-                mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~ÀÉ¨S¦³­­¨î±Ô­z¡C" );
+                mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­æª”æ²’æœ‰é™åˆ¶æ•˜è¿°ã€‚" );
 
               if ( pClass->multiplier <= 1 )
-                mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~ÀÉ·¥­­­¿¼Æ¤£¦X²z¡C" );
+                mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­æª”æ¥µé™å€æ•¸ä¸åˆç†ã€‚" );
 
               if ( pClass->nskill <= 0 )
-                mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~ÀÉªº§Ş¯àÁ`¼Æ¤£¦X²z¡C" );
+                mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­æª”çš„æŠ€èƒ½ç¸½æ•¸ä¸åˆç†ã€‚" );
 
               pClass->next = class_list;
               class_list   = pClass;
@@ -5171,7 +5171,7 @@ void load_class( const char * path )
             if ( !str_scmp( word , "Rebirthgold", &fMatch ) )
             {
               if ( ( amount = fread_number( pFile ) ) < 0 )
-                mudlog( LOG_DEBUG , "Load_class¡R½s¸¹ %d ªºÂ¾·~ÀÉ®×ªºÂàÂ¾ª÷¤£¦Xªk¡C"
+                mudlog( LOG_DEBUG , "Load_classï¹•ç·¨è™Ÿ %d çš„è·æ¥­æª”æ¡ˆçš„è½‰è·é‡‘ä¸åˆæ³•ã€‚"
                   , amount );
 
               pClass->rebirth_gold = amount;
@@ -5182,10 +5182,10 @@ void load_class( const char * path )
             {
               if ( ( amount = fread_number( pFile ) ) < 0
                 || amount > MAX_LEVEL )
-                mudlog( LOG_DEBUG, "Load_class¡R½s¸¹ %d ªº©ïÀY¤£¦Xªk¡C", amount );
+                mudlog( LOG_DEBUG, "Load_classï¹•ç·¨è™Ÿ %d çš„æŠ¬é ­ä¸åˆæ³•ã€‚", amount );
 
               if ( pClass->rank[amount] )
-                mudlog( LOG_DEBUG, "Load_class¡R½s¸¹ %d ªº©ïÀY­«½Æ©w¸q¡C", amount );
+                mudlog( LOG_DEBUG, "Load_classï¹•ç·¨è™Ÿ %d çš„æŠ¬é ­é‡è¤‡å®šç¾©ã€‚", amount );
 
               pClass->rank[amount] = str_dup( fread_word( pFile ) );
               break;
@@ -5247,7 +5247,7 @@ void load_class( const char * path )
             if ( !str_scmp( word, "UpperLimit", &fMatch ) )
             {
               if ( ( amount = fread_number( pFile ) ) > MAX_LEVEL )
-                mudlog( LOG_DEBUG , "Load_class¡R½s¸¹ %d ªºÂ¾·~ÀÉ®×ªº¤W­­µ¥¯Å¤£¦Xªk¡C"
+                mudlog( LOG_DEBUG , "Load_classï¹•ç·¨è™Ÿ %d çš„è·æ¥­æª”æ¡ˆçš„ä¸Šé™ç­‰ç´šä¸åˆæ³•ã€‚"
                  , amount );
 
               pClass->high_rebirth = amount;
@@ -5262,21 +5262,21 @@ void load_class( const char * path )
               int mask;
 
               if ( class_lookup( amount = fread_number( pFile ) ) )
-                mudlog( LOG_DEBUG , "Load_class¡R½s¸¹ %d ªºÂ¾·~¸¹½X­«ÂĞ¡C" , amount );
+                mudlog( LOG_DEBUG , "Load_classï¹•ç·¨è™Ÿ %d çš„è·æ¥­è™Ÿç¢¼é‡è¦†ã€‚" , amount );
 
               if ( amount < 0 || amount >= 32 )
-                mudlog( LOG_DEBUG , "Load_class¡R½s¸¹ %d ªºÂ¾·~ÀÉ®×ªº½s¸¹¤£¦Xªk¡C"
+                mudlog( LOG_DEBUG , "Load_classï¹•ç·¨è™Ÿ %d çš„è·æ¥­æª”æ¡ˆçš„ç·¨è™Ÿä¸åˆæ³•ã€‚"
                   , amount );
 
               if ( amount < 0 || amount >= 32 )
-                mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~½s¸¹¤£¦X²z¡C" );
+                mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­ç·¨è™Ÿä¸åˆç†ã€‚" );
 
               mask = 1 << amount;
 
               for ( zClass = class_list; zClass; zClass = zClass->next )
               {
                 if ( mask == zClass->mask )
-                  mudlog( LOG_DEBUG, "Load_class¡RÂ¾·~¾B¸nºX¼Ğ­«ÂĞ¡C" );
+                  mudlog( LOG_DEBUG, "Load_classï¹•è·æ¥­é®ç½©æ——æ¨™é‡è¦†ã€‚" );
               }
 
               pClass->mask = mask;
@@ -5327,9 +5327,9 @@ void load_class( const char * path )
 
           }
 
-          /* «ü¥O«¬ºA¿ù»~ */
+          /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
           if ( !fMatch )
-            mudlog( LOG_DEBUG , "Load_class¡R©R¥O %s ¤£¥¿½T¡C" , word );
+            mudlog( LOG_DEBUG , "Load_classï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
         }
 
         f_close( pFile );
@@ -5337,46 +5337,46 @@ void load_class( const char * path )
     }
     globfree( &result );
 
-    /* §ä´M¹w³]ªºÂ¾·~ */
+    /* æ‰¾å°‹é è¨­çš„è·æ¥­ */
     for ( amount = 0, class_force = class_demos = NULL, pClass = class_list;
       pClass;
       pClass = pClass->next )
     {
       if ( amount >= MAX_DEFAULT_CLASS )
-        mudlog( LOG_ERR, "Load_class¡R¹w³]Â¾·~¤Ó¦h¡C" );
+        mudlog( LOG_ERR, "Load_classï¹•é è¨­è·æ¥­å¤ªå¤šã€‚" );
 
       if ( pClass->select ) iClass[amount++] = pClass;
 
       if ( pClass->rudiment )
       {
-        if ( class_demos ) mudlog( LOG_ERR, "Load_class¡R¹w³]Â¾·~ %d ­«½Æ¡C"
+        if ( class_demos ) mudlog( LOG_ERR, "Load_classï¹•é è¨­è·æ¥­ %d é‡è¤‡ã€‚"
           , pClass->vnum );
         class_demos = pClass;
       }
 
       if ( pClass->force )
       {
-        if ( class_force ) mudlog( LOG_ERR, "Load_class¡R±j¨îÂ¾·~ %d ­«½Æ¡C"
+        if ( class_force ) mudlog( LOG_ERR, "Load_classï¹•å¼·åˆ¶è·æ¥­ %d é‡è¤‡ã€‚"
           , pClass->vnum );
         class_force = pClass;
       }
     }
 
-    if ( !class_demos ) mudlog( LOG_ERR, "Load_class¡R¨S¦³¹w³]ªºÂ¾·~¡C" );
-    if ( !class_force ) mudlog( LOG_ERR, "Load_class¡R¨S¦³±j¨îªºÂ¾·~¡C" );
-    if ( amount <= 0  ) mudlog( LOG_ERR, "Load_class¡R¨S¦³¿ï¾ÜªºÂ¾·~¡C" );
+    if ( !class_demos ) mudlog( LOG_ERR, "Load_classï¹•æ²’æœ‰é è¨­çš„è·æ¥­ã€‚" );
+    if ( !class_force ) mudlog( LOG_ERR, "Load_classï¹•æ²’æœ‰å¼·åˆ¶çš„è·æ¥­ã€‚" );
+    if ( amount <= 0  ) mudlog( LOG_ERR, "Load_classï¹•æ²’æœ‰é¸æ“‡çš„è·æ¥­ã€‚" );
   }
 
   else
   {
-    mudlog( LOG_ERR , "Load_class¡R¨S¦³Â¾·~¸ê®Æªº¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_ERR , "Load_classï¹•æ²’æœ‰è·æ¥­è³‡æ–™çš„å­ç›®éŒ„ %sã€‚", path );
   }
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­ÓÂ¾·~¸ê®ÆÀÉ¡C" , top_class );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹è·æ¥­è³‡æ–™æª”ã€‚" , top_class );
   RETURN_NULL();
 }
 
-/* ¸ü¤J²GÅé¸ê®ÆÀÉ®×, °ÆÀÉ¦W¬° def */
+/* è¼‰å…¥æ¶²é«”è³‡æ–™æª”æ¡ˆ, å‰¯æª”åç‚º def */
 void load_liq( const char * path )
 {
   glob_t      result;
@@ -5392,7 +5392,7 @@ void load_liq( const char * path )
 
   PUSH_FUNCTION( "load_liq" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   fill_path( strcpy( directory, path ) );
 
   if ( ( rc = glob_file( directory, liquid_ext, &result ) ) >= 0 )
@@ -5404,7 +5404,7 @@ void load_liq( const char * path )
       if ( is_regular( buf ) )
       {
         if ( !( pFile = f_open( buf , "r" ) ) )
-          mudlog( LOG_ERR , "Load_liq¡R¶}±Ò²GÅéÀÉ®× %s ¦³°İÃD¡C" , buf );
+          mudlog( LOG_ERR , "Load_liqï¹•é–‹å•Ÿæ¶²é«”æª”æ¡ˆ %s æœ‰å•é¡Œã€‚" , buf );
 
         set_liq_default( pLiq = alloc_struct( STRUCT_LIQ_DATA ) );
 
@@ -5415,7 +5415,7 @@ void load_liq( const char * path )
 
           switch ( UPPER( word[0] ) )
           {
-          /* µù¸Ñ */
+          /* è¨»è§£ */
           case '*':
             fMatch = TRUE;
             fread_to_eol( pFile );
@@ -5432,9 +5432,9 @@ void load_liq( const char * path )
           case 'E':
             if ( !str_scmp( word , "End", &fMatch ) )
             {
-              if ( !pLiq->name     ) mudlog( LOG_DEBUG, "Load_liq¡R²GÅéÀÉ¨S¦³¦WºÙ¡C" );
-              if ( !pLiq->color    ) mudlog( LOG_DEBUG, "Load_liq¡R²GÅéÀÉ¨S¦³ÃC¦â¡C" );
-              if ( pLiq->slot <= 0 ) mudlog( LOG_DEBUG, "Load_liq¡R²GÅé¨S¦³½s¸¹¡C"  );
+              if ( !pLiq->name     ) mudlog( LOG_DEBUG, "Load_liqï¹•æ¶²é«”æª”æ²’æœ‰åç¨±ã€‚" );
+              if ( !pLiq->color    ) mudlog( LOG_DEBUG, "Load_liqï¹•æ¶²é«”æª”æ²’æœ‰é¡è‰²ã€‚" );
+              if ( pLiq->slot <= 0 ) mudlog( LOG_DEBUG, "Load_liqï¹•æ¶²é«”æ²’æœ‰ç·¨è™Ÿã€‚"  );
 
               pLiq->next = liq_list;
               liq_list   = pLiq;
@@ -5458,7 +5458,7 @@ void load_liq( const char * path )
             if ( !str_scmp( word, "Slot", &fMatch ) )
             {
               if ( liq_lookup(  pLiq->slot = fread_number( pFile ) ) )
-                mudlog( LOG_DEBUG, "Load_liq¡R²GÅé½s¸¹ %d ­«½Æ¡C", pLiq->slot );
+                mudlog( LOG_DEBUG, "Load_liqï¹•æ¶²é«”ç·¨è™Ÿ %d é‡è¤‡ã€‚", pLiq->slot );
 
               break;
             }
@@ -5478,9 +5478,9 @@ void load_liq( const char * path )
             break;
           }
 
-          /* «ü¥O«¬ºA¿ù»~ */
+          /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
           if ( !fMatch )
-             mudlog( LOG_DEBUG , "Load_liq¡R©R¥O %s ¤£¥¿½T¡C" , word );
+             mudlog( LOG_DEBUG , "Load_liqï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
         }
 
         f_close( pFile );
@@ -5488,25 +5488,25 @@ void load_liq( const char * path )
     }
     globfree( &result );
 
-    /* §ä´M¬°¤ôªº²GÅé */
+    /* æ‰¾å°‹ç‚ºæ°´çš„æ¶²é«” */
     for ( liq_water = NULL, pLiq = liq_list; pLiq; pLiq = pLiq->next )
     {
       if ( pLiq->water )
       {
-        if ( liq_water ) mudlog( LOG_ERR, "Load_liq¡R²GÅé¤ô %d ­«½Æ¡C", pLiq->slot );
+        if ( liq_water ) mudlog( LOG_ERR, "Load_liqï¹•æ¶²é«”æ°´ %d é‡è¤‡ã€‚", pLiq->slot );
         liq_water = pLiq;
       }
     }
 
-    if ( !liq_water ) mudlog( LOG_ERR, "Load_liq¡R¨S¦³¤ôªº²GÅé¡C" );
+    if ( !liq_water ) mudlog( LOG_ERR, "Load_liqï¹•æ²’æœ‰æ°´çš„æ¶²é«”ã€‚" );
   }
 
   else
   {
-    mudlog( LOG_ERR , "Load_liq¡R¨S¦³²GÅé¸ê®Æªº¤l¥Ø¿ı %s¡C", path );
+    mudlog( LOG_ERR , "Load_liqï¹•æ²’æœ‰æ¶²é«”è³‡æ–™çš„å­ç›®éŒ„ %sã€‚", path );
   }
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó²GÅé¸ê®ÆÀÉ¡C" , top_liq );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹æ¶²é«”è³‡æ–™æª”ã€‚" , top_liq );
   RETURN_NULL();
 }
 
@@ -5520,7 +5520,7 @@ void load_site( const char * filename )
   PUSH_FUNCTION( "load_site" );
 
   if ( !( File = f_open( filename , "r" ) ) )
-    mudlog( LOG_ERR , "Load_site¡RµLªk¶}±Ò¸T¤î³s½uÀÉ®× %s¡C" , filename );
+    mudlog( LOG_ERR , "Load_siteï¹•ç„¡æ³•é–‹å•Ÿç¦æ­¢é€£ç·šæª”æ¡ˆ %sã€‚" , filename );
 
   for ( ;; )
   {
@@ -5528,14 +5528,14 @@ void load_site( const char * filename )
 
     word = fread_word( File );
 
-    /* ¨C¦æ¥H * ¬°¶}ÀYªº³£·í§@¬O¼Ğ°O¤£·|Åª¨ú */
+    /* æ¯è¡Œä»¥ * ç‚ºé–‹é ­çš„éƒ½ç•¶ä½œæ˜¯æ¨™è¨˜ä¸æœƒè®€å– */
     if ( word[0] == '*' )
     {
       fread_to_eol( File );
       continue;
     }
 
-    /* ­Y¬O¥X²{ #END «h¥NªíÀÉ®×µ²§À¡M¤§«áªº¤£·|¦AÅª¨ú */
+    /* è‹¥æ˜¯å‡ºç¾ #END å‰‡ä»£è¡¨æª”æ¡ˆçµå°¾ï¹ä¹‹å¾Œçš„ä¸æœƒå†è®€å– */
     if ( !str_cmp( word , "#END" ) ) break;
 
     ban_type = fread_number( File );
@@ -5543,7 +5543,7 @@ void load_site( const char * filename )
     switch( ban_type )
     {
     default :
-      mudlog( LOG_DEBUG , "Load_site¡R¸ü¤J¦ì§} %s ¸ê°T¿ù»~ %d¡C" , word , ban_type );
+      mudlog( LOG_DEBUG , "Load_siteï¹•è¼‰å…¥ä½å€ %s è³‡è¨ŠéŒ¯èª¤ %dã€‚" , word , ban_type );
       break;
 
     case BAN_LOGIN  :
@@ -5552,14 +5552,14 @@ void load_site( const char * filename )
       break;
     }
 
-    /* °t¸m°O¾ĞÅé */
+    /* é…ç½®è¨˜æ†¶é«” */
     pBan = alloc_struct( STRUCT_BAN_DATA );
 
     pBan->name = str_dup( word );
     pBan->type = ban_type;
     pBan->next = ban_list;
     ban_list   = pBan;
-    mudlog( LOG_INFO , "¨t²Î³]©w %s ªº¦ì§}ºX¼Ğ %d¡C" , word , ban_type );
+    mudlog( LOG_INFO , "ç³»çµ±è¨­å®š %s çš„ä½å€æ——æ¨™ %dã€‚" , word , ban_type );
   }
 
   f_close( File );
@@ -5576,24 +5576,24 @@ void load_server( const char * filename )
   PUSH_FUNCTION( "load_server" );
 
   if ( !( File = f_open( filename , "r" ) ) )
-    mudlog( LOG_ERR , "Load_server¡RµLªk¶}±Ò¤u§@¯¸ÀÉ®× %s¡C", filename );
+    mudlog( LOG_ERR , "Load_serverï¹•ç„¡æ³•é–‹å•Ÿå·¥ä½œç«™æª”æ¡ˆ %sã€‚", filename );
 
   for ( count = 0; ; )
   {
     if ( if_eof( File ) ) break;
     word = fread_word( File );
 
-    /* ¨C¦æ¥H * ¬°¶}ÀYªº³£·í§@¬O¼Ğ°O¤£·|Åª¨ú */
+    /* æ¯è¡Œä»¥ * ç‚ºé–‹é ­çš„éƒ½ç•¶ä½œæ˜¯æ¨™è¨˜ä¸æœƒè®€å– */
     if ( word[0] == '*' )
     {
       fread_to_eol( File );
       continue;
     }
 
-    /* ­Y¬O¥X²{ #END «h¥NªíÀÉ®×µ²§À¡M¤§«áªº¤£·|¦AÅª¨ú */
+    /* è‹¥æ˜¯å‡ºç¾ #END å‰‡ä»£è¡¨æª”æ¡ˆçµå°¾ï¹ä¹‹å¾Œçš„ä¸æœƒå†è®€å– */
     if ( !str_cmp( word , "#END" ) ) break;
 
-    /* °t¸m°O¾ĞÅé */
+    /* é…ç½®è¨˜æ†¶é«” */
     set_server_default( pServer = alloc_struct( STRUCT_SERVER_DATA ) );
     pServer->address = str_dup( word );
     pServer->next    = server_list;
@@ -5603,7 +5603,7 @@ void load_server( const char * filename )
   }
 
   f_close( File );
-  mudlog( LOG_INFO, "¨t²Î³]©w %d ­Ó¤u§@¯¸¦ì§}¡C", count );
+  mudlog( LOG_INFO, "ç³»çµ±è¨­å®š %d å€‹å·¥ä½œç«™ä½å€ã€‚", count );
 
   RETURN_NULL();
 }
@@ -5619,27 +5619,27 @@ void load_xnames( const char * filename )
   PUSH_FUNCTION( "load_xname" );
 
   if ( !( File = f_open( filename , "r" ) ) )
-    mudlog( LOG_ERR , "Load_xnames¡RµLªk¶}±Ò«O¯d¦rÀÉ®× %s¡C" , filename );
+    mudlog( LOG_ERR , "Load_xnamesï¹•ç„¡æ³•é–‹å•Ÿä¿ç•™å­—æª”æ¡ˆ %sã€‚" , filename );
 
   for ( ;; )
   {
     if ( if_eof( File ) ) break;
     word = fread_word( File );
 
-    /* symbol.def ¨C¦æ¥H*¬°¶}ÀYªº³£·í§@¬O¼Ğ°O¤£·|Åª¨ú */
+    /* symbol.def æ¯è¡Œä»¥*ç‚ºé–‹é ­çš„éƒ½ç•¶ä½œæ˜¯æ¨™è¨˜ä¸æœƒè®€å– */
     if ( word[0] == '*' )
     {
       fread_to_eol( File );
       continue;
     }
 
-    /* ­Y¬O¥X²{ #END «h¥NªíÀÉ®×µ²§À¡M¤§«áªº¤£·|¦AÅª¨ú */
+    /* è‹¥æ˜¯å‡ºç¾ #END å‰‡ä»£è¡¨æª”æ¡ˆçµå°¾ï¹ä¹‹å¾Œçš„ä¸æœƒå†è®€å– */
     if ( !str_cmp( word , "#END" ) ) break;
 
     switch( ( xnames_type = fread_number( File ) ) )
     {
     default :
-      mudlog( LOG_DEBUG , "Load_xnames¡R¸ü¤J«O¯d¦r %s ¿ù»~ºX¼Ğ %d¡C"
+      mudlog( LOG_DEBUG , "Load_xnamesï¹•è¼‰å…¥ä¿ç•™å­— %s éŒ¯èª¤æ——æ¨™ %dã€‚"
         , word , xnames_type );
 
       break;
@@ -5651,7 +5651,7 @@ void load_xnames( const char * filename )
       break;
     }
 
-    /* °t¸m°O¾ĞÅé */
+    /* é…ç½®è¨˜æ†¶é«” */
     pXnames = alloc_struct( STRUCT_XNAME_DATA );
 
     pXnames->word = str_dup( word );
@@ -5661,7 +5661,7 @@ void load_xnames( const char * filename )
     count++;
   }
 
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó«O¯d¦r¡C" , count );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹ä¿ç•™å­—ã€‚" , count );
   f_close( File );
   RETURN_NULL();
 }
@@ -5684,35 +5684,35 @@ void load_skill( const char * path , const char * index )
 
   PUSH_FUNCTION( "load_skill" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   str_cpy( directory , path );
   fill_path( directory );
 
-  /* ³B²z¯Á¤ŞÀÉ®×¦WºÙ */
+  /* è™•ç†ç´¢å¼•æª”æ¡ˆåç¨± */
   sprintf( indexfile , "%s%s" , directory , index );
 
-  /* ¶}±Ò¯Á¤ŞÀÉ®×, ¤£¯à¨S¦³³o­ÓÀÉ®× */
+  /* é–‹å•Ÿç´¢å¼•æª”æ¡ˆ, ä¸èƒ½æ²’æœ‰é€™å€‹æª”æ¡ˆ */
   if ( ( pFile = f_open( indexfile , "r" ) ) )
   {
-    /* ¤@ª½Åª¨ú¨ìÀÉ®×¥½ºİ */
+    /* ä¸€ç›´è®€å–åˆ°æª”æ¡ˆæœ«ç«¯ */
     while ( !if_eof( pFile ) )
     {
-      /* Åª¨ú©R¥OÀÉ®×ªº¦WºÙ */
+      /* è®€å–å‘½ä»¤æª”æ¡ˆçš„åç¨± */
       word = fread_word( pFile );
       fread_to_eol( pFile );
 
       if ( word[0] == '*' ) continue;
 
-      /* ³B²z±ı¶}±Ò©R¥OÀÉ®×ªº¦WºÙ */
+      /* è™•ç†æ¬²é–‹å•Ÿå‘½ä»¤æª”æ¡ˆçš„åç¨± */
       sprintf( buf , "%s%c/%s.%s"
         , directory , LOWER( word[0] ) , word, skill_ext );
 
       if ( ( aFile = f_open( buf , "r" ) ) )
       {
-        /* °t¸m°O¾ĞÅé */
+        /* é…ç½®è¨˜æ†¶é«” */
         set_skill_default( pSkill = alloc_struct( STRUCT_SKILL_DATA ) );
 
-        /* ¸ü¤J§Ş¯àªº¥Dµ{¦¡³¡¥÷ */
+        /* è¼‰å…¥æŠ€èƒ½çš„ä¸»ç¨‹å¼éƒ¨ä»½ */
         for ( finish = FALSE; finish != TRUE; )
         {
           word   = if_eof( aFile ) ? "End" : fread_word( aFile );
@@ -5720,7 +5720,7 @@ void load_skill( const char * path , const char * index )
 
           switch ( UPPER( word[0] ) )
           {
-          /* µù¸Ñ */
+          /* è¨»è§£ */
           case '*':
             fMatch = TRUE;
             fread_to_eol( aFile );
@@ -5732,7 +5732,7 @@ void load_skill( const char * path , const char * index )
             {
               pDamage = load_damage( aFile );
 
-              /* §ä´M³Ì«á¤@­Ó */
+              /* æ‰¾å°‹æœ€å¾Œä¸€å€‹ */
               for ( zDamage = pSkill->damage;
                     zDamage && zDamage->next;
                     zDamage = zDamage->next );
@@ -5745,10 +5745,10 @@ void load_skill( const char * path , const char * index )
 
             if ( !str_scmp( word, "#Restrict", &fMatch ) )
             {
-              /* ¸ü¤J§Ş¯à­­¨î */
+              /* è¼‰å…¥æŠ€èƒ½é™åˆ¶ */
               if ( !( pRestrict = load_restrict( aFile ) ) )
               {
-                mudlog( LOG_DEBUG, "Load_skill¡R¸ü¤J§Ş¯à­­¨î¥¢±Ñ¡C" );
+                mudlog( LOG_DEBUG, "Load_skillï¹•è¼‰å…¥æŠ€èƒ½é™åˆ¶å¤±æ•—ã€‚" );
                 break;
               }
 
@@ -5757,7 +5757,7 @@ void load_skill( const char * path , const char * index )
                 if ( zRestrict->type == pRestrict->type
                   && zRestrict->type != RES_SKILL )
                 {
-                  mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯à­­¨î«¬ºA %d ­«½Æ¡C"
+                  mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½é™åˆ¶å‹æ…‹ %d é‡è¤‡ã€‚"
                     , pRestrict->type );
                 }
               }
@@ -5770,11 +5770,11 @@ void load_skill( const char * path , const char * index )
             if ( !str_scmp( word, "#Affect", &fMatch ) )
             {
               if ( pSkill->affected )
-                mudlog( LOG_ERR, "Load_skill¡R%s ¤w¦³¼vÅT®ÄÀ³¡C", pSkill->name );
+                mudlog( LOG_ERR, "Load_skillï¹•%s å·²æœ‰å½±éŸ¿æ•ˆæ‡‰ã€‚", pSkill->name );
 
               if ( !( pSkill->affected = load_affect( aFile ) ) )
               {
-                mudlog( LOG_DEBUG, "Load_skill¡R¸ü¤Jªk³N¼vÅT¥¢±Ñ¡C" );
+                mudlog( LOG_DEBUG, "Load_skillï¹•è¼‰å…¥æ³•è¡“å½±éŸ¿å¤±æ•—ã€‚" );
                 break;
               }
 
@@ -5801,7 +5801,7 @@ void load_skill( const char * path , const char * index )
               {
               default:
                 mudlog( LOG_DEBUG ,
-                  "Load_skill¡R§Ş¯à¬Û«gºØÃş %d ¤£¦X²z¡C" ,pSkill->antirating );
+                  "Load_skillï¹•æŠ€èƒ½ç›¸å‰‹ç¨®é¡ %d ä¸åˆç†ã€‚" ,pSkill->antirating );
                 break;
 
               case RATING_SKILL:
@@ -5833,7 +5833,7 @@ void load_skill( const char * path , const char * index )
             {
               if ( ( pSkill->adeptation = fread_number( aFile ) ) < 0
                 || pSkill->adeptation > 100 )
-                mudlog( LOG_DEBUG , "Load_skill¡R¿ï¨ú¼ô½m«×%d¤£¦X²z¡C"
+                mudlog( LOG_DEBUG , "Load_skillï¹•é¸å–ç†Ÿç·´åº¦%dä¸åˆç†ã€‚"
                   , pSkill->adeptation );
 
               break;
@@ -5851,7 +5851,7 @@ void load_skill( const char * path , const char * index )
               name = fread_string( aFile );
 
               if ( !( check = check_function_name( name ) ) )
-                mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯àÀÉªº­­¨î¨ç¼Æ %s §ä¤£¨ì¡C" , name );
+                mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½æª”çš„é™åˆ¶å‡½æ•¸ %s æ‰¾ä¸åˆ°ã€‚" , name );
 
               free_string( name );
               pSkill->check = check;
@@ -5869,7 +5869,7 @@ void load_skill( const char * path , const char * index )
                 if ( !str_cmp( aSkill->cname , name ) )
                 {
                   mudlog( LOG_DEBUG ,
-                    "Load_skill¡R§Ş¯à¤¤¤å¦WºÙ %s ­«ÂĞ¡C" , name );
+                    "Load_skillï¹•æŠ€èƒ½ä¸­æ–‡åç¨± %s é‡è¦†ã€‚" , name );
                 }
               }
 
@@ -5903,7 +5903,7 @@ void load_skill( const char * path , const char * index )
               switch ( type = fread_number( aFile ) )
               {
               default:
-                mudlog( LOG_DEBUG , "Load_skill¡R®ø¯Ó«¬ºA %d ¿ù»~¡C", type );
+                mudlog( LOG_DEBUG , "Load_skillï¹•æ¶ˆè€—å‹æ…‹ %d éŒ¯èª¤ã€‚", type );
                 break;
 
               case COST_HIT:
@@ -5928,7 +5928,7 @@ void load_skill( const char * path , const char * index )
 
               degree = fread_number( aFile );
               if ( degree < 0 || degree > 1000 )
-                mudlog( LOG_DEBUG , "Load_skill¡Rµ{«× %d ¤£¦Xªk¡C" , degree );
+                mudlog( LOG_DEBUG , "Load_skillï¹•ç¨‹åº¦ %d ä¸åˆæ³•ã€‚" , degree );
 
               pSkill->degree = degree;
               break;
@@ -5947,29 +5947,29 @@ void load_skill( const char * path , const char * index )
             if ( !str_scmp( word, "End", &fMatch ) )
             {
               if ( IS_ERROR( pSkill->slot ) )
-                mudlog( LOG_DEBUG, "Load_skill¡R§Ş¯à¨S¦³½s¸¹¡C" );
+                mudlog( LOG_DEBUG, "Load_skillï¹•æŠ€èƒ½æ²’æœ‰ç·¨è™Ÿã€‚" );
 
               if ( !pSkill->name )
-                mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯à¨S¦³¦WºÙ¡C" );
+                mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½æ²’æœ‰åç¨±ã€‚" );
 
               if ( !pSkill->cname )
-                mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯à¨S¦³¤¤¤å¦WºÙ¡C" );
+                mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½æ²’æœ‰ä¸­æ–‡åç¨±ã€‚" );
 
               if ( pSkill->function && pSkill->damage )
-                mudlog( LOG_DEBUG, "Load_skill¡R¦³¨ç¼Æ¤S¦³§ğ¶Ë±Ô­z¡C" );
+                mudlog( LOG_DEBUG, "Load_skillï¹•æœ‰å‡½æ•¸åˆæœ‰æ”»å‚·æ•˜è¿°ã€‚" );
 
               if ( !pSkill->function && !pSkill->damage )
-                mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯à¨S¦³¾Ş§@¨ç¼Æ¡C" );
+                mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½æ²’æœ‰æ“ä½œå‡½æ•¸ã€‚" );
 
               if ( !fReload ) top_skill++;
 
               if ( top_skill >= MAX_SKILL )
-                mudlog( LOG_DEBUG, "Load_skill¡R§Ş¯à¼Æ¥Ø¶W¹L³]©w¡C" );
+                mudlog( LOG_DEBUG, "Load_skillï¹•æŠ€èƒ½æ•¸ç›®è¶…éè¨­å®šã€‚" );
 
               if ( pSkill->innate && pSkill->adeptation <= 0 )
-                mudlog( LOG_DEBUG, "Load_skill¡R¦³¿ï¨ú«o¨S¼ô½m«×¡C" );
+                mudlog( LOG_DEBUG, "Load_skillï¹•æœ‰é¸å–å»æ²’ç†Ÿç·´åº¦ã€‚" );
 
-              /* ­pºâ¾÷²vÁ`©M */
+              /* è¨ˆç®—æ©Ÿç‡ç¸½å’Œ */
               for ( pDamage = pSkill->damage; pDamage; pDamage = pDamage->next )
                 pSkill->chance += pDamage->chance;
 
@@ -5998,7 +5998,7 @@ void load_skill( const char * path , const char * index )
               if ( name[0] )
               {
                 if ( !( function = skill_function_name( name ) ) )
-                  mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯àÀÉªº¨ç¼Æ %s §ä¤£¨ì¡C" , name );
+                  mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½æª”çš„å‡½æ•¸ %s æ‰¾ä¸åˆ°ã€‚" , name );
 
                 free_string( name );
                 pSkill->function = function;
@@ -6032,7 +6032,7 @@ void load_skill( const char * path , const char * index )
               pClass = class_lookup( iClass =fread_number( aFile ) );
 
               if ( !pClass )
-                mudlog( LOG_DEBUG, "Load_skill¡R§Ş¯àÀÉ¤¤Â¾·~ %d ¤£¦s¦b¡C", iClass );
+                mudlog( LOG_DEBUG, "Load_skillï¹•æŠ€èƒ½æª”ä¸­è·æ¥­ %d ä¸å­˜åœ¨ã€‚", iClass );
 
               pLimit = alloc_struct( STRUCT_LIMIT_DATA );
 
@@ -6059,14 +6059,14 @@ void load_skill( const char * path , const char * index )
               char * pSource;
               char * pString;
 
-              /* ¤@©w¥ıÅª§¹¤@¦æ */
+              /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
               fread_to_eol( aFile );
               pSource = temp = fread_string( aFile );
 
               if ( str_len( temp ) > sizeof( buf ) - 10 )
-                mudlog( LOG_DEBUG, "Load_skill¡R°T®§¤Óªø¡C" );
+                mudlog( LOG_DEBUG, "Load_skillï¹•è¨Šæ¯å¤ªé•·ã€‚" );
 
-              /* ®ø±¼´«¦æ¦r¤¸ */
+              /* æ¶ˆæ‰æ›è¡Œå­—å…ƒ */
               for ( pString = buf; *temp; temp++ )
               {
                 switch( *temp )
@@ -6100,7 +6100,7 @@ void load_skill( const char * path , const char * index )
               for ( aSkill = skill_list; aSkill; aSkill = aSkill->next )
               {
                 if ( !str_cmp( aSkill->name , name ) )
-                  mudlog( LOG_DEBUG, "Load_skill¡R§Ş¯à¦WºÙ %s ­«ÂĞ¡C" , name );
+                  mudlog( LOG_DEBUG, "Load_skillï¹•æŠ€èƒ½åç¨± %s é‡è¦†ã€‚" , name );
               }
 
               pSkill->name = name;
@@ -6121,7 +6121,7 @@ void load_skill( const char * path , const char * index )
               {
               default:
                 mudlog( LOG_DEBUG ,
-                  "Load_skill¡R§Ş¯à³Ì§Cª¬ºA %d ¤£¦X²z¡C" , position );
+                  "Load_skillï¹•æŠ€èƒ½æœ€ä½ç‹€æ…‹ %d ä¸åˆç†ã€‚" , position );
                 break;
 
               case POS_DEAD:
@@ -6150,7 +6150,7 @@ void load_skill( const char * path , const char * index )
               {
               default:
                 mudlog( LOG_DEBUG ,
-                  "Load_skill¡R§Ş¯àÃÑ§OºØÃş %d ¤£¦X²z¡C" ,pSkill->rating );
+                  "Load_skillï¹•æŠ€èƒ½è­˜åˆ¥ç¨®é¡ %d ä¸åˆç†ã€‚" ,pSkill->rating );
                 break;
 
               case RATING_SKILL:
@@ -6193,7 +6193,7 @@ void load_skill( const char * path , const char * index )
               switch( pSkill->sex = fread_number( aFile ) )
               {
               default:
-                mudlog( LOG_DEBUG, "Load_skill¡R§Ş¯à©Ê§O %d ¤£¦X²z¡C", pSkill->sex );
+                mudlog( LOG_DEBUG, "Load_skillï¹•æŠ€èƒ½æ€§åˆ¥ %d ä¸åˆç†ã€‚", pSkill->sex );
                 break;
 
               case ERRORCODE:
@@ -6209,11 +6209,11 @@ void load_skill( const char * path , const char * index )
             {
               if ( ( pSkill->slot = fread_number( aFile ) ) >= MAX_SKILL
                 || pSkill->slot < 0 )
-                mudlog( LOG_DEBUG, "Load_skill¡R§Ş¯à½s¸¹ %d ¤£¦X²z¡C"
+                mudlog( LOG_DEBUG, "Load_skillï¹•æŠ€èƒ½ç·¨è™Ÿ %d ä¸åˆç†ã€‚"
                   , pSkill->slot );
 
               if ( get_skill( pSkill->slot ) )
-                mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯à½s¸¹ %d ­«½Æ¡C"
+                mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½ç·¨è™Ÿ %d é‡è¤‡ã€‚"
                   , pSkill->slot );
 
               break;
@@ -6235,7 +6235,7 @@ void load_skill( const char * path , const char * index )
               switch( type = fread_number( aFile ) )
               {
               default :
-                mudlog( LOG_DEBUG , "Load_skill¡R§Ş¯à§ÎºA %d ¤£¹ï¡C" , type );
+                mudlog( LOG_DEBUG , "Load_skillï¹•æŠ€èƒ½å½¢æ…‹ %d ä¸å°ã€‚" , type );
                 break;
 
               case TAR_IGNORE:
@@ -6279,7 +6279,7 @@ void load_skill( const char * path , const char * index )
               switch( ( weapon = fread_number( aFile ) ) )
               {
               default:
-                mudlog( LOG_DEBUG ,"Load_skill¡RªZ¾¹§ÎºA %d ¤£¹ï¡C", weapon );
+                mudlog( LOG_DEBUG ,"Load_skillï¹•æ­¦å™¨å½¢æ…‹ %d ä¸å°ã€‚", weapon );
                 break;
 
               case WEAPON_ALL:
@@ -6306,9 +6306,9 @@ void load_skill( const char * path , const char * index )
             break;
           }
 
-          /* «ü¥O«¬ºA¿ù»~ */
+          /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
           if ( !fMatch )
-            mudlog( LOG_DEBUG , "Load_skill¡R©R¥O %s ¤£¥¿½T¡C" , word );
+            mudlog( LOG_DEBUG , "Load_skillï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
         }
 
         f_close( aFile );
@@ -6316,18 +6316,18 @@ void load_skill( const char * path , const char * index )
 
       else
       {
-        mudlog( LOG_ERR , "Load_skill¡RµLªk¶}±Ò§Ş¯àÀÉ %s¡C" , buf );
+        mudlog( LOG_ERR , "Load_skillï¹•ç„¡æ³•é–‹å•ŸæŠ€èƒ½æª” %sã€‚" , buf );
       }
     }
   }
 
   else
   {
-    mudlog( LOG_ERR , "Load_skill¡R¨S¦³§Ş¯à¥Ø¿ı¦Cªí %s¡C", buf );
+    mudlog( LOG_ERR , "Load_skillï¹•æ²’æœ‰æŠ€èƒ½ç›®éŒ„åˆ—è¡¨ %sã€‚", buf );
   }
 
   f_close( pFile );
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó§Ş¯àÀÉ¡C" , top_skill );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹æŠ€èƒ½æª”ã€‚" , top_skill );
   RETURN_NULL();
 }
 
@@ -6340,7 +6340,7 @@ DAMAGE_DATA * load_damage( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_damage" );
 
-  /* °t¸m±Ğ¾É©Ò»İ­nªº°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®æ•™å°æ‰€éœ€è¦çš„è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_damage_default( pDamage = alloc_struct( STRUCT_DAMAGE_DATA ) );
 
   for ( ;; )
@@ -6369,14 +6369,14 @@ DAMAGE_DATA * load_damage( FILE_DATA * pFile )
         char * pSource;
         char * pString;
 
-        /* ¤@©w¥ıÅª§¹¤@¦æ */
+        /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         fread_to_eol( pFile );
         pSource = temp = fread_string( pFile );
 
         if ( str_len( temp ) > sizeof( buf ) - 10 )
-          mudlog( LOG_DEBUG, "Loa_damage¡R§ğ¶Ë´y­z¤Óªø¡C" );
+          mudlog( LOG_DEBUG, "Loa_damageï¹•æ”»å‚·æè¿°å¤ªé•·ã€‚" );
 
-        /* ®ø±¼´«¦æ¦r¤¸ */
+        /* æ¶ˆæ‰æ›è¡Œå­—å…ƒ */
         for ( pString = buf; *temp; temp++ )
         {
           switch( *temp )
@@ -6404,13 +6404,13 @@ DAMAGE_DATA * load_damage( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pDamage->description )
-          mudlog( LOG_DEBUG, "Load_damage¡R§ğ¶Ë¨S¦³±Ô­z¡C" );
+          mudlog( LOG_DEBUG, "Load_damageï¹•æ”»å‚·æ²’æœ‰æ•˜è¿°ã€‚" );
 
         if ( IS_ERROR( pDamage->chance ) || pDamage->chance <= 0 )
-          mudlog( LOG_DEBUG, "Load_damage¡R§ğ¶Ë¨S¦³¾÷²v©Î¤£¥¿½T¡C" );
+          mudlog( LOG_DEBUG, "Load_damageï¹•æ”»å‚·æ²’æœ‰æ©Ÿç‡æˆ–ä¸æ­£ç¢ºã€‚" );
 
         if ( IS_ERROR( pDamage->value )  || pDamage->value < 0 )
-          mudlog( LOG_DEBUG, "Loa_damage¡R§ğ¶Ë¨S¦³¶Ë®`­È©Î¤£¥¿½T¡C" );
+          mudlog( LOG_DEBUG, "Loa_damageï¹•æ”»å‚·æ²’æœ‰å‚·å®³å€¼æˆ–ä¸æ­£ç¢ºã€‚" );
 
         pDamage->situs &= AttackMask;
         RETURN( pDamage );
@@ -6427,7 +6427,7 @@ DAMAGE_DATA * load_damage( FILE_DATA * pFile )
         switch( ( pEffect->type = fread_number( pFile ) ) )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_damage¡R®ÄÀ³«¬ºA¿ù»~¡C" );
+          mudlog( LOG_DEBUG, "Load_damageï¹•æ•ˆæ‡‰å‹æ…‹éŒ¯èª¤ã€‚" );
           break;
 
         case EFFECT_VICTIM_MANA:
@@ -6454,7 +6454,7 @@ DAMAGE_DATA * load_damage( FILE_DATA * pFile )
 
         if ( pEffect->value[2] > 100 || pEffect->value[2] < 0 )
         {
-          mudlog( LOG_DEBUG, "Load_damage¡R¼vÅT¾÷²v %d ¹L¤j©Î¹L¤p¡C", pEffect->value );
+          mudlog( LOG_DEBUG, "Load_damageï¹•å½±éŸ¿æ©Ÿç‡ %d éå¤§æˆ–éå°ã€‚", pEffect->value );
           RETURN( NULL );
         }
 
@@ -6493,7 +6493,7 @@ DAMAGE_DATA * load_damage( FILE_DATA * pFile )
         if ( name[0] )
         {
           if ( !( routine = check_routine_name( name ) ) )
-            mudlog( LOG_DEBUG , "Load_damage¡R§Ş¯àÀÉªº¨ç¼Æ %s §ä¤£¨ì¡C" , name );
+            mudlog( LOG_DEBUG , "Load_damageï¹•æŠ€èƒ½æª”çš„å‡½æ•¸ %s æ‰¾ä¸åˆ°ã€‚" , name );
 
           free_string( name );
           pDamage->routine = routine;
@@ -6513,8 +6513,8 @@ DAMAGE_DATA * load_damage( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
-    if ( !fMatch ) mudlog( LOG_DEBUG , "Load_damage¡R©R¥O %s ¤£¥¿½T¡C" , word );
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
+    if ( !fMatch ) mudlog( LOG_DEBUG , "Load_damageï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
@@ -6534,26 +6534,26 @@ void load_instrument( const char * path , const char * index )
 
   PUSH_FUNCTION( "load_instrument" );
 
-  /* ³B²z¥Ø¿ı */
+  /* è™•ç†ç›®éŒ„ */
   str_cpy( directory , path );
   fill_path( directory );
 
-  /* ³B²z¯Á¤ŞÀÉ®×¦WºÙ */
+  /* è™•ç†ç´¢å¼•æª”æ¡ˆåç¨± */
   sprintf( indexfile , "%s%s" , directory , index );
 
-  /* ¶}±Ò¯Á¤ŞÀÉ®×, ¤£¯à¨S¦³³o­ÓÀÉ®× */
+  /* é–‹å•Ÿç´¢å¼•æª”æ¡ˆ, ä¸èƒ½æ²’æœ‰é€™å€‹æª”æ¡ˆ */
   if ( ( pFile = f_open( indexfile , "r" ) ) )
   {
-    /* ¤@ª½Åª¨ú¨ìÀÉ®×¥½ºİ */
+    /* ä¸€ç›´è®€å–åˆ°æª”æ¡ˆæœ«ç«¯ */
     while ( !if_eof( pFile ) )
     {
-      /* Åª¨ú©R¥OÀÉ®×ªº¦WºÙ */
+      /* è®€å–å‘½ä»¤æª”æ¡ˆçš„åç¨± */
       word = fread_word( pFile );
       fread_to_eol( pFile );
 
       if ( word[0] == '*' ) continue;
 
-      /* ³B²z±ı¶}±Ò©R¥OÀÉ®×ªº¦WºÙ */
+      /* è™•ç†æ¬²é–‹å•Ÿå‘½ä»¤æª”æ¡ˆçš„åç¨± */
       sprintf( buf , "%s%c" , directory , LOWER( word[0] ) );
 
       fill_path( buf            );
@@ -6563,13 +6563,13 @@ void load_instrument( const char * path , const char * index )
 
       if ( ( aFile = f_open( buf , "r" ) ) )
       {
-        /* °t¸m°O¾ĞÅé */
+        /* é…ç½®è¨˜æ†¶é«” */
         pCommand = alloc_struct( STRUCT_CMD_DATA );
 
-        /* ­«¸m¹w³]­È */
+        /* é‡ç½®é è¨­å€¼ */
         set_command_default( pCommand );
 
-        /* ¸ü¤J«ü¥Oªº¥Dµ{¦¡³¡¥÷ */
+        /* è¼‰å…¥æŒ‡ä»¤çš„ä¸»ç¨‹å¼éƒ¨ä»½ */
         for ( finish = FALSE; finish != TRUE; )
         {
           word   = if_eof( aFile ) ? "End" : fread_word( aFile );
@@ -6577,7 +6577,7 @@ void load_instrument( const char * path , const char * index )
 
           switch ( UPPER( word[0] ) )
           {
-          /* µù¸Ñ */
+          /* è¨»è§£ */
           case '*':
             fMatch = TRUE;
             fread_to_eol( aFile );
@@ -6625,13 +6625,13 @@ void load_instrument( const char * path , const char * index )
             if ( !str_scmp( word, "End", &fMatch ) )
             {
               if ( !pCommand->name )
-                mudlog( LOG_DEBUG , "Load_instrument¡R«ü¥OÀÉ¨S¦³¦WºÙ¡C" );
+                mudlog( LOG_DEBUG , "Load_instrumentï¹•æŒ‡ä»¤æª”æ²’æœ‰åç¨±ã€‚" );
 
               if ( !pCommand->cname )
-                mudlog( LOG_DEBUG , "Load_instrument¡R«ü¥OÀÉ¨S¦³¤¤¤å¦WºÙ¡C" );
+                mudlog( LOG_DEBUG , "Load_instrumentï¹•æŒ‡ä»¤æª”æ²’æœ‰ä¸­æ–‡åç¨±ã€‚" );
 
               if ( !pCommand->function )
-                mudlog( LOG_DEBUG , "Load_instrument¡R«ü¥OÀÉ¨S¦³°õ¦æ¨ç¼Æ¡C" );
+                mudlog( LOG_DEBUG , "Load_instrumentï¹•æŒ‡ä»¤æª”æ²’æœ‰åŸ·è¡Œå‡½æ•¸ã€‚" );
 
               if ( pCommand->lock ) pCommand->canlock = FALSE;
               pCommand->filename = str_dup( buf );
@@ -6664,7 +6664,7 @@ void load_instrument( const char * path , const char * index )
               name = fread_string( aFile );
 
               if ( !( function = command_function_name( name ) ) )
-                mudlog( LOG_DEBUG , "Load_instrument¡R«ü¥OÀÉªº¨ç¼Æ %s §ä¤£¨ì¡C"
+                mudlog( LOG_DEBUG , "Load_instrumentï¹•æŒ‡ä»¤æª”çš„å‡½æ•¸ %s æ‰¾ä¸åˆ°ã€‚"
                   , name );
 
               free_string( name );
@@ -6717,7 +6717,7 @@ void load_instrument( const char * path , const char * index )
               switch( log = fread_number( aFile ) )
               {
               default:
-                mudlog( LOG_DEBUG , "Load_instrument¡R«ü¥OÀÉªº¼Ğ°OÅÜ¼Æ %d ¤£¦X²z¡C" , log );
+                mudlog( LOG_DEBUG , "Load_instrumentï¹•æŒ‡ä»¤æª”çš„æ¨™è¨˜è®Šæ•¸ %d ä¸åˆç†ã€‚" , log );
                 break;
 
               case LOG_NORMAL:
@@ -6754,7 +6754,7 @@ void load_instrument( const char * path , const char * index )
               for ( aCommand = cmd_list; aCommand; aCommand = aCommand->next )
               {
                 if ( !str_cmp( aCommand->name , pCommand->name ) )
-                  mudlog( LOG_DEBUG , "Load_instrument¡R«ü¥OÀÉ«ü¥O %s ­«ÂĞ¡C"
+                  mudlog( LOG_DEBUG , "Load_instrumentï¹•æŒ‡ä»¤æª”æŒ‡ä»¤ %s é‡è¦†ã€‚"
                     , pCommand->name );
               }
 
@@ -6780,7 +6780,7 @@ void load_instrument( const char * path , const char * index )
               switch( pos = fread_number( aFile ) )
               {
               default:
-                mudlog( LOG_DEBUG ,"Load_instrument¡R§Ş¯à³Ì§Cª¬ºA %d ¤£¦X²z¡C"
+                mudlog( LOG_DEBUG ,"Load_instrumentï¹•æŠ€èƒ½æœ€ä½ç‹€æ…‹ %d ä¸åˆç†ã€‚"
                   , pos );
                 break;
 
@@ -6809,9 +6809,9 @@ void load_instrument( const char * path , const char * index )
             break;
           }
 
-          /* «ü¥O«¬ºA¿ù»~ */
+          /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
           if ( !fMatch )
-            mudlog( LOG_DEBUG , "Load_instrument¡R©R¥O %s ¤£¥¿½T¡C" , word );
+            mudlog( LOG_DEBUG , "Load_instrumentï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
         }
 
         f_close( aFile );
@@ -6819,18 +6819,18 @@ void load_instrument( const char * path , const char * index )
 
       else
       {
-        mudlog( LOG_ERR , "Load_instrument¡RµLªk¶}±Ò©R¥OÀÉ %s¡C" , buf );
+        mudlog( LOG_ERR , "Load_instrumentï¹•ç„¡æ³•é–‹å•Ÿå‘½ä»¤æª” %sã€‚" , buf );
       }
     }
   }
 
   else
   {
-    mudlog( LOG_ERR , "Load_instrument¡R¨S¦³©R¥O¥Ø¿ı¦Cªí %s¡C", path );
+    mudlog( LOG_ERR , "Load_instrumentï¹•æ²’æœ‰å‘½ä»¤ç›®éŒ„åˆ—è¡¨ %sã€‚", path );
   }
 
   f_close( pFile );
-  mudlog( LOG_INFO , "¨t²Î¸ü¤J %d ­Ó«ü¥OÀÉ¡C" , top_cmd );
+  mudlog( LOG_INFO , "ç³»çµ±è¼‰å…¥ %d å€‹æŒ‡ä»¤æª”ã€‚" , top_cmd );
   RETURN_NULL();
 }
 
@@ -6853,7 +6853,7 @@ void load_internal( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -6863,13 +6863,13 @@ void load_internal( const char * filename )
 
         if ( !str_scmp( word, "#Station", &fMatch ) )
         {
-          /* ¸ü¤JÀÉ®× */
+          /* è¼‰å…¥æª”æ¡ˆ */
           pNet = load_station( pFile );
 
           pNet->next = net_list;
           net_list   = pNet;
 
-          /* ¦pªG¥i¥H¸ü¤J */
+          /* å¦‚æœå¯ä»¥è¼‰å…¥ */
           if ( pNet->valid ) init_client( pNet );
           else pNet->import = pNet->export = -2;
 
@@ -6893,16 +6893,16 @@ void load_internal( const char * filename )
         {
           if ( ( internal_port = fread_number( pFile ) ) <= 1024
             || internal_port > 65000 )
-          mudlog( LOG_ERR, "Load_internal¡R§Aªº³q°T°ğ %d ¤£¦Xªk¡C\n" , internal_port );
+          mudlog( LOG_ERR, "Load_internalï¹•ä½ çš„é€šè¨ŠåŸ  %d ä¸åˆæ³•ã€‚\n" , internal_port );
 
           break;
         }
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_internal¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_internalï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
@@ -6912,7 +6912,7 @@ void load_internal( const char * filename )
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦óºô»Úºô¸ôªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•ç¶²éš›ç¶²è·¯çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
@@ -6947,9 +6947,9 @@ NET_DATA * load_station( FILE_DATA * pFile )
       {
         pNet->address = str_dup( fread_word( pFile ) );
 
-        /* Á×§K­«½Æªº¦ì§} */
+        /* é¿å…é‡è¤‡çš„ä½å€ */
         if ( get_net_data( pNet->address, NET_ADDRESS ) )
-          mudlog( LOG_ERR, "Load_station¡R¯¸§} %s ­«½Æ¡C", pNet->address );
+          mudlog( LOG_ERR, "Load_stationï¹•ç«™å€ %s é‡è¤‡ã€‚", pNet->address );
 
         break;
       }
@@ -6969,9 +6969,9 @@ NET_DATA * load_station( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "End", &fMatch ) )
       {
-        if ( !pNet->name    ) mudlog( LOG_ERR, "Load_station¡R¯Ê¥F¯¸¦W¡C"   );
-        if ( !pNet->address ) mudlog( LOG_ERR, "Load_station¡R¯Ê¥F¦ì§}¡C"   );
-        if ( pNet->port < 0 ) mudlog( LOG_ERR, "Load_station¡R¯Ê¥F³q°T°ğ¡C" );
+        if ( !pNet->name    ) mudlog( LOG_ERR, "Load_stationï¹•ç¼ºä¹ç«™åã€‚"   );
+        if ( !pNet->address ) mudlog( LOG_ERR, "Load_stationï¹•ç¼ºä¹ä½å€ã€‚"   );
+        if ( pNet->port < 0 ) mudlog( LOG_ERR, "Load_stationï¹•ç¼ºä¹é€šè¨ŠåŸ ã€‚" );
 
         RETURN( pNet );
       }
@@ -6994,9 +6994,9 @@ NET_DATA * load_station( FILE_DATA * pFile )
       {
         pNet->name = str_dup( fread_word( pFile ) );
 
-        /* Á×§K­«½Æªº¯¸¦W */
+        /* é¿å…é‡è¤‡çš„ç«™å */
         if ( get_net_data( pNet->name, NET_NAME ) )
-          mudlog( LOG_ERR, "Load_station¡R¯¸¦W %s ­«½Æ¡C", pNet->name );
+          mudlog( LOG_ERR, "Load_stationï¹•ç«™å %s é‡è¤‡ã€‚", pNet->name );
 
         break;
       }
@@ -7019,9 +7019,9 @@ NET_DATA * load_station( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_station¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_stationï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
@@ -7050,7 +7050,7 @@ void load_bus( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -7060,57 +7060,57 @@ void load_bus( const char * filename )
 
         if ( !str_scmp( word, "Bus", &fMatch ) )
         {
-          /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+          /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
           set_bus_default( ( pBus = alloc_struct( STRUCT_BUS_DATA ) ) );
 
-          /* Åª¤J¯¸¦W */
+          /* è®€å…¥ç«™å */
           pBus->name = str_dup( fread_word( pFile ) );
 
-          /* Åª¤J¤W¤U¯¸³B, ¦¹³B¥²»İ¥ı¦s¦b, ¥B¤£¯à¦³¦V¤U¥X¤f */
+          /* è®€å…¥ä¸Šä¸‹ç«™è™•, æ­¤è™•å¿…éœ€å…ˆå­˜åœ¨, ä¸”ä¸èƒ½æœ‰å‘ä¸‹å‡ºå£ */
           location = fread_number( pFile );
 
           if ( !( pBus->station = get_room_index( location ) ) )
-            mudlog( LOG_DEBUG, "Load_bus¡R§ä¤£¨ì¦aÅK¯¸ %d¡C" , location );
+            mudlog( LOG_DEBUG, "Load_busï¹•æ‰¾ä¸åˆ°åœ°éµç«™ %dã€‚" , location );
 
-          /* ÀË¬d¬O§_¦³¦V¤U¥X¤f, ¦³«h¤£¦æ */
+          /* æª¢æŸ¥æ˜¯å¦æœ‰å‘ä¸‹å‡ºå£, æœ‰å‰‡ä¸è¡Œ */
           if ( !check_station( pBus->station ) )
-            mudlog( LOG_DEBUG, "Load_bus¡R¦aÅK¯¸ %d ¤£¦Xªk¡C", location );
+            mudlog( LOG_DEBUG, "Load_busï¹•åœ°éµç«™ %d ä¸åˆæ³•ã€‚", location );
 
-          /* Åª¨ú¤ë¥x, ¤£¯à¦s¦b, ¨t²Î«Ø¥ß */
+          /* è®€å–æœˆå°, ä¸èƒ½å­˜åœ¨, ç³»çµ±å»ºç«‹ */
           platform = get_room_index( location = fread_number( pFile ) );
 
           if ( platform )
-            mudlog( LOG_DEBUG, "Load_bus¡R¦aÅK¯¸¤ë¥x %d ¦s¦b¡C", location );
+            mudlog( LOG_DEBUG, "Load_busï¹•åœ°éµç«™æœˆå° %d å­˜åœ¨ã€‚", location );
 
           if ( !( pBus->platform = create_platform( location
             , pBus->name, pBus->station->area ) ) )
           {
-            mudlog( LOG_DEBUG, "Load_bus¡R«Ø¥ß¦aÅK¯¸ %d ¥¢±Ñ¡C", location );
+            mudlog( LOG_DEBUG, "Load_busï¹•å»ºç«‹åœ°éµç«™ %d å¤±æ•—ã€‚", location );
           }
 
-          /* ¤W¤U³sµ²¨®¯¸ */
+          /* ä¸Šä¸‹é€£çµè»Šç«™ */
           if ( !link_path( pBus->station, pBus->platform ) )
-            mudlog( LOG_DEBUG, "Load_bus¡R³sµ²¦aÅK¯¸¥¢±Ñ¡C" );
+            mudlog( LOG_DEBUG, "Load_busï¹•é€£çµåœ°éµç«™å¤±æ•—ã€‚" );
 
-          /* Åª¨ú¨®´[, ¤£¯à¦s¦b, ¨t²Î«Ø¥ß */
+          /* è®€å–è»Šå»‚, ä¸èƒ½å­˜åœ¨, ç³»çµ±å»ºç«‹ */
           loge    = get_room_index( location = fread_number( pFile ) );
 
           if ( loge )
-            mudlog( LOG_DEBUG, "Load_bus¡R¦aÅK¯¸¨®´[ %d ¦s¦b¡C", location );
+            mudlog( LOG_DEBUG, "Load_busï¹•åœ°éµç«™è»Šå»‚ %d å­˜åœ¨ã€‚", location );
 
           if ( !( pBus->loge = create_loge( location
             , pBus->name, pBus->station->area ) ) )
           {
-            mudlog( LOG_DEBUG, "Load_bus¡R«Ø¥ß¦aÅK¯¸ %d ¥¢±Ñ¡C", location );
+            mudlog( LOG_DEBUG, "Load_busï¹•å»ºç«‹åœ°éµç«™ %d å¤±æ•—ã€‚", location );
           }
 
-          /* Åª¨ú¶O¥Î */
+          /* è®€å–è²»ç”¨ */
           if ( ( pBus->cost = fread_number( pFile ) ) <= 0 )
-            mudlog( LOG_DEBUG, "Load_bus¡R¦aÅK¦¬¶O %d ¤£¦X²z¡C", pBus->cost );
+            mudlog( LOG_DEBUG, "Load_busï¹•åœ°éµæ”¶è²» %d ä¸åˆç†ã€‚", pBus->cost );
 
           fread_to_eol( pFile );
 
-          /* «Ø¥ß¦ê¦C */
+          /* å»ºç«‹ä¸²åˆ— */
           if ( !bus_first ) bus_first      = pBus;
           if (  bus_last  ) bus_last->next = pBus;
 
@@ -7129,7 +7129,7 @@ void load_bus( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -7141,7 +7141,7 @@ void load_bus( const char * filename )
 
         if ( !str_scmp( word , "Loge", &fMatch ) )
         {
-          fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+          fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
           loge_descr = fread_string( pFile );
           break;
         }
@@ -7153,7 +7153,7 @@ void load_bus( const char * filename )
 
         if ( !str_scmp( word , "Platform", &fMatch ) )
         {
-          fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+          fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
           platform_descr = fread_string( pFile );
           break;
         }
@@ -7162,26 +7162,26 @@ void load_bus( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_bus¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_busï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó¦aÅK¸ê®Æ¡C" , count );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹åœ°éµè³‡æ–™ã€‚" , count );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó¦aÅKªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•åœ°éµçš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* ¸ü¤JÂ§ª«¸ê®Æ */
+/* è¼‰å…¥ç¦®ç‰©è³‡æ–™ */
 void load_bounty( const char * filename )
 {
   BOUNTY_DATA * pBounty;
@@ -7201,7 +7201,7 @@ void load_bounty( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -7224,7 +7224,7 @@ void load_bounty( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -7239,26 +7239,26 @@ void load_bounty( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_bounty¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_bountyï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­ÓÄa½à¸ê®Æ¡C" , top_bounty );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹æ‡¸è³è³‡æ–™ã€‚" , top_bounty );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦óÄa½àªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•æ‡¸è³çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­ÓÂ§ª«¸ê®Æ */
+/* è®€å–ä¸€å€‹ç¦®ç‰©è³‡æ–™ */
 BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
 {
   MOB_INDEX_DATA * pMob;
@@ -7289,7 +7289,7 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
       if ( !str_scmp( word, "Chance", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) <= 0 || slot > 1000 )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¥X²{¾÷²v %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•å‡ºç¾æ©Ÿç‡ %d ä¸åˆç†ã€‚", slot );
 
         pBounty->chance = slot;
         break;
@@ -7302,22 +7302,22 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pBounty->mob )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¯Ê¥F©Çª«ªº§Ç¸¹¡C" );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•ç¼ºä¹æ€ªç‰©çš„åºè™Ÿã€‚" );
 
         if ( !pBounty->msg || !*pBounty->msg )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¯Ê¥F¿é¥X±Ô­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•ç¼ºä¹è¼¸å‡ºæ•˜è¿°ã€‚" );
 
         if ( IS_ERROR( pBounty->chance ) )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¯Ê¥F¥X²{¾÷²v¡C" );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•ç¼ºä¹å‡ºç¾æ©Ÿç‡ã€‚" );
 
         if ( IS_ERROR( pBounty->migration ) )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¯Ê¥F¾E±p¾÷²v¡C" );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•ç¼ºä¹é·å¾™æ©Ÿç‡ã€‚" );
 
         if ( IS_ERROR( pBounty->type ) )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¯Ê¥F¼ú½à«¬ºA¡C" );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•ç¼ºä¹çè³å‹æ…‹ã€‚" );
 
         if ( IS_ERROR( pBounty->max ) )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¯Ê¥F³Ì¤j¥X²{¶q¡C" );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•ç¼ºä¹æœ€å¤§å‡ºç¾é‡ã€‚" );
 
         RETURN( pBounty );
       }
@@ -7338,7 +7338,7 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
       if ( !str_scmp( word, "Migration", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) < 0 || slot > 100 )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¾E±p¾÷²v %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•é·å¾™æ©Ÿç‡ %d ä¸åˆç†ã€‚", slot );
 
         pBounty->migration = slot;
         break;
@@ -7347,7 +7347,7 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
       if ( !str_scmp( word, "Mobile", &fMatch ) )
       {
         if ( !( pMob = get_mob_index( slot = fread_number( pFile ) ) ) )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡RÄa½àªÌ %d ¤£¦s¦b¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•æ‡¸è³è€… %d ä¸å­˜åœ¨ã€‚", slot );
 
         pBounty->mob = pMob;
         break;
@@ -7355,7 +7355,7 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "Message", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pBounty->msg = fread_string( pFile );
         break;
       }
@@ -7363,7 +7363,7 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
       if ( !str_scmp( word, "MaxNumber", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R³Ì¤j¼Æ¥Ø %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•æœ€å¤§æ•¸ç›® %d ä¸åˆç†ã€‚", slot );
 
         pBounty->max = slot;
         break;
@@ -7378,7 +7378,7 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
         if ( ( slot = fread_number( pFile ) ) > 0 )
         {
           if ( !get_room_index( slot ) )
-            mudlog( LOG_DEBUG, "Load_a_bounty¡R©Ğ¶¡ %d ¤£¦s¦b¡C", slot );
+            mudlog( LOG_DEBUG, "Load_a_bountyï¹•æˆ¿é–“ %d ä¸å­˜åœ¨ã€‚", slot );
 
           pBounty->room = slot;
         }
@@ -7394,7 +7394,7 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
         switch( ( slot = fread_number( pFile ) ) )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_a_bounty¡R¼ú½à«¬ºA %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_bountyï¹•çè³å‹æ…‹ %d ä¸åˆç†ã€‚", slot );
           break;
 
         case BOUNTY_GOLD:
@@ -7412,15 +7412,15 @@ BOUNTY_DATA * load_a_bounty( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_bounty¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_bountyï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤JÂ§ª«¸ê®Æ */
+/* è¼‰å…¥ç¦®ç‰©è³‡æ–™ */
 void load_gift( const char * filename )
 {
   GIFT_DATA * pGift;
@@ -7441,7 +7441,7 @@ void load_gift( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -7469,7 +7469,7 @@ void load_gift( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End" , &fMatch ) )
         {
           Finish = TRUE;
@@ -7479,26 +7479,26 @@ void load_gift( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_gift¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_giftï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­ÓÂ§ª«¸ê®Æ¡C" , top_gift );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹ç¦®ç‰©è³‡æ–™ã€‚" , top_gift );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦óÂ§ª«ªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•ç¦®ç‰©çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­ÓÂ§ª«¸ê®Æ */
+/* è®€å–ä¸€å€‹ç¦®ç‰©è³‡æ–™ */
 GIFT_DATA * load_a_gift( FILE_DATA * pFile )
 {
   GIFT_DATA * pGift;
@@ -7529,7 +7529,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       if ( !str_scmp( word, "Duration", &fMatch ) )
       {
         if ( ( level = fread_number( pFile ) ) <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¶¡¹j®É¶¡ %d ¤£¦X²z¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•é–“éš”æ™‚é–“ %d ä¸åˆç†ã€‚", level );
 
         pGift->duration = level;
         break;
@@ -7538,7 +7538,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       if ( !str_scmp( word, "Days", &fMatch ) )
       {
         if ( ( level = fread_number( pFile ) ) <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_gift¡RÁ|¿ì¤Ñ¼Æ %d ¤£¦X²z¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•èˆ‰è¾¦å¤©æ•¸ %d ä¸åˆç†ã€‚", level );
 
         pGift->days = level;
         break;
@@ -7553,33 +7553,33 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
         day   = atoi( fread_word( pFile ) );
 
         if ( month <= 0 || day <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª«±H°e¤é´Á¤£¦X²z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®ç‰©å¯„é€æ—¥æœŸä¸åˆç†ã€‚" );
 
         switch( month )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª«±H°e¤é´Á¤£¦X²z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®ç‰©å¯„é€æ—¥æœŸä¸åˆç†ã€‚" );
           break;
 
         case  1: case  3: case 5: case 7: case 8:
         case 10: case 12:
 
           if ( day <= 0 || day > 31 )
-            mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª«±H°e¤é´Á¤£¦X²z¡C" );
+            mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®ç‰©å¯„é€æ—¥æœŸä¸åˆç†ã€‚" );
 
           break;
 
         case 2:
 
           if ( day <= 0 || day > 29 )
-            mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª«±H°e¤é´Á¤£¦X²z¡C" );
+            mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®ç‰©å¯„é€æ—¥æœŸä¸åˆç†ã€‚" );
 
           break;
 
         case 4: case 6: case 9: case 11:
 
           if ( day <= 0 || day > 30 )
-            mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª«±H°e¤é´Á¤£¦X²z¡C" );
+            mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®ç‰©å¯„é€æ—¥æœŸä¸åˆç†ã€‚" );
 
           break;
         }
@@ -7596,34 +7596,34 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( IS_ERROR( pGift->high ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥F³Ì°ªµ¥¯Å¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹æœ€é«˜ç­‰ç´šã€‚" );
 
         if ( IS_ERROR( pGift->low ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥F³Ì§Cµ¥¯Å¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹æœ€ä½ç­‰ç´šã€‚" );
 
         if ( IS_ERROR( pGift->stamp ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«§Ç¸¹¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©åºè™Ÿã€‚" );
 
         if ( IS_ERROR( pGift->sender ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«¬£°eªÌ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©æ´¾é€è€…ã€‚" );
 
         if ( IS_ERROR( pGift->duration ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«¶¡¹j®É¶¡¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©é–“éš”æ™‚é–“ã€‚" );
 
         if ( IS_ERROR( pGift->days ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«Á|¿ì¤Ñ¼Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©èˆ‰è¾¦å¤©æ•¸ã€‚" );
 
         if ( IS_ERROR( pGift->day ) || IS_ERROR( pGift->month ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«¬£°e¤é´Á¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©æ´¾é€æ—¥æœŸã€‚" );
 
         if ( !pGift->gift )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©ã€‚" );
 
         if ( !pGift->title || !*pGift->title )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«¼ĞÃD¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©æ¨™é¡Œã€‚" );
 
         if ( !pGift->message || !*pGift->message )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R¯Ê¥FÂ§ª«°T®§¡C" );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¼ºä¹ç¦®ç‰©è¨Šæ¯ã€‚" );
 
         if ( pGift->high < pGift->low ) SWAP( pGift->high, pGift->low );
 
@@ -7637,7 +7637,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       if ( !str_scmp( word, "Gold", &fMatch ) )
       {
         if ( ( level = fread_number( pFile ) ) < 0 )
-          mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª÷ %d ¤£¦X²z¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®é‡‘ %d ä¸åˆç†ã€‚", level );
 
         pGift->gold = level;
         break;
@@ -7650,7 +7650,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
         level = fread_number( pFile );
 
         if ( !( pIndex = get_obj_index( level ) ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª«¸¹½X %d ¤£¦s¦b¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®ç‰©è™Ÿç¢¼ %d ä¸å­˜åœ¨ã€‚", level );
 
         pGift->gift = pIndex;
         break;
@@ -7663,7 +7663,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       if ( !str_scmp( word, "High", &fMatch ) )
       {
         if ( ( level = fread_number( pFile ) ) <= 0 || level > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R³Ì°ªµ¥¯Å %d ¤£¦X²z¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•æœ€é«˜ç­‰ç´š %d ä¸åˆç†ã€‚", level );
 
         pGift->high = level;
         break;
@@ -7675,7 +7675,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       if ( !str_scmp( word, "Low", &fMatch ) )
       {
         if ( ( level = fread_number( pFile ) ) <= 0 || level > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "Load_a_gift¡R³Ì§Cµ¥¯Å %d ¤£¦X²z¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•æœ€ä½ç­‰ç´š %d ä¸åˆç†ã€‚", level );
 
         pGift->low = level;
         break;
@@ -7687,7 +7687,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "Message", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pGift->message = fread_string( pFile );
         break;
       }
@@ -7699,7 +7699,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       if ( !str_scmp( word, "Sender", &fMatch ) )
       {
         if ( !get_mob_index( level = fread_number( pFile ) ) )
-          mudlog( LOG_DEBUG, "Load_a_gift¡RÂ§ª«¬£°eªÌ %d ¤£¦s¦b¡C", level );
+          mudlog( LOG_DEBUG, "Load_a_giftï¹•ç¦®ç‰©æ´¾é€è€… %d ä¸å­˜åœ¨ã€‚", level );
 
         pGift->sender = level;
         break;
@@ -7712,7 +7712,7 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
         for ( aGift = gift_list; aGift; aGift = aGift->next )
         {
           if ( aGift->stamp == level )
-            mudlog( LOG_DEBUG, "Load_a_gift¡R§Ç¸¹ %d ­«½Æ¡C", level );
+            mudlog( LOG_DEBUG, "Load_a_giftï¹•åºè™Ÿ %d é‡è¤‡ã€‚", level );
         }
 
         pGift->stamp = level;
@@ -7725,15 +7725,15 @@ GIFT_DATA * load_a_gift( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_gift¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_giftï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J°İÃD¸ê®Æ */
+/* è¼‰å…¥å•é¡Œè³‡æ–™ */
 void load_question( const char * filename )
 {
   QUESTION_DATA * pQuestion;
@@ -7753,7 +7753,7 @@ void load_question( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -7776,7 +7776,7 @@ void load_question( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -7786,26 +7786,26 @@ void load_question( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_question¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_questionï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó°İÃD¸ê®Æ¡C" , top_question );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹å•é¡Œè³‡æ–™ã€‚" , top_question );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó°İÃDªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•å•é¡Œçš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­Ó¸ÑÁ¼¸ê®Æ */
+/* è®€å–ä¸€å€‹è§£è¬è³‡æ–™ */
 QUESTION_DATA * load_a_question( FILE_DATA * pFile )
 {
   QUESTION_DATA * pQuestion;
@@ -7837,7 +7837,7 @@ QUESTION_DATA * load_a_question( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pQuestion->title || !*pQuestion->title )
-          mudlog( LOG_DEBUG, "Load_a_question¡R¨S¦³°İÃDÃD¥Ø¡C" );
+          mudlog( LOG_DEBUG, "Load_a_questionï¹•æ²’æœ‰å•é¡Œé¡Œç›®ã€‚" );
 
         for ( ans = loop = count = 0; loop < MAX_QUESTION; loop++ )
         {
@@ -7849,10 +7849,10 @@ QUESTION_DATA * load_a_question( FILE_DATA * pFile )
         }
 
         if ( count <= 1 )
-          mudlog( LOG_DEBUG, "Load_a_question¡R°İÃD¤Ó¤Ö %d¡C", count );
+          mudlog( LOG_DEBUG, "Load_a_questionï¹•å•é¡Œå¤ªå°‘ %dã€‚", count );
 
         if ( ans <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_question¡R¦Ü¤Ö­n¦³¤@­Ó¥H¤Wªºµª®×¡C" );
+          mudlog( LOG_DEBUG, "Load_a_questionï¹•è‡³å°‘è¦æœ‰ä¸€å€‹ä»¥ä¸Šçš„ç­”æ¡ˆã€‚" );
 
         RETURN( pQuestion );
       }
@@ -7867,13 +7867,13 @@ QUESTION_DATA * load_a_question( FILE_DATA * pFile )
           if ( !pQuestion->question[loop] ) break;
 
         if ( loop >= MAX_QUESTION )
-          mudlog( LOG_DEBUG, "Load_a_question¡R¤Ó¦hÃD¥Ø¡MµLªkÀx¦s¡C" );
+          mudlog( LOG_DEBUG, "Load_a_questionï¹•å¤ªå¤šé¡Œç›®ï¹ç„¡æ³•å„²å­˜ã€‚" );
 
         pQuestion->question[loop] = fread_string( pFile );
         pQuestion->answer[loop]   = fread_number( pFile );
 
         if ( !pQuestion->question[loop] || !*pQuestion->question[loop] )
-          mudlog( LOG_DEBUG, "Load_a_question¡RÃD¥Ø¤ÓÂ²µu¡C" );
+          mudlog( LOG_DEBUG, "Load_a_questionï¹•é¡Œç›®å¤ªç°¡çŸ­ã€‚" );
 
         break;
       }
@@ -7884,7 +7884,7 @@ QUESTION_DATA * load_a_question( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "Title", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pQuestion->title = fread_string( pFile );
         break;
       }
@@ -7892,15 +7892,15 @@ QUESTION_DATA * load_a_question( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_question¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_questionï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J¸ÑÁ¼¸ê®Æ */
+/* è¼‰å…¥è§£è¬è³‡æ–™ */
 void load_quest( const char * filename )
 {
   QUEST_INFO * pQuest;
@@ -7920,7 +7920,7 @@ void load_quest( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -7943,7 +7943,7 @@ void load_quest( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -7953,26 +7953,26 @@ void load_quest( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_quest¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_questï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó¸ÑÁ¼¸ê®Æ¡C" , top_quest );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹è§£è¬è³‡æ–™ã€‚" , top_quest );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó¸ÑÁ¼ªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•è§£è¬çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­Ó¸ÑÁ¼¸ê®Æ */
+/* è®€å–ä¸€å€‹è§£è¬è³‡æ–™ */
 QUEST_INFO * load_a_quest( FILE_DATA * pFile )
 {
   QUEST_INFO * pQuest;
@@ -8001,13 +8001,13 @@ QUEST_INFO * load_a_quest( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pQuest->mark )
-          mudlog( LOG_DEBUG, "Load_a_quest¡R¨S¦³¸ÑÁ¼ÃöÁä¦r¡C" );
+          mudlog( LOG_DEBUG, "Load_a_questï¹•æ²’æœ‰è§£è¬é—œéµå­—ã€‚" );
 
         if ( !pQuest->info )
-          mudlog( LOG_DEBUG, "Load_a_quest¡R¨S¦³¸ÑÁ¼¸Ñ»¡¸ê°T¡C" );
+          mudlog( LOG_DEBUG, "Load_a_questï¹•æ²’æœ‰è§£è¬è§£èªªè³‡è¨Šã€‚" );
 
         if ( pQuest->show && !pQuest->help[0] )
-          mudlog( LOG_DEBUG, "Load_a_quest¡RÅã¥Üªº¥ô°È¥²¶·­n¦³´£¥Ü¡C" );
+          mudlog( LOG_DEBUG, "Load_a_questï¹•é¡¯ç¤ºçš„ä»»å‹™å¿…é ˆè¦æœ‰æç¤ºã€‚" );
 
         RETURN( pQuest );
       }
@@ -8018,7 +8018,7 @@ QUEST_INFO * load_a_quest( FILE_DATA * pFile )
 
       if ( !str_scmp( word , "Help" , &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pQuest->help = fread_string( pFile );
         break;
       }
@@ -8034,7 +8034,7 @@ QUEST_INFO * load_a_quest( FILE_DATA * pFile )
       if ( !str_scmp( word, "Keyword", &fMatch ) )
       {
         if ( quest_lookup( pQuest->mark = fread_string( pFile ) ) )
-          mudlog( LOG_ERR, "Load_a_quest¡R¸ÑÁ¼ÃöÁä¦r%s­«ÂĞ¡C", pQuest->mark );
+          mudlog( LOG_ERR, "Load_a_questï¹•è§£è¬é—œéµå­—%sé‡è¦†ã€‚", pQuest->mark );
 
         break;
       }
@@ -8060,15 +8060,15 @@ QUEST_INFO * load_a_quest( FILE_DATA * pFile )
 
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_quest¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_questï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J¸ÑÁ¼¸ê®Æ */
+/* è¼‰å…¥è§£è¬è³‡æ–™ */
 void load_event( const char * filename )
 {
   EVENT_DATA * pEvent;
@@ -8088,7 +8088,7 @@ void load_event( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -8111,7 +8111,7 @@ void load_event( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -8121,26 +8121,26 @@ void load_event( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_event¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_eventï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­ÓÄ²µo¨Æ¥ó¡C" , top_event );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹è§¸ç™¼äº‹ä»¶ã€‚" , top_event );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦óÄ²µo¨Æ¥ó¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•è§¸ç™¼äº‹ä»¶ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­ÓÄ²µo¨Æ¥ó */
+/* è®€å–ä¸€å€‹è§¸ç™¼äº‹ä»¶ */
 EVENT_DATA * load_a_event( FILE_DATA * pFile )
 {
   EVENT_DATA * zEvent;
@@ -8172,7 +8172,7 @@ EVENT_DATA * load_a_event( FILE_DATA * pFile )
       if ( !str_scmp( word, "Chance", &fMatch ) )
       {
         if ( ( chance = fread_number( pFile ) ) <= 0 || chance > 1000 )
-          mudlog( LOG_DEBUG, "Load_a_event¡R¥X²{¾÷²v %d ¤£¦X²z¡C", chance );
+          mudlog( LOG_DEBUG, "Load_a_eventï¹•å‡ºç¾æ©Ÿç‡ %d ä¸åˆç†ã€‚", chance );
 
         pEvent->chance = chance;
         break;
@@ -8185,16 +8185,16 @@ EVENT_DATA * load_a_event( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( IS_ERROR( pEvent->chance ) )
-          mudlog( LOG_DEBUG, "Load_a_event¡R¨S¦³³]©wÄ²µo¾÷²v¡C" );
+          mudlog( LOG_DEBUG, "Load_a_eventï¹•æ²’æœ‰è¨­å®šè§¸ç™¼æ©Ÿç‡ã€‚" );
 
         if ( !pEvent->function )
-          mudlog( LOG_DEBUG, "Load_a_event¡R¨S¦³Ä²µo³B²z¨ç¼Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_eventï¹•æ²’æœ‰è§¸ç™¼è™•ç†å‡½æ•¸ã€‚" );
 
         if ( !pEvent->title )
-          mudlog( LOG_DEBUG, "Load_a_event¡R¨S¦³Ä²µo¦WºÙ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_eventï¹•æ²’æœ‰è§¸ç™¼åç¨±ã€‚" );
 
         if ( !pEvent->keyword )
-          mudlog( LOG_DEBUG, "Load_a_event¡R¯Ê¥FÄ²µoÃöÁä¦r¡C" );
+          mudlog( LOG_DEBUG, "Load_a_eventï¹•ç¼ºä¹è§¸ç™¼é—œéµå­—ã€‚" );
 
         RETURN( pEvent );
       }
@@ -8212,7 +8212,7 @@ EVENT_DATA * load_a_event( FILE_DATA * pFile )
         if ( keyword[0] )
         {
           if ( !( function = event_function( keyword ) ) )
-            mudlog( LOG_DEBUG , "Load_a_event¡RÄ²µo¨Æ¥óªº¨ç¼Æ %s §ä¤£¨ì¡C"
+            mudlog( LOG_DEBUG , "Load_a_eventï¹•è§¸ç™¼äº‹ä»¶çš„å‡½æ•¸ %s æ‰¾ä¸åˆ°ã€‚"
               , keyword );
 
           pEvent->function = function;
@@ -8232,7 +8232,7 @@ EVENT_DATA * load_a_event( FILE_DATA * pFile )
         for ( zEvent = event_list; zEvent; zEvent = zEvent->next )
         {
           if ( !str_cmp( keyword, zEvent->keyword ) )
-            mudlog( LOG_DEBUG, "Load_a_event¡RÃöÁä¦r %s ­«½Æ¡C", keyword );
+            mudlog( LOG_DEBUG, "Load_a_eventï¹•é—œéµå­— %s é‡è¤‡ã€‚", keyword );
         }
 
         pEvent->keyword = str_dup( keyword );
@@ -8256,15 +8256,15 @@ EVENT_DATA * load_a_event( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_event¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_eventï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J´ç²î¸ê®Æ */
+/* è¼‰å…¥æ¸¡èˆ¹è³‡æ–™ */
 void load_ship( const char * filename )
 {
   SHIP_DATA    * pShip;
@@ -8284,7 +8284,7 @@ void load_ship( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -8294,7 +8294,7 @@ void load_ship( const char * filename )
 
         if ( !str_scmp( word, "#Ship", &fMatch ) )
         {
-          /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+          /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
           pShip = load_a_ship( pFile );
 
           pShip->next = ship_list;
@@ -8309,7 +8309,7 @@ void load_ship( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -8319,26 +8319,26 @@ void load_ship( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_ship¡R©R¥O %s ¤£¥¿½T¡C", word );
+        mudlog( LOG_DEBUG , "Load_shipï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó´ç²î¸ê®Æ¡C" , top_ship );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹æ¸¡èˆ¹è³‡æ–™ã€‚" , top_ship );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó´ç²îªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•æ¸¡èˆ¹çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@¿´´ç²î¸ê®Æ */
+/* è®€å–ä¸€è‰˜æ¸¡èˆ¹è³‡æ–™ */
 SHIP_DATA * load_a_ship( FILE_DATA * pFile )
 {
   char            * word;
@@ -8372,16 +8372,16 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Cabin", &fMatch ) )
       {
         if ( pShip->cabin )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R²î¿µ­«½Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•èˆ¹è‰™é‡è¤‡ã€‚" );
 
         if ( get_room_index( slot = fread_number( pFile ) ) )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R²î¿µ¥»¨­¦s¦b¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•èˆ¹è‰™æœ¬èº«å­˜åœ¨ã€‚", slot );
 
         if ( !pShip->description )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³²î¿µ¦WºÙ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰èˆ¹è‰™åç¨±ã€‚" );
 
         if ( !pShip->description )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³²î¿µ±Ô­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰èˆ¹è‰™æ•˜è¿°ã€‚" );
 
         set_room_default( pRoom = alloc_struct( STRUCT_ROOM_INDEX_DATA ) );
 
@@ -8393,7 +8393,7 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
         pRoom->area            = DefaultArea;
         pRoom->name            = str_dup( pShip->name );
         pRoom->description     = str_dup( pShip->description );
-        pRoom->filename        = str_dup( "¨t²Î«Ø¥ß" );
+        pRoom->filename        = str_dup( "ç³»çµ±å»ºç«‹" );
         pRoom->vnum            = slot;
         pRoom->Safe            = TRUE;
         pRoom->NoRecall        = TRUE;
@@ -8417,7 +8417,7 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Cost", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) <= 0 || slot >= MAX_ASSET )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R´ç¶O %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ¸¡è²» %d ä¸åˆç†ã€‚", slot );
 
         pShip->cost = slot;
         break;
@@ -8430,9 +8430,9 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word , "Description", &fMatch ) )
       {
         if ( pShip->description )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R²î¿µ±Ô­z­«½Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•èˆ¹è‰™æ•˜è¿°é‡è¤‡ã€‚" );
 
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pShip->description = fread_string( pFile );
         break;
       }
@@ -8440,15 +8440,15 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Destination" , &fMatch ) )
       {
         if ( pShip->destination )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¥Øªº¦a­«½Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•ç›®çš„åœ°é‡è¤‡ã€‚" );
 
         if ( !( pRoom = get_room_index( slot = fread_number( pFile ) ) ) )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R§ä¤£¨ì¥Øªº¦aÂI %d¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ‰¾ä¸åˆ°ç›®çš„åœ°é» %dã€‚", slot );
 
         for ( aShip = ship_list; aShip; aShip = aShip->next )
         {
           if ( aShip->destination == pRoom )
-            mudlog( LOG_DEBUG, "Load_a_ship¡R¥Øªº¦a %d ­«½Æ¡C", slot );
+            mudlog( LOG_DEBUG, "Load_a_shipï¹•ç›®çš„åœ° %d é‡è¤‡ã€‚", slot );
         }
 
         pShip->destination = pRoom;
@@ -8458,7 +8458,7 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Delay", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) < 0 || slot >= 10000 )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R©µ´Á¾÷²v %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•å»¶æœŸæ©Ÿç‡ %d ä¸åˆç†ã€‚", slot );
 
         pShip->delay = slot;
         break;
@@ -8471,34 +8471,34 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pShip->name )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³´ç²î¦WºÙ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰æ¸¡èˆ¹åç¨±ã€‚" );
 
         if ( !pShip->msg_entrance )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³¾a©¤±Ô­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰é å²¸æ•˜è¿°ã€‚" );
 
         if ( !pShip->msg_land )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³¤J´ä±Ô­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰å…¥æ¸¯æ•˜è¿°ã€‚" );
 
         if ( !pShip->description )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³²î¿µ±Ô­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰èˆ¹è‰™æ•˜è¿°ã€‚" );
 
         if ( !pShip->starting )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³¥XµoÂI¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰å‡ºç™¼é»ã€‚" );
 
         if ( !pShip->destination )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³¥Øªº¦a¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰ç›®çš„åœ°ã€‚" );
 
         if ( !pShip->cabin )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³²î¿µ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰èˆ¹è‰™ã€‚" );
 
         if ( IS_ERROR( pShip->cost ) )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³¶O¥Î¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰è²»ç”¨ã€‚" );
 
         if ( IS_ERROR( pShip->sailing ) )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³¯è¦æ®É¶¡¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰èˆªè¡Œæ™‚é–“ã€‚" );
 
         if ( IS_ERROR( pShip->waiting ) )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¨S¦³µ¥«İ®É¶¡¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ²’æœ‰ç­‰å¾…æ™‚é–“ã€‚" );
 
         RETURN( pShip );
       }
@@ -8506,9 +8506,9 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word , "Entrance", &fMatch ) )
       {
         if ( pShip->msg_entrance )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¾a´ä±Ô­z­«½Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•é æ¸¯æ•˜è¿°é‡è¤‡ã€‚" );
 
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pShip->msg_entrance = fread_string( pFile );
         break;
       }
@@ -8520,9 +8520,9 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word , "Land", &fMatch ) )
       {
         if ( pShip->msg_land )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¤J´ä±Ô­z­«½Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•å…¥æ¸¯æ•˜è¿°é‡è¤‡ã€‚" );
 
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pShip->msg_land = fread_string( pFile );
         break;
       }
@@ -8538,7 +8538,7 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Pirate", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) < 0 || slot >= 10000 )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R®üµs¥X²{¾÷²v %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æµ·ç›œå‡ºç¾æ©Ÿç‡ %d ä¸åˆç†ã€‚", slot );
 
         pShip->pirate = slot;
         break;
@@ -8551,7 +8551,7 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Sailing", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¯è¦æ®É¶¡ %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•èˆªè¡Œæ™‚é–“ %d ä¸åˆç†ã€‚", slot );
 
         pShip->sailing = slot;
         break;
@@ -8560,15 +8560,15 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Starting", &fMatch ) )
       {
         if ( pShip->starting )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R¥XµoÂI­«½Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•å‡ºç™¼é»é‡è¤‡ã€‚" );
 
         if ( !( pRoom = get_room_index( slot = fread_number( pFile ) ) ) )
-          mudlog( LOG_DEBUG, "Load_a_ship¡R§ä¤£¨ì¥XµoÂI %d¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•æ‰¾ä¸åˆ°å‡ºç™¼é» %dã€‚", slot );
 
         for ( aShip = ship_list; aShip; aShip = aShip->next )
         {
           if ( aShip->starting == pRoom )
-            mudlog( LOG_DEBUG, "Load_a_ship¡R¥XµoÂI %d ­«½Æ¡C", slot );
+            mudlog( LOG_DEBUG, "Load_a_shipï¹•å‡ºç™¼é» %d é‡è¤‡ã€‚", slot );
         }
 
         pShip->starting = pRoom;
@@ -8582,7 +8582,7 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       if ( !str_scmp( word, "Waiting", &fMatch ) )
       {
         if ( ( slot = fread_number( pFile ) ) <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_ship¡Rµ¥«İ´ç²î®É¶¡ %d ¤£¦X²z¡C", slot );
+          mudlog( LOG_DEBUG, "Load_a_shipï¹•ç­‰å¾…æ¸¡èˆ¹æ™‚é–“ %d ä¸åˆç†ã€‚", slot );
 
         pShip->waiting = slot;
         break;
@@ -8590,15 +8590,15 @@ SHIP_DATA * load_a_ship( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_ship¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_shipï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* Åª¨ú©ç½æ«~ÀÉ®×¸ê®Æ */
+/* è®€å–æ‹è³£å“æª”æ¡ˆè³‡æ–™ */
 void load_situs( const char * filename )
 {
   SITUS_DATA * pSitus;
@@ -8619,7 +8619,7 @@ void load_situs( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -8647,7 +8647,7 @@ void load_situs( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -8657,14 +8657,14 @@ void load_situs( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_situs¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_situsï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó³¡¦ì¸ê®Æ¡C" , top_situs );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹éƒ¨ä½è³‡æ–™ã€‚" , top_situs );
     f_close( pFile );
 
     for ( pSitus = situs_list; pSitus; pSitus = pSitus->next )
@@ -8675,7 +8675,7 @@ void load_situs( const char * filename )
           if ( zSitus->location == pSitus->associate_vnum ) break;
 
         if ( !zSitus || zSitus == pSitus )
-          mudlog( LOG_DEBUG, "Load_situs¡R%d ³¡¦ìÁp¶°¿ù»~¡C", pSitus->location );
+          mudlog( LOG_DEBUG, "Load_situsï¹•%d éƒ¨ä½è¯é›†éŒ¯èª¤ã€‚", pSitus->location );
 
         else
           pSitus->associate = zSitus;
@@ -8690,13 +8690,13 @@ void load_situs( const char * filename )
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó³¡¦ìªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•éƒ¨ä½çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­Ó³¡¦ì¸ê®Æ */
+/* è®€å–ä¸€å€‹éƒ¨ä½è³‡æ–™ */
 SITUS_DATA * load_a_situs( FILE_DATA * pFile )
 {
   SITUS_DATA * pSitus;
@@ -8737,44 +8737,44 @@ SITUS_DATA * load_a_situs( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( IS_ERROR( pSitus->location ) || pSitus->location == WEAR_NONE )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¦ì¸m¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½ä½ç½®æœªè¨­å®šã€‚" );
 
         if ( IS_ERROR( pSitus->chance ) || pSitus->chance < 0 )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¾÷²v¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½æ©Ÿç‡æœªè¨­å®šã€‚" );
 
         if ( IS_ERROR( pSitus->wear ) )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¬ïµÛºX¼Ğ¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½ç©¿è‘—æ——æ¨™æœªè¨­å®šã€‚" );
 
         if ( IS_ERROR( pSitus->attack ) )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì§ğÀ»ºX¼Ğ¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½æ”»æ“Šæ——æ¨™æœªè¨­å®šã€‚" );
 
         if ( !pSitus->eq_name || !*pSitus->eq_name )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¸Ë³Æ¦WºÙ¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½è£å‚™åç¨±æœªè¨­å®šã€‚" );
 
         if ( !pSitus->situs_name || !*pSitus->situs_name )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¦WºÙ¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½åç¨±æœªè¨­å®šã€‚" );
 
         if ( !pSitus->short_descr || !*pSitus->short_descr )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¦WºÙ¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½åç¨±æœªè¨­å®šã€‚" );
 
         if ( !pSitus->name || !*pSitus->name )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¦WºÙ¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½åç¨±æœªè¨­å®šã€‚" );
 
         if ( !pSitus->msg1 || !*pSitus->msg1 )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¬ïµÛ±Ô­z¤@¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½ç©¿è‘—æ•˜è¿°ä¸€æœªè¨­å®šã€‚" );
 
         if ( !pSitus->msg2 || !*pSitus->msg2 )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¬ïµÛ±Ô­z¤G¥¼³]©w¡C" );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½ç©¿è‘—æ•˜è¿°äºŒæœªè¨­å®šã€‚" );
 
         if ( pSitus->apply_ac < 0 )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¨¾¿m¥[±j­¿¼Æ(%d)¤£¦Xªk¡C"
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½é˜²ç¦¦åŠ å¼·å€æ•¸(%d)ä¸åˆæ³•ã€‚"
              , pSitus->apply_ac );
 
         if ( pSitus->attack == ATTACK_RANDOM )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì§ğÀ»ºX¼Ğ¤£¯à¬° %d¡C", ATTACK_RANDOM );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½æ”»æ“Šæ——æ¨™ä¸èƒ½ç‚º %dã€‚", ATTACK_RANDOM );
 
         if ( pSitus->wear == WEAR_NONE )
-          mudlog( LOG_DEBUG, "Load_a_situs¡R³¡¦ì¬ïÀ¹¦ì¸m¤£¯à¬° %d¡C", WEAR_NONE );
+          mudlog( LOG_DEBUG, "Load_a_situsï¹•éƒ¨ä½ç©¿æˆ´ä½ç½®ä¸èƒ½ç‚º %dã€‚", WEAR_NONE );
 
         RETURN( pSitus );
       }
@@ -8814,15 +8814,15 @@ SITUS_DATA * load_a_situs( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_situs¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_situsï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* Åª¨ú©ç½æ«~ÀÉ®×¸ê®Æ */
+/* è®€å–æ‹è³£å“æª”æ¡ˆè³‡æ–™ */
 void load_sale( const char * filename )
 {
   SALE_DATA * pSale;
@@ -8842,7 +8842,7 @@ void load_sale( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -8868,7 +8868,7 @@ void load_sale( const char * filename )
         if ( !str_scmp( word, "Chance", &fMatch ) )
         {
           if ( ( SaleChance = fread_number( pFile ) ) <= 0 )
-            mudlog( LOG_DEBUG , "Load_sale¡R©ç½æ¾÷²v %d ¤£¦Xªk¡C", SaleChance );
+            mudlog( LOG_DEBUG , "Load_saleï¹•æ‹è³£æ©Ÿç‡ %d ä¸åˆæ³•ã€‚", SaleChance );
           break;
         }
 
@@ -8876,11 +8876,11 @@ void load_sale( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           if ( SaleChance <= 0 )
-            mudlog( LOG_DEBUG , "Load_sale¡R©ç½æ¾÷²v %d ¤£¦Xªk¡C", SaleChance );
+            mudlog( LOG_DEBUG , "Load_saleï¹•æ‹è³£æ©Ÿç‡ %d ä¸åˆæ³•ã€‚", SaleChance );
 
           Finish = TRUE;
           break;
@@ -8893,7 +8893,7 @@ void load_sale( const char * filename )
         if ( !str_scmp( word, "Limit", &fMatch ) )
         {
           if ( ( SaleLimit = fread_number( pFile ) ) <= 0 )
-            mudlog( LOG_DEBUG , "Load_sale¡R©ç½æ¤U­­¤H¼Æ %d ¤£¦Xªk¡C", SaleLimit );
+            mudlog( LOG_DEBUG , "Load_saleï¹•æ‹è³£ä¸‹é™äººæ•¸ %d ä¸åˆæ³•ã€‚", SaleLimit );
 
           break;
         }
@@ -8902,26 +8902,26 @@ void load_sale( const char * filename )
 
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_sale¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_saleï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó©ç½æ«~¡C" , top_sale );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹æ‹è³£å“ã€‚" , top_sale );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó©ç½æ«~ªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•æ‹è³£å“çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­Ó©ç½æ«~¸ê®Æ */
+/* è®€å–ä¸€å€‹æ‹è³£å“è³‡æ–™ */
 SALE_DATA * load_a_sale( FILE_DATA * pFile )
 {
   OBJ_INDEX_DATA * pIndex;
@@ -8952,7 +8952,7 @@ SALE_DATA * load_a_sale( FILE_DATA * pFile )
       if ( !str_scmp( word , "Cost", &fMatch ) )
       {
         if ( ( pSale->cost = fread_number( pFile ) ) <= 0 )
-          mudlog( LOG_DEBUG, "Load_a_sale¡R©ç½æ«~°â»ù %d ¤£¦X²z¡C"
+          mudlog( LOG_DEBUG, "Load_a_saleï¹•æ‹è³£å“å”®åƒ¹ %d ä¸åˆç†ã€‚"
             , pSale->cost );
 
         break;
@@ -8964,13 +8964,13 @@ SALE_DATA * load_a_sale( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "End", &fMatch ) )
       {
-        if ( !pSale->obj ) mudlog( LOG_DEBUG, "Load_a_sale¡R¨S¦³©ç½æ«~¡C" );
+        if ( !pSale->obj ) mudlog( LOG_DEBUG, "Load_a_saleï¹•æ²’æœ‰æ‹è³£å“ã€‚" );
 
         if ( pSale->obj->Takeable == FALSE )
-          mudlog( LOG_DEBUG, "Load_a_sale¡Rª««~¤£¬O¥i¥H©ç½æ¡T" );
+          mudlog( LOG_DEBUG, "Load_a_saleï¹•ç‰©å“ä¸æ˜¯å¯ä»¥æ‹è³£ï¹—" );
 
         if ( IS_ERROR( pSale->cost ) )
-          mudlog( LOG_DEBUG, "Load_a_sale¡Rª««~¨S¦³»ù®æ¡T" );
+          mudlog( LOG_DEBUG, "Load_a_saleï¹•ç‰©å“æ²’æœ‰åƒ¹æ ¼ï¹—" );
 
         RETURN( pSale );
       }
@@ -8982,7 +8982,7 @@ SALE_DATA * load_a_sale( FILE_DATA * pFile )
       if ( !str_scmp( word, "Object", &fMatch ) )
       {
         if ( !( pIndex = get_obj_index( vnum = fread_number( pFile ) ) ) )
-          mudlog( LOG_DEBUG, "Load_a_sale¡R¨S¦³©ç½æ«~¸¹½X %d ¡C", vnum );
+          mudlog( LOG_DEBUG, "Load_a_saleï¹•æ²’æœ‰æ‹è³£å“è™Ÿç¢¼ %d ã€‚", vnum );
 
         pSale->obj = pIndex;
         break;
@@ -9001,15 +9001,15 @@ SALE_DATA * load_a_sale( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_sale¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_saleï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J¯«±Ú¸ê®Æ */
+/* è¼‰å…¥ç¥æ—è³‡æ–™ */
 void load_immlist( const char * filename )
 {
   IMMLIST_DATA * pImmlist;
@@ -9029,7 +9029,7 @@ void load_immlist( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -9054,7 +9054,7 @@ void load_immlist( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -9064,26 +9064,26 @@ void load_immlist( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_immlist¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_immlistï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó¯«±Ú¸ê®Æ¡C" , top_immlist );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹ç¥æ—è³‡æ–™ã€‚" , top_immlist );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó¯«±Úªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•ç¥æ—çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­Ó¯«±Ú¸ê®Æ */
+/* è®€å–ä¸€å€‹ç¥æ—è³‡æ–™ */
 IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
 {
   IMMLIST_DATA * pImmlist;
@@ -9115,7 +9115,7 @@ IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
 
         adviser = fread_number( pFile );
         if ( adviser < 0 || adviser > 1 )
-          mudlog( LOG_DEBUG, "Load_a_immlist¡RÅU°İ¸ê®æ¤£¦X²z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_immlistï¹•é¡§å•è³‡æ ¼ä¸åˆç†ã€‚" );
 
         pImmlist->adviser = adviser;
         break;
@@ -9126,7 +9126,7 @@ IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
 
       if ( !str_scmp( word , "Description", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pImmlist->description = fread_string( pFile );
         break;
       }
@@ -9138,13 +9138,13 @@ IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pImmlist->name )
-          mudlog( LOG_DEBUG, "Load_a_immlist¡R¨S¦³¯«±Ú¦WºÙ¡C" );
+          mudlog( LOG_DEBUG, "Load_a_immlistï¹•æ²’æœ‰ç¥æ—åç¨±ã€‚" );
 
         if ( !pImmlist->description )
-          mudlog( LOG_DEBUG, "Load_a_immlist¡R¨S¦³¸Ñ»¡±Ô­z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_immlistï¹•æ²’æœ‰è§£èªªæ•˜è¿°ã€‚" );
 
         if ( IS_ERROR( pImmlist->level ) && IS_ERROR( pImmlist->trust ) )
-          mudlog( LOG_DEBUG, "Load_a_immlist¡R¨S¦³µ¥¯Å©Î¬O«H¿àµ¥¯Å¡C" );
+          mudlog( LOG_DEBUG, "Load_a_immlistï¹•æ²’æœ‰ç­‰ç´šæˆ–æ˜¯ä¿¡è³´ç­‰ç´šã€‚" );
 
         RETURN( pImmlist );
       }
@@ -9159,7 +9159,7 @@ IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
 
         level = fread_number( pFile );
         if ( level <= LEVEL_HERO || level > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "Load_a_immlist¡Rµ¥¯Å¤£¦X²z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_immlistï¹•ç­‰ç´šä¸åˆç†ã€‚" );
 
         pImmlist->level = level;
         break;
@@ -9173,7 +9173,7 @@ IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
         pImmlist->name = fread_string( pFile );
 
         if ( !is_exist( pImmlist->name ) )
-          mudlog( LOG_DEBUG, "Load_a_immlist¡R¦WºÙ%s¤£¦s¦b¡C", pImmlist->name );
+          mudlog( LOG_DEBUG, "Load_a_immlistï¹•åç¨±%sä¸å­˜åœ¨ã€‚", pImmlist->name );
 
         break;
       }
@@ -9187,7 +9187,7 @@ IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
 
         trust = fread_number( pFile );
         if ( trust <= LEVEL_HERO || trust > MAX_LEVEL )
-          mudlog( LOG_DEBUG, "Load_a_immlist¡R«H¿àµ¥¯Å¤£¦X²z¡C" );
+          mudlog( LOG_DEBUG, "Load_a_immlistï¹•ä¿¡è³´ç­‰ç´šä¸åˆç†ã€‚" );
 
         pImmlist->trust = trust;
         break;
@@ -9195,15 +9195,15 @@ IMMLIST_DATA * load_a_immlist( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_immlist¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_immlistï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤JªÑ²¼¸ê®Æ */
+/* è¼‰å…¥è‚¡ç¥¨è³‡æ–™ */
 void load_stock( const char * filename )
 {
   extern int   stock_win;
@@ -9218,7 +9218,7 @@ void load_stock( const char * filename )
 
   PUSH_FUNCTION( "load_stock" );
 
-  /* ¥ı²M°£°}¦C¸ê®Æ */
+  /* å…ˆæ¸…é™¤é™£åˆ—è³‡æ–™ */
   for ( loop = 0; loop < MAX_STOCK; loop++ )
   {
     stock_data[loop].cost       = 0;
@@ -9244,7 +9244,7 @@ void load_stock( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -9252,7 +9252,7 @@ void load_stock( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -9268,10 +9268,10 @@ void load_stock( const char * filename )
 
           slot = fread_number( pFile ) - 1;
           if ( slot < 0 || slot >= MAX_STOCK )
-            mudlog( LOG_DEBUG, "Load_stock¡R¸¹½X %d ¿ù»~¡C", slot );
+            mudlog( LOG_DEBUG, "Load_stockï¹•è™Ÿç¢¼ %d éŒ¯èª¤ã€‚", slot );
 
           if ( stock_data[slot].name )
-            mudlog( LOG_DEBUG, "Load_stock¡R¸¹½X %d ­«½Æ¡C", slot );
+            mudlog( LOG_DEBUG, "Load_stockï¹•è™Ÿç¢¼ %d é‡è¤‡ã€‚", slot );
 
           stock_data[slot].name       = str_dup( fread_word( pFile ) );
           stock_data[slot].cost       = fread_number( pFile );
@@ -9286,26 +9286,26 @@ void load_stock( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_stock¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_stockï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­ÓªÑ²¼¸ê®Æ¡C" , count );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹è‚¡ç¥¨è³‡æ–™ã€‚" , count );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦óªÑ²¼ªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•è‚¡ç¥¨çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* ¸ü¤J¤é´Á¸ê®Æ */
+/* è¼‰å…¥æ—¥æœŸè³‡æ–™ */
 void load_date( const char * filename )
 {
   FILE_DATA  * pFile;
@@ -9316,7 +9316,7 @@ void load_date( const char * filename )
 
   PUSH_FUNCTION( "load_date" );
 
-  /* ¥ı²M°£¸ê®Æ */
+  /* å…ˆæ¸…é™¤è³‡æ–™ */
   for ( loop = 0; loop < MAX_DAY;   loop++ ) DayName[loop]   = str_dup( "" );
   for ( loop = 0; loop < MAX_MONTH; loop++ ) MonthName[loop] = str_dup( "" );
   for ( loop = 0; loop < MAX_HOUR;  loop++ ) HourName[loop]  = str_dup( "" );
@@ -9334,7 +9334,7 @@ void load_date( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -9345,7 +9345,7 @@ void load_date( const char * filename )
         if ( !str_scmp( word, "DayName", &fMatch ) )
         {
           if ( DaysPerMonth >= MAX_DAY )
-            mudlog( LOG_ERR, "Load_date¡R¤é´Á¼Æ¥Ø¤w¶W¹L¨t²Î³]©w¡C" );
+            mudlog( LOG_ERR, "Load_dateï¹•æ—¥æœŸæ•¸ç›®å·²è¶…éç³»çµ±è¨­å®šã€‚" );
 
           DayName[DaysPerMonth++] = fread_string( pFile );
           break;
@@ -9354,11 +9354,11 @@ void load_date( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           if ( DaysPerMonth <= 0 || MonthsPerYear <= 0 || HoursPerDay != 24 )
-            mudlog( LOG_ERR, "Load_date¡R¯Ê¥F¤é´Á¸ê®Æ¡C" );
+            mudlog( LOG_ERR, "Load_dateï¹•ç¼ºä¹æ—¥æœŸè³‡æ–™ã€‚" );
 
           Finish = TRUE;
           break;
@@ -9371,7 +9371,7 @@ void load_date( const char * filename )
         if ( !str_scmp( word, "HourName", &fMatch ) )
         {
           if ( HoursPerDay >= MAX_HOUR )
-            mudlog( LOG_ERR, "Load_date¡R®É¨°¼Æ¥Ø¤w¶W¹L¨t²Î³]©w¡C" );
+            mudlog( LOG_ERR, "Load_dateï¹•æ™‚è¾°æ•¸ç›®å·²è¶…éç³»çµ±è¨­å®šã€‚" );
 
           HourName[HoursPerDay++] = fread_string( pFile );
           break;
@@ -9383,7 +9383,7 @@ void load_date( const char * filename )
         if ( !str_scmp( word, "MonthName", &fMatch ) )
         {
           if ( MonthsPerYear >= MAX_MONTH )
-            mudlog( LOG_ERR, "Load_date¡R¤ë¥÷¼Æ¥Ø¤w¶W¹L¨t²Î³]©w¡C" );
+            mudlog( LOG_ERR, "Load_dateï¹•æœˆä»½æ•¸ç›®å·²è¶…éç³»çµ±è¨­å®šã€‚" );
 
           MonthName[MonthsPerYear++] = fread_string( pFile );
           break;
@@ -9391,9 +9391,9 @@ void load_date( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_date¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_dateï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
@@ -9403,13 +9403,13 @@ void load_date( const char * filename )
 
   else
   {
-    mudlog( LOG_ERR, "Load_date¡R¨S¦³¸ü¤J¥ô¦ó¤é´Áªº¸ê®Æ¡C" );
+    mudlog( LOG_ERR, "Load_dateï¹•æ²’æœ‰è¼‰å…¥ä»»ä½•æ—¥æœŸçš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* ¸ü¤J¤É¯Å¸ê®Æ¸ê®Æ */
+/* è¼‰å…¥å‡ç´šè³‡æ–™è³‡æ–™ */
 void load_promotion( const char * filename )
 {
   FILE_DATA * pFile;
@@ -9421,7 +9421,7 @@ void load_promotion( const char * filename )
 
   PUSH_FUNCTION( "load_promotion" );
 
-  /* ¥ı²M°£°}¦C¸ê®Æ */
+  /* å…ˆæ¸…é™¤é™£åˆ—è³‡æ–™ */
   for ( loop = 0; loop < MAX_LEVEL; loop++ )
   {
     kill_table[loop].number    = 0;
@@ -9440,7 +9440,7 @@ void load_promotion( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
 
         fMatch = TRUE;
@@ -9449,7 +9449,7 @@ void load_promotion( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           f_close( pFile );
@@ -9462,15 +9462,15 @@ void load_promotion( const char * filename )
         if ( !str_scmp( word, "Level", &fMatch ) )
         {
           if ( ( level = fread_number( pFile ) ) < 0 || level >= MAX_LEVEL )
-            mudlog( LOG_DEBUG, "Load_promotion¡Rµ¥¯Å %d ¤£¦X²z¡C", level );
+            mudlog( LOG_DEBUG, "Load_promotionï¹•ç­‰ç´š %d ä¸åˆç†ã€‚", level );
 
           if ( ( count = fread_number( pFile ) ) < 0 )
-            mudlog( LOG_DEBUG, "Load_promotion¡R¼Æ¥Ø %d ¤£¦X²z¡C", count );
+            mudlog( LOG_DEBUG, "Load_promotionï¹•æ•¸ç›® %d ä¸åˆç†ã€‚", count );
 
           kill_table[level].promotion = count;
 
           if ( ( count = fread_number( pFile ) ) < 0 )
-            mudlog( LOG_DEBUG, "Load_promotion¡R¸gÅç­È %d ¤£¦X²z¡C", count );
+            mudlog( LOG_DEBUG, "Load_promotionï¹•ç¶“é©—å€¼ %d ä¸åˆç†ã€‚", count );
 
           kill_table[level].exp = count;
 
@@ -9483,9 +9483,9 @@ void load_promotion( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_promotion¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_promotionï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
     }
 
     f_close( pFile );
@@ -9493,13 +9493,13 @@ void load_promotion( const char * filename )
 
   else
   {
-    mudlog( LOG_DEBUG, "Load_promotion¡R¨S¦³¬ÛÃö¸ê®ÆÀÉ®×¡C" );
+    mudlog( LOG_DEBUG, "Load_promotionï¹•æ²’æœ‰ç›¸é—œè³‡æ–™æª”æ¡ˆã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* ¸ü¤J­^¶¯¸ê®Æ */
+/* è¼‰å…¥è‹±é›„è³‡æ–™ */
 void load_hero( const char * filename )
 {
   HERO_DATA * pHero;
@@ -9520,7 +9520,7 @@ void load_hero( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -9528,7 +9528,7 @@ void load_hero( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -9570,27 +9570,27 @@ void load_hero( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_hero¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_heroï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó­^¶¯¸ê®Æ¡C" , count );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹è‹±é›„è³‡æ–™ã€‚" , count );
     f_close( pFile );
     update_hero();
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó­^¶¯ªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•è‹±é›„çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* ¸ü¤J©Ò¦³ª±®a¸ê®Æ®w¸ê®Æ */
+/* è¼‰å…¥æ‰€æœ‰ç©å®¶è³‡æ–™åº«è³‡æ–™ */
 void load_database( const char * filename )
 {
   DATABASE_DATA * pData;
@@ -9613,7 +9613,7 @@ void load_database( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -9621,7 +9621,7 @@ void load_database( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -9680,27 +9680,27 @@ void load_database( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_database¡R©R¥O %s ¤£¥¿½T¡C" , word );
+        mudlog( LOG_DEBUG , "Load_databaseï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
 
       if ( Finish ) break;
     }
 
-    mudlog( LOG_INFO, "¨t²Î¸ü¤J %d ­Ó¸ê®Æ®w¸ê®Æ¡C" , count );
+    mudlog( LOG_INFO, "ç³»çµ±è¼‰å…¥ %d å€‹è³‡æ–™åº«è³‡æ–™ã€‚" , count );
     f_close( pFile );
   }
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦ó¸ê®Æ®wªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•è³‡æ–™åº«çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
 
-/* ¸ü¤JÃØ»P¸ê®Æ */
+/* è¼‰å…¥è´ˆèˆ‡è³‡æ–™ */
 void load_donate( const char * filename )
 {
   FILE_DATA * pFile;
@@ -9719,7 +9719,7 @@ void load_donate( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -9739,26 +9739,26 @@ void load_donate( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           if ( DonateBenifit < 0 )
-            mudlog( LOG_ERR, "Load_donate¡R±ÏÀÙª÷¤£¦Xªk¡C" );
+            mudlog( LOG_ERR, "Load_donateï¹•æ•‘æ¿Ÿé‡‘ä¸åˆæ³•ã€‚" );
 
           if ( DonateMoney < 0 )
-            mudlog( LOG_ERR, "Load_donate¡R±ÏÀÙª÷Á`ª÷ÃB¤£¦Xªk¡C" );
+            mudlog( LOG_ERR, "Load_donateï¹•æ•‘æ¿Ÿé‡‘ç¸½é‡‘é¡ä¸åˆæ³•ã€‚" );
 
           if ( DonateLevel < 0 )
-            mudlog( LOG_ERR, "Load_donate¡R±ÏÀÙµ¥¯Å¤£¦Xªk¡C" );
+            mudlog( LOG_ERR, "Load_donateï¹•æ•‘æ¿Ÿç­‰ç´šä¸åˆæ³•ã€‚" );
 
           if ( DonateLimit < 0 )
-            mudlog( LOG_ERR, "Load_donate¡R±ÏÀÙ¹ï¶H¤£¦Xªk¡C" );
+            mudlog( LOG_ERR, "Load_donateï¹•æ•‘æ¿Ÿå°è±¡ä¸åˆæ³•ã€‚" );
 
           if ( DonateDuration < 0 )
-            mudlog( LOG_ERR, "Load_donate¡R±ÏÀÙ¶¡¹j¤£¦Xªk¡C" );
+            mudlog( LOG_ERR, "Load_donateï¹•æ•‘æ¿Ÿé–“éš”ä¸åˆæ³•ã€‚" );
 
           if ( DonateCount < 0 )
-            mudlog( LOG_ERR, "Load_donate¡R±ÏÀÙ¦¸¼Æ¤£¦Xªk¡C" );
+            mudlog( LOG_ERR, "Load_donateï¹•æ•‘æ¿Ÿæ¬¡æ•¸ä¸åˆæ³•ã€‚" );
 
           DonateLock = FALSE;
           Finish     = TRUE;
@@ -9778,9 +9778,9 @@ void load_donate( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
       if ( !fMatch )
-        mudlog( LOG_DEBUG , "Load_donate¡R©R¥O %s ¤£¥¿½T¡C", word );
+        mudlog( LOG_DEBUG , "Load_donateï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
 
       if ( Finish ) break;
     }
@@ -9790,14 +9790,14 @@ void load_donate( const char * filename )
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦óÃØ»Pªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•è´ˆèˆ‡çš„è³‡æ–™ã€‚" );
     DonateLock = TRUE;
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨úÀ°¬£¸ê®Æ */
+/* è®€å–å¹«æ´¾è³‡æ–™ */
 void load_club( const char * filename )
 {
   CLUB_DATA * pClub;
@@ -9819,7 +9819,7 @@ void load_club( const char * filename )
 
       switch ( UPPER( word[0] ) )
       {
-      /* µù¸Ñ */
+      /* è¨»è§£ */
       case '*':
         fMatch = TRUE;
         fread_to_eol( pFile );
@@ -9830,11 +9830,11 @@ void load_club( const char * filename )
         if ( !str_scmp( word, "#CLUB", &fMatch ) )
         {
           if ( club_count() >= max_club )
-            mudlog( LOG_ERR, "Load_club¡RÀ°¬£¼Æ¥Ø¶W¥X­­©w­È¡C" );
+            mudlog( LOG_ERR, "Load_clubï¹•å¹«æ´¾æ•¸ç›®è¶…å‡ºé™å®šå€¼ã€‚" );
 
           pClub = load_a_club( pFile );
 
-          /* ­YÀ°¬£³s¸p¶W¹L 20 ¤Ñ¡M©Î¬O¨S¦³À°¥D«h§R°£¤§ */
+          /* è‹¥å¹«æ´¾é€£ç½²è¶…é 20 å¤©ï¹æˆ–æ˜¯æ²’æœ‰å¹«ä¸»å‰‡åˆªé™¤ä¹‹ */
           if ( ( pClub->status != CLUB_STATUS_UNIONIZE
             && pClub->timer < ( ( time( NULL ) - ClubCountersignDay ) * 86400 ) )
             || !is_exist( pClub->master ) )
@@ -9862,7 +9862,7 @@ void load_club( const char * filename )
             if ( !zClub ) club_list   = pClub;
             else          zClub->next = pClub;
 
-            /* «Ø¥ß°_À°¬£©Ğ¶¡ */
+            /* å»ºç«‹èµ·å¹«æ´¾æˆ¿é–“ */
             club_location( pClub );
           }
 
@@ -9873,7 +9873,7 @@ void load_club( const char * filename )
 
       case 'E':
 
-        /* µ²§ô */
+        /* çµæŸ */
         if ( !str_scmp( word, "End", &fMatch ) )
         {
           Finish = TRUE;
@@ -9882,8 +9882,8 @@ void load_club( const char * filename )
         break;
       }
 
-      /* «ü¥O«¬ºA¿ù»~ */
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_club¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_clubï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
       if ( Finish ) break;
     }
 
@@ -9896,13 +9896,13 @@ void load_club( const char * filename )
 
   else
   {
-    mudlog( LOG_INFO, "¨S¦³¸ü¤J¥ô¦óÀ°¬£ªº¸ê®Æ¡C" );
+    mudlog( LOG_INFO, "æ²’æœ‰è¼‰å…¥ä»»ä½•å¹«æ´¾çš„è³‡æ–™ã€‚" );
   }
 
   RETURN_NULL();
 }
 
-/* Åª¨ú¤@­ÓÀ°¬£¸ê®Æ */
+/* è®€å–ä¸€å€‹å¹«æ´¾è³‡æ–™ */
 CLUB_DATA * load_a_club( FILE_DATA * pFile )
 {
   CLUB_DATA * pClub;
@@ -9938,7 +9938,7 @@ CLUB_DATA * load_a_club( FILE_DATA * pFile )
       {
         pName = fread_string( pFile );
 
-        /* ¹w¨¾ª±®a¦WºÙ¤Óªø */
+        /* é é˜²ç©å®¶åç¨±å¤ªé•· */
         if ( str_len( pName ) <= NAME_LENGTH && is_exist( pName ) )
           char_to_club( pName, pClub, CLUB_DOYEN );
 
@@ -9952,16 +9952,16 @@ CLUB_DATA * load_a_club( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pClub->name )
-          mudlog( LOG_ERR, "Load_a_club¡R¨S¦³­^¤åÀ°¬£¦WºÙ¡C" );
+          mudlog( LOG_ERR, "Load_a_clubï¹•æ²’æœ‰è‹±æ–‡å¹«æ´¾åç¨±ã€‚" );
 
         if ( !pClub->cname )
-          mudlog( LOG_ERR, "Load_a_club¡R¨S¦³À°¬£¤¤¤å¦WºÙ¡C" );
+          mudlog( LOG_ERR, "Load_a_clubï¹•æ²’æœ‰å¹«æ´¾ä¸­æ–‡åç¨±ã€‚" );
 
         if ( !pClub->master )
-          mudlog( LOG_ERR, "Load_a_club¡R¨S¦³À°¬£¥D¤H¦WºÙ¡C" );
+          mudlog( LOG_ERR, "Load_a_clubï¹•æ²’æœ‰å¹«æ´¾ä¸»äººåç¨±ã€‚" );
 
         if ( pClub->status == CLUB_STATUS_UNKNOW )
-          mudlog( LOG_ERR, "Load_a_club¡Rª¬ºA %d ¤£¦X²z¡C", pClub->status );
+          mudlog( LOG_ERR, "Load_a_clubï¹•ç‹€æ…‹ %d ä¸åˆç†ã€‚", pClub->status );
 
         RETURN( pClub );
       }
@@ -9974,7 +9974,7 @@ CLUB_DATA * load_a_club( FILE_DATA * pFile )
       {
         pName = fread_string( pFile );
 
-        /* ¹w¨¾ª±®a¦WºÙ¤Óªø */
+        /* é é˜²ç©å®¶åç¨±å¤ªé•· */
         if ( str_len( pName ) <= NAME_LENGTH && is_exist( pName ) )
           char_to_club( pName, pClub, CLUB_FOLLOWER );
 
@@ -9990,7 +9990,7 @@ CLUB_DATA * load_a_club( FILE_DATA * pFile )
       {
         pName = fread_string( pFile );
 
-        /* ¹w¨¾ª±®a¦WºÙ¤Óªø */
+        /* é é˜²ç©å®¶åç¨±å¤ªé•· */
         if ( str_len( pName ) <= NAME_LENGTH && is_exist( pName ) )
           char_to_club( pName, pClub, CLUB_MEMBER );
 
@@ -10013,7 +10013,7 @@ CLUB_DATA * load_a_club( FILE_DATA * pFile )
         switch( status = fread_number( pFile ) )
         {
         default:
-          mudlog( LOG_DEBUG , "Load_a_club¡Rª¬ºA %d ¤£¥¿½T¡C" , status );
+          mudlog( LOG_DEBUG , "Load_a_clubï¹•ç‹€æ…‹ %d ä¸æ­£ç¢ºã€‚" , status );
           break;
 
         case CLUB_STATUS_COUNTERSIGN:
@@ -10035,7 +10035,7 @@ CLUB_DATA * load_a_club( FILE_DATA * pFile )
       {
         pName = fread_string( pFile );
 
-        /* ¹w¨¾ª±®a¦WºÙ¤Óªø */
+        /* é é˜²ç©å®¶åç¨±å¤ªé•· */
         if ( str_len( pName ) <= NAME_LENGTH && is_exist( pName ) )
           pClub->vicemaster = str_dup( pName );
 
@@ -10046,15 +10046,15 @@ CLUB_DATA * load_a_club( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch )
-      mudlog( LOG_DEBUG , "Load_a_club¡R©R¥O %s ¤£¥¿½T¡C" , word );
+      mudlog( LOG_DEBUG , "Load_a_clubï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚" , word );
   }
 
   RETURN( NULL );
 }
 
-/* ¸ü¤J°İ¸ô¸ê®Æ */
+/* è¼‰å…¥å•è·¯è³‡æ–™ */
 ENQUIRE_DATA * load_enquire( FILE_DATA * pFile )
 {
   ENQUIRE_DATA * pEnquire;
@@ -10063,7 +10063,7 @@ ENQUIRE_DATA * load_enquire( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_enquire" );
 
-  /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_enquire_default( pEnquire = alloc_struct( STRUCT_ENQUIRE_DATA ) );
 
   for ( ;; )
@@ -10073,7 +10073,7 @@ ENQUIRE_DATA * load_enquire( FILE_DATA * pFile )
 
     switch ( UPPER( word[0] ) )
     {
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
       fMatch = TRUE;
       fread_to_eol( pFile );
@@ -10084,7 +10084,7 @@ ENQUIRE_DATA * load_enquire( FILE_DATA * pFile )
       if ( !str_scmp( word, "End", &fMatch ) )
       {
         if ( !pEnquire->keyword )
-          mudlog( LOG_DEBUG, "Load_enquire¡R¨S¦³³]©w°İ¸ôªºÃöÁä¦r¡C" );
+          mudlog( LOG_DEBUG, "Load_enquireï¹•æ²’æœ‰è¨­å®šå•è·¯çš„é—œéµå­—ã€‚" );
 
         RETURN( pEnquire );
       }
@@ -10097,14 +10097,14 @@ ENQUIRE_DATA * load_enquire( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
-    if ( !fMatch ) mudlog( LOG_DEBUG , "Load_pEnquire¡R©R¥O %s ¤£¥¿½T¡C", word );
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
+    if ( !fMatch ) mudlog( LOG_DEBUG , "Load_pEnquireï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
   }
 
   RETURN( pEnquire );
 }
 
-/* ¸ü¤JÄ²µo°Ê§@ */
+/* è¼‰å…¥è§¸ç™¼å‹•ä½œ */
 JOB_DATA * load_job( FILE_DATA * pFile )
 {
   JOB_DATA * pJob;
@@ -10113,7 +10113,7 @@ JOB_DATA * load_job( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_job" );
 
-  /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_job_default( pJob = alloc_struct( STRUCT_JOB_DATA ) );
 
   for ( ;; )
@@ -10123,7 +10123,7 @@ JOB_DATA * load_job( FILE_DATA * pFile )
 
     switch ( UPPER( word[0] ) )
     {
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
       fMatch = TRUE;
       fread_to_eol( pFile );
@@ -10135,19 +10135,19 @@ JOB_DATA * load_job( FILE_DATA * pFile )
       {
         if ( !pJob->keyword )
         {
-          mudlog( LOG_DEBUG, "Load_job¡R¨S¦³³]©wÄ²µoªº¥»¤å¡C" );
+          mudlog( LOG_DEBUG, "Load_jobï¹•æ²’æœ‰è¨­å®šè§¸ç™¼çš„æœ¬æ–‡ã€‚" );
           break;
         }
 
         if ( !pJob->function )
         {
-          mudlog( LOG_DEBUG, "Load_job¡R¨S¦³³]©wÄ²µoªº¨ç¼Æ¡C" );
+          mudlog( LOG_DEBUG, "Load_jobï¹•æ²’æœ‰è¨­å®šè§¸ç™¼çš„å‡½æ•¸ã€‚" );
           break;
         }
 
         if ( IS_ERROR( pJob->position ) )
         {
-          mudlog( LOG_DEBUG, "Load_job¡R¨S¦³³]©wÄ²µoªºª¬ºA¡C" );
+          mudlog( LOG_DEBUG, "Load_jobï¹•æ²’æœ‰è¨­å®šè§¸ç™¼çš„ç‹€æ…‹ã€‚" );
           break;
         }
 
@@ -10166,7 +10166,7 @@ JOB_DATA * load_job( FILE_DATA * pFile )
 
         if ( !( pJob->function  = job_lookup( func ) ) )
         {
-          mudlog( LOG_DEBUG, "Load_job¡R§ä¤£¨ì¾Ş§@¨ç¼Æ %s¡C", func );
+          mudlog( LOG_DEBUG, "Load_jobï¹•æ‰¾ä¸åˆ°æ“ä½œå‡½æ•¸ %sã€‚", func );
           free_string( func );
           break;
         }
@@ -10190,7 +10190,7 @@ JOB_DATA * load_job( FILE_DATA * pFile )
         switch( pJob->position )
         {
         default:
-          mudlog( LOG_DEBUG, "Load_job¡R¿ù»~ªºª¬ºA %d¡C", pJob->position );
+          mudlog( LOG_DEBUG, "Load_jobï¹•éŒ¯èª¤çš„ç‹€æ…‹ %dã€‚", pJob->position );
           break;
 
         case POS_DEAD:
@@ -10207,10 +10207,10 @@ JOB_DATA * load_job( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_job¡R©R¥O %s ¤£¥¿½T¡C", word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_jobï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
       if ( fReload )
       {
         free_job( pJob );
@@ -10233,7 +10233,7 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
 
   PUSH_FUNCTION( "load_program" );
 
-  /* °t¸m°O¾ĞÅé¥H¤Î³]©w¹w³]­È */
+  /* é…ç½®è¨˜æ†¶é«”ä»¥åŠè¨­å®šé è¨­å€¼ */
   set_mprog_default( pProg = alloc_struct( STRUCT_MPROG_DATA ) );
 
   for ( ;; )
@@ -10243,7 +10243,7 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
 
     switch ( UPPER( word[0] ) )
     {
-    /* µù¸Ñ */
+    /* è¨»è§£ */
     case '*':
       fMatch = TRUE;
       fread_to_eol( pFile );
@@ -10268,7 +10268,7 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
 
         if ( chance <= 0 || chance > 100 )
         {
-          mudlog( LOG_DEBUG, "Load_program¡R¾÷²v %d ¤£¦X²z¡C", chance );
+          mudlog( LOG_DEBUG, "Load_programï¹•æ©Ÿç‡ %d ä¸åˆç†ã€‚", chance );
           break;
         }
 
@@ -10285,19 +10285,19 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
       {
         if ( IS_ERROR( pProg->type ) )
         {
-          mudlog( LOG_DEBUG, "Load_program¡R¯Ê¥Fµ{¦¡ªº«¬ºA¡C" );
+          mudlog( LOG_DEBUG, "Load_programï¹•ç¼ºä¹ç¨‹å¼çš„å‹æ…‹ã€‚" );
           break;
         }
 
         if ( !pProg->comlist || !*pProg->comlist )
         {
-          mudlog( LOG_DEBUG, "Load_program¡R¯Ê¥Fµ{¦¡ªº¥»¤å³¡¥÷¡C" );
+          mudlog( LOG_DEBUG, "Load_programï¹•ç¼ºä¹ç¨‹å¼çš„æœ¬æ–‡éƒ¨ä»½ã€‚" );
           break;
         }
 
         if ( !pProg->arglist || !*pProg->arglist )
         {
-          mudlog( LOG_DEBUG, "Load_program¡R¯Ê¥Fµ{¦¡ªº°Ñ¼Æ³¡¥÷¡C" );
+          mudlog( LOG_DEBUG, "Load_programï¹•ç¼ºä¹ç¨‹å¼çš„åƒæ•¸éƒ¨ä»½ã€‚" );
           break;
         }
 
@@ -10315,7 +10315,7 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
 
         if ( chance < 0 )
         {
-          mudlog( LOG_DEBUG, "Load_program¡Rª÷¿ú %d ¤£¦X²z¡C", chance );
+          mudlog( LOG_DEBUG, "Load_programï¹•é‡‘éŒ¢ %d ä¸åˆç†ã€‚", chance );
           break;
         }
 
@@ -10335,7 +10335,7 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
 
         if ( ( pProg->type = mprog_name_to_type( pString ) ) == ERROR_PROG )
         {
-          mudlog( LOG_DEBUG, "Load_program¡R¸ü¤Jµ{¦¡«¬ºA %s ¿ù»~¡C", pString );
+          mudlog( LOG_DEBUG, "Load_programï¹•è¼‰å…¥ç¨‹å¼å‹æ…‹ %s éŒ¯èª¤ã€‚", pString );
           break;
         }
 
@@ -10344,7 +10344,7 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
 
       if ( !str_scmp( word, "Text", &fMatch ) )
       {
-        fread_to_eol( pFile ); /* ¤@©w¥ıÅª§¹¤@¦æ */
+        fread_to_eol( pFile ); /* ä¸€å®šå…ˆè®€å®Œä¸€è¡Œ */
         pProg->comlist = fread_string( pFile );
         break;
       }
@@ -10352,10 +10352,10 @@ MPROG_DATA * load_program( FILE_DATA * pFile )
       break;
     }
 
-    /* «ü¥O«¬ºA¿ù»~ */
+    /* æŒ‡ä»¤å‹æ…‹éŒ¯èª¤ */
     if ( !fMatch || FileError )
     {
-      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_prog¡R©R¥O %s ¤£¥¿½T¡C", word );
+      if ( !fMatch ) mudlog( LOG_DEBUG , "Load_progï¹•å‘½ä»¤ %s ä¸æ­£ç¢ºã€‚", word );
       if ( fReload )
       {
         free_mob_program( pProg );

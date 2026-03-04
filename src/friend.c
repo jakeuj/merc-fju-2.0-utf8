@@ -1,7 +1,7 @@
 /***************************************************************************
-*  �o�O�ѻ��j�ƾǨt�s�@�s�Ҽ��g���C���M�D��� merc ��s�ӨӡM�Ҧ������v    *
-*  �N�|�Q�O�d�M���w��j�a�ק�M���ڭ̤]�Ʊ�A�̤]�ണ�ѵ��j�a�M�Ҧ�����    *
-*  �~�欰�N���Q���\�C                                                      *
+*  這是由輔大化學系製作群所撰寫的遊戲﹐主體由 merc 改編而來﹐所有的版權    *
+*  將會被保留﹐但歡迎大家修改﹐但我們也希望你們也能提供給大家﹐所有的商    *
+*  業行為將不被允許。                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include "merc.h"
 
-/* �C�ӤH�̦h�i�H���X�Ӧn�ͦW�� */
+/* 每個人最多可以有幾個好友名單 */
 #define MAX_FRIEND      30
 
 int     max_friend      = MAX_FRIEND;
@@ -41,13 +41,13 @@ FUNCTION( do_friend )
   {
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "�A�n�[�J���@�쪱�a���n�ͦW��S\n\r", ch );
+      send_to_char( "你要加入哪一位玩家為好友名單﹖\n\r", ch );
       RETURN_NULL();
     }
 
     if ( is_friend( ch, arg + 1 ) )
     {
-      act( "$t���ӴN�b�A���n�ͦW�椧���C", ch, arg + 1, NULL, TO_CHAR );
+      act( "$t本來就在你的好友名單之中。", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -55,25 +55,25 @@ FUNCTION( do_friend )
 
     if ( str_len( arg + 1 ) > sizeof( pFriend->name ) )
     {
-      send_to_char( "�A���n�ͦW�٪��פ��X�k�T\n\r", ch );
+      send_to_char( "你的好友名稱長度不合法﹗\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !str_cmp( ch->name, arg + 1 ) )
     {
-      send_to_char( "�A�n��ۤv���@�n�B�ͶܡS\n\r", ch );
+      send_to_char( "你要把自己當作好朋友嗎﹖\n\r", ch );
       RETURN_NULL();
     }
 
     if ( friend_count( ch ) >= max_friend && !IS_IMMORTAL( ch ) )
     {
-      act( "�A���n�ͦW��W�L$i�ӡM�Х��R���@�ǧa�T", ch, &max_friend, NULL, TO_CHAR );
+      act( "你的好友名單超過$i個﹐請先刪除一些吧﹗", ch, &max_friend, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !is_exist( arg + 1 ) )
     {
-      act( "��Ӧt�z�����M�䤣��o�� $t ��T", ch, arg + 1, NULL, TO_CHAR );
+      act( "整個宇宙之中﹐找不到這位 $t 喔﹗", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -82,7 +82,7 @@ FUNCTION( do_friend )
     pFriend->next = ch->friend;
     ch->friend    = pFriend;
 
-    act( "�A��$t�]���A���n�ͦW�椧���C", ch, arg + 1, NULL, TO_CHAR );
+    act( "你把$t設為你的好友名單之中。", ch, arg + 1, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -90,17 +90,17 @@ FUNCTION( do_friend )
   {
     if ( arg[1] == '\x0' )
     {
-      send_to_char( "�A�n�R�����@�쬰�n�ͦW��S\n\r", ch );
+      send_to_char( "你要刪除哪一位為好友名單﹖\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !is_friend( ch, arg + 1 ) )
     {
-      act( "$t ���ӴN���b�A���n�ͦW�椧���o�T", ch, arg + 1, NULL, TO_CHAR );
+      act( "$t 本來就不在你的好友名單之中囉﹗", ch, arg + 1, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    act( "�A��$t�q�A���n�ͦW�椤�����F�T", ch, arg + 1, NULL, TO_CHAR );
+    act( "你把$t從你的好友名單中移除了﹗", ch, arg + 1, NULL, TO_CHAR );
     extract_a_friend( ch, arg + 1 );
     RETURN_NULL();
   }
@@ -115,32 +115,32 @@ FUNCTION( do_friend )
     {
       if ( !IS_IMMORTAL( ch ) )
       {
-        send_to_char( "�A���v�O�����H�[�ݨ�L�H���n�ͦW��T\n\r", ch );
+        send_to_char( "你的權力不足以觀看其他人的好友名單﹗\n\r", ch );
         RETURN_NULL();
       }
 
       if ( !( victim = get_char_world( ch, arg ) ) )
       {
-        act( "�䤣��A�n�[�ݪ���H $2$T$0�C", ch, NULL, arg, TO_CHAR );
+        act( "找不到你要觀看的對象 $2$T$0。", ch, NULL, arg, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( IS_NPC( victim ) )
       {
-        act( "�D���a$N�O�S���n�ͦW�檺�C", ch, NULL, victim, TO_CHAR );
+        act( "非玩家$N是沒有好友名單的。", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
 
       if ( get_trust( ch ) < get_trust( victim ) )
       {
-        act( "�A���v�O������$N���n�ͦW��C", ch, NULL, victim, TO_CHAR );
+        act( "你的權力不夠看$N的好友名單。", ch, NULL, victim, TO_CHAR );
         RETURN_NULL();
       }
     }
 
     if ( !victim->friend )
     {
-      act( "$N�èS�����󪺦n�ͦW��C", ch, NULL, victim, TO_CHAR );
+      act( "$N並沒有任何的好友名單。", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -148,8 +148,8 @@ FUNCTION( do_friend )
     count = 0;
 
     send_to_buffer(
-      "\e[1;33;44m���� �W�u �W�r         ����W�r                        "
-      " ���� �~�� �ʧO ¾  �~  \e[0m\n\r" );
+      "\e[1;33;44m順序 上線 名字         中文名字                        "
+      " 等級 年齡 性別 職  業  \e[0m\n\r" );
 
     for ( pFriend = victim->friend; pFriend; pFriend = pFriend->next )
     {
@@ -192,7 +192,7 @@ FUNCTION( do_friend )
   RETURN_NULL();
 }
 
-/* �P���n�ͦW�� */
+/* 銷毀好友名單 */
 void extract_friend( CHAR_DATA * ch )
 {
   FRIEND_DATA * pFriend;
@@ -202,7 +202,7 @@ void extract_friend( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "extract_friend: �ӷ������T." );
+    mudlog( LOG_DEBUG, "extract_friend: 來源不正確." );
     RETURN_NULL();
   }
 
@@ -225,7 +225,7 @@ void extract_a_friend( CHAR_DATA * ch, const char * name )
 
   if ( !ch || !name || !*name )
   {
-    mudlog( LOG_DEBUG, "extract_a_friend: �ʥF�ӷ�." );
+    mudlog( LOG_DEBUG, "extract_a_friend: 缺乏來源." );
     RETURN_NULL();
   }
 
@@ -241,7 +241,7 @@ void extract_a_friend( CHAR_DATA * ch, const char * name )
     }
   }
 
-  mudlog( LOG_DEBUG, "extract_a_friend: �S�o�{�n�P�������c." );
+  mudlog( LOG_DEBUG, "extract_a_friend: 沒發現要銷毀的結構." );
   RETURN_NULL();
 }
 
@@ -254,7 +254,7 @@ size_t friend_count( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "friend_count: �ӷ������T." );
+    mudlog( LOG_DEBUG, "friend_count: 來源不正確." );
     RETURN( 0 );
   }
 
@@ -271,7 +271,7 @@ FRIEND_DATA * is_friend( CHAR_DATA * ch, const char * name )
 
   if ( !ch || !name || !*name )
   {
-    mudlog( LOG_DEBUG, "is_friend: �ӷ������T." );
+    mudlog( LOG_DEBUG, "is_friend: 來源不正確." );
     RETURN( NULL );
   }
 
@@ -291,7 +291,7 @@ void friend_msg( CHAR_DATA * ch )
 
   if ( !ch || IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "friend_msg: �ӷ������D." );
+    mudlog( LOG_DEBUG, "friend_msg: 來源有問題." );
     RETURN_NULL();
   }
 
@@ -305,7 +305,7 @@ void friend_msg( CHAR_DATA * ch )
       {
         if ( !str_cmp( pFriend->name, ch->name ) )
         {
-          act( "�A���n��$N�W�u�o�T\a\a", victim, NULL, ch, TO_CHAR );
+          act( "你的好友$N上線囉﹗\a\a", victim, NULL, ch, TO_CHAR );
           RETURN_NULL();
         }
       }

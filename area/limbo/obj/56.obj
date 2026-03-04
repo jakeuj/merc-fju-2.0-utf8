@@ -1,9 +1,9 @@
 Vnum            56
 Name            soldier armor~
-ShortDesc       ¥Õ²Ş¾Ô¥Ò~
+ShortDesc       ç™½ç¿æˆ°ç”²~
 Description
-¸T½Ã­x©Ò¥Îªº¾Ô¥Ò(soldier)¡M¬İ°_¨Ó«Ü²Â­«¡M¦ı¦ü¥G¦³ÆZ¦nªº«OÅ@¡C~
-Unit            ¥ó~
+ç¦è¡›è»æ‰€ç”¨çš„æˆ°ç”²(soldier)ï¹çœ‹èµ·ä¾†å¾ˆç¬¨é‡ï¹ä½†ä¼¼ä¹æœ‰è »å¥½çš„ä¿è­·ã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

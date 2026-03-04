@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -43,7 +43,7 @@ FUNCTION( do_event )
 
   if ( !event_list )
   {
-    act( "¹ï¤£°_¡M$t¨S¦³¥ô¦óªºÄ²µo¨Æ¥ó¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$tæ²’æœ‰ä»»ä½•çš„è§¸ç™¼äº‹ä»¶ï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -53,8 +53,8 @@ FUNCTION( do_event )
   {
     clear_buffer();
 
-    send_to_buffer( "\e[1;33;44m ¶¶§Ç ¦W      ºÙ          "
-      "°õ  ¦æ Âê©w ¾÷  ²v                                    \e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44m é †åº å      ç¨±          "
+      "åŸ·  è¡Œ é–å®š æ©Ÿ  ç‡                                    \e[0m\n\r" );
 
     for ( loop = 1, pEvent = event_list; pEvent; pEvent = pEvent->next )
     {
@@ -70,7 +70,7 @@ FUNCTION( do_event )
   {
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "§A­nÂê©w´X¸¹ªºÄ²µo©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦é–å®šå¹¾è™Ÿçš„è§¸ç™¼å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -80,19 +80,19 @@ FUNCTION( do_event )
 
     if ( !pEvent )
     {
-      send_to_char( "¹ï¤£°_¡M¨S¦³¨º¸¹Ä²µo¡MÂê©w¨ú®ø¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£è™Ÿè§¸ç™¼ï¹é–å®šå–æ¶ˆï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pEvent->lock )
     {
-      act( "§A³]©w¤F$t³o­ÓÄ²µo°Ê§@¡T", ch, pEvent->title, NULL, TO_CHAR );
+      act( "ä½ è¨­å®šäº†$té€™å€‹è§¸ç™¼å‹•ä½œï¹—", ch, pEvent->title, NULL, TO_CHAR );
       pEvent->lock = FALSE;
     }
 
     else
     {
-      act( "§AÂê©w¤F$t³o­ÓÄ²µo°Ê§@¡T", ch, pEvent->title, NULL, TO_CHAR );
+      act( "ä½ é–å®šäº†$té€™å€‹è§¸ç™¼å‹•ä½œï¹—", ch, pEvent->title, NULL, TO_CHAR );
       pEvent->lock = TRUE;
     }
   }
@@ -101,7 +101,7 @@ FUNCTION( do_event )
   {
     if ( argument[0] == '\x0' || !is_number( argument ) )
     {
-      send_to_char( "¹ï¤£°_¡M§A­n¤â°ÊÄ²µo­ş¤@¸¹¨Æ¥ó©O¡S\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ è¦æ‰‹å‹•è§¸ç™¼å“ªä¸€è™Ÿäº‹ä»¶å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -112,12 +112,12 @@ FUNCTION( do_event )
       {
         if ( pEvent->lock )
         {
-          act( "$t³o­Ó¨Æ¥ó¤w¸g³QÂê©wµLªk°õ¦æ¡C"
+          act( "$té€™å€‹äº‹ä»¶å·²ç¶“è¢«é–å®šç„¡æ³•åŸ·è¡Œã€‚"
             , ch, pEvent->title, NULL, TO_CHAR );
           RETURN_NULL();
         }
 
-        act( "§A¤â°ÊÄ²µo¤F$t³o­Ó¨Æ¥ó¡T", ch, pEvent->title, NULL, TO_CHAR );
+        act( "ä½ æ‰‹å‹•è§¸ç™¼äº†$té€™å€‹äº‹ä»¶ï¹—", ch, pEvent->title, NULL, TO_CHAR );
         ( *pEvent->function ) ();
         pEvent->count++;
 
@@ -125,12 +125,12 @@ FUNCTION( do_event )
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M¨S¦³¨º¸¹Ä²µo¡M¨ú®ø°õ¦æ¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£è™Ÿè§¸ç™¼ï¹å–æ¶ˆåŸ·è¡Œï¹—\n\r", ch );
   }
 
   else
   {
-    send_to_char( "§Aªº°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß event ªº¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "ä½ çš„åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢ event çš„ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
   RETURN_NULL();
 }
@@ -160,12 +160,12 @@ void event_thunder( void )
 
   if ( zDesc && ( ch = zDesc->character ) )
   {
-    sprintf( buf, "¬ğµM¤Ñ¤W¤@°}¹pÁn¶©¶©¡M¥­¤é§@´c¦hºİªº%s"
-      "­è¦n´N³Q³o°}¹p¥´¨ì¡T", mob_name( NULL, ch ) );
+    sprintf( buf, "çªç„¶å¤©ä¸Šä¸€é™£é›·è²éš†éš†ï¹å¹³æ—¥ä½œæƒ¡å¤šç«¯çš„%s"
+      "å‰›å¥½å°±è¢«é€™é™£é›·æ‰“åˆ°ï¹—", mob_name( NULL, ch ) );
 
-    talk_channel_2( buf, CHANNEL_BULLETIN, "¤Ñ¨a" );
+    talk_channel_2( buf, CHANNEL_BULLETIN, "å¤©ç½" );
 
-    send_to_char( "½Ö¥s§A¥­¤é§@´c¦hºİ¡M§A¬İ¡M³Q¹p¥´¨ì¤F§a¡T\n\r", ch );
+    send_to_char( "èª°å«ä½ å¹³æ—¥ä½œæƒ¡å¤šç«¯ï¹ä½ çœ‹ï¹è¢«é›·æ‰“åˆ°äº†å§ï¹—\n\r", ch );
 
     ch->hit  = 1;
     ch->mana = 1;
@@ -184,10 +184,10 @@ void event_solar_eclipse( void )
 
   PUSH_FUNCTION( "event_solar_eclipse" );
 
-  str_cpy( buf, "¬ğµM¥X²{¤F¤é»k¡M¤@®É¤H¤ß´q´q¡MÅÑ¸é¥|°_¡M«Ü¦h¤H´N¦b"
-    "¤@°}§L·W°¨¶Ã¤§¤¤¡M¥á¤F¤£¤Ö¿ú¡T" );
+  str_cpy( buf, "çªç„¶å‡ºç¾äº†æ—¥è•ï¹ä¸€æ™‚äººå¿ƒæƒ¶æƒ¶ï¹ç«Šè³Šå››èµ·ï¹å¾ˆå¤šäººå°±åœ¨"
+    "ä¸€é™£å…µæ…Œé¦¬äº‚ä¹‹ä¸­ï¹ä¸Ÿäº†ä¸å°‘éŒ¢ï¹—" );
 
-  talk_channel_2( buf, CHANNEL_BULLETIN, "¤Ñ¨a" );
+  talk_channel_2( buf, CHANNEL_BULLETIN, "å¤©ç½" );
 
   for ( pDesc = descriptor_list; pDesc; pDesc = pDesc->next )
   {
@@ -199,7 +199,7 @@ void event_solar_eclipse( void )
     {
       if ( ( value = ch->gold * 10 / 100 ) > 0 )
       {
-        act( "§A¿ò¥¢¤F$i¨â¶Àª÷¡C", ch, &value, NULL, TO_CHAR );
+        act( "ä½ éºå¤±äº†$iå…©é»ƒé‡‘ã€‚", ch, &value, NULL, TO_CHAR );
         gold_from_char( ch, value );
       }
     }
@@ -217,10 +217,10 @@ void event_month_eclipse( void )
 
   PUSH_FUNCTION( "event_month_eclipse" );
 
-  str_cpy( buf, "¤Ñ¥Í²§¶H¡M³º¥X²{¤F¤ë»k¡M¤j®a¤H¤ß´q´q¡M¤£¤Ö¤H³º±²´Ú¦Ó°k¡M"
-    "¸Ì­±³ºµM¦³§A­Ì¿ú²øªº¦ÑÁó¡T" );
+  str_cpy( buf, "å¤©ç”Ÿç•°è±¡ï¹ç«Ÿå‡ºç¾äº†æœˆè•ï¹å¤§å®¶äººå¿ƒæƒ¶æƒ¶ï¹ä¸å°‘äººç«Ÿæ²æ¬¾è€Œé€ƒï¹"
+    "è£¡é¢ç«Ÿç„¶æœ‰ä½ å€‘éŒ¢èŠçš„è€é—†ï¹—" );
 
-  talk_channel_2( buf, CHANNEL_BULLETIN, "¤Ñ¨a" );
+  talk_channel_2( buf, CHANNEL_BULLETIN, "å¤©ç½" );
 
   for ( pDesc = descriptor_list; pDesc; pDesc = pDesc->next )
   {
@@ -232,7 +232,7 @@ void event_month_eclipse( void )
     {
       if ( ( value = ch->bank * 10 / 100 ) > 0 )
       {
-        act( "§Aªº¿ú²ø¤áÀY¿ò¥¢¤F$i¨â¶Àª÷¡C", ch, &value, NULL, TO_CHAR );
+        act( "ä½ çš„éŒ¢èŠæˆ¶é ­éºå¤±äº†$iå…©é»ƒé‡‘ã€‚", ch, &value, NULL, TO_CHAR );
         ch->bank = UMAX( 0, ch->bank - value );
       }
     }
@@ -250,8 +250,8 @@ void event_drought( void )
 
   PUSH_FUNCTION( "event_drought" );
 
-  str_cpy( buf, "¦]¬°¤[¤[¥¼­°«B¤ô¡M¦U¦a§ò¨aÀW¶Ç¡T" );
-  talk_channel_2( buf, CHANNEL_BULLETIN, "¤Ñ¨a" );
+  str_cpy( buf, "å› ç‚ºä¹…ä¹…æœªé™é›¨æ°´ï¹å„åœ°æ—±ç½é »å‚³ï¹—" );
+  talk_channel_2( buf, CHANNEL_BULLETIN, "å¤©ç½" );
 
   for ( pObj = object_list; pObj; pObj = zObj )
   {
@@ -265,7 +265,7 @@ void event_drought( void )
       && pObj != auction_info->obj
       && pObj->in_room )
     {
-      sprintf( buf, "%s¦]¬°§ò¨a¦Ó°®¬\\¤F¡T\n\r", obj_name( NULL, pObj ) );
+      sprintf( buf, "%så› ç‚ºæ—±ç½è€Œä¹¾æ¯\äº†ï¹—\n\r", obj_name( NULL, pObj ) );
       sendmsg_to_someroom( buf, pObj->in_room );
       extract_obj( pObj );
     }
@@ -280,7 +280,7 @@ void event_drought( void )
       && ch->pcdata )
     {
       ch->pcdata->condition[COND_THIRST] = 0;
-      send_to_char( "\e[33m§AÄ±±o¤f°®¦ŞÀê¡M¦ü¥G¥i¥H³Ü¤U¤@±í¤ô¡C\e[0m\n\r"
+      send_to_char( "\e[33mä½ è¦ºå¾—å£ä¹¾èˆŒç‡¥ï¹ä¼¼ä¹å¯ä»¥å–ä¸‹ä¸€æ¡¶æ°´ã€‚\e[0m\n\r"
         , ch );
     }
   }
@@ -297,8 +297,8 @@ void event_locust( void )
 
   PUSH_FUNCTION( "event_locust" );
 
-  str_cpy( buf, "«Îº|°¾³{³s©]«B¡M¹A§@ª«¤í¦¬¤S¹J¨ì½À®`¡M¦U¦a¨a®`ÀW¶Ç¡T" );
-  talk_channel_2( buf, CHANNEL_BULLETIN, "¤Ñ¨a" );
+  str_cpy( buf, "å±‹æ¼åé€¢é€£å¤œé›¨ï¹è¾²ä½œç‰©æ¬ æ”¶åˆé‡åˆ°è—å®³ï¹å„åœ°ç½å®³é »å‚³ï¹—" );
+  talk_channel_2( buf, CHANNEL_BULLETIN, "å¤©ç½" );
 
   for ( pObj = object_list; pObj; pObj = zObj )
   {
@@ -312,7 +312,7 @@ void event_locust( void )
       && pObj != auction_info->obj
       && pObj->in_room )
     {
-      sprintf( buf, "%s¦]¬°½À®`¦Ó®ø¥¢¤F¡T\n\r", obj_name( NULL, pObj ) );
+      sprintf( buf, "%så› ç‚ºè—å®³è€Œæ¶ˆå¤±äº†ï¹—\n\r", obj_name( NULL, pObj ) );
       sendmsg_to_someroom( buf, pObj->in_room );
       extract_obj( pObj );
     }
@@ -327,7 +327,7 @@ void event_locust( void )
       && ch->pcdata )
     {
       ch->pcdata->condition[COND_FULL] = 0;
-      send_to_char( "\e[33m©BÂPÂP¤@Án¡M§Aªº¨{¤l¾j¤F¡C\e[0m\n\r", ch );
+      send_to_char( "\e[33må’•åš•åš•ä¸€è²ï¹ä½ çš„è‚šå­é¤“äº†ã€‚\e[0m\n\r", ch );
     }
   }
 

@@ -1,10 +1,10 @@
 Vnum            504
 Name            wedding boot~
-ShortDesc       ¥Õ¦â·s®Q¾c~
+ShortDesc       ç™½è‰²æ–°å¨˜é‹~
 Description
-¤@Âù¶H¼x¯Â¯u°ª¶®ªº¥Õ¦â·s®Q¾c(wedding boot)¡M¦bµ²±Bªº®É­Ô¬ï¡C
+ä¸€é›™è±¡å¾µç´”çœŸé«˜é›…çš„ç™½è‰²æ–°å¨˜é‹(wedding boot)ï¹åœ¨çµå©šçš„æ™‚å€™ç©¿ã€‚
 ~
-Unit            Âù~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

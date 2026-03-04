@@ -1,9 +1,9 @@
 Vnum            57
 Name            soldier coat~
-ShortDesc       ¯À¦â¾Ô³T~
+ShortDesc       ç´ è‰²æˆ°è¢~
 Description
-¸T½Ã­x©Ò¬ïªº¨îªA(soldier coat)¡MªÓ¤WÂ¸µÛ¤@±øª÷½u¡C~
-Unit            ¥ó~
+ç¦è¡›è»æ‰€ç©¿çš„åˆ¶æœ(soldier coat)ï¹è‚©ä¸Šç¹¡è‘—ä¸€æ¢é‡‘ç·šã€‚~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

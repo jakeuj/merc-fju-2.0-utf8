@@ -1,5 +1,5 @@
 Name            lubu revenge~
-Cname           �f�����_��~
+Cname           呂布的復仇~
 Slot            SLOT_LUBUREVENGE
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -30,9 +30,9 @@ Help            ~
 
 #Damage
 Description
-$S$n�r�M�@�D�M�N$B���\$R�B�ܷ��P�M�ϥX�ȳ��]�\���q$R�y�@�N�\���U���\�z$R
-�d�U�����q$n���I�᭸�X�M�uı�Ѧa�ܦ�M���ҧL�M�@�಴�M
-���ǩP��u�Ѷ��g�@���M$Nı�o�ͩR�O���q�餺�y��$Z�C~
+$S$n猛然一躍﹐將$B陰功$R運至極致﹐使出玄陰魔功奧義$R『一將功成萬骨枯』$R
+千萬絲怨氣從$n的背後飛出﹐只覺天地變色﹐草木皆兵﹐一轉眼﹐
+身旁周圍只剩黃土一片﹐$N覺得生命力正從體內流失$Z。~
 Chance          20
 Value           20
 Parry           0

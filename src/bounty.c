@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -32,7 +32,7 @@ FUNCTION( do_bounty )
 
   if ( !bounty_list )
   {
-    act( "¹ï¤£°_¡M$t¨S¦³¥ô¦óªºÄa½à¸ê®Æ¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "å°ä¸èµ·ï¹$tæ²’æœ‰ä»»ä½•çš„æ‡¸è³è³‡æ–™ï¹—", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -42,7 +42,7 @@ FUNCTION( do_bounty )
   {
     if ( NowBounty <= 0 )
     {
-      act( "¥Ø«e$t¨S¦³¥ô¦óÄa½àªº¦W³æ¡M½Ğ­@¤ß¦aµ¥­Ô§a¡T", ch, mud_name, NULL, TO_CHAR );
+      act( "ç›®å‰$tæ²’æœ‰ä»»ä½•æ‡¸è³çš„åå–®ï¹è«‹è€å¿ƒåœ°ç­‰å€™å§ï¹—", ch, mud_name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
@@ -57,8 +57,8 @@ FUNCTION( do_bounty )
         continue;
 
       if ( loop == 0 )
-        send_to_buffer( "\e[1;33;44m¶¶§Ç ©Ò¦b°Ï°ì¦WºÙ ©Çª«¦WºÙ             "
-          "      ¼ú½à                              \e[0m\n\r" );
+        send_to_buffer( "\e[1;33;44mé †åº æ‰€åœ¨å€åŸŸåç¨± æ€ªç‰©åç¨±             "
+          "      çè³                              \e[0m\n\r" );
 
       chinese_number( pBounty->value, buf );
       send_to_buffer( "%4d %-12s %-26s %s%s%s\n\r"
@@ -73,9 +73,9 @@ FUNCTION( do_bounty )
     }
 
     if ( loop == 0 )
-      send_to_buffer( "¥Ø«e¨S¦³¥ô¦óÄa½àªº¦W³æ¡M½Ğ­@¤ß¦aµ¥­Ô§a¡T\n\r" );
+      send_to_buffer( "ç›®å‰æ²’æœ‰ä»»ä½•æ‡¸è³çš„åå–®ï¹è«‹è€å¿ƒåœ°ç­‰å€™å§ï¹—\n\r" );
 
-    if ( loop != NowBounty ) mudlog( LOG_DEBUG, "do_bounty: Á`¼Æ¤£²Å¦X." );
+    if ( loop != NowBounty ) mudlog( LOG_DEBUG, "do_bounty: ç¸½æ•¸ä¸ç¬¦åˆ." );
 
     print_buffer( ch );
   }
@@ -86,7 +86,7 @@ FUNCTION( do_bounty )
 
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "§A·QÂê©w²Ä´X­ÓÄa½à©O¡S\n\r", ch );
+      send_to_char( "ä½ æƒ³é–å®šç¬¬å¹¾å€‹æ‡¸è³å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -99,13 +99,13 @@ FUNCTION( do_bounty )
         if ( pBounty->lock )
         {
           pBounty->lock = FALSE;
-          act( "§A¸Ñ°£¤F²Ä$i¸¹ªºÄa½àÂê©w¡T", ch, &slot, NULL, TO_CHAR );
+          act( "ä½ è§£é™¤äº†ç¬¬$iè™Ÿçš„æ‡¸è³é–å®šï¹—", ch, &slot, NULL, TO_CHAR );
         }
 
         else
         {
           pBounty->lock = TRUE;
-          act( "§A³]©w¤F²Ä$i¸¹ªºÄa½àÂê©w¡T", ch, &slot, NULL, TO_CHAR );
+          act( "ä½ è¨­å®šäº†ç¬¬$iè™Ÿçš„æ‡¸è³é–å®šï¹—", ch, &slot, NULL, TO_CHAR );
 
           for ( pMob = char_list; pMob; pMob = pMob->next )
           {
@@ -116,7 +116,7 @@ FUNCTION( do_bounty )
               pBounty->killed++;
               NowBounty--;
 
-              act( "$n¤£¦A¬O³QÄa½àªº¤H¤F¡T", pMob, NULL, NULL, TO_ROOM );
+              act( "$nä¸å†æ˜¯è¢«æ‡¸è³çš„äººäº†ï¹—", pMob, NULL, NULL, TO_ROOM );
             }
           }
         }
@@ -125,7 +125,7 @@ FUNCTION( do_bounty )
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M¨S¦³¨º­Ó¶¶§Çªº¸ê®Æ¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£å€‹é †åºçš„è³‡æ–™ï¹—\n\r", ch );
   }
 
   else if ( !str_prefix( arg, "go" ) && IS_IMMORTAL( ch ) )
@@ -133,7 +133,7 @@ FUNCTION( do_bounty )
     one_argument( argument, arg );
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "§A·QÅı²Ä´X­ÓÄa½à¥ß¨è±Ò°Ê¡S\n\r", ch );
+      send_to_char( "ä½ æƒ³è®“ç¬¬å¹¾å€‹æ‡¸è³ç«‹åˆ»å•Ÿå‹•ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -145,31 +145,31 @@ FUNCTION( do_bounty )
       {
         if ( pBounty->lock )
         {
-          send_to_char( "³o¶µ¸ê®Æ³QÂê©w¡M©Ò¥HµLªk±Ò°Ê¡T\n\r", ch );
+          send_to_char( "é€™é …è³‡æ–™è¢«é–å®šï¹æ‰€ä»¥ç„¡æ³•å•Ÿå‹•ï¹—\n\r", ch );
           RETURN_NULL();
         }
 
         if ( !pBounty->mob || !pBounty->msg || !*pBounty->msg )
         {
-          send_to_char( "¸ê®Æ¤£§¹¥ş¡M©Ò¥HµLªk±Ò°Ê¡T\n\r", ch );
+          send_to_char( "è³‡æ–™ä¸å®Œå…¨ï¹æ‰€ä»¥ç„¡æ³•å•Ÿå‹•ï¹—\n\r", ch );
           RETURN_NULL();
         }
 
         if ( pBounty->count >= pBounty->max )
         {
-          send_to_char( "¼Æ¶q¤w¹F¤W­­¡M©Ò¥HµLªk±Ò°Ê¡C\n\r", ch );
+          send_to_char( "æ•¸é‡å·²é”ä¸Šé™ï¹æ‰€ä»¥ç„¡æ³•å•Ÿå‹•ã€‚\n\r", ch );
           RETURN_NULL();
         }
 
         if ( !( pRoom = random_room( get_room_area( pBounty->room ) ) ) )
         {
-          send_to_char( "§ä¤£¨ì¥X²{ªº©Ğ¶¡¡M±Ò°Ê¥¢±Ñ¡T\n\r", ch );
+          send_to_char( "æ‰¾ä¸åˆ°å‡ºç¾çš„æˆ¿é–“ï¹å•Ÿå‹•å¤±æ•—ï¹—\n\r", ch );
           RETURN_NULL();
         }
 
         if ( !( pMob = shape_mobile( pBounty->mob, pRoom ) ) )
         {
-          send_to_char( "¹ï¤£°_¡MµLªk²£¥Í©Çª«¡MÄ²µo¥¢±Ñ¡T\n\r", ch );
+          send_to_char( "å°ä¸èµ·ï¹ç„¡æ³•ç”¢ç”Ÿæ€ªç‰©ï¹è§¸ç™¼å¤±æ•—ï¹—\n\r", ch );
           RETURN_NULL();
         }
 
@@ -180,21 +180,21 @@ FUNCTION( do_bounty )
         pMob->gold   = 0;
 
         chinese_number( pBounty->value, buf1 );
-        sprintf( buf, "%s¡M¤Z¬O¥i¥H°£±¼%s\e[1;33mªº¤H¡M³£¥i¥H»â½à%s%s%s¡T"
+        sprintf( buf, "%sï¹å‡¡æ˜¯å¯ä»¥é™¤æ‰%s\e[1;33mçš„äººï¹éƒ½å¯ä»¥é ˜è³%s%s%sï¹—"
           , pBounty->msg
           , mob_name( NULL, pMob )
           , bounty_type( pBounty->type )
           , buf1
           , bounty_unit( pBounty->type ) );
 
-        talk_channel_2( buf, CHANNEL_BULLETIN, "Äa½à" );
+        talk_channel_2( buf, CHANNEL_BULLETIN, "æ‡¸è³" );
 
-        send_to_char( "§A¤â°ÊÄ²µo³o¦¸ªºÄa½à¨Æ¥ó¡T\n\r", ch );
+        send_to_char( "ä½ æ‰‹å‹•è§¸ç™¼é€™æ¬¡çš„æ‡¸è³äº‹ä»¶ï¹—\n\r", ch );
         RETURN_NULL();
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M¨S¦³¨º­Ó¶¶§Çªº¸ê®Æ¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£å€‹é †åºçš„è³‡æ–™ï¹—\n\r", ch );
   }
 
   else if ( !str_prefix( arg, "status" ) && IS_IMMORTAL( ch ) )
@@ -204,8 +204,8 @@ FUNCTION( do_bounty )
     if ( arg[0] == '\x0' )
     {
       clear_buffer();
-      send_to_buffer( "\e[1;33;44m¶¶§Ç ©Ç ª« ¦W ºÙ          ¸¹ ½X ¾÷²v"
-        " ©Ğ ¶¡ ¼Æ¶q Max «¬    ºA ¼Æ­È ¾E±p µo¥Í ³Q±ş\e[0m\n\r" );
+      send_to_buffer( "\e[1;33;44mé †åº æ€ª ç‰© å ç¨±          è™Ÿ ç¢¼ æ©Ÿç‡"
+        " æˆ¿ é–“ æ•¸é‡ Max å‹    æ…‹ æ•¸å€¼ é·å¾™ ç™¼ç”Ÿ è¢«æ®º\e[0m\n\r" );
 
       loop = 0;
       for ( pBounty = bounty_list; pBounty; pBounty = pBounty->next, loop++ )
@@ -228,7 +228,7 @@ FUNCTION( do_bounty )
         if ( buffer_full() ) break;
       }
 
-      send_to_buffer( "\n\r¦Ü¤Ö­n %d ¤H¥H¤W¤~·|¶}±ÒÄa½à¨Æ¥ó¡T\n\r"
+      send_to_buffer( "\n\rè‡³å°‘è¦ %d äººä»¥ä¸Šæ‰æœƒé–‹å•Ÿæ‡¸è³äº‹ä»¶ï¹—\n\r"
         , BountyLimit );
 
       print_buffer( ch );
@@ -236,7 +236,7 @@ FUNCTION( do_bounty )
 
     else if ( !is_number( arg ) )
     {
-      send_to_char( "§Aªº¶¶§Ç¥²¶·¬O¸¹½X¡T\n\r", ch );
+      send_to_char( "ä½ çš„é †åºå¿…é ˆæ˜¯è™Ÿç¢¼ï¹—\n\r", ch );
       RETURN_NULL()
     }
 
@@ -244,7 +244,7 @@ FUNCTION( do_bounty )
     {
       if ( ( slot = atoi( arg ) ) <= 0 )
       {
-        send_to_char( "§Aªº¶¶§Ç¼Æ¦r¤£¦X²z¡T\n\r", ch );
+        send_to_char( "ä½ çš„é †åºæ•¸å­—ä¸åˆç†ï¹—\n\r", ch );
         RETURN_NULL();
       }
 
@@ -254,20 +254,20 @@ FUNCTION( do_bounty )
         if ( loop == slot && pBounty->mob && pBounty->msg )
         {
           print_to_char( ch,
-            "¶¶    §Ç¡R %d\n\r"
-            "©Çª«¸¹½X¡R %d\n\r"
-            "©Çª«¦WºÙ¡R %s\n\r"
-            "¥X²{©Ğ¶¡¡R %d\n\r"
-            "¥X²{¾÷²v¡R ¤d¤À¤§ %d\n\r"
-            "¥Ø«e¼Æ¶q¡R %d\n\r"
-            "³Ì¤j¼Æ¶q¡R %d\n\r"
-            "¼ú½à«¬ºA¡R %s\n\r"
-            "¼ú½à¼Æ­È¡R %d\n\r"
-            "¾E±p¾÷²v¡R ¦Ê¤À¤§ %d\n\r"
-            "²£¥Í¦¸¼Æ¡R %d ¦¸\n\r"
-            "³Q §¹ ¦¨¡R %d ¦¸\n\r"
-            "³Q Âê ©w¡R %s\n\r"
-            "¿é¥X±Ô­z¡R\n\r%s\n\r"
+            "é †    åºï¹• %d\n\r"
+            "æ€ªç‰©è™Ÿç¢¼ï¹• %d\n\r"
+            "æ€ªç‰©åç¨±ï¹• %s\n\r"
+            "å‡ºç¾æˆ¿é–“ï¹• %d\n\r"
+            "å‡ºç¾æ©Ÿç‡ï¹• åƒåˆ†ä¹‹ %d\n\r"
+            "ç›®å‰æ•¸é‡ï¹• %d\n\r"
+            "æœ€å¤§æ•¸é‡ï¹• %d\n\r"
+            "çè³å‹æ…‹ï¹• %s\n\r"
+            "çè³æ•¸å€¼ï¹• %d\n\r"
+            "é·å¾™æ©Ÿç‡ï¹• ç™¾åˆ†ä¹‹ %d\n\r"
+            "ç”¢ç”Ÿæ¬¡æ•¸ï¹• %d æ¬¡\n\r"
+            "è¢« å®Œ æˆï¹• %d æ¬¡\n\r"
+            "è¢« é– å®šï¹• %s\n\r"
+            "è¼¸å‡ºæ•˜è¿°ï¹•\n\r%s\n\r"
             , loop
             , pBounty->mob->vnum
             , mob_index_name( NULL, pBounty->mob )
@@ -287,7 +287,7 @@ FUNCTION( do_bounty )
         }
       }
 
-      send_to_char( "¹ï¤£°_¡M¨S¦³¨º­Ó¶¶§Çªº¸ê®Æ¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£å€‹é †åºçš„è³‡æ–™ï¹—\n\r", ch );
     }
 
     RETURN_NULL();
@@ -295,7 +295,7 @@ FUNCTION( do_bounty )
 
   else
   {
-    send_to_char( "§Aªº»yªk¿ù»~¡M½Ğ¬d¸ß bounty ªº¥¿½T¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "ä½ çš„èªæ³•éŒ¯èª¤ï¹è«‹æŸ¥è©¢ bounty çš„æ­£ç¢ºä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
@@ -313,7 +313,7 @@ void bounty_update( void )
 
   if ( get_usernum() < BountyLimit ) RETURN_NULL();
 
-  /* ¨t²Î­«¸m, Ãö³¬ */
+  /* ç³»çµ±é‡ç½®, é—œé–‰ */
   if ( ( reboot_time   > 0 && ( ( reboot_time   - current_time ) < 300 ) )
     || ( shutdown_time > 0 && ( ( shutdown_time - current_time ) < 300 ) ) )
     RETURN_NULL();
@@ -336,14 +336,14 @@ void bounty_update( void )
     pMob->gold   = 0;
 
     chinese_number( pBounty->value, buf1 );
-    sprintf( buf, "%s¡M¤Z¬O¥i¥H°£±¼%s\e[1;33mªº¤H¡M³£¥i¥H»â½à%s%s%s¡T"
+    sprintf( buf, "%sï¹å‡¡æ˜¯å¯ä»¥é™¤æ‰%s\e[1;33mçš„äººï¹éƒ½å¯ä»¥é ˜è³%s%s%sï¹—"
       , pBounty->msg
       , mob_name( NULL, pMob )
       , bounty_type( pBounty->type )
       , buf1
       , bounty_unit( pBounty->type ) );
 
-    talk_channel_2( buf, CHANNEL_BULLETIN, "Äa½à" );
+    talk_channel_2( buf, CHANNEL_BULLETIN, "æ‡¸è³" );
   }
 
   if ( NowBounty <= 0 ) RETURN_NULL();
@@ -362,12 +362,12 @@ void bounty_update( void )
       || pMob->talk_buf
       || pMob->position != POS_STANDING ) continue;
 
-    act( "$n©P³ò¥X²{¤@¹Îµµ®ğ¡M¤£¤[¡M­şÁÙ¦³$nªº¨­¼v©O¡S"
+    act( "$nå‘¨åœå‡ºç¾ä¸€åœ˜ç´«æ°£ï¹ä¸ä¹…ï¹å“ªé‚„æœ‰$nçš„èº«å½±å‘¢ï¹–"
        , pMob, NULL, NULL, TO_ROOM );
 
     char_from_room( pMob );
     char_to_room( pMob, pRoom );
-    act( "¤£¦n·N«ä¡M$n¨Ó­É¦í¤@¤U¡C", pMob, NULL, NULL, TO_ROOM );
+    act( "ä¸å¥½æ„æ€ï¹$nä¾†å€Ÿä½ä¸€ä¸‹ã€‚", pMob, NULL, NULL, TO_ROOM );
   }
 
   RETURN_NULL();
@@ -383,7 +383,7 @@ void check_bounty( CHAR_DATA * ch, CHAR_DATA * victim )
 
   if ( !ch || !victim || !verify_char( ch ) || !verify_char( victim ) )
   {
-    mudlog( LOG_DEBUG, "check_bounty: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "check_bounty: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -398,26 +398,26 @@ void check_bounty( CHAR_DATA * ch, CHAR_DATA * victim )
   switch( pBounty->type )
   {
   default:
-    mudlog( LOG_DEBUG, "check_bounty: ¿ù»~ªº«¬ºA %d.", pBounty->type );
+    mudlog( LOG_DEBUG, "check_bounty: éŒ¯èª¤çš„å‹æ…‹ %d.", pBounty->type );
     RETURN_NULL();
 
   case BOUNTY_GOLD:
 
     if ( pBounty->value <= 0 )
     {
-      mudlog( LOG_DEBUG, "check_bounty: ¿ù»~ªº¼Æ­È %d.", pBounty->value );
+      mudlog( LOG_DEBUG, "check_bounty: éŒ¯èª¤çš„æ•¸å€¼ %d.", pBounty->value );
       RETURN_NULL();
     }
 
     if ( !over_scale( ch ) ) gold_to_char( ch, pBounty->value );
-    else send_to_char( "¹ï¤£°_¡M§AªºÁ`¸ê²£¤w¹F¤W­­¡M©Ò¥H¨S®³¨ì¿ú¡T\n\r", ch );
+    else send_to_char( "å°ä¸èµ·ï¹ä½ çš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹æ‰€ä»¥æ²’æ‹¿åˆ°éŒ¢ï¹—\n\r", ch );
     break;
 
   case BOUNTY_FIRMAN:
 
     if ( pBounty->value <= 0 )
     {
-      mudlog( LOG_DEBUG, "check_bounty: ¿ù»~ªº¼Æ­È %d.", pBounty->value );
+      mudlog( LOG_DEBUG, "check_bounty: éŒ¯èª¤çš„æ•¸å€¼ %d.", pBounty->value );
       RETURN_NULL();
     }
 
@@ -426,8 +426,8 @@ void check_bounty( CHAR_DATA * ch, CHAR_DATA * victim )
   }
 
   chinese_number( pBounty->value, buf1 );
-  sprintf( buf, "¦]¬°%s\e[1;33m(%s)°£±¼¤FÄa½à¤¤ªº%s¡M"
-    "©Ò¥H¯S¦a¼ú½à%s%s%s¡T\e[0m"
+  sprintf( buf, "å› ç‚º%s\e[1;33m(%s)é™¤æ‰äº†æ‡¸è³ä¸­çš„%sï¹"
+    "æ‰€ä»¥ç‰¹åœ°çè³%s%s%sï¹—\e[0m"
     , ch->cname
     , ch->name
     , mob_name( NULL, victim )
@@ -435,10 +435,10 @@ void check_bounty( CHAR_DATA * ch, CHAR_DATA * victim )
     , buf1
     , bounty_unit( pBounty->type ) );
 
-  talk_channel_2( buf, CHANNEL_BULLETIN, "¤½§i" );
+  talk_channel_2( buf, CHANNEL_BULLETIN, "å…¬å‘Š" );
 
   print_to_char( ch
-    , "¦]¬°§A°£±¼¤FÄa½à¤¤ªº%s¡M©Ò¥H¯S¦a¼ú½à§A%s%s%s¡T\e[0m\n\r"
+    , "å› ç‚ºä½ é™¤æ‰äº†æ‡¸è³ä¸­çš„%sï¹æ‰€ä»¥ç‰¹åœ°çè³ä½ %s%s%sï¹—\e[0m\n\r"
     , mob_name( NULL, victim )
     , bounty_type( pBounty->type )
     , buf1

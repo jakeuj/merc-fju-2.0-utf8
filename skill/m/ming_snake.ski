@@ -1,5 +1,5 @@
 Name            ming snake~
-Cname           �߳D�@�k~
+Cname           冥蛇鞭法~
 Slot            SLOT_MING_SNAKE
 Msgoff          ~
 Check           check_whip_attack~
@@ -34,7 +34,7 @@ Help            ~
 
 #Damage
 Description
-$n�⤤$O�@���M�ϥX�@��$Y�y���D�X�}�z$Z�M�����H�M����$N�ӥh�C~
+$n手中$O一揮﹐使出一招$Y『金蛇出洞』$Z﹐氣勢驚人﹐直撲$N而去。~
 Chance          10
 Value           20
 Parry           0
@@ -44,7 +44,7 @@ End
 
 #Damage
 Description
-$n�ϥX�@��$S�y�F�D�K��z$Z�M$O���F�D��ѥ|���K�襴�V$N�C~
+$n使出一招$S『靈蛇八方』$Z﹐$O似靈蛇般由四面八方打向$N。~
 Chance          10
 Value           20
 Parry           0
@@ -54,7 +54,7 @@ End
 
 #Damage
 Description
-$n�ϥX�@��$P�y�F�D�E�{�z$Z�M$O�������{�M���F����M�O$N�L�k���N$n���@���C~
+$n使出一招$P『靈蛇乍現』$Z﹐$O忽隱忽現﹐忽東忽西﹐令$N無法捉摸$n的鞭路。~
 Chance          10
 Value           20
 Parry           0
@@ -64,7 +64,7 @@ End
 
 #Damage
 Description
-$n�W�դ@���M�ϥX�@��$R�y���s½���z$Z�M�I���@�n�M�⤤$O�V$N��ӥh�C~
+$n蓄勢一揮﹐使出一招$R『赤龍翻江』$Z﹐呼的一聲﹐手中$O向$N橫掃而去。~
 Chance          10
 Value           20
 Parry           0
@@ -74,7 +74,7 @@ End
 
 #Damage
 Description
-$n����$O�M�ϥX�@��$Y�y���D�U�D�z$Z�M�p���d�ʱ����D�P�ɥ��X�M����$N�U�j�ޡC~
+$n揮動$O﹐使出一招$Y『金蛇萬道』$Z﹐如有千百條金蛇同時打出﹐直撲$N各大穴。~
 Chance          10
 Value           20
 Parry           0
@@ -84,7 +84,7 @@ End
 
 #Damage
 Description
-$n�⤤$O�@�ݡM��_�@����@��M�@��$W�y���D�񨭡z$Z�M�V$N���h�C~
+$n手中$O一抖﹐圈起一圈圈鞭花﹐一招$W『金蛇纏身』$Z﹐向$N捲去。~
 Chance          10
 Value           20
 Parry           0
@@ -94,7 +94,7 @@ End
 
 #Damage
 Description
-$n���Τ@�סM�ϥX�@��$b�y�U�ۻk�ߡz$Z�M�y�ɺ����@�v�M�@�ծ��a�@�Ѹ{���V$N���ܡC~
+$n身形一斜﹐使出一招$b『萬蠱蝕心』$Z﹐頓時滿天鞭影﹐鞭勢挾帶一股腥風向$N撲至。~
 Chance          10
 Value           20
 Parry           0
@@ -104,8 +104,8 @@ End
 
 #Damage
 Description
-$n$O�L���M�ϥX�@��$B�y�խߤۤơz$Z�M���@���֤����@�v�M�u�D�I�I�n�T�M������
-�١M��¶$N�|�P�C~
+$n$O微揮﹐使出一招$B『幽冥幻化』$Z﹐使鞭之快不見鞭影﹐只聞呼呼聲響﹐邪風陰
+煞﹐圍繞$N四周。~
 Chance          10
 Value           20
 Parry           0

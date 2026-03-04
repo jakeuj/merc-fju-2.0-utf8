@@ -1,8 +1,8 @@
 Vnum            9016
 Name            vendor~
-ShortDesc       ¤p³c~
+ShortDesc       å°è²©~
 Description
-¤@­Ó³c½æÂø³fªº¤p³c¡M¿@¬Ü¤j²´¡M¬İ°_¨Ó¹³¬OÃö¥~ªº­J¤H¡C
+ä¸€å€‹è²©è³£é›œè²¨çš„å°è²©ï¹æ¿ƒçœ‰å¤§çœ¼ï¹çœ‹èµ·ä¾†åƒæ˜¯é—œå¤–çš„èƒ¡äººã€‚
 ~
 Sentinel        Yes
 StayArea        Yes
@@ -32,7 +32,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  say ¤j·İ¤p©j­Ì¡M»°§Ö¨Ó¶Rª««~³á¡T
+  say å¤§çˆºå°å§å€‘ï¹è¶•å¿«ä¾†è²·ç‰©å“å–”ï¹—
 endif
 ~
 End

@@ -1,7 +1,7 @@
 Name            gold shield~
-Cname           ª÷ÄÁ¸n~
+Cname           é‡‘é˜ç½©~
 Slot            SLOT_GOLD_SHIELD
-Msgoff          ¦b§A¨­¤Wªº¤@¹D¹D¯u®ğº¥º¥´²¥h¡T~
+Msgoff          åœ¨ä½ èº«ä¸Šçš„ä¸€é“é“çœŸæ°£æ¼¸æ¼¸æ•£å»ï¹—~
 Function        cast_gold_shield~
 Check           check_unrigid_attack~
 Position        POS_STANDING

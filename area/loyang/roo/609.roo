@@ -1,7 +1,7 @@
 Vnum            609
-Name            ¤­¤æ¦Ì±ĞÂÂ©~~
+Name            äº”æ–—ç±³æ•™èˆŠå±…~
 Description
-³o¸Ì¤w¸g¯î¼o¦h®É¡M¤£¹L¬İ±o¥X¨Ó´¿¸g¿³ºa¤@®É¡C
+é€™è£¡å·²ç¶“è’å»¢å¤šæ™‚ï¹ä¸éçœ‹å¾—å‡ºä¾†æ›¾ç¶“èˆˆæ¦®ä¸€æ™‚ã€‚
 
 ~
 SectorType      SECT_CITY
@@ -16,23 +16,23 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         °V½mªÌ~
+Keyword         è¨“ç·´è€…~
 End
 
 #Enquire
-Keyword         °V½m®v~
+Keyword         è¨“ç·´å¸«~
 End
 
 #Enquire
-Keyword         °V½m~
+Keyword         è¨“ç·´~
 End
 
 #Enquire
-Keyword         ÂàÂ¾ªÌ~
+Keyword         è½‰è·è€…~
 End
 
 #Enquire
-Keyword         ¹D¤hÂàÂ¾ªÌ~
+Keyword         é“å£«è½‰è·è€…~
 End
 
 End

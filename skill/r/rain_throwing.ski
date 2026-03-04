@@ -1,5 +1,5 @@
 Name            rain throwing~
-Cname           ÅQ«BÁ±»î~
+Cname           éœ¸é›¨èž«é­‚~
 Slot            SLOT_RAIN_THROWING
 Msgoff          ~
 Check           check_dagger_attack~
@@ -41,7 +41,7 @@ Help            ~
 
 #Damage
 Description
-$n±N¤â¤¤$O¥Î¤O¤@¾G¡M¤@©Û$B¡yÂI¬P«B¡z$Z¡M¥u¨£¤@¹D¥Õ¥ú©¹$N®g¥h¡C~
+$nå°‡æ‰‹ä¸­$Oç”¨åŠ›ä¸€é„­ï¹ä¸€æ‹›$Bã€Žé»žæ˜Ÿé›¨ã€$Zï¹åªè¦‹ä¸€é“ç™½å…‰å¾€$Nå°„åŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -51,7 +51,7 @@ End
 
 #Damage
 Description
-$n¤â¤¤´²¥X¤@¹D¥Õ¥ú¡M¤@©Û$B¡y´²¹p­·¡z$Z$OÄÆ¯B¤£©wªº©¹$N¦Ó¥h¡C~
+$næ‰‹ä¸­æ•£å‡ºä¸€é“ç™½å…‰ï¹ä¸€æ‹›$Bã€Žæ•£é›·é¢¨ã€$Z$Oé£„æµ®ä¸å®šçš„å¾€$Nè€ŒåŽ»ã€‚~
 Chance          20
 Value           20
 Parry           0
@@ -61,7 +61,7 @@ End
 
 #Damage
 Description
-$n¤@©Û$B¡y¬P¿O¸U«B¡z$Z¡M®g¥Xªº$O´²¥XµL¼Æ´Ý¼v©¹$N¦Ó¥h¡C~
+$nä¸€æ‹›$Bã€Žæ˜Ÿç‡ˆè¬é›¨ã€$Zï¹å°„å‡ºçš„$Oæ•£å‡ºç„¡æ•¸æ®˜å½±å¾€$Nè€ŒåŽ»ã€‚~
 Chance          20
 Value           20
 Parry           0
@@ -71,7 +71,7 @@ End
 
 #Damage
 Description
-$n¤@©Û$B¡yª\¯«·m¿Ë¡z$Z¡M®g¥Xªº$O¦³¦pÍêÆN¶¯­¸¡M©¹$Nª½©b¦Ó¥h¡C~
+$nä¸€æ‹›$Bã€Žæ­¿ç¥žæ¶è¦ªã€$Zï¹å°„å‡ºçš„$Oæœ‰å¦‚ä¿‡é·¹é›„é£›ï¹å¾€$Nç›´å¥”è€ŒåŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -81,7 +81,7 @@ End
 
 #Damage
 Description
-$n¤@©Û$B¡y­·°_¶³´é¡z$Z¡M®g¥Xªº$O¥H·¥ºÝªº³t«×­¸©¹$N¥h¡C~
+$nä¸€æ‹›$Bã€Žé¢¨èµ·é›²æ¹§ã€$Zï¹å°„å‡ºçš„$Oä»¥æ¥µç«¯çš„é€Ÿåº¦é£›å¾€$NåŽ»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -91,8 +91,8 @@ End
 
 #Damage
 Description
-$n¦A§ì°_¤@§â·t¾¹¹ï·Ç$N¡M¥H±K¶°§Ö³tªº¤âªk®g¥h¡M$N¸úÁ×¤£¤Î¡M¥þ³¡ªº·t¾¹¥´¦b
-¨­¤W¡C~
+$nå†æŠ“èµ·ä¸€æŠŠæš—å™¨å°æº–$Nï¹ä»¥å¯†é›†å¿«é€Ÿçš„æ‰‹æ³•å°„åŽ»ï¹$Nèº²é¿ä¸åŠï¹å…¨éƒ¨çš„æš—å™¨æ‰“åœ¨
+èº«ä¸Šã€‚~
 Chance          10
 Value           20
 Parry           0

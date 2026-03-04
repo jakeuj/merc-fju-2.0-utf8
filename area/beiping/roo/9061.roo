@@ -1,10 +1,10 @@
 Vnum            9061
-Name            �Ѭz��f~
+Name            天津渡口~
 Description
-�o�̦���}�����Ӯq�Mť�����Ӯq���������A�M�G�\�h
-�H����ܨ즹�f��h�C���C
+這裡有船開往秦皇島﹐聽說秦皇島的風景明媚﹐故許多
+人都選擇到此搭船去遊覽。
 
-              �o�̦��Х�(sign)
+              這裡有標示(sign)
 
 ~
 SectorType      SECT_CITY
@@ -20,17 +20,17 @@ End
 #Keyword
 Keyword         sign~
 Description
-�n�����Ӯq���ȫȽХѦ��n��M
-�n���o�i�@�B��T�M�Х� ship �d�ߡC
+要往秦皇島的旅客請由此登船﹐
+要取得進一步資訊﹐請打 ship 查詢。
 ~
 End
 
 #Enquire
-Keyword         �X�Y~
+Keyword         碼頭~
 End
 
 #Enquire
-Keyword         ���~
+Keyword         渡船~
 End
 
 End

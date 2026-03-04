@@ -1,7 +1,7 @@
 Vnum            599
-Name            ¹D¨ã©±~
+Name            é“å…·åº—~
 Description
-¥|³B¥Rº¡¤F¤@¨Ç¤p¹D¨ã¡M¤ô³U¡B¤õ§â¡MÀ³¦³ºÉ¦³¡M¥ô§g¿ïÁÊ¡C
+å››è™•å……æ»¿äº†ä¸€äº›å°é“å…·ï¹æ°´è¢‹ã€ç«æŠŠï¹æ‡‰æœ‰ç›¡æœ‰ï¹ä»»å›é¸è³¼ã€‚
 
 ~
 SectorType      SECT_CITY
@@ -16,11 +16,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         °Ó©±~
+Keyword         å•†åº—~
 End
 
 #Enquire
-Keyword         ¹D¨ã«Î~
+Keyword         é“å…·å±‹~
 End
 
 End

@@ -1,9 +1,9 @@
 Vnum            88
 Name            figring~
-ShortDesc       ª÷¿û«üÀô~
+ShortDesc       é‡‘é‹¼æŒ‡ç’°~
 Description
-³o¬O¤@¥u¥Hª÷¿û¥Û©Ò»s¦¨ªº«üÀô(figring)¡M¥i¥H´£¤ÉªÅ¤âªº¶Ë±þ¤O¡C~
-Unit            ¥u~
+é€™æ˜¯ä¸€åªä»¥é‡‘é‹¼çŸ³æ‰€è£½æˆçš„æŒ‡ç’°(figring)ï¹å¯ä»¥æå‡ç©ºæ‰‹çš„å‚·æ®ºåŠ›ã€‚~
+Unit            åª~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FINGER
 Takeable        Yes

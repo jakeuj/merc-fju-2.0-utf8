@@ -16,9 +16,9 @@
  ***************************************************************************/
 
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -30,7 +30,7 @@
 #include <string.h>
 #include "merc.h"
 
-/* °Ï°ì¨ç¼Æ */
+/* å€åŸŸå‡½æ•¸ */
 int     attr_gain       args( ( CHAR_DATA *, int ) );
 void    mobile_update   args( ( void ) );
 void    weather_update  args( ( void ) );
@@ -56,7 +56,7 @@ void    increase_update args( ( void ) );
 #define MANA_GAIN       2
 #define MOVE_GAIN       3
 
-/* ´£ª@ª±®aµ¥¯Å */
+/* ææ˜‡ç©å®¶ç­‰ç´š */
 void advance_level( CHAR_DATA * ch )
 {
   int  add_hp;
@@ -71,10 +71,10 @@ void advance_level( CHAR_DATA * ch )
 
   PUSH_FUNCTION( "advance_level" );
 
-  /* ¨ì¹F­^¶¯µLªkÄ~Äò¤É¯Å */
+  /* åˆ°é”è‹±é›„ç„¡æ³•ç¹¼çºŒå‡ç´š */
   if ( ch->level > LEVEL_HERO || !( pClass = ch->class ) ) RETURN_NULL();
 
-  /* ¼W¥[ªk¤Oªº³B²z */
+  /* å¢åŠ æ³•åŠ›çš„è™•ç† */
   add_mana     = ( pClass->fMana )
     ? add_mana = number_range( 2, ( 2 * get_curr_int( ch )
     + get_curr_wis( ch ) ) / 6 ) : 1;
@@ -83,13 +83,13 @@ void advance_level( CHAR_DATA * ch )
   add_mana     = UMIN( 10000, ( add_mana * 200 ) ) / UMAX( 1, mana_factor );
   add_mana    += ch->level / 10;
 
-  /* ¼W¥[¥Í©R¤Oªº³B²z */
+  /* å¢åŠ ç”Ÿå‘½åŠ›çš„è™•ç† */
   add_hp       = number_range( 1 , get_curr_con( ch ) / 10 );
   add_hp       = ( ch->level / 2 ) + ( 2 * get_curr_con( ch ) )
     + number_range( 10 * add_hp , 12 * add_hp );
   add_hp       = ( add_hp * 100 ) / UMAX( 1, pClass->factor[CON_ITEM] );
 
-  /* ¼W¥[Åé¤Oªº³B²z */
+  /* å¢åŠ é«”åŠ›çš„è™•ç† */
   add_move     = number_range( 5,
                ( get_curr_con( ch ) + get_curr_dex( ch ) ) / 6 );
   move_factor  = pClass->factor[STR_ITEM] + pClass->factor[DEX_ITEM];
@@ -97,7 +97,7 @@ void advance_level( CHAR_DATA * ch )
   add_move     = UMIN( 10000, ( add_move * 200 ) ) / UMAX( 1, move_factor );
   add_move    += ch->level / 10;
 
-  /* ¼W¥[½m²ßÂI¼Æªº³B²z */
+  /* å¢åŠ ç·´ç¿’é»æ•¸çš„è™•ç† */
   add_prac     = number_range( ch->level * 9 , ch->level * 10 );
 
   add_hp       = UMAX(   1, add_hp    );
@@ -114,60 +114,60 @@ void advance_level( CHAR_DATA * ch )
   if ( !IS_NPC(ch) ) REMOVE_BIT( ch->act, PLR_BOUGHT_PET );
 
   print_to_char( ch ,
-    "\e[1;33m§AÀò±o¤F: ¥Í©R¤O %d/%d ªk¤O %d/%d Åé¤O %d/%d "
-    "¾Ç²ßÂI¼Æ %d/%d \e[0m\n\r"
+    "\e[1;33mä½ ç²å¾—äº†: ç”Ÿå‘½åŠ› %d/%d æ³•åŠ› %d/%d é«”åŠ› %d/%d "
+    "å­¸ç¿’é»æ•¸ %d/%d \e[0m\n\r"
       , add_hp, get_curr_hit( ch ), add_mana, get_curr_mana( ch ), add_move
       , get_curr_move( ch ), add_prac, ch->practice  );
 
   if ( ( ch->level % 10 ) == 0 )
   {
     if ( add_firman( ch, 1 ) > 0 )
-      send_to_char( "\e[1;32m¦¹¥~¦A°e§A¤@±i§K¦ºª÷µP¡T\e[0m\n\r", ch );
+      send_to_char( "\e[1;32mæ­¤å¤–å†é€ä½ ä¸€å¼µå…æ­»é‡‘ç‰Œï¹—\e[0m\n\r", ch );
   }
 
-  /* µo¥XÂàÂ¾ªºÄµ§i */
+  /* ç™¼å‡ºè½‰è·çš„è­¦å‘Š */
   if ( ch->level > ForceLevel
     && ch->level < LEVEL_HERO
     && pClass == class_demos )
   {
     send_to_char(
-      "§A¦º¥Ö¿àÁy¦a¤£ÂàÂ¾¡M¥­±`¤S¤£¾Ç¦n¡M¬İ¨Ó§A¯u¬O·íµs¸éªº®Æ¡C\n\r" , ch );
+      "ä½ æ­»çš®è³´è‡‰åœ°ä¸è½‰è·ï¹å¹³å¸¸åˆä¸å­¸å¥½ï¹çœ‹ä¾†ä½ çœŸæ˜¯ç•¶ç›œè³Šçš„æ–™ã€‚\n\r" , ch );
 
     ch->class = class_force;
     set_title( ch, class_force->title );
   }
 
   else if ( ch->class && ch->level >= ch->class->warn )
-    send_to_char( "®¥ÁH§A¡M§A¥i¥H¦Ò¼{ÂàÂ¾Åo¡C\n\r" , ch );
+    send_to_char( "æ­ç¦§ä½ ï¹ä½ å¯ä»¥è€ƒæ…®è½‰è·å›‰ã€‚\n\r" , ch );
 
-  /* ¬O§_¦uÅ@¯«­nÂ÷¶} */
+  /* æ˜¯å¦å®ˆè­·ç¥è¦é›¢é–‹ */
   if ( ch->level == AngelLevel )
   {
-    send_to_char( "§Aªº¦uÅ@¯«(\e[1;32mangel\e[0m)¤w¸gÂ÷¶}¤F¡T\n\r", ch );
+    send_to_char( "ä½ çš„å®ˆè­·ç¥(\e[1;32mangel\e[0m)å·²ç¶“é›¢é–‹äº†ï¹—\n\r", ch );
     REMOVE_BIT( ch->act, PLR_ANGEL );
   }
 
   check_train( ch );
 
-  /* ¨ì¹F­^¶¯ */
+  /* åˆ°é”è‹±é›„ */
   if ( ch->level == LEVEL_HERO )
   {
     chinese_number( hero_count() + 1, buf2 );
 
-    sprintf( buf1, "\e[1;36mÅı§Ú­Ì®¥ÁH%s¦¨¬°%s²Ä%s¦ì­^¶¯¡T\e[0m\n\r"
+    sprintf( buf1, "\e[1;36mè®“æˆ‘å€‘æ­ç¦§%sæˆç‚º%sç¬¬%sä½è‹±é›„ï¹—\e[0m\n\r"
       , mob_name( NULL, ch ), mud_name, buf2 );
 
     send_to_all_char( buf1 );
 
-    act( "®¥ÁH§A¦¨¬°$t²Ä$T¦ì­^¶¯¡T", ch, mud_name, buf2, TO_CHAR );
+    act( "æ­ç¦§ä½ æˆç‚º$tç¬¬$Tä½è‹±é›„ï¹—", ch, mud_name, buf2, TO_CHAR );
 
-    /* ¼W¥[ÃB¥~Äİ©Ê */
+    /* å¢åŠ é¡å¤–å±¬æ€§ */
     add_hero_bonus( ch );
 
-    /* ¼W¥[­^¶¯ */
+    /* å¢åŠ è‹±é›„ */
     hero_add( ch );
 
-    /* ¼g¤JÀÉ®× */
+    /* å¯«å…¥æª”æ¡ˆ */
     update_hero();
   }
 
@@ -182,7 +182,7 @@ void check_train( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "check_train: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "check_train: ç¼ºä¹ä¾†æº." );
     RETURN_NULL();
   }
 
@@ -194,8 +194,8 @@ void check_train( CHAR_DATA * ch )
   if ( ch->practice >= get_dex_train( ch ) ) Train = TRUE;
   if ( ch->practice >= get_con_train( ch ) ) Train = TRUE;
 
-  if ( Train ) send_to_char( "\n\r\n\r\e[1;34m§A¦³¤@¨Ç°V½mÂI¼Æ¡M½Ğ§ä°V½m®v¤É¯Å"
-    "(train)§AªºÄİ©Ê§a¡T\n\r\n\r\e[0m", ch );
+  if ( Train ) send_to_char( "\n\r\n\r\e[1;34mä½ æœ‰ä¸€äº›è¨“ç·´é»æ•¸ï¹è«‹æ‰¾è¨“ç·´å¸«å‡ç´š"
+    "(train)ä½ çš„å±¬æ€§å§ï¹—\n\r\n\r\e[0m", ch );
 
   RETURN_NULL();
 }
@@ -211,8 +211,8 @@ void gain_exp( CHAR_DATA * ch, int gain )
 
   while ( ch->exp >= kill_table[ URANGE( 1 , ch->level, MAX_LEVEL -1 )].exp )
   {
-    send_to_char( "\a\a\a\e[1;31m«z¡T®¥ÁH§A¡T§A¤É¯ÅÅo¡T\e[0m\n\r", ch );
-    act( "$n¶Ô¾Äªº­W½mÀò±o¤F¦^³ø¡M´£ª@¤Fµ¥¯Å¡C", ch, NULL, NULL, TO_ROOM );
+    send_to_char( "\a\a\a\e[1;31må“‡ï¹—æ­ç¦§ä½ ï¹—ä½ å‡ç´šå›‰ï¹—\e[0m\n\r", ch );
+    act( "$nå‹¤å¥®çš„è‹¦ç·´ç²å¾—äº†å›å ±ï¹ææ˜‡äº†ç­‰ç´šã€‚", ch, NULL, NULL, TO_ROOM );
 
     ch->exp -= kill_table[ URANGE( 1, ch->level, MAX_LEVEL -1 ) ].exp;
     if ( ++ch->level == LEVEL_HERO ) ch->exp = 0;
@@ -237,14 +237,14 @@ int attr_gain( CHAR_DATA * ch , int type )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "attr_gain: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "attr_gain: ä¾†æºä¸æ­£ç¢º." );
     RETURN( 0 );
   }
 
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "attr_gain: ¿ù»~ªº¿ï¶µ %d.", type );
+    mudlog( LOG_DEBUG, "attr_gain: éŒ¯èª¤çš„é¸é … %d.", type );
     RETURN( 0 );
 
   case HIT_GAIN:
@@ -298,7 +298,7 @@ int attr_gain( CHAR_DATA * ch , int type )
     if ( ch->pcdata->condition[COND_THIRST] == 0 ) gain /= 2;
   }
 
-  /* À°¬£ recall ÂI¥[±j¦^´_ */
+  /* å¹«æ´¾ recall é»åŠ å¼·å›å¾© */
   if ( ch->in_room && ch->club && ch->club == ch->in_room->club )
     gain *= ClubAttrGain;
 
@@ -326,21 +326,21 @@ void gain_condition( CHAR_DATA * ch, int iCond, int value )
     switch ( iCond )
     {
     default:
-      mudlog( LOG_DEBUG, "gain_condition: ¿ù»~ªº§ÎºA %d.", iCond );
+      mudlog( LOG_DEBUG, "gain_condition: éŒ¯èª¤çš„å½¢æ…‹ %d.", iCond );
       break;
 
     case COND_FULL:
-      send_to_char( "\e[33m©BÂPÂP¤@Án¡M§Aªº¨{¤l¾j¤F¡C\e[0m\n\r", ch );
+      send_to_char( "\e[33må’•åš•åš•ä¸€è²ï¹ä½ çš„è‚šå­é¤“äº†ã€‚\e[0m\n\r", ch );
       break;
 
     case COND_THIRST:
-      send_to_char( "\e[33m§AÄ±±o¤f°®¦ŞÀê¡M¦ü¥G¥i¥H³Ü¤U¤@±í¤ô¡C\e[0m\n\r"
+      send_to_char( "\e[33mä½ è¦ºå¾—å£ä¹¾èˆŒç‡¥ï¹ä¼¼ä¹å¯ä»¥å–ä¸‹ä¸€æ¡¶æ°´ã€‚\e[0m\n\r"
         , ch );
       break;
 
     case COND_DRUNK:
-      if ( condition ) send_to_char( "\e[1;37m§AÀY¤W¬P¬P¤£¨£¤F¡M"
-        "¤w¸g²M¿ô¤F¡C\e[0m\n\r", ch );
+      if ( condition ) send_to_char( "\e[1;37mä½ é ­ä¸Šæ˜Ÿæ˜Ÿä¸è¦‹äº†ï¹"
+        "å·²ç¶“æ¸…é†’äº†ã€‚\e[0m\n\r", ch );
       break;
     }
   }
@@ -369,18 +369,18 @@ void mobile_update( void )
       || is_affected( ch, SLOT_CHARM_PERSON ) )
       continue;
 
-    /* §¤ÃM */
+    /* åé¨ */
     if ( ( rider = ch->mount_by )
       && ch->in_room
       && ch->in_room != rider->in_room )
     {
       if ( ch->fighting ) stop_fighting( ch , TRUE );
 
-      act( "$n°lÀH¥D¤H¨«¤F¡C", ch , NULL, NULL , TO_ROOM );
+      act( "$nè¿½éš¨ä¸»äººèµ°äº†ã€‚", ch , NULL, NULL , TO_ROOM );
       char_from_room( ch );
       char_to_room( ch, rider->in_room );
 
-      act( "$N°lÀH$n¨Ó¨ì³o¸Ì¡C", rider, NULL, ch, TO_ALL );
+      act( "$Nè¿½éš¨$nä¾†åˆ°é€™è£¡ã€‚", rider, NULL, ch, TO_ALL );
     }
 
     if ( ( ch->spec_fun && ( ( * ch->spec_fun ) ( ch ) ) ) ) continue;
@@ -417,7 +417,7 @@ void mobile_update( void )
       {
         obj_from_room( obj_best );
         obj_to_char( obj_best, ch );
-        act( "$n¶¶¤â¾ß°_$p©ñ¨ì¦Û¤v¨­¤W¡C", ch, obj_best, NULL, TO_ROOM );
+        act( "$né †æ‰‹æ’¿èµ·$pæ”¾åˆ°è‡ªå·±èº«ä¸Šã€‚", ch, obj_best, NULL, TO_ROOM );
       }
     }
 
@@ -504,10 +504,10 @@ void talk_update( void )
 
   for ( ch = char_list; ch; ch = ch->next )
   {
-    /* ÀË¬d¬O§_¦³¿é¥X½w½Ä°Ï */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è¼¸å‡ºç·©è¡å€ */
     if ( !verify_char( ch ) || !ch->talk_buf || !IS_NPC( ch ) ) continue;
 
-    /* ­Y¨S¦³©Ò¦b¦a©Î¬O¦b¥´°« */
+    /* è‹¥æ²’æœ‰æ‰€åœ¨åœ°æˆ–æ˜¯åœ¨æ‰“é¬¥ */
     if ( !ch->in_room || ch->position == POS_FIGHTING )
     {
       free_string( ch->talk_buf );
@@ -519,7 +519,7 @@ void talk_update( void )
     switch( ch->talk_mode )
     {
     default:
-      mudlog( LOG_DEBUG, "talk_update: ¿é¥X±±¨î½X %d¿ù»~.", ch->talk_mode );
+      mudlog( LOG_DEBUG, "talk_update: è¼¸å‡ºæ§åˆ¶ç¢¼ %déŒ¯èª¤.", ch->talk_mode );
       free_string( ch->talk_buf );
       ch->talk_mode = MODE_ABSENT;
       break;
@@ -597,7 +597,7 @@ void fail_update( void )
         {
           if ( !( location = get_hometown( ch ) ) )
           {
-            send_to_char( "¥~­±¥@¬É¤Ó¶Â·t¤F¡M§A°®¯Ü«İ¦b³o¸Ì§a¡T\n\r", ch );
+            send_to_char( "å¤–é¢ä¸–ç•Œå¤ªé»‘æš—äº†ï¹ä½ ä¹¾è„†å¾…åœ¨é€™è£¡å§ï¹—\n\r", ch );
             continue;
           }
 
@@ -606,23 +606,23 @@ void fail_update( void )
           if ( ch->mount    ) unmount_char( ch, ch->mount    );
           if ( ch->mount_by ) unmount_char( ch->mount_by, ch );
 
-          /* ­×¥¿¤p°­ */
+          /* ä¿®æ­£å°é¬¼ */
           if ( ch->boss  ) spirit_from_char( ch );
 
-          send_to_char( "³Ş¡M§A¥i¥H¤£¥Î«ä¹LÅo¡M§Æ±æ¥[ªo§a¡T\n\r", ch );
-          act( "®¥³ß$n¥i¥H¤£¥Î«ä¹LÅo¡C", ch, NULL, NULL, TO_ROOM );
+          send_to_char( "å–‚ï¹ä½ å¯ä»¥ä¸ç”¨æ€éå›‰ï¹å¸Œæœ›åŠ æ²¹å§ï¹—\n\r", ch );
+          act( "æ­å–œ$nå¯ä»¥ä¸ç”¨æ€éå›‰ã€‚", ch, NULL, NULL, TO_ROOM );
           char_from_room( ch );
           char_to_room( ch, location );
-          act( "$n¦b³o¸Ì¶}©l«õÁT¶îÀğ¤F¡C", ch, NULL, NULL, TO_ROOM );
+          act( "$nåœ¨é€™è£¡é–‹å§‹æŒ–ç³å¡—ç‰†äº†ã€‚", ch, NULL, NULL, TO_ROOM );
           do_look( ch, "auto" );
 
-          /* ²M°£°lÂÜ¬ö¿ıÂI */
+          /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
           clear_trace( ch, TRUE );
         }
 
         else
         {
-          send_to_char( "³Ş¡T§A¥i¥H¤£¥²«ä¹LÅo¡T\n\r\a\a", ch );
+          send_to_char( "å–‚ï¹—ä½ å¯ä»¥ä¸å¿…æ€éå›‰ï¹—\n\r\a\a", ch );
         }
       }
     }
@@ -650,13 +650,13 @@ void tribunal_update( void )
       {
         if ( IS_SET( ch->act, PLR_NO_TELL ) )
         {
-          send_to_char( "§A¤S¥i¥HÄ~Äò¨Ï¥Î \e[1;32mtell\e[0m «ü¥O¤F¡T\n\r", ch );
+          send_to_char( "ä½ åˆå¯ä»¥ç¹¼çºŒä½¿ç”¨ \e[1;32mtell\e[0m æŒ‡ä»¤äº†ï¹—\n\r", ch );
           REMOVE_BIT( ch->act, PLR_NO_TELL );
         }
 
         else if ( IS_SET( ch->act, PLR_SILENCE ) )
         {
-          send_to_char( "§A¤S¥i¥H¤jÁn»¡¸Ü¤F¡T\n\r", ch );
+          send_to_char( "ä½ åˆå¯ä»¥å¤§è²èªªè©±äº†ï¹—\n\r", ch );
           REMOVE_BIT( ch->act, PLR_SILENCE );
         }
       }
@@ -682,7 +682,7 @@ void steal_update( void )
     && ch->pcdata->steal_panity > 0
     && ch->in_room )
       if ( --ch->pcdata->steal_panity <= 0 )
-        act( "$n¤S¶}©lÄ±±o¤âÄo¡M·Q°½ªF¦è¤F¡T", ch, NULL, NULL, TO_CHAR );
+        act( "$nåˆé–‹å§‹è¦ºå¾—æ‰‹ç™¢ï¹æƒ³å·æ±è¥¿äº†ï¹—", ch, NULL, NULL, TO_CHAR );
   }
 
   RETURN_NULL();
@@ -709,7 +709,7 @@ void jail_update( void )
         {
           if ( !( location = get_hometown( ch ) ) )
           {
-            send_to_char( "¥~­±¥@¬É¤Ó¶Â·t¤F¡M§A°®¯Ü«İ¦b³o¸Ì§a¡T\n\r", ch );
+            send_to_char( "å¤–é¢ä¸–ç•Œå¤ªé»‘æš—äº†ï¹ä½ ä¹¾è„†å¾…åœ¨é€™è£¡å§ï¹—\n\r", ch );
             continue;
           }
 
@@ -718,23 +718,23 @@ void jail_update( void )
           if ( ch->mount    ) unmount_char( ch, ch->mount    );
           if ( ch->mount_by ) unmount_char( ch->mount_by, ch );
 
-          /* ­×¥¿¤p°­ */
+          /* ä¿®æ­£å°é¬¼ */
           if ( ch->boss  ) spirit_from_char( ch );
 
-          send_to_char( "³Ş¡M§A¥i¥H¥Xº»Åo¡M§Æ±æ§A¦n¦n°µ¤H¡T\n\r", ch );
-          act( "®¥³ß$n¥i¥H¥Xº»Åo¡C", ch, NULL, NULL, TO_ROOM );
+          send_to_char( "å–‚ï¹ä½ å¯ä»¥å‡ºç„å›‰ï¹å¸Œæœ›ä½ å¥½å¥½åšäººï¹—\n\r", ch );
+          act( "æ­å–œ$nå¯ä»¥å‡ºç„å›‰ã€‚", ch, NULL, NULL, TO_ROOM );
           char_from_room( ch );
           char_to_room( ch, location );
-          act( "$n¦b³o¸Ì¶}©l±qÀY°µ¤H¡C", ch, NULL, NULL, TO_ROOM );
+          act( "$nåœ¨é€™è£¡é–‹å§‹å¾é ­åšäººã€‚", ch, NULL, NULL, TO_ROOM );
           do_look( ch, "auto" );
 
-          /* ²M°£°lÂÜ¬ö¿ıÂI */
+          /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
           clear_trace( ch, TRUE );
         }
 
         else
         {
-          send_to_char( "³Ş¡T§A¥i¥H¥Xº»Åo¡MÁÙ·Q¦Y¨c¶º°Ú¡T\n\r\a\a", ch );
+          send_to_char( "å–‚ï¹—ä½ å¯ä»¥å‡ºç„å›‰ï¹é‚„æƒ³åƒç‰¢é£¯å•Šï¹—\n\r\a\a", ch );
         }
       }
     }
@@ -761,7 +761,7 @@ void foggy_update( int type )
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "foggy_update: «¬ºA¿ù»~ %d.", type );
+    mudlog( LOG_DEBUG, "foggy_update: å‹æ…‹éŒ¯èª¤ %d.", type );
     break;
 
   case FOGGY_SET:
@@ -788,7 +788,7 @@ void foggy_update( int type )
     {
       FoggyArea = zArea;
 
-      sprintf( buf, "%s\e[0mªşªñ¬ğµM¥X²{¤@°}¿@Ãú¡M½Ğ¦b¦¹°Ï°ìªº¸ô¤H¦h¥[ª`·N¡T"
+      sprintf( buf, "%s\e[0mé™„è¿‘çªç„¶å‡ºç¾ä¸€é™£æ¿ƒéœ§ï¹è«‹åœ¨æ­¤å€åŸŸçš„è·¯äººå¤šåŠ æ³¨æ„ï¹—"
         , FoggyArea->name );
 
       talk_channel_2( buf, CHANNEL_WEATHER, "" );
@@ -821,7 +821,7 @@ void foggy_update( int type )
         }
       }
 
-      sprintf( buf, "%s\e[0m¥X²{ªº¿@Ãú¤w¸gºCºC°h¥h¤F¡T", FoggyArea->name );
+      sprintf( buf, "%s\e[0må‡ºç¾çš„æ¿ƒéœ§å·²ç¶“æ…¢æ…¢é€€å»äº†ï¹—", FoggyArea->name );
 
       talk_channel_2( buf, CHANNEL_WEATHER, "" );
 
@@ -834,7 +834,7 @@ void foggy_update( int type )
   RETURN_NULL();
 }
 
-/* ®½ÃØ */
+/* æè´ˆ */
 void doante_update( void )
 {
   CHAR_DATA * ch;
@@ -847,7 +847,7 @@ void doante_update( void )
   {
     if ( verify_char( ch ) && ch->donate > 0 && --ch->donate <= 0 )
     {
-      act( "®¥ÁH§A¡M§A¤£¦A¨ü¨ì$t°òª÷·|ºÊ·ş§Aªº°]²£¡T"
+      act( "æ­ç¦§ä½ ï¹ä½ ä¸å†å—åˆ°$tåŸºé‡‘æœƒç›£ç£ä½ çš„è²¡ç”¢ï¹—"
         , ch, mud_name, NULL, TO_CHAR );
     }
   }
@@ -855,7 +855,7 @@ void doante_update( void )
   RETURN_NULL();
 }
 
-/* ­pºâ»È¦æ¦s´Ú§Q®§ */
+/* è¨ˆç®—éŠ€è¡Œå­˜æ¬¾åˆ©æ¯ */
 void bank_update( void )
 {
   CHAR_DATA * ch;
@@ -874,13 +874,13 @@ void bank_update( void )
       || over_scale( ch ) ) continue;
 
     if ( ( ch->bank += ch->bank / BankProfit ) < 0 ) ch->bank = profit;
-    act( "¤S¬O·sªº¤@¤Ñ¶}©l¡M$t$0»È¦æµoµ¹§A§Q®§¡T", ch, mud_name, NULL, TO_CHAR );
+    act( "åˆæ˜¯æ–°çš„ä¸€å¤©é–‹å§‹ï¹$t$0éŠ€è¡Œç™¼çµ¦ä½ åˆ©æ¯ï¹—", ch, mud_name, NULL, TO_CHAR );
   }
 
   RETURN_NULL();
 }
 
-/* ÃÄª«¾¯¶q */
+/* è—¥ç‰©åŠ‘é‡ */
 void dosage_update( void )
 {
   CHAR_DATA * ch;
@@ -901,7 +901,7 @@ void dosage_update( void )
       if ( ( damage = get_curr_hit( ch ) * percent / 100 ) <= 0 ) continue;
 
       ch->hit = UMAX( 1, ch->hit - damage );
-      send_to_char( "¥Ñ©óÅé¤ºÃÄª«ªº¬r©Êµo§@¡M§AºCºCÄ±±o¶V¨Ó¶V¤£ÀÙ¨Æ¡T\n\r", ch );
+      send_to_char( "ç”±æ–¼é«”å…§è—¥ç‰©çš„æ¯’æ€§ç™¼ä½œï¹ä½ æ…¢æ…¢è¦ºå¾—è¶Šä¾†è¶Šä¸æ¿Ÿäº‹ï¹—\n\r", ch );
     }
   }
 
@@ -914,7 +914,7 @@ void dosage_update( void )
 
       if ( poisoned && ch->pcdata->dosage < DosageLimit )
       {
-        send_to_char( "§AÃÄª«¤¤¬rªº±¡§Îµyµy°h¤F¡T\n\r", ch );
+        send_to_char( "ä½ è—¥ç‰©ä¸­æ¯’çš„æƒ…å½¢ç¨ç¨é€€äº†ï¹—\n\r", ch );
       }
     }
   }
@@ -922,7 +922,7 @@ void dosage_update( void )
   RETURN_NULL();
 }
 
-/* §ïÅÜ¤Ñ®ğ */
+/* æ”¹è®Šå¤©æ°£ */
 void weather_update( void )
 {
   char              buf[MAX_STRING_LENGTH];
@@ -940,48 +940,48 @@ void weather_update( void )
   case  5:
     foggy_update( FOGGY_SET );
     weather_info.sunlight = SUN_LIGHT;
-    str_cat( buf, "\e[1;32m¤½Âûªº³Ú¥sÁn¦¹°_©¼¸¨¡M¤£µ´©ó¦Õ¡C\e[0m" );
+    str_cat( buf, "\e[1;32må…¬é›çš„å•¼å«è²æ­¤èµ·å½¼è½ï¹ä¸çµ•æ–¼è€³ã€‚\e[0m" );
     break;
 
   case  7:
     foggy_update( FOGGY_CLEAR );
     weather_info.sunlight = SUN_RISE;
-    str_cat( buf, "\e[1;33m»·³B¤H®aªº¦a¤è¸Í¸Í«_°_ª¤·Ï¡C\e[0m" );
+    str_cat( buf, "\e[1;33mé è™•äººå®¶çš„åœ°æ–¹è£Šè£Šå†’èµ·ç‚Šç…™ã€‚\e[0m" );
     break;
 
   case 12:
 
-    /* ¨Æ¥óÄ²µo */
+    /* äº‹ä»¶è§¸ç™¼ */
     event_update();
 
-    str_cat( buf, "\e[1;33m¤w¸g¥¿¤È®É¤À¤F¡MÀ³¸Ó§ä®a«È´Ì¦Y­Ó¶º¡C\e[0m" );
+    str_cat( buf, "\e[1;33må·²ç¶“æ­£åˆæ™‚åˆ†äº†ï¹æ‡‰è©²æ‰¾å®¶å®¢æ£§åƒå€‹é£¯ã€‚\e[0m" );
     break;
 
   case 18:
     weather_info.sunlight = SUN_SET;
-    str_cat( buf, "\e[1;41m¤Ó¶§ºCºCªº±q¦èÃä¸¨¤U¥h¡C\e[0m" );
+    str_cat( buf, "\e[1;41må¤ªé™½æ…¢æ…¢çš„å¾è¥¿é‚Šè½ä¸‹å»ã€‚\e[0m" );
     break;
 
   case 19:
-    str_cat( buf, "\e[1;33m¤Ñ¦âº¥º¥¦a·t¤F¤U¨Ó¡M¿O¤õ«h«G¤F°_¨Ó¡C\e[0m" );
+    str_cat( buf, "\e[1;33må¤©è‰²æ¼¸æ¼¸åœ°æš—äº†ä¸‹ä¾†ï¹ç‡ˆç«å‰‡äº®äº†èµ·ä¾†ã€‚\e[0m" );
     break;
 
   case 20:
     weather_info.sunlight = SUN_DARK;
-    str_cat( buf, "\e[1;46m¶Â·tª¦¤W¤ÑÃä¡M©]±ß¶}©lÅ¢¸n¤j¦a¡C\e[0m" );
+    str_cat( buf, "\e[1;46mé»‘æš—çˆ¬ä¸Šå¤©é‚Šï¹å¤œæ™šé–‹å§‹ç± ç½©å¤§åœ°ã€‚\e[0m" );
     break;
 
   case 22:
-    str_cat( buf, "\e[1;33m§AµoÄ±¤H­Ìº¥º¥³£©¹ª×©ĞÆp¡MºÎ¤jÀYÄ±¥h¤F¡C\e[0m" );
+    str_cat( buf, "\e[1;33mä½ ç™¼è¦ºäººå€‘æ¼¸æ¼¸éƒ½å¾€è‡¥æˆ¿é‘½ï¹ç¡å¤§é ­è¦ºå»äº†ã€‚\e[0m" );
     break;
 
   case 24:
 
-    str_cat( buf, "\e[1;46m¥´§óªÌ»¡¹D¡R¤Ñ°®ª«Àê¡M¤p¤ß¤õÀë¡C\e[0m" );
+    str_cat( buf, "\e[1;46mæ‰“æ›´è€…èªªé“ï¹•å¤©ä¹¾ç‰©ç‡¥ï¹å°å¿ƒç«ç‡­ã€‚\e[0m" );
     time_info.hour = 0;
     time_info.day++;
 
-    /* ¦WºÙ */
+    /* åç¨± */
     for ( pDesc = descriptor_list; pDesc; pDesc = pDesc->next )
     {
       if ( verify_desc( pDesc )
@@ -992,29 +992,29 @@ void weather_update( void )
         ch->pcdata->rechristen = 1;
     }
 
-    /* ±m¨é */
+    /* å½©åˆ¸ */
     if ( --ticketreset <= 0 )
     {
-      str_cpy( msg, "·sªº¤½¯q±m¨é¤S±À¥X¤F¡M½Ğ¦V¦U¸g¾P°ÓÁÊ¶R"
-        "(\e[1;32mchance\e[0m)¡T" );
+      str_cpy( msg, "æ–°çš„å…¬ç›Šå½©åˆ¸åˆæ¨å‡ºäº†ï¹è«‹å‘å„ç¶“éŠ·å•†è³¼è²·"
+        "(\e[1;32mchance\e[0m)ï¹—" );
 
-      talk_channel_2( msg, CHANNEL_BULLETIN, "±m¨é" );
+      talk_channel_2( msg, CHANNEL_BULLETIN, "å½©åˆ¸" );
       dice_ticket();
     }
 
-    /* ±H©ñª««~¶O¥Î */
+    /* å¯„æ”¾ç‰©å“è²»ç”¨ */
     deposit_update();
 
-    /* ªÑ²¼ */
+    /* è‚¡ç¥¨ */
     stock_update();
 
-    /* ­pºâ»È¦æ¦s´Ú§Q®§ */
+    /* è¨ˆç®—éŠ€è¡Œå­˜æ¬¾åˆ©æ¯ */
     bank_update();
 
-    /* ¼Ö³z */
+    /* æ¨‚é€ */
     lotto_update();
 
-    /* ºâÀ°¬£§Q®§ */
+    /* ç®—å¹«æ´¾åˆ©æ¯ */
     for ( pClub = club_list; pClub; pClub = pClub->next )
     {
       if ( pClub->status == CLUB_STATUS_UNIONIZE
@@ -1027,13 +1027,13 @@ void weather_update( void )
 
     save_club();
 
-    /* ¤Ñ¨c */
+    /* å¤©ç‰¢ */
     jail_update();
 
-    /* Ãg»@ */
+    /* æ‡²ç½° */
     tribunal_update();
 
-    /* ¤p°½°½ÅÑ®É¶¡ */
+    /* å°å·å·ç«Šæ™‚é–“ */
     steal_update();
 
     break;
@@ -1071,7 +1071,7 @@ void weather_update( void )
   switch ( weather_info.sky )
   {
   default:
-    mudlog( LOG_DEBUG , "Weather_update: ¿ù»~ªº¤Ñ®ğ %d.", weather_info.sky );
+    mudlog( LOG_DEBUG , "Weather_update: éŒ¯èª¤çš„å¤©æ°£ %d.", weather_info.sky );
     weather_info.sky = SKY_CLOUDLESS;
     break;
 
@@ -1079,7 +1079,7 @@ void weather_update( void )
     if ( weather_info.mmhg <  990
       || ( weather_info.mmhg < 1010 && number_bits( 2 ) == 0 ) )
     {
-      str_cat( buf, "\e[36m¤ÑªÅ¤¤ºCºC»E¶°¯Q¶³¡M¦³¤@ÂI³±³±ªº·PÄ±¡C\e[0m" );
+      str_cat( buf, "\e[36må¤©ç©ºä¸­æ…¢æ…¢èšé›†çƒé›²ï¹æœ‰ä¸€é»é™°é™°çš„æ„Ÿè¦ºã€‚\e[0m" );
       weather_info.sky = SKY_CLOUDY;
     }
     break;
@@ -1088,13 +1088,13 @@ void weather_update( void )
     if ( weather_info.mmhg <  970
       || ( weather_info.mmhg <  990 && number_bits( 2 ) == 0 ) )
     {
-      str_cat( buf, "\e[1;34m¨§¤jªº«BÂI¦V¤U¸¨¡M¶}©l¤U°_«B¤F¡C\e[0m" );
+      str_cat( buf, "\e[1;34mè±†å¤§çš„é›¨é»å‘ä¸‹è½ï¹é–‹å§‹ä¸‹èµ·é›¨äº†ã€‚\e[0m" );
       weather_info.sky = SKY_RAINING;
     }
 
     if ( weather_info.mmhg > 1030 && number_bits( 2 ) == 0 )
     {
-      str_cat( buf, "\e[1;36m¤@°}·L­·§j¹L¡M¶³¼h®ø¥¢¤F¡C\e[0m" );
+      str_cat( buf, "\e[1;36mä¸€é™£å¾®é¢¨å¹éï¹é›²å±¤æ¶ˆå¤±äº†ã€‚\e[0m" );
       weather_info.sky = SKY_CLOUDLESS;
     }
     break;
@@ -1102,14 +1102,14 @@ void weather_update( void )
   case SKY_RAINING:
     if ( weather_info.mmhg <  970 && number_bits( 2 ) == 0 )
     {
-      str_cat( buf, "\e[1;37mÅF¶©¤@Án¡M°{¹q·Ó«G¤F¤ÑªÅ¡C\e[0m" );
+      str_cat( buf, "\e[1;37mè½Ÿéš†ä¸€è²ï¹é–ƒé›»ç…§äº®äº†å¤©ç©ºã€‚\e[0m" );
       weather_info.sky = SKY_LIGHTNING;
     }
 
     if ( weather_info.mmhg > 1030
       || ( weather_info.mmhg > 1010 && number_bits( 2 ) == 0 ) )
     {
-      str_cat( buf, "\e[1;44m«B¶Õ¶}©lÅÜ½w¡Mº¥º¥ªº°±¤F¡C\e[0m" );
+      str_cat( buf, "\e[1;44mé›¨å‹¢é–‹å§‹è®Šç·©ï¹æ¼¸æ¼¸çš„åœäº†ã€‚\e[0m" );
       weather_info.sky = SKY_CLOUDY;
     }
     break;
@@ -1118,7 +1118,7 @@ void weather_update( void )
     if ( weather_info.mmhg > 1010
       || ( weather_info.mmhg > 990 && number_bits( 2 ) == 0 ) )
     {
-      str_cat( buf, "\e[44m©I¼S¤£°±ªº°{¹qº¥º¥ªº¥­®§¤F¡C\e[0m" );
+      str_cat( buf, "\e[44må‘¼å˜¯ä¸åœçš„é–ƒé›»æ¼¸æ¼¸çš„å¹³æ¯äº†ã€‚\e[0m" );
       weather_info.sky = SKY_RAINING;
       break;
     }
@@ -1161,7 +1161,7 @@ void char_update( void )
       save_time = ch->save_time;
     }
 
-    /* ¦³Ãö°Ó©± */
+    /* æœ‰é—œå•†åº— */
     if ( is_keeper( ch )
       && ch->position == POS_STANDING
       && ch->in_room
@@ -1170,15 +1170,15 @@ void char_update( void )
       && pShop->sential
       && pShop->sential != ch->in_room )
     {
-      act( "$n¬ğµM¦³«æ¨Æ¡M¥^¥^¦£¦£¦a¶]¤F¡C", ch, NULL, NULL, TO_ROOM );
+      act( "$nçªç„¶æœ‰æ€¥äº‹ï¹åŒ†åŒ†å¿™å¿™åœ°è·‘äº†ã€‚", ch, NULL, NULL, TO_ROOM );
 
       char_from_room( ch );
       char_to_room( ch, pShop->sential );
 
-      act( "$n¤S¦^¨ì¥Lªº¤u°µ±^¦ì¤F¡C", ch, NULL, NULL, TO_ROOM );
+      act( "$nåˆå›åˆ°ä»–çš„å·¥åšå´—ä½äº†ã€‚", ch, NULL, NULL, TO_ROOM );
     }
 
-    /* ¦³Ãö¾E±p */
+    /* æœ‰é—œé·å¾™ */
     if ( IS_NPC( ch )
       && ch->migrate > 0
       && ch->in_room
@@ -1187,26 +1187,26 @@ void char_update( void )
       && !ch->talk_buf
       && ch->position == POS_STANDING )
     {
-      /* ¦^¨ì Limbo */
+      /* å›åˆ° Limbo */
       if ( number_range( 1, 100 ) > ch->migrate )
       {
-        /* ¦pªG¥»¨­´N¦b Limbo */
+        /* å¦‚æœæœ¬èº«å°±åœ¨ Limbo */
         if ( ch->in_room == RoomLimbo ) continue;
 
-        /* ¤£¬O«h§â¥L¥s¦^ Limbo */
-        act( "$n©P³ò¥X²{¤@¹Îµµ®ğ¡M¤£¤[¡M­şÁÙ¦³$nªº¨­¼v©O¡S"
+        /* ä¸æ˜¯å‰‡æŠŠä»–å«å› Limbo */
+        act( "$nå‘¨åœå‡ºç¾ä¸€åœ˜ç´«æ°£ï¹ä¸ä¹…ï¹å“ªé‚„æœ‰$nçš„èº«å½±å‘¢ï¹–"
           , ch, NULL, NULL, TO_ROOM );
 
         char_from_room( ch );
         char_to_room( ch, RoomLimbo );
 
-        act( "¤£¦n·N«ä¡M$n¨Ó­É¦í¤@¤U¡C", ch, NULL, NULL, TO_ROOM );
+        act( "ä¸å¥½æ„æ€ï¹$nä¾†å€Ÿä½ä¸€ä¸‹ã€‚", ch, NULL, NULL, TO_ROOM );
       }
 
-      /* ¥X²{¦b¤Z¶¡ */
+      /* å‡ºç¾åœ¨å‡¡é–“ */
       else
       {
-        act( "$n©P³ò¥X²{¤@¹Îµµ®ğ¡M¤£¤[¡M­şÁÙ¦³$nªº¨­¼v©O¡S"
+        act( "$nå‘¨åœå‡ºç¾ä¸€åœ˜ç´«æ°£ï¹ä¸ä¹…ï¹å“ªé‚„æœ‰$nçš„èº«å½±å‘¢ï¹–"
           , ch, NULL, NULL, TO_ROOM );
 
         for ( ; ; )
@@ -1224,7 +1224,7 @@ void char_update( void )
         char_from_room( ch );
         char_to_room( ch, room );
 
-        act( "¬ğµM¡M¤W¤è¥X²{¤@¹Îµµ®ğ¡M$n´N¥Ñ³o¹Îµµ®ğ¨«¤F¤U¨Ó¡C"
+        act( "çªç„¶ï¹ä¸Šæ–¹å‡ºç¾ä¸€åœ˜ç´«æ°£ï¹$nå°±ç”±é€™åœ˜ç´«æ°£èµ°äº†ä¸‹ä¾†ã€‚"
           , ch, NULL, NULL, TO_ROOM );
       }
     }
@@ -1236,7 +1236,7 @@ void char_update( void )
       if ( ch->move < get_curr_move( ch ) ) ch->move += attr_gain(ch, MOVE_GAIN );
     }
 
-    /* ÃB¥~«ì´_°ò¥»¼Æ­È */
+    /* é¡å¤–æ¢å¾©åŸºæœ¬æ•¸å€¼ */
     if ( ch->position == POS_SLEEPING
       && !is_dead( ch )
       && ch->jail <= 0
@@ -1249,7 +1249,7 @@ void char_update( void )
 
         if ( !pSkill->function )
         {
-          mudlog( LOG_DEBUG, "char_update: §Ş¯à %s ¨S¦³¾Ş§@¨ç¼Æ."
+          mudlog( LOG_DEBUG, "char_update: æŠ€èƒ½ %s æ²’æœ‰æ“ä½œå‡½æ•¸."
             ,pSkill->name );
           break;
         }
@@ -1270,8 +1270,8 @@ void char_update( void )
         if ( --obj->value[2] == 0 && ch->in_room )
         {
           --ch->in_room->light;
-          act( "$p \"°Ô\" ªº¤@Án´N®ø¥¢¤£¨£¤F¡C", ch, obj, NULL, TO_ROOM );
-          act( "$p©¿µM¥¢¥h¥ú½÷®ø¥¢¤£¨£¤F¡C", ch, obj, NULL, TO_CHAR );
+          act( "$p \"å•ª\" çš„ä¸€è²å°±æ¶ˆå¤±ä¸è¦‹äº†ã€‚", ch, obj, NULL, TO_ROOM );
+          act( "$på¿½ç„¶å¤±å»å…‰è¼æ¶ˆå¤±ä¸è¦‹äº†ã€‚", ch, obj, NULL, TO_CHAR );
           extract_obj( obj );
         }
       }
@@ -1280,29 +1280,29 @@ void char_update( void )
       {
         if ( ch->was_in_room == NULL && ch->in_room )
         {
-          /* ­×¥¿¬O§_¬°Åæ¯¸ */
+          /* ä¿®æ­£æ˜¯å¦ç‚ºé©›ç«™ */
           ch->was_in_room = is_station( ch->in_room )
             ? get_hometown( ch ) : ch->in_room;
 
           if ( ch->fighting ) stop_fighting( ch, TRUE );
 
-          /* ­×¥¿®yÃM */
+          /* ä¿®æ­£åº§é¨ */
           if ( ch->mount    ) unmount_char( ch, ch->mount    );
           if ( ch->mount_by ) unmount_char( ch->mount_by, ch );
 
-          act( "$nªº¨­¼vºCºC®ø¥¢¡M¨«¶i¤F¤@¤ùÁ¡Ãú¤¤¡C"
+          act( "$nçš„èº«å½±æ…¢æ…¢æ¶ˆå¤±ï¹èµ°é€²äº†ä¸€ç‰‡è–„éœ§ä¸­ã€‚"
             , ch, NULL, NULL, TO_ROOM );
-          send_to_char( "§Aªº¨­¼vºCºC®ø¥¢¤F¡C\n\r", ch );
+          send_to_char( "ä½ çš„èº«å½±æ…¢æ…¢æ¶ˆå¤±äº†ã€‚\n\r", ch );
           save_char_obj( ch , SAVE_FILE );
           char_from_room( ch );
           char_to_room( ch, RoomLimbo );
 
-          /* ²M°£°lÂÜ¬ö¿ıÂI */
+          /* æ¸…é™¤è¿½è¹¤ç´€éŒ„é» */
           clear_trace( ch, FALSE );
         }
       }
 
-      /* ®ø±¼¤Ó¤[¨S¦³¤H»{»âªº«ÍÅé */
+      /* æ¶ˆæ‰å¤ªä¹…æ²’æœ‰äººèªé ˜çš„å±é«” */
       if ( ch->timer > MaxCorpseIdle && ch->pcdata && ch->pcdata->corpse )
       {
         extract_obj( ch->pcdata->corpse );
@@ -1341,8 +1341,8 @@ void char_update( void )
 
     if ( is_affected( ch, SLOT_POISON ) )
     {
-      act( "$n«Üµh­W¡M¥ş¨­¦bµo§İ¡M¥i¯à¼µ¤£¤F¦h¤[¤F", ch, NULL, NULL, TO_ROOM );
-      send_to_char( "§A«Üµh­W¡M¥ş¨­¦bµo§İ¡C\n\r", ch );
+      act( "$nå¾ˆç—›è‹¦ï¹å…¨èº«åœ¨ç™¼æŠ–ï¹å¯èƒ½æ’ä¸äº†å¤šä¹…äº†", ch, NULL, NULL, TO_ROOM );
+      send_to_char( "ä½ å¾ˆç—›è‹¦ï¹å…¨èº«åœ¨ç™¼æŠ–ã€‚\n\r", ch );
       damage( ch, ch, 2, SLOT_POISON, ATTACK_RANDOM );
     }
   }
@@ -1381,7 +1381,7 @@ void area_update( void )
           && pch->in_room
           && pch->in_room->area == pArea )
         {
-          send_to_char( "\e[1;34m§AÅ¥¨£»·³B¶Ç¨Ó¤@°}»´·Lªº¸}¨BÁn¡C\e[0m\n\r"
+          send_to_char( "\e[1;34mä½ è½è¦‹é è™•å‚³ä¾†ä¸€é™£è¼•å¾®çš„è…³æ­¥è²ã€‚\e[0m\n\r"
             , pch );
         }
       }
@@ -1414,10 +1414,10 @@ void obj_update( void )
       && victim->pIndexData
       && victim->pIndexData->pShop ) continue;
 
-    /* ¬rª«ªº®É®Ä */
+    /* æ¯’ç‰©çš„æ™‚æ•ˆ */
     if ( obj->venom >= 0 ) obj->venom--;
 
-    /* ªZ¾¹¼W±jªº´î®z */
+    /* æ­¦å™¨å¢å¼·çš„æ¸›å¼± */
     if ( obj->max_armor > 0 && obj->armor > obj->max_armor )
       obj->armor = UMAX( obj->max_armor, obj->armor - 100 );
 
@@ -1426,29 +1426,29 @@ void obj_update( void )
       if ( --obj->value[0] <= 0 )
       {
         if ( obj->carried_by )
-          send_to_char( "«Ü¥i±¤¡M§A¨S¦³¦b¯S©wªº®É¶¡¤º°e¹F§Aªº«H¥ó¡T\n\r"
+          send_to_char( "å¾ˆå¯æƒœï¹ä½ æ²’æœ‰åœ¨ç‰¹å®šçš„æ™‚é–“å…§é€é”ä½ çš„ä¿¡ä»¶ï¹—\n\r"
           , obj->carried_by );
 
         free_string( obj->description );
-        obj->description = str_dup( "¤@«Ê¤w¸g¨S¦³¥Îªº«H¥ó(letter)¡C" );
+        obj->description = str_dup( "ä¸€å°å·²ç¶“æ²’æœ‰ç”¨çš„ä¿¡ä»¶(letter)ã€‚" );
         obj->address     = NULL;
         obj->value[0]    = 0;
         obj->cost        = 1;
       }
     }
 
-    /* ª««~¯ä»Ä */
+    /* ç‰©å“è‡­é…¸ */
     if ( obj->timer == 2 && obj->item_type == ITEM_FOOD && obj->value[3] == 0 )
     {
       if ( obj->carried_by )
       {
-        act( "$pµo¥X¤@°}´c¯ä¡M¬İ¨Ó¬OÃa±¼¤F¡C"
+        act( "$pç™¼å‡ºä¸€é™£æƒ¡è‡­ï¹çœ‹ä¾†æ˜¯å£æ‰äº†ã€‚"
           , obj->carried_by, obj, NULL, TO_CHAR );
       }
 
       else if ( obj->in_room && ( rch = obj->in_room->people ) )
       {
-        act( "$pµo¥X¤@°}¯ä¨ı¡MÃa±¼¤F¡C", rch, obj, NULL, TO_ALL );
+        act( "$pç™¼å‡ºä¸€é™£è‡­å‘³ï¹å£æ‰äº†ã€‚", rch, obj, NULL, TO_ALL );
       }
 
       obj->value[3]++;
@@ -1459,11 +1459,11 @@ void obj_update( void )
 
     switch ( obj->item_type )
     {
-    default:              message = "$pµLÁnµL®§¦a®ø¥¢¤F¡C";       break;
-    case ITEM_FOUNTAIN:   message = "$p¥¢¥h¤ô¤À¦Ó°®¬\\¤F¡C";      break;
-    case ITEM_CORPSE_NPC: message = "$pÂà²´¶¡´N¤Æ¬°¤@¤ù¹Ğ¤g¡C";   break;
-    case ITEM_CORPSE_PC:  message = "$p¤Æ¬°¤@¤ù¹Ğ¤g´²¦bªÅ®ğ¤¤¡C"; break;
-    case ITEM_FOOD:       message = "$p±ÑÃa¦Ó¤À¸Ñ±¼¤F¡C";         break;
+    default:              message = "$pç„¡è²ç„¡æ¯åœ°æ¶ˆå¤±äº†ã€‚";       break;
+    case ITEM_FOUNTAIN:   message = "$på¤±å»æ°´åˆ†è€Œä¹¾æ¯\äº†ã€‚";      break;
+    case ITEM_CORPSE_NPC: message = "$pè½‰çœ¼é–“å°±åŒ–ç‚ºä¸€ç‰‡å¡µåœŸã€‚";   break;
+    case ITEM_CORPSE_PC:  message = "$påŒ–ç‚ºä¸€ç‰‡å¡µåœŸæ•£åœ¨ç©ºæ°£ä¸­ã€‚"; break;
+    case ITEM_FOOD:       message = "$pæ•—å£è€Œåˆ†è§£æ‰äº†ã€‚";         break;
     }
 
     if ( obj->carried_by )
@@ -1503,7 +1503,7 @@ void aggr_update( void )
 
     if ( !verify_char( wch ) ) continue;
 
-    /* ³]©wª±®a§ğÀ»³¡¦ì¥H¤Î¾Ô°«¼Æ­È */
+    /* è¨­å®šç©å®¶æ”»æ“Šéƒ¨ä½ä»¥åŠæˆ°é¬¥æ•¸å€¼ */
     wch->situs = -1;
     wch->cease = FALSE;
 
@@ -1566,7 +1566,7 @@ void aggr_update( void )
 
       if ( !victim )
       {
-        mudlog( LOG_DEBUG , "aggr_update: ¹ï¶H¬OªÅªº." );
+        mudlog( LOG_DEBUG , "aggr_update: å°è±¡æ˜¯ç©ºçš„." );
         continue;
       }
 
@@ -1588,16 +1588,16 @@ void time_update( void )
   {
     shutdown_time = ( time_t ) 0;
 
-    /* ²Ä¤@¦¸³qª¾ */
+    /* ç¬¬ä¸€æ¬¡é€šçŸ¥ */
     if ( current_time >= reboot_time - FIRST_WARN * 60 && first_warn )
     {
-      str_cpy( buf, "\e[1;37m¸Í¸Íªºª¤·Ï¦b«°Àğ¥~¤É°_¡M¤@ªÑ¶Â·tªº·PÄ±"
-        "Å¢¸nµÛ¨C¤@­Ó¤H¡C\n\r­¸³¾¥|³BÅå°_¡M¦ü¥G¦³µL¼Æ¸Uªº¬Y¤£ª¾¦W"
-        "ª«Åé¦b«°¥~îh¥ñµÛ¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\e[1;37mè£Šè£Šçš„ç‚Šç…™åœ¨åŸç‰†å¤–å‡èµ·ï¹ä¸€è‚¡é»‘æš—çš„æ„Ÿè¦º"
+        "ç± ç½©è‘—æ¯ä¸€å€‹äººã€‚\n\ré£›é³¥å››è™•é©šèµ·ï¹ä¼¼ä¹æœ‰ç„¡æ•¸è¬çš„æŸä¸çŸ¥å"
+        "ç‰©é«”åœ¨åŸå¤–èŸ„ä¼è‘—ã€‚\n\r\n\r\e[0m" );
 
       send_to_all_char( buf );
       chinese_number( FIRST_WARN, buf1 );
-      sprintf( buf , "¡u¨t²Î³qª¾¡v%s%s¤ÀÄÁ«á­«·s¶}¾÷¡T\n\r", mud_name, buf1 );
+      sprintf( buf , "ã€Œç³»çµ±é€šçŸ¥ã€%s%såˆ†é˜å¾Œé‡æ–°é–‹æ©Ÿï¹—\n\r", mud_name, buf1 );
       send_to_all_char( buf );
 
       first_warn = FALSE;
@@ -1605,15 +1605,15 @@ void time_update( void )
       RETURN_NULL();
     }
 
-    /* ²Ä¤G¦¸³qª¾ */
+    /* ç¬¬äºŒæ¬¡é€šçŸ¥ */
     if ( current_time >= reboot_time - SECOND_WARN * 60 && second_warn )
     {
-      str_cpy( buf, "\e[1m«°¥~¨º¤£ª¾¦Wªº¹ª¾¸Án¶V¨Ó¶Vªñ¡M§Ï©»´N¦b¨­Ãä"
-        "\n\r«°Àğ¤W¯T·Ï¶}©l¤É°_¡M§A·P¨ì¤F¨Æ±¡ªºÄY­«©Ê¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\e[1måŸå¤–é‚£ä¸çŸ¥åçš„é¼“å™ªè²è¶Šä¾†è¶Šè¿‘ï¹å½·å½¿å°±åœ¨èº«é‚Š"
+        "\n\råŸç‰†ä¸Šç‹¼ç…™é–‹å§‹å‡èµ·ï¹ä½ æ„Ÿåˆ°äº†äº‹æƒ…çš„åš´é‡æ€§ã€‚\n\r\n\r\e[0m" );
 
       send_to_all_char( buf );
       chinese_number( SECOND_WARN, buf1 );
-      sprintf( buf , "¡u¨t²Î³qª¾¡v%s%s¤ÀÄÁ«á­«·s¶}¾÷¡T\n\r", mud_name, buf1 );
+      sprintf( buf , "ã€Œç³»çµ±é€šçŸ¥ã€%s%såˆ†é˜å¾Œé‡æ–°é–‹æ©Ÿï¹—\n\r", mud_name, buf1 );
       send_to_all_char( buf );
 
       second_warn = FALSE;
@@ -1621,17 +1621,17 @@ void time_update( void )
       RETURN_NULL();
     }
 
-    /* ²Ä¤T¦¸³qª¾ */
+    /* ç¬¬ä¸‰æ¬¡é€šçŸ¥ */
     if ( current_time >= reboot_time - THIRD_WARN * 60 && third_warn )
     {
-      str_cpy( buf, "\e[1mÅZ¦a«°ªù¶}©l³Q¶i§ğ¡M±q³oÁn­µ¨Ó¬İ¡M¦ü¥G"
-        "°¨¤W´N·|³Q§ğ³´¡C\n\r³o®É­Ô¦A¤£¨«´N¨Ó¤£¤Î¤F¡M§A¬İ¨ì³\\¦h¤H"
-        "Äâ®a±a²²ªº°k¤`¡C\n\r§A¤]­¢¤£¤Î«İªº·Q­nÂ÷¶}³o­Ó¦MÀIªº¦a¤è¡M"
-        "²¦³º¯dªº«C¤s¦b¡M¤£©È¨S§÷¿N¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\e[1mé©€åœ°åŸé–€é–‹å§‹è¢«é€²æ”»ï¹å¾é€™è²éŸ³ä¾†çœ‹ï¹ä¼¼ä¹"
+        "é¦¬ä¸Šå°±æœƒè¢«æ”»é™·ã€‚\n\ré€™æ™‚å€™å†ä¸èµ°å°±ä¾†ä¸åŠäº†ï¹ä½ çœ‹åˆ°è¨±\å¤šäºº"
+        "æ”œå®¶å¸¶çœ·çš„é€ƒäº¡ã€‚\n\rä½ ä¹Ÿè¿«ä¸åŠå¾…çš„æƒ³è¦é›¢é–‹é€™å€‹å±éšªçš„åœ°æ–¹ï¹"
+        "ç•¢ç«Ÿç•™çš„é’å±±åœ¨ï¹ä¸æ€•æ²’æç‡’ã€‚\n\r\n\r\e[0m" );
 
       send_to_all_char( buf );
       chinese_number( THIRD_WARN, buf1 );
-      sprintf( buf , "¡u¨t²Î³qª¾¡v%s%s¤ÀÄÁ«á­«·s¶}¾÷¡T\n\r", mud_name, buf1 );
+      sprintf( buf , "ã€Œç³»çµ±é€šçŸ¥ã€%s%såˆ†é˜å¾Œé‡æ–°é–‹æ©Ÿï¹—\n\r", mud_name, buf1 );
       send_to_all_char( buf );
 
       third_warn = FALSE;
@@ -1639,18 +1639,18 @@ void time_update( void )
       RETURN_NULL();
     }
 
-    /* ­«·s¶}¾÷ */
+    /* é‡æ–°é–‹æ©Ÿ */
     if ( current_time >= reboot_time )
     {
-      str_cpy( buf, "\e[1mµL¼Æ©_©Çªº¥Íª«±N«°¦À§ğ³´¡M³o­Ó®aºâ¬O·´¤F"
-        "¡C\n\r¤£¹L¡M¤HÁÙ¬¡µÛ´N¦³§Æ±æ¡M¤@ªÑ·sªº¬¡¤O¦b¨C­Ó¤H¨­¤WµoªŞ"
-        "¡C\n\r¤£¤[«á¡M§Ú­Ì¤@©w·|­««Ø®a¶éªº¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\e[1mç„¡æ•¸å¥‡æ€ªçš„ç”Ÿç‰©å°‡åŸæ± æ”»é™·ï¹é€™å€‹å®¶ç®—æ˜¯æ¯€äº†"
+        "ã€‚\n\rä¸éï¹äººé‚„æ´»è‘—å°±æœ‰å¸Œæœ›ï¹ä¸€è‚¡æ–°çš„æ´»åŠ›åœ¨æ¯å€‹äººèº«ä¸Šç™¼èŠ½"
+        "ã€‚\n\rä¸ä¹…å¾Œï¹æˆ‘å€‘ä¸€å®šæœƒé‡å»ºå®¶åœ’çš„ã€‚\n\r\n\r\e[0m" );
       send_to_all_char( buf );
 
-      sprintf( buf , "%s\e[0m¤w¸g±Ò°Ê¤F¦Û§Ú·´·Àµ{§Ç¡Mµ{¦¡­«·s±Ò°Ê¡T\n\r"
+      sprintf( buf , "%s\e[0må·²ç¶“å•Ÿå‹•äº†è‡ªæˆ‘æ¯€æ»…ç¨‹åºï¹ç¨‹å¼é‡æ–°å•Ÿå‹•ï¹—\n\r"
         , mud_name );
       send_to_all_char( buf );
-      mudlog( LOG_INFO, "±Ò°Ê¦Û§Ú·´·Àµ{§Ç, µ{¦¡­«·s±Ò°Ê." );
+      mudlog( LOG_INFO, "å•Ÿå‹•è‡ªæˆ‘æ¯€æ»…ç¨‹åº, ç¨‹å¼é‡æ–°å•Ÿå‹•." );
       do_reboot( NULL, "" );
       RETURN_NULL();
     }
@@ -1660,17 +1660,17 @@ void time_update( void )
   {
     reboot_time = ( time_t ) 0;
 
-    /* ²Ä¤@¦¸³qª¾ */
+    /* ç¬¬ä¸€æ¬¡é€šçŸ¥ */
     if ( current_time >= shutdown_time - FIRST_WARN * 60 && first_warn )
     {
-      str_cpy( buf, "\a\a\e[1;37m¸Í¸Íªºª¤·Ï¦b«°Àğ¥~¤É°_¡M¤@ªÑ¶Â·tªº·PÄ±"
-        "Å¢¸nµÛ¨C¤@­Ó¤H¡C\n\r­¸³¾¥|³BÅå°_¡M¦ü¥G¦³µL¼Æ¸Uªº¬Y¤£ª¾¦W"
-        "ª«Åé¦b«°¥~îh¥ñµÛ¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\a\a\e[1;37mè£Šè£Šçš„ç‚Šç…™åœ¨åŸç‰†å¤–å‡èµ·ï¹ä¸€è‚¡é»‘æš—çš„æ„Ÿè¦º"
+        "ç± ç½©è‘—æ¯ä¸€å€‹äººã€‚\n\ré£›é³¥å››è™•é©šèµ·ï¹ä¼¼ä¹æœ‰ç„¡æ•¸è¬çš„æŸä¸çŸ¥å"
+        "ç‰©é«”åœ¨åŸå¤–èŸ„ä¼è‘—ã€‚\n\r\n\r\e[0m" );
 
       send_to_all_char( buf );
 
       chinese_number( FIRST_WARN, buf1 );
-      sprintf( buf , "¡u¨t²ÎÄµ§i¡v%s%s¤ÀÄÁ«áÃö³¬¨t²Î¡T\n\r", mud_name, buf1 );
+      sprintf( buf , "ã€Œç³»çµ±è­¦å‘Šã€%s%såˆ†é˜å¾Œé—œé–‰ç³»çµ±ï¹—\n\r", mud_name, buf1 );
       send_to_all_char( buf );
 
       first_warn = FALSE;
@@ -1678,16 +1678,16 @@ void time_update( void )
       RETURN_NULL();
     }
 
-    /* ²Ä¤G¦¸Äµ§i */
+    /* ç¬¬äºŒæ¬¡è­¦å‘Š */
     if ( current_time >= shutdown_time - SECOND_WARN * 60 && second_warn )
     {
-      str_cpy( buf, "\a\a\e[1m«°¥~¨º¤£ª¾¦Wªº¹ª¾¸Án¶V¨Ó¶Vªñ¡M§Ï©»´N¦b¨­Ãä"
-        "\n\r«°Àğ¤W¯T·Ï¶}©l¤É°_¡M§A·P¨ì¤F¨Æ±¡ªºÄY­«©Ê¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\a\a\e[1måŸå¤–é‚£ä¸çŸ¥åçš„é¼“å™ªè²è¶Šä¾†è¶Šè¿‘ï¹å½·å½¿å°±åœ¨èº«é‚Š"
+        "\n\råŸç‰†ä¸Šç‹¼ç…™é–‹å§‹å‡èµ·ï¹ä½ æ„Ÿåˆ°äº†äº‹æƒ…çš„åš´é‡æ€§ã€‚\n\r\n\r\e[0m" );
 
       send_to_all_char( buf );
 
       chinese_number( SECOND_WARN, buf1 );
-      sprintf( buf , "¡u¨t²ÎÄµ§i¡v%s%s¤ÀÄÁ«áÃö³¬¨t²Î¡T\n\r", mud_name, buf1 );
+      sprintf( buf , "ã€Œç³»çµ±è­¦å‘Šã€%s%såˆ†é˜å¾Œé—œé–‰ç³»çµ±ï¹—\n\r", mud_name, buf1 );
       send_to_all_char( buf );
 
       second_warn = FALSE;
@@ -1695,17 +1695,17 @@ void time_update( void )
       RETURN_NULL();
     }
 
-    /* ²Ä¤T¦¸Äµ§i */
+    /* ç¬¬ä¸‰æ¬¡è­¦å‘Š */
     if ( current_time >= shutdown_time - THIRD_WARN * 60 && third_warn )
     {
-      str_cpy( buf, "\a\a\e[1mÅZ¦a«°ªù¶}©l³Q¶i§ğ¡M±q³oÁn­µ¨Ó¬İ¡M¦ü¥G"
-        "°¨¤W´N·|³Q§ğ³´¡C\n\r³o®É­Ô¦A¤£¨«´N¨Ó¤£¤Î¤F¡M§A¬İ¨ì³\\¦h¤H"
-        "Äâ®a±a²²ªº°k¤`¡C\n\r§A¤]­¢¤£¤Î«İªº·Q­nÂ÷¶}³o­Ó¦MÀIªº¦a¤è¡M"
-        "²¦³º¯dªº«C¤s¦b¡M¤£©È¨S§÷¿N¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\a\a\e[1mé©€åœ°åŸé–€é–‹å§‹è¢«é€²æ”»ï¹å¾é€™è²éŸ³ä¾†çœ‹ï¹ä¼¼ä¹"
+        "é¦¬ä¸Šå°±æœƒè¢«æ”»é™·ã€‚\n\ré€™æ™‚å€™å†ä¸èµ°å°±ä¾†ä¸åŠäº†ï¹ä½ çœ‹åˆ°è¨±\å¤šäºº"
+        "æ”œå®¶å¸¶çœ·çš„é€ƒäº¡ã€‚\n\rä½ ä¹Ÿè¿«ä¸åŠå¾…çš„æƒ³è¦é›¢é–‹é€™å€‹å±éšªçš„åœ°æ–¹ï¹"
+        "ç•¢ç«Ÿç•™çš„é’å±±åœ¨ï¹ä¸æ€•æ²’æç‡’ã€‚\n\r\n\r\e[0m" );
 
       send_to_all_char( buf );
       chinese_number( THIRD_WARN, buf1 );
-      sprintf( buf , "¡u¨t²ÎÄµ§i¡v%s%s¤ÀÄÁ«áÃö³¬¨t²Î¡T\n\r", mud_name, buf1 );
+      sprintf( buf , "ã€Œç³»çµ±è­¦å‘Šã€%s%såˆ†é˜å¾Œé—œé–‰ç³»çµ±ï¹—\n\r", mud_name, buf1 );
       send_to_all_char( buf );
 
       third_warn = FALSE;
@@ -1713,19 +1713,19 @@ void time_update( void )
       RETURN_NULL();
     }
 
-    /* Ãö³¬¨t²Î */
+    /* é—œé–‰ç³»çµ± */
     if ( current_time >= shutdown_time )
     {
-      str_cpy( buf, "\a\a\e[1mÅF¶©¤@Án¡M¤@°}¥¨¤jªº¸¨¹p¥´¦b§A²´«e¡M\n\r"
-        "©Ò¦³ªº¦a¤è³£ÅÜ¦¨¤F¤@¤ù¤õ®ü¡M´N¹³¬O¤õ¤sÃzµo¤@¼Ë¡C\n\r"
-        "³o­Ó¦a¤è¤w¸g¾P·´¡M©Ò¦³¥Íª«³£®ø¥¢¤F¡M¤j®a²{¦b­n°k¤]¨Ó¤£"
-        "¤Î¤F¡C\n\r\n\r\e[0m" );
+      str_cpy( buf, "\a\a\e[1mè½Ÿéš†ä¸€è²ï¹ä¸€é™£å·¨å¤§çš„è½é›·æ‰“åœ¨ä½ çœ¼å‰ï¹\n\r"
+        "æ‰€æœ‰çš„åœ°æ–¹éƒ½è®Šæˆäº†ä¸€ç‰‡ç«æµ·ï¹å°±åƒæ˜¯ç«å±±çˆ†ç™¼ä¸€æ¨£ã€‚\n\r"
+        "é€™å€‹åœ°æ–¹å·²ç¶“éŠ·æ¯€ï¹æ‰€æœ‰ç”Ÿç‰©éƒ½æ¶ˆå¤±äº†ï¹å¤§å®¶ç¾åœ¨è¦é€ƒä¹Ÿä¾†ä¸"
+        "åŠäº†ã€‚\n\r\n\r\e[0m" );
 
       send_to_all_char( buf );
 
-      sprintf( buf , "%s¤w¸g±Ò°Ê¤F¦Û§Ú·´·Àµ{§Ç¡Mµ{¦¡Ãö³¬¡T\n\r" , mud_name );
+      sprintf( buf , "%så·²ç¶“å•Ÿå‹•äº†è‡ªæˆ‘æ¯€æ»…ç¨‹åºï¹ç¨‹å¼é—œé–‰ï¹—\n\r" , mud_name );
       send_to_all_char( buf );
-      mudlog( LOG_INFO, "±Ò°Ê¦Û§Ú·´·Àµ{§Ç¡Mµ{¦¡Ãö³¬¡C" );
+      mudlog( LOG_INFO, "å•Ÿå‹•è‡ªæˆ‘æ¯€æ»…ç¨‹åºï¹ç¨‹å¼é—œé–‰ã€‚" );
 
       do_shutdown( NULL, "" );
       RETURN_NULL();
@@ -1747,8 +1747,8 @@ void login_update( void )
       && man->connected != CON_PLAYING
       && --man->repeat <= MaxLoginIdle )
     {
-      mudlog( LOG_INFO , "%s ¦b¹Á¸Õ¶i¤J®É¶¢¸m¤Ó¤[", man->host );
-      write_to_buffer( man, "¶¢¸m¤Ó¤[¡M¨t²Î±j¨îÃö³¬¡C\n\r" , 0 );
+      mudlog( LOG_INFO , "%s åœ¨å˜—è©¦é€²å…¥æ™‚é–’ç½®å¤ªä¹…", man->host );
+      write_to_buffer( man, "é–’ç½®å¤ªä¹…ï¹ç³»çµ±å¼·åˆ¶é—œé–‰ã€‚\n\r" , 0 );
       close_socket( man );
     }
   }
@@ -1821,7 +1821,7 @@ void increase_update( void )
         if ( ch->max_hit > OldHit )
         {
           chinese_number( ch->max_hit - OldHit, buf );
-          act( "$6ÀHµÛ·³¤ëªº¼Wªø¥H¤Î¾ú½m¡M§Aªº¥Í©R¤O¤Wª@$tÂI¡T$0"
+          act( "$6éš¨è‘—æ­²æœˆçš„å¢é•·ä»¥åŠæ­·ç·´ï¹ä½ çš„ç”Ÿå‘½åŠ›ä¸Šæ˜‡$té»ï¹—$0"
             , ch, buf, NULL, TO_CHAR );
         }
       }
@@ -1834,7 +1834,7 @@ void increase_update( void )
         if ( ch->max_mana > OldMana )
         {
           chinese_number( ch->max_mana - OldMana, buf );
-          act( "$6ÀHµÛ·³¤ëªº¼Wªø¥H¤Î¾ú½m¡M§Aªºªk¤O¤Wª@$tÂI¡T$0"
+          act( "$6éš¨è‘—æ­²æœˆçš„å¢é•·ä»¥åŠæ­·ç·´ï¹ä½ çš„æ³•åŠ›ä¸Šæ˜‡$té»ï¹—$0"
             , ch, buf, NULL, TO_CHAR );
         }
       }
@@ -1847,7 +1847,7 @@ void increase_update( void )
         if ( ch->max_move > OldMove )
         {
           chinese_number( ch->max_move - OldMove, buf );
-          act( "$6ÀHµÛ·³¤ëªº¼Wªø¥H¤Î¾ú½m¡M§AªºÅé¤O¤Wª@$tÂI¡T$0"
+          act( "$6éš¨è‘—æ­²æœˆçš„å¢é•·ä»¥åŠæ­·ç·´ï¹ä½ çš„é«”åŠ›ä¸Šæ˜‡$té»ï¹—$0"
             , ch, buf, NULL, TO_CHAR );
         }
       }
@@ -1874,7 +1874,7 @@ void update_handler( void )
     area_update();
   }
 
-  /* §ó·s³Ì¤j¤W½u¤H¼Æ */
+  /* æ›´æ–°æœ€å¤§ä¸Šç·šäººæ•¸ */
   top_update();
 
   if ( --pulse_violence <= 0 )
@@ -1893,7 +1893,7 @@ void update_handler( void )
   {
     pulse_point = number_range( PULSE_TICK / 2, 3 * PULSE_TICK / 2 );
 
-    /* ÀË¬dÂ§ª«¬O§_¥i¥Hµo°e */
+    /* æª¢æŸ¥ç¦®ç‰©æ˜¯å¦å¯ä»¥ç™¼é€ */
     gift_update();
 
     dosage_update();
@@ -1906,16 +1906,16 @@ void update_handler( void )
     fight_update();
     variable_update();
 
-    /* Äa½à */
+    /* æ‡¸è³ */
     bounty_update();
 
-    /* §ó·s©ç½æª««~ */
+    /* æ›´æ–°æ‹è³£ç‰©å“ */
     auction_update();
 
-    /* ½ğ±¼¶¢¸m¤Ó¤[ªº¤H */
+    /* è¸¢æ‰é–’ç½®å¤ªä¹…çš„äºº */
     login_update();
 
-    /* ¦Û°Ê¦sÀÉ */
+    /* è‡ªå‹•å­˜æª” */
     autosave_update();
 
     room_update();
@@ -1927,7 +1927,7 @@ void update_handler( void )
     angel_update();
   }
 
-  /* ­×¥¿¦uÅ@¯«¨ì¨Ó */
+  /* ä¿®æ­£å®ˆè­·ç¥åˆ°ä¾† */
   if ( angel_list && PlayerAngel && --pulse_angel_coming <= 0 )
   {
     pulse_angel_coming = PULSE_PER_SECOND * AngelTimes;
@@ -1939,10 +1939,10 @@ void update_handler( void )
   increase_update();
   question_update();
 
-  /* §ó·s½ä°¨ªº¸ê®Æ */
+  /* æ›´æ–°è³­é¦¬çš„è³‡æ–™ */
   gamble_update();
 
-  /* ­«·s¶}¾÷§ó·s */
+  /* é‡æ–°é–‹æ©Ÿæ›´æ–° */
   time_update();
 
   aggr_update();

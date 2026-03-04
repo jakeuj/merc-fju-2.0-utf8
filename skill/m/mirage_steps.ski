@@ -1,5 +1,5 @@
 Name            mirage steps~
-Cname           ���v�g�ܨB~
+Cname           離影迷蹤步~
 Slot            SLOT_MIRAGE_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -27,17 +27,17 @@ Adeptation      0
 Limit           CLASS_GENERAL   50  85
 Limit           CLASS_BRAVO     50  90
 Help
-���v�g�ܨB:
+離影迷蹤步:
 
-�N�C�Ȩ��k�A�ĤJ�@�ǧL�k�W���n�Z�M���O��M�B�k�H
-�֥y�e��M���@���d����C
+將青玄身法再融入一些兵法上的要訣﹐但是整套步法以
+詩句貫穿﹐絲毫不留痕跡。
 
 ~
 
 #Damage
 Description
-$n���S�@���M.......�@�}�C�ϱq�a���_�X........�M�@��$S�y�����j�T���z$Z�M$n�w
-�����h�V�M�������J�g�ҡM�����p��X�ۡC~
+$n雙袖一揚﹐.......一陣青煙從地底冒出........﹐一招$S『煙霧瀰三江』$Z﹐$n已
+不知去向﹐似忽陷入迷境﹐不知如何出招。~
 Chance          10
 Value           20
 Parry           0
@@ -47,8 +47,8 @@ End
 
 #Damage
 Description
-�u��$n���v�@�̡M�˪ŦӰ_�M�ϥX$S�y�P���t�v���z$Z�M���X���p�P�ߤY�Y�M�e�X�@����
-�����꩷�M$N���ۦ����H���šC~
+只見$n身影一晃﹐騰空而起﹐使出$S『星垂暗影落』$Z﹐身驅有如星拋丸擲﹐畫出一條曼
+妙的圓弧﹐$N的招式早以落空。~
 Chance          10
 Value           20
 Parry           0
@@ -58,8 +58,8 @@ End
 
 #Damage
 Description
-$n�ϥX���v�g�ܨB��$S�y�⭷�L�θ�z$Z�M���Φp�P�M���v�H���ۤƤ��M$N���ۦ��l��
-�t�F�T�o�M�t�x���׹L�C�@�ۡC~
+$n使出離影迷蹤步之$S『凌風無形跡』$Z﹐身形如燕﹐身影隨風幻化方位﹐$N的招式始終
+差了三寸﹐瀟灑的避過每一招。~
 Chance          10
 Value           20
 Parry           0
@@ -69,7 +69,7 @@ End
 
 #Damage
 Description
-$n�H�N�ϥX�@��$S�y�A�v�M�i�i�z$Z�M�����@�I�M���Τ@�{�M���H¶��$N����C~
+$n隨意使出一招$S『翠影映波瀾』$Z﹐左足一點﹐身形一閃﹐早以繞到$N身後。~
 Chance          10
 Value           20
 Parry           0
@@ -79,8 +79,8 @@ End
 
 #Damage
 Description
-$n���v�L�ʡM�}��K�P���B�M���O�@��$S�y�R�v�K�H���z$Z�M�����ƽz��ۡM����b
-$N����դ��U�M$n�����d���a�C~
+$n身影微動﹐腳踏醉仙望月步﹐正是一招$S『舞影醉人痴』$Z﹐身形飄緲虛幻﹐穿梭在
+$N的攻勢之下﹐$n竟仍留於原地。~
 Chance          10
 Value           20
 Parry           0
@@ -90,8 +90,8 @@ End
 
 #Damage
 Description
-$n��ŭ��_�M�ϥX�@��$S�y���j����i�z$Z�M�����@��M�������k���ƶ}�M$N�ۦ�����M
-$n���H�Ƹ��T�ض}�~���B�C~
+$n凌空飛起﹐使出一招$S『縈迴盪秋波』$Z﹐擰身一折﹐忽左忽右的飄開﹐$N招式未到﹐
+$n早以飄落三尺開外之處。~
 Chance          10
 Value           20
 Parry           0
@@ -101,8 +101,8 @@ End
 
 #Damage
 Description
-$n�y�ɤߵL�����M�N�H����M����$N��չG�i�M�f�����ۻy�M�K�����M$S�@�F�T��$Z�M
-$N��M�H�����X���M�۩ۦV�ݼv���h�C~
+$n頓時心無雜念﹐意隨念轉﹐眼看$N攻勢逼進﹐口中喃喃自語﹐霎那間﹐$S一靈三化$Z﹐
+$N顯然以分不出虛實﹐招招向殘影擊去。~
 Chance          10
 Value           20
 Parry           0

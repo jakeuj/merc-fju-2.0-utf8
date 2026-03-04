@@ -1,10 +1,10 @@
 Vnum            533
 Name            blademan hat~
-ShortDesc       ¤MªÌ¤§¤y~
+ShortDesc       åˆ€è€…ä¹‹å·¾~
 Description
-ªì¤J¦¿´ò¤§¤M«È³Ì¦h¥Îªº°ò¥»°t³Æ (blademan hat)¡C
+åˆå…¥æ±Ÿæ¹–ä¹‹åˆ€å®¢æœ€å¤šç”¨çš„åŸºæœ¬é…å‚™ (blademan hat)ã€‚
 ~
-Unit            ±ø~
+Unit            æ¢~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HEAD
 Takeable        Yes

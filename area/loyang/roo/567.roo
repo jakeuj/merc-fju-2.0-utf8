@@ -1,10 +1,10 @@
 Vnum            567
-Name            �ù�x�J�f~
+Name            永寧寺入口~
 Description
-�o�̬O�������@�y�x�q�W���ù�x���J�f�M�ݳo�P�ӡM�����J�u�ӿ�
-�M��ܥX��W�a����M�A���T�ۤF�@�n�n�C
+這裡是洛陽內一座寺廟名為永寧寺的入口﹐看這牌樓﹐但見雕工細膩
+﹐顯示出於名家之手﹐你不禁喊了一聲好。
 
-�A�i�H�i�J( enter )�x���ݬݡC
+你可以進入( enter )寺內看看。
 
 ~
 SectorType      SECT_CITY
@@ -35,11 +35,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         ��¾��~
+Keyword         轉職者~
 End
 
 #Enquire
-Keyword         ��x��¾��~
+Keyword         文官轉職者~
 End
 
 End

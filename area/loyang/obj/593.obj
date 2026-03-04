@@ -1,9 +1,9 @@
 Vnum            593
 Name            detect mask potion~
-ShortDesc       °»´ú©ö®eÃÄ¤ô~
+ShortDesc       åµæ¸¬æ˜“å®¹è—¥æ°´~
 Description
 ~
-Unit            ²~~
+Unit            ç“¶~
 ItemType        ITEM_POTION
 Contraband      Yes
 Takeable        Yes

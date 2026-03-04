@@ -1,10 +1,10 @@
 Vnum            10
 Name            turd~
-ShortDesc       ¯ä«Ë~
+ShortDesc       è‡­å±~
 Description
-§A»D¨ì¤F¤£»·³B¯ä«Ë(turd)©ÒÄÆ¨Óªº¨ı¹D¡M¦n¯ä¡M¯u¤£ª¾¹D­n«ç»ò¿ì¡S
+ä½ èåˆ°äº†ä¸é è™•è‡­å±(turd)æ‰€é£„ä¾†çš„å‘³é“ï¹å¥½è‡­ï¹çœŸä¸çŸ¥é“è¦æ€éº¼è¾¦ï¹–
 ~
-Unit            ªb~
+Unit            æ²±~
 ItemType        ITEM_TRASH
 Takeable        Yes
 Level           0

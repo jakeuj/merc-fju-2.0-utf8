@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -45,13 +45,13 @@ FUNCTION( do_lotto )
   {
     clear_buffer();
     chinese_number( lotto_count, buf );
-    send_to_buffer( "¥»´Á¡u²Ä%s´Á¡vªº¼Ö³z¸¹½X¬O\e[1;32m " , buf );
+    send_to_buffer( "æœ¬æœŸã€Œç¬¬%sæœŸã€çš„æ¨‚é€è™Ÿç¢¼æ˜¯\e[1;32m " , buf );
 
     for ( loop = 0; loop < LOTTO_MAX; loop++ )
       send_to_buffer( "%c", ( nLotto[loop] + '0' ) );
 
     chinese_number( lotto_paper, buf );
-    send_to_buffer( "\e[0m¡M¨C¥÷¼Ö³z§Ö³ø»ù¿ú¬° %s ¨â¡C\n\r", buf );
+    send_to_buffer( "\e[0mï¹æ¯ä»½æ¨‚é€å¿«å ±åƒ¹éŒ¢ç‚º %s å…©ã€‚\n\r", buf );
     print_buffer( ch );
     RETURN_NULL();
   }
@@ -65,28 +65,28 @@ FUNCTION( do_lotto )
 
     if ( !arg[0] )
     {
-      send_to_char( "§A­n®³¨º­Óª««~§I¼ú¡S\n\r", ch );
+      send_to_char( "ä½ è¦æ‹¿é‚£å€‹ç‰©å“å…Œçï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pObj = get_obj_carry( ch, arg ) ) )
     {
-      act( "§A¨­¤W¨S¦³³o¼Ëªºª««~ $2$T$0 ³á¡C" , ch, NULL, arg, TO_CHAR );
+      act( "ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£çš„ç‰©å“ $2$T$0 å–”ã€‚" , ch, NULL, arg, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ª««~¬O§_¦³Áı¬r */
+    /* ç‰©å“æ˜¯å¦æœ‰é¤µæ¯’ */
     if ( poison_char( ch, pObj ) ) RETURN_NULL();
 
     if ( ( check = lotto_check( pObj ) ) == ERRORCODE )
     {
-      act( "§Aªº$p¨Ã¨S¦³¤¤¼Ö³z¼ú¡C", ch, pObj, NULL, TO_CHAR );
+      act( "ä½ çš„$pä¸¦æ²’æœ‰ä¸­æ¨‚é€çã€‚", ch, pObj, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     chinese_number( check, buf );
 
-    /* ®Ú¾Ú²Ä´X¯S¼ú¨Óµ¹¼ú«~ */
+    /* æ ¹æ“šç¬¬å¹¾ç‰¹çä¾†çµ¦çå“ */
     switch( check )
     {
     default:
@@ -96,10 +96,10 @@ FUNCTION( do_lotto )
 
       if ( LottoFirst > 0 )
       {
-        act( "®¥ÁH§A¡M§Aªº$p¤¤¤F²Ä$T¯S¼ú¡C", ch, pObj, buf, TO_CHAR );
+        act( "æ­ç¦§ä½ ï¹ä½ çš„$pä¸­äº†ç¬¬$Tç‰¹çã€‚", ch, pObj, buf, TO_CHAR );
         chinese_number( add_firman( ch, LottoFirst ), buf );
-        act( "¼Ö³z¤½·|°e§A$t±i§K¦ºª÷µP¡C", ch, buf, NULL, TO_CHAR );
-        mudlog( LOG_INFO, "[LOTTO] %s±o¨ì²Ä¤@¯S¼ú.", ch->name );
+        act( "æ¨‚é€å…¬æœƒé€ä½ $tå¼µå…æ­»é‡‘ç‰Œã€‚", ch, buf, NULL, TO_CHAR );
+        mudlog( LOG_INFO, "[LOTTO] %så¾—åˆ°ç¬¬ä¸€ç‰¹ç.", ch->name );
       }
 
       break;
@@ -108,10 +108,10 @@ FUNCTION( do_lotto )
 
       if ( LottoSecond > 0 )
       {
-        act( "®¥ÁH§A¡M§Aªº$p¤¤¤F²Ä$T¯S¼ú¡C", ch, pObj, buf, TO_CHAR );
+        act( "æ­ç¦§ä½ ï¹ä½ çš„$pä¸­äº†ç¬¬$Tç‰¹çã€‚", ch, pObj, buf, TO_CHAR );
         chinese_number( add_firman( ch, LottoSecond ), buf );
-        act( "¼Ö³z¤½·|°e§A$t±i§K¦ºª÷µP¡C", ch, buf, NULL, TO_CHAR );
-        mudlog( LOG_INFO, "[LOTTO] %s±o¨ì²Ä¤G¯S¼ú.", ch->name );
+        act( "æ¨‚é€å…¬æœƒé€ä½ $tå¼µå…æ­»é‡‘ç‰Œã€‚", ch, buf, NULL, TO_CHAR );
+        mudlog( LOG_INFO, "[LOTTO] %så¾—åˆ°ç¬¬äºŒç‰¹ç.", ch->name );
       }
 
       break;
@@ -120,10 +120,10 @@ FUNCTION( do_lotto )
 
       if ( LottoThird > 0 )
       {
-        act( "®¥ÁH§A¡M§Aªº$p¤¤¤F²Ä$T¯S¼ú¡C", ch, pObj, buf, TO_CHAR );
+        act( "æ­ç¦§ä½ ï¹ä½ çš„$pä¸­äº†ç¬¬$Tç‰¹çã€‚", ch, pObj, buf, TO_CHAR );
         chinese_number( add_firman( ch, LottoThird ), buf );
-        act( "¼Ö³z¤½·|°e§A$t±i§K¦ºª÷µP¡C", ch, buf, NULL, TO_CHAR );
-        mudlog( LOG_INFO, "[LOTTO] %s±o¨ì²Ä¤T¯S¼ú.", ch->name );
+        act( "æ¨‚é€å…¬æœƒé€ä½ $tå¼µå…æ­»é‡‘ç‰Œã€‚", ch, buf, NULL, TO_CHAR );
+        mudlog( LOG_INFO, "[LOTTO] %så¾—åˆ°ç¬¬ä¸‰ç‰¹ç.", ch->name );
       }
 
       break;
@@ -132,32 +132,32 @@ FUNCTION( do_lotto )
 
       if ( LottoForth > 0 )
       {
-        act( "®¥ÁH§A¡M§Aªº$p¤¤¤F²Ä$T¯S¼ú¡C", ch, pObj, buf, TO_CHAR );
+        act( "æ­ç¦§ä½ ï¹ä½ çš„$pä¸­äº†ç¬¬$Tç‰¹çã€‚", ch, pObj, buf, TO_CHAR );
         chinese_number( add_firman( ch, LottoForth ), buf );
-        act( "¼Ö³z¤½·|°e§A$t±i§K¦ºª÷µP¡C", ch, buf, NULL, TO_CHAR );
-        mudlog( LOG_INFO, "[LOTTO] %s±o¨ì²Ä¥|¯S¼ú.", ch->name );
+        act( "æ¨‚é€å…¬æœƒé€ä½ $tå¼µå…æ­»é‡‘ç‰Œã€‚", ch, buf, NULL, TO_CHAR );
+        mudlog( LOG_INFO, "[LOTTO] %så¾—åˆ°ç¬¬å››ç‰¹ç.", ch->name );
       }
 
       break;
     }
 
-    /* ¥ı¾P·´­ì¨Óªºª««~ */
+    /* å…ˆéŠ·æ¯€åŸä¾†çš„ç‰©å“ */
     extract_obj( pObj );
 
     RETURN_NULL();
   }
 
-  /* ­««Ø¸¹½X, ¥u¦³¯«±Ú¥i¥H */
+  /* é‡å»ºè™Ÿç¢¼, åªæœ‰ç¥æ—å¯ä»¥ */
   if ( !str_prefix( arg , "!reborn" ) && IS_GOD( ch ) )
   {
-    mudlog( LOG_INFO, "[LOTTO] %s ­«¸m¼Ö³z¸¹½X.", ch->name );
-    send_to_char( "§A­«·s³]©w¼Ö³z¸¹½X¡C\n\r" , ch );
+    mudlog( LOG_INFO, "[LOTTO] %s é‡ç½®æ¨‚é€è™Ÿç¢¼.", ch->name );
+    send_to_char( "ä½ é‡æ–°è¨­å®šæ¨‚é€è™Ÿç¢¼ã€‚\n\r" , ch );
     lotto_generate( -1 );
     do_lotto( ch , "" );
     RETURN_NULL();
   }
 
-  /* ³]©w¸¹½X, ¥u¦³¯«±Ú¥i¥H */
+  /* è¨­å®šè™Ÿç¢¼, åªæœ‰ç¥æ—å¯ä»¥ */
   if ( !str_prefix( arg, "!set" ) && IS_GOD( ch ) )
   {
     int  number;
@@ -166,21 +166,21 @@ FUNCTION( do_lotto )
 
     if ( !is_number( arg ) || ( number = atoi( arg ) ) <= 0 )
     {
-      send_to_char( "³]©w¸¹½X¿ù»~¡C\n\r" , ch );
+      send_to_char( "è¨­å®šè™Ÿç¢¼éŒ¯èª¤ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    mudlog( LOG_INFO, "[LOTTO] %s ³]©w¼Ö³z¸¹½X.", ch->name );
+    mudlog( LOG_INFO, "[LOTTO] %s è¨­å®šæ¨‚é€è™Ÿç¢¼.", ch->name );
     lotto_generate( number );
     do_lotto( ch, "" );
     RETURN_NULL();
   }
 
-  send_to_char( "½Ğ¬d¸ß lotto ¥¿½Tªº¨Ï¥Î¤èªk¡C\n\r" , ch );
+  send_to_char( "è«‹æŸ¥è©¢ lotto æ­£ç¢ºçš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r" , ch );
   RETURN_NULL();
 }
 
-/* ¨C¤Ñ§ó´«¼Ö³z¸¹½X */
+/* æ¯å¤©æ›´æ›æ¨‚é€è™Ÿç¢¼ */
 void lotto_update( void )
 {
   DESCRIPTOR_DATA * man;
@@ -190,10 +190,10 @@ void lotto_update( void )
 
   PUSH_FUNCTION( "lotto_update" );
 
-  /* ¥ı²£¥Í¼Ö³z¸¹½X */
+  /* å…ˆç”¢ç”Ÿæ¨‚é€è™Ÿç¢¼ */
   lotto_generate( -1 );
 
-  /* °e¥X¼Ö³z§Ö³ø */
+  /* é€å‡ºæ¨‚é€å¿«å ± */
   for ( man = descriptor_list; man; man = man->next )
   {
     if ( !verify_desc( man )
@@ -203,17 +203,17 @@ void lotto_update( void )
       || ch->gold < lotto_paper
       || ch->position != POS_STANDING ) continue;
 
-    /* ¦©°£§Ö³øªº¿ú */
+    /* æ‰£é™¤å¿«å ±çš„éŒ¢ */
     if ( lotto_paper > 0 ) gold_from_char( ch, lotto_paper );
 
-    /* ÀË¬d¨­¤Wªºª««~ */
+    /* æª¢æŸ¥èº«ä¸Šçš„ç‰©å“ */
     for ( pObj = ch->carrying; pObj; pObj = pObj->next_content )
     {
       if ( pObj->wear_loc == WEAR_NONE
         && can_see_obj( ch, pObj )
         && ( check = lotto_check( pObj ) ) != ERRORCODE )
       {
-        act( "$B¡u¼Ö³z§Ö³ø¡v §Aªº$p¤¤¤F²Ä$I¯S¼ú¡C", ch, pObj, &check, TO_CHAR );
+        act( "$Bã€Œæ¨‚é€å¿«å ±ã€ ä½ çš„$pä¸­äº†ç¬¬$Iç‰¹çã€‚", ch, pObj, &check, TO_CHAR );
       }
     }
   }
@@ -221,7 +221,7 @@ void lotto_update( void )
   RETURN_NULL();
 }
 
-/* ²£¥Í¤@²Õ¼Ö³z¸¹½X */
+/* ç”¢ç”Ÿä¸€çµ„æ¨‚é€è™Ÿç¢¼ */
 void lotto_generate( int number )
 {
   int loop;
@@ -253,14 +253,14 @@ int lotto_check( OBJ_DATA * obj )
 
   PUSH_FUNCTION( "lotto_check" );
 
-  /* ¦pªGª««~¬OªÅªº, ¤@©w¦³¿ù»~ */
+  /* å¦‚æœç‰©å“æ˜¯ç©ºçš„, ä¸€å®šæœ‰éŒ¯èª¤ */
   if ( !obj || ( serial = obj->serial.low ) == 0 ) RETURN ( ERRORCODE );
 
-  /* ª««~¤ÀÃş */
+  /* ç‰©å“åˆ†é¡ */
   switch( obj->item_type )
   {
   default:
-    mudlog( LOG_DEBUG, "lotto_check: ª««~ºØÃş %d ¿ù»~.", obj->item_type );
+    mudlog( LOG_DEBUG, "lotto_check: ç‰©å“ç¨®é¡ %d éŒ¯èª¤.", obj->item_type );
     RETURN( ERRORCODE );
 
   case ITEM_POTION:
@@ -301,7 +301,7 @@ int lotto_check( OBJ_DATA * obj )
     break;
   }
 
-  /* ¹ï¸¹ */
+  /* å°è™Ÿ */
   for ( check = 0, loop = LOTTO_MAX -1; loop >= 0; loop-- )
   {
     if ( nLotto[loop] == ( serial % 10 ) ) check++;
@@ -309,6 +309,6 @@ int lotto_check( OBJ_DATA * obj )
     serial /= 10;
   }
 
-  /* ¦pªG¨S¦³¶Ç¦^ -1, ¦³ªº¸Ü¨Ì§Ç 1, 2, 3 ¶Ç¦^ */
+  /* å¦‚æœæ²’æœ‰å‚³å› -1, æœ‰çš„è©±ä¾åº 1, 2, 3 å‚³å› */
   RETURN( ( ( check > LOTTO_BASE ) ? ( LOTTO_MAX + 1 - check ) : ERRORCODE ) );
 }

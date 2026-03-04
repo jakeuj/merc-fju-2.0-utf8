@@ -1,9 +1,9 @@
 Vnum            96
 Name            maiu tulwar~
-ShortDesc       Ås¤ë­]¤M~
+ShortDesc       å½Žæœˆè‹—åˆ€~
 Description
-¤@§â­]Ã¦¯S»sªº¤j¤M(tulwar)¡M¦¨¥b¤ë§Î¡C¦º¦b¥¦¤â¤Uªº¤H¤£­p¨ä¼Æ¡C~
-Unit            §â~
+ä¸€æŠŠè‹—ç–†ç‰¹è£½çš„å¤§åˆ€(tulwar)ï¹æˆåŠæœˆå½¢ã€‚æ­»åœ¨å®ƒæ‰‹ä¸‹çš„äººä¸è¨ˆå…¶æ•¸ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

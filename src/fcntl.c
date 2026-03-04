@@ -20,32 +20,32 @@ extern bool     fReload;
 
 const char *    file_err_msg    [] =
 {
-  /*  0 */ "¨S¦³¥ô¦ó¿ù»~"                       ,
-  /*  1 */ "¯Ê¥FÀÉ®×¦WºÙ"                       ,
-  /*  2 */ "¶}±ÒÀÉ®×¥¢±Ñ(fopen)"                ,
-  /*  3 */ "ÀÉ®×¤w¸g¦s¦b¡MµLªk¶}±Ò"             ,
-  /*  4 */ "¥ØªºÀÉ®×¬O¤@­Ó¥Ø¿ı"                 ,
-  /*  5 */ "Åv­­µLªk¶}±ÒÀÉ®×©Î¥Ø¿ı"             ,
-  /*  6 */ "ÀÉ®×©Î¥Ø¿ı¸ô®|¤Óªø"                 ,
-  /*  7 */ "¸ô®|¤º®e¤£¦s¦b©Î¬O¤£¦Xªk"           ,
-  /*  8 */ "¥Øªº¤£¬O¤@­Ó¥Ø¿ı"                   ,
-  /*  9 */ "O_NONBLOCK O_WRONLY ¦P®É³Q³]©w"     ,
-  /* 10 */ "¨S¦³³o¶µµwÅé³]³Æ"                   ,
-  /* 11 */ "¥ØªºÀÉ®×¬O°ßÅª³]³Æ"                 ,
-  /* 12 */ "³]³ÆÁc¦£¤¤"                         ,
-  /* 13 */ "¸ô®|¦ì§}¤£¦Xªk"                     ,
-  /* 14 */ "¤Ó¦h²Å¸¹³sµ²"                       ,
-  /* 15 */ "µwÅé¨S¦³¨¬°÷ªºªÅ¤Î¨ÓÀx¦s"           ,
-  /* 16 */ "®Ö¤ß°O¾ĞÅé¤£¨¬"                     ,
-  /* 17 */ "¦æµ{¶}±ÒÀÉ®×Á`¼Æ¤w¹F¤W­­"           ,
-  /* 18 */ "¨t²ÎÀÉ®×¤w¹F¤W­­"                   ,
-  /* 19 */ "ÀÉ®×­«½Æ³Q¶}±Ò"                     ,
-  /* 20 */ "ÃöÀÉ®É¨Ó·½¤£¥¿½T"                   ,
-  /* 21 */ "ÃöÀÉ®Éµ²ºcÄÀ©ñ¦³°İÃD"               ,
-  /* 22 */ "µLªk¨ú±oÀÉ®×¸ê®Æ"                   ,
-  /* 23 */ "µLªk¨ú±o¦@¨É°O¾ĞÅé"                 ,
-  /* 24 */ "¤w¹FÀÉ®×§Àºİ"                       ,
-  /* 25 */ "Åª¨ú¦r¦ê¤Ó¤j"                       ,
+  /*  0 */ "æ²’æœ‰ä»»ä½•éŒ¯èª¤"                       ,
+  /*  1 */ "ç¼ºä¹æª”æ¡ˆåç¨±"                       ,
+  /*  2 */ "é–‹å•Ÿæª”æ¡ˆå¤±æ•—(fopen)"                ,
+  /*  3 */ "æª”æ¡ˆå·²ç¶“å­˜åœ¨ï¹ç„¡æ³•é–‹å•Ÿ"             ,
+  /*  4 */ "ç›®çš„æª”æ¡ˆæ˜¯ä¸€å€‹ç›®éŒ„"                 ,
+  /*  5 */ "æ¬Šé™ç„¡æ³•é–‹å•Ÿæª”æ¡ˆæˆ–ç›®éŒ„"             ,
+  /*  6 */ "æª”æ¡ˆæˆ–ç›®éŒ„è·¯å¾‘å¤ªé•·"                 ,
+  /*  7 */ "è·¯å¾‘å…§å®¹ä¸å­˜åœ¨æˆ–æ˜¯ä¸åˆæ³•"           ,
+  /*  8 */ "ç›®çš„ä¸æ˜¯ä¸€å€‹ç›®éŒ„"                   ,
+  /*  9 */ "O_NONBLOCK O_WRONLY åŒæ™‚è¢«è¨­å®š"     ,
+  /* 10 */ "æ²’æœ‰é€™é …ç¡¬é«”è¨­å‚™"                   ,
+  /* 11 */ "ç›®çš„æª”æ¡ˆæ˜¯å”¯è®€è¨­å‚™"                 ,
+  /* 12 */ "è¨­å‚™ç¹å¿™ä¸­"                         ,
+  /* 13 */ "è·¯å¾‘ä½å€ä¸åˆæ³•"                     ,
+  /* 14 */ "å¤ªå¤šç¬¦è™Ÿé€£çµ"                       ,
+  /* 15 */ "ç¡¬é«”æ²’æœ‰è¶³å¤ çš„ç©ºåŠä¾†å„²å­˜"           ,
+  /* 16 */ "æ ¸å¿ƒè¨˜æ†¶é«”ä¸è¶³"                     ,
+  /* 17 */ "è¡Œç¨‹é–‹å•Ÿæª”æ¡ˆç¸½æ•¸å·²é”ä¸Šé™"           ,
+  /* 18 */ "ç³»çµ±æª”æ¡ˆå·²é”ä¸Šé™"                   ,
+  /* 19 */ "æª”æ¡ˆé‡è¤‡è¢«é–‹å•Ÿ"                     ,
+  /* 20 */ "é—œæª”æ™‚ä¾†æºä¸æ­£ç¢º"                   ,
+  /* 21 */ "é—œæª”æ™‚çµæ§‹é‡‹æ”¾æœ‰å•é¡Œ"               ,
+  /* 22 */ "ç„¡æ³•å–å¾—æª”æ¡ˆè³‡æ–™"                   ,
+  /* 23 */ "ç„¡æ³•å–å¾—å…±äº«è¨˜æ†¶é«”"                 ,
+  /* 24 */ "å·²é”æª”æ¡ˆå°¾ç«¯"                       ,
+  /* 25 */ "è®€å–å­—ä¸²å¤ªå¤§"                       ,
   ""
 };
 
@@ -197,20 +197,20 @@ FUNCTION( do_fcntl )
 
   if ( arg[0] == '\x0' )
   {
-    print_to_char( ch, "¨t²Î«O¯dÀÉ®× %s ¡u¸¹½X¡R%d¡v\n\r"
+    print_to_char( ch, "ç³»çµ±ä¿ç•™æª”æ¡ˆ %s ã€Œè™Ÿç¢¼ï¹•%dã€\n\r"
       , YESNO( fileno( fpReserve ) >= 0 ), fileno( fpReserve ) );
 
-    act( "¨t²Î¥Ø«eÁ`¦@¶}±Ò¹L $x ­ÓÀÉ®×¡C$A", ch, &total_file, NULL, TO_CHAR );
+    act( "ç³»çµ±ç›®å‰ç¸½å…±é–‹å•Ÿé $x å€‹æª”æ¡ˆã€‚$A", ch, &total_file, NULL, TO_CHAR );
 
     if ( !file_list )
     {
-      act( "¥Ø«e$t¨S¦³¶}±Ò¥ô¦óÀÉ®×¡T", ch, mud_name, NULL, TO_CHAR );
+      act( "ç›®å‰$tæ²’æœ‰é–‹å•Ÿä»»ä½•æª”æ¡ˆï¹—", ch, mud_name, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     clear_buffer();
-    send_to_buffer( "\e[1;33;44m¶¶§Ç ¸¹½X ®É  ¶¡ ÀÉ  ¦W                "
-      "        ¿ù»~ ¿ù »~ °T ®§                 \e[0m\n\r" );
+    send_to_buffer( "\e[1;33;44mé †åº è™Ÿç¢¼ æ™‚  é–“ æª”  å                "
+      "        éŒ¯èª¤ éŒ¯ èª¤ è¨Š æ¯                 \e[0m\n\r" );
 
     for ( count = 0, pFile = file_list; pFile; pFile = pFile->next )
     {
@@ -240,7 +240,7 @@ FUNCTION( do_fcntl )
 
   else
   {
-    send_to_char( "¹ï¤£°_¡M§Aªº°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß fcntl ªº¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹ä½ çš„åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢ fcntl çš„ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
@@ -254,7 +254,7 @@ const char * error_string( FILE_DATA * pFile )
 
   if ( !pFile )
   {
-    mudlog( LOG_DEBUG, "error_string: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "error_string: ä¾†æºä¸æ­£ç¢º." );
     RETURN( "\x0" );
   }
 
@@ -262,7 +262,7 @@ const char * error_string( FILE_DATA * pFile )
 
   if ( pFile->error < 0 || pFile->error >= size )
   {
-    mudlog( LOG_DEBUG, "error_string: ¶W¥X½d³ò(%d)", pFile->error );
+    mudlog( LOG_DEBUG, "error_string: è¶…å‡ºç¯„åœ(%d)", pFile->error );
     RETURN( "\x0" );
   }
 
@@ -286,7 +286,7 @@ char fread_letter( FILE_DATA * pFile )
       pFile->error = 24;
 
       mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR,
-        "fread_letter: ¤w¹FÀÉ®×ºÉÀY." );
+        "fread_letter: å·²é”æª”æ¡ˆç›¡é ­." );
 
       FileError |= ERROR_LETTER;
       RETURN( '\x0' );
@@ -334,7 +334,7 @@ int fread_number( FILE_DATA * pFile )
     if ( !isalpha( ( int ) Char ) )
     {
       mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR
-        , "Fread_number: «D¦r¦ê±`¼Æ." );
+        , "Fread_number: éå­—ä¸²å¸¸æ•¸." );
 
       FileError |= ERROR_NUMBER;
       RETURN( 0 );
@@ -346,14 +346,14 @@ int fread_number( FILE_DATA * pFile )
     {
       if ( merc_pid != getpid() )
       {
-        mudlog( LOG_DEBUG, "Fread_number: ¤l¦æµ{Åª¨ú©w¸q¦r¦ê %s ¿ù»~.", word );
+        mudlog( LOG_DEBUG, "Fread_number: å­è¡Œç¨‹è®€å–å®šç¾©å­—ä¸² %s éŒ¯èª¤.", word );
         FileError |= ERROR_NUMBER;
         ReadNumberError = TRUE;
         RETURN( -1 );
       }
 
       mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR,
-        "Fread_number: Åª¨úÀÉ®×¤w©w¸q¦r¦ê %s ¿ù»~.", word );
+        "Fread_number: è®€å–æª”æ¡ˆå·²å®šç¾©å­—ä¸² %s éŒ¯èª¤.", word );
 
       FileError |= ERROR_NUMBER;
       RETURN( 0 );
@@ -402,7 +402,7 @@ char * fread_string( FILE_DATA * pFile )
       pFile->error = 24;
 
       mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR
-        , "fread_string: Åª¨ú¨ìÀÉ§À." );
+        , "fread_string: è®€å–åˆ°æª”å°¾." );
 
       FileError |= ERROR_STRING;
       RETURN( "" );
@@ -419,7 +419,7 @@ char * fread_string( FILE_DATA * pFile )
       pFile->error = 24;
 
       mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR
-        , "fread_string: Åª¨ú¨ìÀÉ§À." );
+        , "fread_string: è®€å–åˆ°æª”å°¾." );
 
       FileError |= ERROR_STRING;
       RETURN( "" );
@@ -430,7 +430,7 @@ char * fread_string( FILE_DATA * pFile )
       pFile->error = 25;
 
       mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_CRIT
-        , "fread_string: Åª¨ú¦r¦ê¤Ó¤j." );
+        , "fread_string: è®€å–å­—ä¸²å¤ªå¤§." );
 
       FileError |= ERROR_STRING;
       RETURN( "" );
@@ -488,7 +488,7 @@ char * fread_string( FILE_DATA * pFile )
   }
 }
 
-/* Åª¨ú alpha ¦r¤¸..°£¤F + - | ¥H¥~ ..±M¬°  fread_number ³]­pªº¨ç¼Æ */
+/* è®€å– alpha å­—å…ƒ..é™¤äº† + - | ä»¥å¤– ..å°ˆç‚º  fread_number è¨­è¨ˆçš„å‡½æ•¸ */
 char * fread_alpha( FILE_DATA * pFile )
 {
   static char   word[MAX_INPUT_LENGTH];
@@ -506,7 +506,7 @@ char * fread_alpha( FILE_DATA * pFile )
       pFile->error = 24;
 
       mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR
-        , "fread_alpha: ¤w¹FÀÉ®×ºÉÀY." );
+        , "fread_alpha: å·²é”æª”æ¡ˆç›¡é ­." );
 
       FileError |= ERROR_ALPHA;
       RETURN( "" );
@@ -540,7 +540,7 @@ char * fread_alpha( FILE_DATA * pFile )
     }
   }
 
-  mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR, "fread_alpha: ¦r¦ê¤Óªø." );
+  mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR, "fread_alpha: å­—ä¸²å¤ªé•·." );
   FileError |= ERROR_ALPHA;
 
   RETURN( "" );
@@ -569,7 +569,7 @@ char * fread_word( FILE_DATA * pFile )
   else if ( pFile->pointer >= pFile->boundary )
   {
     mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR
-      , "fread_word: ¤w¹FÀÉ®×ºÉÀY." );
+      , "fread_word: å·²é”æª”æ¡ˆç›¡é ­." );
 
     FileError |= ERROR_WORD;
     RETURN( "" );
@@ -600,13 +600,13 @@ char * fread_word( FILE_DATA * pFile )
     }
   }
 
-  mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR , "fread_word: ¦r²Õ¤Óªø." );
+  mudlog( fBootDb || fReload ? LOG_DEBUG : LOG_ERR , "fread_word: å­—çµ„å¤ªé•·." );
   FileError |= ERROR_WORD;
 
   RETURN( "" );
 }
 
-/* ´ú¸Õ¬O§_¨ì¹FÀÉ®×§Àºİ */
+/* æ¸¬è©¦æ˜¯å¦åˆ°é”æª”æ¡ˆå°¾ç«¯ */
 bool if_eof( FILE_DATA * pFile )
 {
   char Char;
@@ -631,7 +631,7 @@ bool if_eof( FILE_DATA * pFile )
   }
 }
 
-/* ´ú¸Õ¬O§_¤w¹F¨ìÀÉ®×¬Y¤@¦æªº¦æ¥½ */
+/* æ¸¬è©¦æ˜¯å¦å·²é”åˆ°æª”æ¡ˆæŸä¸€è¡Œçš„è¡Œæœ« */
 bool fread_if_eol( FILE_DATA * pFile )
 {
   char Char;

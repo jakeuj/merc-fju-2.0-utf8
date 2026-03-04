@@ -1,5 +1,5 @@
 Name            sky steps~
-Cname           �L�ȤѶ����k~
+Cname           俠客天雲身法~
 Slot            SLOT_SKY_STEPS
 Msgoff          ~
 Position        POS_FIGHTING
@@ -30,8 +30,8 @@ Help            ~
 
 #Damage
 Description
-$n�H�j���Y�媺��H�B�k�I�i$W�y�����ˬ����z$Z�M��������M�ۨ��e��M���Y�a��
-�o���h��$N��դ��~�C~
+$n以大巧若拙的驚人步法施展$W『五岳倒為輕』$Z﹐左足輕轉﹐旋身前踏﹐竟縮地成
+寸的退至$N攻勢之外。~
 Chance          20
 Value           20
 Parry           0
@@ -40,8 +40,8 @@ Innate          0 0
 End
 #Damage
 Description
-�u��$n�׽�$W�y�d�����d��z$Z�������k�M�������u�M�䤤�S�t���s���M���s����
-�����������ƶh��V$N������C~
+只見$n斜踏$W『千里不留行』$Z忽左忽右﹐似走直線﹐其中又暗藏彎曲和比彎曲更
+巧妙的弧度飄逸轉向$N的身後。~
 Chance          20
 Value           20
 Parry           0
@@ -50,7 +50,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n���y���I�ϥX$W�y����p�y�P�z$Z�M�ǵۿE�_���l���M�p�𸭯�M�ƵM���W�U�_��C~
+$n足尖輕點使出$W『颯沓如流星』$Z﹐藉著激起的勁風﹐如樹葉般﹐飄然的上下起伏。~
 Chance          20
 Value           20
 Parry           0
@@ -59,8 +59,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���D�u�D$W�y�ƤF�ئ�h�z$Z�y�ɹ��Ʀ��@�\�S�����q�����ϡM�H$N�o�X����l�Ʋ�
-�̰ʡM���l�����h�F�}�h�C~
+$n輕呻吟道$W『事了拂衣去』$Z頓時像化成一縷沒有重量的輕煙﹐隨$N發出的氣勁飄移
+晃動﹐身子輕輕退了開去。~
 Chance          20
 Value           20
 Parry           0
@@ -69,8 +69,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���ɥk���@��e��$W�y�Ⱦb�ӥհ��z$Z�M�s�s�ۥX�ƭӨ��Φp�վs�L�د�M�t�x��
-�{�L$N����աC~
+$n瞬時右足一轉疾使$W『銀鞍照白馬』$Z﹐連連幻出數個身形如白駒過隙般﹐瀟灑的
+閃過$N的攻勢。~
 Chance          20
 Value           20
 Parry           0
@@ -79,8 +79,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�۽�$W�y�`�è��P�W�z$Z���餺�u�𥩧����B��M�ܴ��C�ͥX���Ϩ�ѤO�D�M����
-���δ���M���������L$N�C~
+$n旋踏$W『深藏身與名』$Z藉體內真氣巧妙的運轉和變換。生出正反兩股力道﹐瞬間
+移形換位﹐巧妙的躲過$N。~
 Chance          20
 Value           20
 Parry           0

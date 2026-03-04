@@ -1,11 +1,11 @@
 Vnum            9009
 Name            castle armor~
-ShortDesc       �T�íx���Z~
+ShortDesc       禁衛軍戰鎧~
 Description
-�H�@�����p�����걵�Ӧ��M��b���W�M�ƨ㨾�@�\�ġM
-�o�]���Ӥ��T�F���ʤO�C
+以一片片小鋼片串接而成﹐穿在身上﹐甚具防護功效﹐
+卻因此而引響了活動力。
 ~
-Unit            �M~
+Unit            套~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

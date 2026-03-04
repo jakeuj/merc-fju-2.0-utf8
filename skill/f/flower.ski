@@ -1,5 +1,5 @@
 Name            flower hand~
-Cname           ¥É¤k§é±ö¤â~
+Cname           ç‰å¥³æŠ˜æ¢…æ‰‹~
 Slot            SLOT_FLOWER
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -39,7 +39,7 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$nÅÖ¤â¤@¥X¡M¤@©Û$S¡yªá¶}³ô§é¡z$Z©¹$N¨­¤W§ì¥h¡C~
+$nçº–æ‰‹ä¸€å‡ºï¹ä¸€æ‹›$Sã€èŠ±é–‹å ªæŠ˜ã€$Zå¾€$Nèº«ä¸ŠæŠ“å»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -48,7 +48,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤@©Û$S¡y®ç­»Ãø­@¡z$Z¡M¤@Àş¶¡³s¥X¤T¤â©¹$Nªº¨­Åé¦Ó¥h¡C~
+$nä¸€æ‹›$Sã€æ¡ƒé¦™é›£è€ã€$Zï¹ä¸€ç¬é–“é€£å‡ºä¸‰æ‰‹å¾€$Nçš„èº«é«”è€Œå»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -57,7 +57,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¤@¥X¤â¡M¤@¦¡$S¡yÂÂ±¡Ãø§Ñ¡z$Z¥k¤â¦pÆF³D¯ëÃkª¦¡M©¿¦a¤@Âà©¹$N§é¥h¡C~
+$nä¸€å‡ºæ‰‹ï¹ä¸€å¼$Sã€èˆŠæƒ…é›£å¿˜ã€$Zå³æ‰‹å¦‚éˆè›‡èˆ¬æ”€çˆ¬ï¹å¿½åœ°ä¸€è½‰å¾€$NæŠ˜å»ã€‚~
 Chance          10
 Value           20
 Parry           0
@@ -66,7 +66,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n¨­§Î©¿¦a´²ºC¡M¤@¥X¤â«K¬O¤@©Û$S¡yÃø¤ÀÃø±Ë¡z$Z©¹$N«|³ï¤@§é¡C~
+$nèº«å½¢å¿½åœ°æ•£æ…¢ï¹ä¸€å‡ºæ‰‹ä¾¿æ˜¯ä¸€æ‹›$Sã€é›£åˆ†é›£æ¨ã€$Zå¾€$Nå’½å–‰ä¸€æŠ˜ã€‚~
 Chance          10
 Value           20
 Parry           0

@@ -1,8 +1,8 @@
 Vnum            604
-Name            ÅK¦K©~~
+Name            éµåŒ å±…~
 Description
-¤@¤ù¤õ¼ö¡MÄl¤¤ªº¤õ¥¿ª¥¯P¡M¿NµÛÄl¤Wªº§L¾¹¡M§A¤]¥i¥H­×¤@­×Ãa±¼
-ªº¸Ë³Æ¡C
+ä¸€ç‰‡ç«ç†±ï¹çˆä¸­çš„ç«æ­£ç‚™çƒˆï¹ç‡’è‘—çˆä¸Šçš„å…µå™¨ï¹ä½ ä¹Ÿå¯ä»¥ä¿®ä¸€ä¿®å£æ‰
+çš„è£å‚™ã€‚
 
 ~
 SectorType      SECT_CITY
@@ -17,11 +17,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         ÅK¾Q~
+Keyword         éµé‹ª~
 End
 
 #Enquire
-Keyword         ­×²z©±~
+Keyword         ä¿®ç†åº—~
 End
 
 End

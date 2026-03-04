@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include "merc.h"
 
-/* °Ï°ì¨ç¼Æªº«Å§i */
+/* å€åŸŸå‡½æ•¸çš„å®£å‘Š */
 size_t        count_club_member args( ( CLUB_DATA *, int ) );
 int             name_in_club    args( ( char *, CLUB_DATA * ) );
 bool            clubmember_full args( ( CLUB_DATA *, int ) );
@@ -35,7 +35,7 @@ extern  int     name_in_club            args( ( char *, CLUB_DATA * ) );
 int             club_room               = 0;
 int             max_club                = 0;
 
-/* ³]©wÀ°¬£¸ê®Æªº«ü¥O */
+/* è¨­å®šå¹«æ´¾è³‡æ–™çš„æŒ‡ä»¤ */
 FUNCTION( do_clubset )
 {
   CLUB_DATA * pClub;
@@ -50,104 +50,104 @@ FUNCTION( do_clubset )
 
   PUSH_FUNCTION( "do_clubset" );
 
-  /* Â^¨ú°Ñ¼Æ */
+  /* æ“·å–åƒæ•¸ */
   argument = one_argument( argument, arg1 );
   argument = one_argument( argument, arg2 );
   argument = one_argument( argument, arg3 );
 
-  /* ¯Ê¥F°Ñ¼Æ */
+  /* ç¼ºä¹åƒæ•¸ */
   if ( !arg1[0] || !arg2[0] )
   {
-    send_to_char( "§A­n§ó§ï­þ¤@­ÓÀ°¬£ªº¤°»ò¸ê®Æ¡S¥H¤U¬O¿ï¶µ¡R\n\r"
-                  " 1) name       §ó§ï­^¤åÀ°¬£¦WºÙ\n\r"
-                  " 2) cname      §ó§ïÀ°¬£¤¤¤å¦WºÙ\n\r"
-                  " 3) money      §ó§ïÀ°¬£ªºª÷¿ú\n\r"
-                  " 4) master     §ó§ïÀ°¬£ªºÀ°¥D\n\r"
-                  " 5) vicemaster §ó§ïÀ°¬£ªº°ÆÀ°¥D\n\r"
-                  " 6) doyen      ¼W¥[À°¬£ªºªø¦Ñ\n\r"
-                  " 7) member     ¼W¥[À°¬£ªºÀ°²³\n\r"
-                  " 8) strip      ²¾°£À°¬£¤Hª«\n\r"
-                  " 9) verify     »{ÃÒÀ°¬£¤Hª«\n\r"
-                  "10) status     §ó§ïÀ°¬£ª¬ºA\n\r"
-                  "11) fordo      ¸Ñ´²À°¬£\n\r"
+    send_to_char( "ä½ è¦æ›´æ”¹å“ªä¸€å€‹å¹«æ´¾çš„ä»€éº¼è³‡æ–™ï¹–ä»¥ä¸‹æ˜¯é¸é …ï¹•\n\r"
+                  " 1) name       æ›´æ”¹è‹±æ–‡å¹«æ´¾åç¨±\n\r"
+                  " 2) cname      æ›´æ”¹å¹«æ´¾ä¸­æ–‡åç¨±\n\r"
+                  " 3) money      æ›´æ”¹å¹«æ´¾çš„é‡‘éŒ¢\n\r"
+                  " 4) master     æ›´æ”¹å¹«æ´¾çš„å¹«ä¸»\n\r"
+                  " 5) vicemaster æ›´æ”¹å¹«æ´¾çš„å‰¯å¹«ä¸»\n\r"
+                  " 6) doyen      å¢žåŠ å¹«æ´¾çš„é•·è€\n\r"
+                  " 7) member     å¢žåŠ å¹«æ´¾çš„å¹«çœ¾\n\r"
+                  " 8) strip      ç§»é™¤å¹«æ´¾äººç‰©\n\r"
+                  " 9) verify     èªè­‰å¹«æ´¾äººç‰©\n\r"
+                  "10) status     æ›´æ”¹å¹«æ´¾ç‹€æ…‹\n\r"
+                  "11) fordo      è§£æ•£å¹«æ´¾\n\r"
       , ch );
     RETURN_NULL();
   }
 
-  /* ¬d¸ß¬O§_¦³³o­ÓÀ°¬£ */
+  /* æŸ¥è©¢æ˜¯å¦æœ‰é€™å€‹å¹«æ´¾ */
   if ( !( pClub = clubname_lookup( arg1, CLUB_NAME ) ) )
   {
-    act( "§ä¤£¨ì§A­n§ó§ïªºÀ°¬£¦WºÙ$t¡C", ch, arg1, NULL, TO_CHAR );
+    act( "æ‰¾ä¸åˆ°ä½ è¦æ›´æ”¹çš„å¹«æ´¾åç¨±$tã€‚", ch, arg1, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* §ó§ï­^¤å¦WºÙ */
+  /* æ›´æ”¹è‹±æ–‡åç¨± */
   if ( !str_prefix( arg2, "name" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n§âÀ°¬£­^¤å¦WºÙ§ï¦¨¤°»ò©O¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦æŠŠå¹«æ´¾è‹±æ–‡åç¨±æ”¹æˆä»€éº¼å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¬O§_¬Û¦P */
+    /* æ˜¯å¦ç›¸åŒ */
     if ( pClub->name && !str_cmp( pClub->name, arg3 ) )
     {
-      send_to_char( "¹ï¤£°_¡M©M­ì¥»ªº¦WºÙ¤@¼Ë¡M°Ê§@¨ú®ø¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹å’ŒåŽŸæœ¬çš„åç¨±ä¸€æ¨£ï¹å‹•ä½œå–æ¶ˆã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤§«e´N¤w¸g¦s¦b¤F */
+    /* æª¢æŸ¥æ˜¯å¦ä¹‹å‰å°±å·²ç¶“å­˜åœ¨äº† */
     if ( clubname_lookup( arg3, CLUB_NAME ) )
     {
-      send_to_char( "¹ï¤£°_¡M¤w¸g¦³³o¼ËªºÀ°¬£­^¤å¦WºÙ¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹å·²ç¶“æœ‰é€™æ¨£çš„å¹«æ´¾è‹±æ–‡åç¨±ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* Á×§K¦³ªÅ¥Õ¦r */
+    /* é¿å…æœ‰ç©ºç™½å­— */
     for ( pString = arg3; *pString; pString++ )
     {
       if ( !isalpha( ( int ) *pString ) )
       {
-        send_to_char( "³o­Ó­^¤å¦WºÙ¤£¦Xªk¡C\n\r", ch );
+        send_to_char( "é€™å€‹è‹±æ–‡åç¨±ä¸åˆæ³•ã€‚\n\r", ch );
         RETURN_NULL();
       }
     }
 
-    sprintf( buf, "¨t²Î§ó§ïÀ°¬£ %s ­^¤å¦WºÙ¬° %s¡T\n\r", pClub->name, arg3 );
+    sprintf( buf, "ç³»çµ±æ›´æ”¹å¹«æ´¾ %s è‹±æ–‡åç¨±ç‚º %sï¹—\n\r", pClub->name, arg3 );
 
-    /* ³]©wÀ°¬£¸ê®Æ */
+    /* è¨­å®šå¹«æ´¾è³‡æ–™ */
     if ( !set_club( pClub, CLUB_NAME, arg3, 0 ) )
     {
-      send_to_char( "¹ï¤£°_¡M³]©wÀ°¬£­^¤å¦WºÙ¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹è¨­å®šå¹«æ´¾è‹±æ–‡åç¨±å¤±æ•—ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     send_to_all_char( buf );
   }
 
-  /* §ó§ïÀ°¬£¤¤¤å¦WºÙ */
+  /* æ›´æ”¹å¹«æ´¾ä¸­æ–‡åç¨± */
   else if ( !str_prefix( arg2, "cname" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n§âÀ°¬£ªº¤¤¤å¦WºÙ§ï¦¨¤°»ò©O¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦æŠŠå¹«æ´¾çš„ä¸­æ–‡åç¨±æ”¹æˆä»€éº¼å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¬O§_¬Û¦P */
+    /* æ˜¯å¦ç›¸åŒ */
     if ( pClub->cname && !str_cmp( pClub->cname, arg3 ) )
     {
-      send_to_char( "¹ï¤£°_¡M©M­ì¥»ªº¦WºÙ¤@¼Ë¡M°Ê§@¨ú®ø¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹å’ŒåŽŸæœ¬çš„åç¨±ä¸€æ¨£ï¹å‹•ä½œå–æ¶ˆã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤§«e´N¤w¸g¦s¦b¤F */
+    /* æª¢æŸ¥æ˜¯å¦ä¹‹å‰å°±å·²ç¶“å­˜åœ¨äº† */
     if ( clubname_lookup( arg3, CLUB_CNAME ) )
     {
-      send_to_char( "¹ï¤£°_¡M¤w¸g¦³³o¼ËªºÀ°¬£¤¤¤å¦WºÙ¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹å·²ç¶“æœ‰é€™æ¨£çš„å¹«æ´¾ä¸­æ–‡åç¨±ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -155,376 +155,376 @@ FUNCTION( do_clubset )
     {
       if ( *pString == '%' )
       {
-        send_to_char( "¹ï¤£°_¡M³o­Ó¤¤¤å¦WºÙ¤£¦Xªk¡C\n\r", ch );
+        send_to_char( "å°ä¸èµ·ï¹é€™å€‹ä¸­æ–‡åç¨±ä¸åˆæ³•ã€‚\n\r", ch );
         RETURN_NULL();
       }
     }
 
-    sprintf( buf, "¨t²Î§ó§ïÀ°¬£ %s\e[0m ¤¤¤å¦WºÙ¬° %s¡T\n\r"
+    sprintf( buf, "ç³»çµ±æ›´æ”¹å¹«æ´¾ %s\e[0m ä¸­æ–‡åç¨±ç‚º %sï¹—\n\r"
       , pClub->cname, arg3 );
 
-    /* ³]©wÀ°¬£¸ê®Æ */
+    /* è¨­å®šå¹«æ´¾è³‡æ–™ */
     if ( !set_club( pClub, CLUB_CNAME, arg3, 0 ) )
     {
-      send_to_char( "¹ï¤£°_¡M³]©wÀ°¬£¤¤¤å¦WºÙ¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹è¨­å®šå¹«æ´¾ä¸­æ–‡åç¨±å¤±æ•—ã€‚\n\r", ch );
       RETURN_NULL();
     }
     send_to_all_char( buf );
   }
 
-  /* §ó§ïÀ°¬£ª¬ºA */
+  /* æ›´æ”¹å¹«æ´¾ç‹€æ…‹ */
   else if ( !str_prefix( arg2, "status" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "§ó§ïÀ°¬£ª¬ºA¿ï¶µ¥i¥H¬O¡R1. ³s¸p 2. ¦¨¥ß\n\r", ch );
+      send_to_char( "æ›´æ”¹å¹«æ´¾ç‹€æ…‹é¸é …å¯ä»¥æ˜¯ï¹•1. é€£ç½² 2. æˆç«‹\n\r", ch );
       RETURN_NULL();
     }
 
-    sprintf( buf, "¨t²Î§ó§ïÀ°¬£ %s\e[0m(%s)ª¬ºA¬°"
+    sprintf( buf, "ç³»çµ±æ›´æ”¹å¹«æ´¾ %s\e[0m(%s)ç‹€æ…‹ç‚º"
       , pClub->cname, pClub->name );
 
     switch( ( option = atoi( arg3 ) ) )
     {
-    /* ¥¼©w¸q */
+    /* æœªå®šç¾© */
     default:
-      send_to_char( "¤£¥¿½Tªºª¬ºA°Ñ¼Æ¡M¥²¶·¬° 1) ³s¸p 2) ¦¨¥ß\n\r", ch );
+      send_to_char( "ä¸æ­£ç¢ºçš„ç‹€æ…‹åƒæ•¸ï¹å¿…é ˆç‚º 1) é€£ç½² 2) æˆç«‹\n\r", ch );
       RETURN_NULL();
 
-    /* ³s¸pª¬ºA */
+    /* é€£ç½²ç‹€æ…‹ */
     case CLUB_STATUS_COUNTERSIGN:
 
-      str_cat( buf, "³s¸p¡C\n\r" );
+      str_cat( buf, "é€£ç½²ã€‚\n\r" );
       break;
 
-    /* ¤w¦¨¥ßª¬ºA */
+    /* å·²æˆç«‹ç‹€æ…‹ */
     case CLUB_STATUS_UNIONIZE:
 
-      str_cat( buf, "¤w¦¨¥ß¡C\n\r" );
+      str_cat( buf, "å·²æˆç«‹ã€‚\n\r" );
       break;
     }
 
-    /* ³]©wÀ°¬£¸ê®Æ */
+    /* è¨­å®šå¹«æ´¾è³‡æ–™ */
     if ( !set_club( pClub, CLUB_STATUS, NULL, option ) )
     {
-      send_to_char( "¹ï¤£°_¡M³]©wÀ°¬£ª¬ºA¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹è¨­å®šå¹«æ´¾ç‹€æ…‹å¤±æ•—ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     send_to_all_char( buf );
   }
 
-  /* §ó§ïÀ°®wªºª÷¿ú */
+  /* æ›´æ”¹å¹«åº«çš„é‡‘éŒ¢ */
   else if ( !str_prefix( arg2, "money" ) )
   {
     if ( !arg3[0] || ( option = atoi( arg3 ) ) < 0 )
     {
-      send_to_char( "¹ï¤£°_¡M§ó§ïÀ°¬£ª÷¿ú°Ñ¼Æ¿ù»~¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ›´æ”¹å¹«æ´¾é‡‘éŒ¢åƒæ•¸éŒ¯èª¤ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ³]©wÀ°¬£¸ê®Æ */
+    /* è¨­å®šå¹«æ´¾è³‡æ–™ */
     if ( !set_club( pClub, CLUB_MONEY, NULL, option ) )
     {
-      send_to_char( "³]©wÀ°¬£ª÷¿ú¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "è¨­å®šå¹«æ´¾é‡‘éŒ¢å¤±æ•—ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    act( "§A§ó§ï$yªºÀ°¬£ª÷¿ú¬°$I¡C", ch, pClub, &option, TO_CHAR );
+    act( "ä½ æ›´æ”¹$yçš„å¹«æ´¾é‡‘éŒ¢ç‚º$Iã€‚", ch, pClub, &option, TO_CHAR );
   }
 
-  /* §ó§ïÀ°¬£ªºÀ°¥D */
+  /* æ›´æ”¹å¹«æ´¾çš„å¹«ä¸» */
   else if ( !str_prefix( arg2, "master" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n§âÀ°¥D§ï¦¨½Ö¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦æŠŠå¹«ä¸»æ”¹æˆèª°ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤§«e¦³°Ñ¥[¹LÀ°¬£ */
+    /* æª¢æŸ¥æ˜¯å¦ä¹‹å‰æœ‰åƒåŠ éŽå¹«æ´¾ */
     else if ( is_inclub( arg3 ) )
     {
-      send_to_char( "¹ï¤£°_¡M¦¹¤H¤§«e¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ­¤äººä¹‹å‰æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     else
     {
-      /* ­YÀ°¥D¦s¦b, ¥ý§âÀ°¥D²¾°£ */
+      /* è‹¥å¹«ä¸»å­˜åœ¨, å…ˆæŠŠå¹«ä¸»ç§»é™¤ */
       if ( clubmember_full( pClub, CLUB_MASTER ) )
       {
         if ( !char_from_club( pClub->master, pClub, CLUB_MASTER ) )
         {
-          send_to_char( "¨t²Î²¾°£À°¥D¿ù»~¡C\n\r", ch );
+          send_to_char( "ç³»çµ±ç§»é™¤å¹«ä¸»éŒ¯èª¤ã€‚\n\r", ch );
           RETURN_NULL();
         }
 
-        /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+        /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
         if ( ( victim = is_online( pClub->master ) ) )
-          act( "©êºp¡M§A³Q¨t²Î²¾°£$T($t)À°À°¥DÂ¾°È¡C"
+          act( "æŠ±æ­‰ï¹ä½ è¢«ç³»çµ±ç§»é™¤$T($t)å¹«å¹«ä¸»è·å‹™ã€‚"
             , victim, pClub->cname, pClub->name, TO_CHAR );
       }
 
-      sprintf( buf, "¨t²Î§â %s\e[0m(%s) À°¥D %s §ï¦¨ %s¡C\n\r"
+      sprintf( buf, "ç³»çµ±æŠŠ %s\e[0m(%s) å¹«ä¸» %s æ”¹æˆ %sã€‚\n\r"
         , pClub->cname
         , pClub->name
         , pClub->master ? pClub->master : "", arg3 );
 
-      /* ³]©wÀ°¥DÂ¾¦ì */
+      /* è¨­å®šå¹«ä¸»è·ä½ */
       if ( !char_to_club( arg3, pClub, CLUB_MASTER ) )
       {
-        send_to_char( "¨t²Î³]©wÀ°¥D¿ù»~¡C\n\r", ch );
+        send_to_char( "ç³»çµ±è¨­å®šå¹«ä¸»éŒ¯èª¤ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
-      /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+      /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
       if ( ( victim = is_online( arg3 ) ) )
-        act( "¨t²Î½Ð§A¾á¥ô$T($t)ªºÀ°¥D¡C"
+        act( "ç³»çµ±è«‹ä½ æ“”ä»»$T($t)çš„å¹«ä¸»ã€‚"
           , victim, pClub->cname, pClub->name, TO_CHAR );
 
       send_to_all_char( buf );
     }
   }
 
-  /* ³]©wÀ°¬£°ÆÀ°¥D */
+  /* è¨­å®šå¹«æ´¾å‰¯å¹«ä¸» */
   else if ( !str_prefix( arg2, "vicemaster" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n§â°ÆÀ°¥D§ï¦¨½Ö¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦æŠŠå‰¯å¹«ä¸»æ”¹æˆèª°ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤§«e¦³°Ñ¥[¹LÀ°¬£ */
+    /* æª¢æŸ¥æ˜¯å¦ä¹‹å‰æœ‰åƒåŠ éŽå¹«æ´¾ */
     else if ( is_inclub( arg3 ) )
     {
-      send_to_char( "¹ï¤£°_¡M¦¹¤H¤§«e¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ­¤äººä¹‹å‰æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     else
     {
-      /* ­Y°ÆÀ°¥D¦s¦b, ¥ý§â°ÆÀ°¥D²¾°£ */
+      /* è‹¥å‰¯å¹«ä¸»å­˜åœ¨, å…ˆæŠŠå‰¯å¹«ä¸»ç§»é™¤ */
       if ( clubmember_full( pClub, CLUB_VICEMASTER ) )
       {
         if ( !char_from_club( pClub->vicemaster, pClub, CLUB_VICEMASTER ) )
         {
-          send_to_char( "¨t²Î²¾°£°ÆÀ°¥D¿ù»~¡C\n\r", ch );
+          send_to_char( "ç³»çµ±ç§»é™¤å‰¯å¹«ä¸»éŒ¯èª¤ã€‚\n\r", ch );
           RETURN_NULL();
         }
 
-        /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+        /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
         if ( ( victim = is_online( pClub->master ) ) )
-          act( "©êºp¡M§A³Q¨t²Î²¾°£ $y À°°ÆÀ°¥DÂ¾°È¡C"
+          act( "æŠ±æ­‰ï¹ä½ è¢«ç³»çµ±ç§»é™¤ $y å¹«å‰¯å¹«ä¸»è·å‹™ã€‚"
             , victim, pClub, NULL, TO_CHAR );
       }
 
-      sprintf( buf, "¨t²Î§â %s\e[0m(%s)°ÆÀ°¥D %s §ï¦¨ %s¡C\n\r"
+      sprintf( buf, "ç³»çµ±æŠŠ %s\e[0m(%s)å‰¯å¹«ä¸» %s æ”¹æˆ %sã€‚\n\r"
         , pClub->cname
         , pClub->name
         , pClub->vicemaster ? pClub->vicemaster : "", arg3 );
 
-      /* ³]©w°ÆÀ°¥DÂ¾¦ì */
+      /* è¨­å®šå‰¯å¹«ä¸»è·ä½ */
       if ( !char_to_club( arg3, pClub, CLUB_VICEMASTER ) )
       {
-        send_to_char( "¨t²Î³]©w°ÆÀ°¥D¿ù»~¡C\n\r", ch );
+        send_to_char( "ç³»çµ±è¨­å®šå‰¯å¹«ä¸»éŒ¯èª¤ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
-      /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+      /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
       if ( ( victim = is_online( arg3 ) ) )
-        act( "¨t²Î½Ð§A¾á¥ô $y ªº°ÆÀ°¥D¡C", victim, pClub, NULL, TO_CHAR );
+        act( "ç³»çµ±è«‹ä½ æ“”ä»» $y çš„å‰¯å¹«ä¸»ã€‚", victim, pClub, NULL, TO_CHAR );
 
       send_to_all_char( buf );
     }
   }
 
-  /* ³]©wÀ°¬£ªø¦Ñ */
+  /* è¨­å®šå¹«æ´¾é•·è€ */
   else if ( !str_prefix( arg2, "doyen" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n¼W¥[­þ¤@¦ìªø¦Ñ¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦å¢žåŠ å“ªä¸€ä½é•·è€ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤§«e¦³°Ñ¥[¹LÀ°¬£ */
+    /* æª¢æŸ¥æ˜¯å¦ä¹‹å‰æœ‰åƒåŠ éŽå¹«æ´¾ */
     else if ( is_inclub( arg3 ) )
     {
-      send_to_char( "¹ï¤£°_¡M¦¹¤H¤§«e¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ­¤äººä¹‹å‰æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¦¹À°¬£ªºªø¦Ñ¦WÃB¬O§_¤wº¡ */
+    /* æª¢æŸ¥æ­¤å¹«æ´¾çš„é•·è€åé¡æ˜¯å¦å·²æ»¿ */
     else if ( clubmember_full( pClub, CLUB_DOYEN ) )
     {
-      send_to_char( "¹ï¤£°_¡M¦¹À°¬£ªºªø¦Ñ¦WÃB¤wº¡¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ­¤å¹«æ´¾çš„é•·è€åé¡å·²æ»¿ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     else
     {
-      /* ³]©wªø¦ÑÂ¾¦ì */
+      /* è¨­å®šé•·è€è·ä½ */
       if ( !char_to_club( arg3, pClub, CLUB_DOYEN ) )
       {
-        send_to_char( "¨t²Î°õ¦æ³]©wªø¦Ñ¥¢±Ñ¡C\n\r", ch );
+        send_to_char( "ç³»çµ±åŸ·è¡Œè¨­å®šé•·è€å¤±æ•—ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
-      /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+      /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
       if ( ( victim = is_online( arg3 ) ) )
-        act( "¨t²Î½Ð§A¾á¥ô $y ªºªø¦Ñ¡C", victim, pClub, NULL, TO_CHAR );
+        act( "ç³»çµ±è«‹ä½ æ“”ä»» $y çš„é•·è€ã€‚", victim, pClub, NULL, TO_CHAR );
 
-      send_to_char( "³]©wÀ°¬£ªø¦Ñ§¹¦¨¡C\n\r", ch );
+      send_to_char( "è¨­å®šå¹«æ´¾é•·è€å®Œæˆã€‚\n\r", ch );
     }
   }
 
-  /* ³]©wÀ°¬£À°²³ */
+  /* è¨­å®šå¹«æ´¾å¹«çœ¾ */
   else if ( !str_prefix( arg2, "member" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n¼W¥[­þ¤@¦ìÀ°²³¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦å¢žåŠ å“ªä¸€ä½å¹«çœ¾ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤§«e¦³°Ñ¥[¹LÀ°¬£ */
+    /* æª¢æŸ¥æ˜¯å¦ä¹‹å‰æœ‰åƒåŠ éŽå¹«æ´¾ */
     else if ( is_inclub( arg3 ) )
     {
-      send_to_char( "¹ï¤£°_¡M¦¹¤H¤§«e¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ­¤äººä¹‹å‰æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¦¹À°¬£ªºÀ°²³¦WÃB¬O§_¤wº¡ */
+    /* æª¢æŸ¥æ­¤å¹«æ´¾çš„å¹«çœ¾åé¡æ˜¯å¦å·²æ»¿ */
     else if ( clubmember_full( pClub, CLUB_MEMBER ) )
     {
-      send_to_char( "©êºp¡M¦¹À°¬£ªºÀ°²³¦WÃB¤wº¡¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹æ­¤å¹«æ´¾çš„å¹«çœ¾åé¡å·²æ»¿ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     else
     {
-      /* ³]©wÀ°¬£À°²³Â¾¦ì */
+      /* è¨­å®šå¹«æ´¾å¹«çœ¾è·ä½ */
       if ( !char_to_club( arg3, pClub, CLUB_MEMBER ) )
       {
-        send_to_char( "¨t²Î°õ¦æ³]©wÀ°²³¥¢±Ñ¡C\n\r", ch );
+        send_to_char( "ç³»çµ±åŸ·è¡Œè¨­å®šå¹«çœ¾å¤±æ•—ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
-      /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+      /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
       if ( ( victim = is_online( arg3 ) ) )
-        act( "¨t²Î½Ð§A°Ñ¥[ $y ªºÀ°²³¡C", victim, pClub, NULL, TO_CHAR );
+        act( "ç³»çµ±è«‹ä½ åƒåŠ  $y çš„å¹«çœ¾ã€‚", victim, pClub, NULL, TO_CHAR );
 
-      send_to_char( "³]©wÀ°¬£À°²³§¹¦¨¡C\n\r", ch );
+      send_to_char( "è¨­å®šå¹«æ´¾å¹«çœ¾å®Œæˆã€‚\n\r", ch );
     }
   }
 
-  /* ³]©wÀ°¬£À°²³ */
+  /* è¨­å®šå¹«æ´¾å¹«çœ¾ */
   else if ( !str_prefix( arg2, "follower" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n¼W¥[­þ¤@¦ì§Ì¤l¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦å¢žåŠ å“ªä¸€ä½å¼Ÿå­ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¤§«e¦³°Ñ¥[¹LÀ°¬£ */
+    /* æª¢æŸ¥æ˜¯å¦ä¹‹å‰æœ‰åƒåŠ éŽå¹«æ´¾ */
     else if ( is_inclub( arg3 ) )
     {
-      send_to_char( "¹ï¤£°_¡M¦¹¤H¤§«e¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ­¤äººä¹‹å‰æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¦¹À°¬£ªºÀ°²³¦WÃB¬O§_¤wº¡ */
+    /* æª¢æŸ¥æ­¤å¹«æ´¾çš„å¹«çœ¾åé¡æ˜¯å¦å·²æ»¿ */
     else if ( clubmember_full( pClub, CLUB_FOLLOWER ) )
     {
-      send_to_char( "©êºp¡M¦¹À°¬£ªº§Ì¤l¦WÃB¤wº¡¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹æ­¤å¹«æ´¾çš„å¼Ÿå­åé¡å·²æ»¿ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     else
     {
-      /* ³]©wÀ°¬£À°²³Â¾¦ì */
+      /* è¨­å®šå¹«æ´¾å¹«çœ¾è·ä½ */
       if ( !char_to_club( arg3, pClub, CLUB_FOLLOWER ) )
       {
-        send_to_char( "¨t²Î°õ¦æ³]©w§Ì¤l¥¢±Ñ¡C\n\r", ch );
+        send_to_char( "ç³»çµ±åŸ·è¡Œè¨­å®šå¼Ÿå­å¤±æ•—ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
-      /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+      /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
       if ( ( victim = is_online( arg3 ) ) )
-        act( "¨t²Î½Ð§A°Ñ¥[ $y ªº§Ì¤l¡C", victim, pClub, NULL, TO_CHAR );
+        act( "ç³»çµ±è«‹ä½ åƒåŠ  $y çš„å¼Ÿå­ã€‚", victim, pClub, NULL, TO_CHAR );
 
-      send_to_char( "³]©wÀ°¬£§Ì¤l§¹¦¨¡C\n\r", ch );
+      send_to_char( "è¨­å®šå¹«æ´¾å¼Ÿå­å®Œæˆã€‚\n\r", ch );
     }
   }
 
-  /* ²¾°£¬Y¤HÀ°¬£ªºÂ¾¦ì, °£¤FÀ°¥D¥H¥~ */
+  /* ç§»é™¤æŸäººå¹«æ´¾çš„è·ä½, é™¤äº†å¹«ä¸»ä»¥å¤– */
   else if ( !str_prefix( arg2, "strip" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n²¾°£­þ¤@¦ìÀ°¬£¤Hª«¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦ç§»é™¤å“ªä¸€ä½å¹«æ´¾äººç‰©ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¶Ç¦^­ì¥»ªºÂ¾¦ì */
+    /* å‚³å›žåŽŸæœ¬çš„è·ä½ */
     if ( ( option = name_in_club( arg3, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "¹ï¤£°_¡M³o­Ó¤H¤£¦b³o­ÓÀ°¬£¤§¤¤¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™å€‹äººä¸åœ¨é€™å€‹å¹«æ´¾ä¹‹ä¸­ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* À°¥D¤£¯à²¾°£ */
+    /* å¹«ä¸»ä¸èƒ½ç§»é™¤ */
     if ( option == CLUB_MASTER )
     {
-      send_to_char( "¹ï¤£°_¡MÀ°¥D¬O¤£¯à²¾°£¡M¥u¯àÂà²¾¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹å¹«ä¸»æ˜¯ä¸èƒ½ç§»é™¤ï¹åªèƒ½è½‰ç§»ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ²¾°£¥LªºÂ¾¦ì */
+    /* ç§»é™¤ä»–çš„è·ä½ */
     if ( !char_from_club( arg3, pClub, option ) )
     {
-      send_to_char( "¨t²Î°õ¦æ²¾°£Â¾¦ì¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "ç³»çµ±åŸ·è¡Œç§»é™¤è·ä½å¤±æ•—ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+    /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
     if ( ( victim = is_online( arg3 ) ) )
-      send_to_char( "©êºp¡M§A³Q¨t²Î»°¥XÀ°¬£¤F¡C\n\r", victim );
+      send_to_char( "æŠ±æ­‰ï¹ä½ è¢«ç³»çµ±è¶•å‡ºå¹«æ´¾äº†ã€‚\n\r", victim );
 
-    act( "§A§â $T »°¥X $y À°¤§¥~¤F¡C", ch, pClub, arg3, TO_CHAR );
+    act( "ä½ æŠŠ $T è¶•å‡º $y å¹«ä¹‹å¤–äº†ã€‚", ch, pClub, arg3, TO_CHAR );
   }
 
-  /* »{ÃÒÀ°²³ */
+  /* èªè­‰å¹«çœ¾ */
   else if ( !str_prefix( arg2, "verify" ) )
   {
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "½Ð°Ý§A­n»{ÃÒ¨º¦ìÀ°²³¡S\n\r", ch );
+      send_to_char( "è«‹å•ä½ è¦èªè­‰é‚£ä½å¹«çœ¾ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ­ì¥»´N¤£¦b¦¹À°¬£¤§¤¤ */
+    /* åŽŸæœ¬å°±ä¸åœ¨æ­¤å¹«æ´¾ä¹‹ä¸­ */
     if ( ( option = name_in_club( arg3, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "¹ï¤£°_¡M³o­Ó¤HÁÙ¨S¦³¥[¤J³o­ÓÀ°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™å€‹äººé‚„æ²’æœ‰åŠ å…¥é€™å€‹å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¥u¦³À°²³»Ý­n»{ÃÒ */
+    /* åªæœ‰å¹«çœ¾éœ€è¦èªè­‰ */
     if ( option != CLUB_FOLLOWER )
     {
-      send_to_char( "©êºp¡M§A¥u¯à´À§Ì¤l»{ÃÒ¡M¨ä¥Lªº¤£»Ý­n»{ÃÒ¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ä½ åªèƒ½æ›¿å¼Ÿå­èªè­‰ï¹å…¶ä»–çš„ä¸éœ€è¦èªè­‰ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -534,52 +534,52 @@ FUNCTION( do_clubset )
       {
         if ( pClub->verify[loop] )
         {
-          send_to_char( "©êºp¡M¦¹¤H¤§«e´N³Q»{ÃÒ¤F¡C\n\r", ch );
+          send_to_char( "æŠ±æ­‰ï¹æ­¤äººä¹‹å‰å°±è¢«èªè­‰äº†ã€‚\n\r", ch );
           RETURN_NULL();
         }
 
         pClub->verify[loop] = TRUE;
 
-        /* ¦pªG¦¹¤H¤W½u°e¸ê°Tµ¹¥L */
+        /* å¦‚æžœæ­¤äººä¸Šç·šé€è³‡è¨Šçµ¦ä»– */
         if ( ( victim = is_online( pClub->member[loop] ) ) )
         {
           victim->club = pClub;
-          send_to_char( "®¥ÁH§A¡M³q¹L¨t²ÎªºÀ°¬£»{ÃÒ¡C\n\r", victim );
+          send_to_char( "æ­ç¦§ä½ ï¹é€šéŽç³»çµ±çš„å¹«æ´¾èªè­‰ã€‚\n\r", victim );
         }
         break;
       }
     }
   }
 
-  /* ¸Ñ´²À°¬£ */
+  /* è§£æ•£å¹«æ´¾ */
   else if ( !str_prefix( arg2, "fordo" ) )
   {
-    sprintf( buf, "¨t²Î¸Ñ´² %s\e[0m(%s)À°¬£¡M±q¦¹%s¨«¶i¾ú¥v¡T\n\r"
+    sprintf( buf, "ç³»çµ±è§£æ•£ %s\e[0m(%s)å¹«æ´¾ï¹å¾žæ­¤%sèµ°é€²æ­·å²ï¹—\n\r"
       , pClub->cname, pClub->name, pClub->cname );
 
-    /* ¸Ñ´²À°¬£ªº¨ç¼Æ */
+    /* è§£æ•£å¹«æ´¾çš„å‡½æ•¸ */
     if ( fordo_club( pClub ) )
     {
-      send_to_char( "§A¸Ñ´²¤F³o­ÓÀ°¬£¡C\n\r", ch );
+      send_to_char( "ä½ è§£æ•£äº†é€™å€‹å¹«æ´¾ã€‚\n\r", ch );
       send_to_all_char( buf );
     }
 
     else
     {
-      send_to_char( "¨t²Î¸Ñ´²À°¬£¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "ç³»çµ±è§£æ•£å¹«æ´¾å¤±æ•—ã€‚\n\r", ch );
     }
   }
 
-  /* °Æ«ü¥O¿ù»~ */
+  /* å‰¯æŒ‡ä»¤éŒ¯èª¤ */
   else
   {
-    send_to_char( "¿ï¶µ¿ù»~¡M½Ð¬d¸ß clubset «ü¥O¥¿½Tªº¥Îªk¡C\n\r", ch );
+    send_to_char( "é¸é …éŒ¯èª¤ï¹è«‹æŸ¥è©¢ clubset æŒ‡ä»¤æ­£ç¢ºçš„ç”¨æ³•ã€‚\n\r", ch );
   }
 
   RETURN_NULL();
 }
 
-/* À°¬£«ü¥O */
+/* å¹«æ´¾æŒ‡ä»¤ */
 FUNCTION( do_club )
 {
   CLUB_DATA  * pClub;
@@ -599,27 +599,27 @@ FUNCTION( do_club )
 
   PUSH_FUNCTION( "do_club" );
 
-  /* «Dª±®a¤£¥i¥H¦³À°¬£ªº«ü¥O */
+  /* éžçŽ©å®¶ä¸å¯ä»¥æœ‰å¹«æ´¾çš„æŒ‡ä»¤ */
   if ( IS_NPC( ch ) ) RETURN_NULL();
 
   if ( !club_list )
   {
-    act( "$t©|¥¼¦³¥ô¦óÀ°¬£¸ê®Æ¡C", ch, mud_name, NULL, TO_CHAR );
+    act( "$tå°šæœªæœ‰ä»»ä½•å¹«æ´¾è³‡æ–™ã€‚", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* Â^¨ú°Ñ¼Æ */
+  /* æ“·å–åƒæ•¸ */
   argument = one_argument( argument, arg1 );
   argument = one_argument( argument, arg2 );
   argument = one_argument( argument, arg3 );
 
-  /* ¨S¦³°Ñ¼Æ´N¬O¬d¸ß */
+  /* æ²’æœ‰åƒæ•¸å°±æ˜¯æŸ¥è©¢ */
   if ( !arg1[0] )
   {
     clear_buffer();
-    send_to_buffer( "\e[1;32m%sªºÀ°¬£¸ê®Æ¦p¤U¡R\e[0m\n\r\n\r"
-      "\e[1;33;44m¶¶§Ç À°¬£­^¤å¦WºÙ   À°¬£¤¤¤å¦WºÙ         À°¥D          "
-      "ª¬  ºA ¦¨­û     À°®w\e[0m\n\r" , mud_name );
+    send_to_buffer( "\e[1;32m%sçš„å¹«æ´¾è³‡æ–™å¦‚ä¸‹ï¹•\e[0m\n\r\n\r"
+      "\e[1;33;44mé †åº å¹«æ´¾è‹±æ–‡åç¨±   å¹«æ´¾ä¸­æ–‡åç¨±         å¹«ä¸»          "
+      "ç‹€  æ…‹ æˆå“¡     å¹«åº«\e[0m\n\r" , mud_name );
 
     for ( count = 0, pClub = club_list; pClub; pClub = pClub->next )
     {
@@ -631,7 +631,7 @@ FUNCTION( do_club )
       tablize( FORMAT_NUM,    NULL,                          ++count,     "NU", 2  );
       tablize( FORMAT_STRING, pClub->name,                         0,   "NAME", 15 );
       tablize( FORMAT_STRING, pClub->cname,                        0,   "CHIN", 20 );
-      tablize( FORMAT_STRING, pClub->master ? pClub->master : "±q¯Ê", 0, "MAS", 12 );
+      tablize( FORMAT_STRING, pClub->master ? pClub->master : "å¾žç¼º", 0, "MAS", 12 );
       tablize( FORMAT_STRING, club_status( pClub ),                0, "STATUS", 6  );
       tablize( FORMAT_NUM,  NULL, count_club_member( pClub, CLUB_ALL ), "MEMB", 4  );
       tablize( FORMAT_NUM,    NULL,                     pClub->money, "CLUBGO", 8  );
@@ -641,50 +641,50 @@ FUNCTION( do_club )
       if ( buffer_full() ) break;
     }
 
-    if ( count == 0 ) send_to_buffer( "¨S¦³¥ô¦óÀ°¬£ªº¸ê®Æ¡C\n\r" );
+    if ( count == 0 ) send_to_buffer( "æ²’æœ‰ä»»ä½•å¹«æ´¾çš„è³‡æ–™ã€‚\n\r" );
     print_buffer( ch );
     RETURN_NULL();
   }
 
-  /* ³ÐÀ° */
+  /* å‰µå¹« */
   else if ( !str_prefix( arg1, "!create" ) )
   {
-    /* ÀË¬dµ¥¯Å */
+    /* æª¢æŸ¥ç­‰ç´š */
     if ( !IS_HERO( ch ) )
     {
       chinese_number( LEVEL_HERO, buf );
-      act( "¹ï¤£°_¡M§A¥²¶·­n¹F¨ì$t¯Å¤~¥i¥H¡C", ch, buf, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ä½ å¿…é ˆè¦é”åˆ°$tç´šæ‰å¯ä»¥ã€‚", ch, buf, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( ch->club )
     {
-      send_to_char( "©êºp¡M§A¤w¸g¦³¥[¤J¨ä¥LÀ°¬£¤F¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ä½ å·²ç¶“æœ‰åŠ å…¥å…¶ä»–å¹«æ´¾äº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] || !arg3[0] )
     {
-      send_to_char( "§A¥²¶·«ü©wÀ°¬£ªº­^¤å¥H¤Î¤¤¤å¦WºÙ¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆæŒ‡å®šå¹«æ´¾çš„è‹±æ–‡ä»¥åŠä¸­æ–‡åç¨±ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦WºÙ­«½Æ */
+    /* æª¢æŸ¥æ˜¯å¦åç¨±é‡è¤‡ */
     if ( clubname_lookup( arg2, CLUB_NAME )
       || clubname_lookup( arg3, CLUB_CNAME ) )
     {
-      send_to_char( "³o­Ó¦WºÙ¦³¤H¥Î¹L¤F¡C\n\r", ch );
+      send_to_char( "é€™å€‹åç¨±æœ‰äººç”¨éŽäº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* Á×§K¦³ªÅ¥Õ¦r */
+    /* é¿å…æœ‰ç©ºç™½å­— */
     for ( pString = arg2; *pString; pString++ )
     {
       if ( !isalpha( ( int ) *pString ) )
       {
-        send_to_char( "³o­Ó­^¤å¦WºÙ¤£¦Xªk¡C\n\r", ch );
+        send_to_char( "é€™å€‹è‹±æ–‡åç¨±ä¸åˆæ³•ã€‚\n\r", ch );
         RETURN_NULL();
       }
     }
@@ -693,25 +693,25 @@ FUNCTION( do_club )
     {
       if ( *pString == '%' )
       {
-        send_to_char( "³o­Ó¤¤¤å¦WºÙ¤£¦Xªk¡C\n\r", ch );
+        send_to_char( "é€™å€‹ä¸­æ–‡åç¨±ä¸åˆæ³•ã€‚\n\r", ch );
         RETURN_NULL();
       }
     }
 
-    /* ÀË¬d³ÐÀ°¸g¶O */
+    /* æª¢æŸ¥å‰µå¹«ç¶“è²» */
     if ( ch->bank < ClubCreateFund )
     {
-      act( "µ¥§A´ê¨¬¤F$i¨â¶Àª÷¤~¯à³ÐÀ°¡T", ch, &ClubCreateFund, NULL, TO_CHAR );
+      act( "ç­‰ä½ æ¹Šè¶³äº†$iå…©é»ƒé‡‘æ‰èƒ½å‰µå¹«ï¹—", ch, &ClubCreateFund, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( !( pClub = create_club( ch, arg2, arg3 ) ) )
     {
-      send_to_char( "©êºp¡M¨t²ÎµLªkÀ°§A²£¥Í¤@­ÓÀ°¬£¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ç³»çµ±ç„¡æ³•å¹«ä½ ç”¢ç”Ÿä¸€å€‹å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    sprintf( buf, "%s\e[0m ³Ð¤F %s\e[0m(%s)À°¬£¡MÀµ½Ð¤j®a³s¸p¡MÁÂÁÂ¡T\n\r"
+    sprintf( buf, "%s\e[0m å‰µäº† %s\e[0m(%s)å¹«æ´¾ï¹æ‡‡è«‹å¤§å®¶é€£ç½²ï¹è¬è¬ï¹—\n\r"
       , mob_name( NULL, ch ), pClub->cname, pClub->name );
 
     send_to_all_char( buf );
@@ -720,63 +720,63 @@ FUNCTION( do_club )
 
   else if ( !str_prefix( arg1, "!countersign" ) )
   {
-    /* ÀË¬dµ¥¯Å */
+    /* æª¢æŸ¥ç­‰ç´š */
     if ( !IS_HERO( ch ) )
     {
       chinese_number( LEVEL_HERO, buf );
-      act( "¹ï¤£°_¡M§A¥²¶·­n¹F¨ì$t¯Å¤~¥i¥H¡C", ch, buf, NULL, TO_CHAR );
+      act( "å°ä¸èµ·ï¹ä½ å¿…é ˆè¦é”åˆ°$tç´šæ‰å¯ä»¥ã€‚", ch, buf, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( ch->club )
     {
-      send_to_char( "©êºp¡M§A¤w¸g¦³¥[¤J¨ä¥LÀ°¬£¤F¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ä½ å·²ç¶“æœ‰åŠ å…¥å…¶ä»–å¹«æ´¾äº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d³s¸p¸g¶O */
+    /* æª¢æŸ¥é€£ç½²ç¶“è²» */
     if ( ch->gold < ClubCountersignFund )
     {
-      act( "µ¥§A´ê¨¬¤F$x¨â»È¤l¤~¯à³s¸p¡T", ch, &ClubCountersignFund, NULL, TO_CHAR );
+      act( "ç­‰ä½ æ¹Šè¶³äº†$xå…©éŠ€å­æ‰èƒ½é€£ç½²ï¹—", ch, &ClubCountersignFund, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ÀË¬d³s¸pºX¼Ð */
+    /* æª¢æŸ¥é€£ç½²æ——æ¨™ */
     if ( ch->clublog )
     {
-      send_to_char( "¹ï¤£°_¡M§A¤w¸g¦³³s¸p¹L¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ å·²ç¶“æœ‰é€£ç½²éŽäº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dºX¼Ð */
+    /* æª¢æŸ¥æ——æ¨™ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A¥²¶·µù©ú³s¸p­þ¤@­ÓÀ°¬£¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜Žé€£ç½²å“ªä¸€å€‹å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¬d¸ß¬O§_¦³³o¼ËªºÀ°¬£ */
+    /* æŸ¥è©¢æ˜¯å¦æœ‰é€™æ¨£çš„å¹«æ´¾ */
     if ( !( pClub = clubname_lookup( arg2, CLUB_NAME ) ) )
     {
-      act( "©êºp¡M§ä¤£¨ì§A­n³s¸pªºÀ°¬£¦WºÙ $2$T$0¡C", ch, NULL, arg2, TO_CHAR );
+      act( "æŠ±æ­‰ï¹æ‰¾ä¸åˆ°ä½ è¦é€£ç½²çš„å¹«æ´¾åç¨± $2$T$0ã€‚", ch, NULL, arg2, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ¹î¬Ýª¬ºA */
+    /* å¯Ÿçœ‹ç‹€æ…‹ */
     if ( pClub->status != CLUB_STATUS_COUNTERSIGN )
     {
-      send_to_char( "¥»À°¬£¥Ø«e¤£±µ¨ü³s¸p¡C\n\r", ch );
+      send_to_char( "æœ¬å¹«æ´¾ç›®å‰ä¸æŽ¥å—é€£ç½²ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !countersign_club( ch, pClub ) )
     {
-      send_to_char( "©êºp¡M§A³s¸p¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ä½ é€£ç½²å¤±æ•—ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    sprintf( buf, "%s ¤w¸g³s¸p¤F %s\e[0m(%s) À°¬£¡T\n\r"
+    sprintf( buf, "%s å·²ç¶“é€£ç½²äº† %s\e[0m(%s) å¹«æ´¾ï¹—\n\r"
       , mob_name( NULL, ch ), pClub->cname, pClub->name );
 
     send_to_all_char( buf );
@@ -785,49 +785,49 @@ FUNCTION( do_club )
 
   else if ( !str_prefix( arg1, "!join" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( ch->club )
     {
-      send_to_char( "©êºp¡M§A¤w¸g¦³¥[¤J¨ä¥LÀ°¬£¤F¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ä½ å·²ç¶“æœ‰åŠ å…¥å…¶ä»–å¹«æ´¾äº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A¥²¶·µù©ú°Ñ¥[­þ¤@­ÓÀ°¬£¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜ŽåƒåŠ å“ªä¸€å€‹å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³³o¼ËªºÀ°¬£ */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰é€™æ¨£çš„å¹«æ´¾ */
     if ( !( pClub = clubname_lookup( arg2, CLUB_NAME ) ) )
     {
-      act( "§ä¤£¨ì§A­n°Ñ¥[ªºÀ°¬£¦WºÙ $2$T$0¡C", ch, NULL, arg2, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ è¦åƒåŠ çš„å¹«æ´¾åç¨± $2$T$0ã€‚", ch, NULL, arg2, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* À°¬£ª¬ºA¬O§_¥i¥H¥[¤J */
+    /* å¹«æ´¾ç‹€æ…‹æ˜¯å¦å¯ä»¥åŠ å…¥ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦b¤£¯à¥[¤J¥»À°¬£¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨ä¸èƒ½åŠ å…¥æœ¬å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¬O§_¦³¿úÃº¥æ³W¶O */
+    /* æ˜¯å¦æœ‰éŒ¢ç¹³äº¤è¦è²» */
     if ( ch->gold < ClubExpense )
     {
-      act( "µ¥§A´ê¨¬¤F$i¨â»È¤l¤~¯à¥[¤JÀ°¬£¡T", ch, &ClubExpense, NULL, TO_CHAR );
+      act( "ç­‰ä½ æ¹Šè¶³äº†$iå…©éŠ€å­æ‰èƒ½åŠ å…¥å¹«æ´¾ï¹—", ch, &ClubExpense, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¤H¼Æ¬O§_¤wº¡ */
+    /* æª¢æŸ¥äººæ•¸æ˜¯å¦å·²æ»¿ */
     if ( clubmember_full( pClub, CLUB_FOLLOWER ) )
     {
-      send_to_char( "¥»À°¬£¤H¼Æ¤wº¡¡C\n\r", ch );
+      send_to_char( "æœ¬å¹«æ´¾äººæ•¸å·²æ»¿ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¥[¤J¨ìªí®æ */
+    /* åŠ å…¥åˆ°è¡¨æ ¼ */
     if ( char_to_club( ch->name, pClub, CLUB_FOLLOWER ) )
     {
       gold_from_char( ch, ClubExpense );
@@ -835,52 +835,52 @@ FUNCTION( do_club )
       if ( pClub->money + ClubExpense / 2 <= MAX_ASSET )
         pClub->money = UMAX( 0, pClub->money + ClubExpense / 2 );
 
-      sprintf( buf, "%s ¥[¤J¤F¥»À°¬£¡C\n\r", mob_name( NULL, ch ) );
+      sprintf( buf, "%s åŠ å…¥äº†æœ¬å¹«æ´¾ã€‚\n\r", mob_name( NULL, ch ) );
       send_to_club( buf, pClub );
 
-      act( "§A¥[¤J¤F $y À°¬£¡C", ch, pClub, NULL, TO_CHAR );
+      act( "ä½ åŠ å…¥äº† $y å¹«æ´¾ã€‚", ch, pClub, NULL, TO_CHAR );
     }
 
     else
     {
-      send_to_char( "¹ï¤£°_¡M§A¤£¯à°Ñ¥[¥»À°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ ä¸èƒ½åƒåŠ æœ¬å¹«æ´¾ã€‚\n\r", ch );
     }
 
     RETURN_NULL();
   }
 
-  /* ¬d¸ß¬YÀ°¬£, ¨S¦³¤U¤@­Ó°Ñ¼Æ´N¬O¬d¸ß¦Û¤vÀ°¬£ */
+  /* æŸ¥è©¢æŸå¹«æ´¾, æ²’æœ‰ä¸‹ä¸€å€‹åƒæ•¸å°±æ˜¯æŸ¥è©¢è‡ªå·±å¹«æ´¾ */
   else if ( !str_prefix( arg1, "!who" ) )
   {
     pClub = arg2[0] == '\x0' ? ch->club : clubname_lookup( arg2, CLUB_NAME );
 
-    /* ¬d¸ßÀ°¬£¦WºÙ, ¬O§_¦s¦b */
+    /* æŸ¥è©¢å¹«æ´¾åç¨±, æ˜¯å¦å­˜åœ¨ */
     if ( !pClub )
     {
-      send_to_char( "§ä¤£¨ì§A­nÆ[¬ÝªºÀ°¬£¦WºÙ¡C\n\r", ch );
+      send_to_char( "æ‰¾ä¸åˆ°ä½ è¦è§€çœ‹çš„å¹«æ´¾åç¨±ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     club_sort( pClub );
 
     clear_buffer();
-    send_to_buffer( "%s\e[0m(%s) ªº¦¨­û¦W³æ¡u¦@ %d ¤H¡MÀ°®w %d¡M%s"
+    send_to_buffer( "%s\e[0m(%s) çš„æˆå“¡åå–®ã€Œå…± %d äººï¹å¹«åº« %dï¹%s"
       , pClub->cname, pClub->name
       , count_club_member( pClub, CLUB_ALL )
       , pClub->money, club_status( pClub ) );
 
-    /* ¥u¦³¯«±Ú¥i¥H¬Ý¨ì©Ð¶¡¸¹½X */
+    /* åªæœ‰ç¥žæ—å¯ä»¥çœ‹åˆ°æˆ¿é–“è™Ÿç¢¼ */
     if ( IS_IMMORTAL( ch ) )
     {
-      send_to_buffer( "¡M©Ð¶¡¸¹½X %d"
+      send_to_buffer( "ï¹æˆ¿é–“è™Ÿç¢¼ %d"
         , pClub->location ? pClub->location->vnum : -1 );
     }
 
-    send_to_buffer( "¡v\n\r"
-      "\e[1;33;44mÂ¾  ¦ì ¤W½u ¦W¦r         ¤¤¤å¦W¦r            "
-      " µ¥¯Å ¦~ÄÖ ©Ê§O ½T»{ Â¾  ·~       \e[0m\n\r" );
+    send_to_buffer( "ã€\n\r"
+      "\e[1;33;44mè·  ä½ ä¸Šç·š åå­—         ä¸­æ–‡åå­—            "
+      " ç­‰ç´š å¹´é½¡ æ€§åˆ¥ ç¢ºèª è·  æ¥­       \e[0m\n\r" );
 
-    /* ¦L¥XÀ°¥D */
+    /* å°å‡ºå¹«ä¸» */
     if ( pClub->master )
     {
       victim = is_online( pClub->master );
@@ -888,7 +888,7 @@ FUNCTION( do_club )
       {
         pClass  = is_class( pBasic->class, TRUE );
         tablize( FORMAT_SET,
-          "À°  ¥D ONLI NAME         CNAME                \e[0mLEVV AGEE "
+          "å¹«  ä¸» ONLI NAME         CNAME                \e[0mLEVV AGEE "
           "SEXX VERI CLASSS      \e[0m\n\r"
           , 0, NULL, 0 );
 
@@ -913,14 +913,14 @@ FUNCTION( do_club )
       }
       else
       {
-        send_to_buffer( "À°  ¥D %2s   %-12s ????                "
+        send_to_buffer( "å¹«  ä¸» %2s   %-12s ????                "
           " ???? ???? ???? %2s   ??????\n\r"
           , YESNO( victim ), pClub->master, YESNO( 1 ) );
       }
     }
     else
     {
-      send_to_buffer( "À°  ¥D %2s   ±q¯Ê\n\r", YESNO( 0 ) );
+      send_to_buffer( "å¹«  ä¸» %2s   å¾žç¼º\n\r", YESNO( 0 ) );
     }
 
     if ( pClub->vicemaster )
@@ -932,7 +932,7 @@ FUNCTION( do_club )
         pClass = is_class( pBasic->class, TRUE );
 
         tablize( FORMAT_SET,
-          "°ÆÀ°¥D ONLI NAME         CNAME                \e[0mLEVV AGEE"
+          "å‰¯å¹«ä¸» ONLI NAME         CNAME                \e[0mLEVV AGEE"
           " SEXX VERI CLASSS      \e[0m\n\r"
           , 0, NULL, 0 );
 
@@ -956,13 +956,13 @@ FUNCTION( do_club )
       }
       else
       {
-        send_to_buffer( "°ÆÀ°¥D %2s   %-12s ????                "
+        send_to_buffer( "å‰¯å¹«ä¸» %2s   %-12s ????                "
           " ???? ???? ???? %2s   ??????\n\r"
           , YESNO( victim ), pClub->vicemaster, YESNO( 1 ) );
       }
     }
 
-    /* ¦L¥Xªø¦Ñ */
+    /* å°å‡ºé•·è€ */
     for ( loop = 0; loop < MAX_CLUB_DOYEN; loop++ )
     {
       if ( pClub->doyen[loop] )
@@ -974,7 +974,7 @@ FUNCTION( do_club )
           pClass = is_class( pBasic->class, TRUE );
 
           tablize( FORMAT_SET,
-            "ªø  ¦Ñ ONLI NAME         CNAME                \e[0mLEVV AGEE "
+            "é•·  è€ ONLI NAME         CNAME                \e[0mLEVV AGEE "
             "SEXX VERI CLASSS      \e[0m\n\r"
             , 0, NULL, 0 );
 
@@ -998,14 +998,14 @@ FUNCTION( do_club )
         }
         else
         {
-          send_to_buffer( "ªø  ¦Ñ %2s   %-12s ????                "
+          send_to_buffer( "é•·  è€ %2s   %-12s ????                "
             " ???? ???? ???? %2s   ??????\n\r"
             , YESNO( victim ), pClub->doyen[loop], YESNO( 1 ) );
         }
       }
     }
 
-    /* ¦C¦LÀ°²³ */
+    /* åˆ—å°å¹«çœ¾ */
     for ( loop = 0; loop < MAX_CLUB_MEMBER; loop++ )
     {
       if ( pClub->member[loop] && pClub->verify[loop] )
@@ -1017,7 +1017,7 @@ FUNCTION( do_club )
           pClass = is_class( pBasic->class, TRUE );
 
           tablize( FORMAT_SET,
-            "À°  ²³ ONLI NAME         CNAME                \e[0mLEVV AGEE "
+            "å¹«  çœ¾ ONLI NAME         CNAME                \e[0mLEVV AGEE "
             "SEXX VERI CLASSS      \e[0m\n\r"
             , 0, NULL, 0 );
 
@@ -1041,14 +1041,14 @@ FUNCTION( do_club )
         }
         else
         {
-          send_to_buffer( "À°  ²³ %2s   %-12s ????                "
+          send_to_buffer( "å¹«  çœ¾ %2s   %-12s ????                "
             " ???? ???? ???? %2s   ??????\n\r"
             , YESNO( victim ), pClub->member[loop], YESNO( 1 ) );
         }
       }
     }
 
-    /* ¦C¦L§Ì¤l */
+    /* åˆ—å°å¼Ÿå­ */
     for ( loop = 0; loop < MAX_CLUB_MEMBER; loop++ )
     {
       if ( pClub->member[loop] && !pClub->verify[loop] )
@@ -1060,7 +1060,7 @@ FUNCTION( do_club )
           pClass = is_class( pBasic->class, TRUE );
 
           tablize( FORMAT_SET,
-            "§Ì  ¤l ONLI NAME         CNAME                \e[0mLEVV AGEE "
+            "å¼Ÿ  å­ ONLI NAME         CNAME                \e[0mLEVV AGEE "
             "SEXX VERI CLASSS      \e[0m\n\r"
             , 0, NULL, 0 );
 
@@ -1084,7 +1084,7 @@ FUNCTION( do_club )
         }
         else
         {
-          send_to_buffer( "§Ì  ¤l %2s   %-12s ????                "
+          send_to_buffer( "å¼Ÿ  å­ %2s   %-12s ????                "
             " ???? ???? ???? %2s   ??????\n\r"
             , YESNO( victim ), pClub->member[loop], YESNO( 0 ) );
         }
@@ -1095,70 +1095,70 @@ FUNCTION( do_club )
     RETURN_NULL();
   }
 
-  /* »{ÃÒÀ°²³ */
+  /* èªè­‰å¹«çœ¾ */
   else if ( !str_prefix( arg1, "!verify" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, ch->club, CLUB_DOYEN ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥h»{ÃÒÀ°¤º§Ì¤l¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»èªè­‰å¹«å…§å¼Ÿå­ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥H»{ÃÒÀ°²³¤F */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥èªè­‰å¹«çœ¾äº† */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯à»{ÃÒ§Aªº§Ì¤l¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½èªè­‰ä½ çš„å¼Ÿå­ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­n»{ÃÒ¨º¦ìÀ°¤º§Ì¤l¡C\n\r", ch );
+      send_to_char( "ä½ è¦èªè­‰é‚£ä½å¹«å…§å¼Ÿå­ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ®Ú¥»¤£¬OÀ°¤º¤§¤H */
+    /* æ ¹æœ¬ä¸æ˜¯å¹«å…§ä¹‹äºº */
     if ( ( level = name_in_club( arg2, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "§A¨S¦³³o¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰é€™ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¥u¦³À°²³¤~»Ý­n»{ÃÒ */
+    /* åªæœ‰å¹«çœ¾æ‰éœ€è¦èªè­‰ */
     if ( level != CLUB_FOLLOWER )
     {
-      send_to_char( "§A¥u¯à»{ÃÒ§AªºÀ°²³§Ì¤l¡C\n\r", ch );
+      send_to_char( "ä½ åªèƒ½èªè­‰ä½ çš„å¹«çœ¾å¼Ÿå­ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¯uªº¦³³o¦ìÀ°²³, ©Î¬O¤w¸g³q¹L»{ÃÒ */
+    /* æª¢æŸ¥æ˜¯å¦çœŸçš„æœ‰é€™ä½å¹«çœ¾, æˆ–æ˜¯å·²ç¶“é€šéŽèªè­‰ */
     for ( loop = 0; loop < MAX_CLUB_MEMBER; loop++ )
     {
       if ( pClub->member[loop] && !str_cmp( arg2, pClub->member[loop] ) )
       {
         if ( pClub->verify[loop] )
         {
-          send_to_char( "§Aªº§Ì¤l¤w¸g³q¹L»{ÃÒ¤F¡C\n\r", ch );
+          send_to_char( "ä½ çš„å¼Ÿå­å·²ç¶“é€šéŽèªè­‰äº†ã€‚\n\r", ch );
           RETURN_NULL();
         }
 
         pClub->verify[loop] = TRUE;
-        send_to_char( "®¥ÁH¡M§Aªº§Ì¤l¤w¸g³q¹L»{ÃÒ¡C\n\r", ch );
+        send_to_char( "æ­ç¦§ï¹ä½ çš„å¼Ÿå­å·²ç¶“é€šéŽèªè­‰ã€‚\n\r", ch );
 
-        /* ¹î¬Ý¹ï¶H¬O§_¤W½u */
+        /* å¯Ÿçœ‹å°è±¡æ˜¯å¦ä¸Šç·š */
         if ( ( victim = is_online( arg2 ) ) )
         {
           victim->club = pClub;
-          send_to_char( "®¥ÁH§A¡M³q¹LÀ°¥Dªº»{ÃÒ¡C\n\r", victim );
+          send_to_char( "æ­ç¦§ä½ ï¹é€šéŽå¹«ä¸»çš„èªè­‰ã€‚\n\r", victim );
         }
 
         RETURN_NULL();
@@ -1166,73 +1166,73 @@ FUNCTION( do_club )
     }
   }
 
-  /* Âà±bµ¹¨ä¥L§Ì¤l */
+  /* è½‰å¸³çµ¦å…¶ä»–å¼Ÿå­ */
   else if ( !str_prefix( arg1, "!dump" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_VICEMASTER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥hÂà±bµ¹À°¤º§Ì¤l¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»è½‰å¸³çµ¦å¹«å…§å¼Ÿå­ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥HÂà±bµ¹À°²³¤F */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥è½‰å¸³çµ¦å¹«çœ¾äº† */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯àÂà±bµ¹§Aªº§Ì¤l¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½è½‰å¸³çµ¦ä½ çš„å¼Ÿå­ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­nÂà±bµ¹¨º¦ì§Ì¤l¡S\n\r", ch );
+      send_to_char( "ä½ è¦è½‰å¸³çµ¦é‚£ä½å¼Ÿå­ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¹î¬Ý¹ï¶H¬O§_¤W½u, ¥²¶·¤W½u¤~¯àÂà±b */
+    /* å¯Ÿçœ‹å°è±¡æ˜¯å¦ä¸Šç·š, å¿…é ˆä¸Šç·šæ‰èƒ½è½‰å¸³ */
     if ( !( victim = is_online( arg2 ) ) )
     {
-      send_to_char( "§A¨º¦ì§Ì¤l¥Ø«e¨S¦³¤W½u¡C\n\r", ch );
+      send_to_char( "ä½ é‚£ä½å¼Ÿå­ç›®å‰æ²’æœ‰ä¸Šç·šã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¬O§_¦P¤@­ÓÀ°¬£, ¤£¦PÀ°¬£¤£¯àÂà±b */
+    /* æ˜¯å¦åŒä¸€å€‹å¹«æ´¾, ä¸åŒå¹«æ´¾ä¸èƒ½è½‰å¸³ */
     if ( !is_same_club( ch, victim ) )
     {
-      send_to_char( "¨º¦ì¤£¬O§AÀ°¤ºªº¤H¤h¡C\n\r", ch );
+      send_to_char( "é‚£ä½ä¸æ˜¯ä½ å¹«å…§çš„äººå£«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "§A­nÂà¦h¤Ö¿úµ¹¥L©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦è½‰å¤šå°‘éŒ¢çµ¦ä»–å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( ( count = atoi( arg3 ) ) <= 0 || count > pClub->money )
     {
-      send_to_char( "§A­nÂàªÝ¼Ö²¼µ¹¥L¶Ü¡S\n\r", ch );
+      send_to_char( "ä½ è¦è½‰èŠ­æ¨‚ç¥¨çµ¦ä»–å—Žï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( over_scale( victim ) )
     {
-      act( "$NªºÁ`¸ê²£¤w¹F¤W­­¡T", ch, NULL, victim, TO_CHAR );
+      act( "$Nçš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹—", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
-    act( "§A®³¤F $i ¤¸µ¹§Aªº§Ì¤l$N¡C", ch, &count, victim, TO_CHAR );
-    act( "$N ®³¤F $i ¤¸µ¹§A¡C", victim, &count, ch, TO_CHAR );
+    act( "ä½ æ‹¿äº† $i å…ƒçµ¦ä½ çš„å¼Ÿå­$Nã€‚", ch, &count, victim, TO_CHAR );
+    act( "$N æ‹¿äº† $i å…ƒçµ¦ä½ ã€‚", victim, &count, ch, TO_CHAR );
 
     pClub->money -= count;
     gold_to_char( victim, count );
@@ -1240,83 +1240,83 @@ FUNCTION( do_club )
     RETURN_NULL();
   }
 
-  /* ÁÜ½Ð */
+  /* é‚€è«‹ */
   else if ( !str_prefix( arg1, "!invite" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§AÁÙ¨S¦³¥[¤JÀ°¬£¡M«ç»òÁÜ½Ð¡C\n\r", ch );
+      send_to_char( "ä½ é‚„æ²’æœ‰åŠ å…¥å¹«æ´¾ï¹æ€Žéº¼é‚€è«‹ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥HÁÜ½Ð */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥é‚€è«‹ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯àÁÜ½Ð¨ä¥L¤H°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½é‚€è«‹å…¶ä»–äººåƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MEMBER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥hÁÜ½Ð§O¤H¤JÀ°­C¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»é‚€è«‹åˆ¥äººå…¥å¹«è€¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­nÁÜ½Ð½Ö©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦é‚€è«‹èª°å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¹î¬Ý¹ï¶H¬O§_¤W½u, ¤W½u¤~¯àÁÜ½Ð */
+    /* å¯Ÿçœ‹å°è±¡æ˜¯å¦ä¸Šç·š, ä¸Šç·šæ‰èƒ½é‚€è«‹ */
     if ( !( victim = get_char_world( ch, arg2 ) ) )
     {
-      act( "§ä¤£¨ì§A­nÁÜ½Ðªº¤H $2$T$0¡C", ch, NULL, arg2, TO_CHAR );
+      act( "æ‰¾ä¸åˆ°ä½ è¦é‚€è«‹çš„äºº $2$T$0ã€‚", ch, NULL, arg2, TO_CHAR );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¥i¥HÁÜ½Ð¥L */
+    /* æª¢æŸ¥æ˜¯å¦å¯ä»¥é‚€è«‹ä»– */
     if ( IS_NPC( victim ) || victim->club )
     {
-      act( "§AµLªkÁÜ½Ð$N¡C", ch, NULL, victim, TO_CHAR );
+      act( "ä½ ç„¡æ³•é‚€è«‹$Nã€‚", ch, NULL, victim, TO_CHAR );
       RETURN_NULL();
     }
 
-    act( "§AÁÜ½Ð$N¨Ó°Ñ¥[§AªºÀ°¬£¡C", ch, NULL, victim, TO_CHAR );
-    act( "$NÁÜ½Ð§A°Ñ¥[¥LªºÀ°¬£$y¡C", victim, pClub, ch, TO_CHAR );
+    act( "ä½ é‚€è«‹$Nä¾†åƒåŠ ä½ çš„å¹«æ´¾ã€‚", ch, NULL, victim, TO_CHAR );
+    act( "$Né‚€è«‹ä½ åƒåŠ ä»–çš„å¹«æ´¾$yã€‚", victim, pClub, ch, TO_CHAR );
     RETURN_NULL();
   }
 
-  /* ®½Äm */
+  /* æç» */
   else if ( !str_prefix( arg1, "!donate" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A³£¨S¦³¥[¤JÀ°¬£¡M¦p¦ó®½¿é¡C\n\r", ch );
+      send_to_char( "ä½ éƒ½æ²’æœ‰åŠ å…¥å¹«æ´¾ï¹å¦‚ä½•æè¼¸ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->trade == FALSE )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤Ó¥i©È¤F¡M©Ò¥HµLªk°õ¦æ³o­Ó«ü¥O¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å¤ªå¯æ€•äº†ï¹æ‰€ä»¥ç„¡æ³•åŸ·è¡Œé€™å€‹æŒ‡ä»¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­n®½¦h¤Ö¿ú©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦æå¤šå°‘éŒ¢å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¼Æ¥Ø¬O§_¦X²z */
+    /* æª¢æŸ¥æ•¸ç›®æ˜¯å¦åˆç† */
     if ( ( count = atoi( arg2 ) ) <= 0 || count > ch->gold )
     {
-      send_to_char( "§A®½ªº¬O¯È¿ú¶Ü¡S\n\r", ch );
+      send_to_char( "ä½ æçš„æ˜¯ç´™éŒ¢å—Žï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1325,150 +1325,150 @@ FUNCTION( do_club )
 
     gold_from_char( ch, count );
 
-    sprintf( buf, " %s®½¤F¥»À° %d ¤¸¡C\n\r", mob_name( NULL, ch ), count );
+    sprintf( buf, " %sæäº†æœ¬å¹« %d å…ƒã€‚\n\r", mob_name( NULL, ch ), count );
     send_to_club( buf, pClub );
 
     RETURN_NULL();
   }
 
-  /* »â¿ú */
+  /* é ˜éŒ¢ */
   else if ( !str_prefix( arg1, "!withdraw" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§AÁÙ¨S¦³°Ñ¥[À°¬£¡M¦p¦ó»â¿ú¡S\n\r", ch );
+      send_to_char( "ä½ é‚„æ²’æœ‰åƒåŠ å¹«æ´¾ï¹å¦‚ä½•é ˜éŒ¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥H»â¿ú */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥é ˜éŒ¢ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯à»âÀ°¤ºªº¿ú¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½é ˜å¹«å…§çš„éŒ¢ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_DOYEN ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥h»âÀ°¤ºªº¿ú¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»é ˜å¹«å…§çš„éŒ¢ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­n»â¦h¤ÖÀ°¤ºªº¿ú¡S\n\r", ch );
+      send_to_char( "ä½ è¦é ˜å¤šå°‘å¹«å…§çš„éŒ¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( over_scale( ch ) )
     {
-      send_to_char( "§AªºÁ`¸ê²£¤w¹F¤W­­¡MµLªkÄ~Äò»â¨ú¡T\n\r", ch );
+      send_to_char( "ä½ çš„ç¸½è³‡ç”¢å·²é”ä¸Šé™ï¹ç„¡æ³•ç¹¼çºŒé ˜å–ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¼Æ¥Ø¬O§_¦X²z */
+    /* æª¢æŸ¥æ•¸ç›®æ˜¯å¦åˆç† */
     if ( ( count = atoi( arg2 ) ) <= 0 || count > pClub->money )
     {
-      send_to_char( "§A»âªº¬O¯È¿ú¶Ü¡S\n\r", ch );
+      send_to_char( "ä½ é ˜çš„æ˜¯ç´™éŒ¢å—Žï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     pClub->money -= count;
     gold_to_char( ch, count );
 
-    sprintf( buf, " %s ±qÀ°¤º»â¤F %d ¤¸¡C\n\r", mob_name( NULL, ch ), count );
+    sprintf( buf, " %s å¾žå¹«å…§é ˜äº† %d å…ƒã€‚\n\r", mob_name( NULL, ch ), count );
     send_to_club( buf, pClub );
 
     RETURN_NULL();
   }
 
-  /* ÅX³vÀ°²³ */
+  /* é©…é€å¹«çœ¾ */
   else if ( !str_prefix( arg1, "!kick" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªk°õ¦æ¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•åŸ·è¡Œã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥HÅX³vÀ°²³ */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥é©…é€å¹«çœ¾ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯àÅX³vÀ°¤º¤H¤h¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½é©…é€å¹«å…§äººå£«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_VICEMASTER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥hÅX³vÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»é©…é€å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­nÅX³v¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ è¦é©…é€é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¯uªº¦³³o¦ìÀ°²³ */
+    /* æª¢æŸ¥æ˜¯å¦çœŸçš„æœ‰é€™ä½å¹«çœ¾ */
     if ( ( level = name_in_club( arg2, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "§A¨S¦³¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ¥u¯àÅX³vÀ°²³, ¨ä¥L¥u¯à¥Î­°¯Å¤§«á¦AÅX³v */
+    /* åªèƒ½é©…é€å¹«çœ¾, å…¶ä»–åªèƒ½ç”¨é™ç´šä¹‹å¾Œå†é©…é€ */
     if ( level >= CLUB_DOYEN )
     {
-      send_to_char( "§A¥u¯àÅX³v§AªºÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ åªèƒ½é©…é€ä½ çš„å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !char_from_club( arg2, pClub, level ) )
     {
-      send_to_char( "µLªkÅX³v¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ç„¡æ³•é©…é€é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( victim = is_online( arg2 ) ) )
-      send_to_char( "§A³QÀ°¤ºÅX³v¥XÀ°¤F¡C\n\r", victim );
+      send_to_char( "ä½ è¢«å¹«å…§é©…é€å‡ºå¹«äº†ã€‚\n\r", victim );
 
-    sprintf( buf, "%s ³QÅX³v¥XÀ°¤F¡C\n\r", arg2 );
+    sprintf( buf, "%s è¢«é©…é€å‡ºå¹«äº†ã€‚\n\r", arg2 );
     send_to_club( buf, pClub );
 
     RETURN_NULL();
   }
 
-  /* «qÀ° */
+  /* å›å¹« */
   else if ( !str_prefix( arg1, "!quit" ) )
   {
     if ( !arg2[0] || !( pClub = clubname_lookup( arg2, CLUB_NAME ) ) )
     {
-      send_to_char( "§A¥²¶·­n§â§AªºÀ°¬£¦W¦r«÷¹ï¤~¥i¥H³á¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¦æŠŠä½ çš„å¹«æ´¾åå­—æ‹¼å°æ‰å¯ä»¥å–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ( level = name_in_club( ch->name, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[³o­ÓÀ°¬£¡M¦p¦ó«qÀ°¡T\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ é€™å€‹å¹«æ´¾ï¹å¦‚ä½•å›å¹«ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥H«qÀ° */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥å›å¹« */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯à«qÀ°¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½å›å¹«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( level == CLUB_MASTER )
     {
-      send_to_char( "¦]¬°§AªºÂ¾°È¡M©Ò¥H§A¤£¯à«qÀ°¡C\n\r", ch );
+      send_to_char( "å› ç‚ºä½ çš„è·å‹™ï¹æ‰€ä»¥ä½ ä¸èƒ½å›å¹«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1476,252 +1476,252 @@ FUNCTION( do_club )
     {
       if ( level == CLUB_FOLLOWER )
       {
-        send_to_char( "§A«qÀ°¤F¡M¦ý¬OÁÙ¨S³QÀ°¤º»{ÃÒ¡M©Ò¥H¨S¨Æ¡T\n\r", ch );
+        send_to_char( "ä½ å›å¹«äº†ï¹ä½†æ˜¯é‚„æ²’è¢«å¹«å…§èªè­‰ï¹æ‰€ä»¥æ²’äº‹ï¹—\n\r", ch );
       }
 
       else
       {
-        send_to_char( "§A«qÀ°¤F¡M¥þ¥@¬Éªº¤H³£¥i¥H°l±þ§A¤F¡T\n\r", ch );
+        send_to_char( "ä½ å›å¹«äº†ï¹å…¨ä¸–ç•Œçš„äººéƒ½å¯ä»¥è¿½æ®ºä½ äº†ï¹—\n\r", ch );
         SET_BIT( ch->act, PLR_BOLTER );
       }
 
-      sprintf( buf, "%s ¤w¸g«qÀ°¥X¨«¤F¡T\n\r", mob_name( NULL, ch ) );
+      sprintf( buf, "%s å·²ç¶“å›å¹«å‡ºèµ°äº†ï¹—\n\r", mob_name( NULL, ch ) );
       send_to_club( buf, pClub );
     }
 
     else
     {
-      send_to_char( "§A«qÀ°¥¢±Ñ¡T\n\r" , ch );
+      send_to_char( "ä½ å›å¹«å¤±æ•—ï¹—\n\r" , ch );
     }
   }
 
-  /* ÅX³v */
+  /* é©…é€ */
   else if ( !str_prefix( arg1, "!dispel" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªk°õ¦æÅX³vÀ°¬£¤H¤h¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•åŸ·è¡Œé©…é€å¹«æ´¾äººå£«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥HÅX³vÀ°²³ */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥é©…é€å¹«çœ¾ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯àÅX³vÀ°¤º¤H¤h¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½é©…é€å¹«å…§äººå£«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MASTER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥hÅX³vÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»é©…é€å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­nÅX³v¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ è¦é©…é€é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¯uªº¦³³o¦ìÀ°²³ */
+    /* æª¢æŸ¥æ˜¯å¦çœŸçš„æœ‰é€™ä½å¹«çœ¾ */
     if ( ( level = name_in_club( arg2, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "§A¨S¦³¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( level == CLUB_MASTER )
     {
-      send_to_char( "§A¤£¯àÅX³vÀ°¥D¡C\n\r", ch );
+      send_to_char( "ä½ ä¸èƒ½é©…é€å¹«ä¸»ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( victim = is_online( arg2 ) ) )
     {
-      act( "$t¨S¦³¤W½u¡M§A¤£¯àÅX³v¥L¡C", ch, arg2, NULL, TO_CHAR );
+      act( "$tæ²’æœ‰ä¸Šç·šï¹ä½ ä¸èƒ½é©…é€ä»–ã€‚", ch, arg2, NULL, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( char_from_club( arg2, pClub, level ) )
     {
       SET_BIT( victim->act, PLR_BOLTER );
-      send_to_char( "§A³QÀ°¥DÅX³v¥XÀ°¤F¡C\n\r", victim );
-      sprintf( buf, "%s³QÀ°¥DÅX³v¥XÀ°¤F¡C\n\r", mob_name( NULL, victim ) );
+      send_to_char( "ä½ è¢«å¹«ä¸»é©…é€å‡ºå¹«äº†ã€‚\n\r", victim );
+      sprintf( buf, "%sè¢«å¹«ä¸»é©…é€å‡ºå¹«äº†ã€‚\n\r", mob_name( NULL, victim ) );
       send_to_club( buf, pClub );
     }
 
     else
     {
-      send_to_char( "ÅX³vÀ°²³¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "é©…é€å¹«çœ¾å¤±æ•—ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     RETURN_NULL();
   }
 
-  /* ¥ô©R */
+  /* ä»»å‘½ */
   else if ( !str_prefix( arg1, "!appoint" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªk°õ¦æ¥ô©RÂ¾¦ì¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•åŸ·è¡Œä»»å‘½è·ä½ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥H¥ô©RÀ°²³ */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥ä»»å‘½å¹«çœ¾ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯à¥ô©RÀ°¤º¤H¤h¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½ä»»å‘½å¹«å…§äººå£«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MASTER ) )
     {
-      send_to_char( "©êºp¡M§A¨S¦³Åv¤O¥h¥ô©RÀ°²³¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»ä»»å‘½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­n¥ô©R¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ è¦ä»»å‘½é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg3[0] )
     {
-      send_to_char( "§A­n¥ô©R¥L¬°°ÆÀ°¥D(vicemaster)©Îªø¦Ñ(doyen)¡S\n\r", ch );
+      send_to_char( "ä½ è¦ä»»å‘½ä»–ç‚ºå‰¯å¹«ä¸»(vicemaster)æˆ–é•·è€(doyen)ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¯uªº¦³³o¦ìÀ°²³ */
+    /* æª¢æŸ¥æ˜¯å¦çœŸçš„æœ‰é€™ä½å¹«çœ¾ */
     if ( ( level = name_in_club( arg2, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "§A¨S¦³¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( level == CLUB_FOLLOWER )
     {
-      send_to_char( "¨º¦ìÀ°²³¨S¦³³q¹L»{ÃÒ¡C\n\r", ch );
+      send_to_char( "é‚£ä½å¹«çœ¾æ²’æœ‰é€šéŽèªè­‰ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÂ¾¦ì */
+    /* æª¢æŸ¥è·ä½ */
     if ( level != CLUB_MEMBER )
     {
-      send_to_char( "§A¥u¯à¥ô©RÀ°²³¬°°ÆÀ°¥D©Îªø¦Ñ¡C\n\r", ch );
+      send_to_char( "ä½ åªèƒ½ä»»å‘½å¹«çœ¾ç‚ºå‰¯å¹«ä¸»æˆ–é•·è€ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     victim = is_online( arg2 );
 
-    /* ¥ô©R¬°°ÆÀ°¥D */
+    /* ä»»å‘½ç‚ºå‰¯å¹«ä¸» */
     if ( !str_prefix( arg3, "vicemaster" ) )
     {
-      /* ÀË¬d¬O§_¤w¸g¦³°ÆÀ°¥D */
+      /* æª¢æŸ¥æ˜¯å¦å·²ç¶“æœ‰å‰¯å¹«ä¸» */
       if ( clubmember_full( pClub, CLUB_VICEMASTER ) )
       {
-        send_to_char( "À°¬£¤§¤¤¤w¸g¦³°ÆÀ°¥D¤F¡C\n\r", ch );
+        send_to_char( "å¹«æ´¾ä¹‹ä¸­å·²ç¶“æœ‰å‰¯å¹«ä¸»äº†ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
       if ( appoint_member( arg2, pClub, CLUB_VICEMASTER ) )
       {
-        sprintf( buf, "%s¥ô©R%s¬°¥»À°ªº°ÆÀ°¥D¡C\n\r"
+        sprintf( buf, "%sä»»å‘½%sç‚ºæœ¬å¹«çš„å‰¯å¹«ä¸»ã€‚\n\r"
           , mob_name( NULL, ch ), arg2 );
 
         send_to_club( buf, pClub );
-        if ( victim ) send_to_char( "§A³Q¥ô©R¬°¥»À°°ÆÀ°¥D¡C\n\r", victim );
+        if ( victim ) send_to_char( "ä½ è¢«ä»»å‘½ç‚ºæœ¬å¹«å‰¯å¹«ä¸»ã€‚\n\r", victim );
       }
 
       else
       {
-        send_to_char( "¥ô©R°ÆÀ°¥D¥¢±Ñ¡C\n\r", ch );
+        send_to_char( "ä»»å‘½å‰¯å¹«ä¸»å¤±æ•—ã€‚\n\r", ch );
       }
 
       RETURN_NULL();
     }
 
-    /* ¥ô©R¬°ªø¦Ñ */
+    /* ä»»å‘½ç‚ºé•·è€ */
     else if ( !str_prefix( arg3, "doyen" ) )
     {
-      /* ÀË¬d¬O§_¤w¸g¦³ªø¦Ñ */
+      /* æª¢æŸ¥æ˜¯å¦å·²ç¶“æœ‰é•·è€ */
       if ( clubmember_full( pClub, CLUB_DOYEN ) )
       {
-        send_to_char( "À°¬£¤§¤¤ªø¦Ñ¦WÃB¤wº¡¡C\n\r", ch );
+        send_to_char( "å¹«æ´¾ä¹‹ä¸­é•·è€åé¡å·²æ»¿ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
       if ( appoint_member( arg2, pClub, CLUB_DOYEN ) )
       {
-        sprintf( buf, "%s¥ô©R%s¬°¥»À°ªºªø¦Ñ¡C\n\r"
+        sprintf( buf, "%sä»»å‘½%sç‚ºæœ¬å¹«çš„é•·è€ã€‚\n\r"
           , mob_name( NULL, ch ), arg2 );
 
         send_to_club( buf, pClub );
-        if ( victim ) send_to_char( "§A³Q¥ô©R¬°¥»À°ªø¦Ñ¡C\n\r", victim );
+        if ( victim ) send_to_char( "ä½ è¢«ä»»å‘½ç‚ºæœ¬å¹«é•·è€ã€‚\n\r", victim );
       }
 
       else
       {
-        send_to_char( "¥ô©Rªø¦Ñ¥¢±Ñ¡C\n\r", ch );
+        send_to_char( "ä»»å‘½é•·è€å¤±æ•—ã€‚\n\r", ch );
       }
     }
 
     else
     {
-      send_to_char( "§A­n¥ô©R¥L¬°°ÆÀ°¥D(vicemaster)©Îªø¦Ñ(doyen)¡S\n\r", ch );
+      send_to_char( "ä½ è¦ä»»å‘½ä»–ç‚ºå‰¯å¹«ä¸»(vicemaster)æˆ–é•·è€(doyen)ï¹–\n\r", ch );
     }
   }
 
-  /* ¸Ñ¸u */
+  /* è§£è˜ */
   else if ( !str_prefix( arg1, "!dismiss" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªk°õ¦æ¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•åŸ·è¡Œã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥H¸Ñ¸uÀ°²³ */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥è§£è˜å¹«çœ¾ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯à¸Ñ¸uÀ°¤º¤H¤h¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½è§£è˜å¹«å…§äººå£«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MASTER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥h¸Ñ¸uÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»è§£è˜å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­n¸Ñ¸u¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ è¦è§£è˜é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_ÁÙ¦³À°²³ªºªÅÃB */
+    /* æª¢æŸ¥æ˜¯å¦é‚„æœ‰å¹«çœ¾çš„ç©ºé¡ */
     if ( clubmember_full( pClub, CLUB_MEMBER ) )
     {
-      send_to_char( "§AªºÀ°²³¤w¸gº¡ÃB¤F¡M©Ò¥HµLªk¨ø¥ô¡C\n\r", ch );
+      send_to_char( "ä½ çš„å¹«çœ¾å·²ç¶“æ»¿é¡äº†ï¹æ‰€ä»¥ç„¡æ³•å¸ä»»ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¯uªº¦³³o¦ìÀ°²³ */
+    /* æª¢æŸ¥æ˜¯å¦çœŸçš„æœ‰é€™ä½å¹«çœ¾ */
     if ( ( level = name_in_club( arg2, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "§A¨S¦³¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
@@ -1730,99 +1730,99 @@ FUNCTION( do_club )
     switch( level )
     {
     default:
-      send_to_char( "§A¥u¯à¸Ñ¸u°ÆÀ°¥D©Î¬Oªø¦Ñ¡C\n\r", ch );
+      send_to_char( "ä½ åªèƒ½è§£è˜å‰¯å¹«ä¸»æˆ–æ˜¯é•·è€ã€‚\n\r", ch );
       RETURN_NULL();
 
-    /* °ÆÀ°¥D */
+    /* å‰¯å¹«ä¸» */
     case CLUB_VICEMASTER:
 
       if ( appoint_member( arg2, pClub, CLUB_MEMBER ) )
       {
-        sprintf( buf, "%s §â°ÆÀ°¥D %s ¸Ñ¸u¤F¡C\n\r"
+        sprintf( buf, "%s æŠŠå‰¯å¹«ä¸» %s è§£è˜äº†ã€‚\n\r"
           , mob_name( NULL, ch ), arg2 );
 
         send_to_club( buf, pClub );
-        if ( victim ) send_to_char( "§A¤£¦A¬O°ÆÀ°¥D¤F¡C\n\r", victim );
+        if ( victim ) send_to_char( "ä½ ä¸å†æ˜¯å‰¯å¹«ä¸»äº†ã€‚\n\r", victim );
       }
 
       else
       {
-        send_to_char( "¸Ñ¸u°ÆÀ°¥D¥¢±Ñ¡C\n\r", ch );
+        send_to_char( "è§£è˜å‰¯å¹«ä¸»å¤±æ•—ã€‚\n\r", ch );
       }
       break;
 
-    /* ªø¦Ñ */
+    /* é•·è€ */
     case CLUB_DOYEN:
 
       if ( appoint_member( arg2, pClub, CLUB_MEMBER ) )
       {
-        sprintf( buf, "%s §âªø¦Ñ %s ¸Ñ¸u¤F¡C\n\r"
+        sprintf( buf, "%s æŠŠé•·è€ %s è§£è˜äº†ã€‚\n\r"
           , mob_name( NULL, ch ), arg2 );
 
         send_to_club( buf, pClub );
-        if ( victim ) send_to_char( "§A¤£¦A¬Oªø¦Ñ¤F¡C\n\r", victim );
+        if ( victim ) send_to_char( "ä½ ä¸å†æ˜¯é•·è€äº†ã€‚\n\r", victim );
       }
 
       else
       {
-        send_to_char( "¸Ñ¸uªø¦Ñ¥¢±Ñ¡C\n\r", ch );
+        send_to_char( "è§£è˜é•·è€å¤±æ•—ã€‚\n\r", ch );
       }
 
       break;
     }
   }
 
-  /* ÁI¦ì */
+  /* ç¦ªä½ */
   else if ( !str_prefix( arg1, "!abdicate" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªk°õ¦æ¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•åŸ·è¡Œã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥HÁI¦ì */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥ç¦ªä½ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯àÁI¦ìµ¹À°¤º¤H¤h¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½ç¦ªä½çµ¦å¹«å…§äººå£«ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MASTER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¨ÓÁI¦ì¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›ä¾†ç¦ªä½ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­nÁI¦ìµ¹¨º¦ìÀ°²³¡S\n\r", ch );
+      send_to_char( "ä½ è¦ç¦ªä½çµ¦é‚£ä½å¹«çœ¾ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¯uªº¦³³o¦ìÀ°²³ */
+    /* æª¢æŸ¥æ˜¯å¦çœŸçš„æœ‰é€™ä½å¹«çœ¾ */
     if ( ( level = name_in_club( arg2, pClub ) ) == CLUB_NO_RELATION )
     {
-      send_to_char( "§A¨S¦³¨º¦ìÀ°²³¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰é‚£ä½å¹«çœ¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( level == CLUB_FOLLOWER )
     {
-      send_to_char( "©êºp¡M¨º¦ìÀ°²³¨S¦³³q¹L»{ÃÒ¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹é‚£ä½å¹«çœ¾æ²’æœ‰é€šéŽèªè­‰ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( clubmember_full( pClub , CLUB_MEMBER ) )
     {
-      send_to_char( "§AªºÀ°²³¤w¸gº¡ÃB¤F¡M©Ò¥HµLªk¨ø¥ô¡C\n\r", ch );
+      send_to_char( "ä½ çš„å¹«çœ¾å·²ç¶“æ»¿é¡äº†ï¹æ‰€ä»¥ç„¡æ³•å¸ä»»ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    sprintf( buf, "À°¥D%s§âÀ°¥Dªº¦ì¤lÁI¦ìµ¹%s¡C\n\r"
+    sprintf( buf, "å¹«ä¸»%sæŠŠå¹«ä¸»çš„ä½å­ç¦ªä½çµ¦%sã€‚\n\r"
       , mob_name( NULL, ch ), arg2 );
 
     send_to_club( buf, pClub );
@@ -1833,52 +1833,52 @@ FUNCTION( do_club )
 
   else if ( !str_prefix( arg1, "!set" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªk°õ¦æ¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•åŸ·è¡Œã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥H§ïÅÜ */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥æ”¹è®Š */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "²{¦bÁÙ¤£¯à§ïÅÜÀ°¤º³]©w¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½æ”¹è®Šå¹«å…§è¨­å®šã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MASTER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O§ó§ïÀ°¤º³]©w¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›æ›´æ”¹å¹«å…§è¨­å®šã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] )
     {
-      send_to_char( "§A­n§ï¤°»ò¿ï¶µ¡S\n\r", ch );
+      send_to_char( "ä½ è¦æ”¹ä»€éº¼é¸é …ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !str_prefix( arg2, "name" ) )
     {
-      /* ÀË¬d°Ñ¼Æ */
+      /* æª¢æŸ¥åƒæ•¸ */
       if ( !arg3[0] )
       {
-        send_to_char( "½Ð°Ý§A­n§â­^¤å¦WºÙ§ï¦¨¤°»ò¡S\n\r", ch );
+        send_to_char( "è«‹å•ä½ è¦æŠŠè‹±æ–‡åç¨±æ”¹æˆä»€éº¼ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
       if ( clubname_lookup( arg3, CLUB_NAME ) )
       {
-        send_to_char( "©êºp¡M³o­Ó­^¤å¦WºÙ¦³¤H¥Î¹L¤F¡C\n\r", ch );
+        send_to_char( "æŠ±æ­‰ï¹é€™å€‹è‹±æ–‡åç¨±æœ‰äººç”¨éŽäº†ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
       set_club( pClub, CLUB_NAME, arg3, 0 );
 
-      sprintf( buf, "À°¥D %s §âÀ°¦W§ï¦¨ %s\e[0m(%s)¡C\n\r"
+      sprintf( buf, "å¹«ä¸» %s æŠŠå¹«åæ”¹æˆ %s\e[0m(%s)ã€‚\n\r"
         , mob_name( NULL, ch ), pClub->cname, pClub->name );
 
       send_to_club( buf, pClub );
@@ -1886,29 +1886,29 @@ FUNCTION( do_club )
 
     else if ( !str_prefix( arg2, "cname" ) )
     {
-      /* ÀË¬d°Ñ¼Æ */
+      /* æª¢æŸ¥åƒæ•¸ */
       if ( !arg3[0] )
       {
-        send_to_char( "½Ð°Ý§A­n§â¤¤¤å¦WºÙ§ï¦¨¤°»ò¡S\n\r", ch );
+        send_to_char( "è«‹å•ä½ è¦æŠŠä¸­æ–‡åç¨±æ”¹æˆä»€éº¼ï¹–\n\r", ch );
         RETURN_NULL();
       }
 
       if ( clubname_lookup( arg3, CLUB_CNAME ) )
       {
-        send_to_char( "©êºp¡M³o­Ó¤¤¤å¦WºÙ¦³¤H¥Î¹L¤F¡C\n\r", ch );
+        send_to_char( "æŠ±æ­‰ï¹é€™å€‹ä¸­æ–‡åç¨±æœ‰äººç”¨éŽäº†ã€‚\n\r", ch );
         RETURN_NULL();
       }
 
       set_club( pClub, CLUB_CNAME, arg3, 0 );
 
-      sprintf( buf, "À°¥D %s §âÀ°¦W§ï¦¨ %s\e[0m(%s)¡C\n\r"
+      sprintf( buf, "å¹«ä¸» %s æŠŠå¹«åæ”¹æˆ %s\e[0m(%s)ã€‚\n\r"
         , mob_name( NULL, ch ), pClub->cname, pClub->name );
       send_to_club( buf, pClub );
     }
 
     else
     {
-      send_to_char( "¿ï¶µ¿ù»~¡M½Ð¥Î club /? ¬d¸ß club «ü¥O¡C\n\r", ch );
+      send_to_char( "é¸é …éŒ¯èª¤ï¹è«‹ç”¨ club /? æŸ¥è©¢ club æŒ‡ä»¤ã€‚\n\r", ch );
     }
   }
 
@@ -1916,78 +1916,78 @@ FUNCTION( do_club )
   {
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§AÁÙ¨S¦³°Ñ¥[À°¬£¡C\n\r", ch );
+      send_to_char( "ä½ é‚„æ²’æœ‰åƒåŠ å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !arg2[0] || pClub != clubname_lookup( arg2, CLUB_NAME ) )
     {
-      send_to_char( "§A¥²¶·­n§â§AªºÀ°¬£¦W¦r«÷¹ï¤~¥i¥H³á¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¦æŠŠä½ çš„å¹«æ´¾åå­—æ‹¼å°æ‰å¯ä»¥å–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥H¸Ñ´² */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥è§£æ•£ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE )
     {
-      send_to_char( "¹ï¤£°_¡M²{¦bÁÙ¤£¯à¸Ñ´²À°¬£¡C\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ç¾åœ¨é‚„ä¸èƒ½è§£æ•£å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MASTER ) )
     {
-      send_to_char( "©êºp¡M§A¨S¦³Åv¤O¥h¸Ñ´²À°¬£¡C\n\r", ch );
+      send_to_char( "æŠ±æ­‰ï¹ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»è§£æ•£å¹«æ´¾ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    sprintf( buf, "%s\e[0m(%s)À°À°¥D %s ¸Ñ´²¤FÀ°¬£¡M±q¦¹ %s\e[0m ¨«¶i¾ú¥v¡T\n\r"
+    sprintf( buf, "%s\e[0m(%s)å¹«å¹«ä¸» %s è§£æ•£äº†å¹«æ´¾ï¹å¾žæ­¤ %s\e[0m èµ°é€²æ­·å²ï¹—\n\r"
       , pClub->cname, pClub->name, mob_name( NULL, ch ), pClub->cname );
 
     if ( fordo_club( pClub ) )
     {
-      send_to_char( "§A¸Ñ´²À°¬£¡C\n\r", ch );
+      send_to_char( "ä½ è§£æ•£å¹«æ´¾ã€‚\n\r", ch );
       send_to_all_char( buf );
     }
 
     else
     {
-      send_to_char( "¨t²Î¸Ñ´²À°¬£¥¢±Ñ¡C\n\r", ch );
+      send_to_char( "ç³»çµ±è§£æ•£å¹«æ´¾å¤±æ•—ã€‚\n\r", ch );
     }
   }
 
-  /* §â«H¥ó¦Cªí */
+  /* æŠŠä¿¡ä»¶åˆ—è¡¨ */
   else if ( !str_prefix( arg1, "!notelist" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªk°õ¦æ«H¥ó¦Cªí¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•åŸ·è¡Œä¿¡ä»¶åˆ—è¡¨ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥HÅª¨ú«H¥ó */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥è®€å–ä¿¡ä»¶ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE || !pClub->location )
     {
-      send_to_char( "²{¦bÁÙ¤£¯àÆ[¬ÝÀ°¤º«H¥ó¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½è§€çœ‹å¹«å…§ä¿¡ä»¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MEMBER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥h¬ÝÀ°¤º«H¥ó¦Cªí¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»çœ‹å¹«å…§ä¿¡ä»¶åˆ—è¡¨ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !ch->in_room || ch->in_room != pClub->location )
     {
-      send_to_char( "§A¥²¶·¨ìÀ°·|»E¶°¦a¤~¯à¬Ýªº¨ìÀ°¤º«H¥ó¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆåˆ°å¹«æœƒèšé›†åœ°æ‰èƒ½çœ‹çš„åˆ°å¹«å…§ä¿¡ä»¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     clear_buffer();
 
-    send_to_char( "\e[1;33;44m½s ¸¹ Åª¨ú ±H«H¤H»P¼ÐÃD"
+    send_to_char( "\e[1;33;44mç·¨ è™Ÿ è®€å– å¯„ä¿¡äººèˆ‡æ¨™é¡Œ"
                   "                                 \e[0m\n\r", ch );
     for ( count = 0, pNote = note_list; pNote; pNote = pNote->next )
     {
@@ -2004,44 +2004,44 @@ FUNCTION( do_club )
       }
     }
 
-    if ( count == 0 ) send_to_char( "À°·|¤º¨Ã¨S¦³¥ô¦óªº«H¥ó¡C\n\r", ch );
+    if ( count == 0 ) send_to_char( "å¹«æœƒå…§ä¸¦æ²’æœ‰ä»»ä½•çš„ä¿¡ä»¶ã€‚\n\r", ch );
     else print_buffer( ch );
   }
 
-  /* Åª¨úÀ°¤º«H¥ó */
+  /* è®€å–å¹«å…§ä¿¡ä»¶ */
   else if ( !str_prefix( arg1, "!read" ) )
   {
-    /* ÀË¬dÀ°¬£ */
+    /* æª¢æŸ¥å¹«æ´¾ */
     if ( !( pClub = ch->club ) )
     {
-      send_to_char( "§A¨S¦³°Ñ¥[À°¬£¡MµLªkÅª¨úÀ°¤º«H¥ó¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•è®€å–å¹«å…§ä¿¡ä»¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬dÀ°¬£ªºª¬ºA¬O§_¥i¥HÅª¨ú«H¥ó */
+    /* æª¢æŸ¥å¹«æ´¾çš„ç‹€æ…‹æ˜¯å¦å¯ä»¥è®€å–ä¿¡ä»¶ */
     if ( pClub->status != CLUB_STATUS_UNIONIZE || !pClub->location )
     {
-      send_to_char( "²{¦bÁÙ¤£¯àÆ[¬ÝÀ°¤º«H¥ó¡C\n\r", ch );
+      send_to_char( "ç¾åœ¨é‚„ä¸èƒ½è§€çœ‹å¹«å…§ä¿¡ä»¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d¬O§_¦³Â¾Åv */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰è·æ¬Š */
     if ( !right_ring( ch->name, pClub, CLUB_MEMBER ) )
     {
-      send_to_char( "§A¨S¦³Åv¤O¥h¬ÝÀ°¤º«H¥ó¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›åŽ»çœ‹å¹«å…§ä¿¡ä»¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !ch->in_room || ch->in_room != pClub->location )
     {
-      send_to_char( "§A¥²¶·¨ìÀ°·|»E¶°¦a¤~¯à¬Ýªº¨ìÀ°¤º«H¥ó¡C\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆåˆ°å¹«æœƒèšé›†åœ°æ‰èƒ½çœ‹çš„åˆ°å¹«å…§ä¿¡ä»¶ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
-    /* ÀË¬d°Ñ¼Æ */
+    /* æª¢æŸ¥åƒæ•¸ */
     if ( !arg2[0] || ( count = atoi( arg2 ) ) <= 0 )
     {
-      send_to_char( "§A­nÅª²Ä´X«ÊÀ°¤º«H¡S\n\r", ch );
+      send_to_char( "ä½ è¦è®€ç¬¬å¹¾å°å¹«å…§ä¿¡ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -2052,11 +2052,11 @@ FUNCTION( do_club )
         ch->last_clubnote = UMAX( ch->last_clubnote, pNote->date_stamp );
         clear_buffer();
 
-        send_to_buffer( "[%3d] ±H«HªÌ: %s\n\r"
-                        "¼Ð  ÃD: %s\n\r"
-                        "¤é  ´Á: %s\n\r"
-                        "¦¬«HªÌ: %s À°¤º«H\n\r"
-                        "¤º  ®e:\n\r%s"
+        send_to_buffer( "[%3d] å¯„ä¿¡è€…: %s\n\r"
+                        "æ¨™  é¡Œ: %s\n\r"
+                        "æ—¥  æœŸ: %s\n\r"
+                        "æ”¶ä¿¡è€…: %s å¹«å…§ä¿¡\n\r"
+                        "å…§  å®¹:\n\r%s"
            , loop
            , pNote->sender
            , pNote->subject
@@ -2068,34 +2068,34 @@ FUNCTION( do_club )
       }
     }
 
-    send_to_char( "¨S¦³¨º«ÊÀ°¤º«H¡C\n\r", ch );
+    send_to_char( "æ²’æœ‰é‚£å°å¹«å…§ä¿¡ã€‚\n\r", ch );
   }
 
   else
   {
-    send_to_char( "«ü¥O¿ù»~, ½Ð¬d¸ß club «ü¥O¡C\n\r", ch );
+    send_to_char( "æŒ‡ä»¤éŒ¯èª¤, è«‹æŸ¥è©¢ club æŒ‡ä»¤ã€‚\n\r", ch );
   }
 
   RETURN_NULL();
 }
 
-/* ¬d¸ßÀ°¬£¦WºÙ */
+/* æŸ¥è©¢å¹«æ´¾åç¨± */
 CLUB_DATA * clubname_lookup( const char * name, int type )
 {
   CLUB_DATA * pClub;
 
   PUSH_FUNCTION( "clubname_lookup" );
 
-  /* Á×§K¿ù»~ */
+  /* é¿å…éŒ¯èª¤ */
   if ( !name || *name == '\x0' ) RETURN( NULL );
 
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "clubname_lookup: ¿ù»~ªº¿ï¶µ %d.", type );
+    mudlog( LOG_DEBUG, "clubname_lookup: éŒ¯èª¤çš„é¸é … %d.", type );
     break;
 
-  /* ­^¤å¦WºÙ */
+  /* è‹±æ–‡åç¨± */
   case CLUB_NAME:
 
     for ( pClub = club_list; pClub; pClub = pClub->next )
@@ -2103,7 +2103,7 @@ CLUB_DATA * clubname_lookup( const char * name, int type )
 
     break;
 
-  /* ¤¤¤å¦WºÙ */
+  /* ä¸­æ–‡åç¨± */
   case CLUB_CNAME:
 
     for ( pClub = club_list; pClub; pClub = pClub->next )
@@ -2115,7 +2115,7 @@ CLUB_DATA * clubname_lookup( const char * name, int type )
   RETURN( NULL );
 }
 
-/* ³Ð³yÀ°¬£ */
+/* å‰µé€ å¹«æ´¾ */
 CLUB_DATA * create_club( CHAR_DATA * ch, char * name, char * cname )
 {
   CLUB_DATA * pClub;
@@ -2132,7 +2132,7 @@ CLUB_DATA * create_club( CHAR_DATA * ch, char * name, char * cname )
     || club_count() >= max_club )
     RETURN( NULL );
 
-  /* ¦©°£¸g¶O */
+  /* æ‰£é™¤ç¶“è²» */
   ch->bank = UMAX( 0, ch->bank - ClubCreateFund );
   set_club_default( pClub = alloc_struct( STRUCT_CLUB_DATA ) );
 
@@ -2141,10 +2141,10 @@ CLUB_DATA * create_club( CHAR_DATA * ch, char * name, char * cname )
   set_club( pClub, CLUB_STATUS, NULL  , CLUB_STATUS_COUNTERSIGN );
   set_club( pClub, CLUB_TIMER , NULL  , time( NULL ) );
 
-  /* ³]©wÀ°¥DªºÂ¾¦ì */
+  /* è¨­å®šå¹«ä¸»çš„è·ä½ */
   char_to_club( ch->name, pClub, CLUB_MASTER );
 
-  /* ³]©w³sµ² */
+  /* è¨­å®šé€£çµ */
   for ( zClub = club_list;
         zClub && zClub->next;
         zClub = zClub->next );
@@ -2157,7 +2157,7 @@ CLUB_DATA * create_club( CHAR_DATA * ch, char * name, char * cname )
   RETURN( pClub );
 }
 
-/* ³s¸pÀ°¬£ */
+/* é€£ç½²å¹«æ´¾ */
 bool countersign_club( CHAR_DATA * ch, CLUB_DATA * pClub )
 {
   char buf[MAX_STRING_LENGTH];
@@ -2171,14 +2171,14 @@ bool countersign_club( CHAR_DATA * ch, CLUB_DATA * pClub )
   ch->clublog  = TRUE;
   gold_from_char( ch, UMIN( ch->gold, ClubCountersignFund ) );
 
-  /* ³s¸p¦¨¥\ */
+  /* é€£ç½²æˆåŠŸ */
   if ( count_club_member( pClub, CLUB_MEMBER ) >= ClubCountersignCount )
   {
-    sprintf( buf, "%s\e[0m(%s)³s¸p¦¨¥\\¡MÀ°¬£¦¨¥ß¡C\n\r"
+    sprintf( buf, "%s\e[0m(%s)é€£ç½²æˆåŠŸ\ï¹å¹«æ´¾æˆç«‹ã€‚\n\r"
       , pClub->cname, pClub->name );
     send_to_all_char( buf );
 
-    /* ³]©wª¬ºA¬°¦¨¥ß, ¨Ã¥B»s³y¥X¤@­ÓÀ°¬£©Ð¶¡ */
+    /* è¨­å®šç‹€æ…‹ç‚ºæˆç«‹, ä¸¦ä¸”è£½é€ å‡ºä¸€å€‹å¹«æ´¾æˆ¿é–“ */
     set_club( pClub, CLUB_STATUS, NULL, CLUB_STATUS_UNIONIZE );
     club_location( pClub );
   }
@@ -2186,28 +2186,28 @@ bool countersign_club( CHAR_DATA * ch, CLUB_DATA * pClub )
   RETURN( TRUE );
 }
 
-/* ÀË¬d¬Y¤H¬O§_¦bÀ°¬£¤§¤¤ */
+/* æª¢æŸ¥æŸäººæ˜¯å¦åœ¨å¹«æ´¾ä¹‹ä¸­ */
 CLUB_DATA * char_club( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "char_club" );
 
-  /* Á×§K¿ù»~ */
+  /* é¿å…éŒ¯èª¤ */
   if ( !ch || IS_NPC( ch ) ) RETURN( NULL );
 
-  /* ©Çª«¬O¨S¦³À°¬£ªº */
+  /* æ€ªç‰©æ˜¯æ²’æœ‰å¹«æ´¾çš„ */
   if ( IS_NPC( ch ) ) RETURN( ( ch->club = NULL ) );
 
   RETURN( ( ch->club = is_inclub( ch->name ) ) );
 }
 
-/* ¦WºÙ¬O§_¦bÀ°¬£¤§¤¤¤F¶Ü? */
+/* åç¨±æ˜¯å¦åœ¨å¹«æ´¾ä¹‹ä¸­äº†å—Ž? */
 CLUB_DATA * is_inclub( char * name )
 {
   CLUB_DATA * pClub;
 
   PUSH_FUNCTION( "is_inclub" );
 
-  /* Á×§K¿ù»~ */
+  /* é¿å…éŒ¯èª¤ */
   if ( !name || *name == '\x0' ) RETURN( NULL );
 
   for ( pClub = club_list; pClub; pClub = pClub->next )
@@ -2216,32 +2216,32 @@ CLUB_DATA * is_inclub( char * name )
   RETURN( NULL );
 }
 
-/* ´ú¸Õ¬O§_¬Y¤H¦bÀ°¬£¤§¤¤ */
+/* æ¸¬è©¦æ˜¯å¦æŸäººåœ¨å¹«æ´¾ä¹‹ä¸­ */
 int name_in_club( char * name, CLUB_DATA * pClub )
 {
   int loop;
 
   PUSH_FUNCTION( "name_in_club" );
 
-  /* Á×§K¿ù»~ */
+  /* é¿å…éŒ¯èª¤ */
   if ( !name || *name == '\x0' || !pClub ) RETURN( CLUB_NO_RELATION );
 
-  /* À°¥D */
+  /* å¹«ä¸» */
   if ( pClub->master && !str_cmp( name, pClub->master ) )
     RETURN( CLUB_MASTER );
 
-  /* °ÆÀ°¥D */
+  /* å‰¯å¹«ä¸» */
   if ( pClub->vicemaster && !str_cmp( name, pClub->vicemaster ) )
     RETURN( CLUB_VICEMASTER  );
 
-  /* ªø¦Ñ */
+  /* é•·è€ */
   for ( loop = 0; loop < MAX_CLUB_DOYEN; loop++ )
   {
     if ( pClub->doyen[loop] && !str_cmp( name, pClub->doyen[loop] ) )
       RETURN( CLUB_DOYEN );
   }
 
-  /* À°²³©Î§Ì¤l */
+  /* å¹«çœ¾æˆ–å¼Ÿå­ */
   for ( loop = 0; loop < MAX_CLUB_MEMBER; loop++ )
   {
     if ( pClub->member[loop] && !str_cmp( name, pClub->member[loop] ) )
@@ -2254,7 +2254,7 @@ int name_in_club( char * name, CLUB_DATA * pClub )
   RETURN( CLUB_NO_RELATION );
 }
 
-/* §â¬Y¤H¥[¤JÀ°¬£ªºªí®æ¤§¤¤ */
+/* æŠŠæŸäººåŠ å…¥å¹«æ´¾çš„è¡¨æ ¼ä¹‹ä¸­ */
 bool char_to_club( char * name, CLUB_DATA * pClub, int type )
 {
   int         loop;
@@ -2262,10 +2262,10 @@ bool char_to_club( char * name, CLUB_DATA * pClub, int type )
 
   PUSH_FUNCTION( "char_to_club" );
 
-  /* Á×§K¿ù»~ */
+  /* é¿å…éŒ¯èª¤ */
   if ( !name || *name == '\x0' || !pClub ) RETURN( FALSE );
 
-  /* ²¾°£¤£¦Xªkªº¦r¤¸ */
+  /* ç§»é™¤ä¸åˆæ³•çš„å­—å…ƒ */
   smash_tilde( name );
 
   victim = is_online( name );
@@ -2273,15 +2273,15 @@ bool char_to_club( char * name, CLUB_DATA * pClub, int type )
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "char_to_club: ¿ù»~ªº¿ï¶µ %d.", type );
+    mudlog( LOG_DEBUG, "char_to_club: éŒ¯èª¤çš„é¸é … %d.", type );
     break;
 
-  /* À°¥D */
+  /* å¹«ä¸» */
   case CLUB_MASTER:
 
     if ( clubmember_full( pClub, CLUB_MASTER ) )
     {
-      mudlog( LOG_DEBUG, "char_to_club: ¤w¸g¦³À°¥D" );
+      mudlog( LOG_DEBUG, "char_to_club: å·²ç¶“æœ‰å¹«ä¸»" );
       break;
     }
 
@@ -2289,12 +2289,12 @@ bool char_to_club( char * name, CLUB_DATA * pClub, int type )
     if ( victim ) victim->club = pClub;
     RETURN( TRUE );
 
-  /* °ÆÀ°¥D */
+  /* å‰¯å¹«ä¸» */
   case CLUB_VICEMASTER:
 
     if ( clubmember_full( pClub, CLUB_VICEMASTER ) )
     {
-      mudlog( LOG_DEBUG, "char_to_club: ¤w¸g¦³°ÆÀ°¥D" );
+      mudlog( LOG_DEBUG, "char_to_club: å·²ç¶“æœ‰å‰¯å¹«ä¸»" );
       break;
     }
 
@@ -2302,12 +2302,12 @@ bool char_to_club( char * name, CLUB_DATA * pClub, int type )
     if ( victim ) victim->club = pClub;
     RETURN( TRUE );
 
-  /* ªø¦Ñ */
+  /* é•·è€ */
   case CLUB_DOYEN:
 
     if ( clubmember_full( pClub, CLUB_DOYEN ) )
     {
-      mudlog( LOG_DEBUG, "char_to_club: ªø¦Ñ¦WÃB¤wº¡." );
+      mudlog( LOG_DEBUG, "char_to_club: é•·è€åé¡å·²æ»¿." );
       break;
     }
 
@@ -2321,15 +2321,15 @@ bool char_to_club( char * name, CLUB_DATA * pClub, int type )
       }
     }
 
-    mudlog( LOG_DEBUG, "char_to_club: ªø¦Ñ¦WÃB¤wº¡." );
+    mudlog( LOG_DEBUG, "char_to_club: é•·è€åé¡å·²æ»¿." );
     break;
 
-  /* À°²³ */
+  /* å¹«çœ¾ */
   case CLUB_MEMBER:
 
     if ( clubmember_full( pClub, CLUB_MEMBER ) )
     {
-      mudlog( LOG_DEBUG, "char_to_club: À°²³¦WÃB¤wº¡." );
+      mudlog( LOG_DEBUG, "char_to_club: å¹«çœ¾åé¡å·²æ»¿." );
       break;
     }
 
@@ -2344,15 +2344,15 @@ bool char_to_club( char * name, CLUB_DATA * pClub, int type )
       }
     }
 
-    mudlog( LOG_DEBUG, "char_to_club: À°²³¦WÃB¤wº¡." );
+    mudlog( LOG_DEBUG, "char_to_club: å¹«çœ¾åé¡å·²æ»¿." );
     break;
 
-  /* §Ì¤l */
+  /* å¼Ÿå­ */
   case CLUB_FOLLOWER:
 
     if ( clubmember_full( pClub, CLUB_FOLLOWER ) )
     {
-      mudlog( LOG_DEBUG, "char_to_club: À°²³¦WÃB¤wº¡." );
+      mudlog( LOG_DEBUG, "char_to_club: å¹«çœ¾åé¡å·²æ»¿." );
       break;
     }
 
@@ -2367,14 +2367,14 @@ bool char_to_club( char * name, CLUB_DATA * pClub, int type )
       }
     }
 
-    mudlog( LOG_DEBUG, "char_to_club: À°²³¦WÃB¤wº¡." );
+    mudlog( LOG_DEBUG, "char_to_club: å¹«çœ¾åé¡å·²æ»¿." );
     break;
   }
 
   RETURN( FALSE );
 }
 
-/* §â¬Y­Ó¤H±qÀ°·|¤§¤¤²¾°£ */
+/* æŠŠæŸå€‹äººå¾žå¹«æœƒä¹‹ä¸­ç§»é™¤ */
 bool char_from_club( char * name, CLUB_DATA * pClub, int type )
 {
   int         loop;
@@ -2382,30 +2382,30 @@ bool char_from_club( char * name, CLUB_DATA * pClub, int type )
 
   PUSH_FUNCTION( "char_from_club" );
 
-  /* ³]©w CLUB_ALL ¦Û°Ê§ä´M¨äÂ¾¦ì */
+  /* è¨­å®š CLUB_ALL è‡ªå‹•æ‰¾å°‹å…¶è·ä½ */
   if ( type == CLUB_ALL ) type = name_in_club( name, pClub );
 
   victim = is_online( name );
 
   switch( type )
   {
-  /* ¿ù»~ªº¿ï¶µ */
+  /* éŒ¯èª¤çš„é¸é … */
   default:
-    mudlog( LOG_DEBUG, "char_from_club: ¿ù»~ªº¿ï¶µ %d.", type );
+    mudlog( LOG_DEBUG, "char_from_club: éŒ¯èª¤çš„é¸é … %d.", type );
     break;
 
-  /* À°¥D */
+  /* å¹«ä¸» */
   case CLUB_MASTER:
 
     if ( !clubmember_full( pClub, CLUB_MASTER ) )
     {
-      mudlog( LOG_DEBUG, "char_from_club: À°¥D¬OªÅªº." );
+      mudlog( LOG_DEBUG, "char_from_club: å¹«ä¸»æ˜¯ç©ºçš„." );
       break;
     }
 
     if ( str_cmp( name, pClub->master ) )
     {
-      mudlog( LOG_DEBUG, "char_from_club: %s ¤£¬O %sªºÀ°¥D."
+      mudlog( LOG_DEBUG, "char_from_club: %s ä¸æ˜¯ %sçš„å¹«ä¸»."
         , name, pClub->name );
       break;
     }
@@ -2415,18 +2415,18 @@ bool char_from_club( char * name, CLUB_DATA * pClub, int type )
     if ( victim ) victim->club = NULL;
     RETURN( TRUE );
 
-  /* °ÆÀ°¥D */
+  /* å‰¯å¹«ä¸» */
   case CLUB_VICEMASTER:
 
     if ( !clubmember_full( pClub, CLUB_VICEMASTER ) )
     {
-      mudlog( LOG_DEBUG, "char_from_club: °ÆÀ°¥D¬OªÅªº." );
+      mudlog( LOG_DEBUG, "char_from_club: å‰¯å¹«ä¸»æ˜¯ç©ºçš„." );
       break;
     }
 
     if ( str_cmp( name, pClub->vicemaster ) )
     {
-      mudlog( LOG_DEBUG, "char_from_club: %s ¤£¬O %s ªº°ÆÀ°¥D."
+      mudlog( LOG_DEBUG, "char_from_club: %s ä¸æ˜¯ %s çš„å‰¯å¹«ä¸»."
         , name, pClub->name );
       break;
     }
@@ -2436,7 +2436,7 @@ bool char_from_club( char * name, CLUB_DATA * pClub, int type )
     if ( victim ) victim->club = NULL;
     RETURN( TRUE );
 
-  /* ªø¦Ñ */
+  /* é•·è€ */
   case CLUB_DOYEN:
 
     for ( loop = 0; loop < MAX_CLUB_DOYEN; loop++ )
@@ -2450,11 +2450,11 @@ bool char_from_club( char * name, CLUB_DATA * pClub, int type )
       }
     }
 
-    mudlog( LOG_DEBUG, "char_from_club: %s ¤£¬O %s ªºªø¦Ñ."
+    mudlog( LOG_DEBUG, "char_from_club: %s ä¸æ˜¯ %s çš„é•·è€."
       , name, pClub->name );
     break;
 
-  /* À°²³©Î¬O§Ì¤l */
+  /* å¹«çœ¾æˆ–æ˜¯å¼Ÿå­ */
   case CLUB_MEMBER:
   case CLUB_FOLLOWER:
 
@@ -2470,7 +2470,7 @@ bool char_from_club( char * name, CLUB_DATA * pClub, int type )
       }
     }
 
-    mudlog( LOG_DEBUG, "char_from_club: %s ¤£¬O %s ªºÀ°²³©Î§Ì¤l."
+    mudlog( LOG_DEBUG, "char_from_club: %s ä¸æ˜¯ %s çš„å¹«çœ¾æˆ–å¼Ÿå­."
       , name, pClub->name );
     break;
   }
@@ -2478,14 +2478,14 @@ bool char_from_club( char * name, CLUB_DATA * pClub, int type )
   RETURN( FALSE );
 }
 
-/* ¥ô©RÀ°²³Â¾°È */
+/* ä»»å‘½å¹«çœ¾è·å‹™ */
 bool appoint_member( char * name, CLUB_DATA * pClub, int level )
 {
   int orginal;
 
   PUSH_FUNCTION( "appoint_member" );
 
-  /* Á×§K¿ù»~ */
+  /* é¿å…éŒ¯èª¤ */
   if ( !name
     || *name == '\x0'
     || !pClub
@@ -2495,69 +2495,69 @@ bool appoint_member( char * name, CLUB_DATA * pClub, int level )
   switch( level )
   {
   default:
-    mudlog( LOG_DEBUG, "appoint_member: ¿ù»~ªºÂ¾µ¥ %d.", level );
+    mudlog( LOG_DEBUG, "appoint_member: éŒ¯èª¤çš„è·ç­‰ %d.", level );
     break;
 
-  /* À°¥D */
+  /* å¹«ä¸» */
   case CLUB_MASTER:
 
-    /* ¬Ý¬Ý¬O§_¦WÃB¤wº¡, ¥H¤Î¥i¥H¥[¤J·sªºÂ¾·~ªí®æ¤§¤¤ */
+    /* çœ‹çœ‹æ˜¯å¦åé¡å·²æ»¿, ä»¥åŠå¯ä»¥åŠ å…¥æ–°çš„è·æ¥­è¡¨æ ¼ä¹‹ä¸­ */
     if ( clubmember_full( pClub, CLUB_MASTER )
       || !char_to_club( name, pClub, CLUB_MASTER ) )
     {
-      mudlog( LOG_DEBUG, "appoint_member: ¥ô©RÀ°¥D¥¢±Ñ." );
+      mudlog( LOG_DEBUG, "appoint_member: ä»»å‘½å¹«ä¸»å¤±æ•—." );
       break;
     }
 
     RETURN( char_from_club( name, pClub, orginal ) );
 
-  /* °ÆÀ°¥D */
+  /* å‰¯å¹«ä¸» */
   case CLUB_VICEMASTER:
 
-    /* ¬Ý¬Ý¬O§_¦WÃB¤wº¡, ¥H¤Î¥i¥H¥[¤J·sªºÂ¾·~ªí®æ¤§¤¤ */
+    /* çœ‹çœ‹æ˜¯å¦åé¡å·²æ»¿, ä»¥åŠå¯ä»¥åŠ å…¥æ–°çš„è·æ¥­è¡¨æ ¼ä¹‹ä¸­ */
     if ( clubmember_full( pClub, CLUB_VICEMASTER )
       || !char_to_club( name, pClub, CLUB_VICEMASTER ) )
     {
-      mudlog( LOG_DEBUG, "appoint_member: ¥ô©R°ÆÀ°¥D¥¢±Ñ." );
+      mudlog( LOG_DEBUG, "appoint_member: ä»»å‘½å‰¯å¹«ä¸»å¤±æ•—." );
       break;
     }
 
     RETURN( char_from_club( name, pClub, orginal ) );
 
-  /* ªø¦Ñ */
+  /* é•·è€ */
   case CLUB_DOYEN:
 
-    /* ¬Ý¬Ý¬O§_¦WÃB¤wº¡, ¥H¤Î¥i¥H¥[¤J·sªºÂ¾·~ªí®æ¤§¤¤ */
+    /* çœ‹çœ‹æ˜¯å¦åé¡å·²æ»¿, ä»¥åŠå¯ä»¥åŠ å…¥æ–°çš„è·æ¥­è¡¨æ ¼ä¹‹ä¸­ */
     if ( clubmember_full( pClub, CLUB_DOYEN )
       || !char_to_club( name, pClub, CLUB_DOYEN ) )
     {
-      mudlog( LOG_DEBUG, "appoint_member: ¥ô©Rªø¦Ñ¥¢±Ñ." );
+      mudlog( LOG_DEBUG, "appoint_member: ä»»å‘½é•·è€å¤±æ•—." );
       break;
     }
 
     RETURN( char_from_club( name, pClub, orginal ) );
 
-  /* À°²³ */
+  /* å¹«çœ¾ */
   case CLUB_MEMBER:
 
-    /* ¬Ý¬Ý¬O§_¦WÃB¤wº¡, ¥H¤Î¥i¥H¥[¤J·sªºÂ¾·~ªí®æ¤§¤¤ */
+    /* çœ‹çœ‹æ˜¯å¦åé¡å·²æ»¿, ä»¥åŠå¯ä»¥åŠ å…¥æ–°çš„è·æ¥­è¡¨æ ¼ä¹‹ä¸­ */
     if ( clubmember_full( pClub, CLUB_MEMBER )
       || !char_to_club( name, pClub, CLUB_MEMBER ) )
     {
-      mudlog( LOG_DEBUG, "appoint_member: ¥ô©RÀ°²³¥¢±Ñ." );
+      mudlog( LOG_DEBUG, "appoint_member: ä»»å‘½å¹«çœ¾å¤±æ•—." );
       break;
     }
 
     RETURN( char_from_club( name, pClub, orginal ) );
 
-  /* §Ì¤l */
+  /* å¼Ÿå­ */
   case CLUB_FOLLOWER:
 
-    /* ¬Ý¬Ý¬O§_¦WÃB¤wº¡, ¥H¤Î¥i¥H¥[¤J·sªºÂ¾·~ªí®æ¤§¤¤ */
+    /* çœ‹çœ‹æ˜¯å¦åé¡å·²æ»¿, ä»¥åŠå¯ä»¥åŠ å…¥æ–°çš„è·æ¥­è¡¨æ ¼ä¹‹ä¸­ */
     if ( clubmember_full( pClub, CLUB_FOLLOWER )
       || !char_to_club( name, pClub, CLUB_FOLLOWER ) )
     {
-      mudlog( LOG_DEBUG, "appoint_member: ¥ô©R§Ì¤l¥¢±Ñ." );
+      mudlog( LOG_DEBUG, "appoint_member: ä»»å‘½å¼Ÿå­å¤±æ•—." );
       break;
     }
 
@@ -2567,7 +2567,7 @@ bool appoint_member( char * name, CLUB_DATA * pClub, int level )
   RETURN( FALSE );
 }
 
-/* ­pºâÀ°¬£¤¤¬YÂ¾¦ìªº¤H¼Æ */
+/* è¨ˆç®—å¹«æ´¾ä¸­æŸè·ä½çš„äººæ•¸ */
 size_t count_club_member( CLUB_DATA * pClub, int type )
 {
   size_t cMaster;
@@ -2598,30 +2598,30 @@ size_t count_club_member( CLUB_DATA * pClub, int type )
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "count_club_member: ¿ù»~ªºÂ¾µ¥ %d.", type );
+    mudlog( LOG_DEBUG, "count_club_member: éŒ¯èª¤çš„è·ç­‰ %d.", type );
     break;
 
-  /* À°¥D */
+  /* å¹«ä¸» */
   case CLUB_MASTER:
     RETURN( cMaster );
 
-  /* °ÆÀ°¥D */
+  /* å‰¯å¹«ä¸» */
   case CLUB_VICEMASTER:
     RETURN( cVicemaster );
 
-  /* ªø¦Ñ */
+  /* é•·è€ */
   case CLUB_DOYEN:
     RETURN( cDoyen );
 
-  /* À°²³ */
+  /* å¹«çœ¾ */
   case CLUB_MEMBER:
     RETURN( cMember );
 
-  /* §Ì¤l */
+  /* å¼Ÿå­ */
   case CLUB_FOLLOWER:
     RETURN( cFollower );
 
-  /* À°¤º©Ò¦³ªº¤H */
+  /* å¹«å…§æ‰€æœ‰çš„äºº */
   case CLUB_ALL:
     RETURN( cMaster + cVicemaster + cDoyen + cMember + cFollower);
   }
@@ -2629,7 +2629,7 @@ size_t count_club_member( CLUB_DATA * pClub, int type )
   RETURN( 0 );
 }
 
-/* ´ú¸ÕÀ°¬£¤¤¬YÂ¾¦ì¬O§_¤w¸gÃBº¡ */
+/* æ¸¬è©¦å¹«æ´¾ä¸­æŸè·ä½æ˜¯å¦å·²ç¶“é¡æ»¿ */
 bool clubmember_full( CLUB_DATA * pClub, int type )
 {
   int loop;
@@ -2641,25 +2641,25 @@ bool clubmember_full( CLUB_DATA * pClub, int type )
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "clubmember_full: ¿ù»~ªºÂ¾µ¥ %d.", type );
+    mudlog( LOG_DEBUG, "clubmember_full: éŒ¯èª¤çš„è·ç­‰ %d.", type );
     break;
 
-  /* À°¥D */
+  /* å¹«ä¸» */
   case CLUB_MASTER:
     RETURN( pClub->master != NULL );
 
-  /* °ÆÀ°¥D */
+  /* å‰¯å¹«ä¸» */
   case CLUB_VICEMASTER:
     RETURN( pClub->vicemaster != NULL );
 
-  /* ªø¦Ñ */
+  /* é•·è€ */
   case CLUB_DOYEN:
 
     for ( loop = 0; loop < MAX_CLUB_DOYEN; loop++ )
       if ( !pClub->doyen[loop] ) RETURN( FALSE );
     break;
 
-  /* À°²³©Î§Ì¤l */
+  /* å¹«çœ¾æˆ–å¼Ÿå­ */
   case CLUB_MEMBER:
   case CLUB_FOLLOWER:
 
@@ -2671,7 +2671,7 @@ bool clubmember_full( CLUB_DATA * pClub, int type )
   RETURN( TRUE );
 }
 
-/* ¬O§_¦b½u¤W */
+/* æ˜¯å¦åœ¨ç·šä¸Š */
 CHAR_DATA * is_online( const char * name )
 {
   DESCRIPTOR_DATA * man;
@@ -2693,18 +2693,18 @@ CHAR_DATA * is_online( const char * name )
   RETURN( NULL );
 }
 
-/* ¬Y¤HªºÀ°¬£¦WºÙ */
+/* æŸäººçš„å¹«æ´¾åç¨± */
 char * club_name( CHAR_DATA * ch )
 {
   CLUB_DATA * pClub;
 
   PUSH_FUNCTION( "club_name" );
-  if ( !ch ) RETURN( "¥¼ª¾" );
-  if ( IS_NPC( ch ) || !( pClub = ch->club ) ) RETURN( "¨S¦³À°¬£" );
+  if ( !ch ) RETURN( "æœªçŸ¥" );
+  if ( IS_NPC( ch ) || !( pClub = ch->club ) ) RETURN( "æ²’æœ‰å¹«æ´¾" );
   RETURN( pClub->cname );
 }
 
-/* ª±®a¶i¤J¹CÀ¸®É¨ú±o¨äÀ°¬£¸ê®Æ */
+/* çŽ©å®¶é€²å…¥éŠæˆ²æ™‚å–å¾—å…¶å¹«æ´¾è³‡æ–™ */
 void char_attach_club( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "char_attach_club" );
@@ -2715,7 +2715,7 @@ void char_attach_club( CHAR_DATA * ch )
   RETURN_NULL();
 }
 
-/* Åv¤Oµ¥¯Å */
+/* æ¬ŠåŠ›ç­‰ç´š */
 bool right_ring( char * name, CLUB_DATA * pClub, int right )
 {
   PUSH_FUNCTION( "right_ring" );
@@ -2738,7 +2738,7 @@ bool right_ring( char * name, CLUB_DATA * pClub, int right )
   RETURN ( ( name_in_club( name, pClub ) >= right ) );
 }
 
-/* ¬O§_¦P¤@­ÓÀ°¬£ */
+/* æ˜¯å¦åŒä¸€å€‹å¹«æ´¾ */
 bool is_same_club( CHAR_DATA * ch, CHAR_DATA * victim )
 {
   PUSH_FUNCTION( "is_same_club" );
@@ -2753,7 +2753,7 @@ bool is_same_club( CHAR_DATA * ch, CHAR_DATA * victim )
   RETURN( ch->club == victim->club );
 }
 
-/* ¸Ñ´²À°¬£ */
+/* è§£æ•£å¹«æ´¾ */
 bool fordo_club( CLUB_DATA * pClub )
 {
   CLUB_DATA * prev;
@@ -2782,7 +2782,7 @@ bool fordo_club( CLUB_DATA * pClub )
 
     if ( !prev )
     {
-      mudlog( LOG_DEBUG , "fordo_club: ¨Ã¥¼µo²{¨ì±ý¾P·´ªºÀ°¬£." );
+      mudlog( LOG_DEBUG , "fordo_club: ä¸¦æœªç™¼ç¾åˆ°æ¬²éŠ·æ¯€çš„å¹«æ´¾." );
       RETURN( FALSE );
     }
   }
@@ -2812,7 +2812,7 @@ bool fordo_club( CLUB_DATA * pClub )
   RETURN( TRUE );
 }
 
-/* À°¬£¼Æ¥Ø */
+/* å¹«æ´¾æ•¸ç›® */
 size_t club_count( void )
 {
   CLUB_DATA * pClub;
@@ -2823,7 +2823,7 @@ size_t club_count( void )
   RETURN( count );
 }
 
-/* ¶Ç¦^À°¬£¶Ç°eÂI */
+/* å‚³å›žå¹«æ´¾å‚³é€é»ž */
 ROOM_INDEX_DATA * club_recall( CHAR_DATA * ch )
 {
   PUSH_FUNCTION( "club_recall" );
@@ -2837,7 +2837,7 @@ ROOM_INDEX_DATA * club_recall( CHAR_DATA * ch )
   RETURN( NULL );
 }
 
-/* «Ø¥ßÀ°¬£»E¶°ÂI */
+/* å»ºç«‹å¹«æ´¾èšé›†é»ž */
 ROOM_INDEX_DATA * club_location( CLUB_DATA * pClub )
 {
   ROOM_INDEX_DATA * pRoom;
@@ -2850,7 +2850,7 @@ ROOM_INDEX_DATA * club_location( CLUB_DATA * pClub )
 
   if ( !pClub || pClub->status != CLUB_STATUS_UNIONIZE ) RETURN( NULL );
 
-  /* «Ø¥ß°_©Ð¶¡ */
+  /* å»ºç«‹èµ·æˆ¿é–“ */
   set_room_default( pRoom = alloc_struct( STRUCT_ROOM_INDEX_DATA ) );
 
   pRoom->people          = NULL;
@@ -2859,18 +2859,18 @@ ROOM_INDEX_DATA * club_location( CLUB_DATA * pClub )
   pRoom->club            = pClub;
   pRoom->area            = DefaultArea;
 
-  sprintf( buf, "%s \e[0m(%s)À°¬£»E¶°ÂI\e[0m", pClub->cname, pClub->name );
+  sprintf( buf, "%s \e[0m(%s)å¹«æ´¾èšé›†é»ž\e[0m", pClub->cname, pClub->name );
   pRoom->name            = str_dup( buf );
 
   sprintf( buf,
-    "³o¸Ì¬O %s\e[0m (%s)À°ªºÀ°¬£»E¶°ÂI¡M§A¬Ý¨ì³\\¦h¤H¨Ó¨Ó¥h¥h¡C\n\r"
-    "«á­±¦³¤@¥u¤j½c¤l¡M¸Ì­±¦s©ñµÛ¦U¦¡¦U¼Ëªº¸Ë³Æ¡M¨­¬°À°²³ªº§A¥i¥H¨Ï¥Î\n\r"
-    "\e[1;32mstore\e[0m ³o­Ó«ü¥O¨Ó¦s¨ú¡T\n\r\n\r"
+    "é€™è£¡æ˜¯ %s\e[0m (%s)å¹«çš„å¹«æ´¾èšé›†é»žï¹ä½ çœ‹åˆ°è¨±\å¤šäººä¾†ä¾†åŽ»åŽ»ã€‚\n\r"
+    "å¾Œé¢æœ‰ä¸€åªå¤§ç®±å­ï¹è£¡é¢å­˜æ”¾è‘—å„å¼å„æ¨£çš„è£å‚™ï¹èº«ç‚ºå¹«çœ¾çš„ä½ å¯ä»¥ä½¿ç”¨\n\r"
+    "\e[1;32mstore\e[0m é€™å€‹æŒ‡ä»¤ä¾†å­˜å–ï¹—\n\r\n\r"
     , pClub->cname, pClub->name );
 
   pRoom->description     = str_dup( buf );
 
-  pRoom->filename        = str_dup( "¨t²Î«Ø¥ß" );
+  pRoom->filename        = str_dup( "ç³»çµ±å»ºç«‹" );
   pRoom->vnum            = club_room++;
   pRoom->Safe            = TRUE;
   pRoom->NoRecall        = TRUE;
@@ -2889,7 +2889,7 @@ ROOM_INDEX_DATA * club_location( CLUB_DATA * pClub )
   top_room++;
   for ( loop = 0; loop < DIR_MAX; loop++ ) pRoom->exit[loop] = NULL;
 
-  /* «Ø¥ß°_¦V¤Uªº¥X¤f */
+  /* å»ºç«‹èµ·å‘ä¸‹çš„å‡ºå£ */
   set_exit_default( pExit = alloc_struct( STRUCT_EXIT_DATA ) );
   pExit->description    = str_dup( "" );
   pExit->keyword        = str_dup( "" );
@@ -2900,12 +2900,12 @@ ROOM_INDEX_DATA * club_location( CLUB_DATA * pClub )
   pExit->key            = 0;
   pExit->vnum           = RoomRecall->vnum;
   pRoom->exit[ DIR_DOWN ] = pExit;
-  pExit->message        = str_dup( "§A¨«¥X¤F§AªºÀ°¬£»E¶°ÂI¡T" );
+  pExit->message        = str_dup( "ä½ èµ°å‡ºäº†ä½ çš„å¹«æ´¾èšé›†é»žï¹—" );
 
   RETURN( pRoom );
 }
 
-/* À°·|«H¥ó */
+/* å¹«æœƒä¿¡ä»¶ */
 size_t club_notes( CHAR_DATA * ch )
 {
   NOTE_DATA * pNote;
@@ -2922,7 +2922,7 @@ size_t club_notes( CHAR_DATA * ch )
   RETURN( count );
 }
 
-/* À°·|¥¼Åª«H¥ó */
+/* å¹«æœƒæœªè®€ä¿¡ä»¶ */
 size_t club_unread( CHAR_DATA * ch )
 {
   NOTE_DATA * pNote;
@@ -2940,7 +2940,7 @@ size_t club_unread( CHAR_DATA * ch )
   RETURN( count );
 }
 
-/* ¬Ý¬Ý³o«Ê«H¨ì©³¬O¤£¬O³o­ÓÀ°¬£ªº«H¥ó */
+/* çœ‹çœ‹é€™å°ä¿¡åˆ°åº•æ˜¯ä¸æ˜¯é€™å€‹å¹«æ´¾çš„ä¿¡ä»¶ */
 bool is_note_to_club( CLUB_DATA * pClub, NOTE_DATA * pNote )
 {
   PUSH_FUNCTION( "is_note_to_club" );
@@ -2955,24 +2955,24 @@ bool is_note_to_club( CLUB_DATA * pClub, NOTE_DATA * pNote )
   RETURN( FALSE );
 }
 
-/* ³]©wÀ°¬£¸ê®Æ */
+/* è¨­å®šå¹«æ´¾è³‡æ–™ */
 bool set_club( CLUB_DATA * pClub, int type, char * pString, int iNumber )
 {
   PUSH_FUNCTION( "set_club" );
 
-  /* Á×§K¿ù»~ */
+  /* é¿å…éŒ¯èª¤ */
   if ( !pClub ) RETURN( FALSE );
 
   switch ( type )
   {
   default:
-    mudlog( LOG_DEBUG, "set_club: ¿ù»~ªº¿ï¶µ %d.", type );
+    mudlog( LOG_DEBUG, "set_club: éŒ¯èª¤çš„é¸é … %d.", type );
     break;
 
-  /* §ó§ïÀ°¬£­^¤å¦WºÙ */
+  /* æ›´æ”¹å¹«æ´¾è‹±æ–‡åç¨± */
   case CLUB_NAME:
 
-    /* ­Y¬OªÅ¦r¦ê«h¬O¿ù»~ */
+    /* è‹¥æ˜¯ç©ºå­—ä¸²å‰‡æ˜¯éŒ¯èª¤ */
     if ( !pString || *pString == '\x0' ) break;
 
     filter_ansi( pString );
@@ -2981,10 +2981,10 @@ bool set_club( CLUB_DATA * pClub, int type, char * pString, int iNumber )
     pClub->name = str_dup( pString );
     RETURN( TRUE );
 
-  /* §ó§ïÀ°¬£¤¤¤å¦WºÙ */
+  /* æ›´æ”¹å¹«æ´¾ä¸­æ–‡åç¨± */
   case CLUB_CNAME:
 
-    /* ­Y¬OªÅ¦r¦ê«h¬O¿ù»~ */
+    /* è‹¥æ˜¯ç©ºå­—ä¸²å‰‡æ˜¯éŒ¯èª¤ */
     if ( !pString || *pString == '\x0' ) break;
 
     filter_ansi( pString );
@@ -2993,7 +2993,7 @@ bool set_club( CLUB_DATA * pClub, int type, char * pString, int iNumber )
     pClub->cname = str_dup( pString );
     RETURN( TRUE );
 
-  /* §ó§ïÀ°¬£ª÷¿ú */
+  /* æ›´æ”¹å¹«æ´¾é‡‘éŒ¢ */
   case CLUB_MONEY:
 
     if ( iNumber >= 0 )
@@ -3002,10 +3002,10 @@ bool set_club( CLUB_DATA * pClub, int type, char * pString, int iNumber )
       RETURN( TRUE );
     }
 
-    mudlog( LOG_DEBUG, "set_club: ¼Æ¥Ø¤£¦X²z %d.", iNumber );
+    mudlog( LOG_DEBUG, "set_club: æ•¸ç›®ä¸åˆç† %d.", iNumber );
     break;
 
-  /* §ó§ïÀ°¬£ª¬ºA */
+  /* æ›´æ”¹å¹«æ´¾ç‹€æ…‹ */
   case CLUB_STATUS:
 
     if ( iNumber == CLUB_STATUS_COUNTERSIGN
@@ -3015,10 +3015,10 @@ bool set_club( CLUB_DATA * pClub, int type, char * pString, int iNumber )
       RETURN( TRUE );
     }
 
-    mudlog( LOG_DEBUG, "set_club: ¿ù»~ªºª¬ºA %d.", iNumber );
+    mudlog( LOG_DEBUG, "set_club: éŒ¯èª¤çš„ç‹€æ…‹ %d.", iNumber );
     break;
 
-  /* §ó§ïÀ°¬£®É¶¡ */
+  /* æ›´æ”¹å¹«æ´¾æ™‚é–“ */
   case CLUB_TIMER:
 
     if ( iNumber >= 0 )
@@ -3027,40 +3027,40 @@ bool set_club( CLUB_DATA * pClub, int type, char * pString, int iNumber )
       RETURN( TRUE );
     }
 
-    mudlog( LOG_DEBUG, "set_club: ®É¶¡¤£¦X²z %d.", iNumber );
+    mudlog( LOG_DEBUG, "set_club: æ™‚é–“ä¸åˆç† %d.", iNumber );
     break;
   }
 
   RETURN( FALSE );
 }
 
-/* ±oª¾À°¬£¤¤ªºÂ¾¦ì */
+/* å¾—çŸ¥å¹«æ´¾ä¸­çš„è·ä½ */
 char * is_club_class( CHAR_DATA * ch )
 {
   CLUB_DATA * pClub;
 
   PUSH_FUNCTION( "is_club_class" );
 
-  if ( !ch ) RETURN( "¥¼ª¾" );
-  if ( IS_NPC( ch ) || !( pClub = ch->club ) ) RETURN( "¹C¥Á" );
+  if ( !ch ) RETURN( "æœªçŸ¥" );
+  if ( IS_NPC( ch ) || !( pClub = ch->club ) ) RETURN( "éŠæ°‘" );
 
   if ( ch && pClub )
   {
     switch( name_in_club( ch->name, pClub ) )
     {
     default:              break;
-    case CLUB_MASTER:     RETURN( "À°¥D"   );
-    case CLUB_VICEMASTER: RETURN( "°ÆÀ°¥D" );
-    case CLUB_DOYEN:      RETURN( "ªø¦Ñ"   );
-    case CLUB_MEMBER:     RETURN( "À°²³"   );
-    case CLUB_FOLLOWER:   RETURN( "§Ì¤l"   );
+    case CLUB_MASTER:     RETURN( "å¹«ä¸»"   );
+    case CLUB_VICEMASTER: RETURN( "å‰¯å¹«ä¸»" );
+    case CLUB_DOYEN:      RETURN( "é•·è€"   );
+    case CLUB_MEMBER:     RETURN( "å¹«çœ¾"   );
+    case CLUB_FOLLOWER:   RETURN( "å¼Ÿå­"   );
     }
   }
 
-  RETURN( "¥¼ª¾" );
+  RETURN( "æœªçŸ¥" );
 }
 
-/* ±oª¾À°¬£¤¤ªºÂ¾¦ì */
+/* å¾—çŸ¥å¹«æ´¾ä¸­çš„è·ä½ */
 char * club_class( CHAR_DATA * ch, CLUB_DATA * pClub )
 {
   PUSH_FUNCTION( "club_class" );
@@ -3070,15 +3070,15 @@ char * club_class( CHAR_DATA * ch, CLUB_DATA * pClub )
     switch( name_in_club( ch->name, pClub ) )
     {
     default:              break;
-    case CLUB_MASTER:     RETURN( "À°¥D"   );
-    case CLUB_VICEMASTER: RETURN( "°ÆÀ°¥D" );
-    case CLUB_DOYEN:      RETURN( "ªø¦Ñ"   );
-    case CLUB_MEMBER:     RETURN( "À°²³"   );
-    case CLUB_FOLLOWER:   RETURN( "§Ì¤l"   );
+    case CLUB_MASTER:     RETURN( "å¹«ä¸»"   );
+    case CLUB_VICEMASTER: RETURN( "å‰¯å¹«ä¸»" );
+    case CLUB_DOYEN:      RETURN( "é•·è€"   );
+    case CLUB_MEMBER:     RETURN( "å¹«çœ¾"   );
+    case CLUB_FOLLOWER:   RETURN( "å¼Ÿå­"   );
     }
   }
 
-  RETURN( "¥¼ª¾" );
+  RETURN( "æœªçŸ¥" );
 }
 
 bool name_from_club( const char * name, bool fPrint )
@@ -3103,11 +3103,11 @@ bool name_from_club( const char * name, bool fPrint )
     {
       if ( fPrint )
       {
-        sprintf( buf, "ÀHµÛÀ°¥D%sªº®ø¥¢¡M%s\e[0m(%s)À°¬£¤]¨«¤J¤F¾ú¥v¡M"
-          "¦A¤]¨S¦³³o­ÓÀ°¬£¤F¡T"
+        sprintf( buf, "éš¨è‘—å¹«ä¸»%sçš„æ¶ˆå¤±ï¹%s\e[0m(%s)å¹«æ´¾ä¹Ÿèµ°å…¥äº†æ­·å²ï¹"
+          "å†ä¹Ÿæ²’æœ‰é€™å€‹å¹«æ´¾äº†ï¹—"
           , pClub->master, pClub->cname, pClub->name );
 
-        talk_channel_2( buf, CHANNEL_BULLETIN, "¤½§i" );
+        talk_channel_2( buf, CHANNEL_BULLETIN, "å…¬å‘Š" );
       }
 
       for ( member = char_list; member; member = member->next )
@@ -3147,7 +3147,7 @@ bool name_from_club( const char * name, bool fPrint )
     {
       if ( fPrint )
       {
-        sprintf( buf, "¥»À°°ÆÀ°¥D%s¤w·Ï­¸¦Ç·À¡M±o¥t¿ï½å¯à¤F¡T\n\r"
+        sprintf( buf, "æœ¬å¹«å‰¯å¹«ä¸»%så·²ç…™é£›ç°æ»…ï¹å¾—å¦é¸è³¢èƒ½äº†ï¹—\n\r"
           , pClub->vicemaster );
 
         send_to_club( buf, pClub );
@@ -3166,7 +3166,7 @@ bool name_from_club( const char * name, bool fPrint )
       {
         if ( fPrint )
         {
-          sprintf( buf, "À°¤ºªø¦Ñ%s¤£©¯Â÷¶}¤H¥@¡M¥L¤w¦¨¾ú¥v¾Ì¨Ñ«á½ú·q±¥¡T\n\r"
+          sprintf( buf, "å¹«å…§é•·è€%sä¸å¹¸é›¢é–‹äººä¸–ï¹ä»–å·²æˆæ­·å²æ†‘ä¾›å¾Œè¼©æ•¬æ‚¼ï¹—\n\r"
             , name );
 
           send_to_club( buf, pClub );
@@ -3186,8 +3186,8 @@ bool name_from_club( const char * name, bool fPrint )
       {
         if ( fPrint )
         {
-          sprintf( buf, "%s%s¤wÂ÷¶}§Ú­Ìªø¯v©ó¤U¡M­ü¡Mµh¥¢­^¤~¡T\n\r"
-            , pClub->member[loop] ? "À°²³" : "§Ì¤l", name );
+          sprintf( buf, "%s%så·²é›¢é–‹æˆ‘å€‘é•·çœ æ–¼ä¸‹ï¹å”‰ï¹ç—›å¤±è‹±æ‰ï¹—\n\r"
+            , pClub->member[loop] ? "å¹«çœ¾" : "å¼Ÿå­", name );
 
           send_to_club( buf, pClub );
         }

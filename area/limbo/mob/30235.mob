@@ -1,13 +1,13 @@
 Vnum            30235
 Name            zhu ge jing~
-ShortDesc       �Ѹ��@~
-LongDesc        �Ѹ��@(zhu ge jing)
+ShortDesc       諸葛瑾~
+LongDesc        諸葛瑾(zhu ge jing)
 ~
 Description
-�r�l��M�Ѹ��G���S�M�g�|�±��|�K�d�C
-���H���p�ѹ�M�]���`���]�v�H���C�]��
-����M�U�]�v����ަӵ��K�СC������d
-���צn�ӹ𦸥X�ϸ���C
+字子瑜﹐諸葛亮之兄﹐經魯肅推舉仕吳。
+為人敦厚老實﹐因此深受孫權信任。孫策
+死後﹐勸孫權順曹操而絕袁紹。後期為吳
+蜀修好而屢次出使蜀國。
 ~
 Sentinel        Yes
 Alignment       0
@@ -29,5 +29,5 @@ Multipile       100
 Migrate         0
 Sex             SEX_MALE
 Auction
-�j�a�n�M����ȤF�@���˳ơM�ӽ�@�Ǵ������T~
+大家好﹐剛剛賺了一筆裝備﹐來賣一些換獎金﹗~
 End

@@ -1,10 +1,10 @@
 Vnum            30374
 Name            queen fu~
-ShortDesc       ¥ñ¬Ó¦Z~
-LongDesc        ¥ñ¬Ó¦Z(queen fu)
+ShortDesc       ä¼çš‡å~
+LongDesc        ä¼çš‡å(queen fu)
 ~
 Description
-º~´Â³Ì«áªº¤@­Ó¬Ó¦Z¡C
+æ¼¢æœæœ€å¾Œçš„ä¸€å€‹çš‡åã€‚
 ~
 Sentinel        Yes
 Alignment       0
@@ -28,5 +28,5 @@ DodgeRatio      100
 Migrate         0
 Sex             SEX_FEMALE
 Auction
-§Ú¦Ñ¤½³£¦bÅÜ½æ®a²£¤F¡M§Ú¤]¶X¦¹®É½æ½æ´«²{ª÷¡C~
+æˆ‘è€å…¬éƒ½åœ¨è®Šè³£å®¶ç”¢äº†ï¹æˆ‘ä¹Ÿè¶æ­¤æ™‚è³£è³£æ›ç¾é‡‘ã€‚~
 End

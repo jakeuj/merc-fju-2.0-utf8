@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���F�קK���p�ߦӾɭP�������`�M�t�Υi�H�]�w���A�ͩR�Ȥ֩�Y�ӼƭȮɡM
-�N�۰����A�k�]�M�A�p��h�]�w�O�S�аѦ� [1;32mwimpy[0m �a�T
+為了避免不小心而導致不幸死亡﹐系統可以設定當你生命值少於某個數值時﹐
+就自動幫你逃跑﹐你如何去設定呢﹖請參考 [1;32mwimpy[0m 吧﹗
 
-�Ьd�ߡRwimpy
+請查詢﹕wimpy
 ~
 End

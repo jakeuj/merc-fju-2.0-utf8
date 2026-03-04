@@ -1,9 +1,9 @@
 Vnum            689
-Name            ���p�|���Y~
+Name            花園小徑盡頭~
 Description
-���Y�B���@�@���s�M�f�t�ۤp���y���M�n���O�A�٦��󭫭n���ƭn��
-�M�u�Q�N�o�ˤ@���ݦb�o�̡M�ˤ]���쪺�ܡC���L�A�٬ݨ���� (
-water ) ���G���@�ǥ��G�M�����D�O����F��C
+盡頭處有一作假山﹐搭配著小橋流水﹐要不是你還有更重要的事要做
+﹐真想就這樣一直待在這裡﹐倒也閒趣的很。不過你還看到水中 (
+water ) 似乎有一些光亮﹐不知道是什麼東西。
 
 ~
 SectorType      SECT_CITY
@@ -20,7 +20,7 @@ End
 #Keyword
 Keyword         water~
 Description
-�������G���G�G���F��M�O�A�Q���Q�n�h�M��(search)�ݬݡC
+水中似乎有亮亮的東西﹐令你十分想要去尋找(search)看看。
 ~
 End
 

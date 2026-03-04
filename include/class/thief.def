@@ -1,11 +1,11 @@
 Vnum            CLASS_THIEF
 Name            thief~
-Cname           µs  ¸é~
-Title           ©]¦æ°Êª«~
+Cname           ç›œ  è³Š~
+Title           å¤œè¡Œå‹•ç‰©~
 LowerLimit      10
 UpperLimit      L_HER
-LimitMsg        $Y$n»¡¹D¡R¡u§A¤£ª¾¹D´Nºâ¬O¤p°½§Ô­@¤]¦³·¥­­ªº¶Ü¡S¡v
-$n´N¤@­Ó°j¨­¡MÂ¶¨ì$N¨­«áµ¹¤©±j¤O¤@À»¡T$A$R~
+LimitMsg        $Y$nèªªé“ï¹•ã€Œä½ ä¸çŸ¥é“å°±ç®—æ˜¯å°å·å¿è€ä¹Ÿæœ‰æ¥µé™çš„å—ï¹–ã€
+$nå°±ä¸€å€‹è¿´èº«ï¹ç¹åˆ°$Nèº«å¾Œçµ¦äºˆå¼·åŠ›ä¸€æ“Šï¹—$A$R~
 Limit           2000
 Multiplier      35
 RebirthGold     0

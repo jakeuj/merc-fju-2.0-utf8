@@ -5,7 +5,7 @@ int          symbol_lookup      ( char * , int * );
 FILE_INFO    file_structure;
 
 
-/* §R°£ªÅªºÀÉ®× */
+/* åˆªé™¤ç©ºçš„æª”æ¡ˆ */
 void delete_null_file( FILE_INFO * pFile )
 {
 
@@ -21,7 +21,7 @@ void delete_null_file( FILE_INFO * pFile )
     remove( pFile->filename );
 
     print_string( 20 , 23 , LIGHTGREEN
-     , "ªÅªºÀÉ®×, ©Ò¥H§R°£, «ö¥ô¦óÁäÄ~Äò.\n" );
+     , "ç©ºçš„æª”æ¡ˆ, æ‰€ä»¥åˆªé™¤, æŒ‰ä»»ä½•éµç¹¼çºŒ.\n" );
 
     get_control_key();
   }
@@ -29,9 +29,9 @@ void delete_null_file( FILE_INFO * pFile )
   return;
 }
 
-/* ¿é¤JÀÉ¦W
+/* è¼¸å…¥æª”å
 
-¥²¶·¤Ş¤J°Ñ¼Æ¤@¦r¦ê lastname --> °ÆÀÉ¦W
+å¿…é ˆå¼•å…¥åƒæ•¸ä¸€å­—ä¸² lastname --> å‰¯æª”å
 
 */
 
@@ -41,18 +41,18 @@ void delete_null_file( FILE_INFO * pFile )
 #define FILE_PER_COL    ( 80 / PRINT_LEN )
 #define MAX_LINE        20
 
-/* Åª¨úÀÉ®×ªº¦W¦r , ¥L·|¶Ç¦^¤@­ÓÀÉ®×¸ê®Æªºµ²ºc.
-   ¥²¶·¤Ş¤J°Ñ¼Æ¤@¦r¦ê lastname °ÆÀÉ¦W .
+/* è®€å–æª”æ¡ˆçš„åå­— , ä»–æœƒå‚³å›ä¸€å€‹æª”æ¡ˆè³‡æ–™çš„çµæ§‹.
+   å¿…é ˆå¼•å…¥åƒæ•¸ä¸€å­—ä¸² lastname å‰¯æª”å .
 
-    ¶Ç¦^­È :
+    å‚³å›å€¼ :
 
-    filehandler ------> ÀÉ®×ªºÅª¨ú¸¹½X.
-    filename    ------> ÀÉ®×ªº¦W¦r.
-    information ------> 0 ÀÉ®×¤w¸g¦s¦b¦Ó¥B¥i¥HÅª¼g. ÂÂÀÉ®× .
-                        1 ÀÉ®×¤£¦s¦b¦ı¬O¥i¥HÅª¼g. ·sÀÉ®×.
-                       -1 ÀÉ®×¤£¦s¦b, ¥BµLªk¶}±Ò.
-                       -2 ÀÉ®×¦s¦b, ¦ı¬OµLªkÅª¼g.
-                       -3 ÀÉ®×¦s¦b, ¦ı¬OµLªk¶}±Ò.
+    filehandler ------> æª”æ¡ˆçš„è®€å–è™Ÿç¢¼.
+    filename    ------> æª”æ¡ˆçš„åå­—.
+    information ------> 0 æª”æ¡ˆå·²ç¶“å­˜åœ¨è€Œä¸”å¯ä»¥è®€å¯«. èˆŠæª”æ¡ˆ .
+                        1 æª”æ¡ˆä¸å­˜åœ¨ä½†æ˜¯å¯ä»¥è®€å¯«. æ–°æª”æ¡ˆ.
+                       -1 æª”æ¡ˆä¸å­˜åœ¨, ä¸”ç„¡æ³•é–‹å•Ÿ.
+                       -2 æª”æ¡ˆå­˜åœ¨, ä½†æ˜¯ç„¡æ³•è®€å¯«.
+                       -3 æª”æ¡ˆå­˜åœ¨, ä½†æ˜¯ç„¡æ³•é–‹å•Ÿ.
 
 */
 
@@ -68,10 +68,10 @@ FILE_INFO * get_file_name( char * lastname )
    DIR           * reading;
    struct dirent * next;
 
-   /* ²M°£¿Ã¹õ */
+   /* æ¸…é™¤è¢å¹• */
    clear_screen();
 
-   /* ¦C¦L¬ÛÃöªºÀÉ®× */
+   /* åˆ—å°ç›¸é—œçš„æª”æ¡ˆ */
    reading = opendir ( LOCAL_DIRECTORY );
 
    if ( reading )
@@ -91,17 +91,17 @@ FILE_INFO * get_file_name( char * lastname )
          print_string( cursor_x , cursor_y , LIGHTGREEN , next->d_name );
          loop++;
 
-         /* ¦Ò¼{¨ì´«¦æ */
+         /* è€ƒæ…®åˆ°æ›è¡Œ */
          if ( ( loop % FILE_PER_COL ) == 0 ) cursor_y++;
 
        }
      }
 
-     /* Ãö³¬ DIR ºŞ¹D */
+     /* é—œé–‰ DIR ç®¡é“ */
      closedir( reading );
    }
 
-   sprintf( filename , "½Ğ¿é¤JÀÉ¦W, °ÆÀÉ¦W¬O %s : " , lastname );
+   sprintf( filename , "è«‹è¼¸å…¥æª”å, å‰¯æª”åæ˜¯ %s : " , lastname );
    print_string( FILE_X_POS , FILE_Y_POS , LIGHTGREEN , filename );
 
    filename_info = &pString;
@@ -121,30 +121,30 @@ FILE_INFO * get_file_name( char * lastname )
 
    for ( loop = 0 ; loop < 100 ; loop++ ) filename[ loop ] = '\x0';
 
-   /* Åª¨úÀÉ®×ªº¦W¦rªº¦r¦ê */
+   /* è®€å–æª”æ¡ˆçš„åå­—çš„å­—ä¸² */
    get_string( filename_info );
 
-   /* ³]©wÀÉ®×µ²ºcªº¸ê®Æ */
+   /* è¨­å®šæª”æ¡ˆçµæ§‹çš„è³‡æ–™ */
    file_pointer = &file_structure;
    strcat( filename , lastname );
    strcpy( file_pointer->filename , filename );
    file_pointer->filehandler = NULL;
    file_pointer->information = 0;
 
-   /* ÀÉ®×¦WºÙ¬°ªÅ¦r¦ê */
+   /* æª”æ¡ˆåç¨±ç‚ºç©ºå­—ä¸² */
    if ( !strcmp( file_pointer->filename , lastname ) )
    {
      file_pointer->information = -4;
-     show_error( " §AªºÀÉ®×¦WºÙ¹Lµu, ¨t²Î¤£©Ó»{.\n" );
+     show_error( " ä½ çš„æª”æ¡ˆåç¨±éçŸ­, ç³»çµ±ä¸æ‰¿èª.\n" );
      clear_screen();
      return file_pointer;
    }
 
-   /* ´ú¸ÕÀÉ®×¬O§_¦s¦b -1 ¥Nªí¤£¦s¦b */
+   /* æ¸¬è©¦æª”æ¡ˆæ˜¯å¦å­˜åœ¨ -1 ä»£è¡¨ä¸å­˜åœ¨ */
    if ( access( filename , 0 ) == -1 )
    {
-     /* ¥ı¶}ÀÉ¸Õ¸Õ¬İ, ­YµLªk¶}ÀÉ«hµLªkÅª¼g, ¶Ç¦^ -1 */
-     /* ¥i¥H¶}ÀÉ«h¶Ç¦^ 1, ¥Nªí¤£¦s¦b¦ı¬O¥i¥HÅª¼g */
+     /* å…ˆé–‹æª”è©¦è©¦çœ‹, è‹¥ç„¡æ³•é–‹æª”å‰‡ç„¡æ³•è®€å¯«, å‚³å› -1 */
+     /* å¯ä»¥é–‹æª”å‰‡å‚³å› 1, ä»£è¡¨ä¸å­˜åœ¨ä½†æ˜¯å¯ä»¥è®€å¯« */
 
      if ( ( file_pointer->filehandler = fopen( filename , "a+" ) ) == NULL )
      {
@@ -158,11 +158,11 @@ FILE_INFO * get_file_name( char * lastname )
      }
    }
 
-   /* ÀÉ®×¤w¸g¦s¦bªº±¡§Î */
+   /* æª”æ¡ˆå·²ç¶“å­˜åœ¨çš„æƒ…å½¢ */
 
    else
    {
-     /* ­YµLªkÅª¼g«h¶Ç¦^ -2 , ¥NªíÀÉ®×¦s¦b¦ı¬OµLªkÅª¼g */
+     /* è‹¥ç„¡æ³•è®€å¯«å‰‡å‚³å› -2 , ä»£è¡¨æª”æ¡ˆå­˜åœ¨ä½†æ˜¯ç„¡æ³•è®€å¯« */
 
      if ( access( filename , 6 ) == -1 )
      {
@@ -171,7 +171,7 @@ FILE_INFO * get_file_name( char * lastname )
      }
      else
      {
-       /* ¶}ÀÉ¶}¶}¬İ, ¤£¦¨¥\¶Ç¦^ -3 , ¥NªíÀÉ®×¦s¦b¦ı¬OµLªk¶}ÀÉ */
+       /* é–‹æª”é–‹é–‹çœ‹, ä¸æˆåŠŸå‚³å› -3 , ä»£è¡¨æª”æ¡ˆå­˜åœ¨ä½†æ˜¯ç„¡æ³•é–‹æª” */
 
        if ( ( file_pointer->filehandler = fopen( filename , "r+" ) ) == NULL )
        {
@@ -182,16 +182,16 @@ FILE_INFO * get_file_name( char * lastname )
    }
 
   if (      file_pointer->information == -1 )
-    show_error( " §AªºÀÉ®×¤£¦s¦b, ¥BµLªk¶}±Ò.\n" );
+    show_error( " ä½ çš„æª”æ¡ˆä¸å­˜åœ¨, ä¸”ç„¡æ³•é–‹å•Ÿ.\n" );
 
   else if ( file_pointer->information == -2 )
-    show_error( " §AªºÀÉ®×¦s¦b¦ı¬OµLªkÅª¼g.\n" );
+    show_error( " ä½ çš„æª”æ¡ˆå­˜åœ¨ä½†æ˜¯ç„¡æ³•è®€å¯«.\n" );
 
   else if ( file_pointer->information == -3 )
-    show_error( " §AªºÀÉ®×¦s¦b, ¦ı¬OµLªk¶}±Ò.\n" );
+    show_error( " ä½ çš„æª”æ¡ˆå­˜åœ¨, ä½†æ˜¯ç„¡æ³•é–‹å•Ÿ.\n" );
 
   else if ( file_pointer->information == -4 )
-    show_error( " §AªºÀÉ®×¦WºÙ¹Lµu, ¨t²Î¤£©Ó»{.\n" );
+    show_error( " ä½ çš„æª”æ¡ˆåç¨±éçŸ­, ç³»çµ±ä¸æ‰¿èª.\n" );
 
   clear_screen();
 
@@ -205,7 +205,7 @@ FILE_INFO * get_file_name( char * lastname )
 #undef FILE_PER_COL
 #undef MAX_LINE
 
-/* ´ú¸Õ¬O§_¨ì¹FÀÉ®×©³ºİ */
+/* æ¸¬è©¦æ˜¯å¦åˆ°é”æª”æ¡ˆåº•ç«¯ */
 int fread_if_eof( FILE_INFO *pFile )
 {
   char character;
@@ -220,7 +220,7 @@ int fread_if_eof( FILE_INFO *pFile )
 }
 
 
-/* ´ú¸Õ¬O§_¹F¨ìÀÉ®×³o¤@¦æªº©³ºİ */
+/* æ¸¬è©¦æ˜¯å¦é”åˆ°æª”æ¡ˆé€™ä¸€è¡Œçš„åº•ç«¯ */
 int fread_if_eol( FILE_INFO *pFile )
 {
   char character;
@@ -241,7 +241,7 @@ int fread_if_eol( FILE_INFO *pFile )
   return FALSE;
 }
 
-/* Åª§¹¾ã¦æ */
+/* è®€å®Œæ•´è¡Œ */
 void fread_to_eol( FILE_INFO * pFile )
 {
 
@@ -264,14 +264,14 @@ void fread_to_eol( FILE_INFO * pFile )
 
 }
 
-/* ±qÀÉ®×¤¤Åª¨ú¤@­Ó³æ¦r */
+/* å¾æª”æ¡ˆä¸­è®€å–ä¸€å€‹å–®å­— */
 void fread_word( FILE_INFO * pFile , char * address )
 {
     char *pword;
     char character;
     int  len;
 
-    /* ¥ı§â«e­±ªºªÅ¥ÕÅª§¹ */
+    /* å…ˆæŠŠå‰é¢çš„ç©ºç™½è®€å®Œ */
 
     do
     {
@@ -305,7 +305,7 @@ void fread_word( FILE_INFO * pFile , char * address )
     return;
 }
 
-/* ±qÀÉ®×Åª¨ú¤@­Ó¼Æ¦r */
+/* å¾æª”æ¡ˆè®€å–ä¸€å€‹æ•¸å­— */
 
 int fread_number( FILE_INFO *pFile )
 {
@@ -392,7 +392,7 @@ int fread_number( FILE_INFO *pFile )
   return number;
 }
 
-/* Åª¨ú¦r¦ê±`¼Æ±M¥Îªº¨ç¼Æ */
+/* è®€å–å­—ä¸²å¸¸æ•¸å°ˆç”¨çš„å‡½æ•¸ */
 
 char *fread_alpha( FILE_INFO * pFile)
 {
@@ -435,7 +435,7 @@ char *fread_alpha( FILE_INFO * pFile)
   return NULL;
 }
 
-/* ÀË¬d¦r¦ê±`¼Æªí */
+/* æª¢æŸ¥å­—ä¸²å¸¸æ•¸è¡¨ */
 int  symbol_lookup( char * symbol, int * num )
 {
   int loop;
@@ -454,7 +454,7 @@ int  symbol_lookup( char * symbol, int * num )
   return FALSE;
 }
 
-/* ±qÀÉ®×¤¤Åª¨ú¤@­Ó¦r¦ê */
+/* å¾æª”æ¡ˆä¸­è®€å–ä¸€å€‹å­—ä¸² */
 void fread_string( FILE_INFO *pFile , STRING_INFO * pString )
 {
 
@@ -464,10 +464,10 @@ void fread_string( FILE_INFO *pFile , STRING_INFO * pString )
   int    fChinese;
   int    fLast;
 
-  /* ¥ı²M°£¥Øªºªº¦r¦ê */
+  /* å…ˆæ¸…é™¤ç›®çš„çš„å­—ä¸² */
   clear_string( pString );
 
-  /* ¥ı§âªÅ¥ÕÅª¨ú */
+  /* å…ˆæŠŠç©ºç™½è®€å– */
   do
   {
     if ( ( character = getc( pFile->filehandler ) ) == EOF )
@@ -489,10 +489,10 @@ void fread_string( FILE_INFO *pFile , STRING_INFO * pString )
   {
     fLast = fChinese;
 
-    /* Åª¨ú¦r¤¸¨ì¿ëÃÑ¦r¤¸¸Ì */
+    /* è®€å–å­—å…ƒåˆ°è¾¨è­˜å­—å…ƒè£¡ */
     character = getc( pFile->filehandler );
 
-    /* ¬O¤£¬O¤¤¤å¦r */
+    /* æ˜¯ä¸æ˜¯ä¸­æ–‡å­— */
     if ( fChinese )
     {
       fChinese = FALSE;
@@ -515,7 +515,7 @@ void fread_string( FILE_INFO *pFile , STRING_INFO * pString )
           return;
         }
 
-        /* Åª¨ú¤@­Ó¦r¤¸¨ì¯S©wªº¦ì§} */
+        /* è®€å–ä¸€å€‹å­—å…ƒåˆ°ç‰¹å®šçš„ä½å€ */
         *( pString->address + ( cursor_y * ( pString->x_len + 1 ) )
           + cursor_x - 1 ) = character;
 
@@ -551,7 +551,7 @@ void fread_string( FILE_INFO *pFile , STRING_INFO * pString )
             return;
           }
 
-          /* Åª¨ú¤@­Ó¦r¤¸¨ì¯S©wªº¦ì§} */
+          /* è®€å–ä¸€å€‹å­—å…ƒåˆ°ç‰¹å®šçš„ä½å€ */
           *( pString->address + ( cursor_y * ( pString->x_len + 1 ) )
             + cursor_x - 1 ) = character;
 

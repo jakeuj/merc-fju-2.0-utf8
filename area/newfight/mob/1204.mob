@@ -1,12 +1,12 @@
 Vnum            1204
 Name            shadow~
-ShortDesc       �ۼv~
-LongDesc        �ۼv(shadow).
+ShortDesc       幻影~
+LongDesc        幻影(shadow).
 ~
 Description
-�@�����F�ʦ~���Ǫ��M�������۱`�O���H��L�ΡM���ð_�ө�L��
-�M�s�H�ݥ����O�ۼv�M�M�b�H�����v�����O�ۼv�M�s�ߤW�c�ڳ���
-��ۼv�M�u�O�W�����C
+一隻活了百年的怪物﹐它的絕招常是殺人於無形﹐躲藏起來於無形
+﹐連人看它都是幻影﹐映在人腦的影像都是幻影﹐連晚上惡夢都夢
+到幻影﹐真是名附其實。
 ~
 Sentinel        Yes
 StayArea        Yes

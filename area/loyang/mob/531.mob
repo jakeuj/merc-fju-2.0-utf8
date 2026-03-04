@@ -1,12 +1,12 @@
 Vnum            531
 Name            loyang thing keeper~
-ShortDesc       �D�㩱�ѪO~
-LongDesc        ���D�㪺�D�㩱����Q(thing keeper)���b���B�C
+ShortDesc       道具店老板~
+LongDesc        營售道具的道具店老闆娘(thing keeper)站在此處。
 ~
 Description
-�L�@�y�l�����ҼˡM���A�ݤ@���N�Q���M���L���F�n�R�@�ǹ��ȳ~
-���Ϊ����~�M�٬O�ԤU��L�@�y���İʧa�T
-�A�i�H�������~( value )�M�άO�R( buy )��( sell )�B�C�X���~( list )�C
+他一臉奸瑣的模樣﹐讓你看一眼就討厭﹐不過為了要買一些對於旅途
+有用的物品﹐還是忍下扁他一頓的衝動吧﹗
+你可以估價物品( value )﹐或是買( buy )賣( sell )、列出物品( list )。
 ~
 Sentinel        Yes
 NoKill          Yes

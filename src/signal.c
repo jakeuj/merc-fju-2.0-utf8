@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -93,63 +93,63 @@ void signal_setup( void )
 
 void sig_hup( int sig )
 {
-  mudlog( LOG_EMERG , "°õ¦æ²×ºÝ¾÷¥¢¥h³s½u, ¾É­P¦æµ{¤¤Â_" );
+  mudlog( LOG_EMERG , "åŸ·è¡Œçµ‚ç«¯æ©Ÿå¤±åŽ»é€£ç·š, å°Žè‡´è¡Œç¨‹ä¸­æ–·" );
   return;
 }
 
 void sig_int( int sig )
 {
-  mudlog( LOG_EMERG , "²×ºÝ¾÷°õ¦æªÌ«ö¤U¤¤Â_Áä( Crtl-C )¾É­Pµ{¦¡²×¤î" );
+  mudlog( LOG_EMERG , "çµ‚ç«¯æ©ŸåŸ·è¡Œè€…æŒ‰ä¸‹ä¸­æ–·éµ( Crtl-C )å°Žè‡´ç¨‹å¼çµ‚æ­¢" );
   return;
 }
 
 void sig_term( int sig )
 {
-  mudlog( LOG_EMERG , "¥D¾÷¶i¦æÃö¾÷µ{§Ç, ¾É­P¦æµ{¤¤Â_" );
+  mudlog( LOG_EMERG , "ä¸»æ©Ÿé€²è¡Œé—œæ©Ÿç¨‹åº, å°Žè‡´è¡Œç¨‹ä¸­æ–·" );
   return;
 }
 
 void sig_ill( int sig )
 {
-  mudlog( LOG_EMERG , "°õ¦æ«DªkµwÅé«ü¥O¶°" );
+  mudlog( LOG_EMERG , "åŸ·è¡Œéžæ³•ç¡¬é«”æŒ‡ä»¤é›†" );
   return;
 }
 
 void sig_fpe( int sig )
 {
-  mudlog( LOG_EMERG , "¤À¥À¬°¹s©Î¬O¯BÂI¼Æ·¸¦ì" );
+  mudlog( LOG_EMERG , "åˆ†æ¯ç‚ºé›¶æˆ–æ˜¯æµ®é»žæ•¸æº¢ä½" );
   return;
 }
 
 void sig_segv( int sig )
 {
-  mudlog( LOG_EMERG , "¦s¨ú¤£¦Xªkªº¦ì§}, µ{¦¡¤£¥¿±`²×¤î" );
+  mudlog( LOG_EMERG , "å­˜å–ä¸åˆæ³•çš„ä½å€, ç¨‹å¼ä¸æ­£å¸¸çµ‚æ­¢" );
   return;
 }
 
 void sig_bus( int sig )
 {
-  mudlog( LOG_EMERG , "¦s¨ú¤£¦Xªkªº¦ì§}, µ{¦¡°Ñ¦Ò¤£·íÃä¬É¦ì§}" );
+  mudlog( LOG_EMERG , "å­˜å–ä¸åˆæ³•çš„ä½å€, ç¨‹å¼åƒè€ƒä¸ç•¶é‚Šç•Œä½å€" );
   return;
 }
 
 void sig_usr1( int sig )
 {
-  mudlog( LOG_EMERG, "¨Ï¥ÎªÌ¤¤Â_(1)" );
+  mudlog( LOG_EMERG, "ä½¿ç”¨è€…ä¸­æ–·(1)" );
   abort();
   return;
 }
 
 void sig_usr2( int sig )
 {
-  mudlog( LOG_INFO, "¨Ï¥ÎªÌ¤¤Â_(2)" );
+  mudlog( LOG_INFO, "ä½¿ç”¨è€…ä¸­æ–·(2)" );
   do_reboot( NULL , "" );
   return;
 }
 
 void sig_quit( int sig )
 {
-  mudlog( LOG_EMERG, "²×ºÝ¾÷¨Ï¥ÎªÌ«ö¤UÂ÷¶}Áä( Ctrl-\\ )¾É­Pµ{¦¡²×¤î" );
+  mudlog( LOG_EMERG, "çµ‚ç«¯æ©Ÿä½¿ç”¨è€…æŒ‰ä¸‹é›¢é–‹éµ( Ctrl-\\ )å°Žè‡´ç¨‹å¼çµ‚æ­¢" );
   return;
 }
 
@@ -196,12 +196,12 @@ void checkloop( int sig )
   extern int traceloop;
 
   signal( SIGVTALRM , checkloop );
-  if ( !traceloop ) mudlog( LOG_EMERG , "µ{¦¡³´¤JµL½a¦^°é, µ{¦¡¦Û°ÊÃö³¬." );
+  if ( !traceloop ) mudlog( LOG_EMERG , "ç¨‹å¼é™·å…¥ç„¡çª®å›žåœˆ, ç¨‹å¼è‡ªå‹•é—œé–‰." );
   traceloop = 0;
   return;
 }
 
-/* §â¨ç¼Æ¦W¦r±À¤J°ïÅ| */
+/* æŠŠå‡½æ•¸åå­—æŽ¨å…¥å †ç–Š */
 void push_function( char * str )
 {
   if ( internal_debug && !SystemCrash )
@@ -222,7 +222,7 @@ void pop_function( void )
       if ( ++FunctionPointer > MAX_DEBUG - 1 )
       {
         SystemCrash = TRUE;
-        mudlog( LOG_STACK , "°£¿ù°ïÅ|·¸¦ì(POP), µ{¦¡¦Û°ÊÃö³¬." );
+        mudlog( LOG_STACK , "é™¤éŒ¯å †ç–Šæº¢ä½(POP), ç¨‹å¼è‡ªå‹•é—œé–‰." );
       }
     }
     else
@@ -240,8 +240,8 @@ void close_all_socket( void )
 
   PUSH_FUNCTION( "close_all_socket" );
 
-  /* Ãö³¬©Ò¦³ºô»Ú³s½u */
-  mudlog( LOG_INFO, "¹Á¸ÕÃö³¬©Ò¦³ºô»Ú³s½u" );
+  /* é—œé–‰æ‰€æœ‰ç¶²éš›é€£ç·š */
+  mudlog( LOG_INFO, "å˜—è©¦é—œé–‰æ‰€æœ‰ç¶²éš›é€£ç·š" );
 
   for ( pNet = net_list; pNet; pNet = pNet->next )
   {
@@ -252,7 +252,7 @@ void close_all_socket( void )
       close_net_socket( pNet, NET_EXPORT );
   }
 
-  /* ¥ý¨ú®ø©ç½æ */
+  /* å…ˆå–æ¶ˆæ‹è³£ */
   if ( auction_info && auction_info->seller )
   {
     if ( auction_info->buyer )
@@ -270,56 +270,56 @@ void close_all_socket( void )
     }
 
     init_auction();
-    mudlog( LOG_INFO , "¥¿±`Ãö³¬©ç½æ¸ê®Æµ²ºc." );
+    mudlog( LOG_INFO , "æ­£å¸¸é—œé–‰æ‹è³£è³‡æ–™çµæ§‹." );
   }
   else
   {
-    mudlog( LOG_INFO , "¨S¦³©ç½æ¸ê®Æ, ¤£»Ý­nÃö³¬" );
+    mudlog( LOG_INFO , "æ²’æœ‰æ‹è³£è³‡æ–™, ä¸éœ€è¦é—œé–‰" );
   }
 
-  /* ¦ì§}¸ê°TÀÉ®×¦sÀÉ */
-  mudlog( LOG_INFO , "Àx¦s©Ò¦³¦ì§}¸ê®Æ" );
+  /* ä½å€è³‡è¨Šæª”æ¡ˆå­˜æª” */
+  mudlog( LOG_INFO , "å„²å­˜æ‰€æœ‰ä½å€è³‡æ–™" );
   do_address( NULL , "!save" );
 
-  /* ªÑ²¼ÀÉ®×¦sÀÉ */
-  mudlog( LOG_INFO, "Àx¦sªÑ²¼¸ê®ÆÀÉ®×" );
+  /* è‚¡ç¥¨æª”æ¡ˆå­˜æª” */
+  mudlog( LOG_INFO, "å„²å­˜è‚¡ç¥¨è³‡æ–™æª”æ¡ˆ" );
   save_stock();
 
-  mudlog( LOG_INFO , "¹Á¸ÕÀx¦s©Ò¦³ªºª±®a¸ê®Æ." );
+  mudlog( LOG_INFO , "å˜—è©¦å„²å­˜æ‰€æœ‰çš„çŽ©å®¶è³‡æ–™." );
 
   for ( ch = char_list; ch; ch = ch->next )
   {
     if ( !verify_char( ch ) || IS_NPC( ch ) ) continue;
 
-    mudlog( LOG_INFO , "¹Á¸Õ¦^¦sª±®a %s ªº¸ê®Æ" , ch->name );
+    mudlog( LOG_INFO , "å˜—è©¦å›žå­˜çŽ©å®¶ %s çš„è³‡æ–™" , ch->name );
     save_char_obj( ch, SAVE_FILE );
     extract_char( ch, TRUE );
     if ( ch->desc ) close_socket( ch->desc );
   }
 
-  mudlog( LOG_INFO , "¨t²Î¦¨¥\\¦^¦sª±®a¸ê®Æ." );
+  mudlog( LOG_INFO , "ç³»çµ±æˆåŠŸ\å›žå­˜çŽ©å®¶è³‡æ–™." );
 
-  /* Àx¦sÀ°·|¸ê®Æ */
-  mudlog( LOG_INFO, "¹Á¸ÕÀx¦sÀ°·|¸ê®Æ." );
+  /* å„²å­˜å¹«æœƒè³‡æ–™ */
+  mudlog( LOG_INFO, "å˜—è©¦å„²å­˜å¹«æœƒè³‡æ–™." );
   save_club();
 
-  /* ¾ã²zª©­± */
-  mudlog( LOG_INFO, "¹Á¸Õ§R°£¹L¶qªº¤å³¹." );
+  /* æ•´ç†ç‰ˆé¢ */
+  mudlog( LOG_INFO, "å˜—è©¦åˆªé™¤éŽé‡çš„æ–‡ç« ." );
   board_update();
 
-  /* ²M°£¹L¶qªº«H¥ó */
+  /* æ¸…é™¤éŽé‡çš„ä¿¡ä»¶ */
   notes_update();
 
-  /* ¨ø¤U¦@¨É°O¾ÐÅé */
+  /* å¸ä¸‹å…±äº«è¨˜æ†¶é«” */
   delete_share_memory( shmid );
 
-  /* ²M°£°O¿ý½w½Ä°Ï */
+  /* æ¸…é™¤è¨˜éŒ„ç·©è¡å€ */
   output_buffer();
 
   RETURN_NULL();
 }
 
-/* ÀËÅç¤Hª«¬O§_¯uªº¦s¦b */
+/* æª¢é©—äººç‰©æ˜¯å¦çœŸçš„å­˜åœ¨ */
 bool verify_char( CHAR_DATA * ch )
 {
   if ( !ch
@@ -331,7 +331,7 @@ bool verify_char( CHAR_DATA * ch )
   return( TRUE );
 }
 
-/* ÀËÅçª««~¬O§_¯uªº¦s¦b */
+/* æª¢é©—ç‰©å“æ˜¯å¦çœŸçš„å­˜åœ¨ */
 bool verify_obj( OBJ_DATA * obj )
 {
   PUSH_FUNCTION( "verify_obj" );
@@ -340,7 +340,7 @@ bool verify_obj( OBJ_DATA * obj )
   RETURN( TRUE );
 }
 
-/* ÀËÅç´y­zªí¬O§_¯uªº¦s¦b */
+/* æª¢é©—æè¿°è¡¨æ˜¯å¦çœŸçš„å­˜åœ¨ */
 bool verify_desc( DESCRIPTOR_DATA * desc )
 {
   PUSH_FUNCTION( "verify_desc" );
@@ -366,7 +366,7 @@ FUNCTION( do_prof )
 
   if ( ProfCycle <= 0 )
   {
-    act( "$t¥Ø«e¨S¦³¨Ï¥Î¶q²Î­p¥\\¯à¡C", ch, mud_name, NULL, TO_CHAR );
+    act( "$tç›®å‰æ²’æœ‰ä½¿ç”¨é‡çµ±è¨ˆåŠŸ\èƒ½ã€‚", ch, mud_name, NULL, TO_CHAR );
     RETURN_NULL();
   }
 

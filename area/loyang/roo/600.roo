@@ -1,8 +1,8 @@
 Vnum            600
-Name            �ħ�~
+Name            藥局~
 Description
-�@�i�즹���M�A�D��@�Ѩ���Ĩ��ĨӡM�ݨӫK�O�ħ��F�M���f��
-�O�n��ڡC
+一進到此間﹐你聞到一股刺鼻的藥味衝來﹐看來便是藥局了﹐有病還
+是要醫啊。
 
 ~
 SectorType      SECT_CITY
@@ -17,11 +17,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         �ө�~
+Keyword         商店~
 End
 
 #Enquire
-Keyword         �Ĥ���~
+Keyword         藥水店~
 End
 
 End

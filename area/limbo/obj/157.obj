@@ -1,10 +1,10 @@
 Vnum            157
 Name            blood pill~
-ShortDesc       ¤û¶ÀºÜ¦å¤¦~
+ShortDesc       ç‰›é»ƒç«­è¡€ä¸¹~
 Description
-¤@²É¥Ñ¤û¶À·Ò»sªº¸Ñ¬r¤¦ÃÄ(blood pill)¡C
+ä¸€ç²’ç”±ç‰›é»ƒç…‰è£½çš„è§£æ¯’ä¸¹è—¥(blood pill)ã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

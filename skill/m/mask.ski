@@ -1,7 +1,7 @@
 Name            mask~
-Cname           ©ö®e³N~
+Cname           æ˜“å®¹è¡“~
 Slot            SLOT_MASK
-Msgoff          §A¤S«ì´_¨ì¥H«eªº­±»ª¡C~
+Msgoff          ä½ åˆæ¢å¾©åˆ°ä»¥å‰çš„é¢è²Œã€‚~
 Function        skill_mask~
 Position        POS_STANDING
 Type            TAR_CHAR_SELF

@@ -27,7 +27,7 @@ ROOM_INDEX_DATA *       room_index_data_free;
 EXIT_DATA *             exit_data_free;
 EDIT_ROOM_DATA *        edit_room_data_free;
 
-/* §â pRoomIndex ³o¶¡©Ğ¶¡ªº dir ¥X¤f§R°£ */
+/* æŠŠ pRoomIndex é€™é–“æˆ¿é–“çš„ dir å‡ºå£åˆªé™¤ */
 bool del_exit( ROOM_INDEX_DATA *pRoomIndex, int dir )
 {
     EXIT_DATA *pexit;
@@ -152,7 +152,7 @@ void fwrite_edit_area( ROOM_INDEX_DATA *pRoomIndex, FILE *fp )
     fprintf( fp, "S\n");
 }
 
-/* §â pRoomIndex ³o¶¡©Ğ¶¡ªº¥X¤f³s¨ì vnum ¨Ó */
+/* æŠŠ pRoomIndex é€™é–“æˆ¿é–“çš„å‡ºå£é€£åˆ° vnum ä¾† */
 
 void set_exit( ROOM_INDEX_DATA *pRoomIndex, int vnum, int dir )
 {
@@ -194,19 +194,19 @@ void do_addroom( CHAR_DATA * ch, char *argument)
 
     if( argument == NULL )
     {
-        send_to_char("®æ¦¡: addroom <vnum> \n\r", ch);
+        send_to_char("æ ¼å¼: addroom <vnum> \n\r", ch);
         return;
     }
     if( !is_number( argument ) )
     {
-        send_to_char(" vnum ½Ğ¿é¤J¼Æ¦r...\n\r", ch);
+        send_to_char(" vnum è«‹è¼¸å…¥æ•¸å­—...\n\r", ch);
         return;
     }
 
     vnum = atoi( argument );
     if( get_room_index( vnum ) != NULL )
     {
-        send_to_char("³o­Ó¸¹½X¤w¸g¦s¦b¤F..\n\r", ch );
+        send_to_char("é€™å€‹è™Ÿç¢¼å·²ç¶“å­˜åœ¨äº†..\n\r", ch );
         return;
     }
 
@@ -250,19 +250,19 @@ void do_delroom( CHAR_DATA * ch, char *argument)
 
     if( argument == NULL )
     {
-        send_to_char("®æ¦¡: delroom <vnum> \n\r", ch);
+        send_to_char("æ ¼å¼: delroom <vnum> \n\r", ch);
         return;
     }
     if( !is_number( argument ) )
     {
-        send_to_char(" vnum ½Ğ¿é¤J¼Æ¦r...\n\r", ch);
+        send_to_char(" vnum è«‹è¼¸å…¥æ•¸å­—...\n\r", ch);
         return;
     }
 
     vnum = atoi( argument );
     if( ( pRoomIndex = get_room_index( vnum ) ) == NULL )
     {
-        send_to_char("³o­Ó¸¹½X¨Ã¤£¦s¦b.\n\r", ch );
+        send_to_char("é€™å€‹è™Ÿç¢¼ä¸¦ä¸å­˜åœ¨.\n\r", ch );
         return;
     }
     location = ch->in_room;
@@ -299,7 +299,7 @@ void do_delroom( CHAR_DATA * ch, char *argument)
             if( pRoomHash == pRoomIndex )
             {
                 char buf[100];
-                sprintf( buf, " §R°£©Ğ¶¡: %s %d! \n\r", pRoomHash->name,
+                sprintf( buf, " åˆªé™¤æˆ¿é–“: %s %d! \n\r", pRoomHash->name,
                                         pRoomHash->vnum);
                 send_to_char( buf, ch );
                 break;
@@ -317,10 +317,10 @@ void do_delroom( CHAR_DATA * ch, char *argument)
         EDIT_ROOM_DATA *pRoomTmp;
         for( pRoom = pEdit_room; pRoom->next != NULL
                       && pRoom->next->room != pRoomIndex; pRoom = pRoom->next )
-                        ; /* ¤@¦æ */
+                        ; /* ä¸€è¡Œ */
         if( pRoom->next == NULL )
         {
-            send_to_char(" ©Ğ¶¡¤£¦s¦b !! \n\r", ch );
+            send_to_char(" æˆ¿é–“ä¸å­˜åœ¨ !! \n\r", ch );
             return;
         }
         else
@@ -362,7 +362,7 @@ void do_editroom( CHAR_DATA * ch, char *argument)
 
     if( command[0] == '\0' || pArg[0] == '\0' )
     {
-        send_to_char("®æ¦¡: editroom <command> <argumet> \n\r", ch);
+        send_to_char("æ ¼å¼: editroom <command> <argumet> \n\r", ch);
         return;
     }
 
@@ -409,7 +409,7 @@ void do_editroom( CHAR_DATA * ch, char *argument)
             }
             else
             {
-                sprintf( buf, " [ %6d ]  ©|¥¼©w¦W\n\r", pRoomIndex->room->vnum);
+                sprintf( buf, " [ %6d ]  å°šæœªå®šå\n\r", pRoomIndex->room->vnum);
                 send_to_char( buf , ch);
             }
         }
@@ -422,7 +422,7 @@ void do_editroom( CHAR_DATA * ch, char *argument)
 
         if( str_cmp( pArg, "iamsure") )
         {
-            send_to_char("¦pªG¯uªº­n²M°£©Ò¦³½s¿è¹Lªº¸ê®Æ: editroom clear iamsure\n\r", ch);
+            send_to_char("å¦‚æœçœŸçš„è¦æ¸…é™¤æ‰€æœ‰ç·¨è¼¯éçš„è³‡æ–™: editroom clear iamsure\n\r", ch);
             return;
         }
         for( pEdit = pEdit_room; pEdit != NULL; pEdit = pEdit_next)
@@ -432,7 +432,7 @@ void do_editroom( CHAR_DATA * ch, char *argument)
             do_delroom(ch,buf);
         }
     }
-    send_to_char("©R¥O¤£²Å¦X...\n\r", ch);
+    send_to_char("å‘½ä»¤ä¸ç¬¦åˆ...\n\r", ch);
     return;
 }
 
@@ -450,12 +450,12 @@ void do_saveroom( CHAR_DATA * ch, char *argument)
     fclose(fpReserve);
     if ( ( fp = fopen( strsave, "w" ) ) == NULL )
     {
-        send_to_char("¶}ÀÉ¿ù»~!! \n\r", ch );
+        send_to_char("é–‹æª”éŒ¯èª¤!! \n\r", ch );
         return;
     }
     if( pEdit_room == NULL )
     {
-        send_to_char("¥Ø«e¨S¦³½s¿è¤¤ªº°Ï°ì...\n\r", ch);
+        send_to_char("ç›®å‰æ²’æœ‰ç·¨è¼¯ä¸­çš„å€åŸŸ...\n\r", ch);
         return;
     }
     fprintf( fp, "#ROOMS\n");
@@ -468,7 +468,7 @@ void do_saveroom( CHAR_DATA * ch, char *argument)
     return;
 }
 
-/* Âù¦V³]©w */
+/* é›™å‘è¨­å®š */
 void do_addexit( CHAR_DATA * ch, char *argument)
 {
     char direct[MAX_INPUT_LENGTH];
@@ -480,12 +480,12 @@ void do_addexit( CHAR_DATA * ch, char *argument)
 
     if( direct[0] == '\0' || pVnum == NULL )
     {
-        send_to_char("®æ¦¡: addexit <direct> <vnum> \n\r", ch);
+        send_to_char("æ ¼å¼: addexit <direct> <vnum> \n\r", ch);
         return;
     }
     if( !is_number( pVnum ) )
     {
-        send_to_char(" vnum ½Ğ¿é¤J¼Æ¦r...\n\r", ch);
+        send_to_char(" vnum è«‹è¼¸å…¥æ•¸å­—...\n\r", ch);
         return;
     }
 
@@ -505,17 +505,17 @@ void do_addexit( CHAR_DATA * ch, char *argument)
         dir = 5;
     else
     {
-        send_to_char("§A·Q¥[¨ì¨º­Ó¤è¦V¥h°Ú..? \n\r", ch);
+        send_to_char("ä½ æƒ³åŠ åˆ°é‚£å€‹æ–¹å‘å»å•Š..? \n\r", ch);
         return;
     }
     if(  get_room_index( vnum ) == NULL )
     {
-        send_to_char(" ±ı³s¥hªº©Ğ¶¡¤£¦s¦b ! \n\r", ch);
+        send_to_char(" æ¬²é€£å»çš„æˆ¿é–“ä¸å­˜åœ¨ ! \n\r", ch);
         return;
     }
     if ( ch->in_room->exit[dir] != NULL )
     {
-        send_to_char("³o­Ó¤è¦V¤w¸g¦s¦b¤F...\n\r", ch );
+        send_to_char("é€™å€‹æ–¹å‘å·²ç¶“å­˜åœ¨äº†...\n\r", ch );
         return;
     }
 
@@ -549,7 +549,7 @@ void do_addexit( CHAR_DATA * ch, char *argument)
     send_to_char("OK!\n\r",ch);
 }
 
-/* ¥u°µ³æ¦V§R°£¦Ó¤£°µÂù¦V§R°£ */
+/* åªåšå–®å‘åˆªé™¤è€Œä¸åšé›™å‘åˆªé™¤ */
 void do_delexit( CHAR_DATA * ch, char *argument)
 {
     char direct[MAX_INPUT_LENGTH];
@@ -560,7 +560,7 @@ void do_delexit( CHAR_DATA * ch, char *argument)
 
     if( direct[0] == '\0')
     {
-        send_to_char("®æ¦¡: delexit <direct>\n\r", ch);
+        send_to_char("æ ¼å¼: delexit <direct>\n\r", ch);
         return;
     }
     if( !str_prefix( direct, "north" ) )
@@ -577,12 +577,12 @@ void do_delexit( CHAR_DATA * ch, char *argument)
         dir = 5;
     else
     {
-        send_to_char("§A·Q§R°£¨º­Ó¤è¦Vªº¥X¤f°Ú..? \n\r", ch);
+        send_to_char("ä½ æƒ³åˆªé™¤é‚£å€‹æ–¹å‘çš„å‡ºå£å•Š..? \n\r", ch);
         return;
     }
     if ( ch->in_room->exit[dir] == NULL )
     {
-        send_to_char("³o­Ó¤è¦V¨Ã¤£¦s¦b...\n\r", ch );
+        send_to_char("é€™å€‹æ–¹å‘ä¸¦ä¸å­˜åœ¨...\n\r", ch );
         return;
     }
 
@@ -591,7 +591,7 @@ void do_delexit( CHAR_DATA * ch, char *argument)
     send_to_char("OK!\n\r",ch);
 }
 
-/* ½u¤W¸ü¤J°Ï°ìÀÉ®× */
+/* ç·šä¸Šè¼‰å…¥å€åŸŸæª”æ¡ˆ */
 void do_loadarea( CHAR_DATA * ch, char *argument)
 {
     char areafile[MAX_INPUT_LENGTH];
@@ -602,22 +602,22 @@ void do_loadarea( CHAR_DATA * ch, char *argument)
 
     if( areafile[0] == '\0')
     {
-        send_to_char("®æ¦¡: loadarea <areafile name>\n\r", ch);
+        send_to_char("æ ¼å¼: loadarea <areafile name>\n\r", ch);
         return;
     }
     if( ( fp = fopen(areafile,"r") ) == NULL )
     {
-        send_to_char("³o­ÓÀÉ®×¤£¦s¦b!\n\r", ch);
+        send_to_char("é€™å€‹æª”æ¡ˆä¸å­˜åœ¨!\n\r", ch);
         return;
     }
     if( load_area_file(ch, fp ) != FALSE )
     {
-        send_to_char("¸ü¤J¦¨¥\\!!\n\r",ch);
+        send_to_char("è¼‰å…¥æˆåŠŸ\!!\n\r",ch);
         return;
     }
     else
     {
-        send_to_char("¸ü¤J¥¢±Ñ!!\n\r", ch);
+        send_to_char("è¼‰å…¥å¤±æ•—!!\n\r", ch);
         return;
     }
     fclose(fp);
@@ -635,19 +635,19 @@ void do_copyroom( CHAR_DATA * ch, char *argument)
 
     if( source[0] == '\0' || pTarget[0] == '\0' )
     {
-        send_to_char("®æ¦¡: copyroom <source vnum> <target vnum> \n\r", ch);
+        send_to_char("æ ¼å¼: copyroom <source vnum> <target vnum> \n\r", ch);
         return;
     }
     if( !is_number(source) || !is_number(pTarget) )
     {
-        send_to_char("®æ¦¡: copyroom <source vnum> <target vnum> \n\r", ch);
+        send_to_char("æ ¼å¼: copyroom <source vnum> <target vnum> \n\r", ch);
         return;
     }
     s_vnum = atoi(source);
     t_vnum = atoi(pTarget);
     if( ( pRoomSource = get_room_index( s_vnum ) ) == NULL )
     {
-        send_to_char("¨Ó·½©Ğ¶¡¨Ã¤£¦s¦b.\n\r",ch);
+        send_to_char("ä¾†æºæˆ¿é–“ä¸¦ä¸å­˜åœ¨.\n\r",ch);
         return;
     }
     if( ( pRoomTarget = get_room_index( t_vnum ) ) == NULL )
@@ -655,7 +655,7 @@ void do_copyroom( CHAR_DATA * ch, char *argument)
         do_addroom(ch, pTarget);
         if( ( pRoomTarget = get_room_index( t_vnum) ) == NULL )
         {
-            send_to_char("µLªk¶}±Ò¥Øªº©Ğ¶¡.\n\r", ch);
+            send_to_char("ç„¡æ³•é–‹å•Ÿç›®çš„æˆ¿é–“.\n\r", ch);
             return;
         }
     }

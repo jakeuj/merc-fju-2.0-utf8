@@ -1,7 +1,7 @@
 Vnum            603
-Name            Εί§½~
+Name            ι‘£ε±€~
 Description
-¤@¶΅»α¤jªΊΕί§½΅M΄£¨Ρ§A¦s¨ϊΈΛ³ΖªΊªA°Θ΅C
+δΈ€ι–“ι —ε¤§η„ι‘£ε±€οΉζδΎ›δ½ ε­ε–θ£ε‚™η„ζε‹™γ€‚
 
 ~
 SectorType      SECT_CITY
@@ -16,11 +16,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         Εί§½~
+Keyword         ι‘£ε±€~
 End
 
 #Enquire
-Keyword         Γπ§½~
+Keyword         ιΆε±€~
 End
 
 End

@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-�C�ӤH���|���o�˪��ðݡM�쩳�����ǫ��O�i�H���ڿ�J�O�S�S���Y�M�A�u�ݿ�J
-[1;32mcommand[0m�M�t�η|�i�D�A�Ҧ����O�H�Τ��媺²��ѻ��C�Y�O�A��Y�ӫ��O�����x�M
-�A�i�H�d��([1;32mhelp[0m�B[1;32mman[0m) �L���ϥΤ�k�C
+每個人都會有這樣的疑問﹐到底有哪些指令可以讓我輸入呢﹖沒關係﹐你只需輸入
+[1;32mcommand[0m﹐系統會告訴你所有指令以及中文的簡單解說。若是你對某個指令不熟悉﹐
+你可以查詢([1;32mhelp[0m、[1;32mman[0m) 他的使用方法。
 
-�Ьd�ߡR command�Bhelp�Bman
+請查詢﹕ command、help、man
 ~
 End

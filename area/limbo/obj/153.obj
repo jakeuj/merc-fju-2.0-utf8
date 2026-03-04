@@ -1,11 +1,11 @@
 Vnum            153
 Name            tinny revivify pill~
-ShortDesc       ¤pÁÙ¤¦~
+ShortDesc       å°é‚„ä¸¹~
 Description
-¤@Áû¤p°Ñ¤Y(tinny revivify pill)¡M¥i¥Î¨Ó¬¡ºë¸É¦å¡M
-¥u­n¦Y¤U(eat pill)¥¦´N¥i¥H¤F¡C
+ä¸€é¡†å°åƒä¸¸(tinny revivify pill)ï¹å¯ç”¨ä¾†æ´»ç²¾è£œè¡€ï¹
+åªè¦åƒä¸‹(eat pill)å®ƒå°±å¯ä»¥äº†ã€‚
 ~
-Unit            ²É~
+Unit            ç²’~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

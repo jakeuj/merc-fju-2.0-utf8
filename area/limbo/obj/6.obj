@@ -1,9 +1,9 @@
 Vnum            6
 Name            head~
-ShortDesc       %sªºÀYÆ`~
+ShortDesc       %sçš„é ­é¡±~
 Description
-%sªºÀYÆ`(head)±¼¸¨¦b¦¹¡C~
-Unit            Áû~
+%sçš„é ­é¡±(head)æ‰è½åœ¨æ­¤ã€‚~
+Unit            é¡†~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           0

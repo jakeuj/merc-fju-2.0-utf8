@@ -1,7 +1,7 @@
 /***************************************************************************
-*  �o�O�ѻ��j�ƾǨt�s�@�s�Ҽ��g���C���M�D��� merc ��s�ӨӡM�Ҧ������v    *
-*  �N�|�Q�O�d�M���w��j�a�ק�M���ڭ̤]�Ʊ�A�̤]�ണ�ѵ��j�a�M�Ҧ�����    *
-*  �~�欰�N���Q���\�C                                                      *
+*  這是由輔大化學系製作群所撰寫的遊戲﹐主體由 merc 改編而來﹐所有的版權    *
+*  將會被保留﹐但歡迎大家修改﹐但我們也希望你們也能提供給大家﹐所有的商    *
+*  業行為將不被允許。                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -21,7 +21,7 @@ bool    check_weapon      args( ( CHAR_DATA *, int, bool ) );
 {                                                 \
   if ( !character )                               \
   {                                               \
-    mudlog( LOG_DEBUG , "�ˬd�ޯ�, ch �O�Ū�." ); \
+    mudlog( LOG_DEBUG , "檢查技能, ch 是空的." ); \
     RETURN( FALSE );                              \
   }                                               \
 }
@@ -46,7 +46,7 @@ bool check_hand( CHAR_DATA * ch , int type )
   RETURN( FALSE );
 }
 
-/* �T�w�O�_�i�H�A���� */
+/* 確定是否可以再攻擊 */
 bool check_continue( CHAR_DATA * ch, CHAR_DATA * victim )
 {
   PUSH_FUNCTION( "check_continue" );
@@ -75,7 +75,7 @@ bool check_same_weapon( CHAR_DATA * ch, bool fPrint )
     && objl->item_type == ITEM_WEAPON
     && objr->value[3] != objl->value[3] )
   {
-    if ( fPrint ) act( "$n�٤��|������Z���M�L�k�I�i�ۦ��T"
+    if ( fPrint ) act( "$n還不會雙手持武器﹐無法施展招式﹗"
       , ch, NULL, NULL, TO_CHAR );
     RETURN( FALSE );
   }
@@ -83,12 +83,12 @@ bool check_same_weapon( CHAR_DATA * ch, bool fPrint )
   RETURN( TRUE );
 }
 
-/* �ˬd�Z�����A�O�_���T */
+/* 檢查武器型態是否正確 */
 bool check_weapon( CHAR_DATA * ch, int type, bool fPrint )
 {
   PUSH_FUNCTION( "check_weapon" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
   switch( type )
@@ -96,133 +96,133 @@ bool check_weapon( CHAR_DATA * ch, int type, bool fPrint )
   default:
     RETURN( FALSE );
 
-  /* �Ť�ۦ� */
+  /* 空手招式 */
   case WEAPON_HAND:
 
     if ( check_hand( ch , WEAPON_ALL ) )
     {
       if ( fPrint )
-        send_to_char( "�o�ۦ����ݪŤ�M�A�L�k�I�i�o�ӧޯ�T\n\r" , ch );
+        send_to_char( "這招式必需空手﹐你無法施展這個技能﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���C */
+  /* 檢查是否拿劍 */
   case WEAPON_SWORD:
 
     if ( !check_hand( ch, WEAPON_SWORD ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n���C�~��I�i�C�N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿劍才能施展劍術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���M */
+  /* 檢查是否拿刀 */
   case WEAPON_BLADE:
 
     if ( !check_hand( ch, WEAPON_BLADE ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n���M�~��I�i�M�N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿刀才能施展刀術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���P�� */
+  /* 檢查是否拿匕首 */
   case WEAPON_DAGGER:
 
     if ( !check_hand( ch, WEAPON_DAGGER ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n���P���~��I�i�P���N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿匕首才能施展匕首術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���� */
+  /* 檢查是否拿斧 */
   case WEAPON_AXE:
 
     if ( !check_hand( ch, WEAPON_AXE ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n�����Y�~��I�i���Y�N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿斧頭才能施展斧頭術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���@ */
+  /* 檢查是否拿鞭 */
   case WEAPON_WHIP:
 
     if ( !check_hand( ch, WEAPON_WHIP ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n���@�~��I�i�@�N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿鞭才能施展鞭術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���j */
+  /* 檢查是否拿槍 */
   case WEAPON_SPEAR:
 
     if ( !check_hand( ch, WEAPON_SPEAR ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n���j�~��I�i�j�N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿槍才能施展槍術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���� */
+  /* 檢查是否拿筆 */
   case WEAPON_PEN:
 
     if ( !check_hand( ch, WEAPON_PEN ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n�����~��I�i���N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿筆才能施展筆術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���� */
+  /* 檢查是否拿鎚 */
   case WEAPON_HAMMER:
 
     if ( !check_hand( ch, WEAPON_HAMMER ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n����~��I�i��N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿鎚才能施展鎚術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���� */
+  /* 檢查是否拿棒 */
   case WEAPON_CLUB:
 
     if ( !check_hand( ch, WEAPON_CLUB ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n���Τ~��I�i�γN�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿棒才能施展棒術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
     if ( check_same_weapon( ch, fPrint ) == FALSE ) RETURN( FALSE );
     RETURN( TRUE );
 
-  /* �ˬd�O�_���} */
+  /* 檢查是否拿弓 */
   case WEAPON_BOW:
 
     if ( !check_hand( ch, WEAPON_BOW ) )
     {
-      if ( fPrint ) send_to_char( "�A�����n���}�~��I�i�}�N�T\n\r" , ch );
+      if ( fPrint ) send_to_char( "你必須要拿弓才能施展弓術﹗\n\r" , ch );
       RETURN( FALSE );
     }
 
@@ -232,162 +232,162 @@ bool check_weapon( CHAR_DATA * ch, int type, bool fPrint )
   }
 }
 
-/* �ˬd�O�_���C */
+/* 檢查是否拿劍 */
 bool check_sword_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_sword_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���C */
+  /* 檢查是否拿劍 */
   if ( check_weapon( ch, WEAPON_SWORD, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_�i�H���} */
+/* 檢查是否可以拳腳 */
 bool check_unrigid_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_unrigid_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* ��W���Z���h����I�i */
+  /* 手上有武器則不能施展 */
   if ( check_weapon( ch, WEAPON_HAND, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_�Ǫ��i�H�Ϊ����} */
+/* 檢查是否怪物可以用的拳腳 */
 bool check_pc_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_pc_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* ��W���Z���h����I�i */
+  /* 手上有武器則不能施展 */
   if ( check_weapon( ch, WEAPON_HAND, fPrint ) == FALSE ) RETURN( FALSE );
 
-  /* �Ǫ��L�kŪ�� */
+  /* 怪物無法讀書 */
   if ( IS_NPC( ch ) ) RETURN( FALSE );
 
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���j */
+/* 檢查是否拿槍 */
 bool check_spear_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_spear_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���j */
+  /* 檢查是否拿槍 */
   if ( check_weapon( ch, WEAPON_SPEAR, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���M */
+/* 檢查是否拿刀 */
 bool check_blade_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_blade_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���M */
+  /* 檢查是否拿刀 */
   if ( check_weapon( ch, WEAPON_BLADE, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���@ */
+/* 檢查是否拿鞭 */
 bool check_whip_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_whip_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���@ */
+  /* 檢查是否拿鞭 */
   if ( check_weapon( ch, WEAPON_WHIP, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���P�� */
+/* 檢查是否拿匕首 */
 bool check_dagger_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_dagger_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���P�� */
+  /* 檢查是否拿匕首 */
   if ( check_weapon( ch, WEAPON_DAGGER, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���� */
+/* 檢查是否拿斧 */
 bool check_axe_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_axe_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���� */
+  /* 檢查是否拿斧 */
   if ( check_weapon( ch, WEAPON_AXE, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���Ҵ� */
+/* 檢查是否拿棍棒 */
 bool check_club_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_club_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���Ҵ� */
+  /* 檢查是否拿棍棒 */
   if ( check_weapon( ch, WEAPON_CLUB, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���� */
+/* 檢查是否拿筆 */
 bool check_pen_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_pen_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���� */
+  /* 檢查是否拿筆 */
   if ( check_weapon( ch, WEAPON_PEN, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���} */
+/* 檢查是否拿弓 */
 bool check_bow_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_bow_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���} */
+  /* 檢查是否拿弓 */
   if ( check_weapon( ch, WEAPON_BOW, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }
 
-/* �ˬd�O�_���l�l */
+/* 檢查是否拿槌子 */
 bool check_hammer_attack( CHAR_DATA * ch, bool fPrint )
 {
   PUSH_FUNCTION( "check_hammer_attack" );
 
-  /* �ˬd�H�� */
+  /* 檢查人物 */
   CHECK_CHAR( ch );
 
-  /* �ˬd�O�_���l�l */
+  /* 檢查是否拿槌子 */
   if ( check_weapon( ch, WEAPON_HAMMER, fPrint ) == FALSE ) RETURN( FALSE );
   RETURN( TRUE );
 }

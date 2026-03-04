@@ -1,9 +1,9 @@
 Vnum            311
 Name            summon book~
-ShortDesc       ©Û³ê³N¯µÓD~
+ShortDesc       æ‹›å–šè¡“ç§˜ç¬ˆ~
 Description
 ~
-Unit            ¥»~
+Unit            æœ¬~
 ItemType        ITEM_BOOK
 Takeable        Yes
 Level           1

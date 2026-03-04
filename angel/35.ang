@@ -3,10 +3,10 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-§A¥i¥H¬İ¨ì¨C­Ó¦a¤è³£¦³¥X¤f¡M³o·N¨ıµÛ§A¥i¥H³q©¹¨º­Ó¤è¦V¡C¥Ø«e¤è¦V¥i¥H¦³
-ªF([1;32meast[0m) «n([1;32msouth[0m) ¦è([1;32mwest[0m) ¥_([1;32mnorth[0m) ¤W([1;32mup[0m) ¤U([1;32mdown[0m) ¶i([1;32menter[0m) ¥X([1;32mout[0m)
-·íµM§A¥i¥H¤£¥²¿é¤J³o»ò½ÆÂøªº«ü¥O¡M§A¥i¥He¡Bs¡Bw¡Bn¡Bu¡Bd¡Be¡Bo¨Ó¥Nªí¡C
+ä½ å¯ä»¥çœ‹åˆ°æ¯å€‹åœ°æ–¹éƒ½æœ‰å‡ºå£ï¹é€™æ„å‘³è‘—ä½ å¯ä»¥é€šå¾€é‚£å€‹æ–¹å‘ã€‚ç›®å‰æ–¹å‘å¯ä»¥æœ‰
+æ±([1;32meast[0m) å—([1;32msouth[0m) è¥¿([1;32mwest[0m) åŒ—([1;32mnorth[0m) ä¸Š([1;32mup[0m) ä¸‹([1;32mdown[0m) é€²([1;32menter[0m) å‡º([1;32mout[0m)
+ç•¶ç„¶ä½ å¯ä»¥ä¸å¿…è¼¸å…¥é€™éº¼è¤‡é›œçš„æŒ‡ä»¤ï¹ä½ å¯ä»¥eã€sã€wã€nã€uã€dã€eã€oä¾†ä»£è¡¨ã€‚
 
-½Ğ¬d¸ß¡Rexits¡Bnorth¡Beast¡Bwest¡Beast¡Bup¡Bdown¡Benter¡Bout
+è«‹æŸ¥è©¢ï¹•exitsã€northã€eastã€westã€eastã€upã€downã€enterã€out
 ~
 End

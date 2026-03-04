@@ -1,5 +1,5 @@
 Name            judge~
-Cname           Ų��ޯ�N~
+Cname           鑑賞技能術~
 Slot            SLOT_JUDGE
 Msgoff          ~
 Check           check_unrigid_attack~

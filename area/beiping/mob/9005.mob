@@ -1,8 +1,8 @@
 Vnum            9005
 Name            clean man~
-ShortDesc       ²M¹D¤Ò~
+ShortDesc       æ¸…é“å¤«~
 Description
-¤@¦ì²M¦­°_§É¥´±½Àô¹Òªº²M¹D¤Ò(clean man)
+ä¸€ä½æ¸…æ—©èµ·åºŠæ‰“æƒç’°å¢ƒçš„æ¸…é“å¤«(clean man)
 ~
 StayArea        Yes
 AutoSetValue    Yes
@@ -30,7 +30,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  say ¨C¤Ñ³£¦³²M¤£§¹ªº©U§£¡M¯u³Â·Ğ¡T
+  say æ¯å¤©éƒ½æœ‰æ¸…ä¸å®Œçš„åƒåœ¾ï¹çœŸéº»ç…©ï¹—
 endif
 ~
 End

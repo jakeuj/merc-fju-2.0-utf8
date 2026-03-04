@@ -1,9 +1,9 @@
 Vnum            14
 Name            well~
-ShortDesc       ¥j¦â¥j­»ªº²`¤«~
+ShortDesc       å¤è‰²å¤é¦™çš„æ·±äº•~
 Description
-¤@¤f²`¤£¨£©³ªº¤«(well)¡M¨ä¤¤¥Rº¡¤F²M²Dªº¤«¤ô¡M§A¥i¥H³Ü³Ü¬Ý( drink )¡C~
-Unit            ¤f~
+ä¸€å£æ·±ä¸è¦‹åº•çš„äº•(well)ï¹å…¶ä¸­å……æ»¿äº†æ¸…æ¶¼çš„äº•æ°´ï¹ä½ å¯ä»¥å–å–çœ‹( drink )ã€‚~
+Unit            å£~
 ItemType        ITEM_FOUNTAIN
 Level           0
 Weight          5000

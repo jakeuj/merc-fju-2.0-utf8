@@ -1,8 +1,8 @@
 Vnum            9006
 Name            hooligan~
-ShortDesc       ¦aµl~
+ShortDesc       åœ°ç—~
 Description
-¦aµl¥¿¥Î¤@Âù¥û´cªº²´¯«¤W¤U¥´¶qµÛ§A¡C
+åœ°ç—æ­£ç”¨ä¸€é›™å…‡æƒ¡çš„çœ¼ç¥ä¸Šä¸‹æ‰“é‡è‘—ä½ ã€‚
 ~
 StayArea        Yes
 AutoSetValue    Yes
@@ -30,7 +30,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  emote ¯«¤£ª¾°­¤£Ä±ªº¥´¤F§A¤@°O¦Õ¥ú¡T
+  emote ç¥ä¸çŸ¥é¬¼ä¸è¦ºçš„æ‰“äº†ä½ ä¸€è¨˜è€³å…‰ï¹—
   hehe $n
 endif
 ~

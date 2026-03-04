@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ýÅwªï¤j®a­×§ï¡M¦ý§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿Žå¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -23,14 +23,14 @@ int hire_cost( MOB_INDEX_DATA * pIndex, SHOP_DATA * pShop, int type )
 
   if ( !pIndex || !pShop )
   {
-    mudlog( LOG_DEBUG, "hire_cost: ¯Ê¥F¨Ó·½" );
+    mudlog( LOG_DEBUG, "hire_cost: ç¼ºä¹ä¾†æº" );
     RETURN( ( ( ( unsigned ) - 1 ) / 2 ) ) ;
   }
 
   switch( type )
   {
   default:
-    mudlog( LOG_DEBUG, "hire_cost: ¿ù»~ªº§ÎºA %d.", type );
+    mudlog( LOG_DEBUG, "hire_cost: éŒ¯èª¤çš„å½¢æ…‹ %d.", type );
     cost = ( ( unsigned ) - 1 ) / 2;
     break;
 
@@ -66,13 +66,13 @@ FUNCTION( do_hire )
 
   if ( IS_NPC( ch ) || ch->hirer )
   {
-    send_to_char( "§A¨S¦³Åv¤O¶±½Ð¶Ä§L¡C\n\r", ch );
+    send_to_char( "ä½ æ²’æœ‰æ¬ŠåŠ›é›‡è«‹å‚­å…µã€‚\n\r", ch );
     RETURN_NULL();
   }
 
   if ( ch->leader || ch->master )
   {
-    send_to_char( "§A¦³¨ä¥Lªº¶¤¤Í¡M©Ò¥H¤£¯à¶±½Ð¶Ä§L¡C\n\r", ch );
+    send_to_char( "ä½ æœ‰å…¶ä»–çš„éšŠå‹ï¹æ‰€ä»¥ä¸èƒ½é›‡è«‹å‚­å…µã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -83,13 +83,13 @@ FUNCTION( do_hire )
 
     if ( !ch->mercenary )
     {
-      send_to_char( "§A¨S¦³¥ô¦óªº¶Ä§L¡C\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰ä»»ä½•çš„å‚­å…µã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     clear_buffer();
     send_to_buffer(
-      "\e[1;33;44m¶¶§Ç µ¥¯Å ¦P ¥Í  ©R ¤O ªk     ¤O Åé     ¤O ºÙ  ¿× "
+      "\e[1;33;44mé †åº ç­‰ç´š åŒ ç”Ÿ  å‘½ åŠ› æ³•     åŠ› é«”     åŠ› ç¨±  è¬‚ "
       "                        \e[0m\n\r" );
 
     count = 0;
@@ -105,7 +105,7 @@ FUNCTION( do_hire )
         , mob_name( ch, victim ) );
     }
 
-    if ( count == 0 ) send_to_buffer( "§A¨S¦³¥ô¦óªº¶Ä§L¡C\n\r" );
+    if ( count == 0 ) send_to_buffer( "ä½ æ²’æœ‰ä»»ä½•çš„å‚­å…µã€‚\n\r" );
     print_buffer( ch );
   }
 
@@ -117,14 +117,14 @@ FUNCTION( do_hire )
 
     if ( ch->position == POS_FIGHTING )
     {
-      send_to_char( "§A¥¿¦b¾Ô°«¡MµLªk¹µ½Ð¶Ä§L¡T\n\r", ch );
+      send_to_char( "ä½ æ­£åœ¨æˆ°é¬¥ï¹ç„¡æ³•åƒ±è«‹å‚­å…µï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     clear_buffer();
 
-    send_to_buffer( "%s¥i¥H¹µ½Ðªº¶Ä§L¦³¡R\n\r"
-      "\e[1;33;44m¶¶§Ç µ¥¯Å ¶Ä  ª÷ ºÙ¿×                                   "
+    send_to_buffer( "%så¯ä»¥åƒ±è«‹çš„å‚­å…µæœ‰ï¹•\n\r"
+      "\e[1;33;44mé †åº ç­‰ç´š å‚­  é‡‘ ç¨±è¬‚                                   "
       "                        \e[0m\n\r"
       , mob_name( ch, keeper ) );
 
@@ -151,7 +151,7 @@ FUNCTION( do_hire )
 
     if ( ch->position == POS_FIGHTING )
     {
-      send_to_char( "§A¥¿¦b¾Ô°«¡MµLªk¸Ñ¶±¶Ä§L¡T\n\r", ch );
+      send_to_char( "ä½ æ­£åœ¨æˆ°é¬¥ï¹ç„¡æ³•è§£é›‡å‚­å…µï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -159,7 +159,7 @@ FUNCTION( do_hire )
 
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "§A­n¸Ñ¶±¨º¤@¦ì¶Ä§L¡S\n\r", ch );
+      send_to_char( "ä½ è¦è§£é›‡é‚£ä¸€ä½å‚­å…µï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -172,24 +172,24 @@ FUNCTION( do_hire )
       {
         if ( victim->in_room != ch->in_room )
         {
-          send_to_char( "§A¨º¦ì¶Ä§L¤£¦b³o¸Ì­C¡C\n\r", ch );
+          send_to_char( "ä½ é‚£ä½å‚­å…µä¸åœ¨é€™è£¡è€¶ã€‚\n\r", ch );
           RETURN_NULL();
         }
 
         if ( victim->hirer != ch )
         {
-          send_to_char( "¨º¦ì¤£¬O§Aªº¶Ä§L¡C\n\r", ch );
+          send_to_char( "é‚£ä½ä¸æ˜¯ä½ çš„å‚­å…µã€‚\n\r", ch );
           RETURN_NULL();
         }
 
         if ( victim->position != POS_STANDING )
         {
-          act( "$Nªºª¬ºA¥Ø«e¤£¾A¦X¸Ñ¶±¡C", ch, NULL, victim, TO_CHAR );
+          act( "$Nçš„ç‹€æ…‹ç›®å‰ä¸é©åˆè§£é›‡ã€‚", ch, NULL, victim, TO_CHAR );
           RETURN_NULL();
         }
 
         mercenary_from_char( victim, ch );
-        act( "$N¤£¦A¬O$nªº¶Ä§L¤F¡C", ch, NULL, victim, TO_ALL );
+        act( "$Nä¸å†æ˜¯$nçš„å‚­å…µäº†ã€‚", ch, NULL, victim, TO_ALL );
 
         if ( !over_scale( ch ) )
           gold_to_char( ch, hire_cost( victim->pIndexData, pShop, SHOP_SELL ) );
@@ -199,7 +199,7 @@ FUNCTION( do_hire )
       }
     }
 
-    send_to_char( "§A¨S¦³¨º¦ì¶Ä§L¡C\n\r", ch );
+    send_to_char( "ä½ æ²’æœ‰é‚£ä½å‚­å…µã€‚\n\r", ch );
   }
 
   else if ( is_number( arg ) )
@@ -210,7 +210,7 @@ FUNCTION( do_hire )
 
     if ( ch->position == POS_FIGHTING )
     {
-      send_to_char( "§A¥¿¦b¾Ô°«¡MµLªk¹µ½Ð¶Ä§L¡T\n\r", ch );
+      send_to_char( "ä½ æ­£åœ¨æˆ°é¬¥ï¹ç„¡æ³•åƒ±è«‹å‚­å…µï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -219,28 +219,28 @@ FUNCTION( do_hire )
       || ( slot = pShop->buy_type[loop] ) <= 0
       || !( pIndex = get_mob_index( slot ) ) )
     {
-      send_to_char( "§Aªº¶¶§Ç¤£¹ï¡MµLªk¶±½Ð¶Ä§L¡C\n\r", ch );
+      send_to_char( "ä½ çš„é †åºä¸å°ï¹ç„¡æ³•é›‡è«‹å‚­å…µã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->gold <= ( cost = hire_cost( pIndex, pShop, SHOP_BUY ) ) )
     {
-      act( "§A¨­¤Wªº¿ú¤£°÷¶±½Ð$t($T)¡C"
+      act( "ä½ èº«ä¸Šçš„éŒ¢ä¸å¤ é›‡è«‹$t($T)ã€‚"
         , ch, pIndex->short_descr, pIndex->name, TO_CHAR );
       RETURN_NULL();
     }
 
     if ( hire_count( ch ) >= max_hire )
     {
-      send_to_char( "§AÄâ±aªº¶Ä§L¤w¸g¤Ó¦h¤F¡C\n\r", ch );
+      send_to_char( "ä½ æ”œå¸¶çš„å‚­å…µå·²ç¶“å¤ªå¤šäº†ã€‚\n\r", ch );
       RETURN_NULL();
     }
 
     mercenary = shape_mobile( pIndex, ch->in_room );
-    act( "$nªá¤F$i¨â»È¤l¶±½Ð$N¡C", ch, &cost, mercenary, TO_ALL );
+    act( "$nèŠ±äº†$iå…©éŠ€å­é›‡è«‹$Nã€‚", ch, &cost, mercenary, TO_ALL );
     gold_from_char( ch, cost );
 
-    sprintf( name, "%s\e[0m(%s)¶±½Ðªº%s"
+    sprintf( name, "%s\e[0m(%s)é›‡è«‹çš„%s"
       , ch->cname, ch->name, mob_name( NULL, mercenary ) );
 
     free_string( mercenary->byname );
@@ -253,7 +253,7 @@ FUNCTION( do_hire )
 
   else
   {
-    send_to_char( "«ü¥O¿ù»~¡M½Ð¬d¸ß hire ªº¥¿½T¥Îªk¡T\n\r", ch );
+    send_to_char( "æŒ‡ä»¤éŒ¯èª¤ï¹è«‹æŸ¥è©¢ hire çš„æ­£ç¢ºç”¨æ³•ï¹—\n\r", ch );
   }
 
   RETURN_NULL();
@@ -268,7 +268,7 @@ size_t hire_count( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "hire_count: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "hire_count: ä¾†æºä¸æ­£ç¢º." );
     RETURN( 0 );
   }
 
@@ -287,7 +287,7 @@ void all_mercenary_from_char( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "all_mercenary_from_char: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "all_mercenary_from_char: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -297,7 +297,7 @@ void all_mercenary_from_char( CHAR_DATA * ch )
     victim->hirer     = NULL;
     victim->mercenary = NULL;
 
-    /* ­×¥¿¦WºÙ */
+    /* ä¿®æ­£åç¨± */
     if ( IS_NPC( victim ) && victim->pIndexData )
     {
       free_string( victim->byname );
@@ -316,7 +316,7 @@ void mercenary_from_char( CHAR_DATA * victim, CHAR_DATA * ch )
 
   if ( !ch || !victim || !ch->mercenary )
   {
-    mudlog( LOG_DEBUG, "mercenary_from_char: ¨Ó·½¿ù»~." );
+    mudlog( LOG_DEBUG, "mercenary_from_char: ä¾†æºéŒ¯èª¤." );
     RETURN_NULL();
   }
 
@@ -336,12 +336,12 @@ void mercenary_from_char( CHAR_DATA * victim, CHAR_DATA * ch )
       }
     }
 
-    if ( !prev ) mudlog( LOG_DEBUG , "mercenary_from_char: ¥¼µo²{¨ì¤Hª«." );
+    if ( !prev ) mudlog( LOG_DEBUG , "mercenary_from_char: æœªç™¼ç¾åˆ°äººç‰©." );
   }
 
   victim->boss = NULL;
 
-  /* ­×¥¿¦WºÙ */
+  /* ä¿®æ­£åç¨± */
   if ( IS_NPC( victim ) && victim->pIndexData )
   {
     free_string( victim->byname );

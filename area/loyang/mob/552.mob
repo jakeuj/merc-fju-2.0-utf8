@@ -1,10 +1,10 @@
 Vnum            552
 Name            sky shaman~
-ShortDesc       ¥É¿Å¹D~
-LongDesc        ¥É¿Å¹D(sky shaman)
+ShortDesc       ç‰è¡¡é“~
+LongDesc        ç‰è¡¡é“(sky shaman)
 ~
 Description
-¥Lªº¦~¬ö¦ü¥G«Ü¤p¡M¬ù¤G¤Q·³¤W¤U¡M¥ş¨­´²µo¥X¬¡¤O¡M¦n¹³¥Ã»·³£ÀR¤£¤U¨Ó¡C
+ä»–çš„å¹´ç´€ä¼¼ä¹å¾ˆå°ï¹ç´„äºŒåæ­²ä¸Šä¸‹ï¹å…¨èº«æ•£ç™¼å‡ºæ´»åŠ›ï¹å¥½åƒæ°¸é éƒ½éœä¸ä¸‹ä¾†ã€‚
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -33,7 +33,7 @@ Process
 Type            speech_prog
 Argument        no~
 Text
-tell $n §A¯u¬O¤p®ğ£°¡K
+tell $n ä½ çœŸæ˜¯å°æ°£ã„Ÿâ€¦
 ~
 End
 

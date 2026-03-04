@@ -8,7 +8,7 @@
 void        main_shell              ( void );
 void        print_main_shell        ( void );
 
-/* ³]©w¿ï¶µ¨ç¼Æªº¦ì§} */
+/* è¨­å®šé¸é …å‡½æ•¸çš„ä½å€ */
 static void ( *task[] ) () =
 {
   do_edit_area ,
@@ -18,15 +18,15 @@ static void ( *task[] ) () =
   do_exit
 };
 
-/* ³]©w¿ï³æªº¶µ¥Ø */
+/* è¨­å®šé¸å–®çš„é …ç›® */
 
 char const * choice_title[ MAX_CHOICE ] =
 {
- " 1. ½s¿è°Ï°ì  ",
- " 2. ½s¿è©Ğ¶¡  ",
- " 3. ½s¿è°Ó©±  ",
- " 4. ³sµ²ÀÉ®×  ",
- " 5. µ²§ô½s¿è  "
+ " 1. ç·¨è¼¯å€åŸŸ  ",
+ " 2. ç·¨è¼¯æˆ¿é–“  ",
+ " 3. ç·¨è¼¯å•†åº—  ",
+ " 4. é€£çµæª”æ¡ˆ  ",
+ " 5. çµæŸç·¨è¼¯  "
 };
 
 int          now_choice  = 0;
@@ -38,7 +38,7 @@ int main( void )
 
 #if defined (unix)
 
-  /* °_©l¤Æ curses.h */
+  /* èµ·å§‹åŒ– curses.h */
   initscr();
   refresh();
 
@@ -77,7 +77,7 @@ void main_shell()
     if ( main_control == RETURN_HOME  ) now_choice = 0;
     if ( main_control == RETURN_END   ) now_choice = MAX_CHOICE - 1;
 
-    /* ÀË¬d¬O§_¶W¥X½d³ò */
+    /* æª¢æŸ¥æ˜¯å¦è¶…å‡ºç¯„åœ */
     check_boundary( 0 , MAX_CHOICE - 1 , &now_choice );
 
     if ( memory_choice != now_choice )
@@ -111,7 +111,7 @@ void print_main_shell()
   clear_screen();
 
   print_string( DEFAULT_Y - 3 , DEFAULT_X - 2 , FRONT_COLOR
-    , "MUD °Ï°ì²£¥Í¾¹ V1.00" );
+    , "MUD å€åŸŸç”¢ç”Ÿå™¨ V1.00" );
 
   for ( loop = 0; loop < MAX_CHOICE; loop++ )
     print_string( y, x++ , FRONT_COLOR , ( char * ) choice_title[loop] );

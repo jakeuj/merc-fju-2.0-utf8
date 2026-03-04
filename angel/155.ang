@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-���F��K���a��J�M�ڭ̧�]�p�F�p�ɾ�([1;32mtick[0m)�����a�ϥΡM�p�ƾ��i�H�]�w�b�Y�q
-�ɶ����t�Φ۰����A��J�Y�Ǧr���M�Ӥ����ѬO�@���r�V��L�o�C
+為了方便玩家輸入﹐我們更設計了計時器([1;32mtick[0m)給玩家使用﹐計數器可以設定在某段
+時間內系統自動幫你輸入某些字串喔﹐而不必老是一直猛敲鍵盤囉。
 
-�Ьd�ߡRtick
+請查詢﹕tick
 ~
 End

@@ -1,11 +1,11 @@
 Vnum            1208
 Name            soldier~
-ShortDesc       �çL~
-LongDesc        �çL(soldier).
+ShortDesc       衛兵~
+LongDesc        衛兵(soldier).
 ~
 Description
-�@��~���G�Q�����k���֦~�M�Q�D��X�ӧ@���O�@�D�H���çL�M�O�@
-�O�L��¾�d�M���D�H�Qŧ�Z�άO�����ɡM�L�|�ɥL��¾�d����ĤH�C
+一位年約二十歲左右的少年﹐被挑選出來作為保護主人的衛兵﹐保護
+是他的職責﹐當主人被襲擾或是擅闖時﹐他會盡他的職責殲滅敵人。
 ~
 Sentinel        Yes
 StayArea        Yes

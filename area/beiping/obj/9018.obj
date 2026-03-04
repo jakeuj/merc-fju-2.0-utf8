@@ -1,9 +1,9 @@
 Vnum            9018
 Name            castle bracelet~
-ShortDesc       ¸T½Ã­xÅ@µÃ~
+ShortDesc       ç¦è¡›è»è­·è…•~
 Description
-¸T½Ã­x¤¤¯Å­x©x¥ÎªºÅ@µÃ¡C~
-Unit            °¦~
+ç¦è¡›è»ä¸­ç´šè»å®˜ç”¨çš„è­·è…•ã€‚~
+Unit            éš»~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_WRIST
 Takeable        Yes

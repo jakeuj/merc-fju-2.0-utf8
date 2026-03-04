@@ -1,8 +1,8 @@
 Vnum            9009
 Name            royal guard~
-ShortDesc       ±s«eÅ@½Ã~
+ShortDesc       å¾¡å‰è­·è¡›~
 Description
-«OÅ@¤Ñ¤lªº«i²r¾Ô¤h¡MºÉ©¾Â¾¦u¡M¤£ÎA¨¥¯º¡C
+ä¿è­·å¤©å­çš„å‹‡çŒ›æˆ°å£«ï¹ç›¡å¿ è·å®ˆï¹ä¸èŒè¨€ç¬‘ã€‚
 ~
 Sentinel        Yes
 StayArea        Yes
@@ -38,7 +38,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  say ¦b³o¸Ì·F¤°»ò¡S»°§ÖÂ÷¶}§a¡T
+  say åœ¨é€™è£¡å¹¹ä»€éº¼ï¹–è¶•å¿«é›¢é–‹å§ï¹—
 endif
 ~
 End

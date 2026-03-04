@@ -1,5 +1,5 @@
 Name            six fingers~
-Cname           ���߯��C~
+Cname           六脈神劍~
 Slot            SLOT_SIX_FINGERS
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -39,8 +39,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n����@��M�餺�u��y��M$R�y�ְӼC�z$Z�C�����l�M�Q�D���V$N�E�g�ӥh�M�ᦳ��
-�}����M���B�j�ܤ��աC~
+$n拇指一拈﹐體內真氣流轉﹐$R『少商劍』$Z劍路雄勁﹐霸道的向$N激射而去﹐頗有石
+破天驚﹐風雨大至之勢。~
 Chance          10
 Value           20
 Parry           0
@@ -49,7 +49,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�����@���M$R�y�Ӷ��C�z$Z�N�H����M�@�D�u��ѫ��ݨR�X�M���g$N�M���H���ҡC~
+$n食指一伸﹐$R『商陽劍』$Z意隨心轉﹐一道真氣由指端沖出﹐直射$N﹐難以捉模。~
 Chance          10
 Value           20
 Parry           0
@@ -58,8 +58,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���M���u�X�����M$R�y���ļC�z$Z�M�j�}�j��M���Y�{�s��M�C���a��M��F���¦V
-$N�ӥh�C~
+$n旦然的彈出中指﹐$R『中衝劍』$Z﹐大開大闔﹐有若宛龍般﹐劍氣縱橫﹐凌厲的朝向
+$N而去。~
 Chance          10
 Value           20
 Parry           0
@@ -68,8 +68,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�w�w�����X�L�W���M�u�����v�n�_�M$R�y���ļC�z$Z�庢�j��M���p�L�񪺼C��Ţ�n
-��$N�����M���������V��$l�C~
+$n緩緩的伸出無名指﹐「絲絲」聲起﹐$R『關衝劍』$Z拙滯古樸﹐雄厚無比的劍氣籠罩
+住$N全身﹐直直的撞向其$l。~
 Chance          10
 Value           20
 Parry           0
@@ -78,7 +78,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�p���F������ʡM�@��$R�y�ֽļC�z$Z�K�N�p����$N���h�C~
+$n小指靈巧的轉動﹐一招$R『少衝劍』$Z便刁鑽的朝$N飛去。~
 Chance          10
 Value           20
 Parry           0
@@ -87,7 +87,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n��������ʤp���M$R�y�ֿA�C�z$Z���ө��h�M���p�F�D�몺�׮g$N�C~
+$n輕巧的轉動小指﹐$R『少澤劍』$Z忽來忽去﹐有如靈蛇般的斜射$N。~
 Chance          10
 Value           20
 Parry           0
@@ -96,8 +96,8 @@ Innate          0 0
 End
 #Damage
 Description
-$R$n�j�ܤ@�n�M���ʥ����u��M���l�y��M���⤻�C���o�M�Q�����u�M�K�ɼC���a��M
-�����L�ƨ��p�e�����ĿE���V$N�ӥh$Z�C~
+$R$n大喝一聲﹐鼓動全身真氣﹐內勁流轉﹐雙手六劍齊發﹐十指分彈﹐霎時劍氣縱橫﹐
+似有無數迅雷疾風互衝激盪向$N而去$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -106,8 +106,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�t�B$R�y�ְӼC�z$Z�M�餺�u��y��M�C�����l�M�C��ѭ����E�X�M�Q�D���V$N�E�g
-�ӥh�M�ᦳ�ۯ}����M���B�j�ܤ��աC~
+$n暗運$R『少商劍』$Z﹐體內真氣流轉﹐劍路雄勁﹐劍氣由食指激出﹐霸道的向$N激射
+而去﹐頗有石破天驚﹐風雨大至之勢。~
 Chance          10
 Value           20
 Parry           0
@@ -116,7 +116,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�B��$R�y�Ӷ��C�z$Z�M�N�H����M�@�D�u��ѩ���R�X�M���g$N�M���H���ҡC~
+$n運使$R『商陽劍』$Z﹐意隨心轉﹐一道真氣由拇指沖出﹐直射$N﹐難以捉模。~
 Chance          10
 Value           20
 Parry           0
@@ -125,8 +125,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�q��$R�y���ļC�z$Z�M�j�}�j��M���Y�{�s��M�C���a��M�Ѥ����e�ݭ�F���¦V$N
-�ӥh�C~
+$n默使$R『中衝劍』$Z﹐大開大闔﹐有若宛龍般﹐劍氣縱橫﹐由中指前端凌厲的朝向$N
+而去。~
 Chance          10
 Value           20
 Parry           0
@@ -135,8 +135,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�w�w�����X��M�u�����v�n�_�M$R�y���ļC�z$Z�庢�j��M���p�L�񪺼C��Ţ�n��$N
-�����M�C�𪽪������V��$l�C~
+$n緩緩的伸出手﹐「絲絲」聲起﹐$R『關衝劍』$Z拙滯古樸﹐雄厚無比的劍氣籠罩住$N
+全身﹐劍氣直直的撞向其$l。~
 Chance          10
 Value           20
 Parry           0
@@ -145,7 +145,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�p���F������ʡM�@��$R�y�ֽļC�z$Z�K�N�p����$N���h�C~
+$n小指靈巧的轉動﹐一招$R『少衝劍』$Z便刁鑽的朝$N飛去。~
 Chance          10
 Value           20
 Parry           0
@@ -154,7 +154,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�����������ʡM$R�y�ֿA�C�z$Z���ө��h�M���p�F�D�몺�׮g$N�C~
+$n手指輕巧的轉動﹐$R『少澤劍』$Z忽來忽去﹐有如靈蛇般的斜射$N。~
 Chance          10
 Value           20
 Parry           0
@@ -163,8 +163,8 @@ Innate          0 0
 End
 #Damage
 Description
-$R$n�j�ܤ@�n�M���ʥ����u��M���l�y��M�⤤���������I�I�M���C���o�M�K�ɼC��
-�a��M�����L�ƨ��p�e�����ĿE���V$N�ӥh$Z�C~
+$R$n大喝一聲﹐鼓動全身真氣﹐內勁流轉﹐手中六指指指點點﹐六劍齊發﹐霎時劍氣
+縱橫﹐似有無數迅雷疾風互衝激盪向$N而去$Z。~
 Chance          10
 Value           20
 Parry           0
@@ -173,7 +173,7 @@ Innate          0 0
 End
 #Damage
 Description
-$S$n���߯��C�޲�����l�p�J$N�餺�M$N�y�W��M�@�}�C�աM�ݨӤw���F���p�����ˡC~
+$S$n六脈神劍詭異的氣勁鑽入$N體內﹐$N臉上突然一陣青白﹐看來已受了不小的內傷。~
 Chance          10
 Value           20
 Parry           0
@@ -182,7 +182,7 @@ Innate          0 0
 End
 #Damage
 Description
-$R$n���߯��C���C�N���_�F$N���W���ʯߡM$N�}�l�y�y���y�X�A��C$Z~
+$R$n六脈神劍的劍意斬斷了$N身上的動脈﹐$N開始泊泊的流出鮮血。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -191,8 +191,8 @@ Innate          0 0
 End
 #Damage
 Description
-$Y$n���M�y�����߯��C$S��C�ʥ�$Z�B$S�s������$Z$Y���n�Z�M�C��۵M�ӵM���}���
-�X�M���}����C$Z~
+$Y$n忽然頓悟六脈神劍$S氣遊百穴$Z、$S連綿不絕$Z$Y的要訣﹐劍氣自然而然的破體而
+出﹐欲罷不能。$Z~
 Chance          10
 Value           20
 Parry           0

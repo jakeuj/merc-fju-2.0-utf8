@@ -1,10 +1,10 @@
 Vnum            526
 Name            hack item~
-ShortDesc       ¼ù§â~
+ShortDesc       çŠ›æŠŠ~
 Description
-³o¬O¤@¤ä´¶³qªº¼ù§â(hack item)¡M±Mªù®M¦b¤û¨­¤W¥Î¨Ó¯Ñ¥Ğ¥Îªº¡C
+é€™æ˜¯ä¸€æ”¯æ™®é€šçš„çŠ›æŠŠ(hack item)ï¹å°ˆé–€å¥—åœ¨ç‰›èº«ä¸Šç”¨ä¾†è€•ç”°ç”¨çš„ã€‚
 ~
-Unit            ¤ä~
+Unit            æ”¯~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

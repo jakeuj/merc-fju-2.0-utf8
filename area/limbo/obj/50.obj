@@ -1,9 +1,9 @@
 Vnum            50
 Name            mace~
-ShortDesc       ¤pªk§ú~
+ShortDesc       å°æ³•æ–~
 Description
-¤@°¦¥Ñ¤ìÀY§@¦¨ªº¤pªk§ú(mace)~
-Unit            °¦~
+ä¸€éš»ç”±æœ¨é ­ä½œæˆçš„å°æ³•æ–(mace)~
+Unit            éš»~
 ItemType        ITEM_WEAPON
 WearLoc         ITEM_WIELD
 Takeable        Yes

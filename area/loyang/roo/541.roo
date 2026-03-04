@@ -1,8 +1,8 @@
 Vnum            541
-Name            ®c«°¤f~
+Name            å®®åŸŽå£~
 Description
-³o¸Ì¬O¤@­Ó¥æ¤e¤f¡M«nÃä§Y¬O¬¥¶§ªº¥¿¶§ªù¡M¥_Ãä±µ¬¥¶§®c«°¡C¬¥¶§
-¥_Ãä¬°¨~¤s¡M«n¬°¬¥¤ô¡M¦a§Î¥_°ª«n§C¡M¬O³\¦h´Â¥Nªº³£«°¡C
+é€™è£¡æ˜¯ä¸€å€‹äº¤å‰å£ï¹å—é‚Šå³æ˜¯æ´›é™½çš„æ­£é™½é–€ï¹åŒ—é‚ŠæŽ¥æ´›é™½å®®åŸŽã€‚æ´›é™½
+åŒ—é‚Šç‚ºèŠ’å±±ï¹å—ç‚ºæ´›æ°´ï¹åœ°å½¢åŒ—é«˜å—ä½Žï¹æ˜¯è¨±å¤šæœä»£çš„éƒ½åŸŽã€‚
 
 ~
 SectorType      SECT_CITY
@@ -41,15 +41,15 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         °V½mªÌ~
+Keyword         è¨“ç·´è€…~
 End
 
 #Enquire
-Keyword         °V½m®v~
+Keyword         è¨“ç·´å¸«~
 End
 
 #Enquire
-Keyword         °V½m~
+Keyword         è¨“ç·´~
 End
 
 End

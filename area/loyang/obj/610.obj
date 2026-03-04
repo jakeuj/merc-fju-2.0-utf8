@@ -1,11 +1,11 @@
 Vnum            610
 Name            loyang gold backbag~
-ShortDesc       ¬¥¶§¶Àª÷³U~
+ShortDesc       æ´›é™½é»ƒé‡‘è¢‹~
 Description
-ª÷ÀJ²ÓµZªº³U¤l¡M¥R¤ÀÅã¥Ü¥XÁï®a¤l®ğ¡C
+é‡‘é›•ç´°ç¢çš„è¢‹å­ï¹å……åˆ†é¡¯ç¤ºå‡ºé—Šå®¶å­æ°£ã€‚
 
 ~
-Unit            ¥]~
+Unit            åŒ…~
 ItemType        ITEM_BACKBAG
 WearLoc         ITEM_WEAR_BACK
 Takeable        Yes

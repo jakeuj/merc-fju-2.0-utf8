@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-��򪾹D�U�l�̦����ǪF��O�S�A�i�H [1;32mlook in xxx[0m �ӬݬݳU�l�̪��F��M�άO
-�˵�([1;32mexamine[0m) �ݬݡM�d���n�@��F�賣�Q�A�äF([1;32mput[0m)�_�ӤF��C
+怎麼知道袋子裡有哪些東西呢﹖你可以 [1;32mlook in xxx[0m 來看看袋子裡的東西﹐或是
+檢視([1;32mexamine[0m) 看看﹐搞不好一堆東西都被你藏了([1;32mput[0m)起來了喔。
 
-�Ьd�ߡRlook�Bexamine�Bput
+請查詢﹕look、examine、put
 ~
 End

@@ -10,14 +10,14 @@ void initial_room( void )
 
   int 	loop;
 
-  /* �t�m�ж����c���O���� */
+  /* 配置房間結構的記憶體 */
   if ( ( pRoom = ( ROOM_INFO * ) malloc( sizeof( ROOM_INFO ) ) ) == NULL )
     mem_error();
 
-  /* �t�m�ж����ж����X�r�ꪺ�Ŷ� */
+  /* 配置房間中房間號碼字串的空間 */
   pRoom->pVnum = malloc_string();
 
-  /* �]�w�ж����X�r��_�ҭ� */
+  /* 設定房間號碼字串起啟值 */
   pRoom->pVnum->x_pos           = ROOM_X + 13;
   pRoom->pVnum->y_pos           = ROOM_Y + 3;
   pRoom->pVnum->x_len           = 5;
@@ -31,10 +31,10 @@ void initial_room( void )
   pRoom->pVnum->address         = pRoom->aVnum;
   clear_string( pRoom->pVnum );
 
-  /* �t�m�ж����ж��W�٦r�ꪺ�Ŷ� */
+  /* 配置房間中房間名稱字串的空間 */
   pRoom->pName = malloc_string();
 
-  /* �]�w�ж��W�٦r��_�ҭ� */
+  /* 設定房間名稱字串起啟值 */
   pRoom->pName->x_pos           = ROOM_X + 30;
   pRoom->pName->y_pos           = ROOM_Y +  3;
   pRoom->pName->x_len           = 40;
@@ -48,10 +48,10 @@ void initial_room( void )
   pRoom->pName->address         = pRoom->name;
   clear_string( pRoom->pName );
 
-  /* �t�m�ж����ж��y�z�r�ꪺ�Ŷ� */
+  /* 配置房間中房間描述字串的空間 */
   pRoom->pDesc = malloc_string();
 
-  /* �]�w�ж��y�z�r��_�ҭ� */
+  /* 設定房間描述字串起啟值 */
   pRoom->pDesc->x_pos           = ROOM_X + 7;
   pRoom->pDesc->y_pos           = ROOM_Y + 5;
   pRoom->pDesc->x_len           = 68;
@@ -65,17 +65,17 @@ void initial_room( void )
   pRoom->pDesc->address         = pRoom->description;
   clear_string( pRoom->pDesc );
 
-  /* �t�m�ж������ӥX�f�����c�O���� */
+  /* 配置房間中六個出口的結構記憶體 */
   for ( loop = 0; loop < 6; loop++ )
   {
-    /* �t�m�C�@�ӥX�f���c���O���� */
+    /* 配置每一個出口結構的記憶體 */
     pRoom->exit[loop] = ( EXIT_INFO * ) malloc( sizeof( EXIT_INFO ) );
     if ( pRoom->exit[loop] == NULL ) mem_error();
 
-    /* �t�m�C�@�ӥX�f�ж����r��Ŷ� */
+    /* 配置每一個出口房間的字串空間 */
     pRoom->exit[loop]->pRoom = malloc_string();
 
-    /* �]�w�ж����X�r��_�ҭ� */
+    /* 設定房間號碼字串起啟值 */
     pRoom->exit[loop]->pRoom->x_pos           = EXIT_X + 22;
     pRoom->exit[loop]->pRoom->y_pos           = EXIT_Y + 6;
     pRoom->exit[loop]->pRoom->x_len           = 5;
@@ -89,10 +89,10 @@ void initial_room( void )
     pRoom->exit[loop]->pRoom->address         = pRoom->exit[loop]->aRoom;
     clear_string( pRoom->exit[loop]->pRoom );
 
-    /* �t�m�C�@�ӥX�f�_�ͪ��r��Ŷ� */
+    /* 配置每一個出口鑰匙的字串空間 */
     pRoom->exit[loop]->pKey = malloc_string();
 
-    /* �]�w�ж��_�͸��X�r��_�ҭ� */
+    /* 設定房間鑰匙號碼字串起啟值 */
     pRoom->exit[loop]->pKey->x_pos           = EXIT_X + 12;
     pRoom->exit[loop]->pKey->y_pos           = EXIT_Y + 9;
     pRoom->exit[loop]->pKey->x_len           = 5;
@@ -106,10 +106,10 @@ void initial_room( void )
     pRoom->exit[loop]->pKey->address         = pRoom->exit[loop]->aKey;
     clear_string( pRoom->exit[loop]->pKey );
 
-    /* �t�m�C�@�ӥX�f����r���r��Ŷ� */
+    /* 配置每一個出口關鍵字的字串空間 */
     pRoom->exit[loop]->pKeyword = malloc_string();
 
-    /* �]�w�ж��X�f����r�r��_�ҭ� */
+    /* 設定房間出口關鍵字字串起啟值 */
     pRoom->exit[loop]->pKeyword->x_pos           = EXIT_X + 9;
     pRoom->exit[loop]->pKeyword->y_pos           = EXIT_Y + 11;
     pRoom->exit[loop]->pKeyword->x_len           = 40;
@@ -122,10 +122,10 @@ void initial_room( void )
     pRoom->exit[loop]->pKeyword->number          = NUMBER_ACCEPT;
     pRoom->exit[loop]->pKeyword->address = pRoom->exit[loop]->keyword;
 
-    /* �t�m�C�@�ӥX�f�y�z���r��Ŷ� */
+    /* 配置每一個出口描述的字串空間 */
     pRoom->exit[loop]->pDesc = malloc_string();
 
-    /* �]�w�ж��X�f�y�z�r�r��_�ҭ� */
+    /* 設定房間出口描述字字串起啟值 */
     pRoom->exit[loop]->pDesc->x_pos           = EXIT_X + 9;
     pRoom->exit[loop]->pDesc->y_pos           = EXIT_Y + 13;
     pRoom->exit[loop]->pDesc->x_len           = 40;
@@ -140,16 +140,16 @@ void initial_room( void )
 
   }
 
-  /* �t�m�ж��������B�~�y�z�����c���O���� */
+  /* 配置房間中五個額外描述的結構的記憶體 */
   for ( loop = 0; loop < 5; loop++ )
   {
     pRoom->desc[loop] = ( ROOM_DESC * ) malloc ( sizeof( ROOM_DESC ) );
     if ( pRoom->desc[loop] == NULL ) mem_error();
 
-    /* �t�m�ж��B�~�y�z����r�r��Ŷ� */
+    /* 配置房間額外描述關鍵字字串空間 */
     pRoom->desc[loop]->pKeyword = malloc_string();
 
-    /* �]�w�ж�����r�r��_�ҭ� */
+    /* 設定房間關鍵字字串起啟值 */
     pRoom->desc[loop]->pKeyword->x_pos           = DESC_X + 9;
     pRoom->desc[loop]->pKeyword->y_pos           = DESC_Y + 5;
     pRoom->desc[loop]->pKeyword->x_len           = 30;
@@ -162,10 +162,10 @@ void initial_room( void )
     pRoom->desc[loop]->pKeyword->number          = NUMBER_ACCEPT;
     pRoom->desc[loop]->pKeyword->address  = pRoom->desc[loop]->keyword;
 
-    /* �]�w�ж�����r�r��_�ҭ� */
+    /* 設定房間關鍵字字串起啟值 */
     pRoom->desc[loop]->pDesc = malloc_string();
 
-    /* �]�w�ж�����r�r��_�ҭ� */
+    /* 設定房間關鍵字字串起啟值 */
     pRoom->desc[loop]->pDesc->x_pos           = DESC_X + 7;
     pRoom->desc[loop]->pDesc->y_pos           = DESC_Y + 7;
     pRoom->desc[loop]->pDesc->x_len           = 65;

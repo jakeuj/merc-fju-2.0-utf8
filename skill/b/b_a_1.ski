@@ -1,5 +1,5 @@
 Name            b_a_1~
-Cname           �]�~�N~
+Cname           魔獸術~
 Slot            SLOT_B_A_1
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -40,8 +40,8 @@ Help            ~
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�g���v$Z�M�@���������ɪ����~�M�e���@��p�g
-�M��a�ۤT�����l��$N��h�C~
+$n喝道：以我之名﹐出來吧﹗$Y「土爪」$Z﹐一隻狀似螃蟹的異獸﹐前有一對小螯
+﹐後帶著三隻爪子往$N刺去。~
 Chance          10
 Value           20
 Parry           0
@@ -51,8 +51,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u����U���v$Z�M��X�~�]���b��W�M���X�����ҨåH
-�����K������$N�C~
+$n喝道：以我之名﹐出來吧﹗$Y「火猿猴爪」$Z﹐喚出獸魔附在手上﹐伸出長指甲並以
+高熱貼身攻擊$N。~
 Chance          10
 Value           20
 Parry           0
@@ -62,7 +62,7 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u���ۡv$Z�M��X�@��x�j���]�~�M�N$N���^�k���N�ʦL�C~
+$n喝道：以我之名﹐出來吧﹗$Y「鏡蠱」$Z﹐喚出一手掌大的魔獸﹐將$N的回歸之術封印。~
 Chance          10
 Value           20
 Parry           0
@@ -72,8 +72,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u����v$Z�M�@���~���p�������]�~�M�X�{�b�A������
-�åH���t����$N�C~
+$n喝道：以我之名﹐出來吧﹗$Y「走鱗」$Z﹐一隻外表如蟑螂的魔獸﹐出現在你的足邊
+並以高速接近$N。~
 Chance          10
 Value           20
 Parry           0
@@ -83,8 +83,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u���{���Ρv$Z�M��X���h�p���Y�󥭡M���y��������
-�ΡM�a�ۤ��V����$N�C~
+$n喝道：以我之名﹐出來吧﹗$Y「火爍甲蟲」$Z﹐喚出眾多小隻頭扁平﹐身尖的火紅甲
+蟲﹐帶著火燄攻擊$N。~
 Chance          10
 Value           20
 Parry           0
@@ -94,8 +94,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�^���v$Z�M�@�����~�����p�˶��@�M���k�a�ۦ��p
-�I�M�����M��$N��h�C~
+$n喝道：以我之名﹐出來吧﹗$Y「回風」$Z﹐一隻異獸中間如倒圓錐﹐左右帶著有如
+鐮刀的爪﹐往$N刺去。~
 Chance          10
 Value           20
 Parry           0
@@ -105,8 +105,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�۵��v$Z�M�@���~���p�������]�~�M���t���X�e��Ĳ
-��åH���t����$N�C~
+$n喝道：以我之名﹐出來吧﹗$Y「石絲」$Z﹐一隻外表如章魚的魔獸﹐迅速伸出牠的觸
+手並以高速接近$N。~
 Chance          10
 Value           20
 Parry           0
@@ -116,8 +116,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�����Ρv$Z�M��X�ư��p�p�p�]�Ϊ����ΡM�b$N���e
-�z���C~
+$n喝道：以我之名﹐出來吧﹗$Y「炸裂蟲」$Z﹐喚出數隻小小如瓢蟲的甲蟲﹐在$N面前
+爆炸。~
 Chance          10
 Value           20
 Parry           0
@@ -127,8 +127,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u��v$Z�M�@�����Ϋ���Y�Φp�y�@����M�b$N���e
-��¶, �N$N�������X�͡C~
+$n喝道：以我之名﹐出來吧﹗$Y「闇魚」$Z﹐一隻身形扁長頭形如尖錐的闇魚﹐在$N眼前
+圍繞, 將$N的眼睛蒙敝。~
 Chance          10
 Value           20
 Parry           0
@@ -138,7 +138,7 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�p�D�v$Z�M�@���V���z�{�q�������D���a��$N�ĥh�C~
+$n喝道：以我之名﹐出來吧﹗$Y「雷蛇」$Z﹐一隻混身爆閃電光的異蛇倏地往$N衝去。~
 Chance          10
 Value           20
 Parry           0
@@ -148,8 +148,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�Ү��v$Z�M�@�ӧΪ����p��l���޲��]�~�M�X�{�b�A������
-�æR�X��f����, ���t������$N�åB�ɥR�۳�̪���O�C~
+$n喝道：以我之名﹐出來吧﹗$Y「忌息」$Z﹐一個形狀有如鏡子的詭異魔獸﹐出現在你的雙手
+並吐出兩口紅氣, 迅速的攻擊$N並且補充招喚者的體力。~
 Chance          10
 Value           20
 Parry           0
@@ -159,8 +159,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�����v$Z�M�n�ɤ@�D�խi�g�X�M�@���Y�p�s�M��e��
-�u�������N�����~�]��$N��ܡC~
+$n喝道：以我之名﹐出來吧﹗$Y「光牙」$Z﹐登時一道白虹射出﹐一隻頭如龍﹐後呈直
+線狀的光術高熱獸魔往$N攻至。~
 Chance          10
 Value           20
 Parry           0
@@ -170,8 +170,8 @@ End
 
 #Damage
 Description
-$n�ܹD�G�H�ڤ��W�M�X�ӧa�T$Y�u�v���v$Z�M�n�ɤ@�D�¼v�g�X�M�@���Y�p�s, �Ҩ줧�B
-���ɧ]��, �]����$N���ͩR�C~
+$n喝道：以我之名﹐出來吧﹗$Y「影牙」$Z﹐登時一道黑影射出﹐一隻頭如龍, 所到之處
+光盡吞食, 吞食著$N的生命。~
 Chance          10
 Value           20
 Parry           0
@@ -181,10 +181,10 @@ End
 
 #Damage
 Description
-$n�����R��$Y�u$R�׷��۳�$Z---$G�|�Ѹt��^��$Y�v$Z�M�D�W�Ť��M�ߤ��q��$A
-$y           �{$Z�E$S�L$Z�E$R��$Z�E$P�}$Z�E$S��$Z�E$y�C$Z�E$B��$Z�E$R�}$Z$A$A
-�Ť��X�{�@�]�k�}�M�Ƭ��@���s�V$N��h�M$N�Q�s�������p�Q�����몺�W������, �̫�
-$n�j�ܡM���C�]�O�ѤU�L�ġM$N�����Q�]�k�}���]�O���]���C~
+$n凝神靜思$Y「$R終極招喚$Z---$G四天聖精奉還$Y」$Z﹐躍上空中﹐心中默念$A
+$y           臨$Z•$S兵$Z•$R鬥$Z•$P陣$Z•$S皆$Z•$y列$Z•$B位$Z•$R破$Z$A$A
+空中出現一魔法陣﹐化為一條龍向$N攻去﹐$N被龍給擊中如被撕裂般的苦不堪言, 最後
+$n大喝﹐隰婆魔力天下無敵﹐$N瞬間被魔法陣的魔力給吞噬。~
 Chance          10
 Value           20
 Parry           0

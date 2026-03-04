@@ -1,9 +1,9 @@
 Vnum            117
 Name            lunicake~
-ShortDesc       ¤ë»æ~
+ShortDesc       æœˆé¤…~
 Description
-¤@­Ó¤¤¬î¸`ªºÂ§ª«¡M§A¥i¥H®³¨Ó¦Y¦Y(eat)¬İ¡C~
-Unit            Áû~
+ä¸€å€‹ä¸­ç§‹ç¯€çš„ç¦®ç‰©ï¹ä½ å¯ä»¥æ‹¿ä¾†åƒåƒ(eat)çœ‹ã€‚~
+Unit            é¡†~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           1

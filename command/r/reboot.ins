@@ -1,5 +1,5 @@
 Name            reboot~
-Cname           ���s�}��~
+Cname           重新開機~
 Function        do_reboot~
 Position        POS_DEAD
 Level           L_SUP
@@ -15,24 +15,24 @@ Lost            NO
 Lock            NO
 Limit           NO
 Help
-�y�k�Rreboot
+語法﹕reboot
       reboot now
       reboot cancel
-      reboot [������]
+      reboot [分鐘數]
       reboot at xx:xx:xx
 
-    �o�ӫ��O�i�H�Ϩt�έ��s�}���M�p�G�᭱���[�ѼƩάO�ѼƬ� now�M�h�t�η|
-�ߨ譫�s�}���M�Y�᭱�[�Jxx�����M�h�t�η|�۰ʦb�X�����᭫�s�}���C
+    這個指令可以使系統重新開機﹐如果後面不加參數或是參數為 now﹐則系統會
+立刻重新開機﹐若後面加入xx分鐘﹐則系統會自動在幾分鐘後重新開機。
 
-    �ӥB�M�t�η|�b 1�M3�M5�����������a�M�t�αN�n���s�}���M�кɧ������M��
-�B�۰ʧ�t����w�M�����@�몱�a�i�J�C
+    而且﹐系統會在 1﹐3﹐5分鐘提醒玩家﹐系統將要重新開機﹐請盡快離站﹐並
+且自動把系統鎖定﹐不讓一般玩家進入。
 
-    reboot cancel �i�H�������e�ҳ]�w���t�έ��m�ʧ@.
+    reboot cancel 可以取消之前所設定的系統重置動作.
 
-    reboot at �o�ӫ��O�i�H���w�b��ɥi�H���s�}���M�ɶ��O��24�p�ɨ�C���O
-�t�Τ��|��w�C���C
+    reboot at 這個指令可以限定在何時可以重新開機﹐時間是用24小時制。但是
+系統不會鎖定遊戲。
 
-������� �Rwizlock �Mreboot.
+相關資料 ﹕wizlock ﹐reboot.
 
 ~
 End

@@ -1,11 +1,11 @@
 Vnum            CLASS_SCHOLAR
 Name            scholar~
-Cname           ¤å  ©x~
-Title           ´Hµ¡­WÅª~
+Cname           æ–‡  å®˜~
+Title           å¯’çª—è‹¦è®€~
 LowerLimit      10
 UpperLimit      15
-LimitMsg        $Y$n»¡¹D¡R¡uÁöµM§Úªº­×¾i¦n¡M¦ı¬O§A¦p¦¹§ä¦º¡M¯u¬O¥O¤H¥Í®ğ¡T¡v
-$nÂàÀYµo¥X­â¼Fªº¤@À»¡M¶W¥G·Q¹³¡K¡K$A$R~
+LimitMsg        $Y$nèªªé“ï¹•ã€Œé›–ç„¶æˆ‘çš„ä¿®é¤Šå¥½ï¹ä½†æ˜¯ä½ å¦‚æ­¤æ‰¾æ­»ï¹çœŸæ˜¯ä»¤äººç”Ÿæ°£ï¹—ã€
+$nè½‰é ­ç™¼å‡ºå‡Œå²çš„ä¸€æ“Šï¹è¶…ä¹æƒ³åƒâ€¦â€¦$A$R~
 Limit           2000
 Multiplier      15
 RebirthGold     10000

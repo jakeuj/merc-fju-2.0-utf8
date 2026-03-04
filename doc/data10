@@ -1,30 +1,30 @@
-Subject: [¤å¥ó] Socials ¥~±¾¤èªk (Âà¸ü)                adac(Âà±H)
+Subject: [æ–‡ä»¶] Socials å¤–æŽ›æ–¹æ³• (è½‰è¼‰)                adac(è½‰å¯„)
 
-        ¦b Envy 1.0 ¤¤, Social CMD ¬O¦bµ{¦¡¤º³¡ªº, ³o·N«ä´N¬O»¡
-        °²¦p­n­×§ï¤@­Ó Social CMD, ´N¥²¶·­«·s½sÄ¶µ{¦¡.....hmmm.
+        åœ¨ Envy 1.0 ä¸­, Social CMD æ˜¯åœ¨ç¨‹å¼å…§éƒ¨çš„, é€™æ„æ€å°±æ˜¯èªª
+        å‡å¦‚è¦ä¿®æ”¹ä¸€å€‹ Social CMD, å°±å¿…é ˆé‡æ–°ç·¨è­¯ç¨‹å¼.....hmmm.
 
-        ¥H¤Uªº patch, ¬O±N Social CMD ¿W¥ß©óµ{¦¡¤¤, ¦Ó©ñ¨ì°Ï°ìÀÉ¤¤,
-        ÂÇ¥Ñ #SOCIALS ªº©w¸q¥i¥H¦Û¥Ñªº­×§ï©Ò¦³ªº Social CMD.
+        ä»¥ä¸‹çš„ patch, æ˜¯å°‡ Social CMD ç¨ç«‹æ–¼ç¨‹å¼ä¸­, è€Œæ”¾åˆ°å€åŸŸæª”ä¸­,
+        è—‰ç”± #SOCIALS çš„å®šç¾©å¯ä»¥è‡ªç”±çš„ä¿®æ”¹æ‰€æœ‰çš„ Social CMD.
 
         Hope it is useful for you.
         Any bugs, welcome to report.
 
 -----------
 
-        °Ï°ìÀÉ¤¤ªº®æ¦¡¬°:
+        å€åŸŸæª”ä¸­çš„æ ¼å¼ç‚º:
 #SOCIALS
 accuse~
-±±¶D~
-§A·Q«ü³d½Ö?~
-$n ¤@¥I·Q½|¤Hªº¼Ë¤l.~
-You ¹ï $M §ë¥HÄþ³dªº²´¥ú.~
-$n ¹ï $N §ë¥HÄþ³dªº²´¥ú.~
-$n ¹ï§A§ë¥HÄþ³dªº²´¥ú.~
-§A²`²`¦a¦Û³d.~
-$n ¦ü¥G¨}¤ß¤£¦w.~
+æŽ§è¨´~
+ä½ æƒ³æŒ‡è²¬èª°?~
+$n ä¸€ä»˜æƒ³ç½µäººçš„æ¨£å­.~
+You å° $M æŠ•ä»¥è­´è²¬çš„çœ¼å…‰.~
+$n å° $N æŠ•ä»¥è­´è²¬çš„çœ¼å…‰.~
+$n å°ä½ æŠ•ä»¥è­´è²¬çš„çœ¼å…‰.~
+ä½ æ·±æ·±åœ°è‡ªè²¬.~
+$n ä¼¼ä¹Žè‰¯å¿ƒä¸å®‰.~
 
 ack~
-Åå´j~
+é©šæ„•~
 You gasp and say 'ACK!' at your mistake.~
 $n ACKS at $s big mistake.~
 You ACK $M.~
@@ -257,10 +257,10 @@ void do_socials( CHAR_DATA *ch, char *argument )
 END of patch
 
 --
-                                                ·Å©v¬R, ¥æ¤j¸ê¤u
+                                                æº«å®—æ˜±, äº¤å¤§è³‡å·¥
                                                 tywen@csie.nctu.edu.tw.
 
 
 --
-[1m¡° ¨Ó·½:¡E§öªá§ø bbs.ios.ncu.edu.tw¡E[FROM: wenny] [m
+[1mâ€» ä¾†æº:â€¢æèŠ±æ‘ bbs.ios.ncu.edu.twâ€¢[FROM: wenny] [m
 

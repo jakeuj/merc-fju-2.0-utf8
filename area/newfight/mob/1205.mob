@@ -1,12 +1,12 @@
 Vnum            1205
 Name            bear~
-ShortDesc       �B���F��~
-LongDesc        �B���F��(bear).
+ShortDesc       冰穴浣熊~
+LongDesc        冰穴浣熊(bear).
 ~
 Description
-�@�����F�ʦ~���ʪ��M�`�ͬ���B�줧���M�զӼ�b�M�p�ӫO�x��
-�~�֨ϱo�����H�N���Iŧ�M���ɬݨ�ͤH�a��ɡM�F���ܽե֪���
-�|�q�ۤ@���B�D��V�A�C
+一隻活了百年的動物﹐常生活於冰原之中﹐白而潔淨﹐厚而保暖的
+外皮使得不受寒冷的侵襲﹐有時看到生人靠近時﹐浣熊很調皮的都
+會裹著一顆冰求丟向你。
 ~
 Sentinel        Yes
 StayArea        Yes

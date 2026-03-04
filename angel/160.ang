@@ -3,9 +3,9 @@ Lower           1
 Position        POS_STANDING
 Function        ~
 Description
-¹ï©ó¦P¤@­Ó¶¤¥î([1;32mgroup[0m)ªº¤H¡M§A­Ì¥i¥H¤£¥²¨Ï¥Î [1;32msay[0m ©Î¬O [1;32mchat[0m ¨Ó·¾³q¡M§A­Ì¥i¥H
-¨Ï¥Î [1;32mgtell[0m ¨Ó¹ï¾ã­Ó¶¤¥î¨Ó·¾³q³á¡C
+å°æ–¼åŒä¸€å€‹éšŠä¼([1;32mgroup[0m)çš„äººï¹ä½ å€‘å¯ä»¥ä¸å¿…ä½¿ç”¨ [1;32msay[0m æˆ–æ˜¯ [1;32mchat[0m ä¾†æºé€šï¹ä½ å€‘å¯ä»¥
+ä½¿ç”¨ [1;32mgtell[0m ä¾†å°æ•´å€‹éšŠä¼ä¾†æºé€šå–”ã€‚
 
-½Ğ¬d¸ß¡Rgtell¡Bsay¡Bchat
+è«‹æŸ¥è©¢ï¹•gtellã€sayã€chat
 ~
 End

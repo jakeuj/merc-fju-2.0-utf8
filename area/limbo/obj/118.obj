@@ -1,9 +1,9 @@
 Vnum            118
 Name            special lunicake~
-ShortDesc       ¯S»s¤ë»æ~
+ShortDesc       ç‰¹è£½æœˆé¤…~
 Description
-¤@Áû¯S»sªº¤ë»æ¡M¦Y¤F¥i¥HÅı§Aºë¯«¦Ê­¿¡M§A¥i¥H¦Y¦Y¬İ(eat)¡C~
-Unit            Áû~
+ä¸€é¡†ç‰¹è£½çš„æœˆé¤…ï¹åƒäº†å¯ä»¥è®“ä½ ç²¾ç¥ç™¾å€ï¹ä½ å¯ä»¥åƒåƒçœ‹(eat)ã€‚~
+Unit            é¡†~
 ItemType        ITEM_PILL
 Contraband      Yes
 Takeable        Yes

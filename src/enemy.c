@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -20,20 +20,20 @@ void set_enemy( CHAR_DATA * ch, char * city )
 
   if ( !ch || !city || !*city )
   {
-    mudlog( LOG_DEBUG, "set_enemy: ¨Ó·½¦³°İÃD." );
+    mudlog( LOG_DEBUG, "set_enemy: ä¾†æºæœ‰å•é¡Œ." );
     RETURN_NULL();
   }
 
   if ( IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "set_enemy: ¹ï¶H¬O«Dª±®a %s.", ch->name );
+    mudlog( LOG_DEBUG, "set_enemy: å°è±¡æ˜¯éç©å®¶ %s.", ch->name );
     RETURN_NULL();
   }
 
-  /* Á×§K¦sÀÉ®É¦³ ~ ³o­Ó²Å¸¹ */
+  /* é¿å…å­˜æª”æ™‚æœ‰ ~ é€™å€‹ç¬¦è™Ÿ */
   smash_tilde( city );
 
-  /* ÀË¬d¬O§_¦³­«½Æ */
+  /* æª¢æŸ¥æ˜¯å¦æœ‰é‡è¤‡ */
   for ( pEnemy = ch->enemy; pEnemy; pEnemy = pEnemy->next )
     if ( !str_cmp( city, pEnemy->city ) ) RETURN_NULL();
 
@@ -53,13 +53,13 @@ bool check_enemy( CHAR_DATA * ch, const char * city )
 
   if ( !ch || !city || !*city )
   {
-    mudlog( LOG_DEBUG, "check_enemy: ¨Ó·½¦³¿ù»~." );
+    mudlog( LOG_DEBUG, "check_enemy: ä¾†æºæœ‰éŒ¯èª¤." );
     RETURN( FALSE );
   }
 
   if ( IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "check_enemy: ¹ï¶H¬O«Dª±®a %s.", ch->name );
+    mudlog( LOG_DEBUG, "check_enemy: å°è±¡æ˜¯éç©å®¶ %s.", ch->name );
     RETURN( FALSE );
   }
 
@@ -78,7 +78,7 @@ void rem_enemy( CHAR_DATA * ch, const char * city )
 
   if ( !ch || !city || !*city )
   {
-    mudlog( LOG_DEBUG, "rem_enemy: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "rem_enemy: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -97,7 +97,7 @@ void rem_enemy( CHAR_DATA * ch, const char * city )
     prev = pEnemy;
   }
 
-  mudlog( LOG_DEBUG, "rem_enemy: §ä¤£¨ì¼Ğ°O %s.", city );
+  mudlog( LOG_DEBUG, "rem_enemy: æ‰¾ä¸åˆ°æ¨™è¨˜ %s.", city );
   RETURN_NULL();
 }
 
@@ -110,14 +110,14 @@ bool is_enemy( CHAR_DATA * ch, char * opr, char * val )
 
   if ( IS_NPC( ch ) )
   {
-    mudlog( LOG_DEBUG, "is_enemy: ¹ï¶H¬O«Dª±®a." );
+    mudlog( LOG_DEBUG, "is_enemy: å°è±¡æ˜¯éç©å®¶." );
     RETURN( FALSE );
   }
 
   one_argument( val, arg );
   if ( arg[0] == '\x0' || !opr || !*opr )
   {
-    mudlog( LOG_DEBUG, "is_enemy: ¨S¦³¤Ş¼Æ." );
+    mudlog( LOG_DEBUG, "is_enemy: æ²’æœ‰å¼•æ•¸." );
     RETURN( FALSE );
   }
 
@@ -126,7 +126,7 @@ bool is_enemy( CHAR_DATA * ch, char * opr, char * val )
   if ( !strcmp( opr, "!=" ) ) RETURN( !found );
   if ( !strcmp( opr, "==" ) ) RETURN( found );
 
-  mudlog( LOG_DEBUG, "is_enemy: ¿ù»~ªº¹Bºâ¤¸ %s.", opr );
+  mudlog( LOG_DEBUG, "is_enemy: éŒ¯èª¤çš„é‹ç®—å…ƒ %s.", opr );
   RETURN( FALSE );
 }
 
@@ -147,13 +147,13 @@ FUNCTION( do_mpsetenemy )
 
   if ( arg1[0] == '\x0' || arg2[0] == '\x0' )
   {
-    mudlog( LOG_DEBUG, "do_mpsetenemy: MOB %d ¤Ş¼Æ¿ù»~.", vnum );
+    mudlog( LOG_DEBUG, "do_mpsetenemy: MOB %d å¼•æ•¸éŒ¯èª¤.", vnum );
     RETURN_NULL();
   }
 
   if ( !( victim = get_char_room( ch, arg1 ) ) )
   {
-    mudlog( LOG_DEBUG, "do_mpsetenemy: MOB %d ¹ï¶H %s ¤£¦s¦b.", vnum, arg1 );
+    mudlog( LOG_DEBUG, "do_mpsetenemy: MOB %d å°è±¡ %s ä¸å­˜åœ¨.", vnum, arg1 );
     RETURN_NULL();
   }
 
@@ -178,13 +178,13 @@ FUNCTION( do_mpremenemy )
 
   if ( arg1[0] == '\x0' || arg2[0] == '\x0' )
   {
-    mudlog( LOG_DEBUG, "do_mpremenemy: MOB %d ¤Ş¼Æ¿ù»~.", vnum );
+    mudlog( LOG_DEBUG, "do_mpremenemy: MOB %d å¼•æ•¸éŒ¯èª¤.", vnum );
     RETURN_NULL();
   }
 
   if ( !( victim = get_char_room( ch, arg1 ) ) )
   {
-    mudlog( LOG_DEBUG, "do_mpremenemy: MOB %d ¹ï¶H %s ¤£¦s¦b." , vnum, arg1 );
+    mudlog( LOG_DEBUG, "do_mpremenemy: MOB %d å°è±¡ %s ä¸å­˜åœ¨." , vnum, arg1 );
     RETURN_NULL();
   }
 

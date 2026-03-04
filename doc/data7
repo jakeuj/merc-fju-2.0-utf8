@@ -1,14 +1,14 @@
-¼Ğ  ÃD: Ãö©ó link list ªº bug & solution
+æ¨™  é¡Œ: é—œæ–¼ link list çš„ bug & solution
 
 Hi all mud adm
 
-        ¦b Merc Mud ¸Ì­±¦³¤@ºØ Bug ¬O«ÜÃø¥h·Q¨ìªº
-        ¦b¦¹ release µ¹¤j®a, §Æ±æ¯àÀ°¤j®a¸Ñ¨M¤@¨Ç
-        ±`¨£¦ı¬O¤S¤£ª¾¹D«ç»òµo¥Íªº bug, ¤]§Æ±æ
-        ¤j®a¯à¦h¦hµ¹¤©·N¨£»P«ü±Ğ, ¥H¤Uªº¸Ñ¨M¤è¦¡
-        cost »á°ª, ¤]§Æ±æ¯à¦³§ó°ª©ú¥B¤è«Kªº¸Ñ¨M¿ìªk
+        åœ¨ Merc Mud è£¡é¢æœ‰ä¸€ç¨® Bug æ˜¯å¾ˆé›£å»æƒ³åˆ°çš„
+        åœ¨æ­¤ release çµ¦å¤§å®¶, å¸Œæœ›èƒ½å¹«å¤§å®¶è§£æ±ºä¸€äº›
+        å¸¸è¦‹ä½†æ˜¯åˆä¸çŸ¥é“æ€éº¼ç™¼ç”Ÿçš„ bug, ä¹Ÿå¸Œæœ›
+        å¤§å®¶èƒ½å¤šå¤šçµ¦äºˆæ„è¦‹èˆ‡æŒ‡æ•™, ä»¥ä¸‹çš„è§£æ±ºæ–¹å¼
+        cost é —é«˜, ä¹Ÿå¸Œæœ›èƒ½æœ‰æ›´é«˜æ˜ä¸”æ–¹ä¾¿çš„è§£æ±ºè¾¦æ³•
 
-        bug Á|¨Ò¦p
+        bug èˆ‰ä¾‹å¦‚
 
         for( ch = char_list; ch; ch = ch_next )
         {
@@ -24,22 +24,22 @@ Hi all mud adm
         void some_function( CHAR_DATA *ch, ... )
         {
                 ...
-                extract_char( victim /* ¤£¥©ªº¬O victim ­è¦n¬O ch->next */ );
+                extract_char( victim /* ä¸å·§çš„æ˜¯ victim å‰›å¥½æ˜¯ ch->next */ );
                 ...
-                /* ©ÎªÌ¦P®É³s ch ©Î ch ªº«e´X­Ó³£ extract ±¼¤F */
+                /* æˆ–è€…åŒæ™‚é€£ ch æˆ– ch çš„å‰å¹¾å€‹éƒ½ extract æ‰äº† */
         }
 
-        ³oºØ±¡ªp±`¦b¤@­Ó skill ¼g±o«Ü¼É¤Oªº mud ¸Ì­±¨£¨ì
-        ÁöµM Envy Mud ¥Î·íªì§Ú«ØÄ³ªº free mark ªº¤è¦¡¥h³B²z
-        ¦ı¬O¦pªG¹J¨ì ch && ch->next ¦P®É³£³Q free ±¼ªº±¡§Î¤´µM¦³°İÃD
-        (­×¥¿: À³¸Ó¨S¦³°İÃD, ¤£¹L¦b¬Y¨Çfunction¸Ì­±¤£¯à¸õ¹L ->deleted)
+        é€™ç¨®æƒ…æ³å¸¸åœ¨ä¸€å€‹ skill å¯«å¾—å¾ˆæš´åŠ›çš„ mud è£¡é¢è¦‹åˆ°
+        é›–ç„¶ Envy Mud ç”¨ç•¶åˆæˆ‘å»ºè­°çš„ free mark çš„æ–¹å¼å»è™•ç†
+        ä½†æ˜¯å¦‚æœé‡åˆ° ch && ch->next åŒæ™‚éƒ½è¢« free æ‰çš„æƒ…å½¢ä»ç„¶æœ‰å•é¡Œ
+        (ä¿®æ­£: æ‡‰è©²æ²’æœ‰å•é¡Œ, ä¸éåœ¨æŸäº›functionè£¡é¢ä¸èƒ½è·³é ->deleted)
 
-        ¥Ø«e¬O·Q¨ì¤@­Ó·sªº¸Ñ¨M¤èªk¦p¤U
+        ç›®å‰æ˜¯æƒ³åˆ°ä¸€å€‹æ–°çš„è§£æ±ºæ–¹æ³•å¦‚ä¸‹
 
-        §â link list §ï¦¨Âù¦VÃìµ²
-        ¦Ó free list «h¤´µMºû«ù³æ¦VÃìµ²
-        ¨C­Ó node ¥[¤W free mark ¥H°Ï§O¸Ó node ¬O§_¦b free list ¤¤
-        ¼g­Ó next function ¦p¤U
+        æŠŠ link list æ”¹æˆé›™å‘éˆçµ
+        è€Œ free list å‰‡ä»ç„¶ç¶­æŒå–®å‘éˆçµ
+        æ¯å€‹ node åŠ ä¸Š free mark ä»¥å€åˆ¥è©² node æ˜¯å¦åœ¨ free list ä¸­
+        å¯«å€‹ next function å¦‚ä¸‹
 
         next_node *next( node *np )
         {
@@ -47,11 +47,11 @@ Hi all mud adm
                         np = np->prev;
                 if( np )
                         return np->next;
-                else /* ªí¥Ü©Ò¦³ªº prev node ³£¤]¤£©¯³Q free ±¼¤F */
+                else /* è¡¨ç¤ºæ‰€æœ‰çš„ prev node éƒ½ä¹Ÿä¸å¹¸è¢« free æ‰äº† */
                         return node_list;
         }
 
-        ¹ê»Ú¥Îªk¦p
+        å¯¦éš›ç”¨æ³•å¦‚
 
         CHAR_DATA *next_char( CHAR_DATA *ch )
         {
@@ -62,15 +62,15 @@ Hi all mud adm
 
         ...
 
-        /* °²¦p¥H¤U³o­Ó loop ¬O¦b run-time ®É¹ï char_list °Ê§@ªº³Ì¥~­±¤@°é */
+        /* å‡å¦‚ä»¥ä¸‹é€™å€‹ loop æ˜¯åœ¨ run-time æ™‚å° char_list å‹•ä½œçš„æœ€å¤–é¢ä¸€åœˆ */
         old_char_free = char_free;
         for( ch = char_list; ch;
         ch = next_char( ch ), old_char_free = char_free ) {
             /* you can do everything you want here */
         }
 
-        /* °²¦p¥H¤U³o­Ó loop ¤£¬O¦b run-time ®É¹ï char_list °Ê§@ªº³Ì¥~¤@°é
-           ©Î¬O§AµLªk§PÂ_¬O¤£¬O®É(¦p¦b recusive function ¸Ì­±) */
+        /* å‡å¦‚ä»¥ä¸‹é€™å€‹ loop ä¸æ˜¯åœ¨ run-time æ™‚å° char_list å‹•ä½œçš„æœ€å¤–ä¸€åœˆ
+           æˆ–æ˜¯ä½ ç„¡æ³•åˆ¤æ–·æ˜¯ä¸æ˜¯æ™‚(å¦‚åœ¨ recusive function è£¡é¢) */
         for( ch = char_list; ch; ch = next_char(ch) )   {
             /* you can do everything you want here */
         }
@@ -91,21 +91,21 @@ Hi all mud adm
                 if( old_char_free && old_char_free->next ) {
                         new_ch = old_char_free->next;
                         old_char_free->next = new_ch->next;
-                /* ³o¸Ì¥i¯à³y¦¨¤@­Ó bug
-                   ´N¬O§A§Ñ¤F¦b³Ì¥~­±ªº loop §¹«á
-                   ¤~ old_char_free = char_free
-                   ¦pªG¤Ó¦­ªº¸Ü, ¦b extract_char «á¤£¤[¤S alloc_char,
-                   ·|³y¦¨ next_char() = char_list, ´N¥i¯à·|¦³
-                   µL­­¦^°é, ½Ğª`·N  */
+                /* é€™è£¡å¯èƒ½é€ æˆä¸€å€‹ bug
+                   å°±æ˜¯ä½ å¿˜äº†åœ¨æœ€å¤–é¢çš„ loop å®Œå¾Œ
+                   æ‰ old_char_free = char_free
+                   å¦‚æœå¤ªæ—©çš„è©±, åœ¨ extract_char å¾Œä¸ä¹…åˆ alloc_char,
+                   æœƒé€ æˆ next_char() = char_list, å°±å¯èƒ½æœƒæœ‰
+                   ç„¡é™å›åœˆ, è«‹æ³¨æ„  */
                 }
                 else
                         new_ch = ( CHAR_DATA * )calloc(1, sizeof(CHAR_DATA));
-                *new_ch = empty_char; /* ¶¶«K§â in free list ²M¬° FALSE */
+                *new_ch = empty_char; /* é †ä¾¿æŠŠ in free list æ¸…ç‚º FALSE */
 
                 return new_ch;
         }
 
-/* »P char_list ¦ê³sªº function */
+/* èˆ‡ char_list ä¸²é€£çš„ function */
 
         void insert_char( CHAR_DATA *ch )
         {
@@ -115,7 +115,7 @@ Hi all mud adm
             char_list    = ch;
         }
 
-/* ±q char_list ®³±¼ ch ªº function */
+/* å¾ char_list æ‹¿æ‰ ch çš„ function */
 
         bool delete_char( CHAR_DATA *ch )
         {
@@ -133,10 +133,10 @@ Hi all mud adm
             return TRUE;
         }
 
-°O¦í!!
-¦b³Ì¥~°éªº loop µ²§ô©Î¶}©l¥[¤W¤@¦æ(¨ä¹ê¦b¨ú±o next_char() «á´N¥i¥H¤F)
+è¨˜ä½!!
+åœ¨æœ€å¤–åœˆçš„ loop çµæŸæˆ–é–‹å§‹åŠ ä¸Šä¸€è¡Œ(å…¶å¯¦åœ¨å–å¾— next_char() å¾Œå°±å¯ä»¥äº†)
 
 old_char_free = char_free;
 
-¦ı¬O¦pªG¬O³o­Ó loop ¬O¦b¤@­Ó function ¤ºµM«á¤S¦b loop ¤º recursive
-©I¥s¦Û¤v®É ¦b function ¤§¥~¤~¯à¥[¤W³o¤@¦æ!!
+ä½†æ˜¯å¦‚æœæ˜¯é€™å€‹ loop æ˜¯åœ¨ä¸€å€‹ function å…§ç„¶å¾Œåˆåœ¨ loop å…§ recursive
+å‘¼å«è‡ªå·±æ™‚ åœ¨ function ä¹‹å¤–æ‰èƒ½åŠ ä¸Šé€™ä¸€è¡Œ!!

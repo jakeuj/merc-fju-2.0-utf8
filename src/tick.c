@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -32,90 +32,90 @@ FUNCTION( do_tick )
 
   if ( !tick_permit && !IS_IMMORTAL( ch ) )
   {
-    send_to_char( "¹ï¤£°_¡M¨t²ÎºŞ²zªÌ§â­p¼Æ¾¹Ãö³¬¤F¡C\n\r" , ch );
+    send_to_char( "å°ä¸èµ·ï¹ç³»çµ±ç®¡ç†è€…æŠŠè¨ˆæ•¸å™¨é—œé–‰äº†ã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
   argument = one_argument( argument , arg );
 
-  /* ¦pªG¨S¦³°Ñ¼Æ«h¬O¬d¸ß */
+  /* å¦‚æœæ²’æœ‰åƒæ•¸å‰‡æ˜¯æŸ¥è©¢ */
   if ( !arg[0] )
   {
-    /* ©|¥¼³]©w */
+    /* å°šæœªè¨­å®š */
     if ( pDesc->tick < 0 )
     {
-      send_to_char( "§A©|¥¼³]©w§Aªº­p¼Æ¾¹¡M½Ğ¬d¸ß tick ªº¨Ï¥Î¤èªk¡C\n\r" , ch );
+      send_to_char( "ä½ å°šæœªè¨­å®šä½ çš„è¨ˆæ•¸å™¨ï¹è«‹æŸ¥è©¢ tick çš„ä½¿ç”¨æ–¹æ³•ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
-    /* ¤w¸g³]©w«h¬O¬d¸ß */
+    /* å·²ç¶“è¨­å®šå‰‡æ˜¯æŸ¥è©¢ */
     else
     {
-      print_to_char( ch , "§A³]©w¦b¨C %d ­Ó¨t²Î®É¯ß·|¦Û°Ê¿é¤J {%s}¡C\n\r"
+      print_to_char( ch , "ä½ è¨­å®šåœ¨æ¯ %d å€‹ç³»çµ±æ™‚è„ˆæœƒè‡ªå‹•è¼¸å…¥ {%s}ã€‚\n\r"
         , pDesc->tick / TICK_MULTIPLE
         , pDesc->tick_command );
       RETURN_NULL();
     }
   }
 
-  /* ­Y²Ä¤@­Ó°Ñ¼Æ¬O¼Æ¦r */
+  /* è‹¥ç¬¬ä¸€å€‹åƒæ•¸æ˜¯æ•¸å­— */
   if ( is_number( arg ) )
   {
-    /* ÀË¬d¬í¼Æ¬O§_¦Xªk */
+    /* æª¢æŸ¥ç§’æ•¸æ˜¯å¦åˆæ³• */
     if ( ( tick = atoi( arg ) ) < MIN_TICK || tick > MAX_TICK )
     {
-      print_to_char( ch , "­p¼Æ¾¹ªº¨t²Î®É¯ß¥²¶·¤¶©ó %d ©M %d ¤§¶¡¡C\n\r"
+      print_to_char( ch , "è¨ˆæ•¸å™¨çš„ç³»çµ±æ™‚è„ˆå¿…é ˆä»‹æ–¼ %d å’Œ %d ä¹‹é–“ã€‚\n\r"
         , MIN_TICK , MAX_TICK );
       RETURN_NULL();
     }
 
-    /* ÀË¬d©R¥O¦C */
+    /* æª¢æŸ¥å‘½ä»¤åˆ— */
     if ( !*argument )
     {
-      send_to_char( "§A¨S¦³¿é¤J­p¼Æ¾¹ªº©R¥O¦C¡C\n\r" , ch );
+      send_to_char( "ä½ æ²’æœ‰è¼¸å…¥è¨ˆæ•¸å™¨çš„å‘½ä»¤åˆ—ã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
 
-    /* ³]©w­p¼Æ¾¹ªº®É¯ß©M©R¥O */
+    /* è¨­å®šè¨ˆæ•¸å™¨çš„æ™‚è„ˆå’Œå‘½ä»¤ */
     argument[sizeof( pDesc->tick_command ) - 1 ] = '\x0';
     str_cpy( pDesc->tick_command, argument );
     pDesc->tick = tick * TICK_MULTIPLE;
 
-    act( "§A³]©w¦b¨C$i­Ó¨t²Î®É¯ß·|¦Û°Ê¿é¤J $T¡C", ch, &tick, argument, TO_CHAR );
+    act( "ä½ è¨­å®šåœ¨æ¯$iå€‹ç³»çµ±æ™‚è„ˆæœƒè‡ªå‹•è¼¸å…¥ $Tã€‚", ch, &tick, argument, TO_CHAR );
 
     RETURN_NULL();
   }
 
-  /* ²M°£­p¼Æ¾¹ */
+  /* æ¸…é™¤è¨ˆæ•¸å™¨ */
   else if ( !str_prefix( arg , "!clear" ) )
   {
     pDesc->tick            = ERRORCODE;
     pDesc->tick_count      = ERRORCODE;
     pDesc->tick_command[0] = '\x0';
-    send_to_char( "§A§â­p¼Æ¾¹²M°£¥BÃö³¬¤F¡C\n\r" , ch );
+    send_to_char( "ä½ æŠŠè¨ˆæ•¸å™¨æ¸…é™¤ä¸”é—œé–‰äº†ã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* Ãö³¬­p¼Æ¾¹ */
+  /* é—œé–‰è¨ˆæ•¸å™¨ */
   else if ( !str_prefix( arg , "!off" ) )
   {
     pDesc->tick_count = ERRORCODE;
-    send_to_char( "§A§â­p¼Æ¾¹Ãö³¬¤F¡C\n\r" , ch );
+    send_to_char( "ä½ æŠŠè¨ˆæ•¸å™¨é—œé–‰äº†ã€‚\n\r" , ch );
     RETURN_NULL();
   }
 
-  /* ¥´¶}­p¼Æ¾¹ */
+  /* æ‰“é–‹è¨ˆæ•¸å™¨ */
   else if ( !str_prefix( arg , "!on" ) )
   {
     if ( pDesc->tick == ERRORCODE || !pDesc->tick_command[0] )
     {
-      send_to_char( "§A©|¥¼³]©w§Aªº­p¼Æ¾¹¡M½Ğ¬d¸ß tick¡C\n\r" , ch );
+      send_to_char( "ä½ å°šæœªè¨­å®šä½ çš„è¨ˆæ•¸å™¨ï¹è«‹æŸ¥è©¢ tickã€‚\n\r" , ch );
       RETURN_NULL();
     }
 
     pDesc->tick_count = pDesc->tick;
-    print_to_char( ch , "§A±N¨C %d ­Ó¨t²Î®É¯ß¦Û°Ê¿é¤J %s¡C\n\r"
+    print_to_char( ch , "ä½ å°‡æ¯ %d å€‹ç³»çµ±æ™‚è„ˆè‡ªå‹•è¼¸å…¥ %sã€‚\n\r"
       , pDesc->tick / TICK_MULTIPLE
       , pDesc->tick_command );
     RETURN_NULL();
@@ -138,13 +138,13 @@ FUNCTION( do_tick )
       }
 
       tick_permit = FALSE;
-      send_to_char( "§A§â¥şÅéªº­p¼Æ¾¹Ãö³¬¤F¡C\n\r" , ch );
+      send_to_char( "ä½ æŠŠå…¨é«”çš„è¨ˆæ•¸å™¨é—œé–‰äº†ã€‚\n\r" , ch );
     }
 
     else
     {
       tick_permit = TRUE;
-      send_to_char( "§A§â¥şÅéªº­p¼Æ¾¹¥´¶}¤F¡C\n\r" , ch );
+      send_to_char( "ä½ æŠŠå…¨é«”çš„è¨ˆæ•¸å™¨æ‰“é–‹äº†ã€‚\n\r" , ch );
     }
 
     RETURN_NULL();
@@ -152,7 +152,7 @@ FUNCTION( do_tick )
 
   else
   {
-    send_to_char( "§A¿é¤Jªº®æ¦¡¤£¹ï¡M½Ğ¬d¸ß tick¡C\n\r" , ch );
+    send_to_char( "ä½ è¼¸å…¥çš„æ ¼å¼ä¸å°ï¹è«‹æŸ¥è©¢ tickã€‚\n\r" , ch );
     RETURN_NULL();
   }
 

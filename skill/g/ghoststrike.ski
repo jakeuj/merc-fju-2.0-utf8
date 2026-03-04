@@ -1,5 +1,5 @@
 Name            ghost strike~
-Cname           �ȳ��x~
+Cname           玄陰掌~
 Slot            SLOT_GHOSTSTRIKE
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -36,17 +36,17 @@ Limit           CLASS_BRAVO      1  90
 Limit           CLASS_MAGE       1  50
 Limit           CLASS_SMITH      1  50
 Help
-�ȳ��x:
+玄陰掌:
 
-�ȳ��x�D�O�ѥȳ��u����X�ϡM���O�o�دu�𷥩��׽m�M�]��
-�����֦���H�h�ϥγo�شx�k�M�b�����N���o�����n��M�p�G
-��ȳ��x������M�i�H�h���ݡC
+玄陰掌乃是由玄陰真氣所驅使﹐但是這種真氣極易修練﹐因此
+有不少江湖人士使用這種掌法﹐在襄陽就有這類的好手﹐如果
+對玄陰掌有興趣﹐可以去找找看。
 
 ~
 
 #Damage
 Description
-$n�����@�ʨϥX$Y�y�c���d���z$Z�q�Ѧӭ��M���X�C�x�Q�T�L�M�۩ۧ�V$N���̮z�B�C~
+$n邪念一動使出$Y『惡鬼攔路』$Z從天而降﹐擊出七掌十三腿﹐招招攻向$N的最弱處。~
 Chance          20
 Value           20
 Parry           0
@@ -56,8 +56,8 @@ End
 
 #Damage
 Description
-$n���Ω��ܡM�[���b�e�M���j�b��M�ϥX�@��$y�y���v�l�l�z$Z�ٮɮ����l��M�p�i��
-��ѥ|��V$N��ӡC~
+$n身形忽變﹐觀之在前﹐忽焉在後﹐使出一招$y『鬼影幢幢』$Z煞時拳風勁氣﹐如波濤
+般由四方向$N湧來。~
 Chance          20
 Value           20
 Parry           0
@@ -67,8 +67,8 @@ End
 
 #Damage
 Description
-$P$n���x�@�X�M�b�ɳ����|�_�M�_�N���H�l�q���x�y���_�z�X�M��Mť���@�n$S�y�˶�
-�����z$P$n���x�@���M$N�p�m���B�����M�L�k�ʼu$Z�C~
+$P$n雙掌一合﹐剎時陰風四起﹐奇冷的寒勁從雙掌尖不斷透出﹐突然聽見一聲$S『倒陽
+取陰』$P$n雙掌一分﹐$N如置身冰窖中﹐無法動彈$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -78,8 +78,8 @@ End
 
 #Damage
 Description
-$G$n���x�K�a�M�y�W�����C������M�ϥX���r�\����$B�y�l��j�k�z$G�u���L�ƪ�����
-�q�a��«�X�M��i$n�����x���M$N�����驻�]�p��z�@�ˡM�Q�l�J���x����$Z�C~
+$G$n雙掌貼地﹐臉上布滿青紫之色﹐使出氤氳功中的$B『吸魂大法』$G只見無數的陰魂
+從地底竄出﹐湧進$n的雙掌中﹐$N的精氣仿彿也如魂魄一樣﹐被吸入雙掌之中$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -89,8 +89,8 @@ End
 
 #Damage
 Description
-$W$n���Τ@�ܡM�}��C�P�M�馨���P��榡�M�ϥX$Y�y�������z�z$W�p�������$N��
-$l$Z�C~
+$W$n身形一變﹐腳踏七星﹐體成魁星踢斗式﹐使出$Y『鬼哭神嚎』$W如死神般攻$N的
+$l$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -100,8 +100,8 @@ End
 
 #Damage
 Description
-$Y$n�j�ܤ@�n�M$R�y���s���]��z$Y�u��$n�����Q�P���ҥ]��M�p���y��V$N�u����
-��$Z�C~
+$Y$n大喝一聲﹐$R『火龍金魔體』$Y只見$n全身被烈火所包圍﹐如火球般向$N席捲而
+來$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -111,8 +111,8 @@ End
 
 #Damage
 Description
-$S$n�r�M�@�D�M�N$B���r�\$R�B�ܷ��P�M�ϥX�ȳ��x�׷����q$R�y���k���H�z$S�j�j
-���l��q$n�����x��X�M�p�����빳�AŢ�n�Ө�$Z�C~
+$S$n猛然一躍﹐將$B氤氳功$R運至極致﹐使出玄陰掌終極奧義$R『引歸殺象』$S強大
+的勁氣從$n的雙掌踴出﹐如網狀般像你籠罩而來$Z。~
 Chance          20
 Value           20
 Parry           0

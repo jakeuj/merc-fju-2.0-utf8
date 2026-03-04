@@ -1,7 +1,7 @@
 Name            infravision~
-Cname           �]���N~
+Cname           夜視術~
 Slot            SLOT_INFRAVISION
-Msgoff          �A�L�k�A�ݨ�·t�����F��T~
+Msgoff          你無法再看到黑暗中的東西﹗~
 Function        cast_infravision~
 Position        POS_STANDING
 Type            TAR_CHAR_DEFENSIVE

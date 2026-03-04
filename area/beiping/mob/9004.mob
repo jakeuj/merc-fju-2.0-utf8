@@ -1,9 +1,9 @@
 Vnum            9004
 Name            beggar~
-ShortDesc       ¤^¤¢~
+ShortDesc       ä¹žä¸~
 Description
-¤@­Ó´ý¨­Å¼¤¼¤¼ªº¤^¤¢¡M¥Î¤^¨Dªº²´¥ú¬ÝµÛ§A¡C
-§A·Q°_§A¬O¦p¦¹ªº±þÄ^¸o­«¡M¤£¸T·QÀ°¥L¡C
+ä¸€å€‹æ¸¾èº«é«’å…®å…®çš„ä¹žä¸ï¹ç”¨ä¹žæ±‚çš„çœ¼å…‰çœ‹è‘—ä½ ã€‚
+ä½ æƒ³èµ·ä½ æ˜¯å¦‚æ­¤çš„æ®ºå­½ç½ªé‡ï¹ä¸ç¦æƒ³å¹«ä»–ã€‚
 ~
 StayArea        Yes
 AutoSetValue    Yes
@@ -31,8 +31,8 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  emote ¥Î¤â©Ô¤F©Ô§A³S¤l¡T
-  emote ©ê¦í§Aªº¸}¡M·Q°QªF¦è¦Y¡T
+  emote ç”¨æ‰‹æ‹‰äº†æ‹‰ä½ è¢–å­ï¹—
+  emote æŠ±ä½ä½ çš„è…³ï¹æƒ³è¨Žæ±è¥¿åƒï¹—
 endif
 ~
 End

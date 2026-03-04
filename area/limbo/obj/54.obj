@@ -1,9 +1,9 @@
 Vnum            54
 Name            hat~
-ShortDesc       ¥Ö´U~
+ShortDesc       çš®å¸½~
 Description
-¤@³»¥Ñ¦Ï¥Ö»s¦¨ªº¤p¥Ö´U(hat)~
-Unit            ³»~
+ä¸€é ‚ç”±ç¾Šçš®è£½æˆçš„å°çš®å¸½(hat)~
+Unit            é ‚~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HEAD
 Takeable        Yes

@@ -1,9 +1,9 @@
 Vnum            59
 Name            nocturnal cloth~
-ShortDesc       �]���~
+ShortDesc       夜行衣~
 Description
-�]����ʳ̾A�X����A(cloth)�M�X�P�©]�V���@��C~
-Unit            ��~
+夜間行動最適合的衣服(cloth)﹐幾與黑夜混為一體。~
+Unit            件~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_BODY
 Takeable        Yes

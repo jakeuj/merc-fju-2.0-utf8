@@ -1,10 +1,10 @@
 Vnum            9011
 Name            ninja~
-ShortDesc       �߮���H~
+ShortDesc       扶桑浪人~
 Description
-�@���J���o��ѥS����۪A���M�O�Aı�o�ǳ\�n���M�o�a�ۨǳ\
-���w�M�q�L���W�t�����Z���ݨӡM���H�j���O���q�F�s����Ө�
-�M�����L����ت�����T
+一眼撇見這位老兄的衣著服飾﹐令你覺得些許好笑﹐卻帶著些許
+不安﹐從他身上配戴的武器看來﹐此人大概是遠從東瀛渡海而來
+﹐不知他此行目的為何﹗
 ~
 StayArea        Yes
 AutoSetValue    Yes
@@ -35,7 +35,7 @@ Type            greet_prog
 Chance          50
 Text
 if ispc($n)
-  say �p�V�饻�H�N�V���q�e�B�z�C
+  say 私ゾ日本人ザゾやベネオモ。
 endif
 ~
 End

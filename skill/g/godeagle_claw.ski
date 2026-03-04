@@ -1,5 +1,5 @@
 Name            god eagle claw~
-Cname           ���N��~
+Cname           天鷹爪~
 Slot            SLOT_GODEAGLE_CLAW
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -39,8 +39,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$W$n��E���L�Mí���U�L��ĨϥX$w���N��$W��$Y�y���N����z$W�N�����p�����ɮg
-�M�E�ѻ\�a�M�V$N���������C$Z~
+$W$n氣聚雙腿﹐穩住下盤迎敵使出$w天鷹爪$W之$Y『撥鷹見日』$W鷹爪有如巨綱暴射
+﹐舖天蓋地﹐向$N重重擊中。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -49,8 +49,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n���Ϋ歰�M����$N�������M�~�ӦA�W�ϥX$w���N��$W��$Z$R�y�j�P�i�͡z$W�u����
-�vŢ�n$N�M�ϱo$N�I���M�����M����s�s���ۡC$Z~
+$W$n身形急降﹐先避$N的攻擊﹐繼而再上使出$w天鷹爪$W之$Z$R『大鵬展翅』$W只見爪
+影籠罩$N﹐使得$N背門﹐面門﹐後門連連中招。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -59,8 +59,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�����j��M�ɵۤѦa���ըϥX$w���N��$W��$S�y�N������z$W�M�u��$n���p���N
-½�˫�ۡM$N�Q��ʱo�ɥ����ΡC$Z~
+$W$n見狀大驚﹐借著天地之勢使出$w天鷹爪$W之$S『鷹渡天關』$W﹐只見$n有如天鷹
+翻騰急旋﹐$N被扯動得盡失身形。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -69,8 +69,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n��M�ϥX$w���N��$W��$P�y�C�m�N�S�z$W�_�ձ�ŧ���S���n�M�ϱo$N���x�ѵ��M
-��z���M$N�s���ת����|�]�S���M�N�Q�_�}�եءC$Z~
+$W$n突然使出$w天鷹爪$W之$P『七彩鷹嘯』$W震耳欲襲的嘯嗚聲﹐使得$N心膽俱裂﹐
+魂飛魄散﹐$N連躲避的機會也沒有﹐就被震破耳目。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -79,8 +79,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W�����@�β����{�{�r�ʡM���γv���X�i�M�Φ��x���C$n�ɳ��n���ϥX$w���N��$W��$g
-�y�oð�N�ۡz$W�鶴�ӥX�M���������V$N�g�F$N���߯ݨ�l���r�C$Z~
+$W隱見一團異光閃爍猛動﹐光團逐漸擴張﹐形成漩渦。$n暴喝聲中使出$w天鷹爪$W之$g
+『穎簸鷹旋』$W穿身而出﹐雙爪狠狠向$N狂轟$N的心胸其勁之猛。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -89,8 +89,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�M�S�n���ϥX$w���N��$W��$g�y���N�����z$W�H�w�����Ӱ_�C�u���ե��{�ʡM$n��
-�p�Ƨ@�d�����N�M�������V$N�M$N�߮ɳQ�N�����������M�������ˡC$Z~
+$W$n清嘯聲中使出$w天鷹爪$W之$g『飛鷹撩爪』$W人已撥身而起。只見白光閃動﹐$n身
+如化作千隻白鷹﹐直接撲向$N﹐$N立時被鷹爪重重撕裂﹐身受重傷。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -99,8 +99,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W�d�v�@�v���ڡM$n�ϥX$w���N��$W��$y�y�P��d���z$W�M�ǨӶ������T�C�Ѧa����
-���_�١M�t�׷��֡M�{�{�b$N�����e�M�N���b$N�ݫe�����C$Z~
+$W千鈞一髮之際﹐$n使出$w天鷹爪$W之$y『鵬行千里』$W﹐傳來隆隆巨響。天地瞬為
+之震撼﹐速度極快﹐閃爍在$N的面前﹐鷹爪在$N胸前擊中。$Z~
 Chance          10
 Value           20
 Parry           0
@@ -109,8 +109,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n�r�M�I�i�X$w���N��$W��$B�y���ܼ��N�z$W����ʦa�M�¶ե[���S�_�١M����
-����M�N���E�ѦӤU�M�K�p�P�B�M�K���g�V$N��h$Z~
+$W$n猛然施展出$w天鷹爪$W之$B『浪濤暴鷹』$W天驚動地﹐威勢加倍磅礡震撼﹐鬼神
+俱驚﹐鷹爪舖天而下﹐密如星雨﹐密集狂向$N攻去$Z~
 Chance          10
 Value           20
 Parry           0
@@ -119,8 +119,8 @@ Innate          0 0
 End
 #Damage
 Description
-$W$n����L���e�}���[�j�\�O�ϥX$Y���N��$W�̫����$r�y�a�N�L���z$W�M�L����
-���O�M���W�s�]�z�o�C�T������աM$N�y�ɥֶ}�׺�C$Z~
+$W$n不放過眼前良機加強功力使出$Y天鷹爪$W最後殺招$r『蒼鷹無悔』$W﹐無還擊
+之力﹐身上連珠爆發。響不絕於耳﹐$N頓時皮開肉綻。$Z~
 Chance          10
 Value           20
 Parry           0

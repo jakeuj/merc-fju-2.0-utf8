@@ -1,5 +1,5 @@
 Name            burning hands~
-Cname           ���K���x~
+Cname           火焰之掌~
 Slot            SLOT_BURNING_HANDS
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -40,13 +40,13 @@ Limit           CLASS_MAGE       50  95
 Limit           CLASS_SMITH      50  85
 
 Help
-���K���x�G
+火焰之掌：
 
-�@���򥻪��k�N�M�N�k�O�����b���x���M�A�H�������覡���E�෽�M
-��b�ĤH���W�M�y�����K�������ˮ`�M�@�몺�H�N�i�H�ǳo�@���k�N
-�M���L���M�O�@��²�檺�k�N�M�p�G���m���ܡM�̵M���i�঳������
-�¤O�M���L�٬O�n���򥻪��V�m�N�O�F�M�p�G�A�Q�n�ոլݪ��ܡM��
-�������ݥΤ�������άO�ǰ�Ѯv�N�i�H�Ǩ�F�C
+一項基本的法術﹐將法力集中在雙掌中﹐再以高熱的方式凝聚能源﹐
+投在敵人身上﹐造成火焰攻擊的傷害﹐一般的人就可以學這一項法術
+﹐不過雖然是一個簡單的法術﹐如果熟練的話﹐依然有可能有極高的
+威力﹐不過還是要有基本的訓練就是了﹐如果你想要試試看的話﹐到
+襄陽找找看用火的高手或是學堂老師就可以學到了。
 
 ~
 

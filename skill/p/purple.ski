@@ -1,5 +1,5 @@
 Name            purple~
-Cname           �����g�ܨB~
+Cname           紫府迷蹤步~
 Slot            SLOT_PURPLE
 Msgoff          ~
 Position        POS_FIGHTING
@@ -38,8 +38,8 @@ Limit           CLASS_SMITH      1  95
 Help            ~
 #Damage
 Description
-$n�i�}$P�y�����g�ܨB�z$Z����$S�y�g�~����z$Z�M�\�Ž���½�V��$N������M�{�}
-�ɫB�몺��աC~
+$n展開$P『紫府迷蹤步』$Z中的$S『迷途知返』$Z﹐躡空踏虛般翻越至$N的身後﹐閃開
+暴雨般的攻勢。~
 Chance          10
 Value           20
 Parry           0
@@ -48,8 +48,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$P�y�����g�ܨB�z$Z����$S�y�g�����p�z$Z�M�}�U�B�k�@�L�@�ۡM���h�϶i�M��
-�M���k���ڶi�T�B�M�Y�w�װ{�L��ù�몺�ۦ��C~
+$n使出$P『紫府迷蹤步』$Z中的$S『迷離忽況』$Z﹐腳下步法一盤一旋﹐不退反進﹐倏
+然往右側邁進三步﹐即已斜閃過天羅般的招式。~
 Chance          10
 Value           20
 Parry           0
@@ -58,8 +58,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$P�y�����g�ܨB�z$Z����$S�y�g�ܤۼv�z$Z�M�B�k�s��M���ۤƦ��C��ۼv�M��
-���P�P�a�׶}$N���ۦ��C~
+$n使出$P『紫府迷蹤步』$Z中的$S『迷蹤幻影』$Z﹐步法連踏﹐忽幻化成七具幻影﹐輕
+輕鬆鬆地避開$N的招式。~
 Chance          10
 Value           20
 Parry           0
@@ -68,8 +68,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�i�}$P�y�����g�ܨB�z$Z����$S�y�g�k���P�z$Z�M�������k�M���Φ��p�@���\���M��
-���ƶ}�F�T�ءC~
+$n展開$P『紫府迷蹤步』$Z中的$S『迷妄移霏』$Z﹐忽左忽右﹐身形有如一片枯葉﹐輕
+輕飄開了三尺。~
 Chance          10
 Value           20
 Parry           0
@@ -78,8 +78,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ϥX$P�y�����g�ܨB�z$Z���̲`����$S�y�g�ѿðj�z$Z�M���Φ��p�q�{���ơM���P��
-�y�몺�q$N�ǰ{���ӹL�C~
+$n使出$P『紫府迷蹤步』$Z中最深奧的$S『迷天螢迴』$Z﹐身形有如電閃雲飄﹐捷同鬼
+魅般的從$N旁閃身而過。~
 Chance          10
 Value           20
 Parry           0

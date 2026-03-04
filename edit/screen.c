@@ -1,12 +1,12 @@
 #include "edit.h"
 
 
-/* ©w¦ì¥B¦³¿é¥X¦³ÃC¦âªº¦r¦ê
+/* å®šä½ä¸”æœ‰è¼¸å‡ºæœ‰é¡è‰²çš„å­—ä¸²
 
-    x       ----> ¦r¦êªº x ®y¼Ð
-    y       ----> ¦r¦êªº y ®y¼Ð
-    color   ----> ¦r¦êªºÃC¦â½X
-    string  ----> ¦r¦êªº¦ì§}
+    x       ----> å­—ä¸²çš„ x åº§æ¨™
+    y       ----> å­—ä¸²çš„ y åº§æ¨™
+    color   ----> å­—ä¸²çš„é¡è‰²ç¢¼
+    string  ----> å­—ä¸²çš„ä½å€
 */
 
 void print_string( int x , int  y , int color , char * string )
@@ -43,13 +43,13 @@ void print_string( int x , int  y , int color , char * string )
 }
 
 
-/* ©w¦ì¥B¦³¿é¥X¦³ÃC¦âªº¦³ªø«×¦r¦ê, ªø«×¤£º¡ªº¶ñ¤JªÅ¥Õ
+/* å®šä½ä¸”æœ‰è¼¸å‡ºæœ‰é¡è‰²çš„æœ‰é•·åº¦å­—ä¸², é•·åº¦ä¸æ»¿çš„å¡«å…¥ç©ºç™½
 
-    x       ----> ¦r¦êªº x ®y¼Ð
-    y       ----> ¦r¦êªº y ®y¼Ð
-    color   ----> ¦r¦êªºÃC¦â½X
-    string  ----> ¦r¦êªº¦ì§}
-    len     ----> ¦r¦êªºªø«×
+    x       ----> å­—ä¸²çš„ x åº§æ¨™
+    y       ----> å­—ä¸²çš„ y åº§æ¨™
+    color   ----> å­—ä¸²çš„é¡è‰²ç¢¼
+    string  ----> å­—ä¸²çš„ä½å€
+    len     ----> å­—ä¸²çš„é•·åº¦
 */
 
 void show_one_string( int x , int y , int len , char * address , int color )
@@ -57,13 +57,13 @@ void show_one_string( int x , int y , int len , char * address , int color )
   int loop;
   char buffer[ 82 ];
 
-  /* ­Y¬Oªø«×¬°¹s, «h³]©wªø«× */
+  /* è‹¥æ˜¯é•·åº¦ç‚ºé›¶, å‰‡è¨­å®šé•·åº¦ */
   if  ( len == 0 ) len = strlen( address );
 
-  /* ¥ý§â¦r¦ê³]©w¬°ªÅ¥Õ¦C */
+  /* å…ˆæŠŠå­—ä¸²è¨­å®šç‚ºç©ºç™½åˆ— */
   for ( loop = 0 ; loop < 82 ; loop++ ) buffer[ loop ] = ' ';
 
-  /* «þ¨©¦r¦ê */
+  /* æ‹·è²å­—ä¸² */
   for ( loop = 0 ; loop <= len ; loop++ )
   {
     if ( *(address + loop ) != '\x0' ) buffer[loop] = *(address+loop);

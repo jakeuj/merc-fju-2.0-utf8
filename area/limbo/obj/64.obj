@@ -1,9 +1,9 @@
 Vnum            64
 Name            jade fan~
-ShortDesc       ¥É°©Á¡®°~
+ShortDesc       ç‰éª¨è–„æ‰‡~
 Description
-¥H¤W¦n¯Â¥É»s¦¨ªºÁ¡®°(jade fan)¡M¬İ°_¨Ó»á¦³¥j·N¡C~
-Unit            §â~
+ä»¥ä¸Šå¥½ç´”ç‰è£½æˆçš„è–„æ‰‡(jade fan)ï¹çœ‹èµ·ä¾†é —æœ‰å¤æ„ã€‚~
+Unit            æŠŠ~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

@@ -1,7 +1,7 @@
 Vnum            610
-Name            ¥Á©Ğ~
+Name            æ°‘æˆ¿~
 Description
-¤@¶¡´¶³qªº¥Á©Ğ¡M¦³¤@¨Ç©~¥Á¥¿¦b¥ğ®§¡C
+ä¸€é–“æ™®é€šçš„æ°‘æˆ¿ï¹æœ‰ä¸€äº›å±…æ°‘æ­£åœ¨ä¼‘æ¯ã€‚
 
 ~
 SectorType      SECT_CITY
@@ -16,11 +16,11 @@ ExitKey         0
 End
 
 #Enquire
-Keyword         ÅK¾Q~
+Keyword         éµé‹ª~
 End
 
 #Enquire
-Keyword         ­×²z©±~
+Keyword         ä¿®ç†åº—~
 End
 
 End

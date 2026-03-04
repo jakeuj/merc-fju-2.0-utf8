@@ -1,9 +1,9 @@
 Vnum            79
 Name            crabstick~
-ShortDesc       ¤ì´Ò~
+ShortDesc       æœ¨æ£~
 Description
-³o¬O¤@®Ú¤ì»sªº´Ò¤l(crabstick)¡M¥­®É¥i¥H¥Î¨Ó¥´¤H¡C~
-Unit            ®Ú~
+é€™æ˜¯ä¸€æ ¹æœ¨è£½çš„æ£å­(crabstick)ï¹å¹³æ™‚å¯ä»¥ç”¨ä¾†æ‰“äººã€‚~
+Unit            æ ¹~
 ItemType        ITEM_WEAPON
 Glow            Yes
 WearLoc         ITEM_WIELD

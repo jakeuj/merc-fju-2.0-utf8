@@ -1,10 +1,10 @@
 Vnum            505
 Name            white silk glove~
-ShortDesc       ¥Õ¦âµ·½è¤â®M~
+ShortDesc       ç™½è‰²çµ²è³ªæ‰‹å¥—~
 Description
-¤@Âù¥Õ¦âµ·½è¤â®M(white silk glove)¡M¦bµ²±Bªº®É­Ô¬ï¡C
+ä¸€é›™ç™½è‰²çµ²è³ªæ‰‹å¥—(white silk glove)ï¹åœ¨çµå©šçš„æ™‚å€™ç©¿ã€‚
 ~
-Unit            Âù~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_HANDS
 Takeable        Yes

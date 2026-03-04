@@ -1,5 +1,5 @@
 Name            be needle~
-Cname           �Ѧ�Q�G�w~
+Cname           碧血十二針~
 Slot            SLOT_BE_NEEDLE
 Msgoff          ~
 Check           check_dagger_attack~
@@ -37,17 +37,17 @@ Limit           CLASS_BRAVO     50  60
 Limit           CLASS_MAGE      50  50
 Limit           CLASS_SMITH     50  50
 Help
-�Ѧ�Q�G�w:
+碧血十二針:
 
-�Ѱw�b�ɪ��U�w�O�D�ӻ⮩�M�q�`����͵��ҨϥΡM���O�쥻�ϥΪ��Z��
-���w�M�]����u�W�����Q�]���M�g�Ѥ@�찪�H��s��M��H�u�L���Z���M
-�oı�¤O��ӱq�e�M��O�G�s���ϵu�L��¾�~���I�i�M�����O�s�W���M
-���s�Ѧ�Q�G�w�C
+由針灸時的下針力道而領悟﹐通常為醫生等所使用﹐但是原本使用的武器
+為針﹐因為攻守上的不利因素﹐經由一位高人研究後﹐改以短兵類武器﹐
+發覺威力更勝從前﹐於是乎連善使短兵的職業亦能施展﹐但為保存淵源﹐
+仍叫碧血十二針。
 
 ~
 #Damage
 Description
-$n����@��M�_�⦡$R�y��w�޽u�z$Z�⤤$O�w�w���X�M�ŬX�V$N$l��h�C~
+$n素手一拈﹐起手式$R『穿針引線』$Z手中$O緩緩劃出﹐溫柔向$N$l刺去。~
 Chance          10
 Value           20
 Parry           0
@@ -57,7 +57,7 @@ End
 
 #Damage
 Description
-$n�@��$R�y�ɸɺ��z$Z�⤤$O�h�յL�w�M�����n��V$N��B�n�`�M���H���N�C~
+$n一招$R『補補綴綴』$Z手中$O去勢無定﹐不知要刺向$N何處要害﹐難以捉摸。~
 Chance          10
 Value           20
 Parry           0
@@ -67,7 +67,7 @@ End
 
 #Damage
 Description
-$n�R���p���M�R�X$Y�y�wܰ����z$Z������X�@���]�O�M����$N�ۤv��$O���h�C~
+$n舞姿嫚妙﹐舞出$Y『針黹黻黼』$Z渾身放出一股魔力﹐誘使$N自己往$O撞去。~
 Chance          10
 Value           20
 Parry           0
@@ -77,7 +77,7 @@ End
 
 #Damage
 Description
-$n�s�Ǥ@�ӪŻءM�ϥX$Y�y���_�����z$Z�s�H�a$O��V$N��$l�M�Q�@���Ť��C~
+$n窺準一個空隙﹐使出$Y『風起雲湧刺』$Z連人帶$O刺向$N的$l﹐想一擊斃之。~
 Chance          10
 Value           20
 Parry           0
@@ -87,7 +87,7 @@ End
 
 #Damage
 Description
-$n���a�A���M�ϥX$B�y�w¸�m�m���̡ۨz$Z�M�@�w�@�u�Q��$N���_�b$n����C~
+$n面帶媚笑﹐使出$B『針繡鴦鴦雙相依』$Z﹐一針一線想把$N給縫在$n身邊。~
 Chance          10
 Value           20
 Parry           0
@@ -97,7 +97,7 @@ End
 
 #Damage
 Description
-$n�H�p������$O�M�@��$B�y�⾥�@��´�z$Z�M�g�X�F�d�ʹD��C���N$N�n���U�C~
+$n以小指控制$O﹐一招$B『潑墨一葦織』$Z﹐射出了千百道氣劍欲將$N罩於其下。~
 Chance          10
 Value           20
 Parry           0
@@ -107,8 +107,8 @@ End
 
 #Damage
 Description
-$n�а_�ˤߩ��ơM��ı�H�͵L��M�@��$Y�y�g�N�ʥ۰w�z$Z���U�ͦ��M���_$O�K��
-$N�ĥh�C~
+$n憶起傷心往事﹐實覺人生無趣﹐一式$Y『寫意粗石針』$Z不顧生死﹐拿起$O便往
+$N衝去。~
 Chance          10
 Value           20
 Parry           0
@@ -118,7 +118,7 @@ End
 
 #Damage
 Description
-$n���l�y��M�ϥX�g�ç�$R�y���w��¸�z$Z�M�@�ɺ��Ѱw�v�M��l���ť���$N�ӥh�C~
+$n內勁流轉﹐使出狂亂技$R『神針亂繡』$Z﹐一時滿天針影﹐氣勁漫空全往$N而去。~
 Chance          10
 Value           20
 Parry           0
@@ -128,7 +128,7 @@ End
 
 #Damage
 Description
-$n���𻴨��M�ϥX�T�_��$P�u��w�ì�u�v$Z�M�ٮ�´�X�@���w���M���a�N$N�q���C~
+$n提氣輕身﹐使出禁斷技$P「急針亂穿線」$Z﹐煞時織出一片針網﹐緊緊地將$N裹住。~
 Chance          10
 Value           20
 Parry           0
@@ -138,7 +138,7 @@ End
 
 #Damage
 Description
-$n���l�y��M�ϥX�T�_��$G�y�K��ëB¸�z$Z�M�@�ɺ��Ѱw�v�M��l���ť���$N�ӥh�C~
+$n內勁流轉﹐使出禁斷技$G『密刺亂雨繡』$Z﹐一時滿天針影﹐氣勁漫空全往$N而去。~
 Chance          10
 Value           20
 Parry           0
@@ -148,7 +148,7 @@ End
 
 #Damage
 Description
-$n���Τ@�w�M�ϥX�T�_��$S�u�z�w���_���v$Z�M�������a�@�����N�M�X�X�a��$N�ƥh�C~
+$n身形一緩﹐使出禁斷技$S「慧針續斷情」$Z﹐全身不帶一絲殺意﹐柔柔地朝$N飄去。~
 Chance          10
 Value           20
 Parry           0
@@ -158,7 +158,7 @@ End
 
 #Damage
 Description
-$n����$N�p���j�ġM�L�`���U�̯ӯu���ϥX$Y�u�ﳻ�}�x�N�v$Z�M�@�w���ʷ|�ި�U�C~
+$n面對$N如此強敵﹐無奈之下甘耗真元使出$Y「穿頂破軍術」$Z﹐一針往百會穴刺下。~
 Chance          10
 Value           20
 Parry           0

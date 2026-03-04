@@ -1,5 +1,5 @@
 Name            seven dagger~
-Cname           �C�_���w�Z~
+Cname           七奇炙針訣~
 Slot            SLOT_SEVEN_DAGGER
 Msgoff          ~
 Check           check_dagger_attack~
@@ -35,7 +35,7 @@ Help            ~
 
 #Damage
 Description
-$n�N����a�V$N�M�@��$S�y �g��Q�K�^ �z$Z�M�N$N�H�b��a�M�Ϥ��}�ۦ��C~
+$n將身體靠向$N﹐一招$S『 沾衣十八跌 』$Z﹐將$N黏在原地﹐使不開招式。~
 Chance          20
 Value           20
 Parry           0
@@ -45,7 +45,7 @@ End
 
 #Damage
 Description
-$n��⤤��$O�R�������M�@��$S�y ���j��� �z$Z�M�N$N����պɼƾפF�U�ӡC~
+$n把手中的$O舞成圓環﹐一招$S『 雲迴圓月 』$Z﹐將$N的攻勢盡數擋了下來。~
 Chance          20
 Value           20
 Parry           0
@@ -55,7 +55,7 @@ End
 
 #Damage
 Description
-$n�H�R��ʡM�⤤$O���|�ݫe�M�@��$S�y �p�ʦ��� �z$Z�M�ƸѤF$N����աC~
+$n以靜制動﹐手中$O平舉胸前﹐一招$S『 如封似閉 』$Z﹐化解了$N的攻勢。~
 Chance          20
 Value           20
 Parry           0
@@ -65,7 +65,7 @@ End
 
 #Damage
 Description
-$n�ϥX$S�y ����إޤ� �z$Z�M���y�L�L�e���M�@�D��C�V$N�g�F�h�C~
+$n使出$S『 蘭花拂穴手 』$Z﹐指尖微微前指﹐一道氣劍向$N射了去。~
 Chance          20
 Value           20
 Parry           0
@@ -75,7 +75,7 @@ End
 
 #Damage
 Description
-$n�@��$S�y �M���سS�x �z$Z�M����@���M�V$N���F�@�D�x���C~
+$n一招$S『 清風拂袖掌 』$Z﹐雙手一揮﹐向$N掃了一道掌風。~
 Chance          20
 Value           20
 Parry           0
@@ -85,7 +85,7 @@ End
 
 #Damage
 Description
-$n$S�y��g���z$Z�M��Ӥ@��$S�y���Ḩ���z$Z�M����p���ḭ���M�V$N���F�L�h�C~
+$n$S『秋風狂捲』$Z﹐轉而一式$S『飛花落葉』$Z﹐身體如飛花葉落﹐向$N撲了過去。~
 Chance          20
 Value           20
 Parry           0
@@ -95,7 +95,7 @@ End
 
 #Damage
 Description
-$n$S�y���������z$Z���k�g�ۡM�i�Ӥ@��$S�y���r���i�z$Z�M���ߦV�e�@�D�M���V$N�C~
+$n$S『雲霧漫漫』$Z身法迷濛﹐進而一招$S『飛瀑長虹』$Z﹐身軀向前一躍﹐打向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -105,7 +105,7 @@ End
 
 #Damage
 Description
-$n�@��$S�y���W�{�͡z$Z�M���a�@��$S�y�}�̰��[�z$Z�M$N�~�J$n�������C~
+$n一招$S『絕淵逢生』$Z﹐忽地一式$S『洞裡乾坤』$Z﹐$N誤入$n的陷阱。~
 Chance          20
 Value           20
 Parry           0
@@ -115,7 +115,7 @@ End
 
 #Damage
 Description
-$n���$O�M�@��$S�y�A�f��H�z$Z�M���@��$S�y��Ʃګȡz$Z�M�V$N�����u�s��Ʀ^�C~
+$n手持$O﹐一招$S『翠柏迎人』$Z﹐緊跟一招$S『荊棘拒客』$Z﹐向$N的雙臂連刺數回。~
 Chance          20
 Value           20
 Parry           0
@@ -125,7 +125,7 @@ End
 
 #Damage
 Description
-$n��⤤$O�R�F�}�M$S�y�Ⱦ��t�áz$Z�޻�$N�W���M�H��@��$S�y���̰��[�z$Z��V$N�C~
+$n把手中$O舞了開﹐$S『玄機暗藏』$Z引誘$N上當﹐隨後一招$S『谷裡乾坤』$Z刺向$N。~
 Chance          20
 Value           20
 Parry           0
@@ -135,8 +135,8 @@ End
 
 #Damage
 Description
-$n�R��$O�@��$S�y���̹J�T�z$Z�e�V$N���|���h�M�ӫᨭ�Ω��Ǥ@�a$S�y���a�{�͡z
-$Z�ֳt�a�׶}�C~
+$n舞動$O一招$S『谷裡遇劫』$Z疾向$N的咽喉刺去﹐而後身形往旁一縱$S『絕地逢生』
+$Z快速地避開。~
 Chance          20
 Value           20
 Parry           0
@@ -146,8 +146,8 @@ End
 
 #Damage
 Description
-$n���a���S�ߦ�M����汷�M�@��$S�y���A��g�z$Z�V$N���F�L�h�M���a$n����@�i�M�j
-�s�@�n$S�y�[�����u�z$Z�C~
+$n忽地面露喜色﹐雙手急捧﹐一式$S『神農遺經』$Z向$N遞了過去﹐倏地$n雙手一張﹐大
+叫一聲$S『琉璃散暉』$Z。~
 Chance          20
 Value           20
 Parry           0
@@ -157,8 +157,8 @@ End
 
 #Damage
 Description
-$n�ۦ��@��M$S�y�j��a�ѡz$Z�i�Ӥj�s�@�n�y$Y������C���$Z�z�M�⤤$O�V$N����
-�j�ޮg�X�C�D�u��C~
+$n招式一轉﹐$S『古木蒼天』$Z進而大叫一聲『$Y蘭陵氣劍∼∼$Z』﹐手中$O向$N任脈
+大穴射出七道真氣。~
 Chance          20
 Value           20
 Parry           0

@@ -1,9 +1,9 @@
 Vnum            9015
 Name            castle boot~
-ShortDesc       ¸T½Ã­x¾Ô¹u~
+ShortDesc       ç¦è¡›è»æˆ°é´~
 Description
-¸T½Ã­x³q¥Îªº¹u¤l¡C~
-Unit            Âù~
+ç¦è¡›è»é€šç”¨çš„é´å­ã€‚~
+Unit            é›™~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

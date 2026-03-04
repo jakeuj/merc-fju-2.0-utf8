@@ -1,7 +1,7 @@
 /***************************************************************************
-*  ³o¬O¥Ñ»²¤j¤Æ¾Ç¨t»s§@¸s©Ò¼¶¼gªº¹CÀ¸¡M¥DÅé¥Ñ merc §ï½s¦Ó¨Ó¡M©Ò¦³ªºª©Åv    *
-*  ±N·|³Q«O¯d¡M¦ıÅwªï¤j®a­×§ï¡M¦ı§Ú­Ì¤]§Æ±æ§A­Ì¤]¯à´£¨Ñµ¹¤j®a¡M©Ò¦³ªº°Ó    *
-*  ·~¦æ¬°±N¤£³Q¤¹³\¡C                                                      *
+*  é€™æ˜¯ç”±è¼”å¤§åŒ–å­¸ç³»è£½ä½œç¾¤æ‰€æ’°å¯«çš„éŠæˆ²ï¹ä¸»é«”ç”± merc æ”¹ç·¨è€Œä¾†ï¹æ‰€æœ‰çš„ç‰ˆæ¬Š    *
+*  å°‡æœƒè¢«ä¿ç•™ï¹ä½†æ­¡è¿å¤§å®¶ä¿®æ”¹ï¹ä½†æˆ‘å€‘ä¹Ÿå¸Œæœ›ä½ å€‘ä¹Ÿèƒ½æä¾›çµ¦å¤§å®¶ï¹æ‰€æœ‰çš„å•†    *
+*  æ¥­è¡Œç‚ºå°‡ä¸è¢«å…è¨±ã€‚                                                      *
 *                                                                          *
 *  paul@mud.ch.fju.edu.tw                                                  *
 *  lc@mud.ch.fju.edu.tw                                                    *
@@ -48,14 +48,14 @@ FUNCTION( do_vote )
       str_cpy( buf, pVote->subject );
       buf[33] = '\x0';
 
-      send_to_buffer( "\e[1;36m%3d\e[0m. µ¥¯Å¡R%3d Á|¿ìªÌ¡R\e[1;32m%-12s\e[0m "
-        "[%s] ¥D¦®¡R\e[1;34m%s\e[0m\n\r"
+      send_to_buffer( "\e[1;36m%3d\e[0m. ç­‰ç´šï¹•%3d èˆ‰è¾¦è€…ï¹•\e[1;32m%-12s\e[0m "
+        "[%s] ä¸»æ—¨ï¹•\e[1;34m%s\e[0m\n\r"
         , loop++, pVote->level, pVote->poster
         , YESNO( can_vote( ch, pVote ) )
         , buf );
     }
 
-    if ( loop == 0 ) send_to_buffer( "¥Ø«e¨S¦³Á|¿ì¥ô¦ó§ë²¼¡T\n\r" );
+    if ( loop == 0 ) send_to_buffer( "ç›®å‰æ²’æœ‰èˆ‰è¾¦ä»»ä½•æŠ•ç¥¨ï¹—\n\r" );
     print_buffer( ch );
 
     RETURN_NULL();
@@ -65,7 +65,7 @@ FUNCTION( do_vote )
   {
     if ( !argument || !*argument )
     {
-      send_to_char( "§A¥²¶·µù©ú¥D¦®¡T\n\r", ch );
+      send_to_char( "ä½ å¿…é ˆè¨»æ˜ä¸»æ—¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -74,7 +74,7 @@ FUNCTION( do_vote )
     vote_attach( ch );
     free_string( ch->vote->subject );
     ch->vote->subject = str_dup( buf );
-    send_to_char( "§¹¦¨³]©w§ë²¼¥D¦®¡C\n\r", ch );
+    send_to_char( "å®Œæˆè¨­å®šæŠ•ç¥¨ä¸»æ—¨ã€‚\n\r", ch );
     RETURN_NULL();
   }
 
@@ -97,19 +97,19 @@ FUNCTION( do_vote )
   {
     if ( !( pVote = ch->vote ) )
     {
-      send_to_char( "§A©|¥¼³]©w¦n§Aªº¿ï¶µ¡M©Ò¥HµLªkÁ|¿ì¡T\n\r", ch );
+      send_to_char( "ä½ å°šæœªè¨­å®šå¥½ä½ çš„é¸é …ï¹æ‰€ä»¥ç„¡æ³•èˆ‰è¾¦ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pVote->subject || !*pVote->subject )
     {
-      send_to_char( "§A³o¦¸§ë²¼ªº¥D¦®¬O¤°»ò¡M§A±o³]©w¦n¡T\n\r", ch );
+      send_to_char( "ä½ é€™æ¬¡æŠ•ç¥¨çš„ä¸»æ—¨æ˜¯ä»€éº¼ï¹ä½ å¾—è¨­å®šå¥½ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !pVote->text || !*pVote->text )
     {
-      send_to_char( "§A³o¦¸§ë²¼ªº·N¸q¬O¤°»ò¡M§A±o³]©w¦n¥¦¡T\n\r", ch );
+      send_to_char( "ä½ é€™æ¬¡æŠ•ç¥¨çš„æ„ç¾©æ˜¯ä»€éº¼ï¹ä½ å¾—è¨­å®šå¥½å®ƒï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -118,13 +118,13 @@ FUNCTION( do_vote )
 
     if ( count <= 1 )
     {
-      send_to_char( "§A§ë²¼ªº¿ï¶µ©|¥¼³]©w¦n¡MµLªkÁ|¿ì¡T\n\r", ch );
+      send_to_char( "ä½ æŠ•ç¥¨çš„é¸é …å°šæœªè¨­å®šå¥½ï¹ç„¡æ³•èˆ‰è¾¦ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( ch->gold < VoteGold )
     {
-      act( "¹ï¤£°_¡M§A¨­¤W¥²¶·¦³$i¨â»È¤l¡M¤è¯àÁ|¿ì§ë²¼¡T"
+      act( "å°ä¸èµ·ï¹ä½ èº«ä¸Šå¿…é ˆæœ‰$iå…©éŠ€å­ï¹æ–¹èƒ½èˆ‰è¾¦æŠ•ç¥¨ï¹—"
         , ch, &VoteGold, NULL, TO_CHAR );
 
       RETURN_NULL();
@@ -152,16 +152,16 @@ FUNCTION( do_vote )
 
     if ( !write_vote_to_file( pVote ) )
     {
-      send_to_char( "Á|¿ì§ë²¼¥¢±Ñ¡M¨t²ÎµLªk¶}±Ò¡T\n\r", ch );
+      send_to_char( "èˆ‰è¾¦æŠ•ç¥¨å¤±æ•—ï¹ç³»çµ±ç„¡æ³•é–‹å•Ÿï¹—\n\r", ch );
       RETURN_NULL();
     }
 
-    send_to_char( "§¹¦¨Á|¿ì§ë²¼¤âÄò¡C\n\r", ch );
+    send_to_char( "å®Œæˆèˆ‰è¾¦æŠ•ç¥¨æ‰‹çºŒã€‚\n\r", ch );
 
-    sprintf( buf, "%sÁ|¿ì¤F¤@³õ¦³Ãö%s\e[0mªº§ë²¼¡M½Ğ¤j®a"
-      "¿ãÅD°Ñ¥[¡MÁÂÁÂ¡T", mob_name( NULL, ch ), pVote->subject );
+    sprintf( buf, "%sèˆ‰è¾¦äº†ä¸€å ´æœ‰é—œ%s\e[0mçš„æŠ•ç¥¨ï¹è«‹å¤§å®¶"
+      "è¸´èºåƒåŠ ï¹è¬è¬ï¹—", mob_name( NULL, ch ), pVote->subject );
 
-    talk_channel_2( buf, CHANNEL_BULLETIN, "§ë²¼" );
+    talk_channel_2( buf, CHANNEL_BULLETIN, "æŠ•ç¥¨" );
 
     gold_from_char( ch, VoteGold );
     RETURN_NULL();
@@ -175,20 +175,20 @@ FUNCTION( do_vote )
 
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "§A­n³]©w­ş¤@­Ó¿ï¶µ©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦è¨­å®šå“ªä¸€å€‹é¸é …å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
     loop = atoi( arg ) - 1;
     if ( loop < 0 || loop >= MAX_VOTES )
     {
-      print_to_char( ch, "²Ä¤@­Ó°Ñ¼Æ¥u¯à¥Ñ 1 ¨ì %d ¦Ó¤w¡T\n\r", MAX_VOTES );
+      print_to_char( ch, "ç¬¬ä¸€å€‹åƒæ•¸åªèƒ½ç”± 1 åˆ° %d è€Œå·²ï¹—\n\r", MAX_VOTES );
       RETURN_NULL();
     }
 
     if ( !argument || !*argument )
     {
-      send_to_char( "§A­n°é¿ïªº¶µ¥Ø¬O¤°»ò©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦åœˆé¸çš„é …ç›®æ˜¯ä»€éº¼å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -197,7 +197,7 @@ FUNCTION( do_vote )
 
     free_string( ch->vote->message[loop] );
     ch->vote->message[loop] = str_dup( buf );
-    send_to_char( "§¹¦¨§ë²¼°é¿ï¶µ¥Ø¡T\n\r", ch );
+    send_to_char( "å®ŒæˆæŠ•ç¥¨åœˆé¸é …ç›®ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -205,7 +205,7 @@ FUNCTION( do_vote )
   {
     if ( !ch->vote )
     {
-      send_to_char( "§A¨S¦³Á|¿ì¹L¥ô¦óªº§ë²¼¡MµLªk¹î¬İ¡T\n\r", ch );
+      send_to_char( "ä½ æ²’æœ‰èˆ‰è¾¦éä»»ä½•çš„æŠ•ç¥¨ï¹ç„¡æ³•å¯Ÿçœ‹ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -217,7 +217,7 @@ FUNCTION( do_vote )
   {
     if ( !( pVote = ch->vote ) )
     {
-      send_to_char( "§Aªº¦æµ{¸Ì¨S¦³Á|¿ì¥ô¦ó§ë²¼¡M©Ò¥HµLªk²M°£¡T\n\r", ch );
+      send_to_char( "ä½ çš„è¡Œç¨‹è£¡æ²’æœ‰èˆ‰è¾¦ä»»ä½•æŠ•ç¥¨ï¹æ‰€ä»¥ç„¡æ³•æ¸…é™¤ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
@@ -233,11 +233,11 @@ FUNCTION( do_vote )
     for ( loop = 0; loop < MAX_POLL; loop++ )
       free_string( pVote->poller[loop] );
 
-    /* ÄÀ©ñ­p¾ĞÅé */
+    /* é‡‹æ”¾è¨ˆæ†¶é«” */
     free_struct( ch->vote, STRUCT_VOTE_DATA );
     ch->vote = NULL;
 
-    send_to_char( "¤w¸g²M°£§ë²¼³]©wªº¤º®e¡T\n\r", ch );
+    send_to_char( "å·²ç¶“æ¸…é™¤æŠ•ç¥¨è¨­å®šçš„å…§å®¹ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -245,20 +245,20 @@ FUNCTION( do_vote )
   {
     if ( !( pVote = ch->vote ) )
     {
-      send_to_char( "§Aªº¦æµ{¸Ì¨S¦³Á|¿ì¥ô¦ó§ë²¼¡T\n\r", ch );
+      send_to_char( "ä½ çš„è¡Œç¨‹è£¡æ²’æœ‰èˆ‰è¾¦ä»»ä½•æŠ•ç¥¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !( pClub = ch->club ) || !pClub->name || !*pClub->name )
     {
-      send_to_char( "¹ï¤£°_¡M§A¨S¦³°Ñ¥[À°¬£¡MµLªk³]©w¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ æ²’æœ‰åƒåŠ å¹«æ´¾ï¹ç„¡æ³•è¨­å®šï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     free_string( pVote->club );
     pVote->club = str_dup( pClub->name );
 
-    send_to_char( "§A³]©w³o¦¸§ë²¼¬°À°¬£§ë²¼¡T", ch );
+    send_to_char( "ä½ è¨­å®šé€™æ¬¡æŠ•ç¥¨ç‚ºå¹«æ´¾æŠ•ç¥¨ï¹—", ch );
     RETURN_NULL();
   }
 
@@ -266,13 +266,13 @@ FUNCTION( do_vote )
   {
     if ( !( pVote = ch->vote ) )
     {
-      send_to_char( "§Aªº¦æµ{¸Ì¨S¦³Á|¿ì¥ô¦ó§ë²¼¡T\n\r", ch );
+      send_to_char( "ä½ çš„è¡Œç¨‹è£¡æ²’æœ‰èˆ‰è¾¦ä»»ä½•æŠ•ç¥¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !argument || !*argument || !is_number( argument ) )
     {
-      send_to_char( "§A·Q´X¤Ñ«á¶}²¼©O¡S\n\r", ch );
+      send_to_char( "ä½ æƒ³å¹¾å¤©å¾Œé–‹ç¥¨å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -280,12 +280,12 @@ FUNCTION( do_vote )
 
     if ( count < VOTE_MIN_DAYS || count > VOTE_DAYS )
     {
-      send_to_char( "§A³]©wªº¥i§ë²¼¤é´Á¤£¦X²z¡T\n\r", ch );
+      send_to_char( "ä½ è¨­å®šçš„å¯æŠ•ç¥¨æ—¥æœŸä¸åˆç†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     pVote->days = count;
-    act( "§A³]©w³o¦¸§ë²¼$i¤Ñ«á¶}²¼¡T", ch, &count, NULL, TO_CHAR );
+    act( "ä½ è¨­å®šé€™æ¬¡æŠ•ç¥¨$iå¤©å¾Œé–‹ç¥¨ï¹—", ch, &count, NULL, TO_CHAR );
     RETURN_NULL();
   }
 
@@ -293,13 +293,13 @@ FUNCTION( do_vote )
   {
     if ( !( pVote = ch->vote ) )
     {
-      send_to_char( "§Aªº¦æµ{¸Ì¨S¦³Á|¿ì¥ô¦ó§ë²¼¡T\n\r", ch );
+      send_to_char( "ä½ çš„è¡Œç¨‹è£¡æ²’æœ‰èˆ‰è¾¦ä»»ä½•æŠ•ç¥¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !argument || !*argument || !is_number( argument ) )
     {
-      send_to_char( "§A­­¨î³o¬Oµ¥¯Å¦h¤Öªº§ë²¼©O¡S\n\r", ch );
+      send_to_char( "ä½ é™åˆ¶é€™æ˜¯ç­‰ç´šå¤šå°‘çš„æŠ•ç¥¨å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -307,12 +307,12 @@ FUNCTION( do_vote )
 
     if ( count < VOTE_LEVEL  || count > LEVEL_HERO )
     {
-      send_to_char( "§A­­¨îªºµ¥¯Å¤£¦X²z³á¡T\n\r", ch );
+      send_to_char( "ä½ é™åˆ¶çš„ç­‰ç´šä¸åˆç†å–”ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     pVote->level = count;
-    act( "§A­­¨î§Aªº§ë²¼¥²¶·µ¥¯Å$i¥H¤W¤è¥i°é¿ï¡T", ch, &count, NULL, TO_CHAR );
+    act( "ä½ é™åˆ¶ä½ çš„æŠ•ç¥¨å¿…é ˆç­‰ç´š$iä»¥ä¸Šæ–¹å¯åœˆé¸ï¹—", ch, &count, NULL, TO_CHAR );
 
     RETURN_NULL();
   }
@@ -321,7 +321,7 @@ FUNCTION( do_vote )
   {
     if ( !argument || !*argument || !is_number( argument ) )
     {
-      send_to_char( "§A­nÅª­ş¤@­Ó§ë²¼ªº¤º®e©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦è®€å“ªä¸€å€‹æŠ•ç¥¨çš„å…§å®¹å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -333,7 +333,7 @@ FUNCTION( do_vote )
       {
         if ( pVote->lock )
         {
-          send_to_char( "¹ï¤£°_¡M³o­Ó¶µ¥Ø³QÂê©w¤F¡MµLªkÅª¨ú³á¡T\n\r", ch );
+          send_to_char( "å°ä¸èµ·ï¹é€™å€‹é …ç›®è¢«é–å®šäº†ï¹ç„¡æ³•è®€å–å–”ï¹—\n\r", ch );
           RETURN_NULL();
         }
 
@@ -342,7 +342,7 @@ FUNCTION( do_vote )
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M¨S¦³¨º¶µ§ë²¼¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£é …æŠ•ç¥¨ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -350,20 +350,20 @@ FUNCTION( do_vote )
   {
     if ( !( pVote = ch->vote ) )
     {
-      send_to_char( "§Aªº¦æµ{¸Ì¨S¦³Á|¿ì¥ô¦ó§ë²¼¡T\n\r", ch );
+      send_to_char( "ä½ çš„è¡Œç¨‹è£¡æ²’æœ‰èˆ‰è¾¦ä»»ä½•æŠ•ç¥¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pVote->moninal )
     {
       pVote->moninal = FALSE;
-      send_to_char( "§A§â§Aªº§ë²¼§ï¦¨¤£°O¦W§ë²¼¡T\n\r", ch );
+      send_to_char( "ä½ æŠŠä½ çš„æŠ•ç¥¨æ”¹æˆä¸è¨˜åæŠ•ç¥¨ï¹—\n\r", ch );
     }
 
     else
     {
       pVote->moninal = TRUE;
-      send_to_char( "§A§â§Aªº§ë²¼§ï¦¨°O¦W§ë²¼¡T\n\r", ch );
+      send_to_char( "ä½ æŠŠä½ çš„æŠ•ç¥¨æ”¹æˆè¨˜åæŠ•ç¥¨ï¹—\n\r", ch );
     }
     RETURN_NULL();
   }
@@ -372,7 +372,7 @@ FUNCTION( do_vote )
   {
     if ( !argument || !*argument || !is_number( argument ) )
     {
-      send_to_char( "§A­nÂê©w­ş¤@­Ó§ë²¼©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦é–å®šå“ªä¸€å€‹æŠ•ç¥¨å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -384,12 +384,12 @@ FUNCTION( do_vote )
         if ( pVote->lock )
         {
           pVote->lock = FALSE;
-          act( "§A¸Ñ°£¤F$tªº§ë²¼Âê©w¡T", ch, pVote->subject, NULL, TO_CHAR );
+          act( "ä½ è§£é™¤äº†$tçš„æŠ•ç¥¨é–å®šï¹—", ch, pVote->subject, NULL, TO_CHAR );
         }
         else
         {
           pVote->lock = TRUE;
-          act( "§A³]©w¤F$tªº§ë²¼Âê©w¡T", ch, pVote->subject, NULL, TO_CHAR );
+          act( "ä½ è¨­å®šäº†$tçš„æŠ•ç¥¨é–å®šï¹—", ch, pVote->subject, NULL, TO_CHAR );
         }
 
         write_vote_to_file( pVote );
@@ -397,7 +397,7 @@ FUNCTION( do_vote )
       }
     }
 
-    send_to_char( "¹ï¤£°_¡M¨S¦³¨º¶µ§ë²¼¡T\n\r", ch );
+    send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£é …æŠ•ç¥¨ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -407,7 +407,7 @@ FUNCTION( do_vote )
 
     if ( arg[0] == '\x0' || !is_number( arg ) )
     {
-      send_to_char( "§A­n§ë­ş¤@¦¸ªº¿ïÁ|©O¡S\n\r", ch );
+      send_to_char( "ä½ è¦æŠ•å“ªä¸€æ¬¡çš„é¸èˆ‰å‘¢ï¹–\n\r", ch );
       RETURN_NULL();
     }
 
@@ -418,25 +418,25 @@ FUNCTION( do_vote )
 
     if ( !pVote )
     {
-      send_to_char( "¹ï¤£°_¡M¨S¦³¨º¶µ§ë²¼¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹æ²’æœ‰é‚£é …æŠ•ç¥¨ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( pVote->lock )
     {
-      send_to_char( "¹ï¤£°_¡M³o­Ó§ë²¼§@·~³Q¼È®É¸T¤îªº¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é€™å€‹æŠ•ç¥¨ä½œæ¥­è¢«æš«æ™‚ç¦æ­¢çš„ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !can_vote( ch, pVote ) )
     {
-      send_to_char( "¹ï¤£°_¡M§A¤£¯à°Ñ»P³o­Ó¿ïÁ|¤F¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹ä½ ä¸èƒ½åƒèˆ‡é€™å€‹é¸èˆ‰äº†ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     if ( !argument || !*argument || !is_number( argument ) )
     {
-      send_to_char( "§A­n°é¿ï­ş¤@­Ó¿ï¶µ©O\n\r", ch );
+      send_to_char( "ä½ è¦åœˆé¸å“ªä¸€å€‹é¸é …å‘¢\n\r", ch );
       RETURN_NULL();
     }
 
@@ -446,29 +446,29 @@ FUNCTION( do_vote )
       || pVote->message[count] == NULL
       || *( pVote->message[count] ) == '\x0' )
     {
-      send_to_char( "¹ï¤£°_¡M¨º¬OµL®Äªº¿ï¶µ¡T\n\r", ch );
+      send_to_char( "å°ä¸èµ·ï¹é‚£æ˜¯ç„¡æ•ˆçš„é¸é …ï¹—\n\r", ch );
       RETURN_NULL();
     }
 
     set_vote( ch, pVote, count );
     write_vote_to_file( pVote );
 
-    print_to_char( ch, "§A¹ï%s©ÒÁ|¿ìªº¦³Ãö%s\e[0m¿ïÁ|¡M°é¿ï¤F²Ä%d¡M"
-      "¦³Ãö©ó%sªº¿ï¶µ¡T\n\r"
+    print_to_char( ch, "ä½ å°%sæ‰€èˆ‰è¾¦çš„æœ‰é—œ%s\e[0mé¸èˆ‰ï¹åœˆé¸äº†ç¬¬%dï¹"
+      "æœ‰é—œæ–¼%sçš„é¸é …ï¹—\n\r"
       , pVote->poster, pVote->subject, count + 1, pVote->message[count] );
 
-    sprintf( buf, "%s¨H«ä»á¤[¡M²×©ó¦b\e[1;32m%s\e[0m¤W­±»\\¤W"
-      "¥L¯«¸tªº¤@²¼¡T"
+    sprintf( buf, "%sæ²ˆæ€é —ä¹…ï¹çµ‚æ–¼åœ¨\e[1;32m%s\e[0mä¸Šé¢è“‹\ä¸Š"
+      "ä»–ç¥è–çš„ä¸€ç¥¨ï¹—"
       , mob_name( NULL, ch ), pVote->subject );
 
-    talk_channel_2( buf, CHANNEL_BULLETIN, "§ë²¼" );
+    talk_channel_2( buf, CHANNEL_BULLETIN, "æŠ•ç¥¨" );
 
     RETURN_NULL();
   }
 
   else
   {
-    send_to_char( "§Aªº°Ñ¼Æ¿ù»~¡M½Ğ¬d¸ß vote ªº¨Ï¥Î¤èªk¡T\n\r", ch );
+    send_to_char( "ä½ çš„åƒæ•¸éŒ¯èª¤ï¹è«‹æŸ¥è©¢ vote çš„ä½¿ç”¨æ–¹æ³•ï¹—\n\r", ch );
     RETURN_NULL();
   }
 
@@ -483,7 +483,7 @@ void vote_attach( CHAR_DATA * ch )
 
   if ( !ch || !ch->name )
   {
-    mudlog( LOG_DEBUG, "vote_attach: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "vote_attach: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -510,7 +510,7 @@ char * show_vote_all( CHAR_DATA * ch, VOTE_DATA * pVote )
 
   if ( !pVote )
   {
-    mudlog( LOG_DEBUG, "show_vote_all: ¨Ó·½¤£¥¿½T¡T" );
+    mudlog( LOG_DEBUG, "show_vote_all: ä¾†æºä¸æ­£ç¢ºï¹—" );
     RETURN( "" );
   }
 
@@ -520,35 +520,35 @@ char * show_vote_all( CHAR_DATA * ch, VOTE_DATA * pVote )
 
   clear_stack();
   send_to_stack(
-    "Á|¦æ§ë²¼ªÌ  ¡R%s\e[0m\n\r"
-    "§ë²¼¥D¦®    ¡R%s\e[0m\n\r"
-    "Á|¿ì¤é´Á    ¡R%s\n\r"
-    "ºI¤î¤é´Á    ¡R%s\n\r"
-    "Á|¿ì¤é´Á    ¡R%d ¤Ñ\n\r"
-    "À°¬£§ë²¼    ¡R%s\n\r"
-    "¤w§ë²¼¤H¼Æ  ¡R%d\n\r"
-    "§ë²¼³Ì§Cµ¥¯Å¡R%d\n\r"
-    "§ë²¼¶i¦æ¤¤  ¡R%s\n\r"
-    "¬O§_¦³§ë²¼Åv¡R%s\n\r"
-    "°O¦W§ë²¼    ¡R%s\n\r"
-    "§ë²¼·N¸q    ¡R\n\r%s%s%s"
+    "èˆ‰è¡ŒæŠ•ç¥¨è€…  ï¹•%s\e[0m\n\r"
+    "æŠ•ç¥¨ä¸»æ—¨    ï¹•%s\e[0m\n\r"
+    "èˆ‰è¾¦æ—¥æœŸ    ï¹•%s\n\r"
+    "æˆªæ­¢æ—¥æœŸ    ï¹•%s\n\r"
+    "èˆ‰è¾¦æ—¥æœŸ    ï¹•%d å¤©\n\r"
+    "å¹«æ´¾æŠ•ç¥¨    ï¹•%s\n\r"
+    "å·²æŠ•ç¥¨äººæ•¸  ï¹•%d\n\r"
+    "æŠ•ç¥¨æœ€ä½ç­‰ç´šï¹•%d\n\r"
+    "æŠ•ç¥¨é€²è¡Œä¸­  ï¹•%s\n\r"
+    "æ˜¯å¦æœ‰æŠ•ç¥¨æ¬Šï¹•%s\n\r"
+    "è¨˜åæŠ•ç¥¨    ï¹•%s\n\r"
+    "æŠ•ç¥¨æ„ç¾©    ï¹•\n\r%s%s%s"
     , pVote->poster
-    , pVote->subject && *pVote->subject ? pVote->subject : "©|¥¼¨M©w"
-    , pVote->date && *pVote->date ? pVote->date : "©|¥¼¨M©w"
-    , pVote->stamp > 0  ? strtime : "©|¥¼¨M©w"
+    , pVote->subject && *pVote->subject ? pVote->subject : "å°šæœªæ±ºå®š"
+    , pVote->date && *pVote->date ? pVote->date : "å°šæœªæ±ºå®š"
+    , pVote->stamp > 0  ? strtime : "å°šæœªæ±ºå®š"
     , pVote->days
-    , pVote->club && *pVote->club ? pVote->club : "«DÀ°¬£§ë²¼"
+    , pVote->club && *pVote->club ? pVote->club : "éå¹«æ´¾æŠ•ç¥¨"
     , voted_char( pVote )
     , pVote->level
     , YESNO( !vote_timeup( pVote ) )
-    , ch ? YESNO( can_vote( ch, pVote ) ) : "¡S"
+    , ch ? YESNO( can_vote( ch, pVote ) ) : "ï¹–"
     , YESNO( pVote->moninal )
     , VERTICAL_LINE, pVote->text, VERTICAL_LINE );
 
   for ( loop = 0; loop < MAX_VOTES; loop++ )
   {
     if ( !pVote->message[loop] || !*pVote->message[loop] ) continue;
-    send_to_stack( "¿ï¶µ %2d¡R%3d ²¼ %s\e[0m\n\r"
+    send_to_stack( "é¸é … %2dï¹•%3d ç¥¨ %s\e[0m\n\r"
       , loop + 1
       , ( !ch || show_vote( ch, pVote ) ) ? pVote->poll[loop] : 0
       , pVote->message[loop] );
@@ -561,7 +561,7 @@ char * show_vote_all( CHAR_DATA * ch, VOTE_DATA * pVote )
     {
       if ( !pVote->message[count] || !*pVote->message[count] ) continue;
 
-      send_to_stack( "§ëµ¹¿ï¶µ%d(%s\e[0m)ªº¤H¦³¡R"
+      send_to_stack( "æŠ•çµ¦é¸é …%d(%s\e[0m)çš„äººæœ‰ï¹•"
         , count + 1, pVote->message[count] );
 
       for ( iLine = loop = 0; loop < MAX_POLL; loop++ )
@@ -575,7 +575,7 @@ char * show_vote_all( CHAR_DATA * ch, VOTE_DATA * pVote )
         }
       }
 
-      if ( iLine == 0 ) send_to_stack( "\n\r¨S¦³¤H§ë³o­Ó¿ï¶µ¡T\n\r\n\r" );
+      if ( iLine == 0 ) send_to_stack( "\n\ræ²’æœ‰äººæŠ•é€™å€‹é¸é …ï¹—\n\r\n\r" );
       else              send_to_stack( "\n\r\n\r" );
     }
   }
@@ -594,7 +594,7 @@ bool write_vote_to_file( VOTE_DATA * pVote )
 
   if ( !pVote )
   {
-    mudlog( LOG_DEBUG, "write_vote_to_file: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "write_vote_to_file: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -634,7 +634,7 @@ bool write_vote_to_file( VOTE_DATA * pVote )
     fprintf( pFile, "End\n" );
     FCLOSE( pFile );
 
-    /* §ïÅÜÀÉ®×¦s¨ú¼Ò¦¡ */
+    /* æ”¹è®Šæª”æ¡ˆå­˜å–æ¨¡å¼ */
     set_file_mode( filename );
     RETURN( TRUE );
   }
@@ -653,21 +653,21 @@ bool can_vote( CHAR_DATA * ch, VOTE_DATA * pVote )
 
   if ( !ch || !ch->name || !pVote )
   {
-    mudlog( LOG_DEBUG, "can_vote: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "can_vote: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* ©Çª«¤£¯à§ë²¼ */
+  /* æ€ªç‰©ä¸èƒ½æŠ•ç¥¨ */
   if ( IS_NPC( ch ) ) RETURN( FALSE );
 
-  /* ¬İ¬İ¬O§_³QÂê©w¤F */
+  /* çœ‹çœ‹æ˜¯å¦è¢«é–å®šäº† */
   if ( pVote->lock ) RETURN( FALSE );
 
-  /* ¬İ¬İ¬O§_¤w¸g¹L´Á */
+  /* çœ‹çœ‹æ˜¯å¦å·²ç¶“éæœŸ */
   hold_times = pVote->stamp + pVote->days * 24 * 60 * 60;
   if ( current_time > hold_times ) RETURN( FALSE );
 
-  /* ¬O§_¬°À°¬£§ë²¼ */
+  /* æ˜¯å¦ç‚ºå¹«æ´¾æŠ•ç¥¨ */
   if ( pVote->club && *pVote->club )
   {
     if ( !( pClub = ch->club ) || !pClub->name || !*pClub->name )
@@ -676,7 +676,7 @@ bool can_vote( CHAR_DATA * ch, VOTE_DATA * pVote )
     if ( str_cmp( pClub->name, pVote->club ) ) RETURN( FALSE );
   }
 
-  /* ¬İ¬İ¬O§_ÁÙ¦³ªÅ¦ì */
+  /* çœ‹çœ‹æ˜¯å¦é‚„æœ‰ç©ºä½ */
   for ( bVote = FALSE, loop = 0; loop < MAX_POLL; loop++ )
   {
     if ( pVote->poller[loop] && *( pVote->poller[loop] ) == '\x0' )
@@ -688,10 +688,10 @@ bool can_vote( CHAR_DATA * ch, VOTE_DATA * pVote )
 
   if ( !bVote ) RETURN( FALSE );
 
-  /* µ¥¯Å§Cªº¤]¤£¯à§ë²¼ */
+  /* ç­‰ç´šä½çš„ä¹Ÿä¸èƒ½æŠ•ç¥¨ */
   if ( pVote->level > ch->level ) RETURN( FALSE );
 
-  /* ¤£¯à­«½Æ§ë²¼ */
+  /* ä¸èƒ½é‡è¤‡æŠ•ç¥¨ */
   for ( loop = 0; loop < MAX_POLL; loop++ )
     if ( pVote->poller[loop] && !str_cmp( pVote->poller[loop], ch->name ) )
       RETURN( FALSE );
@@ -707,7 +707,7 @@ bool set_vote( CHAR_DATA * ch, VOTE_DATA * pVote, int choice )
 
   if ( !ch || !ch->name || !pVote )
   {
-    mudlog( LOG_DEBUG, "set_vote: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "set_vote: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
@@ -736,7 +736,7 @@ int vote_count( CHAR_DATA * ch )
 
   if ( !ch )
   {
-    mudlog( LOG_DEBUG, "vote_count: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "vote_count: ç¼ºä¹ä¾†æº." );
     RETURN( 0 );
   }
 
@@ -753,14 +753,14 @@ bool show_vote( CHAR_DATA * ch, VOTE_DATA * pVote )
 
   if ( !ch || !pVote )
   {
-    mudlog( LOG_DEBUG, "show_vote: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "show_vote: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* ©Çª«¤@©w¤£¯à¬İ§ë²¼µ²ªG */
+  /* æ€ªç‰©ä¸€å®šä¸èƒ½çœ‹æŠ•ç¥¨çµæœ */
   if ( IS_NPC( ch ) ) RETURN( FALSE );
 
-  /* ¯«±Ú¤@©w¥i¥H */
+  /* ç¥æ—ä¸€å®šå¯ä»¥ */
   if ( IS_IMMORTAL( ch ) ) RETURN( TRUE );
 
   if ( vote_timeup( pVote ) == TRUE ) RETURN( TRUE );
@@ -777,15 +777,15 @@ bool vote_timeup( VOTE_DATA * pVote )
 
   if ( !pVote )
   {
-    mudlog( LOG_DEBUG, "vote_timeup: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "vote_timeup: ç¼ºä¹ä¾†æº." );
     RETURN( FALSE );
   }
 
-  /* ®É¶¡¨ì´Á¤F */
+  /* æ™‚é–“åˆ°æœŸäº† */
   hold_times = pVote->stamp + pVote->days * 24 * 60 * 60;
   if ( current_time > hold_times ) RETURN( TRUE );
 
-  /* ¤H¼Æº¡¤F */
+  /* äººæ•¸æ»¿äº† */
   for ( bVote = TRUE, loop = 0; loop < MAX_POLL; loop++ )
   {
     if ( pVote->poller[loop] == NULL
@@ -810,7 +810,7 @@ int voted_char( VOTE_DATA * pVote )
 
   if ( !pVote )
   {
-    mudlog( LOG_DEBUG, "voted_char: ¯Ê¥F¨Ó·½." );
+    mudlog( LOG_DEBUG, "voted_char: ç¼ºä¹ä¾†æº." );
     RETURN( 0 );
   }
 
@@ -830,7 +830,7 @@ void vote_to_note( VOTE_DATA * pVote )
 
   if ( !pVote )
   {
-    mudlog( LOG_DEBUG, "vote_to_note: ¨Ó·½¤£¥¿½T." );
+    mudlog( LOG_DEBUG, "vote_to_note: ä¾†æºä¸æ­£ç¢º." );
     RETURN_NULL();
   }
 
@@ -854,7 +854,7 @@ void vote_to_note( VOTE_DATA * pVote )
   sprintf( buf, "%s/%d.%s", note_dir, ( int ) pNote->date_stamp, note_ext );
   pNote->filename = str_dup( buf );
 
-  sprintf( buf, "(\e[1;32m§ë²¼µ²ªG\e[0m) %s", pVote->subject );
+  sprintf( buf, "(\e[1;32mæŠ•ç¥¨çµæœ\e[0m) %s", pVote->subject );
   pNote->subject = str_dup( buf );
   pNote->text    = str_dup( show_vote_all( NULL, pVote ) );
 

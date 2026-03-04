@@ -1,9 +1,9 @@
 Vnum            97
 Name            cloud boot~
-ShortDesc       �l���u~
+ShortDesc       勁雲靴~
 Description
-���K�B�ξA���u�l(boot)�M��ǦU¸�ۤ@�����m�M�ݨӤQ�����@�ΡC~
-Unit            ��~
+輕便且舒適的靴子(boot)﹐兩旁各繡著一朵雲彩﹐看來十分的耐用。~
+Unit            雙~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_FEET
 Takeable        Yes

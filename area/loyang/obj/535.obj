@@ -1,10 +1,10 @@
 Vnum            535
 Name            blademan surcoat~
-ShortDesc       ¤MªÌ©Ü­·~
+ShortDesc       åˆ€è€…æŠ«é¢¨~
 Description
-ªì¤J¦¿´ò¤§¤M«È³Ì¦h¥Îªº°ò¥»°t³Æ (blademan surcoat)¡C
+åˆå…¥æ±Ÿæ¹–ä¹‹åˆ€å®¢æœ€å¤šç”¨çš„åŸºæœ¬é…å‚™ (blademan surcoat)ã€‚
 ~
-Unit            ¥ó~
+Unit            ä»¶~
 ItemType        ITEM_ARMOR
 WearLoc         ITEM_WEAR_ABOUT
 Takeable        Yes

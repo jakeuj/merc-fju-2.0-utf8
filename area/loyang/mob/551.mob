@@ -1,10 +1,10 @@
 Vnum            551
 Name            sky shaman~
-ShortDesc       ╓яеv╧D~
-LongDesc        ╓яеv╧D(sky shaman)
+ShortDesc       Е╓╘Ф╛┼И│⌠~
+LongDesc        Е╓╘Ф╛┼И│⌠(sky shaman)
 ~
 Description
-╟╙╤ф╙╨╨A╚в║M╕Э╔G╣o╕ш╓╨╓ъ╙╨е╨╤ф║M╓ё╧L╔L╙╨╙Z╔\╙╨╫T╓]╛OЁл╕n╙╨║C
+И╚≤Е┌╡Г └Ф┘▀Е╨╕О╧░Д╪╪Д╧▌Г≥╪Х┤╙Е┘╖Е©┐Г └И╘∙Е┌╡О╧░Д╦█И│▌Д╩√Г └Ф╜╕Е┼÷Г └Г╒╨Д╧÷Ф≤╞Ф°─Е╔╫Г └Ц─┌
 ~
 AutoSetValue    Yes
 Sentinel        Yes
@@ -38,7 +38,7 @@ Text
 if isnpc($n)
   break
 endif
-tell $n ╗╨╖з╓]╗S╕Ё©Л╙k╓F║T
+tell $n И┌ёФ┬▒Д╧÷Ф╡▓Ф°┴Х╬╕ФЁ∙Д╨├О╧≈
 shrug
 ~
 End
