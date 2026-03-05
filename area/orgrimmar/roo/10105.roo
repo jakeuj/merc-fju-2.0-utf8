@@ -1,0 +1,21 @@
+Vnum            10105
+Name            力量峽谷藥品鋪~
+Description
+一間充滿草藥氣味的藥品鋪﹐貨架上擺放著各種部落傳統藥方配製
+的藥水。薩滿祭師親自調配的特效藥水在此有售﹐效果遠超普通藥
+品。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       EAST
+ExitVnum        10102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

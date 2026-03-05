@@ -1,0 +1,37 @@
+Vnum            10109
+Name            榮耀峽谷~
+Description
+奧格瑞瑪東側的榮耀峽谷﹐這裡是部落武士訓練和磨練技藝的地方
+。競技場就位於峽谷南端﹐每日舉行各種比武活動。空氣中瀰漫著
+鬥爭的氣息和鐵器的冷冽光芒。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10108
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10110
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10111
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

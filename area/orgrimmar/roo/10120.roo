@@ -1,0 +1,53 @@
+Vnum            10120
+Name            奧格瑞瑪中心廣場~
+Description
+奧格瑞瑪的中心廣場﹐四面八方的通道在此匯聚。廣場中央有一座
+用骷髏和骨骼裝飾的巨型旗杆﹐頂端懸掛著部落戰旗。周圍的建築
+以粗獷的石砌和鍛鐵風格為主。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10107
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10123
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10121
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10122
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       DOWN
+ExitVnum        10118
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

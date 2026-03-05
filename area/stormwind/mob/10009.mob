@@ -1,0 +1,45 @@
+Vnum            10009
+Name            potion shopkeeper~
+ShortDesc       藥品鋪老闆~
+LongDesc        藥品鋪老闆(potion shopkeeper)在調配藥水。
+~
+Description
+一位身著綠色長袍的藥劑師﹐精通各種藥水的配製。貨架上整齊排
+列著各種瓶瓶罐罐﹐散發著淡淡的藥草氣息。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DOCTOR
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_FEMALE
+
+Process
+Type            rand_prog
+Chance          35
+Text
+if rand(35)
+  emote 仔細地攪拌著藥水…
+  say 新鮮的療傷藥水剛出爐！
+endif
+~
+End
+
+End

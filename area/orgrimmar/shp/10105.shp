@@ -1,0 +1,9 @@
+Type            SHOP_STORE
+Keeper          10105
+Object          ITEM_WEAPON ITEM_WAND
+OpenHour        0
+CloseHour       23
+Sellprofit      80
+Buyprofit       120
+Sential         10103
+End

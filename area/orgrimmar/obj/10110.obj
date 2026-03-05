@@ -1,0 +1,17 @@
+Vnum            10110
+Name            shadow staff darkness~
+ShortDesc       暗影法杖~
+Description
+一根散發著幽暗能量的暗影法杖(shadow staff)﹐是術士的最愛。~
+Unit            根~
+ItemType        ITEM_WAND
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           25
+Value           0 0 0 0 RATING_DARKNESS 115 480 14
+Weight          7
+Cost            480
+Exp             14
+
+End

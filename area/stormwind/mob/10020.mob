@@ -1,0 +1,45 @@
+Vnum            10020
+Name            flight master~
+ShortDesc       飛行大師~
+LongDesc        一位飛行大師(flight master)在此安排獅鷲飛行。
+~
+Description
+管理飛行大師站的老練騎師﹐熟悉聯盟各地的飛行路線。可以安排
+乘客前往各個聯盟控制的城市和據點。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           12
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          30
+Text
+if rand(30)
+  emote 安排著獅鷲的起降…
+  say 要前往哪個城市？我可以為您安排！
+endif
+~
+End
+
+End

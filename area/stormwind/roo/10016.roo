@@ -1,0 +1,21 @@
+Vnum            10016
+Name            法師區藥材鋪~
+Description
+一間專門販售法術材料和藥品的商鋪。貨架上擺滿了各種魔法藥水
+、魔法道具及補給品。老闆是個博學多才的老法師﹐對各種藥水的
+效用瞭如指掌。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       EAST
+ExitVnum        10014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

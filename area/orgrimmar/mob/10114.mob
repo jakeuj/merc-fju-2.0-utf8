@@ -1,0 +1,47 @@
+Vnum            10114
+Name            shaman elder~
+ShortDesc       薩滿長老~
+LongDesc        一位德高望重的薩滿長老(shaman elder)在此修行。
+~
+Description
+白髮蒼蒼的薩滿長老﹐其元素魔法修為已達登峰造極之境。他是部
+落中最重要的精神支柱之一﹐其智慧和力量為整個部落所仰賴。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'sanctuary'
+Alignment       -50
+Level           65
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_SHAMAN
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          25
+Text
+if rand(25)
+  emote 呼喚著元素精靈…
+  say 元素之道，乃無窮之力！
+endif
+~
+End
+
+End

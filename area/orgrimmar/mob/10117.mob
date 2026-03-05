@@ -1,0 +1,45 @@
+Vnum            10117
+Name            orc rogue~
+ShortDesc       獸人盜賊~
+LongDesc        一名潛伏的獸人盜賊(orc rogue)在此等待時機。
+~
+Description
+皮膚偏暗的獸人盜賊﹐擅長在陰影中潛伏和偷竊。他的彎刀塗有
+特製毒藥﹐被刺到的對手往往在幾秒內就失去戰鬥力。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Alignment       -200
+Level           25
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_THIEF
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          20
+Text
+if rand(20)
+  emote 在陰影中潛行著…
+  say 沒看到我！我不在這裡！
+endif
+~
+End
+
+End

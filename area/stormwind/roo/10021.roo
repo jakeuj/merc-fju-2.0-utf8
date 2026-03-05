@@ -1,0 +1,37 @@
+Vnum            10021
+Name            暴風城公園噴泉廣場~
+Description
+公園的中央噴泉廣場﹐美麗的噴泉在陽光下閃閃發光。廣場四周種
+植著各種花卉﹐色彩繽紛。市民在此休憩聊天﹐孩童嬉笑奔跑﹐一
+派和平安詳的景象。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

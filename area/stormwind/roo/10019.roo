@@ -1,0 +1,29 @@
+Vnum            10019
+Name            暴風城公園~
+Description
+城市內難得的清靜之地─暴風城公園。綠樹成蔭﹐小徑縱橫﹐居民
+們常在此散步休憩。公園中央有一個幽靜的噴泉﹐清澈的水聲令人
+心情平靜。偶爾可見獅鷲騎士在頭頂盤旋巡邏。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

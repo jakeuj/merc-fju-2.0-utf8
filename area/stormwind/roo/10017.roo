@@ -1,0 +1,37 @@
+Vnum            10017
+Name            矮人區入口~
+Description
+矮人區的入口﹐空氣中瀰漫著鍛造的煙火氣息。矮人們在此建立了
+自己的聚居區﹐以精湛的鍛造技術著稱。遠處傳來錘打金屬的聲音
+和矮人特有的粗獷笑聲。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10018
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10025
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

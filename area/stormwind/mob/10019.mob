@@ -1,0 +1,64 @@
+Vnum            10019
+Name            palace guard captain~
+ShortDesc       王宮衛隊長~
+LongDesc        一位威嚴的王宮衛隊長(palace guard captain)守衛著王宮。
+~
+Description
+暴風城精銳騎士中的精銳﹐擔任王宮衛隊長一職。其戰力遠超一般
+士兵﹐任何膽敢闖入王宮的不速之客都難逃他的制裁。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Effect          'sanctuary'
+Alignment       400
+Level           75
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_GENERAL
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            fight_prog
+Chance          100
+Text
+if isnpc($n)
+  break
+endif
+if isimmort($n)
+  break
+endif
+if isenemy($n) != '暴風城'
+  mpsetenemy $n '暴風城'
+endif
+~
+End
+
+Process
+Type            rand_prog
+Chance          20
+Text
+if rand(20)
+  emote 警惕地掃視著周圍…
+  say 王宮安全是我的職責！
+endif
+~
+End
+
+End

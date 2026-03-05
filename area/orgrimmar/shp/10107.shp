@@ -1,0 +1,9 @@
+Type            SHOP_STORE
+Keeper          10107
+Object          ITEM_PILL ITEM_FOOD
+OpenHour        0
+CloseHour       23
+Sellprofit      80
+Buyprofit       115
+Sential         10105
+End

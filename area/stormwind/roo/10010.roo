@@ -1,0 +1,37 @@
+Vnum            10010
+Name            老城區入口~
+Description
+老城區的入口處﹐這裡是暴風城最古老的區域﹐石板路上刻滿了歲
+月的痕跡。窄巷之間偶爾閃過幾個盜賊公會成員的身影。此地連接
+著城市廣場與老城區深處。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10011
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10026
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

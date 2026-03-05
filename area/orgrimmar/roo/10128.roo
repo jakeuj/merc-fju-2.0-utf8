@@ -1,0 +1,21 @@
+Vnum            10128
+Name            奧格瑞瑪礦石商店~
+Description
+礦場附近的礦石材料商店﹐各種礦石、金屬錠和寶石在此出售。礦
+場老闆每天收購礦工挖掘的礦石﹐並以合理的價格出售給鍛造師和
+商人。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10127
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

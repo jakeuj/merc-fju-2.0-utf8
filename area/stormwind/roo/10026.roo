@@ -1,0 +1,21 @@
+Vnum            10026
+Name            老城區酒館~
+Description
+老城區最著名的酒館─獵人之月酒館。昏黃的燭光照亮了整個酒館
+﹐木製的桌椅上刻滿了冒險者留下的名字和印記。酒館老闆熱情地
+為每一位顧客倒上一杯暴風城特釀麥酒。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10010
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

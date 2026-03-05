@@ -1,0 +1,45 @@
+Vnum            10002
+Name            human soldier~
+ShortDesc       人類士兵~
+LongDesc        一名人類士兵(human soldier)站在此處。
+~
+Description
+聯盟的普通士兵﹐裝備著制式武器和防具﹐隨時準備執行任務。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Alignment       150
+Level           20
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          30
+Text
+if rand(30)
+  emote 警惕地四處張望…
+  say 為了聯盟！
+endif
+~
+End
+
+End

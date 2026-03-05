@@ -1,0 +1,56 @@
+Vnum            10101
+Name            奧格瑞瑪南城門~
+Description
+奧格瑞瑪的南側城門﹐巨大的獸骨和鑄鐵打造的城門聳立眼前﹐透
+出一股雄渾的威壓氣息。兩旁的獸人守衛手持重斧﹐不怒而威。門
+楣上刻著部落圖騰標誌。
+
+               輸入 new   可以到達新手訓練區
+               輸入 fight 可以到達競技場
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10140
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Job
+Keyword         new~
+Function        job_recall_new~
+Position        POS_STANDING
+End
+
+#Job
+Keyword         fight~
+Function        job_goto_pk_area~
+Position        POS_STANDING
+End
+
+#Enquire
+Keyword         城門~
+End
+
+#Enquire
+Keyword         守衛~
+End
+
+#Enquire
+Keyword         告示欄~
+End
+
+End

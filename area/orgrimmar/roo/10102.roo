@@ -1,0 +1,65 @@
+Vnum            10102
+Name            力量峽谷~
+Description
+奧格瑞瑪的核心地帶─力量峽谷﹐寬闊的紅土峽谷貫穿城市南北。
+商販的叫賣聲與獸人的怒吼聲此起彼伏。峽谷中央有一座巨大的部
+落旗幟﹐赤紅色的旗面在熱風中獵獵飄揚。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10107
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10108
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10112
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       UP
+ExitVnum        10133
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         旗幟~
+End
+
+#Enquire
+Keyword         市集~
+End
+
+#Enquire
+Keyword         告示欄~
+End
+
+End

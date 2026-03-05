@@ -1,0 +1,29 @@
+Vnum            10135
+Name            遠古之谷~
+Description
+奧格瑞瑪北側的遠古之谷﹐這裡是薩滿儀式的神聖場所。遠古圖騰
+石柱矗立其間﹐記錄著部落古老的傳說。天空中偶爾會出現靈魂之
+火和元素能量的奇異光芒。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10136
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

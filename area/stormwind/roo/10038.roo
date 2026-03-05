@@ -1,0 +1,37 @@
+Vnum            10038
+Name            矮人區廣場~
+Description
+矮人區中央廣場﹐矮小但體格健壯的矮人們在此聚集。廣場中央豎
+立著矮人英雄的雕像﹐底座上刻著他們的英勇事蹟。空氣中瀰漫著
+鍛造的煙火氣息和矮人麥酒的香氣。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10017
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10018
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10039
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

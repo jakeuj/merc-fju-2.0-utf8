@@ -1,0 +1,21 @@
+Vnum            10122
+Name            奧格瑞瑪銀行~
+Description
+奧格瑞瑪的官方銀行﹐厚重的鐵門保護著儲存在地下金庫中的財富
+。整齊的窗口後面坐著矮妖行員﹐熟練地處理著各種存取款業務。
+銀行由精銳守衛日夜看護。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       EAST
+ExitVnum        10120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

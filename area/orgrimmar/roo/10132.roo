@@ -1,0 +1,21 @@
+Vnum            10132
+Name            力量峽谷書店~
+Description
+力量峽谷中的書店﹐主要出售部落傳統技藝和戰鬥秘笈。薩滿法術
+書籍、戰士技能手冊和草藥識別圖鑑在此均有收藏。店主是一位飽
+學的獸人學者。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       WEST
+ExitVnum        10107
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,21 @@
+Vnum            10036
+Name            法師區魔法書鋪~
+Description
+法師區的魔法書籍專賣店﹐書架上擺滿了各種法術捲軸和秘笈。從
+初級的火球術到高階的時間扭曲﹐每種法術都有對應的學習材料。
+老闆是一位白髮法師﹐笑容慈祥地為顧客解答疑惑。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

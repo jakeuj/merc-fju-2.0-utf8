@@ -1,0 +1,29 @@
+Vnum            10034
+Name            飛行大師站~
+Description
+暴風城的飛行大師站﹐訓練有素的獅鷲等待著搭乘牠們的騎士。飛
+行大師可以安排前往聯盟各地的飛行服務﹐是長途旅行的最佳選擇
+。獅鷲的嘶鳴聲在空中迴盪。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

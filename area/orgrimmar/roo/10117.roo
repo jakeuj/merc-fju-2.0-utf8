@@ -1,0 +1,21 @@
+Vnum            10117
+Name            巫師公會~
+Description
+精神峽谷深處的巫師公會﹐入口處擺著一具骷髏作為象徵。裡面供
+奉著邪惡儀式用的祭壇﹐牆上滿是召喚惡魔的魔法陣。只有技藝高
+超的術士才敢踏入此地。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10116
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

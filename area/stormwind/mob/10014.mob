@@ -1,0 +1,47 @@
+Vnum            10014
+Name            gryphon rider~
+ShortDesc       獅鷲騎士~
+LongDesc        一名乘坐著獅鷲的獅鷲騎士(gryphon rider)在此待命。
+~
+Description
+英勇的獅鷲騎士﹐與其坐騎獅鷲形成了絕佳的空戰組合。從高空俯
+瞰城市﹐執行偵察和快速反應任務。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Alignment       300
+Level           70
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          20
+Text
+if rand(20)
+  emote 拍打著翅膀在空中盤旋…
+  say 從空中沒有什麼能逃過我的眼睛！
+endif
+~
+End
+
+End

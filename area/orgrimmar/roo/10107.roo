@@ -1,0 +1,45 @@
+Vnum            10107
+Name            力量峽谷廣場~
+Description
+力量峽谷北端的廣場﹐這裡是部落戰士聚集的場所。廣場上不時有
+獸人戰士進行比武切磋﹐喝彩聲震天。廣場北側通往奧格瑞瑪的中
+心地帶。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10109
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10115
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

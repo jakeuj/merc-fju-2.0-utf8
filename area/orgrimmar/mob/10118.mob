@@ -1,0 +1,45 @@
+Vnum            10118
+Name            tavern keeper orc~
+ShortDesc       獸人客棧老闆~
+LongDesc        獸人客棧老闆(orc tavern keeper)在招待客人。
+~
+Description
+粗獷熱情的獸人客棧老闆婆婆﹐她的廚藝十分出色﹐特別擅長烹飪
+各種獸肉和部落傳統料理。客棧的火爐日夜不熄。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       -50
+Level           8
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_FEMALE
+
+Process
+Type            rand_prog
+Chance          40
+Text
+if rand(40)
+  emote 大聲叫嚷著…
+  say 要吃飯嗎？我的鍋裡有上好的獸肉！
+endif
+~
+End
+
+End

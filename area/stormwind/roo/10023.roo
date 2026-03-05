@@ -1,0 +1,38 @@
+Vnum            10023
+Name            暴風城王宮大門~
+Description
+暴風城王宮的正門﹐厚重的黃金大門上雕刻著聯盟的獅頭徽章。守
+門的王宮騎士盔甲精良、眼神堅定﹐若非持有王宮令牌﹐絕不允許
+任何人擅入。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10024
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

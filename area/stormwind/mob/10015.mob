@@ -1,0 +1,47 @@
+Vnum            10015
+Name            king anduin~
+ShortDesc       安度因國王~
+LongDesc        年輕的安度因·烏瑞恩國王(king anduin)正在處理國政。
+~
+Description
+暴風城的年輕國王安度因·烏瑞恩﹐雖然年輕但具有超乎年齡的智
+慧和仁慈心腸。他以外交手段而非武力來解決爭端﹐深受人民愛戴。
+~
+Sentinel        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Effect          'sanctuary'
+Alignment       600
+Level           99
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_GENERAL
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          20
+Text
+if rand(20)
+  say 願聯盟之光照耀每一個角落。
+  emote 翻閱著國政文書…
+endif
+~
+End
+
+End

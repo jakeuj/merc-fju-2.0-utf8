@@ -1,0 +1,21 @@
+Vnum            10018
+Name            矮人鍛造廠~
+Description
+聞名遠近的矮人鍛造廠﹐熔爐中的火焰晝夜不熄。技藝精湛的矮人
+鐵匠在此錘鍛著各種武器與防具。鐵砧前的矮人匠師動作嫺熟﹐每
+一件出自他們手中的武器都堅不可摧。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10017
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

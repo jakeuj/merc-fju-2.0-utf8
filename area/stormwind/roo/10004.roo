@@ -1,0 +1,28 @@
+Vnum            10004
+Name            貿易區東側市集~
+Description
+貿易區東側的熱鬧市集﹐鱗次櫛比的攤位擺滿了各種貨品。武器、
+防具、藥品、食材一應俱全﹐精明的商人正努力地招攬生意。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10005
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End
