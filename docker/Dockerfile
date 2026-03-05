@@ -25,11 +25,21 @@ WORKDIR /app
 
 COPY . /app
 
+RUN chmod +x /app/scripts/clean-runtime.sh \
+    && /app/scripts/clean-runtime.sh /app \
+    && rm -rf /app/.git
+
 RUN useradd -m -r -s /bin/bash mud \
     && chown -R mud:mud /app \
     && chmod +x /app/docker/entrypoint.sh \
     && chmod +x /app/scripts/bootstrap.sh
 
+RUN cd /app/src \
+    && make clean \
+    && make
+
 USER mud
+
+VOLUME ["/app/player", "/app/mail", "/app/board", "/app/vote", "/app/log", "/app/debug", "/app/etc"]
 
 ENTRYPOINT ["/app/docker/entrypoint.sh"]

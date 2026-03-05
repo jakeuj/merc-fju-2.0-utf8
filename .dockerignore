@@ -1,0 +1,25 @@
+# git metadata should never enter the image
+.git
+
+# runtime data (should live on bind mounts / volumes)
+# keep player bucket directories but drop actual player data
+player/*/*
+mail
+log
+debug
+vote
+
+# developer-only clutter
+.DS_Store
+.idea
+.vscode
+.venv
+venv
+env
+runtime-test
+docs
+convert_big5_to_utf8.py
+
+# local tooling artifacts
+*.log
+*.tmp

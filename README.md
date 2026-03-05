@@ -7,7 +7,15 @@
 
 ## 快速開始
 
-最省事的方式是使用提供的 Ubuntu 24.04 Docker 容器：
+預先建置的映像已發佈於 Docker Hub，可直接拉取使用：
+
+[![Docker Hub](https://img.shields.io/docker/pulls/jakeuj/merc-fju-2.0-utf8?logo=docker)](https://hub.docker.com/repository/docker/jakeuj/merc-fju-2.0-utf8)
+
+```bash
+docker pull jakeuj/merc-fju-2.0-utf8:latest
+```
+
+或從原始碼自行建置（需先 clone 本專案）：
 
 ```bash
 cd /Users/jakeuj/auggie/mud2
@@ -24,6 +32,13 @@ make docker-run            # 以 -p 13838/11234/18888 映射並啟動
 Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與遊戲資料
 （`area/ skill/ angel/ board/ player/` 等）都會透過 bind mount 保留在主機目錄。
 若要 shell 進容器，可使用 `make docker-shell` 或 `docker exec -it merc-fju /bin/bash`。
+
+### 映像乾淨化與釋出建議
+
+- `docker/Dockerfile` 在 `COPY . /app` 之後會執行 `scripts/clean-runtime.sh`，自動清空 `player/ mail/ log/ debug/ vote/` 等 runtime 目錄，並重設 `data/immlist`、`etc/database`、`etc/address`、`etc/stock` 等敏感檔案為 GitHub 上的乾淨值，最後移除 `.git`。即使本地開發時留下玩家檔或免洗帳號，建置出的映像也不會帶入這些資料。
+- 若需要手動檢查某個 staging 目錄是否乾淨，可執行 `bash scripts/clean-runtime.sh <絕對路徑>`；請避免直接對正在服務的實際資料夾執行（會刪掉所有玩家資料）。
+- `.dockerignore` 會排除 `.git/`、`player/` 等目錄，減少 build context 並避免 runtime 檔案意外被複製到映像中。
+- 發佈到 GCP Artifact Registry 或 Docker Hub 之前，建議流程：`git status` 確認程式碼已 commit → `docker build -t merc-fju:release -f docker/Dockerfile .` → `docker tag`/`docker push`。如此生成的映像即可在 GCP VM 上直接掛載乾淨 volume 即時啟用。
 
 > 若無 Docker，或需要遵循舊式手動編譯方式，請直接閱讀
 > `document/README`（保留原始說明與硬體需求），並依照其中「新手上路」章節流程操作。
@@ -55,6 +70,40 @@ Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與
 
 更完整的檔案說明、傳統工具需求與授權條款，請參考 `document/README` 以及
 `document/COPYRIGHT`。以下段落僅摘要 Merc-FJU 2.0 UTF-8 版新增或調整的重點。
+
+### Docker 部署的持久化掛載
+
+官方 Docker 映像會在 `/app` 下寫入數個路徑，這些路徑已於 `docker/Dockerfile` 內宣告為 `VOLUME`，確保資料會被掛到具備持久性的 volume。若要把容器實際資料存到本機磁碟（或 GCP Persistent Disk），請：
+
+1. 先建立對應目錄並複製預設內容（避免第一次掛載時是空的）：
+
+   ```bash
+   mkdir -p /srv/merc/{player,mail,board,vote,log,debug,etc}
+   rsync -a board/ /srv/merc/board/
+   rsync -a etc/ /srv/merc/etc/
+   cp data/server /srv/merc/data-server
+   cp data/immlist /srv/merc/immlist
+   ```
+
+2. 以 `docker run`（或 compose）掛載這些目錄：
+
+   ```bash
+   docker run --name merc -d --restart unless-stopped \
+     -p 3838:3838 -p 1234:1234 -p 8888:8888 \
+     -v /srv/merc/player:/app/player \
+     -v /srv/merc/mail:/app/mail \
+     -v /srv/merc/board:/app/board \
+     -v /srv/merc/vote:/app/vote \
+     -v /srv/merc/log:/app/log \
+     -v /srv/merc/debug:/app/debug \
+     -v /srv/merc/etc:/app/etc \
+     -v /srv/merc/data-server:/app/data/server \
+     -v /srv/merc/immlist:/app/data/immlist \
+     -e MERC_HOME=/app \
+     jakeuj/merc-fju-2.0-utf8:latest
+   ```
+
+3. 在 GCP 上只要把 `/srv/merc` 指向 Persistent Disk（或 Cloud Storage FUSE）即可複製相同做法，達到玩家檔案、信件、留言板與 `merc.ini` 等設定的持久化。
 
 ## 現代化重點
 

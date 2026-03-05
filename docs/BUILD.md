@@ -6,6 +6,11 @@
 3. Inside the container the entrypoint runs `scripts/bootstrap.sh`, `make clean && make`, and finally `src/startup merc.ini`.
 4. Attach via `docker exec -it merc-fju /bin/bash` for debugging or use `make docker-shell`.
 
+### Image hygiene
+- `docker/Dockerfile` calls `scripts/clean-runtime.sh` right after `COPY . /app`, which wipes `player/ mail/ log/ debug/ vote/` and truncates `data/immlist`, `etc/database`, `etc/address`, `etc/stock`, `board/*/list`, and debug logs so no local player data sneaks into the release image.
+- `.dockerignore` excludes `.git/`, runtime folders, IDE junk, etc., shrinking the context that reaches Docker.
+- To inspect or pre-clean a staging directory outside of Docker, run `bash scripts/clean-runtime.sh /absolute/path/to/stage` (never point it at a live volume you still need).
+
 ### docker compose
 ```
 docker compose up --build merc

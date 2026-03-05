@@ -8,8 +8,20 @@ if [[ -x "${ROOT}/scripts/bootstrap.sh" ]]; then
 fi
 
 cd "${ROOT}/src"
-make clean
-make
+
+NEED_BUILD=0
+if [[ ! -x "${ROOT}/src/merc" ]]; then
+  NEED_BUILD=1
+fi
+
+if [[ "${MERC_FORCE_BUILD:-0}" == "1" ]]; then
+  NEED_BUILD=1
+fi
+
+if [[ "${NEED_BUILD}" == "1" ]]; then
+  make clean
+  make
+fi
 
 if [[ $# -gt 0 ]]; then
   exec "$@"
