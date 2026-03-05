@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT=${1:-$(cd "$(dirname "$0")/.." && pwd)}
-PLAYER_BUCKETS=( {a..z} )
+PLAYER_BUCKETS=( {a..z} {A..Z} )
 
 clean_dir() {
   local rel="$1"
