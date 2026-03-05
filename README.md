@@ -5,6 +5,19 @@
 > 讓遊戲在新款 Linux／macOS 可直接建置。傳統部署細節仍可參考
 > `document/README`；本檔只整理 Merc-FJU 2.0 UTF-8 版的更新與快速上手流程。
 
+## 試玩連線
+
+目前有架設公開測試站，歡迎直接連入體驗：
+
+```
+telnet mud.jakeuj.com 3838
+```
+
+> 若您使用 macOS，可在終端機直接執行上述指令；
+> Windows 使用者可安裝 [PuTTY](https://www.putty.org/) 或其他 Telnet 客戶端，
+> 主機填 `mud.jakeuj.com`，連接埠填 `3838`，連線類型選 `Telnet`。
+> 請確認客戶端的字元編碼設定為 **UTF-8**，否則中文顯示會出現亂碼。
+
 ## 快速開始
 
 預先建置的映像已發佈於 Docker Hub，可直接拉取使用：
