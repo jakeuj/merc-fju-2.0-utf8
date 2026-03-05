@@ -1,0 +1,64 @@
+Vnum            10001
+Name            stormwind guard~
+ShortDesc       暴風城守衛~
+LongDesc        一名暴風城守衛(stormwind guard)正在巡邏。
+~
+Description
+身著精良聯盟盔甲的精銳守衛﹐負責保衛暴風城的安全。眼神銳利
+﹐對任何可疑人物都保持高度警戒。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Effect          'sanctuary'
+Alignment       200
+Level           30
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            fight_prog
+Chance          100
+Text
+if isnpc($n)
+  break
+endif
+if isimmort($n)
+  break
+endif
+if isenemy($n) != '暴風城'
+  mpsetenemy $n '暴風城'
+endif
+~
+End
+
+Process
+Type            rand_prog
+Chance          30
+Text
+if rand(30)
+  emote 巡邏著街道…
+  say 保持秩序！違法者將被逮捕！
+endif
+~
+End
+
+End

@@ -1,0 +1,37 @@
+Vnum            10011
+Name            老城區廣場~
+Description
+老城區中心廣場﹐周圍建築古舊但保養良好。廣場一角有一家歷史
+悠久的酒館﹐常年人聲鼎沸。盜賊公會的成員時常在附近的陰影中
+穿梭﹐幾乎難以察覺其蹤跡。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10010
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10012
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10029
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

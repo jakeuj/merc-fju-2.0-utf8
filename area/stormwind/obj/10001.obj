@@ -1,0 +1,16 @@
+Vnum            10001
+Name            longsword alliance~
+ShortDesc       聯盟長劍~
+Description
+一把刻有聯盟獅頭徽章的精良長劍(longsword)﹐劍刃鋒利而均衡。~
+Unit            柄~
+ItemType        ITEM_WEAPON
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           20
+Value           0 -1 -1 5
+Weight          12
+Cost            300
+Exp             15
+
+End

@@ -1,0 +1,17 @@
+Vnum            10106
+Name            berserking potion~
+ShortDesc       狂暴藥水~
+Description
+一瓶充滿激進能量的狂暴藥水(berserking potion)﹐飲用後體力大幅恢復。~
+Unit            瓶~
+ItemType        ITEM_PILL
+Contraband      Yes
+Takeable        Yes
+Level           15
+Value2          OBJ_CAST_HIT
+Value1          100
+Value4          2
+Weight          1
+Cost            150
+
+End

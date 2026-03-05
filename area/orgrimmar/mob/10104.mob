@@ -1,0 +1,45 @@
+Vnum            10104
+Name            goblin merchant~
+ShortDesc       矮妖商人~
+LongDesc        一名精明的矮妖商人(goblin merchant)在此兜售商品。
+~
+Description
+眼睛圓滾滾、耳朵大大的矮妖商人﹐嗅覺靈敏﹐對任何賺錢的機會
+都不會放過。他的貨物來路不明﹐但品質通常不差。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       -50
+Level           8
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_THIEF
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          40
+Text
+if rand(40)
+  emote 急切地推銷著商品…
+  say 便宜賣！全部都便宜賣！今天特賣日！
+endif
+~
+End
+
+End

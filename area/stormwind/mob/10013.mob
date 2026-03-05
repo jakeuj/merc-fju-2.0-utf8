@@ -1,0 +1,45 @@
+Vnum            10013
+Name            dwarven blacksmith~
+ShortDesc       矮人鐵匠~
+LongDesc        一位矮小但強壯的矮人鐵匠(dwarven blacksmith)。
+~
+Description
+身材矮壯、臂膀有力的矮人鐵匠﹐鍛造技術精湛無比。紅潤的臉上
+有著一把濃密的鬍子﹐手上滿是老繭和傷疤。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       150
+Level           20
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          35
+Text
+if rand(35)
+  emote 用力地敲打著鐵砧…
+  say 好鋼要下好功夫才鍛得出來！
+endif
+~
+End
+
+End

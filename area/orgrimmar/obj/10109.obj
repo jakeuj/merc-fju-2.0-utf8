@@ -1,0 +1,16 @@
+Vnum            10109
+Name            orcish leather gloves~
+ShortDesc       皮革手套~
+Description
+以厚實皮革縫製的皮革手套(leather gloves)﹐保護手部同時不影響靈活度。~
+Unit            副~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_HANDS
+Takeable        Yes
+Level           10
+Value           -1
+Weight          2
+Cost            80
+Exp             6
+
+End

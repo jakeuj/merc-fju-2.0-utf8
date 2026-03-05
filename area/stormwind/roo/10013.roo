@@ -1,0 +1,29 @@
+Vnum            10013
+Name            法師區入口~
+Description
+法師區的入口﹐空氣中瀰漫著淡淡的魔法氣息。遠處魔法塔頂部散
+發出幽藍的光芒﹐偶爾有魔法光束劃過天際。這裡聚集了不少學習
+法術的學徒和研究魔法的法師。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

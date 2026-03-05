@@ -1,0 +1,45 @@
+Vnum            10107
+Name            potion shopkeeper troll~
+ShortDesc       巨魔藥品老闆~
+LongDesc        一位巨魔藥品老闆(troll potion shopkeeper)在調配藥水。
+~
+Description
+高大瘦長的巨魔藥劑師﹐精通部落傳統草藥和毒藥的配製方法。他
+的再生能力使他不怕在調配危險藥物時受傷。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       -50
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DOCTOR
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          35
+Text
+if rand(35)
+  emote 混合著各種藥草…
+  say 部落最好的藥水！只此一家！
+endif
+~
+End
+
+End

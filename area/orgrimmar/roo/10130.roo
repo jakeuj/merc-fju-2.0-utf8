@@ -1,0 +1,29 @@
+Vnum            10130
+Name            飛行大師站~
+Description
+奧格瑞瑪的飛行大師站﹐飼養著一批訓練有素的風行者坐騎。飛行
+大師可以安排前往部落各地的飛行服務﹐是長途旅行的最佳選擇。
+風行者獨特的鳴叫聲在空中迴響。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10123
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,29 @@
+Vnum            10030
+Name            暴風城城牆走道~
+Description
+暴風城城牆頂端的巡邏走道﹐從此處可以俯瞰整個城市和周邊的艾
+爾文森林。巡邏的衛兵定時在此來回巡視﹐確保城市安全無虞。城
+牆用巨大的石塊砌成﹐堅固異常。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       DOWN
+ExitVnum        10002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10031
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

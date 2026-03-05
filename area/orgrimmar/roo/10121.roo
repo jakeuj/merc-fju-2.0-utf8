@@ -1,0 +1,21 @@
+Vnum            10121
+Name            拍賣場~
+Description
+奧格瑞瑪的官方拍賣場﹐各種戰利品和稀有物品在此進行競標交易
+。拍賣師大聲宣讀著每件物品的描述和起拍價﹐競標者積極地出價
+。場內時常有珍貴的武器和魔法道具出現。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       WEST
+ExitVnum        10120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

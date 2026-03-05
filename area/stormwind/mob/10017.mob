@@ -1,0 +1,45 @@
+Vnum            10017
+Name            tavern keeper~
+ShortDesc       客棧老闆~
+LongDesc        一位熱情的客棧老闆(tavern keeper)在招呼客人。
+~
+Description
+圓滾滾的客棧老闆笑臉迎人﹐對每一位光顧的旅人都非常熱情。他
+的客棧以豐盛的餐食和舒適的住宿而聞名。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           8
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          40
+Text
+if rand(40)
+  emote 擦拭著酒杯…
+  say 歡迎光臨！要來一杯暴風城特釀麥酒嗎？
+endif
+~
+End
+
+End

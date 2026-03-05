@@ -1,0 +1,16 @@
+Vnum            10004
+Name            mage robe arcane~
+ShortDesc       秘法法師袍~
+Description
+一件繡有秘法圖騰的法師袍(arcane mage robe)﹐增強法術威力。~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           15
+Value           -1
+Weight          4
+Cost            200
+Exp             10
+
+End

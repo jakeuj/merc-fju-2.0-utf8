@@ -1,0 +1,14 @@
+Vnum            10013
+Name            bread loaf~
+ShortDesc       新鮮麵包~
+Description
+一塊剛出爐的香噴噴麵包(bread)﹐散發著誘人的麥香氣息。~
+Unit            塊~
+ItemType        ITEM_FOOD
+Takeable        Yes
+Level           1
+Value           5 5 0
+Weight          1
+Cost            5
+
+End

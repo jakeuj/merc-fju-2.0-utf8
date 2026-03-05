@@ -1,0 +1,16 @@
+Vnum            10101
+Name            orc battle axe~
+ShortDesc       獸人戰斧~
+Description
+一把鑄有部落圖騰的重型獸人戰斧(orc battle axe)﹐砍殺力驚人。~
+Unit            柄~
+ItemType        ITEM_WEAPON
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           20
+Value           0 -1 -1 6
+Weight          16
+Cost            280
+Exp             14
+
+End

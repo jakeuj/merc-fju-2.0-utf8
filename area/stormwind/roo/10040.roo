@@ -1,0 +1,29 @@
+Vnum            10040
+Name            暴風城外圍道路~
+Description
+暴風城城牆外的道路﹐通往南方的艾爾文森林。道路兩旁種植著高
+大的行道樹﹐定期有巡邏騎士往來。此處是進入暴風城之前的最後
+一段路程﹐城門就在北方不遠處。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10027
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

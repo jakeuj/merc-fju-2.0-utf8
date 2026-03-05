@@ -1,0 +1,16 @@
+Vnum            10117
+Name            orcish iron plate~
+ShortDesc       獸人鍛鐵板甲~
+Description
+奧格瑞瑪工匠精心打造的鍛鐵板甲(orcish iron plate)﹐防禦力超強。~
+Unit            套~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           30
+Value           -1
+Weight          28
+Cost            550
+Exp             17
+
+End

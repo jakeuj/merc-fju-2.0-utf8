@@ -1,0 +1,29 @@
+Vnum            10024
+Name            暴風城王宮大廳~
+Description
+金碧輝煌的王宮大廳﹐挑高的穹頂掛著巨大的水晶吊燈。大廳兩側
+陳列著歷代國王的肖像畫﹐精緻的地毯從入口一路鋪至深處的寶座
+台階。王宮護衛肅立兩旁﹐氣氛莊嚴肅穆。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10023
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10025
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

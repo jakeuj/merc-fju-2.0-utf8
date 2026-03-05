@@ -1,0 +1,17 @@
+Vnum            10006
+Name            healing potion red~
+ShortDesc       紅色療傷藥水~
+Description
+一瓶鮮紅色的療傷藥水(healing potion)﹐飲用後傷口迅速癒合。~
+Unit            瓶~
+ItemType        ITEM_PILL
+Contraband      Yes
+Takeable        Yes
+Level           5
+Value2          OBJ_CAST_HIT
+Value1          50
+Value4          1
+Weight          1
+Cost            80
+
+End

@@ -1,0 +1,16 @@
+Vnum            10002
+Name            alliance shield~
+ShortDesc       聯盟盾牌~
+Description
+鑲有聯盟獅頭圖案的精良盾牌(alliance shield)﹐提供堅固的防護。~
+Unit            面~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_SHIELD
+Takeable        Yes
+Level           25
+Value           -1
+Weight          8
+Cost            250
+Exp             12
+
+End

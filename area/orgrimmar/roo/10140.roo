@@ -1,0 +1,21 @@
+Vnum            10140
+Name            奧格瑞瑪外圍荒地~
+Description
+奧格瑞瑪城牆外的紅土荒地﹐烈日炎炎之下草木稀疏。通往南方杜
+洛塔爾深處的道路在此分叉。遠處可以看到奧格瑞瑪高聳的城牆和
+頂端飄揚的部落旗幟。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

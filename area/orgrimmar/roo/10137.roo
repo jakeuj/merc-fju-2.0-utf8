@@ -1,0 +1,37 @@
+Vnum            10137
+Name            奧格瑞瑪市集北部~
+Description
+奧格瑞瑪市集的北側區域﹐食品和日用品的買賣在此進行。各種來
+自部落領地的農產品和獵物在此交易﹐獸人小販粗聲粗氣地招攬著
+顧客。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10138
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10105
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

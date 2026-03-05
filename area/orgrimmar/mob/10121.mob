@@ -1,0 +1,45 @@
+Vnum            10121
+Name            orc scholar~
+ShortDesc       獸人學者~
+LongDesc        一位飽讀詩書的獸人學者(orc scholar)。
+~
+Description
+雖然獸人以戰鬥聞名﹐但這位學者卻選擇以知識作為武器。他精通部
+落歷史和薩滿理論﹐書店是他賦予知識傳承使命的場所。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       -50
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_SCHOLAR
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          35
+Text
+if rand(35)
+  emote 翻閱著厚重的古籍…
+  say 知識就是力量，技能就是生存！
+endif
+~
+End
+
+End

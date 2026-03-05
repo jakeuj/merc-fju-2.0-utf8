@@ -1,0 +1,29 @@
+Vnum            10022
+Name            暴風城王宮前廣場~
+Description
+暴風城王宮正前方的廣場﹐宏偉的王宮建築矗立在廣場北端。廣場
+上有精銳的王宮衛兵日夜巡邏﹐每一位衛兵都是萬中選一的精英騎
+士。廣場中央豎立著一尊紀念歷代英雄的雕像。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10021
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10023
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

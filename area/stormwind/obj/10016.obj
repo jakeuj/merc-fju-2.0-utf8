@@ -1,0 +1,16 @@
+Vnum            10016
+Name            stormwind gloves~
+ShortDesc       暴風城手套~
+Description
+暴風城出品的制式手套(stormwind gloves)﹐靈活且具有防護效果。~
+Unit            副~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_HANDS
+Takeable        Yes
+Level           20
+Value           -1
+Weight          2
+Cost            120
+Exp             8
+
+End

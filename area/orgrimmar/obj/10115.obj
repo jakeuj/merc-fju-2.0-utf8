@@ -1,0 +1,13 @@
+Vnum            10115
+Name            orgrimmar key~
+ShortDesc       大酋長宮殿令牌~
+Description
+進入奧格瑞瑪大酋長宮殿的令牌(orgrimmar key)﹐擁有此物者方可入內。~
+Unit            枚~
+ItemType        ITEM_KEY
+Takeable        Yes
+Level           1
+Weight          1
+Cost            0
+
+End

@@ -1,0 +1,44 @@
+Vnum            10012
+Name            stormwind citizen~
+ShortDesc       暴風城市民~
+LongDesc        一位普通的暴風城市民(stormwind citizen)在此路過。
+~
+Description
+普通的城市居民﹐過著平靜的日常生活。雖然戰爭帶來了不少苦難
+﹐但他們依然保持著樂觀的態度。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_FEMALE
+
+Process
+Type            rand_prog
+Chance          40
+Text
+if rand(40)
+  emote 悠閒地在街上漫步…
+  say 今天天氣真好！
+endif
+~
+End
+
+End

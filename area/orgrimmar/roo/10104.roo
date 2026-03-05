@@ -1,0 +1,20 @@
+Vnum            10104
+Name            力量峽谷防具鋪~
+Description
+專門販售部落風格防具的商鋪﹐貨架上陳列著各種皮甲、鎖鏈甲和
+板甲。工匠就在店後的作坊中當場製作防具﹐顧客可以現場訂製。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

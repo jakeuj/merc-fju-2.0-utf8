@@ -1,0 +1,37 @@
+Vnum            10116
+Name            精神峽谷廣場~
+Description
+精神峽谷的中央廣場﹐這裡是術士和巫師們交流心得的場所。廣場
+四周擺放著各種靈魂石和魔法道具﹐偶爾可見暗影能量從某些術士
+手中爆發而出。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10115
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10113
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10117
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

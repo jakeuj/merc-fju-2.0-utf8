@@ -1,0 +1,14 @@
+Vnum            10018
+Name            skill book longsword~
+ShortDesc       長劍技法秘笈~
+Description
+記載著精湛劍法技巧的秘笈(longsword skill book)﹐研讀後可學會長劍的精妙用法。~
+Unit            本~
+ItemType        ITEM_BOOK
+Takeable        Yes
+Level           15
+Value1          SLOT_TWOSWORD
+Value2          5
+Weight          2
+Cost            500
+End

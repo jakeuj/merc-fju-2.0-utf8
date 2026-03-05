@@ -1,0 +1,21 @@
+Vnum            10106
+Name            力量峽谷酒館~
+Description
+峽谷中最熱鬧的酒館﹐裡面充斥著獸人的豪爽笑聲和猛烈的拳擊聲
+。酒館供應的獸人釀造暗棕麥酒勁道十足﹐喝一口便渾身發熱。牆
+上掛著歷代著名戰士的武器作為裝飾。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       WEST
+ExitVnum        10102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

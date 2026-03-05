@@ -1,0 +1,21 @@
+Vnum            10031
+Name            東側城牆瞭望台~
+Description
+東側城牆的瞭望台﹐視野開闊﹐可以清楚地看到東方的艾爾文森林
+。瞭望台上的獵人騎士坐在獅鷲上﹐時刻準備著應對任何威脅。這
+裡也是暴風城最美的日出觀賞地點。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10030
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

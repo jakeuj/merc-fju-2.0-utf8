@@ -1,0 +1,44 @@
+Vnum            10115
+Name            orc citizen~
+ShortDesc       奧格瑞瑪市民~
+LongDesc        一位奧格瑞瑪的普通市民(orc citizen)。
+~
+Description
+在奧格瑞瑪生活的普通居民﹐雖然生活環境艱苦﹐但部落精神讓他
+們保持著旺盛的生命力和對戰鬥的熱情。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       -50
+Level           8
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          40
+Text
+if rand(40)
+  emote 在峽谷中大步走著…
+  say 部落萬歲！
+endif
+~
+End
+
+End

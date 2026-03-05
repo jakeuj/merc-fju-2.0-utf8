@@ -1,0 +1,45 @@
+Vnum            10116
+Name            flight master orc~
+ShortDesc       飛行大師~
+LongDesc        奧格瑞瑪的飛行大師(orc flight master)在安排飛行任務。
+~
+Description
+管理風行者坐騎的老練騎師﹐熟知部落各地的飛行路線。可以安排
+乘客前往各個部落控制的城市和軍事據點。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       -50
+Level           12
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          30
+Text
+if rand(30)
+  emote 向風行者吹口哨…
+  say 要去哪裡？快說！
+endif
+~
+End
+
+End

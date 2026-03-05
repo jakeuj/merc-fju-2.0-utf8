@@ -1,0 +1,45 @@
+Vnum            10103
+Name            orc shaman~
+ShortDesc       獸人薩滿~
+LongDesc        一名手持圖騰的獸人薩滿(orc shaman)在此冥想。
+~
+Description
+精通元素魔法的獸人薩滿﹐身上刻有部落傳統圖騰紋身。他可以召
+喚風、水、火、土四種元素之力﹐是部落不可或缺的靈魂人物。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Alignment       -50
+Level           25
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_SHAMAN
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          35
+Text
+if rand(35)
+  emote 呼喚著元素之力…
+  say 大地、風、火、水─聽從我的呼喚！
+endif
+~
+End
+
+End

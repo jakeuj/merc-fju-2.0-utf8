@@ -1,0 +1,45 @@
+Vnum            10007
+Name            大教堂廣場~
+Description
+壯觀的大教堂廣場坐落於暴風城北部﹐廣場上鋪設著潔白的大理石
+板。宏偉的聖光大教堂矗立在廣場北端﹐其高聳的尖塔幾乎刺破雲
+霄。廣場上常有神父和聖騎士在此布道。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10008
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

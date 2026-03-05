@@ -1,0 +1,21 @@
+Vnum            10110
+Name            奧格瑞瑪競技場~
+Description
+著名的奧格瑞瑪競技場﹐圓形的沙坑格鬥場被觀眾席環繞。這裡每
+週舉行盛大的比武大會﹐各種種族的勇士在此決一高下。沙土上留
+有無數場戰鬥的血跡與痕跡。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10109
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

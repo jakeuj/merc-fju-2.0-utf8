@@ -1,0 +1,29 @@
+Vnum            10020
+Name            公園深處~
+Description
+公園深處的一片靜謐之地﹐古老的樹木枝繁葉茂遮擋了大部分陽光
+。苔蘚覆蓋著地上的石塊﹐幾隻小松鼠跳躍其間。此地顯得格外幽
+靜﹐是修練或冥想的好去處。
+
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10021
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

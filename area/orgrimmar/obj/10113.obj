@@ -1,0 +1,14 @@
+Vnum            10113
+Name            roasted meat~
+ShortDesc       烤肉~
+Description
+一塊香氣四溢的烤肉(roasted meat)﹐是部落戰士的主食。~
+Unit            塊~
+ItemType        ITEM_FOOD
+Takeable        Yes
+Level           1
+Value           6 6 0
+Weight          1
+Cost            8
+
+End

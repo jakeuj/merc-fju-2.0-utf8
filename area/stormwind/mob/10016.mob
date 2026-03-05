@@ -1,0 +1,44 @@
+Vnum            10016
+Name            dock worker~
+ShortDesc       碼頭工人~
+LongDesc        一名勤勞的碼頭工人(dock worker)正在搬運貨物。
+~
+Description
+皮膚曬得黝黑的碼頭工人﹐每天在海港搬運各種貨物。雖然工作辛
+苦﹐但他樂觀開朗的個性讓周圍的人都感到愉快。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       50
+Level           8
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          40
+Text
+if rand(40)
+  emote 費力地搬運著大箱子…
+  say 今天又有好幾船的貨要卸！
+endif
+~
+End
+
+End

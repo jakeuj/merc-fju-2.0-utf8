@@ -1,0 +1,45 @@
+Vnum            10010
+Name            fire mage~
+ShortDesc       火焰法師~
+LongDesc        一位強大的火焰法師(fire mage)在此修練。
+~
+Description
+精通火焰魔法的資深法師﹐手中魔杖的頂端燃燒著不滅的火焰。周
+圍的空氣因他散發的魔法能量而微微扭曲。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Alignment       100
+Level           50
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_MAGE
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            rand_prog
+Chance          30
+Text
+if rand(30)
+  emote 施放出一個小火球…
+  say 火焰之力無窮無盡！
+endif
+~
+End
+
+End

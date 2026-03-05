@@ -1,0 +1,29 @@
+Vnum            10125
+Name            大酋長議事廳~
+Description
+大酋長的核心議事廳﹐壁畫描繪著部落歷史中的偉大戰役。大酋長
+的寶座由獸骨和鍛鐵打造而成﹐散發著無上的威嚴。議事廳中的決
+策左右著整個部落的命運走向。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10124
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10126
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

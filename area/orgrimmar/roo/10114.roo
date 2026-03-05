@@ -1,0 +1,21 @@
+Vnum            10114
+Name            薩滿聖殿~
+Description
+部落薩滿祭師的聖殿﹐四根圖騰柱環繞著中央的祭壇。水、火、地
+、風四種元素能量在此和諧共存﹐時常有薩滿在此舉行與精靈溝通
+的神聖儀式。
+
+
+~
+SectorType      SECT_INSIDE
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10113
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End
