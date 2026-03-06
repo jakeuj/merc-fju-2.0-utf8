@@ -37,7 +37,7 @@ Chance          30
 Text
 if rand(30)
   emote 向風行者吹口哨…
-  say 要去哪裡？快說！
+  say 要去哪裡？先用 ship 查詢班次﹐到了就快上來！
 endif
 ~
 End

@@ -5,6 +5,9 @@ Description
 大師可以安排前往部落各地的飛行服務﹐是長途旅行的最佳選擇。
 風行者獨特的鳴叫聲在空中迴響。
 
+你可以用 ship 查詢目前的飛行班次﹐班次到站後可用 ship on 登
+乘。
+
 
 ~
 SectorType      SECT_CITY

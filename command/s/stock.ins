@@ -1,5 +1,5 @@
 Name            stock~
-Cname           �Ѳ�~
+Cname           股票~
 Function        do_stock~
 Position        POS_FIGHTING
 Level           0
@@ -15,55 +15,55 @@ Lost            NO
 Lock            NO
 Limit           NO
 Help
-�y�k�Rstock
+語法﹕stock
       stock list
-      stock sell <�Ѳ��s��> <�ƶq>
-      stock buy  <�Ѳ��s��> <�ƶq>
-      stock information                      ( ���ګ��O )
-      stock status                           ( ���ګ��O )
-      stock !<�H���W��>                      ( ���ګ��O )
-      stock add <���q�渹> <�W�d����>        ( ���ګ��O )
-      stock set <���q�s��> name <�s�W��>     ( ���ګ��O )
-      stock set <���q�s��> win  <�s�W��>     ( ���ګ��O )
-      stock set <���q�s��> lost <�s�W��>     ( ���ګ��O )
-      stock set <���q�s��> cost <�s�W��>     ( ���ګ��O )
-      stock set <���q�s��> lock 1            ( ���ګ��O )
-      stock refresh                          ( ���ګ��O )
-      stock history <���q�s��>
+      stock sell <股票編號> <數量>
+      stock buy  <股票編號> <數量>
+      stock information                      ( 神族指令 )
+      stock status                           ( 神族指令 )
+      stock !<人物名稱>                      ( 神族指令 )
+      stock add <公司行號> <上櫃價錢>        ( 神族指令 )
+      stock set <公司編號> name <新名稱>     ( 神族指令 )
+      stock set <公司編號> win  <新名稱>     ( 神族指令 )
+      stock set <公司編號> lost <新名稱>     ( 神族指令 )
+      stock set <公司編號> cost <新名稱>     ( 神族指令 )
+      stock set <公司編號> lock 1            ( 神族指令 )
+      stock refresh                          ( 神族指令 )
+      stock history <公司編號>
 
-    �o�ӫ��O�M���ΨӪѥ����ާ@�M�����ѥ����R�i��X���O�z�L�Ȧ檺�s��
-�ҥH�M�A�����b�Ȧ�̦����������ӶR��C
+    這個指令專門用來股市的操作﹐首先股市的買進賣出都是透過銀行的存款
+所以﹐你必須在銀行裡有足夠的錢來買賣。
 
-    �����M�A�i�H���첼�کҡM�]�j�������첼�کҧY�i����^���ϥ�
-stock list�Ӭݬݥثe�Ҧ��W�d���q���Ѳ������p�C�p�G�Aı�o�Y�i�Ѳ�����
-�������άO�ܦ���O�ɡM�A�i�H��Jstock buy 1 ( 1 �O�o�a���q���s���M�A
-�i�H�Ҽ{��L�����q�s�� )�C���ɡM�p�G�A�Ȧ�s�ڨ����ɡM�A�h�ߨ�֦��@
-�i�����q���Ѳ��F�C�H��A�i�H��Jstock �Ӭݬݦۤv�֦����Ҧ��Ѳ��M�u��
-���ڤ~��ݨ�ثe�A��W�Ҧ��Ѳ����`���ȡC�p�G�p�@���Q�n�R�W�L�@�i����
-�M�b�Ѳ����X�᭱�[�W�ƶq�N�i�H�F�M���M�N�O�@���R�@�i�C
+    首先﹐你可以先到票據所﹐（大神不必到票據所即可交易）先使用
+stock list來看看目前所有上櫃公司的股票的情況。如果你覺得某張股票的價
+錢不錯或是很有潛力時﹐你可以輸入stock buy 1 ( 1 是這家公司的編號﹐你
+可以考慮其他的公司編號 )。此時﹐如果你銀行存款足夠時﹐你則立刻擁有一
+張此公司的股票了。以後你可以輸入stock 來看看自己擁有的所有股票﹐只有
+神族才能看到目前你手上所有股票的總面值。如果妳一次想要買超過一張的話
+﹐在股票號碼後面加上數量就可以了﹐不然就是一次買一張。
 
-    ��������Y��άO�Q���H�F�A���n�D�ɡM�Q�n��X���i�Ѳ��ɡM�A�]����
-���첼�کҥh�i���X�C���O�O stock sell 1 ( 1 �O�o�i�Ѳ����W�d���q��
-�s���M�A�i�H�ϥΨ�L���s�� )�C���L���޶R�X�άO��X���کҳ��|���A�d��
-�������ҥ�|�M�ҥH���A�Ȧ�s�ڤ����H�I�ҥ�|�ɡM�A�]�L�k���Q��X�o�i
-�Ѳ�����C
+    當之後手頭緊或是利潤以達你的要求時﹐想要賣出此張股票時﹐你也必須
+先到票據所去進行賣出。指令是 stock sell 1 ( 1 是這張股票的上櫃公司的
+編號﹐你可以使用其他的編號 )。不過不管買出或是賣出票據所都會扣你千分
+之五的證交稅﹐所以當你銀行存款不足以付證交稅時﹐你也無法順利賣出這張
+股票的喔。
 
-    ���ڥi�H�ϥ� stock information �Ӭݬݪѥ��ت��Ҧ��ܼƨӶi�氣���C
-�]�i�H�b�ѼƸ̥[�J�H�W�M���L�e�����[�J !�o�ӲŸ����[�ݬY�쪱�a���Ѳ�
-�C�Ҧp stock !test�M�o�˴N�i�H�ݨ� test �o�쪱�a���Ҧ��Ѳ��M�`���ȡC
+    神族可以使用 stock information 來看看股市裏的所有變數來進行除錯。
+也可以在參數裡加入人名﹐不過前面先加入 !這個符號來觀看某位玩家的股票
+。例如 stock !test﹐這樣就可以看到 test 這位玩家的所有股票和總面值。
 
-    �j���٥i�H�i���z�w�M�ﶵ�i�H�O
-    name �ק�W�d���q���W��
-    cost �Y�a�Ѳ�������
-    win  �Y�a�Ѳ������T���v
-    lost �Y�a�Ѳ����^�T���v
-    lock ��w�άO�Ѱ���w
+    大神還可以進場干預﹐選項可以是
+    name 修改上櫃公司的名稱
+    cost 某家股票的面值
+    win  某家股票的漲幅機率
+    lost 某家股票的跌幅機率
+    lock 鎖定或是解除鎖定
 
-    �̫�M�j���i�H�ǥ� stock add <���q�W��> <�W�����B> �ӼW�[�Ѳ����q
-�M���M�W�٤���M���e�����ơM�W�����B����C�󤭤d�H�ΰ����ʸU��C
+    最後﹐大神可以藉由 stock add <公司名稱> <上市面額> 來增加股票公司
+﹐當然名稱不能和之前的重複﹐上市面額不能低於五千以及高於兩百萬喔。
 
-    �t�~�M�޲z�̥i�H�ϥΰѼ� refresh �ӭ��s��s�ѥ���������ΡC
+    另外﹐管理者可以使用參數 refresh 來重新刷新股市交易的情形。
 
-    ���j�a�ѹB��q�M�j�a�Ȥj���T
+    祝大家股運亨通﹐大家賺大錢﹗
 ~
 End
