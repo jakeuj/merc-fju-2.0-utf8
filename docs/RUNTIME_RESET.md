@@ -4,7 +4,7 @@
 
 | 路徑 | 類型 | main 分支預設狀態 | 用途／程式假設 | Reset 動作 |
 |------|------|-------------------|----------------|-------------|
-| `player/<letter>/` | 目錄 | 存在但為空，只含 52 個字母桶 | `ini.c` 的 `ADJUST()` 會依角色第一個字元寫入 `player/X/<name>/data`，若桶不存在就會 `create_dir` 失敗 | **保留目錄結構**，但清除各桶內容。`scripts/clean-runtime.sh` 會自動重建 a–z/A–Z；若手動清空 Persistent Disk 記得重新建立 |
+| `player/<letter>/` | 目錄 | 可存在也可延後建立 | `save.c` 會依角色第一個字元的小寫版本寫入 `player/x/<name>/data`，存檔時若 bucket/玩家目錄缺少會自動建立 | **保留 `player/` 根目錄即可**；`scripts/clean-runtime.sh` 仍會主動清空並重建 buckets，方便重置環境 |
 | `mail/`, `log/`, `debug/`, `vote/` | 目錄 | 存在但為空 | runtime 投遞信件、日誌與 debug dump 需要這些可寫目錄 | 目錄需存在並賦予 `mud:mud` 權限；內容可全刪 |
 | `board/imm/list`, `board/loyang/list` | 檔案 | `End` | 留言板程式在啟動時讀取清單，缺少 `End` sentinel 會被視為壞檔 | 重寫為 `End\n` |
 | `etc/address` | 檔案 | 空檔 (blob `e69de29...`) | `address` 指令記錄歷史連線/白名單；若帶有舊 IP 會造成誤判 | **清空**；部署後再由管理者重新寫入需要允許的 IP |

@@ -21,7 +21,7 @@
 | `joke/` | 文本 | ✗ | 笑話集，供 `joke` 指令使用。 |
 | `board/` | 半動態資料 | △ | 留言版設定 (`*.lst`) 與內容 (`*.data`/`list`)；`board/*/list` 需保留 `End` sentinel。 |
 | `etc/` | 半動態資料 | △ | 雜項設定（登入白名單、股票、MOTD、hero 榜…），下節列出細項。 |
-| `player/` | Runtime | ✓ | 玩家檔案。需保留 52 個字母分桶以存放 `<角色>/data`。詳見〈player〉。 |
+| `player/` | Runtime | ✓ | 玩家檔案。採 `player/<小寫首字>/<角色>/data` 結構；bucket 可由 runtime 自動補建。詳見〈player〉。 |
 | `mail/` | Runtime | ✓ | 玩家信件。 |
 | `log/` | Runtime | ✓ | 系統日誌 (`startup`、遊戲 log、rollover)。 |
 | `debug/` | Runtime | ✓ | 錯誤回報、anti-dupe、疑似拷貝裝備等。詳見下節。 |
@@ -41,9 +41,9 @@
 
 ## `player/` 玩家資料
 
-- 結構：`player/<letter>/<name>/data`。`<letter>` 取決於角色名稱的第一個字（支援 a–z 與 A–Z）。`data` 檔案內含角色屬性、經驗、物品等資訊。
-- 來源：`ini.c` 的 `adjust_filename()` 直接組合 `player_dir` + 第一個字母 + `/` + `<name>`，不會幫你建立桶。
-- Reset 建議：保留 52 個桶 (`player/a`…`player/Z`)，清除各桶內容即可。`scripts/clean-runtime.sh` 會自動刪除舊玩家資料並重建桶；若在 GCP/本地手動清空 Persistent Disk，記得再跑一次腳本。
+- 結構：`player/<letter>/<name>/data`。`<letter>` 取決於角色名稱第一個字的**小寫**版本。`data` 檔案內含角色屬性、經驗、物品等資訊。
+- 來源：`save.c` 的 `file_name()` 直接組合 `player_dir` + 小寫首字母 + `/` + `<name>`；`create_dir()` 會在存檔時自動補建缺少的 bucket 與玩家目錄。
+- Reset 建議：保留 `player/` 根目錄即可；`scripts/clean-runtime.sh` 會主動清空並重建常用 bucket，方便重置測試/打包環境，但 runtime 不再依賴 bucket 必須預先存在。
 
 ## `area/` 與世界資料
 

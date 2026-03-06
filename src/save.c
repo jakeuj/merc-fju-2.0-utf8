@@ -72,6 +72,7 @@ void create_dir( const char * name )
 {
   struct stat file_stat;
 
+  char bucket[MAX_STRING_LENGTH];
   char pathname[MAX_STRING_LENGTH];
 
   PUSH_FUNCTION( "create_dir" );
@@ -82,19 +83,36 @@ void create_dir( const char * name )
     RETURN_NULL();
   }
 
+  sprintf( bucket, "%s/%s", player_dir, initial( name ) );
+
+  if ( stat( bucket, &file_stat ) != 0 )
+  {
+    if ( mkdir( bucket, S_IRWXU | S_IRWXG ) != 0 )
+    {
+      mudlog( LOG_DEBUG, "create_dir: 無法建立目錄 %s.", bucket );
+      RETURN_NULL();
+    }
+  }
+
+  else if ( !S_ISDIR( file_stat.st_mode ) )
+  {
+    mudlog( LOG_DEBUG, "create_dir: %s 已經建立, 但不是目錄.", bucket );
+    RETURN_NULL();
+  }
+
   sprintf( pathname, "%s/%s/%s"
     , player_dir, initial( name ), normalize( name ) );
 
   if ( stat( pathname, &file_stat ) != 0 )
   {
     if ( mkdir( pathname, S_IRWXU | S_IRWXG ) != 0 )
-      mudlog( LOG_DEBUG, "create_dir: 無法建立目錄 %s.", name );
+      mudlog( LOG_DEBUG, "create_dir: 無法建立目錄 %s.", pathname );
 
     RETURN_NULL();
   }
 
   if ( !S_ISDIR( file_stat.st_mode ) )
-    mudlog( LOG_DEBUG, "create_dir: %s 已經建立, 但不是目錄.", name );
+    mudlog( LOG_DEBUG, "create_dir: %s 已經建立, 但不是目錄.", pathname );
 
   RETURN_NULL();
 }
