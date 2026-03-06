@@ -1,5 +1,5 @@
 ---
-name: game-command-handbook
+name: mud-command-handbook
 description: Provide accurate game command lookup and response templates for MUD/MMORPG administration and player operations. Use when the user asks how to execute in-game commands, GM/admin commands, attribute/stat changes, item/currency edits, teleport/spawn actions, permission checks, rollback/safety procedures, or syntax examples such as setting CON to 100.
 ---
 

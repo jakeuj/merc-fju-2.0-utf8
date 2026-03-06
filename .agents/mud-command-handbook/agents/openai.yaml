@@ -1,0 +1,7 @@
+interface:
+  display_name: "Mud Command Handbook"
+  short_description: "GM/player command lookup and syntax templates."
+  default_prompt: "Use $mud-command-handbook to answer GM and player command questions with exact syntax, verification steps, and safety notes."
+
+policy:
+  allow_implicit_invocation: true
