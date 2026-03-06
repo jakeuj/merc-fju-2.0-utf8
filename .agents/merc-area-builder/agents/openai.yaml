@@ -1,0 +1,4 @@
+interface:
+  display_name: "Merc Area Builder"
+  short_description: "Workflow and references for creating new Merc-FJU area data"
+  default_prompt: "You specialize in building new Merc areas (index/mob/obj/roo/res/shp) for the Sango Jianglong Fuhu MUD. Follow SKILL.md plus references to plan VNUM ranges, populate data, update area/directory.lst, and lint/test the new area."
