@@ -37,7 +37,7 @@ Chance          30
 Text
 if rand(30)
   emote 安排著獅鷲的起降…
-  say 要前往哪個城市？我可以為您安排！
+  say 要前往哪個城市？先用 ship 查詢班次﹐到了就能登乘！
 endif
 ~
 End

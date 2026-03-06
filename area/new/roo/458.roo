@@ -1,10 +1,10 @@
 Vnum            458
-Name            ���~�ϥαоǫ�~
+Name            物品使用教學室~
 Description
-�o���ЫǬO�оɷs��̦p�󵽥ΥL�̪����~�M���A�ѨϥΪ��~����k.
-�j�H��:�y �u������ơM�����Q�侹 �z.
+這間教室是教導新手們如何善用他們的物品﹐來瞭解使用物品的方法.
+古人說:『 工欲善其事﹐必先利其器 』.
 
-�o�̦��@���i�ܵP (sign)�C�s�����J look sign.
+這裡有一塊告示牌 (sign)。新手請鍵入 look sign.
 
 ~
 SectorType      SECT_CITY
@@ -29,19 +29,19 @@ End
 Keyword         sign~
 Description
 
-�o�̱ЧA���~�p��ϥ�:
-�b�o�̡M�ڭ�²�ٸ˳Ƭ� EQ�M�A�i�H�ϥ� equip �o�ӫ��O�Ӭd�ݥثe
-���W�Ҹ˳ƪ����~�C�ϥ� inventory �o�ӫ��O�Ӭd�ݨ��W�ұa�����~.
-�A�]�i�H²�� equip = eq ; inventory = i �����O.
-�ӨϥΪ��~���ʧ@��: get drop give wear wield remove ����.
+這裡教你物品如何使用:
+在這裡﹐我們簡稱裝備為 EQ﹐你可以使用 equip 這個指令來查看目前
+身上所裝備的物品。使用 inventory 這個指令來查看身上所帶的物品.
+你也可以簡化 equip = eq ; inventory = i 的指令.
+而使用物品的動作有: get drop give wear wield remove 等等.
 
-�A�i�H��J get  <���~����r>��      �Ӿߨ��a�W�����~.
-�A�i�H��J drop <���~����r>�       �N���W�����~�ᱼ.
-�A�i�H��J give <���~����r> <�H�W> �N���W�����~�����Y�H.
-�A�i�H��J wear <���~����r>        �˳ƬY�˪��~�쨭�W.
-�A�i�H��J wield <���~����r>       �˳ƬY�˪��~�쨭�W.
-�A�i�H��J remove <���~����r>      �������W�Ҹ˳ƪ����~.
-<���~����r> = < all >              ��Ҧ����~���o�ǨƱ�.
+你可以鍵入 get  <物品關鍵字>凓      來撿取地上的物品.
+你可以鍵入 drop <物品關鍵字>凓      將身上的物品丟掉.
+你可以鍵入 give <物品關鍵字> <人名> 將身上的物品給予某人.
+你可以鍵入 wear <物品關鍵字>        裝備某樣物品到身上.
+你可以鍵入 wield <物品關鍵字>       裝備某樣物品到身上.
+你可以鍵入 remove <物品關鍵字>      拿掉身上所裝備的物品.
+<物品關鍵字> = < all >              對所有物品做這些事情.
 
 ~
 

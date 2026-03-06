@@ -1,5 +1,5 @@
 Name            dragon fist~
-Cname           ���s�Q�K�x~
+Cname           降龍十八掌~
 Slot            SLOT_DRAGONFIST
 Msgoff          ~
 Check           check_unrigid_attack~
@@ -29,13 +29,13 @@ Limit           CLASS_GENERAL    1  70
 Limit           CLASS_BRAVO      1  95
 Help            ~
 Message
-$Y$n�j�s�@�n    $B�y�ѤU���j�M���ڳ̤j�z$Z$A~
+$Y$n大叫一聲    $B『天下之大﹐為我最大』$Z$A~
 
 #Damage
 Description
-$n���L�L�}�M�k�u���s�M�k�x�e�F�Ӷ��M�V�~���h�M�ϥX$P���s�Q�K�x�Ĥ@��$G
-�y���s�����z$Z�Ϲ��h�L�i�h�M���L�i���M�۫l�_�֡M��$N�Ӥ��Ω�סM�x��
-$l���b�ӥh�C~
+$n左腿微屈﹐右臂內彎﹐右掌畫了個圓圈﹐向外推去﹐使出$P降龍十八掌第一式$G
+『亢龍有悔』$Z使對方退無可退﹐讓無可讓﹐著勁奇快﹐使$N來不及抵擋﹐掌氣往
+$l飛奔而去。~
 Chance          20
 Value           20
 Parry           0
@@ -44,8 +44,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�D�_�b�šM�~���U���M�k�x�e�ޡM���x�q�k��é���X�M�ϥX$P���s�Q�K�x�ĤG��
-$G�y���s�b�ѡz$Z�M�Ƥs�ˮ����x�l�M���V$N$l�C~
+$n躍起半空﹐居高下擊﹐右掌前引﹐左掌從右手腕底穿出﹐使出$P降龍十八掌第二式
+$G『飛龍在天』$Z﹐排山倒海的掌勁﹐擊向$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -54,8 +54,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���u�k�x�M�i��i��M�D�~�@��M�ϥX$P���s�Q�K�x�ĤT��$G�y�s�ԩ󳥡z$Z�M����
-�x��Ƭ����s�ĦV$N��$l�C~
+$n左臂右掌﹐可實可虛﹐非居一格﹐使出$P降龍十八掌第三式$G『龍戰於野』$Z﹐此時
+掌氣化為飛龍衝向$N的$l。~
 Chance          20
 Value           20
 Parry           0
@@ -64,8 +64,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��I���СM���x���e�@���M�ϥX$P���s�Q�K�x�ĥ|��$G�y���s�ťΡz$Z�M���⩿�W
-���U�M�岾���w�����V$N$l�C~
+$n氣沉丹田﹐雙掌往前一推﹐使出$P降龍十八掌第四式$G『潛龍勿用』$Z﹐雙手忽上
+忽下﹐游移不定的擊向$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -74,8 +74,8 @@ Innate          0 0
 End
 #Damage
 Description
-���Ѵx�v�M�������M$N�ϥX$P���s�Q�K�x�Ĥ���$G�y�Q�A�j�t�z$Z�M�l�p�Ŭ��M�L
-�a�L�ɡM�x�𪽪��R��$N$l�C~
+漫天掌影﹐虛實難辨﹐$N使出$P降龍十八掌第五式$G『利涉大川』$Z﹐勁如宣洩﹐無
+窮無盡﹐掌氣直直命中$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -84,8 +84,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�B�Υ������l�O�M�ި��Ӱ_�M���x�ۦX�M�ϥX$P���s�Q�K�x�Ĥ���$G�y�E���󳰡z
-$Z�M�x�L�p������������@�i�iŧ�����V$N$l�C~
+$n運用全身之勁力﹐拔身而起﹐雙掌相合﹐使出$P降龍十八掌第六式$G『鴻漸於陸』
+$Z﹐掌印如錢塘江之潮水一波波襲風打向$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -94,8 +94,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��y���W�L��M�k�����x�M�ϥX$P���s�Q�K�x�ĤC��$G�y��p��ӡz$Z�M�������
-�@�֤@�C�����b$N$l�C~
+$n兩肘往上微抬﹐右拳左掌﹐使出$P降龍十八掌第七式$G『突如其來』$Z﹐直擊橫推
+一快一慢的打在$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -104,8 +104,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�}�_��������M�b���b�x�M�k����x�ϥX$P���s�Q�K�x�ĤK��$G�y�_��ʨ��z$Z�M
-�x�𪽦V$N$l�b�h�C~
+$n屈起食中兩指﹐半拳半掌﹐右手推掌使出$P降龍十八掌第八式$G『震驚百里』$Z﹐
+掌氣直向$N$l奔去。~
 Chance          20
 Value           20
 Parry           0
@@ -114,8 +114,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���x��l�M�k�x���աM�ϥX$P���s�Q�K�x�ĤE��$G�y���D�b�W�z$Z�M�p�Ƥs�ˮ��멹
-$N$l�o�X�@�x�C~
+$n左掌圓勁﹐右掌直勢﹐使出$P降龍十八掌第九式$G『或躍在淵』$Z﹐如排山倒海般往
+$N$l發出一掌。~
 Chance          20
 Value           20
 Parry           0
@@ -124,8 +124,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�Ϥ��A�M�X�����$n������M�ϥX$P���s�Q�K�x�ĤQ��$G�y���s�\���z$Z�M��$N$l
-�����L�h�C~
+$n反手橫劈﹐趁勢轉到$n的身後﹐使出$P降龍十八掌第十式$G『神龍擺尾』$Z﹐往$N$l
+攻擊過去。~
 Chance          20
 Value           20
 Parry           0
@@ -134,8 +134,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�w�w�����X�k��M�ϥX$P���s�Q�K�x�ĤQ�@��$G�y���s�b�Сz$Z�M���p�L�񪺴x��Ţ
-�n��$N�����M�x�𪽪������V��$l�C~
+$n緩緩的伸出右手﹐使出$P降龍十八掌第十一式$G『見龍在田』$Z﹐雄厚無比的掌氣籠
+罩住$N全身﹐掌氣直直的撞向其$l。~
 Chance          20
 Value           20
 Parry           0
@@ -144,8 +144,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n��E���СM�ϥX$P���s�Q�K�x�ĤQ�G��$G�y���s�����z$Z�M���x���p���s�V$N$l�l
-����G�C~
+$n氣聚丹田﹐使出$P降龍十八掌第十二式$G『雙龍取水』$Z﹐雙掌有如雙龍向$N$l吸
+取血液。~
 Chance          20
 Value           20
 Parry           0
@@ -154,8 +154,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n�ި��Ӱ_�M������F�M�ϥX$P���s�Q�K�x�ĤQ�T��$G�y���D��W�z$Z�M�p�C�s�몺
-�g�J$N$l�C~
+$n拔身而起﹐重攻天靈﹐使出$P降龍十八掌第十三式$G『魚躍於淵』$Z﹐如青龍般的
+射入$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -164,7 +164,7 @@ Innate          0 0
 End
 #Damage
 Description
-$n�N��l�D����a�M�ϥX$P���s�Q�K�x�ĤQ�|��$G�y�ɭ����s�z$Z�M���p�p�q����$N$l�C~
+$n將其勁道卸於地﹐使出$P降龍十八掌第十四式$G『時乘六龍』$Z﹐有如雷電噬嗑$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -173,9 +173,9 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Ωް_�M�b�b�Ť��@�ӭo��M�ϥX$P���s�Q�K�x�ĤQ����$G�y�K�����B�z$Z�M�V
-$N�������W�u�ʷ|�ޡv���h�M$N�L�ئA�]�s���X�n�M�uı�������U�ӷU���M�K�ɶ��Y
-�����ȡM���ߦp�n���N�}�Ӥ@��C~
+$n身形拔起﹐在半空中一個觔斗﹐使出$P降龍十八掌第十五式$G『密雲不雨』$Z﹐向
+$N的頂門上「百會穴」打去﹐$N嘴裏再也叫不出聲﹐只覺腦海中愈來愈熱﹐霎時間頭
+昏腦脹﹐腦殼如要炸將開來一般。~
 Chance          20
 Value           20
 Parry           0
@@ -184,8 +184,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Ѧa�����M�s�����G�M�H�C��L�a�M�ϥX$P���s�Q�K�x�ĤQ����$G�y�l�h�����z
-$Z�M����b$N$l�W�@��C~
+$n乘天地之正﹐御六氣之辯﹐以遊於無窮﹐使出$P降龍十八掌第十六式$G『損則有孚』
+$Z﹐左手在$N$l上一拍。~
 Chance          20
 Value           20
 Parry           0
@@ -194,8 +194,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n���Ф����u��M���B����Y�����ޡM�A�e���y�Ѥ��ޡM�ϥX$P���s�Q�K�x�ĤQ�C
-��$G�y�i���B�ܡz$Z�M�x������$N$l�C~
+$n丹田中的真氣﹐先運到肩頭巨骨穴﹐再送到手肘天井穴﹐使出$P降龍十八掌第十七
+式$G『履霜冰至』$Z﹐掌風直擊$N$l。~
 Chance          20
 Value           20
 Parry           0
@@ -204,8 +204,8 @@ Innate          0 0
 End
 #Damage
 Description
-$n����ӤW�M$N�V�ѡM���Y�����M�I���@�U�ϥX$P���s�Q�K�x�ĤQ�K��$G�y����Ĳÿ�z
-$Z�M��x�פU�M�x�O�Ʀ����ΡM�|�����U�C~
+$n揮手而上﹐$N向天﹐渾若不見﹐呼的一下使出$P降龍十八掌第十八式$G『羝羊觸藩』
+$Z﹐手掌斜下﹐掌力化成弧形﹐四散落下。~
 Chance          20
 Value           20
 Parry           0

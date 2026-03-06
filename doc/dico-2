@@ -1,8 +1,8 @@
-	¥H¤Wªº¤å¦r±N·|¤¶²Ğ¦p¦ó¬° Merc ¼W¥[¤@­ÓÂ²³æªº QUEST ¥\¯à¡C
-	¥¦­ì©lªº·Qªk¬O§Q¥Î mob program ¨Ó´À player ³]©w¤@¨Ç mark¡C
-	ÂÇ¥Ñ¹ï mark ªºÀË¬d¨Ó¹F¨ì°O¿ı QUEST §¹¦¨«×ªº¥\¯à¡C
+	ä»¥ä¸Šçš„æ–‡å­—å°‡æœƒä»‹ç´¹å¦‚ä½•ç‚º Merc å¢åŠ ä¸€å€‹ç°¡å–®çš„ QUEST åŠŸèƒ½ã€‚
+	å®ƒåŸå§‹çš„æƒ³æ³•æ˜¯åˆ©ç”¨ mob program ä¾†æ›¿ player è¨­å®šä¸€äº› markã€‚
+	è—‰ç”±å° mark çš„æª¢æŸ¥ä¾†é”åˆ°è¨˜éŒ„ QUEST å®Œæˆåº¦çš„åŠŸèƒ½ã€‚
 	
-	­º¥ı¦b§Aªº Makefile ¤¤¥[¤W quest.c ¤º®e¦p¤U¡G
+	é¦–å…ˆåœ¨ä½ çš„ Makefile ä¸­åŠ ä¸Š quest.c å…§å®¹å¦‚ä¸‹ï¼š
 
 #if defined(macintosh)
 #include <types.h>
@@ -86,7 +86,7 @@ bool del_qmark( CHAR_DATA *victim, char *arg )
     return TRUE;
 }
 
-/* ®æ¦¡: mpaddmark <victim> <mark> */
+/* æ ¼å¼: mpaddmark <victim> <mark> */
 void do_mpadd_qmark( CHAR_DATA *ch, char *argument )
 {
     char arg1[MAX_STRING_LENGTH];
@@ -96,7 +96,7 @@ void do_mpadd_qmark( CHAR_DATA *ch, char *argument )
 
     if ( !IS_NPC( ch ) )
     {
-        send_to_char( "§A·Q·F¹À?\n\r", ch );
+        send_to_char( "ä½ æƒ³å¹¹å˜›?\n\r", ch );
 	return;
     }
     pTmp = one_argument( argument, arg1);
@@ -104,8 +104,8 @@ void do_mpadd_qmark( CHAR_DATA *ch, char *argument )
     if ( ( victim = get_char_room_any( ch, arg1 ) ) == NULL )
     {
 	char buf[100];
-	if( !str_cmp(arg1,"¬Y¤£ª¾¦W¤Hª«") )
-           return; /* ³o¬O¦]¬°¬İ¤£¨£¤~·|³o¼Ë ¤£¬O¥X¿ù*/
+	if( !str_cmp(arg1,"æŸä¸çŸ¥åäººç‰©") )
+           return; /* é€™æ˜¯å› ç‚ºçœ‹ä¸è¦‹æ‰æœƒé€™æ¨£ ä¸æ˜¯å‡ºéŒ¯*/
 	
 	sprintf( buf," BUG : MPADDMARK : no VICTIM %s !! mob %d",
 	      arg1 , ch->pIndexData->vnum );
@@ -123,7 +123,7 @@ void do_mpadd_qmark( CHAR_DATA *ch, char *argument )
         set_qmark( victim, arg2 );
 }
 
-/* ®æ¦¡: mpdelmark <victim> <mark> */
+/* æ ¼å¼: mpdelmark <victim> <mark> */
 void do_mpdel_qmark( CHAR_DATA *ch, char *argument )
 {
     char arg1[MAX_STRING_LENGTH];
@@ -133,7 +133,7 @@ void do_mpdel_qmark( CHAR_DATA *ch, char *argument )
 
     if ( !IS_NPC( ch ) )
     {
-        send_to_char( "§A·Q·F¹À?\n\r", ch );
+        send_to_char( "ä½ æƒ³å¹¹å˜›?\n\r", ch );
 	return;
     }
     pTmp = one_argument( argument, arg1);
@@ -141,8 +141,8 @@ void do_mpdel_qmark( CHAR_DATA *ch, char *argument )
     if ( ( victim = get_char_room_any( ch, arg1 ) ) == NULL )
     {
         char buf[100];
-        if( !str_cmp(arg1,"¬Y¤£ª¾¦W¤Hª«") )
-            return; /* ³o¬O¦]¬°¬İ¤£¨£¤~·|³o¼Ë ¤£¬O¥X¿ù*/
+        if( !str_cmp(arg1,"æŸä¸çŸ¥åäººç‰©") )
+            return; /* é€™æ˜¯å› ç‚ºçœ‹ä¸è¦‹æ‰æœƒé€™æ¨£ ä¸æ˜¯å‡ºéŒ¯*/
 
 	sprintf(buf, " BUG : MPDELMARK : no VICTIM %s !! mob %d",
 	         arg1,ch->pIndexData->vnum );
@@ -160,7 +160,7 @@ void do_mpdel_qmark( CHAR_DATA *ch, char *argument )
         del_qmark( victim, arg2 );
 }
 
-/* ®æ¦¡: is_qmark <victim> <opr> <mark> */
+/* æ ¼å¼: is_qmark <victim> <opr> <mark> */
 bool is_qmark( CHAR_DATA *victim, char* opr,char *mark )
 {
     bool found;
@@ -179,7 +179,7 @@ bool is_qmark( CHAR_DATA *victim, char* opr,char *mark )
 }
 
 
-	¦b merc.h ¤¤©w¸q:
+	åœ¨ merc.h ä¸­å®šç¾©:
 
 typedef struct  quest_mark_data		QMARK;		
 
@@ -198,12 +198,12 @@ bool 	del_qmark	args( ( CHAR_DATA *victim, char *arg      ) );
 bool 	check_qmark	args( ( CHAR_DATA *victim, char *arg      ) );
 bool 	is_qmark	args( ( CHAR_DATA *victim, char* opr, char *mark ) );
 
-	¶â....ÁÙ¦³ merc.h ¤¤ struc pc_data ¤¤ ¼W¥[¤@­ÓÄæ¦ì¡G
+	å—¯....é‚„æœ‰ merc.h ä¸­ struc pc_data ä¸­ å¢åŠ ä¸€å€‹æ¬„ä½ï¼š
 
     QMARK *             quest_mark;	
 
-        ±µµÛ¦b mob_prog.c ¤¤ªº bool mprog_do_ifchck() ³o­Ó¨ç¦¡¤¤¦h
-	¼W¥[¤@­Ó str_cmp¡G
+        æ¥è‘—åœ¨ mob_prog.c ä¸­çš„ bool mprog_do_ifchck() é€™å€‹å‡½å¼ä¸­å¤š
+	å¢åŠ ä¸€å€‹ str_cmpï¼š
 
   if ( !str_cmp( buf, "is_qmark" ) )
     {
@@ -225,8 +225,8 @@ bool 	is_qmark	args( ( CHAR_DATA *victim, char* opr, char *mark ) );
         }
     }	
 
-	¦pªG§A§Æ±æ mob ¤]¯àÀË¬d player ¨­¤W±a©ÎªÌ¬O¸Ë³Æ¬Yª««~¡M¥i¥H¦A¥[
-	¤W³o¨â­Ó str_cmp¡G
+	å¦‚æœä½ å¸Œæœ› mob ä¹Ÿèƒ½æª¢æŸ¥ player èº«ä¸Šå¸¶æˆ–è€…æ˜¯è£å‚™æŸç‰©å“ï¹å¯ä»¥å†åŠ 
+	ä¸Šé€™å…©å€‹ str_cmpï¼š
 
   if ( !str_cmp( buf, "is_inv_obj" ) )
     {
@@ -270,8 +270,8 @@ bool 	is_qmark	args( ( CHAR_DATA *victim, char* opr, char *mark ) );
     }
 
 
-	§O§Ñ¤F¦b mob_prog.c ªº«á­±¥[¤W³o¨â­Ó¨ç¦¡¡M¥H¤Î¦b merc.h ¤¤«Å
-	§i¡C
+	åˆ¥å¿˜äº†åœ¨ mob_prog.c çš„å¾Œé¢åŠ ä¸Šé€™å…©å€‹å‡½å¼ï¹ä»¥åŠåœ¨ merc.h ä¸­å®£
+	å‘Šã€‚
 
 bool is_inv_obj (CHAR_DATA* ch, char* opr, char* val)
 {
@@ -334,20 +334,20 @@ bool is_equ_obj (CHAR_DATA* ch, char* opr, char* val)
   return found;
 }
 
-	³o¼Ë¤@¨Ó´N¥i¥H§Q¥Î mob program ¨Ó»s§@ quest ¡C
+	é€™æ¨£ä¸€ä¾†å°±å¯ä»¥åˆ©ç”¨ mob program ä¾†è£½ä½œ quest ã€‚
 
-	±µµÛ¤U¨Ó¬O­n¼W¥[¤@­Ó·sªº trigger¡CÅı player ¥i¥H©M mob talk
-	¨ÓÄ²µo¡C
+	æ¥è‘—ä¸‹ä¾†æ˜¯è¦å¢åŠ ä¸€å€‹æ–°çš„ triggerã€‚è®“ player å¯ä»¥å’Œ mob talk
+	ä¾†è§¸ç™¼ã€‚
 
-	¦b interp.c ¤¤ªº cmd_table ¤¤¼W¥[¤@­Ó·sªº«ü¥O¡G
+	åœ¨ interp.c ä¸­çš„ cmd_table ä¸­å¢åŠ ä¸€å€‹æ–°çš„æŒ‡ä»¤ï¼š
 
     { "talk",		do_talk,	POS_RESTING,	 0,  LOG_NORMAL	},	
 
-	·íµM¡M¦b merc.h ¤¤¤]­n©w¸q¡G
+	ç•¶ç„¶ï¹åœ¨ merc.h ä¸­ä¹Ÿè¦å®šç¾©ï¼š
 
 DECLARE_DO_FUN(	do_talk		);
 
-	¦Ó§â do_talk() ³o­Ó¨ç¦¡¥[¦b act_comm.c ·í¤¤¡G
+	è€ŒæŠŠ do_talk() é€™å€‹å‡½å¼åŠ åœ¨ act_comm.c ç•¶ä¸­ï¼š
 
 void do_talk( CHAR_DATA *ch, char *argument )
 {
@@ -357,7 +357,7 @@ void do_talk( CHAR_DATA *ch, char *argument )
 
     if ( !IS_NPC(ch) && IS_SET(ch->act, PLR_SILENCE) )
     {
-	send_to_char( "[32m¤Ñ¯«¤£²a§Aµo¥X¥ôÁn­µ![37m\n\r", ch );
+	send_to_char( "[32må¤©ç¥ä¸æ·®ä½ ç™¼å‡ºä»»è²éŸ³![37m\n\r", ch );
 	return;
     }
 
@@ -365,45 +365,45 @@ void do_talk( CHAR_DATA *ch, char *argument )
 
     if ( arg[0] == '\0'  )
     {
-	send_to_char( "§A­n§i¶D¤°»ò¤H¦³Ãö¤°»ò¨Æ©O?\n\r", ch );
+	send_to_char( "ä½ è¦å‘Šè¨´ä»€éº¼äººæœ‰é—œä»€éº¼äº‹å‘¢?\n\r", ch );
 	return;
     }
 
     if ( ( victim = get_char_world( ch, arg ) ) == NULL
     || ( victim->in_room != ch->in_room ) )
     {
-	send_to_char( "§A½Í¸Üªº¹ï¶H²{¦b¦n¹³¤£¦b MUD ¥@¬É¤¤³á!\n\r", ch );
+	send_to_char( "ä½ è«‡è©±çš„å°è±¡ç¾åœ¨å¥½åƒä¸åœ¨ MUD ä¸–ç•Œä¸­å–”!\n\r", ch );
 	return;
     }
 
     if( !IS_NPC(victim) )
     {
-        send_to_char("¥Î tell ²á¤Ñ§a...\n\r",ch);
+        send_to_char("ç”¨ tell èŠå¤©å§...\n\r",ch);
         return;
     }
 
     if ( !IS_AWAKE(victim) )
     {
-	act( "$EºÎ±o«Ü¼ô¦ÓÅ¥¤£¨ì§A»¡¤°»ò.", ch, 0, victim, TO_CHAR );
+	act( "$Eç¡å¾—å¾ˆç†Ÿè€Œè½ä¸åˆ°ä½ èªªä»€éº¼.", ch, 0, victim, TO_CHAR );
 	return;
     }
 
     if( argument[0] != '\0' )
     {
-        act( "§A©M $N ¥æ½Í '$t'.", ch, argument, victim, TO_CHAR );
+        act( "ä½ å’Œ $N äº¤è«‡ '$t'.", ch, argument, victim, TO_CHAR );
         position		= victim->position;
         victim->position	= POS_STANDING;
-        act( "$cfyw$n$cfwe ©M§A¥æ½Í '$t'.", ch, argument, victim, TO_VICT );
+        act( "$cfyw$n$cfwe å’Œä½ äº¤è«‡ '$t'.", ch, argument, victim, TO_VICT );
         victim->position	= position;
         victim->reply	= ch;
         mprog_talk_trigger(argument,ch,victim);
     }
     else
     {
-        act( "§A¸ÕµÛ©M $N ¥æ½Í....", ch, NULL, victim, TO_CHAR );
+        act( "ä½ è©¦è‘—å’Œ $N äº¤è«‡....", ch, NULL, victim, TO_CHAR );
         position		= victim->position;
         victim->position	= POS_STANDING;
-        act( "$cfyw$n$cfwe ¸ÕµÛ©M§A¥æ½Í.", ch, NULL, victim, TO_VICT );
+        act( "$cfyw$n$cfwe è©¦è‘—å’Œä½ äº¤è«‡.", ch, NULL, victim, TO_VICT );
         victim->position	= position;
         victim->reply	= ch;
         mprog_talk_trigger("topic",ch,victim);
@@ -411,17 +411,17 @@ void do_talk( CHAR_DATA *ch, char *argument )
     return;
 }
 
-	§¹¦¨¤F talk ³o­Ó«ü¥O«á¡M«K¬O»s§@ talk_trigger¡C
+	å®Œæˆäº† talk é€™å€‹æŒ‡ä»¤å¾Œï¹ä¾¿æ˜¯è£½ä½œ talk_triggerã€‚
 
-	db.c ¤¤ªº int mprog_name_to_type() ¤¤¥[¤W¤@¦æ¡G
+	db.c ä¸­çš„ int mprog_name_to_type() ä¸­åŠ ä¸Šä¸€è¡Œï¼š
 
    if (!str_cmp(name,"talk_prog"))	return TALK_PROG;		
 
-	mob_commands.c ¤¤ªº char *mprog_type_to_name() ¤¤¥[¤W¤@¦æ¡G
+	mob_commands.c ä¸­çš„ char *mprog_type_to_name() ä¸­åŠ ä¸Šä¸€è¡Œï¼š
 
     case TALK_PROG:		return "talk_prog";	
 
-	mob_prog.c ¤¤¼W¥[¡G
+	mob_prog.c ä¸­å¢åŠ ï¼š
 
 void mprog_talk_trigger( char *txt, CHAR_DATA *ch,CHAR_DATA *mob )
 {
@@ -445,12 +445,12 @@ void mprog_talk_trigger( char *txt, CHAR_DATA *ch,CHAR_DATA *mob )
     return;
 }
 
-	¨º³o¼Ë´N§¹¦¨¤F¡C¤U­±¤¶²Ğ¤@¨Ç½d¨Ò¡G
+	é‚£é€™æ¨£å°±å®Œæˆäº†ã€‚ä¸‹é¢ä»‹ç´¹ä¸€äº›ç¯„ä¾‹ï¼š
 	
-	¦pªG¦b mob program ¤¤¼g talk_prog «á±µ topic ªº¸Ü¡Mªí¥Ü player
-	©M mob talk¡M«á­±¤£¥[¥ô¦ó¤Ş¼Æ¡C¨Ò¦p player ¤U¹F³o¼Ëªº«ü¥O¡J
-	talk mob¡
-	´N·|°õ¦æ¤U­±ªº mob program¡C
+	å¦‚æœåœ¨ mob program ä¸­å¯« talk_prog å¾Œæ¥ topic çš„è©±ï¹è¡¨ç¤º player
+	å’Œ mob talkï¹å¾Œé¢ä¸åŠ ä»»ä½•å¼•æ•¸ã€‚ä¾‹å¦‚ player ä¸‹é”é€™æ¨£çš„æŒ‡ä»¤ï¸°
+	talk mobã€‚
+	å°±æœƒåŸ·è¡Œä¸‹é¢çš„ mob programã€‚
 	
 	
 >talk_prog topic~
@@ -458,39 +458,39 @@ void mprog_talk_trigger( char *txt, CHAR_DATA *ch,CHAR_DATA *mob )
     ....
 ~
 
-	¦pªG¦b mob program ¤¤¼g tlak_prog «á±µ¤@­Ó p ¥[¤W¤@­Ó¦r¦êªº¸Ü¡M¨º
-	»ò·í player ©M mob talk ®É«á­±¥[¤W¤Ş¼Æ "onething" ªº¸Ü¡M´N·|°õ¦æ
-	¤U­±ªº mob program¡C¨Ò¦p«ü¥O¡J
+	å¦‚æœåœ¨ mob program ä¸­å¯« tlak_prog å¾Œæ¥ä¸€å€‹ p åŠ ä¸Šä¸€å€‹å­—ä¸²çš„è©±ï¹é‚£
+	éº¼ç•¶ player å’Œ mob talk æ™‚å¾Œé¢åŠ ä¸Šå¼•æ•¸ "onething" çš„è©±ï¹å°±æœƒåŸ·è¡Œ
+	ä¸‹é¢çš„ mob programã€‚ä¾‹å¦‚æŒ‡ä»¤ï¸°
 	talk mob onething
-	´N·|°õ¦æ mob program ªº¤º®e¡C
+	å°±æœƒåŸ·è¡Œ mob program çš„å…§å®¹ã€‚
 	
 >talk_prog p onething~
     ....
     ....
 ~	
 
-	¦Ü©ó quest mark ªº¥Îªk¡G
+	è‡³æ–¼ quest mark çš„ç”¨æ³•ï¼š
 
-	mob ¥i¥H§Q¥Î mpadd_qmark ¥H¤Î mpdel_qmark «ü¥O¨Ó¬° player ¼W¥[
-	quest mark¡C¨Ò¦p¡G
+	mob å¯ä»¥åˆ©ç”¨ mpadd_qmark ä»¥åŠ mpdel_qmark æŒ‡ä»¤ä¾†ç‚º player å¢åŠ 
+	quest markã€‚ä¾‹å¦‚ï¼š
 
         mpadd_qmark $n areaname_get_obj1
 
-	¨º»ò player ´N·|¼W¥[¤@­Ó¥s°µ areaname_get_obj1 ªº quest mark¡C
-	¨ä¤¤«ØÄ³¥H©³½u¨Ó°Ï¤À¤@¨Ç³æ¦r¡M¦Ó²Ä¤@­Ó³æ¦r³Ì¦n©R¦W¬°°Ï°ìªº¦WºÙ
-	¡C³o¼Ë¤@¨Ó¡M°Ï°ì©M°Ï°ì¤§¶¡©Ò¨Ï¥Îªº quest mark ´N¤£·|¤¬¬Û­«ÂĞ¡M
-	¦Óµo¥Í°İÃD¡C
+	é‚£éº¼ player å°±æœƒå¢åŠ ä¸€å€‹å«åš areaname_get_obj1 çš„ quest markã€‚
+	å…¶ä¸­å»ºè­°ä»¥åº•ç·šä¾†å€åˆ†ä¸€äº›å–®å­—ï¹è€Œç¬¬ä¸€å€‹å–®å­—æœ€å¥½å‘½åç‚ºå€åŸŸçš„åç¨±
+	ã€‚é€™æ¨£ä¸€ä¾†ï¹å€åŸŸå’Œå€åŸŸä¹‹é–“æ‰€ä½¿ç”¨çš„ quest mark å°±ä¸æœƒäº’ç›¸é‡è¦†ï¹
+	è€Œç™¼ç”Ÿå•é¡Œã€‚
 
-	¦pªG­nÀËÅç player ¬O§_¦³¬Y¤@­Ó quest mark ¥i¥H§Q¥Î if ¨Ó°µ¨ì¡C
+	å¦‚æœè¦æª¢é©— player æ˜¯å¦æœ‰æŸä¸€å€‹ quest mark å¯ä»¥åˆ©ç”¨ if ä¾†åšåˆ°ã€‚
 
 	if is_qmark($n) == areaname_get_obj1
 
-	¨º»ò·í player ªº quest mark ¤¤§t¦³ areaname_get_obj1 ªº¸Ü¡M´N·|
-	°õ¦æ if ¤ºªº¤º®e¡C
+	é‚£éº¼ç•¶ player çš„ quest mark ä¸­å«æœ‰ areaname_get_obj1 çš„è©±ï¹å°±æœƒ
+	åŸ·è¡Œ if å…§çš„å…§å®¹ã€‚
 
-	§Q¥Î¥H¤W©Ò¤¶²Ğªº¤@¨Ç¤pµ{¦¡´N¥i¥H«ÜÂ²³æªº¹F¨ì¤@¨Ç quest ªº
-	­n¨D¡MÁöµM¤£¬O«Ü§¹¾ã¡M¦ı¬O°µ¬°°òÂ¦ªºÀ³¥ÎÀ³¸Ó´N°÷¤F¡C
+	åˆ©ç”¨ä»¥ä¸Šæ‰€ä»‹ç´¹çš„ä¸€äº›å°ç¨‹å¼å°±å¯ä»¥å¾ˆç°¡å–®çš„é”åˆ°ä¸€äº› quest çš„
+	è¦æ±‚ï¹é›–ç„¶ä¸æ˜¯å¾ˆå®Œæ•´ï¹ä½†æ˜¯åšç‚ºåŸºç¤çš„æ‡‰ç”¨æ‡‰è©²å°±å¤ äº†ã€‚
 
-	¦pªG§A¯à¬°§Aªº mprog_do_ifchck ¦h¥[§ó¦hªº¶µ¥Ø¡M¨º»ò mob program
-	ªº«Â¤O·|§ó¥[±j¤j¡C
+	å¦‚æœä½ èƒ½ç‚ºä½ çš„ mprog_do_ifchck å¤šåŠ æ›´å¤šçš„é …ç›®ï¹é‚£éº¼ mob program
+	çš„å¨åŠ›æœƒæ›´åŠ å¼·å¤§ã€‚
 
