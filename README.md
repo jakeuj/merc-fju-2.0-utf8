@@ -56,7 +56,7 @@ Docker 內部生成的 `src/merc.ini` 會把 `HOME DIRECTORY` 固定設為 `/app
 - 更詳細的 reset 清單與每個檔案用途，請參考 [`docs/RUNTIME_RESET.md`](docs/RUNTIME_RESET.md)。
 - 發佈到 GCP Artifact Registry 或 Docker Hub 之前，建議流程：`git status` 確認程式碼已 commit → `docker build -t merc-fju:release -f docker/Dockerfile .` → `docker tag`/`docker push`。如此生成的映像即可在 GCP VM 上直接掛載乾淨 volume 即時啟用。
 
-### 本機（macOS / Linux）直接建置
+### 本機（macOS / Linux / WSL）直接建置
 
 若開發環境已具備 gcc/clang 與 make，也可以像傳統 Merc 一樣在主機上原生執行。針對
 macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作：
@@ -78,6 +78,63 @@ macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作�
 
 6. 本機測試可直接 `nc localhost 3838`（或任何 telnet 客戶端）登入，所有 runtime
    資料會寫回主機目錄而非容器。
+
+#### 在 WSL（Windows Subsystem for Linux）中執行
+
+若您使用 Windows 11/10 並安裝了 **WSL 2**（例如 Ubuntu 24.04），也可以直接在 WSL 內編譯與啟動。
+由於 `src/merc` 是 Linux ELF 可執行檔，請在 **WSL shell** 內執行，不要直接在 PowerShell / cmd 內啟動。
+
+1. 進入 repo 在 WSL 的掛載路徑（以本機 `H:` 為例）：
+
+   ```bash
+   cd /mnt/h/repos/merc-fju-2.0-utf8
+   ```
+
+2. 安裝工具鏈（依發行版調整；Ubuntu/Debian 可參考）：
+
+   ```bash
+   sudo apt update
+   sudo apt install -y build-essential csh libxcrypt-compat || \
+     sudo apt install -y build-essential csh libxcrypt-dev
+   ```
+
+3. 重新產生 `src/merc.ini`，讓 `HOME DIRECTORY` 指向 WSL 內的實際路徑：
+
+   ```bash
+   MERC_FORCE_RENDER_INI=1 \
+   MERC_HOME_VALUE=/mnt/h/repos/merc-fju-2.0-utf8 \
+   ./scripts/bootstrap.sh .
+   ```
+
+4. 在 WSL 內重新編譯：
+
+   ```bash
+   cd src
+   make clean && make
+   cd ..
+   ```
+
+5. 啟動伺服器：
+
+   ```bash
+   ./start-merc.sh start
+   ```
+
+6. 確認 WSL 內已開始 listen：
+
+   ```bash
+   ss -ltn | grep -E ':(3838|1234|8888)[[:space:]]'
+   ```
+
+7. 從 Windows 端連線到 WSL 內的遊戲：
+
+   ```bash
+   telnet 127.0.0.1 3838
+   ```
+
+   或使用 PuTTY / MUD client，host 填 `127.0.0.1`、port 填 `3838`，字元編碼設為 **UTF-8**。
+
+> 若 repo 放在 `/mnt/c`、`/mnt/d`、`/mnt/h` 這類 Windows 磁碟掛載點，請確認 `log/`、`player/`、`mail/`、`debug/`、`vote/` 等 runtime 目錄對目前 WSL 使用者可寫；若先前曾以 root 建立這些目錄，`scripts/bootstrap.sh` 可能會因 `log is not writable` 等訊息失敗。這種情況請先修正目錄權限，再重新啟動；若只是臨時驗證，也可先用 `sudo ./start-merc.sh start` 測試。
 
 更多細節與常見維運指令，請參考 [`docs/BUILD.md`](docs/BUILD.md) 的
 「Host-only build」章節與 `document/README` 的傳統說明。
