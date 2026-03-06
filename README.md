@@ -185,7 +185,14 @@ cd src
 ./startup &
 ```
 
-> macOS/本機除錯：若 `./startup` 因 `setpriority: Permission denied.` 等訊息被系統阻擋，可直接在專案根目錄執行 `./src/merc src/merc.ini`。  
+或在專案根目錄以 `./start-merc.sh` 一鍵啟動，腳本會：
+1. 自動執行 `scripts/bootstrap.sh`（若存在）以建立 `log/`、`player/` 等目錄。
+2. 檢查 `src/merc` / `src/merc.ini` 是否可用，必要時拒絕啟動並提示補救。
+3. 移除殘留的 `src/shutdown.txt`，以免程式啟動瞬間自我關閉。
+4. 若偵測不到 `src/merc` 會自動執行 `cd src && make` 嘗試編譯。
+5. 將輸出寫入 `log/manual-start-YYYYmmdd-HHMMSS.log`，並在 `log/merc.pid` 保存 PID。
+
+> macOS/本機除錯：若 `./startup` 因 `setpriority: Permission denied.` 等訊息被系統阻擋，可使用 `./start-merc.sh` 或直接在專案根目錄執行 `./src/merc src/merc.ini`。  
 > 每次強制關閉後請刪除 `src/shutdown.txt`（或在遊戲內輸入 `shutdown`）再重新啟動，否則主程式會立刻偵測到舊的關機旗標而結束。
 
 ## 開發與維運文件
