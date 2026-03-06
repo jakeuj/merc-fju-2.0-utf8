@@ -1,0 +1,25 @@
+Vnum            11027
+Name            畢業考核廳~
+Description
+考核廳以三色旗幟區分武技、術法與生存試題。
+通過測驗者可獲得前往汜水演武林的通行徽章。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11026
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11028
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,14 @@
+Vnum            11007
+Name            書院徽章~
+ShortDesc       書院徽章~
+Description
+一枚刻有雲梯紋樣的書院徽章閃著銀光。
+~
+Unit            件~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           1
+Value           0 0 0 0
+Weight          1
+Cost            25
+End

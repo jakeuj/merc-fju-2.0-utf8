@@ -1,0 +1,41 @@
+Vnum            11002
+Name            迎新接待大廳~
+Description
+高挑的大廳掛滿院規與地圖，值勤學長以木牌引導新生。
+牆上還標示了講武堂、奇術塔與生活街的方向。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11011
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11021
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,33 @@
+Vnum            11031
+Name            竹林練習場~
+Description
+空地上立著木樁與簡易陷阱，供學員練習觀察與走位。
+偶爾會有傀儡啟動作為測驗。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       SOUTH
+ExitVnum        11030
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11032
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11034
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

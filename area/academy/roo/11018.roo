@@ -1,0 +1,25 @@
+Vnum            11018
+Name            烹飪實習間~
+Description
+炊煙從石爐上方緩緩升起，學員學著把食材做成便於攜帶的口糧。
+桌邊貼著提高回復效率的小技巧。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11017
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

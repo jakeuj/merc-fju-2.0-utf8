@@ -1,9 +1,41 @@
 Vnum            11001
 Name            雲梯書院南門廣場~
 Description
-浮空石鋪成的廣場懸在雲海上，中央立著記錄新手任務的光柱，四周可
-見講武堂、奇術塔與圖書亭的入口。多彩的繩索雲梯來回晃動，象徵書
-院與整個跨界世界之間的連結。導師安排的導覽路線從這裡展開。
+浮空石鋪成的廣場懸在雲海上，中央立著記錄新手任務的光柱。
+導師們在此迎接初入世界的旅人，並提醒先到迎新大廳報到。
 ~
 SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        11002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11010
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11290
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
 End

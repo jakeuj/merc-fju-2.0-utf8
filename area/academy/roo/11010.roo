@@ -1,9 +1,25 @@
 Vnum            11010
 Name            雲梯書院內環候車點~
 Description
-圓形的石環圍住一座緩慢旋轉的傳送台，牆上張貼著新手注意事項與緊
-急回書院的暗號。導生會在這裡集合新生，準備搭乘專用馬車返回永靖
-。
+圓形石環圍住一座緩慢旋轉的傳送台，牆上張貼新手須知。
+導生會在這裡集合新生，準備前往永靖或返回南門。
 ~
 SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11011
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
 End

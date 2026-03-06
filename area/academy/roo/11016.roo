@@ -1,0 +1,25 @@
+Vnum            11016
+Name            任務講解室~
+Description
+牆上以圖示說明主線與支線任務流程，桌上擺著演示用令牌。
+任務書記會在此回答接取條件與獎勵內容。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11013
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11017
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

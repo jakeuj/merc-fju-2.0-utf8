@@ -1,0 +1,14 @@
+Vnum            11004
+Name            口糧袋~
+ShortDesc       口糧袋~
+Description
+一袋便於攜帶的乾糧放在木盤中。
+~
+Unit            件~
+ItemType        ITEM_FOOD
+Takeable        Yes
+Level           1
+Value           5 0 0 0
+Weight          1
+Cost            25
+End

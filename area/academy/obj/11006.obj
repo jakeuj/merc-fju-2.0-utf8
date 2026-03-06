@@ -1,0 +1,14 @@
+Vnum            11006
+Name            符粉小包~
+ShortDesc       符粉小包~
+Description
+研磨好的符粉小包散發淡淡藍光。
+~
+Unit            件~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           1
+Value           0 0 0 0
+Weight          1
+Cost            25
+End

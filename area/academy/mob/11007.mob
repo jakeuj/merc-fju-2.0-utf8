@@ -1,0 +1,28 @@
+Vnum            11007
+Name            任務書記 唐岑~
+ShortDesc       任務書記 唐岑~
+Description
+任務書記唐岑埋首整理一疊待發任務卷宗。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           20
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              2400
+Mana            1200
+Move            100
+Class           CLASS_CITIZEN
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_questmaster
+End

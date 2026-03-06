@@ -1,0 +1,28 @@
+Vnum            11001
+Name            新手導師 林墨~
+ShortDesc       新手導師 林墨~
+Description
+一位神情溫和的新手導師林墨在此指引方向。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           20
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              2400
+Mana            1200
+Move            100
+Class           CLASS_MAGE
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_newbie_teacher
+End

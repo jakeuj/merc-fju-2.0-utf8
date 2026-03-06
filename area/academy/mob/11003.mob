@@ -1,0 +1,28 @@
+Vnum            11003
+Name            逃跑教官 阿迅~
+ShortDesc       逃跑教官 阿迅~
+Description
+逃跑教官阿迅踏著快步示範脫戰節奏。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           22
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              2640
+Mana            1320
+Move            100
+Class           CLASS_FIGHTER
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_flee_teacher
+End

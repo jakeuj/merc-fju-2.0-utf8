@@ -1,0 +1,25 @@
+Vnum            11017
+Name            木工實習間~
+Description
+學徒用木料打造練習盾與箭靶，鋸木聲不時響起。
+完成課程可獲得簡易修裝服務。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11016
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11018
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

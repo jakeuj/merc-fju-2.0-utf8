@@ -1,0 +1,41 @@
+Vnum            11004
+Name            講武堂前廊~
+Description
+石柱前廊掛著木劍與盾牌，空氣中帶著汗水與松木香。
+教官要求新生先學會站姿，再談招式。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11005
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11013
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11023
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

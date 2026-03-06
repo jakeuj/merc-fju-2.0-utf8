@@ -1,0 +1,25 @@
+Vnum            11006
+Name            步法訓練道~
+Description
+狹長木道畫有白線與箭頭，要求學員以固定節奏移動。
+牆上寫著『先活下來，才有輸出』。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11005
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

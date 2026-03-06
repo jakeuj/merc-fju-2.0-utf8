@@ -1,0 +1,33 @@
+Vnum            11023
+Name            書庫外廊~
+Description
+外廊堆放待歸檔卷宗，管理員嚴格檢查借閱證。
+只有通過基礎測驗者才能進入深處書庫。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11024
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11004
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

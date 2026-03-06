@@ -1,0 +1,28 @@
+Vnum            11009
+Name            傀儡維修員 岑工~
+ShortDesc       傀儡維修員 岑工~
+Description
+傀儡維修員岑工手持扳手，檢查傀儡關節。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           16
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              1920
+Mana            960
+Move            100
+Class           CLASS_CITIZEN
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_generic
+End

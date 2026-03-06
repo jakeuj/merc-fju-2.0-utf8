@@ -1,0 +1,25 @@
+Vnum            11038
+Name            試煉門廊~
+Description
+門廊前立著兩尊守門像，象徵進入外界前的最後考驗。
+導師要求學員先完成三項基礎課程。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11037
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11039
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End
