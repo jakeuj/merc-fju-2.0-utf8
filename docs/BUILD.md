@@ -10,6 +10,8 @@
 - `docker/Dockerfile` calls `scripts/clean-runtime.sh` right after `COPY . /app`, which wipes `player/ mail/ log/ debug/ vote/` and truncates `data/immlist`, `etc/database`, `etc/address`, `etc/stock`, `board/*/list`, and debug logs so no local player data sneaks into the release image.
 - `.dockerignore` excludes `.git/`, runtime folders, IDE junk, etc., shrinking the context that reaches Docker.
 - To inspect or pre-clean a staging directory outside of Docker, run `bash scripts/clean-runtime.sh /absolute/path/to/stage` (never point it at a live volume you still need).
+- Even though `player/` is runtime-only, the game assumes the alphabetical buckets (`player/a` … `player/Z`, bucket/name/data) already exist; `clean-runtime.sh` recreates them, so if you manually wipe a Persistent Disk make sure to re-run the script or re-create those directories before starting the server.
+- Some mutable files must be restored to their defaults instead of removed—`etc/stock`, `etc/address`, `etc/database`, `data/immlist`, `board/*/list`—because the server reads them during boot. Keep template copies in the repo and copy them over when seeding a new volume.
 
 ### docker compose
 ```

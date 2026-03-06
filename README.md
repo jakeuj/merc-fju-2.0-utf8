@@ -51,6 +51,9 @@ Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與
 - `docker/Dockerfile` 在 `COPY . /app` 之後會執行 `scripts/clean-runtime.sh`，自動清空 `player/ mail/ log/ debug/ vote/` 等 runtime 目錄，並重設 `data/immlist`、`etc/database`、`etc/address`、`etc/stock` 等敏感檔案為 GitHub 上的乾淨值，最後移除 `.git`。即使本地開發時留下玩家檔或免洗帳號，建置出的映像也不會帶入這些資料。
 - 若需要手動檢查某個 staging 目錄是否乾淨，可執行 `bash scripts/clean-runtime.sh <絕對路徑>`；請避免直接對正在服務的實際資料夾執行（會刪掉所有玩家資料）。
 - `.dockerignore` 會排除 `.git/`、`player/` 等目錄，減少 build context 並避免 runtime 檔案意外被複製到映像中。
+- 雖然 `player/` 在執行時會新增/刪除玩家檔，但映像內仍會隨附 52 個字母分桶（`player/a` … `player/Z`，每一桶底下才是 `<角色名>/data`），因為伺服器存檔時會直接假設這些目錄存在；若手動清空 Persistent Disk，請務必再次執行 `scripts/clean-runtime.sh` 或自行重建這些子目錄，否則會出現 `create_dir: 無法建立目錄 <Name>` 錯誤。
+- 有些「會被更新但不能刪除」的檔案需要還原為預設內容，例如 `etc/stock`（預設五家股票）、`etc/address`、`etc/database`、`data/immlist`；上述檔案應在 build 或部署流程中用模板覆寫，而不是直接移除，否則伺服器啟動後會缺少必要設定。
+- 更詳細的 reset 清單與每個檔案用途，請參考 [`docs/RUNTIME_RESET.md`](docs/RUNTIME_RESET.md)。
 - 發佈到 GCP Artifact Registry 或 Docker Hub 之前，建議流程：`git status` 確認程式碼已 commit → `docker build -t merc-fju:release -f docker/Dockerfile .` → `docker tag`/`docker push`。如此生成的映像即可在 GCP VM 上直接掛載乾淨 volume 即時啟用。
 
 > 若無 Docker，或需要遵循舊式手動編譯方式，請直接閱讀

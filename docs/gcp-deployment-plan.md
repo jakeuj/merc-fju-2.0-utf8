@@ -10,6 +10,8 @@ Create a reproducible pipeline that builds the existing Ubuntu 24.04 Docker imag
    - Keep `/Users/jakeuj/auggie/mud2` as canonical source.  
    - `.dockerignore` excludes `player/ mail/ log/ debug/` etc. to shrink build context.  
    - `scripts/clean-runtime.sh` now runs inside `docker/Dockerfile`, scrubbing runtime folders (`player/ mail/ log/ debug/ vote/`) plus skip-worktree files (`data/immlist`, `etc/database`, `etc/address`, `etc/stock`, `board/*/list`, debug logs) so release images never include developer data.  
+   - `player/` 必須保留所有字母分桶（`/player/a` … `/player/Z`，每個桶底下才會生成 `<角色名>/data`），因此清空 PD 後記得重跑 `scripts/clean-runtime.sh` 或以 `python`/bash 重新建立這 52 個子目錄；缺少它們會導致 `create_dir` 失敗。  
+   - 檔案如 `etc/stock`、`etc/address`、`etc/database`、`data/immlist` 是在 runtime 更新但仍需要起始預設值的 Template，部署腳本應該把 repo 內的版本複製到 PD，而不是將它們刪除。  
 2. **Artifact Registry**  
    - Create `LOCATION-docker.pkg.dev/PROJECT/merc-fju/merc-fju` repo.  
    - Authenticate local Docker (`gcloud auth configure-docker LOCATION-docker.pkg.dev`).  
