@@ -1,0 +1,27 @@
+Vnum            11112
+Name            幻境紀錄官 段遙~
+ShortDesc       幻境紀錄官 段遙~
+Description
+幻境紀錄官段遙拿著卷軸，記錄每次試煉數據。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           19
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              2000
+Mana            1200
+Move            100
+Class           CLASS_MAGE
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

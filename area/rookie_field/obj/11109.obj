@@ -1,0 +1,14 @@
+Vnum            11109
+Name            幻鏡碎片~
+ShortDesc       幻鏡碎片~
+Description
+一片閃爍不定的幻鏡碎片在你掌中微微震動。
+~
+Unit            片~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           8
+Value           0 0 0 0
+Weight          1
+Cost            180
+End

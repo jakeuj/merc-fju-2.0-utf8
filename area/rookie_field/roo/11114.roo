@@ -1,0 +1,25 @@
+Vnum            11114
+Name            山賊議事棚~
+Description
+大木棚內堆滿地圖與劫掠名冊，地面有尚未熄滅的火盆。幾名山賊正討
+論下一波突襲路線，氣氛緊繃。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11113
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11115
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

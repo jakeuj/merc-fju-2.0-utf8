@@ -1,0 +1,27 @@
+Vnum            11110
+Name            幻境高階投影~
+ShortDesc       幻境高階投影~
+Description
+一道幻境高階投影在符文間忽隱忽現，隨時準備突襲。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           21
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              2600
+Mana            1000
+Move            120
+Class           CLASS_MAGE
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

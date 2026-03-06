@@ -1,0 +1,15 @@
+Vnum            11110
+Name            校準指北盤~
+ShortDesc       校準指北盤~
+Description
+一具刻著符文刻度的校準指北盤被妥善收納。
+~
+Unit            具~
+ItemType        ITEM_LIGHT
+Takeable        Yes
+Level           8
+WearFlags       ITEM_HOLD
+Value           36 0 0 0
+Weight          1
+Cost            95
+End

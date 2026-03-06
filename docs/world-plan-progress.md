@@ -13,13 +13,14 @@
 - ✅ 新增幫助檔 `help/new_world.hlp`、`help/quest_academy.hlp`、`help/quest_yongjing.hlp`。
 - ✅ 完成 `academy` 第一版實作：補齊 40 間房間（11001–11040）、12 名 NPC、8 件物品、3 間商店與 reset 配置，並串接往 `rookie_field` 的出口。
 - ✅ 完成 `rookie_field` 第一階段實作：新增 12 間房間（11101–11112）、8 名 NPC、6 件物品、2 間商店與 reset 配置，並補上返回 `academy` 的出口。
+- ✅ 完成 `rookie_field` 第二階段事件：新增 8 間房間（11113–11120）、4 名 NPC、4 件物品與對應 reset，補齊山賊首領線與幻境塔高層試煉。
 - ⏳ `yongjing`、`bailang`、`arena_prime`、`coliseum` 的 `mob/obj/res/shp` 仍以 README placeholder 為主，尚未填寫具體重置與 NPC。
 - ⏳ 舊六區仍載入並提供功能；尚未建立 archive 或刪除流程。
 
 ## 下一步 TODO
 1. **汜水演武林 (`rookie_field`)**
-   - 擴充至目標 80 rooms，補上第二階段事件（山賊首領、幻境塔高層）與採集循環 reset。
-2. **永靖樞城 (`yongjing`)**
+   - 持續擴充至目標 80 rooms，補上採集循環 reset 與畢業檢定任務線。
+2. **永靖樞城 (`yongjing`) ← 目前最迫切**
    - 完整主城地圖（目標 220 rooms）、八間商店、六位技能師、公交/傳送 job。
    - 更新 `data/bus.txt` job keyword (`job bus`?) 及 `help/bus` 說明。
 3. **白狼邊境 (`bailang`)**

@@ -1,0 +1,25 @@
+Vnum            11113
+Name            山賊後寨入口~
+Description
+穿過營火地後，道路轉為碎石坡，兩側插滿臨時拒馬與破旗。這裡是
+山賊後寨的警戒帶，能聽見更深處傳來粗暴喝令。
+~
+SectorType      SECT_HILLS
+
+#Exit
+Direction       SOUTH
+ExitVnum        11104
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11114
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

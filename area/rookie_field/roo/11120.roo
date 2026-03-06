@@ -1,0 +1,17 @@
+Vnum            11120
+Name            幻境觀測台~
+Description
+觀測台可以俯瞰整片演武林，牆上掛滿各梯次學員的路徑紀錄。塔方紀
+錄官在此發放進階試煉憑證，並講評撤離決策。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11118
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,25 @@
+Vnum            11116
+Name            幻境塔二層~
+Description
+符文牆面開始出現流動影像，地板每隔片刻就會改變紋路。學員必須在
+錯覺中維持步法節奏，否則容易誤入死角。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11112
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11117
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

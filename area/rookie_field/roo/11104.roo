@@ -12,6 +12,14 @@ ExitVnum        11103
 ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0
+#Exit
+Direction       NORTH
+ExitVnum        11113
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
 End
 
 End

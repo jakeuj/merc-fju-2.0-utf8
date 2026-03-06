@@ -1,0 +1,15 @@
+Vnum            11108
+Name            凝神草膏~
+ShortDesc       凝神草膏~
+Description
+一罐帶著清涼氣味的凝神草膏放在木桌上。
+~
+Unit            罐~
+ItemType        ITEM_PILL
+Takeable        Yes
+Level           8
+WearFlags       ITEM_HOLD
+Value           12 28 0 0
+Weight          1
+Cost            110
+End

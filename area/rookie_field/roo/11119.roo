@@ -1,0 +1,17 @@
+Vnum            11119
+Name            藥草蒸餾棚~
+Description
+木棚內架著蒸餾器與藥罐，空氣中混著辛辣草氣。鑑定員會在此教導學
+員把採回藥材加工成可立即使用的戰地補給。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11111
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

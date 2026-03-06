@@ -1,0 +1,25 @@
+Vnum            11117
+Name            幻境鏡廊~
+Description
+狹長廊道由鏡面石柱組成，倒影會延遲你的動作半拍。想通過此處，必
+須學會判斷真身與殘影的差異。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11116
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11118
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

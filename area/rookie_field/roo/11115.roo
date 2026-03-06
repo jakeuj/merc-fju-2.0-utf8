@@ -1,0 +1,17 @@
+Vnum            11115
+Name            山賊首領營帳~
+Description
+厚重獸皮帳幕遮住了光線，中央擺著滿是刀痕的長桌。山賊首領把戰利
+品與命令牌堆在桌角，戒備著任何闖入者。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11114
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

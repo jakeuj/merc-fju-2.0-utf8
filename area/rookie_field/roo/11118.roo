@@ -1,0 +1,25 @@
+Vnum            11118
+Name            高層試陣台~
+Description
+半開放平台懸在塔身外側，周圍浮動著攻擊型符文。守關投影會依你的
+走位調整攻勢，是進階逃脫與反擊訓練的核心場地。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11117
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End
