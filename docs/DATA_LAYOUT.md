@@ -6,7 +6,7 @@
 
 | 目錄 | 類型 | Runtime？ | 說明 |
 |------|------|-----------|------|
-| `src/` | 原始碼 | ✗ | C 程式碼、Makefile、`startup`、`merc.ini` 範本。Docker build 從這裡產生 `merc`。 |
+| `src/` | 原始碼 | ✗ | C 程式碼、Makefile、`startup`、產生後的 `merc.ini`（active config）。Docker build 從這裡產生 `merc`。 |
 | `area/` | 世界資料 | △ | 區域定義（`index`、`mob/`、`obj/`、`roo/`、`res/`、`mineral/`、`shp/`），大多數情況視同靜態資產。 |
 | `angel/` | 世界資料 | ✗ | 守護神設定（NPC guardian）。 |
 | `command/` | 世界資料 | ✗ | 指令描述（`.ins`）與 `command.lst`。詳見下節。 |
@@ -29,7 +29,7 @@
 | `data/server` | 配置 | △ | 工作站白名單；雖可變動但屬設定檔，不會自動重建。 |
 | `document/README` | 文件 | ✗ | 原始中文說明，保留歷史流程，本文即以其為基礎擴寫。 |
 | `edit/` | 歷史遺跡 | ✗ | DOS 編輯程式，現已不使用。 |
-| `scripts/` | 工具 | ✗ | `clean-runtime.sh`、`bootstrap.sh` 等建置腳本。 |
+| `scripts/` | 工具 | ✗ | `clean-runtime.sh`、`bootstrap.sh`、`render-merc-ini.sh` 等建置腳本。 |
 | `docker/` | 工具 | ✗ | Dockerfile 與 entrypoint。 |
 | `docs/` | 文件 | ✗ | 現代化後新增的 Markdown 文件。 |
 | `runtime-test/` | 測試 | ✓ | 本地 runtime fixture，供整合測試與 CI。 |
@@ -92,7 +92,7 @@
 | `etc/stock` | `STOCK FILE` | 股票系統初始五家公司 | 5 行預設值 (全部價格 10000) | **還原為預設內容**，不可刪除 |
 | `etc/motd.txt`, `etc/donate`, `etc/club.txt`, `etc/purge.dat` | - | 純設定檔，build 時不會重寫 | 依 repo | Reset 時若要回到乾淨狀態，可 `git checkout main -- <檔案>` |
 
-> 注意：`etc/merc.ini` 與 `etc/minimal.ini` 為完整 server 設定範本，兩者不應在 runtime 直接修改；透過 bind mount 將 `etc/merc.ini` 導向 Persistent Disk 後，再依環境調整。
+> 注意：`etc/merc.ini` 與 `etc/minimal.ini` 是設定模板；實際啟動時讀的是 `src/merc.ini`。`src/merc.ini` 應由 `scripts/render-merc-ini.sh` 生成，而不是直接進版控；production 容器內固定使用 `/app`，host-only 開發則生成本機絕對路徑。
 
 ## `debug/` 記錄檔
 

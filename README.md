@@ -38,11 +38,11 @@ make docker-run            # 以 -p 13838/11234/18888 映射並啟動
 
 容器入口點會自動：
 
-1. 以非 root 身份執行 `scripts/bootstrap.sh` 建立 `log/ player/ mail/` 等可寫目錄。
+1. 以非 root 身份執行 `scripts/bootstrap.sh` 建立 `log/ player/ mail/` 等可寫目錄，並在缺少 `src/merc.ini` 時自動由 `etc/merc.ini` 模板生成。
 2. 在 `/app/src` 執行 `make clean && make`，將 `merc` 與 `.o` 全數重新建置並回報編譯警告。
 3. 啟動 `./startup merc.ini`，使用與舊版相同的 csh 循環與日誌輪替。
 
-Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與遊戲資料
+Docker 內部生成的 `src/merc.ini` 會把 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與遊戲資料
 （`area/ skill/ angel/ board/ player/` 等）都會透過 bind mount 保留在主機目錄。
 若要 shell 進容器，可使用 `make docker-shell` 或 `docker exec -it merc-fju /bin/bash`。
 
@@ -71,7 +71,7 @@ Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與
 | `document/` | 本版參考手冊 |
 | `doc/` | 原始 Merc 參考文件 |
 | `include/` | 職業、地形等設定 |
-| `etc/` | 雜項設定（含 `merc.ini`） |
+| `etc/` | 雜項設定與 `merc.ini` 模板 |
 | `greeting/` | 進站畫面 |
 | `help/` | 線上求助檔案 |
 | `skill/` | 技能資料檔案 |
@@ -121,7 +121,7 @@ Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與
      jakeuj/merc-fju-2.0-utf8:latest
    ```
 
-3. 在 GCP 上只要把 `/srv/merc` 指向 Persistent Disk（或 Cloud Storage FUSE）即可複製相同做法，達到玩家檔案、信件、留言板與 `merc.ini` 等設定的持久化。
+3. 在 GCP 上只要把 `/srv/merc` 指向 Persistent Disk（或 Cloud Storage FUSE）即可複製相同做法，達到玩家檔案、信件、留言板與 `etc/` 內其他設定的持久化。
 
 ## 現代化重點
 
@@ -129,10 +129,8 @@ Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與
   `fread_string`、`merc.ini` 解析器等舊版無法處理多位元字元的 bug。
 - **Docker 工具鏈**：`docker/Dockerfile` 安裝 `build-essential`、`csh`、`libxcrypt-compat`
   等依賴，確保舊程式可在新 Linux 核心上編譯與執行。
-- **scripts/**：`bootstrap.sh` 負責初始化可寫目錄；`check-data.py` 可驗證
-  `area/ skill/ angel/` 等資料是否仍為合法 UTF-8 與需有欄位。
-- **etc/merc.ini**：已改以 `/app` 為 HOME DIRECTORY，並新增多組 `MUD PORT`（預設 3838、1234、8888）。
-  若需要舊版參數對照，可比對 `document/README` 或 `docs/merc.ini.snapshot`。
+- **scripts/**：`bootstrap.sh` 負責初始化可寫目錄，`render-merc-ini.sh` 會由 `etc/merc.ini` 模板生成 `src/merc.ini`；`check-data.py` 可驗證 `area/ skill/ angel/` 等資料是否仍為合法 UTF-8 與需有欄位。
+- **etc/merc.ini**：現在是 git 追蹤的模板檔；Docker build 會固定生成 `HOME DIRECTORY=/app` 的 `src/merc.ini`，本機 host-only 開發則用當前 repo 絕對路徑生成。若需要舊版參數對照，可比對 `document/README` 或 `docs/merc.ini.snapshot`。
 - **data/server**：可設定免除多重登入／DNS 查詢的工作站白名單；新版 Docker host
   會在此列出（例如 `192.168.65.x`）。
 
@@ -146,14 +144,14 @@ cd src
 make clean && make
 ```
 
-確保系統已安裝 `gcc`、`make`、`csh`、`libxcrypt-compat`（Ubuntu）或等價套件，
-並在 `etc/merc.ini` 中調整目錄與埠號：
+確保系統已安裝 `gcc`、`make`、`csh`、`libxcrypt-compat`（Ubuntu）或等價套件；若要調整遊戲名稱、port 等固定設定，請先編輯 `etc/merc.ini` 模板，然後再生成本機使用的 `src/merc.ini`：
 
-```ini
-NAME            <你的遊戲名稱>
-MUD PORT        <連線埠號>
-HOME DIRECTORY  <遊戲實際路徑>
+```bash
+make render-merc-ini
+# 或 make bootstrap
 ```
+
+若 repo 路徑變更，可用 `MERC_FORCE_RENDER_INI=1 make bootstrap` 重新生成；若想覆寫目標路徑，也可執行 `MERC_HOME_VALUE=/your/path make render-merc-ini`。
 
 啟動方式與舊版相同（`./startup` 會在 `log/` 內滾動紀錄，並於 `shutdown.txt` 出現時終止）：
 

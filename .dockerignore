@@ -21,5 +21,6 @@ docs
 convert_big5_to_utf8.py
 
 # local tooling artifacts
+src/merc.ini
 *.log
 *.tmp

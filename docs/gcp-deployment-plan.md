@@ -35,7 +35,7 @@ Create a reproducible pipeline that builds the existing Ubuntu 24.04 Docker imag
    - 50 GB balanced PD (adjustable) mounted at `/srv/merc-data`.  
    - Directories on PD: `player/ mail/ board/ vote/ log/ debug/ etc/`; also persist whitelist-related files `etc/address`, `data/server`, and `data/immlist` so IP and immortal ACLs survive rebuilds.  
    - Docker image now declares the directory paths as `VOLUME`s (see `docker/Dockerfile`), so the PD must be bind-mounted into each of them at runtime or data will be ephemeral. Keep `/app/etc/address`, `/app/data/server`, and `/app/data/immlist` as file bind-mounts instead of anonymous volumes.  
-   - `scripts/bootstrap.sh` only creates empty runtime folders; seed PD the first time by copying repo defaults (`cp -r area etc data/server data/immlist ...`) before starting the container. Update `etc/merc.ini` HOME to `/data`.  
+   - `scripts/bootstrap.sh` creates runtime folders and can backfill `src/merc.ini` from the tracked `etc/merc.ini` template. Seed PD the first time by copying repo defaults (`cp -r area etc data/server data/immlist ...`) before starting the container. Keep runtime `HOME DIRECTORY` at `/app`; the Persistent Disk is only the host-side bind-mount source.
 4. **VM specs**  
    - `e2-small` (2 vCPU/2 GB) baseline; allow vertical scaling via instance template.  
    - Boot disk: 20 GB Ubuntu 24.04 LTS.  
@@ -47,10 +47,10 @@ Create a reproducible pipeline that builds the existing Ubuntu 24.04 Docker imag
    - `chown mud:mud /srv/merc-data`.  
 2. **Data layout**  
    - On first boot, copy repo subdirs that must persist (`player/ mail/ board/ vote/ log/ debug/ etc/`) and the `data/server` whitelist file plus `data/immlist` (immortal list) onto PD; keep codebase read-only under `/opt/merc`.  
-   - Update `etc/merc.ini` HOME DIRECTORY to `/data`; keep `Check Server = 1` for production, and maintain a separate dev/testing copy with it disabled if you need faster local loops.  
+   - Do not repoint `HOME DIRECTORY` to the host PD path. Production should keep the generated `src/merc.ini` at `HOME DIRECTORY=/app`; adjust only the bind mounts and any gameplay flags such as `Check Server`.
 3. **Container runtime**  
    - Image ships with `VOLUME ["/app/player", "/app/mail", "/app/board", "/app/vote", "/app/log", "/app/debug", "/app/etc"]`; mount each one to its PD-backed path before startup, and add `-v /srv/merc-data/data/server:/app/data/server -v /srv/merc-data/data/immlist:/app/data/immlist -v /srv/merc-data/etc/address:/app/etc/address` to persist whitelist artifacts.  
-   - Entrypoint `/app/docker/entrypoint.sh` respects `MERC_HOME` (default `/app`), runs `scripts/bootstrap.sh`, and conditionally rebuilds `src/merc` when missing or when `MERC_FORCE_BUILD=1`. Set `MERC_HOME=/app` in production unless you deliberately relocate the tree.  
+   - Entrypoint `/app/docker/entrypoint.sh` respects `MERC_HOME` (default `/app`), runs `scripts/bootstrap.sh`, backfills `src/merc.ini` when missing (or when `MERC_FORCE_RENDER_INI=1`), and conditionally rebuilds `src/merc` when missing or when `MERC_FORCE_BUILD=1`. Set `MERC_HOME=/app` in production unless you deliberately relocate the tree.
    - `docker run --name merc -d --restart unless-stopped \`  
      `-p 3838:3838 -p 1234:1234 -p 8888:8888 \`  
      `-v /srv/merc-data/player:/app/player ...` (repeat for each dir)  

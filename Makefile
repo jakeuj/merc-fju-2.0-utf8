@@ -1,7 +1,13 @@
 IMAGE ?= merc-fju
 DOCKER ?= docker
 
-.PHONY: docker-build docker-run docker-shell docker-clean
+.PHONY: docker-build docker-run docker-shell docker-clean bootstrap render-merc-ini
+
+bootstrap:
+	./scripts/bootstrap.sh "$(CURDIR)"
+
+render-merc-ini:
+	./scripts/render-merc-ini.sh "$(CURDIR)"
 
 docker-build:
 	$(DOCKER) build -t $(IMAGE) -f docker/Dockerfile .

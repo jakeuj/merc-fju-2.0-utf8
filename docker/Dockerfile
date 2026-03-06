@@ -26,7 +26,9 @@ WORKDIR /app
 COPY . /app
 
 RUN chmod +x /app/scripts/clean-runtime.sh \
+    && chmod +x /app/scripts/render-merc-ini.sh \
     && /app/scripts/clean-runtime.sh /app \
+    && /app/scripts/render-merc-ini.sh /app /app \
     && rm -rf /app/.git
 
 RUN useradd -m -r -s /bin/bash mud \

@@ -23,6 +23,7 @@ data/server
 # Compiled binaries and object files
 src/*.o
 src/merc
+src/merc.ini
 
 # macOS
 .DS_Store
