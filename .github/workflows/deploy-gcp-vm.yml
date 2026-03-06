@@ -54,6 +54,82 @@ jobs:
             ${{ steps.release.outputs.image }}
             ${{ env.IMAGE_NAME }}:latest
 
+      - name: Smoke test image with bind mounts
+        shell: bash
+        env:
+          SMOKE_IMAGE: ${{ steps.release.outputs.image }}
+        run: |
+          set -euo pipefail
+
+          smoke_root="$(mktemp -d)"
+          container_name="merc-smoke"
+          host_port=13838
+
+          cleanup() {
+            docker rm -f "${container_name}" >/dev/null 2>&1 || true
+            rm -rf "${smoke_root}"
+          }
+          trap cleanup EXIT
+
+          mkdir -p \
+            "${smoke_root}/player" \
+            "${smoke_root}/mail" \
+            "${smoke_root}/board" \
+            "${smoke_root}/vote" \
+            "${smoke_root}/log" \
+            "${smoke_root}/debug" \
+            "${smoke_root}/etc" \
+            "${smoke_root}/data"
+
+          cp -a board/. "${smoke_root}/board/"
+          cp -a etc/. "${smoke_root}/etc/"
+          cp -f data/server "${smoke_root}/data/server"
+          cp -f data/immlist "${smoke_root}/data/immlist"
+
+          docker run -d \
+            --name "${container_name}" \
+            -p "${host_port}:3838" \
+            -v "${smoke_root}/player:/app/player" \
+            -v "${smoke_root}/mail:/app/mail" \
+            -v "${smoke_root}/board:/app/board" \
+            -v "${smoke_root}/vote:/app/vote" \
+            -v "${smoke_root}/log:/app/log" \
+            -v "${smoke_root}/debug:/app/debug" \
+            -v "${smoke_root}/etc:/app/etc" \
+            -v "${smoke_root}/data/server:/app/data/server" \
+            -v "${smoke_root}/data/immlist:/app/data/immlist" \
+            "${SMOKE_IMAGE}"
+
+          ready=0
+          for _ in $(seq 1 60); do
+            if ! docker ps --filter "name=^/${container_name}$" --filter status=running --format '{{.Names}}' | grep -q "^${container_name}$"; then
+              echo "Smoke container exited unexpectedly" >&2
+              docker logs --tail 200 "${container_name}" || true
+              exit 1
+            fi
+
+            if timeout 1 bash -lc "echo > /dev/tcp/127.0.0.1/${host_port}" >/dev/null 2>&1; then
+              ready=1
+              break
+            fi
+
+            sleep 2
+          done
+
+          if [[ "${ready}" -ne 1 ]]; then
+            echo "Smoke test timed out waiting for port ${host_port}" >&2
+            docker logs --tail 200 "${container_name}" || true
+            exit 1
+          fi
+
+          bucket_count="$(docker exec "${container_name}" sh -lc 'find /app/player -mindepth 1 -maxdepth 1 -type d | wc -l')"
+          if [[ "${bucket_count}" -lt 52 ]]; then
+            echo "Player bucket initialization failed, expected at least 52 buckets but got ${bucket_count}" >&2
+            docker exec "${container_name}" sh -lc 'ls -la /app/player'
+            docker logs --tail 200 "${container_name}" || true
+            exit 1
+          fi
+
       - name: Configure SSH key
         shell: bash
         run: |
