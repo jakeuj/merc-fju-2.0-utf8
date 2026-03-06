@@ -1,0 +1,22 @@
+Echo    WILL_ECHO
+Editor  Jakeuj~
+Name    裂界戰境~
+Fog     -1
+Upper   LEVEL_PC
+Fight   YES
+Lower   40
+Serial  211
+Capital 11801
+Description
+裂界戰境：
+
+地理狀況：以地裂深谷為背景的 PvE 副本競技場，內含分層式挑戰、陷
+阱走廊與冒險者集結地。提供週期性活動與榜單。
+
+交通狀況：需完成星火決戰所或白狼邊境的任務方能進入，由永靖樞城
+北塔與暴風／奧格的跨界大使提供傳送。
+
+怪物等級：建議 50–100 級，含輪替 Boss 與稀有掉落，並提供觀戰席
+位以維持安全距離。
+~
+End

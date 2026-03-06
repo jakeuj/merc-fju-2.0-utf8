@@ -1,0 +1,22 @@
+Echo    WILL_ECHO
+Editor  Jakeuj~
+Name    星火決戰所~
+Fog     -1
+Upper   LEVEL_PC
+Pk      Yes
+Lower   30
+Serial  210
+Capital 11701
+Description
+星火決戰所：
+
+地理狀況：懸浮於永靖上空的環狀競技場，具備觀眾席、賭場、戰術演
+算室與複數擂台。以元素火焰為主題，提供跨界 1v1 與小隊 PK 活動。
+
+交通狀況：透過永靖樞城中央廣場的星火傳送師或 Stormwind/Orgrimmar
+軍務官進入；亦可由 job 排程加入排隊佇列。
+
+怪物等級：由系統建立的對戰傀儡與裁判 NPC，等級伴隨參賽者調整，
+並設置安全緩衝區避免非預期死亡。
+~
+End
