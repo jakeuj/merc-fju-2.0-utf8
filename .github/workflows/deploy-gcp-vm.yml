@@ -173,6 +173,16 @@ jobs:
             fi
           done
 
+          # Keep operator access to /srv/merc-data/etc while preserving container writes.
+          # Historically this path can drift to uid/gid 999 with mode 750, which blocks
+          # SSH operators even though deploy succeeds.
+          if command -v sudo >/dev/null 2>&1 && sudo -n true >/dev/null 2>&1; then
+            sudo chgrp google-sudoers /srv/merc-data/etc
+            sudo chmod 2770 /srv/merc-data/etc
+          else
+            echo "warning: skip /srv/merc-data/etc permission normalization (sudo unavailable)" >&2
+          fi
+
           run_container() {
             local image="$1"
             docker run -d \

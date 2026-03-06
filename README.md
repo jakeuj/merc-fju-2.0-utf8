@@ -115,14 +115,17 @@ macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作�
 
 官方 Docker 映像會在 `/app` 下寫入數個路徑，這些路徑已於 `docker/Dockerfile` 內宣告為 `VOLUME`，確保資料會被掛到具備持久性的 volume。若要把容器實際資料存到本機磁碟（或 GCP Persistent Disk），請：
 
+> 注意：`/app/data/server` 與 `/app/data/immlist` 是**檔案**而非目錄，不屬於 `VOLUME` 宣告路徑。若要持久化這兩者，請使用檔案對檔案的 bind mount。
+> 若 host 端檔案不存在且使用 `-v`，Docker 可能自動建立目錄，導致容器端型別錯誤；建議先 `touch` 檔案並使用 `--mount type=bind`。
+
 1. 先建立對應目錄並複製預設內容（避免第一次掛載時是空的）：
 
    ```bash
-   mkdir -p /srv/merc/{player,mail,board,vote,log,debug,etc}
+   mkdir -p /srv/merc/{player,mail,board,vote,log,debug,etc,data}
    rsync -a board/ /srv/merc/board/
    rsync -a etc/ /srv/merc/etc/
-   cp data/server /srv/merc/data-server
-   cp data/immlist /srv/merc/immlist
+   cp data/server /srv/merc/data/server
+   cp data/immlist /srv/merc/data/immlist
    ```
 
 2. 以 `docker run`（或 compose）掛載這些目錄：
@@ -137,8 +140,8 @@ macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作�
      -v /srv/merc/log:/app/log \
      -v /srv/merc/debug:/app/debug \
      -v /srv/merc/etc:/app/etc \
-     -v /srv/merc/data-server:/app/data/server \
-     -v /srv/merc/immlist:/app/data/immlist \
+     --mount type=bind,src=/srv/merc/data/server,dst=/app/data/server \
+     --mount type=bind,src=/srv/merc/data/immlist,dst=/app/data/immlist \
      -e MERC_HOME=/app \
      jakeuj/merc-fju-2.0-utf8:latest
    ```

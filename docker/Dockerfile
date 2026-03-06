@@ -42,6 +42,9 @@ RUN cd /app/src \
 
 USER mud
 
+# Keep VOLUME entries directory-only.
+# /app/data/server and /app/data/immlist are regular files and must NOT be
+# declared as VOLUME mount points.
 VOLUME ["/app/player", "/app/mail", "/app/board", "/app/vote", "/app/log", "/app/debug", "/app/etc"]
 
 ENTRYPOINT ["/app/docker/entrypoint.sh"]

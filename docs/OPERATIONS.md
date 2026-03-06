@@ -35,6 +35,17 @@ make docker-shell   # 進入容器偵錯
 伺服器在 `/app/player`、`/app/mail`、`/app/board`、`/app/vote`、`/app/log`、`/app/debug`、
 `/app/etc` 等路徑寫入資料，下例示範將它們掛到主機目錄：
 
+> 注意：`/app/data/server` 與 `/app/data/immlist` 是檔案，不是目錄；若要掛載請做檔案對檔案 bind mount，且不要把它們加入 `VOLUME` 清單。
+> 若使用 `-v host_path:/app/data/immlist` 且 `host_path` 不存在，Docker 可能自動建立「目錄」，造成容器端型別錯誤。
+
+建議先建立 host 端路徑型別，再啟動容器：
+
+```bash
+mkdir -p /srv/merc/{player,mail,board,vote,log,debug,etc}
+mkdir -p /srv/merc/data
+touch /srv/merc/data/server /srv/merc/data/immlist
+```
+
 ```bash
 docker run --name merc -d --restart unless-stopped \
   -p 3838:3838 -p 1234:1234 -p 8888:8888 \
@@ -45,8 +56,8 @@ docker run --name merc -d --restart unless-stopped \
   -v /srv/merc/log:/app/log \
   -v /srv/merc/debug:/app/debug \
   -v /srv/merc/etc:/app/etc \
-  -v /srv/merc/data-server:/app/data/server \
-  -v /srv/merc/immlist:/app/data/immlist \
+  --mount type=bind,src=/srv/merc/data/server,dst=/app/data/server \
+  --mount type=bind,src=/srv/merc/data/immlist,dst=/app/data/immlist \
   jakeuj/merc-fju-2.0-utf8:latest
 ```
 

@@ -1,11 +1,11 @@
 #Ship
 Name            洛陽空運~
 Entrance
-要開往北平的飛機已經到了﹐請要到晉陽的旅客準備登機!
+要開往暴風城的飛機已經到了﹐請旅客依序登機!
 ~
 
 Land
-飛機已經到北平了﹐請各位旅客繫好安全帶﹐等待飛機降落!
+飛機已經到暴風城了﹐請各位旅客繫好安全帶﹐等待飛機降落!
 ~
 
 Description
@@ -19,7 +19,7 @@ Description
 ~
 
 Starting        743
-Destination     9001
+Destination     10034
 Cabin           211
 Cost            100
 Sailing         2
@@ -31,11 +31,11 @@ End
 #Ship
 Name            北平空運~
 Entrance
-要開往洛陽的飛機已經到了﹐要登機的旅客請順序到登機坪登機!
+要開往奧格瑞瑪的飛機已經到了﹐要登機的旅客請順序到登機坪登機!
 ~
 
 Land
-開往洛陽的飛機已經到達了﹐請各位旅客坐在座位上﹐等待飛機降落!
+開往奧格瑞瑪的飛機已經到達了﹐請各位旅客坐在座位上﹐等待飛機降落!
 ~
 
 Description
@@ -48,7 +48,7 @@ Description
 ~
 
 Starting        9001
-Destination     743
+Destination     10130
 Cabin           212
 Cost            100
 Sailing         2
@@ -60,11 +60,11 @@ End
 #Ship
 Name            暴風城獅鷲空運~
 Entrance
-要飛往奧格瑞瑪的獅鷲已經整裝待發﹐請旅客依序登上鞍座!
+要飛往北平的獅鷲已經整裝待發﹐請旅客依序登上鞍座!
 ~
 
 Land
-飛往奧格瑞瑪的獅鷲已經抵達﹐請各位旅客抓緊韁繩﹐準備降落!
+飛往北平的獅鷲已經抵達﹐請各位旅客抓緊韁繩﹐準備降落!
 ~
 
 Description
@@ -74,7 +74,7 @@ Description
 ~
 
 Starting        10034
-Destination     10130
+Destination     9001
 Cabin           213
 Cost            150
 Sailing         3
@@ -86,11 +86,11 @@ End
 #Ship
 Name            奧格瑞瑪風行者空運~
 Entrance
-要飛往暴風城的風行者已經準備好了﹐要搭乘的旅客快點上來!
+要飛往洛陽的風行者已經準備好了﹐要搭乘的旅客快點上來!
 ~
 
 Land
-飛往暴風城的風行者已經抵達﹐請各位旅客坐穩﹐準備降落!
+飛往洛陽的風行者已經抵達﹐請各位旅客坐穩﹐準備降落!
 ~
 
 Description
@@ -100,7 +100,7 @@ Description
 ~
 
 Starting        10130
-Destination     10034
+Destination     743
 Cabin           214
 Cost            150
 Sailing         3
