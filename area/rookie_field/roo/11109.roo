@@ -1,0 +1,25 @@
+Vnum            11109
+Name            幻境塔前庭~
+Description
+黑色石板拼成的前庭映出淡藍符文，塔門會依學員等級調整試煉。此
+處主要訓練步法與瞬間脫戰判斷。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        11101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11110
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,15 @@
+Vnum            11103
+Name            藥草包~
+ShortDesc       藥草包~
+Description
+一袋剛採集完成的藥草包放在這裡。
+~
+Unit            件~
+ItemType        ITEM_PILL
+Takeable        Yes
+Level           5
+WearFlags       ITEM_HOLD
+Value           8 20 0 0
+Weight          1
+Cost            70
+End

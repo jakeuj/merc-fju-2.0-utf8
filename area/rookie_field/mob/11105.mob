@@ -1,0 +1,27 @@
+Vnum            11105
+Name            谷地藥童 小芍~
+ShortDesc       谷地藥童 小芍~
+Description
+谷地藥童小芍背著籃子來回採藥。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              900
+Mana            500
+Move            100
+Class           CLASS_MAGE
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

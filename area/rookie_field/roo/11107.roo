@@ -1,0 +1,25 @@
+Vnum            11107
+Name            藥草溼地~
+Description
+潮濕泥地間長著成片止血草與醒神花，採集時必須注意腳下水窪。遠
+處有研究員記錄每位學員的採樣數量。
+~
+SectorType      SECT_SWAMP
+
+#Exit
+Direction       SOUTH
+ExitVnum        11105
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11111
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

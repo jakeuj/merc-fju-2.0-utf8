@@ -1,0 +1,27 @@
+Vnum            11107
+Name            幻境守護者 玄衡~
+ShortDesc       幻境守護者 玄衡~
+Description
+幻境守護者玄衡在符文中央靜靜站立。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           20
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              2400
+Mana            1200
+Move            100
+Class           CLASS_MAGE
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

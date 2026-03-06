@@ -1,0 +1,28 @@
+Vnum            11101
+Name            訓練軍官 韓策~
+ShortDesc       訓練軍官 韓策~
+Description
+一名神色嚴肅的訓練軍官韓策正觀察學員動作。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           18
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              2200
+Mana            600
+Move            120
+Class           CLASS_WARRIOR
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_newbie_teacher
+End

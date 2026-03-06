@@ -1,0 +1,27 @@
+Vnum            11104
+Name            藥草學者 沈芷~
+ShortDesc       藥草學者 沈芷~
+Description
+藥草學者沈芷正在整理新採集的草藥。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           16
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              1400
+Mana            900
+Move            100
+Class           CLASS_MAGE
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

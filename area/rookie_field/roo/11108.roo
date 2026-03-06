@@ -1,0 +1,17 @@
+Vnum            11108
+Name            演武安全木屋~
+Description
+木屋內備有乾糧與簡易床鋪，牆上掛著『逃跑不是失敗，而是戰術』
+的標語。受傷學員通常在此短暫休整。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       NORTH
+ExitVnum        11106
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

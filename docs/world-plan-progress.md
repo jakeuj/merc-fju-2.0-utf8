@@ -5,19 +5,20 @@
 - 保留 Stormwind/Orgrimmar 做為高等異界據點，與永靖樞城透過外交任務串連。
 - 更新交通（bus/傳送）、help 文件與任務流程，確保 1–100 級玩家都有對應地圖與技能師傅。
 
-## 目前進度（2026-03-06）
+## 目前進度（2026-03-07）
 - ✅ 產出高層計畫：`docs/world-replacement.md` 整理 legacy 統計、VNUM 分配、ASCII 動線與 QA 流程。
 - ✅ 完成六個新 slug 骨架（`area/<slug>/index`、子目錄與首間房間），並設定 Serial/Capital。
 - ✅ 新增 bus 站點與房間：永靖驛站(11290)、雲梯內環(11010)、白狼驛站(11530)；`data/bus.txt` 已加入新站。
 - ✅ 更新 Stormwind/Orgrimmar 描述，說明外交門戶。
 - ✅ 新增幫助檔 `help/new_world.hlp`、`help/quest_academy.hlp`、`help/quest_yongjing.hlp`。
 - ✅ 完成 `academy` 第一版實作：補齊 40 間房間（11001–11040）、12 名 NPC、8 件物品、3 間商店與 reset 配置，並串接往 `rookie_field` 的出口。
-- ⏳ `mob/obj/res/shp/mineral` 僅包含 README placeholder，尚未填寫具體重置與 NPC。
+- ✅ 完成 `rookie_field` 第一階段實作：新增 12 間房間（11101–11112）、8 名 NPC、6 件物品、2 間商店與 reset 配置，並補上返回 `academy` 的出口。
+- ⏳ `yongjing`、`bailang`、`arena_prime`、`coliseum` 的 `mob/obj/res/shp` 仍以 README placeholder 為主，尚未填寫具體重置與 NPC。
 - ⏳ 舊六區仍載入並提供功能；尚未建立 archive 或刪除流程。
 
 ## 下一步 TODO
 1. **汜水演武林 (`rookie_field`)**
-   - 規劃山賊營、藥草谷、幻境塔三條路線的房間/Reset；加入逃跑/步法訓練事件。
+   - 擴充至目標 80 rooms，補上第二階段事件（山賊首領、幻境塔高層）與採集循環 reset。
 2. **永靖樞城 (`yongjing`)**
    - 完整主城地圖（目標 220 rooms）、八間商店、六位技能師、公交/傳送 job。
    - 更新 `data/bus.txt` job keyword (`job bus`?) 及 `help/bus` 說明。
@@ -28,8 +29,8 @@
 5. **交通 / 文檔**
    - 更新 `help/bus.hlp`、`help/area`、`greeting/*.txt`，宣告雙版本共存。
    - 考慮為 `scripts/check-data.py` 新增 `--slug` 參數以縮短測試迴圈。
-6. **技能與任務腳本補完（academy）**
-   - 把 `quest_academy` 提及的訓練/enable 流程補到 `skill/` 或 NPC prog。
+6. **技能與任務腳本補完（academy + rookie_field）**
+   - 把 `quest_academy`、`quest_rookie_field` 提及的訓練/enable 流程補到 `skill/` 或 NPC prog。
    - 規劃 `job academy` / 畢業檢定旗標，避免玩家跳過引導。
 7. **舊區 Sunset**
    - 當所有新區完成時，把舊檔案移入 `area/archive/` 或保留 git tag，再從 `area/directory.lst` 移除。

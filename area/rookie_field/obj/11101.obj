@@ -1,0 +1,15 @@
+Vnum            11101
+Name            山賊短刃~
+ShortDesc       山賊短刃~
+Description
+一把磨損的山賊短刃被丟在地上。
+~
+Unit            件~
+ItemType        ITEM_WEAPON
+Takeable        Yes
+Level           5
+WearFlags       WEAPON_DAGGER
+Value           2 5 0 DAM_SLASH
+Weight          2
+Cost            60
+End

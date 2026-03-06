@@ -1,0 +1,9 @@
+Type            SHOP_STORE
+Keeper          11105
+Object          ITEM_PILL ITEM_LIGHT ITEM_TREASURE
+OpenHour        0
+CloseHour       23
+SellProfit      85
+BuyProfit       120
+Sential         11102
+End

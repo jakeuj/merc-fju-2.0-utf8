@@ -8,6 +8,7 @@
 2. 汜水演武林 (`rookie_field`)
    - 擁有山賊營、藥草谷、幻境塔三條練功線。
    - 提供逃跑、步法、採集技巧訓練。
+   - 可輸入 `help quest_rookie_field` 查看第一階段流程。
 
 3. 永靖樞城 (`yongjing`)
    - 新的 recall 與國營驛站起點。

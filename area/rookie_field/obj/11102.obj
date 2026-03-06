@@ -1,0 +1,15 @@
+Vnum            11102
+Name            山賊皮甲~
+ShortDesc       山賊皮甲~
+Description
+一件粗製皮甲掛在木架上。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+Takeable        Yes
+Level           5
+WearFlags       ITEM_TORSO
+Value           0 4 0 0
+Weight          3
+Cost            90
+End
