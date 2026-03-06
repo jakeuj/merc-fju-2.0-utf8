@@ -84,6 +84,8 @@ Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與
 | `debug/` | 錯誤回報（執行時產生） |
 | `vote/` | 投票資料 |
 
+> 想了解 `command/`、`etc/`、`debug/` 等目錄底下檔案的作用，可參考 [`docs/DATA_LAYOUT.md`](docs/DATA_LAYOUT.md)。
+
 更完整的檔案說明、傳統工具需求與授權條款，請參考 `document/README` 以及
 `document/COPYRIGHT`。以下段落僅摘要 Merc-FJU 2.0 UTF-8 版新增或調整的重點。
 
