@@ -9,7 +9,7 @@ description: 建立 Merc-FJU (三國歪傳之降龍伏虎) 新區域的完整工
 
 ## 快速開始（6 步驟）
 1. **規劃**：決定區域 slug（`area/<slug>`）、VNUM 區段、`Serial`、`Capital`、故事描述。先確認 `area/` 內沒有同名目錄，也不與既用 VNUM 衝突。
-2. **建立骨架**：在 `area/` 底下建立 `<slug>/index`、`mob/`、`obj/`、`roo/`、`res/`、`shp/`。區域數量多時可先複製 `stormwind` 或 `orgrimmar` 結構再批次取代。
+2. **建立骨架**：在 `area/` 底下建立 `<slug>/index`、`mineral/`、`mob/`、`obj/`、`roo/`、`res/`、`shp/`（沒有礦物掉落也建空目錄，方便後續擴充）。區域數量多時可先複製 `stormwind` 或 `orgrimmar` 結構再批次取代。
 3. **更新載入清單**：將 `<slug>` 追加到 `area/directory.lst`（依字母排序或就近放在同系列後方），確保伺服器啟動時會讀到新區域。
 4. **填寫資料檔**：依下方「資料檔案指南」撰寫 index/mob/obj/roo/res/shp，並保持 UTF-8。長篇描述結尾記得 `~`。
 5. **驗證**：執行 `python3 scripts/check-data.py`（整體 UTF-8 與基本標記），視需要 `rg vnum` 或 `git diff` 再次檢查出入口、裝備、商店設定。
@@ -24,6 +24,7 @@ description: 建立 Merc-FJU (三國歪傳之降龍伏虎) 新區域的完整工
 - **roo/*.roo**：每個房間獨立檔案，欄位詳見 `document/room.txt`。`SectorType` 使用常數（如 `SECT_CITY`、`SECT_INSIDE`），房間描述可多行。每個 `#Exit` 塊需包含 `Direction`, `ExitVnum`, `ExitKeyword`, `ExitDesc`, `ExitKey`，並對應相鄰房間。
 - **res/*.res**：可集中為一檔，例如 `stormwind.res`。語法詳見 `document/reset.txt`。建議以註解區分「守衛配置」、「商店」、「王宮」等主題：使用 `M` 刷怪、`E` 裝備、`G` 給物品、`D` 控制門、`O` 放置場景物件。
 - **shp/*.shp**：每個商店一檔，`Type` 通常 `SHOP_STORE`，`Keeper` 為 NPC VNUM，商品種類以 `Object` 列舉 item type，`Sellprofit` / `Buyprofit` 控制價格。參照 `document/shop.txt` 與 commit 中 10007/10105 範例。
+- **mineral/**：如需礦脈/採集物，沿用 README 所述格式：每種資源一檔並放入 `mineral/`，再在 `res` 內加上對應的刷新。即使暫時沒有礦物，也建議保留目錄以符合資料夾結構。
 
 ## 規劃建議
 - **VNUM 與 Serial**：保持連號方便查詢。可將陣營或地區對應不同百位（例：100xx = 聯盟、101xx = 部落），並在 `notes` 裡記錄已用範圍。
