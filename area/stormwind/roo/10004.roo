@@ -26,3 +26,18 @@ ExitKey         0
 End
 
 End
+#Exit
+Direction       SOUTH
+ExitVnum        10006
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10032
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End

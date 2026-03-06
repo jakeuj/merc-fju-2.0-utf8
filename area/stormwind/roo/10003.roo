@@ -12,7 +12,7 @@ SectorType      SECT_CITY
 
 #Exit
 Direction       WEST
-ExitVnum        10002
+ExitVnum        10035
 ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0
@@ -28,7 +28,7 @@ End
 
 #Exit
 Direction       NORTH
-ExitVnum        10006
+ExitVnum        10007
 ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0
@@ -36,7 +36,7 @@ End
 
 #Exit
 Direction       SOUTH
-ExitVnum        10005
+ExitVnum        10002
 ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0

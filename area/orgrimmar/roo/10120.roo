@@ -50,4 +50,12 @@ ExitKeyword     ~
 ExitKey         0
 End
 
+#Exit
+Direction       UP
+ExitVnum        10135
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
 End

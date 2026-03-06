@@ -185,6 +185,9 @@ cd src
 ./startup &
 ```
 
+> macOS/本機除錯：若 `./startup` 因 `setpriority: Permission denied.` 等訊息被系統阻擋，可直接在專案根目錄執行 `./src/merc src/merc.ini`。  
+> 每次強制關閉後請刪除 `src/shutdown.txt`（或在遊戲內輸入 `shutdown`）再重新啟動，否則主程式會立刻偵測到舊的關機旗標而結束。
+
 ## 開發與維運文件
 
 - `docs/BUILD.md`：列出 Docker / docker compose 指令、主機直編、維運腳本與 CI 建議。

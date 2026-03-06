@@ -26,4 +26,12 @@ ExitKeyword     ~
 ExitKey         0
 End
 
+#Exit
+Direction       EAST
+ExitVnum        10130
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
 End
