@@ -9,12 +9,20 @@ env/
 dist/
 build/
 
-# MUD runtime
-# log/
-# debug/
-# player/
-# mail/
-# vote/
+# MUD runtime artifacts
+log/
+debug/
+player/
+mail/
+vote/
+runtime-test/
+
+# MUD runtime data files (untracked, auto-generated)
+data/server
+
+# Compiled binaries and object files
+src/*.o
+src/merc
 
 # macOS
 .DS_Store
@@ -23,6 +31,7 @@ build/
 
 # Editor
 .vscode/
+.idea/
 *.swp
 *.swo
 *~
