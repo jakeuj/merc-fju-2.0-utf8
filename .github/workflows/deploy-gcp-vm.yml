@@ -85,6 +85,7 @@ jobs:
           cp -a etc/. "${smoke_root}/etc/"
           cp -f data/server "${smoke_root}/data/server"
           cp -f data/immlist "${smoke_root}/data/immlist"
+          chmod -R a+rwX "${smoke_root}"
 
           docker run -d \
             --name "${container_name}" \
