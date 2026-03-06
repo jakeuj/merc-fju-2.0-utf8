@@ -81,7 +81,6 @@ macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作�
 
 更多細節與常見維運指令，請參考 [`docs/BUILD.md`](docs/BUILD.md) 的
 「Host-only build」章節與 `document/README` 的傳統說明。
-
 ## 目錄結構
 
 | 目錄 | 說明 |
@@ -145,7 +144,6 @@ macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作�
    ```
 
 3. 在 GCP 上只要把 `/srv/merc` 指向 Persistent Disk（或 Cloud Storage FUSE）即可複製相同做法，達到玩家檔案、信件、留言板與 `etc/` 內其他設定的持久化。
-
 ## 現代化重點
 
 - **UTF-8 化**：所有遊戲內容、介面文字與資料表皆完成 Big5→UTF-8 轉換，並修正
@@ -192,9 +190,9 @@ cd src
 
 > macOS/本機除錯：若 `./startup` 因 `setpriority: Permission denied.` 等訊息被系統阻擋，可使用 `./start-merc.sh` 或直接在專案根目錄執行 `./src/merc src/merc.ini`。  
 > 每次強制關閉後請刪除 `src/shutdown.txt`（或在遊戲內輸入 `shutdown`）再重新啟動，否則主程式會立刻偵測到舊的關機旗標而結束。
-
 ## 開發與維運文件
 
+- `docs/OPERATIONS.md`：集中說明 Docker 部署、資料掛載、start-merc 啟動與常用腳本。
 - `docs/BUILD.md`：列出 Docker / docker compose 指令、主機直編、維運腳本與 CI 建議。
 - `document/README`：完整傳統配備、資料結構與內容建置教學，供延伸閱讀或比對。
 - `document/COPYRIGHT`、`doc/license.*`：沿用 Merc / Diku 與三國歪傳製作群的授權條款，
