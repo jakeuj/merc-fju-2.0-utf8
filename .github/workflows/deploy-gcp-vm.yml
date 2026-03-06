@@ -1,0 +1,162 @@
+name: Build and Deploy to GCP VM
+
+on:
+  push:
+    tags:
+      - 'deploy-*'
+  workflow_dispatch:
+
+concurrency:
+  group: merc-gcp-vm-deploy
+  cancel-in-progress: false
+
+env:
+  IMAGE_NAME: jakeuj/merc-fju-2.0-utf8
+  CONTAINER_NAME: merc
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compute release tag
+        id: release
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+          echo "image=${IMAGE_NAME}:${tag}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ steps.release.outputs.image }}
+            ${{ env.IMAGE_NAME }}:latest
+
+      - name: Configure SSH key
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -m 700 -d ~/.ssh
+          printf '%s\n' '${{ secrets.GCP_VM_SSH_KEY }}' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H '${{ secrets.GCP_VM_HOST }}' >> ~/.ssh/known_hosts
+
+      - name: Deploy on GCP VM
+        shell: bash
+        env:
+          DEPLOY_IMAGE: ${{ steps.release.outputs.image }}
+          VM_HOST: ${{ secrets.GCP_VM_HOST }}
+          VM_USER: ${{ secrets.GCP_VM_SSH_USER }}
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/deploy_key \
+            -o StrictHostKeyChecking=yes \
+            "${VM_USER}@${VM_HOST}" \
+            "DEPLOY_IMAGE='${DEPLOY_IMAGE}' CONTAINER_NAME='${CONTAINER_NAME}' bash -se" <<'EOF'
+          set -euo pipefail
+
+          required_paths=(
+            /srv/merc-data/player
+            /srv/merc-data/mail
+            /srv/merc-data/board
+            /srv/merc-data/vote
+            /srv/merc-data/log
+            /srv/merc-data/debug
+            /srv/merc-data/etc
+            /srv/merc-data/data-server/server
+            /srv/merc-data/immlist
+          )
+
+          for path in "${required_paths[@]}"; do
+            if [[ ! -e "${path}" ]]; then
+              echo "Missing required deploy path: ${path}" >&2
+              exit 1
+            fi
+          done
+
+          run_container() {
+            local image="$1"
+            docker run -d \
+              --name "${CONTAINER_NAME}" \
+              --restart unless-stopped \
+              -e MERC_HOME=/app \
+              -p 3838:3838 \
+              -p 1234:1234 \
+              -p 8888:8888 \
+              -v /srv/merc-data/player:/app/player \
+              -v /srv/merc-data/mail:/app/mail \
+              -v /srv/merc-data/board:/app/board \
+              -v /srv/merc-data/vote:/app/vote \
+              -v /srv/merc-data/log:/app/log \
+              -v /srv/merc-data/debug:/app/debug \
+              -v /srv/merc-data/etc:/app/etc \
+              -v /srv/merc-data/data-server/server:/app/data/server \
+              -v /srv/merc-data/immlist:/app/data/immlist \
+              "$image"
+          }
+
+          previous_image=""
+          if docker container inspect "${CONTAINER_NAME}" >/dev/null 2>&1; then
+            previous_image="$(docker inspect "${CONTAINER_NAME}" --format '{{.Config.Image}}')"
+          fi
+
+          docker pull "${DEPLOY_IMAGE}"
+          docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true
+
+          if ! run_container "${DEPLOY_IMAGE}"; then
+            if [[ -n "${previous_image}" ]]; then
+              echo "Deploy failed, attempting rollback to ${previous_image}" >&2
+              docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true
+              run_container "${previous_image}" || true
+            fi
+            exit 1
+          fi
+
+          sleep 5
+          running_image="$(docker ps \
+            --filter "name=^/${CONTAINER_NAME}$" \
+            --filter status=running \
+            --format '{{.Image}}')"
+
+          if [[ "${running_image}" != "${DEPLOY_IMAGE}" ]]; then
+            echo "Container ${CONTAINER_NAME} is not running the expected image ${DEPLOY_IMAGE}" >&2
+            docker logs --tail 100 "${CONTAINER_NAME}" || true
+            if [[ -n "${previous_image}" ]]; then
+              echo "Health check failed, attempting rollback to ${previous_image}" >&2
+              docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true
+              run_container "${previous_image}" || true
+            fi
+            exit 1
+          fi
+
+          docker ps \
+            --filter "name=^/${CONTAINER_NAME}$" \
+            --filter status=running \
+            --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}'
+          EOF
+
+      - name: Deployment summary
+        run: |
+          echo "Deployed ${{ steps.release.outputs.image }} to ${{ secrets.GCP_VM_HOST }}"
