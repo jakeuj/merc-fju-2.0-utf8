@@ -21,10 +21,16 @@ docker compose run merc make clean && make
 The compose file binds the entire repo, so runtime files (`log/`, `player/`, etc.) stay on the host; it keeps the same host-port mapping (13838/11234/18888).
 
 ## Host-only build (fallback)
-1. Install dependencies: `gcc`, `make`, `csh`, `libxcrypt-compat` (or `libxcrypt-dev`), `libncurses-dev`.
-2. Run `scripts/bootstrap.sh` once to create writable directories.
-3. Compile from `src/`: `make clean && make`.
-4. Launch via `cd src && ./startup merc.ini` (requires `csh`).
+> 適用於 macOS（含 Apple Silicon）與一般 Linux 主機，不需要 Docker。
+
+1. 安裝工具鏈  
+   - macOS：`xcode-select --install` 取得 clang/make，`brew install csh` 以提供啟動腳本所需的 C shell。  
+   - Linux：`sudo apt install build-essential csh libxcrypt-compat`（或等價套件）。若發生 `crypt` 連結錯誤，可另外安裝 `libxcrypt-dev`。
+2. （第一次在新路徑執行時）跑 `scripts/bootstrap.sh`，確保 `log/ player/ mail/ debug/ vote/` 等 runtime 目錄存在並具寫入權限。
+3. 進入 `src/`：`make clean && make`。macOS 會自動使用 clang，無需額外 flags。
+4. 編輯 `src/merc.ini` 或 `etc/merc.ini`，將 `HOME DIRECTORY` 改成實際專案路徑，並確認 `MUD PORT` 未被其他服務占用。
+5. 啟動方式與舊版一致：`cd src && ./startup merc.ini &`。該 csh 迴圈會自動輪替 `log/*.log` 並在偵測 `shutdown.txt` 時關閉。
+6. 本機測試可直接 `nc localhost 3838`（或系統內建 `telnet`）登入，所有玩家/日誌資料都寫回主機目錄。
 
 ## Maintenance scripts
 - `scripts/check-data.py` – verifies UTF-8 encoding + structural markers across `area/`, `skill/`, `angel/`.

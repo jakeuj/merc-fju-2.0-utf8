@@ -56,8 +56,31 @@ Docker 內部的 `HOME DIRECTORY` 固定設為 `/app`，因此本地程式碼與
 - 更詳細的 reset 清單與每個檔案用途，請參考 [`docs/RUNTIME_RESET.md`](docs/RUNTIME_RESET.md)。
 - 發佈到 GCP Artifact Registry 或 Docker Hub 之前，建議流程：`git status` 確認程式碼已 commit → `docker build -t merc-fju:release -f docker/Dockerfile .` → `docker tag`/`docker push`。如此生成的映像即可在 GCP VM 上直接掛載乾淨 volume 即時啟用。
 
-> 若無 Docker，或需要遵循舊式手動編譯方式，請直接閱讀
-> `document/README`（保留原始說明與硬體需求），並依照其中「新手上路」章節流程操作。
+### 本機（macOS / Linux）直接建置
+
+若開發環境已具備 gcc/clang 與 make，也可以像傳統 Merc 一樣在主機上原生執行。針對
+macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作：
+
+1. 安裝工具鏈  
+   - macOS：執行 `xcode-select --install` 取得 clang 與 make，然後 `brew install csh`
+     以提供 `./startup` 依賴的 C shell。  
+   - Linux：`sudo apt install build-essential csh libxcrypt-compat`（或對應套件）。
+2. 回到專案根目錄，先跑 `scripts/bootstrap.sh` 建立 `log/ player/ mail/` 等可寫目錄。
+3. 進入 `src/`：`make clean && make`。
+4. 編輯 `src/merc.ini` 或 `etc/merc.ini`，確保 `HOME DIRECTORY` 指向實際路徑（例如
+   `/Users/jakeuj/auggie/mud2`），並確認 `MUD PORT` 不與現有服務衝突。
+5. 啟動伺服器：
+
+   ```bash
+   cd src
+   ./startup &
+   ```
+
+6. 本機測試可直接 `nc localhost 3838`（或任何 telnet 客戶端）登入，所有 runtime
+   資料會寫回主機目錄而非容器。
+
+更多細節與常見維運指令，請參考 [`docs/BUILD.md`](docs/BUILD.md) 的
+「Host-only build」章節與 `document/README` 的傳統說明。
 
 ## 目錄結構
 

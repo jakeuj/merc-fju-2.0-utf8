@@ -7,7 +7,7 @@ Unit            塊~
 ItemType        ITEM_FOOD
 Takeable        Yes
 Level           1
-Value           6 6 0
+Value           6 6 1
 Weight          1
 Cost            8
 
