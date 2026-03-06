@@ -1,0 +1,25 @@
+Vnum            11110
+Name            幻境塔一層~
+Description
+塔內光影不停變化，彷彿同時出現多條道路。守護者要求你在限定時
+間內完成躲避與撤離演練。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11109
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11112
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

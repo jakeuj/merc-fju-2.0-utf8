@@ -6,4 +6,37 @@ Description
 點。官兵正向你介紹安全規則與逃跑訓練流程。
 ~
 SectorType      SECT_FIELD
+
+#Exit
+Direction       NORTH
+ExitVnum        11102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11105
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11109
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11040
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
 End

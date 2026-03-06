@@ -1,0 +1,27 @@
+Vnum            11108
+Name            練步木偶~
+ShortDesc       練步木偶~
+Description
+一具練步木偶在塔內反覆做出閃避動作。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           11
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              1000
+Mana            200
+Move            100
+Class           CLASS_WARRIOR
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

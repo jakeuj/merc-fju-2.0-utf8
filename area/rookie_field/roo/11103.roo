@@ -1,0 +1,33 @@
+Vnum            11103
+Name            山賊前哨~
+Description
+破舊帳棚與散落兵器顯示這裡常有山賊巡邏。風中夾雜火藥味，偶爾
+可聽見斥候互相傳遞暗號。
+~
+SectorType      SECT_HILLS
+
+#Exit
+Direction       NORTH
+ExitVnum        11104
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11106
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

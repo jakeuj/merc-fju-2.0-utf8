@@ -1,0 +1,33 @@
+Vnum            11105
+Name            藥草谷入口~
+Description
+溪谷入口飄著淡淡藥香，木牌標示各種草藥採集時間。藥童提醒你在
+霧氣過濃時要立刻撤回安全區。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       WEST
+ExitVnum        11101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11106
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11107
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

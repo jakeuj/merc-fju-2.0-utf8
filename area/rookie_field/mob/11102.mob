@@ -1,0 +1,27 @@
+Vnum            11102
+Name            山賊斥候~
+ShortDesc       山賊斥候~
+Description
+一名山賊斥候躲在陰影裡觀察動靜。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           12
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              1100
+Mana            300
+Move            100
+Class           CLASS_THIEF
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

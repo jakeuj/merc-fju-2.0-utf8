@@ -1,0 +1,17 @@
+Vnum            11111
+Name            採集試煉坡~
+Description
+斜坡沿線插著木製標記，指引學員辨識可用草藥與毒草。成功辨識後
+可獲得藥草谷進階任務許可。
+~
+SectorType      SECT_HILLS
+
+#Exit
+Direction       SOUTH
+ExitVnum        11107
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

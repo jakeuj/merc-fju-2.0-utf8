@@ -1,0 +1,25 @@
+Vnum            11102
+Name            山道警戒線~
+Description
+山路被削成可供演練的折返坡，木樁上掛滿山賊記號。訓練軍官要求
+學員先熟悉地形，再決定是正面推進或撤退。
+~
+SectorType      SECT_HILLS
+
+#Exit
+Direction       NORTH
+ExitVnum        11103
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

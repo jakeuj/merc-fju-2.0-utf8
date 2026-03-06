@@ -1,0 +1,15 @@
+Vnum            11106
+Name            逃脫銅哨~
+ShortDesc       逃脫銅哨~
+Description
+一只用於撤離演練的逃脫銅哨放在此處。
+~
+Unit            件~
+ItemType        ITEM_LIGHT
+Takeable        Yes
+Level           5
+WearFlags       ITEM_HOLD
+Value           24 0 0 0
+Weight          1
+Cost            45
+End

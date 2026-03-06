@@ -1,0 +1,33 @@
+Vnum            11106
+Name            汜水補給站~
+Description
+石砌平台上設有補給車與醫療箱，是三條訓練路線共用的補給站。商
+賈魯伯一邊記帳，一邊收購山賊戰利品。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11105
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11103
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11108
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

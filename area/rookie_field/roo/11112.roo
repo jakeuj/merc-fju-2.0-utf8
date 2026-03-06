@@ -1,0 +1,17 @@
+Vnum            11112
+Name            幻境逃脫環~
+Description
+環形走廊每隔幾步就會亮起警示符文，迫使學員判斷最佳撤退路線。
+完成三輪演練後即可取得幻境通行符。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11110
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

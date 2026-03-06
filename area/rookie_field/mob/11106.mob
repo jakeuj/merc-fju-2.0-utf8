@@ -1,0 +1,27 @@
+Vnum            11106
+Name            補給商賈 魯伯~
+ShortDesc       補給商賈 魯伯~
+Description
+補給商賈魯伯正清點補給車上的貨物。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       0
+Level           15
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             16
+Int             15
+Wis             15
+Dex             16
+Con             16
+Hp              1600
+Mana            400
+Move            100
+Class           CLASS_WARRIOR
+Gold            30
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

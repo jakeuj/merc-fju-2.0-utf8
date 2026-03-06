@@ -1,0 +1,14 @@
+Vnum            11104
+Name            補給乾糧~
+ShortDesc       補給乾糧~
+Description
+一份耐放的補給乾糧被仔細包好。
+~
+Unit            件~
+ItemType        ITEM_FOOD
+Takeable        Yes
+Level           5
+Value           20 0 0 0
+Weight          1
+Cost            25
+End
