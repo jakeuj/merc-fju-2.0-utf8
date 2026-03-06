@@ -5,7 +5,7 @@ description: 建立 Merc-FJU (三國歪傳之降龍伏虎) 新區域的完整工
 
 # Merc Area Builder
 
-此技能協助你在 `/Users/jakeuj/auggie/mud2` 內建構新的 Merc 區域資料。步驟採繁體中文說明，英文技術術語保留原文。
+此技能協助你以 `https://github.com/jakeuj/merc-fju-2.0-utf8` 為基礎建構新的 Merc 區域資料。步驟採繁體中文說明，英文技術術語保留原文。
 
 ## 快速開始（6 步驟）
 1. **規劃**：決定區域 slug（`area/<slug>`）、VNUM 區段、`Serial`、`Capital`、故事描述。先確認 `area/` 內沒有同名目錄，也不與既用 VNUM 衝突。

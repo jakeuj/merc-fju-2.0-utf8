@@ -1,0 +1,4 @@
+interface:
+  display_name: "三國歪傳指南"
+  short_description: "離線 3yWebsite 鏡像：新聞、技能、國家、地圖與下載"
+  default_prompt: "Use this skill for任何關於三國歪傳之降龍伏虎官網或/Users/jakeuj/auggie/3yWebsite鏡像的問題。"

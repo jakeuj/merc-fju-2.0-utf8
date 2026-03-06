@@ -1,6 +1,6 @@
 # 跨界新世界地圖替換計畫
 
-> 基於 `/Users/jakeuj/auggie/3yWebsite/map/index.html` 的 ASCII 地圖與 `newhand/newbies/index.html` 的新手指南內容，重新建構官方世界觀並逐步取代既有六大區域。
+> 基於 `https://github.com/jakeuj/3yWebsite` 中的 `map/index.html` ASCII 地圖與 `newhand/newbies/index.html` 的新手指南內容，重新建構官方世界觀並逐步取代既有六大區域。
 
 ## 1. 現況盤點
 

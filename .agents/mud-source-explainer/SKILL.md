@@ -1,14 +1,14 @@
 ---
 name: mud-source-explainer
-description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD source tree under /Users/jakeuj/auggie/mud2. Use when compiling or debugging src/merc, editing merc.ini, updating area/angel/skill data, or answering repo-structure questions about this game.
+description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD source tree at https://github.com/jakeuj/merc-fju-2.0-utf8. Use when compiling or debugging src/merc, editing merc.ini, updating area/angel/skill data, or answering repo-structure questions about this game.
 ---
 
 # Sango Jianglong Fuhu Source
 
-使用本技能處理 Merc-FJU 2.0 UTF-8 原始碼樹（`/Users/jakeuj/auggie/mud2`），例如查詢目錄結構、編譯/啟動伺服器、調整 `merc.ini`、或編輯 area/angel/skill 等資料。以下說明依台灣慣用繁體中文撰寫，遇到英文術語時保留英文並補充意義。
+使用本技能處理 Merc-FJU 2.0 UTF-8 原始碼樹（`https://github.com/jakeuj/merc-fju-2.0-utf8`），例如查詢目錄結構、編譯/啟動伺服器、調整 `merc.ini`、或編輯 area/angel/skill 等資料。以下說明依台灣慣用繁體中文撰寫，遇到英文術語時保留英文並補充意義。
 
 ## Quick Start Workflow（快速啟動流程）
-1. `cd /Users/jakeuj/auggie/mud2`（進入專案根目錄）。
+1. 先到 `https://github.com/jakeuj/merc-fju-2.0-utf8` 確認專案內容；若本機已有 clone，再 `cd <repo-path>` 進入專案根目錄。
 2. 先讀 [references/overview.md](references/overview.md) 取得建置重點，再搭配 [docs/DATA_LAYOUT.md](docs/DATA_LAYOUT.md) 確認資料夾責任與 runtime 行為。
 3. 依目標環境編修 `src/merc.ini`，必要時複製到 `etc/merc.ini` 作為部署設定；記得檢查 `HOME DIRECTORY`、port 清單與政策欄位。
 4. 進入 `src/` 執行 `make clean && make`，得到 `merc` 後配合 `startup` 佈署。
