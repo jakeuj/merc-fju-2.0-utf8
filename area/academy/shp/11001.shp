@@ -1,0 +1,9 @@
+Type            SHOP_STORE
+Keeper          11006
+Object          ITEM_WEAPON ITEM_ARMOR
+OpenHour        0
+CloseHour       23
+SellProfit      85
+BuyProfit       120
+Sential         11013
+End

@@ -1,0 +1,25 @@
+Vnum            11030
+Name            竹林邊緣~
+Description
+翠竹搖曳，地面有教官留下的步法足跡。
+這裡是實戰前的暖身區。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       EAST
+ExitVnum        11020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11031
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

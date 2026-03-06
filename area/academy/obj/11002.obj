@@ -1,0 +1,14 @@
+Vnum            11002
+Name            入門布衣~
+ShortDesc       入門布衣~
+Description
+一件縫線結實的入門布衣整齊折好。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+Takeable        Yes
+Level           1
+Value           3 0 0 2
+Weight          1
+Cost            25
+End

@@ -1,0 +1,17 @@
+Vnum            11009
+Name            奇術塔研習室~
+Description
+書架堆滿抄本與卷軸，中央漂浮著光球示範法術軌跡。
+道術導師在此講解咒語節奏與施法安全。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11008
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

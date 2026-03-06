@@ -1,0 +1,25 @@
+Vnum            11019
+Name            裁縫實習間~
+Description
+布匹與皮革整齊掛在牆邊，導師示範如何縫製耐用護具。
+新手可在此兌換基礎布衣。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11018
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11026
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

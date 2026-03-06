@@ -1,0 +1,25 @@
+Vnum            11007
+Name            逃脫演習圈~
+Description
+圓形沙地模擬遭圍攻時的撤退路線，教官不斷吹哨指令變向。
+完成演習後可向逃跑教官請益。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       SOUTH
+ExitVnum        11006
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11008
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

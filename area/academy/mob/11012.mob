@@ -1,0 +1,28 @@
+Vnum            11012
+Name            雲舟船伕 柏舟~
+ShortDesc       雲舟船伕 柏舟~
+Description
+雲舟船伕柏舟在碼頭繫纜，催促旅人準備啟程。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           20
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              2400
+Mana            1200
+Move            100
+Class           CLASS_CITIZEN
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_generic
+End

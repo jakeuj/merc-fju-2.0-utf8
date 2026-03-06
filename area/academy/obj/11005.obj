@@ -1,0 +1,14 @@
+Vnum            11005
+Name            泉水水袋~
+ShortDesc       泉水水袋~
+Description
+一只裝滿靈泉的水袋掛在鉤上。
+~
+Unit            件~
+ItemType        ITEM_DRINK_CON
+Takeable        Yes
+Level           1
+Value           10 10 LIQ_WATER
+Weight          1
+Cost            25
+End

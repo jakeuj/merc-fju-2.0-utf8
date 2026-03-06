@@ -1,0 +1,25 @@
+Vnum            11036
+Name            觀星露台~
+Description
+露台鋪著星圖石板，夜間課程會教導方向辨識與天象判讀。
+此地也常被用來練習遠程法術。
+~
+SectorType      SECT_HILLS
+
+#Exit
+Direction       WEST
+ExitVnum        11035
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11037
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,25 @@
+Vnum            11032
+Name            傀儡維修棚~
+Description
+棚內堆滿關節零件與潤滑油，工匠忙著調整訓練傀儡強度。
+新手可在此理解敵人行為模式。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11031
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11033
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

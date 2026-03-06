@@ -1,0 +1,14 @@
+Vnum            11003
+Name            新手藥包~
+ShortDesc       新手藥包~
+Description
+一包標註止血用途的新手藥包被擺在架上。
+~
+Unit            件~
+ItemType        ITEM_PILL
+Takeable        Yes
+Level           1
+Value           10 0 0 0
+Weight          1
+Cost            25
+End

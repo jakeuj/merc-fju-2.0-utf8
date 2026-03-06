@@ -1,0 +1,33 @@
+Vnum            11024
+Name            秘藏書庫~
+Description
+高聳書架以符文鎖鏈固定，保存著歷代戰記與術法筆記。
+閱讀後可理解技能進階的脈絡。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11023
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11025
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11008
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

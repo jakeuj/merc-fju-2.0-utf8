@@ -1,0 +1,33 @@
+Vnum            11026
+Name            導師會議室~
+Description
+長桌周圍擺著各系導師的座椅，牆上掛著每週訓練成果。
+完成新手課程後，會在此領取推薦函。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11025
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11027
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

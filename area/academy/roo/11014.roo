@@ -1,0 +1,33 @@
+Vnum            11014
+Name            教材商亭~
+Description
+竹棚裡陳列木劍、法杖與啟蒙講義，店主擅長推薦新手裝備。
+角落還有一塊黑板寫著今日特價。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11013
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11008
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11015
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

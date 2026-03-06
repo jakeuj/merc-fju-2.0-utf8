@@ -1,0 +1,14 @@
+Vnum            11008
+Name            導師推薦函~
+ShortDesc       導師推薦函~
+Description
+蓋有書院印記的推薦函妥善封存著。
+~
+Unit            件~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           1
+Value           0 0 0 0
+Weight          1
+Cost            25
+End

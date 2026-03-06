@@ -1,0 +1,28 @@
+Vnum            11006
+Name            教材商人 何師傅~
+ShortDesc       教材商人 何師傅~
+Description
+教材商人何師傅把木劍與講義排列得井然有序。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           18
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              2160
+Mana            1080
+Move            100
+Class           CLASS_CITIZEN
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_shopkeeper
+End

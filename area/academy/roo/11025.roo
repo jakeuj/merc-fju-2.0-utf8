@@ -1,0 +1,25 @@
+Vnum            11025
+Name            符文研磨室~
+Description
+石桌刻滿迴路，學者示範如何將礦粉磨成施法媒材。
+學員可少量兌換練習用符粉。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11024
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11026
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

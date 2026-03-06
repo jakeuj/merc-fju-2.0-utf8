@@ -1,0 +1,17 @@
+Vnum            11015
+Name            藥草與口糧攤~
+Description
+攤位掛著乾燥藥草與行軍糧袋，氣味混著草香與米香。
+補給商提醒旅人記得準備止血與回復用品。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

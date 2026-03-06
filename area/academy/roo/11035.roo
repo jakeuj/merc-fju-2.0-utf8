@@ -1,0 +1,25 @@
+Vnum            11035
+Name            靈泉小池~
+Description
+池水映著雲影，旁邊立著『禁止喧嘩』木牌。
+不少學員在此短暫休息與療傷。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       WEST
+ExitVnum        11034
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11036
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

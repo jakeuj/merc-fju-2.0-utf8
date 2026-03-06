@@ -1,0 +1,41 @@
+Vnum            11003
+Name            雲梯中庭~
+Description
+中庭以圓形步道圍繞靈泉，雲梯從四角延伸到各棟建築。
+學生在此集合，等待課程點名與分組。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       SOUTH
+ExitVnum        11002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11004
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11012
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

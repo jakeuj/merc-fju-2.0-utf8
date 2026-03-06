@@ -1,0 +1,15 @@
+Vnum            11001
+Name            書院木劍~
+ShortDesc       書院木劍~
+Description
+一把供新手練習的書院木劍放在這裡。
+~
+Unit            件~
+ItemType        ITEM_WEAPON
+Takeable        Yes
+Level           1
+WearFlags       WEAPON_SWORD
+Value           3 6 0 DAM_BASH
+Weight          1
+Cost            25
+End

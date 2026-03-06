@@ -1,0 +1,33 @@
+Vnum            11022
+Name            靜思小徑高台~
+Description
+高台可俯瞰整座書院，遠處還能看見汜水演武林的山影。
+導師會在此講述畢業後的歷練方向。
+~
+SectorType      SECT_HILLS
+
+#Exit
+Direction       SOUTH
+ExitVnum        11021
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11023
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

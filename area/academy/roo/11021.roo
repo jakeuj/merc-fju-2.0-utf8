@@ -1,0 +1,33 @@
+Vnum            11021
+Name            靜思小徑中段~
+Description
+蜿蜒步道旁立著碑文，記錄前輩在危境中存活的心得。
+學員常在此練習冥想以恢復法力。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       SOUTH
+ExitVnum        11020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

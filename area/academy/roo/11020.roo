@@ -1,0 +1,33 @@
+Vnum            11020
+Name            靜思小徑入口~
+Description
+石徑被竹林包圍，風聲與鈴響讓人心神安定。
+適合在課程間隙調整呼吸與節奏。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       EAST
+ExitVnum        11001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11021
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11030
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

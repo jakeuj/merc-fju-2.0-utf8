@@ -1,0 +1,33 @@
+Vnum            11012
+Name            學院公告牆~
+Description
+長牆貼滿今日課表、採集任務與演武比試名單。
+學生常在此交換情報，規劃下一段行程。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       SOUTH
+ExitVnum        11011
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11013
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

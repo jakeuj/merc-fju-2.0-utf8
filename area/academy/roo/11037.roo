@@ -1,0 +1,25 @@
+Vnum            11037
+Name            風鈴長廊~
+Description
+長廊懸掛的風鈴會依風向發出不同節奏，幫助學員訓練聽覺。
+穩定節奏是施展連招的重要基礎。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       WEST
+ExitVnum        11036
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11038
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

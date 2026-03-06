@@ -1,0 +1,33 @@
+Vnum            11011
+Name            導生會辦公室~
+Description
+木櫃中整齊收著新生名冊與補發證章，值班導生忙著回覆提問。
+這裡也提供簡易地圖與緊急求援指令。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11010
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11012
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

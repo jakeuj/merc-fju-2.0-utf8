@@ -1,0 +1,41 @@
+Vnum            11008
+Name            奇術塔前階~
+Description
+青石階梯一路盤旋而上，牆面刻有元素與符文圖樣。
+學者提醒學員進塔前先備妥法力藥劑。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       SOUTH
+ExitVnum        11007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11009
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11024
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,25 @@
+Vnum            11028
+Name            雲舟碼頭~
+Description
+小型雲舟停靠在懸空碼頭，準備運送合格學員前往下一站。
+船伕提醒旅人先確認補給與任務紀錄。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11027
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

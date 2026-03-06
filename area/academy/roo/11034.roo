@@ -1,0 +1,25 @@
+Vnum            11034
+Name            靈泉步道~
+Description
+清泉沿著石槽流動，補給隊會在此裝水分送各教室。
+喝下一口泉水能讓人精神一振。
+~
+SectorType      SECT_FIELD
+
+#Exit
+Direction       WEST
+ExitVnum        11031
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11035
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,41 @@
+Vnum            11013
+Name            書院補給街~
+Description
+短短街道兩側開著糧店、藥品攤與教材舖，商人吆喝聲此起彼落。
+許多新手在出發前都會先來補齊道具。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       SOUTH
+ExitVnum        11012
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11004
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11016
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,28 @@
+Vnum            11002
+Name            講武教官 岳寧~
+ShortDesc       講武教官 岳寧~
+Description
+講武教官岳寧抱臂站在場邊，隨時糾正姿勢。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           24
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              2880
+Mana            1440
+Move            100
+Class           CLASS_FIGHTER
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_generic
+End

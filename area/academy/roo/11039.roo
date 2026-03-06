@@ -1,0 +1,25 @@
+Vnum            11039
+Name            榮譽牆~
+Description
+石牆刻著畢業生姓名與首次遠征紀錄，激勵新生勇敢前行。
+許多人會在此留下啟程宣言。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11038
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11040
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

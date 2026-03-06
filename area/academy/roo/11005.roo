@@ -1,0 +1,25 @@
+Vnum            11005
+Name            講武堂主場~
+Description
+寬闊的演武地鋪著防震木板，四周擺放練習用稻草人。
+新兵在此學習基礎攻防與仇恨判斷。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11004
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        11006
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

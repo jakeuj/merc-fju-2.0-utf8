@@ -1,0 +1,25 @@
+Vnum            11040
+Name            北側關門~
+Description
+關門外便是前往汜水演武林的山道，守衛檢查徽章後才放行。
+完成書院訓練的旅人可由此展開真正冒險。
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11039
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

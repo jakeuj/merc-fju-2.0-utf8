@@ -1,0 +1,28 @@
+Vnum            11004
+Name            道術導師 玄禾~
+ShortDesc       道術導師 玄禾~
+Description
+道術導師玄禾手持短杖，低聲吟誦示範咒語。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           24
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              2880
+Mana            1440
+Move            100
+Class           CLASS_MAGE
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_cast_adept
+End

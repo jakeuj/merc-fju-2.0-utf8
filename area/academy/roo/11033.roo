@@ -1,0 +1,17 @@
+Vnum            11033
+Name            教官休息室~
+Description
+牆上掛著破損盾牌與獎章，記錄歷屆教官的戰績。
+偶爾可在此接到額外練習任務。
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        11032
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

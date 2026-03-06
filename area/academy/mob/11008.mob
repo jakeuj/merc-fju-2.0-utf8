@@ -1,0 +1,28 @@
+Vnum            11008
+Name            木工學徒 阿木~
+ShortDesc       木工學徒 阿木~
+Description
+木工學徒阿木抱著木料，滿身木屑。
+~
+Sentinel        Yes
+StayArea        Yes
+Alignment       350
+Level           14
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             18
+Int             18
+Wis             18
+Dex             18
+Con             18
+Hp              1680
+Mana            840
+Move            100
+Class           CLASS_CITIZEN
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+Special         spec_generic
+End
