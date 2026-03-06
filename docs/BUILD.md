@@ -22,11 +22,16 @@ docker compose run merc make clean && make
 The compose file binds the entire repo, so runtime files (`log/`, `player/`, etc.) stay on the host; it keeps the same host-port mapping (13838/11234/18888).
 
 ## Host-only build (fallback)
-1. Install dependencies: `gcc`, `make`, `csh`, `libxcrypt-compat` (or `libxcrypt-dev`), `libncurses-dev`.
-2. Run `make bootstrap` once to create writable directories and generate `src/merc.ini` from `etc/merc.ini` using your current repo absolute path.
+> 適用於 macOS（含 Apple Silicon）與一般 Linux 主機，不需要 Docker。
+
+1. Install dependencies/toolchain:
+   - macOS: `xcode-select --install` and `brew install csh`.
+   - Linux: `gcc`, `make`, `csh`, `libxcrypt-compat` (or `libxcrypt-dev`), `libncurses-dev`.
+2. Run `make bootstrap` (or `scripts/bootstrap.sh`) once to create writable runtime directories and generate `src/merc.ini` from `etc/merc.ini` using your current repo absolute path.
 3. If the repo path changes, re-render with `MERC_FORCE_RENDER_INI=1 make bootstrap` or `make render-merc-ini`.
 4. Compile from `src/`: `make clean && make`.
 5. Launch via `cd src && ./startup merc.ini` (requires `csh`).
+6. Local testing can use `nc localhost 3838` (or `telnet`) and runtime data will stay on the host filesystem.
 
 ## Maintenance scripts
 - `scripts/check-data.py` – verifies UTF-8 encoding + structural markers across `area/`, `skill/`, `angel/`.
