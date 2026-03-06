@@ -20,7 +20,7 @@ End
 
 #Exit
 Direction       NORTH
-ExitVnum        10010
+ExitVnum        10011
 ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0

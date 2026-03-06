@@ -34,4 +34,13 @@ ExitKeyword     ~
 ExitKey         0
 End
 
+#Exit
+Direction       SOUTH
+ExitVnum        10036
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+
 End

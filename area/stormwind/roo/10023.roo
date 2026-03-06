@@ -27,12 +27,4 @@ ExitKey         0
 IsDoor          Yes
 End
 
-#Exit
-Direction       EAST
-ExitVnum        10007
-ExitDesc        ~
-ExitKeyword     ~
-ExitKey         0
-End
-
 End

@@ -34,4 +34,13 @@ ExitKeyword     ~
 ExitKey         0
 End
 
+#Exit
+Direction       NORTH
+ExitVnum        10037
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+
 End

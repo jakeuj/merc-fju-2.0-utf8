@@ -11,14 +11,6 @@ SectorType      SECT_INSIDE
 
 #Exit
 Direction       SOUTH
-ExitVnum        10003
-ExitDesc        ~
-ExitKeyword     ~
-ExitKey         0
-End
-
-#Exit
-Direction       EAST
 ExitVnum        10004
 ExitDesc        ~
 ExitKeyword     ~

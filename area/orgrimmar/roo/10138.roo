@@ -20,7 +20,7 @@ End
 
 #Exit
 Direction       SOUTH
-ExitVnum        10101
+ExitVnum        10106
 ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0
@@ -33,5 +33,22 @@ ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0
 End
+
+#Exit
+Direction       NORTH
+ExitVnum        10104
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       UP
+ExitVnum        10129
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
 
 End
