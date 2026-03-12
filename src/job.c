@@ -84,8 +84,8 @@ JOB( job_goto_pk_area )
 
   if ( !ch || !verify_char( ch ) ) RETURN_NULL();
 
-  if ( !( pIndex1 = get_room_index( 10343 ) )
-    || !( pIndex2 = get_room_index( 10344 ) ) )
+  if ( !( pIndex1 = get_room_index( 13043 ) )
+    || !( pIndex2 = get_room_index( 13044 ) ) )
   {
     mudlog( LOG_DEBUG, "job_goto_pk_area: 沒有校場試煉區." );
     send_to_char( "對不起, 目前系統沒有校場試煉區.\n\r", ch );

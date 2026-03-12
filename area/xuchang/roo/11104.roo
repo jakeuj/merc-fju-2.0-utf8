@@ -1,0 +1,27 @@
+Vnum            11104
+Name            定陵宮~
+Description
+地宮石拱結構堅實﹐建成已經很久了﹐無一石塊塌落﹐四周
+排水設備亦甚良好﹐決少積水﹐足證明當時營建地下建築的
+高超技術是令人驚配的。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        11102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11108
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

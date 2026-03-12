@@ -1,0 +1,15 @@
+Vnum            11125
+Name            tiger helmet~
+ShortDesc       伏虎纓~
+Description
+一頂以上好精鋼打造而成的頭盔﹐在日光的照耀下散發出耀眼的光芒。~
+Unit            頂~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_HEAD
+Takeable        Yes
+Level           30
+Value           -1
+Weight          20
+Cost            300
+Exp             10
+End

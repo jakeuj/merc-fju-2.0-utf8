@@ -1,0 +1,29 @@
+Vnum            13028
+Name            turtle~
+ShortDesc       烏龜~
+LongDesc        烏龜(turtle)
+~
+Description
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+Speak           NO
+End

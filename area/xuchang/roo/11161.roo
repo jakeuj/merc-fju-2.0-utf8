@@ -1,0 +1,36 @@
+Vnum            11161
+Name            天津渡口~
+Description
+這裡有船開往秦皇島﹐聽說秦皇島的風景明媚﹐故許多
+人都選擇到此搭船去遊覽。
+
+              這裡有標示(sign)
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11112
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         sign~
+Description
+要往秦皇島的旅客請由此登船﹐
+要取得進一步資訊﹐請打 ship 查詢。
+~
+End
+
+#Enquire
+Keyword         碼頭~
+End
+
+#Enquire
+Keyword         渡船~
+End
+
+End

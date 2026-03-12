@@ -1,0 +1,15 @@
+Vnum            11116
+Name            cloud boot~
+ShortDesc       勁雲靴~
+Description
+輕便且舒適的靴子(boot)﹐兩旁各繡著一朵雲彩﹐看來十分的耐用。~
+Unit            雙~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_FEET
+Takeable        Yes
+Level           30
+Value           -1
+Weight          10
+Cost            300
+Exp             10
+End

@@ -1,0 +1,27 @@
+Vnum            13008
+Name            飄渺空間~
+Description
+你走進了一條更狹小的空間裡﹐比剛剛的房間更小了一號﹐地上泛
+起一絲絲的白雲圍著你的腳邊﹐這股白雲透著一股寒冷之氣﹐這時
+你覺得涼涼的。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        13009
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        13005
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

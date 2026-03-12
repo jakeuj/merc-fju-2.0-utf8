@@ -1,0 +1,31 @@
+Vnum            13026
+Name            looker man~
+ShortDesc       動物園管理員~
+LongDesc        動物園管理員(looker man)
+~
+Description
+他負責管理這個動物園的進出繳費﹐不過卻常常在睡覺。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'sleep'
+Alignment       0
+Level           18
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+End

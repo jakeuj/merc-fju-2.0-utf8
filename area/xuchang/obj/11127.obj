@@ -1,0 +1,16 @@
+Vnum            11127
+Name            iron lance~
+ShortDesc       鐵槍~
+Description
+一把鐵製長槍。
+~
+Unit            把~
+ItemType        ITEM_WEAPON
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           5
+Value           0 -1 -1 7
+Weight          8
+Cost            50
+Exp             10
+End

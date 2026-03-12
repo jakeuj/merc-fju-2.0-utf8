@@ -1,0 +1,27 @@
+Vnum            13010
+Name            飄渺空間~
+Description
+這時光線越來越強了﹐但光源似乎還離這蠻遠的﹐此時時空間突然
+劇烈抖動﹐空間逐漸縮小﹐彷彿要將這個校場廊道關閉起來﹐你已
+經無法在思考了﹐你也覺得越來越寒冷。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        13011
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        13009
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

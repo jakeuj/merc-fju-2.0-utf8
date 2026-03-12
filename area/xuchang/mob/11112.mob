@@ -1,0 +1,40 @@
+Vnum            11112
+Name            maid~
+ShortDesc       宮女~
+Description
+這是在皇城裡的一位宮女﹐平常跟隨在皇帝或妃子身旁服侍﹐
+他正面帶微笑的看著你﹐眼神中露出懷疑的眼神﹐懷疑你為什
+麼會在這裡出現﹗
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       200
+Level           5
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_FEMALE
+
+Process
+Type            greet_prog
+Chance          50
+Text
+if ispc($n)
+  smile $n
+endif
+~
+End
+
+End

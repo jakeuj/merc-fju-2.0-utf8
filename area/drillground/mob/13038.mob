@@ -1,0 +1,28 @@
+Vnum            13038
+Name            children~
+ShortDesc       小孩~
+LongDesc        小孩(children)
+~
+Description
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           6
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+End

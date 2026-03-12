@@ -1,0 +1,20 @@
+Vnum            12006
+Name            方向訓練室 [上]~
+Description
+你走進了一間平房﹐房間的格局是由檀木所搭建起來﹐一股清香淡雅
+的味道撲進你的鼻子中﹐四周無任何的東西﹐房間的中央擺著一張桌
+子﹐桌上有著一組茶几﹐供應給休息的勇者們.
+新手可以往下走回方向訓練室的中央.
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       DOWN
+ExitVnum        12003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

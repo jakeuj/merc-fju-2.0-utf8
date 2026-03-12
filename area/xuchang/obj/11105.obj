@@ -1,0 +1,15 @@
+Vnum            11105
+Name            castle sword~
+ShortDesc       禁衛軍長劍~
+Description
+禁衛軍通用的長劍。~
+Unit            把~
+ItemType        ITEM_WEAPON
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           15
+Value           0 -1 -1 3
+Weight          2
+Cost            150
+Exp             10
+End

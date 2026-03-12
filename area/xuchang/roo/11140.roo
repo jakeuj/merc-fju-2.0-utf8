@@ -1,0 +1,35 @@
+Vnum            11140
+Name            紫禁城~
+Description
+紫禁城外朝以前三殿『太和﹐中和﹐保和』為中心﹐文華殿
+﹐武英殿是為兩翼。是以前皇帝行使權力的場所﹐另有三大
+殿﹐曰『奉天﹐華蓋﹐謹身』。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        11141
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11146
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11139
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

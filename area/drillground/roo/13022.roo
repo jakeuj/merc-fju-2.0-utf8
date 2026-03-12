@@ -1,0 +1,21 @@
+Vnum            13022
+Name            雪之宮~
+Description
+看到此景﹐有道是﹕
+
+『天上雪片紛飛﹐地上霜塊甚美﹐冰雪美人微笑﹐直叫人間天堂』
+
+真是直叫人身死也相願。
+
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       EAST
+ExitVnum        13020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

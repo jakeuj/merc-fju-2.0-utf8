@@ -1,0 +1,61 @@
+Vnum            12019
+Name            商店 [buy & sell & value]~
+Description
+這裡是書院學宮的商店﹐在這裡你可以買到許多價廉物美的好東西。
+指令 list 可以列出販賣的內容﹐buy & sell <物品> 可以購買以及
+賣掉物品﹐value <物品> 可以對物品來估價。
+
+北邊有教你如何線上拍賣東西.
+這裡有一塊告示牌 (sign).
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        12014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        12020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       UP
+ExitVnum        12015
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         sign~
+Description
+
+在商店裡有販賣裝備及物品﹐要看店裡賣些什麼可以用指令 list.
+如果你只要看一種裝備﹐你可以用 list <裝備的種類>
+ex: list leggings.
+假如你要買的物品不止一個﹐你必須註明是第幾個以免買錯.
+ex: buy 2.leggings
+指令 sell 的用法和 buy 是一樣的﹐在賣給老闆之前﹐你可以要求
+老闆估價﹐估價的指令是 value <物品>
+
+~
+End
+
+#Enquire
+Keyword         商店~
+End
+
+#Enquire
+Keyword         道具屋~
+End
+
+End

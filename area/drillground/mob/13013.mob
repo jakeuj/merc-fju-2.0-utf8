@@ -1,0 +1,32 @@
+Vnum            13013
+Name            stone mob~
+ShortDesc       岩怪~
+LongDesc        岩怪(stone mob).
+~
+Description
+一隻岩石妖怪﹐身上全是堅硬的石塊所組成﹐任何兵器對它都傷害
+不了﹐但是它的移動力不是很迅捷。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           6
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+Speak           NO
+End

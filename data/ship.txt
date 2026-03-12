@@ -19,7 +19,7 @@ Description
 ~
 
 Starting        10243
-Destination     10101
+Destination     11101
 Cabin           211
 Cost            100
 Sailing         2
@@ -47,65 +47,13 @@ Description
 
 ~
 
-Starting        10101
+Starting        11101
 Destination     10243
 Cabin           212
 Cost            100
 Sailing         2
 Waiting         4
 Pirate          5
-Delay           100
-End
-
-#Ship
-Name            長安鷹騎空運~
-Entrance
-要飛往許昌的鷹騎已經整裝待發﹐請旅客依序登上鞍座!
-~
-
-Land
-飛往許昌的鷹騎已經抵達﹐請各位旅客抓緊韁繩﹐準備降落!
-~
-
-Description
-你正騎乘在一隻健壯的獅鷲背上﹐猛烈的風聲從耳邊呼嘯而過。腳下
-的雲海與大地快速掠過﹐遙遠的地平線上隱約可見敵對陣營的城池。
-
-~
-
-Starting        10243
-Destination     10101
-Cabin           213
-Cost            150
-Sailing         3
-Waiting         4
-Pirate          0
-Delay           100
-End
-
-#Ship
-Name            許昌信鷹空運~
-Entrance
-要飛往長安的信鷹已經準備好了﹐要搭乘的旅客快點上來!
-~
-
-Land
-飛往長安的信鷹已經抵達﹐請各位旅客坐穩﹐準備降落!
-~
-
-Description
-你正騎乘在一頭訓練有素的風行者背上﹐強勁氣流捲過四周。高空中
-視野極佳﹐遼闊大地與翻湧雲層盡收眼底﹐遠行的緊張感油然而生。
-
-~
-
-Starting        10101
-Destination     10243
-Cabin           214
-Cost            150
-Sailing         3
-Waiting         4
-Pirate          0
 Delay           100
 End
 

@@ -1,0 +1,33 @@
+Vnum            13005
+Name            bear~
+ShortDesc       冰穴浣熊~
+LongDesc        冰穴浣熊(bear).
+~
+Description
+一隻活了百年的動物﹐常生活於冰原之中﹐白而潔淨﹐厚而保暖的
+外皮使得不受寒冷的侵襲﹐有時看到生人靠近時﹐浣熊很調皮的都
+會裹著一顆冰求丟向你。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           5
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+Speak           NO
+End

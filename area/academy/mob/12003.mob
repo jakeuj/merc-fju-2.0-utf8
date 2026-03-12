@@ -1,0 +1,27 @@
+Vnum            12003
+Name            dog~
+ShortDesc       大獒犬~
+Description
+一隻全黑的獒犬﹐一看到人走進牠的身邊﹐牠就對你兇了過來﹐邊
+吼邊叫﹐一張正流著口水的嘴巴正張開著﹐準備向你咬了過來。
+~
+Sentinel        Yes
+Alignment       0
+Level           3
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            0
+Move            100
+Class           0
+Gold            20
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+End

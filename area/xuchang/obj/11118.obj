@@ -1,0 +1,15 @@
+Vnum            11118
+Name            castle bracelet~
+ShortDesc       禁衛軍護腕~
+Description
+禁衛軍中級軍官用的護腕。~
+Unit            隻~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_WRIST
+Takeable        Yes
+Level           20
+Value           -1
+Weight          10
+Cost            200
+Exp             10
+End

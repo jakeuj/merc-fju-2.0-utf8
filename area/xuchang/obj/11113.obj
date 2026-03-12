@@ -1,0 +1,16 @@
+Vnum            11113
+Name            agraffe robe~
+ShortDesc       青絲軟甲~
+Description
+雖然是用金屬絲線打製成的﹐但是一點也不會影響身體的活動﹐
+能提供不錯的保護能力。~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           25
+Value           -1
+Weight          20
+Cost            250
+Exp             10
+End

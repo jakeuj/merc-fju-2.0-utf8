@@ -1,0 +1,32 @@
+Vnum            13015
+Name            soldier~
+ShortDesc       打瞌睡的守衛~
+LongDesc        打瞌睡的守衛(soldier).
+~
+Description
+長年把守在這個炎窟當中的怪物﹐一副睡不飽、精神散漫的傢伙﹐正
+依靠在洞口邊呼呼大睡﹐還可以聽到它吽叫的聲音。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           8
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+Speak           NO
+End

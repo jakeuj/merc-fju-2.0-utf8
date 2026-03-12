@@ -1,0 +1,14 @@
+Vnum            12001
+Name            water skin~
+ShortDesc       水袋~
+Description
+一個可以裝水水袋(small bag)被丟在地上。
+~
+Unit            個~
+ItemType        ITEM_DRINK_CON
+Takeable        Yes
+Level           1
+Value           36 36 LIQ_WATER
+Weight          2
+Cost            20
+End

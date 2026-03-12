@@ -1,0 +1,29 @@
+Vnum            11155
+Name            藥房~
+Description
+藥店兩旁的牆壁均立了兩個大櫃子﹐再縱橫分成了數百個小櫃子﹐
+每個小櫃子上都標示了一種草藥名﹐仔細的算一算﹐這兒有的藥
+材之豐富只怕是天下數一數二的了﹐藥店的夥計忙碌的走動著﹐
+都忙的不可開交﹐在角落裡一個小學童模樣的小孩手裡正拿著一
+把大扇子﹐拼命的朝著火盆搧風。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        11115
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         商店~
+End
+
+#Enquire
+Keyword         藥局~
+End
+
+End

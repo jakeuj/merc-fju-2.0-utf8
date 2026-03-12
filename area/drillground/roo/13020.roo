@@ -1,0 +1,52 @@
+Vnum            13020
+Name            冰穴魔堡~
+Description
+眼前的景象令你難以相信﹐這個城堡內部真是寬廣﹐而且城堡內的
+六根支柱完全由大之的冰柱所支撐﹐柱子上的雕刻極為精細﹐而且
+周圍的雕飾擺設也全有冰塊所鑄﹐不知誰有這樣的功力﹐做到這般
+完美的物品出來。
+
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       UP
+ExitVnum        13023
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        13024
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        13021
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        13019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        13022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

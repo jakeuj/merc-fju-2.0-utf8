@@ -1,0 +1,15 @@
+Vnum            11119
+Name            dragon bracelet~
+ShortDesc       龍驤護腕~
+Description
+高階軍官用的護腕。~
+Unit            隻~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_WRIST
+Takeable        Yes
+Level           25
+Value           -1
+Weight          10
+Cost            250
+Exp             10
+End

@@ -1,0 +1,32 @@
+Vnum            11118
+Name            squader~
+ShortDesc       禁衛軍小隊長~
+Description
+禁衛軍中的小隊長﹐唯有較出色武藝與表現才能升為隊長。
+~
+Sentinel        Yes
+StayArea        Yes
+Ask             Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Effect          'sanctuary'
+Alignment       200
+Level           15
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

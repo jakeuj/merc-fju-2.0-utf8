@@ -1,9 +1,9 @@
 Type            SHOP_STORE
-Keeper          10205
+Keeper          12005
 Object          ITEM_FOOD ITEM_DRINK_CON
 OpenHour        0
 CloseHour       23
 SellProfit      80
 BuyProfit       120
-Sential         10219
+Sential         12019
 End

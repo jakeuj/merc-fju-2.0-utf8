@@ -1,0 +1,27 @@
+Vnum            11139
+Name            紫禁城~
+Description
+從天安門入端門﹐通過石板御道﹐便是故宮的正門『午門』
+﹐其平面呈凹型﹐中有重樓﹐廣九楹﹐高三十五公尺﹐十分
+壯觀。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        11140
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11138
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

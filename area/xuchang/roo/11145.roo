@@ -1,0 +1,19 @@
+Vnum            11145
+Name            紫禁城~
+Description
+紫禁城建築以黃瓦﹐紅牆﹐朱楹﹐白玉雕欄而成﹐紫禁城的
+成熟建築成就充分顯示了中國古代匠師們的高超技術﹐和創
+造才能﹐令人嘆為觀止。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11144
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

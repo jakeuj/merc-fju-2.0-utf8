@@ -1,0 +1,29 @@
+Vnum            11156
+Name            京城乾記錢莊~
+Description
+大門閃閃發光﹐原來這錢莊的大門竟是用黃金鑄的。不禁佩服乾通
+天乾老爺的富可敵國。這裡是乾通天的產業之一﹐是乾通天所有事
+業的資金來源。由於全國錢莊有協定在﹐因此您的存款可以在各錢
+莊之間互相流通。
+
+~
+SectorType      SECT_CITY
+DepositMoney    Yes
+
+#Exit
+Direction       SOUTH
+ExitVnum        11112
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         錢莊~
+End
+
+#Enquire
+Keyword         銀行~
+End
+
+End

@@ -1,0 +1,35 @@
+Vnum            11110
+Name            天壇~
+Description
+皇穹宮單簞藍瓦﹐金碧重彩﹐遠遠望去﹐猶如一把高撐雲空
+的大傘。在陽光照耀之下﹐閃閃發光﹐殿內由八根金柱和八
+根簞柱承托屋頂。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        11157
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11111
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11109
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

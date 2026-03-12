@@ -1,0 +1,16 @@
+Vnum            11114
+Name            waku~
+ShortDesc       武士和服~
+Description
+東瀛武士穿的和服。
+~
+Unit            套~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           10
+Value           -1
+Weight          10
+Cost            100
+Exp             10
+End

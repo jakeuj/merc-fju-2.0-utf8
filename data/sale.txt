@@ -23,7 +23,7 @@ Cost            10000
 End
 
 #Sale
-Object          522
+Object          156
 Visible         NO
 Cost            10000
 End

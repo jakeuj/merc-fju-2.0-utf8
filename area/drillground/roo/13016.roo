@@ -1,0 +1,26 @@
+Vnum            13016
+Name            冰之穴~
+Description
+當你走到這裡時發現一個巖穴﹐在巖穴的上面覆蓋了厚厚的冰層,
+一看這巖穴裡好像別有洞天﹐想一看究竟裡面有什麼事情會發生。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        13015
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       enter
+ExitVnum        13019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,29 @@
+Vnum            12026
+Name            書院學宮的時光結界~
+Description
+當你經過了一路下來辛苦的學習﹐也知道了怎麼開始進入三國時代遊
+戲了﹐接下來書院學宮也沒什麼可以教你的了﹐接下來的你只好靠著
+本身學習到的知識去奮鬥了﹐往後的路還長著.
+
+努力奮鬥吧!! 我的勇者.................
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        12025
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       DOWN
+ExitVnum        12027
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

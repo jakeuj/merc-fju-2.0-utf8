@@ -1,0 +1,15 @@
+Vnum            11101
+Name            amethyst duds~
+ShortDesc       紫絳衫~
+Description
+彩雲般的絳紫暈染整件衣衫(duds)﹐層層疊疊的紫帶垂飾的煞是好看。~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           3
+Value           -1
+Weight          5
+Cost            30
+Exp             10
+End

@@ -1,9 +1,9 @@
 Type		SHOP_STORE
-Keeper		10103
+Keeper		11103
 Object		ITEM_POTION
 OpenHour	0
 CloseHour	23
 Sellprofit	80
 Buyprofit	115
-Sential		10155
+Sential		11155
 End

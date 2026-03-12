@@ -1,0 +1,33 @@
+Vnum            13002
+Name            ice girl~
+ShortDesc       雪之女~
+LongDesc        漂漂的雪之女(ice girl).
+~
+Description
+一位年紀約十六歲的女孩﹐面目姣好﹐皮膚白晰﹐擁有處女之身﹐
+終身生活在這冰宮之內﹐因為他是冰山女人的女兒﹐以後將會繼承
+母親的職位。這時他努力學習冰之魔法﹐只是功力不足﹐只有練到
+雪的地步。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           8
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_FEMALE
+End

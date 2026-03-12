@@ -7,7 +7,12 @@
 * 基本區域
 limbo
 
+* 正式世界 VNUM 保留範圍
+* academy: 12000-12999
 academy
+* changan: 10000-10999
 changan
+* xuchang: 11000-11999
 xuchang
+* drillground: 13000-13999
 drillground

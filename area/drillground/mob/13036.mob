@@ -1,0 +1,29 @@
+Vnum            13036
+Name            taiwan monkey~
+ShortDesc       台灣彌猴~
+LongDesc        台灣彌猴(taiwan monkey)
+~
+Description
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           13
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+Speak           NO
+End

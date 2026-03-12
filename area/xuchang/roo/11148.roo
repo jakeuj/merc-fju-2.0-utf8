@@ -1,0 +1,26 @@
+Vnum            11148
+Name            頤和園~
+Description
+這兒是一片平坦的草原﹐是皇上出外打獵遊玩的所在﹐因此嚴禁一
+般民眾在此遊蕩。這裡每一道門都有重兵把守著。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        11149
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11147
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

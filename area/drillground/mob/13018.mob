@@ -1,0 +1,31 @@
+Vnum            13018
+Name            ice giant~
+ShortDesc       冰巨人~
+LongDesc        冰巨人(ice giant)
+~
+Description
+一個全身由冰所組成的巨人﹐似乎相當的可怕﹗
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           4
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_FEMALE
+Speak           NO
+End

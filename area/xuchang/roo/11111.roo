@@ -1,0 +1,35 @@
+Vnum            11111
+Name            太廟~
+Description
+太廟呈南北方向的長方形﹐總建築面積十三萬九千六百五十
+平方公尺。三層琉璃磚門﹐三層大殿﹐戟門﹐石橋南北排列
+。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        11158
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11112
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11110
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

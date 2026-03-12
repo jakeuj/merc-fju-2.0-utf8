@@ -1,0 +1,30 @@
+Vnum            13035
+Name            火炎窟~
+Description
+這裡的地方土石與岩粒相混雜再一起﹐經得起熱度的煎熬﹐久催之
+下並不會掉落岩石下來﹐代表此處的岩層乃是火山噴發後﹐所構成
+的火山灰岩。
+
+嗯﹖你發現這附近有一處閃著金黃色的礦石﹐閃閃發亮的黃色礦物
+﹐好像是…哇﹗哇﹗
+
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        13031
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        13034
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

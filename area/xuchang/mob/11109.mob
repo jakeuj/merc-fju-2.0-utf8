@@ -1,0 +1,46 @@
+Vnum            11109
+Name            royal guard~
+ShortDesc       御前護衛~
+Description
+保護天子的勇猛戰士﹐盡忠職守﹐不茍言笑。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Effect          'sanctuary'
+Alignment       200
+Level           50
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'fonxan sword'
+AutoEnable      'gdragon steps'
+
+Process
+Type            greet_prog
+Chance          50
+Text
+if ispc($n)
+  say 在這裡幹什麼﹖趕快離開吧﹗
+endif
+~
+End
+
+End

@@ -1,0 +1,20 @@
+Vnum            12028
+Name            戰鬥訓練室~
+Description
+這個房間有訓練你的怪物在這裡﹐你必須要打敗他們才會獲得勝利﹐
+也才會有經驗值﹐當然不能太小看它們的實力.
+
+俗語說:『懂得洞察怪物的動作﹐才能百戰百勝.』
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        12018
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

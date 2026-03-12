@@ -1,0 +1,15 @@
+Vnum            11121
+Name            phoenix arms~
+ShortDesc       鳳翔護臂~
+Description
+高階衛士用的護臂(Arms)~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_ARMS
+Takeable        Yes
+Level           25
+Value           -1
+Weight          15
+Cost            250
+Exp             10
+End

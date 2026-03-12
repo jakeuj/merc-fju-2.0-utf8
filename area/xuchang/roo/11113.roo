@@ -1,0 +1,19 @@
+Vnum            11113
+Name            戒台寺~
+Description
+在千佛閣與戒壇之間﹐有牡丹院等庭院式建築。寺內有三座
+八角型和六角型經幢﹐雕刻著文和佛像﹐寺內的臥龍松﹐九
+龍松抱塔松都是著名的古松。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        11105
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

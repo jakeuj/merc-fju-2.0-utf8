@@ -1,0 +1,26 @@
+Vnum            13009
+Name            飄渺空間~
+Description
+前方泛著隱約的光線﹐在這個虛幻的空間裡﹐引導你走向這微淡的
+光源﹐像似有股力量拉著你走出這裡。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        13010
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        13008
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

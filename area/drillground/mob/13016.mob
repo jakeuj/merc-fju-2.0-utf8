@@ -1,0 +1,31 @@
+Vnum            13016
+Name            ice ball~
+ShortDesc       冰球~
+LongDesc        冰球(ice ball)
+~
+Description
+一個由冰所組成的小球﹐到處彈來彈去。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           1
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_FEMALE
+Speak           NO
+End

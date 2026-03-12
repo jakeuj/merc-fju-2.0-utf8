@@ -1,0 +1,33 @@
+Vnum            13009
+Name            fire~
+ShortDesc       火蜥蜴~
+LongDesc        火蜥蜴(fire).
+~
+Description
+一隻長約有三十尺的大蜥蜴﹐長年生活於火窟中﹐蜥蜴的皮膚呈現
+火紅顏色﹐非常的鮮豔耀人﹐由於牠的尾巴甩捲有力﹐很多人都死
+在牠的尾巴上﹐牠屬於肉食性的動物一種。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           15
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+Speak           NO
+End

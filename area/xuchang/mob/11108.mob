@@ -1,0 +1,42 @@
+Vnum            11108
+Name            picaroon~
+ShortDesc       京城大盜~
+Description
+雖然他是一名被通緝的大盜﹐但眉目間卻隱隱有一股不凡的氣質。
+似乎向來與流水行雲同渡﹐跟落霞孤騖齊飛。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       200
+Level           25
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'gdragon steps'
+
+Process
+Type            greet_prog
+Chance          50
+Text
+if ispc($n)
+  look $n
+endif
+~
+End
+
+End

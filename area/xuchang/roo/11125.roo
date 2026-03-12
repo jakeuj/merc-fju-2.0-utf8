@@ -1,0 +1,27 @@
+Vnum            11125
+Name            八達嶺~
+Description
+八達嶺下層是一無門窗的高台﹐中層為空室﹐可以儲存兵糧
+﹐並有射箭口。上層四面可以供瞭望用﹐可以放繩梯上下﹐
+每隔一定距離﹐必有烽火台。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        11124
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11163
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

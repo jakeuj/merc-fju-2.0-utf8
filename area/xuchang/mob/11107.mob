@@ -1,0 +1,38 @@
+Vnum            11107
+Name            mastiff~
+ShortDesc       凶惡的獒犬~
+Description
+非常具有攻擊性的狗﹐隨時想要撲上來咬你一口的樣子。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       200
+Level           3
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            greet_prog
+Chance          50
+Text
+if ispc($n)
+  bark $n
+endif
+~
+End
+
+End

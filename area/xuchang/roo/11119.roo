@@ -1,0 +1,43 @@
+Vnum            11119
+Name            燕下都~
+Description
+戰國春秋時代﹐燕太子丹定計復仇﹐派壯士荊軻刺秦始皇就
+是從這裡『燕下都』出發的﹐其後不久﹐秦發兵統一了中原
+﹐下都被焚﹐成為一片廢墟。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        11116
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        11126
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11118
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

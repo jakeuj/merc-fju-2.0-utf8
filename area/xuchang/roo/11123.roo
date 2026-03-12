@@ -1,0 +1,27 @@
+Vnum            11123
+Name            八達嶺~
+Description
+八達嶺距離北京約七十餘公里﹐是萬里長城中保存最完整和
+最具有代表性的一段。有東西兩門﹐東稱『居庸外鎮』﹐西
+名『北門鎖鎮』。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        11124
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11122
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

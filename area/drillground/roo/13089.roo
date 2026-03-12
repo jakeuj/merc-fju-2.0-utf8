@@ -1,0 +1,46 @@
+Vnum            13089
+Name            新手動物園~
+Description
+這是一座動物園﹐有很多動物跑來跑去﹗你看到有許多的遊客在這裡
+逛來逛去﹐很多都是全家一起出來玩﹐你看到他們都和樂融融的在一
+起﹐令你感到人性的溫暖。
+
+                        南邊有一道門
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        13080
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        13090
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        13094
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+#Exit
+Direction       WEST
+ExitVnum        13088
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

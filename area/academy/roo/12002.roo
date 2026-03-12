@@ -1,0 +1,29 @@
+Vnum            12002
+Name            校園大道~
+Description
+這是一條筆直寬敞的道路。道路的兩旁種植了各式各樣的花朵﹐可愛的蝴蝶和勤勞的
+蜜蜂正在花叢間來回的穿梭著。你嗅著清新的花香﹐精神不禁為之一振.
+
+繼續往北走可以到達書院的方向訓練教室.
+新手請鍵入 north 即可往北走.
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        12003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        12001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

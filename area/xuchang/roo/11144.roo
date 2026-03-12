@@ -1,0 +1,35 @@
+Vnum            11144
+Name            紫禁城~
+Description
+紫禁城內廷不及外朝之寬敞宏偉﹐但嚴謹盛K而富有生活氣
+息﹐各宮之間各有門牆﹐雖然自為系統﹐但又有曲廊﹐庭院
+相連。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        11137
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        11145
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11143
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

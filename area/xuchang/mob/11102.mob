@@ -1,0 +1,34 @@
+Vnum            11102
+Name            palace soldier~
+ShortDesc       殿前武士~
+Description
+殿前武士是皇城中最英勇的士兵﹐只要你敢輕舉妄動﹐一定會
+付出慘痛的代價。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Effect          'sanctuary'
+Alignment       200
+Level           45
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'dream blade'
+AutoEnable      'gdragon steps'
+End

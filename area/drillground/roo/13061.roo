@@ -1,0 +1,34 @@
+Vnum            13061
+Name            新手動物園~
+Description
+這是一座動物園﹐有很多動物跑來跑去﹗附近有一個小池塘﹐裡面有
+許多的鴨子在上面遊樂﹗
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        13062
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        13073
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        13060
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

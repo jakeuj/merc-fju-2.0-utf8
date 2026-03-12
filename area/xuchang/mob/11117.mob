@@ -1,0 +1,38 @@
+Vnum            11117
+Name            scamp~
+ShortDesc       無賴~
+Description
+大爺我來收保護費了﹐不想死的就乖乖的交出來﹗
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       200
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            greet_prog
+Chance          30
+Text
+if ispc($n)
+  emote 大剌剌的走過來﹐向你吐了一口膿痰。
+endif
+~
+End
+
+End

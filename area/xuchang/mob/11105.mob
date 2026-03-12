@@ -1,0 +1,38 @@
+Vnum            11105
+Name            clean man~
+ShortDesc       清道夫~
+Description
+一位清早起床打掃環境的清道夫(clean man)
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       200
+Level           5
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            greet_prog
+Chance          50
+Text
+if ispc($n)
+  say 每天都有清不完的垃圾﹐真麻煩﹗
+endif
+~
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            11122
+Name            八達嶺~
+Description
+萬里長城東起河北山海關﹐西迄嘉裕關﹐全長六千多公里﹐
+從戰國時代就開始建造﹐它主要的功能就是抵抗北方的外族
+攻擊。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        11123
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        11121
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

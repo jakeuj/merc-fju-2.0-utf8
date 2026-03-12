@@ -1,0 +1,27 @@
+Vnum            13028
+Name            火炎窟入口~
+Description
+這個火炎窟已有好幾千年的歷史﹐整個洞口的周圍原本是土砌成的﹐
+經過時間的考驗後﹐已變成了陶瓷﹐釉白的陶瓷顯得潔淨無暇﹐但是
+火炎窟裡的炎氣還是依舊﹐不受時間的影響。
+
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       ENTER
+ExitVnum        13029
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        13043
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End
