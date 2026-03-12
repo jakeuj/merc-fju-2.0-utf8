@@ -1,21 +1,26 @@
 ---
 name: merc-area-builder
-description: 建立 Merc-FJU (三國歪傳之降龍伏虎) 新區域的完整工作流程：規劃 VNUM/Serial、建立 area slug 目錄、撰寫 index/mob/obj/roo/res/shp 檔案、更新 area/directory.lst、並以 scripts/check-data.py 與遊戲 reload 驗證。適用於新增或大幅擴充任何 MUD 區域時。
+description: 建立或擴充 Merc-FJU 區域資料的完整工作流程：依 README 規劃區域目錄與 index/mineral/mob/obj/res/roo/shp 結構、撰寫各類資料檔、更新 area/directory.lst、必要時同步調整技能 Chance/Value，並以專案內工具與遊戲 reload 驗證。適用於新增或大幅修改任何 MUD 區域時。
 ---
 
 # Merc Area Builder
 
-此技能協助你在 `/Users/jakeuj/auggie/mud2` 內建構新的 Merc 區域資料。步驟採繁體中文說明，英文技術術語保留原文。
+此技能協助你在目前的 Merc-FJU 專案工作區內建構或擴充區域資料。步驟採繁體中文說明，英文技術術語保留原文。
 
 ## 快速開始（6 步驟）
 1. **規劃**：決定區域 slug（`area/<slug>`）、VNUM 區段、`Serial`、`Capital`、故事描述。先確認 `area/` 內沒有同名目錄，也不與既用 VNUM 衝突。
-2. **建立骨架**：在 `area/` 底下建立 `<slug>/index`、`mineral/`、`mob/`、`obj/`、`roo/`、`res/`、`shp/`（沒有礦物掉落也建空目錄，方便後續擴充）。區域數量多時可先複製 `stormwind` 或 `orgrimmar` 結構再批次取代。
+2. **建立骨架**：依 `document/README` 建立完整區域結構。每個區域至少要有 `index`，通常還要建立 `mineral/`、`mob/`、`obj/`、`res/`、`roo/`、`shp/`。即使暫時沒有礦物或商店，仍優先保留目錄結構，避免後續載入或維護不一致。
 3. **更新載入清單**：將 `<slug>` 追加到 `area/directory.lst`（依字母排序或就近放在同系列後方），確保伺服器啟動時會讀到新區域。
 4. **填寫資料檔**：依下方「資料檔案指南」撰寫 index/mob/obj/roo/res/shp，並保持 UTF-8。長篇描述結尾記得 `~`。
-5. **驗證**：執行 `python3 scripts/check-data.py`（整體 UTF-8 與基本標記），視需要 `rg vnum` 或 `git diff` 再次檢查出入口、裝備、商店設定。
-6. **載入測試**：啟動 `./startup` 或在遊戲中 `reload area <slug>`，以 `goto <vnum>`、`stat mob <vnum>` 巡視；觀察 `log/` 是否有 parse 錯誤。
+5. **同步技能數值**：若此區域會啟用新的武術、閃躲或其他開放技能，依 README 一併檢查對應技能資料的 `Chance`（出現機率）與 `Value`（攻傷數值），避免區域內容可用但技能表未調整。
+6. **驗證**：執行 `python3 scripts/check-data.py`（整體 UTF-8 與基本標記），視需要用搜尋工具再次檢查出入口、裝備、商店與 reset 設定，最後啟動 `./startup` 或在遊戲中 `reload area <slug>`，以 `goto <vnum>`、`stat mob <vnum>` 巡視並查看 `log/` 是否有 parse 錯誤。
 
 詳細 checklist 與 commit 範例請閱讀 `references/area-build-checklist.md` 與 `references/wow-area-example.md`。
+
+## README 專案慣例
+- README 明確說明，為了讓遊戲可正常運作，發行包釋放了數個示範區域；正式營運後，除 `limbo` 外，其餘釋出區域應依 `COPYRIGHT` 規範評估是否移除。規劃新內容時，不要假設示範區域會永久存在。
+- 區域開發的起點是參考既有區域檔案。若沒有更合適的模板，可優先比對 `area/limbo`、`area/stormwind`、`area/orgrimmar` 等現有結構，再依本專案格式調整。
+- 每次新增區域時，優先確認目錄命名、檔案編碼、分隔符與既有檔案一致，不要混入其他 MUD 變體的格式。
 
 ## 資料檔案指南
 - **index**：欄位順序與 commit `stormwind/index`、`orgrimmar/index` 相同。`Echo` = `WILL_ECHO`，`Fog` 可填白天/夜間兩筆，`Serial` 建議採 3 位數流水號，`Capital` 指向起始房間。`Description` 可分段敘述地理、交通、怪物等級，每段之間以空行+`~` 結束。
@@ -31,6 +36,7 @@ description: 建立 Merc-FJU (三國歪傳之降龍伏虎) 新區域的完整工
 - **命名**：檔名與 VNUM 相同（`10001.mob`、`10001.roo`）；若採單一 `res` 檔，使用 `<slug>.res`。
 - **語言風格**：描述以台灣繁體中文書寫，必要英文字以括號標註，如 `一名奧格瑞瑪守衛(orgrimmar guard)`。
 - **Process 腳本**：對話可使用 `say`、`emote`；複雜行為可調用 `mpsetenemy`, `rand(n)` 等內建 MUDProg 指令。保持條件簡潔避免無線迴圈。
+- **技能聯動**：若區域設計涉及可習得、可掉落或可由 NPC 使用的新技能，除了區域資料外，還要主動檢查技能資料檔中的 `Chance` / `Value` 是否與區域等級帶和傷害預期相符。
 
 ## 驗證與除錯
 1. `python3 scripts/check-data.py`：確保 UTF-8 與必要標記；若僅檢查 `area/slug`，可臨時修改腳本 TARGET 列表或先備份後還原。
