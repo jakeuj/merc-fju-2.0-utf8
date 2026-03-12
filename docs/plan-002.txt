@@ -1,0 +1,349 @@
+新手區承接盤點與後續開發計畫
+Summary
+本計畫以 repo 內的 `docs/newhand-index.md` 作為主要對照表，
+並以 `H:\repos\.agents\skills\sango-mud-website-reference\references\newhand-index.md`
+作為補充來源，再比對下列舊版資料：
+
+- `H:\repos\merc-fju-2.0-utf8-origin\area\new`
+- `H:\repos\merc-fju-2.0-utf8-origin\area\newfight`
+- `H:\repos\3yWebsite\newhand\commands\index.html`
+- `H:\repos\3yWebsite\newhand\newbies\index.html`
+- `H:\repos\3yWebsite\newhand\players\newplayer\9903151.html`
+- `H:\repos\3yWebsite\newhand\players\newplayer\0104101.html`
+- `H:\repos\3yWebsite\newhand\players\newplayer\0104121.html`
+- `H:\repos\3yWebsite\newhand\players\newplayer\9907151.htm`
+
+結論是：
+
+- 現版 `academy` 幾乎完整承接舊版 `new` 的教學骨架。
+- 現版 `drillground` 幾乎完整承接舊版 `newfight` 的房間與怪物骨架。
+- 已修復的 `bore / touch / pray / pull` 互動，方向符合舊版「look keyword -> 特殊動作」設計。
+- 目前真正的缺口不在房間數量，而在：
+  - 新手練功區與 PvP/校場被合併後的定位不夠清楚
+  - 新手離開教學區後的主城承接、升級引導與世界導覽不足
+  - 舊版網站中存在、但現版遊戲內未明確承接的玩家知識與成長節點
+
+Comparison
+一、已承接的舊功能
+
+- 舊 `new` 的 450-477 教學線，現版以 `academy` 12001-12028 承接，房間結構、教學主題、怪物與商店規模基本一致。
+- 舊 `newfight` 的 1201-1295 練功線，現版以 `drillground` 13001-13095 承接，房間結構、怪物密度與等級分層基本一致。
+- `Room School = 500`、新角色先進時空隧道、再往北進教學區、往下進正式世界，已修回接近舊版邏輯。
+- `look hole -> bore hole` 已可用，並可通往後續試煉區。
+- `touch stone`、`pray`、`pull bar` 等舊式關鍵字互動已補回，不再只是誤導文案。
+
+二、尚未完整承接的舊功能
+
+1. 新手練功區與 PvP 區的定位被混合
+舊版 `newfight`：
+- `Upper 15`
+- `NewHand Yes`
+- 主要用途是新手練功
+
+現版 `drillground`：
+- `Upper LEVEL_PC`
+- `Pk Yes`
+- `Fight Yes`
+- 區域描述改成「整合舊有練功、切磋與對戰用途」
+
+這代表現版雖保留了舊房間，但玩法定位已從「低等級安全訓練場」改成「新手試煉 + 對戰校場混合區」。
+需要補明確規格：
+- 這裡是否仍是 1-15 級保護區
+- 高等玩家是否應繼續能自由進入
+- PvP 規則是否應與新手訓練區切開
+
+2. 舊版網站中的新手升級承接未內建到遊戲導引
+網站資料顯示：
+- 新手區只是 1-10 或 1-15 的起點
+- 離開後會進主城，再依等級轉往其他區
+- `area`、`find`、`recall`、`rebirth`、`train` 是後續成長核心
+
+現版遊戲內目前已經能走：
+- `500 -> academy -> changan`
+
+但尚未明確承接：
+- 長安作為「離開教學後第一主城」的明確導引
+- 10 級轉職 NPC 的導覽與提示
+- 10-30 級練功路線的遊戲內提示
+- `area` / `find` / `recall set` 的新手引導
+
+3. 舊版多出生地主題已簡化成單一主城，但缺少新的說明文本
+舊網站某些時期曾出現多出生地選單，但你目前已決定回到「單一合理出生主城」模式，這是正確的。
+不過現版仍缺：
+- 創角/新手 help 中對「為什麼只剩長安」的自洽說明
+- 書院學宮與長安之間的世界觀承接文案
+
+4. 新手區的玩家知識承接不足
+`newhand` 文章中高頻出現的內容包括：
+- `enable`
+- `flee`
+- `area`
+- `find`
+- `pry`
+- `leftskill`
+- `train`
+- `rebirth`
+- `recall`
+- `bus` / `ship`
+- `realm`
+
+現版 `academy` 仍偏重早期的房間指令教學，但缺少：
+- 「離開學宮後先做什麼」的明確教學
+- 「10 級後去哪裡」的遊戲內導引
+- 「加入國家 / 陣營」何時該開始的提示
+
+5. 需確認的規則差異
+舊版 `newfight` 描述提到：
+- 怪物等級均在 15 級以下
+- 若怪物比你高很多，你無法攻擊
+
+現版 `drillground` 雖保留怪物分層，但尚未重新驗證：
+- 是否仍有低等級保護規則
+- 是否仍限制高等角色對低等怪的互動方式
+- 是否因 `Pk/Fight` 設定改變而影響原本新手安全性
+
+Gap Matrix
+高優先缺口：
+
+- `drillground` 的新手區與 PvP 區定位未正式定義
+- 長安出城後的 10-30 級成長引導未內建
+- `area` / `find` / `recall` / `rebirth` / `train` 缺少從新手區到正式世界的承接教學
+- 新手離開學宮後的下一步缺少系統內提示
+
+中優先缺口：
+
+- 新手 help / welcome / motd / 房間文案仍未完全改成「長安版」世界觀
+- 國家/realm 的引導尚未在適當等級節點浮現
+- 類別導向的新手建議尚未整理成現版主城與 NPC 配置
+
+低優先缺口：
+
+- 舊版多篇玩家文章中的 alias、裝備修理、拍賣文化等便利知識尚未轉成現版說明文件
+- `academy` 與 `drillground` 的部分舊文案仍可再潤飾，使其更貼合現版命名
+
+Implementation Plan
+Phase 1: 定義新手區與校場邊界
+
+- 決定 `drillground` 是否維持「新手練功 + PvP 混合區」。
+- 若否，拆成：
+  - 低等級新手試煉區
+  - 獨立 PvP / 切磋入口
+- 重新檢查 `Upper`、`Pk`、`Fight`、`NewHand` 的組合是否符合預期。
+- 補一份規則說明，避免玩家把校場當成出生地或主城的一部分。
+
+Phase 2: 建立正式世界承接導引
+
+- 在 `academy` 終點或 `500` / `12025` / `12026` 一帶補：
+  - 前往長安後的建議步驟
+  - `train`、`rebirth`、`area`、`find`、`recall` 基本提示
+- 在 `10001` 或長安主城入口補：
+  - 新手轉職、訓練、交通、回學宮的導引
+- 補一份現版新手 help，對應舊 `newhand/newbies` 與 `players/newplayer` 的核心內容。
+
+Phase 3: 建立 1-30 級世界導覽
+
+- 以現版區域為準，重新整理：
+  - 1-10 級：academy / drillground
+  - 10-20 級：長安周邊與現存低等區
+  - 20-30 級：下一層正式區
+- 若現版缺少舊版對應的低中等區，列為內容擴充需求。
+- 將路線寫入：
+  - help 文件
+  - 新手房間文案
+  - 長安入口告示或導師 NPC 對話
+
+Phase 4: 用網站資料重建玩家成長文件
+
+- 以 `newhand-index.md` 為索引，整理現版對應版的：
+  - 新手入門
+  - 升級路線
+  - 屬性與訓練
+  - 轉職
+  - 交通與 recall
+  - 國家/realm 入門
+- 先求「內容正確且可玩」，再決定要放成：
+  - help 檔
+  - 房間文案
+  - 看板文章
+  - 網站文件
+
+Phase 5: 新區與中期內容補完
+
+- 若 10-30 或 30-50 級現版路線明顯斷層，依網站與舊版地理規則規劃補區。
+- 優先補：
+  - 主城周邊低中等冒險區
+  - 可對應舊網站常提及升級城市的現版替代區
+  - 轉職、訓練、交通服務完整的一級主城生態
+
+Deliverables
+
+- `docs/plan-002.txt`：新手區承接與後續開發主計畫
+- 一份現版 1-30 級導覽草案
+- 一份 `drillground` 區域定位規格
+- 一份新手 help / welcome 重寫草案
+- 一份主城長安新手承接 NPC 或告示設計稿
+
+Codex Web Execution Mode
+目標
+
+本節的目的，是讓本計畫可以直接交給 Codex Web 之類的 AI coding agent 分階段實作，
+並且在每一步完成後：
+
+- 更新 `docs/plan-002.txt` 的進度
+- 輸出本輪變更摘要
+- 產生「下一步可直接複製貼上的 prompt」
+
+執行原則
+
+- 一次只做一個 Task，不跨 Phase。
+- 每次實作都必須先讀：
+  - `docs/plan-002.txt`
+  - `docs/newhand-index.md`
+- 若可以存取外部 skills，再補讀：
+  - `H:\repos\.agents\skills\sango-mud-website-reference\references\newhand-index.md`
+- 若任務牽涉新手流程、文案、隱藏指令或升級承接，必須對照：
+  - `H:\repos\merc-fju-2.0-utf8-origin\area\new`
+  - `H:\repos\merc-fju-2.0-utf8-origin\area\newfight`
+  - `H:\repos\3yWebsite\newhand\players\newplayer\*.html`
+- 不做大範圍重構；優先做小步可驗證修改。
+- 每一步完成後，要把狀態寫回本檔，不只回覆聊天訊息。
+
+Progress Update Format
+每完成一個 Task，AI 都要在本檔最後方的 `Execution Log` 補一筆，格式固定如下：
+
+- Date: `YYYY-MM-DD`
+- Task: `Task ID`
+- Status: `done` / `blocked` / `partial`
+- Changes:
+  - 修改了哪些檔案
+  - 做了哪些功能或文案調整
+- Verification:
+  - 跑了哪些檢查
+  - 是否有實機測試
+- Next Prompt:
+  - 下一步建議交給 AI 的 prompt
+
+Task Board
+Phase 1
+
+- `P1-T1` 盤點 `drillground` 現行規則與舊版 `newfight` 差異，輸出一份區域定位規格草案。
+- `P1-T2` 決定 `drillground` 是否保留 `Pk/Fight` 混合模式，並落實到 `index`、文案或入口規則。
+- `P1-T3` 驗證新手保護是否仍存在；若不存在，提出最小修正方案並實作。
+
+Phase 2
+
+- `P2-T1` 盤點 `academy` 終點、`500`、`10001` 目前的新手承接文案缺口。
+- `P2-T2` 補 `500` / `academy` / 長安入口的導引文案，涵蓋 `train`、`rebirth`、`area`、`find`、`recall`。
+- `P2-T3` 補一份現版新手 help 草案，並掛到現有 help 系統或文件位置。
+
+Phase 3
+
+- `P3-T1` 盤點現版 1-30 級實際可走的區域與等級帶。
+- `P3-T2` 寫出現版 1-30 級導覽草案，對照舊網站升級邏輯。
+- `P3-T3` 把 1-30 級導覽嵌入遊戲內可見位置，例如房間、告示、help 或 NPC 對話。
+
+Phase 4
+
+- `P4-T1` 依 `newhand` 舊文章整理現版「新手入門」文件。
+- `P4-T2` 整理現版「屬性與訓練 / 轉職 / 交通與 recall」文件。
+- `P4-T3` 整理現版「realm/國家入門」何時提示最合理，並補最小可用文案。
+
+Phase 5
+
+- `P5-T1` 盤點現版 10-30、30-50 級是否有實際斷層。
+- `P5-T2` 若有斷層，提出最小補區方案。
+- `P5-T3` 實作第一個中期承接區或其設計稿。
+
+Definition Of Done
+每個 Task 完成至少要滿足：
+
+- 有明確輸出物，不只是分析
+- 有修改檔案或新增文件
+- 有至少一項驗證
+- 有更新 `Execution Log`
+- 有提供下一步 prompt
+
+Prompt Template
+以下 prompt 可直接複製給 Codex Web，之後只需要替換 Task ID。
+
+通用執行 prompt：
+
+請先閱讀 `docs/plan-002.txt`，再執行 Task `TASK_ID`。
+
+工作規則：
+- 先對照 `docs/newhand-index.md`
+- 若可存取外部 skills，再補充參考 `H:\repos\.agents\skills\sango-mud-website-reference\references\newhand-index.md`
+- 若牽涉新手流程，必須參考 `H:\repos\merc-fju-2.0-utf8-origin\area\new`、`H:\repos\merc-fju-2.0-utf8-origin\area\newfight`、以及 `H:\repos\3yWebsite\newhand\players\newplayer\` 相關文章
+- 直接修改程式、區域或文件，不要只提出建議
+- 完成後更新 `docs/plan-002.txt` 的 `Execution Log`
+- 在回覆中提供：
+  - 本輪完成內容
+  - 驗證結果
+  - 建議下一步 Task
+  - 下一步可直接複製的 prompt
+
+如果遇到阻塞：
+- 先把已確認的發現寫入 `Execution Log`
+- 將狀態標成 `blocked`
+- 仍然要提供下一步建議 prompt
+
+Suggested First Prompts
+
+第一步：
+
+請先閱讀 `docs/plan-002.txt`，執行 Task `P1-T1`。
+請盤點 `drillground` 相對於舊版 `newfight` 的規則差異，確認它目前到底是「新手練功區」、「PvP 校場」，還是混合區。請輸出一份最小可執行的區域定位規格，必要時直接補到文件中。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+第二步：
+
+請先閱讀 `docs/plan-002.txt`，執行 Task `P2-T1`。
+請盤點 `500`、`academy`、`10001` 之間的新手承接缺口，找出哪些房間或 help 文案需要補，並直接整理成可實作清單。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+第三步：
+
+請先閱讀 `docs/plan-002.txt`，執行 Task `P3-T1`。
+請盤點現版 1-30 級玩家實際可走的區域、主城承接與升級節點，對照舊網站 `newhand/players/newplayer` 的升級文章，找出現版斷層與可沿用的部分。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+Execution Log
+
+- Date: `2026-03-13`
+- Task: `plan-bootstrap`
+- Status: `done`
+- Changes:
+  - 建立 `docs/plan-002.txt`
+  - 建立 `docs/newhand-index.md`，讓看不到 `H:\repos\.agents\skills` 的 Web AI 也能取得新手參考索引
+  - 盤點現版 `academy` / `drillground` 與舊版 `new` / `newfight` 的承接狀況
+  - 補上可交給 Codex Web 單步執行的 Task Board、進度更新規則與 prompt 模板
+- Verification:
+  - 已靜態比對房間、mob、obj、res 規模
+  - 已對照 `newhand` 文章與 `.agents` 索引
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P1-T1`。請盤點 `drillground` 相對於舊版 `newfight` 的規則差異，確認它目前到底是「新手練功區」、「PvP 校場」，還是混合區。請輸出一份最小可執行的區域定位規格，必要時直接補到文件中。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+Test Plan
+靜態對照：
+
+- 比對 `academy` 與舊 `new` 的房間、mob、obj、教學主題
+- 比對 `drillground` 與舊 `newfight` 的房間、mob、特殊互動
+- 檢查新手相關資料是否仍提及已不存在的洛陽專屬設計
+
+實機驗證：
+
+- 新角色出生於 `500`
+- 往北進 `academy`
+- 能完成核心教學與基本戰鬥
+- 能從 `academy` 進入 `drillground`
+- 能從 `500` 往下進 `10001`
+- 在長安能找到新手接下來需要的訓練/轉職/交通線索
+
+內容驗證：
+
+- 新手房間文案與實際出口一致
+- `#Keyword` 所提示的互動實際可用，或改成不誤導的文字
+- 新手說明文本與現版世界配置一致，不再殘留舊主城邏輯
+
+Assumptions
+
+- 現版 `academy` 與 `drillground` 不是「重建失敗」，而是「骨架已在，但世界承接不足」。
+- 你目前的產品方向是：單一合理出生主城、保留新手教學區、保留早期試煉內容，但不再把學宮或校場當成正式出生地。
+- 後續若要維持新手友善體驗，最需要補的是導引與區域定位，而不是再重做一次 `new` / `newfight` 的房間本體。
