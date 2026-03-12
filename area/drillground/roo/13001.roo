@@ -16,12 +16,4 @@ ExitKeyword     ~
 ExitKey         0
 End
 
-#Exit
-Direction       WEST
-ExitVnum        10001
-ExitDesc        ~
-ExitKeyword     ~
-ExitKey         0
-End
-
 End

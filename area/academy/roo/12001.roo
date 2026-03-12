@@ -24,7 +24,7 @@ End
 
 #Exit
 Direction       SOUTH
-ExitVnum        10001
+ExitVnum        500
 ExitDesc        ~
 ExitKeyword     ~
 ExitKey         0
