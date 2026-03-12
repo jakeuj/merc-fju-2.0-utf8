@@ -49,6 +49,7 @@ cd <repo-root>
 - `startup` remains available when you specifically need the legacy `csh` loop and rolling `log/###.log`.
 - On Windows shells, prefer `start-merc.cmd` or `start-merc.ps1`, which forward into WSL and then call `./start-merc.sh`.
 - `shutdown.txt` lets you stop the legacy loop gracefully; `start-merc.sh stop` is the preferred quick stop path for manual launches.
+- If startup gets past `scripts/bootstrap.sh` and still exits, inspect the latest `log/manual-start-*.log` before changing launcher code; many failures at that point are data-load bugs such as duplicate VNUMs in `area/`.
 
 ## Data Editing Tips
 - Area files use classic Merc formats; follow templates in `document/*.txt`.

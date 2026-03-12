@@ -15,6 +15,7 @@ description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD s
 5. 啟動時預設優先使用 `./start-merc.sh start`；若人在 Windows shell，優先使用 `.\start-merc.cmd start` 或 `.\start-merc.ps1 start` 轉進 WSL，再由 wrapper 呼叫 `./start-merc.sh`。
 6. 觀察 `log/manual-start-*.log` 或 `log/####.log` 是否持續滾動，並確認 `src/shutdown.txt` 沒有殘留。
 7. 編輯 area/help/social 時遵循 `document/*.txt` 模板並維持 UTF-8，必要時套用 `scripts/check-data.py`、`convert_big5_to_utf8.py` 驗證資料。
+8. 若 `start-merc.sh` 已成功進入載入流程卻仍退出，先把問題分類成「遊戲資料層錯誤」而不是「啟動器/WSL 錯誤」，並從最新 log 抓第一個 `BUG:` 或 parse error。
 
 ## Repository Layout Essentials（目錄速覽）
 - `src/`: C 程式碼、`startup`、`Makefile.*`、`merc.ini`。建置與 IPC 相關調整都在這裡。
@@ -45,6 +46,7 @@ description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD s
 - 靜態 vs Runtime：`src/`, `area/`, `angel/`, `command/`, `skill/`, `social/`, `document/`, `doc/`, `scripts/`, `docker/` 為靜態；`player/`, `mail/`, `log/`, `debug/`, `vote/`, `runtime-test/` 會在 runtime 生成；`data/`, `board/`, `etc/` 屬半動態，需看具體檔案是否被系統覆寫。
 - `player/`: 採 52 個字母桶（`player/a`…`player/Z`），內含 `<角色名>/data`。`ini.c` 的 `adjust_filename()` 不會自動建桶，reset 時可跑 `scripts/clean-runtime.sh` 重建。
 - `area/`: 每區域含 `index`, `mob/`, `obj/`, `roo/`, `res/`, `mineral/`, `shp/`。UTF-8 版視為靜態，依 `document/*.txt` 模板撰寫即可。
+- `area/` 的 VNUM 區段必須全域唯一；同時載入的兩個區域若重複宣告同一個 room/mob/obj VNUM，伺服器會在載入期間中止。
 - `command/`: `command/command.lst` 決定載入順序，條目名稱須與 `command/<letter>/*.ins` 的 `Name` 欄位一致；新增指令時新增 `.ins` 並更新 `command.lst`。
 - `etc/`: 對應 `merc.ini` 的檔案鍵值（例如 `ADDRESS FILE`, `HERO FILE`, `STOCK FILE`）。`etc/stock` 須保留五家公司預設值；`etc/hero` 至少包含 `End` sentinel；`etc/motd.txt`, `etc/donate`, `etc/club.txt`, `etc/purge.dat` 建議以 Git 版為模板後再覆寫。
 - `data/`: 包含 `server`（登入白名單）、`immlist`, `bounty.txt`, `event.txt`, `sale.txt`, `welcome`, `welcome.imm` 等；其中 `server`、`immlist` 會在 runtime 被管理者修改，需要依部署情境決定是否 reset。
@@ -74,6 +76,8 @@ description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD s
 - Build 失敗時：`make clean` 後重新編譯，確認 `include/` 內 header 未缺；若是 BSD/Clang，檢查 `Makefile` flag。
 - Runtime 問題：先看 `log/<數字>.log` 與 `debug/error`，再確認 `shutdown.txt` 是否被誤寫。
 - Windows/WSL 問題：若 `start-merc.ps1` 已成功進入 WSL 但 `scripts/bootstrap.sh` 報 `log is not writable`，優先處理 `/mnt/<drive>/...` 目錄權限，而不是修改 launcher 邏輯。
+- 若 `scripts/bootstrap.sh` 已成功而 `merc` 仍退出，立即查看 `log/manual-start-*.log`；常見第二層原因是 `area/` 內重複 VNUM 或壞掉的引用，而不是 wrapper 或 shell 問題。
+- 若只有 `player/` 在 `/mnt/<drive>` 上不可寫，且 repo 根目錄本身可寫，可先備份實際玩家資料，重建 `player/` 與 bucket 目錄後再恢復玩家子目錄。
 - 玩家資料卡住：檢查 `merc.ini` 中的 `File Quota`, `Hold day` 限制，必要時清理 `player/<letter>/<name>/data`。
 - 法律需求：遵守 Merc/Diku 授權，禁止商業化並保留原始 CREDIT。
 

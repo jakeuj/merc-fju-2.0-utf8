@@ -69,6 +69,28 @@ Notes:
 - On `/mnt/<drive>` mounts, `chmod` can fail even when the folder is already writable.
 - Treat it as a real blocker only when `test -w <dir>` also fails.
 
+### `player is not writable` and only `player/` is broken
+Meaning:
+- The repo root is writable, but the existing `player/` directory has bad WSL metadata or ACL state.
+
+Safe repair order:
+1. Inspect whether `player/<bucket>/<name>/` contains real character data.
+2. Back up the original tree before destructive changes.
+3. Recreate `player/` and the 52 bucket directories.
+4. Copy player subdirectories back into the matching bucket.
+
+Example:
+```bash
+test -w . && echo root:writable || echo root:not-writable
+test -w player && echo player:writable || echo player:not-writable
+find player -mindepth 2 -maxdepth 3 -type f | head
+```
+
+When root is writable but `player/` is not:
+- Use the Windows side or another writable path to back up `player/`.
+- Recreate `player/` from scratch, then rebuild `player/{a..z}` and `player/{A..Z}`.
+- Restore any real player folders such as `player/j/jakeuj/`.
+
 ### Immediate exit after launch
 Meaning:
 - `src/shutdown.txt` may still exist, or the process fails during early boot.
@@ -83,6 +105,12 @@ Repair:
 ```bash
 rm -f src/shutdown.txt
 ./start-merc.sh start
+```
+
+If it still exits:
+```bash
+latest=$(ls -t log/manual-start-*.log | head -n 1)
+tail -n 80 "$latest"
 ```
 
 ### `merc.ini` points to the wrong path
@@ -116,6 +144,31 @@ Then continue inside WSL:
 ./start-merc.sh status
 ls -t log | head
 ```
+
+If `bootstrap` succeeded and the process still dies:
+- Read the latest `log/manual-start-*.log`.
+- Look for data-layer errors such as duplicate room VNUMs, missing room/object references, or malformed area files.
+- Treat these as area/world-data issues, not launcher issues.
+
+### Duplicate room VNUM or area load failure
+Meaning:
+- Runtime permissions are no longer the blocker; the server is now failing while loading game data.
+
+Example signal:
+```text
+BUG: Load_room: room vnum 10205 duplicated
+```
+
+Check:
+```bash
+latest=$(ls -t log/manual-start-*.log | head -n 1)
+tail -n 80 "$latest"
+grep -R "^Vnum[[:space:]]*10205" area
+```
+
+Interpretation:
+- If two loaded areas both define the same room/object/mob VNUM, startup will abort even though the launcher worked.
+- In this repo, `academy` and `changan` both using `102xx` is a world-data conflict that must be fixed in area files or load selection.
 
 ## Verification
 - Process status: `./start-merc.sh status`
