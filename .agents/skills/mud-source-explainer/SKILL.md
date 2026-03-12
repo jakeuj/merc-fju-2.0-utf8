@@ -1,19 +1,20 @@
 ---
 name: mud-source-explainer
-description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD source tree under /Users/jakeuj/auggie/mud2. Use when compiling or debugging src/merc, editing merc.ini, updating area/angel/skill data, or answering repo-structure questions about this game.
+description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD source tree in the current workspace. Use when compiling or debugging src/merc, editing merc.ini, starting the server from Linux/macOS/WSL/Windows wrappers, updating area/angel/skill data, or answering repo-structure questions about this game.
 ---
 
 # Sango Jianglong Fuhu Source
 
-使用本技能處理 Merc-FJU 2.0 UTF-8 原始碼樹（`/Users/jakeuj/auggie/mud2`），例如查詢目錄結構、編譯/啟動伺服器、調整 `merc.ini`、或編輯 area/angel/skill 等資料。以下說明依台灣慣用繁體中文撰寫，遇到英文術語時保留英文並補充意義。
+使用本技能處理目前工作區內的 Merc-FJU 2.0 UTF-8 原始碼樹，例如查詢目錄結構、編譯/啟動伺服器、調整 `merc.ini`、或編輯 area/angel/skill 等資料。以下說明依台灣慣用繁體中文撰寫，遇到英文術語時保留英文並補充意義。
 
 ## Quick Start Workflow（快速啟動流程）
-1. `cd /Users/jakeuj/auggie/mud2`（進入專案根目錄）。
+1. 先確認目前 shell 位於專案根目錄；不要假設固定路徑，優先以目前工作區為準。
 2. 先讀 [references/overview.md](references/overview.md) 取得建置重點，再搭配 [docs/DATA_LAYOUT.md](docs/DATA_LAYOUT.md) 確認資料夾責任與 runtime 行為。
-3. 依目標環境編修 `src/merc.ini`，必要時複製到 `etc/merc.ini` 作為部署設定；記得檢查 `HOME DIRECTORY`、port 清單與政策欄位。
-4. 進入 `src/` 執行 `make clean && make`，得到 `merc` 後配合 `startup` 佈署。
-5. 用 `./startup &`（csh 迴圈）啟動，觀察 `log/####.log` 是否持續滾動，並確認沒有 `shutdown.txt`。
-6. 編輯 area/help/social 時遵循 `document/*.txt` 模板並維持 UTF-8，必要時套用 `scripts/check-data.py`、`convert_big5_to_utf8.py` 驗證資料。
+3. 依目標環境編修 `src/merc.ini` 或 `etc/merc.ini` 模板；若 repo 路徑變更或切到 WSL，優先重新生成 `src/merc.ini`，確認 `HOME DIRECTORY`、port 清單與政策欄位正確。
+4. 進入 `src/` 執行 `make clean && make`，得到 Linux/macOS/WSL 對應平台的 `merc` 後再啟動。
+5. 啟動時預設優先使用 `./start-merc.sh start`；若人在 Windows shell，優先使用 `.\start-merc.cmd start` 或 `.\start-merc.ps1 start` 轉進 WSL，再由 wrapper 呼叫 `./start-merc.sh`。
+6. 觀察 `log/manual-start-*.log` 或 `log/####.log` 是否持續滾動，並確認 `src/shutdown.txt` 沒有殘留。
+7. 編輯 area/help/social 時遵循 `document/*.txt` 模板並維持 UTF-8，必要時套用 `scripts/check-data.py`、`convert_big5_to_utf8.py` 驗證資料。
 
 ## Repository Layout Essentials（目錄速覽）
 - `src/`: C 程式碼、`startup`、`Makefile.*`、`merc.ini`。建置與 IPC 相關調整都在這裡。
@@ -27,7 +28,10 @@ description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD s
 - Linux 預設：`cd src && make clean && make`。BSD 需先以 `cp Makefile.bsd Makefile` 切換。
 - 編譯需求：gcc ≥ 2.7、`make`、`crypt`、POSIX shell 工具。若缺 libcrypt，於 `Makefile` 補上 `-lcrypt`。
 - `startup` 是 `csh` 無限迴圈，會設定 ulimit、輪換 `log/*.log`，除非偵測到 `shutdown.txt` 才停止。
+- 專案另提供 `start-merc.sh` 作為較安全的單次入口：會先跑 `scripts/bootstrap.sh`、必要時自動 `make`、清掉殘留 `src/shutdown.txt`，並把 PID 寫到 `log/merc.pid`。
+- 在 Windows 11 + WSL 情境下，不要直接在 PowerShell 執行 Linux ELF `src/merc`；改用 `start-merc.cmd` 或 `start-merc.ps1`，讓它自動把 Windows 路徑轉成 `/mnt/<drive>/...` 後呼叫 `./start-merc.sh`。
 - 啟動前確認 `player/??`, `log/`, `mail/` 等目錄擁有寫入權限，否則伺服器會在初始化時退出。
+- 若 repo 位於 `/mnt/c`、`/mnt/d`、`/mnt/h` 等 WSL 掛載磁碟，`chmod` 可能失敗但目錄仍可寫；若同時不可寫，先修正掛載權限或目錄 owner，再重試啟動。
 
 ## Configuration Guidance (`src/merc.ini`)
 - `MUD PORT`: 每行 >1024 代表一個監聽 socket，維運多埠時保持排序與註解。
@@ -52,6 +56,14 @@ description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD s
 - Reset `etc/`、`data/` 時，務必依表格判斷哪些檔案以空檔起始（如 `etc/address`, `etc/database`）、哪些需保留 sentinel（`etc/hero`, `board/*/list`）。
 - 在 GCP 或本地 Persistent Disk 重新掛載後，記得再跑一次桶目錄建立腳本，否則 `merc` 啟動時會在 `adjust_filename()` 階段失敗。
 
+## Git / Commit Hygiene（提交衛生）
+- 提交功能或內容變更前，先把 `git status --short` 分成「靜態資料」與「runtime 產物」兩類來看，不要把執行過程中自然變動的檔案一起提交。
+- `etc/`, `data/`, `board/` 都是半動態區；同一路徑下可能同時存在應提交的設定檔與不應提交的 runtime 檔，必須逐檔判斷。
+- 常見應排除的 runtime 變更包含 `etc/wizard.log`、管理期間被刷新但未刻意編修的 `etc/hero`、以及各種 log / cache / player state 檔案。
+- 若這次任務確實有修改 `merc.ini`、`bounty.txt`、`bus.txt`、`ship.txt`、`help/*.hlp` 等靜態或部署設定，應只 stage 這些目標檔；不要因為它們和 runtime 檔同在 `etc/` 或 `data/` 就一起提交。
+- 提交前可先用 `git restore --staged <path>` 把誤加入 index 的 runtime 檔移出，再做一次 `git status --short` 確認 commit 範圍。
+- 遇到大型世界替換或 reload 測試後，特別要重查 `etc/hero`、`etc/wizard.log`、`log/`, `debug/` 是否被執行流程動到；這些通常屬本機/伺服器狀態，不屬於功能交付內容。
+
 ## Content Editing（內容編輯）
 - `document/mob.txt`, `obj.txt`, `room.txt`, `reset.txt`, `shop.txt` 提供標準欄位解釋；改區域時先補完 `index` 再更新 `mob/obj/roo/res` 等。
 - `angel/` 內的守護神設定會被 `src/angel.c` 解析，ID 需與程式碼中的枚舉一致。
@@ -61,6 +73,7 @@ description: Hands-on guide for the 三國歪傳之降龍伏虎 (Merc-FJU) MUD s
 ## Troubleshooting & Maintenance（偵錯維護）
 - Build 失敗時：`make clean` 後重新編譯，確認 `include/` 內 header 未缺；若是 BSD/Clang，檢查 `Makefile` flag。
 - Runtime 問題：先看 `log/<數字>.log` 與 `debug/error`，再確認 `shutdown.txt` 是否被誤寫。
+- Windows/WSL 問題：若 `start-merc.ps1` 已成功進入 WSL 但 `scripts/bootstrap.sh` 報 `log is not writable`，優先處理 `/mnt/<drive>/...` 目錄權限，而不是修改 launcher 邏輯。
 - 玩家資料卡住：檢查 `merc.ini` 中的 `File Quota`, `Hold day` 限制，必要時清理 `player/<letter>/<name>/data`。
 - 法律需求：遵守 Merc/Diku 授權，禁止商業化並保留原始 CREDIT。
 

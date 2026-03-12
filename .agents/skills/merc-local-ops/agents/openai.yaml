@@ -1,0 +1,4 @@
+interface:
+  display_name: "Merc Local Ops"
+  short_description: "Merc-FJU local startup, WSL operations, and permission repair"
+  default_prompt: "Use $merc-local-ops to start Merc-FJU locally, route Windows launches through WSL, and fix common runtime permission problems."

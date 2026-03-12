@@ -1,7 +1,7 @@
 # Merc-FJU (三國歪傳之降龍伏虎) Quick Reference
 
 ## Paths
-- Repo root: `/Users/jakeuj/auggie/mud2`
+- Repo root: current workspace root (do not assume a fixed macOS path)
 - Executable target: `src/merc`
 - Primary config: `src/merc.ini` (copy alongside runtime or to `etc/merc.ini` as needed)
 
@@ -21,7 +21,7 @@
 
 ## Build Steps
 ```bash
-cd /Users/jakeuj/auggie/mud2/src
+cd <repo-root>/src
 make clean && make           # Linux default Makefile
 # For BSD: cp Makefile.bsd Makefile before make
 ```
@@ -42,11 +42,13 @@ Copy updated config next to the executable before launching.
 
 ## Launching & Logs
 ```bash
-cd /Users/jakeuj/auggie/mud2/src
-./startup &   # csh script; keeps merc running and logs to ../log/<n>.log
+cd <repo-root>
+./start-merc.sh start
 ```
-- `startup` enforces stack limits, appends output to `log/###.log`, watches for `shutdown.txt` flag.
-- `shutdown.txt` lets you stop the loop gracefully.
+- `start-merc.sh` runs `scripts/bootstrap.sh`, auto-builds `src/merc` if missing, clears stale `src/shutdown.txt`, writes logs to `log/manual-start-*.log`, and tracks PID in `log/merc.pid`.
+- `startup` remains available when you specifically need the legacy `csh` loop and rolling `log/###.log`.
+- On Windows shells, prefer `start-merc.cmd` or `start-merc.ps1`, which forward into WSL and then call `./start-merc.sh`.
+- `shutdown.txt` lets you stop the legacy loop gracefully; `start-merc.sh stop` is the preferred quick stop path for manual launches.
 
 ## Data Editing Tips
 - Area files use classic Merc formats; follow templates in `document/*.txt`.

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Sango Jianglong Fuhu Source"
-  short_description: "Guidance for working on the Sango Jianglong Fuhu MUD codebase"
-  default_prompt: "You are the maintainer of the 三國歪傳之降龍伏虎 (Merc-FJU) MUD source tree. Follow SKILL.md to inspect directories, configure merc.ini, build merc, and help with gameplay data edits."

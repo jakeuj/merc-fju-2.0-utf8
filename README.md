@@ -134,6 +134,24 @@ macOS（Apple Silicon）與大部分 Linux 發行版，可依下列步驟操作�
 
    或使用 PuTTY / MUD client，host 填 `127.0.0.1`、port 填 `3838`，字元編碼設為 **UTF-8**。
 
+8. 若希望在 **Windows Terminal / PowerShell** 直接一鍵轉進 WSL 啟動，可在 repo 根目錄執行：
+
+   ```cmd
+   .\start-merc.cmd start
+   ```
+
+   或：
+
+   ```powershell
+   .\start-merc.ps1 start
+   .\start-merc.ps1 status
+   .\start-merc.ps1 stop
+   ```
+
+   這支 wrapper 會自動把目前的 Windows 路徑（例如 `H:\repos\merc-fju-2.0-utf8`）
+   轉成 WSL 路徑（例如 `/mnt/h/repos/merc-fju-2.0-utf8`），再呼叫既有的
+   `./start-merc.sh`。若您有多個 distro，也可加上 `-Distro Ubuntu-24.04` 指定目標。
+
 > 若 repo 放在 `/mnt/c`、`/mnt/d`、`/mnt/h` 這類 Windows 磁碟掛載點，請確認 `log/`、`player/`、`mail/`、`debug/`、`vote/` 等 runtime 目錄對目前 WSL 使用者可寫；若先前曾以 root 建立這些目錄，`scripts/bootstrap.sh` 可能會因 `log is not writable` 等訊息失敗。這種情況請先修正目錄權限，再重新啟動；若只是臨時驗證，也可先用 `sudo ./start-merc.sh start` 測試。
 
 更多細節與常見維運指令，請參考 [`docs/BUILD.md`](docs/BUILD.md) 的
