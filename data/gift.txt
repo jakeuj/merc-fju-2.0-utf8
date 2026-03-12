@@ -246,7 +246,7 @@ Date            2 3
 Days            2
 Stamp           607
 Sender          21
-Gift            607
+Gift            10107
 Gold            0
 High            120
 Low             30

@@ -1,0 +1,64 @@
+正式世界收尾與舊資料清理計畫
+Summary
+目前「正式世界 VNUM 規劃重整」已完成，academy、changan、xuchang、drillground 已改成各自獨立號段，原本的區域撞號問題已解掉。
+
+另外，和 H:\repos\merc-fju-2.0-utf8-origin\area\directory.lst 比對後，可確認目前版本已符合 document/README 提到的方向：
+
+原始釋出區是 loyang、beiping、new、newfight、pk_area、free_fight
+目前 area/directory.lst 只保留 limbo 與新的正式區
+目前 area/ 目錄下也已不再有這 6 個舊區目錄
+也就是說，就「移除除了 limbo 以外的釋出區」這件事來看，已經達成
+下一步的重點不再是 VNUM 規劃，而是把殘留在 data/*.txt、board/ 等非區域資料中的舊世界引用清到可以完整開服。
+
+Key Changes
+以「能完整啟動到進遊戲」為目標，逐一清理目前仍會在 boot 階段報錯的非區域資料。
+優先處理順序改為：
+data/gift.txt
+其他 data/*.txt 內仍引用不存在 Object / Room / Mob 的資料
+board/、etc/、其他 boot 時會被讀入的索引檔
+每修一輪都重新前台啟動 src/merc，直到不再出現新的 Load_* boot 錯誤為止。
+保持目前正式世界號段不再變動：
+10000-10999 = changan
+11000-11999 = xuchang
+12000-12999 = academy
+13000-13999 = drillground
+Implementation Changes
+清查所有 boot-time 資料檔中的舊引用，特別是：
+data/gift.txt
+data/sale.txt
+data/ship.txt
+data/bus.txt
+board/*/index
+修正原則固定如下：
+若引用的是正式世界已存在的共用物件或房間，改為對應現存 VNUM
+若引用的是已刪除舊區專屬內容，改成正式區已有的等價內容，或直接移除該條目
+不再把舊 loyang / beiping 的號碼直接沿用到新世界
+建立一份 boot 檢查清單，之後每次正式區調整都固定跑：
+全區 mob/obj/roo 重複 VNUM 掃描
+python scripts/check-data.py
+前台啟動 src/merc ./src/merc.ini
+檢查 debug/bugs、debug/error
+補強技能文件：
+merc-area-builder 已經納入一區一千位段與 directory.lst 註解規則
+後續若還有常見 boot 錯誤模式，可再補進 merc-local-ops 或 mud-source-explainer
+Test Plan
+靜態檢查
+area/directory.lst 只包含 limbo 與正式區
+area/ 下不存在 loyang、beiping、new、newfight、pk_area、free_fight
+正式區之間沒有重複 mob/obj/roo VNUM
+資料檢查
+python scripts/check-data.py 通過
+掃描 data/、board/、etc/ 中是否還有引用不存在的房間、物件、NPC
+啟動檢查
+前台執行 src/merc ./src/merc.ini
+每次只接受「錯誤往後推進」；若仍回到已修過的重複房號或已知舊錯誤，視為回歸失敗
+目標是 boot 完成，不再出現 Load_room、Load_reset、load_board_index、Load_a_ship、Load_a_sale、Load_a_gift 類錯誤
+最終驗證
+start-merc 可正常存活
+玩家可從 academy 進入 changan
+Room Recall、Room School、job_goto_pk_area、驛站、空運都指向正式區
+Assumptions
+README 的「釋出 6 區正式後應刪除」要求，現在已經符合；後續工作不是再刪區，而是清除舊資料引用。
+目前 area/player 視為 runtime/非正式區，不屬於 directory.lst 載入區域，不列入 README 那 6 區判定。
+下一階段不再重排正式區的大號段，除非發現新的跨千位段衝突。
+gift.txt 之後若遇到舊物件不存在，優先改成 limbo 或正式區現存的等價物件，而不是重新引回舊區內容。
