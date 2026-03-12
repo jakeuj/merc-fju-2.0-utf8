@@ -27,6 +27,10 @@ extern void       check_contraband args( ( CHAR_DATA * ) );
 
 DECLARE_JOB_FUN( job_recall_new    );
 DECLARE_JOB_FUN( job_goto_pk_area   );
+DECLARE_JOB_FUN( job_bore_hole      );
+DECLARE_JOB_FUN( job_pull_bar       );
+DECLARE_JOB_FUN( job_pray_yama      );
+DECLARE_JOB_FUN( job_touch_stone    );
 
 #if defined(FUNC_NAME)
 #undef FUNC_NAME
@@ -40,6 +44,10 @@ JOB_FUN * job_lookup( const char * name )
   PUSH_FUNCTION( "job_lookup" );
   FUNC_NAME( job_recall_new   );
   FUNC_NAME( job_goto_pk_area );
+  FUNC_NAME( job_bore_hole    );
+  FUNC_NAME( job_pull_bar     );
+  FUNC_NAME( job_pray_yama    );
+  FUNC_NAME( job_touch_stone  );
   RETURN( NULL );
 }
 
@@ -181,5 +189,137 @@ JOB( job_goto_pk_area )
   act( "$n來送死囉﹗", ch, NULL, NULL, TO_ROOM );
   gold_from_char( ch, FIGHT_MONEY );
 
+  RETURN_NULL();
+}
+
+JOB( job_bore_hole )
+{
+  ROOM_INDEX_DATA * pRoom;
+
+  PUSH_FUNCTION( "job_bore_hole" );
+
+  if ( argument[0] && str_cmp( argument, "hole" ) )
+  {
+    send_to_char( "你想鑽進什麼裡面﹖\n\r", ch );
+    RETURN_NULL();
+  }
+
+  if ( !ch->in_room
+    || !can_char_from_room( ch, TRUE ) ) RETURN_NULL();
+
+  if ( !( pRoom = get_room_index( 13012 ) ) )
+  {
+    mudlog( LOG_DEBUG, "job_bore_hole: 沒有時間結界房間." );
+    send_to_char( "裂縫後方的時空似乎暫時封閉了。\n\r", ch );
+    RETURN_NULL();
+  }
+
+  act( "$n鼓起勇氣鑽進裂縫裡﹐身影瞬間沒入淡藍色光芒中。"
+    , ch, NULL, NULL, TO_ROOM );
+  send_to_char( "\e[1;36m你順著裂縫的藍光鑽了進去﹐眼前的時空忽然扭曲起來﹗\e[0m\n\r\n\r", ch );
+
+  char_from_room( ch );
+  char_to_room( ch, pRoom );
+
+  do_look( ch, "auto" );
+  clear_trace( ch, TRUE );
+
+  act( "$n從扭曲的時空裂縫中跌了出來﹗", ch, NULL, NULL, TO_ROOM );
+  RETURN_NULL();
+}
+
+JOB( job_pull_bar )
+{
+  ROOM_INDEX_DATA * pRoom;
+
+  PUSH_FUNCTION( "job_pull_bar" );
+
+  if ( argument[0] && str_cmp( argument, "bar" ) )
+  {
+    send_to_char( "你想拉動什麼﹖\n\r", ch );
+    RETURN_NULL();
+  }
+
+  if ( !ch->in_room
+    || !can_char_from_room( ch, TRUE ) ) RETURN_NULL();
+
+  if ( !( pRoom = get_room_index( 13006 ) ) )
+  {
+    mudlog( LOG_DEBUG, "job_pull_bar: 沒有新手動物園外部房間." );
+    send_to_char( "拉把卡得死緊﹐怎麼也扳不動。\n\r", ch );
+    RETURN_NULL();
+  }
+
+  act( "$n用力拉下牆上的拉把﹐一旁的暗門忽然打了開來。"
+    , ch, NULL, NULL, TO_ROOM );
+  send_to_char( "\e[1;33m你猛然一拉﹐牆邊的暗門應聲滑開﹐把你送回時空空間。\e[0m\n\r\n\r", ch );
+
+  char_from_room( ch );
+  char_to_room( ch, pRoom );
+
+  do_look( ch, "auto" );
+  clear_trace( ch, TRUE );
+
+  act( "$n狼狽地從隱藏暗門裡跌了出來。", ch, NULL, NULL, TO_ROOM );
+  RETURN_NULL();
+}
+
+JOB( job_pray_yama )
+{
+  PUSH_FUNCTION( "job_pray_yama" );
+
+  if ( argument[0] && str_cmp( argument, "pray" ) && str_cmp( argument, "god" ) )
+  {
+    send_to_char( "你想向誰祈禱﹖\n\r", ch );
+    RETURN_NULL();
+  }
+
+  act( "$n虔誠地向閻羅王神像伏地祈禱﹐殿中的熱浪似乎稍稍退去了。"
+    , ch, NULL, NULL, TO_ROOM );
+  send_to_char( "\e[1;31m你誠心祈求閻羅王垂憐﹐一股清涼的氣息暫時撫平了灼熱與痛苦。\e[0m\n\r", ch );
+
+  ch->hit  = UMAX( 1, get_curr_hit( ch ) );
+  ch->mana = UMAX( 1, get_curr_mana( ch ) );
+  ch->move = UMAX( 1, get_curr_move( ch ) );
+
+  RETURN_NULL();
+}
+
+JOB( job_touch_stone )
+{
+  ROOM_INDEX_DATA * pRoom;
+
+  PUSH_FUNCTION( "job_touch_stone" );
+
+  if ( argument[0] && str_cmp( argument, "stone" ) )
+  {
+    send_to_char( "你想碰觸什麼﹖\n\r", ch );
+    RETURN_NULL();
+  }
+
+  if ( !ch->in_room
+    || !can_char_from_room( ch, TRUE ) ) RETURN_NULL();
+
+  if ( !( pRoom = get_room_index( 13020 ) ) )
+  {
+    mudlog( LOG_DEBUG, "job_touch_stone: 沒有冰穴魔堡房間." );
+    send_to_char( "冰玄石前的結界猛然一震﹐逼得你不敢再靠近。\n\r", ch );
+    RETURN_NULL();
+  }
+
+  act( "$n忍不住伸手碰向冰玄石﹐卻被結界爆出的寒氣猛然震飛。"
+    , ch, NULL, NULL, TO_ROOM );
+  send_to_char( "\e[1;36m你的指尖才剛碰到冰玄石﹐結界便爆出刺骨寒流﹐把你震回魔堡內部﹗\e[0m\n\r\n\r", ch );
+
+  ch->hit  = UMAX( 1, ch->hit - UMAX( 1, get_curr_hit( ch ) / 8 ) );
+  ch->move = UMAX( 0, ch->move - UMAX( 1, get_curr_move( ch ) / 8 ) );
+
+  char_from_room( ch );
+  char_to_room( ch, pRoom );
+
+  do_look( ch, "auto" );
+  clear_trace( ch, TRUE );
+
+  act( "$n被冰玄石的寒氣狠狠震了回來﹐看起來相當狼狽。", ch, NULL, NULL, TO_ROOM );
   RETURN_NULL();
 }

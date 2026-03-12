@@ -23,4 +23,10 @@ Description
 ~
 End
 
+#Job
+Keyword         pull~
+Function        job_pull_bar~
+Position        POS_STANDING
+End
+
 End

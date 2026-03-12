@@ -37,4 +37,10 @@ Description
 
 End
 
+#Job
+Keyword         bore~
+Function        job_bore_hole~
+Position        POS_STANDING
+End
+
 End	

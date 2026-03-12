@@ -36,4 +36,10 @@ Description
 
 End
 
+#Job
+Keyword         touch~
+Function        job_touch_stone~
+Position        POS_STANDING
+End
+
 End

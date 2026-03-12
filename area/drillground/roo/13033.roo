@@ -41,4 +41,10 @@ Description
 
 End
 
+#Job
+Keyword         pray~
+Function        job_pray_yama~
+Position        POS_STANDING
+End
+
 End
