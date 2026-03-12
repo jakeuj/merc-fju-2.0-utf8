@@ -1,0 +1,17 @@
+Vnum            10053
+Name            wolf legging~
+ShortDesc       狼皮護膝~
+Description
+用狼皮製成的護膝 ﹐能提高雙腳的敏捷度。
+~
+Unit            具~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_LEGS
+Takeable        Yes
+Level           20
+Value           -1
+Weight          10
+Cost            200
+Exp             10
+
+End

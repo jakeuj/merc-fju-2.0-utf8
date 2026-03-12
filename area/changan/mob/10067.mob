@@ -1,0 +1,30 @@
+Vnum            10067
+Name            traveller~
+ShortDesc       旅客~
+LongDesc        旅客(traveller)
+~
+Description
+他滿臉風霜﹐似乎經過很多的苦難﹐由其他的國家來到這個地方。
+~
+AutoSetValue    Yes
+Alignment       0
+Level           19
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+End

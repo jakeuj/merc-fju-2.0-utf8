@@ -1,9 +1,0 @@
-Type            SHOP_SMITH
-Keeper          507
-Object          ITEM_ALL_ARMOR
-OpenHour        0
-CloseHour       23
-SellProfit      80
-BuyProfit       120
-Sential         610
-End

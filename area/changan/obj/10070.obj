@@ -1,0 +1,13 @@
+Vnum            10070
+Name            sky stone~
+ShortDesc       玉衡石~
+Description
+~
+Unit            顆~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           49
+Weight          1
+Cost            100
+
+End

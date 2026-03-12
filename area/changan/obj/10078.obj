@@ -1,0 +1,14 @@
+Vnum            10078
+Name            cure light book~
+ShortDesc       輕度治療秘笈~
+Description
+~
+Unit            本~
+ItemType        ITEM_BOOK
+Takeable        Yes
+Level           1
+Value1          SLOT_CURE_LIGHT
+Value2          5
+Weight          3
+Cost            10000
+End

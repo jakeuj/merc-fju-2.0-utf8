@@ -1,0 +1,17 @@
+Vnum            10031
+Name            blademan boot~
+ShortDesc       刀者之靴~
+Description
+初入江湖之刀客最多用的基本配備 (blademan boot)。
+~
+Unit            雙~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_FEET
+Takeable        Yes
+Level           10
+Value           -1
+Weight          10
+Cost            100
+Exp             10
+
+End

@@ -22,7 +22,7 @@ extern void       check_contraband args( ( CHAR_DATA * ) );
 /* 定義到競技場要交的錢 */
 #define FIGHT_MONEY                10000
 
-/* 定義最小可以去新手區的等級 */
+/* 定義最小可以回書院學宮的等級 */
 #define LEVEL_NO_NEW               15
 
 DECLARE_JOB_FUN( job_recall_new    );
@@ -55,12 +55,12 @@ JOB( job_recall_new )
 
   if ( ch->level >= LEVEL_NO_NEW )
   {
-    send_to_char( "你都已經那麼老了還想去新手區啊﹐真不害臊﹗\n\r", ch );
+    send_to_char( "你都已經那麼老了還想回書院學宮啊﹐真不害臊﹗\n\r", ch );
     RETURN_NULL();
   }
 
-  act( "$n向天神祈禱回到新手區繼續訓練。", ch, NULL, NULL, TO_ROOM );
-  send_to_char( "\e[1;33m你狼狽的逃回新手區﹗\e[0m\n\r\n\r", ch );
+  act( "$n向天神祈禱回到書院學宮繼續訓練。", ch, NULL, NULL, TO_ROOM );
+  send_to_char( "\e[1;33m你狼狽的逃回書院學宮﹗\e[0m\n\r\n\r", ch );
 
   char_from_room( ch );
   char_to_room( ch, pRoom );
@@ -84,11 +84,11 @@ JOB( job_goto_pk_area )
 
   if ( !ch || !verify_char( ch ) ) RETURN_NULL();
 
-  if ( !( pIndex1 = get_room_index( 7043 ) )
-    || !( pIndex2 = get_room_index( 7044 ) ) )
+  if ( !( pIndex1 = get_room_index( 10343 ) )
+    || !( pIndex2 = get_room_index( 10344 ) ) )
   {
-    mudlog( LOG_DEBUG, "job_goto_pk_area: 沒有對戰區." );
-    send_to_char( "對不起, 目前系統沒有對戰區.\n\r", ch );
+    mudlog( LOG_DEBUG, "job_goto_pk_area: 沒有校場試煉區." );
+    send_to_char( "對不起, 目前系統沒有校場試煉區.\n\r", ch );
     RETURN_NULL();
   }
 

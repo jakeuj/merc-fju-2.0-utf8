@@ -1,0 +1,40 @@
+Vnum            10052
+Name            sky shaman~
+ShortDesc       玉衡道~
+LongDesc        玉衡道(sky shaman)
+~
+Description
+他的年紀似乎很小﹐約二十歲上下﹐全身散發出活力﹐好像永遠都靜不下來。
+~
+AutoSetValue    Yes
+Sentinel        Yes
+Alignment       0
+Level           49
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'long fist'
+AutoEnable      'gdragon steps'
+
+Process
+Type            speech_prog
+Argument        no~
+Text
+tell $n 你真是小氣ㄟ…
+~
+End
+
+End

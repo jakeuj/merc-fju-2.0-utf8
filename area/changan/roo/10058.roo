@@ -1,0 +1,31 @@
+Vnum            10058
+Name            銅駝街~
+Description
+長安道路成方格形﹐以通向城門的御道為骨架﹐又以銅駝街為中軸線
+﹐城門內道路約寬四十米。
+
+~
+SectorType      SECT_CITY
+Memorize        Yes
+
+#Exit
+Direction       NORTH
+ExitVnum        10001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10063
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         記憶點~
+End
+
+End

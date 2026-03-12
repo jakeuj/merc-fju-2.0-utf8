@@ -1,0 +1,28 @@
+Vnum            10194
+Name            花園小徑~
+Description
+這兒散佈許多豔麗的花兒﹐努力綻放顏色﹐就像是一場嘉年華會一樣
+﹐只見到處都是纓紅粉綠﹐一片繁華﹐倒是一旁飛舞的蜂兒蝶兒也不
+落花後﹐看來倒像是拈花惹草呢﹗
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10195
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10193
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

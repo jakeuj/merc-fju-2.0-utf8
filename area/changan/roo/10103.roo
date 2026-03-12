@@ -1,0 +1,26 @@
+Vnum            10103
+Name            鑣局~
+Description
+一間頗大的鑣局﹐提供你存取裝備的服務。
+
+~
+SectorType      SECT_CITY
+StoreRoom       Yes
+
+#Exit
+Direction       WEST
+ExitVnum        10064
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         鑣局~
+End
+
+#Enquire
+Keyword         鏢局~
+End
+
+End

@@ -1,0 +1,25 @@
+Vnum            10090
+Name            acajou sword~
+ShortDesc       桃木劍~
+Description
+一把純以桃木所製成的劍﹐散發著淡淡的香味。
+~
+ItemType        ITEM_WEAPON
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           45
+Value           0 -1 -1 WEAPON_SWORD
+Weight          10
+Cost            500
+
+#Affect
+Location        APPLY_WIS
+Modifier        2
+End
+
+#Affect
+Location        APPLY_INT
+Modifier        -1
+End
+
+End

@@ -1,0 +1,9 @@
+Type            SHOP_STORE
+Keeper          10013
+Object          ITEM_WEAPON ITEM_ARROW
+OpenHour        0
+CloseHour       23
+SellProfit      80
+BuyProfit       120
+Sential         10097
+End

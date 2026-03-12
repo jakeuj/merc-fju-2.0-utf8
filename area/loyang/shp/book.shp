@@ -1,9 +1,0 @@
-Type            SHOP_STORE
-Keeper          573
-Object          ITEM_BOOK
-OpenHour        0
-CloseHour       23
-SellProfit      80
-BuyProfit       120
-Sential         641
-End

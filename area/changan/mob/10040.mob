@@ -1,0 +1,51 @@
+Vnum            10040
+Name            scholar~
+ShortDesc       私塾老師~
+LongDesc        交私塾的老師(scholar)。
+~
+Description
+他口中一直唸著一些之乎者也有的沒的…
+~
+Sentinel        Yes
+Rebirth         Yes
+NoKill          Yes
+Effect          'sanctuary'
+Alignment       300
+Level           50
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             100
+Wis             100
+Dex             10
+Con             10
+Hp              10000
+Mana            1000
+Move            100
+Class           CLASS_SCHOLAR
+Gold            0
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+#Learn
+Adept           35
+Cost            350
+Inventory       70
+Name            'create water'
+End
+#Learn
+Adept           35
+Cost            50
+Inventory       70
+Name            'make light'
+End
+#Learn
+Adept           35
+Cost            500
+Inventory       70
+Name            'create food'
+End
+End

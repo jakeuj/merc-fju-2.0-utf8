@@ -1,0 +1,35 @@
+Vnum            10141
+Name            紫禁城~
+Description
+紫禁城外朝最南之處的太和殿﹐又名『金巒殿』﹐是故宮最
+大的建築群﹐座頂之中的藻井懸有蟠龍銜珠﹐另有眾多靡彩
+之畫。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10136
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10142
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10140
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

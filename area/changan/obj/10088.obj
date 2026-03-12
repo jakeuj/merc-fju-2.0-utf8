@@ -1,0 +1,15 @@
+Vnum            10088
+Name            magic wand~
+ShortDesc       法杖~
+Description
+~
+ItemType        ITEM_WAND
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           15
+Value           0 0 0 0 RATING_ALL 115 300 10
+Weight          5
+Cost            100
+
+End

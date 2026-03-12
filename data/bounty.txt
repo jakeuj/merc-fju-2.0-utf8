@@ -14,10 +14,10 @@
 Limit           20
 
 #Bounty
-Mobile          589
-Room            501
+Mobile          10089
+Room            10001
 Message
-洛陽附近的盜賊又出來作亂了~
+長安附近的盜賊又出來作亂了~
 Chance          50
 MaxNumber       2
 Type            BOUNTY_GOLD
@@ -27,7 +27,7 @@ Lock            NO
 End
 
 #Bounty
-Mobile          590
+Mobile          10090
 Room            -1
 Message
 有一隻野狗叼走了當今聖上的御內褲~
@@ -40,7 +40,7 @@ Lock            NO
 End
 
 #Bounty
-Mobile          594
+Mobile          10094
 Room            -1
 Message
 一隻令人看了就吐的狗擾亂交通~
@@ -53,7 +53,7 @@ Lock            NO
 End
 
 #Bounty
-Mobile          591
+Mobile          10091
 Room            -1
 Message
 有一個傢伙在世界各地不停的作亂~
@@ -66,7 +66,7 @@ Lock            NO
 End
 
 #Bounty
-Mobile          592
+Mobile          10092
 Room            -1
 Message
 有一支野貓咬走了當今皇后的御圍兜兜~
@@ -79,10 +79,10 @@ Lock            NO
 End
 
 #Bounty
-Mobile          595
+Mobile          10095
 Room            -1
 Message
-董卓大聲喊道﹕「我的僕人竟敢背叛我﹗」﹐還想跑路~
+長安守備大聲喊道﹕「我的僕人竟敢背叛我﹗」﹐還想跑路~
 Chance          2
 MaxNumber       1
 Type            BOUNTY_FIRMAN
@@ -92,7 +92,7 @@ Lock            NO
 End
 
 #Bounty
-Mobile          597
+Mobile          10097
 Room            -1
 Message
 女生們注意﹐出現了很弱的採花大盜~

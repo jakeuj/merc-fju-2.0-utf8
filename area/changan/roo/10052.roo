@@ -1,0 +1,27 @@
+Vnum            10052
+Name            城內道路~
+Description
+放眼望去這個城市﹐一戶戶人家靠著道路麟次櫛比﹐城牆高聳入雲﹐
+街上行人來來往往﹐顯示出城市的富裕﹐欣欣向榮。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10053
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10051
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

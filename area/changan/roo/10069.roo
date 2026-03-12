@@ -1,0 +1,27 @@
+Vnum            10069
+Name            城內道路~
+Description
+這一條路上人們來來去去、熙熙攘攘﹐十分熱鬧﹐路旁又有許多商家
+﹐或許對你的冒險十分有益﹐快去看看吧。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10064
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10074
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

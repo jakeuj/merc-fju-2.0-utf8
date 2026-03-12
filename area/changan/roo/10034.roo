@@ -1,0 +1,35 @@
+Vnum            10034
+Name            三叉路~
+Description
+這裡是長安宮城邊的道路﹐路上還有城牆﹐牆上有著一些官兵在鎮守
+﹐護衛宮城的安全。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10039
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10033
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

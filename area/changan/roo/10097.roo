@@ -1,0 +1,39 @@
+Vnum            10097
+Name            長安武器店~
+Description
+你一進來只見琳瑯滿目的武器放在牆上﹐一個中年身穿粗布長袍的男
+子笑咪咪的站在你面前﹐等待著你的惠顧。
+
+牆上掛著一張字條( paper )﹐你可以看看( look )。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10063
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         paper~
+Description
+這裡是長安最大的武器店﹐歡迎參觀比較。
+
+如欲選購請用 LIST 來看賣一些什麼東西﹐欲購買請用 BUY 。
+
+~
+End
+
+#Enquire
+Keyword         商店~
+End
+
+#Enquire
+Keyword         武器屋~
+End
+
+End

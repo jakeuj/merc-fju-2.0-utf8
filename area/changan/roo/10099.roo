@@ -1,0 +1,26 @@
+Vnum            10099
+Name            道具店~
+Description
+四處充滿了一些小道具﹐水袋、火把﹐應有盡有﹐任君選購。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10073
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         商店~
+End
+
+#Enquire
+Keyword         道具屋~
+End
+
+End

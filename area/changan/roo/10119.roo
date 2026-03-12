@@ -1,0 +1,35 @@
+Vnum            10119
+Name            大校場~
+Description
+一隊隊的騎兵不停的來回衝刺﹐你還不停的聽到「殺﹗殺﹗」的聲音
+﹐灰塵瀰漫﹐這個地方真不是人呆的…
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10125
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10118
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

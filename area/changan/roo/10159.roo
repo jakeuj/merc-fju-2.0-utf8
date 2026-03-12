@@ -1,0 +1,36 @@
+Vnum            10159
+Name            房間門口~
+Description
+這個房間的門看來有一點簡陋﹐似乎只要一點點的風就可以吹過去﹐
+真不知道裡面住的是什麼樣的人﹐怎麼會如此的安於貧困。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10151
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10160
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10158
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

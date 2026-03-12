@@ -1,0 +1,27 @@
+Vnum            10062
+Name            城內道路~
+Description
+此路邊一排排的青蔥蔥的樹木﹐分外使的炎炎夏日涼了下來﹐感受到
+一分舒爽。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10067
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10061
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

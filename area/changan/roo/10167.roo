@@ -1,0 +1,37 @@
+Vnum            10167
+Name            門口~
+Description
+這一間房間的門有一點小小的﹐感覺不是很大﹐倒是中央那一個符貼
+的滿正中的﹐是一個很明顯的對比﹐另外你看到了髒髒的窗戶﹐有一
+點點噁心。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10155
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10168
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10166
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

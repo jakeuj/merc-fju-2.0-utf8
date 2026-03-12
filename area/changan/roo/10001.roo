@@ -1,0 +1,79 @@
+Vnum            10001
+Name            長安城正陽門~
+Description
+此處為長安城的中心位置﹐長安東有許昌、陳留﹐西有弘農、長安等
+﹐南邊為宛、新野等城﹐北邊則有鄴、晉陽﹐可說是中國的中心﹐而
+這個時代也在此開展了序幕。
+
+北邊是長安的宮城﹐掌管此城大大小小事件的處理之處。長安分為內
+城與外城﹐中間有城牆交隔﹐城市範圍東西二十里﹐南北十五里﹐建
+有坊里三百二十個。
+
+                 輸入 [1;32mnew[0m   可以到達新手訓練區
+                 輸入 [1;33mfight[0m 可以到達三國競技場
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10041
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10051
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10058
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10050
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Job
+Keyword         new~
+Function        job_recall_new~
+Position        POS_STANDING
+End
+
+#Job
+Keyword         fight~
+Function        job_goto_pk_area~
+Position        POS_STANDING
+End
+
+#Enquire
+Keyword         布告欄~
+End
+
+#Enquire
+Keyword         公佈欄~
+End
+
+#Enquire
+Keyword         城門~
+End
+
+#Enquire
+Keyword         水井~
+End
+
+End

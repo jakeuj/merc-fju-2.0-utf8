@@ -1,0 +1,19 @@
+Vnum            10303
+Name            靜止的時間空間~
+Description
+當你走到這間房間﹐彷彿不像剛剛的隧道一樣﹐在這裡的時間完全
+是靜止的﹐一個虛幻飄渺的空間裡﹐像似時間走廊上的一小點﹐極
+為渺小。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10302
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

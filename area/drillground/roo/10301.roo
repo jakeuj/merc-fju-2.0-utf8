@@ -1,0 +1,27 @@
+Vnum            10301
+Name            校場廊道~
+Description
+這裡是時空的隧道裡﹐眼前一片五光十色的景象映射在你的眼前﹐
+讓你心裡真是觸目驚心﹐眼前的隧道繼續往前延伸﹐望眼看去都看
+不見隧道的盡頭。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10302
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,33 @@
+Vnum            10220
+Name            皇宮~
+Description
+富麗堂皇的一個地方﹐到處都是精雕細琢的木頭﹐置身其中令你感到
+有點昏炫﹐尤其是中央的燈雖然是由木頭所做成的﹐隱隱發出幽然的
+光芒﹐卻不覺得昏暗﹐實在是不錯的精品。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10219
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10241
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         574
+IsDoor          Yes
+Closed          Yes
+Locked          Yes
+End
+
+
+
+End

@@ -1,0 +1,31 @@
+Vnum            10308
+Name            soldier~
+ShortDesc       衛兵~
+LongDesc        衛兵(soldier).
+~
+Description
+一位年約二十歲左右的少年﹐被挑選出來作為保護主人的衛兵﹐保護
+是他的職責﹐當主人被襲擾或是擅闖時﹐他會盡他的職責殲滅敵人。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+End

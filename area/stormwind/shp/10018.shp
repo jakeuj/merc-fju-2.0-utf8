@@ -1,9 +1,0 @@
-Type            SHOP_STORE
-Keeper          10018
-Object          ITEM_BOOK ITEM_SCROLL
-OpenHour        0
-CloseHour       23
-Sellprofit      80
-Buyprofit       110
-Sential         10032
-End

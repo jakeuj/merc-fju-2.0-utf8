@@ -1,0 +1,27 @@
+Vnum            10232
+Name            皇宮二樓~
+Description
+皇宮二樓在這裡有一點狹窄﹐不過人聲依舊﹐倒是你的心情已經不再
+那麼緊張了。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10230
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10233
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

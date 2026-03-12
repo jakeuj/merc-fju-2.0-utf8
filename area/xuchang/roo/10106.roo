@@ -1,0 +1,27 @@
+Vnum            10106
+Name            避暑山莊~
+Description
+山莊佔地約五百六十萬平方公尺﹐其中五分之四為自然山地
+﹐其餘是平原和湖泊﹐周圍圍繞以長達十公里的宮牆。是中
+國現存最大的皇家園林。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10107
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10105
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

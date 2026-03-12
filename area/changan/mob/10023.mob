@@ -1,0 +1,31 @@
+Vnum            10023
+Name            bad boy~
+ShortDesc       壞男孩~
+LongDesc        壞男孩(bad boy)
+~
+Description
+看他滿腦子的壞思想﹐真不知道當初他的師長是怎麼教的。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           13
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              100
+Mana            100
+Move            100
+Class           CLASS_SCHOLAR
+Gold            0
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+End

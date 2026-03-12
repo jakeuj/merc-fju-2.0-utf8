@@ -1,0 +1,35 @@
+Vnum            10302
+Name            校場廊道~
+Description
+這條的隧道還真的是很美﹐隧道的旁邊景象環生﹐彷彿看到了以前
+前世社會景象﹐濛濛濃濃的﹐是有是無﹐左邊延伸出一個時空空間
+出來﹐似乎是一個靜止的時間空間在那。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10304
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10301
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10303
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

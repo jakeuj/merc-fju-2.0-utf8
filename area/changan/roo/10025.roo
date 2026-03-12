@@ -1,0 +1,35 @@
+Vnum            10025
+Name            城內道路~
+Description
+據說在鎮州往長安有一條小路﹐許多人日夜奔馳在那一條小路上﹐不
+知所為何來。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10026
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10036
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

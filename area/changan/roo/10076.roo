@@ -1,0 +1,27 @@
+Vnum            10076
+Name            城內道路~
+Description
+長安的城市有經過一番設計﹐家家戶戶麟次櫛比﹐不會讓人有亂的感
+覺。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10071
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10082
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

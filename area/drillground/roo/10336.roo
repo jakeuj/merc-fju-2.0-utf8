@@ -1,0 +1,22 @@
+Vnum            10336
+Name            火炎窟~
+Description
+這地方看起來很遼闊﹐在這洞窟上面彷彿別有洞天﹐一圈一迴的岩
+石圍繞攀延﹐另外看到岩石上落有腳印﹐看似不像人的腳印﹐這時
+心裡已經感到害怕與無奈。
+
+炎窟四周火氣騰騰﹐這裡的四周血跡班班﹐好像這個地方存在怪獸
+般﹐專門咬人當作是牠的食物。
+
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       SOUTH
+ExitVnum        10332
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

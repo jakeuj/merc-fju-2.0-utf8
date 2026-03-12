@@ -1,0 +1,30 @@
+Vnum            10009
+Name            small dog~
+ShortDesc       可愛的小狗~
+LongDesc        十分可愛的小狗(small dog)在此地玩耍。
+~
+Description
+十分可愛的小狗(small dog)在此地玩耍。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           5
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             6
+Int             6
+Wis             6
+Dex             6
+Con             6
+Hp              300
+Mana            0
+Move            50
+Class           0
+Gold            100
+Speak           NO
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+End

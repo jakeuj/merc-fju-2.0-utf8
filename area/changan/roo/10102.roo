@@ -1,0 +1,26 @@
+Vnum            10102
+Name            銀行~
+Description
+在此處你可以存款、提款﹐將你的資金做有效的應用。
+
+~
+SectorType      SECT_CITY
+DepositMoney    Yes
+
+#Exit
+Direction       EAST
+ExitVnum        10064
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         錢莊~
+End
+
+#Enquire
+Keyword         銀行~
+End
+
+End

@@ -1,0 +1,31 @@
+Vnum         10100
+Name         elves wind ring~
+ShortDesc    妖精微風之戒~
+Description
+妖精族特有的裝備, 要有特殊的關係才能的到.
+
+~
+ItemType     ITEM_ARMOR
+WearLoc      ITEM_WEAR_FINGER
+Takeable     Yes
+Level        100
+Value        3
+Weight       1
+Cost         2000
+
+#Affect
+Location        APPLY_HITROLL
+Modifier        10
+End
+
+#Affect
+Location        APPLY_INT
+Modifier        1
+End
+
+#Affect
+Location        APPLY_WIS
+Modifier        1
+End
+
+End

@@ -1,0 +1,26 @@
+Vnum            10317
+Name            時光道路~
+Description
+漸漸的感覺到一股更熱的氣團衝向這邊﹐使得你的胸口感到一股悶
+熱感﹐透不過氣來呼吸﹐這時覺得後悔進來這裡囉。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10318
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10314
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

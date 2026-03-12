@@ -1,0 +1,27 @@
+Vnum            10114
+Name            料敵塔~
+Description
+定縣城內南門里東側﹐原有古剎開元寺。寺早已損毀﹐現僅
+存一塔。塔高八十四公尺是中國現在最高的一座古磚塔﹐因
+可以敵方的軍事動向﹐故俗稱『料敵塔』。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10108
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10115
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

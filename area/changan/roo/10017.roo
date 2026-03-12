@@ -1,0 +1,27 @@
+Vnum            10017
+Name            宮城外道路~
+Description
+此路環繞宮城而建﹐頗有保護的作用﹐可以在宮城被圍或有危難時快
+速增援部隊。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10018
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10016
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,17 @@
+Vnum            10046
+Name            tiger boot~
+ShortDesc       縱虎靴~
+Description
+由虎皮製成 ﹐可提供很好的防護力 ﹐增加敏捷度。
+~
+Unit            雙~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_FEET
+Takeable        Yes
+Level           20
+Value           -1
+Weight          10
+Cost            100
+Exp             10
+
+End

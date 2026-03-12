@@ -1,0 +1,15 @@
+Vnum            10089
+Name            saint wand~
+ShortDesc       [1;37m聖杖[0m~
+Description
+此杖全身發出白色的光芒﹐似乎有很多的法力。
+~
+ItemType        ITEM_WAND
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           65
+Value           0 0 0 0 RATING_SAINT 135 1000 100
+Weight          15
+Cost            1200
+End

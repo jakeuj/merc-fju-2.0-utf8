@@ -1,0 +1,35 @@
+Vnum            10016
+Name            城內道路~
+Description
+一條路的三叉路口﹐北邊即有通往外城的出口﹐時常可以見到一些戰
+馬通過。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10009
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10017
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10022
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

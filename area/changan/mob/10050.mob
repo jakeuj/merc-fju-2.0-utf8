@@ -1,0 +1,45 @@
+Vnum            10050
+Name            sky shaman~
+ShortDesc       天璇道~
+LongDesc        天璇道(sky shaman)
+~
+Description
+一身乾淨的道服﹐顯示嚴謹的生活﹐不苟言笑﹐很認真的一個人。
+~
+AutoSetValue    Yes
+Sentinel        Yes
+Alignment       0
+Level           49
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'long fist'
+AutoEnable      'gdragon steps'
+
+Process
+Type            speech_prog
+Argument        no~
+Text
+if ispc($n)
+  tell $n 喔……那……沒事﹗
+  emote 很焦急……
+endif
+~
+End
+
+End

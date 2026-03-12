@@ -1,0 +1,27 @@
+Vnum            10131
+Name            北海~
+Description
+北海的東和北的兩岸有建築群多處﹐且都各具有特色﹐東岸
+的濠濮澗﹐在挺拔山石間﹐有一泓池水﹐池中有敞軒﹐曲橋
+﹐頗具自然之風。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10132
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10130
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

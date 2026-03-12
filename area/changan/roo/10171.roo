@@ -1,0 +1,27 @@
+Vnum            10171
+Name            轉角~
+Description
+這一條走道到這裡向北方轉去﹐你所能看到的依舊只是不停搖曳的燈
+影﹐看來幾乎與之前那一條走道沒什麼不同。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10170
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10172
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

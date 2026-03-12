@@ -1,0 +1,19 @@
+Vnum            10013
+Name            tinny revivify pill~
+ShortDesc       小還丹~
+Description
+一顆小參丸(tinny revivify pill)﹐可用來活精補血﹐
+只要吃下(eat pill)它就可以了。
+~
+Unit            粒~
+ItemType        ITEM_PILL
+Contraband      Yes
+Takeable        Yes
+Level           3
+Value1          50
+Value2          OBJ_CAST_MOVE
+Value4          1
+Weight          2
+Cost            300
+
+End

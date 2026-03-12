@@ -1,0 +1,33 @@
+Vnum            10046
+Name            war horse~
+ShortDesc       戰馬~
+LongDesc        戰馬(war horse)在這裡。
+~
+Description
+牠是一匹走失的馬﹐在這裡悠閒的吃著草…
+~
+AutoSetValue    Yes
+Sentinel        Yes
+Alignment       50
+Level           28
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_FEMALE
+Tractable       70
+AutoEnable      'gdragon steps'
+End

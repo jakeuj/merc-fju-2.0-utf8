@@ -1,0 +1,47 @@
+Vnum            10208
+Name            視覺訓練室 [look]~
+Description
+這間教室是教導新手們如何看到這整個遊戲的世界﹐也就是如何利用
+『眼睛』得知想要知道的資訊.
+
+這裡有一塊告示牌 (sign)。新手請鍵入 look sign.
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10209
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10203
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         sign~
+Description
+
+教導你怎麼獲得資訊的途徑:
+你可以使用 look 這個指令﹐不加任何參數﹐便可以看到目前房間的
+狀態。包括房間的描述及所有在房間中人物及怪物的名字﹐以及地上
+物品的名字.
+
+你也可以 look <某人> 來查看某人的狀況。也可以使用 look <物品>
+來查看物品.
+
+另外一個指令: examine 可以讓你檢視容器內的物品。你可以鍵入
+examine <容器名> 來得知。當然﹐你也可以用 l 和 exa 簡化指令.
+
+~
+
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10143
+Name            紫禁城~
+Description
+在紫禁城的建築周圍﹐還設有雲龍階石﹐鎦金寶鼎﹐銅獅﹐
+琉璃照壁﹐以及日晷﹐嘉量等建築小品和陳設物﹐豐富了紫
+禁城的環境。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10144
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10142
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

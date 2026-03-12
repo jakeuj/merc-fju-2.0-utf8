@@ -1,0 +1,27 @@
+Vnum            10079
+Name            城內道路~
+Description
+傳說在春秋時代孫武所著的孫子兵法依然流傳至今﹐且曹操有加以註
+解﹐只是目前不知道在誰的手上。
+
+~
+SectorType      SECT_CITY
+NoMob           Yes
+
+#Exit
+Direction       NORTH
+ExitVnum        10075
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10091
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

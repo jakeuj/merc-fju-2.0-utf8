@@ -1,0 +1,19 @@
+Vnum            10008
+Name            大夏門~
+Description
+大夏門是長安北邊的屏障﹐掌握的城內城外的進出安全﹐附近並有金
+墉城﹐是長安的副城。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10009
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

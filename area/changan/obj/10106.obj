@@ -1,0 +1,26 @@
+Vnum         10106
+Name         elves pearl earring~
+ShortDesc    妖精珍珠耳環~
+Description
+妖精族特有的裝備, 要有特殊的關係才能的到.
+
+~
+ItemType     ITEM_ARMOR
+WearLoc      ITEM_WEAR_EARRING
+Takeable     Yes
+Level        100
+Value        3
+Weight       2
+Cost         2000
+
+#Affect
+Location        APPLY_INT
+Modifier        1
+End
+
+#Affect
+Location        APPLY_MANA
+Modifier        500
+End
+
+End

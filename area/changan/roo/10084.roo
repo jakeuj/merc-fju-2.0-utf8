@@ -1,0 +1,36 @@
+Vnum            10084
+Name            城內道路~
+Description
+據說獻帝在反獻帝聯軍來攻時﹐率領十五萬軍與呂布、李儒等人共同
+防守虎牢關﹐不過呂布依然敗給了關羽、劉備、張飛三人的聯手攻擊
+。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10085
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10083
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10244
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

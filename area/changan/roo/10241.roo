@@ -1,0 +1,31 @@
+Vnum            10241
+Name            宮殿~
+Description
+雕樑畫棟的門口﹐不過大門緊閉著﹐你無法進去。大門極其寬廣﹐兩
+旁尚有石獅﹐似乎頗為威風。如果你要進去的話﹐可以試著敲敲 (
+knock ) 門。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       OUT
+ExitVnum        10035
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10220
+ExitDesc        宮殿~
+ExitKeyword     door~
+ExitKey         574
+IsDoor          Yes
+Closed          Yes
+Locked          Yes
+End
+
+End

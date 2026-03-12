@@ -1,0 +1,26 @@
+Vnum            10031
+Name            城內道路~
+Description
+長安隸屬河南尹內﹐此尹約有大大小小成郭約二十一個﹐頗見規模。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10032
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10030
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,44 @@
+Vnum            10129
+Name            大校場~
+Description
+你的眼前是一個很大的廣場﹐一隊隊的騎兵和步兵在衝刺來回﹐嚴謹
+的訓練著﹐另外則有許多的手持長鞭的軍官來回走著﹐檢視著軍隊訓
+練的情況。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10123
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10130
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10132
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10128
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,55 @@
+Vnum            10095
+Name            servant~
+ShortDesc       獻帝僕人~
+Description
+~
+AutoSetValue    Yes
+StayArea        Yes
+Alignment       100
+Level           100
+Hitroll         0
+Protect         0
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              20000
+Mana            100
+Move            100
+Class           CLASS_DEMOS
+Gold            0
+Multipile       100
+AttackRatio     200
+DodgeRatio      90
+Migrate         0
+Sex             0
+Enable          100 'ryo'
+Enable          100 'linpo steps'
+
+Process
+Type            fight_prog
+Chance          100
+Text
+if isnpc($n)
+  break
+endif
+if rand(30)
+  say 找死﹐我也是有暗藏幾招的﹗
+  cast 'li br'
+endif
+~
+End
+
+Process
+Type            hitprcnt_prog
+Chance          60
+Text
+if rand(50)
+  cast heal servant
+endif
+~
+End
+
+End

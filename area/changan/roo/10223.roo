@@ -1,0 +1,35 @@
+Vnum            10223
+Name            皇宮二樓~
+Description
+來到二樓﹐眼前為之一亮﹐你的眼前極為寬廣﹐不過兩旁的衛士文官
+也不在少﹐另外還有著一股肅穆之氣﹐令你有一點緊張。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10224
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10227
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10222
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

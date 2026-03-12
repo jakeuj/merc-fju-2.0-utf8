@@ -1,0 +1,15 @@
+Vnum            10102
+Name            blue robe~
+ShortDesc       湛藍色長袍~
+Description
+湛藍的天空色﹐使的整件長袍(robe)似乎有種透明的感覺。~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           3
+Value           -1
+Weight          5
+Cost            30
+Exp             10
+End

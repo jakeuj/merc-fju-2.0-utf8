@@ -1,0 +1,44 @@
+Vnum            10049
+Name            路口~
+Description
+南邊有一家民宅﹐看過去頗為莊嚴﹐似乎是一個大戶人家所居住的地
+方﹐卻不知道是誰的宅第。北邊一家新開的書店倒是令人感到富麗堂
+皇呢﹗
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10050
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10101
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10141
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10048
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

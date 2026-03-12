@@ -1,0 +1,35 @@
+Vnum            10244
+Name            長安神殿~
+Description
+這個神殿有一點西方神殿的味道﹐到處都是以大理石雕塑而成﹐你的
+面前有一面很大的牆壁﹐上面刻著遊戲中所有神族的名稱( wizlist )
+﹐如果你有什麼錯誤想要祈求神族幫你贖罪﹐你可以試著向天神祈求
+(anticipate)。
+
+          牆壁上有一張說明( note )。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10084
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         note~
+Description
+如果你想要查詢自己的不雅字記錄﹐請使用 anticipate check 查詢
+﹐不過會消耗你一些金幣( 等級的十倍 )﹐如果你想要消去你的不雅
+字記錄﹐則請輸入 anticipate xname ﹐每消去一個會消耗你一面免
+死金牌與金幣若干( 等級的一千倍 )﹐請在你要祈求( anticipate )
+之前先考慮清楚﹗
+
+~
+End
+
+End

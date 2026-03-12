@@ -1,0 +1,31 @@
+Vnum            10032
+Name            medicine boss~
+ShortDesc       藥房老闆~
+LongDesc        出售藥物的藥房老闆(medicine boss)站在此處。
+~
+Description
+他一臉福福的樣子﹐讓人感到他是一個敦厚的長者。
+~
+Sentinel        Yes
+NoKill          Yes
+Alignment       0
+Level           15
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              3000
+Mana            100
+Move            100
+Class           0
+Gold            100
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+End

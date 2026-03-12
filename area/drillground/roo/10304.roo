@@ -1,0 +1,27 @@
+Vnum            10304
+Name            時間隧道~
+Description
+你依然看不到這條隧道的盡頭﹐但這裡似乎比較寒冷﹐你不經意的
+打了個寒顫﹐這裡的景象又跟之前的不一樣﹐隨著時間的流動而轉
+變。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10305
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10302
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

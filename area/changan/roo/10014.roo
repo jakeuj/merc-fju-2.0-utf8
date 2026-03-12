@@ -1,0 +1,28 @@
+Vnum            10014
+Name            城內道路~
+Description
+我國第一座寺廟即是長安的白馬寺﹐該寺建造的動機﹐起因於後漢明
+帝據說在夜裡夢到一個黃金色的神﹐占卜結果﹐是當時西方胡人信仰
+的神﹐所以才將其傳入中國。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10009
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10013
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10054
+Name            城內道路~
+Description
+路的兩旁種植一些常見的行道樹﹐有一些樹十分巨大﹐看來已有百年
+以上﹐高聳入雲。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10055
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10053
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

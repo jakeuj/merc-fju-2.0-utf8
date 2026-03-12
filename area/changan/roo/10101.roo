@@ -1,0 +1,27 @@
+Vnum            10101
+Name            民宅入口~
+Description
+這裡是一間民宅的入口﹐屋前兩座石獅( lion )虎虎生威﹐看來是一
+個大戶人家住的地方﹐卻不知是誰。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10049
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         lion~
+Description
+這石獅子看起來似乎搖搖欲墜﹐非常危險。
+
+~
+End
+
+End

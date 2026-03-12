@@ -1,0 +1,27 @@
+Vnum            10196
+Name            花園小徑~
+Description
+兩旁的花圃似乎還有一些剛發芽的小植物﹐猶在那裡為了來到這是界
+努力﹐你不禁開始為它加油﹐生命的活力真是奇妙。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10199
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10193
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

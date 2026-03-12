@@ -1,0 +1,21 @@
+Vnum            10156
+Name            瑤光居~
+Description
+來到這裡你感到來到了一個女生的房間﹐雖然沒有一些女紅之類的物
+品﹐倒是從鼻子裡聞到一陣陣的清香﹐有一點置身物外的感覺﹐另外
+窗明如鏡﹐晚上月光撒在地上﹐別有一番情趣。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10169
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+End

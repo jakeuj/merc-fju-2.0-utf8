@@ -1380,7 +1380,7 @@ ANGEL( angel_blind )
   if ( is_affected( ch, SLOT_BLINDNESS ) )
   {
     if ( fPrint ) send_to_char(
-      "你的眼睛已經瞎了﹐趕緊找醫生去醫治喔﹗聽說洛陽的醫生不錯喔﹗\n\r", ch );
+      "你的眼睛已經瞎了﹐趕緊找醫生去醫治喔﹗聽說長安的醫生不錯喔﹗\n\r", ch );
 
     RETURN( TRUE );
   }
@@ -1395,7 +1395,7 @@ ANGEL( angel_poison )
   if ( is_affected( ch, SLOT_POISON ) )
   {
     if ( fPrint ) send_to_char(
-      "你已經中毒了﹐趕緊找醫生去醫治喔﹗聽說洛陽的醫生不錯喔﹗\n\r", ch );
+      "你已經中毒了﹐趕緊找醫生去醫治喔﹗聽說長安的醫生不錯喔﹗\n\r", ch );
 
     RETURN( TRUE );
   }

@@ -1,0 +1,35 @@
+Vnum            10009
+Name            三叉路~
+Description
+南邊是長安宮城的所在﹐北邊是長安北邊出口大夏門﹐此處地理位置
+十分重要。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10008
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10016
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

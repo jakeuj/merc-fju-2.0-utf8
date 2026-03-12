@@ -1,0 +1,44 @@
+Vnum            10210
+Name            皇宮~
+Description
+兩旁有著往上的樓梯﹐上面則是審事的地方﹐你可以見到一些太監走
+來走去﹐來回奔忙著﹐也有一些宮女在一旁﹐偶而還會一兩個大臣走
+過。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10206
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10211
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10214
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10209
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10005
+Name            城內道路~
+Description
+這一條以細石子鋪成的路﹐走起來也不會太顛簸﹐可以以滿高的速度
+行動﹐可以在戰爭時快速增援。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10004
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10006
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

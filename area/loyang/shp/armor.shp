@@ -1,9 +1,0 @@
-Type            SHOP_STORE
-Keeper          514
-Object          ITEM_ARMOR ITEM_BACKBAG
-OpenHour        0
-CloseHour       23
-SellProfit      80
-BuyProfit       120
-Sential         598
-End

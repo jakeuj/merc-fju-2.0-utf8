@@ -1,0 +1,53 @@
+Vnum            10060
+Name            temple guard~
+ShortDesc       禁軍護衛~
+LongDesc        負責皇宮安全的禁軍(temple guard)在此站崗。
+~
+Description
+雄赳赳﹐氣昂昂﹐看來真的只有這樣的人才可以保護皇宮的安全。
+~
+AutoSetValue    Yes
+Sentinel        Yes
+Effect          'detect invis'
+Effect          'detect hidden'
+Effect          'sanctuary'
+Alignment       100
+Level           35
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              3000
+Mana            -1
+Move            -1
+Class           CLASS_FIGHTER
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'hua sword'
+Enable          40 'gdragon steps'
+
+Process
+Type            fight_prog
+Chance          100
+Text
+if isnpc($n)
+  break
+endif
+if isimminvis($n)
+  break
+endif
+if isenemy($n) != '長安'
+  mpsetenemy $n '長安'
+endif
+~
+End
+
+End

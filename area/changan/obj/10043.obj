@@ -1,0 +1,18 @@
+Vnum            10043
+Name            steel blade~
+ShortDesc       鋼刀~
+Description
+這是一把用精鋼煉製而成的刀(steel blade)﹐刀刃十分的鋒利。
+~
+Unit            把~
+ItemType        ITEM_WEAPON
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           10
+Value           0 -1 -1 4
+Weight          20
+Cost            100
+Exp             10
+
+End

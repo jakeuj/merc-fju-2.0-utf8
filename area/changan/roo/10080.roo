@@ -1,0 +1,19 @@
+Vnum            10080
+Name            西明門~
+Description
+西出此門不遠則為弘農城﹐雖然城市規模不及長安﹐卻也是有名的大
+城市。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10081
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

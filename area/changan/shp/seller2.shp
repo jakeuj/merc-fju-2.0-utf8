@@ -1,0 +1,8 @@
+Type            SHOP_STORE
+Keeper          10033
+Object          ITEM_FOOD
+OpenHour        0
+CloseHour       23
+SellProfit      80
+BuyProfit       120
+End

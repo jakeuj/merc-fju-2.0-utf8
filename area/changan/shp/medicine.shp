@@ -1,0 +1,9 @@
+Type            SHOP_STORE
+Keeper          10032
+Object          ITEM_PILL ITEM_POTION
+OpenHour        0
+CloseHour       23
+SellProfit      80
+BuyProfit       120
+Sential         10100
+End

@@ -1,0 +1,27 @@
+Vnum            10176
+Name            轉角~
+Description
+這個走廊向南方跟西方延伸﹐你只有聽到一些輕輕呼嘯的風聲﹐其他
+的聲音則像是與世隔絕一樣﹐沒有感覺。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10179
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10175
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

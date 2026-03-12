@@ -1,0 +1,19 @@
+Vnum            10116
+Name            橋樓殿~
+Description
+橋樓殿為福慶寺的主殿﹐是一座面寬五間﹐進約三間﹐周圍
+廊﹐外觀兩層﹐上覆綠色琉璃瓦的單簞歇山頂的樓閣﹐台基
+和石橋混為一體。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       SOUTH
+ExitVnum        10119
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

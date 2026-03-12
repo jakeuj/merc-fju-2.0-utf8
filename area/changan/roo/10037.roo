@@ -1,0 +1,26 @@
+Vnum            10037
+Name            城內道路~
+Description
+三國的世界是十分廣泛的﹐其舞臺背景幾乎囊括了整個中國。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10028
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10044
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,17 @@
+Vnum            10052
+Name            wolf hat~
+ShortDesc       狼頭盔~
+Description
+由狼皮所製 ﹐具有不錯的防護力。
+~
+Unit            頂~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_HEAD
+Takeable        Yes
+Level           20
+Value           -1
+Weight          10
+Cost            100
+Exp             10
+
+End

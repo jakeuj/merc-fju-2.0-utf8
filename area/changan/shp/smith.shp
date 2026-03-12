@@ -1,0 +1,9 @@
+Type            SHOP_SMITH
+Keeper          10034
+Object          ITEM_WIELD
+OpenHour        0
+CloseHour       23
+SellProfit      80
+BuyProfit       120
+Sential         10104
+End

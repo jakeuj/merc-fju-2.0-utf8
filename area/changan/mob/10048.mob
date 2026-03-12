@@ -1,0 +1,75 @@
+Vnum            10048
+Name            sky shaman~
+ShortDesc       天璣道~
+LongDesc        天璣道(sky shaman)
+~
+Description
+一身幾乎泛黃的道袍﹐滿臉鬍渣﹐似乎生活過得很潦倒。
+~
+AutoSetValue    Yes
+Sentinel        Yes
+Alignment       0
+Level           49
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'long fist'
+AutoEnable      'gdragon steps'
+
+Process
+Type            rand_prog
+Chance          10
+Text
+if rand(3)
+  say 哎﹗好無聊喔﹗
+  yawn
+  break
+endif
+if rand(3)
+  say 最近好忙($2busy$0)喔﹗跟我的風格都不一樣﹗
+  say 好懷念那種自由自在的生活…
+  sigh
+  break
+endif
+~
+End
+
+Process
+Type            speech_prog
+Argument        busy~
+Text
+if ispc($n)
+  hmm $n
+  tell $n 我看你也沒有這個能耐幫我﹐你想要試試看嗎﹖($2yes$0/$2no$0)
+  emote 恢復沈思的狀態…
+endif
+~
+End
+
+Process
+Type            speech_prog
+Argument        no~
+Text
+if ispc($n)
+  say 快滾﹐不要打擾我思考﹗一秒內消失我的眼前﹐不然要你好看﹗
+  growl $n
+endif
+~
+End
+
+End

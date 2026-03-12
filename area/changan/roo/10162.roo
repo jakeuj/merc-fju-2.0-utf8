@@ -1,0 +1,27 @@
+Vnum            10162
+Name            走廊~
+Description
+這裡附近只有走到的部份略為陰暗﹐其他地方都有相當的照明﹐只是
+走到這裡﹐你依然不知道住這裡的究竟為何人。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10163
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10161
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

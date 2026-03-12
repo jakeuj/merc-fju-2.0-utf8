@@ -1,0 +1,16 @@
+Vnum            10110
+Name            night cloth~
+ShortDesc       夜行衣~
+Description
+小頭盜賊最喜歡穿的服飾。
+~
+Unit            套~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           15
+Value           -1
+Weight          10
+Cost            150
+Exp             10
+End

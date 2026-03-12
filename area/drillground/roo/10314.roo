@@ -1,0 +1,27 @@
+Vnum            10314
+Name            時光道路~
+Description
+這一條時光道路是通往另一個時空區間﹐彷彿跟剛剛的時光隧道有點
+兒不同﹐漸漸的這條的道路變得較暖活﹐隱隱約約有股紅色的氣團撲
+向這裡。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       SOUTH
+ExitVnum        10311
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10317
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

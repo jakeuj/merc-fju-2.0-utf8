@@ -1,0 +1,55 @@
+Vnum            10086
+Name            li ru~
+ShortDesc       李儒~
+LongDesc        李儒(li ru)
+~
+Description
+獻帝的女婿與軍師。屢屢獻計﹐幫助獻帝
+掌大權﹐得呂布﹐破諸侯。識破了王允的
+『連環計』﹐勸諫獻帝﹐但獻帝不聽。董
+卓被殺後他也被處死。
+~
+Sentinel        Yes
+Alignment       0
+Level           65
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_SCHOLAR
+Gold            0
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+#Learn
+Adept           30
+Cost            13000
+Inventory       85
+Name            'dark hell'
+End
+
+#Learn
+Adept           40
+Inventory       60
+Cost            24500
+Name            'six god'
+End
+
+#Learn
+Adept           30
+Cost            1300
+Inventory       70
+Name            'detect mask'
+End
+
+End

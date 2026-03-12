@@ -1,0 +1,18 @@
+Vnum            10030
+Name            閶闔門~
+Description
+此門為長安十幾個門之一﹐不過規模小了些﹐沒有其他門來的雄偉。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10031
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

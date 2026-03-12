@@ -1,0 +1,40 @@
+Vnum            10090
+Name            wild dog~
+ShortDesc       野狗~
+LongDesc        野狗(wild dog)
+~
+Description
+~
+AutoSetValue    Yes
+Alignment       -100
+Level           45
+Hitroll         0
+Protect         0
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              100
+Mana            100
+Move            100
+Class           CLASS_FIGHTER
+Gold            0
+Multipile       100
+AttackRatio     170
+DodgeRatio      90
+Migrate         0
+Sex             SEX_MALE
+Enable          100 'mobile kill'
+AutoEnable      'mobile steps'
+
+Process
+Type            fight_prog
+Chance          30
+Text
+say 汪汪汪﹗
+~
+End
+
+End

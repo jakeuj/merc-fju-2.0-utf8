@@ -1,0 +1,27 @@
+Vnum            10083
+Name            城內道路~
+Description
+虎牢關位於長安往東方的戰線上﹐為幅面約兩百公尺的隘路形成的關
+卡﹐是為了防範長安免受侵襲所設置的。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10084
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10082
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

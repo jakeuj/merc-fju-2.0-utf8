@@ -1,0 +1,17 @@
+Vnum            10032
+Name            blademan cloth~
+ShortDesc       刀者之服~
+Description
+初入江湖之刀客最多用的基本配備 (blademan cloth)。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           10
+Value           -1
+Weight          8
+Cost            100
+Exp             10
+
+End

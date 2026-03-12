@@ -1,0 +1,14 @@
+Vnum            10064
+Name            general door key~
+ShortDesc       將軍帳大門鑰匙~
+Description
+這是一把很精緻的鑰匙﹐上面還有一些彫花。
+~
+Unit            支~
+ItemType        ITEM_KEY
+Takeable        Yes
+Level           3
+Weight          2
+Cost            30
+
+End

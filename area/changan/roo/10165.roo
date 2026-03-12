@@ -1,0 +1,36 @@
+Vnum            10165
+Name            走道~
+Description
+這裡前方有一間緊閉的房間﹐不過房間的門上掛著許多的小擺飾﹐你
+若心裡想著這裡不是小孩便是女生的房間了。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10154
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10166
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10164
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

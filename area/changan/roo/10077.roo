@@ -1,0 +1,28 @@
+Vnum            10077
+Name            銅駝街~
+Description
+走在這古色古香的街道中﹐讓你耳邊又回想起了那一首千古流傳的絕
+句﹐「滾滾長江東逝水﹐浪花淘盡英雄。是非成敗轉頭空﹐青山依舊
+在﹐幾度夕陽紅。」好像心中那一股豪氣油然而生。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10073
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10086
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

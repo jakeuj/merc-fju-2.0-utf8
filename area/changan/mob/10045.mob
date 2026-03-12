@@ -1,0 +1,33 @@
+Vnum            10045
+Name            rider~
+ShortDesc       騎兵~
+LongDesc        騎兵(rider)在這裡。
+~
+Description
+他手持長槍﹐一副英俊威武的樣子﹐翱首遠視﹐似乎十分的自得。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       150
+Level           30
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_FEMALE
+AutoEnable      'long fist'
+AutoEnable      'gdragon steps'
+End

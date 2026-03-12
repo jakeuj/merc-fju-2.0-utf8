@@ -1,0 +1,41 @@
+Vnum            10089
+Name            thief bandit~
+ShortDesc       盜賊~
+LongDesc        盜賊(thief bandit)
+~
+Description
+他不但偷取東西﹐如果被發現便會殺人滅口﹐相當的殘忍。
+~
+AutoSetValue    Yes
+Alignment       -300
+Level           85
+Hitroll         0
+Protect         0
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              100
+Mana            100
+Move            100
+Class           CLASS_THIEF
+Gold            0
+Multipile       100
+AttackRatio     150
+DodgeRatio      150
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'six fire'
+Enable          100 'mirage steps'
+
+Process
+Type            fight_prog
+Chance          30
+Text
+say 憑你也想要打敗我﹖回家在練幾年吧﹗
+~
+End
+
+End

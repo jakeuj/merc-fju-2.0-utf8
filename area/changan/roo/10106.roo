@@ -1,0 +1,26 @@
+Vnum            10106
+Name            花園入口~
+Description
+處處可聞鳥語花香﹐好似一座世外桃源。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10067
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       ENTER
+ExitVnum        10242
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

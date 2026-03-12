@@ -1,0 +1,35 @@
+Vnum            10012
+Name            城內道路~
+Description
+北邊可以到達長安副城金墉城﹐西邊則是長安東邊出口承明門﹐到處
+都可以見到人們來來往往﹐頗為熱鬧。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10010
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10013
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10011
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10124
+Name            八達嶺~
+Description
+八達嶺城牆用條石﹐上部用大型城磚砌成﹐城牆頂部路面則
+用方磚舖砌。每隔不遠﹐便有一座拱門﹐這個稱作為『券門
+』。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10125
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10123
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10018
+Name            城內道路~
+Description
+正南方可以見到一座金碧輝煌的建築物﹐那是長安宮城所在﹐據說董
+卓鎮守在內。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10017
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

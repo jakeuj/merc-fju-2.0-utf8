@@ -1,0 +1,43 @@
+Vnum            10064
+Name            十字路口~
+Description
+西邊有一家銀行提供一些取款存款的服務﹐東邊則是鏢局﹐可以存放
+物品。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10059
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10103
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10069
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10102
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

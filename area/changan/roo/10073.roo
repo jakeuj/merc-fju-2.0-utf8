@@ -1,0 +1,45 @@
+Vnum            10073
+Name            銅駝街~
+Description
+銅駝街為長安城中軸的街道﹐北接宮城出口正陽門﹐南達宣陽門﹐再
+達外城﹐四通八達。
+
+西邊有一家道具店﹐東邊開了一家藥局。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10068
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10100
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10077
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10099
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,43 @@
+Vnum            10006
+Name            城內道路~
+Description
+三國的故事是從後漢開始的﹐後漢的國都在長安﹐所以長安是很重要
+的舞臺。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10005
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10108
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10107
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

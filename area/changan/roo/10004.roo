@@ -1,0 +1,42 @@
+Vnum            10004
+Name            城內道路~
+Description
+路的兩旁有一些民家﹐西方的那一間似乎很有氣勢﹐不是一般的民眾
+說。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10110
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10005
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10109
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10050
+Name            城內道路~
+Description
+由此往西可以到達西陽門﹐此門和東邊的東陽門相對﹐一樣的宏偉巨
+大﹐掌握著長安民眾的進出。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10049
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

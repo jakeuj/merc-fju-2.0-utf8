@@ -1,0 +1,18 @@
+Vnum            10056
+Name            soldier blade~
+ShortDesc       軍刀~
+Description
+一把普通的軍刀(soldier blade)。
+~
+Unit            把~
+ItemType        ITEM_WEAPON
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           30
+Value           0 -1 -1 4
+Weight          20
+Cost            500
+Exp             10
+
+End

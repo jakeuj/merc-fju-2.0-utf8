@@ -1,0 +1,18 @@
+Vnum            10092
+Name            青陽門~
+Description
+東邊可以出城到達外城﹐再過去便是遠近聞名的虎牢關了。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10091
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

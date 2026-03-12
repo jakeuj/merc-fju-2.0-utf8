@@ -1,0 +1,27 @@
+Vnum            10066
+Name            城內道路~
+Description
+東邊是長安古寺永寧寺﹐不過中間隔了一個樹林﹐所以沒辦法直接過
+去。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10061
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10071
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,16 @@
+Vnum            10063
+Name            scroll of identify~
+ShortDesc       鑑定捲軸~
+Description
+一張似乎擁有魔力的卷軸(the scroll of identify)。
+~
+Unit            張~
+ItemType        ITEM_SCROLL
+Takeable        Yes
+Level           3
+Value1          1
+Value2          OBJ_CAST_IDENT
+Weight          2
+Cost            300
+
+End

@@ -1,0 +1,16 @@
+Vnum            10075
+Name            temple plate~
+ShortDesc       禁軍護衛鎧甲~
+Description
+這副鎧甲以純銀打造而成﹐極其亮麗﹐可以保護你不受傷。
+~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           30
+Value           -1
+Weight          25
+Cost            200
+Exp             10
+
+End

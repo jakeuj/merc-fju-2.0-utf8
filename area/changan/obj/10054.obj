@@ -1,0 +1,17 @@
+Vnum            10054
+Name            wolf eye ring~
+ShortDesc       狼眼鑽戒~
+Description
+純金鑽戒 ﹐鑲著稀有的狼眼石 ﹐閃閃發光。
+~
+Unit            只~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_FINGER
+Takeable        Yes
+Level           20
+Value           -1
+Weight          10
+Cost            200
+Exp             10
+
+End

@@ -1,0 +1,35 @@
+Vnum            10174
+Name            轉角~
+Description
+南邊一間空出來的房間﹐你由這裡望進去﹐所有的東西都很整齊的排
+列﹐似乎有人在此居住。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10175
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10178
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10173
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

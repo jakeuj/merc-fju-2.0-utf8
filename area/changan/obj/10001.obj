@@ -1,0 +1,15 @@
+Vnum            10001
+Name            uniform armor~
+ShortDesc       制式戰甲~
+Description
+標準裝備戰甲(armor)看來防護力還不錯。~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           40
+Value           -1
+Weight          15
+Cost            400
+Exp             10
+End

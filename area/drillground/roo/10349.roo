@@ -1,0 +1,21 @@
+Vnum            10349
+Name            新手動物園~
+Description
+這是一座動物園﹐有很多動物跑來跑去﹗這裡是入口處﹐有一個管理
+員在收費﹐只不過他好像在打盹﹐似乎可以不用交錢喔﹗
+
+                    東邊有一道大門
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10350
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+End

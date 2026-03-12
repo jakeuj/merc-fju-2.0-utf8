@@ -1,5 +1,0 @@
->hitprcnt_prog 50~
-if              rand(30)
-  c heal little_wind
-endif
-~

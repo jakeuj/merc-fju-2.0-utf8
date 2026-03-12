@@ -1,0 +1,29 @@
+Vnum            10306
+Name            空間~
+Description
+當你走到這間房間﹐彷彿不像剛剛的隧道一樣﹐在這裡的時間完全
+是靜止的﹐一個虛幻飄渺的空間裡﹐像似時間走廊上的一小點﹐在
+時間區域裡有不少的空間像似這樣的。
+
+ 這裡有一個奇怪的門通往不知名的地方﹐你可以試著進入([1;32menter[0m)
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       WEST
+ExitVnum        10305
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       ENTER
+ExitVnum        10349
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

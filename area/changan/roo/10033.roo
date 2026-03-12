@@ -1,0 +1,28 @@
+Vnum            10033
+Name            城內道路~
+Description
+由於當時的戰爭﹐天災與地震頻繁﹐導致人們對於世事產生無常之慨
+﹐因此開始信仰佛教。所以說﹐三國時代的故事﹐和我國的佛教史有
+密切的關係。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10034
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10032
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

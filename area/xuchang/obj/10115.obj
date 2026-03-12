@@ -1,0 +1,15 @@
+Vnum            10115
+Name            castle boot~
+ShortDesc       禁衛軍戰靴~
+Description
+禁衛軍通用的靴子。~
+Unit            雙~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_FEET
+Takeable        Yes
+Level           10
+Value           -1
+Weight          10
+Cost            100
+Exp             10
+End

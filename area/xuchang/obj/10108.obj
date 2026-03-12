@@ -1,0 +1,15 @@
+Vnum            10108
+Name            ziwei sword~
+ShortDesc       紫微軟劍~
+Description
+劍身柔軟的長劍。~
+Unit            把~
+ItemType        ITEM_WEAPON
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           25
+Value           0 -1 -1 3
+Weight          2
+Cost            250
+Exp             10
+End

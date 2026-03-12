@@ -1,0 +1,26 @@
+Vnum            10019
+Name            城內道路~
+Description
+在三國時代﹐長安已經有了佛教的寺廟﹐那就是長安城郊的白馬寺。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10018
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

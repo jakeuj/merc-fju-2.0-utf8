@@ -1,0 +1,26 @@
+Vnum            10046
+Name            城內道路~
+Description
+西邊是長安西邊出口西陽門﹐城門十分寬廣結實﹐鎮守著長安城。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10047
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10045
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,32 @@
+Vnum            10301
+Name            ice woman~
+ShortDesc       冰山美人~
+LongDesc        沒有笑容的冰山美人(ice woman).
+~
+Description
+一位年紀約三十多歲的女人﹐面目姣好﹐皮膚白晰﹐終身生活在這
+冰宮之內﹐管理所有冰界的大小事情﹐冰界的怪物都極為尊重此人
+。而他有一個女兒叫做雪之女。
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       100
+Level           15
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_FEMALE
+End

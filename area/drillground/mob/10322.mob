@@ -1,0 +1,31 @@
+Vnum            10322
+Name            fire giant~
+ShortDesc       火巨人~
+LongDesc        火巨人(fire giant)
+~
+Description
+一個九尺四吋的巨人﹐全身被火包圍著﹐似乎很強﹗
+~
+Sentinel        Yes
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           4
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           0
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+Speak           NO
+End

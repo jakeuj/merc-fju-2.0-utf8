@@ -1,0 +1,26 @@
+Vnum         10096
+Name         elves elder amulet~
+ShortDesc    妖精長老護符~
+Description
+妖精族特有的裝備, 要有特殊的關係才能的到.
+
+~
+ItemType     ITEM_ARMOR
+WearLoc      ITEM_WEAR_NECK
+Takeable     Yes
+Level        100
+Value        6
+Weight       3
+Cost         2000
+
+#Affect
+Location        APPLY_CON
+Modifier        1
+End
+
+#Affect
+Location        APPLY_WIS
+Modifier        1
+End
+
+End

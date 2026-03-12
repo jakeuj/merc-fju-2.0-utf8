@@ -1,0 +1,9 @@
+Type            SHOP_STORE
+Keeper          10031
+Object          ITEM_DRINK_CON ITEM_LIGHT ITEM_TREASURE ITEM_SIGIL ITEM_VELLUM
+OpenHour        0
+CloseHour       23
+SellProfit      80
+BuyProfit       120
+Sential         10099
+End

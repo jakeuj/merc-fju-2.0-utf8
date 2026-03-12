@@ -1,0 +1,35 @@
+Vnum            10161
+Name            房門口~
+Description
+這一間房門口沒有什麼特殊﹐滿普通的式樣。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10152
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10162
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10160
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

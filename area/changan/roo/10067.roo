@@ -1,0 +1,45 @@
+Vnum            10067
+Name            永寧寺入口~
+Description
+這裡是長安內一座寺廟名為永寧寺的入口﹐看這牌樓﹐但見雕工細膩
+﹐顯示出於名家之手﹐你不禁喊了一聲好。
+
+你可以進入( enter )寺內看看。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10062
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10106
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10072
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         轉職者~
+End
+
+#Enquire
+Keyword         文官轉職者~
+End
+
+End

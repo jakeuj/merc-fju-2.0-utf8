@@ -1,0 +1,16 @@
+Echo    NO_ECHO
+Editor  Cutty Ene~
+Name    書院學宮~
+Fog     -1
+Upper   LEVEL_PC
+Lower   1
+Serial  102
+Capital 10201
+NewHand Yes
+Description
+地理狀況﹕此區為正式世界的新手起點﹐以書院與學宮為核心﹐提供
+基礎移動、戰鬥、指令與補給教學。
+交通狀況﹕低等級玩家可由 `new` 指令或系統引導回到此地﹐完成訓
+練後可自迎新門南出進入長安﹐或前往校場試煉進一步鍛鍊。
+~
+End

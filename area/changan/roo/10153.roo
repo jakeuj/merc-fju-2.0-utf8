@@ -1,0 +1,21 @@
+Vnum            10153
+Name            天權居~
+Description
+來到這個房間﹐你感到似乎比之前見過的寬了些﹐不過牆壁上到處都
+是傷痕﹐原來房間的主人好武﹐常常在房間裡面不自覺的就練起武來
+了﹗
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10163
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+End

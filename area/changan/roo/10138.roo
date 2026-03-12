@@ -1,0 +1,27 @@
+Vnum            10138
+Name            道路~
+Description
+你沿著大校場走進來﹐發覺這裡已經聽不大到那一些震耳欲聾的聲音
+﹐不知眼前這個地方是臥虎藏龍﹐還是走了在說吧。。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10139
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10120
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

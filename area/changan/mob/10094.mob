@@ -1,0 +1,30 @@
+Vnum            10094
+Name            ugly dog~
+ShortDesc       惹人厭小狗~
+Description
+~
+AutoSetValue    Yes
+StayArea        Yes
+Alignment       100
+Level           69
+Hitroll         0
+Protect         0
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              100
+Mana            100
+Move            100
+Class           CLASS_DEMOS
+Gold            0
+Multipile       100
+AttackRatio     200
+DodgeRatio      90
+Migrate         0
+Sex             0
+Enable          100 'ryo'
+
+End

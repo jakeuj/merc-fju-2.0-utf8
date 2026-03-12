@@ -1,0 +1,17 @@
+Vnum            10077
+Name            iron sword~
+ShortDesc       剛劍~
+Description
+全部的劍身以精鋼造成﹐鋒利無比。
+~
+Unit            支~
+ItemType        ITEM_WEAPON
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           70
+Value           0 -1 -1 WEAPON_SWORD
+Weight          25
+Cost            650
+Exp             10
+
+End

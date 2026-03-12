@@ -1,0 +1,27 @@
+Vnum            10202
+Name            dog~
+ShortDesc       惡犬~
+Description
+一隻全黑的狗﹐一看到人走進牠的身邊﹐牠就對你兇了過來﹐邊吼
+邊叫﹐一張正流著口水的嘴巴正張開著﹐準備向你咬了過來。
+~
+Sentinel        Yes
+Alignment       0
+Level           1
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              60
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+Migrate         0
+Sex             SEX_NEUTRAL
+End

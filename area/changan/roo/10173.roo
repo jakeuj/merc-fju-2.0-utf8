@@ -1,0 +1,27 @@
+Vnum            10173
+Name            走道~
+Description
+前後的火光不停搖曳﹐照的你的影子亦隨著搖曳﹐你不禁有了身在恍
+惚中的感覺。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10174
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10172
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10065
+Name            城內道路~
+Description
+路旁一戶戶人家門戶緊閉﹐不知為了何故﹐一條路見不到一個人﹐唯
+有一些小動物遊蕩來去。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10060
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10070
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

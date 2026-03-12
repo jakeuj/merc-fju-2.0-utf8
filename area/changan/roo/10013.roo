@@ -1,0 +1,35 @@
+Vnum            10013
+Name            三叉路~
+Description
+路向東西南邊延伸﹐路旁可以見到許多人家居住﹐不過能夠住到長安
+城內來的人﹐非富即貴﹐一般人是沒有辦法的。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10014
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10015
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10012
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

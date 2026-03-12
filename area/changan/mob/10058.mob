@@ -1,0 +1,45 @@
+Vnum            10058
+Name            dong zhuo~
+ShortDesc       獻帝~
+LongDesc        獻帝(dong zhuo)
+~
+Description
+西涼刺史。趁何進誅殺十常侍之際﹐進軍
+長安﹐掌握了軍政大權。廢少帝立獻帝﹐
+推行暴政﹐敗壞朝綱。造成天下大亂﹐開
+起了三國時代的開端。
+~
+Sentinel        Yes
+NoReborn        Yes
+Alignment       -300
+Level           98
+Hitroll         70
+Protect         -30
+Damroll         80
+Str             100
+Int             100
+Wis             100
+Dex             100
+Con             100
+Hp              50000
+Mana            10000
+Move            10000
+Class           CLASS_GENERAL
+Gold            -1
+Multipile       140
+Migrate         0
+Sex             SEX_MALE
+Enable          75 'fire dragon'
+Enable          60 'linpo steps'
+
+Process
+Type            rand_prog
+Chance          80
+Text
+if rand(20)
+  say 最近守衛越來越混了﹗
+endif
+~
+End
+
+End

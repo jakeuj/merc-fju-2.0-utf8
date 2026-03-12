@@ -1,0 +1,19 @@
+Vnum            10325
+Name            闇之宮~
+Description
+『黑暗﹐恐懼﹐害怕』三者感覺之氣息漫佈在整個房間之中﹐讓你
+感覺一種無形的壓力加諸於你﹐剎那間你的皮膚身體泛起雞皮疙瘩﹐
+髮毛整個都豎立了起來。
+
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       EAST
+ExitVnum        10326
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

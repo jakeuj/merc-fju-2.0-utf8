@@ -1,0 +1,26 @@
+Vnum            10160
+Name            走廊~
+Description
+你走在這個走廊﹐隱隱的風聲讓你感覺極為不自在﹗
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10161
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10159
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

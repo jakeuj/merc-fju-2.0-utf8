@@ -1,0 +1,17 @@
+Vnum            10010
+Name            lounge pant~
+ShortDesc       高級西裝褲~
+Description
+一件高級西裝褲(lounge pant)﹐平時在結婚的時候穿。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_LEGS
+Takeable        Yes
+Level           10
+Value           -1
+Weight          5
+Cost            100
+Exp             10
+
+End

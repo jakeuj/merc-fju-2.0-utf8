@@ -1,0 +1,37 @@
+Vnum            10080
+Name            horse keeper brother~
+ShortDesc       馬房老闆的小弟~
+LongDesc        馬房老闆的小弟(horse keeper brother)
+~
+Description
+他是在老闆旁邊跟班的﹐學習馬的技巧。
+~
+Sentinel        Yes
+NoKill          Yes
+Alignment       0
+Level           10
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              3000
+Mana            100
+Move            100
+Class           0
+Gold            100
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+#Learn
+Adept           30
+Cost            100
+Inventory       70
+Name            'mount'
+End
+End

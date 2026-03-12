@@ -1,11 +1,11 @@
 #Ship
-Name            洛陽空運~
+Name            長安空運~
 Entrance
-要開往暴風城的飛機已經到了﹐請旅客依序登機!
+要開往許昌的飛機已經到了﹐請旅客依序登機!
 ~
 
 Land
-飛機已經到暴風城了﹐請各位旅客繫好安全帶﹐等待飛機降落!
+飛機已經到許昌了﹐請各位旅客繫好安全帶﹐等待飛機降落!
 ~
 
 Description
@@ -18,8 +18,8 @@ Description
 
 ~
 
-Starting        743
-Destination     10034
+Starting        10243
+Destination     10101
 Cabin           211
 Cost            100
 Sailing         2
@@ -29,13 +29,13 @@ Delay           100
 End
 
 #Ship
-Name            北平空運~
+Name            許昌空運~
 Entrance
-要開往奧格瑞瑪的飛機已經到了﹐要登機的旅客請順序到登機坪登機!
+要開往長安的飛機已經到了﹐要登機的旅客請順序到登機坪登機!
 ~
 
 Land
-開往奧格瑞瑪的飛機已經到達了﹐請各位旅客坐在座位上﹐等待飛機降落!
+開往長安的飛機已經到達了﹐請各位旅客坐在座位上﹐等待飛機降落!
 ~
 
 Description
@@ -47,8 +47,8 @@ Description
 
 ~
 
-Starting        9001
-Destination     10130
+Starting        10101
+Destination     10243
 Cabin           212
 Cost            100
 Sailing         2
@@ -58,13 +58,13 @@ Delay           100
 End
 
 #Ship
-Name            暴風城獅鷲空運~
+Name            長安鷹騎空運~
 Entrance
-要飛往北平的獅鷲已經整裝待發﹐請旅客依序登上鞍座!
+要飛往許昌的鷹騎已經整裝待發﹐請旅客依序登上鞍座!
 ~
 
 Land
-飛往北平的獅鷲已經抵達﹐請各位旅客抓緊韁繩﹐準備降落!
+飛往許昌的鷹騎已經抵達﹐請各位旅客抓緊韁繩﹐準備降落!
 ~
 
 Description
@@ -73,8 +73,8 @@ Description
 
 ~
 
-Starting        10034
-Destination     9001
+Starting        10243
+Destination     10101
 Cabin           213
 Cost            150
 Sailing         3
@@ -84,13 +84,13 @@ Delay           100
 End
 
 #Ship
-Name            奧格瑞瑪風行者空運~
+Name            許昌信鷹空運~
 Entrance
-要飛往洛陽的風行者已經準備好了﹐要搭乘的旅客快點上來!
+要飛往長安的信鷹已經準備好了﹐要搭乘的旅客快點上來!
 ~
 
 Land
-飛往洛陽的風行者已經抵達﹐請各位旅客坐穩﹐準備降落!
+飛往長安的信鷹已經抵達﹐請各位旅客坐穩﹐準備降落!
 ~
 
 Description
@@ -99,8 +99,8 @@ Description
 
 ~
 
-Starting        10130
-Destination     743
+Starting        10101
+Destination     10243
 Cabin           214
 Cost            150
 Sailing         3

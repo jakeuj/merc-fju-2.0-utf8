@@ -18,8 +18,8 @@
 #define ROOM_VNUM_CHAT                  3
 #define ROOM_VNUM_DEADROOM              10
 #define ROOM_VNUM_DEADBODY              20
-#define ROOM_VNUM_RECALL                501
-#define ROOM_VNUM_SCHOOL                500
+#define ROOM_VNUM_RECALL                10001
+#define ROOM_VNUM_SCHOOL                10201
 #define ROOM_VNUM_FAIL                  50
 
 /* 著名的MOB的虛擬號碼 */

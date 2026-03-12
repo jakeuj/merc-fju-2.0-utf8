@@ -1,0 +1,21 @@
+Vnum         10102
+Name         elves soft_wind arms~
+ShortDesc    妖精柔風護臂~
+Description
+妖精族特有的裝備, 要有特殊的關係才能的到.
+
+~
+ItemType     ITEM_ARMOR
+WearLoc      ITEM_WEAR_ARMS
+Takeable     Yes
+Level        100
+Value        6
+Weight       10
+Cost         2000
+
+#Affect
+Location        APPLY_STR
+Modifier        2
+End
+
+End

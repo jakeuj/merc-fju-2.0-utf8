@@ -1,0 +1,17 @@
+Vnum            10029
+Name            t shirt~
+ShortDesc       汗衫~
+Description
+一件透氣舒適的汗衫(t shirt)﹐很適合工作時穿著。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           15
+Value           -1
+Weight          5
+Cost            100
+Exp             10
+
+End

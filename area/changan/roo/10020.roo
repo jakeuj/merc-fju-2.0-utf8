@@ -1,0 +1,51 @@
+Vnum            10020
+Name            三叉路~
+Description
+佛教的傳入只有來到中原的西域人或是由於貿易而來往於中原、西域
+的商人會立刻信仰﹐而漢人只有好奇這一些人的信仰情形而已。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10007
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10025
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10019
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10112
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         商店~
+End
+
+#Enquire
+Keyword         食物店~
+End
+
+End

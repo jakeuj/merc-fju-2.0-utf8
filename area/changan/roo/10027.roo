@@ -1,0 +1,27 @@
+Vnum            10027
+Name            城內道路~
+Description
+東邊直行可以到達建春門﹐西邊不遠則是長安的宮城﹐宮城居長安中
+央位置﹐有鎮守的作用。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10028
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10026
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

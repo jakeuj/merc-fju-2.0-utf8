@@ -1,0 +1,35 @@
+Vnum            10071
+Name            城內道路~
+Description
+傳聞永寧寺後有一個神秘的花園﹐卻不知道是真是假﹐要親自看看才
+知道。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10066
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10072
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10076
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,34 @@
+Vnum            10012
+Name            clime ossifer~
+ShortDesc       地政官吏~
+LongDesc        身著華服的地政官吏(clime ossifer)站在此處。
+~
+Description
+他手拿一本地政手冊(clime book)﹐等待你的詢問。
+~
+StayArea        Yes
+Ask             Yes
+AutoSetValue    Yes
+Alignment       0
+Level           45
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              3000
+Mana            100
+Move            100
+Class           0
+Gold            100
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'long fist'
+AutoEnable      'gdragon steps'
+End

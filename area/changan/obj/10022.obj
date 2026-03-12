@@ -1,0 +1,17 @@
+Vnum            10022
+Name            apron~
+ShortDesc       圍裙~
+Description
+一條家庭主婦穿著的圍裙(apron)。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_LEGS
+Takeable        Yes
+Level           15
+Value           -1
+Weight          15
+Cost            200
+Exp             10
+
+End

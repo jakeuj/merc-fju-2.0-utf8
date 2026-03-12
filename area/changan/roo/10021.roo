@@ -1,0 +1,27 @@
+Vnum            10021
+Name            城內道路~
+Description
+現在的長安市﹐市區人口約五十萬﹐郊外約有三十萬﹐已經是一個人
+口有八十萬的中型城市了。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10015
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10032
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

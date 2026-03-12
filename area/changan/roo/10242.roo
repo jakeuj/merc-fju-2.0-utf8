@@ -1,0 +1,29 @@
+Vnum            10242
+Name            花園~
+Description
+你看到一群蜜蜂嗡嗡的飛著﹐一陣清香不知由何處飄進你的鼻子﹐讓
+你感到十分的清爽。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       OUT
+ExitVnum        10106
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10197
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+
+
+End

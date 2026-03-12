@@ -1,0 +1,28 @@
+Vnum            10175
+Name            走道~
+Description
+你細細的的觀察這裡﹐牆壁的感覺很乾淨﹐似乎有人每一天都來這裡
+清潔﹐不過奇怪的是這裡就像鬼屋一樣﹐為什麼能如此的保持乾淨﹐
+這樣的疑問一直在你的心中打轉。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10176
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10174
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

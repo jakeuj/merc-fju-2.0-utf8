@@ -1,0 +1,18 @@
+Vnum            10002
+Name            廣莫門~
+Description
+此為長安北方的城門之一﹐居中央部位﹐遙望遠方﹐山巒起伏﹐頗有
+一番氣象。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       SOUTH
+ExitVnum        10003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

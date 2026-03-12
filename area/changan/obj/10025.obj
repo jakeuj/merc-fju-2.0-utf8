@@ -1,0 +1,15 @@
+Vnum            10025
+Name            egg~
+ShortDesc       生雞蛋~
+Description
+一個雞蛋(egg)﹐你可以吃它或拿來砸人。
+~
+Unit            顆~
+ItemType        ITEM_FOOD
+Takeable        Yes
+Level           5
+Value           20 15 5 0
+Weight          1
+Cost            30
+
+End

@@ -1,0 +1,19 @@
+Vnum            10045
+Name            tiger blade~
+ShortDesc       虎頭軍刀~
+Description
+由精鋼鑄成 ﹐特別鋒利 ﹐是守衛隊頭的裝備。
+刀身染滿了倭寇的鮮血。
+~
+Unit            把~
+ItemType        ITEM_WEAPON
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           10
+Value           0 -1 -1 4
+Weight          20
+Cost            100
+Exp             10
+
+End

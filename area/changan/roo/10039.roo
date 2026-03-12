@@ -1,0 +1,27 @@
+Vnum            10039
+Name            城內道路~
+Description
+長安南北兩宮相距七里﹐南北宮均長一里多﹐周長四里多﹐較西漢長
+安的宮殿的規模小很多。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10034
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10040
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

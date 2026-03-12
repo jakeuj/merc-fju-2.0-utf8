@@ -1,9 +1,0 @@
-Type            SHOP_STORE
-Keeper          10009
-Object          ITEM_PILL ITEM_FOOD ITEM_DRINK_CON
-OpenHour        0
-CloseHour       23
-Sellprofit      80
-Buyprofit       115
-Sential         10016
-End

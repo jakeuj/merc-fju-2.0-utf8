@@ -1,0 +1,17 @@
+Vnum            10047
+Name            tiger glove~
+ShortDesc       虎皮手套~
+Description
+虎皮製成的手套 ﹐能大量提高本身的破壞力。
+~
+Unit            雙~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_HANDS
+Takeable        Yes
+Level           30
+Value           -1
+Weight          10
+Cost            400
+Exp             10
+
+End

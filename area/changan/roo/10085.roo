@@ -1,0 +1,27 @@
+Vnum            10085
+Name            城內道路~
+Description
+東邊為長安最新的長安驛站﹐可以快速到達其他城市﹐是高科技的產
+物﹐稱為長安春水站。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10086
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10084
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

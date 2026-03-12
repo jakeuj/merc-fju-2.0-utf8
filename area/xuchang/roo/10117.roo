@@ -1,0 +1,39 @@
+Vnum            10117
+Name            趙王城~
+Description
+戰國時期﹐趙王敬侯遷都於此﹐是當時最繁榮的都市之一﹐
+平面呈曲尺型﹐東面和南面較長﹐用圍牆分割成東﹐西﹐北
+三個部份。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10115
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10121
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         訓練者~
+End
+
+#Enquire
+Keyword         訓練師~
+End
+
+#Enquire
+Keyword         訓練~
+End
+
+End

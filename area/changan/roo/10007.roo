@@ -1,0 +1,27 @@
+Vnum            10007
+Name            城內道路~
+Description
+在這個時代﹐佛教剛從西域傳入中原不久﹐不過﹐雖然說是傳入﹐卻
+只有很少的漢人立刻加以相信。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10006
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10020
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10332
+Name            火炎窟內部~
+Description
+內部又感覺更悶熱了﹐覺得好像正在考驗我的耐熱力﹐這時演下一
+看﹐岩壁都已經剝落﹐牆角邊還有幾具死人骨頭那﹐已有不少人喪
+身於此﹐死不瞑目﹗
+
+~
+SectorType      SECT_INSIDE
+
+#Exit
+Direction       NORTH
+ExitVnum        10336
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10333
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

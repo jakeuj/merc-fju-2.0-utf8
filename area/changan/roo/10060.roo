@@ -1,0 +1,27 @@
+Vnum            10060
+Name            城內道路~
+Description
+長安的鐵器十分發達﹐有許多珍品﹐出產的武器防具品質自然不在話
+下。
+
+~
+SectorType      SECT_CITY
+NoMob           Yes
+
+#Exit
+Direction       NORTH
+ExitVnum        10055
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10065
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

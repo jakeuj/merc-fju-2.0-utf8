@@ -1,0 +1,14 @@
+Vnum            10081
+Name            colour stone~
+ShortDesc       彩色的石頭~
+Description
+~
+Unit            顆~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           1
+Value           0
+Weight          1
+Cost            10
+
+End

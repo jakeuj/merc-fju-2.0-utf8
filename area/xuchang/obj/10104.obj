@@ -1,0 +1,16 @@
+Vnum            10104
+Name            crayon~
+ShortDesc       炭筆~
+Description
+一支由樹枝燒製而成的炭筆(crayon)﹐可用來到處塗鴉。~
+Unit            隻~
+ItemType        ITEM_WEAPON
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           15
+Value           0 -1 -1 8
+Weight          10
+Cost            150
+Exp             10
+End

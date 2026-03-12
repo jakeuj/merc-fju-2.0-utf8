@@ -1,0 +1,27 @@
+Vnum            10179
+Name            走廊~
+Description
+這是一條走廊﹐不過你並未見到什麼人在此行走﹐令你十分納悶﹐另
+外四周寂靜無聲﹐似乎像是另外一個世界。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10176
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10180
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

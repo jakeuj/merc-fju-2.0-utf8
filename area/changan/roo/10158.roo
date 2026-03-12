@@ -1,0 +1,35 @@
+Vnum            10158
+Name            轉角~
+Description
+在你眼前出現的是一堆房間﹐整齊排列著﹐房門似乎述說著古老的故
+事﹐讓你的好奇心想要一探究竟
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10159
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10170
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10157
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

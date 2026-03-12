@@ -1,0 +1,39 @@
+Vnum            10106
+Name            hooligan~
+ShortDesc       地痞~
+Description
+地痞正用一雙兇惡的眼神上下打量著你。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       200
+Level           15
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            greet_prog
+Chance          50
+Text
+if ispc($n)
+  emote 神不知鬼不覺的打了你一記耳光﹗
+  hehe $n
+endif
+~
+End
+
+End

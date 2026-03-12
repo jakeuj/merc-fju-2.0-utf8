@@ -1,0 +1,43 @@
+Vnum            10055
+Name            十字路口~
+Description
+東邊是東陽門﹐可以到達城外﹐上面可以見到高高的城牆﹐另外還有
+許多士兵在上面巡邏﹐戒備森嚴。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10044
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10056
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10060
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10054
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

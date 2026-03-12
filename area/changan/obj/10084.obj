@@ -1,0 +1,28 @@
+Vnum            10084
+Name            red gold armlet~
+ShortDesc       <<1;31m紅<<1;33m金<<0m臂甲~
+Description
+這是獻帝的護甲﹐以黃金的合金製成﹐十分的堅固卻也不會很硬﹐是
+獻帝尋遍天下得來的至寶。
+~
+ItemType        ITEM_ARMOR
+Glow            Yes
+WearLoc         ITEM_WEAR_ARMS
+Takeable        Yes
+Level           85
+Value           -1
+Weight          25
+Cost            1000
+Exp             10
+
+#Affect
+Location        APPLY_STR
+Modifier        1
+End
+
+#Affect
+Location        APPLY_CON
+Modifier        -1
+End
+
+End

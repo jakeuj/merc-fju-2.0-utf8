@@ -1,0 +1,27 @@
+Vnum            10072
+Name            城內道路~
+Description
+你隱隱地聽到一些鳥語﹐空氣中參雜著一陣花香﹐卻不知是由何處發
+出。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10067
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10071
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

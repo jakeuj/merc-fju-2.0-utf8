@@ -1,0 +1,27 @@
+Vnum            10109
+Name            天壇~
+Description
+天壇外層簞柱十二根代表十二個時辰﹐內外柱二十四根又代
+表著二十四個節氣﹐殿內地面正中是一塊圓形的大理石﹐帶
+天然龍鳳花紋﹐與殿頂中央蟠龍藻井遙遙相望。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10110
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10108
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

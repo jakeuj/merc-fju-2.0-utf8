@@ -1,0 +1,35 @@
+Vnum            10199
+Name            花園小徑~
+Description
+一群蜜蜂嗡嗡的飛過你的身旁﹐擾動了一陣花香﹐遠望前方﹐幾隻彩
+蝶翩翩飛舞著﹐汲取著大自然的精華。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10200
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10196
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10198
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

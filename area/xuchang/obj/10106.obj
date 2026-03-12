@@ -1,0 +1,16 @@
+Vnum            10106
+Name            royal blade~
+ShortDesc       皇家金刀~
+Description
+這是一柄巨大的戰刀(blade)﹐重五十斤﹐一般人恐怕難以使得動。~
+Unit            柄~
+ItemType        ITEM_WEAPON
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           30
+Value           0 -1 -1 4
+Weight          50
+Cost            300
+Exp             10
+End

@@ -1,0 +1,35 @@
+Vnum            10172
+Name            轉角~
+Description
+南邊又是一間房間﹐格局跟剛剛你在東邊看到的那一間幾乎差不多﹐
+可以看出來桌上多了一些東西﹐略顯雜亂。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10173
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10177
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10171
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

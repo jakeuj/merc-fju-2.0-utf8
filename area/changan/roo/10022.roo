@@ -1,0 +1,47 @@
+Vnum            10022
+Name            城外道路~
+Description
+此路環繞宮城而建﹐寬直平坦﹐頗適合一些大車子在上面行走﹐看來
+此路的用途應該跟軍事有關。
+
+東邊的城牆( east_wall )似乎有些不同。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10016
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10023
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10034
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         east_wall~
+Description
+此處的城牆似乎怪怪的﹐倒像是一道門。
+
+~
+
+End
+
+End

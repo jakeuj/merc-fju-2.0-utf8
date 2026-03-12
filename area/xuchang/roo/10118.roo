@@ -1,0 +1,19 @@
+Vnum            10118
+Name            燕下都~
+Description
+下都在易縣南北易水和中易水之間﹐是久負盛名的一座古都
+。在春秋戰國時代﹐為燕昭王和太子丹的皇城﹐這裡曾經是
+燕的重要政治、經濟中心之一。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10119
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

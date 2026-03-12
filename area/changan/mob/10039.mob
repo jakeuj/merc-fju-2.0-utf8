@@ -1,0 +1,79 @@
+Vnum            10039
+Name            shaman~
+ShortDesc       小道士~
+LongDesc        五斗米道的的小道士(shaman)。
+~
+Description
+自從五斗米失利之後﹐他就一直躲在這裡…
+~
+Sentinel        Yes
+Train           Yes
+Rebirth         Yes
+Ask             Yes
+Effect          'sanctuary'
+Alignment       300
+Level           50
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             100
+Wis             100
+Dex             10
+Con             10
+Hp              10000
+Mana            1000
+Move            100
+Class           CLASS_SHAMAN
+Gold            0
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'gdragon steps'
+
+#Learn
+Adept           35
+Cost            300
+Inventory       70
+Name            'burning hands'
+End
+#Learn
+Adept           35
+Cost            500
+Inventory       75
+Name            'nine steps'
+End
+
+Process
+Type            rand_prog
+Chance          10
+Text
+if rand(1)
+  say 師父們命我守在這裡﹐不知道他們閉關閉的如何了﹖
+  emote 看起來十分焦急…
+else
+  if rand(1)
+    say 啊﹗我的那個東西不見了﹗
+    say 如何對師父們交代﹖
+    emote 正在四處尋找($2search$0)。
+  endif
+endif
+~
+End
+
+Process
+Type            fight_prog
+Chance          100
+Text
+if ispc($n)
+  if rand(30)
+    say 太可惡了你﹗讓你看看厲害﹗
+    cast 'cast fire' $n
+  endif
+endif
+~
+End
+
+End

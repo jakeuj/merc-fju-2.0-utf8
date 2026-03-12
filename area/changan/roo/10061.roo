@@ -1,0 +1,35 @@
+Vnum            10061
+Name            城內道路~
+Description
+東南邊可以看到一個個的牌樓與古色古香的建築﹐似乎是一個寺
+廟的所在。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10057
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10062
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10066
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

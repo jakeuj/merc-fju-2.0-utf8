@@ -1,0 +1,27 @@
+Vnum            10048
+Name            城內道路~
+Description
+前赤壁賦∼∼方其破荊州﹐下江陵﹐順流而東也﹐舳艫千里﹐旌旗蔽
+空﹐釀酒橫江﹐橫槊賦詩；故一世之雄也﹐而今安在乎﹖
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10049
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10047
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

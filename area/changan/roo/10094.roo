@@ -1,0 +1,18 @@
+Vnum            10094
+Name            宣陽門~
+Description
+此為長安城市南邊最大的出口﹐戒備森嚴﹐想要闖關可難比登天。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10086
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,55 @@
+Vnum            10072
+Name            kindly doctor~
+ShortDesc       郎中~
+LongDesc        郎中(kindly doctor)
+~
+Description
+他一走過身邊就有一股很濃重的藥味﹐讓你有一點嗆﹐不過有一些倒
+是相當不錯的救命工具。
+~
+AutoSetValue    Yes
+Alignment       0
+Level           48
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'gdragon steps'
+
+Process
+Type            fight_prog
+Chance          30
+Text
+if ispc($n)
+  say 可惡的小賊﹐嚐嚐我的厲害吧﹗
+  cast 'burning hands' $n
+endif
+~
+End
+
+Process
+Type            greet_prog
+Chance          30
+Text
+if ispc($n)
+  say 你好﹗有沒有需要我服務的地方﹖
+  smile $n
+endif
+~
+End
+
+End

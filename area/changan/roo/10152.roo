@@ -1,0 +1,20 @@
+Vnum            10152
+Name            天璇居~
+Description
+你進入這個房間﹐並沒有什麼特殊的感覺﹐房間的佈局也是普普通通
+﹐不過讓你驚異的是﹐這個房間簡直一塵不染﹐你不驚吐了吐舌頭。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       SOUTH
+ExitVnum        10161
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+IsDoor          Yes
+End
+
+End

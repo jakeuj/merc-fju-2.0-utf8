@@ -1,0 +1,25 @@
+Vnum            10140
+Name            將軍室~
+Description
+你眼前是一個極廣大的營帳﹐有著一些虎皮鹿角作為裝飾﹐不過正中
+一把寶劍倒是引起你的注意﹐似乎在劍鞘裡就已經閃出一些耀眼的光
+芒﹐應該是一把不可多得的絕世好劍﹐不過眼前的人虎虎生威﹐看來
+並不好惹。
+
+~
+SectorType      SECT_INSIDE
+ForeverLight    Yes
+Safe            Yes
+
+#Exit
+Direction       SOUTH
+ExitVnum        10139
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         564
+IsDoor          Yes
+Closed          Yes
+Locked          Yes
+End
+
+End

@@ -1,0 +1,18 @@
+Vnum            10044
+Name            tiger armor~
+ShortDesc       白虎之鎧~
+Description
+以上等精鋼鑲在白虎皮上 ﹐不但具有強大的防護能力
+又彌補了厚重不便的缺點 ﹐為不錯之鎧甲。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           20
+Value           -1
+Weight          10
+Cost            100
+Exp             10
+
+End

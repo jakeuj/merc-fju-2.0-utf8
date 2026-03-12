@@ -1,0 +1,44 @@
+Vnum            10005
+Name            citizen~
+ShortDesc       居民~
+LongDesc        長安城的居民(citizen)在此遊蕩。
+~
+Description
+看他一副無所事事的樣子﹐讓你十分的羨慕他。
+~
+StayArea        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           15
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              3000
+Mana            100
+Move            100
+Class           0
+Gold            100
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+Process
+Type            greet_prog
+Chance          25
+Text
+if ispc($n)
+  say 聽說城裡那個鏢師之前在其他地方學過武藝﹐都沒有人敢劫他的鏢﹗
+  say 嗯﹐人還是有一技之長的好﹗
+  ponder
+endif
+~
+End
+
+End

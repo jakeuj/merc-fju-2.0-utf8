@@ -1,0 +1,31 @@
+Vnum            10063
+Name            tiny fox~
+ShortDesc       小狐狸~
+LongDesc        可愛的小狐狸(tiny fox)在這裡玩耍。
+~
+Description
+一臉的奸瑣﹐真不知道它在想什麼﹗
+~
+AutoSetValue    Yes
+Alignment       0
+Level           6
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Speak           NO
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+End

@@ -1,0 +1,44 @@
+Vnum            10032
+Name            十字路口~
+Description
+導致後漢末期動亂的各種原因當中﹐最主要的因素可以說就是宮廷內
+部的權利鬥爭﹐其中以長安為主要舞臺﹐醞釀的各種奪權的陰謀﹐結
+果最後還造成宦官全部被殺死的慘劇。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10021
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10033
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10038
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10031
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

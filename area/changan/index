@@ -1,0 +1,23 @@
+Echo    WILL_ECHO
+Editor  Cutty~
+Name    長安城~
+Fog     10
+Upper   LEVEL_PC
+Fog     20
+Lower   1
+Serial  100
+Capital 10001
+Description
+長安城﹕
+
+地理狀況﹕關中帝都﹐城垣雄偉﹐宮城、官署與市街井然分佈﹐是新
+正式三國世界的中央主城。
+
+交通狀況﹕可由書院學宮南出抵達﹐玩家亦可由 recall 回到此城中
+央廣場﹐作為主要集散與補給據點。
+
+怪物等級﹕城中以守衛、官吏與商旅為主﹐宮城與軍府一帶戒備較森
+嚴﹐適合中低階到中階玩家活動。
+
+~
+End

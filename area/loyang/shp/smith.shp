@@ -1,9 +1,0 @@
-Type            SHOP_SMITH
-Keeper          534
-Object          ITEM_WIELD
-OpenHour        0
-CloseHour       23
-SellProfit      80
-BuyProfit       120
-Sential         604
-End

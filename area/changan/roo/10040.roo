@@ -1,0 +1,27 @@
+Vnum            10040
+Name            城內道路~
+Description
+有關長安的宮城﹐東漢光武初年的主要宮殿在南宮﹐明帝時造北宮與
+諸王府﹐和帝至桓帝、靈帝時增設東宮與西宮。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10041
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10039
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10038
+Name            城內道路~
+Description
+折戟沈沙鐵未銷﹐自將磨洗認前朝。
+東風不與周郎便﹐銅雀春深鎖二喬。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10032
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10047
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

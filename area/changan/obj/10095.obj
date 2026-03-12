@@ -1,0 +1,21 @@
+Vnum         10095
+Name         elves jade leggings~
+ShortDesc    妖精寶石護腿~
+Description
+妖精族特有的裝備, 要有特殊的關係才能的到.
+
+~
+ItemType     ITEM_ARMOR
+WearLoc      ITEM_WEAR_LEGS
+Takeable     Yes
+Level        100
+Value        6
+Weight       10
+Cost         2000
+
+#Affect
+Location        APPLY_DEX
+Modifier        2
+End
+
+End

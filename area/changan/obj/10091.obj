@@ -1,0 +1,21 @@
+Vnum            10091
+Name            acajou~
+ShortDesc       桃木~
+Description
+散發出淡淡桃香的木頭﹐讓你隱隱有一股飄飄然的感覺。
+~
+Unit            段~
+ItemType        ITEM_LIGHT
+WearLoc         ITEM_WEAR_LIGHT
+Takeable        Yes
+Level           58
+Weight          4
+Cost            300
+Value           0 0 45
+
+#Affect
+Location        APPLY_HITROLL
+Modifier        2
+End
+
+End

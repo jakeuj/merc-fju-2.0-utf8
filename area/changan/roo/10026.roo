@@ -1,0 +1,27 @@
+Vnum            10026
+Name            城內道路~
+Description
+此路非常寬敞﹐兩輛車並行也不會困難﹐馬車行於其上只覺平穩舒適
+﹐沒有任何不舒適感。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10027
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10025
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

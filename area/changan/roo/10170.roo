@@ -1,0 +1,27 @@
+Vnum            10170
+Name            走道~
+Description
+這是一條南北向的走道﹐牆上的燈影無聲的照在地下﹐增添了幾許哀
+愁。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10158
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10171
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

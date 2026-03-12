@@ -1,0 +1,36 @@
+Vnum            10226
+Name            皇宮二樓~
+Description
+兩旁的文官不時的互相討論著﹐其間參雜一些爭執﹐不過倒還是滿平
+和的﹐大家的臉上都有著笑容﹐而一旁的衛士則顯的十分的威嚴﹐一
+點笑容都沒有﹐注意著這裡的安全。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10222
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10227
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10229
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

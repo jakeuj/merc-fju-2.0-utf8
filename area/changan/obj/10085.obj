@@ -1,0 +1,15 @@
+Vnum            10085
+Name            secret letter~
+ShortDesc       秘密信~
+Description
+這上面記載了一些機密文字﹐上面一個大大的 「極機密」。
+~
+Unit            封~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           10
+Value1          0
+Weight          1
+Cost            0
+
+End

@@ -1,0 +1,38 @@
+Vnum            10109
+Name            五斗米教舊居~
+Description
+這裡已經荒廢多時﹐不過看得出來曾經興榮一時。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10004
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         訓練者~
+End
+
+#Enquire
+Keyword         訓練師~
+End
+
+#Enquire
+Keyword         訓練~
+End
+
+#Enquire
+Keyword         轉職者~
+End
+
+#Enquire
+Keyword         道士轉職者~
+End
+
+End

@@ -1,0 +1,36 @@
+Vnum            10111
+Name            訓練場~
+Description
+這裡是一個頗大的空地﹐你可以聽見一些吆喝聲隱隱約約的傳過來﹐
+白煙茫茫﹐不知有多少的士兵在此進行操練﹐這也是長安主要軍力的
+來源。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10137
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       OUT
+ExitVnum        10028
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         轉職者~
+End
+
+#Enquire
+Keyword         武官轉職者~
+End
+
+End

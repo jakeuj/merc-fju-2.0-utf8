@@ -1,0 +1,35 @@
+Vnum            10187
+Name            花園小徑~
+Description
+這裡的花似乎和之前所種植的不大相同﹐這裡則多半屬於一些小的盆
+栽﹐綠綠的﹐卻沒有大紅或是大紫的花﹐有一點靜靜的安詳感。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10190
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10188
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10186
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

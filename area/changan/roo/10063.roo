@@ -1,0 +1,45 @@
+Vnum            10063
+Name            銅駝街~
+Description
+城內的總體佈局﹐宮城建於城內居中偏北﹐北面為北宮及帝王專用園
+林﹐正對宮門正陽門的銅駝街為城市主要軸線。
+
+西邊有一家武器店﹐東邊則為防具店。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10098
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       NORTH
+ExitVnum        10058
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10097
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10068
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

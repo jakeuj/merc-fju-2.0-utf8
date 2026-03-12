@@ -1,0 +1,36 @@
+Vnum            10003
+Name            城內道路~
+Description
+此路連接城北廣莫門﹐路旁有許多民家﹐看來頗為興隆﹐一路上民眾
+來來往往﹐有一番樂鬧氣象。
+
+	東邊是長安機場﹐有飛機飛往晉陽城。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       NORTH
+ExitVnum        10002
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10243
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10004
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

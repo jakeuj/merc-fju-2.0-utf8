@@ -1,0 +1,44 @@
+Vnum            10028
+Name            三叉路~
+Description
+南邊一條道路沿城而建﹐道路東邊即是高聳在上的城牆﹐還有廣闊的
+護城河﹐看來要進攻此城還頗不容易呢。前方有一個很大的操場﹐塵
+土飛揚著。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10029
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10037
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10027
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       ENTER
+ExitVnum        10111
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

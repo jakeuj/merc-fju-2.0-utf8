@@ -1,0 +1,14 @@
+Vnum            10023
+Name            beck~
+ShortDesc       水缸~
+Description
+一個用來裝清水的水缸(beck)。
+~
+Unit            桶~
+ItemType        ITEM_FOUNTAIN
+WearLoc         0
+Level           1
+Weight          1
+Cost            0
+
+End

@@ -1,0 +1,27 @@
+Vnum            10070
+Name            城內道路~
+Description
+路上但見小狗對著你叫﹐小鳥由天空中迅疾飛過﹐卻沒見到半個人﹐
+連極多的小販都沒有。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10065
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10075
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

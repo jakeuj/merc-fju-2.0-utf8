@@ -1,0 +1,45 @@
+Vnum            10053
+Name            sky shaman~
+ShortDesc       開陽道~
+LongDesc        開陽道(sky shaman)
+~
+Description
+他一臉猥瑣的模樣﹐讓你覺得好像是不知道那裡來的小販。
+~
+AutoSetValue    Yes
+Sentinel        Yes
+Alignment       0
+Level           49
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+AutoEnable      'long fist'
+AutoEnable      'gdragon steps'
+
+Process
+Type            greet_prog
+Chance          35
+Text
+if ispc($n)
+  say 嗯…
+  ponder
+endif
+~
+End
+
+End

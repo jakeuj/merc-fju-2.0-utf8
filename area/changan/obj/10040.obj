@@ -1,0 +1,18 @@
+Vnum            10040
+Name            guard blade~
+ShortDesc       守衛隊鋼刀~
+Description
+一把精鋼鑄成的大刀(guard blade) ﹐為守衛所特有。
+~
+Unit            把~
+ItemType        ITEM_WEAPON
+Glow            Yes
+WearLoc         ITEM_WIELD
+Takeable        Yes
+Level           20
+Value           0 -1 -1 4
+Weight          15
+Cost            200
+Exp             10
+
+End

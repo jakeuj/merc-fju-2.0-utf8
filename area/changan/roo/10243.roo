@@ -1,0 +1,24 @@
+Vnum            10243
+Name            長安機場~
+Description
+這個機場是長安花費巨資興建而成﹐目前只有開往許昌的飛機在運行
+﹐如果你要到許昌的話﹐可以搭乘本交通工具﹐方便迅速確實﹐相當
+的不錯。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10003
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         機場~
+End
+
+End

@@ -1,0 +1,63 @@
+Vnum            10083
+Name            cai yi~
+ShortDesc       蔡邕~
+LongDesc        蔡邕(cai yi)
+~
+Description
+東漢議郎。博學多才﹐通曉學問﹐天文﹐
+音樂。獻帝慕其才能﹐強迫他來輔佐。因
+此在獻帝被處決後﹐被王允認作是獻帝一
+黨﹐囚禁後被殺害。
+~
+Sentinel        Yes
+AutoSetValue    Yes
+Alignment       0
+Level           64
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             10
+Int             10
+Wis             10
+Dex             10
+Con             10
+Hp              100
+Mana            100
+Move            100
+Class           CLASS_SCHOLAR
+Gold            0
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+#Learn
+Cost            12000
+Inventory       45
+Adept           45
+Name            'cook'
+End
+
+#Learn
+Cost            32000
+Inventory       65
+Adept           50
+Name            'bystander fist'
+End
+
+AutoEnable      'color steps'
+AutoEnable      'universe'
+
+Process
+Type            fight_prog
+Chance          100
+Text
+if rand(30)
+  say 可惡的惡賊﹗看我來收拾你﹗
+  cast 'chill touch' $n
+endif
+~
+End
+
+End

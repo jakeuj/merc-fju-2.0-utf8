@@ -1,0 +1,41 @@
+Vnum            10070
+Name            poet man~
+ShortDesc       詩人~
+LongDesc        詩人(poet man)
+~
+Description
+你靜靜聽他所吟唱的古老的詩歌﹐訴說的偉大的戰役。
+~
+AutoSetValue    Yes
+Alignment       0
+Level           36
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             -1
+Int             -1
+Wis             -1
+Dex             -1
+Con             -1
+Hp              -1
+Mana            -1
+Move            -1
+Class           CLASS_DEMOS
+Gold            -1
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_MALE
+
+#Learn
+Adept           30
+Cost            500
+Inventory       70
+Name            'detect evil'
+End
+
+AutoEnable      'long fist'
+AutoEnable      'shade steps'
+
+End

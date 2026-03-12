@@ -1,0 +1,27 @@
+Vnum            10043
+Name            城內道路~
+Description
+位於長安附近的白馬寺﹐為第一世紀所造之最古老佛寺﹐據說﹐劉備
+、關羽、和張飛三個人常常來到此寺團聚。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10036
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10042
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

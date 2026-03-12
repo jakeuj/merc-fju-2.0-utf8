@@ -1,0 +1,28 @@
+Vnum            10051
+Name            城內道路~
+Description
+有此處向東邊可以到達長安東陽門﹐路上有一些城市守衛在巡邏﹐他
+們會負責維持長安城的安危或紀律﹐所以違律犯紀的人請小心﹐他們
+可是會將你抓起來的。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10052
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

@@ -1,0 +1,27 @@
+Vnum            10120
+Name            燕下都~
+Description
+燕下都分東西兩座城﹐高台聳立集中在東北城北處﹐那是宮
+殿的建築群﹐最大的是武陽宮﹐是最重要的宮殿建築﹐燕下
+都是典型的戰國城市。
+
+~
+SectorType      SECT_CITY
+
+#Exit
+Direction       EAST
+ExitVnum        10121
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10119
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

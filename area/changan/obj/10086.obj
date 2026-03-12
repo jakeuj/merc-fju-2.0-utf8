@@ -1,0 +1,15 @@
+Vnum            10086
+Name            secret thing~
+ShortDesc       信物~
+Description
+這是一個信物﹐為了某樣證明。
+~
+Unit            個~
+ItemType        ITEM_TREASURE
+Takeable        Yes
+Level           10
+Value1          0
+Weight          1
+Cost            0
+
+End

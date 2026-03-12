@@ -1,0 +1,31 @@
+Vnum         10094
+Name         elves armor cloak~
+ShortDesc    妖精護身披風~
+Description
+妖精族特有的裝備, 要有特殊的關係才能的到.
+
+~
+ItemType     ITEM_ARMOR
+WearLoc      ITEM_WEAR_ABOUT
+Takeable     Yes
+Level        100
+Value        6
+Weight       7
+Cost         2000
+
+#Affect
+Location        APPLY_DEX
+Modifier        1
+End
+
+#Affect
+Location        APPLY_HIT
+Modifier        1000
+End
+
+#Affect
+Location        APPLY_STR
+Modifier        1
+End
+
+End

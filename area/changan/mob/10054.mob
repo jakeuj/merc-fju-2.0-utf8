@@ -1,0 +1,47 @@
+Vnum            10054
+Name            sky shaman~
+ShortDesc       瑤光道~
+LongDesc        瑤光道(sky shaman)
+~
+Description
+在七人之中﹐他的年紀最小﹐也是唯一的女的﹐常常撒嬌﹐
+不過倒是真的十分可愛﹐令人有想要保護他的衝動。
+~
+AutoSetValue    Yes
+Sentinel        Yes
+Alignment       0
+Level           44
+Hitroll         0
+Protect         -1
+Damroll         0
+Str             5
+Int             5
+Wis             5
+Dex             5
+Con             5
+Hp              100
+Mana            10
+Move            10
+Class           0
+Gold            10
+Multipile       100
+AttackRatio     100
+DodgeRatio      100
+Migrate         0
+Sex             SEX_FEMALE
+AutoEnable      'long fist'
+AutoEnable      'gdragon steps'
+
+Process
+Type            greet_prog
+Chance          40
+Text
+if ispc($n)
+  say 歡迎來到我的房間﹐你好﹗
+  say 最近有什麼新鮮事呢﹖好想知道喔﹗
+  wince $n
+endif
+~
+End
+
+End

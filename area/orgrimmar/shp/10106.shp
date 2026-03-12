@@ -1,9 +1,0 @@
-Type            SHOP_STORE
-Keeper          10106
-Object          ITEM_ARMOR
-OpenHour        0
-CloseHour       23
-Sellprofit      80
-Buyprofit       120
-Sential         10104
-End

@@ -1,0 +1,18 @@
+Vnum            10107
+Name            民房~
+Description
+一間普通的民房﹐有一些居民正在休息。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       EAST
+ExitVnum        10006
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

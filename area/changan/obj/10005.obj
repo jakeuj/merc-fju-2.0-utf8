@@ -1,0 +1,17 @@
+Vnum            10005
+Name            white silk glove~
+ShortDesc       白色絲質手套~
+Description
+一雙白色絲質手套(white silk glove)﹐在結婚的時候穿。
+~
+Unit            雙~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_HANDS
+Takeable        Yes
+Level           10
+Value           -1
+Weight          2
+Cost            100
+Exp             10
+
+End

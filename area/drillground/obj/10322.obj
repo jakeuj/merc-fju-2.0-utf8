@@ -1,0 +1,13 @@
+Vnum            10322
+Name            coins~
+ShortDesc       三十兩黃金~
+Description
+一堆三十兩的黃金(coins)放在地上。~
+Unit            堆~
+ItemType        ITEM_MONEY
+Takeable        Yes
+Level           2
+Value           30
+Weight          1
+Cost            30
+End

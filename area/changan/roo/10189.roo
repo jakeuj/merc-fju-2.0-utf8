@@ -1,0 +1,27 @@
+Vnum            10189
+Name            花園小徑盡頭~
+Description
+盡頭處有一作假山﹐搭配著小橋流水﹐要不是你還有更重要的事要做
+﹐真想就這樣一直待在這裡﹐倒也閒趣的很。不過你還看到水中 (
+water ) 似乎有一些光亮﹐不知道是什麼東西。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       WEST
+ExitVnum        10188
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Keyword
+Keyword         water~
+Description
+水中似乎有亮亮的東西﹐令你十分想要去尋找(search)看看。
+~
+End
+
+End

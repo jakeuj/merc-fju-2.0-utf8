@@ -1,0 +1,19 @@
+Vnum            10178
+Name            空房~
+Description
+這個房間空蕩蕩的﹐不過該有的東西還是都在﹐像是一些桌子椅子﹐
+牆上掛著幾副畫﹐大多描寫著江南奢華的生活。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10174
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

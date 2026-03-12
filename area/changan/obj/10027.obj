@@ -1,0 +1,17 @@
+Vnum            10027
+Name            knowledge robe~
+ShortDesc       孔子儒服~
+Description
+傳說中至聖先師穿過的儒服(knowledge robe)﹐流傳至今日已是無價之寶。
+~
+Unit            件~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_BODY
+Takeable        Yes
+Level           45
+Value           -1
+Weight          8
+Cost            200
+Exp             10
+
+End

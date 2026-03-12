@@ -1,0 +1,12 @@
+Vnum            10058
+Name            wood board~
+ShortDesc       原木做成的公佈欄~
+Description
+此公佈欄(board)用來公佈新近決定的事﹐大家有事沒空的時候必須要看( read )一下。~
+Unit            個~
+ItemType        ITEM_FURNITURE
+Level           1
+Weight          1
+Cost            0
+
+End

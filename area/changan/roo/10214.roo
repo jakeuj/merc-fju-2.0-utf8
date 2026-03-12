@@ -1,0 +1,44 @@
+Vnum            10214
+Name            皇宮~
+Description
+兩旁站著一身閃亮盔甲的近衛軍﹐個個一副炯炯有神的模樣﹐兩旁的
+落地窗上有著連接到地上的窗簾﹐不過陽光卻也可以經過來到大殿中
+﹐只有一些管事們走來走去﹐收拾著皇宮內的物品。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10210
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10215
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10217
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10213
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+End

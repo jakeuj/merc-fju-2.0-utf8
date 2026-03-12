@@ -1,0 +1,11 @@
+Vnum            10181
+Name            昏暗的房間~
+Description
+一間吵鬧的酒場﹐你眼睛只看到昏暗的光線﹐要是沒有光線幾乎看不
+到任何東西﹐你邊詛咒昏暗的光線﹐邊察看四周的客人。
+
+~
+SectorType      SECT_CITY
+Dark            Yes
+
+End

@@ -1,0 +1,17 @@
+Vnum            10009
+Name            thunder hat~
+ShortDesc       閃雷帽~
+Description
+一頂可以散掉雷擊時受傷的帽子。
+~
+Unit            頂~
+ItemType        ITEM_ARMOR
+WearLoc         ITEM_WEAR_HEAD
+Takeable        Yes
+Level           10
+Value           -1
+Weight          2
+Cost            20
+Exp             10
+
+End

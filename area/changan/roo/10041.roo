@@ -1,0 +1,55 @@
+Vnum            10041
+Name            宮城口~
+Description
+這裡是一個交叉口﹐南邊即是長安的正陽門﹐北邊接長安宮城。長安
+北邊為芒山﹐南為洛水﹐地形北高南低﹐是許多朝代的都城。
+
+~
+SectorType      SECT_CITY
+
+
+#Exit
+Direction       NORTH
+ExitVnum        10035
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       EAST
+ExitVnum        10042
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       SOUTH
+ExitVnum        10001
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Exit
+Direction       WEST
+ExitVnum        10040
+ExitDesc        ~
+ExitKeyword     ~
+ExitKey         0
+End
+
+#Enquire
+Keyword         訓練者~
+End
+
+#Enquire
+Keyword         訓練師~
+End
+
+#Enquire
+Keyword         訓練~
+End
+
+End

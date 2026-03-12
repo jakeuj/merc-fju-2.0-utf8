@@ -1,8 +1,0 @@
-Type            SHOP_COPER
-Keeper          580
-Horse           15 16 17
-OpenHour        0
-CloseHour       23
-SellProfit      80
-BuyProfit       120
-End
