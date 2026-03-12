@@ -29,6 +29,10 @@ description: 建立、擴充或正式替換 Merc-FJU 區域資料的完整工作
 - 當正式區完全承接功能後，應把舊區實體目錄移除，而不是只從 `directory.lst` 停用。
 - 若新主城規模超過原先預估，優先擴充到新的保留段（例如 `104xx`、`105xx`），不要把其他正式區既定段位拿來暫借，否則很容易和 `academy`、`xuchang`、`drillground` 互撞。
 - 若是新建正式世界或大型主城，預設直接保留 `1000` 個 VNUM 給單一區域，比起先切成 `100xx`、之後再硬擠第二段，通常更安全也更好維護。
+- 正式替換前，優先對照 `H:\\repos\\merc-fju-2.0-utf8-origin\\` 的舊版資料，確認原本是「實體出口」、「時空隧道轉接」，還是 `#Job` / 指令傳送。不要只看目前缺什麼就把舊 VNUM 直接映射到現存主城房。
+- 目前正式世界已確認的入口語意是：`Room School = 500`（時空隧道），新角色先進 `500`，再由 `down` 送往 `get_hometown()`；主城出生地則由各區 `index` 的 `Capital` 控制。
+- 若新版本設計只有單一主城出生地，應只保留一個正式主城 `Capital`，並把新手教學區、PvP 區、試煉區的 `Capital` 改回 `0`，避免新角色出現在書院、校場或其他功能區。
+- `limbo/500` 是過渡房，不應直接硬接到已經有完整街道網的核心主城十字路口；否則開機時 `fix_exits()` 會自動改寫反向出口，造成主城原始動線被覆蓋。
 
 ## 資料檔案指南
 - **index**：欄位順序與 commit `stormwind/index`、`orgrimmar/index` 相同。`Echo` = `WILL_ECHO`，`Fog` 可填白天/夜間兩筆，`Serial` 建議採 3 位數流水號，`Capital` 指向起始房間。`Description` 可分段敘述地理、交通、怪物等級，每段之間以空行+`~` 結束。
@@ -49,6 +53,7 @@ description: 建立、擴充或正式替換 Merc-FJU 區域資料的完整工作
 - **Process 腳本**：對話可使用 `say`、`emote`；複雜行為可調用 `mpsetenemy`, `rand(n)` 等內建 MUDProg 指令。保持條件簡潔避免無線迴圈。
 - **技能聯動**：若區域設計涉及可習得、可掉落或可由 NPC 使用的新技能，除了區域資料外，還要主動檢查技能資料檔中的 `Chance` / `Value` 是否與區域等級帶和傷害預期相符。
 - **交通與服務聯動**：只要新區承接主城、新手區或戰鬥區，就預設要檢查 `bus.txt`、`ship.txt`、懸賞房號、`RoomRecall/RoomSchool` 與 `job_goto_pk_area` 這類固定入口。
+- **靜態資料映射**：`data/gift.txt`、`data/sale.txt`、`data/bus.txt`、`data/ship.txt`、`board/*/index` 這類檔案常殘留舊版 VNUM。正式替換時不要只求能載入，應對照舊版用途，把物件或房間映射到現行正式區的等價對象。
 
 ## 驗證與除錯
 1. `python3 scripts/check-data.py`：確保 UTF-8 與必要標記；若僅檢查 `area/slug`，可臨時修改腳本 TARGET 列表或先備份後還原。
@@ -57,6 +62,8 @@ description: 建立、擴充或正式替換 Merc-FJU 區域資料的完整工作
 4. 遊戲內測試：`reload area <slug>` 後觀察 `log/<pid>.log`，若出現 `db_read_area`、`load_resets` 錯誤，依行數回頭修正；若有主城/新手區替換，另外測 `recall`、`new`、對戰傳送與交通工具。
 5. 匯出資料：若需交付範例，可附上新 `area/<slug>` 目錄、`area/directory.lst`、以及相關 `src/` / `data/` / `help/` diff，一併附上此技能說明。
 6. 啟動驗證：依 `merc-local-ops` 流程實際 `start-merc` 一次，再檢查 `debug/bugs`、`debug/error`。像 `Load_room: 房間號碼重複`、`load_mobiles`、`FOPEN/f_open` 這類錯誤，通常代表 VNUM 規劃或區域引用仍有衝突，不能只靠靜態 diff 判定完成。
+7. 開機訊息檢查：若出現 `Fix_exits:`，不要把它當成單純資訊略過。這通常表示你把單向出口接到已有既定反向出口的房間，應重新調整轉接房或改回 `#Job` 傳送，而不是依賴開機時自動修正。
+8. 出生地驗證：新增或替換主城後，務必實測新角色建立流程，確認出生地選單只列出預期的 `Capital` 區域，且從 `Room School` 下樓後會進到正確主城，而不是新手教學區或 PvP 區。
 
 ## 參考資料
 - `references/area-build-checklist.md`：逐項核對模板，含建議指令與常見陷阱。
