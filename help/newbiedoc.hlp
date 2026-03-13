@@ -1,0 +1,37 @@
+-1 NEWBIEDOC NEWBIE_DOC STARTDOC~
+.
+    【現版新手入門文件（遊戲內可執行版）】
+
+    一、離開學宮後先做這五件事
+
+    1) area
+       先看可去區域。
+    2) find trainer / find shaman / find 小將
+       先找到訓練與轉職 NPC。
+    3) train <trainer> <str|int|wis|dex|con>
+       先把訓練點轉成屬性。
+    4) rebirth <target>
+       十級前後完成第一次轉職。
+    5) recall set
+       先設回城點，再外出。
+
+    二、1-30 等級帶建議
+
+    - 1-10：academy / drillground（迷路可 new）
+    - 10-20：長安 10001 承接 + drillground 補練
+    - 20-30：到長安車站 10086 後用 bus 往返許昌承接練功
+
+    三、重要提醒
+
+    - drillground 為混合區（新手試煉 + 對戰），不是純安全區。
+    - 進新地圖前先 area，再用 find 找 NPC。
+
+    四、延伸閱讀
+
+    - help newbies
+    - help getstart
+    - help classrebirth
+    - help trainattr
+    - help travel
+
+~

@@ -1,0 +1,50 @@
+-1 GETSTART STARTSTEP START_NEWBIE~
+.
+    【現版新手起手流程（對應房間 500 / 12025 / 12026 / 10001）】
+
+    一、先完成學宮，再決定分流
+
+       1) 在書院學宮結業房（12026）：
+          - 想繼續試煉：down 到 12027。
+          - 想進正式世界：回迎新門後到時空隧道 500，再 down 到長安 10001。
+
+    二、到長安 10001 後的起手順序
+
+       1) area
+          先看目前主城與周邊區域。
+
+       2) find trainer / find shaman / find 小將
+          先找到訓練師與轉職者位置。
+
+       3) train
+          先把升級點數轉成屬性。
+
+       4) rebirth
+          十級前後記得完成第一次轉職。
+
+       5) recall set
+          先設定回城點，外出比較安全。
+
+       6) bus
+          需要跨城移動時再使用交通系統。
+
+    三、迷路或不確定時
+
+       - new：回新手訓練區重新整理。
+       - help <指令>：查單一指令說明（例如 help find）。
+
+
+    【1-30 等級速覽】
+
+    - 1-10：academy / drillground（由 500 north 進學宮；迷路可 new）
+    - 10-20：長安 10001 承接（area -> find -> train -> rebirth -> recall set）
+    - 20-30：長安與許昌雙城循環（先到長安車站 10086，再用 bus 往返）
+
+    四、延伸閱讀
+
+       - help newbies
+       - help classrebirth
+       - help trainattr
+       - help travel
+
+~

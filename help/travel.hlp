@@ -8,4 +8,9 @@
      4. [1;32munmount[0m     下馬
      5. [1;32mtrade[0m       買馬
 
+
+     新手提醒：使用交通前﹐建議先用 find 找目的地 NPC 或站點，
+     例如 find trainer、find shaman、find 小將，再決定是否搭乘 bus/ship。
+     若長途外出前記得先做 recall set，避免迷路後回不來。
+
 ~

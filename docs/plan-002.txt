@@ -304,6 +304,333 @@ Suggested First Prompts
 請先閱讀 `docs/plan-002.txt`，執行 Task `P3-T1`。
 請盤點現版 1-30 級玩家實際可走的區域、主城承接與升級節點，對照舊網站 `newhand/players/newplayer` 的升級文章，找出現版斷層與可沿用的部分。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
 
+P1-T1 Deliverable: drillground 區域定位規格（最小可執行）
+定位結論（as-is）
+
+- `drillground` 目前應定義為「混合區（新手練功 + PvP 校場）」，不是純新手練功區，也不是純 PvP 區。
+- 判定依據：
+  - `area/drillground/index` 同時啟用 `Pk Yes`、`Fight YES`，且 `Upper LEVEL_PC` 未限制高等玩家。
+  - 區域描述明確寫「整合舊有的練功、切磋與對戰用途」。
+  - `academy/index` 將 `drillground` 描述為新手進一步鍛鍊場，形成「新手承接 + 對戰入口」雙用途。
+
+與舊版 `newfight` 已知差異（from plan baseline）
+
+- 舊版傾向「新手練功專區」：`Upper 15`、`NewHand Yes`。
+- 現版改為「全玩家可進入的混合區」：`Upper LEVEL_PC`，並開啟 `Pk/Fight`。
+- 怪物等級不再完全落在 15 以下（現況可見最高至 18 級），與舊版新手保護敘事有偏差。
+
+最小可執行規格（本輪只定義，不改機制）
+
+1. 區域型態
+- Type: `hybrid_training_pvp`
+- Audience:
+  - 主訓練帶：1-15 級新手
+  - 競技帶：所有等級玩家
+
+2. 規則聲明（文件先行）
+- `drillground` 不是出生主城，也不是純安全新手區。
+- 新手可在此練功，但需知悉區域含 PvP/切磋用途。
+- 是否保留 `Pk/Fight` 混合模式與新手保護細節，交由 `P1-T2`、`P1-T3` 決策與驗證。
+
+3. 驗證基準（供後續 Task 接續）
+- `P1-T2`：決定並落地 `Pk/Fight` 是否保留混合（index/入口/文案至少一項實作）。
+- `P1-T3`：驗證低等級保護（含等級差攻擊限制）是否存在；若不存在，提出最小修正。
+
+P1-T2 Deliverable: drillground 混合模式決策與落地（最小可驗證）
+決策
+
+- 決定保留 `drillground` 的 `Pk/Fight` 混合模式，不拆成純新手區與獨立 PvP 區。
+- 決策理由：
+  - 現行房間骨架與入口已整合「學宮承接 + 對戰入口」，拆區會放大改動範圍。
+  - Phase 1 要求先做小步可驗證修改，先把規則說明寫清楚，後續再由 `P1-T3` 檢驗保護機制。
+
+落地內容（本輪實作）
+
+- 維持 `area/drillground/index` 的 `Pk Yes`、`Fight YES`。
+- 重寫 `area/drillground/index` 區域描述，新增：
+  - 明確宣告「新手試煉 + 校場對戰」混合模式。
+  - 明確提醒「非純新手保護區」。
+  - 將怪物等級說明改為「1-15 主訓練帶 + 跨等級對戰承接」。
+
+可驗證條件
+
+- `area/drillground/index` 仍可見 `Pk` / `Fight` 開啟。
+- 區域描述可直接讓玩家理解本區不是純安全新手區。
+- `P1-T3` 需補做機制面驗證（低等級保護與等級差攻擊限制）。
+
+P1-T3 Deliverable: drillground 新手保護與等級差限制驗證 + 最小修正
+驗證結論（修正前）
+
+- `drillground` 原本未設定 `NewHand Yes`，因此 `can_fight()` 內的新手區保護分支不會生效。
+- 在 `pArea->fight` 早退邏輯下，`drillground` 內原本可直接開打，缺乏「新手區等級差限制」的保護閘。
+- 結論：`drillground` 在混合模式下存在新手保護缺口，需要最小修正。
+
+最小修正（本輪實作）
+
+1. 區域旗標修正
+- 在 `area/drillground/index` 新增 `NewHand Yes`，讓新手區保護規則可套用至本區。
+
+2. 戰鬥規則補強（不拆區）
+- 在 `src/fight.c::can_fight()` 新增新手區玩家保護：
+  - 若位於 `NewHand` 區域
+  - 且雙方都是玩家
+  - 且等級差 `> 6`
+  - 且非雙方皆為正式 PK 狀態
+  - 則阻止主動開打。
+- 保留 `drillground` 的 `Pk/Fight` 混合模式，不拆區、不改入口。
+
+可驗證條件
+
+- `area/drillground/index` 可見 `NewHand Yes`。
+- `src/fight.c` 可見新手區 NPC 等級差限制（既有）與玩家等級差保護（新增）並存。
+- `P1-T2` 的混合區決策仍成立（`Pk Yes`、`Fight YES` 未改動）。
+
+P2-T1 Deliverable: `academy` 終點、`500`、`10001` 新手承接缺口盤點（可實作清單）
+盤點範圍與依據
+
+- 範圍：`area/academy/roo/12025`、`12026`、`area/limbo/roo/500`、`area/changan/roo/10001`。
+- 對照：`docs/newhand-index.md` 所列新手核心承接（`train`、`rebirth`、`area`、`find`、`recall`、交通）。
+
+現況缺口（as-is）
+
+1. `500`（時空隧道）
+- 已有「north 去學宮 / down 進正式世界」方向，但缺少離開新手區後的指令承接（`area`、`find`、`recall set`、`train`、`rebirth`）。
+- 缺少「進入正式世界第一站是 `10001`」的明確落點提示。
+
+2. `academy` 終點（`12025`、`12026`）
+- `12025` 內容偏舊（`MAP`、泛用 `help` 提示），沒有「完成學宮後下一步」的流程化指引。
+- `12026` 作為結業節點，未清楚提示：
+  - 往下是試煉/校場動線（`12027`）
+  - 返回正式世界（`500 -> 10001`）後該先做哪些事。
+
+3. `10001`（長安城正陽門）
+- 目前只有 `new` / `fight` 快捷提示，缺少新手進城後最需要的生存指令承接。
+- 缺少低等級玩家最常用的「查人找點」導引（例如 `find trainer`、`find shaman`）與 `recall set` 提示。
+- 缺少把轉職/訓練/交通（bus）串成一段可執行動線的文字。
+
+4. help 承接
+- `help/newbies.hlp` 目前是主題索引，尚未內建「離開學宮 -> 長安第一步」章節。
+- `help/travel.hlp` 僅列交通指令，未連到新手在長安實際會用到的落地操作（如先 `find` 再移動）。
+
+可實作清單（供 P2-T2 直接落地）
+
+A. 房間文案（高優先，最小改動）
+1) `area/limbo/roo/500.roo`
+- 新增 4 行「離開學宮後建議流程」：
+  - `down` 到 `10001` 後，先 `area` 看區域
+  - 用 `find trainer` / `find shaman` / `find 小將` 找訓練或轉職 NPC
+  - 用 `recall set` 設定回城點
+  - 不熟路時可 `new` 回學宮、或 `bus` 前往其他城市
+
+2) `area/academy/roo/12025.roo`
+- 把「新手須知」改為「結業後 3 步」格式：
+  - 第一步：回 `500` 下樓進 `10001`
+  - 第二步：`find` 找訓練/轉職 NPC，`train` / `rebirth`
+  - 第三步：`area` 看可去區域，必要時 `recall` / `new`
+
+3) `area/academy/roo/12026.roo`
+- 補一段分流說明：
+  - 想繼續試煉：`down` 去 `12027`（校場/試煉）
+  - 想進正式世界：由迎新門回 `500` 後 `down` 到長安
+
+4) `area/changan/roo/10001.roo`
+- 保留 `new` / `fight`，再加「新手入城指令包」：`area`、`find`、`train`、`rebirth`、`recall set`、`bus`。
+- 在描述末段加入「10 級前後先訓練與轉職」提醒。
+
+B. help 文案（中優先，低風險）
+5) `help/newbies.hlp`
+- 新增章節「離開學宮後」：
+  - `10001` 作為第一主城落點
+  - `find` / `train` / `rebirth` / `recall set` / `bus` 最小指令清單
+
+6) `help/travel.hlp`
+- 新增 1 段：交通前先 `find` 目的 NPC/站點，避免新手只知道 `bus` 不知道去哪搭。
+
+C. 驗證項目（供 P2-T2 完成時檢查）
+- 房間文案是否同時提到 `10001` 與至少三個新手核心指令（`find`、`train`、`rebirth`、`recall set`、`area`）。
+- `10001` 是否能讓新手在不查外部網站下理解「先訓練、再轉職、再外出」。
+- `newbies`/`travel` help 是否與房間文案一致，不互相矛盾。
+
+P2-T2 Deliverable: `500` / `academy` 終點 / `10001` 導引文案落地
+本輪實作
+
+- `area/limbo/roo/500.roo`
+  - 新增離開學宮後的 4 步承接：`area`、`find`、`recall set`、`train`、`rebirth`、`bus`。
+- `area/academy/roo/12025.roo`
+  - 將舊「新手須知」改寫為「結業後 3 步」：
+    1) 回 `500` 下樓進 `10001`
+    2) `find` 找 NPC 後 `train` / `rebirth`
+    3) `area` + `recall set` + 必要時 `new`
+- `area/academy/roo/12026.roo`
+  - 新增分流說明：
+    - `down` 到 `12027` 走試煉線
+    - 回 `500` 再 `down` 到 `10001` 走正式世界線
+- `area/changan/roo/10001.roo`
+  - 保留 `new` / `fight`，並新增新手入城指令包：`area`、`find`、`train`、`rebirth`、`recall set`、`bus`。
+- `help/newbies.hlp`
+  - 新增「離開學宮後的第一步」章節，提供長安起手順序。
+- `help/travel.hlp`
+  - 新增交通前先 `find`、外出前先 `recall set` 的新手提醒。
+
+驗證重點
+
+- 4 個關鍵房間（`500`、`12025`、`12026`、`10001`）皆已出現 `train`、`rebirth`、`area`、`find`、`recall set` 中的多項指令承接。
+- `10001` 已可直接讀到「先訓練、再轉職、再外出」的動線。
+- `newbies` / `travel` help 與房間文案一致，避免新手只看到交通指令但不知道先找 NPC。
+
+P2-T3 Deliverable: 現版新手 help 草案掛載（與房間導引一致）
+本輪實作
+
+- 新增 `help/getstart.hlp`（Topic: `GETSTART` / `STARTSTEP` / `START_NEWBIE`）：
+  - 整合 `500`、`12025`、`12026`、`10001` 的導引流程。
+  - 明確列出起手順序：`area` -> `find` -> `train` -> `rebirth` -> `recall set` -> `bus`。
+  - 補上分流（`12026` 下樓試煉 vs 回 `500` 下樓入長安）與迷路 fallback（`new`）。
+- 修改 `help/newbies.hlp`：
+  - 在索引新增 `help getstart`，把「離校起手流程」正式掛進既有 help 系統入口。
+
+一致性檢查
+
+- `help/getstart.hlp` 內容與 `500`、`12025`、`12026`、`10001` 目前文案一致，未引入新路線與未實作指令。
+- `help/newbies.hlp` 能導向 `help getstart`，讓新手從既有 `help newbies` 就能進入新流程文件。
+
+P3-T1 Deliverable: 現版 1-30 級可玩路線盤點（對照舊 `newplayer` 升級脈絡）
+盤點方式
+
+- 靜態盤點區域與怪物等級分布：`academy`、`drillground`、`changan`、`xuchang`。
+- 盤點關鍵承接點：`500`、`12025`、`12026`、`10001`、`help/getstart.hlp`。
+- 對照基準：`docs/newhand-index.md` 所述舊站 `newplayer` 核心邏輯（新手區 -> 主城 -> 分級外出）。
+
+現版可走路線（as-is）
+
+1) 1-10 級（可走、清楚）
+- 主路線：`500 -> academy -> (可選) drillground`。
+- 依據：
+  - `academy` 為 `NewHand Yes` 新手教學區。
+  - `drillground` 怪物主帶落在 1-18，且文案已標 1-15 主訓練帶。
+- 判定：此段可玩性高，承接清楚。
+
+2) 10-20 級（可走、但混合）
+- 主落點：`10001`（長安）後，依 `find/train/rebirth` 做角色承接，並可回 `drillground` 深入練功。
+- 區域特性：
+  - `changan` 怪物等級分布跨度大（1-100），低中高階混居。
+  - `xuchang` 可經 `bus` 抵達，等級分布 3-50，屬中階副主城。
+- 判定：可玩，但新手對「下一張地圖」辨識成本偏高。
+
+3) 20-30 級（可走、但導引不足）
+- 目前可用來源：`changan` / `xuchang` 內的 21-30 級怪物群。
+- 問題：缺乏「明確 20-30 推薦區」與遊戲內一致指引（房間/help 尚未給出分級地圖名單）。
+- 判定：可玩但有斷層感，屬 P3 主要缺口。
+
+等級分布觀察（靜態）
+
+- `academy`: 1-50（新手教學骨架完整，但非純等級導向練功區）。
+- `drillground`: 1-18（1-10 數量高，11-18 承接自然）。
+- `changan`: 1-100（1-30 有內容，但混入大量高等內容）。
+- `xuchang`: 3-50（可作 15+ 承接，但低中高階混合）。
+
+對照舊 `newplayer` 可沿用與斷層
+
+可沿用部分：
+- 「新手區只是起點」的結構可沿用：現版已具備 `academy/drillground -> changan`。
+- 「先主城整備再外出」可沿用：`10001` + `help/getstart` 已補齊起手指令鏈。
+
+現版斷層：
+- 10-30 缺少明確分級目的地清單（目前只有通用指令，沒有區域名單導引）。
+- `changan`/`xuchang` 皆為混合等級城市，對新手不夠「一眼可懂」。
+- 尚未有一份與現版區域一致的「1-30 路線表」嵌入房間或 help 主入口。
+
+供 `P3-T2` 直接承接的最小輸出需求
+
+- 產出「現版 1-30 導覽草案」：
+  - 1-10：`academy` / `drillground`
+  - 10-20：`changan`（主城承接 + 基礎外出）
+  - 20-30：`xuchang` + `changan` 指定節點（先文件化，不先加新區）
+- 導覽格式需包含：
+  - 每級段的推薦區域
+  - 進出方式（`new` / `bus` / 主要房間）
+  - 必備指令（`area/find/train/rebirth/recall set`）
+
+P3-T2 Deliverable: 現版 1-30 級導覽草案（可落地版）
+本輪輸出
+
+- 新增 `docs/guide-1-30-draft.md`，依 `P3-T1` 框架產出現版 1-30 導覽草案。
+- 草案內容已明確涵蓋：
+  - 每級段推薦區域
+  - 進出方式（`new` / `bus` / 關鍵房間）
+  - 必備指令（`area`、`find`、`train`、`rebirth`、`recall set`）
+
+導覽草案摘要
+
+- 1-10：`academy` / `drillground`
+  - 起點 `500`，`north` 入學宮，必要時 `new` 回訓練區。
+- 10-20：`10001`（長安）承接 + `drillground` 補練
+  - `500 -> down -> 10001` 後按 `area -> find -> train -> rebirth -> recall set` 執行。
+- 20-30：`xuchang` + `changan` 雙城循環
+  - 由長安車站 `bus` 往返 `長安春水站 <-> 許昌驛站`，建立補給與練功節奏。
+
+與舊 `newplayer` 對照結果
+
+- 可沿用：新手區起手 -> 主城承接 -> 分級外出。
+- 現版化：以長安/許昌雙城與現有 `bus` 交通替代舊文中的多城市路線敘事。
+- 後續（P3-T3）建議：把草案關鍵片段嵌入遊戲內可見位置（房間/告示/help 主入口）。
+
+P3-T3 Deliverable: 1-30 導覽嵌入遊戲內可見位置
+本輪實作
+
+- `help/getstart.hlp`
+  - 新增「1-30 等級速覽」區塊，將 `docs/guide-1-30-draft.md` 的級段導覽嵌入可直接查詢的 help 內容。
+  - 明確列出三段路線：
+    - 1-10：`academy` / `drillground`
+    - 10-20：`10001` 承接 + 指令鏈
+    - 20-30：長安 `10086` 轉 `bus` 往返許昌
+- `area/changan/roo/10001.roo`
+  - 在既有新手入城建議新增第 6 點：20-30 級可用 `bus` 往返許昌承接下一段練功。
+
+一致性結果
+
+- 嵌入內容與 `docs/guide-1-30-draft.md` 一致，未新增不存在的地圖或指令。
+- 保持與既有承接文案一致：`500 -> academy -> 10001 -> bus(10086)`。
+
+P4-T1 Deliverable: 現版「新手入門」文件草案（遊戲內可執行）
+本輪實作
+
+- 新增 `docs/newbie-onboarding-draft.md`：
+  - 依 `docs/newhand-index.md` 與現有 `help/getstart.hlp`、`help/newbies.hlp` 整理現版新手入門草案。
+  - 內容聚焦可直接執行的流程與指令（`area`、`find`、`train`、`rebirth`、`recall set`、`bus`）。
+- 新增 `help/newbiedoc.hlp`：
+  - 將新手入門草案掛入遊戲內 help 系統（Topic: `NEWBIEDOC` / `NEWBIE_DOC` / `STARTDOC`）。
+  - 保持與 `help/getstart.hlp`、`10001`、`500` 既有導引一致。
+- 修改 `help/newbies.hlp`：
+  - 在索引新增 `help newbiedoc` 入口，讓新手由主 help 可直接進入新版入門文件。
+
+文件內容重點
+
+- 離開學宮後的固定五步：`area` -> `find` -> `train` -> `rebirth` -> `recall set`。
+- 1-30 級三段路線：
+  - 1-10：`academy` / `drillground`
+  - 10-20：`10001` 承接
+  - 20-30：`10086` 轉 `bus` 往返許昌
+- 風險提示：`drillground` 為混合區，不是純安全區。
+
+P4-T2 Deliverable: 現版「屬性與訓練 / 轉職 / 交通與 recall」文件
+本輪實作
+
+- 新增 `docs/newbie-training-rebirth-travel-draft.md`：
+  - 整理現版新手進階主題（train / rebirth / bus / recall），以可直接執行為目標。
+  - 範例採用現有主城資源：`trainer`、`shaman`、`小將`、長安車站（10086）。
+- 新增 `help/newbiebuild.hlp`：
+  - 將進階文件掛入 help 系統（Topic: `NEWBIEBUILD` / `NEWBIE_GROWTH` / `BUILDSTEP`）。
+  - 內容直接給出「find -> train -> rebirth -> recall set -> bus」流程。
+- 修改 `help/newbies.hlp`：
+  - 新增 `help newbiebuild` 入口，與既有 `getstart/newbiedoc` 形成新手到進階的連續導覽。
+
+內容重點
+
+- 訓練：`find trainer` + `train trainer <屬性>`。
+- 轉職：`find shaman` / `find 小將` + `rebirth <target>`。
+- 交通：長安車站 `10086` 以 `bus` 承接許昌。
+- 回城：每輪外出前先 `recall set`。
+
 Execution Log
 
 - Date: `2026-03-13`
@@ -319,6 +646,160 @@ Execution Log
   - 已對照 `newhand` 文章與 `.agents` 索引
 - Next Prompt:
   - 請先閱讀 `docs/plan-002.txt`，執行 Task `P1-T1`。請盤點 `drillground` 相對於舊版 `newfight` 的規則差異，確認它目前到底是「新手練功區」、「PvP 校場」，還是混合區。請輸出一份最小可執行的區域定位規格，必要時直接補到文件中。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+
+- Date: `2026-03-12`
+- Task: `P1-T1`
+- Status: `done`
+- Changes:
+  - 在 `docs/plan-002.txt` 新增 `P1-T1 Deliverable: drillground 區域定位規格（最小可執行）`。
+  - 依現行 `area/drillground/index` 與 `area/academy/index` 明確定義 `drillground` as-is 為「混合區（新手練功 + PvP 校場）」。
+  - 補上與舊版 `newfight` 的規則差異摘要，以及 `P1-T2` / `P1-T3` 可直接承接的驗證基準。
+- Verification:
+  - 靜態檢查 `area/drillground/index`：`Upper LEVEL_PC`、`Pk Yes`、`Fight YES`。
+  - 靜態檢查 `area/academy/index`：新手導引文案把 `drillground` 視為鍛鍊承接區。
+  - 靜態抽樣 `area/drillground/mob/*.mob`：最高等級為 18，確認與舊版「<=15」敘事存在差異。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P1-T2`。請決定 `drillground` 是否保留 `Pk/Fight` 混合模式，並把決策直接落實到最小可驗證修改（優先 `area/drillground/index` 與必要文案）。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P1-T2`
+- Status: `done`
+- Changes:
+  - 修改 `area/drillground/index`，正式保留 `Pk/Fight` 混合模式，並把區域描述改為可直接理解的規則文案。
+  - 在 `docs/plan-002.txt` 新增 `P1-T2 Deliverable`，記錄決策、理由、實作落點與可驗證條件。
+- Verification:
+  - 靜態檢查 `area/drillground/index`：`Pk Yes`、`Fight YES` 仍維持開啟。
+  - 靜態檢查 `area/drillground/index`：描述新增「混合模式」、「非純新手保護區」與「1-15 主訓練帶」關鍵語句。
+  - 靜態檢查 `docs/plan-002.txt`：`Execution Log` 已新增 `P1-T2` 紀錄且附下一步 prompt。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P1-T3`。請驗證 `drillground` 是否存在低等級保護與等級差攻擊限制；若不存在，請提出最小修正方案並直接實作（以不拆區、最小改動為原則）。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P1-T3`
+- Status: `done`
+- Changes:
+  - 修改 `area/drillground/index`，新增 `NewHand Yes`，讓新手區保護規則可套用到 `drillground`。
+  - 修改 `src/fight.c` 的 `can_fight()`，補上新手區玩家對玩家等級差（>6）主動攻擊限制（非雙方正式 PK 狀態）。
+  - 在 `docs/plan-002.txt` 新增 `P1-T3 Deliverable`，記錄驗證結果、缺口判定與最小修正方案。
+- Verification:
+  - 靜態檢查 `area/drillground/index`：`Pk Yes`、`Fight YES` 仍保留，且新增 `NewHand Yes`。
+  - 靜態檢查 `src/fight.c`：`can_fight()` 同時存在新手區 NPC 等級差保護與玩家等級差保護條件。
+  - 編譯檢查：`make -C src fight.o` 成功，確認新增條件可編譯。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P2-T1`。請盤點 `academy` 終點、`500`、`10001` 之間的新手承接缺口，找出需補的房間或 help 文案，並直接整理成可實作清單。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P2-T1`
+- Status: `done`
+- Changes:
+  - 在 `docs/plan-002.txt` 新增 `P2-T1 Deliverable`，盤點 `academy` 終點、`500`、`10001` 的新手承接缺口。
+  - 直接整理出可實作清單（房間文案 4 項 + help 文案 2 項）與 `P2-T2` 可直接驗證條件。
+- Verification:
+  - 靜態檢查 `area/limbo/roo/500.roo`、`area/academy/roo/12025.roo`、`area/academy/roo/12026.roo`、`area/changan/roo/10001.roo` 現況文案與出口。
+  - 靜態檢查 `help/newbies.hlp`、`help/travel.hlp` 目前內容是否已有承接章節。
+  - 已確認 `docs/newhand-index.md` 指出的核心承接指令（`train`、`rebirth`、`area`、`find`、`recall`）尚未完整出現在上述關鍵節點文案。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P2-T2`。請依 `P2-T1 Deliverable` 的可實作清單，直接補 `500`、`academy` 終點與 `10001` 的導引文案（至少覆蓋 `train`、`rebirth`、`area`、`find`、`recall set`），並視需要同步更新 `help/newbies.hlp` 或 `help/travel.hlp`。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P2-T2`
+- Status: `done`
+- Changes:
+  - 修改 `area/limbo/roo/500.roo`、`area/academy/roo/12025.roo`、`area/academy/roo/12026.roo`、`area/changan/roo/10001.roo`，補齊新手離開學宮後的承接指令文案。
+  - 修改 `help/newbies.hlp`、`help/travel.hlp`，補上長安起手流程與交通前置提醒。
+  - 在 `docs/plan-002.txt` 新增 `P2-T2 Deliverable` 與本輪驗證重點。
+- Verification:
+  - 靜態檢查四個關鍵房間均已出現 `train`、`rebirth`、`area`、`find`、`recall set` 指令承接。
+  - 靜態檢查 `help/newbies.hlp` 與 `help/travel.hlp` 已新增「離開學宮後」與「交通前先 find」內容。
+  - 關鍵字檢查：`10001` 文案可直接看到「先訓練、再轉職、再外出」路徑（`find` → `train`/`rebirth` → `bus`）。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P2-T3`。請把本輪已補的房間導引內容整理成一份現版新手 help 草案，掛到現有 help 系統（可先新增 `help/getstart` 或擴充 `help/newbies.hlp`），並確保與 `500`、`12025`、`12026`、`10001` 文案一致。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P2-T3`
+- Status: `done`
+- Changes:
+  - 新增 `help/getstart.hlp`，整合 `500`、`12025`、`12026`、`10001` 的現版新手起手流程。
+  - 修改 `help/newbies.hlp`，新增 `help getstart` 入口，讓新手可由既有 help 導向新草案。
+  - 在 `docs/plan-002.txt` 新增 `P2-T3 Deliverable` 與執行紀錄。
+- Verification:
+  - 靜態檢查 `help/getstart.hlp`：包含 `area`、`find`、`train`、`rebirth`、`recall set`、`bus`，且包含 `500`、`12026`、`10001` 分流敘述。
+  - 靜態檢查 `help/newbies.hlp`：索引已新增 `help getstart`。
+  - 一致性比對：`help/getstart.hlp` 的動線與 `area/limbo/roo/500.roo`、`area/academy/roo/12025.roo`、`area/academy/roo/12026.roo`、`area/changan/roo/10001.roo` 的既有導引一致。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P3-T1`。請盤點現版 1-30 級玩家實際可走的區域、主城承接與升級節點，對照舊網站 `newhand/players/newplayer` 的升級文章，找出現版斷層與可沿用部分。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P3-T1`
+- Status: `done`
+- Changes:
+  - 在 `docs/plan-002.txt` 新增 `P3-T1 Deliverable`，盤點現版 1-30 級可走區域、主城承接與升級節點。
+  - 對照 `docs/newhand-index.md` 所述舊 `newplayer` 升級邏輯，明確列出可沿用部分與現版斷層。
+  - 補上 `P3-T2` 可直接接手的最小輸出需求（1-30 導覽草案框架）。
+- Verification:
+  - 靜態檢查 `area/academy/index`、`area/drillground/index`、`area/changan/index`、`area/xuchang/index` 區域描述與承接資訊。
+  - 靜態統計 `area/*/mob/*.mob` 等級分布，確認 1-30 可玩內容主要集中於 `drillground` + `changan/xuchang` 混合帶。
+  - 靜態檢查 `data/bus.txt`，確認 `長安春水站 <-> 許昌驛站` 交通可作 10-30 承接路徑之一。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P3-T2`。請依 `P3-T1 Deliverable` 寫出「現版 1-30 級導覽草案」，需明確列出每級段推薦區域、進出方式（`new`/`bus`/關鍵房間）與必備指令（`area`、`find`、`train`、`rebirth`、`recall set`）。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P3-T2`
+- Status: `done`
+- Changes:
+  - 新增 `docs/guide-1-30-draft.md`，完成現版 1-30 級導覽草案。
+  - 在 `docs/plan-002.txt` 新增 `P3-T2 Deliverable`，整理級段路線、指令清單與舊版對照結果。
+- Verification:
+  - 靜態檢查 `docs/guide-1-30-draft.md` 已包含 1-10 / 10-20 / 20-30 三級段與對應區域。
+  - 靜態檢查草案已含進出方式（`new`、`bus`、`500`、`10001`、`10086`）與必備指令（`area`、`find`、`train`、`rebirth`、`recall set`）。
+  - 靜態檢查 `docs/plan-002.txt` 已新增 `P3-T2` 記錄與下一步 prompt。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P3-T3`。請把 `docs/guide-1-30-draft.md` 的關鍵導覽嵌入遊戲內可見位置（至少擇一：`help/newbies.hlp`、`help/getstart.hlp`、`area/changan/roo/10001.roo` 告示式文案），並確保與現有房間路線一致。完成後更新 `docs/plan-002.txt` 的 `Execution Log`，並提供下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P3-T3`
+- Status: `done`
+- Changes:
+  - 修改 `help/getstart.hlp`，新增「1-30 等級速覽」並嵌入三段級帶導覽。
+  - 修改 `area/changan/roo/10001.roo`，新增 20-30 級以 `bus` 往返許昌的承接提示。
+  - 在 `docs/plan-002.txt` 新增 `P3-T3 Deliverable` 與執行紀錄。
+- Verification:
+  - 靜態檢查 `help/getstart.hlp` 已包含 1-10 / 10-20 / 20-30 三段摘要，且含 `new`、`bus`、`10001`、`10086`。
+  - 靜態檢查 `area/changan/roo/10001.roo` 已新增第 6 點 20-30 承接提示。
+  - 一致性比對：`help/getstart.hlp` 與 `docs/guide-1-30-draft.md` 的導覽段落一致。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P4-T1`。請依 `docs/newhand-index.md` 與現有 `help/getstart.hlp`、`help/newbies.hlp`，整理一份現版「新手入門」文件草案（聚焦可直接在遊戲內執行的流程與指令），並更新 `Execution Log` 與下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P4-T1`
+- Status: `done`
+- Changes:
+  - 新增 `docs/newbie-onboarding-draft.md`，整理現版「新手入門」文件草案。
+  - 新增 `help/newbiedoc.hlp` 並掛入 help 系統，提供遊戲內可直接查詢的入門流程。
+  - 修改 `help/newbies.hlp`，新增 `help newbiedoc` 入口。
+  - 在 `docs/plan-002.txt` 新增 `P4-T1 Deliverable` 與執行紀錄。
+- Verification:
+  - 靜態檢查 `docs/newbie-onboarding-draft.md` 與 `help/newbiedoc.hlp` 均包含核心指令：`area`、`find`、`train`、`rebirth`、`recall set`、`bus`。
+  - 靜態檢查 `help/newbies.hlp` 已新增 `help newbiedoc` 入口。
+  - 一致性比對：`newbiedoc/getstart/newbies` 三份 help 內容與 `500`、`10001` 目前導引文案一致。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P4-T2`。請整理現版「屬性與訓練 / 轉職 / 交通與 recall」文件，優先採用現有指令與主城 NPC（trainer/shaman/小將/車站）為範例，並掛到 help 系統。完成後更新 `Execution Log` 與下一步 prompt。
+
+- Date: `2026-03-12`
+- Task: `P4-T2`
+- Status: `done`
+- Changes:
+  - 新增 `docs/newbie-training-rebirth-travel-draft.md`，整理現版「屬性與訓練 / 轉職 / 交通與 recall」文件。
+  - 新增 `help/newbiebuild.hlp` 並掛到 help 系統，提供進階可執行流程。
+  - 修改 `help/newbies.hlp`，新增 `help newbiebuild` 入口。
+  - 在 `docs/plan-002.txt` 新增 `P4-T2 Deliverable` 與執行紀錄。
+- Verification:
+  - 靜態檢查 `docs/newbie-training-rebirth-travel-draft.md` 與 `help/newbiebuild.hlp` 均包含 `train`、`rebirth`、`bus`、`recall set` 與 NPC 範例（trainer/shaman/小將）。
+  - 靜態檢查 `help/newbies.hlp` 已新增 `help newbiebuild` 入口。
+  - 一致性比對：`newbiebuild/newbiedoc/getstart/travel` 的指令路徑一致（`find -> train -> rebirth -> recall set -> bus`）。
+- Next Prompt:
+  - 請先閱讀 `docs/plan-002.txt`，執行 Task `P4-T3`。請整理現版「realm/國家入門」在何時提示最合理（建議等級節點 + 房間/help 觸發點），並補一份最小可用文案到 help 系統。完成後更新 `Execution Log` 與下一步 prompt。
 
 Test Plan
 靜態對照：

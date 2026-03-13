@@ -21,6 +21,11 @@ Description
      這裡往北([1;36mnorth[0m)可以到達訓練學校﹐適合新手學習﹗
      這裡往下([1;32mdown [0m)可以進入正式世界﹐展開冒險旅程﹗
 
+     建議你下樓到長安 10001 後﹐先用 area 看看附近區域分佈。
+     接著可用 find trainer / find shaman / find 小將 找訓練或轉職者。
+     請先設定 recall set 做為回城點﹐再用 train 與 rebirth 強化角色。
+     若一時迷路可輸入 new 回學宮﹐或用 bus 前往其他城市。
+
 ~
 SectorType      SECT_INSIDE
 NoMob           Yes

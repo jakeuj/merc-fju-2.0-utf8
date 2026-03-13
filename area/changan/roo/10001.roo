@@ -12,6 +12,14 @@ Description
                  輸入 [1;32mnew[0m   可以到達新手訓練區
                  輸入 [1;33mfight[0m 可以到達三國競技場
 
+新手入城建議：
+  1) 先輸入 area 了解附近可前往區域。
+  2) 再用 find trainer / find shaman / find 小將 找訓練或轉職者。
+  3) 輸入 train 提升屬性，等級到十級前後記得 rebirth 轉職。
+  4) 請先設定 recall set 做為回城點，外出更安全。
+  5) 需要遠行時可到車站使用 bus。
+  6) 若已進入 20-30 級，可優先以 bus 往返許昌承接下一段練功。
+
 ~
 SectorType      SECT_CITY
 

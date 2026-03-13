@@ -1,0 +1,34 @@
+-1 NEWBIEBUILD NEWBIE_GROWTH BUILDSTEP~
+.
+    【新手進階：屬性訓練 / 轉職 / 交通與 recall】
+
+    一、訓練（train）
+    1) find trainer
+    2) train <trainer> <str|int|wis|dex|con>
+       例：train trainer con
+
+    二、轉職（rebirth）
+    - 道士線：find shaman -> rebirth shaman
+    - 武官線：find 小將 -> rebirth 小將
+    - 建議十級前後完成第一次轉職。
+
+    三、交通（bus）
+    - 先到長安車站（10086），再輸入 bus。
+    - 20-30 級可用 bus 往返長安與許昌承接練功。
+
+    四、回城（recall）
+    - 出門前先 recall set。
+    - 換練點後記得檢查回城點。
+
+    五、一輪流程
+    area
+    -> find trainer
+    -> train ...
+    -> find shaman/小將
+    -> rebirth ...
+    -> recall set
+    -> bus（需要跨城時）
+
+    延伸：help newbiedoc / help getstart / help trainattr / help classrebirth / help travel
+
+~

@@ -1760,6 +1760,19 @@ bool can_fight( CHAR_DATA * ch , CHAR_DATA * victim )
     RETURN( FALSE );
   }
 
+  /* 新手區保護：玩家間等級差過大不可主動開打 */
+  if ( ch->in_room
+    && ( pArea = ( ch->in_room->area ) )
+    && pArea->newhand
+    && !IS_NPC( ch ) && !IS_NPC( victim )
+    && abs( ch->level - victim->level ) > 6
+    && !( is_pk( ch ) && is_pk( victim ) ) )
+  {
+    act( "$N與你的等級差距太大﹐在新手區不可主動挑戰。"
+      , ch, NULL, victim, TO_CHAR );
+    RETURN( FALSE );
+  }
+
   /* 對戰區一定可以打 */
   if ( ch->in_room
     && ( pArea = ( ch->in_room->area ) )
